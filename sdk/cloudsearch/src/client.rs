@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`BuildSuggesters`](crate::client::fluent_builders::BuildSuggesters) operation.
     ///
-    /// - Takes [`BuildSuggestersInput`](crate::input::BuildSuggestersInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::BuildSuggestersInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::BuildSuggesters::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::BuildSuggesters::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     /// - On success, responds with [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput) with field(s):
     ///   - [`field_names(Option<Vec<String>>)`](crate::output::BuildSuggestersOutput::field_names): <p>A list of field names.</p>
     /// - On failure, responds with [`SdkError<BuildSuggestersError>`](crate::error::BuildSuggestersError)
@@ -95,8 +95,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
     ///
-    /// - Takes [`CreateDomainInput`](crate::input::CreateDomainInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::CreateDomainInput::domain_name): <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain_name): <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
     ///   - [`domain_status(Option<DomainStatus>)`](crate::output::CreateDomainOutput::domain_status): <p>The current status of the search domain.</p>
     /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::error::CreateDomainError)
@@ -105,9 +105,9 @@ where
     }
     /// Constructs a fluent builder for the [`DefineAnalysisScheme`](crate::client::fluent_builders::DefineAnalysisScheme) operation.
     ///
-    /// - Takes [`DefineAnalysisSchemeInput`](crate::input::DefineAnalysisSchemeInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DefineAnalysisSchemeInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`analysis_scheme(Option<AnalysisScheme>)`](crate::input::DefineAnalysisSchemeInput::analysis_scheme): <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DefineAnalysisScheme::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DefineAnalysisScheme::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`analysis_scheme(AnalysisScheme)`](crate::client::fluent_builders::DefineAnalysisScheme::analysis_scheme) / [`set_analysis_scheme(Option<AnalysisScheme>)`](crate::client::fluent_builders::DefineAnalysisScheme::set_analysis_scheme): <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
     /// - On success, responds with [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput) with field(s):
     ///   - [`analysis_scheme(Option<AnalysisSchemeStatus>)`](crate::output::DefineAnalysisSchemeOutput::analysis_scheme): <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     /// - On failure, responds with [`SdkError<DefineAnalysisSchemeError>`](crate::error::DefineAnalysisSchemeError)
@@ -116,9 +116,9 @@ where
     }
     /// Constructs a fluent builder for the [`DefineExpression`](crate::client::fluent_builders::DefineExpression) operation.
     ///
-    /// - Takes [`DefineExpressionInput`](crate::input::DefineExpressionInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DefineExpressionInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`expression(Option<Expression>)`](crate::input::DefineExpressionInput::expression): <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DefineExpression::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DefineExpression::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`expression(Expression)`](crate::client::fluent_builders::DefineExpression::expression) / [`set_expression(Option<Expression>)`](crate::client::fluent_builders::DefineExpression::set_expression): <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
     /// - On success, responds with [`DefineExpressionOutput`](crate::output::DefineExpressionOutput) with field(s):
     ///   - [`expression(Option<ExpressionStatus>)`](crate::output::DefineExpressionOutput::expression): <p>The value of an <code>Expression</code> and its current status.</p>
     /// - On failure, responds with [`SdkError<DefineExpressionError>`](crate::error::DefineExpressionError)
@@ -127,9 +127,9 @@ where
     }
     /// Constructs a fluent builder for the [`DefineIndexField`](crate::client::fluent_builders::DefineIndexField) operation.
     ///
-    /// - Takes [`DefineIndexFieldInput`](crate::input::DefineIndexFieldInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DefineIndexFieldInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`index_field(Option<IndexField>)`](crate::input::DefineIndexFieldInput::index_field): <p>The index field and field options you want to configure. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DefineIndexField::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DefineIndexField::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`index_field(IndexField)`](crate::client::fluent_builders::DefineIndexField::index_field) / [`set_index_field(Option<IndexField>)`](crate::client::fluent_builders::DefineIndexField::set_index_field): <p>The index field and field options you want to configure. </p>
     /// - On success, responds with [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput) with field(s):
     ///   - [`index_field(Option<IndexFieldStatus>)`](crate::output::DefineIndexFieldOutput::index_field): <p>The value of an <code>IndexField</code> and its current status.</p>
     /// - On failure, responds with [`SdkError<DefineIndexFieldError>`](crate::error::DefineIndexFieldError)
@@ -138,9 +138,9 @@ where
     }
     /// Constructs a fluent builder for the [`DefineSuggester`](crate::client::fluent_builders::DefineSuggester) operation.
     ///
-    /// - Takes [`DefineSuggesterInput`](crate::input::DefineSuggesterInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DefineSuggesterInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`suggester(Option<Suggester>)`](crate::input::DefineSuggesterInput::suggester): <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DefineSuggester::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DefineSuggester::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`suggester(Suggester)`](crate::client::fluent_builders::DefineSuggester::suggester) / [`set_suggester(Option<Suggester>)`](crate::client::fluent_builders::DefineSuggester::set_suggester): <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
     /// - On success, responds with [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput) with field(s):
     ///   - [`suggester(Option<SuggesterStatus>)`](crate::output::DefineSuggesterOutput::suggester): <p>The value of a <code>Suggester</code> and its current status.</p>
     /// - On failure, responds with [`SdkError<DefineSuggesterError>`](crate::error::DefineSuggesterError)
@@ -149,9 +149,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAnalysisScheme`](crate::client::fluent_builders::DeleteAnalysisScheme) operation.
     ///
-    /// - Takes [`DeleteAnalysisSchemeInput`](crate::input::DeleteAnalysisSchemeInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteAnalysisSchemeInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`analysis_scheme_name(Option<String>)`](crate::input::DeleteAnalysisSchemeInput::analysis_scheme_name): <p>The name of the analysis scheme you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAnalysisScheme::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteAnalysisScheme::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`analysis_scheme_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAnalysisScheme::analysis_scheme_name) / [`set_analysis_scheme_name(Option<String>)`](crate::client::fluent_builders::DeleteAnalysisScheme::set_analysis_scheme_name): <p>The name of the analysis scheme you want to delete.</p>
     /// - On success, responds with [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput) with field(s):
     ///   - [`analysis_scheme(Option<AnalysisSchemeStatus>)`](crate::output::DeleteAnalysisSchemeOutput::analysis_scheme): <p>The status of the analysis scheme being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteAnalysisSchemeError>`](crate::error::DeleteAnalysisSchemeError)
@@ -160,8 +160,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) operation.
     ///
-    /// - Takes [`DeleteDomainInput`](crate::input::DeleteDomainInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteDomainInput::domain_name): <p>The name of the domain you want to permanently delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteDomain::set_domain_name): <p>The name of the domain you want to permanently delete.</p>
     /// - On success, responds with [`DeleteDomainOutput`](crate::output::DeleteDomainOutput) with field(s):
     ///   - [`domain_status(Option<DomainStatus>)`](crate::output::DeleteDomainOutput::domain_status): <p>The current status of the search domain.</p>
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::error::DeleteDomainError)
@@ -170,9 +170,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteExpression`](crate::client::fluent_builders::DeleteExpression) operation.
     ///
-    /// - Takes [`DeleteExpressionInput`](crate::input::DeleteExpressionInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteExpressionInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`expression_name(Option<String>)`](crate::input::DeleteExpressionInput::expression_name): <p>The name of the <code><code>Expression</code></code> to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteExpression::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteExpression::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`expression_name(impl Into<String>)`](crate::client::fluent_builders::DeleteExpression::expression_name) / [`set_expression_name(Option<String>)`](crate::client::fluent_builders::DeleteExpression::set_expression_name): <p>The name of the <code><code>Expression</code></code> to delete.</p>
     /// - On success, responds with [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput) with field(s):
     ///   - [`expression(Option<ExpressionStatus>)`](crate::output::DeleteExpressionOutput::expression): <p>The status of the expression being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteExpressionError>`](crate::error::DeleteExpressionError)
@@ -181,9 +181,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteIndexField`](crate::client::fluent_builders::DeleteIndexField) operation.
     ///
-    /// - Takes [`DeleteIndexFieldInput`](crate::input::DeleteIndexFieldInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteIndexFieldInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`index_field_name(Option<String>)`](crate::input::DeleteIndexFieldInput::index_field_name): <p>The name of the index field your want to remove from the domain's indexing options.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteIndexField::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteIndexField::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`index_field_name(impl Into<String>)`](crate::client::fluent_builders::DeleteIndexField::index_field_name) / [`set_index_field_name(Option<String>)`](crate::client::fluent_builders::DeleteIndexField::set_index_field_name): <p>The name of the index field your want to remove from the domain's indexing options.</p>
     /// - On success, responds with [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput) with field(s):
     ///   - [`index_field(Option<IndexFieldStatus>)`](crate::output::DeleteIndexFieldOutput::index_field): <p>The status of the index field being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteIndexFieldError>`](crate::error::DeleteIndexFieldError)
@@ -192,9 +192,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSuggester`](crate::client::fluent_builders::DeleteSuggester) operation.
     ///
-    /// - Takes [`DeleteSuggesterInput`](crate::input::DeleteSuggesterInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteSuggesterInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`suggester_name(Option<String>)`](crate::input::DeleteSuggesterInput::suggester_name): <p>Specifies the name of the suggester you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSuggester::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteSuggester::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`suggester_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSuggester::suggester_name) / [`set_suggester_name(Option<String>)`](crate::client::fluent_builders::DeleteSuggester::set_suggester_name): <p>Specifies the name of the suggester you want to delete.</p>
     /// - On success, responds with [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput) with field(s):
     ///   - [`suggester(Option<SuggesterStatus>)`](crate::output::DeleteSuggesterOutput::suggester): <p>The status of the suggester being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteSuggesterError>`](crate::error::DeleteSuggesterError)
@@ -203,10 +203,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAnalysisSchemes`](crate::client::fluent_builders::DescribeAnalysisSchemes) operation.
     ///
-    /// - Takes [`DescribeAnalysisSchemesInput`](crate::input::DescribeAnalysisSchemesInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DescribeAnalysisSchemesInput::domain_name): <p>The name of the domain you want to describe.</p>
-    ///   - [`analysis_scheme_names(Option<Vec<String>>)`](crate::input::DescribeAnalysisSchemesInput::analysis_scheme_names): <p>The analysis schemes you want to describe.</p>
-    ///   - [`deployed(Option<bool>)`](crate::input::DescribeAnalysisSchemesInput::deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAnalysisSchemes::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeAnalysisSchemes::set_domain_name): <p>The name of the domain you want to describe.</p>
+    ///   - [`analysis_scheme_names(Vec<String>)`](crate::client::fluent_builders::DescribeAnalysisSchemes::analysis_scheme_names) / [`set_analysis_scheme_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAnalysisSchemes::set_analysis_scheme_names): <p>The analysis schemes you want to describe.</p>
+    ///   - [`deployed(bool)`](crate::client::fluent_builders::DescribeAnalysisSchemes::deployed) / [`set_deployed(Option<bool>)`](crate::client::fluent_builders::DescribeAnalysisSchemes::set_deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     /// - On success, responds with [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput) with field(s):
     ///   - [`analysis_schemes(Option<Vec<AnalysisSchemeStatus>>)`](crate::output::DescribeAnalysisSchemesOutput::analysis_schemes): <p>The analysis scheme descriptions.</p>
     /// - On failure, responds with [`SdkError<DescribeAnalysisSchemesError>`](crate::error::DescribeAnalysisSchemesError)
@@ -215,9 +215,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAvailabilityOptions`](crate::client::fluent_builders::DescribeAvailabilityOptions) operation.
     ///
-    /// - Takes [`DescribeAvailabilityOptionsInput`](crate::input::DescribeAvailabilityOptionsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DescribeAvailabilityOptionsInput::domain_name): <p>The name of the domain you want to describe.</p>
-    ///   - [`deployed(Option<bool>)`](crate::input::DescribeAvailabilityOptionsInput::deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAvailabilityOptions::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeAvailabilityOptions::set_domain_name): <p>The name of the domain you want to describe.</p>
+    ///   - [`deployed(bool)`](crate::client::fluent_builders::DescribeAvailabilityOptions::deployed) / [`set_deployed(Option<bool>)`](crate::client::fluent_builders::DescribeAvailabilityOptions::set_deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     /// - On success, responds with [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput) with field(s):
     ///   - [`availability_options(Option<AvailabilityOptionsStatus>)`](crate::output::DescribeAvailabilityOptionsOutput::availability_options): <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
     /// - On failure, responds with [`SdkError<DescribeAvailabilityOptionsError>`](crate::error::DescribeAvailabilityOptionsError)
@@ -228,9 +228,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDomainEndpointOptions`](crate::client::fluent_builders::DescribeDomainEndpointOptions) operation.
     ///
-    /// - Takes [`DescribeDomainEndpointOptionsInput`](crate::input::DescribeDomainEndpointOptionsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DescribeDomainEndpointOptionsInput::domain_name): <p>A string that represents the name of a domain.</p>
-    ///   - [`deployed(Option<bool>)`](crate::input::DescribeDomainEndpointOptionsInput::deployed): <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainEndpointOptions::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomainEndpointOptions::set_domain_name): <p>A string that represents the name of a domain.</p>
+    ///   - [`deployed(bool)`](crate::client::fluent_builders::DescribeDomainEndpointOptions::deployed) / [`set_deployed(Option<bool>)`](crate::client::fluent_builders::DescribeDomainEndpointOptions::set_deployed): <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
     /// - On success, responds with [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput) with field(s):
     ///   - [`domain_endpoint_options(Option<DomainEndpointOptionsStatus>)`](crate::output::DescribeDomainEndpointOptionsOutput::domain_endpoint_options): <p>The status and configuration of a search domain's endpoint options.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainEndpointOptionsError>`](crate::error::DescribeDomainEndpointOptionsError)
@@ -241,8 +241,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDomains`](crate::client::fluent_builders::DescribeDomains) operation.
     ///
-    /// - Takes [`DescribeDomainsInput`](crate::input::DescribeDomainsInput) with field(s):
-    ///   - [`domain_names(Option<Vec<String>>)`](crate::input::DescribeDomainsInput::domain_names): <p>The names of the domains you want to include in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_names(Vec<String>)`](crate::client::fluent_builders::DescribeDomains::domain_names) / [`set_domain_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDomains::set_domain_names): <p>The names of the domains you want to include in the response.</p>
     /// - On success, responds with [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput) with field(s):
     ///   - [`domain_status_list(Option<Vec<DomainStatus>>)`](crate::output::DescribeDomainsOutput::domain_status_list): <p>A list that contains the status of each requested domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainsError>`](crate::error::DescribeDomainsError)
@@ -251,10 +251,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeExpressions`](crate::client::fluent_builders::DescribeExpressions) operation.
     ///
-    /// - Takes [`DescribeExpressionsInput`](crate::input::DescribeExpressionsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DescribeExpressionsInput::domain_name): <p>The name of the domain you want to describe.</p>
-    ///   - [`expression_names(Option<Vec<String>>)`](crate::input::DescribeExpressionsInput::expression_names): <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    ///   - [`deployed(Option<bool>)`](crate::input::DescribeExpressionsInput::deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeExpressions::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeExpressions::set_domain_name): <p>The name of the domain you want to describe.</p>
+    ///   - [`expression_names(Vec<String>)`](crate::client::fluent_builders::DescribeExpressions::expression_names) / [`set_expression_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeExpressions::set_expression_names): <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+    ///   - [`deployed(bool)`](crate::client::fluent_builders::DescribeExpressions::deployed) / [`set_deployed(Option<bool>)`](crate::client::fluent_builders::DescribeExpressions::set_deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     /// - On success, responds with [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput) with field(s):
     ///   - [`expressions(Option<Vec<ExpressionStatus>>)`](crate::output::DescribeExpressionsOutput::expressions): <p>The expressions configured for the domain.</p>
     /// - On failure, responds with [`SdkError<DescribeExpressionsError>`](crate::error::DescribeExpressionsError)
@@ -263,10 +263,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeIndexFields`](crate::client::fluent_builders::DescribeIndexFields) operation.
     ///
-    /// - Takes [`DescribeIndexFieldsInput`](crate::input::DescribeIndexFieldsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DescribeIndexFieldsInput::domain_name): <p>The name of the domain you want to describe.</p>
-    ///   - [`field_names(Option<Vec<String>>)`](crate::input::DescribeIndexFieldsInput::field_names): <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-    ///   - [`deployed(Option<bool>)`](crate::input::DescribeIndexFieldsInput::deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeIndexFields::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeIndexFields::set_domain_name): <p>The name of the domain you want to describe.</p>
+    ///   - [`field_names(Vec<String>)`](crate::client::fluent_builders::DescribeIndexFields::field_names) / [`set_field_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeIndexFields::set_field_names): <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
+    ///   - [`deployed(bool)`](crate::client::fluent_builders::DescribeIndexFields::deployed) / [`set_deployed(Option<bool>)`](crate::client::fluent_builders::DescribeIndexFields::set_deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     /// - On success, responds with [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput) with field(s):
     ///   - [`index_fields(Option<Vec<IndexFieldStatus>>)`](crate::output::DescribeIndexFieldsOutput::index_fields): <p>The index fields configured for the domain.</p>
     /// - On failure, responds with [`SdkError<DescribeIndexFieldsError>`](crate::error::DescribeIndexFieldsError)
@@ -275,8 +275,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeScalingParameters`](crate::client::fluent_builders::DescribeScalingParameters) operation.
     ///
-    /// - Takes [`DescribeScalingParametersInput`](crate::input::DescribeScalingParametersInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DescribeScalingParametersInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingParameters::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeScalingParameters::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     /// - On success, responds with [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput) with field(s):
     ///   - [`scaling_parameters(Option<ScalingParametersStatus>)`](crate::output::DescribeScalingParametersOutput::scaling_parameters): <p>The status and configuration of a search domain's scaling parameters. </p>
     /// - On failure, responds with [`SdkError<DescribeScalingParametersError>`](crate::error::DescribeScalingParametersError)
@@ -287,9 +287,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeServiceAccessPolicies`](crate::client::fluent_builders::DescribeServiceAccessPolicies) operation.
     ///
-    /// - Takes [`DescribeServiceAccessPoliciesInput`](crate::input::DescribeServiceAccessPoliciesInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DescribeServiceAccessPoliciesInput::domain_name): <p>The name of the domain you want to describe.</p>
-    ///   - [`deployed(Option<bool>)`](crate::input::DescribeServiceAccessPoliciesInput::deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeServiceAccessPolicies::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeServiceAccessPolicies::set_domain_name): <p>The name of the domain you want to describe.</p>
+    ///   - [`deployed(bool)`](crate::client::fluent_builders::DescribeServiceAccessPolicies::deployed) / [`set_deployed(Option<bool>)`](crate::client::fluent_builders::DescribeServiceAccessPolicies::set_deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     /// - On success, responds with [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput) with field(s):
     ///   - [`access_policies(Option<AccessPoliciesStatus>)`](crate::output::DescribeServiceAccessPoliciesOutput::access_policies): <p>The access rules configured for the domain specified in the request.</p>
     /// - On failure, responds with [`SdkError<DescribeServiceAccessPoliciesError>`](crate::error::DescribeServiceAccessPoliciesError)
@@ -300,10 +300,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSuggesters`](crate::client::fluent_builders::DescribeSuggesters) operation.
     ///
-    /// - Takes [`DescribeSuggestersInput`](crate::input::DescribeSuggestersInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DescribeSuggestersInput::domain_name): <p>The name of the domain you want to describe.</p>
-    ///   - [`suggester_names(Option<Vec<String>>)`](crate::input::DescribeSuggestersInput::suggester_names): <p>The suggesters you want to describe.</p>
-    ///   - [`deployed(Option<bool>)`](crate::input::DescribeSuggestersInput::deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSuggesters::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeSuggesters::set_domain_name): <p>The name of the domain you want to describe.</p>
+    ///   - [`suggester_names(Vec<String>)`](crate::client::fluent_builders::DescribeSuggesters::suggester_names) / [`set_suggester_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSuggesters::set_suggester_names): <p>The suggesters you want to describe.</p>
+    ///   - [`deployed(bool)`](crate::client::fluent_builders::DescribeSuggesters::deployed) / [`set_deployed(Option<bool>)`](crate::client::fluent_builders::DescribeSuggesters::set_deployed): <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     /// - On success, responds with [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput) with field(s):
     ///   - [`suggesters(Option<Vec<SuggesterStatus>>)`](crate::output::DescribeSuggestersOutput::suggesters): <p>The suggesters configured for the domain specified in the request.</p>
     /// - On failure, responds with [`SdkError<DescribeSuggestersError>`](crate::error::DescribeSuggestersError)
@@ -312,8 +312,8 @@ where
     }
     /// Constructs a fluent builder for the [`IndexDocuments`](crate::client::fluent_builders::IndexDocuments) operation.
     ///
-    /// - Takes [`IndexDocumentsInput`](crate::input::IndexDocumentsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::IndexDocumentsInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::IndexDocuments::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::IndexDocuments::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     /// - On success, responds with [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput) with field(s):
     ///   - [`field_names(Option<Vec<String>>)`](crate::output::IndexDocumentsOutput::field_names): <p>The names of the fields that are currently being indexed.</p>
     /// - On failure, responds with [`SdkError<IndexDocumentsError>`](crate::error::IndexDocumentsError)
@@ -322,7 +322,7 @@ where
     }
     /// Constructs a fluent builder for the [`ListDomainNames`](crate::client::fluent_builders::ListDomainNames) operation.
     ///
-    /// - Takes [`ListDomainNamesInput`](crate::input::ListDomainNamesInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::ListDomainNames::send) it.
 
     /// - On success, responds with [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput) with field(s):
     ///   - [`domain_names(Option<HashMap<String, String>>)`](crate::output::ListDomainNamesOutput::domain_names): <p>The names of the search domains owned by an account.</p>
@@ -332,9 +332,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAvailabilityOptions`](crate::client::fluent_builders::UpdateAvailabilityOptions) operation.
     ///
-    /// - Takes [`UpdateAvailabilityOptionsInput`](crate::input::UpdateAvailabilityOptionsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::UpdateAvailabilityOptionsInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`multi_az(Option<bool>)`](crate::input::UpdateAvailabilityOptionsInput::multi_az): <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAvailabilityOptions::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateAvailabilityOptions::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`multi_az(bool)`](crate::client::fluent_builders::UpdateAvailabilityOptions::multi_az) / [`set_multi_az(Option<bool>)`](crate::client::fluent_builders::UpdateAvailabilityOptions::set_multi_az): <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
     /// - On success, responds with [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput) with field(s):
     ///   - [`availability_options(Option<AvailabilityOptionsStatus>)`](crate::output::UpdateAvailabilityOptionsOutput::availability_options): <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
     /// - On failure, responds with [`SdkError<UpdateAvailabilityOptionsError>`](crate::error::UpdateAvailabilityOptionsError)
@@ -345,9 +345,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDomainEndpointOptions`](crate::client::fluent_builders::UpdateDomainEndpointOptions) operation.
     ///
-    /// - Takes [`UpdateDomainEndpointOptionsInput`](crate::input::UpdateDomainEndpointOptionsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::UpdateDomainEndpointOptionsInput::domain_name): <p>A string that represents the name of a domain.</p>
-    ///   - [`domain_endpoint_options(Option<DomainEndpointOptions>)`](crate::input::UpdateDomainEndpointOptionsInput::domain_endpoint_options): <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainEndpointOptions::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainEndpointOptions::set_domain_name): <p>A string that represents the name of a domain.</p>
+    ///   - [`domain_endpoint_options(DomainEndpointOptions)`](crate::client::fluent_builders::UpdateDomainEndpointOptions::domain_endpoint_options) / [`set_domain_endpoint_options(Option<DomainEndpointOptions>)`](crate::client::fluent_builders::UpdateDomainEndpointOptions::set_domain_endpoint_options): <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
     /// - On success, responds with [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput) with field(s):
     ///   - [`domain_endpoint_options(Option<DomainEndpointOptionsStatus>)`](crate::output::UpdateDomainEndpointOptionsOutput::domain_endpoint_options): <p>The newly-configured domain endpoint options.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainEndpointOptionsError>`](crate::error::UpdateDomainEndpointOptionsError)
@@ -358,9 +358,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateScalingParameters`](crate::client::fluent_builders::UpdateScalingParameters) operation.
     ///
-    /// - Takes [`UpdateScalingParametersInput`](crate::input::UpdateScalingParametersInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::UpdateScalingParametersInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`scaling_parameters(Option<ScalingParameters>)`](crate::input::UpdateScalingParametersInput::scaling_parameters): <p>The desired instance type and desired number of replicas of each index partition.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateScalingParameters::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateScalingParameters::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`scaling_parameters(ScalingParameters)`](crate::client::fluent_builders::UpdateScalingParameters::scaling_parameters) / [`set_scaling_parameters(Option<ScalingParameters>)`](crate::client::fluent_builders::UpdateScalingParameters::set_scaling_parameters): <p>The desired instance type and desired number of replicas of each index partition.</p>
     /// - On success, responds with [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput) with field(s):
     ///   - [`scaling_parameters(Option<ScalingParametersStatus>)`](crate::output::UpdateScalingParametersOutput::scaling_parameters): <p>The status and configuration of a search domain's scaling parameters. </p>
     /// - On failure, responds with [`SdkError<UpdateScalingParametersError>`](crate::error::UpdateScalingParametersError)
@@ -369,9 +369,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateServiceAccessPolicies`](crate::client::fluent_builders::UpdateServiceAccessPolicies) operation.
     ///
-    /// - Takes [`UpdateServiceAccessPoliciesInput`](crate::input::UpdateServiceAccessPoliciesInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::UpdateServiceAccessPoliciesInput::domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    ///   - [`access_policies(Option<String>)`](crate::input::UpdateServiceAccessPoliciesInput::access_policies): <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceAccessPolicies::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateServiceAccessPolicies::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`access_policies(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceAccessPolicies::access_policies) / [`set_access_policies(Option<String>)`](crate::client::fluent_builders::UpdateServiceAccessPolicies::set_access_policies): <p>The access rules you want to configure. These rules replace any existing rules. </p>
     /// - On success, responds with [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput) with field(s):
     ///   - [`access_policies(Option<AccessPoliciesStatus>)`](crate::output::UpdateServiceAccessPoliciesOutput::access_policies): <p>The access rules configured for the domain.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceAccessPoliciesError>`](crate::error::UpdateServiceAccessPoliciesError)

@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`AssociateApi`](crate::client::fluent_builders::AssociateApi) operation.
     ///
-    /// - Takes [`AssociateApiInput`](crate::input::AssociateApiInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::AssociateApiInput::domain_name): <p>The domain name.</p>
-    ///   - [`api_id(Option<String>)`](crate::input::AssociateApiInput::api_id): <p>The API ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AssociateApi::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AssociateApi::set_domain_name): <p>The domain name.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::AssociateApi::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::AssociateApi::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`AssociateApiOutput`](crate::output::AssociateApiOutput) with field(s):
     ///   - [`api_association(Option<ApiAssociation>)`](crate::output::AssociateApiOutput::api_association): <p>The <code>ApiAssociation</code> object.</p>
     /// - On failure, responds with [`SdkError<AssociateApiError>`](crate::error::AssociateApiError)
@@ -96,13 +96,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateApiCache`](crate::client::fluent_builders::CreateApiCache) operation.
     ///
-    /// - Takes [`CreateApiCacheInput`](crate::input::CreateApiCacheInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateApiCacheInput::api_id): <p>The GraphQL API ID.</p>
-    ///   - [`ttl(i64)`](crate::input::CreateApiCacheInput::ttl): <p>TTL in seconds for cache entries.</p>  <p>Valid values are 1–3,600 seconds.</p>
-    ///   - [`transit_encryption_enabled(bool)`](crate::input::CreateApiCacheInput::transit_encryption_enabled): <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
-    ///   - [`at_rest_encryption_enabled(bool)`](crate::input::CreateApiCacheInput::at_rest_encryption_enabled): <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
-    ///   - [`api_caching_behavior(Option<ApiCachingBehavior>)`](crate::input::CreateApiCacheInput::api_caching_behavior): <p>Caching behavior.</p>  <ul>   <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>   <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>  </ul>
-    ///   - [`r#type(Option<ApiCacheType>)`](crate::input::CreateApiCacheInput::type): <p>The cache instance type. Valid values are </p>  <ul>   <li> <p> <code>SMALL</code> </p> </li>   <li> <p> <code>MEDIUM</code> </p> </li>   <li> <p> <code>LARGE</code> </p> </li>   <li> <p> <code>XLARGE</code> </p> </li>   <li> <p> <code>LARGE_2X</code> </p> </li>   <li> <p> <code>LARGE_4X</code> </p> </li>   <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>   <li> <p> <code>LARGE_12X</code> </p> </li>  </ul>  <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>  <p>The following legacy instance types are available, but their use is discouraged:</p>  <ul>   <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>   <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>   <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>   <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>   <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>   <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>   <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateApiCache::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateApiCache::set_api_id): <p>The GraphQL API ID.</p>
+    ///   - [`ttl(i64)`](crate::client::fluent_builders::CreateApiCache::ttl) / [`set_ttl(i64)`](crate::client::fluent_builders::CreateApiCache::set_ttl): <p>TTL in seconds for cache entries.</p>  <p>Valid values are 1–3,600 seconds.</p>
+    ///   - [`transit_encryption_enabled(bool)`](crate::client::fluent_builders::CreateApiCache::transit_encryption_enabled) / [`set_transit_encryption_enabled(bool)`](crate::client::fluent_builders::CreateApiCache::set_transit_encryption_enabled): <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
+    ///   - [`at_rest_encryption_enabled(bool)`](crate::client::fluent_builders::CreateApiCache::at_rest_encryption_enabled) / [`set_at_rest_encryption_enabled(bool)`](crate::client::fluent_builders::CreateApiCache::set_at_rest_encryption_enabled): <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
+    ///   - [`api_caching_behavior(ApiCachingBehavior)`](crate::client::fluent_builders::CreateApiCache::api_caching_behavior) / [`set_api_caching_behavior(Option<ApiCachingBehavior>)`](crate::client::fluent_builders::CreateApiCache::set_api_caching_behavior): <p>Caching behavior.</p>  <ul>   <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>   <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>  </ul>
+    ///   - [`r#type(ApiCacheType)`](crate::client::fluent_builders::CreateApiCache::r#type) / [`set_type(Option<ApiCacheType>)`](crate::client::fluent_builders::CreateApiCache::set_type): <p>The cache instance type. Valid values are </p>  <ul>   <li> <p> <code>SMALL</code> </p> </li>   <li> <p> <code>MEDIUM</code> </p> </li>   <li> <p> <code>LARGE</code> </p> </li>   <li> <p> <code>XLARGE</code> </p> </li>   <li> <p> <code>LARGE_2X</code> </p> </li>   <li> <p> <code>LARGE_4X</code> </p> </li>   <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>   <li> <p> <code>LARGE_12X</code> </p> </li>  </ul>  <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>  <p>The following legacy instance types are available, but their use is discouraged:</p>  <ul>   <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>   <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>   <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>   <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>   <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>   <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>   <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>  </ul>
     /// - On success, responds with [`CreateApiCacheOutput`](crate::output::CreateApiCacheOutput) with field(s):
     ///   - [`api_cache(Option<ApiCache>)`](crate::output::CreateApiCacheOutput::api_cache): <p>The <code>ApiCache</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateApiCacheError>`](crate::error::CreateApiCacheError)
@@ -111,10 +111,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateApiKey`](crate::client::fluent_builders::CreateApiKey) operation.
     ///
-    /// - Takes [`CreateApiKeyInput`](crate::input::CreateApiKeyInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateApiKeyInput::api_id): <p>The ID for your GraphQL API.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateApiKeyInput::description): <p>A description of the purpose of the API key.</p>
-    ///   - [`expires(i64)`](crate::input::CreateApiKeyInput::expires): <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateApiKey::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateApiKey::set_api_id): <p>The ID for your GraphQL API.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApiKey::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApiKey::set_description): <p>A description of the purpose of the API key.</p>
+    ///   - [`expires(i64)`](crate::client::fluent_builders::CreateApiKey::expires) / [`set_expires(i64)`](crate::client::fluent_builders::CreateApiKey::set_expires): <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
     /// - On success, responds with [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput) with field(s):
     ///   - [`api_key(Option<ApiKey>)`](crate::output::CreateApiKeyOutput::api_key): <p>The API key.</p>
     /// - On failure, responds with [`SdkError<CreateApiKeyError>`](crate::error::CreateApiKeyError)
@@ -123,18 +123,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDataSource`](crate::client::fluent_builders::CreateDataSource) operation.
     ///
-    /// - Takes [`CreateDataSourceInput`](crate::input::CreateDataSourceInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateDataSourceInput::api_id): <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateDataSourceInput::name): <p>A user-supplied name for the <code>DataSource</code>.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateDataSourceInput::description): <p>A description of the <code>DataSource</code>.</p>
-    ///   - [`r#type(Option<DataSourceType>)`](crate::input::CreateDataSourceInput::type): <p>The type of the <code>DataSource</code>.</p>
-    ///   - [`service_role_arn(Option<String>)`](crate::input::CreateDataSourceInput::service_role_arn): <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
-    ///   - [`dynamodb_config(Option<DynamodbDataSourceConfig>)`](crate::input::CreateDataSourceInput::dynamodb_config): <p>Amazon DynamoDB settings.</p>
-    ///   - [`lambda_config(Option<LambdaDataSourceConfig>)`](crate::input::CreateDataSourceInput::lambda_config): <p>Lambda settings.</p>
-    ///   - [`elasticsearch_config(Option<ElasticsearchDataSourceConfig>)`](crate::input::CreateDataSourceInput::elasticsearch_config): <p>Amazon OpenSearch Service settings.</p>  <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
-    ///   - [`open_search_service_config(Option<OpenSearchServiceDataSourceConfig>)`](crate::input::CreateDataSourceInput::open_search_service_config): <p>Amazon OpenSearch Service settings.</p>
-    ///   - [`http_config(Option<HttpDataSourceConfig>)`](crate::input::CreateDataSourceInput::http_config): <p>HTTP endpoint settings.</p>
-    ///   - [`relational_database_config(Option<RelationalDatabaseDataSourceConfig>)`](crate::input::CreateDataSourceInput::relational_database_config): <p>Relational database settings.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_api_id): <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_name): <p>A user-supplied name for the <code>DataSource</code>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_description): <p>A description of the <code>DataSource</code>.</p>
+    ///   - [`r#type(DataSourceType)`](crate::client::fluent_builders::CreateDataSource::r#type) / [`set_type(Option<DataSourceType>)`](crate::client::fluent_builders::CreateDataSource::set_type): <p>The type of the <code>DataSource</code>.</p>
+    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_service_role_arn): <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
+    ///   - [`dynamodb_config(DynamodbDataSourceConfig)`](crate::client::fluent_builders::CreateDataSource::dynamodb_config) / [`set_dynamodb_config(Option<DynamodbDataSourceConfig>)`](crate::client::fluent_builders::CreateDataSource::set_dynamodb_config): <p>Amazon DynamoDB settings.</p>
+    ///   - [`lambda_config(LambdaDataSourceConfig)`](crate::client::fluent_builders::CreateDataSource::lambda_config) / [`set_lambda_config(Option<LambdaDataSourceConfig>)`](crate::client::fluent_builders::CreateDataSource::set_lambda_config): <p>Lambda settings.</p>
+    ///   - [`elasticsearch_config(ElasticsearchDataSourceConfig)`](crate::client::fluent_builders::CreateDataSource::elasticsearch_config) / [`set_elasticsearch_config(Option<ElasticsearchDataSourceConfig>)`](crate::client::fluent_builders::CreateDataSource::set_elasticsearch_config): <p>Amazon OpenSearch Service settings.</p>  <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>CreateDataSourceRequest$openSearchServiceConfig</code> to create an OpenSearch data source.</p>
+    ///   - [`open_search_service_config(OpenSearchServiceDataSourceConfig)`](crate::client::fluent_builders::CreateDataSource::open_search_service_config) / [`set_open_search_service_config(Option<OpenSearchServiceDataSourceConfig>)`](crate::client::fluent_builders::CreateDataSource::set_open_search_service_config): <p>Amazon OpenSearch Service settings.</p>
+    ///   - [`http_config(HttpDataSourceConfig)`](crate::client::fluent_builders::CreateDataSource::http_config) / [`set_http_config(Option<HttpDataSourceConfig>)`](crate::client::fluent_builders::CreateDataSource::set_http_config): <p>HTTP endpoint settings.</p>
+    ///   - [`relational_database_config(RelationalDatabaseDataSourceConfig)`](crate::client::fluent_builders::CreateDataSource::relational_database_config) / [`set_relational_database_config(Option<RelationalDatabaseDataSourceConfig>)`](crate::client::fluent_builders::CreateDataSource::set_relational_database_config): <p>Relational database settings.</p>
     /// - On success, responds with [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput) with field(s):
     ///   - [`data_source(Option<DataSource>)`](crate::output::CreateDataSourceOutput::data_source): <p>The <code>DataSource</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateDataSourceError>`](crate::error::CreateDataSourceError)
@@ -143,10 +143,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDomainName`](crate::client::fluent_builders::CreateDomainName) operation.
     ///
-    /// - Takes [`CreateDomainNameInput`](crate::input::CreateDomainNameInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::CreateDomainNameInput::domain_name): <p>The domain name.</p>
-    ///   - [`certificate_arn(Option<String>)`](crate::input::CreateDomainNameInput::certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateDomainNameInput::description): <p>A description of the <code>DomainName</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomainName::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomainName::set_domain_name): <p>The domain name.</p>
+    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDomainName::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::CreateDomainName::set_certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDomainName::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDomainName::set_description): <p>A description of the <code>DomainName</code>.</p>
     /// - On success, responds with [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput) with field(s):
     ///   - [`domain_name_config(Option<DomainNameConfig>)`](crate::output::CreateDomainNameOutput::domain_name_config): <p>The configuration for the <code>DomainName</code>.</p>
     /// - On failure, responds with [`SdkError<CreateDomainNameError>`](crate::error::CreateDomainNameError)
@@ -155,15 +155,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFunction`](crate::client::fluent_builders::CreateFunction) operation.
     ///
-    /// - Takes [`CreateFunctionInput`](crate::input::CreateFunctionInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateFunctionInput::api_id): <p>The GraphQL API ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateFunctionInput::name): <p>The <code>Function</code> name. The function name does not have to be unique.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateFunctionInput::description): <p>The <code>Function</code> description.</p>
-    ///   - [`data_source_name(Option<String>)`](crate::input::CreateFunctionInput::data_source_name): <p>The <code>Function</code> <code>DataSource</code> name.</p>
-    ///   - [`request_mapping_template(Option<String>)`](crate::input::CreateFunctionInput::request_mapping_template): <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    ///   - [`response_mapping_template(Option<String>)`](crate::input::CreateFunctionInput::response_mapping_template): <p>The <code>Function</code> response mapping template.</p>
-    ///   - [`function_version(Option<String>)`](crate::input::CreateFunctionInput::function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
-    ///   - [`sync_config(Option<SyncConfig>)`](crate::input::CreateFunctionInput::sync_config): <p>Describes a Sync configuration for a resolver.</p>  <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_api_id): <p>The GraphQL API ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_name): <p>The <code>Function</code> name. The function name does not have to be unique.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_description): <p>The <code>Function</code> description.</p>
+    ///   - [`data_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::data_source_name) / [`set_data_source_name(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_data_source_name): <p>The <code>Function</code> <code>DataSource</code> name.</p>
+    ///   - [`request_mapping_template(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::request_mapping_template) / [`set_request_mapping_template(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_request_mapping_template): <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
+    ///   - [`response_mapping_template(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::response_mapping_template) / [`set_response_mapping_template(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_response_mapping_template): <p>The <code>Function</code> response mapping template.</p>
+    ///   - [`function_version(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::function_version) / [`set_function_version(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::CreateFunction::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::CreateFunction::set_sync_config): <p>Describes a Sync configuration for a resolver.</p>  <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     /// - On success, responds with [`CreateFunctionOutput`](crate::output::CreateFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::output::CreateFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::error::CreateFunctionError)
@@ -172,16 +172,16 @@ where
     }
     /// Constructs a fluent builder for the [`CreateGraphqlApi`](crate::client::fluent_builders::CreateGraphqlApi) operation.
     ///
-    /// - Takes [`CreateGraphqlApiInput`](crate::input::CreateGraphqlApiInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateGraphqlApiInput::name): <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
-    ///   - [`log_config(Option<LogConfig>)`](crate::input::CreateGraphqlApiInput::log_config): <p>The Amazon CloudWatch Logs configuration.</p>
-    ///   - [`authentication_type(Option<AuthenticationType>)`](crate::input::CreateGraphqlApiInput::authentication_type): <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
-    ///   - [`user_pool_config(Option<UserPoolConfig>)`](crate::input::CreateGraphqlApiInput::user_pool_config): <p>The Amazon Cognito user pool configuration.</p>
-    ///   - [`open_id_connect_config(Option<OpenIdConnectConfig>)`](crate::input::CreateGraphqlApiInput::open_id_connect_config): <p>The OIDC configuration.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateGraphqlApiInput::tags): <p>A <code>TagMap</code> object.</p>
-    ///   - [`additional_authentication_providers(Option<Vec<AdditionalAuthenticationProvider>>)`](crate::input::CreateGraphqlApiInput::additional_authentication_providers): <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    ///   - [`xray_enabled(bool)`](crate::input::CreateGraphqlApiInput::xray_enabled): <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
-    ///   - [`lambda_authorizer_config(Option<LambdaAuthorizerConfig>)`](crate::input::CreateGraphqlApiInput::lambda_authorizer_config): <p>Configuration for Lambda function authorization.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateGraphqlApi::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateGraphqlApi::set_name): <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
+    ///   - [`log_config(LogConfig)`](crate::client::fluent_builders::CreateGraphqlApi::log_config) / [`set_log_config(Option<LogConfig>)`](crate::client::fluent_builders::CreateGraphqlApi::set_log_config): <p>The Amazon CloudWatch Logs configuration.</p>
+    ///   - [`authentication_type(AuthenticationType)`](crate::client::fluent_builders::CreateGraphqlApi::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::client::fluent_builders::CreateGraphqlApi::set_authentication_type): <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
+    ///   - [`user_pool_config(UserPoolConfig)`](crate::client::fluent_builders::CreateGraphqlApi::user_pool_config) / [`set_user_pool_config(Option<UserPoolConfig>)`](crate::client::fluent_builders::CreateGraphqlApi::set_user_pool_config): <p>The Amazon Cognito user pool configuration.</p>
+    ///   - [`open_id_connect_config(OpenIdConnectConfig)`](crate::client::fluent_builders::CreateGraphqlApi::open_id_connect_config) / [`set_open_id_connect_config(Option<OpenIdConnectConfig>)`](crate::client::fluent_builders::CreateGraphqlApi::set_open_id_connect_config): <p>The OIDC configuration.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateGraphqlApi::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateGraphqlApi::set_tags): <p>A <code>TagMap</code> object.</p>
+    ///   - [`additional_authentication_providers(Vec<AdditionalAuthenticationProvider>)`](crate::client::fluent_builders::CreateGraphqlApi::additional_authentication_providers) / [`set_additional_authentication_providers(Option<Vec<AdditionalAuthenticationProvider>>)`](crate::client::fluent_builders::CreateGraphqlApi::set_additional_authentication_providers): <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
+    ///   - [`xray_enabled(bool)`](crate::client::fluent_builders::CreateGraphqlApi::xray_enabled) / [`set_xray_enabled(bool)`](crate::client::fluent_builders::CreateGraphqlApi::set_xray_enabled): <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
+    ///   - [`lambda_authorizer_config(LambdaAuthorizerConfig)`](crate::client::fluent_builders::CreateGraphqlApi::lambda_authorizer_config) / [`set_lambda_authorizer_config(Option<LambdaAuthorizerConfig>)`](crate::client::fluent_builders::CreateGraphqlApi::set_lambda_authorizer_config): <p>Configuration for Lambda function authorization.</p>
     /// - On success, responds with [`CreateGraphqlApiOutput`](crate::output::CreateGraphqlApiOutput) with field(s):
     ///   - [`graphql_api(Option<GraphqlApi>)`](crate::output::CreateGraphqlApiOutput::graphql_api): <p>The <code>GraphqlApi</code>.</p>
     /// - On failure, responds with [`SdkError<CreateGraphqlApiError>`](crate::error::CreateGraphqlApiError)
@@ -190,17 +190,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateResolver`](crate::client::fluent_builders::CreateResolver) operation.
     ///
-    /// - Takes [`CreateResolverInput`](crate::input::CreateResolverInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateResolverInput::api_id): <p>The ID for the GraphQL API for which the resolver is being created.</p>
-    ///   - [`type_name(Option<String>)`](crate::input::CreateResolverInput::type_name): <p>The name of the <code>Type</code>.</p>
-    ///   - [`field_name(Option<String>)`](crate::input::CreateResolverInput::field_name): <p>The name of the field to attach the resolver to.</p>
-    ///   - [`data_source_name(Option<String>)`](crate::input::CreateResolverInput::data_source_name): <p>The name of the data source for which the resolver is being created.</p>
-    ///   - [`request_mapping_template(Option<String>)`](crate::input::CreateResolverInput::request_mapping_template): <p>The mapping template to use for requests.</p>  <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>  <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    ///   - [`response_mapping_template(Option<String>)`](crate::input::CreateResolverInput::response_mapping_template): <p>The mapping template to use for responses from the data source.</p>
-    ///   - [`kind(Option<ResolverKind>)`](crate::input::CreateResolverInput::kind): <p>The resolver type.</p>  <ul>   <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>   <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>  </ul>
-    ///   - [`pipeline_config(Option<PipelineConfig>)`](crate::input::CreateResolverInput::pipeline_config): <p>The <code>PipelineConfig</code>.</p>
-    ///   - [`sync_config(Option<SyncConfig>)`](crate::input::CreateResolverInput::sync_config): <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-    ///   - [`caching_config(Option<CachingConfig>)`](crate::input::CreateResolverInput::caching_config): <p>The caching configuration for the resolver.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateResolver::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateResolver::set_api_id): <p>The ID for the GraphQL API for which the resolver is being created.</p>
+    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::CreateResolver::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::CreateResolver::set_type_name): <p>The name of the <code>Type</code>.</p>
+    ///   - [`field_name(impl Into<String>)`](crate::client::fluent_builders::CreateResolver::field_name) / [`set_field_name(Option<String>)`](crate::client::fluent_builders::CreateResolver::set_field_name): <p>The name of the field to attach the resolver to.</p>
+    ///   - [`data_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateResolver::data_source_name) / [`set_data_source_name(Option<String>)`](crate::client::fluent_builders::CreateResolver::set_data_source_name): <p>The name of the data source for which the resolver is being created.</p>
+    ///   - [`request_mapping_template(impl Into<String>)`](crate::client::fluent_builders::CreateResolver::request_mapping_template) / [`set_request_mapping_template(Option<String>)`](crate::client::fluent_builders::CreateResolver::set_request_mapping_template): <p>The mapping template to use for requests.</p>  <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>  <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
+    ///   - [`response_mapping_template(impl Into<String>)`](crate::client::fluent_builders::CreateResolver::response_mapping_template) / [`set_response_mapping_template(Option<String>)`](crate::client::fluent_builders::CreateResolver::set_response_mapping_template): <p>The mapping template to use for responses from the data source.</p>
+    ///   - [`kind(ResolverKind)`](crate::client::fluent_builders::CreateResolver::kind) / [`set_kind(Option<ResolverKind>)`](crate::client::fluent_builders::CreateResolver::set_kind): <p>The resolver type.</p>  <ul>   <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>   <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>  </ul>
+    ///   - [`pipeline_config(PipelineConfig)`](crate::client::fluent_builders::CreateResolver::pipeline_config) / [`set_pipeline_config(Option<PipelineConfig>)`](crate::client::fluent_builders::CreateResolver::set_pipeline_config): <p>The <code>PipelineConfig</code>.</p>
+    ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::CreateResolver::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::CreateResolver::set_sync_config): <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
+    ///   - [`caching_config(CachingConfig)`](crate::client::fluent_builders::CreateResolver::caching_config) / [`set_caching_config(Option<CachingConfig>)`](crate::client::fluent_builders::CreateResolver::set_caching_config): <p>The caching configuration for the resolver.</p>
     /// - On success, responds with [`CreateResolverOutput`](crate::output::CreateResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::output::CreateResolverOutput::resolver): <p>The <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateResolverError>`](crate::error::CreateResolverError)
@@ -209,10 +209,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateType`](crate::client::fluent_builders::CreateType) operation.
     ///
-    /// - Takes [`CreateTypeInput`](crate::input::CreateTypeInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateTypeInput::api_id): <p>The API ID.</p>
-    ///   - [`definition(Option<String>)`](crate::input::CreateTypeInput::definition): <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>  <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
-    ///   - [`format(Option<TypeDefinitionFormat>)`](crate::input::CreateTypeInput::format): <p>The type format: SDL or JSON.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateType::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateType::set_api_id): <p>The API ID.</p>
+    ///   - [`definition(impl Into<String>)`](crate::client::fluent_builders::CreateType::definition) / [`set_definition(Option<String>)`](crate::client::fluent_builders::CreateType::set_definition): <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>  <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
+    ///   - [`format(TypeDefinitionFormat)`](crate::client::fluent_builders::CreateType::format) / [`set_format(Option<TypeDefinitionFormat>)`](crate::client::fluent_builders::CreateType::set_format): <p>The type format: SDL or JSON.</p>
     /// - On success, responds with [`CreateTypeOutput`](crate::output::CreateTypeOutput) with field(s):
     ///   - [`r#type(Option<Type>)`](crate::output::CreateTypeOutput::type): <p>The <code>Type</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateTypeError>`](crate::error::CreateTypeError)
@@ -221,8 +221,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApiCache`](crate::client::fluent_builders::DeleteApiCache) operation.
     ///
-    /// - Takes [`DeleteApiCacheInput`](crate::input::DeleteApiCacheInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteApiCacheInput::api_id): <p>The API ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApiCache::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteApiCache::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`DeleteApiCacheOutput`](crate::output::DeleteApiCacheOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApiCacheError>`](crate::error::DeleteApiCacheError)
@@ -231,9 +231,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApiKey`](crate::client::fluent_builders::DeleteApiKey) operation.
     ///
-    /// - Takes [`DeleteApiKeyInput`](crate::input::DeleteApiKeyInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteApiKeyInput::api_id): <p>The API ID.</p>
-    ///   - [`id(Option<String>)`](crate::input::DeleteApiKeyInput::id): <p>The ID for the API key.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApiKey::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteApiKey::set_api_id): <p>The API ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteApiKey::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteApiKey::set_id): <p>The ID for the API key.</p>
     /// - On success, responds with [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApiKeyError>`](crate::error::DeleteApiKeyError)
@@ -242,9 +242,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDataSource`](crate::client::fluent_builders::DeleteDataSource) operation.
     ///
-    /// - Takes [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteDataSourceInput::api_id): <p>The API ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::DeleteDataSourceInput::name): <p>The name of the data source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_api_id): <p>The API ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_name): <p>The name of the data source.</p>
     /// - On success, responds with [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::error::DeleteDataSourceError)
@@ -253,8 +253,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDomainName`](crate::client::fluent_builders::DeleteDomainName) operation.
     ///
-    /// - Takes [`DeleteDomainNameInput`](crate::input::DeleteDomainNameInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteDomainNameInput::domain_name): <p>The domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDomainName::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteDomainName::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDomainNameError>`](crate::error::DeleteDomainNameError)
@@ -263,9 +263,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFunction`](crate::client::fluent_builders::DeleteFunction) operation.
     ///
-    /// - Takes [`DeleteFunctionInput`](crate::input::DeleteFunctionInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteFunctionInput::api_id): <p>The GraphQL API ID.</p>
-    ///   - [`function_id(Option<String>)`](crate::input::DeleteFunctionInput::function_id): <p>The <code>Function</code> ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFunction::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteFunction::set_api_id): <p>The GraphQL API ID.</p>
+    ///   - [`function_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFunction::function_id) / [`set_function_id(Option<String>)`](crate::client::fluent_builders::DeleteFunction::set_function_id): <p>The <code>Function</code> ID.</p>
     /// - On success, responds with [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFunctionError>`](crate::error::DeleteFunctionError)
@@ -274,8 +274,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteGraphqlApi`](crate::client::fluent_builders::DeleteGraphqlApi) operation.
     ///
-    /// - Takes [`DeleteGraphqlApiInput`](crate::input::DeleteGraphqlApiInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteGraphqlApiInput::api_id): <p>The API ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGraphqlApi::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteGraphqlApi::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`DeleteGraphqlApiOutput`](crate::output::DeleteGraphqlApiOutput)
 
     /// - On failure, responds with [`SdkError<DeleteGraphqlApiError>`](crate::error::DeleteGraphqlApiError)
@@ -284,10 +284,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteResolver`](crate::client::fluent_builders::DeleteResolver) operation.
     ///
-    /// - Takes [`DeleteResolverInput`](crate::input::DeleteResolverInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteResolverInput::api_id): <p>The API ID.</p>
-    ///   - [`type_name(Option<String>)`](crate::input::DeleteResolverInput::type_name): <p>The name of the resolver type.</p>
-    ///   - [`field_name(Option<String>)`](crate::input::DeleteResolverInput::field_name): <p>The resolver field name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResolver::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteResolver::set_api_id): <p>The API ID.</p>
+    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResolver::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::DeleteResolver::set_type_name): <p>The name of the resolver type.</p>
+    ///   - [`field_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResolver::field_name) / [`set_field_name(Option<String>)`](crate::client::fluent_builders::DeleteResolver::set_field_name): <p>The resolver field name.</p>
     /// - On success, responds with [`DeleteResolverOutput`](crate::output::DeleteResolverOutput)
 
     /// - On failure, responds with [`SdkError<DeleteResolverError>`](crate::error::DeleteResolverError)
@@ -296,9 +296,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteType`](crate::client::fluent_builders::DeleteType) operation.
     ///
-    /// - Takes [`DeleteTypeInput`](crate::input::DeleteTypeInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteTypeInput::api_id): <p>The API ID.</p>
-    ///   - [`type_name(Option<String>)`](crate::input::DeleteTypeInput::type_name): <p>The type name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteType::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteType::set_api_id): <p>The API ID.</p>
+    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::DeleteType::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::DeleteType::set_type_name): <p>The type name.</p>
     /// - On success, responds with [`DeleteTypeOutput`](crate::output::DeleteTypeOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTypeError>`](crate::error::DeleteTypeError)
@@ -307,8 +307,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateApi`](crate::client::fluent_builders::DisassociateApi) operation.
     ///
-    /// - Takes [`DisassociateApiInput`](crate::input::DisassociateApiInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DisassociateApiInput::domain_name): <p>The domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateApi::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DisassociateApi::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`DisassociateApiOutput`](crate::output::DisassociateApiOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateApiError>`](crate::error::DisassociateApiError)
@@ -317,8 +317,8 @@ where
     }
     /// Constructs a fluent builder for the [`FlushApiCache`](crate::client::fluent_builders::FlushApiCache) operation.
     ///
-    /// - Takes [`FlushApiCacheInput`](crate::input::FlushApiCacheInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::FlushApiCacheInput::api_id): <p>The API ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::FlushApiCache::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::FlushApiCache::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`FlushApiCacheOutput`](crate::output::FlushApiCacheOutput)
 
     /// - On failure, responds with [`SdkError<FlushApiCacheError>`](crate::error::FlushApiCacheError)
@@ -327,8 +327,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApiAssociation`](crate::client::fluent_builders::GetApiAssociation) operation.
     ///
-    /// - Takes [`GetApiAssociationInput`](crate::input::GetApiAssociationInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::GetApiAssociationInput::domain_name): <p>The domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetApiAssociation::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetApiAssociation::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`GetApiAssociationOutput`](crate::output::GetApiAssociationOutput) with field(s):
     ///   - [`api_association(Option<ApiAssociation>)`](crate::output::GetApiAssociationOutput::api_association): <p>The <code>ApiAssociation</code> object.</p>
     /// - On failure, responds with [`SdkError<GetApiAssociationError>`](crate::error::GetApiAssociationError)
@@ -337,8 +337,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApiCache`](crate::client::fluent_builders::GetApiCache) operation.
     ///
-    /// - Takes [`GetApiCacheInput`](crate::input::GetApiCacheInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetApiCacheInput::api_id): <p>The API ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetApiCache::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetApiCache::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`GetApiCacheOutput`](crate::output::GetApiCacheOutput) with field(s):
     ///   - [`api_cache(Option<ApiCache>)`](crate::output::GetApiCacheOutput::api_cache): <p>The <code>ApiCache</code> object.</p>
     /// - On failure, responds with [`SdkError<GetApiCacheError>`](crate::error::GetApiCacheError)
@@ -347,9 +347,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetDataSource`](crate::client::fluent_builders::GetDataSource) operation.
     ///
-    /// - Takes [`GetDataSourceInput`](crate::input::GetDataSourceInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetDataSourceInput::api_id): <p>The API ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::GetDataSourceInput::name): <p>The name of the data source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetDataSource::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetDataSource::set_api_id): <p>The API ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetDataSource::set_name): <p>The name of the data source.</p>
     /// - On success, responds with [`GetDataSourceOutput`](crate::output::GetDataSourceOutput) with field(s):
     ///   - [`data_source(Option<DataSource>)`](crate::output::GetDataSourceOutput::data_source): <p>The <code>DataSource</code> object.</p>
     /// - On failure, responds with [`SdkError<GetDataSourceError>`](crate::error::GetDataSourceError)
@@ -358,8 +358,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDomainName`](crate::client::fluent_builders::GetDomainName) operation.
     ///
-    /// - Takes [`GetDomainNameInput`](crate::input::GetDomainNameInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::GetDomainNameInput::domain_name): <p>The domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetDomainName::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetDomainName::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`GetDomainNameOutput`](crate::output::GetDomainNameOutput) with field(s):
     ///   - [`domain_name_config(Option<DomainNameConfig>)`](crate::output::GetDomainNameOutput::domain_name_config): <p>The configuration for the <code>DomainName</code>.</p>
     /// - On failure, responds with [`SdkError<GetDomainNameError>`](crate::error::GetDomainNameError)
@@ -368,9 +368,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetFunction`](crate::client::fluent_builders::GetFunction) operation.
     ///
-    /// - Takes [`GetFunctionInput`](crate::input::GetFunctionInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetFunctionInput::api_id): <p>The GraphQL API ID.</p>
-    ///   - [`function_id(Option<String>)`](crate::input::GetFunctionInput::function_id): <p>The <code>Function</code> ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetFunction::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetFunction::set_api_id): <p>The GraphQL API ID.</p>
+    ///   - [`function_id(impl Into<String>)`](crate::client::fluent_builders::GetFunction::function_id) / [`set_function_id(Option<String>)`](crate::client::fluent_builders::GetFunction::set_function_id): <p>The <code>Function</code> ID.</p>
     /// - On success, responds with [`GetFunctionOutput`](crate::output::GetFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::output::GetFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<GetFunctionError>`](crate::error::GetFunctionError)
@@ -379,8 +379,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetGraphqlApi`](crate::client::fluent_builders::GetGraphqlApi) operation.
     ///
-    /// - Takes [`GetGraphqlApiInput`](crate::input::GetGraphqlApiInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetGraphqlApiInput::api_id): <p>The API ID for the GraphQL API.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetGraphqlApi::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetGraphqlApi::set_api_id): <p>The API ID for the GraphQL API.</p>
     /// - On success, responds with [`GetGraphqlApiOutput`](crate::output::GetGraphqlApiOutput) with field(s):
     ///   - [`graphql_api(Option<GraphqlApi>)`](crate::output::GetGraphqlApiOutput::graphql_api): <p>The <code>GraphqlApi</code> object.</p>
     /// - On failure, responds with [`SdkError<GetGraphqlApiError>`](crate::error::GetGraphqlApiError)
@@ -389,10 +389,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetIntrospectionSchema`](crate::client::fluent_builders::GetIntrospectionSchema) operation.
     ///
-    /// - Takes [`GetIntrospectionSchemaInput`](crate::input::GetIntrospectionSchemaInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetIntrospectionSchemaInput::api_id): <p>The API ID.</p>
-    ///   - [`format(Option<OutputType>)`](crate::input::GetIntrospectionSchemaInput::format): <p>The schema format: SDL or JSON.</p>
-    ///   - [`include_directives(Option<bool>)`](crate::input::GetIntrospectionSchemaInput::include_directives): <p>A flag that specifies whether the schema introspection should contain directives.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetIntrospectionSchema::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetIntrospectionSchema::set_api_id): <p>The API ID.</p>
+    ///   - [`format(OutputType)`](crate::client::fluent_builders::GetIntrospectionSchema::format) / [`set_format(Option<OutputType>)`](crate::client::fluent_builders::GetIntrospectionSchema::set_format): <p>The schema format: SDL or JSON.</p>
+    ///   - [`include_directives(bool)`](crate::client::fluent_builders::GetIntrospectionSchema::include_directives) / [`set_include_directives(Option<bool>)`](crate::client::fluent_builders::GetIntrospectionSchema::set_include_directives): <p>A flag that specifies whether the schema introspection should contain directives.</p>
     /// - On success, responds with [`GetIntrospectionSchemaOutput`](crate::output::GetIntrospectionSchemaOutput) with field(s):
     ///   - [`schema(Option<Blob>)`](crate::output::GetIntrospectionSchemaOutput::schema): <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>  <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     /// - On failure, responds with [`SdkError<GetIntrospectionSchemaError>`](crate::error::GetIntrospectionSchemaError)
@@ -401,10 +401,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetResolver`](crate::client::fluent_builders::GetResolver) operation.
     ///
-    /// - Takes [`GetResolverInput`](crate::input::GetResolverInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetResolverInput::api_id): <p>The API ID.</p>
-    ///   - [`type_name(Option<String>)`](crate::input::GetResolverInput::type_name): <p>The resolver type name.</p>
-    ///   - [`field_name(Option<String>)`](crate::input::GetResolverInput::field_name): <p>The resolver field name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetResolver::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetResolver::set_api_id): <p>The API ID.</p>
+    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::GetResolver::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::GetResolver::set_type_name): <p>The resolver type name.</p>
+    ///   - [`field_name(impl Into<String>)`](crate::client::fluent_builders::GetResolver::field_name) / [`set_field_name(Option<String>)`](crate::client::fluent_builders::GetResolver::set_field_name): <p>The resolver field name.</p>
     /// - On success, responds with [`GetResolverOutput`](crate::output::GetResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::output::GetResolverOutput::resolver): <p>The <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<GetResolverError>`](crate::error::GetResolverError)
@@ -413,8 +413,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSchemaCreationStatus`](crate::client::fluent_builders::GetSchemaCreationStatus) operation.
     ///
-    /// - Takes [`GetSchemaCreationStatusInput`](crate::input::GetSchemaCreationStatusInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetSchemaCreationStatusInput::api_id): <p>The API ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetSchemaCreationStatus::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetSchemaCreationStatus::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`GetSchemaCreationStatusOutput`](crate::output::GetSchemaCreationStatusOutput) with field(s):
     ///   - [`status(Option<SchemaStatus>)`](crate::output::GetSchemaCreationStatusOutput::status): <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     ///   - [`details(Option<String>)`](crate::output::GetSchemaCreationStatusOutput::details): <p>Detailed information about the status of the schema creation operation.</p>
@@ -424,10 +424,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetType`](crate::client::fluent_builders::GetType) operation.
     ///
-    /// - Takes [`GetTypeInput`](crate::input::GetTypeInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetTypeInput::api_id): <p>The API ID.</p>
-    ///   - [`type_name(Option<String>)`](crate::input::GetTypeInput::type_name): <p>The type name.</p>
-    ///   - [`format(Option<TypeDefinitionFormat>)`](crate::input::GetTypeInput::format): <p>The type format: SDL or JSON.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetType::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetType::set_api_id): <p>The API ID.</p>
+    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::GetType::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::GetType::set_type_name): <p>The type name.</p>
+    ///   - [`format(TypeDefinitionFormat)`](crate::client::fluent_builders::GetType::format) / [`set_format(Option<TypeDefinitionFormat>)`](crate::client::fluent_builders::GetType::set_format): <p>The type format: SDL or JSON.</p>
     /// - On success, responds with [`GetTypeOutput`](crate::output::GetTypeOutput) with field(s):
     ///   - [`r#type(Option<Type>)`](crate::output::GetTypeOutput::type): <p>The <code>Type</code> object.</p>
     /// - On failure, responds with [`SdkError<GetTypeError>`](crate::error::GetTypeError)
@@ -436,10 +436,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListApiKeys`](crate::client::fluent_builders::ListApiKeys) operation.
     ///
-    /// - Takes [`ListApiKeysInput`](crate::input::ListApiKeysInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::ListApiKeysInput::api_id): <p>The API ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListApiKeysInput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    ///   - [`max_results(i32)`](crate::input::ListApiKeysInput::max_results): <p>The maximum number of results that you want the request to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::ListApiKeys::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::ListApiKeys::set_api_id): <p>The API ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApiKeys::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApiKeys::set_next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApiKeys::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListApiKeys::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListApiKeysOutput`](crate::output::ListApiKeysOutput) with field(s):
     ///   - [`api_keys(Option<Vec<ApiKey>>)`](crate::output::ListApiKeysOutput::api_keys): <p>The <code>ApiKey</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListApiKeysOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
@@ -449,10 +449,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListDataSources`](crate::client::fluent_builders::ListDataSources) operation.
     ///
-    /// - Takes [`ListDataSourcesInput`](crate::input::ListDataSourcesInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::ListDataSourcesInput::api_id): <p>The API ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDataSourcesInput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    ///   - [`max_results(i32)`](crate::input::ListDataSourcesInput::max_results): <p>The maximum number of results that you want the request to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_api_id): <p>The API ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSources::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDataSources::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput) with field(s):
     ///   - [`data_sources(Option<Vec<DataSource>>)`](crate::output::ListDataSourcesOutput::data_sources): <p>The <code>DataSource</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDataSourcesOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
@@ -462,9 +462,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListDomainNames`](crate::client::fluent_builders::ListDomainNames) operation.
     ///
-    /// - Takes [`ListDomainNamesInput`](crate::input::ListDomainNamesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDomainNamesInput::next_token): <p>The API token.</p>
-    ///   - [`max_results(i32)`](crate::input::ListDomainNamesInput::max_results): <p>The maximum number of results that you want the request to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomainNames::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomainNames::set_next_token): <p>The API token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDomainNames::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDomainNames::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput) with field(s):
     ///   - [`domain_name_configs(Option<Vec<DomainNameConfig>>)`](crate::output::ListDomainNamesOutput::domain_name_configs): <p>Lists configurations for multiple domain names.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDomainNamesOutput::next_token): <p>The API token.</p>
@@ -474,10 +474,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListFunctions`](crate::client::fluent_builders::ListFunctions) operation.
     ///
-    /// - Takes [`ListFunctionsInput`](crate::input::ListFunctionsInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::ListFunctionsInput::api_id): <p>The GraphQL API ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFunctionsInput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    ///   - [`max_results(i32)`](crate::input::ListFunctionsInput::max_results): <p>The maximum number of results that you want the request to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::ListFunctions::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::ListFunctions::set_api_id): <p>The GraphQL API ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFunctions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFunctions::set_next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFunctions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListFunctions::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListFunctionsOutput`](crate::output::ListFunctionsOutput) with field(s):
     ///   - [`functions(Option<Vec<FunctionConfiguration>>)`](crate::output::ListFunctionsOutput::functions): <p>A list of <code>Function</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFunctionsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
@@ -487,9 +487,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListGraphqlApis`](crate::client::fluent_builders::ListGraphqlApis) operation.
     ///
-    /// - Takes [`ListGraphqlApisInput`](crate::input::ListGraphqlApisInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListGraphqlApisInput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    ///   - [`max_results(i32)`](crate::input::ListGraphqlApisInput::max_results): <p>The maximum number of results that you want the request to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGraphqlApis::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGraphqlApis::set_next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGraphqlApis::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListGraphqlApis::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListGraphqlApisOutput`](crate::output::ListGraphqlApisOutput) with field(s):
     ///   - [`graphql_apis(Option<Vec<GraphqlApi>>)`](crate::output::ListGraphqlApisOutput::graphql_apis): <p>The <code>GraphqlApi</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGraphqlApisOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
@@ -499,11 +499,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListResolvers`](crate::client::fluent_builders::ListResolvers) operation.
     ///
-    /// - Takes [`ListResolversInput`](crate::input::ListResolversInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::ListResolversInput::api_id): <p>The API ID.</p>
-    ///   - [`type_name(Option<String>)`](crate::input::ListResolversInput::type_name): <p>The type name.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListResolversInput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    ///   - [`max_results(i32)`](crate::input::ListResolversInput::max_results): <p>The maximum number of results that you want the request to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::ListResolvers::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::ListResolvers::set_api_id): <p>The API ID.</p>
+    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::ListResolvers::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::ListResolvers::set_type_name): <p>The type name.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResolvers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResolvers::set_next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResolvers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListResolvers::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListResolversOutput`](crate::output::ListResolversOutput) with field(s):
     ///   - [`resolvers(Option<Vec<Resolver>>)`](crate::output::ListResolversOutput::resolvers): <p>The <code>Resolver</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListResolversOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
@@ -513,11 +513,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListResolversByFunction`](crate::client::fluent_builders::ListResolversByFunction) operation.
     ///
-    /// - Takes [`ListResolversByFunctionInput`](crate::input::ListResolversByFunctionInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::ListResolversByFunctionInput::api_id): <p>The API ID.</p>
-    ///   - [`function_id(Option<String>)`](crate::input::ListResolversByFunctionInput::function_id): <p>The function ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListResolversByFunctionInput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    ///   - [`max_results(i32)`](crate::input::ListResolversByFunctionInput::max_results): <p>The maximum number of results that you want the request to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::ListResolversByFunction::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::ListResolversByFunction::set_api_id): <p>The API ID.</p>
+    ///   - [`function_id(impl Into<String>)`](crate::client::fluent_builders::ListResolversByFunction::function_id) / [`set_function_id(Option<String>)`](crate::client::fluent_builders::ListResolversByFunction::set_function_id): <p>The function ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResolversByFunction::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResolversByFunction::set_next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResolversByFunction::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListResolversByFunction::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListResolversByFunctionOutput`](crate::output::ListResolversByFunctionOutput) with field(s):
     ///   - [`resolvers(Option<Vec<Resolver>>)`](crate::output::ListResolversByFunctionOutput::resolvers): <p>The list of resolvers.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListResolversByFunctionOutput::next_token): <p>An identifier that you can use to return the next set of items in the list.</p>
@@ -527,8 +527,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A <code>TagMap</code> object.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -537,11 +537,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListTypes`](crate::client::fluent_builders::ListTypes) operation.
     ///
-    /// - Takes [`ListTypesInput`](crate::input::ListTypesInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::ListTypesInput::api_id): <p>The API ID.</p>
-    ///   - [`format(Option<TypeDefinitionFormat>)`](crate::input::ListTypesInput::format): <p>The type format: SDL or JSON.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTypesInput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    ///   - [`max_results(i32)`](crate::input::ListTypesInput::max_results): <p>The maximum number of results that you want the request to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::ListTypes::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::ListTypes::set_api_id): <p>The API ID.</p>
+    ///   - [`format(TypeDefinitionFormat)`](crate::client::fluent_builders::ListTypes::format) / [`set_format(Option<TypeDefinitionFormat>)`](crate::client::fluent_builders::ListTypes::set_format): <p>The type format: SDL or JSON.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTypes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTypes::set_next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTypes::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListTypes::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListTypesOutput`](crate::output::ListTypesOutput) with field(s):
     ///   - [`types(Option<Vec<Type>>)`](crate::output::ListTypesOutput::types): <p>The <code>Type</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTypesOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
@@ -551,9 +551,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartSchemaCreation`](crate::client::fluent_builders::StartSchemaCreation) operation.
     ///
-    /// - Takes [`StartSchemaCreationInput`](crate::input::StartSchemaCreationInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::StartSchemaCreationInput::api_id): <p>The API ID.</p>
-    ///   - [`definition(Option<Blob>)`](crate::input::StartSchemaCreationInput::definition): <p>The schema definition, in GraphQL schema language format.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::StartSchemaCreation::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::StartSchemaCreation::set_api_id): <p>The API ID.</p>
+    ///   - [`definition(Blob)`](crate::client::fluent_builders::StartSchemaCreation::definition) / [`set_definition(Option<Blob>)`](crate::client::fluent_builders::StartSchemaCreation::set_definition): <p>The schema definition, in GraphQL schema language format.</p>
     /// - On success, responds with [`StartSchemaCreationOutput`](crate::output::StartSchemaCreationOutput) with field(s):
     ///   - [`status(Option<SchemaStatus>)`](crate::output::StartSchemaCreationOutput::status): <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     /// - On failure, responds with [`SdkError<StartSchemaCreationError>`](crate::error::StartSchemaCreationError)
@@ -562,9 +562,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A <code>TagMap</code> object.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A <code>TagMap</code> object.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -573,9 +573,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of <code>TagKey</code> objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The <code>GraphqlApi</code> Amazon Resource Name (ARN).</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of <code>TagKey</code> objects.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -584,11 +584,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApiCache`](crate::client::fluent_builders::UpdateApiCache) operation.
     ///
-    /// - Takes [`UpdateApiCacheInput`](crate::input::UpdateApiCacheInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateApiCacheInput::api_id): <p>The GraphQL API ID.</p>
-    ///   - [`ttl(i64)`](crate::input::UpdateApiCacheInput::ttl): <p>TTL in seconds for cache entries.</p>  <p>Valid values are 1–3,600 seconds.</p>
-    ///   - [`api_caching_behavior(Option<ApiCachingBehavior>)`](crate::input::UpdateApiCacheInput::api_caching_behavior): <p>Caching behavior.</p>  <ul>   <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>   <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>  </ul>
-    ///   - [`r#type(Option<ApiCacheType>)`](crate::input::UpdateApiCacheInput::type): <p>The cache instance type. Valid values are </p>  <ul>   <li> <p> <code>SMALL</code> </p> </li>   <li> <p> <code>MEDIUM</code> </p> </li>   <li> <p> <code>LARGE</code> </p> </li>   <li> <p> <code>XLARGE</code> </p> </li>   <li> <p> <code>LARGE_2X</code> </p> </li>   <li> <p> <code>LARGE_4X</code> </p> </li>   <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>   <li> <p> <code>LARGE_12X</code> </p> </li>  </ul>  <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>  <p>The following legacy instance types are available, but their use is discouraged:</p>  <ul>   <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>   <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>   <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>   <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>   <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>   <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>   <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApiCache::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateApiCache::set_api_id): <p>The GraphQL API ID.</p>
+    ///   - [`ttl(i64)`](crate::client::fluent_builders::UpdateApiCache::ttl) / [`set_ttl(i64)`](crate::client::fluent_builders::UpdateApiCache::set_ttl): <p>TTL in seconds for cache entries.</p>  <p>Valid values are 1–3,600 seconds.</p>
+    ///   - [`api_caching_behavior(ApiCachingBehavior)`](crate::client::fluent_builders::UpdateApiCache::api_caching_behavior) / [`set_api_caching_behavior(Option<ApiCachingBehavior>)`](crate::client::fluent_builders::UpdateApiCache::set_api_caching_behavior): <p>Caching behavior.</p>  <ul>   <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>   <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>  </ul>
+    ///   - [`r#type(ApiCacheType)`](crate::client::fluent_builders::UpdateApiCache::r#type) / [`set_type(Option<ApiCacheType>)`](crate::client::fluent_builders::UpdateApiCache::set_type): <p>The cache instance type. Valid values are </p>  <ul>   <li> <p> <code>SMALL</code> </p> </li>   <li> <p> <code>MEDIUM</code> </p> </li>   <li> <p> <code>LARGE</code> </p> </li>   <li> <p> <code>XLARGE</code> </p> </li>   <li> <p> <code>LARGE_2X</code> </p> </li>   <li> <p> <code>LARGE_4X</code> </p> </li>   <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>   <li> <p> <code>LARGE_12X</code> </p> </li>  </ul>  <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>  <p>The following legacy instance types are available, but their use is discouraged:</p>  <ul>   <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>   <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>   <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>   <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>   <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>   <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>   <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>  </ul>
     /// - On success, responds with [`UpdateApiCacheOutput`](crate::output::UpdateApiCacheOutput) with field(s):
     ///   - [`api_cache(Option<ApiCache>)`](crate::output::UpdateApiCacheOutput::api_cache): <p>The <code>ApiCache</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateApiCacheError>`](crate::error::UpdateApiCacheError)
@@ -597,11 +597,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApiKey`](crate::client::fluent_builders::UpdateApiKey) operation.
     ///
-    /// - Takes [`UpdateApiKeyInput`](crate::input::UpdateApiKeyInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateApiKeyInput::api_id): <p>The ID for the GraphQL API.</p>
-    ///   - [`id(Option<String>)`](crate::input::UpdateApiKeyInput::id): <p>The API key ID.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateApiKeyInput::description): <p>A description of the purpose of the API key.</p>
-    ///   - [`expires(i64)`](crate::input::UpdateApiKeyInput::expires): <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApiKey::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateApiKey::set_api_id): <p>The ID for the GraphQL API.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateApiKey::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateApiKey::set_id): <p>The API key ID.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApiKey::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApiKey::set_description): <p>A description of the purpose of the API key.</p>
+    ///   - [`expires(i64)`](crate::client::fluent_builders::UpdateApiKey::expires) / [`set_expires(i64)`](crate::client::fluent_builders::UpdateApiKey::set_expires): <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
     /// - On success, responds with [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput) with field(s):
     ///   - [`api_key(Option<ApiKey>)`](crate::output::UpdateApiKeyOutput::api_key): <p>The API key.</p>
     /// - On failure, responds with [`SdkError<UpdateApiKeyError>`](crate::error::UpdateApiKeyError)
@@ -610,18 +610,18 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDataSource`](crate::client::fluent_builders::UpdateDataSource) operation.
     ///
-    /// - Takes [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateDataSourceInput::api_id): <p>The API ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateDataSourceInput::name): <p>The new name for the data source.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateDataSourceInput::description): <p>The new description for the data source.</p>
-    ///   - [`r#type(Option<DataSourceType>)`](crate::input::UpdateDataSourceInput::type): <p>The new data source type.</p>
-    ///   - [`service_role_arn(Option<String>)`](crate::input::UpdateDataSourceInput::service_role_arn): <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
-    ///   - [`dynamodb_config(Option<DynamodbDataSourceConfig>)`](crate::input::UpdateDataSourceInput::dynamodb_config): <p>The new Amazon DynamoDB configuration.</p>
-    ///   - [`lambda_config(Option<LambdaDataSourceConfig>)`](crate::input::UpdateDataSourceInput::lambda_config): <p>The new Lambda configuration.</p>
-    ///   - [`elasticsearch_config(Option<ElasticsearchDataSourceConfig>)`](crate::input::UpdateDataSourceInput::elasticsearch_config): <p>The new OpenSearch configuration.</p>  <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
-    ///   - [`open_search_service_config(Option<OpenSearchServiceDataSourceConfig>)`](crate::input::UpdateDataSourceInput::open_search_service_config): <p>The new OpenSearch configuration.</p>
-    ///   - [`http_config(Option<HttpDataSourceConfig>)`](crate::input::UpdateDataSourceInput::http_config): <p>The new HTTP endpoint configuration.</p>
-    ///   - [`relational_database_config(Option<RelationalDatabaseDataSourceConfig>)`](crate::input::UpdateDataSourceInput::relational_database_config): <p>The new relational database configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_api_id): <p>The API ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_name): <p>The new name for the data source.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_description): <p>The new description for the data source.</p>
+    ///   - [`r#type(DataSourceType)`](crate::client::fluent_builders::UpdateDataSource::r#type) / [`set_type(Option<DataSourceType>)`](crate::client::fluent_builders::UpdateDataSource::set_type): <p>The new data source type.</p>
+    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_service_role_arn): <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
+    ///   - [`dynamodb_config(DynamodbDataSourceConfig)`](crate::client::fluent_builders::UpdateDataSource::dynamodb_config) / [`set_dynamodb_config(Option<DynamodbDataSourceConfig>)`](crate::client::fluent_builders::UpdateDataSource::set_dynamodb_config): <p>The new Amazon DynamoDB configuration.</p>
+    ///   - [`lambda_config(LambdaDataSourceConfig)`](crate::client::fluent_builders::UpdateDataSource::lambda_config) / [`set_lambda_config(Option<LambdaDataSourceConfig>)`](crate::client::fluent_builders::UpdateDataSource::set_lambda_config): <p>The new Lambda configuration.</p>
+    ///   - [`elasticsearch_config(ElasticsearchDataSourceConfig)`](crate::client::fluent_builders::UpdateDataSource::elasticsearch_config) / [`set_elasticsearch_config(Option<ElasticsearchDataSourceConfig>)`](crate::client::fluent_builders::UpdateDataSource::set_elasticsearch_config): <p>The new OpenSearch configuration.</p>  <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
+    ///   - [`open_search_service_config(OpenSearchServiceDataSourceConfig)`](crate::client::fluent_builders::UpdateDataSource::open_search_service_config) / [`set_open_search_service_config(Option<OpenSearchServiceDataSourceConfig>)`](crate::client::fluent_builders::UpdateDataSource::set_open_search_service_config): <p>The new OpenSearch configuration.</p>
+    ///   - [`http_config(HttpDataSourceConfig)`](crate::client::fluent_builders::UpdateDataSource::http_config) / [`set_http_config(Option<HttpDataSourceConfig>)`](crate::client::fluent_builders::UpdateDataSource::set_http_config): <p>The new HTTP endpoint configuration.</p>
+    ///   - [`relational_database_config(RelationalDatabaseDataSourceConfig)`](crate::client::fluent_builders::UpdateDataSource::relational_database_config) / [`set_relational_database_config(Option<RelationalDatabaseDataSourceConfig>)`](crate::client::fluent_builders::UpdateDataSource::set_relational_database_config): <p>The new relational database configuration.</p>
     /// - On success, responds with [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput) with field(s):
     ///   - [`data_source(Option<DataSource>)`](crate::output::UpdateDataSourceOutput::data_source): <p>The updated <code>DataSource</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateDataSourceError>`](crate::error::UpdateDataSourceError)
@@ -630,9 +630,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDomainName`](crate::client::fluent_builders::UpdateDomainName) operation.
     ///
-    /// - Takes [`UpdateDomainNameInput`](crate::input::UpdateDomainNameInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::UpdateDomainNameInput::domain_name): <p>The domain name.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateDomainNameInput::description): <p>A description of the <code>DomainName</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainName::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainName::set_domain_name): <p>The domain name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainName::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDomainName::set_description): <p>A description of the <code>DomainName</code>.</p>
     /// - On success, responds with [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput) with field(s):
     ///   - [`domain_name_config(Option<DomainNameConfig>)`](crate::output::UpdateDomainNameOutput::domain_name_config): <p>The configuration for the <code>DomainName</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainNameError>`](crate::error::UpdateDomainNameError)
@@ -641,16 +641,16 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFunction`](crate::client::fluent_builders::UpdateFunction) operation.
     ///
-    /// - Takes [`UpdateFunctionInput`](crate::input::UpdateFunctionInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateFunctionInput::api_id): <p>The GraphQL API ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateFunctionInput::name): <p>The <code>Function</code> name.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateFunctionInput::description): <p>The <code>Function</code> description.</p>
-    ///   - [`function_id(Option<String>)`](crate::input::UpdateFunctionInput::function_id): <p>The function ID.</p>
-    ///   - [`data_source_name(Option<String>)`](crate::input::UpdateFunctionInput::data_source_name): <p>The <code>Function</code> <code>DataSource</code> name.</p>
-    ///   - [`request_mapping_template(Option<String>)`](crate::input::UpdateFunctionInput::request_mapping_template): <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    ///   - [`response_mapping_template(Option<String>)`](crate::input::UpdateFunctionInput::response_mapping_template): <p>The <code>Function</code> request mapping template.</p>
-    ///   - [`function_version(Option<String>)`](crate::input::UpdateFunctionInput::function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
-    ///   - [`sync_config(Option<SyncConfig>)`](crate::input::UpdateFunctionInput::sync_config): <p>Describes a Sync configuration for a resolver.</p>  <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_api_id): <p>The GraphQL API ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_name): <p>The <code>Function</code> name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_description): <p>The <code>Function</code> description.</p>
+    ///   - [`function_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::function_id) / [`set_function_id(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_function_id): <p>The function ID.</p>
+    ///   - [`data_source_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::data_source_name) / [`set_data_source_name(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_data_source_name): <p>The <code>Function</code> <code>DataSource</code> name.</p>
+    ///   - [`request_mapping_template(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::request_mapping_template) / [`set_request_mapping_template(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_request_mapping_template): <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
+    ///   - [`response_mapping_template(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::response_mapping_template) / [`set_response_mapping_template(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_response_mapping_template): <p>The <code>Function</code> request mapping template.</p>
+    ///   - [`function_version(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::function_version) / [`set_function_version(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
+    ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::UpdateFunction::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::UpdateFunction::set_sync_config): <p>Describes a Sync configuration for a resolver.</p>  <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     /// - On success, responds with [`UpdateFunctionOutput`](crate::output::UpdateFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::output::UpdateFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionError>`](crate::error::UpdateFunctionError)
@@ -659,16 +659,16 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateGraphqlApi`](crate::client::fluent_builders::UpdateGraphqlApi) operation.
     ///
-    /// - Takes [`UpdateGraphqlApiInput`](crate::input::UpdateGraphqlApiInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateGraphqlApiInput::api_id): <p>The API ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateGraphqlApiInput::name): <p>The new name for the <code>GraphqlApi</code> object.</p>
-    ///   - [`log_config(Option<LogConfig>)`](crate::input::UpdateGraphqlApiInput::log_config): <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
-    ///   - [`authentication_type(Option<AuthenticationType>)`](crate::input::UpdateGraphqlApiInput::authentication_type): <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
-    ///   - [`user_pool_config(Option<UserPoolConfig>)`](crate::input::UpdateGraphqlApiInput::user_pool_config): <p>The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.</p>
-    ///   - [`open_id_connect_config(Option<OpenIdConnectConfig>)`](crate::input::UpdateGraphqlApiInput::open_id_connect_config): <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
-    ///   - [`additional_authentication_providers(Option<Vec<AdditionalAuthenticationProvider>>)`](crate::input::UpdateGraphqlApiInput::additional_authentication_providers): <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    ///   - [`xray_enabled(bool)`](crate::input::UpdateGraphqlApiInput::xray_enabled): <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
-    ///   - [`lambda_authorizer_config(Option<LambdaAuthorizerConfig>)`](crate::input::UpdateGraphqlApiInput::lambda_authorizer_config): <p>Configuration for Lambda function authorization.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGraphqlApi::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateGraphqlApi::set_api_id): <p>The API ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateGraphqlApi::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateGraphqlApi::set_name): <p>The new name for the <code>GraphqlApi</code> object.</p>
+    ///   - [`log_config(LogConfig)`](crate::client::fluent_builders::UpdateGraphqlApi::log_config) / [`set_log_config(Option<LogConfig>)`](crate::client::fluent_builders::UpdateGraphqlApi::set_log_config): <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
+    ///   - [`authentication_type(AuthenticationType)`](crate::client::fluent_builders::UpdateGraphqlApi::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::client::fluent_builders::UpdateGraphqlApi::set_authentication_type): <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
+    ///   - [`user_pool_config(UserPoolConfig)`](crate::client::fluent_builders::UpdateGraphqlApi::user_pool_config) / [`set_user_pool_config(Option<UserPoolConfig>)`](crate::client::fluent_builders::UpdateGraphqlApi::set_user_pool_config): <p>The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.</p>
+    ///   - [`open_id_connect_config(OpenIdConnectConfig)`](crate::client::fluent_builders::UpdateGraphqlApi::open_id_connect_config) / [`set_open_id_connect_config(Option<OpenIdConnectConfig>)`](crate::client::fluent_builders::UpdateGraphqlApi::set_open_id_connect_config): <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
+    ///   - [`additional_authentication_providers(Vec<AdditionalAuthenticationProvider>)`](crate::client::fluent_builders::UpdateGraphqlApi::additional_authentication_providers) / [`set_additional_authentication_providers(Option<Vec<AdditionalAuthenticationProvider>>)`](crate::client::fluent_builders::UpdateGraphqlApi::set_additional_authentication_providers): <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
+    ///   - [`xray_enabled(bool)`](crate::client::fluent_builders::UpdateGraphqlApi::xray_enabled) / [`set_xray_enabled(bool)`](crate::client::fluent_builders::UpdateGraphqlApi::set_xray_enabled): <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
+    ///   - [`lambda_authorizer_config(LambdaAuthorizerConfig)`](crate::client::fluent_builders::UpdateGraphqlApi::lambda_authorizer_config) / [`set_lambda_authorizer_config(Option<LambdaAuthorizerConfig>)`](crate::client::fluent_builders::UpdateGraphqlApi::set_lambda_authorizer_config): <p>Configuration for Lambda function authorization.</p>
     /// - On success, responds with [`UpdateGraphqlApiOutput`](crate::output::UpdateGraphqlApiOutput) with field(s):
     ///   - [`graphql_api(Option<GraphqlApi>)`](crate::output::UpdateGraphqlApiOutput::graphql_api): <p>The updated <code>GraphqlApi</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateGraphqlApiError>`](crate::error::UpdateGraphqlApiError)
@@ -677,17 +677,17 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateResolver`](crate::client::fluent_builders::UpdateResolver) operation.
     ///
-    /// - Takes [`UpdateResolverInput`](crate::input::UpdateResolverInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateResolverInput::api_id): <p>The API ID.</p>
-    ///   - [`type_name(Option<String>)`](crate::input::UpdateResolverInput::type_name): <p>The new type name.</p>
-    ///   - [`field_name(Option<String>)`](crate::input::UpdateResolverInput::field_name): <p>The new field name.</p>
-    ///   - [`data_source_name(Option<String>)`](crate::input::UpdateResolverInput::data_source_name): <p>The new data source name.</p>
-    ///   - [`request_mapping_template(Option<String>)`](crate::input::UpdateResolverInput::request_mapping_template): <p>The new request mapping template.</p>  <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>  <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    ///   - [`response_mapping_template(Option<String>)`](crate::input::UpdateResolverInput::response_mapping_template): <p>The new response mapping template.</p>
-    ///   - [`kind(Option<ResolverKind>)`](crate::input::UpdateResolverInput::kind): <p>The resolver type.</p>  <ul>   <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>   <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>  </ul>
-    ///   - [`pipeline_config(Option<PipelineConfig>)`](crate::input::UpdateResolverInput::pipeline_config): <p>The <code>PipelineConfig</code>.</p>
-    ///   - [`sync_config(Option<SyncConfig>)`](crate::input::UpdateResolverInput::sync_config): <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-    ///   - [`caching_config(Option<CachingConfig>)`](crate::input::UpdateResolverInput::caching_config): <p>The caching configuration for the resolver.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateResolver::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateResolver::set_api_id): <p>The API ID.</p>
+    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResolver::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::UpdateResolver::set_type_name): <p>The new type name.</p>
+    ///   - [`field_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResolver::field_name) / [`set_field_name(Option<String>)`](crate::client::fluent_builders::UpdateResolver::set_field_name): <p>The new field name.</p>
+    ///   - [`data_source_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResolver::data_source_name) / [`set_data_source_name(Option<String>)`](crate::client::fluent_builders::UpdateResolver::set_data_source_name): <p>The new data source name.</p>
+    ///   - [`request_mapping_template(impl Into<String>)`](crate::client::fluent_builders::UpdateResolver::request_mapping_template) / [`set_request_mapping_template(Option<String>)`](crate::client::fluent_builders::UpdateResolver::set_request_mapping_template): <p>The new request mapping template.</p>  <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>  <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
+    ///   - [`response_mapping_template(impl Into<String>)`](crate::client::fluent_builders::UpdateResolver::response_mapping_template) / [`set_response_mapping_template(Option<String>)`](crate::client::fluent_builders::UpdateResolver::set_response_mapping_template): <p>The new response mapping template.</p>
+    ///   - [`kind(ResolverKind)`](crate::client::fluent_builders::UpdateResolver::kind) / [`set_kind(Option<ResolverKind>)`](crate::client::fluent_builders::UpdateResolver::set_kind): <p>The resolver type.</p>  <ul>   <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>   <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>  </ul>
+    ///   - [`pipeline_config(PipelineConfig)`](crate::client::fluent_builders::UpdateResolver::pipeline_config) / [`set_pipeline_config(Option<PipelineConfig>)`](crate::client::fluent_builders::UpdateResolver::set_pipeline_config): <p>The <code>PipelineConfig</code>.</p>
+    ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::UpdateResolver::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::UpdateResolver::set_sync_config): <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
+    ///   - [`caching_config(CachingConfig)`](crate::client::fluent_builders::UpdateResolver::caching_config) / [`set_caching_config(Option<CachingConfig>)`](crate::client::fluent_builders::UpdateResolver::set_caching_config): <p>The caching configuration for the resolver.</p>
     /// - On success, responds with [`UpdateResolverOutput`](crate::output::UpdateResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::output::UpdateResolverOutput::resolver): <p>The updated <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateResolverError>`](crate::error::UpdateResolverError)
@@ -696,11 +696,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateType`](crate::client::fluent_builders::UpdateType) operation.
     ///
-    /// - Takes [`UpdateTypeInput`](crate::input::UpdateTypeInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateTypeInput::api_id): <p>The API ID.</p>
-    ///   - [`type_name(Option<String>)`](crate::input::UpdateTypeInput::type_name): <p>The new type name.</p>
-    ///   - [`definition(Option<String>)`](crate::input::UpdateTypeInput::definition): <p>The new definition.</p>
-    ///   - [`format(Option<TypeDefinitionFormat>)`](crate::input::UpdateTypeInput::format): <p>The new type format: SDL or JSON.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateType::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateType::set_api_id): <p>The API ID.</p>
+    ///   - [`type_name(impl Into<String>)`](crate::client::fluent_builders::UpdateType::type_name) / [`set_type_name(Option<String>)`](crate::client::fluent_builders::UpdateType::set_type_name): <p>The new type name.</p>
+    ///   - [`definition(impl Into<String>)`](crate::client::fluent_builders::UpdateType::definition) / [`set_definition(Option<String>)`](crate::client::fluent_builders::UpdateType::set_definition): <p>The new definition.</p>
+    ///   - [`format(TypeDefinitionFormat)`](crate::client::fluent_builders::UpdateType::format) / [`set_format(Option<TypeDefinitionFormat>)`](crate::client::fluent_builders::UpdateType::set_format): <p>The new type format: SDL or JSON.</p>
     /// - On success, responds with [`UpdateTypeOutput`](crate::output::UpdateTypeOutput) with field(s):
     ///   - [`r#type(Option<Type>)`](crate::output::UpdateTypeOutput::type): <p>The updated <code>Type</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateTypeError>`](crate::error::UpdateTypeError)

@@ -85,11 +85,11 @@ where
 {
     /// Constructs a fluent builder for the [`AddProfileKey`](crate::client::fluent_builders::AddProfileKey) operation.
     ///
-    /// - Takes [`AddProfileKeyInput`](crate::input::AddProfileKeyInput) with field(s):
-    ///   - [`profile_id(Option<String>)`](crate::input::AddProfileKeyInput::profile_id): <p>The unique identifier of a customer profile.</p>
-    ///   - [`key_name(Option<String>)`](crate::input::AddProfileKeyInput::key_name): <p>A searchable identifier of a customer profile.</p>
-    ///   - [`values(Option<Vec<String>>)`](crate::input::AddProfileKeyInput::values): <p>A list of key values.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::AddProfileKeyInput::domain_name): <p>The unique name of the domain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::AddProfileKey::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::AddProfileKey::set_profile_id): <p>The unique identifier of a customer profile.</p>
+    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::AddProfileKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::AddProfileKey::set_key_name): <p>A searchable identifier of a customer profile.</p>
+    ///   - [`values(Vec<String>)`](crate::client::fluent_builders::AddProfileKey::values) / [`set_values(Option<Vec<String>>)`](crate::client::fluent_builders::AddProfileKey::set_values): <p>A list of key values.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AddProfileKey::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AddProfileKey::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`AddProfileKeyOutput`](crate::output::AddProfileKeyOutput) with field(s):
     ///   - [`key_name(Option<String>)`](crate::output::AddProfileKeyOutput::key_name): <p>A searchable identifier of a customer profile.</p>
     ///   - [`values(Option<Vec<String>>)`](crate::output::AddProfileKeyOutput::values): <p>A list of key values.</p>
@@ -99,13 +99,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
     ///
-    /// - Takes [`CreateDomainInput`](crate::input::CreateDomainInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::CreateDomainInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`default_expiration_days(Option<i32>)`](crate::input::CreateDomainInput::default_expiration_days): <p>The default number of days until the data within the domain expires.</p>
-    ///   - [`default_encryption_key(Option<String>)`](crate::input::CreateDomainInput::default_encryption_key): <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
-    ///   - [`dead_letter_queue_url(Option<String>)`](crate::input::CreateDomainInput::dead_letter_queue_url): <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
-    ///   - [`matching(Option<MatchingRequest>)`](crate::input::CreateDomainInput::matching): <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>  <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDomainInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`default_expiration_days(i32)`](crate::client::fluent_builders::CreateDomain::default_expiration_days) / [`set_default_expiration_days(Option<i32>)`](crate::client::fluent_builders::CreateDomain::set_default_expiration_days): <p>The default number of days until the data within the domain expires.</p>
+    ///   - [`default_encryption_key(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::default_encryption_key) / [`set_default_encryption_key(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_default_encryption_key): <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
+    ///   - [`dead_letter_queue_url(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::dead_letter_queue_url) / [`set_dead_letter_queue_url(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_dead_letter_queue_url): <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
+    ///   - [`matching(MatchingRequest)`](crate::client::fluent_builders::CreateDomain::matching) / [`set_matching(Option<MatchingRequest>)`](crate::client::fluent_builders::CreateDomain::set_matching): <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>  <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDomain::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDomain::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::output::CreateDomainOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`default_expiration_days(Option<i32>)`](crate::output::CreateDomainOutput::default_expiration_days): <p>The default number of days until the data within the domain expires.</p>
@@ -121,29 +121,29 @@ where
     }
     /// Constructs a fluent builder for the [`CreateProfile`](crate::client::fluent_builders::CreateProfile) operation.
     ///
-    /// - Takes [`CreateProfileInput`](crate::input::CreateProfileInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::CreateProfileInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`account_number(Option<String>)`](crate::input::CreateProfileInput::account_number): <p>A unique account number that you have given to the customer.</p>
-    ///   - [`additional_information(Option<String>)`](crate::input::CreateProfileInput::additional_information): <p>Any additional information relevant to the customer’s profile.</p>
-    ///   - [`party_type(Option<PartyType>)`](crate::input::CreateProfileInput::party_type): <p>The type of profile used to describe the customer.</p>
-    ///   - [`business_name(Option<String>)`](crate::input::CreateProfileInput::business_name): <p>The name of the customer’s business.</p>
-    ///   - [`first_name(Option<String>)`](crate::input::CreateProfileInput::first_name): <p>The customer’s first name.</p>
-    ///   - [`middle_name(Option<String>)`](crate::input::CreateProfileInput::middle_name): <p>The customer’s middle name.</p>
-    ///   - [`last_name(Option<String>)`](crate::input::CreateProfileInput::last_name): <p>The customer’s last name.</p>
-    ///   - [`birth_date(Option<String>)`](crate::input::CreateProfileInput::birth_date): <p>The customer’s birth date. </p>
-    ///   - [`gender(Option<Gender>)`](crate::input::CreateProfileInput::gender): <p>The gender with which the customer identifies. </p>
-    ///   - [`phone_number(Option<String>)`](crate::input::CreateProfileInput::phone_number): <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
-    ///   - [`mobile_phone_number(Option<String>)`](crate::input::CreateProfileInput::mobile_phone_number): <p>The customer’s mobile phone number.</p>
-    ///   - [`home_phone_number(Option<String>)`](crate::input::CreateProfileInput::home_phone_number): <p>The customer’s home phone number.</p>
-    ///   - [`business_phone_number(Option<String>)`](crate::input::CreateProfileInput::business_phone_number): <p>The customer’s business phone number.</p>
-    ///   - [`email_address(Option<String>)`](crate::input::CreateProfileInput::email_address): <p>The customer’s email address, which has not been specified as a personal or business address. </p>
-    ///   - [`personal_email_address(Option<String>)`](crate::input::CreateProfileInput::personal_email_address): <p>The customer’s personal email address.</p>
-    ///   - [`business_email_address(Option<String>)`](crate::input::CreateProfileInput::business_email_address): <p>The customer’s business email address.</p>
-    ///   - [`address(Option<Address>)`](crate::input::CreateProfileInput::address): <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
-    ///   - [`shipping_address(Option<Address>)`](crate::input::CreateProfileInput::shipping_address): <p>The customer’s shipping address.</p>
-    ///   - [`mailing_address(Option<Address>)`](crate::input::CreateProfileInput::mailing_address): <p>The customer’s mailing address.</p>
-    ///   - [`billing_address(Option<Address>)`](crate::input::CreateProfileInput::billing_address): <p>The customer’s billing address.</p>
-    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::input::CreateProfileInput::attributes): <p>A key value pair of attributes of a customer profile.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`account_number(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::account_number) / [`set_account_number(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_account_number): <p>A unique account number that you have given to the customer.</p>
+    ///   - [`additional_information(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::additional_information) / [`set_additional_information(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_additional_information): <p>Any additional information relevant to the customer’s profile.</p>
+    ///   - [`party_type(PartyType)`](crate::client::fluent_builders::CreateProfile::party_type) / [`set_party_type(Option<PartyType>)`](crate::client::fluent_builders::CreateProfile::set_party_type): <p>The type of profile used to describe the customer.</p>
+    ///   - [`business_name(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::business_name) / [`set_business_name(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_business_name): <p>The name of the customer’s business.</p>
+    ///   - [`first_name(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::first_name) / [`set_first_name(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_first_name): <p>The customer’s first name.</p>
+    ///   - [`middle_name(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::middle_name) / [`set_middle_name(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_middle_name): <p>The customer’s middle name.</p>
+    ///   - [`last_name(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::last_name) / [`set_last_name(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_last_name): <p>The customer’s last name.</p>
+    ///   - [`birth_date(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::birth_date) / [`set_birth_date(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_birth_date): <p>The customer’s birth date. </p>
+    ///   - [`gender(Gender)`](crate::client::fluent_builders::CreateProfile::gender) / [`set_gender(Option<Gender>)`](crate::client::fluent_builders::CreateProfile::set_gender): <p>The gender with which the customer identifies. </p>
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_phone_number): <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
+    ///   - [`mobile_phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::mobile_phone_number) / [`set_mobile_phone_number(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_mobile_phone_number): <p>The customer’s mobile phone number.</p>
+    ///   - [`home_phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::home_phone_number) / [`set_home_phone_number(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_home_phone_number): <p>The customer’s home phone number.</p>
+    ///   - [`business_phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::business_phone_number) / [`set_business_phone_number(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_business_phone_number): <p>The customer’s business phone number.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_email_address): <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    ///   - [`personal_email_address(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::personal_email_address) / [`set_personal_email_address(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_personal_email_address): <p>The customer’s personal email address.</p>
+    ///   - [`business_email_address(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::business_email_address) / [`set_business_email_address(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_business_email_address): <p>The customer’s business email address.</p>
+    ///   - [`address(Address)`](crate::client::fluent_builders::CreateProfile::address) / [`set_address(Option<Address>)`](crate::client::fluent_builders::CreateProfile::set_address): <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
+    ///   - [`shipping_address(Address)`](crate::client::fluent_builders::CreateProfile::shipping_address) / [`set_shipping_address(Option<Address>)`](crate::client::fluent_builders::CreateProfile::set_shipping_address): <p>The customer’s shipping address.</p>
+    ///   - [`mailing_address(Address)`](crate::client::fluent_builders::CreateProfile::mailing_address) / [`set_mailing_address(Option<Address>)`](crate::client::fluent_builders::CreateProfile::set_mailing_address): <p>The customer’s mailing address.</p>
+    ///   - [`billing_address(Address)`](crate::client::fluent_builders::CreateProfile::billing_address) / [`set_billing_address(Option<Address>)`](crate::client::fluent_builders::CreateProfile::set_billing_address): <p>The customer’s billing address.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::CreateProfile::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateProfile::set_attributes): <p>A key value pair of attributes of a customer profile.</p>
     /// - On success, responds with [`CreateProfileOutput`](crate::output::CreateProfileOutput) with field(s):
     ///   - [`profile_id(Option<String>)`](crate::output::CreateProfileOutput::profile_id): <p>The unique identifier of a customer profile.</p>
     /// - On failure, responds with [`SdkError<CreateProfileError>`](crate::error::CreateProfileError)
@@ -152,8 +152,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) operation.
     ///
-    /// - Takes [`DeleteDomainInput`](crate::input::DeleteDomainInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteDomainInput::domain_name): <p>The unique name of the domain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteDomain::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`DeleteDomainOutput`](crate::output::DeleteDomainOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::output::DeleteDomainOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::error::DeleteDomainError)
@@ -162,9 +162,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteIntegration`](crate::client::fluent_builders::DeleteIntegration) operation.
     ///
-    /// - Takes [`DeleteIntegrationInput`](crate::input::DeleteIntegrationInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteIntegrationInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`uri(Option<String>)`](crate::input::DeleteIntegrationInput::uri): <p>The URI of the S3 bucket or any other type of data source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteIntegration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteIntegration::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`uri(impl Into<String>)`](crate::client::fluent_builders::DeleteIntegration::uri) / [`set_uri(Option<String>)`](crate::client::fluent_builders::DeleteIntegration::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
     /// - On success, responds with [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::output::DeleteIntegrationOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteIntegrationError>`](crate::error::DeleteIntegrationError)
@@ -173,9 +173,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteProfile`](crate::client::fluent_builders::DeleteProfile) operation.
     ///
-    /// - Takes [`DeleteProfileInput`](crate::input::DeleteProfileInput) with field(s):
-    ///   - [`profile_id(Option<String>)`](crate::input::DeleteProfileInput::profile_id): <p>The unique identifier of a customer profile.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteProfileInput::domain_name): <p>The unique name of the domain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProfile::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteProfile::set_profile_id): <p>The unique identifier of a customer profile.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProfile::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteProfile::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`DeleteProfileOutput`](crate::output::DeleteProfileOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::output::DeleteProfileOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteProfileError>`](crate::error::DeleteProfileError)
@@ -184,11 +184,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteProfileKey`](crate::client::fluent_builders::DeleteProfileKey) operation.
     ///
-    /// - Takes [`DeleteProfileKeyInput`](crate::input::DeleteProfileKeyInput) with field(s):
-    ///   - [`profile_id(Option<String>)`](crate::input::DeleteProfileKeyInput::profile_id): <p>The unique identifier of a customer profile.</p>
-    ///   - [`key_name(Option<String>)`](crate::input::DeleteProfileKeyInput::key_name): <p>A searchable identifier of a customer profile.</p>
-    ///   - [`values(Option<Vec<String>>)`](crate::input::DeleteProfileKeyInput::values): <p>A list of key values.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteProfileKeyInput::domain_name): <p>The unique name of the domain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProfileKey::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteProfileKey::set_profile_id): <p>The unique identifier of a customer profile.</p>
+    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProfileKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::DeleteProfileKey::set_key_name): <p>A searchable identifier of a customer profile.</p>
+    ///   - [`values(Vec<String>)`](crate::client::fluent_builders::DeleteProfileKey::values) / [`set_values(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteProfileKey::set_values): <p>A list of key values.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProfileKey::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteProfileKey::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`DeleteProfileKeyOutput`](crate::output::DeleteProfileKeyOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::output::DeleteProfileKeyOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteProfileKeyError>`](crate::error::DeleteProfileKeyError)
@@ -197,11 +197,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteProfileObject`](crate::client::fluent_builders::DeleteProfileObject) operation.
     ///
-    /// - Takes [`DeleteProfileObjectInput`](crate::input::DeleteProfileObjectInput) with field(s):
-    ///   - [`profile_id(Option<String>)`](crate::input::DeleteProfileObjectInput::profile_id): <p>The unique identifier of a customer profile.</p>
-    ///   - [`profile_object_unique_key(Option<String>)`](crate::input::DeleteProfileObjectInput::profile_object_unique_key): <p>The unique identifier of the profile object generated by the service.</p>
-    ///   - [`object_type_name(Option<String>)`](crate::input::DeleteProfileObjectInput::object_type_name): <p>The name of the profile object type.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteProfileObjectInput::domain_name): <p>The unique name of the domain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProfileObject::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteProfileObject::set_profile_id): <p>The unique identifier of a customer profile.</p>
+    ///   - [`profile_object_unique_key(impl Into<String>)`](crate::client::fluent_builders::DeleteProfileObject::profile_object_unique_key) / [`set_profile_object_unique_key(Option<String>)`](crate::client::fluent_builders::DeleteProfileObject::set_profile_object_unique_key): <p>The unique identifier of the profile object generated by the service.</p>
+    ///   - [`object_type_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProfileObject::object_type_name) / [`set_object_type_name(Option<String>)`](crate::client::fluent_builders::DeleteProfileObject::set_object_type_name): <p>The name of the profile object type.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProfileObject::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteProfileObject::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`DeleteProfileObjectOutput`](crate::output::DeleteProfileObjectOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::output::DeleteProfileObjectOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteProfileObjectError>`](crate::error::DeleteProfileObjectError)
@@ -210,9 +210,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteProfileObjectType`](crate::client::fluent_builders::DeleteProfileObjectType) operation.
     ///
-    /// - Takes [`DeleteProfileObjectTypeInput`](crate::input::DeleteProfileObjectTypeInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteProfileObjectTypeInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`object_type_name(Option<String>)`](crate::input::DeleteProfileObjectTypeInput::object_type_name): <p>The name of the profile object type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProfileObjectType::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteProfileObjectType::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`object_type_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProfileObjectType::object_type_name) / [`set_object_type_name(Option<String>)`](crate::client::fluent_builders::DeleteProfileObjectType::set_object_type_name): <p>The name of the profile object type.</p>
     /// - On success, responds with [`DeleteProfileObjectTypeOutput`](crate::output::DeleteProfileObjectTypeOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::output::DeleteProfileObjectTypeOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteProfileObjectTypeError>`](crate::error::DeleteProfileObjectTypeError)
@@ -221,10 +221,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetAutoMergingPreview`](crate::client::fluent_builders::GetAutoMergingPreview) operation.
     ///
-    /// - Takes [`GetAutoMergingPreviewInput`](crate::input::GetAutoMergingPreviewInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::GetAutoMergingPreviewInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`consolidation(Option<Consolidation>)`](crate::input::GetAutoMergingPreviewInput::consolidation): <p>A list of matching attributes that represent matching criteria.</p>
-    ///   - [`conflict_resolution(Option<ConflictResolution>)`](crate::input::GetAutoMergingPreviewInput::conflict_resolution): <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetAutoMergingPreview::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetAutoMergingPreview::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`consolidation(Consolidation)`](crate::client::fluent_builders::GetAutoMergingPreview::consolidation) / [`set_consolidation(Option<Consolidation>)`](crate::client::fluent_builders::GetAutoMergingPreview::set_consolidation): <p>A list of matching attributes that represent matching criteria.</p>
+    ///   - [`conflict_resolution(ConflictResolution)`](crate::client::fluent_builders::GetAutoMergingPreview::conflict_resolution) / [`set_conflict_resolution(Option<ConflictResolution>)`](crate::client::fluent_builders::GetAutoMergingPreview::set_conflict_resolution): <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// - On success, responds with [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::output::GetAutoMergingPreviewOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`number_of_matches_in_sample(i64)`](crate::output::GetAutoMergingPreviewOutput::number_of_matches_in_sample): <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
@@ -236,8 +236,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDomain`](crate::client::fluent_builders::GetDomain) operation.
     ///
-    /// - Takes [`GetDomainInput`](crate::input::GetDomainInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::GetDomainInput::domain_name): <p>The unique name of the domain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetDomain::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`GetDomainOutput`](crate::output::GetDomainOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::output::GetDomainOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`default_expiration_days(Option<i32>)`](crate::output::GetDomainOutput::default_expiration_days): <p>The default number of days until the data within the domain expires.</p>
@@ -254,9 +254,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetIdentityResolutionJob`](crate::client::fluent_builders::GetIdentityResolutionJob) operation.
     ///
-    /// - Takes [`GetIdentityResolutionJobInput`](crate::input::GetIdentityResolutionJobInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::GetIdentityResolutionJobInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::GetIdentityResolutionJobInput::job_id): <p>The unique identifier of the Identity Resolution Job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetIdentityResolutionJob::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetIdentityResolutionJob::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetIdentityResolutionJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetIdentityResolutionJob::set_job_id): <p>The unique identifier of the Identity Resolution Job.</p>
     /// - On success, responds with [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::output::GetIdentityResolutionJobOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`job_id(Option<String>)`](crate::output::GetIdentityResolutionJobOutput::job_id): <p>The unique identifier of the Identity Resolution Job.</p>
@@ -277,9 +277,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetIntegration`](crate::client::fluent_builders::GetIntegration) operation.
     ///
-    /// - Takes [`GetIntegrationInput`](crate::input::GetIntegrationInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::GetIntegrationInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`uri(Option<String>)`](crate::input::GetIntegrationInput::uri): <p>The URI of the S3 bucket or any other type of data source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetIntegration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetIntegration::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`uri(impl Into<String>)`](crate::client::fluent_builders::GetIntegration::uri) / [`set_uri(Option<String>)`](crate::client::fluent_builders::GetIntegration::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
     /// - On success, responds with [`GetIntegrationOutput`](crate::output::GetIntegrationOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::output::GetIntegrationOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`uri(Option<String>)`](crate::output::GetIntegrationOutput::uri): <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -294,10 +294,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetMatches`](crate::client::fluent_builders::GetMatches) operation.
     ///
-    /// - Takes [`GetMatchesInput`](crate::input::GetMatchesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::GetMatchesInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetMatchesInput::max_results): <p>The maximum number of results to return per page.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::GetMatchesInput::domain_name): <p>The unique name of the domain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetMatches::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetMatches::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetMatches::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetMatches::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetMatches::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetMatches::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`GetMatchesOutput`](crate::output::GetMatchesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetMatchesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`match_generation_date(Option<DateTime>)`](crate::output::GetMatchesOutput::match_generation_date): <p>The timestamp this version of Match Result generated.</p>
@@ -309,9 +309,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetProfileObjectType`](crate::client::fluent_builders::GetProfileObjectType) operation.
     ///
-    /// - Takes [`GetProfileObjectTypeInput`](crate::input::GetProfileObjectTypeInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::GetProfileObjectTypeInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`object_type_name(Option<String>)`](crate::input::GetProfileObjectTypeInput::object_type_name): <p>The name of the profile object type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetProfileObjectType::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetProfileObjectType::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`object_type_name(impl Into<String>)`](crate::client::fluent_builders::GetProfileObjectType::object_type_name) / [`set_object_type_name(Option<String>)`](crate::client::fluent_builders::GetProfileObjectType::set_object_type_name): <p>The name of the profile object type.</p>
     /// - On success, responds with [`GetProfileObjectTypeOutput`](crate::output::GetProfileObjectTypeOutput) with field(s):
     ///   - [`object_type_name(Option<String>)`](crate::output::GetProfileObjectTypeOutput::object_type_name): <p>The name of the profile object type.</p>
     ///   - [`description(Option<String>)`](crate::output::GetProfileObjectTypeOutput::description): <p>The description of the profile object type.</p>
@@ -331,8 +331,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetProfileObjectTypeTemplate`](crate::client::fluent_builders::GetProfileObjectTypeTemplate) operation.
     ///
-    /// - Takes [`GetProfileObjectTypeTemplateInput`](crate::input::GetProfileObjectTypeTemplateInput) with field(s):
-    ///   - [`template_id(Option<String>)`](crate::input::GetProfileObjectTypeTemplateInput::template_id): <p>A unique identifier for the object template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::GetProfileObjectTypeTemplate::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::GetProfileObjectTypeTemplate::set_template_id): <p>A unique identifier for the object template.</p>
     /// - On success, responds with [`GetProfileObjectTypeTemplateOutput`](crate::output::GetProfileObjectTypeTemplateOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::output::GetProfileObjectTypeTemplateOutput::template_id): <p>A unique identifier for the object template.</p>
     ///   - [`source_name(Option<String>)`](crate::output::GetProfileObjectTypeTemplateOutput::source_name): <p>The name of the source of the object template.</p>
@@ -349,10 +349,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListAccountIntegrations`](crate::client::fluent_builders::ListAccountIntegrations) operation.
     ///
-    /// - Takes [`ListAccountIntegrationsInput`](crate::input::ListAccountIntegrationsInput) with field(s):
-    ///   - [`uri(Option<String>)`](crate::input::ListAccountIntegrationsInput::uri): <p>The URI of the S3 bucket or any other type of data source.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccountIntegrationsInput::next_token): <p>The pagination token from the previous ListAccountIntegrations API call.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccountIntegrationsInput::max_results): <p>The maximum number of objects returned per page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`uri(impl Into<String>)`](crate::client::fluent_builders::ListAccountIntegrations::uri) / [`set_uri(Option<String>)`](crate::client::fluent_builders::ListAccountIntegrations::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountIntegrations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountIntegrations::set_next_token): <p>The pagination token from the previous ListAccountIntegrations API call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountIntegrations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountIntegrations::set_max_results): <p>The maximum number of objects returned per page.</p>
     /// - On success, responds with [`ListAccountIntegrationsOutput`](crate::output::ListAccountIntegrationsOutput) with field(s):
     ///   - [`items(Option<Vec<ListIntegrationItem>>)`](crate::output::ListAccountIntegrationsOutput::items): <p>The list of ListAccountIntegration instances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountIntegrationsOutput::next_token): <p>The pagination token from the previous ListAccountIntegrations API call.</p>
@@ -362,9 +362,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListDomains`](crate::client::fluent_builders::ListDomains) operation.
     ///
-    /// - Takes [`ListDomainsInput`](crate::input::ListDomainsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDomainsInput::next_token): <p>The pagination token from the previous ListDomain API call.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDomainsInput::max_results): <p>The maximum number of objects returned per page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomains::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomains::set_next_token): <p>The pagination token from the previous ListDomain API call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDomains::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDomains::set_max_results): <p>The maximum number of objects returned per page.</p>
     /// - On success, responds with [`ListDomainsOutput`](crate::output::ListDomainsOutput) with field(s):
     ///   - [`items(Option<Vec<ListDomainItem>>)`](crate::output::ListDomainsOutput::items): <p>The list of ListDomains instances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDomainsOutput::next_token): <p>The pagination token from the previous ListDomains API call.</p>
@@ -374,10 +374,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListIdentityResolutionJobs`](crate::client::fluent_builders::ListIdentityResolutionJobs) operation.
     ///
-    /// - Takes [`ListIdentityResolutionJobsInput`](crate::input::ListIdentityResolutionJobsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::ListIdentityResolutionJobsInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIdentityResolutionJobsInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIdentityResolutionJobsInput::max_results): <p>The maximum number of results to return per page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListIdentityResolutionJobs::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListIdentityResolutionJobs::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIdentityResolutionJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIdentityResolutionJobs::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIdentityResolutionJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIdentityResolutionJobs::set_max_results): <p>The maximum number of results to return per page.</p>
     /// - On success, responds with [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput) with field(s):
     ///   - [`identity_resolution_jobs_list(Option<Vec<IdentityResolutionJob>>)`](crate::output::ListIdentityResolutionJobsOutput::identity_resolution_jobs_list): <p>A list of Identity Resolution Jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIdentityResolutionJobsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
@@ -389,10 +389,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListIntegrations`](crate::client::fluent_builders::ListIntegrations) operation.
     ///
-    /// - Takes [`ListIntegrationsInput`](crate::input::ListIntegrationsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::ListIntegrationsInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIntegrationsInput::next_token): <p>The pagination token from the previous ListIntegrations API call.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIntegrationsInput::max_results): <p>The maximum number of objects returned per page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListIntegrations::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListIntegrations::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIntegrations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIntegrations::set_next_token): <p>The pagination token from the previous ListIntegrations API call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIntegrations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIntegrations::set_max_results): <p>The maximum number of objects returned per page.</p>
     /// - On success, responds with [`ListIntegrationsOutput`](crate::output::ListIntegrationsOutput) with field(s):
     ///   - [`items(Option<Vec<ListIntegrationItem>>)`](crate::output::ListIntegrationsOutput::items): <p>The list of ListIntegrations instances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIntegrationsOutput::next_token): <p>The pagination token from the previous ListIntegrations API call.</p>
@@ -402,13 +402,13 @@ where
     }
     /// Constructs a fluent builder for the [`ListProfileObjects`](crate::client::fluent_builders::ListProfileObjects) operation.
     ///
-    /// - Takes [`ListProfileObjectsInput`](crate::input::ListProfileObjectsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListProfileObjectsInput::next_token): <p>The pagination token from the previous call to ListProfileObjects.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProfileObjectsInput::max_results): <p>The maximum number of objects returned per page.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::ListProfileObjectsInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`object_type_name(Option<String>)`](crate::input::ListProfileObjectsInput::object_type_name): <p>The name of the profile object type.</p>
-    ///   - [`profile_id(Option<String>)`](crate::input::ListProfileObjectsInput::profile_id): <p>The unique identifier of a customer profile.</p>
-    ///   - [`object_filter(Option<ObjectFilter>)`](crate::input::ListProfileObjectsInput::object_filter): <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProfileObjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProfileObjects::set_next_token): <p>The pagination token from the previous call to ListProfileObjects.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProfileObjects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProfileObjects::set_max_results): <p>The maximum number of objects returned per page.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListProfileObjects::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListProfileObjects::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`object_type_name(impl Into<String>)`](crate::client::fluent_builders::ListProfileObjects::object_type_name) / [`set_object_type_name(Option<String>)`](crate::client::fluent_builders::ListProfileObjects::set_object_type_name): <p>The name of the profile object type.</p>
+    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::ListProfileObjects::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::ListProfileObjects::set_profile_id): <p>The unique identifier of a customer profile.</p>
+    ///   - [`object_filter(ObjectFilter)`](crate::client::fluent_builders::ListProfileObjects::object_filter) / [`set_object_filter(Option<ObjectFilter>)`](crate::client::fluent_builders::ListProfileObjects::set_object_filter): <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
     /// - On success, responds with [`ListProfileObjectsOutput`](crate::output::ListProfileObjectsOutput) with field(s):
     ///   - [`items(Option<Vec<ListProfileObjectsItem>>)`](crate::output::ListProfileObjectsOutput::items): <p>The list of ListProfileObject instances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProfileObjectsOutput::next_token): <p>The pagination token from the previous call to ListProfileObjects.</p>
@@ -418,10 +418,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListProfileObjectTypes`](crate::client::fluent_builders::ListProfileObjectTypes) operation.
     ///
-    /// - Takes [`ListProfileObjectTypesInput`](crate::input::ListProfileObjectTypesInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::ListProfileObjectTypesInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListProfileObjectTypesInput::next_token): <p>Identifies the next page of results to return.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProfileObjectTypesInput::max_results): <p>The maximum number of objects returned per page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListProfileObjectTypes::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListProfileObjectTypes::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProfileObjectTypes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProfileObjectTypes::set_next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProfileObjectTypes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProfileObjectTypes::set_max_results): <p>The maximum number of objects returned per page.</p>
     /// - On success, responds with [`ListProfileObjectTypesOutput`](crate::output::ListProfileObjectTypesOutput) with field(s):
     ///   - [`items(Option<Vec<ListProfileObjectTypeItem>>)`](crate::output::ListProfileObjectTypesOutput::items): <p>The list of ListProfileObjectTypes instances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProfileObjectTypesOutput::next_token): <p>Identifies the next page of results to return.</p>
@@ -431,9 +431,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListProfileObjectTypeTemplates`](crate::client::fluent_builders::ListProfileObjectTypeTemplates) operation.
     ///
-    /// - Takes [`ListProfileObjectTypeTemplatesInput`](crate::input::ListProfileObjectTypeTemplatesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListProfileObjectTypeTemplatesInput::next_token): <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProfileObjectTypeTemplatesInput::max_results): <p>The maximum number of objects returned per page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProfileObjectTypeTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProfileObjectTypeTemplates::set_next_token): <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProfileObjectTypeTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProfileObjectTypeTemplates::set_max_results): <p>The maximum number of objects returned per page.</p>
     /// - On success, responds with [`ListProfileObjectTypeTemplatesOutput`](crate::output::ListProfileObjectTypeTemplatesOutput) with field(s):
     ///   - [`items(Option<Vec<ListProfileObjectTypeTemplateItem>>)`](crate::output::ListProfileObjectTypeTemplatesOutput::items): <p>The list of ListProfileObjectType template instances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProfileObjectTypeTemplatesOutput::next_token): <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
@@ -445,8 +445,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource for which you want to view tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource for which you want to view tags.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -455,11 +455,11 @@ where
     }
     /// Constructs a fluent builder for the [`MergeProfiles`](crate::client::fluent_builders::MergeProfiles) operation.
     ///
-    /// - Takes [`MergeProfilesInput`](crate::input::MergeProfilesInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::MergeProfilesInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`main_profile_id(Option<String>)`](crate::input::MergeProfilesInput::main_profile_id): <p>The identifier of the profile to be taken.</p>
-    ///   - [`profile_ids_to_be_merged(Option<Vec<String>>)`](crate::input::MergeProfilesInput::profile_ids_to_be_merged): <p>The identifier of the profile to be merged into MainProfileId.</p>
-    ///   - [`field_source_profile_ids(Option<FieldSourceProfileIds>)`](crate::input::MergeProfilesInput::field_source_profile_ids): <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::MergeProfiles::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::MergeProfiles::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`main_profile_id(impl Into<String>)`](crate::client::fluent_builders::MergeProfiles::main_profile_id) / [`set_main_profile_id(Option<String>)`](crate::client::fluent_builders::MergeProfiles::set_main_profile_id): <p>The identifier of the profile to be taken.</p>
+    ///   - [`profile_ids_to_be_merged(Vec<String>)`](crate::client::fluent_builders::MergeProfiles::profile_ids_to_be_merged) / [`set_profile_ids_to_be_merged(Option<Vec<String>>)`](crate::client::fluent_builders::MergeProfiles::set_profile_ids_to_be_merged): <p>The identifier of the profile to be merged into MainProfileId.</p>
+    ///   - [`field_source_profile_ids(FieldSourceProfileIds)`](crate::client::fluent_builders::MergeProfiles::field_source_profile_ids) / [`set_field_source_profile_ids(Option<FieldSourceProfileIds>)`](crate::client::fluent_builders::MergeProfiles::set_field_source_profile_ids): <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     /// - On success, responds with [`MergeProfilesOutput`](crate::output::MergeProfilesOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::output::MergeProfilesOutput::message): <p>A message that indicates the merge request is complete.</p>
     /// - On failure, responds with [`SdkError<MergeProfilesError>`](crate::error::MergeProfilesError)
@@ -468,13 +468,13 @@ where
     }
     /// Constructs a fluent builder for the [`PutIntegration`](crate::client::fluent_builders::PutIntegration) operation.
     ///
-    /// - Takes [`PutIntegrationInput`](crate::input::PutIntegrationInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::PutIntegrationInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`uri(Option<String>)`](crate::input::PutIntegrationInput::uri): <p>The URI of the S3 bucket or any other type of data source.</p>
-    ///   - [`object_type_name(Option<String>)`](crate::input::PutIntegrationInput::object_type_name): <p>The name of the profile object type.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::PutIntegrationInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
-    ///   - [`flow_definition(Option<FlowDefinition>)`](crate::input::PutIntegrationInput::flow_definition): <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
-    ///   - [`object_type_names(Option<HashMap<String, String>>)`](crate::input::PutIntegrationInput::object_type_names): <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::PutIntegration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::PutIntegration::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`uri(impl Into<String>)`](crate::client::fluent_builders::PutIntegration::uri) / [`set_uri(Option<String>)`](crate::client::fluent_builders::PutIntegration::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
+    ///   - [`object_type_name(impl Into<String>)`](crate::client::fluent_builders::PutIntegration::object_type_name) / [`set_object_type_name(Option<String>)`](crate::client::fluent_builders::PutIntegration::set_object_type_name): <p>The name of the profile object type.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PutIntegration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutIntegration::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`flow_definition(FlowDefinition)`](crate::client::fluent_builders::PutIntegration::flow_definition) / [`set_flow_definition(Option<FlowDefinition>)`](crate::client::fluent_builders::PutIntegration::set_flow_definition): <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
+    ///   - [`object_type_names(HashMap<String, String>)`](crate::client::fluent_builders::PutIntegration::object_type_names) / [`set_object_type_names(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutIntegration::set_object_type_names): <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     /// - On success, responds with [`PutIntegrationOutput`](crate::output::PutIntegrationOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::output::PutIntegrationOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`uri(Option<String>)`](crate::output::PutIntegrationOutput::uri): <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -489,10 +489,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutProfileObject`](crate::client::fluent_builders::PutProfileObject) operation.
     ///
-    /// - Takes [`PutProfileObjectInput`](crate::input::PutProfileObjectInput) with field(s):
-    ///   - [`object_type_name(Option<String>)`](crate::input::PutProfileObjectInput::object_type_name): <p>The name of the profile object type.</p>
-    ///   - [`object(Option<String>)`](crate::input::PutProfileObjectInput::object): <p>A string that is serialized from a JSON object.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::PutProfileObjectInput::domain_name): <p>The unique name of the domain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`object_type_name(impl Into<String>)`](crate::client::fluent_builders::PutProfileObject::object_type_name) / [`set_object_type_name(Option<String>)`](crate::client::fluent_builders::PutProfileObject::set_object_type_name): <p>The name of the profile object type.</p>
+    ///   - [`object(impl Into<String>)`](crate::client::fluent_builders::PutProfileObject::object) / [`set_object(Option<String>)`](crate::client::fluent_builders::PutProfileObject::set_object): <p>A string that is serialized from a JSON object.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::PutProfileObject::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::PutProfileObject::set_domain_name): <p>The unique name of the domain.</p>
     /// - On success, responds with [`PutProfileObjectOutput`](crate::output::PutProfileObjectOutput) with field(s):
     ///   - [`profile_object_unique_key(Option<String>)`](crate::output::PutProfileObjectOutput::profile_object_unique_key): <p>The unique identifier of the profile object generated by the service.</p>
     /// - On failure, responds with [`SdkError<PutProfileObjectError>`](crate::error::PutProfileObjectError)
@@ -501,18 +501,18 @@ where
     }
     /// Constructs a fluent builder for the [`PutProfileObjectType`](crate::client::fluent_builders::PutProfileObjectType) operation.
     ///
-    /// - Takes [`PutProfileObjectTypeInput`](crate::input::PutProfileObjectTypeInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::PutProfileObjectTypeInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`object_type_name(Option<String>)`](crate::input::PutProfileObjectTypeInput::object_type_name): <p>The name of the profile object type.</p>
-    ///   - [`description(Option<String>)`](crate::input::PutProfileObjectTypeInput::description): <p>Description of the profile object type.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::PutProfileObjectTypeInput::template_id): <p>A unique identifier for the object template.</p>
-    ///   - [`expiration_days(Option<i32>)`](crate::input::PutProfileObjectTypeInput::expiration_days): <p>The number of days until the data in the object expires.</p>
-    ///   - [`encryption_key(Option<String>)`](crate::input::PutProfileObjectTypeInput::encryption_key): <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    ///   - [`allow_profile_creation(bool)`](crate::input::PutProfileObjectTypeInput::allow_profile_creation): <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
-    ///   - [`source_last_updated_timestamp_format(Option<String>)`](crate::input::PutProfileObjectTypeInput::source_last_updated_timestamp_format): <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
-    ///   - [`fields(Option<HashMap<String, ObjectTypeField>>)`](crate::input::PutProfileObjectTypeInput::fields): <p>A map of the name and ObjectType field.</p>
-    ///   - [`keys(Option<HashMap<String, Vec<ObjectTypeKey>>>)`](crate::input::PutProfileObjectTypeInput::keys): <p>A list of unique keys that can be used to map data to the profile.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::PutProfileObjectTypeInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`object_type_name(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::object_type_name) / [`set_object_type_name(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_object_type_name): <p>The name of the profile object type.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_description): <p>Description of the profile object type.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_template_id): <p>A unique identifier for the object template.</p>
+    ///   - [`expiration_days(i32)`](crate::client::fluent_builders::PutProfileObjectType::expiration_days) / [`set_expiration_days(Option<i32>)`](crate::client::fluent_builders::PutProfileObjectType::set_expiration_days): <p>The number of days until the data in the object expires.</p>
+    ///   - [`encryption_key(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::encryption_key) / [`set_encryption_key(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_encryption_key): <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
+    ///   - [`allow_profile_creation(bool)`](crate::client::fluent_builders::PutProfileObjectType::allow_profile_creation) / [`set_allow_profile_creation(bool)`](crate::client::fluent_builders::PutProfileObjectType::set_allow_profile_creation): <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
+    ///   - [`source_last_updated_timestamp_format(impl Into<String>)`](crate::client::fluent_builders::PutProfileObjectType::source_last_updated_timestamp_format) / [`set_source_last_updated_timestamp_format(Option<String>)`](crate::client::fluent_builders::PutProfileObjectType::set_source_last_updated_timestamp_format): <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
+    ///   - [`fields(HashMap<String, ObjectTypeField>)`](crate::client::fluent_builders::PutProfileObjectType::fields) / [`set_fields(Option<HashMap<String, ObjectTypeField>>)`](crate::client::fluent_builders::PutProfileObjectType::set_fields): <p>A map of the name and ObjectType field.</p>
+    ///   - [`keys(HashMap<String, Vec<ObjectTypeKey>>)`](crate::client::fluent_builders::PutProfileObjectType::keys) / [`set_keys(Option<HashMap<String, Vec<ObjectTypeKey>>>)`](crate::client::fluent_builders::PutProfileObjectType::set_keys): <p>A list of unique keys that can be used to map data to the profile.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PutProfileObjectType::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutProfileObjectType::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On success, responds with [`PutProfileObjectTypeOutput`](crate::output::PutProfileObjectTypeOutput) with field(s):
     ///   - [`object_type_name(Option<String>)`](crate::output::PutProfileObjectTypeOutput::object_type_name): <p>The name of the profile object type.</p>
     ///   - [`description(Option<String>)`](crate::output::PutProfileObjectTypeOutput::description): <p>Description of the profile object type.</p>
@@ -532,12 +532,12 @@ where
     }
     /// Constructs a fluent builder for the [`SearchProfiles`](crate::client::fluent_builders::SearchProfiles) operation.
     ///
-    /// - Takes [`SearchProfilesInput`](crate::input::SearchProfilesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::SearchProfilesInput::next_token): <p>The pagination token from the previous SearchProfiles API call.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchProfilesInput::max_results): <p>The maximum number of objects returned per page.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::SearchProfilesInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`key_name(Option<String>)`](crate::input::SearchProfilesInput::key_name): <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
-    ///   - [`values(Option<Vec<String>>)`](crate::input::SearchProfilesInput::values): <p>A list of key values.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchProfiles::set_next_token): <p>The pagination token from the previous SearchProfiles API call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchProfiles::set_max_results): <p>The maximum number of objects returned per page.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::SearchProfiles::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::SearchProfiles::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::SearchProfiles::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::SearchProfiles::set_key_name): <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
+    ///   - [`values(Vec<String>)`](crate::client::fluent_builders::SearchProfiles::values) / [`set_values(Option<Vec<String>>)`](crate::client::fluent_builders::SearchProfiles::set_values): <p>A list of key values.</p>
     /// - On success, responds with [`SearchProfilesOutput`](crate::output::SearchProfilesOutput) with field(s):
     ///   - [`items(Option<Vec<Profile>>)`](crate::output::SearchProfilesOutput::items): <p>The list of SearchProfiles instances.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchProfilesOutput::next_token): <p>The pagination token from the previous SearchProfiles API call.</p>
@@ -547,9 +547,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource that you're adding tags to.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource that you're adding tags to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -558,9 +558,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource from which you are removing tags.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of tag keys to remove from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource from which you are removing tags.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -569,13 +569,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDomain`](crate::client::fluent_builders::UpdateDomain) operation.
     ///
-    /// - Takes [`UpdateDomainInput`](crate::input::UpdateDomainInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::UpdateDomainInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`default_expiration_days(Option<i32>)`](crate::input::UpdateDomainInput::default_expiration_days): <p>The default number of days until the data within the domain expires.</p>
-    ///   - [`default_encryption_key(Option<String>)`](crate::input::UpdateDomainInput::default_encryption_key): <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
-    ///   - [`dead_letter_queue_url(Option<String>)`](crate::input::UpdateDomainInput::dead_letter_queue_url): <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
-    ///   - [`matching(Option<MatchingRequest>)`](crate::input::UpdateDomainInput::matching): <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>  <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::UpdateDomainInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`default_expiration_days(i32)`](crate::client::fluent_builders::UpdateDomain::default_expiration_days) / [`set_default_expiration_days(Option<i32>)`](crate::client::fluent_builders::UpdateDomain::set_default_expiration_days): <p>The default number of days until the data within the domain expires.</p>
+    ///   - [`default_encryption_key(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::default_encryption_key) / [`set_default_encryption_key(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_default_encryption_key): <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
+    ///   - [`dead_letter_queue_url(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::dead_letter_queue_url) / [`set_dead_letter_queue_url(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_dead_letter_queue_url): <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
+    ///   - [`matching(MatchingRequest)`](crate::client::fluent_builders::UpdateDomain::matching) / [`set_matching(Option<MatchingRequest>)`](crate::client::fluent_builders::UpdateDomain::set_matching): <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>  <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateDomain::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateDomain::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On success, responds with [`UpdateDomainOutput`](crate::output::UpdateDomainOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::output::UpdateDomainOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`default_expiration_days(Option<i32>)`](crate::output::UpdateDomainOutput::default_expiration_days): <p>The default number of days until the data within the domain expires.</p>
@@ -591,30 +591,30 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateProfile`](crate::client::fluent_builders::UpdateProfile) operation.
     ///
-    /// - Takes [`UpdateProfileInput`](crate::input::UpdateProfileInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::UpdateProfileInput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`profile_id(Option<String>)`](crate::input::UpdateProfileInput::profile_id): <p>The unique identifier of a customer profile.</p>
-    ///   - [`additional_information(Option<String>)`](crate::input::UpdateProfileInput::additional_information): <p>Any additional information relevant to the customer’s profile.</p>
-    ///   - [`account_number(Option<String>)`](crate::input::UpdateProfileInput::account_number): <p>A unique account number that you have given to the customer.</p>
-    ///   - [`party_type(Option<PartyType>)`](crate::input::UpdateProfileInput::party_type): <p>The type of profile used to describe the customer.</p>
-    ///   - [`business_name(Option<String>)`](crate::input::UpdateProfileInput::business_name): <p>The name of the customer’s business.</p>
-    ///   - [`first_name(Option<String>)`](crate::input::UpdateProfileInput::first_name): <p>The customer’s first name.</p>
-    ///   - [`middle_name(Option<String>)`](crate::input::UpdateProfileInput::middle_name): <p>The customer’s middle name.</p>
-    ///   - [`last_name(Option<String>)`](crate::input::UpdateProfileInput::last_name): <p>The customer’s last name.</p>
-    ///   - [`birth_date(Option<String>)`](crate::input::UpdateProfileInput::birth_date): <p>The customer’s birth date. </p>
-    ///   - [`gender(Option<Gender>)`](crate::input::UpdateProfileInput::gender): <p>The gender with which the customer identifies. </p>
-    ///   - [`phone_number(Option<String>)`](crate::input::UpdateProfileInput::phone_number): <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
-    ///   - [`mobile_phone_number(Option<String>)`](crate::input::UpdateProfileInput::mobile_phone_number): <p>The customer’s mobile phone number.</p>
-    ///   - [`home_phone_number(Option<String>)`](crate::input::UpdateProfileInput::home_phone_number): <p>The customer’s home phone number.</p>
-    ///   - [`business_phone_number(Option<String>)`](crate::input::UpdateProfileInput::business_phone_number): <p>The customer’s business phone number.</p>
-    ///   - [`email_address(Option<String>)`](crate::input::UpdateProfileInput::email_address): <p>The customer’s email address, which has not been specified as a personal or business address. </p>
-    ///   - [`personal_email_address(Option<String>)`](crate::input::UpdateProfileInput::personal_email_address): <p>The customer’s personal email address.</p>
-    ///   - [`business_email_address(Option<String>)`](crate::input::UpdateProfileInput::business_email_address): <p>The customer’s business email address.</p>
-    ///   - [`address(Option<UpdateAddress>)`](crate::input::UpdateProfileInput::address): <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
-    ///   - [`shipping_address(Option<UpdateAddress>)`](crate::input::UpdateProfileInput::shipping_address): <p>The customer’s shipping address.</p>
-    ///   - [`mailing_address(Option<UpdateAddress>)`](crate::input::UpdateProfileInput::mailing_address): <p>The customer’s mailing address.</p>
-    ///   - [`billing_address(Option<UpdateAddress>)`](crate::input::UpdateProfileInput::billing_address): <p>The customer’s billing address.</p>
-    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::input::UpdateProfileInput::attributes): <p>A key value pair of attributes of a customer profile.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_profile_id): <p>The unique identifier of a customer profile.</p>
+    ///   - [`additional_information(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::additional_information) / [`set_additional_information(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_additional_information): <p>Any additional information relevant to the customer’s profile.</p>
+    ///   - [`account_number(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::account_number) / [`set_account_number(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_account_number): <p>A unique account number that you have given to the customer.</p>
+    ///   - [`party_type(PartyType)`](crate::client::fluent_builders::UpdateProfile::party_type) / [`set_party_type(Option<PartyType>)`](crate::client::fluent_builders::UpdateProfile::set_party_type): <p>The type of profile used to describe the customer.</p>
+    ///   - [`business_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::business_name) / [`set_business_name(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_business_name): <p>The name of the customer’s business.</p>
+    ///   - [`first_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::first_name) / [`set_first_name(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_first_name): <p>The customer’s first name.</p>
+    ///   - [`middle_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::middle_name) / [`set_middle_name(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_middle_name): <p>The customer’s middle name.</p>
+    ///   - [`last_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::last_name) / [`set_last_name(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_last_name): <p>The customer’s last name.</p>
+    ///   - [`birth_date(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::birth_date) / [`set_birth_date(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_birth_date): <p>The customer’s birth date. </p>
+    ///   - [`gender(Gender)`](crate::client::fluent_builders::UpdateProfile::gender) / [`set_gender(Option<Gender>)`](crate::client::fluent_builders::UpdateProfile::set_gender): <p>The gender with which the customer identifies. </p>
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_phone_number): <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
+    ///   - [`mobile_phone_number(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::mobile_phone_number) / [`set_mobile_phone_number(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_mobile_phone_number): <p>The customer’s mobile phone number.</p>
+    ///   - [`home_phone_number(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::home_phone_number) / [`set_home_phone_number(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_home_phone_number): <p>The customer’s home phone number.</p>
+    ///   - [`business_phone_number(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::business_phone_number) / [`set_business_phone_number(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_business_phone_number): <p>The customer’s business phone number.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_email_address): <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    ///   - [`personal_email_address(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::personal_email_address) / [`set_personal_email_address(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_personal_email_address): <p>The customer’s personal email address.</p>
+    ///   - [`business_email_address(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::business_email_address) / [`set_business_email_address(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_business_email_address): <p>The customer’s business email address.</p>
+    ///   - [`address(UpdateAddress)`](crate::client::fluent_builders::UpdateProfile::address) / [`set_address(Option<UpdateAddress>)`](crate::client::fluent_builders::UpdateProfile::set_address): <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
+    ///   - [`shipping_address(UpdateAddress)`](crate::client::fluent_builders::UpdateProfile::shipping_address) / [`set_shipping_address(Option<UpdateAddress>)`](crate::client::fluent_builders::UpdateProfile::set_shipping_address): <p>The customer’s shipping address.</p>
+    ///   - [`mailing_address(UpdateAddress)`](crate::client::fluent_builders::UpdateProfile::mailing_address) / [`set_mailing_address(Option<UpdateAddress>)`](crate::client::fluent_builders::UpdateProfile::set_mailing_address): <p>The customer’s mailing address.</p>
+    ///   - [`billing_address(UpdateAddress)`](crate::client::fluent_builders::UpdateProfile::billing_address) / [`set_billing_address(Option<UpdateAddress>)`](crate::client::fluent_builders::UpdateProfile::set_billing_address): <p>The customer’s billing address.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::UpdateProfile::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateProfile::set_attributes): <p>A key value pair of attributes of a customer profile.</p>
     /// - On success, responds with [`UpdateProfileOutput`](crate::output::UpdateProfileOutput) with field(s):
     ///   - [`profile_id(Option<String>)`](crate::output::UpdateProfileOutput::profile_id): <p>The unique identifier of a customer profile.</p>
     /// - On failure, responds with [`SdkError<UpdateProfileError>`](crate::error::UpdateProfileError)

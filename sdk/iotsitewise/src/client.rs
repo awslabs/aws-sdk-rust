@@ -85,11 +85,11 @@ where
 {
     /// Constructs a fluent builder for the [`AssociateAssets`](crate::client::fluent_builders::AssociateAssets) operation.
     ///
-    /// - Takes [`AssociateAssetsInput`](crate::input::AssociateAssetsInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::AssociateAssetsInput::asset_id): <p>The ID of the parent asset.</p>
-    ///   - [`hierarchy_id(Option<String>)`](crate::input::AssociateAssetsInput::hierarchy_id): <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`child_asset_id(Option<String>)`](crate::input::AssociateAssetsInput::child_asset_id): <p>The ID of the child asset to be associated.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::AssociateAssetsInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::AssociateAssets::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::AssociateAssets::set_asset_id): <p>The ID of the parent asset.</p>
+    ///   - [`hierarchy_id(impl Into<String>)`](crate::client::fluent_builders::AssociateAssets::hierarchy_id) / [`set_hierarchy_id(Option<String>)`](crate::client::fluent_builders::AssociateAssets::set_hierarchy_id): <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`child_asset_id(impl Into<String>)`](crate::client::fluent_builders::AssociateAssets::child_asset_id) / [`set_child_asset_id(Option<String>)`](crate::client::fluent_builders::AssociateAssets::set_child_asset_id): <p>The ID of the child asset to be associated.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::AssociateAssets::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::AssociateAssets::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`AssociateAssetsOutput`](crate::output::AssociateAssetsOutput)
 
     /// - On failure, responds with [`SdkError<AssociateAssetsError>`](crate::error::AssociateAssetsError)
@@ -98,11 +98,11 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateTimeSeriesToAssetProperty`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty) operation.
     ///
-    /// - Takes [`AssociateTimeSeriesToAssetPropertyInput`](crate::input::AssociateTimeSeriesToAssetPropertyInput) with field(s):
-    ///   - [`alias(Option<String>)`](crate::input::AssociateTimeSeriesToAssetPropertyInput::alias): <p>The alias that identifies the time series.</p>
-    ///   - [`asset_id(Option<String>)`](crate::input::AssociateTimeSeriesToAssetPropertyInput::asset_id): <p>The ID of the asset in which the asset property was created.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::AssociateTimeSeriesToAssetPropertyInput::property_id): <p>The ID of the asset property.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::AssociateTimeSeriesToAssetPropertyInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty::set_alias): <p>The alias that identifies the time series.</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty::set_asset_id): <p>The ID of the asset in which the asset property was created.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty::set_property_id): <p>The ID of the asset property.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`AssociateTimeSeriesToAssetPropertyOutput`](crate::output::AssociateTimeSeriesToAssetPropertyOutput)
 
     /// - On failure, responds with [`SdkError<AssociateTimeSeriesToAssetPropertyError>`](crate::error::AssociateTimeSeriesToAssetPropertyError)
@@ -113,10 +113,10 @@ where
     }
     /// Constructs a fluent builder for the [`BatchAssociateProjectAssets`](crate::client::fluent_builders::BatchAssociateProjectAssets) operation.
     ///
-    /// - Takes [`BatchAssociateProjectAssetsInput`](crate::input::BatchAssociateProjectAssetsInput) with field(s):
-    ///   - [`project_id(Option<String>)`](crate::input::BatchAssociateProjectAssetsInput::project_id): <p>The ID of the project to which to associate the assets.</p>
-    ///   - [`asset_ids(Option<Vec<String>>)`](crate::input::BatchAssociateProjectAssetsInput::asset_ids): <p>The IDs of the assets to be associated to the project.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::BatchAssociateProjectAssetsInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::BatchAssociateProjectAssets::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::BatchAssociateProjectAssets::set_project_id): <p>The ID of the project to which to associate the assets.</p>
+    ///   - [`asset_ids(Vec<String>)`](crate::client::fluent_builders::BatchAssociateProjectAssets::asset_ids) / [`set_asset_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchAssociateProjectAssets::set_asset_ids): <p>The IDs of the assets to be associated to the project.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::BatchAssociateProjectAssets::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::BatchAssociateProjectAssets::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`BatchAssociateProjectAssetsOutput`](crate::output::BatchAssociateProjectAssetsOutput) with field(s):
     ///   - [`errors(Option<Vec<AssetErrorDetails>>)`](crate::output::BatchAssociateProjectAssetsOutput::errors): <p>A list of associated error information, if any.</p>
     /// - On failure, responds with [`SdkError<BatchAssociateProjectAssetsError>`](crate::error::BatchAssociateProjectAssetsError)
@@ -127,10 +127,10 @@ where
     }
     /// Constructs a fluent builder for the [`BatchDisassociateProjectAssets`](crate::client::fluent_builders::BatchDisassociateProjectAssets) operation.
     ///
-    /// - Takes [`BatchDisassociateProjectAssetsInput`](crate::input::BatchDisassociateProjectAssetsInput) with field(s):
-    ///   - [`project_id(Option<String>)`](crate::input::BatchDisassociateProjectAssetsInput::project_id): <p>The ID of the project from which to disassociate the assets.</p>
-    ///   - [`asset_ids(Option<Vec<String>>)`](crate::input::BatchDisassociateProjectAssetsInput::asset_ids): <p>The IDs of the assets to be disassociated from the project.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::BatchDisassociateProjectAssetsInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::BatchDisassociateProjectAssets::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::BatchDisassociateProjectAssets::set_project_id): <p>The ID of the project from which to disassociate the assets.</p>
+    ///   - [`asset_ids(Vec<String>)`](crate::client::fluent_builders::BatchDisassociateProjectAssets::asset_ids) / [`set_asset_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDisassociateProjectAssets::set_asset_ids): <p>The IDs of the assets to be disassociated from the project.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::BatchDisassociateProjectAssets::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::BatchDisassociateProjectAssets::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`BatchDisassociateProjectAssetsOutput`](crate::output::BatchDisassociateProjectAssetsOutput) with field(s):
     ///   - [`errors(Option<Vec<AssetErrorDetails>>)`](crate::output::BatchDisassociateProjectAssetsOutput::errors): <p>A list of associated error information, if any.</p>
     /// - On failure, responds with [`SdkError<BatchDisassociateProjectAssetsError>`](crate::error::BatchDisassociateProjectAssetsError)
@@ -141,8 +141,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchPutAssetPropertyValue`](crate::client::fluent_builders::BatchPutAssetPropertyValue) operation.
     ///
-    /// - Takes [`BatchPutAssetPropertyValueInput`](crate::input::BatchPutAssetPropertyValueInput) with field(s):
-    ///   - [`entries(Option<Vec<PutAssetPropertyValueEntry>>)`](crate::input::BatchPutAssetPropertyValueInput::entries): <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`entries(Vec<PutAssetPropertyValueEntry>)`](crate::client::fluent_builders::BatchPutAssetPropertyValue::entries) / [`set_entries(Option<Vec<PutAssetPropertyValueEntry>>)`](crate::client::fluent_builders::BatchPutAssetPropertyValue::set_entries): <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
     /// - On success, responds with [`BatchPutAssetPropertyValueOutput`](crate::output::BatchPutAssetPropertyValueOutput) with field(s):
     ///   - [`error_entries(Option<Vec<BatchPutAssetPropertyErrorEntry>>)`](crate::output::BatchPutAssetPropertyValueOutput::error_entries): <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     /// - On failure, responds with [`SdkError<BatchPutAssetPropertyValueError>`](crate::error::BatchPutAssetPropertyValueError)
@@ -153,12 +153,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAccessPolicy`](crate::client::fluent_builders::CreateAccessPolicy) operation.
     ///
-    /// - Takes [`CreateAccessPolicyInput`](crate::input::CreateAccessPolicyInput) with field(s):
-    ///   - [`access_policy_identity(Option<Identity>)`](crate::input::CreateAccessPolicyInput::access_policy_identity): <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
-    ///   - [`access_policy_resource(Option<Resource>)`](crate::input::CreateAccessPolicyInput::access_policy_resource): <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-    ///   - [`access_policy_permission(Option<Permission>)`](crate::input::CreateAccessPolicyInput::access_policy_permission): <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateAccessPolicyInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAccessPolicyInput::tags): <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`access_policy_identity(Identity)`](crate::client::fluent_builders::CreateAccessPolicy::access_policy_identity) / [`set_access_policy_identity(Option<Identity>)`](crate::client::fluent_builders::CreateAccessPolicy::set_access_policy_identity): <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    ///   - [`access_policy_resource(Resource)`](crate::client::fluent_builders::CreateAccessPolicy::access_policy_resource) / [`set_access_policy_resource(Option<Resource>)`](crate::client::fluent_builders::CreateAccessPolicy::set_access_policy_resource): <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    ///   - [`access_policy_permission(Permission)`](crate::client::fluent_builders::CreateAccessPolicy::access_policy_permission) / [`set_access_policy_permission(Option<Permission>)`](crate::client::fluent_builders::CreateAccessPolicy::set_access_policy_permission): <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAccessPolicy::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAccessPolicy::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAccessPolicy::set_tags): <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On success, responds with [`CreateAccessPolicyOutput`](crate::output::CreateAccessPolicyOutput) with field(s):
     ///   - [`access_policy_id(Option<String>)`](crate::output::CreateAccessPolicyOutput::access_policy_id): <p>The ID of the access policy.</p>
     ///   - [`access_policy_arn(Option<String>)`](crate::output::CreateAccessPolicyOutput::access_policy_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
@@ -168,11 +168,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAsset`](crate::client::fluent_builders::CreateAsset) operation.
     ///
-    /// - Takes [`CreateAssetInput`](crate::input::CreateAssetInput) with field(s):
-    ///   - [`asset_name(Option<String>)`](crate::input::CreateAssetInput::asset_name): <p>A unique, friendly name for the asset.</p>
-    ///   - [`asset_model_id(Option<String>)`](crate::input::CreateAssetInput::asset_model_id): <p>The ID of the asset model from which to create the asset.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateAssetInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAssetInput::tags): <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_name(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::asset_name) / [`set_asset_name(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_asset_name): <p>A unique, friendly name for the asset.</p>
+    ///   - [`asset_model_id(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_asset_model_id): <p>The ID of the asset model from which to create the asset.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAsset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAsset::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAsset::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAsset::set_tags): <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On success, responds with [`CreateAssetOutput`](crate::output::CreateAssetOutput) with field(s):
     ///   - [`asset_id(Option<String>)`](crate::output::CreateAssetOutput::asset_id): <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
     ///   - [`asset_arn(Option<String>)`](crate::output::CreateAssetOutput::asset_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
@@ -183,14 +183,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAssetModel`](crate::client::fluent_builders::CreateAssetModel) operation.
     ///
-    /// - Takes [`CreateAssetModelInput`](crate::input::CreateAssetModelInput) with field(s):
-    ///   - [`asset_model_name(Option<String>)`](crate::input::CreateAssetModelInput::asset_model_name): <p>A unique, friendly name for the asset model.</p>
-    ///   - [`asset_model_description(Option<String>)`](crate::input::CreateAssetModelInput::asset_model_description): <p>A description for the asset model.</p>
-    ///   - [`asset_model_properties(Option<Vec<AssetModelPropertyDefinition>>)`](crate::input::CreateAssetModelInput::asset_model_properties): <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`asset_model_hierarchies(Option<Vec<AssetModelHierarchyDefinition>>)`](crate::input::CreateAssetModelInput::asset_model_hierarchies): <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`asset_model_composite_models(Option<Vec<AssetModelCompositeModelDefinition>>)`](crate::input::CreateAssetModelInput::asset_model_composite_models): <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateAssetModelInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAssetModelInput::tags): <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_model_name(impl Into<String>)`](crate::client::fluent_builders::CreateAssetModel::asset_model_name) / [`set_asset_model_name(Option<String>)`](crate::client::fluent_builders::CreateAssetModel::set_asset_model_name): <p>A unique, friendly name for the asset model.</p>
+    ///   - [`asset_model_description(impl Into<String>)`](crate::client::fluent_builders::CreateAssetModel::asset_model_description) / [`set_asset_model_description(Option<String>)`](crate::client::fluent_builders::CreateAssetModel::set_asset_model_description): <p>A description for the asset model.</p>
+    ///   - [`asset_model_properties(Vec<AssetModelPropertyDefinition>)`](crate::client::fluent_builders::CreateAssetModel::asset_model_properties) / [`set_asset_model_properties(Option<Vec<AssetModelPropertyDefinition>>)`](crate::client::fluent_builders::CreateAssetModel::set_asset_model_properties): <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`asset_model_hierarchies(Vec<AssetModelHierarchyDefinition>)`](crate::client::fluent_builders::CreateAssetModel::asset_model_hierarchies) / [`set_asset_model_hierarchies(Option<Vec<AssetModelHierarchyDefinition>>)`](crate::client::fluent_builders::CreateAssetModel::set_asset_model_hierarchies): <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`asset_model_composite_models(Vec<AssetModelCompositeModelDefinition>)`](crate::client::fluent_builders::CreateAssetModel::asset_model_composite_models) / [`set_asset_model_composite_models(Option<Vec<AssetModelCompositeModelDefinition>>)`](crate::client::fluent_builders::CreateAssetModel::set_asset_model_composite_models): <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAssetModel::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAssetModel::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAssetModel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAssetModel::set_tags): <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On success, responds with [`CreateAssetModelOutput`](crate::output::CreateAssetModelOutput) with field(s):
     ///   - [`asset_model_id(Option<String>)`](crate::output::CreateAssetModelOutput::asset_model_id): <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
     ///   - [`asset_model_arn(Option<String>)`](crate::output::CreateAssetModelOutput::asset_model_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
@@ -201,13 +201,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDashboard`](crate::client::fluent_builders::CreateDashboard) operation.
     ///
-    /// - Takes [`CreateDashboardInput`](crate::input::CreateDashboardInput) with field(s):
-    ///   - [`project_id(Option<String>)`](crate::input::CreateDashboardInput::project_id): <p>The ID of the project in which to create the dashboard.</p>
-    ///   - [`dashboard_name(Option<String>)`](crate::input::CreateDashboardInput::dashboard_name): <p>A friendly name for the dashboard.</p>
-    ///   - [`dashboard_description(Option<String>)`](crate::input::CreateDashboardInput::dashboard_description): <p>A description for the dashboard.</p>
-    ///   - [`dashboard_definition(Option<String>)`](crate::input::CreateDashboardInput::dashboard_definition): <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateDashboardInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDashboardInput::tags): <p>A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_project_id): <p>The ID of the project in which to create the dashboard.</p>
+    ///   - [`dashboard_name(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::dashboard_name) / [`set_dashboard_name(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_dashboard_name): <p>A friendly name for the dashboard.</p>
+    ///   - [`dashboard_description(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::dashboard_description) / [`set_dashboard_description(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_dashboard_description): <p>A description for the dashboard.</p>
+    ///   - [`dashboard_definition(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::dashboard_definition) / [`set_dashboard_definition(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_dashboard_definition): <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDashboard::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDashboard::set_tags): <p>A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On success, responds with [`CreateDashboardOutput`](crate::output::CreateDashboardOutput) with field(s):
     ///   - [`dashboard_id(Option<String>)`](crate::output::CreateDashboardOutput::dashboard_id): <p>The ID of the dashboard.</p>
     ///   - [`dashboard_arn(Option<String>)`](crate::output::CreateDashboardOutput::dashboard_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
@@ -217,10 +217,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateGateway`](crate::client::fluent_builders::CreateGateway) operation.
     ///
-    /// - Takes [`CreateGatewayInput`](crate::input::CreateGatewayInput) with field(s):
-    ///   - [`gateway_name(Option<String>)`](crate::input::CreateGatewayInput::gateway_name): <p>A unique, friendly name for the gateway.</p>
-    ///   - [`gateway_platform(Option<GatewayPlatform>)`](crate::input::CreateGatewayInput::gateway_platform): <p>The gateway's platform. You can only specify one platform in a gateway.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateGatewayInput::tags): <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_name(impl Into<String>)`](crate::client::fluent_builders::CreateGateway::gateway_name) / [`set_gateway_name(Option<String>)`](crate::client::fluent_builders::CreateGateway::set_gateway_name): <p>A unique, friendly name for the gateway.</p>
+    ///   - [`gateway_platform(GatewayPlatform)`](crate::client::fluent_builders::CreateGateway::gateway_platform) / [`set_gateway_platform(Option<GatewayPlatform>)`](crate::client::fluent_builders::CreateGateway::set_gateway_platform): <p>The gateway's platform. You can only specify one platform in a gateway.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateGateway::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateGateway::set_tags): <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On success, responds with [`CreateGatewayOutput`](crate::output::CreateGatewayOutput) with field(s):
     ///   - [`gateway_id(Option<String>)`](crate::output::CreateGatewayOutput::gateway_id): <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
     ///   - [`gateway_arn(Option<String>)`](crate::output::CreateGatewayOutput::gateway_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
@@ -230,17 +230,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreatePortal`](crate::client::fluent_builders::CreatePortal) operation.
     ///
-    /// - Takes [`CreatePortalInput`](crate::input::CreatePortalInput) with field(s):
-    ///   - [`portal_name(Option<String>)`](crate::input::CreatePortalInput::portal_name): <p>A friendly name for the portal.</p>
-    ///   - [`portal_description(Option<String>)`](crate::input::CreatePortalInput::portal_description): <p>A description for the portal.</p>
-    ///   - [`portal_contact_email(Option<String>)`](crate::input::CreatePortalInput::portal_contact_email): <p>The Amazon Web Services administrator's contact email address.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreatePortalInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    ///   - [`portal_logo_image_file(Option<ImageFile>)`](crate::input::CreatePortalInput::portal_logo_image_file): <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreatePortalInput::role_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreatePortalInput::tags): <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`portal_auth_mode(Option<AuthMode>)`](crate::input::CreatePortalInput::portal_auth_mode): <p>The service to use to authenticate users to the portal. Choose from the following options:</p>  <ul>   <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>   <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>  </ul>  <p>You can't change this value after you create a portal.</p>  <p>Default: <code>SSO</code> </p>
-    ///   - [`notification_sender_email(Option<String>)`](crate::input::CreatePortalInput::notification_sender_email): <p>The email address that sends alarm notifications.</p> <important>   <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>  </important>
-    ///   - [`alarms(Option<Alarms>)`](crate::input::CreatePortalInput::alarms): <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`portal_name(impl Into<String>)`](crate::client::fluent_builders::CreatePortal::portal_name) / [`set_portal_name(Option<String>)`](crate::client::fluent_builders::CreatePortal::set_portal_name): <p>A friendly name for the portal.</p>
+    ///   - [`portal_description(impl Into<String>)`](crate::client::fluent_builders::CreatePortal::portal_description) / [`set_portal_description(Option<String>)`](crate::client::fluent_builders::CreatePortal::set_portal_description): <p>A description for the portal.</p>
+    ///   - [`portal_contact_email(impl Into<String>)`](crate::client::fluent_builders::CreatePortal::portal_contact_email) / [`set_portal_contact_email(Option<String>)`](crate::client::fluent_builders::CreatePortal::set_portal_contact_email): <p>The Amazon Web Services administrator's contact email address.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreatePortal::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreatePortal::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`portal_logo_image_file(ImageFile)`](crate::client::fluent_builders::CreatePortal::portal_logo_image_file) / [`set_portal_logo_image_file(Option<ImageFile>)`](crate::client::fluent_builders::CreatePortal::set_portal_logo_image_file): <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePortal::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreatePortal::set_role_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreatePortal::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePortal::set_tags): <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`portal_auth_mode(AuthMode)`](crate::client::fluent_builders::CreatePortal::portal_auth_mode) / [`set_portal_auth_mode(Option<AuthMode>)`](crate::client::fluent_builders::CreatePortal::set_portal_auth_mode): <p>The service to use to authenticate users to the portal. Choose from the following options:</p>  <ul>   <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>   <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>  </ul>  <p>You can't change this value after you create a portal.</p>  <p>Default: <code>SSO</code> </p>
+    ///   - [`notification_sender_email(impl Into<String>)`](crate::client::fluent_builders::CreatePortal::notification_sender_email) / [`set_notification_sender_email(Option<String>)`](crate::client::fluent_builders::CreatePortal::set_notification_sender_email): <p>The email address that sends alarm notifications.</p> <important>   <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>  </important>
+    ///   - [`alarms(Alarms)`](crate::client::fluent_builders::CreatePortal::alarms) / [`set_alarms(Option<Alarms>)`](crate::client::fluent_builders::CreatePortal::set_alarms): <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     /// - On success, responds with [`CreatePortalOutput`](crate::output::CreatePortalOutput) with field(s):
     ///   - [`portal_id(Option<String>)`](crate::output::CreatePortalOutput::portal_id): <p>The ID of the created portal.</p>
     ///   - [`portal_arn(Option<String>)`](crate::output::CreatePortalOutput::portal_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
@@ -253,12 +253,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// - Takes [`CreateProjectInput`](crate::input::CreateProjectInput) with field(s):
-    ///   - [`portal_id(Option<String>)`](crate::input::CreateProjectInput::portal_id): <p>The ID of the portal in which to create the project.</p>
-    ///   - [`project_name(Option<String>)`](crate::input::CreateProjectInput::project_name): <p>A friendly name for the project.</p>
-    ///   - [`project_description(Option<String>)`](crate::input::CreateProjectInput::project_description): <p>A description for the project.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateProjectInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateProjectInput::tags): <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`portal_id(impl Into<String>)`](crate::client::fluent_builders::CreateProject::portal_id) / [`set_portal_id(Option<String>)`](crate::client::fluent_builders::CreateProject::set_portal_id): <p>The ID of the portal in which to create the project.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_project_name): <p>A friendly name for the project.</p>
+    ///   - [`project_description(impl Into<String>)`](crate::client::fluent_builders::CreateProject::project_description) / [`set_project_description(Option<String>)`](crate::client::fluent_builders::CreateProject::set_project_description): <p>A description for the project.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateProject::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateProject::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateProject::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateProject::set_tags): <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
     ///   - [`project_id(Option<String>)`](crate::output::CreateProjectOutput::project_id): <p>The ID of the project.</p>
     ///   - [`project_arn(Option<String>)`](crate::output::CreateProjectOutput::project_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
@@ -268,9 +268,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAccessPolicy`](crate::client::fluent_builders::DeleteAccessPolicy) operation.
     ///
-    /// - Takes [`DeleteAccessPolicyInput`](crate::input::DeleteAccessPolicyInput) with field(s):
-    ///   - [`access_policy_id(Option<String>)`](crate::input::DeleteAccessPolicyInput::access_policy_id): <p>The ID of the access policy to be deleted.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteAccessPolicyInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`access_policy_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPolicy::access_policy_id) / [`set_access_policy_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessPolicy::set_access_policy_id): <p>The ID of the access policy to be deleted.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteAccessPolicy::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteAccessPolicyOutput`](crate::output::DeleteAccessPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAccessPolicyError>`](crate::error::DeleteAccessPolicyError)
@@ -279,9 +279,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAsset`](crate::client::fluent_builders::DeleteAsset) operation.
     ///
-    /// - Takes [`DeleteAssetInput`](crate::input::DeleteAssetInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::DeleteAssetInput::asset_id): <p>The ID of the asset to delete.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteAssetInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::DeleteAsset::set_asset_id): <p>The ID of the asset to delete.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteAsset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteAsset::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteAssetOutput`](crate::output::DeleteAssetOutput) with field(s):
     ///   - [`asset_status(Option<AssetStatus>)`](crate::output::DeleteAssetOutput::asset_status): <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<DeleteAssetError>`](crate::error::DeleteAssetError)
@@ -290,9 +290,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAssetModel`](crate::client::fluent_builders::DeleteAssetModel) operation.
     ///
-    /// - Takes [`DeleteAssetModelInput`](crate::input::DeleteAssetModelInput) with field(s):
-    ///   - [`asset_model_id(Option<String>)`](crate::input::DeleteAssetModelInput::asset_model_id): <p>The ID of the asset model to delete.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteAssetModelInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_model_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAssetModel::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::client::fluent_builders::DeleteAssetModel::set_asset_model_id): <p>The ID of the asset model to delete.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteAssetModel::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteAssetModel::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteAssetModelOutput`](crate::output::DeleteAssetModelOutput) with field(s):
     ///   - [`asset_model_status(Option<AssetModelStatus>)`](crate::output::DeleteAssetModelOutput::asset_model_status): <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<DeleteAssetModelError>`](crate::error::DeleteAssetModelError)
@@ -301,9 +301,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDashboard`](crate::client::fluent_builders::DeleteDashboard) operation.
     ///
-    /// - Takes [`DeleteDashboardInput`](crate::input::DeleteDashboardInput) with field(s):
-    ///   - [`dashboard_id(Option<String>)`](crate::input::DeleteDashboardInput::dashboard_id): <p>The ID of the dashboard to delete.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteDashboardInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDashboard::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::DeleteDashboard::set_dashboard_id): <p>The ID of the dashboard to delete.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteDashboard::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteDashboard::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDashboardError>`](crate::error::DeleteDashboardError)
@@ -312,8 +312,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteGateway`](crate::client::fluent_builders::DeleteGateway) operation.
     ///
-    /// - Takes [`DeleteGatewayInput`](crate::input::DeleteGatewayInput) with field(s):
-    ///   - [`gateway_id(Option<String>)`](crate::input::DeleteGatewayInput::gateway_id): <p>The ID of the gateway to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGateway::gateway_id) / [`set_gateway_id(Option<String>)`](crate::client::fluent_builders::DeleteGateway::set_gateway_id): <p>The ID of the gateway to delete.</p>
     /// - On success, responds with [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput)
 
     /// - On failure, responds with [`SdkError<DeleteGatewayError>`](crate::error::DeleteGatewayError)
@@ -322,9 +322,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeletePortal`](crate::client::fluent_builders::DeletePortal) operation.
     ///
-    /// - Takes [`DeletePortalInput`](crate::input::DeletePortalInput) with field(s):
-    ///   - [`portal_id(Option<String>)`](crate::input::DeletePortalInput::portal_id): <p>The ID of the portal to delete.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeletePortalInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`portal_id(impl Into<String>)`](crate::client::fluent_builders::DeletePortal::portal_id) / [`set_portal_id(Option<String>)`](crate::client::fluent_builders::DeletePortal::set_portal_id): <p>The ID of the portal to delete.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeletePortal::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeletePortal::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeletePortalOutput`](crate::output::DeletePortalOutput) with field(s):
     ///   - [`portal_status(Option<PortalStatus>)`](crate::output::DeletePortalOutput::portal_status): <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<DeletePortalError>`](crate::error::DeletePortalError)
@@ -333,9 +333,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// - Takes [`DeleteProjectInput`](crate::input::DeleteProjectInput) with field(s):
-    ///   - [`project_id(Option<String>)`](crate::input::DeleteProjectInput::project_id): <p>The ID of the project.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteProjectInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProject::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::DeleteProject::set_project_id): <p>The ID of the project.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteProject::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteProject::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
 
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
@@ -344,11 +344,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTimeSeries`](crate::client::fluent_builders::DeleteTimeSeries) operation.
     ///
-    /// - Takes [`DeleteTimeSeriesInput`](crate::input::DeleteTimeSeriesInput) with field(s):
-    ///   - [`alias(Option<String>)`](crate::input::DeleteTimeSeriesInput::alias): <p>The alias that identifies the time series.</p>
-    ///   - [`asset_id(Option<String>)`](crate::input::DeleteTimeSeriesInput::asset_id): <p>The ID of the asset in which the asset property was created.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::DeleteTimeSeriesInput::property_id): <p>The ID of the asset property.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteTimeSeriesInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::DeleteTimeSeries::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::DeleteTimeSeries::set_alias): <p>The alias that identifies the time series.</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTimeSeries::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::DeleteTimeSeries::set_asset_id): <p>The ID of the asset in which the asset property was created.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTimeSeries::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::DeleteTimeSeries::set_property_id): <p>The ID of the asset property.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteTimeSeries::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteTimeSeries::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteTimeSeriesOutput`](crate::output::DeleteTimeSeriesOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTimeSeriesError>`](crate::error::DeleteTimeSeriesError)
@@ -357,8 +357,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAccessPolicy`](crate::client::fluent_builders::DescribeAccessPolicy) operation.
     ///
-    /// - Takes [`DescribeAccessPolicyInput`](crate::input::DescribeAccessPolicyInput) with field(s):
-    ///   - [`access_policy_id(Option<String>)`](crate::input::DescribeAccessPolicyInput::access_policy_id): <p>The ID of the access policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`access_policy_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccessPolicy::access_policy_id) / [`set_access_policy_id(Option<String>)`](crate::client::fluent_builders::DescribeAccessPolicy::set_access_policy_id): <p>The ID of the access policy.</p>
     /// - On success, responds with [`DescribeAccessPolicyOutput`](crate::output::DescribeAccessPolicyOutput) with field(s):
     ///   - [`access_policy_id(Option<String>)`](crate::output::DescribeAccessPolicyOutput::access_policy_id): <p>The ID of the access policy.</p>
     ///   - [`access_policy_arn(Option<String>)`](crate::output::DescribeAccessPolicyOutput::access_policy_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
@@ -373,8 +373,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAsset`](crate::client::fluent_builders::DescribeAsset) operation.
     ///
-    /// - Takes [`DescribeAssetInput`](crate::input::DescribeAssetInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::DescribeAssetInput::asset_id): <p>The ID of the asset.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::DescribeAsset::set_asset_id): <p>The ID of the asset.</p>
     /// - On success, responds with [`DescribeAssetOutput`](crate::output::DescribeAssetOutput) with field(s):
     ///   - [`asset_id(Option<String>)`](crate::output::DescribeAssetOutput::asset_id): <p>The ID of the asset.</p>
     ///   - [`asset_arn(Option<String>)`](crate::output::DescribeAssetOutput::asset_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
@@ -392,8 +392,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAssetModel`](crate::client::fluent_builders::DescribeAssetModel) operation.
     ///
-    /// - Takes [`DescribeAssetModelInput`](crate::input::DescribeAssetModelInput) with field(s):
-    ///   - [`asset_model_id(Option<String>)`](crate::input::DescribeAssetModelInput::asset_model_id): <p>The ID of the asset model.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_model_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAssetModel::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::client::fluent_builders::DescribeAssetModel::set_asset_model_id): <p>The ID of the asset model.</p>
     /// - On success, responds with [`DescribeAssetModelOutput`](crate::output::DescribeAssetModelOutput) with field(s):
     ///   - [`asset_model_id(Option<String>)`](crate::output::DescribeAssetModelOutput::asset_model_id): <p>The ID of the asset model.</p>
     ///   - [`asset_model_arn(Option<String>)`](crate::output::DescribeAssetModelOutput::asset_model_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
@@ -411,9 +411,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAssetProperty`](crate::client::fluent_builders::DescribeAssetProperty) operation.
     ///
-    /// - Takes [`DescribeAssetPropertyInput`](crate::input::DescribeAssetPropertyInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::DescribeAssetPropertyInput::asset_id): <p>The ID of the asset.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::DescribeAssetPropertyInput::property_id): <p>The ID of the asset property.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAssetProperty::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::DescribeAssetProperty::set_asset_id): <p>The ID of the asset.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAssetProperty::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::DescribeAssetProperty::set_property_id): <p>The ID of the asset property.</p>
     /// - On success, responds with [`DescribeAssetPropertyOutput`](crate::output::DescribeAssetPropertyOutput) with field(s):
     ///   - [`asset_id(Option<String>)`](crate::output::DescribeAssetPropertyOutput::asset_id): <p>The ID of the asset.</p>
     ///   - [`asset_name(Option<String>)`](crate::output::DescribeAssetPropertyOutput::asset_name): <p>The name of the asset.</p>
@@ -426,8 +426,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDashboard`](crate::client::fluent_builders::DescribeDashboard) operation.
     ///
-    /// - Takes [`DescribeDashboardInput`](crate::input::DescribeDashboardInput) with field(s):
-    ///   - [`dashboard_id(Option<String>)`](crate::input::DescribeDashboardInput::dashboard_id): <p>The ID of the dashboard.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDashboard::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::DescribeDashboard::set_dashboard_id): <p>The ID of the dashboard.</p>
     /// - On success, responds with [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput) with field(s):
     ///   - [`dashboard_id(Option<String>)`](crate::output::DescribeDashboardOutput::dashboard_id): <p>The ID of the dashboard.</p>
     ///   - [`dashboard_arn(Option<String>)`](crate::output::DescribeDashboardOutput::dashboard_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
@@ -443,7 +443,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDefaultEncryptionConfiguration`](crate::client::fluent_builders::DescribeDefaultEncryptionConfiguration) operation.
     ///
-    /// - Takes [`DescribeDefaultEncryptionConfigurationInput`](crate::input::DescribeDefaultEncryptionConfigurationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeDefaultEncryptionConfiguration::send) it.
 
     /// - On success, responds with [`DescribeDefaultEncryptionConfigurationOutput`](crate::output::DescribeDefaultEncryptionConfigurationOutput) with field(s):
     ///   - [`encryption_type(Option<EncryptionType>)`](crate::output::DescribeDefaultEncryptionConfigurationOutput::encryption_type): <p>The type of encryption used for the encryption configuration.</p>
@@ -457,8 +457,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeGateway`](crate::client::fluent_builders::DescribeGateway) operation.
     ///
-    /// - Takes [`DescribeGatewayInput`](crate::input::DescribeGatewayInput) with field(s):
-    ///   - [`gateway_id(Option<String>)`](crate::input::DescribeGatewayInput::gateway_id): <p>The ID of the gateway device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGateway::gateway_id) / [`set_gateway_id(Option<String>)`](crate::client::fluent_builders::DescribeGateway::set_gateway_id): <p>The ID of the gateway device.</p>
     /// - On success, responds with [`DescribeGatewayOutput`](crate::output::DescribeGatewayOutput) with field(s):
     ///   - [`gateway_id(Option<String>)`](crate::output::DescribeGatewayOutput::gateway_id): <p>The ID of the gateway device.</p>
     ///   - [`gateway_name(Option<String>)`](crate::output::DescribeGatewayOutput::gateway_name): <p>The name of the gateway.</p>
@@ -473,9 +473,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeGatewayCapabilityConfiguration`](crate::client::fluent_builders::DescribeGatewayCapabilityConfiguration) operation.
     ///
-    /// - Takes [`DescribeGatewayCapabilityConfigurationInput`](crate::input::DescribeGatewayCapabilityConfigurationInput) with field(s):
-    ///   - [`gateway_id(Option<String>)`](crate::input::DescribeGatewayCapabilityConfigurationInput::gateway_id): <p>The ID of the gateway that defines the capability configuration.</p>
-    ///   - [`capability_namespace(Option<String>)`](crate::input::DescribeGatewayCapabilityConfigurationInput::capability_namespace): <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayCapabilityConfiguration::gateway_id) / [`set_gateway_id(Option<String>)`](crate::client::fluent_builders::DescribeGatewayCapabilityConfiguration::set_gateway_id): <p>The ID of the gateway that defines the capability configuration.</p>
+    ///   - [`capability_namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayCapabilityConfiguration::capability_namespace) / [`set_capability_namespace(Option<String>)`](crate::client::fluent_builders::DescribeGatewayCapabilityConfiguration::set_capability_namespace): <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     /// - On success, responds with [`DescribeGatewayCapabilityConfigurationOutput`](crate::output::DescribeGatewayCapabilityConfigurationOutput) with field(s):
     ///   - [`gateway_id(Option<String>)`](crate::output::DescribeGatewayCapabilityConfigurationOutput::gateway_id): <p>The ID of the gateway that defines the capability configuration.</p>
     ///   - [`capability_namespace(Option<String>)`](crate::output::DescribeGatewayCapabilityConfigurationOutput::capability_namespace): <p>The namespace of the gateway capability.</p>
@@ -489,7 +489,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeLoggingOptions`](crate::client::fluent_builders::DescribeLoggingOptions) operation.
     ///
-    /// - Takes [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeLoggingOptions::send) it.
 
     /// - On success, responds with [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput) with field(s):
     ///   - [`logging_options(Option<LoggingOptions>)`](crate::output::DescribeLoggingOptionsOutput::logging_options): <p>The current logging options.</p>
@@ -499,8 +499,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribePortal`](crate::client::fluent_builders::DescribePortal) operation.
     ///
-    /// - Takes [`DescribePortalInput`](crate::input::DescribePortalInput) with field(s):
-    ///   - [`portal_id(Option<String>)`](crate::input::DescribePortalInput::portal_id): <p>The ID of the portal.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`portal_id(impl Into<String>)`](crate::client::fluent_builders::DescribePortal::portal_id) / [`set_portal_id(Option<String>)`](crate::client::fluent_builders::DescribePortal::set_portal_id): <p>The ID of the portal.</p>
     /// - On success, responds with [`DescribePortalOutput`](crate::output::DescribePortalOutput) with field(s):
     ///   - [`portal_id(Option<String>)`](crate::output::DescribePortalOutput::portal_id): <p>The ID of the portal.</p>
     ///   - [`portal_arn(Option<String>)`](crate::output::DescribePortalOutput::portal_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
@@ -523,8 +523,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeProject`](crate::client::fluent_builders::DescribeProject) operation.
     ///
-    /// - Takes [`DescribeProjectInput`](crate::input::DescribeProjectInput) with field(s):
-    ///   - [`project_id(Option<String>)`](crate::input::DescribeProjectInput::project_id): <p>The ID of the project.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProject::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::DescribeProject::set_project_id): <p>The ID of the project.</p>
     /// - On success, responds with [`DescribeProjectOutput`](crate::output::DescribeProjectOutput) with field(s):
     ///   - [`project_id(Option<String>)`](crate::output::DescribeProjectOutput::project_id): <p>The ID of the project.</p>
     ///   - [`project_arn(Option<String>)`](crate::output::DescribeProjectOutput::project_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
@@ -539,7 +539,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeStorageConfiguration`](crate::client::fluent_builders::DescribeStorageConfiguration) operation.
     ///
-    /// - Takes [`DescribeStorageConfigurationInput`](crate::input::DescribeStorageConfigurationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeStorageConfiguration::send) it.
 
     /// - On success, responds with [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput) with field(s):
     ///   - [`storage_type(Option<StorageType>)`](crate::output::DescribeStorageConfigurationOutput::storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
@@ -556,10 +556,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTimeSeries`](crate::client::fluent_builders::DescribeTimeSeries) operation.
     ///
-    /// - Takes [`DescribeTimeSeriesInput`](crate::input::DescribeTimeSeriesInput) with field(s):
-    ///   - [`alias(Option<String>)`](crate::input::DescribeTimeSeriesInput::alias): <p>The alias that identifies the time series.</p>
-    ///   - [`asset_id(Option<String>)`](crate::input::DescribeTimeSeriesInput::asset_id): <p>The ID of the asset in which the asset property was created.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::DescribeTimeSeriesInput::property_id): <p>The ID of the asset property.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::DescribeTimeSeries::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::DescribeTimeSeries::set_alias): <p>The alias that identifies the time series.</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTimeSeries::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::DescribeTimeSeries::set_asset_id): <p>The ID of the asset in which the asset property was created.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTimeSeries::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::DescribeTimeSeries::set_property_id): <p>The ID of the asset property.</p>
     /// - On success, responds with [`DescribeTimeSeriesOutput`](crate::output::DescribeTimeSeriesOutput) with field(s):
     ///   - [`asset_id(Option<String>)`](crate::output::DescribeTimeSeriesOutput::asset_id): <p>The ID of the asset in which the asset property was created.</p>
     ///   - [`property_id(Option<String>)`](crate::output::DescribeTimeSeriesOutput::property_id): <p>The ID of the asset property.</p>
@@ -575,11 +575,11 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateAssets`](crate::client::fluent_builders::DisassociateAssets) operation.
     ///
-    /// - Takes [`DisassociateAssetsInput`](crate::input::DisassociateAssetsInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::DisassociateAssetsInput::asset_id): <p>The ID of the parent asset from which to disassociate the child asset.</p>
-    ///   - [`hierarchy_id(Option<String>)`](crate::input::DisassociateAssetsInput::hierarchy_id): <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`child_asset_id(Option<String>)`](crate::input::DisassociateAssetsInput::child_asset_id): <p>The ID of the child asset to disassociate.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DisassociateAssetsInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateAssets::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::DisassociateAssets::set_asset_id): <p>The ID of the parent asset from which to disassociate the child asset.</p>
+    ///   - [`hierarchy_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateAssets::hierarchy_id) / [`set_hierarchy_id(Option<String>)`](crate::client::fluent_builders::DisassociateAssets::set_hierarchy_id): <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`child_asset_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateAssets::child_asset_id) / [`set_child_asset_id(Option<String>)`](crate::client::fluent_builders::DisassociateAssets::set_child_asset_id): <p>The ID of the child asset to disassociate.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DisassociateAssets::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DisassociateAssets::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DisassociateAssetsOutput`](crate::output::DisassociateAssetsOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateAssetsError>`](crate::error::DisassociateAssetsError)
@@ -588,11 +588,11 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateTimeSeriesFromAssetProperty`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty) operation.
     ///
-    /// - Takes [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput) with field(s):
-    ///   - [`alias(Option<String>)`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput::alias): <p>The alias that identifies the time series.</p>
-    ///   - [`asset_id(Option<String>)`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput::asset_id): <p>The ID of the asset in which the asset property was created.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput::property_id): <p>The ID of the asset property.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DisassociateTimeSeriesFromAssetPropertyInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty::set_alias): <p>The alias that identifies the time series.</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty::set_asset_id): <p>The ID of the asset in which the asset property was created.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty::set_property_id): <p>The ID of the asset property.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::output::DisassociateTimeSeriesFromAssetPropertyOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateTimeSeriesFromAssetPropertyError>`](crate::error::DisassociateTimeSeriesFromAssetPropertyError)
@@ -602,20 +602,20 @@ where
         fluent_builders::DisassociateTimeSeriesFromAssetProperty::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetAssetPropertyAggregates`](crate::client::fluent_builders::GetAssetPropertyAggregates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAssetPropertyAggregates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetAssetPropertyAggregates::into_paginator).
     ///
-    /// - Takes [`GetAssetPropertyAggregatesInput`](crate::input::GetAssetPropertyAggregatesInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::GetAssetPropertyAggregatesInput::asset_id): <p>The ID of the asset.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::GetAssetPropertyAggregatesInput::property_id): <p>The ID of the asset property.</p>
-    ///   - [`property_alias(Option<String>)`](crate::input::GetAssetPropertyAggregatesInput::property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`aggregate_types(Option<Vec<AggregateType>>)`](crate::input::GetAssetPropertyAggregatesInput::aggregate_types): <p>The data aggregating function.</p>
-    ///   - [`resolution(Option<String>)`](crate::input::GetAssetPropertyAggregatesInput::resolution): <p>The time interval over which to aggregate data.</p>
-    ///   - [`qualities(Option<Vec<Quality>>)`](crate::input::GetAssetPropertyAggregatesInput::qualities): <p>The quality by which to filter asset data.</p>
-    ///   - [`start_date(Option<DateTime>)`](crate::input::GetAssetPropertyAggregatesInput::start_date): <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    ///   - [`end_date(Option<DateTime>)`](crate::input::GetAssetPropertyAggregatesInput::end_date): <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    ///   - [`time_ordering(Option<TimeOrdering>)`](crate::input::GetAssetPropertyAggregatesInput::time_ordering): <p>The chronological sorting order of the requested information.</p>  <p>Default: <code>ASCENDING</code> </p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetAssetPropertyAggregatesInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetAssetPropertyAggregatesInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 100</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_asset_id): <p>The ID of the asset.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_property_id): <p>The ID of the asset property.</p>
+    ///   - [`property_alias(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::property_alias) / [`set_property_alias(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`aggregate_types(Vec<AggregateType>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::aggregate_types) / [`set_aggregate_types(Option<Vec<AggregateType>>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_aggregate_types): <p>The data aggregating function.</p>
+    ///   - [`resolution(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::resolution) / [`set_resolution(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_resolution): <p>The time interval over which to aggregate data.</p>
+    ///   - [`qualities(Vec<Quality>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::qualities) / [`set_qualities(Option<Vec<Quality>>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_qualities): <p>The quality by which to filter asset data.</p>
+    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::GetAssetPropertyAggregates::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_start_date): <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::GetAssetPropertyAggregates::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_end_date): <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    ///   - [`time_ordering(TimeOrdering)`](crate::client::fluent_builders::GetAssetPropertyAggregates::time_ordering) / [`set_time_ordering(Option<TimeOrdering>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_time_ordering): <p>The chronological sorting order of the requested information.</p>  <p>Default: <code>ASCENDING</code> </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetAssetPropertyAggregates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetAssetPropertyAggregates::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 100</p>
     /// - On success, responds with [`GetAssetPropertyAggregatesOutput`](crate::output::GetAssetPropertyAggregatesOutput) with field(s):
     ///   - [`aggregated_values(Option<Vec<AggregatedValue>>)`](crate::output::GetAssetPropertyAggregatesOutput::aggregated_values): <p>The requested aggregated values.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetAssetPropertyAggregatesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -627,10 +627,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetAssetPropertyValue`](crate::client::fluent_builders::GetAssetPropertyValue) operation.
     ///
-    /// - Takes [`GetAssetPropertyValueInput`](crate::input::GetAssetPropertyValueInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::GetAssetPropertyValueInput::asset_id): <p>The ID of the asset.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::GetAssetPropertyValueInput::property_id): <p>The ID of the asset property.</p>
-    ///   - [`property_alias(Option<String>)`](crate::input::GetAssetPropertyValueInput::property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyValue::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyValue::set_asset_id): <p>The ID of the asset.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyValue::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyValue::set_property_id): <p>The ID of the asset property.</p>
+    ///   - [`property_alias(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyValue::property_alias) / [`set_property_alias(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyValue::set_property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On success, responds with [`GetAssetPropertyValueOutput`](crate::output::GetAssetPropertyValueOutput) with field(s):
     ///   - [`property_value(Option<AssetPropertyValue>)`](crate::output::GetAssetPropertyValueOutput::property_value): <p>The current asset property value.</p>
     /// - On failure, responds with [`SdkError<GetAssetPropertyValueError>`](crate::error::GetAssetPropertyValueError)
@@ -638,18 +638,18 @@ where
         fluent_builders::GetAssetPropertyValue::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetAssetPropertyValueHistory`](crate::client::fluent_builders::GetAssetPropertyValueHistory) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAssetPropertyValueHistory::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetAssetPropertyValueHistory::into_paginator).
     ///
-    /// - Takes [`GetAssetPropertyValueHistoryInput`](crate::input::GetAssetPropertyValueHistoryInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::GetAssetPropertyValueHistoryInput::asset_id): <p>The ID of the asset.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::GetAssetPropertyValueHistoryInput::property_id): <p>The ID of the asset property.</p>
-    ///   - [`property_alias(Option<String>)`](crate::input::GetAssetPropertyValueHistoryInput::property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`start_date(Option<DateTime>)`](crate::input::GetAssetPropertyValueHistoryInput::start_date): <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    ///   - [`end_date(Option<DateTime>)`](crate::input::GetAssetPropertyValueHistoryInput::end_date): <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    ///   - [`qualities(Option<Vec<Quality>>)`](crate::input::GetAssetPropertyValueHistoryInput::qualities): <p>The quality by which to filter asset data.</p>
-    ///   - [`time_ordering(Option<TimeOrdering>)`](crate::input::GetAssetPropertyValueHistoryInput::time_ordering): <p>The chronological sorting order of the requested information.</p>  <p>Default: <code>ASCENDING</code> </p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetAssetPropertyValueHistoryInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetAssetPropertyValueHistoryInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 100</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::set_asset_id): <p>The ID of the asset.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::set_property_id): <p>The ID of the asset property.</p>
+    ///   - [`property_alias(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::property_alias) / [`set_property_alias(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::set_property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::set_start_date): <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::set_end_date): <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    ///   - [`qualities(Vec<Quality>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::qualities) / [`set_qualities(Option<Vec<Quality>>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::set_qualities): <p>The quality by which to filter asset data.</p>
+    ///   - [`time_ordering(TimeOrdering)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::time_ordering) / [`set_time_ordering(Option<TimeOrdering>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::set_time_ordering): <p>The chronological sorting order of the requested information.</p>  <p>Default: <code>ASCENDING</code> </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetAssetPropertyValueHistory::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 100</p>
     /// - On success, responds with [`GetAssetPropertyValueHistoryOutput`](crate::output::GetAssetPropertyValueHistoryOutput) with field(s):
     ///   - [`asset_property_value_history(Option<Vec<AssetPropertyValue>>)`](crate::output::GetAssetPropertyValueHistoryOutput::asset_property_value_history): <p>The asset property's value history.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetAssetPropertyValueHistoryOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -660,22 +660,22 @@ where
         fluent_builders::GetAssetPropertyValueHistory::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetInterpolatedAssetPropertyValues`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::into_paginator).
     ///
-    /// - Takes [`GetInterpolatedAssetPropertyValuesInput`](crate::input::GetInterpolatedAssetPropertyValuesInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::asset_id): <p>The ID of the asset.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::property_id): <p>The ID of the asset property.</p>
-    ///   - [`property_alias(Option<String>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`start_time_in_seconds(Option<i64>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::start_time_in_seconds): <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
-    ///   - [`start_time_offset_in_nanos(Option<i32>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::start_time_offset_in_nanos): <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
-    ///   - [`end_time_in_seconds(Option<i64>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::end_time_in_seconds): <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
-    ///   - [`end_time_offset_in_nanos(Option<i32>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::end_time_offset_in_nanos): <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
-    ///   - [`quality(Option<Quality>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::quality): <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
-    ///   - [`interval_in_seconds(Option<i64>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::interval_in_seconds): <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::max_results): <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::type): <p>The interpolation type.</p>  <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p>  <ul>   <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>   <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>  </ul>
-    ///   - [`interval_window_in_seconds(Option<i64>)`](crate::input::GetInterpolatedAssetPropertyValuesInput::interval_window_in_seconds): <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note>   <ul>    <li> <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>    <li> <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an interpolated value for the interval. This indicates that there's a gap in the ingested data points.</p> </li>   </ul>  </note>  <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_asset_id): <p>The ID of the asset.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_property_id): <p>The ID of the asset property.</p>
+    ///   - [`property_alias(impl Into<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::property_alias) / [`set_property_alias(Option<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`start_time_in_seconds(i64)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::start_time_in_seconds) / [`set_start_time_in_seconds(Option<i64>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_start_time_in_seconds): <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
+    ///   - [`start_time_offset_in_nanos(i32)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::start_time_offset_in_nanos) / [`set_start_time_offset_in_nanos(Option<i32>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_start_time_offset_in_nanos): <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
+    ///   - [`end_time_in_seconds(i64)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::end_time_in_seconds) / [`set_end_time_in_seconds(Option<i64>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_end_time_in_seconds): <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
+    ///   - [`end_time_offset_in_nanos(i32)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::end_time_offset_in_nanos) / [`set_end_time_offset_in_nanos(Option<i32>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_end_time_offset_in_nanos): <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
+    ///   - [`quality(Quality)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::quality) / [`set_quality(Option<Quality>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_quality): <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
+    ///   - [`interval_in_seconds(i64)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::interval_in_seconds) / [`set_interval_in_seconds(Option<i64>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_interval_in_seconds): <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_max_results): <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
+    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::r#type) / [`set_type(Option<String>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_type): <p>The interpolation type.</p>  <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p>  <ul>   <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>   <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>  </ul>
+    ///   - [`interval_window_in_seconds(i64)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::interval_window_in_seconds) / [`set_interval_window_in_seconds(Option<i64>)`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::set_interval_window_in_seconds): <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note>   <ul>    <li> <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>    <li> <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an interpolated value for the interval. This indicates that there's a gap in the ingested data points.</p> </li>   </ul>  </note>  <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
     /// - On success, responds with [`GetInterpolatedAssetPropertyValuesOutput`](crate::output::GetInterpolatedAssetPropertyValuesOutput) with field(s):
     ///   - [`interpolated_asset_property_values(Option<Vec<InterpolatedAssetPropertyValue>>)`](crate::output::GetInterpolatedAssetPropertyValuesOutput::interpolated_asset_property_values): <p>The requested interpolated values.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetInterpolatedAssetPropertyValuesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -686,16 +686,16 @@ where
         fluent_builders::GetInterpolatedAssetPropertyValues::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccessPolicies`](crate::client::fluent_builders::ListAccessPolicies) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccessPolicies::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessPolicies::into_paginator).
     ///
-    /// - Takes [`ListAccessPoliciesInput`](crate::input::ListAccessPoliciesInput) with field(s):
-    ///   - [`identity_type(Option<IdentityType>)`](crate::input::ListAccessPoliciesInput::identity_type): <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
-    ///   - [`identity_id(Option<String>)`](crate::input::ListAccessPoliciesInput::identity_id): <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
-    ///   - [`resource_type(Option<ResourceType>)`](crate::input::ListAccessPoliciesInput::resource_type): <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
-    ///   - [`resource_id(Option<String>)`](crate::input::ListAccessPoliciesInput::resource_id): <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
-    ///   - [`iam_arn(Option<String>)`](crate::input::ListAccessPoliciesInput::iam_arn): <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccessPoliciesInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccessPoliciesInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    /// - The fluent builder is configurable:
+    ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::ListAccessPolicies::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::ListAccessPolicies::set_identity_type): <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPolicies::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::ListAccessPolicies::set_identity_id): <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListAccessPolicies::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListAccessPolicies::set_resource_type): <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPolicies::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ListAccessPolicies::set_resource_id): <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
+    ///   - [`iam_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccessPolicies::iam_arn) / [`set_iam_arn(Option<String>)`](crate::client::fluent_builders::ListAccessPolicies::set_iam_arn): <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessPolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessPolicies::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessPolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccessPolicies::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListAccessPoliciesOutput`](crate::output::ListAccessPoliciesOutput) with field(s):
     ///   - [`access_policy_summaries(Option<Vec<AccessPolicySummary>>)`](crate::output::ListAccessPoliciesOutput::access_policy_summaries): <p>A list that summarizes each access policy.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccessPoliciesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -704,11 +704,11 @@ where
         fluent_builders::ListAccessPolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssetModels`](crate::client::fluent_builders::ListAssetModels) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssetModels::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssetModels::into_paginator).
     ///
-    /// - Takes [`ListAssetModelsInput`](crate::input::ListAssetModelsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssetModelsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssetModelsInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssetModels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssetModels::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssetModels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssetModels::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListAssetModelsOutput`](crate::output::ListAssetModelsOutput) with field(s):
     ///   - [`asset_model_summaries(Option<Vec<AssetModelSummary>>)`](crate::output::ListAssetModelsOutput::asset_model_summaries): <p>A list that summarizes each asset model.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssetModelsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -717,13 +717,13 @@ where
         fluent_builders::ListAssetModels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssetRelationships`](crate::client::fluent_builders::ListAssetRelationships) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssetRelationships::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssetRelationships::into_paginator).
     ///
-    /// - Takes [`ListAssetRelationshipsInput`](crate::input::ListAssetRelationshipsInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::ListAssetRelationshipsInput::asset_id): <p>The ID of the asset.</p>
-    ///   - [`traversal_type(Option<TraversalType>)`](crate::input::ListAssetRelationshipsInput::traversal_type): <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>  <ul>   <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>  </ul>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssetRelationshipsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssetRelationshipsInput::max_results): <p>The maximum number of results to return for each paginated request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::ListAssetRelationships::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::ListAssetRelationships::set_asset_id): <p>The ID of the asset.</p>
+    ///   - [`traversal_type(TraversalType)`](crate::client::fluent_builders::ListAssetRelationships::traversal_type) / [`set_traversal_type(Option<TraversalType>)`](crate::client::fluent_builders::ListAssetRelationships::set_traversal_type): <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>  <ul>   <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssetRelationships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssetRelationships::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssetRelationships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssetRelationships::set_max_results): <p>The maximum number of results to return for each paginated request.</p>
     /// - On success, responds with [`ListAssetRelationshipsOutput`](crate::output::ListAssetRelationshipsOutput) with field(s):
     ///   - [`asset_relationship_summaries(Option<Vec<AssetRelationshipSummary>>)`](crate::output::ListAssetRelationshipsOutput::asset_relationship_summaries): <p>A list that summarizes each asset relationship.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssetRelationshipsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -732,13 +732,13 @@ where
         fluent_builders::ListAssetRelationships::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssets`](crate::client::fluent_builders::ListAssets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssets::into_paginator).
     ///
-    /// - Takes [`ListAssetsInput`](crate::input::ListAssetsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssetsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssetsInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
-    ///   - [`asset_model_id(Option<String>)`](crate::input::ListAssetsInput::asset_model_id): <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
-    ///   - [`filter(Option<ListAssetsFilter>)`](crate::input::ListAssetsInput::filter): <p>The filter for the requested list of assets. Choose one of the following options:</p>  <ul>   <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>   <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>  </ul>  <p>Default: <code>ALL</code> </p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssets::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssets::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    ///   - [`asset_model_id(impl Into<String>)`](crate::client::fluent_builders::ListAssets::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::client::fluent_builders::ListAssets::set_asset_model_id): <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    ///   - [`filter(ListAssetsFilter)`](crate::client::fluent_builders::ListAssets::filter) / [`set_filter(Option<ListAssetsFilter>)`](crate::client::fluent_builders::ListAssets::set_filter): <p>The filter for the requested list of assets. Choose one of the following options:</p>  <ul>   <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>   <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>  </ul>  <p>Default: <code>ALL</code> </p>
     /// - On success, responds with [`ListAssetsOutput`](crate::output::ListAssetsOutput) with field(s):
     ///   - [`asset_summaries(Option<Vec<AssetSummary>>)`](crate::output::ListAssetsOutput::asset_summaries): <p>A list that summarizes each asset.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssetsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -747,14 +747,14 @@ where
         fluent_builders::ListAssets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssociatedAssets`](crate::client::fluent_builders::ListAssociatedAssets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedAssets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedAssets::into_paginator).
     ///
-    /// - Takes [`ListAssociatedAssetsInput`](crate::input::ListAssociatedAssetsInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::ListAssociatedAssetsInput::asset_id): <p>The ID of the asset to query.</p>
-    ///   - [`hierarchy_id(Option<String>)`](crate::input::ListAssociatedAssetsInput::hierarchy_id): <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`traversal_direction(Option<TraversalDirection>)`](crate::input::ListAssociatedAssetsInput::traversal_direction): <p>The direction to list associated assets. Choose one of the following options:</p>  <ul>   <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>   <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>  </ul>  <p>Default: <code>CHILD</code> </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssociatedAssetsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssociatedAssetsInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedAssets::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::ListAssociatedAssets::set_asset_id): <p>The ID of the asset to query.</p>
+    ///   - [`hierarchy_id(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedAssets::hierarchy_id) / [`set_hierarchy_id(Option<String>)`](crate::client::fluent_builders::ListAssociatedAssets::set_hierarchy_id): <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`traversal_direction(TraversalDirection)`](crate::client::fluent_builders::ListAssociatedAssets::traversal_direction) / [`set_traversal_direction(Option<TraversalDirection>)`](crate::client::fluent_builders::ListAssociatedAssets::set_traversal_direction): <p>The direction to list associated assets. Choose one of the following options:</p>  <ul>   <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>   <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>  </ul>  <p>Default: <code>CHILD</code> </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedAssets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssociatedAssets::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssociatedAssets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssociatedAssets::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListAssociatedAssetsOutput`](crate::output::ListAssociatedAssetsOutput) with field(s):
     ///   - [`asset_summaries(Option<Vec<AssociatedAssetsSummary>>)`](crate::output::ListAssociatedAssetsOutput::asset_summaries): <p>A list that summarizes the associated assets.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssociatedAssetsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -763,12 +763,12 @@ where
         fluent_builders::ListAssociatedAssets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDashboards`](crate::client::fluent_builders::ListDashboards) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDashboards::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDashboards::into_paginator).
     ///
-    /// - Takes [`ListDashboardsInput`](crate::input::ListDashboardsInput) with field(s):
-    ///   - [`project_id(Option<String>)`](crate::input::ListDashboardsInput::project_id): <p>The ID of the project.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDashboardsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDashboardsInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::ListDashboards::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::ListDashboards::set_project_id): <p>The ID of the project.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDashboards::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDashboards::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDashboards::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDashboards::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListDashboardsOutput`](crate::output::ListDashboardsOutput) with field(s):
     ///   - [`dashboard_summaries(Option<Vec<DashboardSummary>>)`](crate::output::ListDashboardsOutput::dashboard_summaries): <p>A list that summarizes each dashboard in the project.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDashboardsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -777,11 +777,11 @@ where
         fluent_builders::ListDashboards::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListGateways`](crate::client::fluent_builders::ListGateways) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
     ///
-    /// - Takes [`ListGatewaysInput`](crate::input::ListGatewaysInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListGatewaysInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListGatewaysInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGateways::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGateways::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGateways::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGateways::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListGatewaysOutput`](crate::output::ListGatewaysOutput) with field(s):
     ///   - [`gateway_summaries(Option<Vec<GatewaySummary>>)`](crate::output::ListGatewaysOutput::gateway_summaries): <p>A list that summarizes each gateway.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGatewaysOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -790,11 +790,11 @@ where
         fluent_builders::ListGateways::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPortals`](crate::client::fluent_builders::ListPortals) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPortals::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPortals::into_paginator).
     ///
-    /// - Takes [`ListPortalsInput`](crate::input::ListPortalsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListPortalsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPortalsInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPortals::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPortals::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPortals::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPortals::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListPortalsOutput`](crate::output::ListPortalsOutput) with field(s):
     ///   - [`portal_summaries(Option<Vec<PortalSummary>>)`](crate::output::ListPortalsOutput::portal_summaries): <p>A list that summarizes each portal.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPortalsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -803,12 +803,12 @@ where
         fluent_builders::ListPortals::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProjectAssets`](crate::client::fluent_builders::ListProjectAssets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjectAssets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjectAssets::into_paginator).
     ///
-    /// - Takes [`ListProjectAssetsInput`](crate::input::ListProjectAssetsInput) with field(s):
-    ///   - [`project_id(Option<String>)`](crate::input::ListProjectAssetsInput::project_id): <p>The ID of the project.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListProjectAssetsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProjectAssetsInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::ListProjectAssets::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::ListProjectAssets::set_project_id): <p>The ID of the project.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProjectAssets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProjectAssets::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProjectAssets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProjectAssets::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListProjectAssetsOutput`](crate::output::ListProjectAssetsOutput) with field(s):
     ///   - [`asset_ids(Option<Vec<String>>)`](crate::output::ListProjectAssetsOutput::asset_ids): <p>A list that contains the IDs of each asset associated with the project.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProjectAssetsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -817,12 +817,12 @@ where
         fluent_builders::ListProjectAssets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     ///
-    /// - Takes [`ListProjectsInput`](crate::input::ListProjectsInput) with field(s):
-    ///   - [`portal_id(Option<String>)`](crate::input::ListProjectsInput::portal_id): <p>The ID of the portal.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListProjectsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProjectsInput::max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
+    /// - The fluent builder is configurable:
+    ///   - [`portal_id(impl Into<String>)`](crate::client::fluent_builders::ListProjects::portal_id) / [`set_portal_id(Option<String>)`](crate::client::fluent_builders::ListProjects::set_portal_id): <p>The ID of the portal.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProjects::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProjects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProjects::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
     ///   - [`project_summaries(Option<Vec<ProjectSummary>>)`](crate::output::ListProjectsOutput::project_summaries): <p>A list that summarizes each project in the portal.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -832,8 +832,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -841,14 +841,14 @@ where
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTimeSeries`](crate::client::fluent_builders::ListTimeSeries) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTimeSeries::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTimeSeries::into_paginator).
     ///
-    /// - Takes [`ListTimeSeriesInput`](crate::input::ListTimeSeriesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListTimeSeriesInput::next_token): <p>The token to be used for the next set of paginated results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTimeSeriesInput::max_results): <p>The maximum number of results to return for each paginated request.</p>
-    ///   - [`asset_id(Option<String>)`](crate::input::ListTimeSeriesInput::asset_id): <p>The ID of the asset in which the asset property was created.</p>
-    ///   - [`alias_prefix(Option<String>)`](crate::input::ListTimeSeriesInput::alias_prefix): <p>The alias prefix of the time series.</p>
-    ///   - [`time_series_type(Option<ListTimeSeriesType>)`](crate::input::ListTimeSeriesInput::time_series_type): <p>The type of the time series. The time series type can be one of the following values:</p>  <ul>   <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>   <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTimeSeries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTimeSeries::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTimeSeries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTimeSeries::set_max_results): <p>The maximum number of results to return for each paginated request.</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::ListTimeSeries::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::ListTimeSeries::set_asset_id): <p>The ID of the asset in which the asset property was created.</p>
+    ///   - [`alias_prefix(impl Into<String>)`](crate::client::fluent_builders::ListTimeSeries::alias_prefix) / [`set_alias_prefix(Option<String>)`](crate::client::fluent_builders::ListTimeSeries::set_alias_prefix): <p>The alias prefix of the time series.</p>
+    ///   - [`time_series_type(ListTimeSeriesType)`](crate::client::fluent_builders::ListTimeSeries::time_series_type) / [`set_time_series_type(Option<ListTimeSeriesType>)`](crate::client::fluent_builders::ListTimeSeries::set_time_series_type): <p>The type of the time series. The time series type can be one of the following values:</p>  <ul>   <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>   <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>  </ul>
     /// - On success, responds with [`ListTimeSeriesOutput`](crate::output::ListTimeSeriesOutput) with field(s):
     ///   - [`time_series_summaries(Option<Vec<TimeSeriesSummary>>)`](crate::output::ListTimeSeriesOutput::time_series_summaries): <p>One or more time series summaries to list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTimeSeriesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -858,9 +858,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutDefaultEncryptionConfiguration`](crate::client::fluent_builders::PutDefaultEncryptionConfiguration) operation.
     ///
-    /// - Takes [`PutDefaultEncryptionConfigurationInput`](crate::input::PutDefaultEncryptionConfigurationInput) with field(s):
-    ///   - [`encryption_type(Option<EncryptionType>)`](crate::input::PutDefaultEncryptionConfigurationInput::encryption_type): <p>The type of encryption used for the encryption configuration.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::input::PutDefaultEncryptionConfigurationInput::kms_key_id): <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`encryption_type(EncryptionType)`](crate::client::fluent_builders::PutDefaultEncryptionConfiguration::encryption_type) / [`set_encryption_type(Option<EncryptionType>)`](crate::client::fluent_builders::PutDefaultEncryptionConfiguration::set_encryption_type): <p>The type of encryption used for the encryption configuration.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::PutDefaultEncryptionConfiguration::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::PutDefaultEncryptionConfiguration::set_kms_key_id): <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     /// - On success, responds with [`PutDefaultEncryptionConfigurationOutput`](crate::output::PutDefaultEncryptionConfigurationOutput) with field(s):
     ///   - [`encryption_type(Option<EncryptionType>)`](crate::output::PutDefaultEncryptionConfigurationOutput::encryption_type): <p>The type of encryption used for the encryption configuration.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::output::PutDefaultEncryptionConfigurationOutput::kms_key_arn): <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
@@ -873,8 +873,8 @@ where
     }
     /// Constructs a fluent builder for the [`PutLoggingOptions`](crate::client::fluent_builders::PutLoggingOptions) operation.
     ///
-    /// - Takes [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput) with field(s):
-    ///   - [`logging_options(Option<LoggingOptions>)`](crate::input::PutLoggingOptionsInput::logging_options): <p>The logging options to set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`logging_options(LoggingOptions)`](crate::client::fluent_builders::PutLoggingOptions::logging_options) / [`set_logging_options(Option<LoggingOptions>)`](crate::client::fluent_builders::PutLoggingOptions::set_logging_options): <p>The logging options to set.</p>
     /// - On success, responds with [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput)
 
     /// - On failure, responds with [`SdkError<PutLoggingOptionsError>`](crate::error::PutLoggingOptionsError)
@@ -883,11 +883,11 @@ where
     }
     /// Constructs a fluent builder for the [`PutStorageConfiguration`](crate::client::fluent_builders::PutStorageConfiguration) operation.
     ///
-    /// - Takes [`PutStorageConfigurationInput`](crate::input::PutStorageConfigurationInput) with field(s):
-    ///   - [`storage_type(Option<StorageType>)`](crate::input::PutStorageConfigurationInput::storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
-    ///   - [`multi_layer_storage(Option<MultiLayerStorage>)`](crate::input::PutStorageConfigurationInput::multi_layer_storage): <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
-    ///   - [`disassociated_data_storage(Option<DisassociatedDataStorageState>)`](crate::input::PutStorageConfigurationInput::disassociated_data_storage): <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>  <ul>   <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>     <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>    </important> </li>   <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::input::PutStorageConfigurationInput::retention_period): <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`storage_type(StorageType)`](crate::client::fluent_builders::PutStorageConfiguration::storage_type) / [`set_storage_type(Option<StorageType>)`](crate::client::fluent_builders::PutStorageConfiguration::set_storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
+    ///   - [`multi_layer_storage(MultiLayerStorage)`](crate::client::fluent_builders::PutStorageConfiguration::multi_layer_storage) / [`set_multi_layer_storage(Option<MultiLayerStorage>)`](crate::client::fluent_builders::PutStorageConfiguration::set_multi_layer_storage): <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
+    ///   - [`disassociated_data_storage(DisassociatedDataStorageState)`](crate::client::fluent_builders::PutStorageConfiguration::disassociated_data_storage) / [`set_disassociated_data_storage(Option<DisassociatedDataStorageState>)`](crate::client::fluent_builders::PutStorageConfiguration::set_disassociated_data_storage): <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>  <ul>   <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>     <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>    </important> </li>   <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`retention_period(RetentionPeriod)`](crate::client::fluent_builders::PutStorageConfiguration::retention_period) / [`set_retention_period(Option<RetentionPeriod>)`](crate::client::fluent_builders::PutStorageConfiguration::set_retention_period): <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     /// - On success, responds with [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput) with field(s):
     ///   - [`storage_type(Option<StorageType>)`](crate::output::PutStorageConfigurationOutput::storage_type): <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>  <ul>   <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>   <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>  </ul>
     ///   - [`multi_layer_storage(Option<MultiLayerStorage>)`](crate::output::PutStorageConfigurationOutput::multi_layer_storage): <p>Contains information about the storage destination.</p>
@@ -900,9 +900,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -911,9 +911,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of keys for tags to remove from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of keys for tags to remove from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -922,12 +922,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAccessPolicy`](crate::client::fluent_builders::UpdateAccessPolicy) operation.
     ///
-    /// - Takes [`UpdateAccessPolicyInput`](crate::input::UpdateAccessPolicyInput) with field(s):
-    ///   - [`access_policy_id(Option<String>)`](crate::input::UpdateAccessPolicyInput::access_policy_id): <p>The ID of the access policy.</p>
-    ///   - [`access_policy_identity(Option<Identity>)`](crate::input::UpdateAccessPolicyInput::access_policy_identity): <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
-    ///   - [`access_policy_resource(Option<Resource>)`](crate::input::UpdateAccessPolicyInput::access_policy_resource): <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-    ///   - [`access_policy_permission(Option<Permission>)`](crate::input::UpdateAccessPolicyInput::access_policy_permission): <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateAccessPolicyInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`access_policy_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::access_policy_id) / [`set_access_policy_id(Option<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_access_policy_id): <p>The ID of the access policy.</p>
+    ///   - [`access_policy_identity(Identity)`](crate::client::fluent_builders::UpdateAccessPolicy::access_policy_identity) / [`set_access_policy_identity(Option<Identity>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_access_policy_identity): <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    ///   - [`access_policy_resource(Resource)`](crate::client::fluent_builders::UpdateAccessPolicy::access_policy_resource) / [`set_access_policy_resource(Option<Resource>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_access_policy_resource): <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    ///   - [`access_policy_permission(Permission)`](crate::client::fluent_builders::UpdateAccessPolicy::access_policy_permission) / [`set_access_policy_permission(Option<Permission>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_access_policy_permission): <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateAccessPolicyOutput`](crate::output::UpdateAccessPolicyOutput)
 
     /// - On failure, responds with [`SdkError<UpdateAccessPolicyError>`](crate::error::UpdateAccessPolicyError)
@@ -936,10 +936,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAsset`](crate::client::fluent_builders::UpdateAsset) operation.
     ///
-    /// - Takes [`UpdateAssetInput`](crate::input::UpdateAssetInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::UpdateAssetInput::asset_id): <p>The ID of the asset to update.</p>
-    ///   - [`asset_name(Option<String>)`](crate::input::UpdateAssetInput::asset_name): <p>A unique, friendly name for the asset.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateAssetInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_id): <p>The ID of the asset to update.</p>
+    ///   - [`asset_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_name) / [`set_asset_name(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_name): <p>A unique, friendly name for the asset.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateAssetOutput`](crate::output::UpdateAssetOutput) with field(s):
     ///   - [`asset_status(Option<AssetStatus>)`](crate::output::UpdateAssetOutput::asset_status): <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<UpdateAssetError>`](crate::error::UpdateAssetError)
@@ -948,14 +948,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAssetModel`](crate::client::fluent_builders::UpdateAssetModel) operation.
     ///
-    /// - Takes [`UpdateAssetModelInput`](crate::input::UpdateAssetModelInput) with field(s):
-    ///   - [`asset_model_id(Option<String>)`](crate::input::UpdateAssetModelInput::asset_model_id): <p>The ID of the asset model to update.</p>
-    ///   - [`asset_model_name(Option<String>)`](crate::input::UpdateAssetModelInput::asset_model_name): <p>A unique, friendly name for the asset model.</p>
-    ///   - [`asset_model_description(Option<String>)`](crate::input::UpdateAssetModelInput::asset_model_description): <p>A description for the asset model.</p>
-    ///   - [`asset_model_properties(Option<Vec<AssetModelProperty>>)`](crate::input::UpdateAssetModelInput::asset_model_properties): <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`asset_model_hierarchies(Option<Vec<AssetModelHierarchy>>)`](crate::input::UpdateAssetModelInput::asset_model_hierarchies): <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`asset_model_composite_models(Option<Vec<AssetModelCompositeModel>>)`](crate::input::UpdateAssetModelInput::asset_model_composite_models): <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateAssetModelInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_model_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetModel::asset_model_id) / [`set_asset_model_id(Option<String>)`](crate::client::fluent_builders::UpdateAssetModel::set_asset_model_id): <p>The ID of the asset model to update.</p>
+    ///   - [`asset_model_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetModel::asset_model_name) / [`set_asset_model_name(Option<String>)`](crate::client::fluent_builders::UpdateAssetModel::set_asset_model_name): <p>A unique, friendly name for the asset model.</p>
+    ///   - [`asset_model_description(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetModel::asset_model_description) / [`set_asset_model_description(Option<String>)`](crate::client::fluent_builders::UpdateAssetModel::set_asset_model_description): <p>A description for the asset model.</p>
+    ///   - [`asset_model_properties(Vec<AssetModelProperty>)`](crate::client::fluent_builders::UpdateAssetModel::asset_model_properties) / [`set_asset_model_properties(Option<Vec<AssetModelProperty>>)`](crate::client::fluent_builders::UpdateAssetModel::set_asset_model_properties): <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`asset_model_hierarchies(Vec<AssetModelHierarchy>)`](crate::client::fluent_builders::UpdateAssetModel::asset_model_hierarchies) / [`set_asset_model_hierarchies(Option<Vec<AssetModelHierarchy>>)`](crate::client::fluent_builders::UpdateAssetModel::set_asset_model_hierarchies): <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`asset_model_composite_models(Vec<AssetModelCompositeModel>)`](crate::client::fluent_builders::UpdateAssetModel::asset_model_composite_models) / [`set_asset_model_composite_models(Option<Vec<AssetModelCompositeModel>>)`](crate::client::fluent_builders::UpdateAssetModel::set_asset_model_composite_models): <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetModel::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateAssetModel::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateAssetModelOutput`](crate::output::UpdateAssetModelOutput) with field(s):
     ///   - [`asset_model_status(Option<AssetModelStatus>)`](crate::output::UpdateAssetModelOutput::asset_model_status): <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<UpdateAssetModelError>`](crate::error::UpdateAssetModelError)
@@ -964,12 +964,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAssetProperty`](crate::client::fluent_builders::UpdateAssetProperty) operation.
     ///
-    /// - Takes [`UpdateAssetPropertyInput`](crate::input::UpdateAssetPropertyInput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::input::UpdateAssetPropertyInput::asset_id): <p>The ID of the asset to be updated.</p>
-    ///   - [`property_id(Option<String>)`](crate::input::UpdateAssetPropertyInput::property_id): <p>The ID of the asset property to be updated.</p>
-    ///   - [`property_alias(Option<String>)`](crate::input::UpdateAssetPropertyInput::property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>If you omit this parameter, the alias is removed from the property.</p>
-    ///   - [`property_notification_state(Option<PropertyNotificationState>)`](crate::input::UpdateAssetPropertyInput::property_notification_state): <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateAssetPropertyInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetProperty::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::UpdateAssetProperty::set_asset_id): <p>The ID of the asset to be updated.</p>
+    ///   - [`property_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetProperty::property_id) / [`set_property_id(Option<String>)`](crate::client::fluent_builders::UpdateAssetProperty::set_property_id): <p>The ID of the asset property to be updated.</p>
+    ///   - [`property_alias(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetProperty::property_alias) / [`set_property_alias(Option<String>)`](crate::client::fluent_builders::UpdateAssetProperty::set_property_alias): <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>If you omit this parameter, the alias is removed from the property.</p>
+    ///   - [`property_notification_state(PropertyNotificationState)`](crate::client::fluent_builders::UpdateAssetProperty::property_notification_state) / [`set_property_notification_state(Option<PropertyNotificationState>)`](crate::client::fluent_builders::UpdateAssetProperty::set_property_notification_state): <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAssetProperty::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateAssetProperty::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateAssetPropertyOutput`](crate::output::UpdateAssetPropertyOutput)
 
     /// - On failure, responds with [`SdkError<UpdateAssetPropertyError>`](crate::error::UpdateAssetPropertyError)
@@ -978,12 +978,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDashboard`](crate::client::fluent_builders::UpdateDashboard) operation.
     ///
-    /// - Takes [`UpdateDashboardInput`](crate::input::UpdateDashboardInput) with field(s):
-    ///   - [`dashboard_id(Option<String>)`](crate::input::UpdateDashboardInput::dashboard_id): <p>The ID of the dashboard to update.</p>
-    ///   - [`dashboard_name(Option<String>)`](crate::input::UpdateDashboardInput::dashboard_name): <p>A new friendly name for the dashboard.</p>
-    ///   - [`dashboard_description(Option<String>)`](crate::input::UpdateDashboardInput::dashboard_description): <p>A new description for the dashboard.</p>
-    ///   - [`dashboard_definition(Option<String>)`](crate::input::UpdateDashboardInput::dashboard_definition): <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateDashboardInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_dashboard_id): <p>The ID of the dashboard to update.</p>
+    ///   - [`dashboard_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::dashboard_name) / [`set_dashboard_name(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_dashboard_name): <p>A new friendly name for the dashboard.</p>
+    ///   - [`dashboard_description(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::dashboard_description) / [`set_dashboard_description(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_dashboard_description): <p>A new description for the dashboard.</p>
+    ///   - [`dashboard_definition(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::dashboard_definition) / [`set_dashboard_definition(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_dashboard_definition): <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDashboardError>`](crate::error::UpdateDashboardError)
@@ -992,9 +992,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateGateway`](crate::client::fluent_builders::UpdateGateway) operation.
     ///
-    /// - Takes [`UpdateGatewayInput`](crate::input::UpdateGatewayInput) with field(s):
-    ///   - [`gateway_id(Option<String>)`](crate::input::UpdateGatewayInput::gateway_id): <p>The ID of the gateway to update.</p>
-    ///   - [`gateway_name(Option<String>)`](crate::input::UpdateGatewayInput::gateway_name): <p>A unique, friendly name for the gateway.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGateway::gateway_id) / [`set_gateway_id(Option<String>)`](crate::client::fluent_builders::UpdateGateway::set_gateway_id): <p>The ID of the gateway to update.</p>
+    ///   - [`gateway_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGateway::gateway_name) / [`set_gateway_name(Option<String>)`](crate::client::fluent_builders::UpdateGateway::set_gateway_name): <p>A unique, friendly name for the gateway.</p>
     /// - On success, responds with [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput)
 
     /// - On failure, responds with [`SdkError<UpdateGatewayError>`](crate::error::UpdateGatewayError)
@@ -1003,10 +1003,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateGatewayCapabilityConfiguration`](crate::client::fluent_builders::UpdateGatewayCapabilityConfiguration) operation.
     ///
-    /// - Takes [`UpdateGatewayCapabilityConfigurationInput`](crate::input::UpdateGatewayCapabilityConfigurationInput) with field(s):
-    ///   - [`gateway_id(Option<String>)`](crate::input::UpdateGatewayCapabilityConfigurationInput::gateway_id): <p>The ID of the gateway to be updated.</p>
-    ///   - [`capability_namespace(Option<String>)`](crate::input::UpdateGatewayCapabilityConfigurationInput::capability_namespace): <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    ///   - [`capability_configuration(Option<String>)`](crate::input::UpdateGatewayCapabilityConfigurationInput::capability_configuration): <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayCapabilityConfiguration::gateway_id) / [`set_gateway_id(Option<String>)`](crate::client::fluent_builders::UpdateGatewayCapabilityConfiguration::set_gateway_id): <p>The ID of the gateway to be updated.</p>
+    ///   - [`capability_namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayCapabilityConfiguration::capability_namespace) / [`set_capability_namespace(Option<String>)`](crate::client::fluent_builders::UpdateGatewayCapabilityConfiguration::set_capability_namespace): <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    ///   - [`capability_configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayCapabilityConfiguration::capability_configuration) / [`set_capability_configuration(Option<String>)`](crate::client::fluent_builders::UpdateGatewayCapabilityConfiguration::set_capability_configuration): <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// - On success, responds with [`UpdateGatewayCapabilityConfigurationOutput`](crate::output::UpdateGatewayCapabilityConfigurationOutput) with field(s):
     ///   - [`capability_namespace(Option<String>)`](crate::output::UpdateGatewayCapabilityConfigurationOutput::capability_namespace): <p>The namespace of the gateway capability.</p>
     ///   - [`capability_sync_status(Option<CapabilitySyncStatus>)`](crate::output::UpdateGatewayCapabilityConfigurationOutput::capability_sync_status): <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>  <ul>   <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>   <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>   <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>  </ul>  <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
@@ -1018,16 +1018,16 @@ where
     }
     /// Constructs a fluent builder for the [`UpdatePortal`](crate::client::fluent_builders::UpdatePortal) operation.
     ///
-    /// - Takes [`UpdatePortalInput`](crate::input::UpdatePortalInput) with field(s):
-    ///   - [`portal_id(Option<String>)`](crate::input::UpdatePortalInput::portal_id): <p>The ID of the portal to update.</p>
-    ///   - [`portal_name(Option<String>)`](crate::input::UpdatePortalInput::portal_name): <p>A new friendly name for the portal.</p>
-    ///   - [`portal_description(Option<String>)`](crate::input::UpdatePortalInput::portal_description): <p>A new description for the portal.</p>
-    ///   - [`portal_contact_email(Option<String>)`](crate::input::UpdatePortalInput::portal_contact_email): <p>The Amazon Web Services administrator's contact email address.</p>
-    ///   - [`portal_logo_image(Option<Image>)`](crate::input::UpdatePortalInput::portal_logo_image): <p>Contains an image that is one of the following:</p>  <ul>   <li> <p>An image file. Choose this option to upload a new image.</p> </li>   <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>  </ul>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdatePortalInput::role_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdatePortalInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    ///   - [`notification_sender_email(Option<String>)`](crate::input::UpdatePortalInput::notification_sender_email): <p>The email address that sends alarm notifications.</p>
-    ///   - [`alarms(Option<Alarms>)`](crate::input::UpdatePortalInput::alarms): <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`portal_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePortal::portal_id) / [`set_portal_id(Option<String>)`](crate::client::fluent_builders::UpdatePortal::set_portal_id): <p>The ID of the portal to update.</p>
+    ///   - [`portal_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePortal::portal_name) / [`set_portal_name(Option<String>)`](crate::client::fluent_builders::UpdatePortal::set_portal_name): <p>A new friendly name for the portal.</p>
+    ///   - [`portal_description(impl Into<String>)`](crate::client::fluent_builders::UpdatePortal::portal_description) / [`set_portal_description(Option<String>)`](crate::client::fluent_builders::UpdatePortal::set_portal_description): <p>A new description for the portal.</p>
+    ///   - [`portal_contact_email(impl Into<String>)`](crate::client::fluent_builders::UpdatePortal::portal_contact_email) / [`set_portal_contact_email(Option<String>)`](crate::client::fluent_builders::UpdatePortal::set_portal_contact_email): <p>The Amazon Web Services administrator's contact email address.</p>
+    ///   - [`portal_logo_image(Image)`](crate::client::fluent_builders::UpdatePortal::portal_logo_image) / [`set_portal_logo_image(Option<Image>)`](crate::client::fluent_builders::UpdatePortal::set_portal_logo_image): <p>Contains an image that is one of the following:</p>  <ul>   <li> <p>An image file. Choose this option to upload a new image.</p> </li>   <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>  </ul>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePortal::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdatePortal::set_role_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdatePortal::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdatePortal::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`notification_sender_email(impl Into<String>)`](crate::client::fluent_builders::UpdatePortal::notification_sender_email) / [`set_notification_sender_email(Option<String>)`](crate::client::fluent_builders::UpdatePortal::set_notification_sender_email): <p>The email address that sends alarm notifications.</p>
+    ///   - [`alarms(Alarms)`](crate::client::fluent_builders::UpdatePortal::alarms) / [`set_alarms(Option<Alarms>)`](crate::client::fluent_builders::UpdatePortal::set_alarms): <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     /// - On success, responds with [`UpdatePortalOutput`](crate::output::UpdatePortalOutput) with field(s):
     ///   - [`portal_status(Option<PortalStatus>)`](crate::output::UpdatePortalOutput::portal_status): <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<UpdatePortalError>`](crate::error::UpdatePortalError)
@@ -1036,11 +1036,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
     ///
-    /// - Takes [`UpdateProjectInput`](crate::input::UpdateProjectInput) with field(s):
-    ///   - [`project_id(Option<String>)`](crate::input::UpdateProjectInput::project_id): <p>The ID of the project to update.</p>
-    ///   - [`project_name(Option<String>)`](crate::input::UpdateProjectInput::project_name): <p>A new friendly name for the project.</p>
-    ///   - [`project_description(Option<String>)`](crate::input::UpdateProjectInput::project_description): <p>A new description for the project.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateProjectInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project_id): <p>The ID of the project to update.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project_name): <p>A new friendly name for the project.</p>
+    ///   - [`project_description(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project_description) / [`set_project_description(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project_description): <p>A new description for the project.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
 
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)

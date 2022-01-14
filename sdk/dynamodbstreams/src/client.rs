@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`DescribeStream`](crate::client::fluent_builders::DescribeStream) operation.
     ///
-    /// - Takes [`DescribeStreamInput`](crate::input::DescribeStreamInput) with field(s):
-    ///   - [`stream_arn(Option<String>)`](crate::input::DescribeStreamInput::stream_arn): <p>The Amazon Resource Name (ARN) for the stream.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeStreamInput::limit): <p>The maximum number of shard objects to return. The upper limit is 100.</p>
-    ///   - [`exclusive_start_shard_id(Option<String>)`](crate::input::DescribeStreamInput::exclusive_start_shard_id): <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeStream::set_stream_arn): <p>The Amazon Resource Name (ARN) for the stream.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeStream::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeStream::set_limit): <p>The maximum number of shard objects to return. The upper limit is 100.</p>
+    ///   - [`exclusive_start_shard_id(impl Into<String>)`](crate::client::fluent_builders::DescribeStream::exclusive_start_shard_id) / [`set_exclusive_start_shard_id(Option<String>)`](crate::client::fluent_builders::DescribeStream::set_exclusive_start_shard_id): <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     /// - On success, responds with [`DescribeStreamOutput`](crate::output::DescribeStreamOutput) with field(s):
     ///   - [`stream_description(Option<StreamDescription>)`](crate::output::DescribeStreamOutput::stream_description): <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamError>`](crate::error::DescribeStreamError)
@@ -97,9 +97,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetRecords`](crate::client::fluent_builders::GetRecords) operation.
     ///
-    /// - Takes [`GetRecordsInput`](crate::input::GetRecordsInput) with field(s):
-    ///   - [`shard_iterator(Option<String>)`](crate::input::GetRecordsInput::shard_iterator): <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::GetRecordsInput::limit): <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`shard_iterator(impl Into<String>)`](crate::client::fluent_builders::GetRecords::shard_iterator) / [`set_shard_iterator(Option<String>)`](crate::client::fluent_builders::GetRecords::set_shard_iterator): <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetRecords::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::GetRecords::set_limit): <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
     /// - On success, responds with [`GetRecordsOutput`](crate::output::GetRecordsOutput) with field(s):
     ///   - [`records(Option<Vec<Record>>)`](crate::output::GetRecordsOutput::records): <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
     ///   - [`next_shard_iterator(Option<String>)`](crate::output::GetRecordsOutput::next_shard_iterator): <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
@@ -109,11 +109,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetShardIterator`](crate::client::fluent_builders::GetShardIterator) operation.
     ///
-    /// - Takes [`GetShardIteratorInput`](crate::input::GetShardIteratorInput) with field(s):
-    ///   - [`stream_arn(Option<String>)`](crate::input::GetShardIteratorInput::stream_arn): <p>The Amazon Resource Name (ARN) for the stream.</p>
-    ///   - [`shard_id(Option<String>)`](crate::input::GetShardIteratorInput::shard_id): <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
-    ///   - [`shard_iterator_type(Option<ShardIteratorType>)`](crate::input::GetShardIteratorInput::shard_iterator_type): <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>  <ul>   <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>   <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>   <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>   <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>  </ul>
-    ///   - [`sequence_number(Option<String>)`](crate::input::GetShardIteratorInput::sequence_number): <p>The sequence number of a stream record in the shard from which to start reading.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::GetShardIterator::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::GetShardIterator::set_stream_arn): <p>The Amazon Resource Name (ARN) for the stream.</p>
+    ///   - [`shard_id(impl Into<String>)`](crate::client::fluent_builders::GetShardIterator::shard_id) / [`set_shard_id(Option<String>)`](crate::client::fluent_builders::GetShardIterator::set_shard_id): <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
+    ///   - [`shard_iterator_type(ShardIteratorType)`](crate::client::fluent_builders::GetShardIterator::shard_iterator_type) / [`set_shard_iterator_type(Option<ShardIteratorType>)`](crate::client::fluent_builders::GetShardIterator::set_shard_iterator_type): <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>  <ul>   <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>   <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>   <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>   <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>  </ul>
+    ///   - [`sequence_number(impl Into<String>)`](crate::client::fluent_builders::GetShardIterator::sequence_number) / [`set_sequence_number(Option<String>)`](crate::client::fluent_builders::GetShardIterator::set_sequence_number): <p>The sequence number of a stream record in the shard from which to start reading.</p>
     /// - On success, responds with [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput) with field(s):
     ///   - [`shard_iterator(Option<String>)`](crate::output::GetShardIteratorOutput::shard_iterator): <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
     /// - On failure, responds with [`SdkError<GetShardIteratorError>`](crate::error::GetShardIteratorError)
@@ -122,10 +122,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListStreams`](crate::client::fluent_builders::ListStreams) operation.
     ///
-    /// - Takes [`ListStreamsInput`](crate::input::ListStreamsInput) with field(s):
-    ///   - [`table_name(Option<String>)`](crate::input::ListStreamsInput::table_name): <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListStreamsInput::limit): <p>The maximum number of streams to return. The upper limit is 100.</p>
-    ///   - [`exclusive_start_stream_arn(Option<String>)`](crate::input::ListStreamsInput::exclusive_start_stream_arn): <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::ListStreams::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::ListStreams::set_table_name): <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListStreams::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListStreams::set_limit): <p>The maximum number of streams to return. The upper limit is 100.</p>
+    ///   - [`exclusive_start_stream_arn(impl Into<String>)`](crate::client::fluent_builders::ListStreams::exclusive_start_stream_arn) / [`set_exclusive_start_stream_arn(Option<String>)`](crate::client::fluent_builders::ListStreams::set_exclusive_start_stream_arn): <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     /// - On success, responds with [`ListStreamsOutput`](crate::output::ListStreamsOutput) with field(s):
     ///   - [`streams(Option<Vec<Stream>>)`](crate::output::ListStreamsOutput::streams): <p>A list of stream descriptors associated with the current account and endpoint.</p>
     ///   - [`last_evaluated_stream_arn(Option<String>)`](crate::output::ListStreamsOutput::last_evaluated_stream_arn): <p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>  <p>If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>  <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>

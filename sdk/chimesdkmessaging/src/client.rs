@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`AssociateChannelFlow`](crate::client::fluent_builders::AssociateChannelFlow) operation.
     ///
-    /// - Takes [`AssociateChannelFlowInput`](crate::input::AssociateChannelFlowInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::AssociateChannelFlowInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_flow_arn(Option<String>)`](crate::input::AssociateChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::AssociateChannelFlowInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateChannelFlow::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::AssociateChannelFlow::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_flow_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateChannelFlow::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::client::fluent_builders::AssociateChannelFlow::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::AssociateChannelFlow::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::AssociateChannelFlow::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     /// - On success, responds with [`AssociateChannelFlowOutput`](crate::output::AssociateChannelFlowOutput)
 
     /// - On failure, responds with [`SdkError<AssociateChannelFlowError>`](crate::error::AssociateChannelFlowError)
@@ -97,11 +97,11 @@ where
     }
     /// Constructs a fluent builder for the [`BatchCreateChannelMembership`](crate::client::fluent_builders::BatchCreateChannelMembership) operation.
     ///
-    /// - Takes [`BatchCreateChannelMembershipInput`](crate::input::BatchCreateChannelMembershipInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::BatchCreateChannelMembershipInput::channel_arn): <p>The ARN of the channel to which you're adding users.</p>
-    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::BatchCreateChannelMembershipInput::type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    ///   - [`member_arns(Option<Vec<String>>)`](crate::input::BatchCreateChannelMembershipInput::member_arns): <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::BatchCreateChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::set_channel_arn): <p>The ARN of the channel to which you're adding users.</p>
+    ///   - [`r#type(ChannelMembershipType)`](crate::client::fluent_builders::BatchCreateChannelMembership::r#type) / [`set_type(Option<ChannelMembershipType>)`](crate::client::fluent_builders::BatchCreateChannelMembership::set_type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    ///   - [`member_arns(Vec<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::member_arns) / [`set_member_arns(Option<Vec<String>>)`](crate::client::fluent_builders::BatchCreateChannelMembership::set_member_arns): <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput) with field(s):
     ///   - [`batch_channel_memberships(Option<BatchChannelMemberships>)`](crate::output::BatchCreateChannelMembershipOutput::batch_channel_memberships): <p>The list of channel memberships in the response.</p>
     ///   - [`errors(Option<Vec<BatchCreateChannelMembershipError>>)`](crate::output::BatchCreateChannelMembershipOutput::errors): <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
@@ -113,11 +113,11 @@ where
     }
     /// Constructs a fluent builder for the [`ChannelFlowCallback`](crate::client::fluent_builders::ChannelFlowCallback) operation.
     ///
-    /// - Takes [`ChannelFlowCallbackInput`](crate::input::ChannelFlowCallbackInput) with field(s):
-    ///   - [`callback_id(Option<String>)`](crate::input::ChannelFlowCallbackInput::callback_id): <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
-    ///   - [`channel_arn(Option<String>)`](crate::input::ChannelFlowCallbackInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`delete_resource(bool)`](crate::input::ChannelFlowCallbackInput::delete_resource): <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
-    ///   - [`channel_message(Option<ChannelMessageCallback>)`](crate::input::ChannelFlowCallbackInput::channel_message): <p>Stores information about the processed message.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`callback_id(impl Into<String>)`](crate::client::fluent_builders::ChannelFlowCallback::callback_id) / [`set_callback_id(Option<String>)`](crate::client::fluent_builders::ChannelFlowCallback::set_callback_id): <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ChannelFlowCallback::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ChannelFlowCallback::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`delete_resource(bool)`](crate::client::fluent_builders::ChannelFlowCallback::delete_resource) / [`set_delete_resource(bool)`](crate::client::fluent_builders::ChannelFlowCallback::set_delete_resource): <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
+    ///   - [`channel_message(ChannelMessageCallback)`](crate::client::fluent_builders::ChannelFlowCallback::channel_message) / [`set_channel_message(Option<ChannelMessageCallback>)`](crate::client::fluent_builders::ChannelFlowCallback::set_channel_message): <p>Stores information about the processed message.</p>
     /// - On success, responds with [`ChannelFlowCallbackOutput`](crate::output::ChannelFlowCallbackOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::ChannelFlowCallbackOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`callback_id(Option<String>)`](crate::output::ChannelFlowCallbackOutput::callback_id): <p>The call back ID passed in the request.</p>
@@ -127,15 +127,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateChannel`](crate::client::fluent_builders::CreateChannel) operation.
     ///
-    /// - Takes [`CreateChannelInput`](crate::input::CreateChannelInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::CreateChannelInput::app_instance_arn): <p>The ARN of the channel request.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateChannelInput::name): <p>The name of the channel.</p>
-    ///   - [`mode(Option<ChannelMode>)`](crate::input::CreateChannelInput::mode): <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
-    ///   - [`privacy(Option<ChannelPrivacy>)`](crate::input::CreateChannelInput::privacy): <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
-    ///   - [`metadata(Option<String>)`](crate::input::CreateChannelInput::metadata): <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateChannelInput::client_request_token): <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateChannelInput::tags): <p>The tags for the creation request.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::CreateChannelInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_app_instance_arn): <p>The ARN of the channel request.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_name): <p>The name of the channel.</p>
+    ///   - [`mode(ChannelMode)`](crate::client::fluent_builders::CreateChannel::mode) / [`set_mode(Option<ChannelMode>)`](crate::client::fluent_builders::CreateChannel::set_mode): <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+    ///   - [`privacy(ChannelPrivacy)`](crate::client::fluent_builders::CreateChannel::privacy) / [`set_privacy(Option<ChannelPrivacy>)`](crate::client::fluent_builders::CreateChannel::set_privacy): <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_metadata): <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_client_request_token): <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>The tags for the creation request.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
@@ -144,10 +144,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateChannelBan`](crate::client::fluent_builders::CreateChannelBan) operation.
     ///
-    /// - Takes [`CreateChannelBanInput`](crate::input::CreateChannelBanInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::CreateChannelBanInput::channel_arn): <p>The ARN of the ban request.</p>
-    ///   - [`member_arn(Option<String>)`](crate::input::CreateChannelBanInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::CreateChannelBanInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelBan::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelBan::set_channel_arn): <p>The ARN of the ban request.</p>
+    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelBan::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelBan::set_member_arn): <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::CreateChannelBan::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::CreateChannelBan::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`CreateChannelBanOutput`](crate::output::CreateChannelBanOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelBanOutput::channel_arn): <p>The ARN of the response to the ban request.</p>
     ///   - [`member(Option<Identity>)`](crate::output::CreateChannelBanOutput::member): <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
@@ -157,12 +157,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateChannelFlow`](crate::client::fluent_builders::CreateChannelFlow) operation.
     ///
-    /// - Takes [`CreateChannelFlowInput`](crate::input::CreateChannelFlowInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::CreateChannelFlowInput::app_instance_arn): <p>The ARN of the channel flow request.</p>
-    ///   - [`processors(Option<Vec<Processor>>)`](crate::input::CreateChannelFlowInput::processors): <p>Information about the processor Lambda functions.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateChannelFlowInput::name): <p>The name of the channel flow.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateChannelFlowInput::tags): <p>The tags for the creation request.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateChannelFlowInput::client_request_token): <p>The client token for the request. An Idempotency token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelFlow::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelFlow::set_app_instance_arn): <p>The ARN of the channel flow request.</p>
+    ///   - [`processors(Vec<Processor>)`](crate::client::fluent_builders::CreateChannelFlow::processors) / [`set_processors(Option<Vec<Processor>>)`](crate::client::fluent_builders::CreateChannelFlow::set_processors): <p>Information about the processor Lambda functions.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateChannelFlow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateChannelFlow::set_name): <p>The name of the channel flow.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateChannelFlow::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateChannelFlow::set_tags): <p>The tags for the creation request.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateChannelFlow::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateChannelFlow::set_client_request_token): <p>The client token for the request. An Idempotency token.</p>
     /// - On success, responds with [`CreateChannelFlowOutput`](crate::output::CreateChannelFlowOutput) with field(s):
     ///   - [`channel_flow_arn(Option<String>)`](crate::output::CreateChannelFlowOutput::channel_flow_arn): <p>The ARN of the channel flow.</p>
     /// - On failure, responds with [`SdkError<CreateChannelFlowError>`](crate::error::CreateChannelFlowError)
@@ -171,11 +171,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateChannelMembership`](crate::client::fluent_builders::CreateChannelMembership) operation.
     ///
-    /// - Takes [`CreateChannelMembershipInput`](crate::input::CreateChannelMembershipInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::CreateChannelMembershipInput::channel_arn): <p>The ARN of the channel to which you're adding users.</p>
-    ///   - [`member_arn(Option<String>)`](crate::input::CreateChannelMembershipInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
-    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::CreateChannelMembershipInput::type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::CreateChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelMembership::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelMembership::set_channel_arn): <p>The ARN of the channel to which you're adding users.</p>
+    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelMembership::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelMembership::set_member_arn): <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
+    ///   - [`r#type(ChannelMembershipType)`](crate::client::fluent_builders::CreateChannelMembership::r#type) / [`set_type(Option<ChannelMembershipType>)`](crate::client::fluent_builders::CreateChannelMembership::set_type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::CreateChannelMembership::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::CreateChannelMembership::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelMembershipOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`member(Option<Identity>)`](crate::output::CreateChannelMembershipOutput::member): <p>The ARN and metadata of the member being added.</p>
@@ -185,10 +185,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateChannelModerator`](crate::client::fluent_builders::CreateChannelModerator) operation.
     ///
-    /// - Takes [`CreateChannelModeratorInput`](crate::input::CreateChannelModeratorInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::CreateChannelModeratorInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_moderator_arn(Option<String>)`](crate::input::CreateChannelModeratorInput::channel_moderator_arn): <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::CreateChannelModeratorInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelModerator::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelModerator::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_moderator_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelModerator::channel_moderator_arn) / [`set_channel_moderator_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelModerator::set_channel_moderator_arn): <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::CreateChannelModerator::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::CreateChannelModerator::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`CreateChannelModeratorOutput`](crate::output::CreateChannelModeratorOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelModeratorOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`channel_moderator(Option<Identity>)`](crate::output::CreateChannelModeratorOutput::channel_moderator): <p>The ARNs of the channel and the moderator.</p>
@@ -198,9 +198,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) operation.
     ///
-    /// - Takes [`DeleteChannelInput`](crate::input::DeleteChannelInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelInput::channel_arn): <p>The ARN of the channel being deleted.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannel::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannel::set_channel_arn): <p>The ARN of the channel being deleted.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannel::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannel::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
 
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::error::DeleteChannelError)
@@ -209,10 +209,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteChannelBan`](crate::client::fluent_builders::DeleteChannelBan) operation.
     ///
-    /// - Takes [`DeleteChannelBanInput`](crate::input::DeleteChannelBanInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelBanInput::channel_arn): <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
-    ///   - [`member_arn(Option<String>)`](crate::input::DeleteChannelBanInput::member_arn): <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelBanInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelBan::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelBan::set_channel_arn): <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
+    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelBan::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelBan::set_member_arn): <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelBan::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannelBan::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput)
 
     /// - On failure, responds with [`SdkError<DeleteChannelBanError>`](crate::error::DeleteChannelBanError)
@@ -221,8 +221,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteChannelFlow`](crate::client::fluent_builders::DeleteChannelFlow) operation.
     ///
-    /// - Takes [`DeleteChannelFlowInput`](crate::input::DeleteChannelFlowInput) with field(s):
-    ///   - [`channel_flow_arn(Option<String>)`](crate::input::DeleteChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_flow_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelFlow::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelFlow::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
     /// - On success, responds with [`DeleteChannelFlowOutput`](crate::output::DeleteChannelFlowOutput)
 
     /// - On failure, responds with [`SdkError<DeleteChannelFlowError>`](crate::error::DeleteChannelFlowError)
@@ -231,10 +231,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteChannelMembership`](crate::client::fluent_builders::DeleteChannelMembership) operation.
     ///
-    /// - Takes [`DeleteChannelMembershipInput`](crate::input::DeleteChannelMembershipInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelMembershipInput::channel_arn): <p>The ARN of the channel from which you want to remove the user.</p>
-    ///   - [`member_arn(Option<String>)`](crate::input::DeleteChannelMembershipInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMembership::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelMembership::set_channel_arn): <p>The ARN of the channel from which you want to remove the user.</p>
+    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMembership::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelMembership::set_member_arn): <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMembership::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannelMembership::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput)
 
     /// - On failure, responds with [`SdkError<DeleteChannelMembershipError>`](crate::error::DeleteChannelMembershipError)
@@ -243,10 +243,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteChannelMessage`](crate::client::fluent_builders::DeleteChannelMessage) operation.
     ///
-    /// - Takes [`DeleteChannelMessageInput`](crate::input::DeleteChannelMessageInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelMessageInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`message_id(Option<String>)`](crate::input::DeleteChannelMessageInput::message_id): <p>The ID of the message being deleted.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelMessage::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::DeleteChannelMessage::set_message_id): <p>The ID of the message being deleted.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput)
 
     /// - On failure, responds with [`SdkError<DeleteChannelMessageError>`](crate::error::DeleteChannelMessageError)
@@ -255,10 +255,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteChannelModerator`](crate::client::fluent_builders::DeleteChannelModerator) operation.
     ///
-    /// - Takes [`DeleteChannelModeratorInput`](crate::input::DeleteChannelModeratorInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelModeratorInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_moderator_arn(Option<String>)`](crate::input::DeleteChannelModeratorInput::channel_moderator_arn): <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelModeratorInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelModerator::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelModerator::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_moderator_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelModerator::channel_moderator_arn) / [`set_channel_moderator_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelModerator::set_channel_moderator_arn): <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelModerator::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannelModerator::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput)
 
     /// - On failure, responds with [`SdkError<DeleteChannelModeratorError>`](crate::error::DeleteChannelModeratorError)
@@ -267,9 +267,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) operation.
     ///
-    /// - Takes [`DescribeChannelInput`](crate::input::DescribeChannelInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannel::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannel::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannel::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannel::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DescribeChannelOutput`](crate::output::DescribeChannelOutput) with field(s):
     ///   - [`channel(Option<Channel>)`](crate::output::DescribeChannelOutput::channel): <p>The channel details.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::error::DescribeChannelError)
@@ -278,10 +278,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeChannelBan`](crate::client::fluent_builders::DescribeChannelBan) operation.
     ///
-    /// - Takes [`DescribeChannelBanInput`](crate::input::DescribeChannelBanInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelBanInput::channel_arn): <p>The ARN of the channel from which the user is banned.</p>
-    ///   - [`member_arn(Option<String>)`](crate::input::DescribeChannelBanInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelBanInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelBan::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelBan::set_channel_arn): <p>The ARN of the channel from which the user is banned.</p>
+    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelBan::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelBan::set_member_arn): <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelBan::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelBan::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DescribeChannelBanOutput`](crate::output::DescribeChannelBanOutput) with field(s):
     ///   - [`channel_ban(Option<ChannelBan>)`](crate::output::DescribeChannelBanOutput::channel_ban): <p>The details of the ban.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelBanError>`](crate::error::DescribeChannelBanError)
@@ -290,8 +290,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeChannelFlow`](crate::client::fluent_builders::DescribeChannelFlow) operation.
     ///
-    /// - Takes [`DescribeChannelFlowInput`](crate::input::DescribeChannelFlowInput) with field(s):
-    ///   - [`channel_flow_arn(Option<String>)`](crate::input::DescribeChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_flow_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelFlow::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelFlow::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
     /// - On success, responds with [`DescribeChannelFlowOutput`](crate::output::DescribeChannelFlowOutput) with field(s):
     ///   - [`channel_flow(Option<ChannelFlow>)`](crate::output::DescribeChannelFlowOutput::channel_flow): <p>The channel flow details.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelFlowError>`](crate::error::DescribeChannelFlowError)
@@ -300,10 +300,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeChannelMembership`](crate::client::fluent_builders::DescribeChannelMembership) operation.
     ///
-    /// - Takes [`DescribeChannelMembershipInput`](crate::input::DescribeChannelMembershipInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelMembershipInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`member_arn(Option<String>)`](crate::input::DescribeChannelMembershipInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembership::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembership::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembership::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembership::set_member_arn): <p>The <code>AppInstanceUserArn</code> of the member.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembership::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembership::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DescribeChannelMembershipOutput`](crate::output::DescribeChannelMembershipOutput) with field(s):
     ///   - [`channel_membership(Option<ChannelMembership>)`](crate::output::DescribeChannelMembershipOutput::channel_membership): <p>The details of the membership.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelMembershipError>`](crate::error::DescribeChannelMembershipError)
@@ -314,10 +314,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeChannelMembershipForAppInstanceUser`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser) operation.
     ///
-    /// - Takes [`DescribeChannelMembershipForAppInstanceUserInput`](crate::input::DescribeChannelMembershipForAppInstanceUserInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelMembershipForAppInstanceUserInput::channel_arn): <p>The ARN of the channel to which the user belongs.</p>
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::DescribeChannelMembershipForAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the user in a channel.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelMembershipForAppInstanceUserInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::set_channel_arn): <p>The ARN of the channel to which the user belongs.</p>
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the user in a channel.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput) with field(s):
     ///   - [`channel_membership(Option<ChannelMembershipForAppInstanceUserSummary>)`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput::channel_membership): <p>The channel to which a user belongs.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelMembershipForAppInstanceUserError>`](crate::error::DescribeChannelMembershipForAppInstanceUserError)
@@ -328,10 +328,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeChannelModeratedByAppInstanceUser`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser) operation.
     ///
-    /// - Takes [`DescribeChannelModeratedByAppInstanceUserInput`](crate::input::DescribeChannelModeratedByAppInstanceUserInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelModeratedByAppInstanceUserInput::channel_arn): <p>The ARN of the moderated channel.</p>
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::DescribeChannelModeratedByAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelModeratedByAppInstanceUserInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::set_channel_arn): <p>The ARN of the moderated channel.</p>
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput) with field(s):
     ///   - [`channel(Option<ChannelModeratedByAppInstanceUserSummary>)`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput::channel): <p>The moderated channel.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelModeratedByAppInstanceUserError>`](crate::error::DescribeChannelModeratedByAppInstanceUserError)
@@ -342,10 +342,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeChannelModerator`](crate::client::fluent_builders::DescribeChannelModerator) operation.
     ///
-    /// - Takes [`DescribeChannelModeratorInput`](crate::input::DescribeChannelModeratorInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelModeratorInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_moderator_arn(Option<String>)`](crate::input::DescribeChannelModeratorInput::channel_moderator_arn): <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelModeratorInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModerator::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelModerator::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_moderator_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModerator::channel_moderator_arn) / [`set_channel_moderator_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelModerator::set_channel_moderator_arn): <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModerator::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelModerator::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DescribeChannelModeratorOutput`](crate::output::DescribeChannelModeratorOutput) with field(s):
     ///   - [`channel_moderator(Option<ChannelModerator>)`](crate::output::DescribeChannelModeratorOutput::channel_moderator): <p>The details of the channel moderator.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelModeratorError>`](crate::error::DescribeChannelModeratorError)
@@ -354,10 +354,10 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateChannelFlow`](crate::client::fluent_builders::DisassociateChannelFlow) operation.
     ///
-    /// - Takes [`DisassociateChannelFlowInput`](crate::input::DisassociateChannelFlowInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::DisassociateChannelFlowInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_flow_arn(Option<String>)`](crate::input::DisassociateChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::DisassociateChannelFlowInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateChannelFlow::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DisassociateChannelFlow::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_flow_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateChannelFlow::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::client::fluent_builders::DisassociateChannelFlow::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DisassociateChannelFlow::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DisassociateChannelFlow::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     /// - On success, responds with [`DisassociateChannelFlowOutput`](crate::output::DisassociateChannelFlowOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateChannelFlowError>`](crate::error::DisassociateChannelFlowError)
@@ -366,10 +366,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetChannelMembershipPreferences`](crate::client::fluent_builders::GetChannelMembershipPreferences) operation.
     ///
-    /// - Takes [`GetChannelMembershipPreferencesInput`](crate::input::GetChannelMembershipPreferencesInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::GetChannelMembershipPreferencesInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`member_arn(Option<String>)`](crate::input::GetChannelMembershipPreferencesInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::GetChannelMembershipPreferencesInput::chime_bearer): <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::GetChannelMembershipPreferences::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::GetChannelMembershipPreferences::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::GetChannelMembershipPreferences::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::GetChannelMembershipPreferences::set_member_arn): <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::GetChannelMembershipPreferences::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::GetChannelMembershipPreferences::set_chime_bearer): <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
     /// - On success, responds with [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::GetChannelMembershipPreferencesOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`member(Option<Identity>)`](crate::output::GetChannelMembershipPreferencesOutput::member): <p>The details of a user.</p>
@@ -382,10 +382,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetChannelMessage`](crate::client::fluent_builders::GetChannelMessage) operation.
     ///
-    /// - Takes [`GetChannelMessageInput`](crate::input::GetChannelMessageInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::GetChannelMessageInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`message_id(Option<String>)`](crate::input::GetChannelMessageInput::message_id): <p>The ID of the message.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::GetChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::GetChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::GetChannelMessage::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::GetChannelMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::GetChannelMessage::set_message_id): <p>The ID of the message.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::GetChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::GetChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput) with field(s):
     ///   - [`channel_message(Option<ChannelMessage>)`](crate::output::GetChannelMessageOutput::channel_message): <p>The details of and content in the message.</p>
     /// - On failure, responds with [`SdkError<GetChannelMessageError>`](crate::error::GetChannelMessageError)
@@ -394,10 +394,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetChannelMessageStatus`](crate::client::fluent_builders::GetChannelMessageStatus) operation.
     ///
-    /// - Takes [`GetChannelMessageStatusInput`](crate::input::GetChannelMessageStatusInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::GetChannelMessageStatusInput::channel_arn): <p>The ARN of the channel</p>
-    ///   - [`message_id(Option<String>)`](crate::input::GetChannelMessageStatusInput::message_id): <p>The ID of the message.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::GetChannelMessageStatusInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::GetChannelMessageStatus::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::GetChannelMessageStatus::set_channel_arn): <p>The ARN of the channel</p>
+    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::GetChannelMessageStatus::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::GetChannelMessageStatus::set_message_id): <p>The ID of the message.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::GetChannelMessageStatus::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::GetChannelMessageStatus::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     /// - On success, responds with [`GetChannelMessageStatusOutput`](crate::output::GetChannelMessageStatusOutput) with field(s):
     ///   - [`status(Option<ChannelMessageStatusStructure>)`](crate::output::GetChannelMessageStatusOutput::status): <p>The message status and details.</p>
     /// - On failure, responds with [`SdkError<GetChannelMessageStatusError>`](crate::error::GetChannelMessageStatusError)
@@ -406,7 +406,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetMessagingSessionEndpoint`](crate::client::fluent_builders::GetMessagingSessionEndpoint) operation.
     ///
-    /// - Takes [`GetMessagingSessionEndpointInput`](crate::input::GetMessagingSessionEndpointInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetMessagingSessionEndpoint::send) it.
 
     /// - On success, responds with [`GetMessagingSessionEndpointOutput`](crate::output::GetMessagingSessionEndpointOutput) with field(s):
     ///   - [`endpoint(Option<MessagingSessionEndpoint>)`](crate::output::GetMessagingSessionEndpointOutput::endpoint): <p>The endpoint returned in the response.</p>
@@ -417,13 +417,13 @@ where
         fluent_builders::GetMessagingSessionEndpoint::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannelBans`](crate::client::fluent_builders::ListChannelBans) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelBans::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelBans::into_paginator).
     ///
-    /// - Takes [`ListChannelBansInput`](crate::input::ListChannelBansInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::ListChannelBansInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelBansInput::max_results): <p>The maximum number of bans that you want returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelBansInput::next_token): <p>The token passed by previous API calls until all requested bans are returned.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelBansInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelBans::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListChannelBans::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelBans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelBans::set_max_results): <p>The maximum number of bans that you want returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelBans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelBans::set_next_token): <p>The token passed by previous API calls until all requested bans are returned.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelBans::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelBans::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`ListChannelBansOutput`](crate::output::ListChannelBansOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelBansOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelBansOutput::next_token): <p>The token passed by previous API calls until all requested bans are returned.</p>
@@ -433,12 +433,12 @@ where
         fluent_builders::ListChannelBans::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannelFlows`](crate::client::fluent_builders::ListChannelFlows) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelFlows::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelFlows::into_paginator).
     ///
-    /// - Takes [`ListChannelFlowsInput`](crate::input::ListChannelFlowsInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::ListChannelFlowsInput::app_instance_arn): <p>The ARN of the app instance.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelFlowsInput::max_results): <p>The maximum number of channel flows that you want to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelFlowsInput::next_token): <p>The token passed by previous API calls until all requested channel flows are returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelFlows::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::ListChannelFlows::set_app_instance_arn): <p>The ARN of the app instance.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelFlows::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelFlows::set_max_results): <p>The maximum number of channel flows that you want to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelFlows::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelFlows::set_next_token): <p>The token passed by previous API calls until all requested channel flows are returned.</p>
     /// - On success, responds with [`ListChannelFlowsOutput`](crate::output::ListChannelFlowsOutput) with field(s):
     ///   - [`channel_flows(Option<Vec<ChannelFlowSummary>>)`](crate::output::ListChannelFlowsOutput::channel_flows): <p>The information about each channel flow.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelFlowsOutput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
@@ -447,14 +447,14 @@ where
         fluent_builders::ListChannelFlows::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannelMemberships`](crate::client::fluent_builders::ListChannelMemberships) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelMemberships::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelMemberships::into_paginator).
     ///
-    /// - Takes [`ListChannelMembershipsInput`](crate::input::ListChannelMembershipsInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::ListChannelMembershipsInput::channel_arn): <p>The maximum number of channel memberships that you want returned.</p>
-    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::ListChannelMembershipsInput::type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelMembershipsInput::max_results): <p>The maximum number of channel memberships that you want returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelMembershipsInput::next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelMembershipsInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelMemberships::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListChannelMemberships::set_channel_arn): <p>The maximum number of channel memberships that you want returned.</p>
+    ///   - [`r#type(ChannelMembershipType)`](crate::client::fluent_builders::ListChannelMemberships::r#type) / [`set_type(Option<ChannelMembershipType>)`](crate::client::fluent_builders::ListChannelMemberships::set_type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelMemberships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelMemberships::set_max_results): <p>The maximum number of channel memberships that you want returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelMemberships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelMemberships::set_next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelMemberships::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelMemberships::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`ListChannelMembershipsOutput`](crate::output::ListChannelMembershipsOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelMembershipsOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`channel_memberships(Option<Vec<ChannelMembershipSummary>>)`](crate::output::ListChannelMembershipsOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
@@ -464,13 +464,13 @@ where
         fluent_builders::ListChannelMemberships::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannelMembershipsForAppInstanceUser`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::into_paginator).
     ///
-    /// - Takes [`ListChannelMembershipsForAppInstanceUserInput`](crate::input::ListChannelMembershipsForAppInstanceUserInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::ListChannelMembershipsForAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>s</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelMembershipsForAppInstanceUserInput::max_results): <p>The maximum number of users that you want returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelMembershipsForAppInstanceUserInput::next_token): <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelMembershipsForAppInstanceUserInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_max_results): <p>The maximum number of users that you want returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_next_token): <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput) with field(s):
     ///   - [`channel_memberships(Option<Vec<ChannelMembershipForAppInstanceUserSummary>>)`](crate::output::ListChannelMembershipsForAppInstanceUserOutput::channel_memberships): <p>The token passed by previous API calls until all requested users are returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelMembershipsForAppInstanceUserOutput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
@@ -481,16 +481,16 @@ where
         fluent_builders::ListChannelMembershipsForAppInstanceUser::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannelMessages`](crate::client::fluent_builders::ListChannelMessages) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelMessages::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelMessages::into_paginator).
     ///
-    /// - Takes [`ListChannelMessagesInput`](crate::input::ListChannelMessagesInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::ListChannelMessagesInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListChannelMessagesInput::sort_order): <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
-    ///   - [`not_before(Option<DateTime>)`](crate::input::ListChannelMessagesInput::not_before): <p>The initial or starting time stamp for your requested messages.</p>
-    ///   - [`not_after(Option<DateTime>)`](crate::input::ListChannelMessagesInput::not_after): <p>The final or ending time stamp for your requested messages.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelMessagesInput::max_results): <p>The maximum number of messages that you want returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelMessagesInput::next_token): <p>The token passed by previous API calls until all requested messages are returned.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelMessagesInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelMessages::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListChannelMessages::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListChannelMessages::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListChannelMessages::set_sort_order): <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+    ///   - [`not_before(DateTime)`](crate::client::fluent_builders::ListChannelMessages::not_before) / [`set_not_before(Option<DateTime>)`](crate::client::fluent_builders::ListChannelMessages::set_not_before): <p>The initial or starting time stamp for your requested messages.</p>
+    ///   - [`not_after(DateTime)`](crate::client::fluent_builders::ListChannelMessages::not_after) / [`set_not_after(Option<DateTime>)`](crate::client::fluent_builders::ListChannelMessages::set_not_after): <p>The final or ending time stamp for your requested messages.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelMessages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelMessages::set_max_results): <p>The maximum number of messages that you want returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelMessages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelMessages::set_next_token): <p>The token passed by previous API calls until all requested messages are returned.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelMessages::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelMessages::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelMessagesOutput::channel_arn): <p>The ARN of the channel containing the requested messages.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelMessagesOutput::next_token): <p>The token passed by previous API calls until all requested messages are returned.</p>
@@ -500,13 +500,13 @@ where
         fluent_builders::ListChannelMessages::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannelModerators`](crate::client::fluent_builders::ListChannelModerators) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelModerators::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelModerators::into_paginator).
     ///
-    /// - Takes [`ListChannelModeratorsInput`](crate::input::ListChannelModeratorsInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::ListChannelModeratorsInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelModeratorsInput::max_results): <p>The maximum number of moderators that you want returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelModeratorsInput::next_token): <p>The token passed by previous API calls until all requested moderators are returned.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelModeratorsInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelModerators::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListChannelModerators::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelModerators::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelModerators::set_max_results): <p>The maximum number of moderators that you want returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelModerators::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelModerators::set_next_token): <p>The token passed by previous API calls until all requested moderators are returned.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelModerators::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelModerators::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`ListChannelModeratorsOutput`](crate::output::ListChannelModeratorsOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelModeratorsOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelModeratorsOutput::next_token): <p>The token passed by previous API calls until all requested moderators are returned.</p>
@@ -516,14 +516,14 @@ where
         fluent_builders::ListChannelModerators::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannels`](crate::client::fluent_builders::ListChannels) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
     ///
-    /// - Takes [`ListChannelsInput`](crate::input::ListChannelsInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::ListChannelsInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`privacy(Option<ChannelPrivacy>)`](crate::input::ListChannelsInput::privacy): <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelsInput::max_results): <p>The maximum number of channels that you want to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelsInput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelsInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannels::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::ListChannels::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    ///   - [`privacy(ChannelPrivacy)`](crate::client::fluent_builders::ListChannels::privacy) / [`set_privacy(Option<ChannelPrivacy>)`](crate::client::fluent_builders::ListChannels::set_privacy): <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannels::set_max_results): <p>The maximum number of channels that you want to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannels::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannels::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
     ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::output::ListChannelsOutput::channels): <p>The information about each channel.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>The token returned from previous API requests until the number of channels is reached.</p>
@@ -532,12 +532,12 @@ where
         fluent_builders::ListChannels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannelsAssociatedWithChannelFlow`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::into_paginator).
     ///
-    /// - Takes [`ListChannelsAssociatedWithChannelFlowInput`](crate::input::ListChannelsAssociatedWithChannelFlowInput) with field(s):
-    ///   - [`channel_flow_arn(Option<String>)`](crate::input::ListChannelsAssociatedWithChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelsAssociatedWithChannelFlowInput::max_results): <p>The maximum number of channels that you want to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelsAssociatedWithChannelFlowInput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_flow_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::set_max_results): <p>The maximum number of channels that you want to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::set_next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
     /// - On success, responds with [`ListChannelsAssociatedWithChannelFlowOutput`](crate::output::ListChannelsAssociatedWithChannelFlowOutput) with field(s):
     ///   - [`channels(Option<Vec<ChannelAssociatedWithFlowSummary>>)`](crate::output::ListChannelsAssociatedWithChannelFlowOutput::channels): <p>The information about each channel.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelsAssociatedWithChannelFlowOutput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
@@ -548,13 +548,13 @@ where
         fluent_builders::ListChannelsAssociatedWithChannelFlow::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannelsModeratedByAppInstanceUser`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::into_paginator).
     ///
-    /// - Takes [`ListChannelsModeratedByAppInstanceUserInput`](crate::input::ListChannelsModeratedByAppInstanceUserInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::ListChannelsModeratedByAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the user in the moderated channel.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelsModeratedByAppInstanceUserInput::max_results): <p>The maximum number of channels in the request.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelsModeratedByAppInstanceUserInput::next_token): <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelsModeratedByAppInstanceUserInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the user in the moderated channel.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::set_max_results): <p>The maximum number of channels in the request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::set_next_token): <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`ListChannelsModeratedByAppInstanceUserOutput`](crate::output::ListChannelsModeratedByAppInstanceUserOutput) with field(s):
     ///   - [`channels(Option<Vec<ChannelModeratedByAppInstanceUserSummary>>)`](crate::output::ListChannelsModeratedByAppInstanceUserOutput::channels): <p>The moderated channels in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelsModeratedByAppInstanceUserOutput::next_token): <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
@@ -566,8 +566,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tag key-value pairs.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -576,11 +576,11 @@ where
     }
     /// Constructs a fluent builder for the [`PutChannelMembershipPreferences`](crate::client::fluent_builders::PutChannelMembershipPreferences) operation.
     ///
-    /// - Takes [`PutChannelMembershipPreferencesInput`](crate::input::PutChannelMembershipPreferencesInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::PutChannelMembershipPreferencesInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`member_arn(Option<String>)`](crate::input::PutChannelMembershipPreferencesInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::PutChannelMembershipPreferencesInput::chime_bearer): <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
-    ///   - [`preferences(Option<ChannelMembershipPreferences>)`](crate::input::PutChannelMembershipPreferencesInput::preferences): <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::PutChannelMembershipPreferences::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::PutChannelMembershipPreferences::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::PutChannelMembershipPreferences::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::PutChannelMembershipPreferences::set_member_arn): <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::PutChannelMembershipPreferences::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::PutChannelMembershipPreferences::set_chime_bearer): <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    ///   - [`preferences(ChannelMembershipPreferences)`](crate::client::fluent_builders::PutChannelMembershipPreferences::preferences) / [`set_preferences(Option<ChannelMembershipPreferences>)`](crate::client::fluent_builders::PutChannelMembershipPreferences::set_preferences): <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
     /// - On success, responds with [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::PutChannelMembershipPreferencesOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`member(Option<Identity>)`](crate::output::PutChannelMembershipPreferencesOutput::member): <p>The details of a user.</p>
@@ -593,10 +593,10 @@ where
     }
     /// Constructs a fluent builder for the [`RedactChannelMessage`](crate::client::fluent_builders::RedactChannelMessage) operation.
     ///
-    /// - Takes [`RedactChannelMessageInput`](crate::input::RedactChannelMessageInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::RedactChannelMessageInput::channel_arn): <p>The ARN of the channel containing the messages that you want to redact.</p>
-    ///   - [`message_id(Option<String>)`](crate::input::RedactChannelMessageInput::message_id): <p>The ID of the message being redacted.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::RedactChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::RedactChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::RedactChannelMessage::set_channel_arn): <p>The ARN of the channel containing the messages that you want to redact.</p>
+    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::RedactChannelMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::RedactChannelMessage::set_message_id): <p>The ID of the message being redacted.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::RedactChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::RedactChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::RedactChannelMessageOutput::channel_arn): <p>The ARN of the channel containing the messages that you want to redact.</p>
     ///   - [`message_id(Option<String>)`](crate::output::RedactChannelMessageOutput::message_id): <p>The ID of the message being redacted.</p>
@@ -606,16 +606,16 @@ where
     }
     /// Constructs a fluent builder for the [`SendChannelMessage`](crate::client::fluent_builders::SendChannelMessage) operation.
     ///
-    /// - Takes [`SendChannelMessageInput`](crate::input::SendChannelMessageInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::SendChannelMessageInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`content(Option<String>)`](crate::input::SendChannelMessageInput::content): <p>The content of the message.</p>
-    ///   - [`r#type(Option<ChannelMessageType>)`](crate::input::SendChannelMessageInput::type): <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-    ///   - [`persistence(Option<ChannelMessagePersistenceType>)`](crate::input::SendChannelMessageInput::persistence): <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    ///   - [`metadata(Option<String>)`](crate::input::SendChannelMessageInput::metadata): <p>The optional metadata for each message.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::SendChannelMessageInput::client_request_token): <p>The <code>Idempotency</code> token for each client request.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::SendChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    ///   - [`push_notification(Option<PushNotificationConfiguration>)`](crate::input::SendChannelMessageInput::push_notification): <p>The push notification configuration of the message.</p>
-    ///   - [`message_attributes(Option<HashMap<String, MessageAttributeValue>>)`](crate::input::SendChannelMessageInput::message_attributes): <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_content): <p>The content of the message.</p>
+    ///   - [`r#type(ChannelMessageType)`](crate::client::fluent_builders::SendChannelMessage::r#type) / [`set_type(Option<ChannelMessageType>)`](crate::client::fluent_builders::SendChannelMessage::set_type): <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    ///   - [`persistence(ChannelMessagePersistenceType)`](crate::client::fluent_builders::SendChannelMessage::persistence) / [`set_persistence(Option<ChannelMessagePersistenceType>)`](crate::client::fluent_builders::SendChannelMessage::set_persistence): <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_metadata): <p>The optional metadata for each message.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_client_request_token): <p>The <code>Idempotency</code> token for each client request.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    ///   - [`push_notification(PushNotificationConfiguration)`](crate::client::fluent_builders::SendChannelMessage::push_notification) / [`set_push_notification(Option<PushNotificationConfiguration>)`](crate::client::fluent_builders::SendChannelMessage::set_push_notification): <p>The push notification configuration of the message.</p>
+    ///   - [`message_attributes(HashMap<String, MessageAttributeValue>)`](crate::client::fluent_builders::SendChannelMessage::message_attributes) / [`set_message_attributes(Option<HashMap<String, MessageAttributeValue>>)`](crate::client::fluent_builders::SendChannelMessage::set_message_attributes): <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
     /// - On success, responds with [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::SendChannelMessageOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`message_id(Option<String>)`](crate::output::SendChannelMessageOutput::message_id): <p>The ID string assigned to each message.</p>
@@ -626,9 +626,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The resource ARN.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tag key-value pairs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource ARN.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tag key-value pairs.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -637,9 +637,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The resource ARN.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource ARN.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -648,12 +648,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) operation.
     ///
-    /// - Takes [`UpdateChannelInput`](crate::input::UpdateChannelInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::UpdateChannelInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateChannelInput::name): <p>The name of the channel.</p>
-    ///   - [`mode(Option<ChannelMode>)`](crate::input::UpdateChannelInput::mode): <p>The mode of the update request.</p>
-    ///   - [`metadata(Option<String>)`](crate::input::UpdateChannelInput::metadata): <p>The metadata for the update request.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::UpdateChannelInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_name): <p>The name of the channel.</p>
+    ///   - [`mode(ChannelMode)`](crate::client::fluent_builders::UpdateChannel::mode) / [`set_mode(Option<ChannelMode>)`](crate::client::fluent_builders::UpdateChannel::set_mode): <p>The mode of the update request.</p>
+    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_metadata): <p>The metadata for the update request.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::UpdateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::error::UpdateChannelError)
@@ -662,10 +662,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateChannelFlow`](crate::client::fluent_builders::UpdateChannelFlow) operation.
     ///
-    /// - Takes [`UpdateChannelFlowInput`](crate::input::UpdateChannelFlowInput) with field(s):
-    ///   - [`channel_flow_arn(Option<String>)`](crate::input::UpdateChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
-    ///   - [`processors(Option<Vec<Processor>>)`](crate::input::UpdateChannelFlowInput::processors): <p>Information about the processor Lambda functions </p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateChannelFlowInput::name): <p>The name of the channel flow.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_flow_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelFlow::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannelFlow::set_channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`processors(Vec<Processor>)`](crate::client::fluent_builders::UpdateChannelFlow::processors) / [`set_processors(Option<Vec<Processor>>)`](crate::client::fluent_builders::UpdateChannelFlow::set_processors): <p>Information about the processor Lambda functions </p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelFlow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateChannelFlow::set_name): <p>The name of the channel flow.</p>
     /// - On success, responds with [`UpdateChannelFlowOutput`](crate::output::UpdateChannelFlowOutput) with field(s):
     ///   - [`channel_flow_arn(Option<String>)`](crate::output::UpdateChannelFlowOutput::channel_flow_arn): <p>The ARN of the channel flow.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelFlowError>`](crate::error::UpdateChannelFlowError)
@@ -674,12 +674,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateChannelMessage`](crate::client::fluent_builders::UpdateChannelMessage) operation.
     ///
-    /// - Takes [`UpdateChannelMessageInput`](crate::input::UpdateChannelMessageInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::UpdateChannelMessageInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`message_id(Option<String>)`](crate::input::UpdateChannelMessageInput::message_id): <p>The ID string of the message being updated.</p>
-    ///   - [`content(Option<String>)`](crate::input::UpdateChannelMessageInput::content): <p>The content of the message being updated.</p>
-    ///   - [`metadata(Option<String>)`](crate::input::UpdateChannelMessageInput::metadata): <p>The metadata of the message being updated.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::UpdateChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_message_id): <p>The ID string of the message being updated.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_content): <p>The content of the message being updated.</p>
+    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_metadata): <p>The metadata of the message being updated.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::UpdateChannelMessageOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`message_id(Option<String>)`](crate::output::UpdateChannelMessageOutput::message_id): <p>The ID string of the message being updated.</p>
@@ -690,9 +690,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateChannelReadMarker`](crate::client::fluent_builders::UpdateChannelReadMarker) operation.
     ///
-    /// - Takes [`UpdateChannelReadMarkerInput`](crate::input::UpdateChannelReadMarkerInput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::input::UpdateChannelReadMarkerInput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`chime_bearer(Option<String>)`](crate::input::UpdateChannelReadMarkerInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelReadMarker::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannelReadMarker::set_channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelReadMarker::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::UpdateChannelReadMarker::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::UpdateChannelReadMarkerOutput::channel_arn): <p>The ARN of the channel.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelReadMarkerError>`](crate::error::UpdateChannelReadMarkerError)

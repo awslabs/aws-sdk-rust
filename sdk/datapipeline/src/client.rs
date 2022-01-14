@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`ActivatePipeline`](crate::client::fluent_builders::ActivatePipeline) operation.
     ///
-    /// - Takes [`ActivatePipelineInput`](crate::input::ActivatePipelineInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::ActivatePipelineInput::pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`parameter_values(Option<Vec<ParameterValue>>)`](crate::input::ActivatePipelineInput::parameter_values): <p>A list of parameter values to pass to the pipeline at activation.</p>
-    ///   - [`start_timestamp(Option<DateTime>)`](crate::input::ActivatePipelineInput::start_timestamp): <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::ActivatePipeline::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::ActivatePipeline::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`parameter_values(Vec<ParameterValue>)`](crate::client::fluent_builders::ActivatePipeline::parameter_values) / [`set_parameter_values(Option<Vec<ParameterValue>>)`](crate::client::fluent_builders::ActivatePipeline::set_parameter_values): <p>A list of parameter values to pass to the pipeline at activation.</p>
+    ///   - [`start_timestamp(DateTime)`](crate::client::fluent_builders::ActivatePipeline::start_timestamp) / [`set_start_timestamp(Option<DateTime>)`](crate::client::fluent_builders::ActivatePipeline::set_start_timestamp): <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     /// - On success, responds with [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput)
 
     /// - On failure, responds with [`SdkError<ActivatePipelineError>`](crate::error::ActivatePipelineError)
@@ -97,9 +97,9 @@ where
     }
     /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
     ///
-    /// - Takes [`AddTagsInput`](crate::input::AddTagsInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::AddTagsInput::pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsInput::tags): <p>The tags to add, as key/value pairs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::AddTags::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::AddTags::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AddTags::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTags::set_tags): <p>The tags to add, as key/value pairs.</p>
     /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput)
 
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
@@ -108,11 +108,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreatePipeline`](crate::client::fluent_builders::CreatePipeline) operation.
     ///
-    /// - Takes [`CreatePipelineInput`](crate::input::CreatePipelineInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreatePipelineInput::name): <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
-    ///   - [`unique_id(Option<String>)`](crate::input::CreatePipelineInput::unique_id): <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreatePipelineInput::description): <p>The description for the pipeline.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePipelineInput::tags): <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePipeline::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePipeline::set_name): <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
+    ///   - [`unique_id(impl Into<String>)`](crate::client::fluent_builders::CreatePipeline::unique_id) / [`set_unique_id(Option<String>)`](crate::client::fluent_builders::CreatePipeline::set_unique_id): <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePipeline::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePipeline::set_description): <p>The description for the pipeline.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePipeline::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePipeline::set_tags): <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     /// - On success, responds with [`CreatePipelineOutput`](crate::output::CreatePipelineOutput) with field(s):
     ///   - [`pipeline_id(Option<String>)`](crate::output::CreatePipelineOutput::pipeline_id): <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
     /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::error::CreatePipelineError)
@@ -121,9 +121,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeactivatePipeline`](crate::client::fluent_builders::DeactivatePipeline) operation.
     ///
-    /// - Takes [`DeactivatePipelineInput`](crate::input::DeactivatePipelineInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::DeactivatePipelineInput::pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`cancel_active(Option<bool>)`](crate::input::DeactivatePipelineInput::cancel_active): <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::DeactivatePipeline::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::DeactivatePipeline::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`cancel_active(bool)`](crate::client::fluent_builders::DeactivatePipeline::cancel_active) / [`set_cancel_active(Option<bool>)`](crate::client::fluent_builders::DeactivatePipeline::set_cancel_active): <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     /// - On success, responds with [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput)
 
     /// - On failure, responds with [`SdkError<DeactivatePipelineError>`](crate::error::DeactivatePipelineError)
@@ -132,8 +132,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeletePipeline`](crate::client::fluent_builders::DeletePipeline) operation.
     ///
-    /// - Takes [`DeletePipelineInput`](crate::input::DeletePipelineInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::DeletePipelineInput::pipeline_id): <p>The ID of the pipeline.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::DeletePipeline::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::DeletePipeline::set_pipeline_id): <p>The ID of the pipeline.</p>
     /// - On success, responds with [`DeletePipelineOutput`](crate::output::DeletePipelineOutput)
 
     /// - On failure, responds with [`SdkError<DeletePipelineError>`](crate::error::DeletePipelineError)
@@ -141,13 +141,13 @@ where
         fluent_builders::DeletePipeline::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeObjects`](crate::client::fluent_builders::DescribeObjects) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeObjects::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeObjects::into_paginator).
     ///
-    /// - Takes [`DescribeObjectsInput`](crate::input::DescribeObjectsInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::DescribeObjectsInput::pipeline_id): <p>The ID of the pipeline that contains the object definitions.</p>
-    ///   - [`object_ids(Option<Vec<String>>)`](crate::input::DescribeObjectsInput::object_ids): <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    ///   - [`evaluate_expressions(bool)`](crate::input::DescribeObjectsInput::evaluate_expressions): <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeObjectsInput::marker): <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::DescribeObjects::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::DescribeObjects::set_pipeline_id): <p>The ID of the pipeline that contains the object definitions.</p>
+    ///   - [`object_ids(Vec<String>)`](crate::client::fluent_builders::DescribeObjects::object_ids) / [`set_object_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeObjects::set_object_ids): <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
+    ///   - [`evaluate_expressions(bool)`](crate::client::fluent_builders::DescribeObjects::evaluate_expressions) / [`set_evaluate_expressions(bool)`](crate::client::fluent_builders::DescribeObjects::set_evaluate_expressions): <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeObjects::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeObjects::set_marker): <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     /// - On success, responds with [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput) with field(s):
     ///   - [`pipeline_objects(Option<Vec<PipelineObject>>)`](crate::output::DescribeObjectsOutput::pipeline_objects): <p>An array of object definitions.</p>
     ///   - [`marker(Option<String>)`](crate::output::DescribeObjectsOutput::marker): <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
@@ -158,8 +158,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribePipelines`](crate::client::fluent_builders::DescribePipelines) operation.
     ///
-    /// - Takes [`DescribePipelinesInput`](crate::input::DescribePipelinesInput) with field(s):
-    ///   - [`pipeline_ids(Option<Vec<String>>)`](crate::input::DescribePipelinesInput::pipeline_ids): <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_ids(Vec<String>)`](crate::client::fluent_builders::DescribePipelines::pipeline_ids) / [`set_pipeline_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribePipelines::set_pipeline_ids): <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
     /// - On success, responds with [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput) with field(s):
     ///   - [`pipeline_description_list(Option<Vec<PipelineDescription>>)`](crate::output::DescribePipelinesOutput::pipeline_description_list): <p>An array of descriptions for the specified pipelines.</p>
     /// - On failure, responds with [`SdkError<DescribePipelinesError>`](crate::error::DescribePipelinesError)
@@ -168,10 +168,10 @@ where
     }
     /// Constructs a fluent builder for the [`EvaluateExpression`](crate::client::fluent_builders::EvaluateExpression) operation.
     ///
-    /// - Takes [`EvaluateExpressionInput`](crate::input::EvaluateExpressionInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::EvaluateExpressionInput::pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`object_id(Option<String>)`](crate::input::EvaluateExpressionInput::object_id): <p>The ID of the object.</p>
-    ///   - [`expression(Option<String>)`](crate::input::EvaluateExpressionInput::expression): <p>The expression to evaluate.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::EvaluateExpression::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::EvaluateExpression::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`object_id(impl Into<String>)`](crate::client::fluent_builders::EvaluateExpression::object_id) / [`set_object_id(Option<String>)`](crate::client::fluent_builders::EvaluateExpression::set_object_id): <p>The ID of the object.</p>
+    ///   - [`expression(impl Into<String>)`](crate::client::fluent_builders::EvaluateExpression::expression) / [`set_expression(Option<String>)`](crate::client::fluent_builders::EvaluateExpression::set_expression): <p>The expression to evaluate.</p>
     /// - On success, responds with [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput) with field(s):
     ///   - [`evaluated_expression(Option<String>)`](crate::output::EvaluateExpressionOutput::evaluated_expression): <p>The evaluated expression.</p>
     /// - On failure, responds with [`SdkError<EvaluateExpressionError>`](crate::error::EvaluateExpressionError)
@@ -180,9 +180,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetPipelineDefinition`](crate::client::fluent_builders::GetPipelineDefinition) operation.
     ///
-    /// - Takes [`GetPipelineDefinitionInput`](crate::input::GetPipelineDefinitionInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::GetPipelineDefinitionInput::pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`version(Option<String>)`](crate::input::GetPipelineDefinitionInput::version): <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::GetPipelineDefinition::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::GetPipelineDefinition::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetPipelineDefinition::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetPipelineDefinition::set_version): <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
     /// - On success, responds with [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput) with field(s):
     ///   - [`pipeline_objects(Option<Vec<PipelineObject>>)`](crate::output::GetPipelineDefinitionOutput::pipeline_objects): <p>The objects defined in the pipeline.</p>
     ///   - [`parameter_objects(Option<Vec<ParameterObject>>)`](crate::output::GetPipelineDefinitionOutput::parameter_objects): <p>The parameter objects used in the pipeline definition.</p>
@@ -192,10 +192,10 @@ where
         fluent_builders::GetPipelineDefinition::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPipelines`](crate::client::fluent_builders::ListPipelines) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
     ///
-    /// - Takes [`ListPipelinesInput`](crate::input::ListPipelinesInput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::input::ListPipelinesInput::marker): <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPipelines::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPipelines::set_marker): <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
     /// - On success, responds with [`ListPipelinesOutput`](crate::output::ListPipelinesOutput) with field(s):
     ///   - [`pipeline_id_list(Option<Vec<PipelineIdName>>)`](crate::output::ListPipelinesOutput::pipeline_id_list): <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
     ///   - [`marker(Option<String>)`](crate::output::ListPipelinesOutput::marker): <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
@@ -206,10 +206,10 @@ where
     }
     /// Constructs a fluent builder for the [`PollForTask`](crate::client::fluent_builders::PollForTask) operation.
     ///
-    /// - Takes [`PollForTaskInput`](crate::input::PollForTaskInput) with field(s):
-    ///   - [`worker_group(Option<String>)`](crate::input::PollForTaskInput::worker_group): <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-    ///   - [`hostname(Option<String>)`](crate::input::PollForTaskInput::hostname): <p>The public DNS name of the calling task runner.</p>
-    ///   - [`instance_identity(Option<InstanceIdentity>)`](crate::input::PollForTaskInput::instance_identity): <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`worker_group(impl Into<String>)`](crate::client::fluent_builders::PollForTask::worker_group) / [`set_worker_group(Option<String>)`](crate::client::fluent_builders::PollForTask::set_worker_group): <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    ///   - [`hostname(impl Into<String>)`](crate::client::fluent_builders::PollForTask::hostname) / [`set_hostname(Option<String>)`](crate::client::fluent_builders::PollForTask::set_hostname): <p>The public DNS name of the calling task runner.</p>
+    ///   - [`instance_identity(InstanceIdentity)`](crate::client::fluent_builders::PollForTask::instance_identity) / [`set_instance_identity(Option<InstanceIdentity>)`](crate::client::fluent_builders::PollForTask::set_instance_identity): <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
     /// - On success, responds with [`PollForTaskOutput`](crate::output::PollForTaskOutput) with field(s):
     ///   - [`task_object(Option<TaskObject>)`](crate::output::PollForTaskOutput::task_object): <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     /// - On failure, responds with [`SdkError<PollForTaskError>`](crate::error::PollForTaskError)
@@ -218,11 +218,11 @@ where
     }
     /// Constructs a fluent builder for the [`PutPipelineDefinition`](crate::client::fluent_builders::PutPipelineDefinition) operation.
     ///
-    /// - Takes [`PutPipelineDefinitionInput`](crate::input::PutPipelineDefinitionInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::PutPipelineDefinitionInput::pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`pipeline_objects(Option<Vec<PipelineObject>>)`](crate::input::PutPipelineDefinitionInput::pipeline_objects): <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    ///   - [`parameter_objects(Option<Vec<ParameterObject>>)`](crate::input::PutPipelineDefinitionInput::parameter_objects): <p>The parameter objects used with the pipeline.</p>
-    ///   - [`parameter_values(Option<Vec<ParameterValue>>)`](crate::input::PutPipelineDefinitionInput::parameter_values): <p>The parameter values used with the pipeline.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::PutPipelineDefinition::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::PutPipelineDefinition::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`pipeline_objects(Vec<PipelineObject>)`](crate::client::fluent_builders::PutPipelineDefinition::pipeline_objects) / [`set_pipeline_objects(Option<Vec<PipelineObject>>)`](crate::client::fluent_builders::PutPipelineDefinition::set_pipeline_objects): <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
+    ///   - [`parameter_objects(Vec<ParameterObject>)`](crate::client::fluent_builders::PutPipelineDefinition::parameter_objects) / [`set_parameter_objects(Option<Vec<ParameterObject>>)`](crate::client::fluent_builders::PutPipelineDefinition::set_parameter_objects): <p>The parameter objects used with the pipeline.</p>
+    ///   - [`parameter_values(Vec<ParameterValue>)`](crate::client::fluent_builders::PutPipelineDefinition::parameter_values) / [`set_parameter_values(Option<Vec<ParameterValue>>)`](crate::client::fluent_builders::PutPipelineDefinition::set_parameter_values): <p>The parameter values used with the pipeline.</p>
     /// - On success, responds with [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput) with field(s):
     ///   - [`validation_errors(Option<Vec<ValidationError>>)`](crate::output::PutPipelineDefinitionOutput::validation_errors): <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
     ///   - [`validation_warnings(Option<Vec<ValidationWarning>>)`](crate::output::PutPipelineDefinitionOutput::validation_warnings): <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
@@ -232,14 +232,14 @@ where
         fluent_builders::PutPipelineDefinition::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`QueryObjects`](crate::client::fluent_builders::QueryObjects) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::QueryObjects::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::QueryObjects::into_paginator).
     ///
-    /// - Takes [`QueryObjectsInput`](crate::input::QueryObjectsInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::QueryObjectsInput::pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`query(Option<Query>)`](crate::input::QueryObjectsInput::query): <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
-    ///   - [`sphere(Option<String>)`](crate::input::QueryObjectsInput::sphere): <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
-    ///   - [`marker(Option<String>)`](crate::input::QueryObjectsInput::marker): <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::QueryObjectsInput::limit): <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::QueryObjects::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::QueryObjects::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`query(Query)`](crate::client::fluent_builders::QueryObjects::query) / [`set_query(Option<Query>)`](crate::client::fluent_builders::QueryObjects::set_query): <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
+    ///   - [`sphere(impl Into<String>)`](crate::client::fluent_builders::QueryObjects::sphere) / [`set_sphere(Option<String>)`](crate::client::fluent_builders::QueryObjects::set_sphere): <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::QueryObjects::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::QueryObjects::set_marker): <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::QueryObjects::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::QueryObjects::set_limit): <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     /// - On success, responds with [`QueryObjectsOutput`](crate::output::QueryObjectsOutput) with field(s):
     ///   - [`ids(Option<Vec<String>>)`](crate::output::QueryObjectsOutput::ids): <p>The identifiers that match the query selectors.</p>
     ///   - [`marker(Option<String>)`](crate::output::QueryObjectsOutput::marker): <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
@@ -250,9 +250,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveTags`](crate::client::fluent_builders::RemoveTags) operation.
     ///
-    /// - Takes [`RemoveTagsInput`](crate::input::RemoveTagsInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::RemoveTagsInput::pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::RemoveTagsInput::tag_keys): <p>The keys of the tags to remove.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTags::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::RemoveTags::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::RemoveTags::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTags::set_tag_keys): <p>The keys of the tags to remove.</p>
     /// - On success, responds with [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
 
     /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::error::RemoveTagsError)
@@ -261,9 +261,9 @@ where
     }
     /// Constructs a fluent builder for the [`ReportTaskProgress`](crate::client::fluent_builders::ReportTaskProgress) operation.
     ///
-    /// - Takes [`ReportTaskProgressInput`](crate::input::ReportTaskProgressInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::ReportTaskProgressInput::task_id): <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    ///   - [`fields(Option<Vec<Field>>)`](crate::input::ReportTaskProgressInput::fields): <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::ReportTaskProgress::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::ReportTaskProgress::set_task_id): <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+    ///   - [`fields(Vec<Field>)`](crate::client::fluent_builders::ReportTaskProgress::fields) / [`set_fields(Option<Vec<Field>>)`](crate::client::fluent_builders::ReportTaskProgress::set_fields): <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
     /// - On success, responds with [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput) with field(s):
     ///   - [`canceled(bool)`](crate::output::ReportTaskProgressOutput::canceled): <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     /// - On failure, responds with [`SdkError<ReportTaskProgressError>`](crate::error::ReportTaskProgressError)
@@ -272,10 +272,10 @@ where
     }
     /// Constructs a fluent builder for the [`ReportTaskRunnerHeartbeat`](crate::client::fluent_builders::ReportTaskRunnerHeartbeat) operation.
     ///
-    /// - Takes [`ReportTaskRunnerHeartbeatInput`](crate::input::ReportTaskRunnerHeartbeatInput) with field(s):
-    ///   - [`taskrunner_id(Option<String>)`](crate::input::ReportTaskRunnerHeartbeatInput::taskrunner_id): <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
-    ///   - [`worker_group(Option<String>)`](crate::input::ReportTaskRunnerHeartbeatInput::worker_group): <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-    ///   - [`hostname(Option<String>)`](crate::input::ReportTaskRunnerHeartbeatInput::hostname): <p>The public DNS name of the task runner.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`taskrunner_id(impl Into<String>)`](crate::client::fluent_builders::ReportTaskRunnerHeartbeat::taskrunner_id) / [`set_taskrunner_id(Option<String>)`](crate::client::fluent_builders::ReportTaskRunnerHeartbeat::set_taskrunner_id): <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+    ///   - [`worker_group(impl Into<String>)`](crate::client::fluent_builders::ReportTaskRunnerHeartbeat::worker_group) / [`set_worker_group(Option<String>)`](crate::client::fluent_builders::ReportTaskRunnerHeartbeat::set_worker_group): <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    ///   - [`hostname(impl Into<String>)`](crate::client::fluent_builders::ReportTaskRunnerHeartbeat::hostname) / [`set_hostname(Option<String>)`](crate::client::fluent_builders::ReportTaskRunnerHeartbeat::set_hostname): <p>The public DNS name of the task runner.</p>
     /// - On success, responds with [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput) with field(s):
     ///   - [`terminate(bool)`](crate::output::ReportTaskRunnerHeartbeatOutput::terminate): <p>Indicates whether the calling task runner should terminate.</p>
     /// - On failure, responds with [`SdkError<ReportTaskRunnerHeartbeatError>`](crate::error::ReportTaskRunnerHeartbeatError)
@@ -286,10 +286,10 @@ where
     }
     /// Constructs a fluent builder for the [`SetStatus`](crate::client::fluent_builders::SetStatus) operation.
     ///
-    /// - Takes [`SetStatusInput`](crate::input::SetStatusInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::SetStatusInput::pipeline_id): <p>The ID of the pipeline that contains the objects.</p>
-    ///   - [`object_ids(Option<Vec<String>>)`](crate::input::SetStatusInput::object_ids): <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    ///   - [`status(Option<String>)`](crate::input::SetStatusInput::status): <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::SetStatus::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::SetStatus::set_pipeline_id): <p>The ID of the pipeline that contains the objects.</p>
+    ///   - [`object_ids(Vec<String>)`](crate::client::fluent_builders::SetStatus::object_ids) / [`set_object_ids(Option<Vec<String>>)`](crate::client::fluent_builders::SetStatus::set_object_ids): <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    ///   - [`status(impl Into<String>)`](crate::client::fluent_builders::SetStatus::status) / [`set_status(Option<String>)`](crate::client::fluent_builders::SetStatus::set_status): <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     /// - On success, responds with [`SetStatusOutput`](crate::output::SetStatusOutput)
 
     /// - On failure, responds with [`SdkError<SetStatusError>`](crate::error::SetStatusError)
@@ -298,12 +298,12 @@ where
     }
     /// Constructs a fluent builder for the [`SetTaskStatus`](crate::client::fluent_builders::SetTaskStatus) operation.
     ///
-    /// - Takes [`SetTaskStatusInput`](crate::input::SetTaskStatusInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::SetTaskStatusInput::task_id): <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    ///   - [`task_status(Option<TaskStatus>)`](crate::input::SetTaskStatusInput::task_status): <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-    ///   - [`error_id(Option<String>)`](crate::input::SetTaskStatusInput::error_id): <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
-    ///   - [`error_message(Option<String>)`](crate::input::SetTaskStatusInput::error_message): <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    ///   - [`error_stack_trace(Option<String>)`](crate::input::SetTaskStatusInput::error_stack_trace): <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::SetTaskStatus::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::SetTaskStatus::set_task_id): <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+    ///   - [`task_status(TaskStatus)`](crate::client::fluent_builders::SetTaskStatus::task_status) / [`set_task_status(Option<TaskStatus>)`](crate::client::fluent_builders::SetTaskStatus::set_task_status): <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
+    ///   - [`error_id(impl Into<String>)`](crate::client::fluent_builders::SetTaskStatus::error_id) / [`set_error_id(Option<String>)`](crate::client::fluent_builders::SetTaskStatus::set_error_id): <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+    ///   - [`error_message(impl Into<String>)`](crate::client::fluent_builders::SetTaskStatus::error_message) / [`set_error_message(Option<String>)`](crate::client::fluent_builders::SetTaskStatus::set_error_message): <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+    ///   - [`error_stack_trace(impl Into<String>)`](crate::client::fluent_builders::SetTaskStatus::error_stack_trace) / [`set_error_stack_trace(Option<String>)`](crate::client::fluent_builders::SetTaskStatus::set_error_stack_trace): <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     /// - On success, responds with [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput)
 
     /// - On failure, responds with [`SdkError<SetTaskStatusError>`](crate::error::SetTaskStatusError)
@@ -312,11 +312,11 @@ where
     }
     /// Constructs a fluent builder for the [`ValidatePipelineDefinition`](crate::client::fluent_builders::ValidatePipelineDefinition) operation.
     ///
-    /// - Takes [`ValidatePipelineDefinitionInput`](crate::input::ValidatePipelineDefinitionInput) with field(s):
-    ///   - [`pipeline_id(Option<String>)`](crate::input::ValidatePipelineDefinitionInput::pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`pipeline_objects(Option<Vec<PipelineObject>>)`](crate::input::ValidatePipelineDefinitionInput::pipeline_objects): <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    ///   - [`parameter_objects(Option<Vec<ParameterObject>>)`](crate::input::ValidatePipelineDefinitionInput::parameter_objects): <p>The parameter objects used with the pipeline.</p>
-    ///   - [`parameter_values(Option<Vec<ParameterValue>>)`](crate::input::ValidatePipelineDefinitionInput::parameter_values): <p>The parameter values used with the pipeline.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_id(impl Into<String>)`](crate::client::fluent_builders::ValidatePipelineDefinition::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::client::fluent_builders::ValidatePipelineDefinition::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`pipeline_objects(Vec<PipelineObject>)`](crate::client::fluent_builders::ValidatePipelineDefinition::pipeline_objects) / [`set_pipeline_objects(Option<Vec<PipelineObject>>)`](crate::client::fluent_builders::ValidatePipelineDefinition::set_pipeline_objects): <p>The objects that define the pipeline changes to validate against the pipeline.</p>
+    ///   - [`parameter_objects(Vec<ParameterObject>)`](crate::client::fluent_builders::ValidatePipelineDefinition::parameter_objects) / [`set_parameter_objects(Option<Vec<ParameterObject>>)`](crate::client::fluent_builders::ValidatePipelineDefinition::set_parameter_objects): <p>The parameter objects used with the pipeline.</p>
+    ///   - [`parameter_values(Vec<ParameterValue>)`](crate::client::fluent_builders::ValidatePipelineDefinition::parameter_values) / [`set_parameter_values(Option<Vec<ParameterValue>>)`](crate::client::fluent_builders::ValidatePipelineDefinition::set_parameter_values): <p>The parameter values used with the pipeline.</p>
     /// - On success, responds with [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput) with field(s):
     ///   - [`validation_errors(Option<Vec<ValidationError>>)`](crate::output::ValidatePipelineDefinitionOutput::validation_errors): <p>Any validation errors that were found.</p>
     ///   - [`validation_warnings(Option<Vec<ValidationWarning>>)`](crate::output::ValidatePipelineDefinitionOutput::validation_warnings): <p>Any validation warnings that were found.</p>

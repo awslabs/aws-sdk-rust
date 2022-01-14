@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`AcceptCertificateTransfer`](crate::client::fluent_builders::AcceptCertificateTransfer) operation.
     ///
-    /// - Takes [`AcceptCertificateTransferInput`](crate::input::AcceptCertificateTransferInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::AcceptCertificateTransferInput::certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    ///   - [`set_as_active(bool)`](crate::input::AcceptCertificateTransferInput::set_as_active): <p>Specifies whether the certificate is active.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::AcceptCertificateTransfer::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::AcceptCertificateTransfer::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    ///   - [`set_as_active(bool)`](crate::client::fluent_builders::AcceptCertificateTransfer::set_as_active) / [`set_set_as_active(bool)`](crate::client::fluent_builders::AcceptCertificateTransfer::set_set_as_active): <p>Specifies whether the certificate is active.</p>
     /// - On success, responds with [`AcceptCertificateTransferOutput`](crate::output::AcceptCertificateTransferOutput)
 
     /// - On failure, responds with [`SdkError<AcceptCertificateTransferError>`](crate::error::AcceptCertificateTransferError)
@@ -98,11 +98,11 @@ where
     }
     /// Constructs a fluent builder for the [`AddThingToBillingGroup`](crate::client::fluent_builders::AddThingToBillingGroup) operation.
     ///
-    /// - Takes [`AddThingToBillingGroupInput`](crate::input::AddThingToBillingGroupInput) with field(s):
-    ///   - [`billing_group_name(Option<String>)`](crate::input::AddThingToBillingGroupInput::billing_group_name): <p>The name of the billing group.</p> <note>   <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>  </note>
-    ///   - [`billing_group_arn(Option<String>)`](crate::input::AddThingToBillingGroupInput::billing_group_arn): <p>The ARN of the billing group.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::AddThingToBillingGroupInput::thing_name): <p>The name of the thing to be added to the billing group.</p>
-    ///   - [`thing_arn(Option<String>)`](crate::input::AddThingToBillingGroupInput::thing_arn): <p>The ARN of the thing to be added to the billing group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`billing_group_name(impl Into<String>)`](crate::client::fluent_builders::AddThingToBillingGroup::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::client::fluent_builders::AddThingToBillingGroup::set_billing_group_name): <p>The name of the billing group.</p> <note>   <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>  </note>
+    ///   - [`billing_group_arn(impl Into<String>)`](crate::client::fluent_builders::AddThingToBillingGroup::billing_group_arn) / [`set_billing_group_arn(Option<String>)`](crate::client::fluent_builders::AddThingToBillingGroup::set_billing_group_arn): <p>The ARN of the billing group.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::AddThingToBillingGroup::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::AddThingToBillingGroup::set_thing_name): <p>The name of the thing to be added to the billing group.</p>
+    ///   - [`thing_arn(impl Into<String>)`](crate::client::fluent_builders::AddThingToBillingGroup::thing_arn) / [`set_thing_arn(Option<String>)`](crate::client::fluent_builders::AddThingToBillingGroup::set_thing_arn): <p>The ARN of the thing to be added to the billing group.</p>
     /// - On success, responds with [`AddThingToBillingGroupOutput`](crate::output::AddThingToBillingGroupOutput)
 
     /// - On failure, responds with [`SdkError<AddThingToBillingGroupError>`](crate::error::AddThingToBillingGroupError)
@@ -111,12 +111,12 @@ where
     }
     /// Constructs a fluent builder for the [`AddThingToThingGroup`](crate::client::fluent_builders::AddThingToThingGroup) operation.
     ///
-    /// - Takes [`AddThingToThingGroupInput`](crate::input::AddThingToThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::AddThingToThingGroupInput::thing_group_name): <p>The name of the group to which you are adding a thing.</p>
-    ///   - [`thing_group_arn(Option<String>)`](crate::input::AddThingToThingGroupInput::thing_group_arn): <p>The ARN of the group to which you are adding a thing.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::AddThingToThingGroupInput::thing_name): <p>The name of the thing to add to a group.</p>
-    ///   - [`thing_arn(Option<String>)`](crate::input::AddThingToThingGroupInput::thing_arn): <p>The ARN of the thing to add to a group.</p>
-    ///   - [`override_dynamic_groups(bool)`](crate::input::AddThingToThingGroupInput::override_dynamic_groups): <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::AddThingToThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::AddThingToThingGroup::set_thing_group_name): <p>The name of the group to which you are adding a thing.</p>
+    ///   - [`thing_group_arn(impl Into<String>)`](crate::client::fluent_builders::AddThingToThingGroup::thing_group_arn) / [`set_thing_group_arn(Option<String>)`](crate::client::fluent_builders::AddThingToThingGroup::set_thing_group_arn): <p>The ARN of the group to which you are adding a thing.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::AddThingToThingGroup::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::AddThingToThingGroup::set_thing_name): <p>The name of the thing to add to a group.</p>
+    ///   - [`thing_arn(impl Into<String>)`](crate::client::fluent_builders::AddThingToThingGroup::thing_arn) / [`set_thing_arn(Option<String>)`](crate::client::fluent_builders::AddThingToThingGroup::set_thing_arn): <p>The ARN of the thing to add to a group.</p>
+    ///   - [`override_dynamic_groups(bool)`](crate::client::fluent_builders::AddThingToThingGroup::override_dynamic_groups) / [`set_override_dynamic_groups(bool)`](crate::client::fluent_builders::AddThingToThingGroup::set_override_dynamic_groups): <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     /// - On success, responds with [`AddThingToThingGroupOutput`](crate::output::AddThingToThingGroupOutput)
 
     /// - On failure, responds with [`SdkError<AddThingToThingGroupError>`](crate::error::AddThingToThingGroupError)
@@ -125,11 +125,11 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateTargetsWithJob`](crate::client::fluent_builders::AssociateTargetsWithJob) operation.
     ///
-    /// - Takes [`AssociateTargetsWithJobInput`](crate::input::AssociateTargetsWithJobInput) with field(s):
-    ///   - [`targets(Option<Vec<String>>)`](crate::input::AssociateTargetsWithJobInput::targets): <p>A list of thing group ARNs that define the targets of the job.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::AssociateTargetsWithJobInput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
-    ///   - [`comment(Option<String>)`](crate::input::AssociateTargetsWithJobInput::comment): <p>An optional comment string describing why the job was associated with the targets.</p>
-    ///   - [`namespace_id(Option<String>)`](crate::input::AssociateTargetsWithJobInput::namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`targets(Vec<String>)`](crate::client::fluent_builders::AssociateTargetsWithJob::targets) / [`set_targets(Option<Vec<String>>)`](crate::client::fluent_builders::AssociateTargetsWithJob::set_targets): <p>A list of thing group ARNs that define the targets of the job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::AssociateTargetsWithJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::AssociateTargetsWithJob::set_job_id): <p>The unique identifier you assigned to this job when it was created.</p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::AssociateTargetsWithJob::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::AssociateTargetsWithJob::set_comment): <p>An optional comment string describing why the job was associated with the targets.</p>
+    ///   - [`namespace_id(impl Into<String>)`](crate::client::fluent_builders::AssociateTargetsWithJob::namespace_id) / [`set_namespace_id(Option<String>)`](crate::client::fluent_builders::AssociateTargetsWithJob::set_namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
     /// - On success, responds with [`AssociateTargetsWithJobOutput`](crate::output::AssociateTargetsWithJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::output::AssociateTargetsWithJobOutput::job_arn): <p>An ARN identifying the job.</p>
     ///   - [`job_id(Option<String>)`](crate::output::AssociateTargetsWithJobOutput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
@@ -140,9 +140,9 @@ where
     }
     /// Constructs a fluent builder for the [`AttachPolicy`](crate::client::fluent_builders::AttachPolicy) operation.
     ///
-    /// - Takes [`AttachPolicyInput`](crate::input::AttachPolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::AttachPolicyInput::policy_name): <p>The name of the policy to attach.</p>
-    ///   - [`target(Option<String>)`](crate::input::AttachPolicyInput::target): <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::AttachPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::AttachPolicy::set_policy_name): <p>The name of the policy to attach.</p>
+    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::AttachPolicy::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::AttachPolicy::set_target): <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
     /// - On success, responds with [`AttachPolicyOutput`](crate::output::AttachPolicyOutput)
 
     /// - On failure, responds with [`SdkError<AttachPolicyError>`](crate::error::AttachPolicyError)
@@ -151,9 +151,9 @@ where
     }
     /// Constructs a fluent builder for the [`AttachPrincipalPolicy`](crate::client::fluent_builders::AttachPrincipalPolicy) operation.
     ///
-    /// - Takes [`AttachPrincipalPolicyInput`](crate::input::AttachPrincipalPolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::AttachPrincipalPolicyInput::policy_name): <p>The policy name.</p>
-    ///   - [`principal(Option<String>)`](crate::input::AttachPrincipalPolicyInput::principal): <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::AttachPrincipalPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::AttachPrincipalPolicy::set_policy_name): <p>The policy name.</p>
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::AttachPrincipalPolicy::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::AttachPrincipalPolicy::set_principal): <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     /// - On success, responds with [`AttachPrincipalPolicyOutput`](crate::output::AttachPrincipalPolicyOutput)
 
     /// - On failure, responds with [`SdkError<AttachPrincipalPolicyError>`](crate::error::AttachPrincipalPolicyError)
@@ -162,9 +162,9 @@ where
     }
     /// Constructs a fluent builder for the [`AttachSecurityProfile`](crate::client::fluent_builders::AttachSecurityProfile) operation.
     ///
-    /// - Takes [`AttachSecurityProfileInput`](crate::input::AttachSecurityProfileInput) with field(s):
-    ///   - [`security_profile_name(Option<String>)`](crate::input::AttachSecurityProfileInput::security_profile_name): <p>The security profile that is attached.</p>
-    ///   - [`security_profile_target_arn(Option<String>)`](crate::input::AttachSecurityProfileInput::security_profile_target_arn): <p>The ARN of the target (thing group) to which the security profile is attached.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::AttachSecurityProfile::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::AttachSecurityProfile::set_security_profile_name): <p>The security profile that is attached.</p>
+    ///   - [`security_profile_target_arn(impl Into<String>)`](crate::client::fluent_builders::AttachSecurityProfile::security_profile_target_arn) / [`set_security_profile_target_arn(Option<String>)`](crate::client::fluent_builders::AttachSecurityProfile::set_security_profile_target_arn): <p>The ARN of the target (thing group) to which the security profile is attached.</p>
     /// - On success, responds with [`AttachSecurityProfileOutput`](crate::output::AttachSecurityProfileOutput)
 
     /// - On failure, responds with [`SdkError<AttachSecurityProfileError>`](crate::error::AttachSecurityProfileError)
@@ -173,9 +173,9 @@ where
     }
     /// Constructs a fluent builder for the [`AttachThingPrincipal`](crate::client::fluent_builders::AttachThingPrincipal) operation.
     ///
-    /// - Takes [`AttachThingPrincipalInput`](crate::input::AttachThingPrincipalInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::AttachThingPrincipalInput::thing_name): <p>The name of the thing.</p>
-    ///   - [`principal(Option<String>)`](crate::input::AttachThingPrincipalInput::principal): <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::AttachThingPrincipal::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::AttachThingPrincipal::set_thing_name): <p>The name of the thing.</p>
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::AttachThingPrincipal::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::AttachThingPrincipal::set_principal): <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     /// - On success, responds with [`AttachThingPrincipalOutput`](crate::output::AttachThingPrincipalOutput)
 
     /// - On failure, responds with [`SdkError<AttachThingPrincipalError>`](crate::error::AttachThingPrincipalError)
@@ -184,8 +184,8 @@ where
     }
     /// Constructs a fluent builder for the [`CancelAuditMitigationActionsTask`](crate::client::fluent_builders::CancelAuditMitigationActionsTask) operation.
     ///
-    /// - Takes [`CancelAuditMitigationActionsTaskInput`](crate::input::CancelAuditMitigationActionsTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::CancelAuditMitigationActionsTaskInput::task_id): <p>The unique identifier for the task that you want to cancel. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::CancelAuditMitigationActionsTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::CancelAuditMitigationActionsTask::set_task_id): <p>The unique identifier for the task that you want to cancel. </p>
     /// - On success, responds with [`CancelAuditMitigationActionsTaskOutput`](crate::output::CancelAuditMitigationActionsTaskOutput)
 
     /// - On failure, responds with [`SdkError<CancelAuditMitigationActionsTaskError>`](crate::error::CancelAuditMitigationActionsTaskError)
@@ -196,8 +196,8 @@ where
     }
     /// Constructs a fluent builder for the [`CancelAuditTask`](crate::client::fluent_builders::CancelAuditTask) operation.
     ///
-    /// - Takes [`CancelAuditTaskInput`](crate::input::CancelAuditTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::CancelAuditTaskInput::task_id): <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::CancelAuditTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::CancelAuditTask::set_task_id): <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
     /// - On success, responds with [`CancelAuditTaskOutput`](crate::output::CancelAuditTaskOutput)
 
     /// - On failure, responds with [`SdkError<CancelAuditTaskError>`](crate::error::CancelAuditTaskError)
@@ -206,8 +206,8 @@ where
     }
     /// Constructs a fluent builder for the [`CancelCertificateTransfer`](crate::client::fluent_builders::CancelCertificateTransfer) operation.
     ///
-    /// - Takes [`CancelCertificateTransferInput`](crate::input::CancelCertificateTransferInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::CancelCertificateTransferInput::certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::CancelCertificateTransfer::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::CancelCertificateTransfer::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     /// - On success, responds with [`CancelCertificateTransferOutput`](crate::output::CancelCertificateTransferOutput)
 
     /// - On failure, responds with [`SdkError<CancelCertificateTransferError>`](crate::error::CancelCertificateTransferError)
@@ -218,8 +218,8 @@ where
     }
     /// Constructs a fluent builder for the [`CancelDetectMitigationActionsTask`](crate::client::fluent_builders::CancelDetectMitigationActionsTask) operation.
     ///
-    /// - Takes [`CancelDetectMitigationActionsTaskInput`](crate::input::CancelDetectMitigationActionsTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::CancelDetectMitigationActionsTaskInput::task_id): <p> The unique identifier of the task. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::CancelDetectMitigationActionsTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::CancelDetectMitigationActionsTask::set_task_id): <p> The unique identifier of the task. </p>
     /// - On success, responds with [`CancelDetectMitigationActionsTaskOutput`](crate::output::CancelDetectMitigationActionsTaskOutput)
 
     /// - On failure, responds with [`SdkError<CancelDetectMitigationActionsTaskError>`](crate::error::CancelDetectMitigationActionsTaskError)
@@ -230,11 +230,11 @@ where
     }
     /// Constructs a fluent builder for the [`CancelJob`](crate::client::fluent_builders::CancelJob) operation.
     ///
-    /// - Takes [`CancelJobInput`](crate::input::CancelJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::CancelJobInput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
-    ///   - [`reason_code(Option<String>)`](crate::input::CancelJobInput::reason_code): <p>(Optional)A reason code string that explains why the job was canceled.</p>
-    ///   - [`comment(Option<String>)`](crate::input::CancelJobInput::comment): <p>An optional comment string describing why the job was canceled.</p>
-    ///   - [`force(bool)`](crate::input::CancelJobInput::force): <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>  <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::CancelJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::CancelJob::set_job_id): <p>The unique identifier you assigned to this job when it was created.</p>
+    ///   - [`reason_code(impl Into<String>)`](crate::client::fluent_builders::CancelJob::reason_code) / [`set_reason_code(Option<String>)`](crate::client::fluent_builders::CancelJob::set_reason_code): <p>(Optional)A reason code string that explains why the job was canceled.</p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::CancelJob::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::CancelJob::set_comment): <p>An optional comment string describing why the job was canceled.</p>
+    ///   - [`force(bool)`](crate::client::fluent_builders::CancelJob::force) / [`set_force(bool)`](crate::client::fluent_builders::CancelJob::set_force): <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>  <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     /// - On success, responds with [`CancelJobOutput`](crate::output::CancelJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::output::CancelJobOutput::job_arn): <p>The job ARN.</p>
     ///   - [`job_id(Option<String>)`](crate::output::CancelJobOutput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
@@ -245,12 +245,12 @@ where
     }
     /// Constructs a fluent builder for the [`CancelJobExecution`](crate::client::fluent_builders::CancelJobExecution) operation.
     ///
-    /// - Takes [`CancelJobExecutionInput`](crate::input::CancelJobExecutionInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::CancelJobExecutionInput::job_id): <p>The ID of the job to be canceled.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::CancelJobExecutionInput::thing_name): <p>The name of the thing whose execution of the job will be canceled.</p>
-    ///   - [`force(bool)`](crate::input::CancelJobExecutionInput::force): <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>  <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::CancelJobExecutionInput::expected_version): <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
-    ///   - [`status_details(Option<HashMap<String, String>>)`](crate::input::CancelJobExecutionInput::status_details): <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::CancelJobExecution::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::CancelJobExecution::set_job_id): <p>The ID of the job to be canceled.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::CancelJobExecution::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::CancelJobExecution::set_thing_name): <p>The name of the thing whose execution of the job will be canceled.</p>
+    ///   - [`force(bool)`](crate::client::fluent_builders::CancelJobExecution::force) / [`set_force(bool)`](crate::client::fluent_builders::CancelJobExecution::set_force): <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>  <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::CancelJobExecution::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::CancelJobExecution::set_expected_version): <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
+    ///   - [`status_details(HashMap<String, String>)`](crate::client::fluent_builders::CancelJobExecution::status_details) / [`set_status_details(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CancelJobExecution::set_status_details): <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     /// - On success, responds with [`CancelJobExecutionOutput`](crate::output::CancelJobExecutionOutput)
 
     /// - On failure, responds with [`SdkError<CancelJobExecutionError>`](crate::error::CancelJobExecutionError)
@@ -259,7 +259,7 @@ where
     }
     /// Constructs a fluent builder for the [`ClearDefaultAuthorizer`](crate::client::fluent_builders::ClearDefaultAuthorizer) operation.
     ///
-    /// - Takes [`ClearDefaultAuthorizerInput`](crate::input::ClearDefaultAuthorizerInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::ClearDefaultAuthorizer::send) it.
 
     /// - On success, responds with [`ClearDefaultAuthorizerOutput`](crate::output::ClearDefaultAuthorizerOutput)
 
@@ -269,8 +269,8 @@ where
     }
     /// Constructs a fluent builder for the [`ConfirmTopicRuleDestination`](crate::client::fluent_builders::ConfirmTopicRuleDestination) operation.
     ///
-    /// - Takes [`ConfirmTopicRuleDestinationInput`](crate::input::ConfirmTopicRuleDestinationInput) with field(s):
-    ///   - [`confirmation_token(Option<String>)`](crate::input::ConfirmTopicRuleDestinationInput::confirmation_token): <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`confirmation_token(impl Into<String>)`](crate::client::fluent_builders::ConfirmTopicRuleDestination::confirmation_token) / [`set_confirmation_token(Option<String>)`](crate::client::fluent_builders::ConfirmTopicRuleDestination::set_confirmation_token): <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
     /// - On success, responds with [`ConfirmTopicRuleDestinationOutput`](crate::output::ConfirmTopicRuleDestinationOutput)
 
     /// - On failure, responds with [`SdkError<ConfirmTopicRuleDestinationError>`](crate::error::ConfirmTopicRuleDestinationError)
@@ -281,13 +281,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAuditSuppression`](crate::client::fluent_builders::CreateAuditSuppression) operation.
     ///
-    /// - Takes [`CreateAuditSuppressionInput`](crate::input::CreateAuditSuppressionInput) with field(s):
-    ///   - [`check_name(Option<String>)`](crate::input::CreateAuditSuppressionInput::check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    ///   - [`resource_identifier(Option<ResourceIdentifier>)`](crate::input::CreateAuditSuppressionInput::resource_identifier): <p>Information that identifies the noncompliant resource.</p>
-    ///   - [`expiration_date(Option<DateTime>)`](crate::input::CreateAuditSuppressionInput::expiration_date): <p> The epoch timestamp in seconds at which this suppression expires. </p>
-    ///   - [`suppress_indefinitely(Option<bool>)`](crate::input::CreateAuditSuppressionInput::suppress_indefinitely): <p> Indicates whether a suppression should exist indefinitely or not. </p>
-    ///   - [`description(Option<String>)`](crate::input::CreateAuditSuppressionInput::description): <p> The description of the audit suppression. </p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateAuditSuppressionInput::client_request_token): <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`check_name(impl Into<String>)`](crate::client::fluent_builders::CreateAuditSuppression::check_name) / [`set_check_name(Option<String>)`](crate::client::fluent_builders::CreateAuditSuppression::set_check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    ///   - [`resource_identifier(ResourceIdentifier)`](crate::client::fluent_builders::CreateAuditSuppression::resource_identifier) / [`set_resource_identifier(Option<ResourceIdentifier>)`](crate::client::fluent_builders::CreateAuditSuppression::set_resource_identifier): <p>Information that identifies the noncompliant resource.</p>
+    ///   - [`expiration_date(DateTime)`](crate::client::fluent_builders::CreateAuditSuppression::expiration_date) / [`set_expiration_date(Option<DateTime>)`](crate::client::fluent_builders::CreateAuditSuppression::set_expiration_date): <p> The epoch timestamp in seconds at which this suppression expires. </p>
+    ///   - [`suppress_indefinitely(bool)`](crate::client::fluent_builders::CreateAuditSuppression::suppress_indefinitely) / [`set_suppress_indefinitely(Option<bool>)`](crate::client::fluent_builders::CreateAuditSuppression::set_suppress_indefinitely): <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAuditSuppression::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAuditSuppression::set_description): <p> The description of the audit suppression. </p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAuditSuppression::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAuditSuppression::set_client_request_token): <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     /// - On success, responds with [`CreateAuditSuppressionOutput`](crate::output::CreateAuditSuppressionOutput)
 
     /// - On failure, responds with [`SdkError<CreateAuditSuppressionError>`](crate::error::CreateAuditSuppressionError)
@@ -296,15 +296,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAuthorizer`](crate::client::fluent_builders::CreateAuthorizer) operation.
     ///
-    /// - Takes [`CreateAuthorizerInput`](crate::input::CreateAuthorizerInput) with field(s):
-    ///   - [`authorizer_name(Option<String>)`](crate::input::CreateAuthorizerInput::authorizer_name): <p>The authorizer name.</p>
-    ///   - [`authorizer_function_arn(Option<String>)`](crate::input::CreateAuthorizerInput::authorizer_function_arn): <p>The ARN of the authorizer's Lambda function.</p>
-    ///   - [`token_key_name(Option<String>)`](crate::input::CreateAuthorizerInput::token_key_name): <p>The name of the token key used to extract the token from the HTTP headers.</p>
-    ///   - [`token_signing_public_keys(Option<HashMap<String, String>>)`](crate::input::CreateAuthorizerInput::token_signing_public_keys): <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
-    ///   - [`status(Option<AuthorizerStatus>)`](crate::input::CreateAuthorizerInput::status): <p>The status of the create authorizer request.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAuthorizerInput::tags): <p>Metadata which can be used to manage the custom authorizer.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
-    ///   - [`signing_disabled(Option<bool>)`](crate::input::CreateAuthorizerInput::signing_disabled): <p>Specifies whether IoT validates the token signature in an authorization request.</p>
-    ///   - [`enable_caching_for_http(Option<bool>)`](crate::input::CreateAuthorizerInput::enable_caching_for_http): <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>  <p>The default value is <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authorizer_name(impl Into<String>)`](crate::client::fluent_builders::CreateAuthorizer::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::client::fluent_builders::CreateAuthorizer::set_authorizer_name): <p>The authorizer name.</p>
+    ///   - [`authorizer_function_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAuthorizer::authorizer_function_arn) / [`set_authorizer_function_arn(Option<String>)`](crate::client::fluent_builders::CreateAuthorizer::set_authorizer_function_arn): <p>The ARN of the authorizer's Lambda function.</p>
+    ///   - [`token_key_name(impl Into<String>)`](crate::client::fluent_builders::CreateAuthorizer::token_key_name) / [`set_token_key_name(Option<String>)`](crate::client::fluent_builders::CreateAuthorizer::set_token_key_name): <p>The name of the token key used to extract the token from the HTTP headers.</p>
+    ///   - [`token_signing_public_keys(HashMap<String, String>)`](crate::client::fluent_builders::CreateAuthorizer::token_signing_public_keys) / [`set_token_signing_public_keys(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAuthorizer::set_token_signing_public_keys): <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
+    ///   - [`status(AuthorizerStatus)`](crate::client::fluent_builders::CreateAuthorizer::status) / [`set_status(Option<AuthorizerStatus>)`](crate::client::fluent_builders::CreateAuthorizer::set_status): <p>The status of the create authorizer request.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAuthorizer::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAuthorizer::set_tags): <p>Metadata which can be used to manage the custom authorizer.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    ///   - [`signing_disabled(bool)`](crate::client::fluent_builders::CreateAuthorizer::signing_disabled) / [`set_signing_disabled(Option<bool>)`](crate::client::fluent_builders::CreateAuthorizer::set_signing_disabled): <p>Specifies whether IoT validates the token signature in an authorization request.</p>
+    ///   - [`enable_caching_for_http(bool)`](crate::client::fluent_builders::CreateAuthorizer::enable_caching_for_http) / [`set_enable_caching_for_http(Option<bool>)`](crate::client::fluent_builders::CreateAuthorizer::set_enable_caching_for_http): <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>  <p>The default value is <code>false</code>.</p>
     /// - On success, responds with [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput) with field(s):
     ///   - [`authorizer_name(Option<String>)`](crate::output::CreateAuthorizerOutput::authorizer_name): <p>The authorizer's name.</p>
     ///   - [`authorizer_arn(Option<String>)`](crate::output::CreateAuthorizerOutput::authorizer_arn): <p>The authorizer ARN.</p>
@@ -314,10 +314,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateBillingGroup`](crate::client::fluent_builders::CreateBillingGroup) operation.
     ///
-    /// - Takes [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput) with field(s):
-    ///   - [`billing_group_name(Option<String>)`](crate::input::CreateBillingGroupInput::billing_group_name): <p>The name you wish to give to the billing group.</p>
-    ///   - [`billing_group_properties(Option<BillingGroupProperties>)`](crate::input::CreateBillingGroupInput::billing_group_properties): <p>The properties of the billing group.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateBillingGroupInput::tags): <p>Metadata which can be used to manage the billing group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`billing_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateBillingGroup::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::client::fluent_builders::CreateBillingGroup::set_billing_group_name): <p>The name you wish to give to the billing group.</p>
+    ///   - [`billing_group_properties(BillingGroupProperties)`](crate::client::fluent_builders::CreateBillingGroup::billing_group_properties) / [`set_billing_group_properties(Option<BillingGroupProperties>)`](crate::client::fluent_builders::CreateBillingGroup::set_billing_group_properties): <p>The properties of the billing group.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBillingGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBillingGroup::set_tags): <p>Metadata which can be used to manage the billing group.</p>
     /// - On success, responds with [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput) with field(s):
     ///   - [`billing_group_name(Option<String>)`](crate::output::CreateBillingGroupOutput::billing_group_name): <p>The name you gave to the billing group.</p>
     ///   - [`billing_group_arn(Option<String>)`](crate::output::CreateBillingGroupOutput::billing_group_arn): <p>The ARN of the billing group.</p>
@@ -328,9 +328,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCertificateFromCsr`](crate::client::fluent_builders::CreateCertificateFromCsr) operation.
     ///
-    /// - Takes [`CreateCertificateFromCsrInput`](crate::input::CreateCertificateFromCsrInput) with field(s):
-    ///   - [`certificate_signing_request(Option<String>)`](crate::input::CreateCertificateFromCsrInput::certificate_signing_request): <p>The certificate signing request (CSR).</p>
-    ///   - [`set_as_active(bool)`](crate::input::CreateCertificateFromCsrInput::set_as_active): <p>Specifies whether the certificate is active.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_signing_request(impl Into<String>)`](crate::client::fluent_builders::CreateCertificateFromCsr::certificate_signing_request) / [`set_certificate_signing_request(Option<String>)`](crate::client::fluent_builders::CreateCertificateFromCsr::set_certificate_signing_request): <p>The certificate signing request (CSR).</p>
+    ///   - [`set_as_active(bool)`](crate::client::fluent_builders::CreateCertificateFromCsr::set_as_active) / [`set_set_as_active(bool)`](crate::client::fluent_builders::CreateCertificateFromCsr::set_set_as_active): <p>Specifies whether the certificate is active.</p>
     /// - On success, responds with [`CreateCertificateFromCsrOutput`](crate::output::CreateCertificateFromCsrOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::CreateCertificateFromCsrOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal for policy operations.</p>
     ///   - [`certificate_id(Option<String>)`](crate::output::CreateCertificateFromCsrOutput::certificate_id): <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
@@ -343,12 +343,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCustomMetric`](crate::client::fluent_builders::CreateCustomMetric) operation.
     ///
-    /// - Takes [`CreateCustomMetricInput`](crate::input::CreateCustomMetricInput) with field(s):
-    ///   - [`metric_name(Option<String>)`](crate::input::CreateCustomMetricInput::metric_name): <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateCustomMetricInput::display_name): <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
-    ///   - [`metric_type(Option<CustomMetricType>)`](crate::input::CreateCustomMetricInput::metric_type): <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCustomMetricInput::tags): <p> Metadata that can be used to manage the custom metric. </p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateCustomMetricInput::client_request_token): <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::CreateCustomMetric::set_metric_name): <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetric::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateCustomMetric::set_display_name): <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
+    ///   - [`metric_type(CustomMetricType)`](crate::client::fluent_builders::CreateCustomMetric::metric_type) / [`set_metric_type(Option<CustomMetricType>)`](crate::client::fluent_builders::CreateCustomMetric::set_metric_type): <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCustomMetric::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCustomMetric::set_tags): <p> Metadata that can be used to manage the custom metric. </p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetric::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateCustomMetric::set_client_request_token): <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     /// - On success, responds with [`CreateCustomMetricOutput`](crate::output::CreateCustomMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::output::CreateCustomMetricOutput::metric_name): <p> The name of the custom metric to be used in the metric report. </p>
     ///   - [`metric_arn(Option<String>)`](crate::output::CreateCustomMetricOutput::metric_arn): <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
@@ -358,12 +358,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDimension`](crate::client::fluent_builders::CreateDimension) operation.
     ///
-    /// - Takes [`CreateDimensionInput`](crate::input::CreateDimensionInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateDimensionInput::name): <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
-    ///   - [`r#type(Option<DimensionType>)`](crate::input::CreateDimensionInput::type): <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
-    ///   - [`string_values(Option<Vec<String>>)`](crate::input::CreateDimensionInput::string_values): <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDimensionInput::tags): <p>Metadata that can be used to manage the dimension.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateDimensionInput::client_request_token): <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDimension::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDimension::set_name): <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    ///   - [`r#type(DimensionType)`](crate::client::fluent_builders::CreateDimension::r#type) / [`set_type(Option<DimensionType>)`](crate::client::fluent_builders::CreateDimension::set_type): <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
+    ///   - [`string_values(Vec<String>)`](crate::client::fluent_builders::CreateDimension::string_values) / [`set_string_values(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDimension::set_string_values): <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDimension::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDimension::set_tags): <p>Metadata that can be used to manage the dimension.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateDimension::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateDimension::set_client_request_token): <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     /// - On success, responds with [`CreateDimensionOutput`](crate::output::CreateDimensionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateDimensionOutput::name): <p>A unique identifier for the dimension.</p>
     ///   - [`arn(Option<String>)`](crate::output::CreateDimensionOutput::arn): <p>The Amazon Resource Name (ARN) of the created dimension.</p>
@@ -373,14 +373,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDomainConfiguration`](crate::client::fluent_builders::CreateDomainConfiguration) operation.
     ///
-    /// - Takes [`CreateDomainConfigurationInput`](crate::input::CreateDomainConfigurationInput) with field(s):
-    ///   - [`domain_configuration_name(Option<String>)`](crate::input::CreateDomainConfigurationInput::domain_configuration_name): <p>The name of the domain configuration. This value must be unique to a region.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::CreateDomainConfigurationInput::domain_name): <p>The name of the domain.</p>
-    ///   - [`server_certificate_arns(Option<Vec<String>>)`](crate::input::CreateDomainConfigurationInput::server_certificate_arns): <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
-    ///   - [`validation_certificate_arn(Option<String>)`](crate::input::CreateDomainConfigurationInput::validation_certificate_arn): <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
-    ///   - [`authorizer_config(Option<AuthorizerConfig>)`](crate::input::CreateDomainConfigurationInput::authorizer_config): <p>An object that specifies the authorization service for a domain.</p>
-    ///   - [`service_type(Option<ServiceType>)`](crate::input::CreateDomainConfigurationInput::service_type): <p>The type of service delivered by the endpoint.</p> <note>   <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>  </note>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDomainConfigurationInput::tags): <p>Metadata which can be used to manage the domain configuration.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomainConfiguration::domain_configuration_name) / [`set_domain_configuration_name(Option<String>)`](crate::client::fluent_builders::CreateDomainConfiguration::set_domain_configuration_name): <p>The name of the domain configuration. This value must be unique to a region.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomainConfiguration::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomainConfiguration::set_domain_name): <p>The name of the domain.</p>
+    ///   - [`server_certificate_arns(Vec<String>)`](crate::client::fluent_builders::CreateDomainConfiguration::server_certificate_arns) / [`set_server_certificate_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDomainConfiguration::set_server_certificate_arns): <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
+    ///   - [`validation_certificate_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDomainConfiguration::validation_certificate_arn) / [`set_validation_certificate_arn(Option<String>)`](crate::client::fluent_builders::CreateDomainConfiguration::set_validation_certificate_arn): <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
+    ///   - [`authorizer_config(AuthorizerConfig)`](crate::client::fluent_builders::CreateDomainConfiguration::authorizer_config) / [`set_authorizer_config(Option<AuthorizerConfig>)`](crate::client::fluent_builders::CreateDomainConfiguration::set_authorizer_config): <p>An object that specifies the authorization service for a domain.</p>
+    ///   - [`service_type(ServiceType)`](crate::client::fluent_builders::CreateDomainConfiguration::service_type) / [`set_service_type(Option<ServiceType>)`](crate::client::fluent_builders::CreateDomainConfiguration::set_service_type): <p>The type of service delivered by the endpoint.</p> <note>   <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDomainConfiguration::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomainConfiguration::set_tags): <p>Metadata which can be used to manage the domain configuration.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
     /// - On success, responds with [`CreateDomainConfigurationOutput`](crate::output::CreateDomainConfigurationOutput) with field(s):
     ///   - [`domain_configuration_name(Option<String>)`](crate::output::CreateDomainConfigurationOutput::domain_configuration_name): <p>The name of the domain configuration.</p>
     ///   - [`domain_configuration_arn(Option<String>)`](crate::output::CreateDomainConfigurationOutput::domain_configuration_arn): <p>The ARN of the domain configuration.</p>
@@ -392,13 +392,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDynamicThingGroup`](crate::client::fluent_builders::CreateDynamicThingGroup) operation.
     ///
-    /// - Takes [`CreateDynamicThingGroupInput`](crate::input::CreateDynamicThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::CreateDynamicThingGroupInput::thing_group_name): <p>The dynamic thing group name to create.</p>
-    ///   - [`thing_group_properties(Option<ThingGroupProperties>)`](crate::input::CreateDynamicThingGroupInput::thing_group_properties): <p>The dynamic thing group properties.</p>
-    ///   - [`index_name(Option<String>)`](crate::input::CreateDynamicThingGroupInput::index_name): <p>The dynamic thing group index name.</p> <note>   <p>Currently one index is supported: <code>AWS_Things</code>.</p>  </note>
-    ///   - [`query_string(Option<String>)`](crate::input::CreateDynamicThingGroupInput::query_string): <p>The dynamic thing group search query string.</p>  <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
-    ///   - [`query_version(Option<String>)`](crate::input::CreateDynamicThingGroupInput::query_version): <p>The dynamic thing group query version.</p> <note>   <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>  </note>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDynamicThingGroupInput::tags): <p>Metadata which can be used to manage the dynamic thing group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDynamicThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::CreateDynamicThingGroup::set_thing_group_name): <p>The dynamic thing group name to create.</p>
+    ///   - [`thing_group_properties(ThingGroupProperties)`](crate::client::fluent_builders::CreateDynamicThingGroup::thing_group_properties) / [`set_thing_group_properties(Option<ThingGroupProperties>)`](crate::client::fluent_builders::CreateDynamicThingGroup::set_thing_group_properties): <p>The dynamic thing group properties.</p>
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::CreateDynamicThingGroup::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::CreateDynamicThingGroup::set_index_name): <p>The dynamic thing group index name.</p> <note>   <p>Currently one index is supported: <code>AWS_Things</code>.</p>  </note>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::CreateDynamicThingGroup::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::CreateDynamicThingGroup::set_query_string): <p>The dynamic thing group search query string.</p>  <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
+    ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::CreateDynamicThingGroup::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::CreateDynamicThingGroup::set_query_version): <p>The dynamic thing group query version.</p> <note>   <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDynamicThingGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDynamicThingGroup::set_tags): <p>Metadata which can be used to manage the dynamic thing group.</p>
     /// - On success, responds with [`CreateDynamicThingGroupOutput`](crate::output::CreateDynamicThingGroupOutput) with field(s):
     ///   - [`thing_group_name(Option<String>)`](crate::output::CreateDynamicThingGroupOutput::thing_group_name): <p>The dynamic thing group name.</p>
     ///   - [`thing_group_arn(Option<String>)`](crate::output::CreateDynamicThingGroupOutput::thing_group_arn): <p>The dynamic thing group ARN.</p>
@@ -412,17 +412,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFleetMetric`](crate::client::fluent_builders::CreateFleetMetric) operation.
     ///
-    /// - Takes [`CreateFleetMetricInput`](crate::input::CreateFleetMetricInput) with field(s):
-    ///   - [`metric_name(Option<String>)`](crate::input::CreateFleetMetricInput::metric_name): <p>The name of the fleet metric to create.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::CreateFleetMetricInput::query_string): <p>The search query string.</p>
-    ///   - [`aggregation_type(Option<AggregationType>)`](crate::input::CreateFleetMetricInput::aggregation_type): <p>The type of the aggregation query.</p>
-    ///   - [`period(Option<i32>)`](crate::input::CreateFleetMetricInput::period): <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
-    ///   - [`aggregation_field(Option<String>)`](crate::input::CreateFleetMetricInput::aggregation_field): <p>The field to aggregate.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateFleetMetricInput::description): <p>The fleet metric description.</p>
-    ///   - [`query_version(Option<String>)`](crate::input::CreateFleetMetricInput::query_version): <p>The query version.</p>
-    ///   - [`index_name(Option<String>)`](crate::input::CreateFleetMetricInput::index_name): <p>The name of the index to search.</p>
-    ///   - [`unit(Option<FleetMetricUnit>)`](crate::input::CreateFleetMetricInput::unit): <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateFleetMetricInput::tags): <p>Metadata, which can be used to manage the fleet metric.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleetMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::CreateFleetMetric::set_metric_name): <p>The name of the fleet metric to create.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::CreateFleetMetric::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::CreateFleetMetric::set_query_string): <p>The search query string.</p>
+    ///   - [`aggregation_type(AggregationType)`](crate::client::fluent_builders::CreateFleetMetric::aggregation_type) / [`set_aggregation_type(Option<AggregationType>)`](crate::client::fluent_builders::CreateFleetMetric::set_aggregation_type): <p>The type of the aggregation query.</p>
+    ///   - [`period(i32)`](crate::client::fluent_builders::CreateFleetMetric::period) / [`set_period(Option<i32>)`](crate::client::fluent_builders::CreateFleetMetric::set_period): <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    ///   - [`aggregation_field(impl Into<String>)`](crate::client::fluent_builders::CreateFleetMetric::aggregation_field) / [`set_aggregation_field(Option<String>)`](crate::client::fluent_builders::CreateFleetMetric::set_aggregation_field): <p>The field to aggregate.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFleetMetric::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFleetMetric::set_description): <p>The fleet metric description.</p>
+    ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::CreateFleetMetric::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::CreateFleetMetric::set_query_version): <p>The query version.</p>
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleetMetric::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::CreateFleetMetric::set_index_name): <p>The name of the index to search.</p>
+    ///   - [`unit(FleetMetricUnit)`](crate::client::fluent_builders::CreateFleetMetric::unit) / [`set_unit(Option<FleetMetricUnit>)`](crate::client::fluent_builders::CreateFleetMetric::set_unit): <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFleetMetric::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFleetMetric::set_tags): <p>Metadata, which can be used to manage the fleet metric.</p>
     /// - On success, responds with [`CreateFleetMetricOutput`](crate::output::CreateFleetMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::output::CreateFleetMetricOutput::metric_name): <p>The name of the fleet metric to create.</p>
     ///   - [`metric_arn(Option<String>)`](crate::output::CreateFleetMetricOutput::metric_arn): <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
@@ -432,22 +432,22 @@ where
     }
     /// Constructs a fluent builder for the [`CreateJob`](crate::client::fluent_builders::CreateJob) operation.
     ///
-    /// - Takes [`CreateJobInput`](crate::input::CreateJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::CreateJobInput::job_id): <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
-    ///   - [`targets(Option<Vec<String>>)`](crate::input::CreateJobInput::targets): <p>A list of things and thing groups to which the job should be sent.</p>
-    ///   - [`document_source(Option<String>)`](crate::input::CreateJobInput::document_source): <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>   <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>   <p>The placeholder link is of the following form:</p>   <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>   <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>  </note>
-    ///   - [`document(Option<String>)`](crate::input::CreateJobInput::document): <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateJobInput::description): <p>A short text description of the job.</p>
-    ///   - [`presigned_url_config(Option<PresignedUrlConfig>)`](crate::input::CreateJobInput::presigned_url_config): <p>Configuration information for pre-signed S3 URLs.</p>
-    ///   - [`target_selection(Option<TargetSelection>)`](crate::input::CreateJobInput::target_selection): <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
-    ///   - [`job_executions_rollout_config(Option<JobExecutionsRolloutConfig>)`](crate::input::CreateJobInput::job_executions_rollout_config): <p>Allows you to create a staged rollout of the job.</p>
-    ///   - [`abort_config(Option<AbortConfig>)`](crate::input::CreateJobInput::abort_config): <p>Allows you to create the criteria to abort a job.</p>
-    ///   - [`timeout_config(Option<TimeoutConfig>)`](crate::input::CreateJobInput::timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateJobInput::tags): <p>Metadata which can be used to manage the job.</p>
-    ///   - [`namespace_id(Option<String>)`](crate::input::CreateJobInput::namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
-    ///   - [`job_template_arn(Option<String>)`](crate::input::CreateJobInput::job_template_arn): <p>The ARN of the job template used to create the job.</p>
-    ///   - [`job_executions_retry_config(Option<JobExecutionsRetryConfig>)`](crate::input::CreateJobInput::job_executions_retry_config): <p>Allows you to create the criteria to retry a job.</p>
-    ///   - [`document_parameters(Option<HashMap<String, String>>)`](crate::input::CreateJobInput::document_parameters): <p>Parameters of a managed template that you can specify to create the job document.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::CreateJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::CreateJob::set_job_id): <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+    ///   - [`targets(Vec<String>)`](crate::client::fluent_builders::CreateJob::targets) / [`set_targets(Option<Vec<String>>)`](crate::client::fluent_builders::CreateJob::set_targets): <p>A list of things and thing groups to which the job should be sent.</p>
+    ///   - [`document_source(impl Into<String>)`](crate::client::fluent_builders::CreateJob::document_source) / [`set_document_source(Option<String>)`](crate::client::fluent_builders::CreateJob::set_document_source): <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>   <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>   <p>The placeholder link is of the following form:</p>   <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>   <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>  </note>
+    ///   - [`document(impl Into<String>)`](crate::client::fluent_builders::CreateJob::document) / [`set_document(Option<String>)`](crate::client::fluent_builders::CreateJob::set_document): <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateJob::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateJob::set_description): <p>A short text description of the job.</p>
+    ///   - [`presigned_url_config(PresignedUrlConfig)`](crate::client::fluent_builders::CreateJob::presigned_url_config) / [`set_presigned_url_config(Option<PresignedUrlConfig>)`](crate::client::fluent_builders::CreateJob::set_presigned_url_config): <p>Configuration information for pre-signed S3 URLs.</p>
+    ///   - [`target_selection(TargetSelection)`](crate::client::fluent_builders::CreateJob::target_selection) / [`set_target_selection(Option<TargetSelection>)`](crate::client::fluent_builders::CreateJob::set_target_selection): <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
+    ///   - [`job_executions_rollout_config(JobExecutionsRolloutConfig)`](crate::client::fluent_builders::CreateJob::job_executions_rollout_config) / [`set_job_executions_rollout_config(Option<JobExecutionsRolloutConfig>)`](crate::client::fluent_builders::CreateJob::set_job_executions_rollout_config): <p>Allows you to create a staged rollout of the job.</p>
+    ///   - [`abort_config(AbortConfig)`](crate::client::fluent_builders::CreateJob::abort_config) / [`set_abort_config(Option<AbortConfig>)`](crate::client::fluent_builders::CreateJob::set_abort_config): <p>Allows you to create the criteria to abort a job.</p>
+    ///   - [`timeout_config(TimeoutConfig)`](crate::client::fluent_builders::CreateJob::timeout_config) / [`set_timeout_config(Option<TimeoutConfig>)`](crate::client::fluent_builders::CreateJob::set_timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateJob::set_tags): <p>Metadata which can be used to manage the job.</p>
+    ///   - [`namespace_id(impl Into<String>)`](crate::client::fluent_builders::CreateJob::namespace_id) / [`set_namespace_id(Option<String>)`](crate::client::fluent_builders::CreateJob::set_namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
+    ///   - [`job_template_arn(impl Into<String>)`](crate::client::fluent_builders::CreateJob::job_template_arn) / [`set_job_template_arn(Option<String>)`](crate::client::fluent_builders::CreateJob::set_job_template_arn): <p>The ARN of the job template used to create the job.</p>
+    ///   - [`job_executions_retry_config(JobExecutionsRetryConfig)`](crate::client::fluent_builders::CreateJob::job_executions_retry_config) / [`set_job_executions_retry_config(Option<JobExecutionsRetryConfig>)`](crate::client::fluent_builders::CreateJob::set_job_executions_retry_config): <p>Allows you to create the criteria to retry a job.</p>
+    ///   - [`document_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::document_parameters) / [`set_document_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_document_parameters): <p>Parameters of a managed template that you can specify to create the job document.</p>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::output::CreateJobOutput::job_arn): <p>The job ARN.</p>
     ///   - [`job_id(Option<String>)`](crate::output::CreateJobOutput::job_id): <p>The unique identifier you assigned to this job.</p>
@@ -458,18 +458,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateJobTemplate`](crate::client::fluent_builders::CreateJobTemplate) operation.
     ///
-    /// - Takes [`CreateJobTemplateInput`](crate::input::CreateJobTemplateInput) with field(s):
-    ///   - [`job_template_id(Option<String>)`](crate::input::CreateJobTemplateInput::job_template_id): <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
-    ///   - [`job_arn(Option<String>)`](crate::input::CreateJobTemplateInput::job_arn): <p>The ARN of the job to use as the basis for the job template.</p>
-    ///   - [`document_source(Option<String>)`](crate::input::CreateJobTemplateInput::document_source): <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>   <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>   <p>The placeholder link is of the following form:</p>   <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>   <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>  </note>
-    ///   - [`document(Option<String>)`](crate::input::CreateJobTemplateInput::document): <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateJobTemplateInput::description): <p>A description of the job document.</p>
-    ///   - [`presigned_url_config(Option<PresignedUrlConfig>)`](crate::input::CreateJobTemplateInput::presigned_url_config): <p>Configuration for pre-signed S3 URLs.</p>
-    ///   - [`job_executions_rollout_config(Option<JobExecutionsRolloutConfig>)`](crate::input::CreateJobTemplateInput::job_executions_rollout_config): <p>Allows you to create a staged rollout of a job.</p>
-    ///   - [`abort_config(Option<AbortConfig>)`](crate::input::CreateJobTemplateInput::abort_config): <p>The criteria that determine when and how a job abort takes place.</p>
-    ///   - [`timeout_config(Option<TimeoutConfig>)`](crate::input::CreateJobTemplateInput::timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateJobTemplateInput::tags): <p>Metadata that can be used to manage the job template.</p>
-    ///   - [`job_executions_retry_config(Option<JobExecutionsRetryConfig>)`](crate::input::CreateJobTemplateInput::job_executions_retry_config): <p>Allows you to create the criteria to retry a job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_template_id(impl Into<String>)`](crate::client::fluent_builders::CreateJobTemplate::job_template_id) / [`set_job_template_id(Option<String>)`](crate::client::fluent_builders::CreateJobTemplate::set_job_template_id): <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
+    ///   - [`job_arn(impl Into<String>)`](crate::client::fluent_builders::CreateJobTemplate::job_arn) / [`set_job_arn(Option<String>)`](crate::client::fluent_builders::CreateJobTemplate::set_job_arn): <p>The ARN of the job to use as the basis for the job template.</p>
+    ///   - [`document_source(impl Into<String>)`](crate::client::fluent_builders::CreateJobTemplate::document_source) / [`set_document_source(Option<String>)`](crate::client::fluent_builders::CreateJobTemplate::set_document_source): <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>   <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>   <p>The placeholder link is of the following form:</p>   <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>   <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>  </note>
+    ///   - [`document(impl Into<String>)`](crate::client::fluent_builders::CreateJobTemplate::document) / [`set_document(Option<String>)`](crate::client::fluent_builders::CreateJobTemplate::set_document): <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateJobTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateJobTemplate::set_description): <p>A description of the job document.</p>
+    ///   - [`presigned_url_config(PresignedUrlConfig)`](crate::client::fluent_builders::CreateJobTemplate::presigned_url_config) / [`set_presigned_url_config(Option<PresignedUrlConfig>)`](crate::client::fluent_builders::CreateJobTemplate::set_presigned_url_config): <p>Configuration for pre-signed S3 URLs.</p>
+    ///   - [`job_executions_rollout_config(JobExecutionsRolloutConfig)`](crate::client::fluent_builders::CreateJobTemplate::job_executions_rollout_config) / [`set_job_executions_rollout_config(Option<JobExecutionsRolloutConfig>)`](crate::client::fluent_builders::CreateJobTemplate::set_job_executions_rollout_config): <p>Allows you to create a staged rollout of a job.</p>
+    ///   - [`abort_config(AbortConfig)`](crate::client::fluent_builders::CreateJobTemplate::abort_config) / [`set_abort_config(Option<AbortConfig>)`](crate::client::fluent_builders::CreateJobTemplate::set_abort_config): <p>The criteria that determine when and how a job abort takes place.</p>
+    ///   - [`timeout_config(TimeoutConfig)`](crate::client::fluent_builders::CreateJobTemplate::timeout_config) / [`set_timeout_config(Option<TimeoutConfig>)`](crate::client::fluent_builders::CreateJobTemplate::set_timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateJobTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateJobTemplate::set_tags): <p>Metadata that can be used to manage the job template.</p>
+    ///   - [`job_executions_retry_config(JobExecutionsRetryConfig)`](crate::client::fluent_builders::CreateJobTemplate::job_executions_retry_config) / [`set_job_executions_retry_config(Option<JobExecutionsRetryConfig>)`](crate::client::fluent_builders::CreateJobTemplate::set_job_executions_retry_config): <p>Allows you to create the criteria to retry a job.</p>
     /// - On success, responds with [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput) with field(s):
     ///   - [`job_template_arn(Option<String>)`](crate::output::CreateJobTemplateOutput::job_template_arn): <p>The ARN of the job template.</p>
     ///   - [`job_template_id(Option<String>)`](crate::output::CreateJobTemplateOutput::job_template_id): <p>The unique identifier of the job template.</p>
@@ -479,8 +479,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateKeysAndCertificate`](crate::client::fluent_builders::CreateKeysAndCertificate) operation.
     ///
-    /// - Takes [`CreateKeysAndCertificateInput`](crate::input::CreateKeysAndCertificateInput) with field(s):
-    ///   - [`set_as_active(bool)`](crate::input::CreateKeysAndCertificateInput::set_as_active): <p>Specifies whether the certificate is active.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`set_as_active(bool)`](crate::client::fluent_builders::CreateKeysAndCertificate::set_as_active) / [`set_set_as_active(bool)`](crate::client::fluent_builders::CreateKeysAndCertificate::set_set_as_active): <p>Specifies whether the certificate is active.</p>
     /// - On success, responds with [`CreateKeysAndCertificateOutput`](crate::output::CreateKeysAndCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::CreateKeysAndCertificateOutput::certificate_arn): <p>The ARN of the certificate.</p>
     ///   - [`certificate_id(Option<String>)`](crate::output::CreateKeysAndCertificateOutput::certificate_id): <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
@@ -494,11 +494,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMitigationAction`](crate::client::fluent_builders::CreateMitigationAction) operation.
     ///
-    /// - Takes [`CreateMitigationActionInput`](crate::input::CreateMitigationActionInput) with field(s):
-    ///   - [`action_name(Option<String>)`](crate::input::CreateMitigationActionInput::action_name): <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateMitigationActionInput::role_arn): <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
-    ///   - [`action_params(Option<MitigationActionParams>)`](crate::input::CreateMitigationActionInput::action_params): <p>Defines the type of action and the parameters for that action.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateMitigationActionInput::tags): <p>Metadata that can be used to manage the mitigation action.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::CreateMitigationAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::CreateMitigationAction::set_action_name): <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMitigationAction::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateMitigationAction::set_role_arn): <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
+    ///   - [`action_params(MitigationActionParams)`](crate::client::fluent_builders::CreateMitigationAction::action_params) / [`set_action_params(Option<MitigationActionParams>)`](crate::client::fluent_builders::CreateMitigationAction::set_action_params): <p>Defines the type of action and the parameters for that action.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMitigationAction::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMitigationAction::set_tags): <p>Metadata that can be used to manage the mitigation action.</p>
     /// - On success, responds with [`CreateMitigationActionOutput`](crate::output::CreateMitigationActionOutput) with field(s):
     ///   - [`action_arn(Option<String>)`](crate::output::CreateMitigationActionOutput::action_arn): <p>The ARN for the new mitigation action.</p>
     ///   - [`action_id(Option<String>)`](crate::output::CreateMitigationActionOutput::action_id): <p>A unique identifier for the new mitigation action.</p>
@@ -508,20 +508,20 @@ where
     }
     /// Constructs a fluent builder for the [`CreateOTAUpdate`](crate::client::fluent_builders::CreateOTAUpdate) operation.
     ///
-    /// - Takes [`CreateOtaUpdateInput`](crate::input::CreateOtaUpdateInput) with field(s):
-    ///   - [`ota_update_id(Option<String>)`](crate::input::CreateOtaUpdateInput::ota_update_id): <p>The ID of the OTA update to be created.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateOtaUpdateInput::description): <p>The description of the OTA update.</p>
-    ///   - [`targets(Option<Vec<String>>)`](crate::input::CreateOtaUpdateInput::targets): <p>The devices targeted to receive OTA updates.</p>
-    ///   - [`protocols(Option<Vec<Protocol>>)`](crate::input::CreateOtaUpdateInput::protocols): <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
-    ///   - [`target_selection(Option<TargetSelection>)`](crate::input::CreateOtaUpdateInput::target_selection): <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
-    ///   - [`aws_job_executions_rollout_config(Option<AwsJobExecutionsRolloutConfig>)`](crate::input::CreateOtaUpdateInput::aws_job_executions_rollout_config): <p>Configuration for the rollout of OTA updates.</p>
-    ///   - [`aws_job_presigned_url_config(Option<AwsJobPresignedUrlConfig>)`](crate::input::CreateOtaUpdateInput::aws_job_presigned_url_config): <p>Configuration information for pre-signed URLs.</p>
-    ///   - [`aws_job_abort_config(Option<AwsJobAbortConfig>)`](crate::input::CreateOtaUpdateInput::aws_job_abort_config): <p>The criteria that determine when and how a job abort takes place.</p>
-    ///   - [`aws_job_timeout_config(Option<AwsJobTimeoutConfig>)`](crate::input::CreateOtaUpdateInput::aws_job_timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    ///   - [`files(Option<Vec<OtaUpdateFile>>)`](crate::input::CreateOtaUpdateInput::files): <p>The files to be streamed by the OTA update.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateOtaUpdateInput::role_arn): <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
-    ///   - [`additional_parameters(Option<HashMap<String, String>>)`](crate::input::CreateOtaUpdateInput::additional_parameters): <p>A list of additional OTA update parameters which are name-value pairs.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateOtaUpdateInput::tags): <p>Metadata which can be used to manage updates.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ota_update_id(impl Into<String>)`](crate::client::fluent_builders::CreateOTAUpdate::ota_update_id) / [`set_ota_update_id(Option<String>)`](crate::client::fluent_builders::CreateOTAUpdate::set_ota_update_id): <p>The ID of the OTA update to be created.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateOTAUpdate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateOTAUpdate::set_description): <p>The description of the OTA update.</p>
+    ///   - [`targets(Vec<String>)`](crate::client::fluent_builders::CreateOTAUpdate::targets) / [`set_targets(Option<Vec<String>>)`](crate::client::fluent_builders::CreateOTAUpdate::set_targets): <p>The devices targeted to receive OTA updates.</p>
+    ///   - [`protocols(Vec<Protocol>)`](crate::client::fluent_builders::CreateOTAUpdate::protocols) / [`set_protocols(Option<Vec<Protocol>>)`](crate::client::fluent_builders::CreateOTAUpdate::set_protocols): <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    ///   - [`target_selection(TargetSelection)`](crate::client::fluent_builders::CreateOTAUpdate::target_selection) / [`set_target_selection(Option<TargetSelection>)`](crate::client::fluent_builders::CreateOTAUpdate::set_target_selection): <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
+    ///   - [`aws_job_executions_rollout_config(AwsJobExecutionsRolloutConfig)`](crate::client::fluent_builders::CreateOTAUpdate::aws_job_executions_rollout_config) / [`set_aws_job_executions_rollout_config(Option<AwsJobExecutionsRolloutConfig>)`](crate::client::fluent_builders::CreateOTAUpdate::set_aws_job_executions_rollout_config): <p>Configuration for the rollout of OTA updates.</p>
+    ///   - [`aws_job_presigned_url_config(AwsJobPresignedUrlConfig)`](crate::client::fluent_builders::CreateOTAUpdate::aws_job_presigned_url_config) / [`set_aws_job_presigned_url_config(Option<AwsJobPresignedUrlConfig>)`](crate::client::fluent_builders::CreateOTAUpdate::set_aws_job_presigned_url_config): <p>Configuration information for pre-signed URLs.</p>
+    ///   - [`aws_job_abort_config(AwsJobAbortConfig)`](crate::client::fluent_builders::CreateOTAUpdate::aws_job_abort_config) / [`set_aws_job_abort_config(Option<AwsJobAbortConfig>)`](crate::client::fluent_builders::CreateOTAUpdate::set_aws_job_abort_config): <p>The criteria that determine when and how a job abort takes place.</p>
+    ///   - [`aws_job_timeout_config(AwsJobTimeoutConfig)`](crate::client::fluent_builders::CreateOTAUpdate::aws_job_timeout_config) / [`set_aws_job_timeout_config(Option<AwsJobTimeoutConfig>)`](crate::client::fluent_builders::CreateOTAUpdate::set_aws_job_timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    ///   - [`files(Vec<OtaUpdateFile>)`](crate::client::fluent_builders::CreateOTAUpdate::files) / [`set_files(Option<Vec<OtaUpdateFile>>)`](crate::client::fluent_builders::CreateOTAUpdate::set_files): <p>The files to be streamed by the OTA update.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateOTAUpdate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateOTAUpdate::set_role_arn): <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
+    ///   - [`additional_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateOTAUpdate::additional_parameters) / [`set_additional_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateOTAUpdate::set_additional_parameters): <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateOTAUpdate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateOTAUpdate::set_tags): <p>Metadata which can be used to manage updates.</p>
     /// - On success, responds with [`CreateOtaUpdateOutput`](crate::output::CreateOtaUpdateOutput) with field(s):
     ///   - [`ota_update_id(Option<String>)`](crate::output::CreateOtaUpdateOutput::ota_update_id): <p>The OTA update ID.</p>
     ///   - [`aws_iot_job_id(Option<String>)`](crate::output::CreateOtaUpdateOutput::aws_iot_job_id): <p>The IoT job ID associated with the OTA update.</p>
@@ -534,10 +534,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreatePolicy`](crate::client::fluent_builders::CreatePolicy) operation.
     ///
-    /// - Takes [`CreatePolicyInput`](crate::input::CreatePolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::CreatePolicyInput::policy_name): <p>The policy name.</p>
-    ///   - [`policy_document(Option<String>)`](crate::input::CreatePolicyInput::policy_document): <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePolicyInput::tags): <p>Metadata which can be used to manage the policy.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::CreatePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::CreatePolicy::set_policy_name): <p>The policy name.</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::CreatePolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::CreatePolicy::set_policy_document): <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePolicy::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePolicy::set_tags): <p>Metadata which can be used to manage the policy.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
     /// - On success, responds with [`CreatePolicyOutput`](crate::output::CreatePolicyOutput) with field(s):
     ///   - [`policy_name(Option<String>)`](crate::output::CreatePolicyOutput::policy_name): <p>The policy name.</p>
     ///   - [`policy_arn(Option<String>)`](crate::output::CreatePolicyOutput::policy_arn): <p>The policy ARN.</p>
@@ -549,10 +549,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreatePolicyVersion`](crate::client::fluent_builders::CreatePolicyVersion) operation.
     ///
-    /// - Takes [`CreatePolicyVersionInput`](crate::input::CreatePolicyVersionInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::CreatePolicyVersionInput::policy_name): <p>The policy name.</p>
-    ///   - [`policy_document(Option<String>)`](crate::input::CreatePolicyVersionInput::policy_document): <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
-    ///   - [`set_as_default(bool)`](crate::input::CreatePolicyVersionInput::set_as_default): <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::CreatePolicyVersion::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::CreatePolicyVersion::set_policy_name): <p>The policy name.</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::CreatePolicyVersion::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::CreatePolicyVersion::set_policy_document): <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
+    ///   - [`set_as_default(bool)`](crate::client::fluent_builders::CreatePolicyVersion::set_as_default) / [`set_set_as_default(bool)`](crate::client::fluent_builders::CreatePolicyVersion::set_set_as_default): <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
     /// - On success, responds with [`CreatePolicyVersionOutput`](crate::output::CreatePolicyVersionOutput) with field(s):
     ///   - [`policy_arn(Option<String>)`](crate::output::CreatePolicyVersionOutput::policy_arn): <p>The policy ARN.</p>
     ///   - [`policy_document(Option<String>)`](crate::output::CreatePolicyVersionOutput::policy_document): <p>The JSON document that describes the policy.</p>
@@ -564,8 +564,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateProvisioningClaim`](crate::client::fluent_builders::CreateProvisioningClaim) operation.
     ///
-    /// - Takes [`CreateProvisioningClaimInput`](crate::input::CreateProvisioningClaimInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::CreateProvisioningClaimInput::template_name): <p>The name of the provisioning template to use.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningClaim::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateProvisioningClaim::set_template_name): <p>The name of the provisioning template to use.</p>
     /// - On success, responds with [`CreateProvisioningClaimOutput`](crate::output::CreateProvisioningClaimOutput) with field(s):
     ///   - [`certificate_id(Option<String>)`](crate::output::CreateProvisioningClaimOutput::certificate_id): <p>The ID of the certificate.</p>
     ///   - [`certificate_pem(Option<String>)`](crate::output::CreateProvisioningClaimOutput::certificate_pem): <p>The provisioning claim certificate.</p>
@@ -577,14 +577,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateProvisioningTemplate`](crate::client::fluent_builders::CreateProvisioningTemplate) operation.
     ///
-    /// - Takes [`CreateProvisioningTemplateInput`](crate::input::CreateProvisioningTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::CreateProvisioningTemplateInput::template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateProvisioningTemplateInput::description): <p>The description of the fleet provisioning template.</p>
-    ///   - [`template_body(Option<String>)`](crate::input::CreateProvisioningTemplateInput::template_body): <p>The JSON formatted contents of the fleet provisioning template.</p>
-    ///   - [`enabled(bool)`](crate::input::CreateProvisioningTemplateInput::enabled): <p>True to enable the fleet provisioning template, otherwise false.</p>
-    ///   - [`provisioning_role_arn(Option<String>)`](crate::input::CreateProvisioningTemplateInput::provisioning_role_arn): <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
-    ///   - [`pre_provisioning_hook(Option<ProvisioningHook>)`](crate::input::CreateProvisioningTemplateInput::pre_provisioning_hook): <p>Creates a pre-provisioning hook template.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateProvisioningTemplateInput::tags): <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_template_name): <p>The name of the fleet provisioning template.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_description): <p>The description of the fleet provisioning template.</p>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_template_body): <p>The JSON formatted contents of the fleet provisioning template.</p>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateProvisioningTemplate::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_enabled): <p>True to enable the fleet provisioning template, otherwise false.</p>
+    ///   - [`provisioning_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::provisioning_role_arn) / [`set_provisioning_role_arn(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_provisioning_role_arn): <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
+    ///   - [`pre_provisioning_hook(ProvisioningHook)`](crate::client::fluent_builders::CreateProvisioningTemplate::pre_provisioning_hook) / [`set_pre_provisioning_hook(Option<ProvisioningHook>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_pre_provisioning_hook): <p>Creates a pre-provisioning hook template.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProvisioningTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_tags): <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
     /// - On success, responds with [`CreateProvisioningTemplateOutput`](crate::output::CreateProvisioningTemplateOutput) with field(s):
     ///   - [`template_arn(Option<String>)`](crate::output::CreateProvisioningTemplateOutput::template_arn): <p>The ARN that identifies the provisioning template.</p>
     ///   - [`template_name(Option<String>)`](crate::output::CreateProvisioningTemplateOutput::template_name): <p>The name of the fleet provisioning template.</p>
@@ -597,10 +597,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateProvisioningTemplateVersion`](crate::client::fluent_builders::CreateProvisioningTemplateVersion) operation.
     ///
-    /// - Takes [`CreateProvisioningTemplateVersionInput`](crate::input::CreateProvisioningTemplateVersionInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::CreateProvisioningTemplateVersionInput::template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`template_body(Option<String>)`](crate::input::CreateProvisioningTemplateVersionInput::template_body): <p>The JSON formatted contents of the fleet provisioning template.</p>
-    ///   - [`set_as_default(bool)`](crate::input::CreateProvisioningTemplateVersionInput::set_as_default): <p>Sets a fleet provision template version as the default version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_template_name): <p>The name of the fleet provisioning template.</p>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_template_body): <p>The JSON formatted contents of the fleet provisioning template.</p>
+    ///   - [`set_as_default(bool)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_as_default) / [`set_set_as_default(bool)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_set_as_default): <p>Sets a fleet provision template version as the default version.</p>
     /// - On success, responds with [`CreateProvisioningTemplateVersionOutput`](crate::output::CreateProvisioningTemplateVersionOutput) with field(s):
     ///   - [`template_arn(Option<String>)`](crate::output::CreateProvisioningTemplateVersionOutput::template_arn): <p>The ARN that identifies the provisioning template.</p>
     ///   - [`template_name(Option<String>)`](crate::output::CreateProvisioningTemplateVersionOutput::template_name): <p>The name of the fleet provisioning template.</p>
@@ -614,11 +614,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRoleAlias`](crate::client::fluent_builders::CreateRoleAlias) operation.
     ///
-    /// - Takes [`CreateRoleAliasInput`](crate::input::CreateRoleAliasInput) with field(s):
-    ///   - [`role_alias(Option<String>)`](crate::input::CreateRoleAliasInput::role_alias): <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateRoleAliasInput::role_arn): <p>The role ARN.</p>
-    ///   - [`credential_duration_seconds(Option<i32>)`](crate::input::CreateRoleAliasInput::credential_duration_seconds): <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateRoleAliasInput::tags): <p>Metadata which can be used to manage the role alias.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`role_alias(impl Into<String>)`](crate::client::fluent_builders::CreateRoleAlias::role_alias) / [`set_role_alias(Option<String>)`](crate::client::fluent_builders::CreateRoleAlias::set_role_alias): <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRoleAlias::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateRoleAlias::set_role_arn): <p>The role ARN.</p>
+    ///   - [`credential_duration_seconds(i32)`](crate::client::fluent_builders::CreateRoleAlias::credential_duration_seconds) / [`set_credential_duration_seconds(Option<i32>)`](crate::client::fluent_builders::CreateRoleAlias::set_credential_duration_seconds): <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRoleAlias::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRoleAlias::set_tags): <p>Metadata which can be used to manage the role alias.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
     /// - On success, responds with [`CreateRoleAliasOutput`](crate::output::CreateRoleAliasOutput) with field(s):
     ///   - [`role_alias(Option<String>)`](crate::output::CreateRoleAliasOutput::role_alias): <p>The role alias.</p>
     ///   - [`role_alias_arn(Option<String>)`](crate::output::CreateRoleAliasOutput::role_alias_arn): <p>The role alias ARN.</p>
@@ -628,13 +628,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateScheduledAudit`](crate::client::fluent_builders::CreateScheduledAudit) operation.
     ///
-    /// - Takes [`CreateScheduledAuditInput`](crate::input::CreateScheduledAuditInput) with field(s):
-    ///   - [`frequency(Option<AuditFrequency>)`](crate::input::CreateScheduledAuditInput::frequency): <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
-    ///   - [`day_of_month(Option<String>)`](crate::input::CreateScheduledAuditInput::day_of_month): <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
-    ///   - [`day_of_week(Option<DayOfWeek>)`](crate::input::CreateScheduledAuditInput::day_of_week): <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
-    ///   - [`target_check_names(Option<Vec<String>>)`](crate::input::CreateScheduledAuditInput::target_check_names): <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    ///   - [`scheduled_audit_name(Option<String>)`](crate::input::CreateScheduledAuditInput::scheduled_audit_name): <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateScheduledAuditInput::tags): <p>Metadata that can be used to manage the scheduled audit.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`frequency(AuditFrequency)`](crate::client::fluent_builders::CreateScheduledAudit::frequency) / [`set_frequency(Option<AuditFrequency>)`](crate::client::fluent_builders::CreateScheduledAudit::set_frequency): <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
+    ///   - [`day_of_month(impl Into<String>)`](crate::client::fluent_builders::CreateScheduledAudit::day_of_month) / [`set_day_of_month(Option<String>)`](crate::client::fluent_builders::CreateScheduledAudit::set_day_of_month): <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+    ///   - [`day_of_week(DayOfWeek)`](crate::client::fluent_builders::CreateScheduledAudit::day_of_week) / [`set_day_of_week(Option<DayOfWeek>)`](crate::client::fluent_builders::CreateScheduledAudit::set_day_of_week): <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    ///   - [`target_check_names(Vec<String>)`](crate::client::fluent_builders::CreateScheduledAudit::target_check_names) / [`set_target_check_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateScheduledAudit::set_target_check_names): <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    ///   - [`scheduled_audit_name(impl Into<String>)`](crate::client::fluent_builders::CreateScheduledAudit::scheduled_audit_name) / [`set_scheduled_audit_name(Option<String>)`](crate::client::fluent_builders::CreateScheduledAudit::set_scheduled_audit_name): <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateScheduledAudit::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateScheduledAudit::set_tags): <p>Metadata that can be used to manage the scheduled audit.</p>
     /// - On success, responds with [`CreateScheduledAuditOutput`](crate::output::CreateScheduledAuditOutput) with field(s):
     ///   - [`scheduled_audit_arn(Option<String>)`](crate::output::CreateScheduledAuditOutput::scheduled_audit_arn): <p>The ARN of the scheduled audit.</p>
     /// - On failure, responds with [`SdkError<CreateScheduledAuditError>`](crate::error::CreateScheduledAuditError)
@@ -643,14 +643,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSecurityProfile`](crate::client::fluent_builders::CreateSecurityProfile) operation.
     ///
-    /// - Takes [`CreateSecurityProfileInput`](crate::input::CreateSecurityProfileInput) with field(s):
-    ///   - [`security_profile_name(Option<String>)`](crate::input::CreateSecurityProfileInput::security_profile_name): <p>The name you are giving to the security profile.</p>
-    ///   - [`security_profile_description(Option<String>)`](crate::input::CreateSecurityProfileInput::security_profile_description): <p>A description of the security profile.</p>
-    ///   - [`behaviors(Option<Vec<Behavior>>)`](crate::input::CreateSecurityProfileInput::behaviors): <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    ///   - [`alert_targets(Option<HashMap<AlertTargetType, AlertTarget>>)`](crate::input::CreateSecurityProfileInput::alert_targets): <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
-    ///   - [`additional_metrics_to_retain(Option<Vec<String>>)`](crate::input::CreateSecurityProfileInput::additional_metrics_to_retain): <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>  <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    ///   - [`additional_metrics_to_retain_v2(Option<Vec<MetricToRetain>>)`](crate::input::CreateSecurityProfileInput::additional_metrics_to_retain_v2): <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSecurityProfileInput::tags): <p>Metadata that can be used to manage the security profile.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_security_profile_name): <p>The name you are giving to the security profile.</p>
+    ///   - [`security_profile_description(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::security_profile_description) / [`set_security_profile_description(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_security_profile_description): <p>A description of the security profile.</p>
+    ///   - [`behaviors(Vec<Behavior>)`](crate::client::fluent_builders::CreateSecurityProfile::behaviors) / [`set_behaviors(Option<Vec<Behavior>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_behaviors): <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    ///   - [`alert_targets(HashMap<AlertTargetType, AlertTarget>)`](crate::client::fluent_builders::CreateSecurityProfile::alert_targets) / [`set_alert_targets(Option<HashMap<AlertTargetType, AlertTarget>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_alert_targets): <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
+    ///   - [`additional_metrics_to_retain(Vec<String>)`](crate::client::fluent_builders::CreateSecurityProfile::additional_metrics_to_retain) / [`set_additional_metrics_to_retain(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_additional_metrics_to_retain): <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>  <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    ///   - [`additional_metrics_to_retain_v2(Vec<MetricToRetain>)`](crate::client::fluent_builders::CreateSecurityProfile::additional_metrics_to_retain_v2) / [`set_additional_metrics_to_retain_v2(Option<Vec<MetricToRetain>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_additional_metrics_to_retain_v2): <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSecurityProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_tags): <p>Metadata that can be used to manage the security profile.</p>
     /// - On success, responds with [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput) with field(s):
     ///   - [`security_profile_name(Option<String>)`](crate::output::CreateSecurityProfileOutput::security_profile_name): <p>The name you gave to the security profile.</p>
     ///   - [`security_profile_arn(Option<String>)`](crate::output::CreateSecurityProfileOutput::security_profile_arn): <p>The ARN of the security profile.</p>
@@ -660,12 +660,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateStream`](crate::client::fluent_builders::CreateStream) operation.
     ///
-    /// - Takes [`CreateStreamInput`](crate::input::CreateStreamInput) with field(s):
-    ///   - [`stream_id(Option<String>)`](crate::input::CreateStreamInput::stream_id): <p>The stream ID.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateStreamInput::description): <p>A description of the stream.</p>
-    ///   - [`files(Option<Vec<StreamFile>>)`](crate::input::CreateStreamInput::files): <p>The files to stream.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateStreamInput::role_arn): <p>An IAM role that allows the IoT service principal to access your S3 files.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateStreamInput::tags): <p>Metadata which can be used to manage streams.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::CreateStream::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::CreateStream::set_stream_id): <p>The stream ID.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStream::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStream::set_description): <p>A description of the stream.</p>
+    ///   - [`files(Vec<StreamFile>)`](crate::client::fluent_builders::CreateStream::files) / [`set_files(Option<Vec<StreamFile>>)`](crate::client::fluent_builders::CreateStream::set_files): <p>The files to stream.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStream::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStream::set_role_arn): <p>An IAM role that allows the IoT service principal to access your S3 files.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateStream::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateStream::set_tags): <p>Metadata which can be used to manage streams.</p>
     /// - On success, responds with [`CreateStreamOutput`](crate::output::CreateStreamOutput) with field(s):
     ///   - [`stream_id(Option<String>)`](crate::output::CreateStreamOutput::stream_id): <p>The stream ID.</p>
     ///   - [`stream_arn(Option<String>)`](crate::output::CreateStreamOutput::stream_arn): <p>The stream ARN.</p>
@@ -677,11 +677,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateThing`](crate::client::fluent_builders::CreateThing) operation.
     ///
-    /// - Takes [`CreateThingInput`](crate::input::CreateThingInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::CreateThingInput::thing_name): <p>The name of the thing to create.</p>  <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-    ///   - [`thing_type_name(Option<String>)`](crate::input::CreateThingInput::thing_type_name): <p>The name of the thing type associated with the new thing.</p>
-    ///   - [`attribute_payload(Option<AttributePayload>)`](crate::input::CreateThingInput::attribute_payload): <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>  <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
-    ///   - [`billing_group_name(Option<String>)`](crate::input::CreateThingInput::billing_group_name): <p>The name of the billing group the thing will be added to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::CreateThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::CreateThing::set_thing_name): <p>The name of the thing to create.</p>  <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
+    ///   - [`thing_type_name(impl Into<String>)`](crate::client::fluent_builders::CreateThing::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::client::fluent_builders::CreateThing::set_thing_type_name): <p>The name of the thing type associated with the new thing.</p>
+    ///   - [`attribute_payload(AttributePayload)`](crate::client::fluent_builders::CreateThing::attribute_payload) / [`set_attribute_payload(Option<AttributePayload>)`](crate::client::fluent_builders::CreateThing::set_attribute_payload): <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>  <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
+    ///   - [`billing_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateThing::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::client::fluent_builders::CreateThing::set_billing_group_name): <p>The name of the billing group the thing will be added to.</p>
     /// - On success, responds with [`CreateThingOutput`](crate::output::CreateThingOutput) with field(s):
     ///   - [`thing_name(Option<String>)`](crate::output::CreateThingOutput::thing_name): <p>The name of the new thing.</p>
     ///   - [`thing_arn(Option<String>)`](crate::output::CreateThingOutput::thing_arn): <p>The ARN of the new thing.</p>
@@ -692,11 +692,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateThingGroup`](crate::client::fluent_builders::CreateThingGroup) operation.
     ///
-    /// - Takes [`CreateThingGroupInput`](crate::input::CreateThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::CreateThingGroupInput::thing_group_name): <p>The thing group name to create.</p>
-    ///   - [`parent_group_name(Option<String>)`](crate::input::CreateThingGroupInput::parent_group_name): <p>The name of the parent thing group.</p>
-    ///   - [`thing_group_properties(Option<ThingGroupProperties>)`](crate::input::CreateThingGroupInput::thing_group_properties): <p>The thing group properties.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateThingGroupInput::tags): <p>Metadata which can be used to manage the thing group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::CreateThingGroup::set_thing_group_name): <p>The thing group name to create.</p>
+    ///   - [`parent_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateThingGroup::parent_group_name) / [`set_parent_group_name(Option<String>)`](crate::client::fluent_builders::CreateThingGroup::set_parent_group_name): <p>The name of the parent thing group.</p>
+    ///   - [`thing_group_properties(ThingGroupProperties)`](crate::client::fluent_builders::CreateThingGroup::thing_group_properties) / [`set_thing_group_properties(Option<ThingGroupProperties>)`](crate::client::fluent_builders::CreateThingGroup::set_thing_group_properties): <p>The thing group properties.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateThingGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateThingGroup::set_tags): <p>Metadata which can be used to manage the thing group.</p>
     /// - On success, responds with [`CreateThingGroupOutput`](crate::output::CreateThingGroupOutput) with field(s):
     ///   - [`thing_group_name(Option<String>)`](crate::output::CreateThingGroupOutput::thing_group_name): <p>The thing group name.</p>
     ///   - [`thing_group_arn(Option<String>)`](crate::output::CreateThingGroupOutput::thing_group_arn): <p>The thing group ARN.</p>
@@ -707,10 +707,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateThingType`](crate::client::fluent_builders::CreateThingType) operation.
     ///
-    /// - Takes [`CreateThingTypeInput`](crate::input::CreateThingTypeInput) with field(s):
-    ///   - [`thing_type_name(Option<String>)`](crate::input::CreateThingTypeInput::thing_type_name): <p>The name of the thing type.</p>
-    ///   - [`thing_type_properties(Option<ThingTypeProperties>)`](crate::input::CreateThingTypeInput::thing_type_properties): <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateThingTypeInput::tags): <p>Metadata which can be used to manage the thing type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_type_name(impl Into<String>)`](crate::client::fluent_builders::CreateThingType::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::client::fluent_builders::CreateThingType::set_thing_type_name): <p>The name of the thing type.</p>
+    ///   - [`thing_type_properties(ThingTypeProperties)`](crate::client::fluent_builders::CreateThingType::thing_type_properties) / [`set_thing_type_properties(Option<ThingTypeProperties>)`](crate::client::fluent_builders::CreateThingType::set_thing_type_properties): <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateThingType::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateThingType::set_tags): <p>Metadata which can be used to manage the thing type.</p>
     /// - On success, responds with [`CreateThingTypeOutput`](crate::output::CreateThingTypeOutput) with field(s):
     ///   - [`thing_type_name(Option<String>)`](crate::output::CreateThingTypeOutput::thing_type_name): <p>The name of the thing type.</p>
     ///   - [`thing_type_arn(Option<String>)`](crate::output::CreateThingTypeOutput::thing_type_arn): <p>The Amazon Resource Name (ARN) of the thing type.</p>
@@ -721,10 +721,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTopicRule`](crate::client::fluent_builders::CreateTopicRule) operation.
     ///
-    /// - Takes [`CreateTopicRuleInput`](crate::input::CreateTopicRuleInput) with field(s):
-    ///   - [`rule_name(Option<String>)`](crate::input::CreateTopicRuleInput::rule_name): <p>The name of the rule.</p>
-    ///   - [`topic_rule_payload(Option<TopicRulePayload>)`](crate::input::CreateTopicRuleInput::topic_rule_payload): <p>The rule payload.</p>
-    ///   - [`tags(Option<String>)`](crate::input::CreateTopicRuleInput::tags): <p>Metadata which can be used to manage the topic rule.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::CreateTopicRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::CreateTopicRule::set_rule_name): <p>The name of the rule.</p>
+    ///   - [`topic_rule_payload(TopicRulePayload)`](crate::client::fluent_builders::CreateTopicRule::topic_rule_payload) / [`set_topic_rule_payload(Option<TopicRulePayload>)`](crate::client::fluent_builders::CreateTopicRule::set_topic_rule_payload): <p>The rule payload.</p>
+    ///   - [`tags(impl Into<String>)`](crate::client::fluent_builders::CreateTopicRule::tags) / [`set_tags(Option<String>)`](crate::client::fluent_builders::CreateTopicRule::set_tags): <p>Metadata which can be used to manage the topic rule.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
     /// - On success, responds with [`CreateTopicRuleOutput`](crate::output::CreateTopicRuleOutput)
 
     /// - On failure, responds with [`SdkError<CreateTopicRuleError>`](crate::error::CreateTopicRuleError)
@@ -733,8 +733,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTopicRuleDestination`](crate::client::fluent_builders::CreateTopicRuleDestination) operation.
     ///
-    /// - Takes [`CreateTopicRuleDestinationInput`](crate::input::CreateTopicRuleDestinationInput) with field(s):
-    ///   - [`destination_configuration(Option<TopicRuleDestinationConfiguration>)`](crate::input::CreateTopicRuleDestinationInput::destination_configuration): <p>The topic rule destination configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`destination_configuration(TopicRuleDestinationConfiguration)`](crate::client::fluent_builders::CreateTopicRuleDestination::destination_configuration) / [`set_destination_configuration(Option<TopicRuleDestinationConfiguration>)`](crate::client::fluent_builders::CreateTopicRuleDestination::set_destination_configuration): <p>The topic rule destination configuration.</p>
     /// - On success, responds with [`CreateTopicRuleDestinationOutput`](crate::output::CreateTopicRuleDestinationOutput) with field(s):
     ///   - [`topic_rule_destination(Option<TopicRuleDestination>)`](crate::output::CreateTopicRuleDestinationOutput::topic_rule_destination): <p>The topic rule destination.</p>
     /// - On failure, responds with [`SdkError<CreateTopicRuleDestinationError>`](crate::error::CreateTopicRuleDestinationError)
@@ -745,8 +745,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAccountAuditConfiguration`](crate::client::fluent_builders::DeleteAccountAuditConfiguration) operation.
     ///
-    /// - Takes [`DeleteAccountAuditConfigurationInput`](crate::input::DeleteAccountAuditConfigurationInput) with field(s):
-    ///   - [`delete_scheduled_audits(bool)`](crate::input::DeleteAccountAuditConfigurationInput::delete_scheduled_audits): <p>If true, all scheduled audits are deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delete_scheduled_audits(bool)`](crate::client::fluent_builders::DeleteAccountAuditConfiguration::delete_scheduled_audits) / [`set_delete_scheduled_audits(bool)`](crate::client::fluent_builders::DeleteAccountAuditConfiguration::set_delete_scheduled_audits): <p>If true, all scheduled audits are deleted.</p>
     /// - On success, responds with [`DeleteAccountAuditConfigurationOutput`](crate::output::DeleteAccountAuditConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAccountAuditConfigurationError>`](crate::error::DeleteAccountAuditConfigurationError)
@@ -757,9 +757,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAuditSuppression`](crate::client::fluent_builders::DeleteAuditSuppression) operation.
     ///
-    /// - Takes [`DeleteAuditSuppressionInput`](crate::input::DeleteAuditSuppressionInput) with field(s):
-    ///   - [`check_name(Option<String>)`](crate::input::DeleteAuditSuppressionInput::check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    ///   - [`resource_identifier(Option<ResourceIdentifier>)`](crate::input::DeleteAuditSuppressionInput::resource_identifier): <p>Information that identifies the noncompliant resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`check_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAuditSuppression::check_name) / [`set_check_name(Option<String>)`](crate::client::fluent_builders::DeleteAuditSuppression::set_check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    ///   - [`resource_identifier(ResourceIdentifier)`](crate::client::fluent_builders::DeleteAuditSuppression::resource_identifier) / [`set_resource_identifier(Option<ResourceIdentifier>)`](crate::client::fluent_builders::DeleteAuditSuppression::set_resource_identifier): <p>Information that identifies the noncompliant resource.</p>
     /// - On success, responds with [`DeleteAuditSuppressionOutput`](crate::output::DeleteAuditSuppressionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAuditSuppressionError>`](crate::error::DeleteAuditSuppressionError)
@@ -768,8 +768,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAuthorizer`](crate::client::fluent_builders::DeleteAuthorizer) operation.
     ///
-    /// - Takes [`DeleteAuthorizerInput`](crate::input::DeleteAuthorizerInput) with field(s):
-    ///   - [`authorizer_name(Option<String>)`](crate::input::DeleteAuthorizerInput::authorizer_name): <p>The name of the authorizer to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authorizer_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAuthorizer::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::client::fluent_builders::DeleteAuthorizer::set_authorizer_name): <p>The name of the authorizer to delete.</p>
     /// - On success, responds with [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAuthorizerError>`](crate::error::DeleteAuthorizerError)
@@ -778,9 +778,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteBillingGroup`](crate::client::fluent_builders::DeleteBillingGroup) operation.
     ///
-    /// - Takes [`DeleteBillingGroupInput`](crate::input::DeleteBillingGroupInput) with field(s):
-    ///   - [`billing_group_name(Option<String>)`](crate::input::DeleteBillingGroupInput::billing_group_name): <p>The name of the billing group.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::DeleteBillingGroupInput::expected_version): <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`billing_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBillingGroup::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::client::fluent_builders::DeleteBillingGroup::set_billing_group_name): <p>The name of the billing group.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::DeleteBillingGroup::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::DeleteBillingGroup::set_expected_version): <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     /// - On success, responds with [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteBillingGroupError>`](crate::error::DeleteBillingGroupError)
@@ -789,8 +789,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCACertificate`](crate::client::fluent_builders::DeleteCACertificate) operation.
     ///
-    /// - Takes [`DeleteCaCertificateInput`](crate::input::DeleteCaCertificateInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::DeleteCaCertificateInput::certificate_id): <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCACertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::DeleteCACertificate::set_certificate_id): <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
     /// - On success, responds with [`DeleteCaCertificateOutput`](crate::output::DeleteCaCertificateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCACertificateError>`](crate::error::DeleteCACertificateError)
@@ -799,9 +799,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCertificate`](crate::client::fluent_builders::DeleteCertificate) operation.
     ///
-    /// - Takes [`DeleteCertificateInput`](crate::input::DeleteCertificateInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::DeleteCertificateInput::certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    ///   - [`force_delete(bool)`](crate::input::DeleteCertificateInput::force_delete): <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::DeleteCertificate::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    ///   - [`force_delete(bool)`](crate::client::fluent_builders::DeleteCertificate::force_delete) / [`set_force_delete(bool)`](crate::client::fluent_builders::DeleteCertificate::set_force_delete): <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     /// - On success, responds with [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::error::DeleteCertificateError)
@@ -810,8 +810,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCustomMetric`](crate::client::fluent_builders::DeleteCustomMetric) operation.
     ///
-    /// - Takes [`DeleteCustomMetricInput`](crate::input::DeleteCustomMetricInput) with field(s):
-    ///   - [`metric_name(Option<String>)`](crate::input::DeleteCustomMetricInput::metric_name): <p> The name of the custom metric. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::DeleteCustomMetric::set_metric_name): <p> The name of the custom metric. </p>
     /// - On success, responds with [`DeleteCustomMetricOutput`](crate::output::DeleteCustomMetricOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCustomMetricError>`](crate::error::DeleteCustomMetricError)
@@ -820,8 +820,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDimension`](crate::client::fluent_builders::DeleteDimension) operation.
     ///
-    /// - Takes [`DeleteDimensionInput`](crate::input::DeleteDimensionInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteDimensionInput::name): <p>The unique identifier for the dimension that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteDimension::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteDimension::set_name): <p>The unique identifier for the dimension that you want to delete.</p>
     /// - On success, responds with [`DeleteDimensionOutput`](crate::output::DeleteDimensionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDimensionError>`](crate::error::DeleteDimensionError)
@@ -830,8 +830,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDomainConfiguration`](crate::client::fluent_builders::DeleteDomainConfiguration) operation.
     ///
-    /// - Takes [`DeleteDomainConfigurationInput`](crate::input::DeleteDomainConfigurationInput) with field(s):
-    ///   - [`domain_configuration_name(Option<String>)`](crate::input::DeleteDomainConfigurationInput::domain_configuration_name): <p>The name of the domain configuration to be deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_configuration_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDomainConfiguration::domain_configuration_name) / [`set_domain_configuration_name(Option<String>)`](crate::client::fluent_builders::DeleteDomainConfiguration::set_domain_configuration_name): <p>The name of the domain configuration to be deleted.</p>
     /// - On success, responds with [`DeleteDomainConfigurationOutput`](crate::output::DeleteDomainConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDomainConfigurationError>`](crate::error::DeleteDomainConfigurationError)
@@ -842,9 +842,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDynamicThingGroup`](crate::client::fluent_builders::DeleteDynamicThingGroup) operation.
     ///
-    /// - Takes [`DeleteDynamicThingGroupInput`](crate::input::DeleteDynamicThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::DeleteDynamicThingGroupInput::thing_group_name): <p>The name of the dynamic thing group to delete.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::DeleteDynamicThingGroupInput::expected_version): <p>The expected version of the dynamic thing group to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDynamicThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::DeleteDynamicThingGroup::set_thing_group_name): <p>The name of the dynamic thing group to delete.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::DeleteDynamicThingGroup::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::DeleteDynamicThingGroup::set_expected_version): <p>The expected version of the dynamic thing group to delete.</p>
     /// - On success, responds with [`DeleteDynamicThingGroupOutput`](crate::output::DeleteDynamicThingGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDynamicThingGroupError>`](crate::error::DeleteDynamicThingGroupError)
@@ -853,9 +853,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFleetMetric`](crate::client::fluent_builders::DeleteFleetMetric) operation.
     ///
-    /// - Takes [`DeleteFleetMetricInput`](crate::input::DeleteFleetMetricInput) with field(s):
-    ///   - [`metric_name(Option<String>)`](crate::input::DeleteFleetMetricInput::metric_name): <p>The name of the fleet metric to delete.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::DeleteFleetMetricInput::expected_version): <p>The expected version of the fleet metric to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::DeleteFleetMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::DeleteFleetMetric::set_metric_name): <p>The name of the fleet metric to delete.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::DeleteFleetMetric::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::DeleteFleetMetric::set_expected_version): <p>The expected version of the fleet metric to delete.</p>
     /// - On success, responds with [`DeleteFleetMetricOutput`](crate::output::DeleteFleetMetricOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFleetMetricError>`](crate::error::DeleteFleetMetricError)
@@ -864,10 +864,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteJob`](crate::client::fluent_builders::DeleteJob) operation.
     ///
-    /// - Takes [`DeleteJobInput`](crate::input::DeleteJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DeleteJobInput::job_id): <p>The ID of the job to be deleted.</p>  <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
-    ///   - [`force(bool)`](crate::input::DeleteJobInput::force): <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>   <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>  </note>
-    ///   - [`namespace_id(Option<String>)`](crate::input::DeleteJobInput::namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DeleteJob::set_job_id): <p>The ID of the job to be deleted.</p>  <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
+    ///   - [`force(bool)`](crate::client::fluent_builders::DeleteJob::force) / [`set_force(bool)`](crate::client::fluent_builders::DeleteJob::set_force): <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>   <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>  </note>
+    ///   - [`namespace_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJob::namespace_id) / [`set_namespace_id(Option<String>)`](crate::client::fluent_builders::DeleteJob::set_namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
     /// - On success, responds with [`DeleteJobOutput`](crate::output::DeleteJobOutput)
 
     /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::error::DeleteJobError)
@@ -876,12 +876,12 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteJobExecution`](crate::client::fluent_builders::DeleteJobExecution) operation.
     ///
-    /// - Takes [`DeleteJobExecutionInput`](crate::input::DeleteJobExecutionInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DeleteJobExecutionInput::job_id): <p>The ID of the job whose execution on a particular device will be deleted.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::DeleteJobExecutionInput::thing_name): <p>The name of the thing whose job execution will be deleted.</p>
-    ///   - [`execution_number(Option<i64>)`](crate::input::DeleteJobExecutionInput::execution_number): <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>  <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
-    ///   - [`force(bool)`](crate::input::DeleteJobExecutionInput::force): <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>   <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>  </note>
-    ///   - [`namespace_id(Option<String>)`](crate::input::DeleteJobExecutionInput::namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJobExecution::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DeleteJobExecution::set_job_id): <p>The ID of the job whose execution on a particular device will be deleted.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::DeleteJobExecution::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::DeleteJobExecution::set_thing_name): <p>The name of the thing whose job execution will be deleted.</p>
+    ///   - [`execution_number(i64)`](crate::client::fluent_builders::DeleteJobExecution::execution_number) / [`set_execution_number(Option<i64>)`](crate::client::fluent_builders::DeleteJobExecution::set_execution_number): <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>  <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
+    ///   - [`force(bool)`](crate::client::fluent_builders::DeleteJobExecution::force) / [`set_force(bool)`](crate::client::fluent_builders::DeleteJobExecution::set_force): <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>   <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>  </note>
+    ///   - [`namespace_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJobExecution::namespace_id) / [`set_namespace_id(Option<String>)`](crate::client::fluent_builders::DeleteJobExecution::set_namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
     /// - On success, responds with [`DeleteJobExecutionOutput`](crate::output::DeleteJobExecutionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteJobExecutionError>`](crate::error::DeleteJobExecutionError)
@@ -890,8 +890,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteJobTemplate`](crate::client::fluent_builders::DeleteJobTemplate) operation.
     ///
-    /// - Takes [`DeleteJobTemplateInput`](crate::input::DeleteJobTemplateInput) with field(s):
-    ///   - [`job_template_id(Option<String>)`](crate::input::DeleteJobTemplateInput::job_template_id): <p>The unique identifier of the job template to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_template_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJobTemplate::job_template_id) / [`set_job_template_id(Option<String>)`](crate::client::fluent_builders::DeleteJobTemplate::set_job_template_id): <p>The unique identifier of the job template to delete.</p>
     /// - On success, responds with [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteJobTemplateError>`](crate::error::DeleteJobTemplateError)
@@ -900,8 +900,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteMitigationAction`](crate::client::fluent_builders::DeleteMitigationAction) operation.
     ///
-    /// - Takes [`DeleteMitigationActionInput`](crate::input::DeleteMitigationActionInput) with field(s):
-    ///   - [`action_name(Option<String>)`](crate::input::DeleteMitigationActionInput::action_name): <p>The name of the mitigation action that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMitigationAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::DeleteMitigationAction::set_action_name): <p>The name of the mitigation action that you want to delete.</p>
     /// - On success, responds with [`DeleteMitigationActionOutput`](crate::output::DeleteMitigationActionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteMitigationActionError>`](crate::error::DeleteMitigationActionError)
@@ -910,10 +910,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteOTAUpdate`](crate::client::fluent_builders::DeleteOTAUpdate) operation.
     ///
-    /// - Takes [`DeleteOtaUpdateInput`](crate::input::DeleteOtaUpdateInput) with field(s):
-    ///   - [`ota_update_id(Option<String>)`](crate::input::DeleteOtaUpdateInput::ota_update_id): <p>The ID of the OTA update to delete.</p>
-    ///   - [`delete_stream(bool)`](crate::input::DeleteOtaUpdateInput::delete_stream): <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
-    ///   - [`force_delete_aws_job(bool)`](crate::input::DeleteOtaUpdateInput::force_delete_aws_job): <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ota_update_id(impl Into<String>)`](crate::client::fluent_builders::DeleteOTAUpdate::ota_update_id) / [`set_ota_update_id(Option<String>)`](crate::client::fluent_builders::DeleteOTAUpdate::set_ota_update_id): <p>The ID of the OTA update to delete.</p>
+    ///   - [`delete_stream(bool)`](crate::client::fluent_builders::DeleteOTAUpdate::delete_stream) / [`set_delete_stream(bool)`](crate::client::fluent_builders::DeleteOTAUpdate::set_delete_stream): <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+    ///   - [`force_delete_aws_job(bool)`](crate::client::fluent_builders::DeleteOTAUpdate::force_delete_aws_job) / [`set_force_delete_aws_job(bool)`](crate::client::fluent_builders::DeleteOTAUpdate::set_force_delete_aws_job): <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     /// - On success, responds with [`DeleteOtaUpdateOutput`](crate::output::DeleteOtaUpdateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteOTAUpdateError>`](crate::error::DeleteOTAUpdateError)
@@ -922,8 +922,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) operation.
     ///
-    /// - Takes [`DeletePolicyInput`](crate::input::DeletePolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::DeletePolicyInput::policy_name): <p>The name of the policy to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeletePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeletePolicy::set_policy_name): <p>The name of the policy to delete.</p>
     /// - On success, responds with [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::error::DeletePolicyError)
@@ -932,9 +932,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeletePolicyVersion`](crate::client::fluent_builders::DeletePolicyVersion) operation.
     ///
-    /// - Takes [`DeletePolicyVersionInput`](crate::input::DeletePolicyVersionInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::DeletePolicyVersionInput::policy_name): <p>The name of the policy.</p>
-    ///   - [`policy_version_id(Option<String>)`](crate::input::DeletePolicyVersionInput::policy_version_id): <p>The policy version ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeletePolicyVersion::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeletePolicyVersion::set_policy_name): <p>The name of the policy.</p>
+    ///   - [`policy_version_id(impl Into<String>)`](crate::client::fluent_builders::DeletePolicyVersion::policy_version_id) / [`set_policy_version_id(Option<String>)`](crate::client::fluent_builders::DeletePolicyVersion::set_policy_version_id): <p>The policy version ID.</p>
     /// - On success, responds with [`DeletePolicyVersionOutput`](crate::output::DeletePolicyVersionOutput)
 
     /// - On failure, responds with [`SdkError<DeletePolicyVersionError>`](crate::error::DeletePolicyVersionError)
@@ -943,8 +943,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteProvisioningTemplate`](crate::client::fluent_builders::DeleteProvisioningTemplate) operation.
     ///
-    /// - Takes [`DeleteProvisioningTemplateInput`](crate::input::DeleteProvisioningTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DeleteProvisioningTemplateInput::template_name): <p>The name of the fleet provision template to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteProvisioningTemplate::set_template_name): <p>The name of the fleet provision template to delete.</p>
     /// - On success, responds with [`DeleteProvisioningTemplateOutput`](crate::output::DeleteProvisioningTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteProvisioningTemplateError>`](crate::error::DeleteProvisioningTemplateError)
@@ -955,9 +955,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteProvisioningTemplateVersion`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion) operation.
     ///
-    /// - Takes [`DeleteProvisioningTemplateVersionInput`](crate::input::DeleteProvisioningTemplateVersionInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DeleteProvisioningTemplateVersionInput::template_name): <p>The name of the fleet provisioning template version to delete.</p>
-    ///   - [`version_id(Option<i32>)`](crate::input::DeleteProvisioningTemplateVersionInput::version_id): <p>The fleet provisioning template version ID to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::set_template_name): <p>The name of the fleet provisioning template version to delete.</p>
+    ///   - [`version_id(i32)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::version_id) / [`set_version_id(Option<i32>)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::set_version_id): <p>The fleet provisioning template version ID to delete.</p>
     /// - On success, responds with [`DeleteProvisioningTemplateVersionOutput`](crate::output::DeleteProvisioningTemplateVersionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteProvisioningTemplateVersionError>`](crate::error::DeleteProvisioningTemplateVersionError)
@@ -968,7 +968,7 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRegistrationCode`](crate::client::fluent_builders::DeleteRegistrationCode) operation.
     ///
-    /// - Takes [`DeleteRegistrationCodeInput`](crate::input::DeleteRegistrationCodeInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DeleteRegistrationCode::send) it.
 
     /// - On success, responds with [`DeleteRegistrationCodeOutput`](crate::output::DeleteRegistrationCodeOutput)
 
@@ -978,8 +978,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRoleAlias`](crate::client::fluent_builders::DeleteRoleAlias) operation.
     ///
-    /// - Takes [`DeleteRoleAliasInput`](crate::input::DeleteRoleAliasInput) with field(s):
-    ///   - [`role_alias(Option<String>)`](crate::input::DeleteRoleAliasInput::role_alias): <p>The role alias to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`role_alias(impl Into<String>)`](crate::client::fluent_builders::DeleteRoleAlias::role_alias) / [`set_role_alias(Option<String>)`](crate::client::fluent_builders::DeleteRoleAlias::set_role_alias): <p>The role alias to delete.</p>
     /// - On success, responds with [`DeleteRoleAliasOutput`](crate::output::DeleteRoleAliasOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRoleAliasError>`](crate::error::DeleteRoleAliasError)
@@ -988,8 +988,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteScheduledAudit`](crate::client::fluent_builders::DeleteScheduledAudit) operation.
     ///
-    /// - Takes [`DeleteScheduledAuditInput`](crate::input::DeleteScheduledAuditInput) with field(s):
-    ///   - [`scheduled_audit_name(Option<String>)`](crate::input::DeleteScheduledAuditInput::scheduled_audit_name): <p>The name of the scheduled audit you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`scheduled_audit_name(impl Into<String>)`](crate::client::fluent_builders::DeleteScheduledAudit::scheduled_audit_name) / [`set_scheduled_audit_name(Option<String>)`](crate::client::fluent_builders::DeleteScheduledAudit::set_scheduled_audit_name): <p>The name of the scheduled audit you want to delete.</p>
     /// - On success, responds with [`DeleteScheduledAuditOutput`](crate::output::DeleteScheduledAuditOutput)
 
     /// - On failure, responds with [`SdkError<DeleteScheduledAuditError>`](crate::error::DeleteScheduledAuditError)
@@ -998,9 +998,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSecurityProfile`](crate::client::fluent_builders::DeleteSecurityProfile) operation.
     ///
-    /// - Takes [`DeleteSecurityProfileInput`](crate::input::DeleteSecurityProfileInput) with field(s):
-    ///   - [`security_profile_name(Option<String>)`](crate::input::DeleteSecurityProfileInput::security_profile_name): <p>The name of the security profile to be deleted.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::DeleteSecurityProfileInput::expected_version): <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSecurityProfile::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::DeleteSecurityProfile::set_security_profile_name): <p>The name of the security profile to be deleted.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::DeleteSecurityProfile::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::DeleteSecurityProfile::set_expected_version): <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     /// - On success, responds with [`DeleteSecurityProfileOutput`](crate::output::DeleteSecurityProfileOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSecurityProfileError>`](crate::error::DeleteSecurityProfileError)
@@ -1009,8 +1009,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteStream`](crate::client::fluent_builders::DeleteStream) operation.
     ///
-    /// - Takes [`DeleteStreamInput`](crate::input::DeleteStreamInput) with field(s):
-    ///   - [`stream_id(Option<String>)`](crate::input::DeleteStreamInput::stream_id): <p>The stream ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStream::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::DeleteStream::set_stream_id): <p>The stream ID.</p>
     /// - On success, responds with [`DeleteStreamOutput`](crate::output::DeleteStreamOutput)
 
     /// - On failure, responds with [`SdkError<DeleteStreamError>`](crate::error::DeleteStreamError)
@@ -1019,9 +1019,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteThing`](crate::client::fluent_builders::DeleteThing) operation.
     ///
-    /// - Takes [`DeleteThingInput`](crate::input::DeleteThingInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::DeleteThingInput::thing_name): <p>The name of the thing to delete.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::DeleteThingInput::expected_version): <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::DeleteThing::set_thing_name): <p>The name of the thing to delete.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::DeleteThing::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::DeleteThing::set_expected_version): <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     /// - On success, responds with [`DeleteThingOutput`](crate::output::DeleteThingOutput)
 
     /// - On failure, responds with [`SdkError<DeleteThingError>`](crate::error::DeleteThingError)
@@ -1030,9 +1030,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteThingGroup`](crate::client::fluent_builders::DeleteThingGroup) operation.
     ///
-    /// - Takes [`DeleteThingGroupInput`](crate::input::DeleteThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::DeleteThingGroupInput::thing_group_name): <p>The name of the thing group to delete.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::DeleteThingGroupInput::expected_version): <p>The expected version of the thing group to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::DeleteThingGroup::set_thing_group_name): <p>The name of the thing group to delete.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::DeleteThingGroup::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::DeleteThingGroup::set_expected_version): <p>The expected version of the thing group to delete.</p>
     /// - On success, responds with [`DeleteThingGroupOutput`](crate::output::DeleteThingGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteThingGroupError>`](crate::error::DeleteThingGroupError)
@@ -1041,8 +1041,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteThingType`](crate::client::fluent_builders::DeleteThingType) operation.
     ///
-    /// - Takes [`DeleteThingTypeInput`](crate::input::DeleteThingTypeInput) with field(s):
-    ///   - [`thing_type_name(Option<String>)`](crate::input::DeleteThingTypeInput::thing_type_name): <p>The name of the thing type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_type_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThingType::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::client::fluent_builders::DeleteThingType::set_thing_type_name): <p>The name of the thing type.</p>
     /// - On success, responds with [`DeleteThingTypeOutput`](crate::output::DeleteThingTypeOutput)
 
     /// - On failure, responds with [`SdkError<DeleteThingTypeError>`](crate::error::DeleteThingTypeError)
@@ -1051,8 +1051,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTopicRule`](crate::client::fluent_builders::DeleteTopicRule) operation.
     ///
-    /// - Takes [`DeleteTopicRuleInput`](crate::input::DeleteTopicRuleInput) with field(s):
-    ///   - [`rule_name(Option<String>)`](crate::input::DeleteTopicRuleInput::rule_name): <p>The name of the rule.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTopicRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteTopicRule::set_rule_name): <p>The name of the rule.</p>
     /// - On success, responds with [`DeleteTopicRuleOutput`](crate::output::DeleteTopicRuleOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTopicRuleError>`](crate::error::DeleteTopicRuleError)
@@ -1061,8 +1061,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTopicRuleDestination`](crate::client::fluent_builders::DeleteTopicRuleDestination) operation.
     ///
-    /// - Takes [`DeleteTopicRuleDestinationInput`](crate::input::DeleteTopicRuleDestinationInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::DeleteTopicRuleDestinationInput::arn): <p>The ARN of the topic rule destination to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTopicRuleDestination::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteTopicRuleDestination::set_arn): <p>The ARN of the topic rule destination to delete.</p>
     /// - On success, responds with [`DeleteTopicRuleDestinationOutput`](crate::output::DeleteTopicRuleDestinationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTopicRuleDestinationError>`](crate::error::DeleteTopicRuleDestinationError)
@@ -1073,9 +1073,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteV2LoggingLevel`](crate::client::fluent_builders::DeleteV2LoggingLevel) operation.
     ///
-    /// - Takes [`DeleteV2LoggingLevelInput`](crate::input::DeleteV2LoggingLevelInput) with field(s):
-    ///   - [`target_type(Option<LogTargetType>)`](crate::input::DeleteV2LoggingLevelInput::target_type): <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
-    ///   - [`target_name(Option<String>)`](crate::input::DeleteV2LoggingLevelInput::target_name): <p>The name of the resource for which you are configuring logging.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`target_type(LogTargetType)`](crate::client::fluent_builders::DeleteV2LoggingLevel::target_type) / [`set_target_type(Option<LogTargetType>)`](crate::client::fluent_builders::DeleteV2LoggingLevel::set_target_type): <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    ///   - [`target_name(impl Into<String>)`](crate::client::fluent_builders::DeleteV2LoggingLevel::target_name) / [`set_target_name(Option<String>)`](crate::client::fluent_builders::DeleteV2LoggingLevel::set_target_name): <p>The name of the resource for which you are configuring logging.</p>
     /// - On success, responds with [`DeleteV2LoggingLevelOutput`](crate::output::DeleteV2LoggingLevelOutput)
 
     /// - On failure, responds with [`SdkError<DeleteV2LoggingLevelError>`](crate::error::DeleteV2LoggingLevelError)
@@ -1084,9 +1084,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeprecateThingType`](crate::client::fluent_builders::DeprecateThingType) operation.
     ///
-    /// - Takes [`DeprecateThingTypeInput`](crate::input::DeprecateThingTypeInput) with field(s):
-    ///   - [`thing_type_name(Option<String>)`](crate::input::DeprecateThingTypeInput::thing_type_name): <p>The name of the thing type to deprecate.</p>
-    ///   - [`undo_deprecate(bool)`](crate::input::DeprecateThingTypeInput::undo_deprecate): <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_type_name(impl Into<String>)`](crate::client::fluent_builders::DeprecateThingType::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::client::fluent_builders::DeprecateThingType::set_thing_type_name): <p>The name of the thing type to deprecate.</p>
+    ///   - [`undo_deprecate(bool)`](crate::client::fluent_builders::DeprecateThingType::undo_deprecate) / [`set_undo_deprecate(bool)`](crate::client::fluent_builders::DeprecateThingType::set_undo_deprecate): <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     /// - On success, responds with [`DeprecateThingTypeOutput`](crate::output::DeprecateThingTypeOutput)
 
     /// - On failure, responds with [`SdkError<DeprecateThingTypeError>`](crate::error::DeprecateThingTypeError)
@@ -1095,7 +1095,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAccountAuditConfiguration`](crate::client::fluent_builders::DescribeAccountAuditConfiguration) operation.
     ///
-    /// - Takes [`DescribeAccountAuditConfigurationInput`](crate::input::DescribeAccountAuditConfigurationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAccountAuditConfiguration::send) it.
 
     /// - On success, responds with [`DescribeAccountAuditConfigurationOutput`](crate::output::DescribeAccountAuditConfigurationOutput) with field(s):
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeAccountAuditConfigurationOutput::role_arn): <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>  <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
@@ -1109,8 +1109,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAuditFinding`](crate::client::fluent_builders::DescribeAuditFinding) operation.
     ///
-    /// - Takes [`DescribeAuditFindingInput`](crate::input::DescribeAuditFindingInput) with field(s):
-    ///   - [`finding_id(Option<String>)`](crate::input::DescribeAuditFindingInput::finding_id): <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAuditFinding::finding_id) / [`set_finding_id(Option<String>)`](crate::client::fluent_builders::DescribeAuditFinding::set_finding_id): <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
     /// - On success, responds with [`DescribeAuditFindingOutput`](crate::output::DescribeAuditFindingOutput) with field(s):
     ///   - [`finding(Option<AuditFinding>)`](crate::output::DescribeAuditFindingOutput::finding): <p>The findings (results) of the audit.</p>
     /// - On failure, responds with [`SdkError<DescribeAuditFindingError>`](crate::error::DescribeAuditFindingError)
@@ -1119,8 +1119,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAuditMitigationActionsTask`](crate::client::fluent_builders::DescribeAuditMitigationActionsTask) operation.
     ///
-    /// - Takes [`DescribeAuditMitigationActionsTaskInput`](crate::input::DescribeAuditMitigationActionsTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::DescribeAuditMitigationActionsTaskInput::task_id): <p>The unique identifier for the audit mitigation task.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAuditMitigationActionsTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::DescribeAuditMitigationActionsTask::set_task_id): <p>The unique identifier for the audit mitigation task.</p>
     /// - On success, responds with [`DescribeAuditMitigationActionsTaskOutput`](crate::output::DescribeAuditMitigationActionsTaskOutput) with field(s):
     ///   - [`task_status(Option<AuditMitigationActionsTaskStatus>)`](crate::output::DescribeAuditMitigationActionsTaskOutput::task_status): <p>The current status of the task.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::output::DescribeAuditMitigationActionsTaskOutput::start_time): <p>The date and time when the task was started.</p>
@@ -1137,9 +1137,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAuditSuppression`](crate::client::fluent_builders::DescribeAuditSuppression) operation.
     ///
-    /// - Takes [`DescribeAuditSuppressionInput`](crate::input::DescribeAuditSuppressionInput) with field(s):
-    ///   - [`check_name(Option<String>)`](crate::input::DescribeAuditSuppressionInput::check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    ///   - [`resource_identifier(Option<ResourceIdentifier>)`](crate::input::DescribeAuditSuppressionInput::resource_identifier): <p>Information that identifies the noncompliant resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`check_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAuditSuppression::check_name) / [`set_check_name(Option<String>)`](crate::client::fluent_builders::DescribeAuditSuppression::set_check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    ///   - [`resource_identifier(ResourceIdentifier)`](crate::client::fluent_builders::DescribeAuditSuppression::resource_identifier) / [`set_resource_identifier(Option<ResourceIdentifier>)`](crate::client::fluent_builders::DescribeAuditSuppression::set_resource_identifier): <p>Information that identifies the noncompliant resource.</p>
     /// - On success, responds with [`DescribeAuditSuppressionOutput`](crate::output::DescribeAuditSuppressionOutput) with field(s):
     ///   - [`check_name(Option<String>)`](crate::output::DescribeAuditSuppressionOutput::check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     ///   - [`resource_identifier(Option<ResourceIdentifier>)`](crate::output::DescribeAuditSuppressionOutput::resource_identifier): <p>Information that identifies the noncompliant resource.</p>
@@ -1152,8 +1152,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAuditTask`](crate::client::fluent_builders::DescribeAuditTask) operation.
     ///
-    /// - Takes [`DescribeAuditTaskInput`](crate::input::DescribeAuditTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::DescribeAuditTaskInput::task_id): <p>The ID of the audit whose information you want to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAuditTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::DescribeAuditTask::set_task_id): <p>The ID of the audit whose information you want to get.</p>
     /// - On success, responds with [`DescribeAuditTaskOutput`](crate::output::DescribeAuditTaskOutput) with field(s):
     ///   - [`task_status(Option<AuditTaskStatus>)`](crate::output::DescribeAuditTaskOutput::task_status): <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     ///   - [`task_type(Option<AuditTaskType>)`](crate::output::DescribeAuditTaskOutput::task_type): <p>The type of audit: "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
@@ -1167,8 +1167,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAuthorizer`](crate::client::fluent_builders::DescribeAuthorizer) operation.
     ///
-    /// - Takes [`DescribeAuthorizerInput`](crate::input::DescribeAuthorizerInput) with field(s):
-    ///   - [`authorizer_name(Option<String>)`](crate::input::DescribeAuthorizerInput::authorizer_name): <p>The name of the authorizer to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authorizer_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAuthorizer::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::client::fluent_builders::DescribeAuthorizer::set_authorizer_name): <p>The name of the authorizer to describe.</p>
     /// - On success, responds with [`DescribeAuthorizerOutput`](crate::output::DescribeAuthorizerOutput) with field(s):
     ///   - [`authorizer_description(Option<AuthorizerDescription>)`](crate::output::DescribeAuthorizerOutput::authorizer_description): <p>The authorizer description.</p>
     /// - On failure, responds with [`SdkError<DescribeAuthorizerError>`](crate::error::DescribeAuthorizerError)
@@ -1177,8 +1177,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeBillingGroup`](crate::client::fluent_builders::DescribeBillingGroup) operation.
     ///
-    /// - Takes [`DescribeBillingGroupInput`](crate::input::DescribeBillingGroupInput) with field(s):
-    ///   - [`billing_group_name(Option<String>)`](crate::input::DescribeBillingGroupInput::billing_group_name): <p>The name of the billing group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`billing_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBillingGroup::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::client::fluent_builders::DescribeBillingGroup::set_billing_group_name): <p>The name of the billing group.</p>
     /// - On success, responds with [`DescribeBillingGroupOutput`](crate::output::DescribeBillingGroupOutput) with field(s):
     ///   - [`billing_group_name(Option<String>)`](crate::output::DescribeBillingGroupOutput::billing_group_name): <p>The name of the billing group.</p>
     ///   - [`billing_group_id(Option<String>)`](crate::output::DescribeBillingGroupOutput::billing_group_id): <p>The ID of the billing group.</p>
@@ -1192,8 +1192,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCACertificate`](crate::client::fluent_builders::DescribeCACertificate) operation.
     ///
-    /// - Takes [`DescribeCaCertificateInput`](crate::input::DescribeCaCertificateInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::DescribeCaCertificateInput::certificate_id): <p>The CA certificate identifier.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCACertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::DescribeCACertificate::set_certificate_id): <p>The CA certificate identifier.</p>
     /// - On success, responds with [`DescribeCaCertificateOutput`](crate::output::DescribeCaCertificateOutput) with field(s):
     ///   - [`certificate_description(Option<CaCertificateDescription>)`](crate::output::DescribeCaCertificateOutput::certificate_description): <p>The CA certificate description.</p>
     ///   - [`registration_config(Option<RegistrationConfig>)`](crate::output::DescribeCaCertificateOutput::registration_config): <p>Information about the registration configuration.</p>
@@ -1203,8 +1203,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCertificate`](crate::client::fluent_builders::DescribeCertificate) operation.
     ///
-    /// - Takes [`DescribeCertificateInput`](crate::input::DescribeCertificateInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::DescribeCertificateInput::certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::DescribeCertificate::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     /// - On success, responds with [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput) with field(s):
     ///   - [`certificate_description(Option<CertificateDescription>)`](crate::output::DescribeCertificateOutput::certificate_description): <p>The description of the certificate.</p>
     /// - On failure, responds with [`SdkError<DescribeCertificateError>`](crate::error::DescribeCertificateError)
@@ -1213,8 +1213,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCustomMetric`](crate::client::fluent_builders::DescribeCustomMetric) operation.
     ///
-    /// - Takes [`DescribeCustomMetricInput`](crate::input::DescribeCustomMetricInput) with field(s):
-    ///   - [`metric_name(Option<String>)`](crate::input::DescribeCustomMetricInput::metric_name): <p> The name of the custom metric. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::DescribeCustomMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::DescribeCustomMetric::set_metric_name): <p> The name of the custom metric. </p>
     /// - On success, responds with [`DescribeCustomMetricOutput`](crate::output::DescribeCustomMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::output::DescribeCustomMetricOutput::metric_name): <p> The name of the custom metric. </p>
     ///   - [`metric_arn(Option<String>)`](crate::output::DescribeCustomMetricOutput::metric_arn): <p> The Amazon Resource Number (ARN) of the custom metric. </p>
@@ -1228,7 +1228,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDefaultAuthorizer`](crate::client::fluent_builders::DescribeDefaultAuthorizer) operation.
     ///
-    /// - Takes [`DescribeDefaultAuthorizerInput`](crate::input::DescribeDefaultAuthorizerInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeDefaultAuthorizer::send) it.
 
     /// - On success, responds with [`DescribeDefaultAuthorizerOutput`](crate::output::DescribeDefaultAuthorizerOutput) with field(s):
     ///   - [`authorizer_description(Option<AuthorizerDescription>)`](crate::output::DescribeDefaultAuthorizerOutput::authorizer_description): <p>The default authorizer's description.</p>
@@ -1240,8 +1240,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDetectMitigationActionsTask`](crate::client::fluent_builders::DescribeDetectMitigationActionsTask) operation.
     ///
-    /// - Takes [`DescribeDetectMitigationActionsTaskInput`](crate::input::DescribeDetectMitigationActionsTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::DescribeDetectMitigationActionsTaskInput::task_id): <p> The unique identifier of the task. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDetectMitigationActionsTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::DescribeDetectMitigationActionsTask::set_task_id): <p> The unique identifier of the task. </p>
     /// - On success, responds with [`DescribeDetectMitigationActionsTaskOutput`](crate::output::DescribeDetectMitigationActionsTaskOutput) with field(s):
     ///   - [`task_summary(Option<DetectMitigationActionsTaskSummary>)`](crate::output::DescribeDetectMitigationActionsTaskOutput::task_summary): <p> The description of a task. </p>
     /// - On failure, responds with [`SdkError<DescribeDetectMitigationActionsTaskError>`](crate::error::DescribeDetectMitigationActionsTaskError)
@@ -1252,8 +1252,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDimension`](crate::client::fluent_builders::DescribeDimension) operation.
     ///
-    /// - Takes [`DescribeDimensionInput`](crate::input::DescribeDimensionInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DescribeDimensionInput::name): <p>The unique identifier for the dimension.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeDimension::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeDimension::set_name): <p>The unique identifier for the dimension.</p>
     /// - On success, responds with [`DescribeDimensionOutput`](crate::output::DescribeDimensionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::DescribeDimensionOutput::name): <p>The unique identifier for the dimension.</p>
     ///   - [`arn(Option<String>)`](crate::output::DescribeDimensionOutput::arn): <p>The Amazon Resource Name (ARN) for the dimension.</p>
@@ -1267,8 +1267,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDomainConfiguration`](crate::client::fluent_builders::DescribeDomainConfiguration) operation.
     ///
-    /// - Takes [`DescribeDomainConfigurationInput`](crate::input::DescribeDomainConfigurationInput) with field(s):
-    ///   - [`domain_configuration_name(Option<String>)`](crate::input::DescribeDomainConfigurationInput::domain_configuration_name): <p>The name of the domain configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_configuration_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainConfiguration::domain_configuration_name) / [`set_domain_configuration_name(Option<String>)`](crate::client::fluent_builders::DescribeDomainConfiguration::set_domain_configuration_name): <p>The name of the domain configuration.</p>
     /// - On success, responds with [`DescribeDomainConfigurationOutput`](crate::output::DescribeDomainConfigurationOutput) with field(s):
     ///   - [`domain_configuration_name(Option<String>)`](crate::output::DescribeDomainConfigurationOutput::domain_configuration_name): <p>The name of the domain configuration.</p>
     ///   - [`domain_configuration_arn(Option<String>)`](crate::output::DescribeDomainConfigurationOutput::domain_configuration_arn): <p>The ARN of the domain configuration.</p>
@@ -1287,8 +1287,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEndpoint`](crate::client::fluent_builders::DescribeEndpoint) operation.
     ///
-    /// - Takes [`DescribeEndpointInput`](crate::input::DescribeEndpointInput) with field(s):
-    ///   - [`endpoint_type(Option<String>)`](crate::input::DescribeEndpointInput::endpoint_type): <p>The endpoint type. Valid endpoint types include:</p>  <ul>   <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>  </ul>  <ul>   <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>  </ul>  <ul>   <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>  </ul>  <ul>   <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>  </ul>  <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_type(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpoint::endpoint_type) / [`set_endpoint_type(Option<String>)`](crate::client::fluent_builders::DescribeEndpoint::set_endpoint_type): <p>The endpoint type. Valid endpoint types include:</p>  <ul>   <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>  </ul>  <ul>   <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>  </ul>  <ul>   <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>  </ul>  <ul>   <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>  </ul>  <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
     /// - On success, responds with [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput) with field(s):
     ///   - [`endpoint_address(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_address): <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::error::DescribeEndpointError)
@@ -1297,7 +1297,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEventConfigurations`](crate::client::fluent_builders::DescribeEventConfigurations) operation.
     ///
-    /// - Takes [`DescribeEventConfigurationsInput`](crate::input::DescribeEventConfigurationsInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeEventConfigurations::send) it.
 
     /// - On success, responds with [`DescribeEventConfigurationsOutput`](crate::output::DescribeEventConfigurationsOutput) with field(s):
     ///   - [`event_configurations(Option<HashMap<EventType, Configuration>>)`](crate::output::DescribeEventConfigurationsOutput::event_configurations): <p>The event configurations.</p>
@@ -1311,8 +1311,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFleetMetric`](crate::client::fluent_builders::DescribeFleetMetric) operation.
     ///
-    /// - Takes [`DescribeFleetMetricInput`](crate::input::DescribeFleetMetricInput) with field(s):
-    ///   - [`metric_name(Option<String>)`](crate::input::DescribeFleetMetricInput::metric_name): <p>The name of the fleet metric to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::DescribeFleetMetric::set_metric_name): <p>The name of the fleet metric to describe.</p>
     /// - On success, responds with [`DescribeFleetMetricOutput`](crate::output::DescribeFleetMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::output::DescribeFleetMetricOutput::metric_name): <p>The name of the fleet metric to describe.</p>
     ///   - [`query_string(Option<String>)`](crate::output::DescribeFleetMetricOutput::query_string): <p>The search query string.</p>
@@ -1333,8 +1333,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeIndex`](crate::client::fluent_builders::DescribeIndex) operation.
     ///
-    /// - Takes [`DescribeIndexInput`](crate::input::DescribeIndexInput) with field(s):
-    ///   - [`index_name(Option<String>)`](crate::input::DescribeIndexInput::index_name): <p>The index name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::DescribeIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::DescribeIndex::set_index_name): <p>The index name.</p>
     /// - On success, responds with [`DescribeIndexOutput`](crate::output::DescribeIndexOutput) with field(s):
     ///   - [`index_name(Option<String>)`](crate::output::DescribeIndexOutput::index_name): <p>The index name.</p>
     ///   - [`index_status(Option<IndexStatus>)`](crate::output::DescribeIndexOutput::index_status): <p>The index status.</p>
@@ -1345,8 +1345,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeJob`](crate::client::fluent_builders::DescribeJob) operation.
     ///
-    /// - Takes [`DescribeJobInput`](crate::input::DescribeJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeJobInput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeJob::set_job_id): <p>The unique identifier you assigned to this job when it was created.</p>
     /// - On success, responds with [`DescribeJobOutput`](crate::output::DescribeJobOutput) with field(s):
     ///   - [`document_source(Option<String>)`](crate::output::DescribeJobOutput::document_source): <p>An S3 link to the job document.</p>
     ///   - [`job(Option<Job>)`](crate::output::DescribeJobOutput::job): <p>Information about the job.</p>
@@ -1356,10 +1356,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeJobExecution`](crate::client::fluent_builders::DescribeJobExecution) operation.
     ///
-    /// - Takes [`DescribeJobExecutionInput`](crate::input::DescribeJobExecutionInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeJobExecutionInput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::DescribeJobExecutionInput::thing_name): <p>The name of the thing on which the job execution is running.</p>
-    ///   - [`execution_number(Option<i64>)`](crate::input::DescribeJobExecutionInput::execution_number): <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJobExecution::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeJobExecution::set_job_id): <p>The unique identifier you assigned to this job when it was created.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::DescribeJobExecution::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::DescribeJobExecution::set_thing_name): <p>The name of the thing on which the job execution is running.</p>
+    ///   - [`execution_number(i64)`](crate::client::fluent_builders::DescribeJobExecution::execution_number) / [`set_execution_number(Option<i64>)`](crate::client::fluent_builders::DescribeJobExecution::set_execution_number): <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     /// - On success, responds with [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput) with field(s):
     ///   - [`execution(Option<JobExecution>)`](crate::output::DescribeJobExecutionOutput::execution): <p>Information about the job execution.</p>
     /// - On failure, responds with [`SdkError<DescribeJobExecutionError>`](crate::error::DescribeJobExecutionError)
@@ -1368,8 +1368,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeJobTemplate`](crate::client::fluent_builders::DescribeJobTemplate) operation.
     ///
-    /// - Takes [`DescribeJobTemplateInput`](crate::input::DescribeJobTemplateInput) with field(s):
-    ///   - [`job_template_id(Option<String>)`](crate::input::DescribeJobTemplateInput::job_template_id): <p>The unique identifier of the job template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_template_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJobTemplate::job_template_id) / [`set_job_template_id(Option<String>)`](crate::client::fluent_builders::DescribeJobTemplate::set_job_template_id): <p>The unique identifier of the job template.</p>
     /// - On success, responds with [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput) with field(s):
     ///   - [`job_template_arn(Option<String>)`](crate::output::DescribeJobTemplateOutput::job_template_arn): <p>The ARN of the job template.</p>
     ///   - [`job_template_id(Option<String>)`](crate::output::DescribeJobTemplateOutput::job_template_id): <p>The unique identifier of the job template.</p>
@@ -1388,9 +1388,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeManagedJobTemplate`](crate::client::fluent_builders::DescribeManagedJobTemplate) operation.
     ///
-    /// - Takes [`DescribeManagedJobTemplateInput`](crate::input::DescribeManagedJobTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DescribeManagedJobTemplateInput::template_name): <p>The unique name of a managed job template, which is required.</p>
-    ///   - [`template_version(Option<String>)`](crate::input::DescribeManagedJobTemplateInput::template_version): <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DescribeManagedJobTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DescribeManagedJobTemplate::set_template_name): <p>The unique name of a managed job template, which is required.</p>
+    ///   - [`template_version(impl Into<String>)`](crate::client::fluent_builders::DescribeManagedJobTemplate::template_version) / [`set_template_version(Option<String>)`](crate::client::fluent_builders::DescribeManagedJobTemplate::set_template_version): <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
     /// - On success, responds with [`DescribeManagedJobTemplateOutput`](crate::output::DescribeManagedJobTemplateOutput) with field(s):
     ///   - [`template_name(Option<String>)`](crate::output::DescribeManagedJobTemplateOutput::template_name): <p>The unique name of a managed template, such as <code>AWS-Reboot</code>.</p>
     ///   - [`template_arn(Option<String>)`](crate::output::DescribeManagedJobTemplateOutput::template_arn): <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
@@ -1407,8 +1407,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeMitigationAction`](crate::client::fluent_builders::DescribeMitigationAction) operation.
     ///
-    /// - Takes [`DescribeMitigationActionInput`](crate::input::DescribeMitigationActionInput) with field(s):
-    ///   - [`action_name(Option<String>)`](crate::input::DescribeMitigationActionInput::action_name): <p>The friendly name that uniquely identifies the mitigation action.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMitigationAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::DescribeMitigationAction::set_action_name): <p>The friendly name that uniquely identifies the mitigation action.</p>
     /// - On success, responds with [`DescribeMitigationActionOutput`](crate::output::DescribeMitigationActionOutput) with field(s):
     ///   - [`action_name(Option<String>)`](crate::output::DescribeMitigationActionOutput::action_name): <p>The friendly name that uniquely identifies the mitigation action.</p>
     ///   - [`action_type(Option<MitigationActionType>)`](crate::output::DescribeMitigationActionOutput::action_type): <p>The type of mitigation action.</p>
@@ -1424,8 +1424,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeProvisioningTemplate`](crate::client::fluent_builders::DescribeProvisioningTemplate) operation.
     ///
-    /// - Takes [`DescribeProvisioningTemplateInput`](crate::input::DescribeProvisioningTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DescribeProvisioningTemplateInput::template_name): <p>The name of the fleet provisioning template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplate::set_template_name): <p>The name of the fleet provisioning template.</p>
     /// - On success, responds with [`DescribeProvisioningTemplateOutput`](crate::output::DescribeProvisioningTemplateOutput) with field(s):
     ///   - [`template_arn(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::template_arn): <p>The ARN of the fleet provisioning template.</p>
     ///   - [`template_name(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::template_name): <p>The name of the fleet provisioning template.</p>
@@ -1445,9 +1445,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeProvisioningTemplateVersion`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion) operation.
     ///
-    /// - Takes [`DescribeProvisioningTemplateVersionInput`](crate::input::DescribeProvisioningTemplateVersionInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DescribeProvisioningTemplateVersionInput::template_name): <p>The template name.</p>
-    ///   - [`version_id(Option<i32>)`](crate::input::DescribeProvisioningTemplateVersionInput::version_id): <p>The fleet provisioning template version ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::set_template_name): <p>The template name.</p>
+    ///   - [`version_id(i32)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::version_id) / [`set_version_id(Option<i32>)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::set_version_id): <p>The fleet provisioning template version ID.</p>
     /// - On success, responds with [`DescribeProvisioningTemplateVersionOutput`](crate::output::DescribeProvisioningTemplateVersionOutput) with field(s):
     ///   - [`version_id(Option<i32>)`](crate::output::DescribeProvisioningTemplateVersionOutput::version_id): <p>The fleet provisioning template version ID.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeProvisioningTemplateVersionOutput::creation_date): <p>The date when the fleet provisioning template version was created.</p>
@@ -1461,8 +1461,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeRoleAlias`](crate::client::fluent_builders::DescribeRoleAlias) operation.
     ///
-    /// - Takes [`DescribeRoleAliasInput`](crate::input::DescribeRoleAliasInput) with field(s):
-    ///   - [`role_alias(Option<String>)`](crate::input::DescribeRoleAliasInput::role_alias): <p>The role alias to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`role_alias(impl Into<String>)`](crate::client::fluent_builders::DescribeRoleAlias::role_alias) / [`set_role_alias(Option<String>)`](crate::client::fluent_builders::DescribeRoleAlias::set_role_alias): <p>The role alias to describe.</p>
     /// - On success, responds with [`DescribeRoleAliasOutput`](crate::output::DescribeRoleAliasOutput) with field(s):
     ///   - [`role_alias_description(Option<RoleAliasDescription>)`](crate::output::DescribeRoleAliasOutput::role_alias_description): <p>The role alias description.</p>
     /// - On failure, responds with [`SdkError<DescribeRoleAliasError>`](crate::error::DescribeRoleAliasError)
@@ -1471,8 +1471,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeScheduledAudit`](crate::client::fluent_builders::DescribeScheduledAudit) operation.
     ///
-    /// - Takes [`DescribeScheduledAuditInput`](crate::input::DescribeScheduledAuditInput) with field(s):
-    ///   - [`scheduled_audit_name(Option<String>)`](crate::input::DescribeScheduledAuditInput::scheduled_audit_name): <p>The name of the scheduled audit whose information you want to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`scheduled_audit_name(impl Into<String>)`](crate::client::fluent_builders::DescribeScheduledAudit::scheduled_audit_name) / [`set_scheduled_audit_name(Option<String>)`](crate::client::fluent_builders::DescribeScheduledAudit::set_scheduled_audit_name): <p>The name of the scheduled audit whose information you want to get.</p>
     /// - On success, responds with [`DescribeScheduledAuditOutput`](crate::output::DescribeScheduledAuditOutput) with field(s):
     ///   - [`frequency(Option<AuditFrequency>)`](crate::output::DescribeScheduledAuditOutput::frequency): <p>How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     ///   - [`day_of_month(Option<String>)`](crate::output::DescribeScheduledAuditOutput::day_of_month): <p>The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
@@ -1486,8 +1486,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSecurityProfile`](crate::client::fluent_builders::DescribeSecurityProfile) operation.
     ///
-    /// - Takes [`DescribeSecurityProfileInput`](crate::input::DescribeSecurityProfileInput) with field(s):
-    ///   - [`security_profile_name(Option<String>)`](crate::input::DescribeSecurityProfileInput::security_profile_name): <p>The name of the security profile whose information you want to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSecurityProfile::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::DescribeSecurityProfile::set_security_profile_name): <p>The name of the security profile whose information you want to get.</p>
     /// - On success, responds with [`DescribeSecurityProfileOutput`](crate::output::DescribeSecurityProfileOutput) with field(s):
     ///   - [`security_profile_name(Option<String>)`](crate::output::DescribeSecurityProfileOutput::security_profile_name): <p>The name of the security profile.</p>
     ///   - [`security_profile_arn(Option<String>)`](crate::output::DescribeSecurityProfileOutput::security_profile_arn): <p>The ARN of the security profile.</p>
@@ -1505,8 +1505,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeStream`](crate::client::fluent_builders::DescribeStream) operation.
     ///
-    /// - Takes [`DescribeStreamInput`](crate::input::DescribeStreamInput) with field(s):
-    ///   - [`stream_id(Option<String>)`](crate::input::DescribeStreamInput::stream_id): <p>The stream ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::DescribeStream::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::DescribeStream::set_stream_id): <p>The stream ID.</p>
     /// - On success, responds with [`DescribeStreamOutput`](crate::output::DescribeStreamOutput) with field(s):
     ///   - [`stream_info(Option<StreamInfo>)`](crate::output::DescribeStreamOutput::stream_info): <p>Information about the stream.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamError>`](crate::error::DescribeStreamError)
@@ -1515,8 +1515,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeThing`](crate::client::fluent_builders::DescribeThing) operation.
     ///
-    /// - Takes [`DescribeThingInput`](crate::input::DescribeThingInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::DescribeThingInput::thing_name): <p>The name of the thing.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::DescribeThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::DescribeThing::set_thing_name): <p>The name of the thing.</p>
     /// - On success, responds with [`DescribeThingOutput`](crate::output::DescribeThingOutput) with field(s):
     ///   - [`default_client_id(Option<String>)`](crate::output::DescribeThingOutput::default_client_id): <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>  <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
     ///   - [`thing_name(Option<String>)`](crate::output::DescribeThingOutput::thing_name): <p>The name of the thing.</p>
@@ -1532,8 +1532,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeThingGroup`](crate::client::fluent_builders::DescribeThingGroup) operation.
     ///
-    /// - Takes [`DescribeThingGroupInput`](crate::input::DescribeThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::DescribeThingGroupInput::thing_group_name): <p>The name of the thing group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::DescribeThingGroup::set_thing_group_name): <p>The name of the thing group.</p>
     /// - On success, responds with [`DescribeThingGroupOutput`](crate::output::DescribeThingGroupOutput) with field(s):
     ///   - [`thing_group_name(Option<String>)`](crate::output::DescribeThingGroupOutput::thing_group_name): <p>The name of the thing group.</p>
     ///   - [`thing_group_id(Option<String>)`](crate::output::DescribeThingGroupOutput::thing_group_id): <p>The thing group ID.</p>
@@ -1551,8 +1551,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeThingRegistrationTask`](crate::client::fluent_builders::DescribeThingRegistrationTask) operation.
     ///
-    /// - Takes [`DescribeThingRegistrationTaskInput`](crate::input::DescribeThingRegistrationTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::DescribeThingRegistrationTaskInput::task_id): <p>The task ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::DescribeThingRegistrationTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::DescribeThingRegistrationTask::set_task_id): <p>The task ID.</p>
     /// - On success, responds with [`DescribeThingRegistrationTaskOutput`](crate::output::DescribeThingRegistrationTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::output::DescribeThingRegistrationTaskOutput::task_id): <p>The task ID.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeThingRegistrationTaskOutput::creation_date): <p>The task creation date.</p>
@@ -1574,8 +1574,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeThingType`](crate::client::fluent_builders::DescribeThingType) operation.
     ///
-    /// - Takes [`DescribeThingTypeInput`](crate::input::DescribeThingTypeInput) with field(s):
-    ///   - [`thing_type_name(Option<String>)`](crate::input::DescribeThingTypeInput::thing_type_name): <p>The name of the thing type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_type_name(impl Into<String>)`](crate::client::fluent_builders::DescribeThingType::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::client::fluent_builders::DescribeThingType::set_thing_type_name): <p>The name of the thing type.</p>
     /// - On success, responds with [`DescribeThingTypeOutput`](crate::output::DescribeThingTypeOutput) with field(s):
     ///   - [`thing_type_name(Option<String>)`](crate::output::DescribeThingTypeOutput::thing_type_name): <p>The name of the thing type.</p>
     ///   - [`thing_type_id(Option<String>)`](crate::output::DescribeThingTypeOutput::thing_type_id): <p>The thing type ID.</p>
@@ -1588,9 +1588,9 @@ where
     }
     /// Constructs a fluent builder for the [`DetachPolicy`](crate::client::fluent_builders::DetachPolicy) operation.
     ///
-    /// - Takes [`DetachPolicyInput`](crate::input::DetachPolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::DetachPolicyInput::policy_name): <p>The policy to detach.</p>
-    ///   - [`target(Option<String>)`](crate::input::DetachPolicyInput::target): <p>The target from which the policy will be detached.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DetachPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DetachPolicy::set_policy_name): <p>The policy to detach.</p>
+    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::DetachPolicy::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::DetachPolicy::set_target): <p>The target from which the policy will be detached.</p>
     /// - On success, responds with [`DetachPolicyOutput`](crate::output::DetachPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DetachPolicyError>`](crate::error::DetachPolicyError)
@@ -1599,9 +1599,9 @@ where
     }
     /// Constructs a fluent builder for the [`DetachPrincipalPolicy`](crate::client::fluent_builders::DetachPrincipalPolicy) operation.
     ///
-    /// - Takes [`DetachPrincipalPolicyInput`](crate::input::DetachPrincipalPolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::DetachPrincipalPolicyInput::policy_name): <p>The name of the policy to detach.</p>
-    ///   - [`principal(Option<String>)`](crate::input::DetachPrincipalPolicyInput::principal): <p>The principal.</p>  <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DetachPrincipalPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DetachPrincipalPolicy::set_policy_name): <p>The name of the policy to detach.</p>
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::DetachPrincipalPolicy::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::DetachPrincipalPolicy::set_principal): <p>The principal.</p>  <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     /// - On success, responds with [`DetachPrincipalPolicyOutput`](crate::output::DetachPrincipalPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DetachPrincipalPolicyError>`](crate::error::DetachPrincipalPolicyError)
@@ -1610,9 +1610,9 @@ where
     }
     /// Constructs a fluent builder for the [`DetachSecurityProfile`](crate::client::fluent_builders::DetachSecurityProfile) operation.
     ///
-    /// - Takes [`DetachSecurityProfileInput`](crate::input::DetachSecurityProfileInput) with field(s):
-    ///   - [`security_profile_name(Option<String>)`](crate::input::DetachSecurityProfileInput::security_profile_name): <p>The security profile that is detached.</p>
-    ///   - [`security_profile_target_arn(Option<String>)`](crate::input::DetachSecurityProfileInput::security_profile_target_arn): <p>The ARN of the thing group from which the security profile is detached.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::DetachSecurityProfile::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::DetachSecurityProfile::set_security_profile_name): <p>The security profile that is detached.</p>
+    ///   - [`security_profile_target_arn(impl Into<String>)`](crate::client::fluent_builders::DetachSecurityProfile::security_profile_target_arn) / [`set_security_profile_target_arn(Option<String>)`](crate::client::fluent_builders::DetachSecurityProfile::set_security_profile_target_arn): <p>The ARN of the thing group from which the security profile is detached.</p>
     /// - On success, responds with [`DetachSecurityProfileOutput`](crate::output::DetachSecurityProfileOutput)
 
     /// - On failure, responds with [`SdkError<DetachSecurityProfileError>`](crate::error::DetachSecurityProfileError)
@@ -1621,9 +1621,9 @@ where
     }
     /// Constructs a fluent builder for the [`DetachThingPrincipal`](crate::client::fluent_builders::DetachThingPrincipal) operation.
     ///
-    /// - Takes [`DetachThingPrincipalInput`](crate::input::DetachThingPrincipalInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::DetachThingPrincipalInput::thing_name): <p>The name of the thing.</p>
-    ///   - [`principal(Option<String>)`](crate::input::DetachThingPrincipalInput::principal): <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::DetachThingPrincipal::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::DetachThingPrincipal::set_thing_name): <p>The name of the thing.</p>
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::DetachThingPrincipal::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::DetachThingPrincipal::set_principal): <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
     /// - On success, responds with [`DetachThingPrincipalOutput`](crate::output::DetachThingPrincipalOutput)
 
     /// - On failure, responds with [`SdkError<DetachThingPrincipalError>`](crate::error::DetachThingPrincipalError)
@@ -1632,8 +1632,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisableTopicRule`](crate::client::fluent_builders::DisableTopicRule) operation.
     ///
-    /// - Takes [`DisableTopicRuleInput`](crate::input::DisableTopicRuleInput) with field(s):
-    ///   - [`rule_name(Option<String>)`](crate::input::DisableTopicRuleInput::rule_name): <p>The name of the rule to disable.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::DisableTopicRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::DisableTopicRule::set_rule_name): <p>The name of the rule to disable.</p>
     /// - On success, responds with [`DisableTopicRuleOutput`](crate::output::DisableTopicRuleOutput)
 
     /// - On failure, responds with [`SdkError<DisableTopicRuleError>`](crate::error::DisableTopicRuleError)
@@ -1642,8 +1642,8 @@ where
     }
     /// Constructs a fluent builder for the [`EnableTopicRule`](crate::client::fluent_builders::EnableTopicRule) operation.
     ///
-    /// - Takes [`EnableTopicRuleInput`](crate::input::EnableTopicRuleInput) with field(s):
-    ///   - [`rule_name(Option<String>)`](crate::input::EnableTopicRuleInput::rule_name): <p>The name of the topic rule to enable.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::EnableTopicRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::EnableTopicRule::set_rule_name): <p>The name of the topic rule to enable.</p>
     /// - On success, responds with [`EnableTopicRuleOutput`](crate::output::EnableTopicRuleOutput)
 
     /// - On failure, responds with [`SdkError<EnableTopicRuleError>`](crate::error::EnableTopicRuleError)
@@ -1651,12 +1651,12 @@ where
         fluent_builders::EnableTopicRule::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetBehaviorModelTrainingSummaries`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::into_paginator).
     ///
-    /// - Takes [`GetBehaviorModelTrainingSummariesInput`](crate::input::GetBehaviorModelTrainingSummariesInput) with field(s):
-    ///   - [`security_profile_name(Option<String>)`](crate::input::GetBehaviorModelTrainingSummariesInput::security_profile_name): <p> The name of the security profile. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetBehaviorModelTrainingSummariesInput::max_results): <p> The maximum number of results to return at one time. The default is 25. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetBehaviorModelTrainingSummariesInput::next_token): <p> The token for the next set of results. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::set_security_profile_name): <p> The name of the security profile. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::set_max_results): <p> The maximum number of results to return at one time. The default is 25. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetBehaviorModelTrainingSummaries::set_next_token): <p> The token for the next set of results. </p>
     /// - On success, responds with [`GetBehaviorModelTrainingSummariesOutput`](crate::output::GetBehaviorModelTrainingSummariesOutput) with field(s):
     ///   - [`summaries(Option<Vec<BehaviorModelTrainingSummary>>)`](crate::output::GetBehaviorModelTrainingSummariesOutput::summaries): <p> A list of all ML Detect behaviors and their model status for a given Security Profile. </p>
     ///   - [`next_token(Option<String>)`](crate::output::GetBehaviorModelTrainingSummariesOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
@@ -1668,12 +1668,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetBucketsAggregation`](crate::client::fluent_builders::GetBucketsAggregation) operation.
     ///
-    /// - Takes [`GetBucketsAggregationInput`](crate::input::GetBucketsAggregationInput) with field(s):
-    ///   - [`index_name(Option<String>)`](crate::input::GetBucketsAggregationInput::index_name): <p>The name of the index to search.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::GetBucketsAggregationInput::query_string): <p>The search query string.</p>
-    ///   - [`aggregation_field(Option<String>)`](crate::input::GetBucketsAggregationInput::aggregation_field): <p>The aggregation field.</p>
-    ///   - [`query_version(Option<String>)`](crate::input::GetBucketsAggregationInput::query_version): <p>The version of the query.</p>
-    ///   - [`buckets_aggregation_type(Option<BucketsAggregationType>)`](crate::input::GetBucketsAggregationInput::buckets_aggregation_type): <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::GetBucketsAggregation::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::GetBucketsAggregation::set_index_name): <p>The name of the index to search.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::GetBucketsAggregation::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::GetBucketsAggregation::set_query_string): <p>The search query string.</p>
+    ///   - [`aggregation_field(impl Into<String>)`](crate::client::fluent_builders::GetBucketsAggregation::aggregation_field) / [`set_aggregation_field(Option<String>)`](crate::client::fluent_builders::GetBucketsAggregation::set_aggregation_field): <p>The aggregation field.</p>
+    ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::GetBucketsAggregation::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::GetBucketsAggregation::set_query_version): <p>The version of the query.</p>
+    ///   - [`buckets_aggregation_type(BucketsAggregationType)`](crate::client::fluent_builders::GetBucketsAggregation::buckets_aggregation_type) / [`set_buckets_aggregation_type(Option<BucketsAggregationType>)`](crate::client::fluent_builders::GetBucketsAggregation::set_buckets_aggregation_type): <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
     /// - On success, responds with [`GetBucketsAggregationOutput`](crate::output::GetBucketsAggregationOutput) with field(s):
     ///   - [`total_count(i32)`](crate::output::GetBucketsAggregationOutput::total_count): <p>The total number of things that fit the query string criteria.</p>
     ///   - [`buckets(Option<Vec<Bucket>>)`](crate::output::GetBucketsAggregationOutput::buckets): <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>  <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>  <p> <code>count</code>: The number of documents that have that value.</p>
@@ -1683,11 +1683,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetCardinality`](crate::client::fluent_builders::GetCardinality) operation.
     ///
-    /// - Takes [`GetCardinalityInput`](crate::input::GetCardinalityInput) with field(s):
-    ///   - [`index_name(Option<String>)`](crate::input::GetCardinalityInput::index_name): <p>The name of the index to search.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::GetCardinalityInput::query_string): <p>The search query string.</p>
-    ///   - [`aggregation_field(Option<String>)`](crate::input::GetCardinalityInput::aggregation_field): <p>The field to aggregate.</p>
-    ///   - [`query_version(Option<String>)`](crate::input::GetCardinalityInput::query_version): <p>The query version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::GetCardinality::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::GetCardinality::set_index_name): <p>The name of the index to search.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::GetCardinality::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::GetCardinality::set_query_string): <p>The search query string.</p>
+    ///   - [`aggregation_field(impl Into<String>)`](crate::client::fluent_builders::GetCardinality::aggregation_field) / [`set_aggregation_field(Option<String>)`](crate::client::fluent_builders::GetCardinality::set_aggregation_field): <p>The field to aggregate.</p>
+    ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::GetCardinality::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::GetCardinality::set_query_version): <p>The query version.</p>
     /// - On success, responds with [`GetCardinalityOutput`](crate::output::GetCardinalityOutput) with field(s):
     ///   - [`cardinality(i32)`](crate::output::GetCardinalityOutput::cardinality): <p>The approximate count of unique values that match the query.</p>
     /// - On failure, responds with [`SdkError<GetCardinalityError>`](crate::error::GetCardinalityError)
@@ -1696,10 +1696,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetEffectivePolicies`](crate::client::fluent_builders::GetEffectivePolicies) operation.
     ///
-    /// - Takes [`GetEffectivePoliciesInput`](crate::input::GetEffectivePoliciesInput) with field(s):
-    ///   - [`principal(Option<String>)`](crate::input::GetEffectivePoliciesInput::principal): <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    ///   - [`cognito_identity_pool_id(Option<String>)`](crate::input::GetEffectivePoliciesInput::cognito_identity_pool_id): <p>The Cognito identity pool ID.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::GetEffectivePoliciesInput::thing_name): <p>The thing name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::GetEffectivePolicies::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::GetEffectivePolicies::set_principal): <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    ///   - [`cognito_identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetEffectivePolicies::cognito_identity_pool_id) / [`set_cognito_identity_pool_id(Option<String>)`](crate::client::fluent_builders::GetEffectivePolicies::set_cognito_identity_pool_id): <p>The Cognito identity pool ID.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::GetEffectivePolicies::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::GetEffectivePolicies::set_thing_name): <p>The thing name.</p>
     /// - On success, responds with [`GetEffectivePoliciesOutput`](crate::output::GetEffectivePoliciesOutput) with field(s):
     ///   - [`effective_policies(Option<Vec<EffectivePolicy>>)`](crate::output::GetEffectivePoliciesOutput::effective_policies): <p>The effective policies.</p>
     /// - On failure, responds with [`SdkError<GetEffectivePoliciesError>`](crate::error::GetEffectivePoliciesError)
@@ -1708,7 +1708,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetIndexingConfiguration`](crate::client::fluent_builders::GetIndexingConfiguration) operation.
     ///
-    /// - Takes [`GetIndexingConfigurationInput`](crate::input::GetIndexingConfigurationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetIndexingConfiguration::send) it.
 
     /// - On success, responds with [`GetIndexingConfigurationOutput`](crate::output::GetIndexingConfigurationOutput) with field(s):
     ///   - [`thing_indexing_configuration(Option<ThingIndexingConfiguration>)`](crate::output::GetIndexingConfigurationOutput::thing_indexing_configuration): <p>Thing indexing configuration.</p>
@@ -1719,8 +1719,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetJobDocument`](crate::client::fluent_builders::GetJobDocument) operation.
     ///
-    /// - Takes [`GetJobDocumentInput`](crate::input::GetJobDocumentInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::GetJobDocumentInput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetJobDocument::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetJobDocument::set_job_id): <p>The unique identifier you assigned to this job when it was created.</p>
     /// - On success, responds with [`GetJobDocumentOutput`](crate::output::GetJobDocumentOutput) with field(s):
     ///   - [`document(Option<String>)`](crate::output::GetJobDocumentOutput::document): <p>The job document content.</p>
     /// - On failure, responds with [`SdkError<GetJobDocumentError>`](crate::error::GetJobDocumentError)
@@ -1729,7 +1729,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetLoggingOptions`](crate::client::fluent_builders::GetLoggingOptions) operation.
     ///
-    /// - Takes [`GetLoggingOptionsInput`](crate::input::GetLoggingOptionsInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetLoggingOptions::send) it.
 
     /// - On success, responds with [`GetLoggingOptionsOutput`](crate::output::GetLoggingOptionsOutput) with field(s):
     ///   - [`role_arn(Option<String>)`](crate::output::GetLoggingOptionsOutput::role_arn): <p>The ARN of the IAM role that grants access.</p>
@@ -1740,8 +1740,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetOTAUpdate`](crate::client::fluent_builders::GetOTAUpdate) operation.
     ///
-    /// - Takes [`GetOtaUpdateInput`](crate::input::GetOtaUpdateInput) with field(s):
-    ///   - [`ota_update_id(Option<String>)`](crate::input::GetOtaUpdateInput::ota_update_id): <p>The OTA update ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ota_update_id(impl Into<String>)`](crate::client::fluent_builders::GetOTAUpdate::ota_update_id) / [`set_ota_update_id(Option<String>)`](crate::client::fluent_builders::GetOTAUpdate::set_ota_update_id): <p>The OTA update ID.</p>
     /// - On success, responds with [`GetOtaUpdateOutput`](crate::output::GetOtaUpdateOutput) with field(s):
     ///   - [`ota_update_info(Option<OtaUpdateInfo>)`](crate::output::GetOtaUpdateOutput::ota_update_info): <p>The OTA update info.</p>
     /// - On failure, responds with [`SdkError<GetOTAUpdateError>`](crate::error::GetOTAUpdateError)
@@ -1750,12 +1750,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetPercentiles`](crate::client::fluent_builders::GetPercentiles) operation.
     ///
-    /// - Takes [`GetPercentilesInput`](crate::input::GetPercentilesInput) with field(s):
-    ///   - [`index_name(Option<String>)`](crate::input::GetPercentilesInput::index_name): <p>The name of the index to search.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::GetPercentilesInput::query_string): <p>The search query string.</p>
-    ///   - [`aggregation_field(Option<String>)`](crate::input::GetPercentilesInput::aggregation_field): <p>The field to aggregate.</p>
-    ///   - [`query_version(Option<String>)`](crate::input::GetPercentilesInput::query_version): <p>The query version.</p>
-    ///   - [`percents(Option<Vec<f64>>)`](crate::input::GetPercentilesInput::percents): <p>The percentile groups returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::GetPercentiles::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::GetPercentiles::set_index_name): <p>The name of the index to search.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::GetPercentiles::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::GetPercentiles::set_query_string): <p>The search query string.</p>
+    ///   - [`aggregation_field(impl Into<String>)`](crate::client::fluent_builders::GetPercentiles::aggregation_field) / [`set_aggregation_field(Option<String>)`](crate::client::fluent_builders::GetPercentiles::set_aggregation_field): <p>The field to aggregate.</p>
+    ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::GetPercentiles::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::GetPercentiles::set_query_version): <p>The query version.</p>
+    ///   - [`percents(Vec<f64>)`](crate::client::fluent_builders::GetPercentiles::percents) / [`set_percents(Option<Vec<f64>>)`](crate::client::fluent_builders::GetPercentiles::set_percents): <p>The percentile groups returned.</p>
     /// - On success, responds with [`GetPercentilesOutput`](crate::output::GetPercentilesOutput) with field(s):
     ///   - [`percentiles(Option<Vec<PercentPair>>)`](crate::output::GetPercentilesOutput::percentiles): <p>The percentile values of the aggregated fields.</p>
     /// - On failure, responds with [`SdkError<GetPercentilesError>`](crate::error::GetPercentilesError)
@@ -1764,8 +1764,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetPolicy`](crate::client::fluent_builders::GetPolicy) operation.
     ///
-    /// - Takes [`GetPolicyInput`](crate::input::GetPolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::GetPolicyInput::policy_name): <p>The name of the policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::GetPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::GetPolicy::set_policy_name): <p>The name of the policy.</p>
     /// - On success, responds with [`GetPolicyOutput`](crate::output::GetPolicyOutput) with field(s):
     ///   - [`policy_name(Option<String>)`](crate::output::GetPolicyOutput::policy_name): <p>The policy name.</p>
     ///   - [`policy_arn(Option<String>)`](crate::output::GetPolicyOutput::policy_arn): <p>The policy ARN.</p>
@@ -1780,9 +1780,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetPolicyVersion`](crate::client::fluent_builders::GetPolicyVersion) operation.
     ///
-    /// - Takes [`GetPolicyVersionInput`](crate::input::GetPolicyVersionInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::GetPolicyVersionInput::policy_name): <p>The name of the policy.</p>
-    ///   - [`policy_version_id(Option<String>)`](crate::input::GetPolicyVersionInput::policy_version_id): <p>The policy version ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::GetPolicyVersion::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::GetPolicyVersion::set_policy_name): <p>The name of the policy.</p>
+    ///   - [`policy_version_id(impl Into<String>)`](crate::client::fluent_builders::GetPolicyVersion::policy_version_id) / [`set_policy_version_id(Option<String>)`](crate::client::fluent_builders::GetPolicyVersion::set_policy_version_id): <p>The policy version ID.</p>
     /// - On success, responds with [`GetPolicyVersionOutput`](crate::output::GetPolicyVersionOutput) with field(s):
     ///   - [`policy_arn(Option<String>)`](crate::output::GetPolicyVersionOutput::policy_arn): <p>The policy ARN.</p>
     ///   - [`policy_name(Option<String>)`](crate::output::GetPolicyVersionOutput::policy_name): <p>The policy name.</p>
@@ -1798,7 +1798,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetRegistrationCode`](crate::client::fluent_builders::GetRegistrationCode) operation.
     ///
-    /// - Takes [`GetRegistrationCodeInput`](crate::input::GetRegistrationCodeInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetRegistrationCode::send) it.
 
     /// - On success, responds with [`GetRegistrationCodeOutput`](crate::output::GetRegistrationCodeOutput) with field(s):
     ///   - [`registration_code(Option<String>)`](crate::output::GetRegistrationCodeOutput::registration_code): <p>The CA certificate registration code.</p>
@@ -1808,11 +1808,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetStatistics`](crate::client::fluent_builders::GetStatistics) operation.
     ///
-    /// - Takes [`GetStatisticsInput`](crate::input::GetStatisticsInput) with field(s):
-    ///   - [`index_name(Option<String>)`](crate::input::GetStatisticsInput::index_name): <p>The name of the index to search. The default value is <code>AWS_Things</code>.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::GetStatisticsInput::query_string): <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
-    ///   - [`aggregation_field(Option<String>)`](crate::input::GetStatisticsInput::aggregation_field): <p>The aggregation field name.</p>
-    ///   - [`query_version(Option<String>)`](crate::input::GetStatisticsInput::query_version): <p>The version of the query used to search.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::GetStatistics::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::GetStatistics::set_index_name): <p>The name of the index to search. The default value is <code>AWS_Things</code>.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::GetStatistics::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::GetStatistics::set_query_string): <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
+    ///   - [`aggregation_field(impl Into<String>)`](crate::client::fluent_builders::GetStatistics::aggregation_field) / [`set_aggregation_field(Option<String>)`](crate::client::fluent_builders::GetStatistics::set_aggregation_field): <p>The aggregation field name.</p>
+    ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::GetStatistics::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::GetStatistics::set_query_version): <p>The version of the query used to search.</p>
     /// - On success, responds with [`GetStatisticsOutput`](crate::output::GetStatisticsOutput) with field(s):
     ///   - [`statistics(Option<Statistics>)`](crate::output::GetStatisticsOutput::statistics): <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
     /// - On failure, responds with [`SdkError<GetStatisticsError>`](crate::error::GetStatisticsError)
@@ -1821,8 +1821,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetTopicRule`](crate::client::fluent_builders::GetTopicRule) operation.
     ///
-    /// - Takes [`GetTopicRuleInput`](crate::input::GetTopicRuleInput) with field(s):
-    ///   - [`rule_name(Option<String>)`](crate::input::GetTopicRuleInput::rule_name): <p>The name of the rule.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::GetTopicRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::GetTopicRule::set_rule_name): <p>The name of the rule.</p>
     /// - On success, responds with [`GetTopicRuleOutput`](crate::output::GetTopicRuleOutput) with field(s):
     ///   - [`rule_arn(Option<String>)`](crate::output::GetTopicRuleOutput::rule_arn): <p>The rule ARN.</p>
     ///   - [`rule(Option<TopicRule>)`](crate::output::GetTopicRuleOutput::rule): <p>The rule.</p>
@@ -1832,8 +1832,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetTopicRuleDestination`](crate::client::fluent_builders::GetTopicRuleDestination) operation.
     ///
-    /// - Takes [`GetTopicRuleDestinationInput`](crate::input::GetTopicRuleDestinationInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::GetTopicRuleDestinationInput::arn): <p>The ARN of the topic rule destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetTopicRuleDestination::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetTopicRuleDestination::set_arn): <p>The ARN of the topic rule destination.</p>
     /// - On success, responds with [`GetTopicRuleDestinationOutput`](crate::output::GetTopicRuleDestinationOutput) with field(s):
     ///   - [`topic_rule_destination(Option<TopicRuleDestination>)`](crate::output::GetTopicRuleDestinationOutput::topic_rule_destination): <p>The topic rule destination.</p>
     /// - On failure, responds with [`SdkError<GetTopicRuleDestinationError>`](crate::error::GetTopicRuleDestinationError)
@@ -1842,7 +1842,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetV2LoggingOptions`](crate::client::fluent_builders::GetV2LoggingOptions) operation.
     ///
-    /// - Takes [`GetV2LoggingOptionsInput`](crate::input::GetV2LoggingOptionsInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetV2LoggingOptions::send) it.
 
     /// - On success, responds with [`GetV2LoggingOptionsOutput`](crate::output::GetV2LoggingOptionsOutput) with field(s):
     ///   - [`role_arn(Option<String>)`](crate::output::GetV2LoggingOptionsOutput::role_arn): <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
@@ -1853,16 +1853,16 @@ where
         fluent_builders::GetV2LoggingOptions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListActiveViolations`](crate::client::fluent_builders::ListActiveViolations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActiveViolations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListActiveViolations::into_paginator).
     ///
-    /// - Takes [`ListActiveViolationsInput`](crate::input::ListActiveViolationsInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::ListActiveViolationsInput::thing_name): <p>The name of the thing whose active violations are listed.</p>
-    ///   - [`security_profile_name(Option<String>)`](crate::input::ListActiveViolationsInput::security_profile_name): <p>The name of the Device Defender security profile for which violations are listed.</p>
-    ///   - [`behavior_criteria_type(Option<BehaviorCriteriaType>)`](crate::input::ListActiveViolationsInput::behavior_criteria_type): <p> The criteria for a behavior. </p>
-    ///   - [`list_suppressed_alerts(Option<bool>)`](crate::input::ListActiveViolationsInput::list_suppressed_alerts): <p> A list of all suppressed alerts. </p>
-    ///   - [`verification_state(Option<VerificationState>)`](crate::input::ListActiveViolationsInput::verification_state): <p>The verification state of the violation (detect alarm).</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListActiveViolationsInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListActiveViolationsInput::max_results): <p>The maximum number of results to return at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListActiveViolations::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListActiveViolations::set_thing_name): <p>The name of the thing whose active violations are listed.</p>
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::ListActiveViolations::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::ListActiveViolations::set_security_profile_name): <p>The name of the Device Defender security profile for which violations are listed.</p>
+    ///   - [`behavior_criteria_type(BehaviorCriteriaType)`](crate::client::fluent_builders::ListActiveViolations::behavior_criteria_type) / [`set_behavior_criteria_type(Option<BehaviorCriteriaType>)`](crate::client::fluent_builders::ListActiveViolations::set_behavior_criteria_type): <p> The criteria for a behavior. </p>
+    ///   - [`list_suppressed_alerts(bool)`](crate::client::fluent_builders::ListActiveViolations::list_suppressed_alerts) / [`set_list_suppressed_alerts(Option<bool>)`](crate::client::fluent_builders::ListActiveViolations::set_list_suppressed_alerts): <p> A list of all suppressed alerts. </p>
+    ///   - [`verification_state(VerificationState)`](crate::client::fluent_builders::ListActiveViolations::verification_state) / [`set_verification_state(Option<VerificationState>)`](crate::client::fluent_builders::ListActiveViolations::set_verification_state): <p>The verification state of the violation (detect alarm).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListActiveViolations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListActiveViolations::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListActiveViolations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListActiveViolations::set_max_results): <p>The maximum number of results to return at one time.</p>
     /// - On success, responds with [`ListActiveViolationsOutput`](crate::output::ListActiveViolationsOutput) with field(s):
     ///   - [`active_violations(Option<Vec<ActiveViolation>>)`](crate::output::ListActiveViolationsOutput::active_violations): <p>The list of active violations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListActiveViolationsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -1871,13 +1871,13 @@ where
         fluent_builders::ListActiveViolations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAttachedPolicies`](crate::client::fluent_builders::ListAttachedPolicies) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttachedPolicies::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttachedPolicies::into_paginator).
     ///
-    /// - Takes [`ListAttachedPoliciesInput`](crate::input::ListAttachedPoliciesInput) with field(s):
-    ///   - [`target(Option<String>)`](crate::input::ListAttachedPoliciesInput::target): <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    ///   - [`recursive(bool)`](crate::input::ListAttachedPoliciesInput::recursive): <p>When true, recursively list attached policies.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListAttachedPoliciesInput::marker): <p>The token to retrieve the next set of results.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListAttachedPoliciesInput::page_size): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::ListAttachedPolicies::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::ListAttachedPolicies::set_target): <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    ///   - [`recursive(bool)`](crate::client::fluent_builders::ListAttachedPolicies::recursive) / [`set_recursive(bool)`](crate::client::fluent_builders::ListAttachedPolicies::set_recursive): <p>When true, recursively list attached policies.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListAttachedPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListAttachedPolicies::set_marker): <p>The token to retrieve the next set of results.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListAttachedPolicies::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListAttachedPolicies::set_page_size): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListAttachedPoliciesOutput`](crate::output::ListAttachedPoliciesOutput) with field(s):
     ///   - [`policies(Option<Vec<Policy>>)`](crate::output::ListAttachedPoliciesOutput::policies): <p>The policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListAttachedPoliciesOutput::next_marker): <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
@@ -1886,17 +1886,17 @@ where
         fluent_builders::ListAttachedPolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAuditFindings`](crate::client::fluent_builders::ListAuditFindings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAuditFindings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAuditFindings::into_paginator).
     ///
-    /// - Takes [`ListAuditFindingsInput`](crate::input::ListAuditFindingsInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::ListAuditFindingsInput::task_id): <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
-    ///   - [`check_name(Option<String>)`](crate::input::ListAuditFindingsInput::check_name): <p>A filter to limit results to the findings for the specified audit check.</p>
-    ///   - [`resource_identifier(Option<ResourceIdentifier>)`](crate::input::ListAuditFindingsInput::resource_identifier): <p>Information identifying the noncompliant resource.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAuditFindingsInput::max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAuditFindingsInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::ListAuditFindingsInput::start_time): <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::ListAuditFindingsInput::end_time): <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    ///   - [`list_suppressed_findings(bool)`](crate::input::ListAuditFindingsInput::list_suppressed_findings): <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::ListAuditFindings::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::ListAuditFindings::set_task_id): <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
+    ///   - [`check_name(impl Into<String>)`](crate::client::fluent_builders::ListAuditFindings::check_name) / [`set_check_name(Option<String>)`](crate::client::fluent_builders::ListAuditFindings::set_check_name): <p>A filter to limit results to the findings for the specified audit check.</p>
+    ///   - [`resource_identifier(ResourceIdentifier)`](crate::client::fluent_builders::ListAuditFindings::resource_identifier) / [`set_resource_identifier(Option<ResourceIdentifier>)`](crate::client::fluent_builders::ListAuditFindings::set_resource_identifier): <p>Information identifying the noncompliant resource.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAuditFindings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAuditFindings::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAuditFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAuditFindings::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListAuditFindings::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListAuditFindings::set_start_time): <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListAuditFindings::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListAuditFindings::set_end_time): <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    ///   - [`list_suppressed_findings(bool)`](crate::client::fluent_builders::ListAuditFindings::list_suppressed_findings) / [`set_list_suppressed_findings(bool)`](crate::client::fluent_builders::ListAuditFindings::set_list_suppressed_findings): <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     /// - On success, responds with [`ListAuditFindingsOutput`](crate::output::ListAuditFindingsOutput) with field(s):
     ///   - [`findings(Option<Vec<AuditFinding>>)`](crate::output::ListAuditFindingsOutput::findings): <p>The findings (results) of the audit.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAuditFindingsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -1905,14 +1905,14 @@ where
         fluent_builders::ListAuditFindings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAuditMitigationActionsExecutions`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::into_paginator).
     ///
-    /// - Takes [`ListAuditMitigationActionsExecutionsInput`](crate::input::ListAuditMitigationActionsExecutionsInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::ListAuditMitigationActionsExecutionsInput::task_id): <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
-    ///   - [`action_status(Option<AuditMitigationActionsExecutionStatus>)`](crate::input::ListAuditMitigationActionsExecutionsInput::action_status): <p>Specify this filter to limit results to those with a specific status.</p>
-    ///   - [`finding_id(Option<String>)`](crate::input::ListAuditMitigationActionsExecutionsInput::finding_id): <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAuditMitigationActionsExecutionsInput::max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAuditMitigationActionsExecutionsInput::next_token): <p>The token for the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::set_task_id): <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
+    ///   - [`action_status(AuditMitigationActionsExecutionStatus)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::action_status) / [`set_action_status(Option<AuditMitigationActionsExecutionStatus>)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::set_action_status): <p>Specify this filter to limit results to those with a specific status.</p>
+    ///   - [`finding_id(impl Into<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::finding_id) / [`set_finding_id(Option<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::set_finding_id): <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsExecutions::set_next_token): <p>The token for the next set of results.</p>
     /// - On success, responds with [`ListAuditMitigationActionsExecutionsOutput`](crate::output::ListAuditMitigationActionsExecutionsOutput) with field(s):
     ///   - [`actions_executions(Option<Vec<AuditMitigationActionExecutionMetadata>>)`](crate::output::ListAuditMitigationActionsExecutionsOutput::actions_executions): <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAuditMitigationActionsExecutionsOutput::next_token): <p>The token for the next set of results.</p>
@@ -1923,16 +1923,16 @@ where
         fluent_builders::ListAuditMitigationActionsExecutions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAuditMitigationActionsTasks`](crate::client::fluent_builders::ListAuditMitigationActionsTasks) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::into_paginator).
     ///
-    /// - Takes [`ListAuditMitigationActionsTasksInput`](crate::input::ListAuditMitigationActionsTasksInput) with field(s):
-    ///   - [`audit_task_id(Option<String>)`](crate::input::ListAuditMitigationActionsTasksInput::audit_task_id): <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
-    ///   - [`finding_id(Option<String>)`](crate::input::ListAuditMitigationActionsTasksInput::finding_id): <p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p>
-    ///   - [`task_status(Option<AuditMitigationActionsTaskStatus>)`](crate::input::ListAuditMitigationActionsTasksInput::task_status): <p>Specify this filter to limit results to tasks that are in a specific state.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAuditMitigationActionsTasksInput::max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAuditMitigationActionsTasksInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::ListAuditMitigationActionsTasksInput::start_time): <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::ListAuditMitigationActionsTasksInput::end_time): <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`audit_task_id(impl Into<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::audit_task_id) / [`set_audit_task_id(Option<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::set_audit_task_id): <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
+    ///   - [`finding_id(impl Into<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::finding_id) / [`set_finding_id(Option<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::set_finding_id): <p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p>
+    ///   - [`task_status(AuditMitigationActionsTaskStatus)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::task_status) / [`set_task_status(Option<AuditMitigationActionsTaskStatus>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::set_task_status): <p>Specify this filter to limit results to tasks that are in a specific state.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::set_start_time): <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListAuditMitigationActionsTasks::set_end_time): <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
     /// - On success, responds with [`ListAuditMitigationActionsTasksOutput`](crate::output::ListAuditMitigationActionsTasksOutput) with field(s):
     ///   - [`tasks(Option<Vec<AuditMitigationActionsTaskMetadata>>)`](crate::output::ListAuditMitigationActionsTasksOutput::tasks): <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAuditMitigationActionsTasksOutput::next_token): <p>The token for the next set of results.</p>
@@ -1943,14 +1943,14 @@ where
         fluent_builders::ListAuditMitigationActionsTasks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAuditSuppressions`](crate::client::fluent_builders::ListAuditSuppressions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAuditSuppressions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAuditSuppressions::into_paginator).
     ///
-    /// - Takes [`ListAuditSuppressionsInput`](crate::input::ListAuditSuppressionsInput) with field(s):
-    ///   - [`check_name(Option<String>)`](crate::input::ListAuditSuppressionsInput::check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    ///   - [`resource_identifier(Option<ResourceIdentifier>)`](crate::input::ListAuditSuppressionsInput::resource_identifier): <p>Information that identifies the noncompliant resource.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListAuditSuppressionsInput::ascending_order): <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAuditSuppressionsInput::next_token): <p> The token for the next set of results. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAuditSuppressionsInput::max_results): <p> The maximum number of results to return at one time. The default is 25. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`check_name(impl Into<String>)`](crate::client::fluent_builders::ListAuditSuppressions::check_name) / [`set_check_name(Option<String>)`](crate::client::fluent_builders::ListAuditSuppressions::set_check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    ///   - [`resource_identifier(ResourceIdentifier)`](crate::client::fluent_builders::ListAuditSuppressions::resource_identifier) / [`set_resource_identifier(Option<ResourceIdentifier>)`](crate::client::fluent_builders::ListAuditSuppressions::set_resource_identifier): <p>Information that identifies the noncompliant resource.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListAuditSuppressions::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListAuditSuppressions::set_ascending_order): <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAuditSuppressions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAuditSuppressions::set_next_token): <p> The token for the next set of results. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAuditSuppressions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAuditSuppressions::set_max_results): <p> The maximum number of results to return at one time. The default is 25. </p>
     /// - On success, responds with [`ListAuditSuppressionsOutput`](crate::output::ListAuditSuppressionsOutput) with field(s):
     ///   - [`suppressions(Option<Vec<AuditSuppression>>)`](crate::output::ListAuditSuppressionsOutput::suppressions): <p> List of audit suppressions. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAuditSuppressionsOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
@@ -1959,15 +1959,15 @@ where
         fluent_builders::ListAuditSuppressions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAuditTasks`](crate::client::fluent_builders::ListAuditTasks) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAuditTasks::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAuditTasks::into_paginator).
     ///
-    /// - Takes [`ListAuditTasksInput`](crate::input::ListAuditTasksInput) with field(s):
-    ///   - [`start_time(Option<DateTime>)`](crate::input::ListAuditTasksInput::start_time): <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::ListAuditTasksInput::end_time): <p>The end of the time period.</p>
-    ///   - [`task_type(Option<AuditTaskType>)`](crate::input::ListAuditTasksInput::task_type): <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
-    ///   - [`task_status(Option<AuditTaskStatus>)`](crate::input::ListAuditTasksInput::task_status): <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAuditTasksInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAuditTasksInput::max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListAuditTasks::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListAuditTasks::set_start_time): <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListAuditTasks::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListAuditTasks::set_end_time): <p>The end of the time period.</p>
+    ///   - [`task_type(AuditTaskType)`](crate::client::fluent_builders::ListAuditTasks::task_type) / [`set_task_type(Option<AuditTaskType>)`](crate::client::fluent_builders::ListAuditTasks::set_task_type): <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+    ///   - [`task_status(AuditTaskStatus)`](crate::client::fluent_builders::ListAuditTasks::task_status) / [`set_task_status(Option<AuditTaskStatus>)`](crate::client::fluent_builders::ListAuditTasks::set_task_status): <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAuditTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAuditTasks::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAuditTasks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAuditTasks::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
     /// - On success, responds with [`ListAuditTasksOutput`](crate::output::ListAuditTasksOutput) with field(s):
     ///   - [`tasks(Option<Vec<AuditTaskMetadata>>)`](crate::output::ListAuditTasksOutput::tasks): <p>The audits that were performed during the specified time period.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAuditTasksOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -1976,13 +1976,13 @@ where
         fluent_builders::ListAuditTasks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAuthorizers`](crate::client::fluent_builders::ListAuthorizers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAuthorizers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAuthorizers::into_paginator).
     ///
-    /// - Takes [`ListAuthorizersInput`](crate::input::ListAuthorizersInput) with field(s):
-    ///   - [`page_size(Option<i32>)`](crate::input::ListAuthorizersInput::page_size): <p>The maximum number of results to return at one time.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListAuthorizersInput::marker): <p>A marker used to get the next set of results.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListAuthorizersInput::ascending_order): <p>Return the list of authorizers in ascending alphabetical order.</p>
-    ///   - [`status(Option<AuthorizerStatus>)`](crate::input::ListAuthorizersInput::status): <p>The status of the list authorizers request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListAuthorizers::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListAuthorizers::set_page_size): <p>The maximum number of results to return at one time.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListAuthorizers::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListAuthorizers::set_marker): <p>A marker used to get the next set of results.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListAuthorizers::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListAuthorizers::set_ascending_order): <p>Return the list of authorizers in ascending alphabetical order.</p>
+    ///   - [`status(AuthorizerStatus)`](crate::client::fluent_builders::ListAuthorizers::status) / [`set_status(Option<AuthorizerStatus>)`](crate::client::fluent_builders::ListAuthorizers::set_status): <p>The status of the list authorizers request.</p>
     /// - On success, responds with [`ListAuthorizersOutput`](crate::output::ListAuthorizersOutput) with field(s):
     ///   - [`authorizers(Option<Vec<AuthorizerSummary>>)`](crate::output::ListAuthorizersOutput::authorizers): <p>The authorizers.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListAuthorizersOutput::next_marker): <p>A marker used to get the next set of results.</p>
@@ -1991,12 +1991,12 @@ where
         fluent_builders::ListAuthorizers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListBillingGroups`](crate::client::fluent_builders::ListBillingGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBillingGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBillingGroups::into_paginator).
     ///
-    /// - Takes [`ListBillingGroupsInput`](crate::input::ListBillingGroupsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListBillingGroupsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListBillingGroupsInput::max_results): <p>The maximum number of results to return per request.</p>
-    ///   - [`name_prefix_filter(Option<String>)`](crate::input::ListBillingGroupsInput::name_prefix_filter): <p>Limit the results to billing groups whose names have the given prefix.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBillingGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBillingGroups::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBillingGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBillingGroups::set_max_results): <p>The maximum number of results to return per request.</p>
+    ///   - [`name_prefix_filter(impl Into<String>)`](crate::client::fluent_builders::ListBillingGroups::name_prefix_filter) / [`set_name_prefix_filter(Option<String>)`](crate::client::fluent_builders::ListBillingGroups::set_name_prefix_filter): <p>Limit the results to billing groups whose names have the given prefix.</p>
     /// - On success, responds with [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput) with field(s):
     ///   - [`billing_groups(Option<Vec<GroupNameAndArn>>)`](crate::output::ListBillingGroupsOutput::billing_groups): <p>The list of billing groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBillingGroupsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2005,12 +2005,12 @@ where
         fluent_builders::ListBillingGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCACertificates`](crate::client::fluent_builders::ListCACertificates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCACertificates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCACertificates::into_paginator).
     ///
-    /// - Takes [`ListCaCertificatesInput`](crate::input::ListCaCertificatesInput) with field(s):
-    ///   - [`page_size(Option<i32>)`](crate::input::ListCaCertificatesInput::page_size): <p>The result page size.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListCaCertificatesInput::marker): <p>The marker for the next set of results.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListCaCertificatesInput::ascending_order): <p>Determines the order of the results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListCACertificates::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListCACertificates::set_page_size): <p>The result page size.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListCACertificates::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListCACertificates::set_marker): <p>The marker for the next set of results.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListCACertificates::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListCACertificates::set_ascending_order): <p>Determines the order of the results.</p>
     /// - On success, responds with [`ListCaCertificatesOutput`](crate::output::ListCaCertificatesOutput) with field(s):
     ///   - [`certificates(Option<Vec<CaCertificate>>)`](crate::output::ListCaCertificatesOutput::certificates): <p>The CA certificates registered in your Amazon Web Services account.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListCaCertificatesOutput::next_marker): <p>The current position within the list of CA certificates.</p>
@@ -2019,12 +2019,12 @@ where
         fluent_builders::ListCACertificates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCertificates`](crate::client::fluent_builders::ListCertificates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCertificates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCertificates::into_paginator).
     ///
-    /// - Takes [`ListCertificatesInput`](crate::input::ListCertificatesInput) with field(s):
-    ///   - [`page_size(Option<i32>)`](crate::input::ListCertificatesInput::page_size): <p>The result page size.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListCertificatesInput::marker): <p>The marker for the next set of results.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListCertificatesInput::ascending_order): <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListCertificates::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListCertificates::set_page_size): <p>The result page size.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListCertificates::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListCertificates::set_marker): <p>The marker for the next set of results.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListCertificates::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListCertificates::set_ascending_order): <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     /// - On success, responds with [`ListCertificatesOutput`](crate::output::ListCertificatesOutput) with field(s):
     ///   - [`certificates(Option<Vec<Certificate>>)`](crate::output::ListCertificatesOutput::certificates): <p>The descriptions of the certificates.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListCertificatesOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
@@ -2033,13 +2033,13 @@ where
         fluent_builders::ListCertificates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCertificatesByCA`](crate::client::fluent_builders::ListCertificatesByCA) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCertificatesByCA::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCertificatesByCA::into_paginator).
     ///
-    /// - Takes [`ListCertificatesByCaInput`](crate::input::ListCertificatesByCaInput) with field(s):
-    ///   - [`ca_certificate_id(Option<String>)`](crate::input::ListCertificatesByCaInput::ca_certificate_id): <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListCertificatesByCaInput::page_size): <p>The result page size.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListCertificatesByCaInput::marker): <p>The marker for the next set of results.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListCertificatesByCaInput::ascending_order): <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ca_certificate_id(impl Into<String>)`](crate::client::fluent_builders::ListCertificatesByCA::ca_certificate_id) / [`set_ca_certificate_id(Option<String>)`](crate::client::fluent_builders::ListCertificatesByCA::set_ca_certificate_id): <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListCertificatesByCA::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListCertificatesByCA::set_page_size): <p>The result page size.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListCertificatesByCA::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListCertificatesByCA::set_marker): <p>The marker for the next set of results.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListCertificatesByCA::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListCertificatesByCA::set_ascending_order): <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     /// - On success, responds with [`ListCertificatesByCaOutput`](crate::output::ListCertificatesByCaOutput) with field(s):
     ///   - [`certificates(Option<Vec<Certificate>>)`](crate::output::ListCertificatesByCaOutput::certificates): <p>The device certificates signed by the specified CA certificate.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListCertificatesByCaOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
@@ -2048,11 +2048,11 @@ where
         fluent_builders::ListCertificatesByCA::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCustomMetrics`](crate::client::fluent_builders::ListCustomMetrics) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomMetrics::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomMetrics::into_paginator).
     ///
-    /// - Takes [`ListCustomMetricsInput`](crate::input::ListCustomMetricsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListCustomMetricsInput::next_token): <p> The token for the next set of results. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListCustomMetricsInput::max_results): <p> The maximum number of results to return at one time. The default is 25. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomMetrics::set_next_token): <p> The token for the next set of results. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCustomMetrics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCustomMetrics::set_max_results): <p> The maximum number of results to return at one time. The default is 25. </p>
     /// - On success, responds with [`ListCustomMetricsOutput`](crate::output::ListCustomMetricsOutput) with field(s):
     ///   - [`metric_names(Option<Vec<String>>)`](crate::output::ListCustomMetricsOutput::metric_names): <p> The name of the custom metric. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCustomMetricsOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
@@ -2061,16 +2061,16 @@ where
         fluent_builders::ListCustomMetrics::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDetectMitigationActionsExecutions`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::into_paginator).
     ///
-    /// - Takes [`ListDetectMitigationActionsExecutionsInput`](crate::input::ListDetectMitigationActionsExecutionsInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::ListDetectMitigationActionsExecutionsInput::task_id): <p> The unique identifier of the task. </p>
-    ///   - [`violation_id(Option<String>)`](crate::input::ListDetectMitigationActionsExecutionsInput::violation_id): <p> The unique identifier of the violation. </p>
-    ///   - [`thing_name(Option<String>)`](crate::input::ListDetectMitigationActionsExecutionsInput::thing_name): <p> The name of the thing whose mitigation actions are listed. </p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::ListDetectMitigationActionsExecutionsInput::start_time): <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::ListDetectMitigationActionsExecutionsInput::end_time): <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDetectMitigationActionsExecutionsInput::max_results): <p> The maximum number of results to return at one time. The default is 25. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDetectMitigationActionsExecutionsInput::next_token): <p> The token for the next set of results. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::set_task_id): <p> The unique identifier of the task. </p>
+    ///   - [`violation_id(impl Into<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::violation_id) / [`set_violation_id(Option<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::set_violation_id): <p> The unique identifier of the violation. </p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::set_thing_name): <p> The name of the thing whose mitigation actions are listed. </p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::set_start_time): <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::set_end_time): <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::set_max_results): <p> The maximum number of results to return at one time. The default is 25. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsExecutions::set_next_token): <p> The token for the next set of results. </p>
     /// - On success, responds with [`ListDetectMitigationActionsExecutionsOutput`](crate::output::ListDetectMitigationActionsExecutionsOutput) with field(s):
     ///   - [`actions_executions(Option<Vec<DetectMitigationActionExecution>>)`](crate::output::ListDetectMitigationActionsExecutionsOutput::actions_executions): <p> List of actions executions. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDetectMitigationActionsExecutionsOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
@@ -2081,13 +2081,13 @@ where
         fluent_builders::ListDetectMitigationActionsExecutions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDetectMitigationActionsTasks`](crate::client::fluent_builders::ListDetectMitigationActionsTasks) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::into_paginator).
     ///
-    /// - Takes [`ListDetectMitigationActionsTasksInput`](crate::input::ListDetectMitigationActionsTasksInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDetectMitigationActionsTasksInput::max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDetectMitigationActionsTasksInput::next_token): <p> The token for the next set of results. </p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::ListDetectMitigationActionsTasksInput::start_time): <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::ListDetectMitigationActionsTasksInput::end_time): <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::set_next_token): <p> The token for the next set of results. </p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::set_start_time): <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListDetectMitigationActionsTasks::set_end_time): <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     /// - On success, responds with [`ListDetectMitigationActionsTasksOutput`](crate::output::ListDetectMitigationActionsTasksOutput) with field(s):
     ///   - [`tasks(Option<Vec<DetectMitigationActionsTaskSummary>>)`](crate::output::ListDetectMitigationActionsTasksOutput::tasks): <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDetectMitigationActionsTasksOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
@@ -2098,11 +2098,11 @@ where
         fluent_builders::ListDetectMitigationActionsTasks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDimensions`](crate::client::fluent_builders::ListDimensions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDimensions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDimensions::into_paginator).
     ///
-    /// - Takes [`ListDimensionsInput`](crate::input::ListDimensionsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDimensionsInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDimensionsInput::max_results): <p>The maximum number of results to retrieve at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDimensions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDimensions::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDimensions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDimensions::set_max_results): <p>The maximum number of results to retrieve at one time.</p>
     /// - On success, responds with [`ListDimensionsOutput`](crate::output::ListDimensionsOutput) with field(s):
     ///   - [`dimension_names(Option<Vec<String>>)`](crate::output::ListDimensionsOutput::dimension_names): <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDimensionsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -2111,12 +2111,12 @@ where
         fluent_builders::ListDimensions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDomainConfigurations`](crate::client::fluent_builders::ListDomainConfigurations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomainConfigurations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomainConfigurations::into_paginator).
     ///
-    /// - Takes [`ListDomainConfigurationsInput`](crate::input::ListDomainConfigurationsInput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::input::ListDomainConfigurationsInput::marker): <p>The marker for the next set of results.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListDomainConfigurationsInput::page_size): <p>The result page size.</p>
-    ///   - [`service_type(Option<ServiceType>)`](crate::input::ListDomainConfigurationsInput::service_type): <p>The type of service delivered by the endpoint.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDomainConfigurations::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDomainConfigurations::set_marker): <p>The marker for the next set of results.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListDomainConfigurations::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListDomainConfigurations::set_page_size): <p>The result page size.</p>
+    ///   - [`service_type(ServiceType)`](crate::client::fluent_builders::ListDomainConfigurations::service_type) / [`set_service_type(Option<ServiceType>)`](crate::client::fluent_builders::ListDomainConfigurations::set_service_type): <p>The type of service delivered by the endpoint.</p>
     /// - On success, responds with [`ListDomainConfigurationsOutput`](crate::output::ListDomainConfigurationsOutput) with field(s):
     ///   - [`domain_configurations(Option<Vec<DomainConfigurationSummary>>)`](crate::output::ListDomainConfigurationsOutput::domain_configurations): <p>A list of objects that contain summary information about the user's domain configurations.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListDomainConfigurationsOutput::next_marker): <p>The marker for the next set of results.</p>
@@ -2125,11 +2125,11 @@ where
         fluent_builders::ListDomainConfigurations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFleetMetrics`](crate::client::fluent_builders::ListFleetMetrics) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFleetMetrics::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFleetMetrics::into_paginator).
     ///
-    /// - Takes [`ListFleetMetricsInput`](crate::input::ListFleetMetricsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListFleetMetricsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFleetMetricsInput::max_results): <p>The maximum number of results to return in this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFleetMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFleetMetrics::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFleetMetrics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFleetMetrics::set_max_results): <p>The maximum number of results to return in this operation.</p>
     /// - On success, responds with [`ListFleetMetricsOutput`](crate::output::ListFleetMetricsOutput) with field(s):
     ///   - [`fleet_metrics(Option<Vec<FleetMetricNameAndArn>>)`](crate::output::ListFleetMetricsOutput::fleet_metrics): <p>The list of fleet metrics objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFleetMetricsOutput::next_token): <p>The token for the next set of results. Will not be returned if the operation has returned all results.</p>
@@ -2138,11 +2138,11 @@ where
         fluent_builders::ListFleetMetrics::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListIndices`](crate::client::fluent_builders::ListIndices) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIndices::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIndices::into_paginator).
     ///
-    /// - Takes [`ListIndicesInput`](crate::input::ListIndicesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListIndicesInput::next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIndicesInput::max_results): <p>The maximum number of results to return at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIndices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIndices::set_next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIndices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIndices::set_max_results): <p>The maximum number of results to return at one time.</p>
     /// - On success, responds with [`ListIndicesOutput`](crate::output::ListIndicesOutput) with field(s):
     ///   - [`index_names(Option<Vec<String>>)`](crate::output::ListIndicesOutput::index_names): <p>The index names.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIndicesOutput::next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -2151,13 +2151,13 @@ where
         fluent_builders::ListIndices::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListJobExecutionsForJob`](crate::client::fluent_builders::ListJobExecutionsForJob) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobExecutionsForJob::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobExecutionsForJob::into_paginator).
     ///
-    /// - Takes [`ListJobExecutionsForJobInput`](crate::input::ListJobExecutionsForJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::ListJobExecutionsForJobInput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
-    ///   - [`status(Option<JobExecutionStatus>)`](crate::input::ListJobExecutionsForJobInput::status): <p>The status of the job.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListJobExecutionsForJobInput::max_results): <p>The maximum number of results to be returned per request.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListJobExecutionsForJobInput::next_token): <p>The token to retrieve the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::ListJobExecutionsForJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::ListJobExecutionsForJob::set_job_id): <p>The unique identifier you assigned to this job when it was created.</p>
+    ///   - [`status(JobExecutionStatus)`](crate::client::fluent_builders::ListJobExecutionsForJob::status) / [`set_status(Option<JobExecutionStatus>)`](crate::client::fluent_builders::ListJobExecutionsForJob::set_status): <p>The status of the job.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobExecutionsForJob::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJobExecutionsForJob::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobExecutionsForJob::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobExecutionsForJob::set_next_token): <p>The token to retrieve the next set of results.</p>
     /// - On success, responds with [`ListJobExecutionsForJobOutput`](crate::output::ListJobExecutionsForJobOutput) with field(s):
     ///   - [`execution_summaries(Option<Vec<JobExecutionSummaryForJob>>)`](crate::output::ListJobExecutionsForJobOutput::execution_summaries): <p>A list of job execution summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListJobExecutionsForJobOutput::next_token): <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2166,15 +2166,15 @@ where
         fluent_builders::ListJobExecutionsForJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListJobExecutionsForThing`](crate::client::fluent_builders::ListJobExecutionsForThing) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobExecutionsForThing::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobExecutionsForThing::into_paginator).
     ///
-    /// - Takes [`ListJobExecutionsForThingInput`](crate::input::ListJobExecutionsForThingInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::ListJobExecutionsForThingInput::thing_name): <p>The thing name.</p>
-    ///   - [`status(Option<JobExecutionStatus>)`](crate::input::ListJobExecutionsForThingInput::status): <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    ///   - [`namespace_id(Option<String>)`](crate::input::ListJobExecutionsForThingInput::namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListJobExecutionsForThingInput::max_results): <p>The maximum number of results to be returned per request.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListJobExecutionsForThingInput::next_token): <p>The token to retrieve the next set of results.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::ListJobExecutionsForThingInput::job_id): <p>The unique identifier you assigned to this job when it was created.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListJobExecutionsForThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListJobExecutionsForThing::set_thing_name): <p>The thing name.</p>
+    ///   - [`status(JobExecutionStatus)`](crate::client::fluent_builders::ListJobExecutionsForThing::status) / [`set_status(Option<JobExecutionStatus>)`](crate::client::fluent_builders::ListJobExecutionsForThing::set_status): <p>An optional filter that lets you search for jobs that have the specified status.</p>
+    ///   - [`namespace_id(impl Into<String>)`](crate::client::fluent_builders::ListJobExecutionsForThing::namespace_id) / [`set_namespace_id(Option<String>)`](crate::client::fluent_builders::ListJobExecutionsForThing::set_namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobExecutionsForThing::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJobExecutionsForThing::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobExecutionsForThing::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobExecutionsForThing::set_next_token): <p>The token to retrieve the next set of results.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::ListJobExecutionsForThing::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::ListJobExecutionsForThing::set_job_id): <p>The unique identifier you assigned to this job when it was created.</p>
     /// - On success, responds with [`ListJobExecutionsForThingOutput`](crate::output::ListJobExecutionsForThingOutput) with field(s):
     ///   - [`execution_summaries(Option<Vec<JobExecutionSummaryForThing>>)`](crate::output::ListJobExecutionsForThingOutput::execution_summaries): <p>A list of job execution summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListJobExecutionsForThingOutput::next_token): <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2185,16 +2185,16 @@ where
         fluent_builders::ListJobExecutionsForThing::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     ///
-    /// - Takes [`ListJobsInput`](crate::input::ListJobsInput) with field(s):
-    ///   - [`status(Option<JobStatus>)`](crate::input::ListJobsInput::status): <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    ///   - [`target_selection(Option<TargetSelection>)`](crate::input::ListJobsInput::target_selection): <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListJobsInput::max_results): <p>The maximum number of results to return per request.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListJobsInput::next_token): <p>The token to retrieve the next set of results.</p>
-    ///   - [`thing_group_name(Option<String>)`](crate::input::ListJobsInput::thing_group_name): <p>A filter that limits the returned jobs to those for the specified group.</p>
-    ///   - [`thing_group_id(Option<String>)`](crate::input::ListJobsInput::thing_group_id): <p>A filter that limits the returned jobs to those for the specified group.</p>
-    ///   - [`namespace_id(Option<String>)`](crate::input::ListJobsInput::namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`status(JobStatus)`](crate::client::fluent_builders::ListJobs::status) / [`set_status(Option<JobStatus>)`](crate::client::fluent_builders::ListJobs::set_status): <p>An optional filter that lets you search for jobs that have the specified status.</p>
+    ///   - [`target_selection(TargetSelection)`](crate::client::fluent_builders::ListJobs::target_selection) / [`set_target_selection(Option<TargetSelection>)`](crate::client::fluent_builders::ListJobs::set_target_selection): <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJobs::set_max_results): <p>The maximum number of results to return per request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobs::set_next_token): <p>The token to retrieve the next set of results.</p>
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::ListJobs::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::ListJobs::set_thing_group_name): <p>A filter that limits the returned jobs to those for the specified group.</p>
+    ///   - [`thing_group_id(impl Into<String>)`](crate::client::fluent_builders::ListJobs::thing_group_id) / [`set_thing_group_id(Option<String>)`](crate::client::fluent_builders::ListJobs::set_thing_group_id): <p>A filter that limits the returned jobs to those for the specified group.</p>
+    ///   - [`namespace_id(impl Into<String>)`](crate::client::fluent_builders::ListJobs::namespace_id) / [`set_namespace_id(Option<String>)`](crate::client::fluent_builders::ListJobs::set_namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
     /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec<JobSummary>>)`](crate::output::ListJobsOutput::jobs): <p>A list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2203,11 +2203,11 @@ where
         fluent_builders::ListJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListJobTemplates`](crate::client::fluent_builders::ListJobTemplates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobTemplates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobTemplates::into_paginator).
     ///
-    /// - Takes [`ListJobTemplatesInput`](crate::input::ListJobTemplatesInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListJobTemplatesInput::max_results): <p>The maximum number of results to return in the list.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListJobTemplatesInput::next_token): <p>The token to use to return the next set of results in the list.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJobTemplates::set_max_results): <p>The maximum number of results to return in the list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobTemplates::set_next_token): <p>The token to use to return the next set of results in the list.</p>
     /// - On success, responds with [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput) with field(s):
     ///   - [`job_templates(Option<Vec<JobTemplateSummary>>)`](crate::output::ListJobTemplatesOutput::job_templates): <p>A list of objects that contain information about the job templates.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListJobTemplatesOutput::next_token): <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2217,10 +2217,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListManagedJobTemplates`](crate::client::fluent_builders::ListManagedJobTemplates) operation.
     ///
-    /// - Takes [`ListManagedJobTemplatesInput`](crate::input::ListManagedJobTemplatesInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::ListManagedJobTemplatesInput::template_name): <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListManagedJobTemplatesInput::max_results): <p>Maximum number of entries that can be returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListManagedJobTemplatesInput::next_token): <p>The token to retrieve the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::ListManagedJobTemplates::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::ListManagedJobTemplates::set_template_name): <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListManagedJobTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListManagedJobTemplates::set_max_results): <p>Maximum number of entries that can be returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListManagedJobTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListManagedJobTemplates::set_next_token): <p>The token to retrieve the next set of results.</p>
     /// - On success, responds with [`ListManagedJobTemplatesOutput`](crate::output::ListManagedJobTemplatesOutput) with field(s):
     ///   - [`managed_job_templates(Option<Vec<ManagedJobTemplateSummary>>)`](crate::output::ListManagedJobTemplatesOutput::managed_job_templates): <p>A list of managed job templates that are returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListManagedJobTemplatesOutput::next_token): <p>The token to retrieve the next set of results.</p>
@@ -2229,12 +2229,12 @@ where
         fluent_builders::ListManagedJobTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMitigationActions`](crate::client::fluent_builders::ListMitigationActions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMitigationActions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMitigationActions::into_paginator).
     ///
-    /// - Takes [`ListMitigationActionsInput`](crate::input::ListMitigationActionsInput) with field(s):
-    ///   - [`action_type(Option<MitigationActionType>)`](crate::input::ListMitigationActionsInput::action_type): <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListMitigationActionsInput::max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListMitigationActionsInput::next_token): <p>The token for the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_type(MitigationActionType)`](crate::client::fluent_builders::ListMitigationActions::action_type) / [`set_action_type(Option<MitigationActionType>)`](crate::client::fluent_builders::ListMitigationActions::set_action_type): <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMitigationActions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMitigationActions::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMitigationActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMitigationActions::set_next_token): <p>The token for the next set of results.</p>
     /// - On success, responds with [`ListMitigationActionsOutput`](crate::output::ListMitigationActionsOutput) with field(s):
     ///   - [`action_identifiers(Option<Vec<MitigationActionIdentifier>>)`](crate::output::ListMitigationActionsOutput::action_identifiers): <p>A set of actions that matched the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMitigationActionsOutput::next_token): <p>The token for the next set of results.</p>
@@ -2243,12 +2243,12 @@ where
         fluent_builders::ListMitigationActions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListOTAUpdates`](crate::client::fluent_builders::ListOTAUpdates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOTAUpdates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOTAUpdates::into_paginator).
     ///
-    /// - Takes [`ListOtaUpdatesInput`](crate::input::ListOtaUpdatesInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListOtaUpdatesInput::max_results): <p>The maximum number of results to return at one time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListOtaUpdatesInput::next_token): <p>A token used to retrieve the next set of results.</p>
-    ///   - [`ota_update_status(Option<OtaUpdateStatus>)`](crate::input::ListOtaUpdatesInput::ota_update_status): <p>The OTA update job status.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOTAUpdates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOTAUpdates::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOTAUpdates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOTAUpdates::set_next_token): <p>A token used to retrieve the next set of results.</p>
+    ///   - [`ota_update_status(OtaUpdateStatus)`](crate::client::fluent_builders::ListOTAUpdates::ota_update_status) / [`set_ota_update_status(Option<OtaUpdateStatus>)`](crate::client::fluent_builders::ListOTAUpdates::set_ota_update_status): <p>The OTA update job status.</p>
     /// - On success, responds with [`ListOtaUpdatesOutput`](crate::output::ListOtaUpdatesOutput) with field(s):
     ///   - [`ota_updates(Option<Vec<OtaUpdateSummary>>)`](crate::output::ListOtaUpdatesOutput::ota_updates): <p>A list of OTA update jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListOtaUpdatesOutput::next_token): <p>A token to use to get the next set of results.</p>
@@ -2257,12 +2257,12 @@ where
         fluent_builders::ListOTAUpdates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListOutgoingCertificates`](crate::client::fluent_builders::ListOutgoingCertificates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOutgoingCertificates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOutgoingCertificates::into_paginator).
     ///
-    /// - Takes [`ListOutgoingCertificatesInput`](crate::input::ListOutgoingCertificatesInput) with field(s):
-    ///   - [`page_size(Option<i32>)`](crate::input::ListOutgoingCertificatesInput::page_size): <p>The result page size.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListOutgoingCertificatesInput::marker): <p>The marker for the next set of results.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListOutgoingCertificatesInput::ascending_order): <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListOutgoingCertificates::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListOutgoingCertificates::set_page_size): <p>The result page size.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListOutgoingCertificates::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListOutgoingCertificates::set_marker): <p>The marker for the next set of results.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListOutgoingCertificates::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListOutgoingCertificates::set_ascending_order): <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     /// - On success, responds with [`ListOutgoingCertificatesOutput`](crate::output::ListOutgoingCertificatesOutput) with field(s):
     ///   - [`outgoing_certificates(Option<Vec<OutgoingCertificate>>)`](crate::output::ListOutgoingCertificatesOutput::outgoing_certificates): <p>The certificates that are being transferred but not yet accepted.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListOutgoingCertificatesOutput::next_marker): <p>The marker for the next set of results.</p>
@@ -2271,12 +2271,12 @@ where
         fluent_builders::ListOutgoingCertificates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPolicies`](crate::client::fluent_builders::ListPolicies) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicies::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPolicies::into_paginator).
     ///
-    /// - Takes [`ListPoliciesInput`](crate::input::ListPoliciesInput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::input::ListPoliciesInput::marker): <p>The marker for the next set of results.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListPoliciesInput::page_size): <p>The result page size.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListPoliciesInput::ascending_order): <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPolicies::set_marker): <p>The marker for the next set of results.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListPolicies::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListPolicies::set_page_size): <p>The result page size.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListPolicies::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListPolicies::set_ascending_order): <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     /// - On success, responds with [`ListPoliciesOutput`](crate::output::ListPoliciesOutput) with field(s):
     ///   - [`policies(Option<Vec<Policy>>)`](crate::output::ListPoliciesOutput::policies): <p>The descriptions of the policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListPoliciesOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
@@ -2285,13 +2285,13 @@ where
         fluent_builders::ListPolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPolicyPrincipals`](crate::client::fluent_builders::ListPolicyPrincipals) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicyPrincipals::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPolicyPrincipals::into_paginator).
     ///
-    /// - Takes [`ListPolicyPrincipalsInput`](crate::input::ListPolicyPrincipalsInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::ListPolicyPrincipalsInput::policy_name): <p>The policy name.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListPolicyPrincipalsInput::marker): <p>The marker for the next set of results.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListPolicyPrincipalsInput::page_size): <p>The result page size.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListPolicyPrincipalsInput::ascending_order): <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::ListPolicyPrincipals::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::ListPolicyPrincipals::set_policy_name): <p>The policy name.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPolicyPrincipals::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPolicyPrincipals::set_marker): <p>The marker for the next set of results.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListPolicyPrincipals::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListPolicyPrincipals::set_page_size): <p>The result page size.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListPolicyPrincipals::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListPolicyPrincipals::set_ascending_order): <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     /// - On success, responds with [`ListPolicyPrincipalsOutput`](crate::output::ListPolicyPrincipalsOutput) with field(s):
     ///   - [`principals(Option<Vec<String>>)`](crate::output::ListPolicyPrincipalsOutput::principals): <p>The descriptions of the principals.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListPolicyPrincipalsOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
@@ -2301,8 +2301,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListPolicyVersions`](crate::client::fluent_builders::ListPolicyVersions) operation.
     ///
-    /// - Takes [`ListPolicyVersionsInput`](crate::input::ListPolicyVersionsInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::ListPolicyVersionsInput::policy_name): <p>The policy name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::ListPolicyVersions::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::ListPolicyVersions::set_policy_name): <p>The policy name.</p>
     /// - On success, responds with [`ListPolicyVersionsOutput`](crate::output::ListPolicyVersionsOutput) with field(s):
     ///   - [`policy_versions(Option<Vec<PolicyVersion>>)`](crate::output::ListPolicyVersionsOutput::policy_versions): <p>The policy versions.</p>
     /// - On failure, responds with [`SdkError<ListPolicyVersionsError>`](crate::error::ListPolicyVersionsError)
@@ -2310,13 +2310,13 @@ where
         fluent_builders::ListPolicyVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPrincipalPolicies`](crate::client::fluent_builders::ListPrincipalPolicies) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrincipalPolicies::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPrincipalPolicies::into_paginator).
     ///
-    /// - Takes [`ListPrincipalPoliciesInput`](crate::input::ListPrincipalPoliciesInput) with field(s):
-    ///   - [`principal(Option<String>)`](crate::input::ListPrincipalPoliciesInput::principal): <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListPrincipalPoliciesInput::marker): <p>The marker for the next set of results.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListPrincipalPoliciesInput::page_size): <p>The result page size.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListPrincipalPoliciesInput::ascending_order): <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::ListPrincipalPolicies::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::ListPrincipalPolicies::set_principal): <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPrincipalPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPrincipalPolicies::set_marker): <p>The marker for the next set of results.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListPrincipalPolicies::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListPrincipalPolicies::set_page_size): <p>The result page size.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListPrincipalPolicies::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListPrincipalPolicies::set_ascending_order): <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
     /// - On success, responds with [`ListPrincipalPoliciesOutput`](crate::output::ListPrincipalPoliciesOutput) with field(s):
     ///   - [`policies(Option<Vec<Policy>>)`](crate::output::ListPrincipalPoliciesOutput::policies): <p>The policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListPrincipalPoliciesOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
@@ -2325,12 +2325,12 @@ where
         fluent_builders::ListPrincipalPolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPrincipalThings`](crate::client::fluent_builders::ListPrincipalThings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrincipalThings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPrincipalThings::into_paginator).
     ///
-    /// - Takes [`ListPrincipalThingsInput`](crate::input::ListPrincipalThingsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListPrincipalThingsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPrincipalThingsInput::max_results): <p>The maximum number of results to return in this operation.</p>
-    ///   - [`principal(Option<String>)`](crate::input::ListPrincipalThingsInput::principal): <p>The principal.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPrincipalThings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPrincipalThings::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPrincipalThings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPrincipalThings::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::ListPrincipalThings::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::ListPrincipalThings::set_principal): <p>The principal.</p>
     /// - On success, responds with [`ListPrincipalThingsOutput`](crate::output::ListPrincipalThingsOutput) with field(s):
     ///   - [`things(Option<Vec<String>>)`](crate::output::ListPrincipalThingsOutput::things): <p>The things.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPrincipalThingsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2339,11 +2339,11 @@ where
         fluent_builders::ListPrincipalThings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProvisioningTemplates`](crate::client::fluent_builders::ListProvisioningTemplates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProvisioningTemplates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProvisioningTemplates::into_paginator).
     ///
-    /// - Takes [`ListProvisioningTemplatesInput`](crate::input::ListProvisioningTemplatesInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProvisioningTemplatesInput::max_results): <p>The maximum number of results to return at one time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListProvisioningTemplatesInput::next_token): <p>A token to retrieve the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProvisioningTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProvisioningTemplates::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProvisioningTemplates::set_next_token): <p>A token to retrieve the next set of results.</p>
     /// - On success, responds with [`ListProvisioningTemplatesOutput`](crate::output::ListProvisioningTemplatesOutput) with field(s):
     ///   - [`templates(Option<Vec<ProvisioningTemplateSummary>>)`](crate::output::ListProvisioningTemplatesOutput::templates): <p>A list of fleet provisioning templates</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProvisioningTemplatesOutput::next_token): <p>A token to retrieve the next set of results.</p>
@@ -2354,12 +2354,12 @@ where
         fluent_builders::ListProvisioningTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProvisioningTemplateVersions`](crate::client::fluent_builders::ListProvisioningTemplateVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProvisioningTemplateVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProvisioningTemplateVersions::into_paginator).
     ///
-    /// - Takes [`ListProvisioningTemplateVersionsInput`](crate::input::ListProvisioningTemplateVersionsInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::ListProvisioningTemplateVersionsInput::template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProvisioningTemplateVersionsInput::max_results): <p>The maximum number of results to return at one time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListProvisioningTemplateVersionsInput::next_token): <p>A token to retrieve the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::set_template_name): <p>The name of the fleet provisioning template.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::set_next_token): <p>A token to retrieve the next set of results.</p>
     /// - On success, responds with [`ListProvisioningTemplateVersionsOutput`](crate::output::ListProvisioningTemplateVersionsOutput) with field(s):
     ///   - [`versions(Option<Vec<ProvisioningTemplateVersionSummary>>)`](crate::output::ListProvisioningTemplateVersionsOutput::versions): <p>The list of fleet provisioning template versions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProvisioningTemplateVersionsOutput::next_token): <p>A token to retrieve the next set of results.</p>
@@ -2370,12 +2370,12 @@ where
         fluent_builders::ListProvisioningTemplateVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRoleAliases`](crate::client::fluent_builders::ListRoleAliases) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoleAliases::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoleAliases::into_paginator).
     ///
-    /// - Takes [`ListRoleAliasesInput`](crate::input::ListRoleAliasesInput) with field(s):
-    ///   - [`page_size(Option<i32>)`](crate::input::ListRoleAliasesInput::page_size): <p>The maximum number of results to return at one time.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListRoleAliasesInput::marker): <p>A marker used to get the next set of results.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListRoleAliasesInput::ascending_order): <p>Return the list of role aliases in ascending alphabetical order.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListRoleAliases::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListRoleAliases::set_page_size): <p>The maximum number of results to return at one time.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListRoleAliases::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListRoleAliases::set_marker): <p>A marker used to get the next set of results.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListRoleAliases::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListRoleAliases::set_ascending_order): <p>Return the list of role aliases in ascending alphabetical order.</p>
     /// - On success, responds with [`ListRoleAliasesOutput`](crate::output::ListRoleAliasesOutput) with field(s):
     ///   - [`role_aliases(Option<Vec<String>>)`](crate::output::ListRoleAliasesOutput::role_aliases): <p>The role aliases.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListRoleAliasesOutput::next_marker): <p>A marker used to get the next set of results.</p>
@@ -2384,11 +2384,11 @@ where
         fluent_builders::ListRoleAliases::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListScheduledAudits`](crate::client::fluent_builders::ListScheduledAudits) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListScheduledAudits::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListScheduledAudits::into_paginator).
     ///
-    /// - Takes [`ListScheduledAuditsInput`](crate::input::ListScheduledAuditsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListScheduledAuditsInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListScheduledAuditsInput::max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListScheduledAudits::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListScheduledAudits::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListScheduledAudits::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListScheduledAudits::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
     /// - On success, responds with [`ListScheduledAuditsOutput`](crate::output::ListScheduledAuditsOutput) with field(s):
     ///   - [`scheduled_audits(Option<Vec<ScheduledAuditMetadata>>)`](crate::output::ListScheduledAuditsOutput::scheduled_audits): <p>The list of scheduled audits.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListScheduledAuditsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -2397,13 +2397,13 @@ where
         fluent_builders::ListScheduledAudits::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSecurityProfiles`](crate::client::fluent_builders::ListSecurityProfiles) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfiles::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfiles::into_paginator).
     ///
-    /// - Takes [`ListSecurityProfilesInput`](crate::input::ListSecurityProfilesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListSecurityProfilesInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListSecurityProfilesInput::max_results): <p>The maximum number of results to return at one time.</p>
-    ///   - [`dimension_name(Option<String>)`](crate::input::ListSecurityProfilesInput::dimension_name): <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
-    ///   - [`metric_name(Option<String>)`](crate::input::ListSecurityProfilesInput::metric_name): <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecurityProfiles::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityProfiles::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`dimension_name(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfiles::dimension_name) / [`set_dimension_name(Option<String>)`](crate::client::fluent_builders::ListSecurityProfiles::set_dimension_name): <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfiles::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::ListSecurityProfiles::set_metric_name): <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     /// - On success, responds with [`ListSecurityProfilesOutput`](crate::output::ListSecurityProfilesOutput) with field(s):
     ///   - [`security_profile_identifiers(Option<Vec<SecurityProfileIdentifier>>)`](crate::output::ListSecurityProfilesOutput::security_profile_identifiers): <p>A list of security profile identifiers (names and ARNs).</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSecurityProfilesOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -2412,13 +2412,13 @@ where
         fluent_builders::ListSecurityProfiles::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSecurityProfilesForTarget`](crate::client::fluent_builders::ListSecurityProfilesForTarget) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfilesForTarget::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfilesForTarget::into_paginator).
     ///
-    /// - Takes [`ListSecurityProfilesForTargetInput`](crate::input::ListSecurityProfilesForTargetInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListSecurityProfilesForTargetInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListSecurityProfilesForTargetInput::max_results): <p>The maximum number of results to return at one time.</p>
-    ///   - [`recursive(bool)`](crate::input::ListSecurityProfilesForTargetInput::recursive): <p>If true, return child groups too.</p>
-    ///   - [`security_profile_target_arn(Option<String>)`](crate::input::ListSecurityProfilesForTargetInput::security_profile_target_arn): <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfilesForTarget::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecurityProfilesForTarget::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityProfilesForTarget::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityProfilesForTarget::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`recursive(bool)`](crate::client::fluent_builders::ListSecurityProfilesForTarget::recursive) / [`set_recursive(bool)`](crate::client::fluent_builders::ListSecurityProfilesForTarget::set_recursive): <p>If true, return child groups too.</p>
+    ///   - [`security_profile_target_arn(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfilesForTarget::security_profile_target_arn) / [`set_security_profile_target_arn(Option<String>)`](crate::client::fluent_builders::ListSecurityProfilesForTarget::set_security_profile_target_arn): <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
     /// - On success, responds with [`ListSecurityProfilesForTargetOutput`](crate::output::ListSecurityProfilesForTargetOutput) with field(s):
     ///   - [`security_profile_target_mappings(Option<Vec<SecurityProfileTargetMapping>>)`](crate::output::ListSecurityProfilesForTargetOutput::security_profile_target_mappings): <p>A list of security profiles and their associated targets.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSecurityProfilesForTargetOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -2429,12 +2429,12 @@ where
         fluent_builders::ListSecurityProfilesForTarget::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListStreams`](crate::client::fluent_builders::ListStreams) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreams::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreams::into_paginator).
     ///
-    /// - Takes [`ListStreamsInput`](crate::input::ListStreamsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListStreamsInput::max_results): <p>The maximum number of results to return at a time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListStreamsInput::next_token): <p>A token used to get the next set of results.</p>
-    ///   - [`ascending_order(bool)`](crate::input::ListStreamsInput::ascending_order): <p>Set to true to return the list of streams in ascending order.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreams::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStreams::set_max_results): <p>The maximum number of results to return at a time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreams::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreams::set_next_token): <p>A token used to get the next set of results.</p>
+    ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListStreams::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListStreams::set_ascending_order): <p>Set to true to return the list of streams in ascending order.</p>
     /// - On success, responds with [`ListStreamsOutput`](crate::output::ListStreamsOutput) with field(s):
     ///   - [`streams(Option<Vec<StreamSummary>>)`](crate::output::ListStreamsOutput::streams): <p>A list of streams.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListStreamsOutput::next_token): <p>A token used to get the next set of results.</p>
@@ -2443,11 +2443,11 @@ where
         fluent_builders::ListStreams::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags assigned to the resource.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2456,12 +2456,12 @@ where
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTargetsForPolicy`](crate::client::fluent_builders::ListTargetsForPolicy) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTargetsForPolicy::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTargetsForPolicy::into_paginator).
     ///
-    /// - Takes [`ListTargetsForPolicyInput`](crate::input::ListTargetsForPolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::ListTargetsForPolicyInput::policy_name): <p>The policy name.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListTargetsForPolicyInput::marker): <p>A marker used to get the next set of results.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListTargetsForPolicyInput::page_size): <p>The maximum number of results to return at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::ListTargetsForPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::ListTargetsForPolicy::set_policy_name): <p>The policy name.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListTargetsForPolicy::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListTargetsForPolicy::set_marker): <p>A marker used to get the next set of results.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListTargetsForPolicy::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListTargetsForPolicy::set_page_size): <p>The maximum number of results to return at one time.</p>
     /// - On success, responds with [`ListTargetsForPolicyOutput`](crate::output::ListTargetsForPolicyOutput) with field(s):
     ///   - [`targets(Option<Vec<String>>)`](crate::output::ListTargetsForPolicyOutput::targets): <p>The policy targets.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListTargetsForPolicyOutput::next_marker): <p>A marker used to get the next set of results.</p>
@@ -2470,12 +2470,12 @@ where
         fluent_builders::ListTargetsForPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTargetsForSecurityProfile`](crate::client::fluent_builders::ListTargetsForSecurityProfile) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTargetsForSecurityProfile::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTargetsForSecurityProfile::into_paginator).
     ///
-    /// - Takes [`ListTargetsForSecurityProfileInput`](crate::input::ListTargetsForSecurityProfileInput) with field(s):
-    ///   - [`security_profile_name(Option<String>)`](crate::input::ListTargetsForSecurityProfileInput::security_profile_name): <p>The security profile.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTargetsForSecurityProfileInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTargetsForSecurityProfileInput::max_results): <p>The maximum number of results to return at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::ListTargetsForSecurityProfile::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::ListTargetsForSecurityProfile::set_security_profile_name): <p>The security profile.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTargetsForSecurityProfile::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTargetsForSecurityProfile::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTargetsForSecurityProfile::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTargetsForSecurityProfile::set_max_results): <p>The maximum number of results to return at one time.</p>
     /// - On success, responds with [`ListTargetsForSecurityProfileOutput`](crate::output::ListTargetsForSecurityProfileOutput) with field(s):
     ///   - [`security_profile_targets(Option<Vec<SecurityProfileTarget>>)`](crate::output::ListTargetsForSecurityProfileOutput::security_profile_targets): <p>The thing groups to which the security profile is attached.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTargetsForSecurityProfileOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -2486,14 +2486,14 @@ where
         fluent_builders::ListTargetsForSecurityProfile::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThingGroups`](crate::client::fluent_builders::ListThingGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThingGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThingGroups::into_paginator).
     ///
-    /// - Takes [`ListThingGroupsInput`](crate::input::ListThingGroupsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListThingGroupsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThingGroupsInput::max_results): <p>The maximum number of results to return at one time.</p>
-    ///   - [`parent_group(Option<String>)`](crate::input::ListThingGroupsInput::parent_group): <p>A filter that limits the results to those with the specified parent group.</p>
-    ///   - [`name_prefix_filter(Option<String>)`](crate::input::ListThingGroupsInput::name_prefix_filter): <p>A filter that limits the results to those with the specified name prefix.</p>
-    ///   - [`recursive(Option<bool>)`](crate::input::ListThingGroupsInput::recursive): <p>If true, return child groups as well.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThingGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThingGroups::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThingGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThingGroups::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`parent_group(impl Into<String>)`](crate::client::fluent_builders::ListThingGroups::parent_group) / [`set_parent_group(Option<String>)`](crate::client::fluent_builders::ListThingGroups::set_parent_group): <p>A filter that limits the results to those with the specified parent group.</p>
+    ///   - [`name_prefix_filter(impl Into<String>)`](crate::client::fluent_builders::ListThingGroups::name_prefix_filter) / [`set_name_prefix_filter(Option<String>)`](crate::client::fluent_builders::ListThingGroups::set_name_prefix_filter): <p>A filter that limits the results to those with the specified name prefix.</p>
+    ///   - [`recursive(bool)`](crate::client::fluent_builders::ListThingGroups::recursive) / [`set_recursive(Option<bool>)`](crate::client::fluent_builders::ListThingGroups::set_recursive): <p>If true, return child groups as well.</p>
     /// - On success, responds with [`ListThingGroupsOutput`](crate::output::ListThingGroupsOutput) with field(s):
     ///   - [`thing_groups(Option<Vec<GroupNameAndArn>>)`](crate::output::ListThingGroupsOutput::thing_groups): <p>The thing groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThingGroupsOutput::next_token): <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
@@ -2502,12 +2502,12 @@ where
         fluent_builders::ListThingGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThingGroupsForThing`](crate::client::fluent_builders::ListThingGroupsForThing) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThingGroupsForThing::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThingGroupsForThing::into_paginator).
     ///
-    /// - Takes [`ListThingGroupsForThingInput`](crate::input::ListThingGroupsForThingInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::ListThingGroupsForThingInput::thing_name): <p>The thing name.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListThingGroupsForThingInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThingGroupsForThingInput::max_results): <p>The maximum number of results to return at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListThingGroupsForThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListThingGroupsForThing::set_thing_name): <p>The thing name.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThingGroupsForThing::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThingGroupsForThing::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThingGroupsForThing::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThingGroupsForThing::set_max_results): <p>The maximum number of results to return at one time.</p>
     /// - On success, responds with [`ListThingGroupsForThingOutput`](crate::output::ListThingGroupsForThingOutput) with field(s):
     ///   - [`thing_groups(Option<Vec<GroupNameAndArn>>)`](crate::output::ListThingGroupsForThingOutput::thing_groups): <p>The thing groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThingGroupsForThingOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2516,12 +2516,12 @@ where
         fluent_builders::ListThingGroupsForThing::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThingPrincipals`](crate::client::fluent_builders::ListThingPrincipals) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThingPrincipals::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThingPrincipals::into_paginator).
     ///
-    /// - Takes [`ListThingPrincipalsInput`](crate::input::ListThingPrincipalsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListThingPrincipalsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThingPrincipalsInput::max_results): <p>The maximum number of results to return in this operation.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::ListThingPrincipalsInput::thing_name): <p>The name of the thing.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThingPrincipals::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThingPrincipals::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThingPrincipals::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThingPrincipals::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListThingPrincipals::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListThingPrincipals::set_thing_name): <p>The name of the thing.</p>
     /// - On success, responds with [`ListThingPrincipalsOutput`](crate::output::ListThingPrincipalsOutput) with field(s):
     ///   - [`principals(Option<Vec<String>>)`](crate::output::ListThingPrincipalsOutput::principals): <p>The principals associated with the thing.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThingPrincipalsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2530,13 +2530,13 @@ where
         fluent_builders::ListThingPrincipals::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThingRegistrationTaskReports`](crate::client::fluent_builders::ListThingRegistrationTaskReports) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThingRegistrationTaskReports::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThingRegistrationTaskReports::into_paginator).
     ///
-    /// - Takes [`ListThingRegistrationTaskReportsInput`](crate::input::ListThingRegistrationTaskReportsInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::ListThingRegistrationTaskReportsInput::task_id): <p>The id of the task.</p>
-    ///   - [`report_type(Option<ReportType>)`](crate::input::ListThingRegistrationTaskReportsInput::report_type): <p>The type of task report.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListThingRegistrationTaskReportsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThingRegistrationTaskReportsInput::max_results): <p>The maximum number of results to return per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::ListThingRegistrationTaskReports::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::ListThingRegistrationTaskReports::set_task_id): <p>The id of the task.</p>
+    ///   - [`report_type(ReportType)`](crate::client::fluent_builders::ListThingRegistrationTaskReports::report_type) / [`set_report_type(Option<ReportType>)`](crate::client::fluent_builders::ListThingRegistrationTaskReports::set_report_type): <p>The type of task report.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThingRegistrationTaskReports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThingRegistrationTaskReports::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThingRegistrationTaskReports::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThingRegistrationTaskReports::set_max_results): <p>The maximum number of results to return per request.</p>
     /// - On success, responds with [`ListThingRegistrationTaskReportsOutput`](crate::output::ListThingRegistrationTaskReportsOutput) with field(s):
     ///   - [`resource_links(Option<Vec<String>>)`](crate::output::ListThingRegistrationTaskReportsOutput::resource_links): <p>Links to the task resources.</p>
     ///   - [`report_type(Option<ReportType>)`](crate::output::ListThingRegistrationTaskReportsOutput::report_type): <p>The type of task report.</p>
@@ -2548,12 +2548,12 @@ where
         fluent_builders::ListThingRegistrationTaskReports::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThingRegistrationTasks`](crate::client::fluent_builders::ListThingRegistrationTasks) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThingRegistrationTasks::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThingRegistrationTasks::into_paginator).
     ///
-    /// - Takes [`ListThingRegistrationTasksInput`](crate::input::ListThingRegistrationTasksInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListThingRegistrationTasksInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThingRegistrationTasksInput::max_results): <p>The maximum number of results to return at one time.</p>
-    ///   - [`status(Option<Status>)`](crate::input::ListThingRegistrationTasksInput::status): <p>The status of the bulk thing provisioning task.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThingRegistrationTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThingRegistrationTasks::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThingRegistrationTasks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThingRegistrationTasks::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`status(Status)`](crate::client::fluent_builders::ListThingRegistrationTasks::status) / [`set_status(Option<Status>)`](crate::client::fluent_builders::ListThingRegistrationTasks::set_status): <p>The status of the bulk thing provisioning task.</p>
     /// - On success, responds with [`ListThingRegistrationTasksOutput`](crate::output::ListThingRegistrationTasksOutput) with field(s):
     ///   - [`task_ids(Option<Vec<String>>)`](crate::output::ListThingRegistrationTasksOutput::task_ids): <p>A list of bulk thing provisioning task IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThingRegistrationTasksOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2564,15 +2564,15 @@ where
         fluent_builders::ListThingRegistrationTasks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThings`](crate::client::fluent_builders::ListThings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThings::into_paginator).
     ///
-    /// - Takes [`ListThingsInput`](crate::input::ListThingsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListThingsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThingsInput::max_results): <p>The maximum number of results to return in this operation.</p>
-    ///   - [`attribute_name(Option<String>)`](crate::input::ListThingsInput::attribute_name): <p>The attribute name used to search for things.</p>
-    ///   - [`attribute_value(Option<String>)`](crate::input::ListThingsInput::attribute_value): <p>The attribute value used to search for things.</p>
-    ///   - [`thing_type_name(Option<String>)`](crate::input::ListThingsInput::thing_type_name): <p>The name of the thing type used to search for things.</p>
-    ///   - [`use_prefix_attribute_value(bool)`](crate::input::ListThingsInput::use_prefix_attribute_value): <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>  <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThings::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThings::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`attribute_name(impl Into<String>)`](crate::client::fluent_builders::ListThings::attribute_name) / [`set_attribute_name(Option<String>)`](crate::client::fluent_builders::ListThings::set_attribute_name): <p>The attribute name used to search for things.</p>
+    ///   - [`attribute_value(impl Into<String>)`](crate::client::fluent_builders::ListThings::attribute_value) / [`set_attribute_value(Option<String>)`](crate::client::fluent_builders::ListThings::set_attribute_value): <p>The attribute value used to search for things.</p>
+    ///   - [`thing_type_name(impl Into<String>)`](crate::client::fluent_builders::ListThings::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::client::fluent_builders::ListThings::set_thing_type_name): <p>The name of the thing type used to search for things.</p>
+    ///   - [`use_prefix_attribute_value(bool)`](crate::client::fluent_builders::ListThings::use_prefix_attribute_value) / [`set_use_prefix_attribute_value(bool)`](crate::client::fluent_builders::ListThings::set_use_prefix_attribute_value): <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>  <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
     /// - On success, responds with [`ListThingsOutput`](crate::output::ListThingsOutput) with field(s):
     ///   - [`things(Option<Vec<ThingAttribute>>)`](crate::output::ListThingsOutput::things): <p>The things.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThingsOutput::next_token): <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
@@ -2581,12 +2581,12 @@ where
         fluent_builders::ListThings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThingsInBillingGroup`](crate::client::fluent_builders::ListThingsInBillingGroup) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThingsInBillingGroup::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThingsInBillingGroup::into_paginator).
     ///
-    /// - Takes [`ListThingsInBillingGroupInput`](crate::input::ListThingsInBillingGroupInput) with field(s):
-    ///   - [`billing_group_name(Option<String>)`](crate::input::ListThingsInBillingGroupInput::billing_group_name): <p>The name of the billing group.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListThingsInBillingGroupInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThingsInBillingGroupInput::max_results): <p>The maximum number of results to return per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`billing_group_name(impl Into<String>)`](crate::client::fluent_builders::ListThingsInBillingGroup::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::client::fluent_builders::ListThingsInBillingGroup::set_billing_group_name): <p>The name of the billing group.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThingsInBillingGroup::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThingsInBillingGroup::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThingsInBillingGroup::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThingsInBillingGroup::set_max_results): <p>The maximum number of results to return per request.</p>
     /// - On success, responds with [`ListThingsInBillingGroupOutput`](crate::output::ListThingsInBillingGroupOutput) with field(s):
     ///   - [`things(Option<Vec<String>>)`](crate::output::ListThingsInBillingGroupOutput::things): <p>A list of things in the billing group.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThingsInBillingGroupOutput::next_token): <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
@@ -2597,13 +2597,13 @@ where
         fluent_builders::ListThingsInBillingGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThingsInThingGroup`](crate::client::fluent_builders::ListThingsInThingGroup) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThingsInThingGroup::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThingsInThingGroup::into_paginator).
     ///
-    /// - Takes [`ListThingsInThingGroupInput`](crate::input::ListThingsInThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::ListThingsInThingGroupInput::thing_group_name): <p>The thing group name.</p>
-    ///   - [`recursive(bool)`](crate::input::ListThingsInThingGroupInput::recursive): <p>When true, list things in this thing group and in all child groups as well.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListThingsInThingGroupInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThingsInThingGroupInput::max_results): <p>The maximum number of results to return at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::ListThingsInThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::ListThingsInThingGroup::set_thing_group_name): <p>The thing group name.</p>
+    ///   - [`recursive(bool)`](crate::client::fluent_builders::ListThingsInThingGroup::recursive) / [`set_recursive(bool)`](crate::client::fluent_builders::ListThingsInThingGroup::set_recursive): <p>When true, list things in this thing group and in all child groups as well.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThingsInThingGroup::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThingsInThingGroup::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThingsInThingGroup::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThingsInThingGroup::set_max_results): <p>The maximum number of results to return at one time.</p>
     /// - On success, responds with [`ListThingsInThingGroupOutput`](crate::output::ListThingsInThingGroupOutput) with field(s):
     ///   - [`things(Option<Vec<String>>)`](crate::output::ListThingsInThingGroupOutput::things): <p>The things in the specified thing group.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThingsInThingGroupOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2612,12 +2612,12 @@ where
         fluent_builders::ListThingsInThingGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThingTypes`](crate::client::fluent_builders::ListThingTypes) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThingTypes::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThingTypes::into_paginator).
     ///
-    /// - Takes [`ListThingTypesInput`](crate::input::ListThingTypesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListThingTypesInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThingTypesInput::max_results): <p>The maximum number of results to return in this operation.</p>
-    ///   - [`thing_type_name(Option<String>)`](crate::input::ListThingTypesInput::thing_type_name): <p>The name of the thing type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThingTypes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThingTypes::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThingTypes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThingTypes::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`thing_type_name(impl Into<String>)`](crate::client::fluent_builders::ListThingTypes::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::client::fluent_builders::ListThingTypes::set_thing_type_name): <p>The name of the thing type.</p>
     /// - On success, responds with [`ListThingTypesOutput`](crate::output::ListThingTypesOutput) with field(s):
     ///   - [`thing_types(Option<Vec<ThingTypeDefinition>>)`](crate::output::ListThingTypesOutput::thing_types): <p>The thing types.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThingTypesOutput::next_token): <p>The token for the next set of results. Will not be returned if operation has returned all results.</p>
@@ -2626,11 +2626,11 @@ where
         fluent_builders::ListThingTypes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTopicRuleDestinations`](crate::client::fluent_builders::ListTopicRuleDestinations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTopicRuleDestinations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTopicRuleDestinations::into_paginator).
     ///
-    /// - Takes [`ListTopicRuleDestinationsInput`](crate::input::ListTopicRuleDestinationsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTopicRuleDestinationsInput::max_results): <p>The maximum number of results to return at one time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTopicRuleDestinationsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTopicRuleDestinations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTopicRuleDestinations::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTopicRuleDestinations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTopicRuleDestinations::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     /// - On success, responds with [`ListTopicRuleDestinationsOutput`](crate::output::ListTopicRuleDestinationsOutput) with field(s):
     ///   - [`destination_summaries(Option<Vec<TopicRuleDestinationSummary>>)`](crate::output::ListTopicRuleDestinationsOutput::destination_summaries): <p>Information about a topic rule destination.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTopicRuleDestinationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2641,13 +2641,13 @@ where
         fluent_builders::ListTopicRuleDestinations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTopicRules`](crate::client::fluent_builders::ListTopicRules) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTopicRules::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTopicRules::into_paginator).
     ///
-    /// - Takes [`ListTopicRulesInput`](crate::input::ListTopicRulesInput) with field(s):
-    ///   - [`topic(Option<String>)`](crate::input::ListTopicRulesInput::topic): <p>The topic.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTopicRulesInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTopicRulesInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`rule_disabled(Option<bool>)`](crate::input::ListTopicRulesInput::rule_disabled): <p>Specifies whether the rule is disabled.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`topic(impl Into<String>)`](crate::client::fluent_builders::ListTopicRules::topic) / [`set_topic(Option<String>)`](crate::client::fluent_builders::ListTopicRules::set_topic): <p>The topic.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTopicRules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTopicRules::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTopicRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTopicRules::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`rule_disabled(bool)`](crate::client::fluent_builders::ListTopicRules::rule_disabled) / [`set_rule_disabled(Option<bool>)`](crate::client::fluent_builders::ListTopicRules::set_rule_disabled): <p>Specifies whether the rule is disabled.</p>
     /// - On success, responds with [`ListTopicRulesOutput`](crate::output::ListTopicRulesOutput) with field(s):
     ///   - [`rules(Option<Vec<TopicRuleListItem>>)`](crate::output::ListTopicRulesOutput::rules): <p>The rules.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTopicRulesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2656,12 +2656,12 @@ where
         fluent_builders::ListTopicRules::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListV2LoggingLevels`](crate::client::fluent_builders::ListV2LoggingLevels) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListV2LoggingLevels::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListV2LoggingLevels::into_paginator).
     ///
-    /// - Takes [`ListV2LoggingLevelsInput`](crate::input::ListV2LoggingLevelsInput) with field(s):
-    ///   - [`target_type(Option<LogTargetType>)`](crate::input::ListV2LoggingLevelsInput::target_type): <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListV2LoggingLevelsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListV2LoggingLevelsInput::max_results): <p>The maximum number of results to return at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`target_type(LogTargetType)`](crate::client::fluent_builders::ListV2LoggingLevels::target_type) / [`set_target_type(Option<LogTargetType>)`](crate::client::fluent_builders::ListV2LoggingLevels::set_target_type): <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListV2LoggingLevels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListV2LoggingLevels::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListV2LoggingLevels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListV2LoggingLevels::set_max_results): <p>The maximum number of results to return at one time.</p>
     /// - On success, responds with [`ListV2LoggingLevelsOutput`](crate::output::ListV2LoggingLevelsOutput) with field(s):
     ///   - [`log_target_configurations(Option<Vec<LogTargetConfiguration>>)`](crate::output::ListV2LoggingLevelsOutput::log_target_configurations): <p>The logging configuration for a target.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListV2LoggingLevelsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -2670,18 +2670,18 @@ where
         fluent_builders::ListV2LoggingLevels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListViolationEvents`](crate::client::fluent_builders::ListViolationEvents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListViolationEvents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListViolationEvents::into_paginator).
     ///
-    /// - Takes [`ListViolationEventsInput`](crate::input::ListViolationEventsInput) with field(s):
-    ///   - [`start_time(Option<DateTime>)`](crate::input::ListViolationEventsInput::start_time): <p>The start time for the alerts to be listed.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::ListViolationEventsInput::end_time): <p>The end time for the alerts to be listed.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::ListViolationEventsInput::thing_name): <p>A filter to limit results to those alerts caused by the specified thing.</p>
-    ///   - [`security_profile_name(Option<String>)`](crate::input::ListViolationEventsInput::security_profile_name): <p>A filter to limit results to those alerts generated by the specified security profile.</p>
-    ///   - [`behavior_criteria_type(Option<BehaviorCriteriaType>)`](crate::input::ListViolationEventsInput::behavior_criteria_type): <p> The criteria for a behavior. </p>
-    ///   - [`list_suppressed_alerts(Option<bool>)`](crate::input::ListViolationEventsInput::list_suppressed_alerts): <p> A list of all suppressed alerts. </p>
-    ///   - [`verification_state(Option<VerificationState>)`](crate::input::ListViolationEventsInput::verification_state): <p>The verification state of the violation (detect alarm).</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListViolationEventsInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListViolationEventsInput::max_results): <p>The maximum number of results to return at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListViolationEvents::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListViolationEvents::set_start_time): <p>The start time for the alerts to be listed.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListViolationEvents::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListViolationEvents::set_end_time): <p>The end time for the alerts to be listed.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListViolationEvents::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListViolationEvents::set_thing_name): <p>A filter to limit results to those alerts caused by the specified thing.</p>
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::ListViolationEvents::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::ListViolationEvents::set_security_profile_name): <p>A filter to limit results to those alerts generated by the specified security profile.</p>
+    ///   - [`behavior_criteria_type(BehaviorCriteriaType)`](crate::client::fluent_builders::ListViolationEvents::behavior_criteria_type) / [`set_behavior_criteria_type(Option<BehaviorCriteriaType>)`](crate::client::fluent_builders::ListViolationEvents::set_behavior_criteria_type): <p> The criteria for a behavior. </p>
+    ///   - [`list_suppressed_alerts(bool)`](crate::client::fluent_builders::ListViolationEvents::list_suppressed_alerts) / [`set_list_suppressed_alerts(Option<bool>)`](crate::client::fluent_builders::ListViolationEvents::set_list_suppressed_alerts): <p> A list of all suppressed alerts. </p>
+    ///   - [`verification_state(VerificationState)`](crate::client::fluent_builders::ListViolationEvents::verification_state) / [`set_verification_state(Option<VerificationState>)`](crate::client::fluent_builders::ListViolationEvents::set_verification_state): <p>The verification state of the violation (detect alarm).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListViolationEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListViolationEvents::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListViolationEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListViolationEvents::set_max_results): <p>The maximum number of results to return at one time.</p>
     /// - On success, responds with [`ListViolationEventsOutput`](crate::output::ListViolationEventsOutput) with field(s):
     ///   - [`violation_events(Option<Vec<ViolationEvent>>)`](crate::output::ListViolationEventsOutput::violation_events): <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListViolationEventsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -2691,10 +2691,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutVerificationStateOnViolation`](crate::client::fluent_builders::PutVerificationStateOnViolation) operation.
     ///
-    /// - Takes [`PutVerificationStateOnViolationInput`](crate::input::PutVerificationStateOnViolationInput) with field(s):
-    ///   - [`violation_id(Option<String>)`](crate::input::PutVerificationStateOnViolationInput::violation_id): <p>The violation ID.</p>
-    ///   - [`verification_state(Option<VerificationState>)`](crate::input::PutVerificationStateOnViolationInput::verification_state): <p>The verification state of the violation.</p>
-    ///   - [`verification_state_description(Option<String>)`](crate::input::PutVerificationStateOnViolationInput::verification_state_description): <p>The description of the verification state of the violation (detect alarm).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`violation_id(impl Into<String>)`](crate::client::fluent_builders::PutVerificationStateOnViolation::violation_id) / [`set_violation_id(Option<String>)`](crate::client::fluent_builders::PutVerificationStateOnViolation::set_violation_id): <p>The violation ID.</p>
+    ///   - [`verification_state(VerificationState)`](crate::client::fluent_builders::PutVerificationStateOnViolation::verification_state) / [`set_verification_state(Option<VerificationState>)`](crate::client::fluent_builders::PutVerificationStateOnViolation::set_verification_state): <p>The verification state of the violation.</p>
+    ///   - [`verification_state_description(impl Into<String>)`](crate::client::fluent_builders::PutVerificationStateOnViolation::verification_state_description) / [`set_verification_state_description(Option<String>)`](crate::client::fluent_builders::PutVerificationStateOnViolation::set_verification_state_description): <p>The description of the verification state of the violation (detect alarm).</p>
     /// - On success, responds with [`PutVerificationStateOnViolationOutput`](crate::output::PutVerificationStateOnViolationOutput)
 
     /// - On failure, responds with [`SdkError<PutVerificationStateOnViolationError>`](crate::error::PutVerificationStateOnViolationError)
@@ -2705,13 +2705,13 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterCACertificate`](crate::client::fluent_builders::RegisterCACertificate) operation.
     ///
-    /// - Takes [`RegisterCaCertificateInput`](crate::input::RegisterCaCertificateInput) with field(s):
-    ///   - [`ca_certificate(Option<String>)`](crate::input::RegisterCaCertificateInput::ca_certificate): <p>The CA certificate.</p>
-    ///   - [`verification_certificate(Option<String>)`](crate::input::RegisterCaCertificateInput::verification_certificate): <p>The private key verification certificate.</p>
-    ///   - [`set_as_active(bool)`](crate::input::RegisterCaCertificateInput::set_as_active): <p>A boolean value that specifies if the CA certificate is set to active.</p>
-    ///   - [`allow_auto_registration(bool)`](crate::input::RegisterCaCertificateInput::allow_auto_registration): <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
-    ///   - [`registration_config(Option<RegistrationConfig>)`](crate::input::RegisterCaCertificateInput::registration_config): <p>Information about the registration configuration.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::RegisterCaCertificateInput::tags): <p>Metadata which can be used to manage the CA certificate.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`ca_certificate(impl Into<String>)`](crate::client::fluent_builders::RegisterCACertificate::ca_certificate) / [`set_ca_certificate(Option<String>)`](crate::client::fluent_builders::RegisterCACertificate::set_ca_certificate): <p>The CA certificate.</p>
+    ///   - [`verification_certificate(impl Into<String>)`](crate::client::fluent_builders::RegisterCACertificate::verification_certificate) / [`set_verification_certificate(Option<String>)`](crate::client::fluent_builders::RegisterCACertificate::set_verification_certificate): <p>The private key verification certificate.</p>
+    ///   - [`set_as_active(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_as_active) / [`set_set_as_active(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_set_as_active): <p>A boolean value that specifies if the CA certificate is set to active.</p>
+    ///   - [`allow_auto_registration(bool)`](crate::client::fluent_builders::RegisterCACertificate::allow_auto_registration) / [`set_allow_auto_registration(bool)`](crate::client::fluent_builders::RegisterCACertificate::set_allow_auto_registration): <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
+    ///   - [`registration_config(RegistrationConfig)`](crate::client::fluent_builders::RegisterCACertificate::registration_config) / [`set_registration_config(Option<RegistrationConfig>)`](crate::client::fluent_builders::RegisterCACertificate::set_registration_config): <p>Information about the registration configuration.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RegisterCACertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RegisterCACertificate::set_tags): <p>Metadata which can be used to manage the CA certificate.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
     /// - On success, responds with [`RegisterCaCertificateOutput`](crate::output::RegisterCaCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::RegisterCaCertificateOutput::certificate_arn): <p>The CA certificate ARN.</p>
     ///   - [`certificate_id(Option<String>)`](crate::output::RegisterCaCertificateOutput::certificate_id): <p>The CA certificate identifier.</p>
@@ -2721,11 +2721,11 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterCertificate`](crate::client::fluent_builders::RegisterCertificate) operation.
     ///
-    /// - Takes [`RegisterCertificateInput`](crate::input::RegisterCertificateInput) with field(s):
-    ///   - [`certificate_pem(Option<String>)`](crate::input::RegisterCertificateInput::certificate_pem): <p>The certificate data, in PEM format.</p>
-    ///   - [`ca_certificate_pem(Option<String>)`](crate::input::RegisterCertificateInput::ca_certificate_pem): <p>The CA certificate used to sign the device certificate being registered.</p>
-    ///   - [`set_as_active(Option<bool>)`](crate::input::RegisterCertificateInput::set_as_active): <p>A boolean value that specifies if the certificate is set to active.</p>
-    ///   - [`status(Option<CertificateStatus>)`](crate::input::RegisterCertificateInput::status): <p>The status of the register certificate request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_pem(impl Into<String>)`](crate::client::fluent_builders::RegisterCertificate::certificate_pem) / [`set_certificate_pem(Option<String>)`](crate::client::fluent_builders::RegisterCertificate::set_certificate_pem): <p>The certificate data, in PEM format.</p>
+    ///   - [`ca_certificate_pem(impl Into<String>)`](crate::client::fluent_builders::RegisterCertificate::ca_certificate_pem) / [`set_ca_certificate_pem(Option<String>)`](crate::client::fluent_builders::RegisterCertificate::set_ca_certificate_pem): <p>The CA certificate used to sign the device certificate being registered.</p>
+    ///   - [`set_as_active(bool)`](crate::client::fluent_builders::RegisterCertificate::set_as_active) / [`set_set_as_active(Option<bool>)`](crate::client::fluent_builders::RegisterCertificate::set_set_as_active): <p>A boolean value that specifies if the certificate is set to active.</p>
+    ///   - [`status(CertificateStatus)`](crate::client::fluent_builders::RegisterCertificate::status) / [`set_status(Option<CertificateStatus>)`](crate::client::fluent_builders::RegisterCertificate::set_status): <p>The status of the register certificate request.</p>
     /// - On success, responds with [`RegisterCertificateOutput`](crate::output::RegisterCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::RegisterCertificateOutput::certificate_arn): <p>The certificate ARN.</p>
     ///   - [`certificate_id(Option<String>)`](crate::output::RegisterCertificateOutput::certificate_id): <p>The certificate identifier.</p>
@@ -2735,9 +2735,9 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterCertificateWithoutCA`](crate::client::fluent_builders::RegisterCertificateWithoutCA) operation.
     ///
-    /// - Takes [`RegisterCertificateWithoutCaInput`](crate::input::RegisterCertificateWithoutCaInput) with field(s):
-    ///   - [`certificate_pem(Option<String>)`](crate::input::RegisterCertificateWithoutCaInput::certificate_pem): <p>The certificate data, in PEM format.</p>
-    ///   - [`status(Option<CertificateStatus>)`](crate::input::RegisterCertificateWithoutCaInput::status): <p>The status of the register certificate request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_pem(impl Into<String>)`](crate::client::fluent_builders::RegisterCertificateWithoutCA::certificate_pem) / [`set_certificate_pem(Option<String>)`](crate::client::fluent_builders::RegisterCertificateWithoutCA::set_certificate_pem): <p>The certificate data, in PEM format.</p>
+    ///   - [`status(CertificateStatus)`](crate::client::fluent_builders::RegisterCertificateWithoutCA::status) / [`set_status(Option<CertificateStatus>)`](crate::client::fluent_builders::RegisterCertificateWithoutCA::set_status): <p>The status of the register certificate request.</p>
     /// - On success, responds with [`RegisterCertificateWithoutCaOutput`](crate::output::RegisterCertificateWithoutCaOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::output::RegisterCertificateWithoutCaOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
     ///   - [`certificate_id(Option<String>)`](crate::output::RegisterCertificateWithoutCaOutput::certificate_id): <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
@@ -2749,9 +2749,9 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterThing`](crate::client::fluent_builders::RegisterThing) operation.
     ///
-    /// - Takes [`RegisterThingInput`](crate::input::RegisterThingInput) with field(s):
-    ///   - [`template_body(Option<String>)`](crate::input::RegisterThingInput::template_body): <p>The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.</p>
-    ///   - [`parameters(Option<HashMap<String, String>>)`](crate::input::RegisterThingInput::parameters): <p>The parameters for provisioning a thing. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning Templates</a> for more information.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::RegisterThing::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::RegisterThing::set_template_body): <p>The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.</p>
+    ///   - [`parameters(HashMap<String, String>)`](crate::client::fluent_builders::RegisterThing::parameters) / [`set_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RegisterThing::set_parameters): <p>The parameters for provisioning a thing. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning Templates</a> for more information.</p>
     /// - On success, responds with [`RegisterThingOutput`](crate::output::RegisterThingOutput) with field(s):
     ///   - [`certificate_pem(Option<String>)`](crate::output::RegisterThingOutput::certificate_pem): <p>The certificate data, in PEM format.</p>
     ///   - [`resource_arns(Option<HashMap<String, String>>)`](crate::output::RegisterThingOutput::resource_arns): <p>ARNs for the generated resources.</p>
@@ -2761,9 +2761,9 @@ where
     }
     /// Constructs a fluent builder for the [`RejectCertificateTransfer`](crate::client::fluent_builders::RejectCertificateTransfer) operation.
     ///
-    /// - Takes [`RejectCertificateTransferInput`](crate::input::RejectCertificateTransferInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::RejectCertificateTransferInput::certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    ///   - [`reject_reason(Option<String>)`](crate::input::RejectCertificateTransferInput::reject_reason): <p>The reason the certificate transfer was rejected.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::RejectCertificateTransfer::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::RejectCertificateTransfer::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    ///   - [`reject_reason(impl Into<String>)`](crate::client::fluent_builders::RejectCertificateTransfer::reject_reason) / [`set_reject_reason(Option<String>)`](crate::client::fluent_builders::RejectCertificateTransfer::set_reject_reason): <p>The reason the certificate transfer was rejected.</p>
     /// - On success, responds with [`RejectCertificateTransferOutput`](crate::output::RejectCertificateTransferOutput)
 
     /// - On failure, responds with [`SdkError<RejectCertificateTransferError>`](crate::error::RejectCertificateTransferError)
@@ -2774,11 +2774,11 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveThingFromBillingGroup`](crate::client::fluent_builders::RemoveThingFromBillingGroup) operation.
     ///
-    /// - Takes [`RemoveThingFromBillingGroupInput`](crate::input::RemoveThingFromBillingGroupInput) with field(s):
-    ///   - [`billing_group_name(Option<String>)`](crate::input::RemoveThingFromBillingGroupInput::billing_group_name): <p>The name of the billing group.</p>
-    ///   - [`billing_group_arn(Option<String>)`](crate::input::RemoveThingFromBillingGroupInput::billing_group_arn): <p>The ARN of the billing group.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::RemoveThingFromBillingGroupInput::thing_name): <p>The name of the thing to be removed from the billing group.</p>
-    ///   - [`thing_arn(Option<String>)`](crate::input::RemoveThingFromBillingGroupInput::thing_arn): <p>The ARN of the thing to be removed from the billing group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`billing_group_name(impl Into<String>)`](crate::client::fluent_builders::RemoveThingFromBillingGroup::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::client::fluent_builders::RemoveThingFromBillingGroup::set_billing_group_name): <p>The name of the billing group.</p>
+    ///   - [`billing_group_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveThingFromBillingGroup::billing_group_arn) / [`set_billing_group_arn(Option<String>)`](crate::client::fluent_builders::RemoveThingFromBillingGroup::set_billing_group_arn): <p>The ARN of the billing group.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::RemoveThingFromBillingGroup::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::RemoveThingFromBillingGroup::set_thing_name): <p>The name of the thing to be removed from the billing group.</p>
+    ///   - [`thing_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveThingFromBillingGroup::thing_arn) / [`set_thing_arn(Option<String>)`](crate::client::fluent_builders::RemoveThingFromBillingGroup::set_thing_arn): <p>The ARN of the thing to be removed from the billing group.</p>
     /// - On success, responds with [`RemoveThingFromBillingGroupOutput`](crate::output::RemoveThingFromBillingGroupOutput)
 
     /// - On failure, responds with [`SdkError<RemoveThingFromBillingGroupError>`](crate::error::RemoveThingFromBillingGroupError)
@@ -2789,11 +2789,11 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveThingFromThingGroup`](crate::client::fluent_builders::RemoveThingFromThingGroup) operation.
     ///
-    /// - Takes [`RemoveThingFromThingGroupInput`](crate::input::RemoveThingFromThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::RemoveThingFromThingGroupInput::thing_group_name): <p>The group name.</p>
-    ///   - [`thing_group_arn(Option<String>)`](crate::input::RemoveThingFromThingGroupInput::thing_group_arn): <p>The group ARN.</p>
-    ///   - [`thing_name(Option<String>)`](crate::input::RemoveThingFromThingGroupInput::thing_name): <p>The name of the thing to remove from the group.</p>
-    ///   - [`thing_arn(Option<String>)`](crate::input::RemoveThingFromThingGroupInput::thing_arn): <p>The ARN of the thing to remove from the group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::RemoveThingFromThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::RemoveThingFromThingGroup::set_thing_group_name): <p>The group name.</p>
+    ///   - [`thing_group_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveThingFromThingGroup::thing_group_arn) / [`set_thing_group_arn(Option<String>)`](crate::client::fluent_builders::RemoveThingFromThingGroup::set_thing_group_arn): <p>The group ARN.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::RemoveThingFromThingGroup::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::RemoveThingFromThingGroup::set_thing_name): <p>The name of the thing to remove from the group.</p>
+    ///   - [`thing_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveThingFromThingGroup::thing_arn) / [`set_thing_arn(Option<String>)`](crate::client::fluent_builders::RemoveThingFromThingGroup::set_thing_arn): <p>The ARN of the thing to remove from the group.</p>
     /// - On success, responds with [`RemoveThingFromThingGroupOutput`](crate::output::RemoveThingFromThingGroupOutput)
 
     /// - On failure, responds with [`SdkError<RemoveThingFromThingGroupError>`](crate::error::RemoveThingFromThingGroupError)
@@ -2804,9 +2804,9 @@ where
     }
     /// Constructs a fluent builder for the [`ReplaceTopicRule`](crate::client::fluent_builders::ReplaceTopicRule) operation.
     ///
-    /// - Takes [`ReplaceTopicRuleInput`](crate::input::ReplaceTopicRuleInput) with field(s):
-    ///   - [`rule_name(Option<String>)`](crate::input::ReplaceTopicRuleInput::rule_name): <p>The name of the rule.</p>
-    ///   - [`topic_rule_payload(Option<TopicRulePayload>)`](crate::input::ReplaceTopicRuleInput::topic_rule_payload): <p>The rule payload.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::ReplaceTopicRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::ReplaceTopicRule::set_rule_name): <p>The name of the rule.</p>
+    ///   - [`topic_rule_payload(TopicRulePayload)`](crate::client::fluent_builders::ReplaceTopicRule::topic_rule_payload) / [`set_topic_rule_payload(Option<TopicRulePayload>)`](crate::client::fluent_builders::ReplaceTopicRule::set_topic_rule_payload): <p>The rule payload.</p>
     /// - On success, responds with [`ReplaceTopicRuleOutput`](crate::output::ReplaceTopicRuleOutput)
 
     /// - On failure, responds with [`SdkError<ReplaceTopicRuleError>`](crate::error::ReplaceTopicRuleError)
@@ -2815,12 +2815,12 @@ where
     }
     /// Constructs a fluent builder for the [`SearchIndex`](crate::client::fluent_builders::SearchIndex) operation.
     ///
-    /// - Takes [`SearchIndexInput`](crate::input::SearchIndexInput) with field(s):
-    ///   - [`index_name(Option<String>)`](crate::input::SearchIndexInput::index_name): <p>The search index name.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::SearchIndexInput::query_string): <p>The search query string.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::SearchIndexInput::next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchIndexInput::max_results): <p>The maximum number of results to return at one time.</p>
-    ///   - [`query_version(Option<String>)`](crate::input::SearchIndexInput::query_version): <p>The query version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::SearchIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::SearchIndex::set_index_name): <p>The search index name.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::SearchIndex::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::SearchIndex::set_query_string): <p>The search query string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchIndex::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchIndex::set_next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchIndex::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchIndex::set_max_results): <p>The maximum number of results to return at one time.</p>
+    ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::SearchIndex::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::SearchIndex::set_query_version): <p>The query version.</p>
     /// - On success, responds with [`SearchIndexOutput`](crate::output::SearchIndexOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::SearchIndexOutput::next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     ///   - [`things(Option<Vec<ThingDocument>>)`](crate::output::SearchIndexOutput::things): <p>The things that match the search query.</p>
@@ -2831,8 +2831,8 @@ where
     }
     /// Constructs a fluent builder for the [`SetDefaultAuthorizer`](crate::client::fluent_builders::SetDefaultAuthorizer) operation.
     ///
-    /// - Takes [`SetDefaultAuthorizerInput`](crate::input::SetDefaultAuthorizerInput) with field(s):
-    ///   - [`authorizer_name(Option<String>)`](crate::input::SetDefaultAuthorizerInput::authorizer_name): <p>The authorizer name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authorizer_name(impl Into<String>)`](crate::client::fluent_builders::SetDefaultAuthorizer::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::client::fluent_builders::SetDefaultAuthorizer::set_authorizer_name): <p>The authorizer name.</p>
     /// - On success, responds with [`SetDefaultAuthorizerOutput`](crate::output::SetDefaultAuthorizerOutput) with field(s):
     ///   - [`authorizer_name(Option<String>)`](crate::output::SetDefaultAuthorizerOutput::authorizer_name): <p>The authorizer name.</p>
     ///   - [`authorizer_arn(Option<String>)`](crate::output::SetDefaultAuthorizerOutput::authorizer_arn): <p>The authorizer ARN.</p>
@@ -2842,9 +2842,9 @@ where
     }
     /// Constructs a fluent builder for the [`SetDefaultPolicyVersion`](crate::client::fluent_builders::SetDefaultPolicyVersion) operation.
     ///
-    /// - Takes [`SetDefaultPolicyVersionInput`](crate::input::SetDefaultPolicyVersionInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::SetDefaultPolicyVersionInput::policy_name): <p>The policy name.</p>
-    ///   - [`policy_version_id(Option<String>)`](crate::input::SetDefaultPolicyVersionInput::policy_version_id): <p>The policy version ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::SetDefaultPolicyVersion::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::SetDefaultPolicyVersion::set_policy_name): <p>The policy name.</p>
+    ///   - [`policy_version_id(impl Into<String>)`](crate::client::fluent_builders::SetDefaultPolicyVersion::policy_version_id) / [`set_policy_version_id(Option<String>)`](crate::client::fluent_builders::SetDefaultPolicyVersion::set_policy_version_id): <p>The policy version ID.</p>
     /// - On success, responds with [`SetDefaultPolicyVersionOutput`](crate::output::SetDefaultPolicyVersionOutput)
 
     /// - On failure, responds with [`SdkError<SetDefaultPolicyVersionError>`](crate::error::SetDefaultPolicyVersionError)
@@ -2853,8 +2853,8 @@ where
     }
     /// Constructs a fluent builder for the [`SetLoggingOptions`](crate::client::fluent_builders::SetLoggingOptions) operation.
     ///
-    /// - Takes [`SetLoggingOptionsInput`](crate::input::SetLoggingOptionsInput) with field(s):
-    ///   - [`logging_options_payload(Option<LoggingOptionsPayload>)`](crate::input::SetLoggingOptionsInput::logging_options_payload): <p>The logging options payload.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`logging_options_payload(LoggingOptionsPayload)`](crate::client::fluent_builders::SetLoggingOptions::logging_options_payload) / [`set_logging_options_payload(Option<LoggingOptionsPayload>)`](crate::client::fluent_builders::SetLoggingOptions::set_logging_options_payload): <p>The logging options payload.</p>
     /// - On success, responds with [`SetLoggingOptionsOutput`](crate::output::SetLoggingOptionsOutput)
 
     /// - On failure, responds with [`SdkError<SetLoggingOptionsError>`](crate::error::SetLoggingOptionsError)
@@ -2863,9 +2863,9 @@ where
     }
     /// Constructs a fluent builder for the [`SetV2LoggingLevel`](crate::client::fluent_builders::SetV2LoggingLevel) operation.
     ///
-    /// - Takes [`SetV2LoggingLevelInput`](crate::input::SetV2LoggingLevelInput) with field(s):
-    ///   - [`log_target(Option<LogTarget>)`](crate::input::SetV2LoggingLevelInput::log_target): <p>The log target.</p>
-    ///   - [`log_level(Option<LogLevel>)`](crate::input::SetV2LoggingLevelInput::log_level): <p>The log level.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_target(LogTarget)`](crate::client::fluent_builders::SetV2LoggingLevel::log_target) / [`set_log_target(Option<LogTarget>)`](crate::client::fluent_builders::SetV2LoggingLevel::set_log_target): <p>The log target.</p>
+    ///   - [`log_level(LogLevel)`](crate::client::fluent_builders::SetV2LoggingLevel::log_level) / [`set_log_level(Option<LogLevel>)`](crate::client::fluent_builders::SetV2LoggingLevel::set_log_level): <p>The log level.</p>
     /// - On success, responds with [`SetV2LoggingLevelOutput`](crate::output::SetV2LoggingLevelOutput)
 
     /// - On failure, responds with [`SdkError<SetV2LoggingLevelError>`](crate::error::SetV2LoggingLevelError)
@@ -2874,10 +2874,10 @@ where
     }
     /// Constructs a fluent builder for the [`SetV2LoggingOptions`](crate::client::fluent_builders::SetV2LoggingOptions) operation.
     ///
-    /// - Takes [`SetV2LoggingOptionsInput`](crate::input::SetV2LoggingOptionsInput) with field(s):
-    ///   - [`role_arn(Option<String>)`](crate::input::SetV2LoggingOptionsInput::role_arn): <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
-    ///   - [`default_log_level(Option<LogLevel>)`](crate::input::SetV2LoggingOptionsInput::default_log_level): <p>The default logging level.</p>
-    ///   - [`disable_all_logs(bool)`](crate::input::SetV2LoggingOptionsInput::disable_all_logs): <p>If true all logs are disabled. The default is false.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::SetV2LoggingOptions::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::SetV2LoggingOptions::set_role_arn): <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
+    ///   - [`default_log_level(LogLevel)`](crate::client::fluent_builders::SetV2LoggingOptions::default_log_level) / [`set_default_log_level(Option<LogLevel>)`](crate::client::fluent_builders::SetV2LoggingOptions::set_default_log_level): <p>The default logging level.</p>
+    ///   - [`disable_all_logs(bool)`](crate::client::fluent_builders::SetV2LoggingOptions::disable_all_logs) / [`set_disable_all_logs(bool)`](crate::client::fluent_builders::SetV2LoggingOptions::set_disable_all_logs): <p>If true all logs are disabled. The default is false.</p>
     /// - On success, responds with [`SetV2LoggingOptionsOutput`](crate::output::SetV2LoggingOptionsOutput)
 
     /// - On failure, responds with [`SdkError<SetV2LoggingOptionsError>`](crate::error::SetV2LoggingOptionsError)
@@ -2886,11 +2886,11 @@ where
     }
     /// Constructs a fluent builder for the [`StartAuditMitigationActionsTask`](crate::client::fluent_builders::StartAuditMitigationActionsTask) operation.
     ///
-    /// - Takes [`StartAuditMitigationActionsTaskInput`](crate::input::StartAuditMitigationActionsTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::StartAuditMitigationActionsTaskInput::task_id): <p>A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.</p>
-    ///   - [`target(Option<AuditMitigationActionsTaskTarget>)`](crate::input::StartAuditMitigationActionsTaskInput::target): <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
-    ///   - [`audit_check_to_actions_mapping(Option<HashMap<String, Vec<String>>>)`](crate::input::StartAuditMitigationActionsTaskInput::audit_check_to_actions_mapping): <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StartAuditMitigationActionsTaskInput::client_request_token): <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::StartAuditMitigationActionsTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::StartAuditMitigationActionsTask::set_task_id): <p>A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.</p>
+    ///   - [`target(AuditMitigationActionsTaskTarget)`](crate::client::fluent_builders::StartAuditMitigationActionsTask::target) / [`set_target(Option<AuditMitigationActionsTaskTarget>)`](crate::client::fluent_builders::StartAuditMitigationActionsTask::set_target): <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
+    ///   - [`audit_check_to_actions_mapping(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::StartAuditMitigationActionsTask::audit_check_to_actions_mapping) / [`set_audit_check_to_actions_mapping(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::StartAuditMitigationActionsTask::set_audit_check_to_actions_mapping): <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartAuditMitigationActionsTask::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartAuditMitigationActionsTask::set_client_request_token): <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
     /// - On success, responds with [`StartAuditMitigationActionsTaskOutput`](crate::output::StartAuditMitigationActionsTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::output::StartAuditMitigationActionsTaskOutput::task_id): <p>The unique identifier for the audit mitigation task. This matches the <code>taskId</code> that you specified in the request.</p>
     /// - On failure, responds with [`SdkError<StartAuditMitigationActionsTaskError>`](crate::error::StartAuditMitigationActionsTaskError)
@@ -2901,14 +2901,14 @@ where
     }
     /// Constructs a fluent builder for the [`StartDetectMitigationActionsTask`](crate::client::fluent_builders::StartDetectMitigationActionsTask) operation.
     ///
-    /// - Takes [`StartDetectMitigationActionsTaskInput`](crate::input::StartDetectMitigationActionsTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::StartDetectMitigationActionsTaskInput::task_id): <p> The unique identifier of the task. </p>
-    ///   - [`target(Option<DetectMitigationActionsTaskTarget>)`](crate::input::StartDetectMitigationActionsTaskInput::target): <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
-    ///   - [`actions(Option<Vec<String>>)`](crate::input::StartDetectMitigationActionsTaskInput::actions): <p> The actions to be performed when a device has unexpected behavior. </p>
-    ///   - [`violation_event_occurrence_range(Option<ViolationEventOccurrenceRange>)`](crate::input::StartDetectMitigationActionsTaskInput::violation_event_occurrence_range): <p> Specifies the time period of which violation events occurred between. </p>
-    ///   - [`include_only_active_violations(Option<bool>)`](crate::input::StartDetectMitigationActionsTaskInput::include_only_active_violations): <p> Specifies to list only active violations. </p>
-    ///   - [`include_suppressed_alerts(Option<bool>)`](crate::input::StartDetectMitigationActionsTaskInput::include_suppressed_alerts): <p> Specifies to include suppressed alerts. </p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StartDetectMitigationActionsTaskInput::client_request_token): <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::set_task_id): <p> The unique identifier of the task. </p>
+    ///   - [`target(DetectMitigationActionsTaskTarget)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::target) / [`set_target(Option<DetectMitigationActionsTaskTarget>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::set_target): <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
+    ///   - [`actions(Vec<String>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::actions) / [`set_actions(Option<Vec<String>>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::set_actions): <p> The actions to be performed when a device has unexpected behavior. </p>
+    ///   - [`violation_event_occurrence_range(ViolationEventOccurrenceRange)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::violation_event_occurrence_range) / [`set_violation_event_occurrence_range(Option<ViolationEventOccurrenceRange>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::set_violation_event_occurrence_range): <p> Specifies the time period of which violation events occurred between. </p>
+    ///   - [`include_only_active_violations(bool)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::include_only_active_violations) / [`set_include_only_active_violations(Option<bool>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::set_include_only_active_violations): <p> Specifies to list only active violations. </p>
+    ///   - [`include_suppressed_alerts(bool)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::include_suppressed_alerts) / [`set_include_suppressed_alerts(Option<bool>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::set_include_suppressed_alerts): <p> Specifies to include suppressed alerts. </p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartDetectMitigationActionsTask::set_client_request_token): <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     /// - On success, responds with [`StartDetectMitigationActionsTaskOutput`](crate::output::StartDetectMitigationActionsTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::output::StartDetectMitigationActionsTaskOutput::task_id): <p> The unique identifier of the task. </p>
     /// - On failure, responds with [`SdkError<StartDetectMitigationActionsTaskError>`](crate::error::StartDetectMitigationActionsTaskError)
@@ -2919,8 +2919,8 @@ where
     }
     /// Constructs a fluent builder for the [`StartOnDemandAuditTask`](crate::client::fluent_builders::StartOnDemandAuditTask) operation.
     ///
-    /// - Takes [`StartOnDemandAuditTaskInput`](crate::input::StartOnDemandAuditTaskInput) with field(s):
-    ///   - [`target_check_names(Option<Vec<String>>)`](crate::input::StartOnDemandAuditTaskInput::target_check_names): <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`target_check_names(Vec<String>)`](crate::client::fluent_builders::StartOnDemandAuditTask::target_check_names) / [`set_target_check_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartOnDemandAuditTask::set_target_check_names): <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
     /// - On success, responds with [`StartOnDemandAuditTaskOutput`](crate::output::StartOnDemandAuditTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::output::StartOnDemandAuditTaskOutput::task_id): <p>The ID of the on-demand audit you started.</p>
     /// - On failure, responds with [`SdkError<StartOnDemandAuditTaskError>`](crate::error::StartOnDemandAuditTaskError)
@@ -2929,11 +2929,11 @@ where
     }
     /// Constructs a fluent builder for the [`StartThingRegistrationTask`](crate::client::fluent_builders::StartThingRegistrationTask) operation.
     ///
-    /// - Takes [`StartThingRegistrationTaskInput`](crate::input::StartThingRegistrationTaskInput) with field(s):
-    ///   - [`template_body(Option<String>)`](crate::input::StartThingRegistrationTaskInput::template_body): <p>The provisioning template.</p>
-    ///   - [`input_file_bucket(Option<String>)`](crate::input::StartThingRegistrationTaskInput::input_file_bucket): <p>The S3 bucket that contains the input file.</p>
-    ///   - [`input_file_key(Option<String>)`](crate::input::StartThingRegistrationTaskInput::input_file_key): <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::StartThingRegistrationTaskInput::role_arn): <p>The IAM role ARN that grants permission the input file.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::StartThingRegistrationTask::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::StartThingRegistrationTask::set_template_body): <p>The provisioning template.</p>
+    ///   - [`input_file_bucket(impl Into<String>)`](crate::client::fluent_builders::StartThingRegistrationTask::input_file_bucket) / [`set_input_file_bucket(Option<String>)`](crate::client::fluent_builders::StartThingRegistrationTask::set_input_file_bucket): <p>The S3 bucket that contains the input file.</p>
+    ///   - [`input_file_key(impl Into<String>)`](crate::client::fluent_builders::StartThingRegistrationTask::input_file_key) / [`set_input_file_key(Option<String>)`](crate::client::fluent_builders::StartThingRegistrationTask::set_input_file_key): <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::StartThingRegistrationTask::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::StartThingRegistrationTask::set_role_arn): <p>The IAM role ARN that grants permission the input file.</p>
     /// - On success, responds with [`StartThingRegistrationTaskOutput`](crate::output::StartThingRegistrationTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::output::StartThingRegistrationTaskOutput::task_id): <p>The bulk thing provisioning task ID.</p>
     /// - On failure, responds with [`SdkError<StartThingRegistrationTaskError>`](crate::error::StartThingRegistrationTaskError)
@@ -2944,8 +2944,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopThingRegistrationTask`](crate::client::fluent_builders::StopThingRegistrationTask) operation.
     ///
-    /// - Takes [`StopThingRegistrationTaskInput`](crate::input::StopThingRegistrationTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::StopThingRegistrationTaskInput::task_id): <p>The bulk thing provisioning task ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::StopThingRegistrationTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::StopThingRegistrationTask::set_task_id): <p>The bulk thing provisioning task ID.</p>
     /// - On success, responds with [`StopThingRegistrationTaskOutput`](crate::output::StopThingRegistrationTaskOutput)
 
     /// - On failure, responds with [`SdkError<StopThingRegistrationTaskError>`](crate::error::StopThingRegistrationTaskError)
@@ -2956,9 +2956,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The new or modified tags for the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The new or modified tags for the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -2967,13 +2967,13 @@ where
     }
     /// Constructs a fluent builder for the [`TestAuthorization`](crate::client::fluent_builders::TestAuthorization) operation.
     ///
-    /// - Takes [`TestAuthorizationInput`](crate::input::TestAuthorizationInput) with field(s):
-    ///   - [`principal(Option<String>)`](crate::input::TestAuthorizationInput::principal): <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    ///   - [`cognito_identity_pool_id(Option<String>)`](crate::input::TestAuthorizationInput::cognito_identity_pool_id): <p>The Cognito identity pool ID.</p>
-    ///   - [`auth_infos(Option<Vec<AuthInfo>>)`](crate::input::TestAuthorizationInput::auth_infos): <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    ///   - [`client_id(Option<String>)`](crate::input::TestAuthorizationInput::client_id): <p>The MQTT client ID.</p>
-    ///   - [`policy_names_to_add(Option<Vec<String>>)`](crate::input::TestAuthorizationInput::policy_names_to_add): <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    ///   - [`policy_names_to_skip(Option<Vec<String>>)`](crate::input::TestAuthorizationInput::policy_names_to_skip): <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`principal(impl Into<String>)`](crate::client::fluent_builders::TestAuthorization::principal) / [`set_principal(Option<String>)`](crate::client::fluent_builders::TestAuthorization::set_principal): <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    ///   - [`cognito_identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::TestAuthorization::cognito_identity_pool_id) / [`set_cognito_identity_pool_id(Option<String>)`](crate::client::fluent_builders::TestAuthorization::set_cognito_identity_pool_id): <p>The Cognito identity pool ID.</p>
+    ///   - [`auth_infos(Vec<AuthInfo>)`](crate::client::fluent_builders::TestAuthorization::auth_infos) / [`set_auth_infos(Option<Vec<AuthInfo>>)`](crate::client::fluent_builders::TestAuthorization::set_auth_infos): <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::TestAuthorization::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::TestAuthorization::set_client_id): <p>The MQTT client ID.</p>
+    ///   - [`policy_names_to_add(Vec<String>)`](crate::client::fluent_builders::TestAuthorization::policy_names_to_add) / [`set_policy_names_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::TestAuthorization::set_policy_names_to_add): <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
+    ///   - [`policy_names_to_skip(Vec<String>)`](crate::client::fluent_builders::TestAuthorization::policy_names_to_skip) / [`set_policy_names_to_skip(Option<Vec<String>>)`](crate::client::fluent_builders::TestAuthorization::set_policy_names_to_skip): <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
     /// - On success, responds with [`TestAuthorizationOutput`](crate::output::TestAuthorizationOutput) with field(s):
     ///   - [`auth_results(Option<Vec<AuthResult>>)`](crate::output::TestAuthorizationOutput::auth_results): <p>The authentication results.</p>
     /// - On failure, responds with [`SdkError<TestAuthorizationError>`](crate::error::TestAuthorizationError)
@@ -2982,13 +2982,13 @@ where
     }
     /// Constructs a fluent builder for the [`TestInvokeAuthorizer`](crate::client::fluent_builders::TestInvokeAuthorizer) operation.
     ///
-    /// - Takes [`TestInvokeAuthorizerInput`](crate::input::TestInvokeAuthorizerInput) with field(s):
-    ///   - [`authorizer_name(Option<String>)`](crate::input::TestInvokeAuthorizerInput::authorizer_name): <p>The custom authorizer name.</p>
-    ///   - [`token(Option<String>)`](crate::input::TestInvokeAuthorizerInput::token): <p>The token returned by your custom authentication service.</p>
-    ///   - [`token_signature(Option<String>)`](crate::input::TestInvokeAuthorizerInput::token_signature): <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
-    ///   - [`http_context(Option<HttpContext>)`](crate::input::TestInvokeAuthorizerInput::http_context): <p>Specifies a test HTTP authorization request.</p>
-    ///   - [`mqtt_context(Option<MqttContext>)`](crate::input::TestInvokeAuthorizerInput::mqtt_context): <p>Specifies a test MQTT authorization request.</p>
-    ///   - [`tls_context(Option<TlsContext>)`](crate::input::TestInvokeAuthorizerInput::tls_context): <p>Specifies a test TLS authorization request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authorizer_name(impl Into<String>)`](crate::client::fluent_builders::TestInvokeAuthorizer::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::client::fluent_builders::TestInvokeAuthorizer::set_authorizer_name): <p>The custom authorizer name.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::TestInvokeAuthorizer::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::TestInvokeAuthorizer::set_token): <p>The token returned by your custom authentication service.</p>
+    ///   - [`token_signature(impl Into<String>)`](crate::client::fluent_builders::TestInvokeAuthorizer::token_signature) / [`set_token_signature(Option<String>)`](crate::client::fluent_builders::TestInvokeAuthorizer::set_token_signature): <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
+    ///   - [`http_context(HttpContext)`](crate::client::fluent_builders::TestInvokeAuthorizer::http_context) / [`set_http_context(Option<HttpContext>)`](crate::client::fluent_builders::TestInvokeAuthorizer::set_http_context): <p>Specifies a test HTTP authorization request.</p>
+    ///   - [`mqtt_context(MqttContext)`](crate::client::fluent_builders::TestInvokeAuthorizer::mqtt_context) / [`set_mqtt_context(Option<MqttContext>)`](crate::client::fluent_builders::TestInvokeAuthorizer::set_mqtt_context): <p>Specifies a test MQTT authorization request.</p>
+    ///   - [`tls_context(TlsContext)`](crate::client::fluent_builders::TestInvokeAuthorizer::tls_context) / [`set_tls_context(Option<TlsContext>)`](crate::client::fluent_builders::TestInvokeAuthorizer::set_tls_context): <p>Specifies a test TLS authorization request.</p>
     /// - On success, responds with [`TestInvokeAuthorizerOutput`](crate::output::TestInvokeAuthorizerOutput) with field(s):
     ///   - [`is_authenticated(Option<bool>)`](crate::output::TestInvokeAuthorizerOutput::is_authenticated): <p>True if the token is authenticated, otherwise false.</p>
     ///   - [`principal_id(Option<String>)`](crate::output::TestInvokeAuthorizerOutput::principal_id): <p>The principal ID.</p>
@@ -3001,10 +3001,10 @@ where
     }
     /// Constructs a fluent builder for the [`TransferCertificate`](crate::client::fluent_builders::TransferCertificate) operation.
     ///
-    /// - Takes [`TransferCertificateInput`](crate::input::TransferCertificateInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::TransferCertificateInput::certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    ///   - [`target_aws_account(Option<String>)`](crate::input::TransferCertificateInput::target_aws_account): <p>The Amazon Web Services account.</p>
-    ///   - [`transfer_message(Option<String>)`](crate::input::TransferCertificateInput::transfer_message): <p>The transfer message.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::TransferCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::TransferCertificate::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    ///   - [`target_aws_account(impl Into<String>)`](crate::client::fluent_builders::TransferCertificate::target_aws_account) / [`set_target_aws_account(Option<String>)`](crate::client::fluent_builders::TransferCertificate::set_target_aws_account): <p>The Amazon Web Services account.</p>
+    ///   - [`transfer_message(impl Into<String>)`](crate::client::fluent_builders::TransferCertificate::transfer_message) / [`set_transfer_message(Option<String>)`](crate::client::fluent_builders::TransferCertificate::set_transfer_message): <p>The transfer message.</p>
     /// - On success, responds with [`TransferCertificateOutput`](crate::output::TransferCertificateOutput) with field(s):
     ///   - [`transferred_certificate_arn(Option<String>)`](crate::output::TransferCertificateOutput::transferred_certificate_arn): <p>The ARN of the certificate.</p>
     /// - On failure, responds with [`SdkError<TransferCertificateError>`](crate::error::TransferCertificateError)
@@ -3013,9 +3013,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of the keys of the tags to be removed from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of the keys of the tags to be removed from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -3024,10 +3024,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAccountAuditConfiguration`](crate::client::fluent_builders::UpdateAccountAuditConfiguration) operation.
     ///
-    /// - Takes [`UpdateAccountAuditConfigurationInput`](crate::input::UpdateAccountAuditConfigurationInput) with field(s):
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateAccountAuditConfigurationInput::role_arn): <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
-    ///   - [`audit_notification_target_configurations(Option<HashMap<AuditNotificationType, AuditNotificationTarget>>)`](crate::input::UpdateAccountAuditConfigurationInput::audit_notification_target_configurations): <p>Information about the targets to which audit notifications are sent.</p>
-    ///   - [`audit_check_configurations(Option<HashMap<String, AuditCheckConfiguration>>)`](crate::input::UpdateAccountAuditConfigurationInput::audit_check_configurations): <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>  <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>  <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>  <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountAuditConfiguration::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateAccountAuditConfiguration::set_role_arn): <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
+    ///   - [`audit_notification_target_configurations(HashMap<AuditNotificationType, AuditNotificationTarget>)`](crate::client::fluent_builders::UpdateAccountAuditConfiguration::audit_notification_target_configurations) / [`set_audit_notification_target_configurations(Option<HashMap<AuditNotificationType, AuditNotificationTarget>>)`](crate::client::fluent_builders::UpdateAccountAuditConfiguration::set_audit_notification_target_configurations): <p>Information about the targets to which audit notifications are sent.</p>
+    ///   - [`audit_check_configurations(HashMap<String, AuditCheckConfiguration>)`](crate::client::fluent_builders::UpdateAccountAuditConfiguration::audit_check_configurations) / [`set_audit_check_configurations(Option<HashMap<String, AuditCheckConfiguration>>)`](crate::client::fluent_builders::UpdateAccountAuditConfiguration::set_audit_check_configurations): <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>  <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>  <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>  <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     /// - On success, responds with [`UpdateAccountAuditConfigurationOutput`](crate::output::UpdateAccountAuditConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateAccountAuditConfigurationError>`](crate::error::UpdateAccountAuditConfigurationError)
@@ -3038,12 +3038,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAuditSuppression`](crate::client::fluent_builders::UpdateAuditSuppression) operation.
     ///
-    /// - Takes [`UpdateAuditSuppressionInput`](crate::input::UpdateAuditSuppressionInput) with field(s):
-    ///   - [`check_name(Option<String>)`](crate::input::UpdateAuditSuppressionInput::check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    ///   - [`resource_identifier(Option<ResourceIdentifier>)`](crate::input::UpdateAuditSuppressionInput::resource_identifier): <p>Information that identifies the noncompliant resource.</p>
-    ///   - [`expiration_date(Option<DateTime>)`](crate::input::UpdateAuditSuppressionInput::expiration_date): <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
-    ///   - [`suppress_indefinitely(Option<bool>)`](crate::input::UpdateAuditSuppressionInput::suppress_indefinitely): <p> Indicates whether a suppression should exist indefinitely or not. </p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateAuditSuppressionInput::description): <p> The description of the audit suppression. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`check_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAuditSuppression::check_name) / [`set_check_name(Option<String>)`](crate::client::fluent_builders::UpdateAuditSuppression::set_check_name): <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    ///   - [`resource_identifier(ResourceIdentifier)`](crate::client::fluent_builders::UpdateAuditSuppression::resource_identifier) / [`set_resource_identifier(Option<ResourceIdentifier>)`](crate::client::fluent_builders::UpdateAuditSuppression::set_resource_identifier): <p>Information that identifies the noncompliant resource.</p>
+    ///   - [`expiration_date(DateTime)`](crate::client::fluent_builders::UpdateAuditSuppression::expiration_date) / [`set_expiration_date(Option<DateTime>)`](crate::client::fluent_builders::UpdateAuditSuppression::set_expiration_date): <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
+    ///   - [`suppress_indefinitely(bool)`](crate::client::fluent_builders::UpdateAuditSuppression::suppress_indefinitely) / [`set_suppress_indefinitely(Option<bool>)`](crate::client::fluent_builders::UpdateAuditSuppression::set_suppress_indefinitely): <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAuditSuppression::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAuditSuppression::set_description): <p> The description of the audit suppression. </p>
     /// - On success, responds with [`UpdateAuditSuppressionOutput`](crate::output::UpdateAuditSuppressionOutput)
 
     /// - On failure, responds with [`SdkError<UpdateAuditSuppressionError>`](crate::error::UpdateAuditSuppressionError)
@@ -3052,13 +3052,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAuthorizer`](crate::client::fluent_builders::UpdateAuthorizer) operation.
     ///
-    /// - Takes [`UpdateAuthorizerInput`](crate::input::UpdateAuthorizerInput) with field(s):
-    ///   - [`authorizer_name(Option<String>)`](crate::input::UpdateAuthorizerInput::authorizer_name): <p>The authorizer name.</p>
-    ///   - [`authorizer_function_arn(Option<String>)`](crate::input::UpdateAuthorizerInput::authorizer_function_arn): <p>The ARN of the authorizer's Lambda function.</p>
-    ///   - [`token_key_name(Option<String>)`](crate::input::UpdateAuthorizerInput::token_key_name): <p>The key used to extract the token from the HTTP headers. </p>
-    ///   - [`token_signing_public_keys(Option<HashMap<String, String>>)`](crate::input::UpdateAuthorizerInput::token_signing_public_keys): <p>The public keys used to verify the token signature.</p>
-    ///   - [`status(Option<AuthorizerStatus>)`](crate::input::UpdateAuthorizerInput::status): <p>The status of the update authorizer request.</p>
-    ///   - [`enable_caching_for_http(Option<bool>)`](crate::input::UpdateAuthorizerInput::enable_caching_for_http): <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authorizer_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_authorizer_name): <p>The authorizer name.</p>
+    ///   - [`authorizer_function_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::authorizer_function_arn) / [`set_authorizer_function_arn(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_authorizer_function_arn): <p>The ARN of the authorizer's Lambda function.</p>
+    ///   - [`token_key_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::token_key_name) / [`set_token_key_name(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_token_key_name): <p>The key used to extract the token from the HTTP headers. </p>
+    ///   - [`token_signing_public_keys(HashMap<String, String>)`](crate::client::fluent_builders::UpdateAuthorizer::token_signing_public_keys) / [`set_token_signing_public_keys(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateAuthorizer::set_token_signing_public_keys): <p>The public keys used to verify the token signature.</p>
+    ///   - [`status(AuthorizerStatus)`](crate::client::fluent_builders::UpdateAuthorizer::status) / [`set_status(Option<AuthorizerStatus>)`](crate::client::fluent_builders::UpdateAuthorizer::set_status): <p>The status of the update authorizer request.</p>
+    ///   - [`enable_caching_for_http(bool)`](crate::client::fluent_builders::UpdateAuthorizer::enable_caching_for_http) / [`set_enable_caching_for_http(Option<bool>)`](crate::client::fluent_builders::UpdateAuthorizer::set_enable_caching_for_http): <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
     /// - On success, responds with [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput) with field(s):
     ///   - [`authorizer_name(Option<String>)`](crate::output::UpdateAuthorizerOutput::authorizer_name): <p>The authorizer name.</p>
     ///   - [`authorizer_arn(Option<String>)`](crate::output::UpdateAuthorizerOutput::authorizer_arn): <p>The authorizer ARN.</p>
@@ -3068,10 +3068,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBillingGroup`](crate::client::fluent_builders::UpdateBillingGroup) operation.
     ///
-    /// - Takes [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput) with field(s):
-    ///   - [`billing_group_name(Option<String>)`](crate::input::UpdateBillingGroupInput::billing_group_name): <p>The name of the billing group.</p>
-    ///   - [`billing_group_properties(Option<BillingGroupProperties>)`](crate::input::UpdateBillingGroupInput::billing_group_properties): <p>The properties of the billing group.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::UpdateBillingGroupInput::expected_version): <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`billing_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBillingGroup::billing_group_name) / [`set_billing_group_name(Option<String>)`](crate::client::fluent_builders::UpdateBillingGroup::set_billing_group_name): <p>The name of the billing group.</p>
+    ///   - [`billing_group_properties(BillingGroupProperties)`](crate::client::fluent_builders::UpdateBillingGroup::billing_group_properties) / [`set_billing_group_properties(Option<BillingGroupProperties>)`](crate::client::fluent_builders::UpdateBillingGroup::set_billing_group_properties): <p>The properties of the billing group.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::UpdateBillingGroup::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::UpdateBillingGroup::set_expected_version): <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     /// - On success, responds with [`UpdateBillingGroupOutput`](crate::output::UpdateBillingGroupOutput) with field(s):
     ///   - [`version(i64)`](crate::output::UpdateBillingGroupOutput::version): <p>The latest version of the billing group.</p>
     /// - On failure, responds with [`SdkError<UpdateBillingGroupError>`](crate::error::UpdateBillingGroupError)
@@ -3080,12 +3080,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateCACertificate`](crate::client::fluent_builders::UpdateCACertificate) operation.
     ///
-    /// - Takes [`UpdateCaCertificateInput`](crate::input::UpdateCaCertificateInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::UpdateCaCertificateInput::certificate_id): <p>The CA certificate identifier.</p>
-    ///   - [`new_status(Option<CaCertificateStatus>)`](crate::input::UpdateCaCertificateInput::new_status): <p>The updated status of the CA certificate.</p>  <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
-    ///   - [`new_auto_registration_status(Option<AutoRegistrationStatus>)`](crate::input::UpdateCaCertificateInput::new_auto_registration_status): <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
-    ///   - [`registration_config(Option<RegistrationConfig>)`](crate::input::UpdateCaCertificateInput::registration_config): <p>Information about the registration configuration.</p>
-    ///   - [`remove_auto_registration(bool)`](crate::input::UpdateCaCertificateInput::remove_auto_registration): <p>If true, removes auto registration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::UpdateCACertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::UpdateCACertificate::set_certificate_id): <p>The CA certificate identifier.</p>
+    ///   - [`new_status(CaCertificateStatus)`](crate::client::fluent_builders::UpdateCACertificate::new_status) / [`set_new_status(Option<CaCertificateStatus>)`](crate::client::fluent_builders::UpdateCACertificate::set_new_status): <p>The updated status of the CA certificate.</p>  <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    ///   - [`new_auto_registration_status(AutoRegistrationStatus)`](crate::client::fluent_builders::UpdateCACertificate::new_auto_registration_status) / [`set_new_auto_registration_status(Option<AutoRegistrationStatus>)`](crate::client::fluent_builders::UpdateCACertificate::set_new_auto_registration_status): <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
+    ///   - [`registration_config(RegistrationConfig)`](crate::client::fluent_builders::UpdateCACertificate::registration_config) / [`set_registration_config(Option<RegistrationConfig>)`](crate::client::fluent_builders::UpdateCACertificate::set_registration_config): <p>Information about the registration configuration.</p>
+    ///   - [`remove_auto_registration(bool)`](crate::client::fluent_builders::UpdateCACertificate::remove_auto_registration) / [`set_remove_auto_registration(bool)`](crate::client::fluent_builders::UpdateCACertificate::set_remove_auto_registration): <p>If true, removes auto registration.</p>
     /// - On success, responds with [`UpdateCaCertificateOutput`](crate::output::UpdateCaCertificateOutput)
 
     /// - On failure, responds with [`SdkError<UpdateCACertificateError>`](crate::error::UpdateCACertificateError)
@@ -3094,9 +3094,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateCertificate`](crate::client::fluent_builders::UpdateCertificate) operation.
     ///
-    /// - Takes [`UpdateCertificateInput`](crate::input::UpdateCertificateInput) with field(s):
-    ///   - [`certificate_id(Option<String>)`](crate::input::UpdateCertificateInput::certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    ///   - [`new_status(Option<CertificateStatus>)`](crate::input::UpdateCertificateInput::new_status): <p>The new status.</p>  <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>  <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::UpdateCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::UpdateCertificate::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    ///   - [`new_status(CertificateStatus)`](crate::client::fluent_builders::UpdateCertificate::new_status) / [`set_new_status(Option<CertificateStatus>)`](crate::client::fluent_builders::UpdateCertificate::set_new_status): <p>The new status.</p>  <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>  <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     /// - On success, responds with [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput)
 
     /// - On failure, responds with [`SdkError<UpdateCertificateError>`](crate::error::UpdateCertificateError)
@@ -3105,9 +3105,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateCustomMetric`](crate::client::fluent_builders::UpdateCustomMetric) operation.
     ///
-    /// - Takes [`UpdateCustomMetricInput`](crate::input::UpdateCustomMetricInput) with field(s):
-    ///   - [`metric_name(Option<String>)`](crate::input::UpdateCustomMetricInput::metric_name): <p> The name of the custom metric. Cannot be updated. </p>
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateCustomMetricInput::display_name): <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::UpdateCustomMetric::set_metric_name): <p> The name of the custom metric. Cannot be updated. </p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomMetric::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateCustomMetric::set_display_name): <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     /// - On success, responds with [`UpdateCustomMetricOutput`](crate::output::UpdateCustomMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::output::UpdateCustomMetricOutput::metric_name): <p> The name of the custom metric. </p>
     ///   - [`metric_arn(Option<String>)`](crate::output::UpdateCustomMetricOutput::metric_arn): <p> The Amazon Resource Number (ARN) of the custom metric. </p>
@@ -3121,9 +3121,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDimension`](crate::client::fluent_builders::UpdateDimension) operation.
     ///
-    /// - Takes [`UpdateDimensionInput`](crate::input::UpdateDimensionInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::UpdateDimensionInput::name): <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
-    ///   - [`string_values(Option<Vec<String>>)`](crate::input::UpdateDimensionInput::string_values): <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDimension::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDimension::set_name): <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    ///   - [`string_values(Vec<String>)`](crate::client::fluent_builders::UpdateDimension::string_values) / [`set_string_values(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDimension::set_string_values): <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
     /// - On success, responds with [`UpdateDimensionOutput`](crate::output::UpdateDimensionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::UpdateDimensionOutput::name): <p>A unique identifier for the dimension.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateDimensionOutput::arn): <p>The Amazon Resource Name (ARN)of the created dimension.</p>
@@ -3137,11 +3137,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDomainConfiguration`](crate::client::fluent_builders::UpdateDomainConfiguration) operation.
     ///
-    /// - Takes [`UpdateDomainConfigurationInput`](crate::input::UpdateDomainConfigurationInput) with field(s):
-    ///   - [`domain_configuration_name(Option<String>)`](crate::input::UpdateDomainConfigurationInput::domain_configuration_name): <p>The name of the domain configuration to be updated.</p>
-    ///   - [`authorizer_config(Option<AuthorizerConfig>)`](crate::input::UpdateDomainConfigurationInput::authorizer_config): <p>An object that specifies the authorization service for a domain.</p>
-    ///   - [`domain_configuration_status(Option<DomainConfigurationStatus>)`](crate::input::UpdateDomainConfigurationInput::domain_configuration_status): <p>The status to which the domain configuration should be updated.</p>
-    ///   - [`remove_authorizer_config(bool)`](crate::input::UpdateDomainConfigurationInput::remove_authorizer_config): <p>Removes the authorization configuration from a domain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_configuration_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainConfiguration::domain_configuration_name) / [`set_domain_configuration_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainConfiguration::set_domain_configuration_name): <p>The name of the domain configuration to be updated.</p>
+    ///   - [`authorizer_config(AuthorizerConfig)`](crate::client::fluent_builders::UpdateDomainConfiguration::authorizer_config) / [`set_authorizer_config(Option<AuthorizerConfig>)`](crate::client::fluent_builders::UpdateDomainConfiguration::set_authorizer_config): <p>An object that specifies the authorization service for a domain.</p>
+    ///   - [`domain_configuration_status(DomainConfigurationStatus)`](crate::client::fluent_builders::UpdateDomainConfiguration::domain_configuration_status) / [`set_domain_configuration_status(Option<DomainConfigurationStatus>)`](crate::client::fluent_builders::UpdateDomainConfiguration::set_domain_configuration_status): <p>The status to which the domain configuration should be updated.</p>
+    ///   - [`remove_authorizer_config(bool)`](crate::client::fluent_builders::UpdateDomainConfiguration::remove_authorizer_config) / [`set_remove_authorizer_config(bool)`](crate::client::fluent_builders::UpdateDomainConfiguration::set_remove_authorizer_config): <p>Removes the authorization configuration from a domain.</p>
     /// - On success, responds with [`UpdateDomainConfigurationOutput`](crate::output::UpdateDomainConfigurationOutput) with field(s):
     ///   - [`domain_configuration_name(Option<String>)`](crate::output::UpdateDomainConfigurationOutput::domain_configuration_name): <p>The name of the domain configuration that was updated.</p>
     ///   - [`domain_configuration_arn(Option<String>)`](crate::output::UpdateDomainConfigurationOutput::domain_configuration_arn): <p>The ARN of the domain configuration that was updated.</p>
@@ -3153,13 +3153,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDynamicThingGroup`](crate::client::fluent_builders::UpdateDynamicThingGroup) operation.
     ///
-    /// - Takes [`UpdateDynamicThingGroupInput`](crate::input::UpdateDynamicThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::UpdateDynamicThingGroupInput::thing_group_name): <p>The name of the dynamic thing group to update.</p>
-    ///   - [`thing_group_properties(Option<ThingGroupProperties>)`](crate::input::UpdateDynamicThingGroupInput::thing_group_properties): <p>The dynamic thing group properties to update.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::UpdateDynamicThingGroupInput::expected_version): <p>The expected version of the dynamic thing group to update.</p>
-    ///   - [`index_name(Option<String>)`](crate::input::UpdateDynamicThingGroupInput::index_name): <p>The dynamic thing group index to update.</p> <note>   <p>Currently one index is supported: <code>AWS_Things</code>.</p>  </note>
-    ///   - [`query_string(Option<String>)`](crate::input::UpdateDynamicThingGroupInput::query_string): <p>The dynamic thing group search query string to update.</p>
-    ///   - [`query_version(Option<String>)`](crate::input::UpdateDynamicThingGroupInput::query_version): <p>The dynamic thing group query version to update.</p> <note>   <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::set_thing_group_name): <p>The name of the dynamic thing group to update.</p>
+    ///   - [`thing_group_properties(ThingGroupProperties)`](crate::client::fluent_builders::UpdateDynamicThingGroup::thing_group_properties) / [`set_thing_group_properties(Option<ThingGroupProperties>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::set_thing_group_properties): <p>The dynamic thing group properties to update.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::UpdateDynamicThingGroup::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::set_expected_version): <p>The expected version of the dynamic thing group to update.</p>
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::set_index_name): <p>The dynamic thing group index to update.</p> <note>   <p>Currently one index is supported: <code>AWS_Things</code>.</p>  </note>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::set_query_string): <p>The dynamic thing group search query string to update.</p>
+    ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::UpdateDynamicThingGroup::set_query_version): <p>The dynamic thing group query version to update.</p> <note>   <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>  </note>
     /// - On success, responds with [`UpdateDynamicThingGroupOutput`](crate::output::UpdateDynamicThingGroupOutput) with field(s):
     ///   - [`version(i64)`](crate::output::UpdateDynamicThingGroupOutput::version): <p>The dynamic thing group version.</p>
     /// - On failure, responds with [`SdkError<UpdateDynamicThingGroupError>`](crate::error::UpdateDynamicThingGroupError)
@@ -3168,8 +3168,8 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEventConfigurations`](crate::client::fluent_builders::UpdateEventConfigurations) operation.
     ///
-    /// - Takes [`UpdateEventConfigurationsInput`](crate::input::UpdateEventConfigurationsInput) with field(s):
-    ///   - [`event_configurations(Option<HashMap<EventType, Configuration>>)`](crate::input::UpdateEventConfigurationsInput::event_configurations): <p>The new event configuration values.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`event_configurations(HashMap<EventType, Configuration>)`](crate::client::fluent_builders::UpdateEventConfigurations::event_configurations) / [`set_event_configurations(Option<HashMap<EventType, Configuration>>)`](crate::client::fluent_builders::UpdateEventConfigurations::set_event_configurations): <p>The new event configuration values.</p>
     /// - On success, responds with [`UpdateEventConfigurationsOutput`](crate::output::UpdateEventConfigurationsOutput)
 
     /// - On failure, responds with [`SdkError<UpdateEventConfigurationsError>`](crate::error::UpdateEventConfigurationsError)
@@ -3180,17 +3180,17 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFleetMetric`](crate::client::fluent_builders::UpdateFleetMetric) operation.
     ///
-    /// - Takes [`UpdateFleetMetricInput`](crate::input::UpdateFleetMetricInput) with field(s):
-    ///   - [`metric_name(Option<String>)`](crate::input::UpdateFleetMetricInput::metric_name): <p>The name of the fleet metric to update.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::UpdateFleetMetricInput::query_string): <p>The search query string.</p>
-    ///   - [`aggregation_type(Option<AggregationType>)`](crate::input::UpdateFleetMetricInput::aggregation_type): <p>The type of the aggregation query.</p>
-    ///   - [`period(Option<i32>)`](crate::input::UpdateFleetMetricInput::period): <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
-    ///   - [`aggregation_field(Option<String>)`](crate::input::UpdateFleetMetricInput::aggregation_field): <p>The field to aggregate.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateFleetMetricInput::description): <p>The description of the fleet metric.</p>
-    ///   - [`query_version(Option<String>)`](crate::input::UpdateFleetMetricInput::query_version): <p>The version of the query.</p>
-    ///   - [`index_name(Option<String>)`](crate::input::UpdateFleetMetricInput::index_name): <p>The name of the index to search.</p>
-    ///   - [`unit(Option<FleetMetricUnit>)`](crate::input::UpdateFleetMetricInput::unit): <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::UpdateFleetMetricInput::expected_version): <p>The expected version of the fleet metric record in the registry.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetMetric::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::UpdateFleetMetric::set_metric_name): <p>The name of the fleet metric to update.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetMetric::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::UpdateFleetMetric::set_query_string): <p>The search query string.</p>
+    ///   - [`aggregation_type(AggregationType)`](crate::client::fluent_builders::UpdateFleetMetric::aggregation_type) / [`set_aggregation_type(Option<AggregationType>)`](crate::client::fluent_builders::UpdateFleetMetric::set_aggregation_type): <p>The type of the aggregation query.</p>
+    ///   - [`period(i32)`](crate::client::fluent_builders::UpdateFleetMetric::period) / [`set_period(Option<i32>)`](crate::client::fluent_builders::UpdateFleetMetric::set_period): <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    ///   - [`aggregation_field(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetMetric::aggregation_field) / [`set_aggregation_field(Option<String>)`](crate::client::fluent_builders::UpdateFleetMetric::set_aggregation_field): <p>The field to aggregate.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetMetric::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFleetMetric::set_description): <p>The description of the fleet metric.</p>
+    ///   - [`query_version(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetMetric::query_version) / [`set_query_version(Option<String>)`](crate::client::fluent_builders::UpdateFleetMetric::set_query_version): <p>The version of the query.</p>
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetMetric::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::UpdateFleetMetric::set_index_name): <p>The name of the index to search.</p>
+    ///   - [`unit(FleetMetricUnit)`](crate::client::fluent_builders::UpdateFleetMetric::unit) / [`set_unit(Option<FleetMetricUnit>)`](crate::client::fluent_builders::UpdateFleetMetric::set_unit): <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::UpdateFleetMetric::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::UpdateFleetMetric::set_expected_version): <p>The expected version of the fleet metric record in the registry.</p>
     /// - On success, responds with [`UpdateFleetMetricOutput`](crate::output::UpdateFleetMetricOutput)
 
     /// - On failure, responds with [`SdkError<UpdateFleetMetricError>`](crate::error::UpdateFleetMetricError)
@@ -3199,9 +3199,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateIndexingConfiguration`](crate::client::fluent_builders::UpdateIndexingConfiguration) operation.
     ///
-    /// - Takes [`UpdateIndexingConfigurationInput`](crate::input::UpdateIndexingConfigurationInput) with field(s):
-    ///   - [`thing_indexing_configuration(Option<ThingIndexingConfiguration>)`](crate::input::UpdateIndexingConfigurationInput::thing_indexing_configuration): <p>Thing indexing configuration.</p>
-    ///   - [`thing_group_indexing_configuration(Option<ThingGroupIndexingConfiguration>)`](crate::input::UpdateIndexingConfigurationInput::thing_group_indexing_configuration): <p>Thing group indexing configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_indexing_configuration(ThingIndexingConfiguration)`](crate::client::fluent_builders::UpdateIndexingConfiguration::thing_indexing_configuration) / [`set_thing_indexing_configuration(Option<ThingIndexingConfiguration>)`](crate::client::fluent_builders::UpdateIndexingConfiguration::set_thing_indexing_configuration): <p>Thing indexing configuration.</p>
+    ///   - [`thing_group_indexing_configuration(ThingGroupIndexingConfiguration)`](crate::client::fluent_builders::UpdateIndexingConfiguration::thing_group_indexing_configuration) / [`set_thing_group_indexing_configuration(Option<ThingGroupIndexingConfiguration>)`](crate::client::fluent_builders::UpdateIndexingConfiguration::set_thing_group_indexing_configuration): <p>Thing group indexing configuration.</p>
     /// - On success, responds with [`UpdateIndexingConfigurationOutput`](crate::output::UpdateIndexingConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateIndexingConfigurationError>`](crate::error::UpdateIndexingConfigurationError)
@@ -3212,15 +3212,15 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateJob`](crate::client::fluent_builders::UpdateJob) operation.
     ///
-    /// - Takes [`UpdateJobInput`](crate::input::UpdateJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::UpdateJobInput::job_id): <p>The ID of the job to be updated.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateJobInput::description): <p>A short text description of the job.</p>
-    ///   - [`presigned_url_config(Option<PresignedUrlConfig>)`](crate::input::UpdateJobInput::presigned_url_config): <p>Configuration information for pre-signed S3 URLs.</p>
-    ///   - [`job_executions_rollout_config(Option<JobExecutionsRolloutConfig>)`](crate::input::UpdateJobInput::job_executions_rollout_config): <p>Allows you to create a staged rollout of the job.</p>
-    ///   - [`abort_config(Option<AbortConfig>)`](crate::input::UpdateJobInput::abort_config): <p>Allows you to create criteria to abort a job.</p>
-    ///   - [`timeout_config(Option<TimeoutConfig>)`](crate::input::UpdateJobInput::timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
-    ///   - [`namespace_id(Option<String>)`](crate::input::UpdateJobInput::namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
-    ///   - [`job_executions_retry_config(Option<JobExecutionsRetryConfig>)`](crate::input::UpdateJobInput::job_executions_retry_config): <p>Allows you to create the criteria to retry a job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::UpdateJob::set_job_id): <p>The ID of the job to be updated.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateJob::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateJob::set_description): <p>A short text description of the job.</p>
+    ///   - [`presigned_url_config(PresignedUrlConfig)`](crate::client::fluent_builders::UpdateJob::presigned_url_config) / [`set_presigned_url_config(Option<PresignedUrlConfig>)`](crate::client::fluent_builders::UpdateJob::set_presigned_url_config): <p>Configuration information for pre-signed S3 URLs.</p>
+    ///   - [`job_executions_rollout_config(JobExecutionsRolloutConfig)`](crate::client::fluent_builders::UpdateJob::job_executions_rollout_config) / [`set_job_executions_rollout_config(Option<JobExecutionsRolloutConfig>)`](crate::client::fluent_builders::UpdateJob::set_job_executions_rollout_config): <p>Allows you to create a staged rollout of the job.</p>
+    ///   - [`abort_config(AbortConfig)`](crate::client::fluent_builders::UpdateJob::abort_config) / [`set_abort_config(Option<AbortConfig>)`](crate::client::fluent_builders::UpdateJob::set_abort_config): <p>Allows you to create criteria to abort a job.</p>
+    ///   - [`timeout_config(TimeoutConfig)`](crate::client::fluent_builders::UpdateJob::timeout_config) / [`set_timeout_config(Option<TimeoutConfig>)`](crate::client::fluent_builders::UpdateJob::set_timeout_config): <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+    ///   - [`namespace_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJob::namespace_id) / [`set_namespace_id(Option<String>)`](crate::client::fluent_builders::UpdateJob::set_namespace_id): <p>The namespace used to indicate that a job is a customer-managed job.</p>  <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>  <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>   <p>The <code>namespaceId</code> feature is in public preview.</p>  </note>
+    ///   - [`job_executions_retry_config(JobExecutionsRetryConfig)`](crate::client::fluent_builders::UpdateJob::job_executions_retry_config) / [`set_job_executions_retry_config(Option<JobExecutionsRetryConfig>)`](crate::client::fluent_builders::UpdateJob::set_job_executions_retry_config): <p>Allows you to create the criteria to retry a job.</p>
     /// - On success, responds with [`UpdateJobOutput`](crate::output::UpdateJobOutput)
 
     /// - On failure, responds with [`SdkError<UpdateJobError>`](crate::error::UpdateJobError)
@@ -3229,10 +3229,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateMitigationAction`](crate::client::fluent_builders::UpdateMitigationAction) operation.
     ///
-    /// - Takes [`UpdateMitigationActionInput`](crate::input::UpdateMitigationActionInput) with field(s):
-    ///   - [`action_name(Option<String>)`](crate::input::UpdateMitigationActionInput::action_name): <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateMitigationActionInput::role_arn): <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
-    ///   - [`action_params(Option<MitigationActionParams>)`](crate::input::UpdateMitigationActionInput::action_params): <p>Defines the type of action and the parameters for that action.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMitigationAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::UpdateMitigationAction::set_action_name): <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateMitigationAction::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateMitigationAction::set_role_arn): <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
+    ///   - [`action_params(MitigationActionParams)`](crate::client::fluent_builders::UpdateMitigationAction::action_params) / [`set_action_params(Option<MitigationActionParams>)`](crate::client::fluent_builders::UpdateMitigationAction::set_action_params): <p>Defines the type of action and the parameters for that action.</p>
     /// - On success, responds with [`UpdateMitigationActionOutput`](crate::output::UpdateMitigationActionOutput) with field(s):
     ///   - [`action_arn(Option<String>)`](crate::output::UpdateMitigationActionOutput::action_arn): <p>The ARN for the new mitigation action.</p>
     ///   - [`action_id(Option<String>)`](crate::output::UpdateMitigationActionOutput::action_id): <p>A unique identifier for the mitigation action.</p>
@@ -3242,14 +3242,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateProvisioningTemplate`](crate::client::fluent_builders::UpdateProvisioningTemplate) operation.
     ///
-    /// - Takes [`UpdateProvisioningTemplateInput`](crate::input::UpdateProvisioningTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::UpdateProvisioningTemplateInput::template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateProvisioningTemplateInput::description): <p>The description of the fleet provisioning template.</p>
-    ///   - [`enabled(bool)`](crate::input::UpdateProvisioningTemplateInput::enabled): <p>True to enable the fleet provisioning template, otherwise false.</p>
-    ///   - [`default_version_id(Option<i32>)`](crate::input::UpdateProvisioningTemplateInput::default_version_id): <p>The ID of the default provisioning template version.</p>
-    ///   - [`provisioning_role_arn(Option<String>)`](crate::input::UpdateProvisioningTemplateInput::provisioning_role_arn): <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    ///   - [`pre_provisioning_hook(Option<ProvisioningHook>)`](crate::input::UpdateProvisioningTemplateInput::pre_provisioning_hook): <p>Updates the pre-provisioning hook template.</p>
-    ///   - [`remove_pre_provisioning_hook(Option<bool>)`](crate::input::UpdateProvisioningTemplateInput::remove_pre_provisioning_hook): <p>Removes pre-provisioning hook template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_template_name): <p>The name of the fleet provisioning template.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_description): <p>The description of the fleet provisioning template.</p>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_enabled): <p>True to enable the fleet provisioning template, otherwise false.</p>
+    ///   - [`default_version_id(i32)`](crate::client::fluent_builders::UpdateProvisioningTemplate::default_version_id) / [`set_default_version_id(Option<i32>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_default_version_id): <p>The ID of the default provisioning template version.</p>
+    ///   - [`provisioning_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::provisioning_role_arn) / [`set_provisioning_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_provisioning_role_arn): <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
+    ///   - [`pre_provisioning_hook(ProvisioningHook)`](crate::client::fluent_builders::UpdateProvisioningTemplate::pre_provisioning_hook) / [`set_pre_provisioning_hook(Option<ProvisioningHook>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_pre_provisioning_hook): <p>Updates the pre-provisioning hook template.</p>
+    ///   - [`remove_pre_provisioning_hook(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::remove_pre_provisioning_hook) / [`set_remove_pre_provisioning_hook(Option<bool>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_remove_pre_provisioning_hook): <p>Removes pre-provisioning hook template.</p>
     /// - On success, responds with [`UpdateProvisioningTemplateOutput`](crate::output::UpdateProvisioningTemplateOutput)
 
     /// - On failure, responds with [`SdkError<UpdateProvisioningTemplateError>`](crate::error::UpdateProvisioningTemplateError)
@@ -3260,10 +3260,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRoleAlias`](crate::client::fluent_builders::UpdateRoleAlias) operation.
     ///
-    /// - Takes [`UpdateRoleAliasInput`](crate::input::UpdateRoleAliasInput) with field(s):
-    ///   - [`role_alias(Option<String>)`](crate::input::UpdateRoleAliasInput::role_alias): <p>The role alias to update.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateRoleAliasInput::role_arn): <p>The role ARN.</p>
-    ///   - [`credential_duration_seconds(Option<i32>)`](crate::input::UpdateRoleAliasInput::credential_duration_seconds): <p>The number of seconds the credential will be valid.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`role_alias(impl Into<String>)`](crate::client::fluent_builders::UpdateRoleAlias::role_alias) / [`set_role_alias(Option<String>)`](crate::client::fluent_builders::UpdateRoleAlias::set_role_alias): <p>The role alias to update.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRoleAlias::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateRoleAlias::set_role_arn): <p>The role ARN.</p>
+    ///   - [`credential_duration_seconds(i32)`](crate::client::fluent_builders::UpdateRoleAlias::credential_duration_seconds) / [`set_credential_duration_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateRoleAlias::set_credential_duration_seconds): <p>The number of seconds the credential will be valid.</p>
     /// - On success, responds with [`UpdateRoleAliasOutput`](crate::output::UpdateRoleAliasOutput) with field(s):
     ///   - [`role_alias(Option<String>)`](crate::output::UpdateRoleAliasOutput::role_alias): <p>The role alias.</p>
     ///   - [`role_alias_arn(Option<String>)`](crate::output::UpdateRoleAliasOutput::role_alias_arn): <p>The role alias ARN.</p>
@@ -3273,12 +3273,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateScheduledAudit`](crate::client::fluent_builders::UpdateScheduledAudit) operation.
     ///
-    /// - Takes [`UpdateScheduledAuditInput`](crate::input::UpdateScheduledAuditInput) with field(s):
-    ///   - [`frequency(Option<AuditFrequency>)`](crate::input::UpdateScheduledAuditInput::frequency): <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
-    ///   - [`day_of_month(Option<String>)`](crate::input::UpdateScheduledAuditInput::day_of_month): <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
-    ///   - [`day_of_week(Option<DayOfWeek>)`](crate::input::UpdateScheduledAuditInput::day_of_week): <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
-    ///   - [`target_check_names(Option<Vec<String>>)`](crate::input::UpdateScheduledAuditInput::target_check_names): <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    ///   - [`scheduled_audit_name(Option<String>)`](crate::input::UpdateScheduledAuditInput::scheduled_audit_name): <p>The name of the scheduled audit. (Max. 128 chars)</p>
+    /// - The fluent builder is configurable:
+    ///   - [`frequency(AuditFrequency)`](crate::client::fluent_builders::UpdateScheduledAudit::frequency) / [`set_frequency(Option<AuditFrequency>)`](crate::client::fluent_builders::UpdateScheduledAudit::set_frequency): <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
+    ///   - [`day_of_month(impl Into<String>)`](crate::client::fluent_builders::UpdateScheduledAudit::day_of_month) / [`set_day_of_month(Option<String>)`](crate::client::fluent_builders::UpdateScheduledAudit::set_day_of_month): <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
+    ///   - [`day_of_week(DayOfWeek)`](crate::client::fluent_builders::UpdateScheduledAudit::day_of_week) / [`set_day_of_week(Option<DayOfWeek>)`](crate::client::fluent_builders::UpdateScheduledAudit::set_day_of_week): <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    ///   - [`target_check_names(Vec<String>)`](crate::client::fluent_builders::UpdateScheduledAudit::target_check_names) / [`set_target_check_names(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateScheduledAudit::set_target_check_names): <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    ///   - [`scheduled_audit_name(impl Into<String>)`](crate::client::fluent_builders::UpdateScheduledAudit::scheduled_audit_name) / [`set_scheduled_audit_name(Option<String>)`](crate::client::fluent_builders::UpdateScheduledAudit::set_scheduled_audit_name): <p>The name of the scheduled audit. (Max. 128 chars)</p>
     /// - On success, responds with [`UpdateScheduledAuditOutput`](crate::output::UpdateScheduledAuditOutput) with field(s):
     ///   - [`scheduled_audit_arn(Option<String>)`](crate::output::UpdateScheduledAuditOutput::scheduled_audit_arn): <p>The ARN of the scheduled audit.</p>
     /// - On failure, responds with [`SdkError<UpdateScheduledAuditError>`](crate::error::UpdateScheduledAuditError)
@@ -3287,17 +3287,17 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSecurityProfile`](crate::client::fluent_builders::UpdateSecurityProfile) operation.
     ///
-    /// - Takes [`UpdateSecurityProfileInput`](crate::input::UpdateSecurityProfileInput) with field(s):
-    ///   - [`security_profile_name(Option<String>)`](crate::input::UpdateSecurityProfileInput::security_profile_name): <p>The name of the security profile you want to update.</p>
-    ///   - [`security_profile_description(Option<String>)`](crate::input::UpdateSecurityProfileInput::security_profile_description): <p>A description of the security profile.</p>
-    ///   - [`behaviors(Option<Vec<Behavior>>)`](crate::input::UpdateSecurityProfileInput::behaviors): <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    ///   - [`alert_targets(Option<HashMap<AlertTargetType, AlertTarget>>)`](crate::input::UpdateSecurityProfileInput::alert_targets): <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-    ///   - [`additional_metrics_to_retain(Option<Vec<String>>)`](crate::input::UpdateSecurityProfileInput::additional_metrics_to_retain): <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>  <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    ///   - [`additional_metrics_to_retain_v2(Option<Vec<MetricToRetain>>)`](crate::input::UpdateSecurityProfileInput::additional_metrics_to_retain_v2): <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    ///   - [`delete_behaviors(bool)`](crate::input::UpdateSecurityProfileInput::delete_behaviors): <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
-    ///   - [`delete_alert_targets(bool)`](crate::input::UpdateSecurityProfileInput::delete_alert_targets): <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
-    ///   - [`delete_additional_metrics_to_retain(bool)`](crate::input::UpdateSecurityProfileInput::delete_additional_metrics_to_retain): <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::UpdateSecurityProfileInput::expected_version): <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_security_profile_name): <p>The name of the security profile you want to update.</p>
+    ///   - [`security_profile_description(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::security_profile_description) / [`set_security_profile_description(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_security_profile_description): <p>A description of the security profile.</p>
+    ///   - [`behaviors(Vec<Behavior>)`](crate::client::fluent_builders::UpdateSecurityProfile::behaviors) / [`set_behaviors(Option<Vec<Behavior>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_behaviors): <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    ///   - [`alert_targets(HashMap<AlertTargetType, AlertTarget>)`](crate::client::fluent_builders::UpdateSecurityProfile::alert_targets) / [`set_alert_targets(Option<HashMap<AlertTargetType, AlertTarget>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_alert_targets): <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
+    ///   - [`additional_metrics_to_retain(Vec<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::additional_metrics_to_retain) / [`set_additional_metrics_to_retain(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_additional_metrics_to_retain): <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>  <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    ///   - [`additional_metrics_to_retain_v2(Vec<MetricToRetain>)`](crate::client::fluent_builders::UpdateSecurityProfile::additional_metrics_to_retain_v2) / [`set_additional_metrics_to_retain_v2(Option<Vec<MetricToRetain>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_additional_metrics_to_retain_v2): <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    ///   - [`delete_behaviors(bool)`](crate::client::fluent_builders::UpdateSecurityProfile::delete_behaviors) / [`set_delete_behaviors(bool)`](crate::client::fluent_builders::UpdateSecurityProfile::set_delete_behaviors): <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+    ///   - [`delete_alert_targets(bool)`](crate::client::fluent_builders::UpdateSecurityProfile::delete_alert_targets) / [`set_delete_alert_targets(bool)`](crate::client::fluent_builders::UpdateSecurityProfile::set_delete_alert_targets): <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+    ///   - [`delete_additional_metrics_to_retain(bool)`](crate::client::fluent_builders::UpdateSecurityProfile::delete_additional_metrics_to_retain) / [`set_delete_additional_metrics_to_retain(bool)`](crate::client::fluent_builders::UpdateSecurityProfile::set_delete_additional_metrics_to_retain): <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::UpdateSecurityProfile::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_expected_version): <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     /// - On success, responds with [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput) with field(s):
     ///   - [`security_profile_name(Option<String>)`](crate::output::UpdateSecurityProfileOutput::security_profile_name): <p>The name of the security profile that was updated.</p>
     ///   - [`security_profile_arn(Option<String>)`](crate::output::UpdateSecurityProfileOutput::security_profile_arn): <p>The ARN of the security profile that was updated.</p>
@@ -3315,11 +3315,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateStream`](crate::client::fluent_builders::UpdateStream) operation.
     ///
-    /// - Takes [`UpdateStreamInput`](crate::input::UpdateStreamInput) with field(s):
-    ///   - [`stream_id(Option<String>)`](crate::input::UpdateStreamInput::stream_id): <p>The stream ID.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateStreamInput::description): <p>The description of the stream.</p>
-    ///   - [`files(Option<Vec<StreamFile>>)`](crate::input::UpdateStreamInput::files): <p>The files associated with the stream.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateStreamInput::role_arn): <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStream::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::UpdateStream::set_stream_id): <p>The stream ID.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateStream::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateStream::set_description): <p>The description of the stream.</p>
+    ///   - [`files(Vec<StreamFile>)`](crate::client::fluent_builders::UpdateStream::files) / [`set_files(Option<Vec<StreamFile>>)`](crate::client::fluent_builders::UpdateStream::set_files): <p>The files associated with the stream.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStream::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStream::set_role_arn): <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
     /// - On success, responds with [`UpdateStreamOutput`](crate::output::UpdateStreamOutput) with field(s):
     ///   - [`stream_id(Option<String>)`](crate::output::UpdateStreamOutput::stream_id): <p>The stream ID.</p>
     ///   - [`stream_arn(Option<String>)`](crate::output::UpdateStreamOutput::stream_arn): <p>The stream ARN.</p>
@@ -3331,12 +3331,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateThing`](crate::client::fluent_builders::UpdateThing) operation.
     ///
-    /// - Takes [`UpdateThingInput`](crate::input::UpdateThingInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::UpdateThingInput::thing_name): <p>The name of the thing to update.</p>  <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-    ///   - [`thing_type_name(Option<String>)`](crate::input::UpdateThingInput::thing_type_name): <p>The name of the thing type.</p>
-    ///   - [`attribute_payload(Option<AttributePayload>)`](crate::input::UpdateThingInput::attribute_payload): <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>  <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>  <p>This data is used to add new attributes or update existing attributes.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::UpdateThingInput::expected_version): <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
-    ///   - [`remove_thing_type(bool)`](crate::input::UpdateThingInput::remove_thing_type): <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::UpdateThing::set_thing_name): <p>The name of the thing to update.</p>  <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
+    ///   - [`thing_type_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThing::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::client::fluent_builders::UpdateThing::set_thing_type_name): <p>The name of the thing type.</p>
+    ///   - [`attribute_payload(AttributePayload)`](crate::client::fluent_builders::UpdateThing::attribute_payload) / [`set_attribute_payload(Option<AttributePayload>)`](crate::client::fluent_builders::UpdateThing::set_attribute_payload): <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>  <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>  <p>This data is used to add new attributes or update existing attributes.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::UpdateThing::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::UpdateThing::set_expected_version): <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
+    ///   - [`remove_thing_type(bool)`](crate::client::fluent_builders::UpdateThing::remove_thing_type) / [`set_remove_thing_type(bool)`](crate::client::fluent_builders::UpdateThing::set_remove_thing_type): <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     /// - On success, responds with [`UpdateThingOutput`](crate::output::UpdateThingOutput)
 
     /// - On failure, responds with [`SdkError<UpdateThingError>`](crate::error::UpdateThingError)
@@ -3345,10 +3345,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateThingGroup`](crate::client::fluent_builders::UpdateThingGroup) operation.
     ///
-    /// - Takes [`UpdateThingGroupInput`](crate::input::UpdateThingGroupInput) with field(s):
-    ///   - [`thing_group_name(Option<String>)`](crate::input::UpdateThingGroupInput::thing_group_name): <p>The thing group to update.</p>
-    ///   - [`thing_group_properties(Option<ThingGroupProperties>)`](crate::input::UpdateThingGroupInput::thing_group_properties): <p>The thing group properties.</p>
-    ///   - [`expected_version(Option<i64>)`](crate::input::UpdateThingGroupInput::expected_version): <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThingGroup::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::client::fluent_builders::UpdateThingGroup::set_thing_group_name): <p>The thing group to update.</p>
+    ///   - [`thing_group_properties(ThingGroupProperties)`](crate::client::fluent_builders::UpdateThingGroup::thing_group_properties) / [`set_thing_group_properties(Option<ThingGroupProperties>)`](crate::client::fluent_builders::UpdateThingGroup::set_thing_group_properties): <p>The thing group properties.</p>
+    ///   - [`expected_version(i64)`](crate::client::fluent_builders::UpdateThingGroup::expected_version) / [`set_expected_version(Option<i64>)`](crate::client::fluent_builders::UpdateThingGroup::set_expected_version): <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
     /// - On success, responds with [`UpdateThingGroupOutput`](crate::output::UpdateThingGroupOutput) with field(s):
     ///   - [`version(i64)`](crate::output::UpdateThingGroupOutput::version): <p>The version of the updated thing group.</p>
     /// - On failure, responds with [`SdkError<UpdateThingGroupError>`](crate::error::UpdateThingGroupError)
@@ -3357,11 +3357,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateThingGroupsForThing`](crate::client::fluent_builders::UpdateThingGroupsForThing) operation.
     ///
-    /// - Takes [`UpdateThingGroupsForThingInput`](crate::input::UpdateThingGroupsForThingInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::UpdateThingGroupsForThingInput::thing_name): <p>The thing whose group memberships will be updated.</p>
-    ///   - [`thing_groups_to_add(Option<Vec<String>>)`](crate::input::UpdateThingGroupsForThingInput::thing_groups_to_add): <p>The groups to which the thing will be added.</p>
-    ///   - [`thing_groups_to_remove(Option<Vec<String>>)`](crate::input::UpdateThingGroupsForThingInput::thing_groups_to_remove): <p>The groups from which the thing will be removed.</p>
-    ///   - [`override_dynamic_groups(bool)`](crate::input::UpdateThingGroupsForThingInput::override_dynamic_groups): <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThingGroupsForThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::UpdateThingGroupsForThing::set_thing_name): <p>The thing whose group memberships will be updated.</p>
+    ///   - [`thing_groups_to_add(Vec<String>)`](crate::client::fluent_builders::UpdateThingGroupsForThing::thing_groups_to_add) / [`set_thing_groups_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateThingGroupsForThing::set_thing_groups_to_add): <p>The groups to which the thing will be added.</p>
+    ///   - [`thing_groups_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateThingGroupsForThing::thing_groups_to_remove) / [`set_thing_groups_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateThingGroupsForThing::set_thing_groups_to_remove): <p>The groups from which the thing will be removed.</p>
+    ///   - [`override_dynamic_groups(bool)`](crate::client::fluent_builders::UpdateThingGroupsForThing::override_dynamic_groups) / [`set_override_dynamic_groups(bool)`](crate::client::fluent_builders::UpdateThingGroupsForThing::set_override_dynamic_groups): <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     /// - On success, responds with [`UpdateThingGroupsForThingOutput`](crate::output::UpdateThingGroupsForThingOutput)
 
     /// - On failure, responds with [`SdkError<UpdateThingGroupsForThingError>`](crate::error::UpdateThingGroupsForThingError)
@@ -3372,9 +3372,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTopicRuleDestination`](crate::client::fluent_builders::UpdateTopicRuleDestination) operation.
     ///
-    /// - Takes [`UpdateTopicRuleDestinationInput`](crate::input::UpdateTopicRuleDestinationInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::UpdateTopicRuleDestinationInput::arn): <p>The ARN of the topic rule destination.</p>
-    ///   - [`status(Option<TopicRuleDestinationStatus>)`](crate::input::UpdateTopicRuleDestinationInput::status): <p>The status of the topic rule destination. Valid values are:</p>  <dl>   <dt>   IN_PROGRESS  </dt>   <dd>    <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>   </dd>   <dt>   ENABLED  </dt>   <dd>    <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>   </dd>   <dt>   DISABLED  </dt>   <dd>    <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>   </dd>   <dt>   ERROR  </dt>   <dd>    <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>   </dd>  </dl>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTopicRuleDestination::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateTopicRuleDestination::set_arn): <p>The ARN of the topic rule destination.</p>
+    ///   - [`status(TopicRuleDestinationStatus)`](crate::client::fluent_builders::UpdateTopicRuleDestination::status) / [`set_status(Option<TopicRuleDestinationStatus>)`](crate::client::fluent_builders::UpdateTopicRuleDestination::set_status): <p>The status of the topic rule destination. Valid values are:</p>  <dl>   <dt>   IN_PROGRESS  </dt>   <dd>    <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>   </dd>   <dt>   ENABLED  </dt>   <dd>    <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>   </dd>   <dt>   DISABLED  </dt>   <dd>    <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>   </dd>   <dt>   ERROR  </dt>   <dd>    <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>   </dd>  </dl>
     /// - On success, responds with [`UpdateTopicRuleDestinationOutput`](crate::output::UpdateTopicRuleDestinationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTopicRuleDestinationError>`](crate::error::UpdateTopicRuleDestinationError)
@@ -3385,8 +3385,8 @@ where
     }
     /// Constructs a fluent builder for the [`ValidateSecurityProfileBehaviors`](crate::client::fluent_builders::ValidateSecurityProfileBehaviors) operation.
     ///
-    /// - Takes [`ValidateSecurityProfileBehaviorsInput`](crate::input::ValidateSecurityProfileBehaviorsInput) with field(s):
-    ///   - [`behaviors(Option<Vec<Behavior>>)`](crate::input::ValidateSecurityProfileBehaviorsInput::behaviors): <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`behaviors(Vec<Behavior>)`](crate::client::fluent_builders::ValidateSecurityProfileBehaviors::behaviors) / [`set_behaviors(Option<Vec<Behavior>>)`](crate::client::fluent_builders::ValidateSecurityProfileBehaviors::set_behaviors): <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
     /// - On success, responds with [`ValidateSecurityProfileBehaviorsOutput`](crate::output::ValidateSecurityProfileBehaviorsOutput) with field(s):
     ///   - [`valid(bool)`](crate::output::ValidateSecurityProfileBehaviorsOutput::valid): <p>True if the behaviors were valid.</p>
     ///   - [`validation_errors(Option<Vec<ValidationError>>)`](crate::output::ValidateSecurityProfileBehaviorsOutput::validation_errors): <p>The list of any errors found in the behaviors.</p>

@@ -85,12 +85,12 @@ where
 {
     /// Constructs a fluent builder for the [`CreateLifecyclePolicy`](crate::client::fluent_builders::CreateLifecyclePolicy) operation.
     ///
-    /// - Takes [`CreateLifecyclePolicyInput`](crate::input::CreateLifecyclePolicyInput) with field(s):
-    ///   - [`execution_role_arn(Option<String>)`](crate::input::CreateLifecyclePolicyInput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateLifecyclePolicyInput::description): <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
-    ///   - [`state(Option<SettablePolicyStateValues>)`](crate::input::CreateLifecyclePolicyInput::state): <p>The desired activation state of the lifecycle policy after creation.</p>
-    ///   - [`policy_details(Option<PolicyDetails>)`](crate::input::CreateLifecyclePolicyInput::policy_details): <p>The configuration details of the lifecycle policy.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateLifecyclePolicyInput::tags): <p>The tags to apply to the lifecycle policy during creation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_description): <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
+    ///   - [`state(SettablePolicyStateValues)`](crate::client::fluent_builders::CreateLifecyclePolicy::state) / [`set_state(Option<SettablePolicyStateValues>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_state): <p>The desired activation state of the lifecycle policy after creation.</p>
+    ///   - [`policy_details(PolicyDetails)`](crate::client::fluent_builders::CreateLifecyclePolicy::policy_details) / [`set_policy_details(Option<PolicyDetails>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_policy_details): <p>The configuration details of the lifecycle policy.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLifecyclePolicy::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLifecyclePolicy::set_tags): <p>The tags to apply to the lifecycle policy during creation.</p>
     /// - On success, responds with [`CreateLifecyclePolicyOutput`](crate::output::CreateLifecyclePolicyOutput) with field(s):
     ///   - [`policy_id(Option<String>)`](crate::output::CreateLifecyclePolicyOutput::policy_id): <p>The identifier of the lifecycle policy.</p>
     /// - On failure, responds with [`SdkError<CreateLifecyclePolicyError>`](crate::error::CreateLifecyclePolicyError)
@@ -99,8 +99,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteLifecyclePolicy`](crate::client::fluent_builders::DeleteLifecyclePolicy) operation.
     ///
-    /// - Takes [`DeleteLifecyclePolicyInput`](crate::input::DeleteLifecyclePolicyInput) with field(s):
-    ///   - [`policy_id(Option<String>)`](crate::input::DeleteLifecyclePolicyInput::policy_id): <p>The identifier of the lifecycle policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::set_policy_id): <p>The identifier of the lifecycle policy.</p>
     /// - On success, responds with [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLifecyclePolicyError>`](crate::error::DeleteLifecyclePolicyError)
@@ -109,12 +109,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetLifecyclePolicies`](crate::client::fluent_builders::GetLifecyclePolicies) operation.
     ///
-    /// - Takes [`GetLifecyclePoliciesInput`](crate::input::GetLifecyclePoliciesInput) with field(s):
-    ///   - [`policy_ids(Option<Vec<String>>)`](crate::input::GetLifecyclePoliciesInput::policy_ids): <p>The identifiers of the data lifecycle policies.</p>
-    ///   - [`state(Option<GettablePolicyStateValues>)`](crate::input::GetLifecyclePoliciesInput::state): <p>The activation state.</p>
-    ///   - [`resource_types(Option<Vec<ResourceTypeValues>>)`](crate::input::GetLifecyclePoliciesInput::resource_types): <p>The resource type.</p>
-    ///   - [`target_tags(Option<Vec<String>>)`](crate::input::GetLifecyclePoliciesInput::target_tags): <p>The target tag for a policy.</p>  <p>Tags are strings in the format <code>key=value</code>.</p>
-    ///   - [`tags_to_add(Option<Vec<String>>)`](crate::input::GetLifecyclePoliciesInput::tags_to_add): <p>The tags to add to objects created by the policy.</p>  <p>Tags are strings in the format <code>key=value</code>.</p>  <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_ids(Vec<String>)`](crate::client::fluent_builders::GetLifecyclePolicies::policy_ids) / [`set_policy_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_policy_ids): <p>The identifiers of the data lifecycle policies.</p>
+    ///   - [`state(GettablePolicyStateValues)`](crate::client::fluent_builders::GetLifecyclePolicies::state) / [`set_state(Option<GettablePolicyStateValues>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_state): <p>The activation state.</p>
+    ///   - [`resource_types(Vec<ResourceTypeValues>)`](crate::client::fluent_builders::GetLifecyclePolicies::resource_types) / [`set_resource_types(Option<Vec<ResourceTypeValues>>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_resource_types): <p>The resource type.</p>
+    ///   - [`target_tags(Vec<String>)`](crate::client::fluent_builders::GetLifecyclePolicies::target_tags) / [`set_target_tags(Option<Vec<String>>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_target_tags): <p>The target tag for a policy.</p>  <p>Tags are strings in the format <code>key=value</code>.</p>
+    ///   - [`tags_to_add(Vec<String>)`](crate::client::fluent_builders::GetLifecyclePolicies::tags_to_add) / [`set_tags_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::GetLifecyclePolicies::set_tags_to_add): <p>The tags to add to objects created by the policy.</p>  <p>Tags are strings in the format <code>key=value</code>.</p>  <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
     /// - On success, responds with [`GetLifecyclePoliciesOutput`](crate::output::GetLifecyclePoliciesOutput) with field(s):
     ///   - [`policies(Option<Vec<LifecyclePolicySummary>>)`](crate::output::GetLifecyclePoliciesOutput::policies): <p>Summary information about the lifecycle policies.</p>
     /// - On failure, responds with [`SdkError<GetLifecyclePoliciesError>`](crate::error::GetLifecyclePoliciesError)
@@ -123,8 +123,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetLifecyclePolicy`](crate::client::fluent_builders::GetLifecyclePolicy) operation.
     ///
-    /// - Takes [`GetLifecyclePolicyInput`](crate::input::GetLifecyclePolicyInput) with field(s):
-    ///   - [`policy_id(Option<String>)`](crate::input::GetLifecyclePolicyInput::policy_id): <p>The identifier of the lifecycle policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::set_policy_id): <p>The identifier of the lifecycle policy.</p>
     /// - On success, responds with [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput) with field(s):
     ///   - [`policy(Option<LifecyclePolicy>)`](crate::output::GetLifecyclePolicyOutput::policy): <p>Detailed information about the lifecycle policy.</p>
     /// - On failure, responds with [`SdkError<GetLifecyclePolicyError>`](crate::error::GetLifecyclePolicyError)
@@ -133,8 +133,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Information about the tags.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -143,9 +143,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>One or more tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>One or more tags.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -154,9 +154,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -165,12 +165,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateLifecyclePolicy`](crate::client::fluent_builders::UpdateLifecyclePolicy) operation.
     ///
-    /// - Takes [`UpdateLifecyclePolicyInput`](crate::input::UpdateLifecyclePolicyInput) with field(s):
-    ///   - [`policy_id(Option<String>)`](crate::input::UpdateLifecyclePolicyInput::policy_id): <p>The identifier of the lifecycle policy.</p>
-    ///   - [`execution_role_arn(Option<String>)`](crate::input::UpdateLifecyclePolicyInput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    ///   - [`state(Option<SettablePolicyStateValues>)`](crate::input::UpdateLifecyclePolicyInput::state): <p>The desired activation state of the lifecycle policy after creation.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateLifecyclePolicyInput::description): <p>A description of the lifecycle policy.</p>
-    ///   - [`policy_details(Option<PolicyDetails>)`](crate::input::UpdateLifecyclePolicyInput::policy_details): <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_policy_id): <p>The identifier of the lifecycle policy.</p>
+    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
+    ///   - [`state(SettablePolicyStateValues)`](crate::client::fluent_builders::UpdateLifecyclePolicy::state) / [`set_state(Option<SettablePolicyStateValues>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_state): <p>The desired activation state of the lifecycle policy after creation.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_description): <p>A description of the lifecycle policy.</p>
+    ///   - [`policy_details(PolicyDetails)`](crate::client::fluent_builders::UpdateLifecyclePolicy::policy_details) / [`set_policy_details(Option<PolicyDetails>)`](crate::client::fluent_builders::UpdateLifecyclePolicy::set_policy_details): <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
     /// - On success, responds with [`UpdateLifecyclePolicyOutput`](crate::output::UpdateLifecyclePolicyOutput)
 
     /// - On failure, responds with [`SdkError<UpdateLifecyclePolicyError>`](crate::error::UpdateLifecyclePolicyError)

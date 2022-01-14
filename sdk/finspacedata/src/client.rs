@@ -85,12 +85,12 @@ where
 {
     /// Constructs a fluent builder for the [`CreateChangeset`](crate::client::fluent_builders::CreateChangeset) operation.
     ///
-    /// - Takes [`CreateChangesetInput`](crate::input::CreateChangesetInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::CreateChangesetInput::client_token): <p>A token used to ensure idempotency.</p>
-    ///   - [`dataset_id(Option<String>)`](crate::input::CreateChangesetInput::dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
-    ///   - [`change_type(Option<ChangeType>)`](crate::input::CreateChangesetInput::change_type): <p>Option to indicate how a Changeset will be applied to a Dataset.</p>  <ul>   <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>   <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>   <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>  </ul>
-    ///   - [`source_params(Option<HashMap<String, String>>)`](crate::input::CreateChangesetInput::source_params): <p>Options that define the location of the data being ingested.</p>
-    ///   - [`format_params(Option<HashMap<String, String>>)`](crate::input::CreateChangesetInput::format_params): <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>  <p> <code>formatType</code> is a required attribute and can have the following values: </p>  <ul>   <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>   <li> <p> <code>CSV</code> - CSV source file format.</p> </li>   <li> <p> <code>JSON</code> - JSON source file format.</p> </li>   <li> <p> <code>XML</code> - XML source file format.</p> </li>  </ul>  <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateChangeset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateChangeset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::CreateChangeset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::CreateChangeset::set_dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
+    ///   - [`change_type(ChangeType)`](crate::client::fluent_builders::CreateChangeset::change_type) / [`set_change_type(Option<ChangeType>)`](crate::client::fluent_builders::CreateChangeset::set_change_type): <p>Option to indicate how a Changeset will be applied to a Dataset.</p>  <ul>   <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>   <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>   <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>  </ul>
+    ///   - [`source_params(HashMap<String, String>)`](crate::client::fluent_builders::CreateChangeset::source_params) / [`set_source_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChangeset::set_source_params): <p>Options that define the location of the data being ingested.</p>
+    ///   - [`format_params(HashMap<String, String>)`](crate::client::fluent_builders::CreateChangeset::format_params) / [`set_format_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChangeset::set_format_params): <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>  <p> <code>formatType</code> is a required attribute and can have the following values: </p>  <ul>   <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>   <li> <p> <code>CSV</code> - CSV source file format.</p> </li>   <li> <p> <code>JSON</code> - JSON source file format.</p> </li>   <li> <p> <code>XML</code> - XML source file format.</p> </li>  </ul>  <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
     /// - On success, responds with [`CreateChangesetOutput`](crate::output::CreateChangesetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::output::CreateChangesetOutput::dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
     ///   - [`changeset_id(Option<String>)`](crate::output::CreateChangesetOutput::changeset_id): <p>The unique identifier of the Changeset that is created.</p>
@@ -100,15 +100,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
-    /// - Takes [`CreateDatasetInput`](crate::input::CreateDatasetInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::CreateDatasetInput::client_token): <p>A token used to ensure idempotency.</p>
-    ///   - [`dataset_title(Option<String>)`](crate::input::CreateDatasetInput::dataset_title): <p>Display title for a FinSpace Dataset.</p>
-    ///   - [`kind(Option<DatasetKind>)`](crate::input::CreateDatasetInput::kind): <p>The format in which Dataset data is structured.</p>  <ul>   <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>   <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>  </ul>
-    ///   - [`dataset_description(Option<String>)`](crate::input::CreateDatasetInput::dataset_description): <p>Description of a Dataset.</p>
-    ///   - [`owner_info(Option<DatasetOwnerInfo>)`](crate::input::CreateDatasetInput::owner_info): <p>Contact information for a Dataset owner.</p>
-    ///   - [`permission_group_params(Option<PermissionGroupParams>)`](crate::input::CreateDatasetInput::permission_group_params): <p>Permission group parameters for Dataset permissions.</p>
-    ///   - [`alias(Option<String>)`](crate::input::CreateDatasetInput::alias): <p>The unique resource identifier for a Dataset.</p>
-    ///   - [`schema_definition(Option<SchemaUnion>)`](crate::input::CreateDatasetInput::schema_definition): <p>Definition for a schema on a tabular Dataset.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`dataset_title(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_title) / [`set_dataset_title(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_title): <p>Display title for a FinSpace Dataset.</p>
+    ///   - [`kind(DatasetKind)`](crate::client::fluent_builders::CreateDataset::kind) / [`set_kind(Option<DatasetKind>)`](crate::client::fluent_builders::CreateDataset::set_kind): <p>The format in which Dataset data is structured.</p>  <ul>   <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>   <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>  </ul>
+    ///   - [`dataset_description(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_description) / [`set_dataset_description(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_description): <p>Description of a Dataset.</p>
+    ///   - [`owner_info(DatasetOwnerInfo)`](crate::client::fluent_builders::CreateDataset::owner_info) / [`set_owner_info(Option<DatasetOwnerInfo>)`](crate::client::fluent_builders::CreateDataset::set_owner_info): <p>Contact information for a Dataset owner.</p>
+    ///   - [`permission_group_params(PermissionGroupParams)`](crate::client::fluent_builders::CreateDataset::permission_group_params) / [`set_permission_group_params(Option<PermissionGroupParams>)`](crate::client::fluent_builders::CreateDataset::set_permission_group_params): <p>Permission group parameters for Dataset permissions.</p>
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_alias): <p>The unique resource identifier for a Dataset.</p>
+    ///   - [`schema_definition(SchemaUnion)`](crate::client::fluent_builders::CreateDataset::schema_definition) / [`set_schema_definition(Option<SchemaUnion>)`](crate::client::fluent_builders::CreateDataset::set_schema_definition): <p>Definition for a schema on a tabular Dataset.</p>
     /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::output::CreateDatasetOutput::dataset_id): <p>The unique identifier for the created Dataset.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
@@ -117,14 +117,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDataView`](crate::client::fluent_builders::CreateDataView) operation.
     ///
-    /// - Takes [`CreateDataViewInput`](crate::input::CreateDataViewInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::CreateDataViewInput::client_token): <p>A token used to ensure idempotency.</p>
-    ///   - [`dataset_id(Option<String>)`](crate::input::CreateDataViewInput::dataset_id): <p>The unique Dataset identifier that is used to create a Dataview.</p>
-    ///   - [`auto_update(bool)`](crate::input::CreateDataViewInput::auto_update): <p>Flag to indicate Dataview should be updated automatically.</p>
-    ///   - [`sort_columns(Option<Vec<String>>)`](crate::input::CreateDataViewInput::sort_columns): <p>Columns to be used for sorting the data.</p>
-    ///   - [`partition_columns(Option<Vec<String>>)`](crate::input::CreateDataViewInput::partition_columns): <p>Ordered set of column names used to partition data.</p>
-    ///   - [`as_of_timestamp(Option<i64>)`](crate::input::CreateDataViewInput::as_of_timestamp): <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    ///   - [`destination_type_params(Option<DataViewDestinationTypeParams>)`](crate::input::CreateDataViewInput::destination_type_params): <p>Options that define the destination type for the Dataview.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataView::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataView::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataView::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::CreateDataView::set_dataset_id): <p>The unique Dataset identifier that is used to create a Dataview.</p>
+    ///   - [`auto_update(bool)`](crate::client::fluent_builders::CreateDataView::auto_update) / [`set_auto_update(bool)`](crate::client::fluent_builders::CreateDataView::set_auto_update): <p>Flag to indicate Dataview should be updated automatically.</p>
+    ///   - [`sort_columns(Vec<String>)`](crate::client::fluent_builders::CreateDataView::sort_columns) / [`set_sort_columns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDataView::set_sort_columns): <p>Columns to be used for sorting the data.</p>
+    ///   - [`partition_columns(Vec<String>)`](crate::client::fluent_builders::CreateDataView::partition_columns) / [`set_partition_columns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDataView::set_partition_columns): <p>Ordered set of column names used to partition data.</p>
+    ///   - [`as_of_timestamp(i64)`](crate::client::fluent_builders::CreateDataView::as_of_timestamp) / [`set_as_of_timestamp(Option<i64>)`](crate::client::fluent_builders::CreateDataView::set_as_of_timestamp): <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`destination_type_params(DataViewDestinationTypeParams)`](crate::client::fluent_builders::CreateDataView::destination_type_params) / [`set_destination_type_params(Option<DataViewDestinationTypeParams>)`](crate::client::fluent_builders::CreateDataView::set_destination_type_params): <p>Options that define the destination type for the Dataview.</p>
     /// - On success, responds with [`CreateDataViewOutput`](crate::output::CreateDataViewOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::output::CreateDataViewOutput::dataset_id): <p>The unique identifier of the Dataset used for the Dataview.</p>
     ///   - [`data_view_id(Option<String>)`](crate::output::CreateDataViewOutput::data_view_id): <p>The unique identifier for the created Dataview.</p>
@@ -134,9 +134,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
-    /// - Takes [`DeleteDatasetInput`](crate::input::DeleteDatasetInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteDatasetInput::client_token): <p>A token used to ensure idempotency.</p>
-    ///   - [`dataset_id(Option<String>)`](crate::input::DeleteDatasetInput::dataset_id): <p>The unique identifier of the Dataset to be deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_dataset_id): <p>The unique identifier of the Dataset to be deleted.</p>
     /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::output::DeleteDatasetOutput::dataset_id): <p>The unique identifier for the deleted Dataset.</p>
     /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
@@ -145,9 +145,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetChangeset`](crate::client::fluent_builders::GetChangeset) operation.
     ///
-    /// - Takes [`GetChangesetInput`](crate::input::GetChangesetInput) with field(s):
-    ///   - [`dataset_id(Option<String>)`](crate::input::GetChangesetInput::dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    ///   - [`changeset_id(Option<String>)`](crate::input::GetChangesetInput::changeset_id): <p>The unique identifier of the Changeset for which to get data.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::GetChangeset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::GetChangeset::set_dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    ///   - [`changeset_id(impl Into<String>)`](crate::client::fluent_builders::GetChangeset::changeset_id) / [`set_changeset_id(Option<String>)`](crate::client::fluent_builders::GetChangeset::set_changeset_id): <p>The unique identifier of the Changeset for which to get data.</p>
     /// - On success, responds with [`GetChangesetOutput`](crate::output::GetChangesetOutput) with field(s):
     ///   - [`changeset_id(Option<String>)`](crate::output::GetChangesetOutput::changeset_id): <p>The unique identifier for a Changeset.</p>
     ///   - [`changeset_arn(Option<String>)`](crate::output::GetChangesetOutput::changeset_arn): <p>The ARN identifier of the Changeset.</p>
@@ -168,8 +168,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDataset`](crate::client::fluent_builders::GetDataset) operation.
     ///
-    /// - Takes [`GetDatasetInput`](crate::input::GetDatasetInput) with field(s):
-    ///   - [`dataset_id(Option<String>)`](crate::input::GetDatasetInput::dataset_id): <p>The unique identifier for a Dataset.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::GetDataset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::GetDataset::set_dataset_id): <p>The unique identifier for a Dataset.</p>
     /// - On success, responds with [`GetDatasetOutput`](crate::output::GetDatasetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::output::GetDatasetOutput::dataset_id): <p>The unique identifier for a Dataset.</p>
     ///   - [`dataset_arn(Option<String>)`](crate::output::GetDatasetOutput::dataset_arn): <p>The ARN identifier of the Dataset.</p>
@@ -187,9 +187,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetDataView`](crate::client::fluent_builders::GetDataView) operation.
     ///
-    /// - Takes [`GetDataViewInput`](crate::input::GetDataViewInput) with field(s):
-    ///   - [`data_view_id(Option<String>)`](crate::input::GetDataViewInput::data_view_id): <p>The unique identifier for the Dataview.</p>
-    ///   - [`dataset_id(Option<String>)`](crate::input::GetDataViewInput::dataset_id): <p>The unique identifier for the Dataset used in the Dataview.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`data_view_id(impl Into<String>)`](crate::client::fluent_builders::GetDataView::data_view_id) / [`set_data_view_id(Option<String>)`](crate::client::fluent_builders::GetDataView::set_data_view_id): <p>The unique identifier for the Dataview.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::GetDataView::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::GetDataView::set_dataset_id): <p>The unique identifier for the Dataset used in the Dataview.</p>
     /// - On success, responds with [`GetDataViewOutput`](crate::output::GetDataViewOutput) with field(s):
     ///   - [`auto_update(bool)`](crate::output::GetDataViewOutput::auto_update): <p>Flag to indicate Dataview should be updated automatically.</p>
     ///   - [`partition_columns(Option<Vec<String>>)`](crate::output::GetDataViewOutput::partition_columns): <p>Ordered set of column names used to partition data.</p>
@@ -209,9 +209,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetProgrammaticAccessCredentials`](crate::client::fluent_builders::GetProgrammaticAccessCredentials) operation.
     ///
-    /// - Takes [`GetProgrammaticAccessCredentialsInput`](crate::input::GetProgrammaticAccessCredentialsInput) with field(s):
-    ///   - [`duration_in_minutes(i64)`](crate::input::GetProgrammaticAccessCredentialsInput::duration_in_minutes): <p>The time duration in which the credentials remain valid. </p>
-    ///   - [`environment_id(Option<String>)`](crate::input::GetProgrammaticAccessCredentialsInput::environment_id): <p>The FinSpace environment identifier.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`duration_in_minutes(i64)`](crate::client::fluent_builders::GetProgrammaticAccessCredentials::duration_in_minutes) / [`set_duration_in_minutes(i64)`](crate::client::fluent_builders::GetProgrammaticAccessCredentials::set_duration_in_minutes): <p>The time duration in which the credentials remain valid. </p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::GetProgrammaticAccessCredentials::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::GetProgrammaticAccessCredentials::set_environment_id): <p>The FinSpace environment identifier.</p>
     /// - On success, responds with [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput) with field(s):
     ///   - [`credentials(Option<Credentials>)`](crate::output::GetProgrammaticAccessCredentialsOutput::credentials): <p>Returns the programmatic credentials.</p>
     ///   - [`duration_in_minutes(i64)`](crate::output::GetProgrammaticAccessCredentialsOutput::duration_in_minutes): <p>Returns the duration in which the credentials will remain valid.</p>
@@ -223,8 +223,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetWorkingLocation`](crate::client::fluent_builders::GetWorkingLocation) operation.
     ///
-    /// - Takes [`GetWorkingLocationInput`](crate::input::GetWorkingLocationInput) with field(s):
-    ///   - [`location_type(Option<LocationType>)`](crate::input::GetWorkingLocationInput::location_type): <p>Specify the type of the working location.</p>  <ul>   <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>   <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`location_type(LocationType)`](crate::client::fluent_builders::GetWorkingLocation::location_type) / [`set_location_type(Option<LocationType>)`](crate::client::fluent_builders::GetWorkingLocation::set_location_type): <p>Specify the type of the working location.</p>  <ul>   <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>   <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>  </ul>
     /// - On success, responds with [`GetWorkingLocationOutput`](crate::output::GetWorkingLocationOutput) with field(s):
     ///   - [`s3_uri(Option<String>)`](crate::output::GetWorkingLocationOutput::s3_uri): <p>Returns the Amazon S3 URI for the working location.</p>
     ///   - [`s3_path(Option<String>)`](crate::output::GetWorkingLocationOutput::s3_path): <p>Returns the Amazon S3 Path for the working location.</p>
@@ -234,12 +234,12 @@ where
         fluent_builders::GetWorkingLocation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChangesets`](crate::client::fluent_builders::ListChangesets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChangesets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChangesets::into_paginator).
     ///
-    /// - Takes [`ListChangesetsInput`](crate::input::ListChangesetsInput) with field(s):
-    ///   - [`dataset_id(Option<String>)`](crate::input::ListChangesetsInput::dataset_id): <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChangesetsInput::max_results): <p>The maximum number of results per page.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChangesetsInput::next_token): <p>A token indicating where a results page should begin.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::ListChangesets::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::ListChangesets::set_dataset_id): <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChangesets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChangesets::set_max_results): <p>The maximum number of results per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChangesets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChangesets::set_next_token): <p>A token indicating where a results page should begin.</p>
     /// - On success, responds with [`ListChangesetsOutput`](crate::output::ListChangesetsOutput) with field(s):
     ///   - [`changesets(Option<Vec<ChangesetSummary>>)`](crate::output::ListChangesetsOutput::changesets): <p>List of Changesets found.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChangesetsOutput::next_token): <p>A token indicating where a results page should begin.</p>
@@ -248,11 +248,11 @@ where
         fluent_builders::ListChangesets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDatasets`](crate::client::fluent_builders::ListDatasets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
     ///
-    /// - Takes [`ListDatasetsInput`](crate::input::ListDatasetsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetsInput::next_token): <p>A token indicating where a results page should begin.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetsInput::max_results): <p>The maximum number of results per page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatasets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatasets::set_next_token): <p>A token indicating where a results page should begin.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDatasets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDatasets::set_max_results): <p>The maximum number of results per page.</p>
     /// - On success, responds with [`ListDatasetsOutput`](crate::output::ListDatasetsOutput) with field(s):
     ///   - [`datasets(Option<Vec<Dataset>>)`](crate::output::ListDatasetsOutput::datasets): <p>List of Datasets.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDatasetsOutput::next_token): <p>A token indicating where a results page should begin.</p>
@@ -261,12 +261,12 @@ where
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDataViews`](crate::client::fluent_builders::ListDataViews) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataViews::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataViews::into_paginator).
     ///
-    /// - Takes [`ListDataViewsInput`](crate::input::ListDataViewsInput) with field(s):
-    ///   - [`dataset_id(Option<String>)`](crate::input::ListDataViewsInput::dataset_id): <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDataViewsInput::next_token): <p>A token indicating where a results page should begin.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDataViewsInput::max_results): <p>The maximum number of results per page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::ListDataViews::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::ListDataViews::set_dataset_id): <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataViews::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataViews::set_next_token): <p>A token indicating where a results page should begin.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataViews::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataViews::set_max_results): <p>The maximum number of results per page.</p>
     /// - On success, responds with [`ListDataViewsOutput`](crate::output::ListDataViewsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListDataViewsOutput::next_token): <p>A token indicating where a results page should begin.</p>
     ///   - [`data_views(Option<Vec<DataViewSummary>>)`](crate::output::ListDataViewsOutput::data_views): <p>A list of Dataviews.</p>
@@ -276,12 +276,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateChangeset`](crate::client::fluent_builders::UpdateChangeset) operation.
     ///
-    /// - Takes [`UpdateChangesetInput`](crate::input::UpdateChangesetInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateChangesetInput::client_token): <p>A token used to ensure idempotency.</p>
-    ///   - [`dataset_id(Option<String>)`](crate::input::UpdateChangesetInput::dataset_id): <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-    ///   - [`changeset_id(Option<String>)`](crate::input::UpdateChangesetInput::changeset_id): <p>The unique identifier for the Changeset to update.</p>
-    ///   - [`source_params(Option<HashMap<String, String>>)`](crate::input::UpdateChangesetInput::source_params): <p>Options that define the location of the data being ingested.</p>
-    ///   - [`format_params(Option<HashMap<String, String>>)`](crate::input::UpdateChangesetInput::format_params): <p>Options that define the structure of the source file(s).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_dataset_id): <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+    ///   - [`changeset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::changeset_id) / [`set_changeset_id(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_changeset_id): <p>The unique identifier for the Changeset to update.</p>
+    ///   - [`source_params(HashMap<String, String>)`](crate::client::fluent_builders::UpdateChangeset::source_params) / [`set_source_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateChangeset::set_source_params): <p>Options that define the location of the data being ingested.</p>
+    ///   - [`format_params(HashMap<String, String>)`](crate::client::fluent_builders::UpdateChangeset::format_params) / [`set_format_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateChangeset::set_format_params): <p>Options that define the structure of the source file(s).</p>
     /// - On success, responds with [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput) with field(s):
     ///   - [`changeset_id(Option<String>)`](crate::output::UpdateChangesetOutput::changeset_id): <p>The unique identifier for the Changeset to update.</p>
     ///   - [`dataset_id(Option<String>)`](crate::output::UpdateChangesetOutput::dataset_id): <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
@@ -291,14 +291,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDataset`](crate::client::fluent_builders::UpdateDataset) operation.
     ///
-    /// - Takes [`UpdateDatasetInput`](crate::input::UpdateDatasetInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateDatasetInput::client_token): <p>A token used to ensure idempotency.</p>
-    ///   - [`dataset_id(Option<String>)`](crate::input::UpdateDatasetInput::dataset_id): <p>The unique identifier for the Dataset to update.</p>
-    ///   - [`dataset_title(Option<String>)`](crate::input::UpdateDatasetInput::dataset_title): <p>A display title for the Dataset.</p>
-    ///   - [`kind(Option<DatasetKind>)`](crate::input::UpdateDatasetInput::kind): <p>The format in which the Dataset data is structured.</p>  <ul>   <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>   <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>  </ul>
-    ///   - [`dataset_description(Option<String>)`](crate::input::UpdateDatasetInput::dataset_description): <p>A description for the Dataset.</p>
-    ///   - [`alias(Option<String>)`](crate::input::UpdateDatasetInput::alias): <p>The unique resource identifier for a Dataset.</p>
-    ///   - [`schema_definition(Option<SchemaUnion>)`](crate::input::UpdateDatasetInput::schema_definition): <p>Definition for a schema on a tabular Dataset.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_dataset_id): <p>The unique identifier for the Dataset to update.</p>
+    ///   - [`dataset_title(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::dataset_title) / [`set_dataset_title(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_dataset_title): <p>A display title for the Dataset.</p>
+    ///   - [`kind(DatasetKind)`](crate::client::fluent_builders::UpdateDataset::kind) / [`set_kind(Option<DatasetKind>)`](crate::client::fluent_builders::UpdateDataset::set_kind): <p>The format in which the Dataset data is structured.</p>  <ul>   <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>   <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>  </ul>
+    ///   - [`dataset_description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::dataset_description) / [`set_dataset_description(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_dataset_description): <p>A description for the Dataset.</p>
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_alias): <p>The unique resource identifier for a Dataset.</p>
+    ///   - [`schema_definition(SchemaUnion)`](crate::client::fluent_builders::UpdateDataset::schema_definition) / [`set_schema_definition(Option<SchemaUnion>)`](crate::client::fluent_builders::UpdateDataset::set_schema_definition): <p>Definition for a schema on a tabular Dataset.</p>
     /// - On success, responds with [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::output::UpdateDatasetOutput::dataset_id): <p>The unique identifier for updated Dataset.</p>
     /// - On failure, responds with [`SdkError<UpdateDatasetError>`](crate::error::UpdateDatasetError)

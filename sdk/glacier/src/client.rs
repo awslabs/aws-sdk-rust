@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`AbortMultipartUpload`](crate::client::fluent_builders::AbortMultipartUpload) operation.
     ///
-    /// - Takes [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::AbortMultipartUploadInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::AbortMultipartUploadInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`upload_id(Option<String>)`](crate::input::AbortMultipartUploadInput::upload_id): <p>The upload ID of the multipart upload to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::AbortMultipartUpload::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::AbortMultipartUpload::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::AbortMultipartUpload::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::AbortMultipartUpload::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`upload_id(impl Into<String>)`](crate::client::fluent_builders::AbortMultipartUpload::upload_id) / [`set_upload_id(Option<String>)`](crate::client::fluent_builders::AbortMultipartUpload::set_upload_id): <p>The upload ID of the multipart upload to delete.</p>
     /// - On success, responds with [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput)
 
     /// - On failure, responds with [`SdkError<AbortMultipartUploadError>`](crate::error::AbortMultipartUploadError)
@@ -97,9 +97,9 @@ where
     }
     /// Constructs a fluent builder for the [`AbortVaultLock`](crate::client::fluent_builders::AbortVaultLock) operation.
     ///
-    /// - Takes [`AbortVaultLockInput`](crate::input::AbortVaultLockInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::AbortVaultLockInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::AbortVaultLockInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::AbortVaultLock::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::AbortVaultLock::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::AbortVaultLock::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::AbortVaultLock::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput)
 
     /// - On failure, responds with [`SdkError<AbortVaultLockError>`](crate::error::AbortVaultLockError)
@@ -108,10 +108,10 @@ where
     }
     /// Constructs a fluent builder for the [`AddTagsToVault`](crate::client::fluent_builders::AddTagsToVault) operation.
     ///
-    /// - Takes [`AddTagsToVaultInput`](crate::input::AddTagsToVaultInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::AddTagsToVaultInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::AddTagsToVaultInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::AddTagsToVaultInput::tags): <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::AddTagsToVault::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::AddTagsToVault::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::AddTagsToVault::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::AddTagsToVault::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::AddTagsToVault::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AddTagsToVault::set_tags): <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
     /// - On success, responds with [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput)
 
     /// - On failure, responds with [`SdkError<AddTagsToVaultError>`](crate::error::AddTagsToVaultError)
@@ -120,12 +120,12 @@ where
     }
     /// Constructs a fluent builder for the [`CompleteMultipartUpload`](crate::client::fluent_builders::CompleteMultipartUpload) operation.
     ///
-    /// - Takes [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::CompleteMultipartUploadInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::CompleteMultipartUploadInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`upload_id(Option<String>)`](crate::input::CompleteMultipartUploadInput::upload_id): <p>The upload ID of the multipart upload.</p>
-    ///   - [`archive_size(Option<String>)`](crate::input::CompleteMultipartUploadInput::archive_size): <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
-    ///   - [`checksum(Option<String>)`](crate::input::CompleteMultipartUploadInput::checksum): <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`upload_id(impl Into<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::upload_id) / [`set_upload_id(Option<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::set_upload_id): <p>The upload ID of the multipart upload.</p>
+    ///   - [`archive_size(impl Into<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::archive_size) / [`set_archive_size(Option<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::set_archive_size): <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
+    ///   - [`checksum(impl Into<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::checksum) / [`set_checksum(Option<String>)`](crate::client::fluent_builders::CompleteMultipartUpload::set_checksum): <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
     /// - On success, responds with [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput) with field(s):
     ///   - [`location(Option<String>)`](crate::output::CompleteMultipartUploadOutput::location): <p>The relative URI path of the newly added archive resource.</p>
     ///   - [`checksum(Option<String>)`](crate::output::CompleteMultipartUploadOutput::checksum): <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
@@ -136,10 +136,10 @@ where
     }
     /// Constructs a fluent builder for the [`CompleteVaultLock`](crate::client::fluent_builders::CompleteVaultLock) operation.
     ///
-    /// - Takes [`CompleteVaultLockInput`](crate::input::CompleteVaultLockInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::CompleteVaultLockInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::CompleteVaultLockInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`lock_id(Option<String>)`](crate::input::CompleteVaultLockInput::lock_id): <p>The <code>lockId</code> value is the lock ID obtained from a <code>InitiateVaultLock</code> request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CompleteVaultLock::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CompleteVaultLock::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::CompleteVaultLock::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::CompleteVaultLock::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`lock_id(impl Into<String>)`](crate::client::fluent_builders::CompleteVaultLock::lock_id) / [`set_lock_id(Option<String>)`](crate::client::fluent_builders::CompleteVaultLock::set_lock_id): <p>The <code>lockId</code> value is the lock ID obtained from a <code>InitiateVaultLock</code> request.</p>
     /// - On success, responds with [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput)
 
     /// - On failure, responds with [`SdkError<CompleteVaultLockError>`](crate::error::CompleteVaultLockError)
@@ -148,9 +148,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateVault`](crate::client::fluent_builders::CreateVault) operation.
     ///
-    /// - Takes [`CreateVaultInput`](crate::input::CreateVaultInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::CreateVaultInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::CreateVaultInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateVault::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateVault::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::CreateVault::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::CreateVault::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`CreateVaultOutput`](crate::output::CreateVaultOutput) with field(s):
     ///   - [`location(Option<String>)`](crate::output::CreateVaultOutput::location): <p>The URI of the vault that was created.</p>
     /// - On failure, responds with [`SdkError<CreateVaultError>`](crate::error::CreateVaultError)
@@ -159,10 +159,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteArchive`](crate::client::fluent_builders::DeleteArchive) operation.
     ///
-    /// - Takes [`DeleteArchiveInput`](crate::input::DeleteArchiveInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DeleteArchiveInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::DeleteArchiveInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`archive_id(Option<String>)`](crate::input::DeleteArchiveInput::archive_id): <p>The ID of the archive to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteArchive::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteArchive::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::DeleteArchive::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::DeleteArchive::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`archive_id(impl Into<String>)`](crate::client::fluent_builders::DeleteArchive::archive_id) / [`set_archive_id(Option<String>)`](crate::client::fluent_builders::DeleteArchive::set_archive_id): <p>The ID of the archive to delete.</p>
     /// - On success, responds with [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput)
 
     /// - On failure, responds with [`SdkError<DeleteArchiveError>`](crate::error::DeleteArchiveError)
@@ -171,9 +171,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteVault`](crate::client::fluent_builders::DeleteVault) operation.
     ///
-    /// - Takes [`DeleteVaultInput`](crate::input::DeleteVaultInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DeleteVaultInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::DeleteVaultInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVault::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteVault::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVault::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::DeleteVault::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`DeleteVaultOutput`](crate::output::DeleteVaultOutput)
 
     /// - On failure, responds with [`SdkError<DeleteVaultError>`](crate::error::DeleteVaultError)
@@ -182,9 +182,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteVaultAccessPolicy`](crate::client::fluent_builders::DeleteVaultAccessPolicy) operation.
     ///
-    /// - Takes [`DeleteVaultAccessPolicyInput`](crate::input::DeleteVaultAccessPolicyInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DeleteVaultAccessPolicyInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`vault_name(Option<String>)`](crate::input::DeleteVaultAccessPolicyInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVaultAccessPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteVaultAccessPolicy::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVaultAccessPolicy::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::DeleteVaultAccessPolicy::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteVaultAccessPolicyError>`](crate::error::DeleteVaultAccessPolicyError)
@@ -193,9 +193,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteVaultNotifications`](crate::client::fluent_builders::DeleteVaultNotifications) operation.
     ///
-    /// - Takes [`DeleteVaultNotificationsInput`](crate::input::DeleteVaultNotificationsInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DeleteVaultNotificationsInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`vault_name(Option<String>)`](crate::input::DeleteVaultNotificationsInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVaultNotifications::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteVaultNotifications::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVaultNotifications::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::DeleteVaultNotifications::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput)
 
     /// - On failure, responds with [`SdkError<DeleteVaultNotificationsError>`](crate::error::DeleteVaultNotificationsError)
@@ -204,10 +204,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeJob`](crate::client::fluent_builders::DescribeJob) operation.
     ///
-    /// - Takes [`DescribeJobInput`](crate::input::DescribeJobInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeJobInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`vault_name(Option<String>)`](crate::input::DescribeJobInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeJobInput::job_id): <p>The ID of the job to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJob::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeJob::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::DescribeJob::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::DescribeJob::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeJob::set_job_id): <p>The ID of the job to describe.</p>
     /// - On success, responds with [`DescribeJobOutput`](crate::output::DescribeJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::DescribeJobOutput::job_id): <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
     ///   - [`job_description(Option<String>)`](crate::output::DescribeJobOutput::job_description): <p>The job description provided when initiating the job.</p>
@@ -236,9 +236,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeVault`](crate::client::fluent_builders::DescribeVault) operation.
     ///
-    /// - Takes [`DescribeVaultInput`](crate::input::DescribeVaultInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeVaultInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`vault_name(Option<String>)`](crate::input::DescribeVaultInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeVault::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeVault::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVault::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::DescribeVault::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`DescribeVaultOutput`](crate::output::DescribeVaultOutput) with field(s):
     ///   - [`vault_arn(Option<String>)`](crate::output::DescribeVaultOutput::vault_arn): <p>The Amazon Resource Name (ARN) of the vault.</p>
     ///   - [`vault_name(Option<String>)`](crate::output::DescribeVaultOutput::vault_name): <p>The name of the vault.</p>
@@ -252,8 +252,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDataRetrievalPolicy`](crate::client::fluent_builders::GetDataRetrievalPolicy) operation.
     ///
-    /// - Takes [`GetDataRetrievalPolicyInput`](crate::input::GetDataRetrievalPolicyInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::GetDataRetrievalPolicyInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetDataRetrievalPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetDataRetrievalPolicy::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
     /// - On success, responds with [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput) with field(s):
     ///   - [`policy(Option<DataRetrievalPolicy>)`](crate::output::GetDataRetrievalPolicyOutput::policy): <p>Contains the returned data retrieval policy in JSON format.</p>
     /// - On failure, responds with [`SdkError<GetDataRetrievalPolicyError>`](crate::error::GetDataRetrievalPolicyError)
@@ -262,11 +262,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetJobOutput`](crate::client::fluent_builders::GetJobOutput) operation.
     ///
-    /// - Takes [`GetJobOutputInput`](crate::input::GetJobOutputInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::GetJobOutputInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::GetJobOutputInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::GetJobOutputInput::job_id): <p>The job ID whose data is downloaded.</p>
-    ///   - [`range(Option<String>)`](crate::input::GetJobOutputInput::range): <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p>  <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p>  <ol>   <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li>   <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li>   <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li>   <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li>  </ol>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetJobOutput::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetJobOutput::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::GetJobOutput::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::GetJobOutput::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetJobOutput::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetJobOutput::set_job_id): <p>The job ID whose data is downloaded.</p>
+    ///   - [`range(impl Into<String>)`](crate::client::fluent_builders::GetJobOutput::range) / [`set_range(Option<String>)`](crate::client::fluent_builders::GetJobOutput::set_range): <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p>  <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p>  <ol>   <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li>   <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li>   <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li>   <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li>  </ol>
     /// - On success, responds with [`GetJobOutputOutput`](crate::output::GetJobOutputOutput) with field(s):
     ///   - [`body(byte_stream::ByteStream)`](crate::output::GetJobOutputOutput::body): <p>The job data, either archive data or inventory data.</p>
     ///   - [`checksum(Option<String>)`](crate::output::GetJobOutputOutput::checksum): <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>  <ul>   <li> <p>You get the entire range of the archive.</p> </li>   <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>   <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>  </ul>
@@ -281,9 +281,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetVaultAccessPolicy`](crate::client::fluent_builders::GetVaultAccessPolicy) operation.
     ///
-    /// - Takes [`GetVaultAccessPolicyInput`](crate::input::GetVaultAccessPolicyInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::GetVaultAccessPolicyInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::GetVaultAccessPolicyInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetVaultAccessPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetVaultAccessPolicy::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::GetVaultAccessPolicy::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::GetVaultAccessPolicy::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput) with field(s):
     ///   - [`policy(Option<VaultAccessPolicy>)`](crate::output::GetVaultAccessPolicyOutput::policy): <p>Contains the returned vault access policy as a JSON string.</p>
     /// - On failure, responds with [`SdkError<GetVaultAccessPolicyError>`](crate::error::GetVaultAccessPolicyError)
@@ -292,9 +292,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetVaultLock`](crate::client::fluent_builders::GetVaultLock) operation.
     ///
-    /// - Takes [`GetVaultLockInput`](crate::input::GetVaultLockInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::GetVaultLockInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::GetVaultLockInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetVaultLock::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetVaultLock::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::GetVaultLock::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::GetVaultLock::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`GetVaultLockOutput`](crate::output::GetVaultLockOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::output::GetVaultLockOutput::policy): <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
     ///   - [`state(Option<String>)`](crate::output::GetVaultLockOutput::state): <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
@@ -306,9 +306,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetVaultNotifications`](crate::client::fluent_builders::GetVaultNotifications) operation.
     ///
-    /// - Takes [`GetVaultNotificationsInput`](crate::input::GetVaultNotificationsInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::GetVaultNotificationsInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::GetVaultNotificationsInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetVaultNotifications::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetVaultNotifications::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::GetVaultNotifications::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::GetVaultNotifications::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput) with field(s):
     ///   - [`vault_notification_config(Option<VaultNotificationConfig>)`](crate::output::GetVaultNotificationsOutput::vault_notification_config): <p>Returns the notification configuration set on the vault.</p>
     /// - On failure, responds with [`SdkError<GetVaultNotificationsError>`](crate::error::GetVaultNotificationsError)
@@ -317,10 +317,10 @@ where
     }
     /// Constructs a fluent builder for the [`InitiateJob`](crate::client::fluent_builders::InitiateJob) operation.
     ///
-    /// - Takes [`InitiateJobInput`](crate::input::InitiateJobInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::InitiateJobInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::InitiateJobInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`job_parameters(Option<JobParameters>)`](crate::input::InitiateJobInput::job_parameters): <p>Provides options for specifying job information.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::InitiateJob::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::InitiateJob::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::InitiateJob::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::InitiateJob::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`job_parameters(JobParameters)`](crate::client::fluent_builders::InitiateJob::job_parameters) / [`set_job_parameters(Option<JobParameters>)`](crate::client::fluent_builders::InitiateJob::set_job_parameters): <p>Provides options for specifying job information.</p>
     /// - On success, responds with [`InitiateJobOutput`](crate::output::InitiateJobOutput) with field(s):
     ///   - [`location(Option<String>)`](crate::output::InitiateJobOutput::location): <p>The relative URI path of the job.</p>
     ///   - [`job_id(Option<String>)`](crate::output::InitiateJobOutput::job_id): <p>The ID of the job.</p>
@@ -331,11 +331,11 @@ where
     }
     /// Constructs a fluent builder for the [`InitiateMultipartUpload`](crate::client::fluent_builders::InitiateMultipartUpload) operation.
     ///
-    /// - Takes [`InitiateMultipartUploadInput`](crate::input::InitiateMultipartUploadInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::InitiateMultipartUploadInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`vault_name(Option<String>)`](crate::input::InitiateMultipartUploadInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`archive_description(Option<String>)`](crate::input::InitiateMultipartUploadInput::archive_description): <p>The archive description that you are uploading in parts.</p>  <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-    ///   - [`part_size(Option<String>)`](crate::input::InitiateMultipartUploadInput::part_size): <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::InitiateMultipartUpload::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::InitiateMultipartUpload::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::InitiateMultipartUpload::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::InitiateMultipartUpload::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`archive_description(impl Into<String>)`](crate::client::fluent_builders::InitiateMultipartUpload::archive_description) / [`set_archive_description(Option<String>)`](crate::client::fluent_builders::InitiateMultipartUpload::set_archive_description): <p>The archive description that you are uploading in parts.</p>  <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
+    ///   - [`part_size(impl Into<String>)`](crate::client::fluent_builders::InitiateMultipartUpload::part_size) / [`set_part_size(Option<String>)`](crate::client::fluent_builders::InitiateMultipartUpload::set_part_size): <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
     /// - On success, responds with [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput) with field(s):
     ///   - [`location(Option<String>)`](crate::output::InitiateMultipartUploadOutput::location): <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
     ///   - [`upload_id(Option<String>)`](crate::output::InitiateMultipartUploadOutput::upload_id): <p>The ID of the multipart upload. This value is also included as part of the location.</p>
@@ -345,10 +345,10 @@ where
     }
     /// Constructs a fluent builder for the [`InitiateVaultLock`](crate::client::fluent_builders::InitiateVaultLock) operation.
     ///
-    /// - Takes [`InitiateVaultLockInput`](crate::input::InitiateVaultLockInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::InitiateVaultLockInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::InitiateVaultLockInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`policy(Option<VaultLockPolicy>)`](crate::input::InitiateVaultLockInput::policy): <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::InitiateVaultLock::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::InitiateVaultLock::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::InitiateVaultLock::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::InitiateVaultLock::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`policy(VaultLockPolicy)`](crate::client::fluent_builders::InitiateVaultLock::policy) / [`set_policy(Option<VaultLockPolicy>)`](crate::client::fluent_builders::InitiateVaultLock::set_policy): <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
     /// - On success, responds with [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput) with field(s):
     ///   - [`lock_id(Option<String>)`](crate::output::InitiateVaultLockOutput::lock_id): <p>The lock ID, which is used to complete the vault locking process.</p>
     /// - On failure, responds with [`SdkError<InitiateVaultLockError>`](crate::error::InitiateVaultLockError)
@@ -356,15 +356,15 @@ where
         fluent_builders::InitiateVaultLock::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     ///
-    /// - Takes [`ListJobsInput`](crate::input::ListJobsInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::ListJobsInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`vault_name(Option<String>)`](crate::input::ListJobsInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListJobsInput::limit): <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListJobsInput::marker): <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
-    ///   - [`statuscode(Option<String>)`](crate::input::ListJobsInput::statuscode): <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
-    ///   - [`completed(Option<String>)`](crate::input::ListJobsInput::completed): <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListJobs::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListJobs::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::ListJobs::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::ListJobs::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListJobs::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListJobs::set_limit): <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListJobs::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListJobs::set_marker): <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
+    ///   - [`statuscode(impl Into<String>)`](crate::client::fluent_builders::ListJobs::statuscode) / [`set_statuscode(Option<String>)`](crate::client::fluent_builders::ListJobs::set_statuscode): <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
+    ///   - [`completed(impl Into<String>)`](crate::client::fluent_builders::ListJobs::completed) / [`set_completed(Option<String>)`](crate::client::fluent_builders::ListJobs::set_completed): <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
     /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
     ///   - [`job_list(Option<Vec<GlacierJobDescription>>)`](crate::output::ListJobsOutput::job_list): <p>A list of job objects. Each job object contains metadata describing the job.</p>
     ///   - [`marker(Option<String>)`](crate::output::ListJobsOutput::marker): <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
@@ -373,13 +373,13 @@ where
         fluent_builders::ListJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMultipartUploads`](crate::client::fluent_builders::ListMultipartUploads) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMultipartUploads::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMultipartUploads::into_paginator).
     ///
-    /// - Takes [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::ListMultipartUploadsInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`vault_name(Option<String>)`](crate::input::ListMultipartUploadsInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListMultipartUploadsInput::limit): <p>Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List Uploads operation returns up to 50 uploads.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListMultipartUploadsInput::marker): <p>An opaque string used for pagination. This value specifies the upload at which the listing of uploads should begin. Get the marker value from a previous List Uploads response. You need only include the marker if you are continuing the pagination of results started in a previous List Uploads request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListMultipartUploads::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListMultipartUploads::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::ListMultipartUploads::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::ListMultipartUploads::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListMultipartUploads::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListMultipartUploads::set_limit): <p>Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List Uploads operation returns up to 50 uploads.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListMultipartUploads::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListMultipartUploads::set_marker): <p>An opaque string used for pagination. This value specifies the upload at which the listing of uploads should begin. Get the marker value from a previous List Uploads response. You need only include the marker if you are continuing the pagination of results started in a previous List Uploads request.</p>
     /// - On success, responds with [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput) with field(s):
     ///   - [`uploads_list(Option<Vec<UploadListElement>>)`](crate::output::ListMultipartUploadsOutput::uploads_list): <p>A list of in-progress multipart uploads.</p>
     ///   - [`marker(Option<String>)`](crate::output::ListMultipartUploadsOutput::marker): <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
@@ -388,14 +388,14 @@ where
         fluent_builders::ListMultipartUploads::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListParts`](crate::client::fluent_builders::ListParts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListParts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListParts::into_paginator).
     ///
-    /// - Takes [`ListPartsInput`](crate::input::ListPartsInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::ListPartsInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`vault_name(Option<String>)`](crate::input::ListPartsInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`upload_id(Option<String>)`](crate::input::ListPartsInput::upload_id): <p>The upload ID of the multipart upload.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListPartsInput::marker): <p>An opaque string used for pagination. This value specifies the part at which the listing of parts should begin. Get the marker value from the response of a previous List Parts response. You need only include the marker if you are continuing the pagination of results started in a previous List Parts request.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListPartsInput::limit): <p>The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListParts::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListParts::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::ListParts::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::ListParts::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`upload_id(impl Into<String>)`](crate::client::fluent_builders::ListParts::upload_id) / [`set_upload_id(Option<String>)`](crate::client::fluent_builders::ListParts::set_upload_id): <p>The upload ID of the multipart upload.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListParts::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListParts::set_marker): <p>An opaque string used for pagination. This value specifies the part at which the listing of parts should begin. Get the marker value from the response of a previous List Parts response. You need only include the marker if you are continuing the pagination of results started in a previous List Parts request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListParts::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListParts::set_limit): <p>The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit.</p>
     /// - On success, responds with [`ListPartsOutput`](crate::output::ListPartsOutput) with field(s):
     ///   - [`multipart_upload_id(Option<String>)`](crate::output::ListPartsOutput::multipart_upload_id): <p>The ID of the upload to which the parts are associated.</p>
     ///   - [`vault_arn(Option<String>)`](crate::output::ListPartsOutput::vault_arn): <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
@@ -410,8 +410,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListProvisionedCapacity`](crate::client::fluent_builders::ListProvisionedCapacity) operation.
     ///
-    /// - Takes [`ListProvisionedCapacityInput`](crate::input::ListProvisionedCapacityInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::ListProvisionedCapacityInput::account_id): <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListProvisionedCapacity::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListProvisionedCapacity::set_account_id): <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
     /// - On success, responds with [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput) with field(s):
     ///   - [`provisioned_capacity_list(Option<Vec<ProvisionedCapacityDescription>>)`](crate::output::ListProvisionedCapacityOutput::provisioned_capacity_list): <p>The response body contains the following JSON fields.</p>
     /// - On failure, responds with [`SdkError<ListProvisionedCapacityError>`](crate::error::ListProvisionedCapacityError)
@@ -420,9 +420,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForVault`](crate::client::fluent_builders::ListTagsForVault) operation.
     ///
-    /// - Takes [`ListTagsForVaultInput`](crate::input::ListTagsForVaultInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::ListTagsForVaultInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::ListTagsForVaultInput::vault_name): <p>The name of the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListTagsForVault::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListTagsForVault::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::ListTagsForVault::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::ListTagsForVault::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForVaultOutput::tags): <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
     /// - On failure, responds with [`SdkError<ListTagsForVaultError>`](crate::error::ListTagsForVaultError)
@@ -430,12 +430,12 @@ where
         fluent_builders::ListTagsForVault::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListVaults`](crate::client::fluent_builders::ListVaults) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVaults::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVaults::into_paginator).
     ///
-    /// - Takes [`ListVaultsInput`](crate::input::ListVaultsInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::ListVaultsInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`marker(Option<String>)`](crate::input::ListVaultsInput::marker): <p>A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListVaultsInput::limit): <p>The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListVaults::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListVaults::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListVaults::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListVaults::set_marker): <p>A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListVaults::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListVaults::set_limit): <p>The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</p>
     /// - On success, responds with [`ListVaultsOutput`](crate::output::ListVaultsOutput) with field(s):
     ///   - [`vault_list(Option<Vec<DescribeVaultOutput>>)`](crate::output::ListVaultsOutput::vault_list): <p>List of vaults.</p>
     ///   - [`marker(Option<String>)`](crate::output::ListVaultsOutput::marker): <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
@@ -445,8 +445,8 @@ where
     }
     /// Constructs a fluent builder for the [`PurchaseProvisionedCapacity`](crate::client::fluent_builders::PurchaseProvisionedCapacity) operation.
     ///
-    /// - Takes [`PurchaseProvisionedCapacityInput`](crate::input::PurchaseProvisionedCapacityInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::PurchaseProvisionedCapacityInput::account_id): <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseProvisionedCapacity::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PurchaseProvisionedCapacity::set_account_id): <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
     /// - On success, responds with [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput) with field(s):
     ///   - [`capacity_id(Option<String>)`](crate::output::PurchaseProvisionedCapacityOutput::capacity_id): <p>The ID that identifies the provisioned capacity unit.</p>
     /// - On failure, responds with [`SdkError<PurchaseProvisionedCapacityError>`](crate::error::PurchaseProvisionedCapacityError)
@@ -457,10 +457,10 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveTagsFromVault`](crate::client::fluent_builders::RemoveTagsFromVault) operation.
     ///
-    /// - Takes [`RemoveTagsFromVaultInput`](crate::input::RemoveTagsFromVaultInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::RemoveTagsFromVaultInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::RemoveTagsFromVaultInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::RemoveTagsFromVaultInput::tag_keys): <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTagsFromVault::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::RemoveTagsFromVault::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::RemoveTagsFromVault::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::RemoveTagsFromVault::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::RemoveTagsFromVault::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTagsFromVault::set_tag_keys): <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
     /// - On success, responds with [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput)
 
     /// - On failure, responds with [`SdkError<RemoveTagsFromVaultError>`](crate::error::RemoveTagsFromVaultError)
@@ -469,9 +469,9 @@ where
     }
     /// Constructs a fluent builder for the [`SetDataRetrievalPolicy`](crate::client::fluent_builders::SetDataRetrievalPolicy) operation.
     ///
-    /// - Takes [`SetDataRetrievalPolicyInput`](crate::input::SetDataRetrievalPolicyInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::SetDataRetrievalPolicyInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`policy(Option<DataRetrievalPolicy>)`](crate::input::SetDataRetrievalPolicyInput::policy): <p>The data retrieval policy in JSON format.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::SetDataRetrievalPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::SetDataRetrievalPolicy::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`policy(DataRetrievalPolicy)`](crate::client::fluent_builders::SetDataRetrievalPolicy::policy) / [`set_policy(Option<DataRetrievalPolicy>)`](crate::client::fluent_builders::SetDataRetrievalPolicy::set_policy): <p>The data retrieval policy in JSON format.</p>
     /// - On success, responds with [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput)
 
     /// - On failure, responds with [`SdkError<SetDataRetrievalPolicyError>`](crate::error::SetDataRetrievalPolicyError)
@@ -480,10 +480,10 @@ where
     }
     /// Constructs a fluent builder for the [`SetVaultAccessPolicy`](crate::client::fluent_builders::SetVaultAccessPolicy) operation.
     ///
-    /// - Takes [`SetVaultAccessPolicyInput`](crate::input::SetVaultAccessPolicyInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::SetVaultAccessPolicyInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::SetVaultAccessPolicyInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`policy(Option<VaultAccessPolicy>)`](crate::input::SetVaultAccessPolicyInput::policy): <p>The vault access policy as a JSON string.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::SetVaultAccessPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::SetVaultAccessPolicy::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::SetVaultAccessPolicy::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::SetVaultAccessPolicy::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`policy(VaultAccessPolicy)`](crate::client::fluent_builders::SetVaultAccessPolicy::policy) / [`set_policy(Option<VaultAccessPolicy>)`](crate::client::fluent_builders::SetVaultAccessPolicy::set_policy): <p>The vault access policy as a JSON string.</p>
     /// - On success, responds with [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput)
 
     /// - On failure, responds with [`SdkError<SetVaultAccessPolicyError>`](crate::error::SetVaultAccessPolicyError)
@@ -492,10 +492,10 @@ where
     }
     /// Constructs a fluent builder for the [`SetVaultNotifications`](crate::client::fluent_builders::SetVaultNotifications) operation.
     ///
-    /// - Takes [`SetVaultNotificationsInput`](crate::input::SetVaultNotificationsInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::SetVaultNotificationsInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    ///   - [`vault_name(Option<String>)`](crate::input::SetVaultNotificationsInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`vault_notification_config(Option<VaultNotificationConfig>)`](crate::input::SetVaultNotificationsInput::vault_notification_config): <p>Provides options for specifying notification configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::SetVaultNotifications::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::SetVaultNotifications::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::SetVaultNotifications::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::SetVaultNotifications::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`vault_notification_config(VaultNotificationConfig)`](crate::client::fluent_builders::SetVaultNotifications::vault_notification_config) / [`set_vault_notification_config(Option<VaultNotificationConfig>)`](crate::client::fluent_builders::SetVaultNotifications::set_vault_notification_config): <p>Provides options for specifying notification configuration.</p>
     /// - On success, responds with [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput)
 
     /// - On failure, responds with [`SdkError<SetVaultNotificationsError>`](crate::error::SetVaultNotificationsError)
@@ -504,12 +504,12 @@ where
     }
     /// Constructs a fluent builder for the [`UploadArchive`](crate::client::fluent_builders::UploadArchive) operation.
     ///
-    /// - Takes [`UploadArchiveInput`](crate::input::UploadArchiveInput) with field(s):
-    ///   - [`vault_name(Option<String>)`](crate::input::UploadArchiveInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`account_id(Option<String>)`](crate::input::UploadArchiveInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`archive_description(Option<String>)`](crate::input::UploadArchiveInput::archive_description): <p>The optional description of the archive you are uploading.</p>
-    ///   - [`checksum(Option<String>)`](crate::input::UploadArchiveInput::checksum): <p>The SHA256 tree hash of the data being uploaded.</p>
-    ///   - [`body(byte_stream::ByteStream)`](crate::input::UploadArchiveInput::body): <p>The data to upload.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::UploadArchive::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::UploadArchive::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UploadArchive::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UploadArchive::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`archive_description(impl Into<String>)`](crate::client::fluent_builders::UploadArchive::archive_description) / [`set_archive_description(Option<String>)`](crate::client::fluent_builders::UploadArchive::set_archive_description): <p>The optional description of the archive you are uploading.</p>
+    ///   - [`checksum(impl Into<String>)`](crate::client::fluent_builders::UploadArchive::checksum) / [`set_checksum(Option<String>)`](crate::client::fluent_builders::UploadArchive::set_checksum): <p>The SHA256 tree hash of the data being uploaded.</p>
+    ///   - [`body(byte_stream::ByteStream)`](crate::client::fluent_builders::UploadArchive::body) / [`set_body(byte_stream::ByteStream)`](crate::client::fluent_builders::UploadArchive::set_body): <p>The data to upload.</p>
     /// - On success, responds with [`UploadArchiveOutput`](crate::output::UploadArchiveOutput) with field(s):
     ///   - [`location(Option<String>)`](crate::output::UploadArchiveOutput::location): <p>The relative URI path of the newly added archive resource.</p>
     ///   - [`checksum(Option<String>)`](crate::output::UploadArchiveOutput::checksum): <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
@@ -520,13 +520,13 @@ where
     }
     /// Constructs a fluent builder for the [`UploadMultipartPart`](crate::client::fluent_builders::UploadMultipartPart) operation.
     ///
-    /// - Takes [`UploadMultipartPartInput`](crate::input::UploadMultipartPartInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::UploadMultipartPartInput::account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    ///   - [`vault_name(Option<String>)`](crate::input::UploadMultipartPartInput::vault_name): <p>The name of the vault.</p>
-    ///   - [`upload_id(Option<String>)`](crate::input::UploadMultipartPartInput::upload_id): <p>The upload ID of the multipart upload.</p>
-    ///   - [`checksum(Option<String>)`](crate::input::UploadMultipartPartInput::checksum): <p>The SHA256 tree hash of the data being uploaded.</p>
-    ///   - [`range(Option<String>)`](crate::input::UploadMultipartPartInput::range): <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
-    ///   - [`body(byte_stream::ByteStream)`](crate::input::UploadMultipartPartInput::body): <p>The data to upload.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UploadMultipartPart::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UploadMultipartPart::set_account_id): <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    ///   - [`vault_name(impl Into<String>)`](crate::client::fluent_builders::UploadMultipartPart::vault_name) / [`set_vault_name(Option<String>)`](crate::client::fluent_builders::UploadMultipartPart::set_vault_name): <p>The name of the vault.</p>
+    ///   - [`upload_id(impl Into<String>)`](crate::client::fluent_builders::UploadMultipartPart::upload_id) / [`set_upload_id(Option<String>)`](crate::client::fluent_builders::UploadMultipartPart::set_upload_id): <p>The upload ID of the multipart upload.</p>
+    ///   - [`checksum(impl Into<String>)`](crate::client::fluent_builders::UploadMultipartPart::checksum) / [`set_checksum(Option<String>)`](crate::client::fluent_builders::UploadMultipartPart::set_checksum): <p>The SHA256 tree hash of the data being uploaded.</p>
+    ///   - [`range(impl Into<String>)`](crate::client::fluent_builders::UploadMultipartPart::range) / [`set_range(Option<String>)`](crate::client::fluent_builders::UploadMultipartPart::set_range): <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
+    ///   - [`body(byte_stream::ByteStream)`](crate::client::fluent_builders::UploadMultipartPart::body) / [`set_body(byte_stream::ByteStream)`](crate::client::fluent_builders::UploadMultipartPart::set_body): <p>The data to upload.</p>
     /// - On success, responds with [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput) with field(s):
     ///   - [`checksum(Option<String>)`](crate::output::UploadMultipartPartOutput::checksum): <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
     /// - On failure, responds with [`SdkError<UploadMultipartPartError>`](crate::error::UploadMultipartPartError)

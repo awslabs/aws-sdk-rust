@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`AssociateAttributeGroup`](crate::client::fluent_builders::AssociateAttributeGroup) operation.
     ///
-    /// - Takes [`AssociateAttributeGroupInput`](crate::input::AssociateAttributeGroupInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::AssociateAttributeGroupInput::application): <p>The name or ID of the application.</p>
-    ///   - [`attribute_group(Option<String>)`](crate::input::AssociateAttributeGroupInput::attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::AssociateAttributeGroup::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::AssociateAttributeGroup::set_application): <p>The name or ID of the application.</p>
+    ///   - [`attribute_group(impl Into<String>)`](crate::client::fluent_builders::AssociateAttributeGroup::attribute_group) / [`set_attribute_group(Option<String>)`](crate::client::fluent_builders::AssociateAttributeGroup::set_attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     /// - On success, responds with [`AssociateAttributeGroupOutput`](crate::output::AssociateAttributeGroupOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::AssociateAttributeGroupOutput::application_arn): <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
     ///   - [`attribute_group_arn(Option<String>)`](crate::output::AssociateAttributeGroupOutput::attribute_group_arn): <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
@@ -97,10 +97,10 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateResource`](crate::client::fluent_builders::AssociateResource) operation.
     ///
-    /// - Takes [`AssociateResourceInput`](crate::input::AssociateResourceInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::AssociateResourceInput::application): <p>The name or ID of the application.</p>
-    ///   - [`resource_type(Option<ResourceType>)`](crate::input::AssociateResourceInput::resource_type): <p>The type of resource of which the application will be associated.</p>
-    ///   - [`resource(Option<String>)`](crate::input::AssociateResourceInput::resource): <p>The name or ID of the resource of which the application will be associated.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::AssociateResource::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::AssociateResource::set_application): <p>The name or ID of the application.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::AssociateResource::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::AssociateResource::set_resource_type): <p>The type of resource of which the application will be associated.</p>
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::AssociateResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::AssociateResource::set_resource): <p>The name or ID of the resource of which the application will be associated.</p>
     /// - On success, responds with [`AssociateResourceOutput`](crate::output::AssociateResourceOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::AssociateResourceOutput::application_arn): <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
     ///   - [`resource_arn(Option<String>)`](crate::output::AssociateResourceOutput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
@@ -110,11 +110,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
-    /// - Takes [`CreateApplicationInput`](crate::input::CreateApplicationInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateApplicationInput::name): <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateApplicationInput::description): <p>The description of the application.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateApplicationInput::tags): <p>Key-value pairs you can use to associate with the application.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateApplicationInput::client_token): <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_name): <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_description): <p>The description of the application.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>Key-value pairs you can use to associate with the application.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_client_token): <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::output::CreateApplicationOutput::application): <p>Information about the application.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
@@ -123,12 +123,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAttributeGroup`](crate::client::fluent_builders::CreateAttributeGroup) operation.
     ///
-    /// - Takes [`CreateAttributeGroupInput`](crate::input::CreateAttributeGroupInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateAttributeGroupInput::name): <p>The name of the attribute group.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateAttributeGroupInput::description): <p>The description of the attribute group that the user provides.</p>
-    ///   - [`attributes(Option<String>)`](crate::input::CreateAttributeGroupInput::attributes): <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAttributeGroupInput::tags): <p>Key-value pairs you can use to associate with the attribute group.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateAttributeGroupInput::client_token): <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAttributeGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAttributeGroup::set_name): <p>The name of the attribute group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAttributeGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAttributeGroup::set_description): <p>The description of the attribute group that the user provides.</p>
+    ///   - [`attributes(impl Into<String>)`](crate::client::fluent_builders::CreateAttributeGroup::attributes) / [`set_attributes(Option<String>)`](crate::client::fluent_builders::CreateAttributeGroup::set_attributes): <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAttributeGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAttributeGroup::set_tags): <p>Key-value pairs you can use to associate with the attribute group.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAttributeGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAttributeGroup::set_client_token): <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     /// - On success, responds with [`CreateAttributeGroupOutput`](crate::output::CreateAttributeGroupOutput) with field(s):
     ///   - [`attribute_group(Option<AttributeGroup>)`](crate::output::CreateAttributeGroupOutput::attribute_group): <p>Information about the attribute group.</p>
     /// - On failure, responds with [`SdkError<CreateAttributeGroupError>`](crate::error::CreateAttributeGroupError)
@@ -137,8 +137,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
     ///
-    /// - Takes [`DeleteApplicationInput`](crate::input::DeleteApplicationInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::DeleteApplicationInput::application): <p>The name or ID of the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application): <p>The name or ID of the application.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput) with field(s):
     ///   - [`application(Option<ApplicationSummary>)`](crate::output::DeleteApplicationOutput::application): <p>Information about the deleted application.</p>
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
@@ -147,8 +147,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAttributeGroup`](crate::client::fluent_builders::DeleteAttributeGroup) operation.
     ///
-    /// - Takes [`DeleteAttributeGroupInput`](crate::input::DeleteAttributeGroupInput) with field(s):
-    ///   - [`attribute_group(Option<String>)`](crate::input::DeleteAttributeGroupInput::attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`attribute_group(impl Into<String>)`](crate::client::fluent_builders::DeleteAttributeGroup::attribute_group) / [`set_attribute_group(Option<String>)`](crate::client::fluent_builders::DeleteAttributeGroup::set_attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     /// - On success, responds with [`DeleteAttributeGroupOutput`](crate::output::DeleteAttributeGroupOutput) with field(s):
     ///   - [`attribute_group(Option<AttributeGroupSummary>)`](crate::output::DeleteAttributeGroupOutput::attribute_group): <p>Information about the deleted attribute group.</p>
     /// - On failure, responds with [`SdkError<DeleteAttributeGroupError>`](crate::error::DeleteAttributeGroupError)
@@ -157,9 +157,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateAttributeGroup`](crate::client::fluent_builders::DisassociateAttributeGroup) operation.
     ///
-    /// - Takes [`DisassociateAttributeGroupInput`](crate::input::DisassociateAttributeGroupInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::DisassociateAttributeGroupInput::application): <p>The name or ID of the application.</p>
-    ///   - [`attribute_group(Option<String>)`](crate::input::DisassociateAttributeGroupInput::attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::DisassociateAttributeGroup::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::DisassociateAttributeGroup::set_application): <p>The name or ID of the application.</p>
+    ///   - [`attribute_group(impl Into<String>)`](crate::client::fluent_builders::DisassociateAttributeGroup::attribute_group) / [`set_attribute_group(Option<String>)`](crate::client::fluent_builders::DisassociateAttributeGroup::set_attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     /// - On success, responds with [`DisassociateAttributeGroupOutput`](crate::output::DisassociateAttributeGroupOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::DisassociateAttributeGroupOutput::application_arn): <p>The Amazon resource name (ARN) that specifies the application.</p>
     ///   - [`attribute_group_arn(Option<String>)`](crate::output::DisassociateAttributeGroupOutput::attribute_group_arn): <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
@@ -171,10 +171,10 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateResource`](crate::client::fluent_builders::DisassociateResource) operation.
     ///
-    /// - Takes [`DisassociateResourceInput`](crate::input::DisassociateResourceInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::DisassociateResourceInput::application): <p>The name or ID of the application.</p>
-    ///   - [`resource_type(Option<ResourceType>)`](crate::input::DisassociateResourceInput::resource_type): <p>The type of the resource that is being disassociated.</p>
-    ///   - [`resource(Option<String>)`](crate::input::DisassociateResourceInput::resource): <p>The name or ID of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::DisassociateResource::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::DisassociateResource::set_application): <p>The name or ID of the application.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::DisassociateResource::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::DisassociateResource::set_resource_type): <p>The type of the resource that is being disassociated.</p>
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::DisassociateResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::DisassociateResource::set_resource): <p>The name or ID of the resource.</p>
     /// - On success, responds with [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::DisassociateResourceOutput::application_arn): <p>The Amazon resource name (ARN) that specifies the application.</p>
     ///   - [`resource_arn(Option<String>)`](crate::output::DisassociateResourceOutput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
@@ -184,8 +184,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApplication`](crate::client::fluent_builders::GetApplication) operation.
     ///
-    /// - Takes [`GetApplicationInput`](crate::input::GetApplicationInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::GetApplicationInput::application): <p>The name or ID of the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application): <p>The name or ID of the application.</p>
     /// - On success, responds with [`GetApplicationOutput`](crate::output::GetApplicationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::GetApplicationOutput::id): <p>The identifier of the application.</p>
     ///   - [`arn(Option<String>)`](crate::output::GetApplicationOutput::arn): <p>The Amazon resource name (ARN) that specifies the application across services.</p>
@@ -202,10 +202,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetAssociatedResource`](crate::client::fluent_builders::GetAssociatedResource) operation.
     ///
-    /// - Takes [`GetAssociatedResourceInput`](crate::input::GetAssociatedResourceInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::GetAssociatedResourceInput::application): <p>The name or ID of the application.</p>
-    ///   - [`resource_type(Option<ResourceType>)`](crate::input::GetAssociatedResourceInput::resource_type): <p>The type of resource associated with the application.</p>
-    ///   - [`resource(Option<String>)`](crate::input::GetAssociatedResourceInput::resource): <p>The name or ID of the resource associated with the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::GetAssociatedResource::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::GetAssociatedResource::set_application): <p>The name or ID of the application.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::GetAssociatedResource::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::GetAssociatedResource::set_resource_type): <p>The type of resource associated with the application.</p>
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::GetAssociatedResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::GetAssociatedResource::set_resource): <p>The name or ID of the resource associated with the application.</p>
     /// - On success, responds with [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput) with field(s):
     ///   - [`resource(Option<Resource>)`](crate::output::GetAssociatedResourceOutput::resource): <p>The resource associated with the application.</p>
     /// - On failure, responds with [`SdkError<GetAssociatedResourceError>`](crate::error::GetAssociatedResourceError)
@@ -214,8 +214,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetAttributeGroup`](crate::client::fluent_builders::GetAttributeGroup) operation.
     ///
-    /// - Takes [`GetAttributeGroupInput`](crate::input::GetAttributeGroupInput) with field(s):
-    ///   - [`attribute_group(Option<String>)`](crate::input::GetAttributeGroupInput::attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`attribute_group(impl Into<String>)`](crate::client::fluent_builders::GetAttributeGroup::attribute_group) / [`set_attribute_group(Option<String>)`](crate::client::fluent_builders::GetAttributeGroup::set_attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     /// - On success, responds with [`GetAttributeGroupOutput`](crate::output::GetAttributeGroupOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::GetAttributeGroupOutput::id): <p>The identifier of the attribute group.</p>
     ///   - [`arn(Option<String>)`](crate::output::GetAttributeGroupOutput::arn): <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
@@ -230,11 +230,11 @@ where
         fluent_builders::GetAttributeGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     ///
-    /// - Takes [`ListApplicationsInput`](crate::input::ListApplicationsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationsInput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListApplicationsInput::max_results): <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>The token to use to get the next page of results after a previous API call. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApplications::set_max_results): <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
     ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::output::ListApplicationsOutput::applications): <p>This list of applications.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
@@ -243,12 +243,12 @@ where
         fluent_builders::ListApplications::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssociatedAttributeGroups`](crate::client::fluent_builders::ListAssociatedAttributeGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedAttributeGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedAttributeGroups::into_paginator).
     ///
-    /// - Takes [`ListAssociatedAttributeGroupsInput`](crate::input::ListAssociatedAttributeGroupsInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::ListAssociatedAttributeGroupsInput::application): <p>The name or ID of the application.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssociatedAttributeGroupsInput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssociatedAttributeGroupsInput::max_results): <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedAttributeGroups::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::ListAssociatedAttributeGroups::set_application): <p>The name or ID of the application.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedAttributeGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssociatedAttributeGroups::set_next_token): <p>The token to use to get the next page of results after a previous API call. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssociatedAttributeGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssociatedAttributeGroups::set_max_results): <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     /// - On success, responds with [`ListAssociatedAttributeGroupsOutput`](crate::output::ListAssociatedAttributeGroupsOutput) with field(s):
     ///   - [`attribute_groups(Option<Vec<String>>)`](crate::output::ListAssociatedAttributeGroupsOutput::attribute_groups): <p>A list of attribute group IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssociatedAttributeGroupsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
@@ -259,12 +259,12 @@ where
         fluent_builders::ListAssociatedAttributeGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssociatedResources`](crate::client::fluent_builders::ListAssociatedResources) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedResources::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedResources::into_paginator).
     ///
-    /// - Takes [`ListAssociatedResourcesInput`](crate::input::ListAssociatedResourcesInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::ListAssociatedResourcesInput::application): <p>The name or ID of the application.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssociatedResourcesInput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssociatedResourcesInput::max_results): <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedResources::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::ListAssociatedResources::set_application): <p>The name or ID of the application.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssociatedResources::set_next_token): <p>The token to use to get the next page of results after a previous API call. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssociatedResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssociatedResources::set_max_results): <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     /// - On success, responds with [`ListAssociatedResourcesOutput`](crate::output::ListAssociatedResourcesOutput) with field(s):
     ///   - [`resources(Option<Vec<ResourceInfo>>)`](crate::output::ListAssociatedResourcesOutput::resources): <p>Information about the resources.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssociatedResourcesOutput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
@@ -273,11 +273,11 @@ where
         fluent_builders::ListAssociatedResources::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAttributeGroups`](crate::client::fluent_builders::ListAttributeGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttributeGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttributeGroups::into_paginator).
     ///
-    /// - Takes [`ListAttributeGroupsInput`](crate::input::ListAttributeGroupsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListAttributeGroupsInput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAttributeGroupsInput::max_results): <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAttributeGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAttributeGroups::set_next_token): <p>The token to use to get the next page of results after a previous API call. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAttributeGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAttributeGroups::set_max_results): <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     /// - On success, responds with [`ListAttributeGroupsOutput`](crate::output::ListAttributeGroupsOutput) with field(s):
     ///   - [`attribute_groups(Option<Vec<AttributeGroupSummary>>)`](crate::output::ListAttributeGroupsOutput::attribute_groups): <p>This list of attribute groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAttributeGroupsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
@@ -287,8 +287,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags on the resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -297,9 +297,9 @@ where
     }
     /// Constructs a fluent builder for the [`SyncResource`](crate::client::fluent_builders::SyncResource) operation.
     ///
-    /// - Takes [`SyncResourceInput`](crate::input::SyncResourceInput) with field(s):
-    ///   - [`resource_type(Option<ResourceType>)`](crate::input::SyncResourceInput::resource_type): <p>The type of resource of which the application will be associated.</p>
-    ///   - [`resource(Option<String>)`](crate::input::SyncResourceInput::resource): <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::SyncResource::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::SyncResource::set_resource_type): <p>The type of resource of which the application will be associated.</p>
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::SyncResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::SyncResource::set_resource): <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
     /// - On success, responds with [`SyncResourceOutput`](crate::output::SyncResourceOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::SyncResourceOutput::application_arn): <p>The Amazon resource name (ARN) that specifies the application.</p>
     ///   - [`resource_arn(Option<String>)`](crate::output::SyncResourceOutput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
@@ -310,9 +310,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The new or modified tags for the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The new or modified tags for the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -321,9 +321,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of the tag keys to remove from the specified resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of the tag keys to remove from the specified resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -332,10 +332,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
     ///
-    /// - Takes [`UpdateApplicationInput`](crate::input::UpdateApplicationInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::UpdateApplicationInput::application): <p>The name or ID of the application that will be updated.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateApplicationInput::name): <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateApplicationInput::description): <p>The new description of the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application): <p>The name or ID of the application that will be updated.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_name): <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_description): <p>The new description of the application.</p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::output::UpdateApplicationOutput::application): <p>The updated information of the application.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
@@ -344,11 +344,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAttributeGroup`](crate::client::fluent_builders::UpdateAttributeGroup) operation.
     ///
-    /// - Takes [`UpdateAttributeGroupInput`](crate::input::UpdateAttributeGroupInput) with field(s):
-    ///   - [`attribute_group(Option<String>)`](crate::input::UpdateAttributeGroupInput::attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateAttributeGroupInput::name): <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateAttributeGroupInput::description): <p>The description of the attribute group that the user provides.</p>
-    ///   - [`attributes(Option<String>)`](crate::input::UpdateAttributeGroupInput::attributes): <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`attribute_group(impl Into<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::attribute_group) / [`set_attribute_group(Option<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::set_attribute_group): <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::set_name): <p>The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::set_description): <p>The description of the attribute group that the user provides.</p>
+    ///   - [`attributes(impl Into<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::attributes) / [`set_attributes(Option<String>)`](crate::client::fluent_builders::UpdateAttributeGroup::set_attributes): <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     /// - On success, responds with [`UpdateAttributeGroupOutput`](crate::output::UpdateAttributeGroupOutput) with field(s):
     ///   - [`attribute_group(Option<AttributeGroup>)`](crate::output::UpdateAttributeGroupOutput::attribute_group): <p>The updated information of the attribute group.</p>
     /// - On failure, responds with [`SdkError<UpdateAttributeGroupError>`](crate::error::UpdateAttributeGroupError)

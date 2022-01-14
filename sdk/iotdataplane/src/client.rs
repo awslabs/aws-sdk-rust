@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`DeleteThingShadow`](crate::client::fluent_builders::DeleteThingShadow) operation.
     ///
-    /// - Takes [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::DeleteThingShadowInput::thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(Option<String>)`](crate::input::DeleteThingShadowInput::shadow_name): <p>The name of the shadow.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThingShadow::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::DeleteThingShadow::set_thing_name): <p>The name of the thing.</p>
+    ///   - [`shadow_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThingShadow::shadow_name) / [`set_shadow_name(Option<String>)`](crate::client::fluent_builders::DeleteThingShadow::set_shadow_name): <p>The name of the shadow.</p>
     /// - On success, responds with [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput) with field(s):
     ///   - [`payload(Option<Blob>)`](crate::output::DeleteThingShadowOutput::payload): <p>The state information, in JSON format.</p>
     /// - On failure, responds with [`SdkError<DeleteThingShadowError>`](crate::error::DeleteThingShadowError)
@@ -96,8 +96,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetRetainedMessage`](crate::client::fluent_builders::GetRetainedMessage) operation.
     ///
-    /// - Takes [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput) with field(s):
-    ///   - [`topic(Option<String>)`](crate::input::GetRetainedMessageInput::topic): <p>The topic name of the retained message to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`topic(impl Into<String>)`](crate::client::fluent_builders::GetRetainedMessage::topic) / [`set_topic(Option<String>)`](crate::client::fluent_builders::GetRetainedMessage::set_topic): <p>The topic name of the retained message to retrieve.</p>
     /// - On success, responds with [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput) with field(s):
     ///   - [`topic(Option<String>)`](crate::output::GetRetainedMessageOutput::topic): <p>The topic name to which the retained message was published.</p>
     ///   - [`payload(Option<Blob>)`](crate::output::GetRetainedMessageOutput::payload): <p>The Base64-encoded message payload of the retained message body.</p>
@@ -109,9 +109,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetThingShadow`](crate::client::fluent_builders::GetThingShadow) operation.
     ///
-    /// - Takes [`GetThingShadowInput`](crate::input::GetThingShadowInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::GetThingShadowInput::thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(Option<String>)`](crate::input::GetThingShadowInput::shadow_name): <p>The name of the shadow.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::GetThingShadow::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::GetThingShadow::set_thing_name): <p>The name of the thing.</p>
+    ///   - [`shadow_name(impl Into<String>)`](crate::client::fluent_builders::GetThingShadow::shadow_name) / [`set_shadow_name(Option<String>)`](crate::client::fluent_builders::GetThingShadow::set_shadow_name): <p>The name of the shadow.</p>
     /// - On success, responds with [`GetThingShadowOutput`](crate::output::GetThingShadowOutput) with field(s):
     ///   - [`payload(Option<Blob>)`](crate::output::GetThingShadowOutput::payload): <p>The state information, in JSON format.</p>
     /// - On failure, responds with [`SdkError<GetThingShadowError>`](crate::error::GetThingShadowError)
@@ -120,10 +120,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListNamedShadowsForThing`](crate::client::fluent_builders::ListNamedShadowsForThing) operation.
     ///
-    /// - Takes [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::ListNamedShadowsForThingInput::thing_name): <p>The name of the thing.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListNamedShadowsForThingInput::next_token): <p>The token to retrieve the next set of results.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListNamedShadowsForThingInput::page_size): <p>The result page size.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::set_thing_name): <p>The name of the thing.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::set_next_token): <p>The token to retrieve the next set of results.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListNamedShadowsForThing::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListNamedShadowsForThing::set_page_size): <p>The result page size.</p>
     /// - On success, responds with [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput) with field(s):
     ///   - [`results(Option<Vec<String>>)`](crate::output::ListNamedShadowsForThingOutput::results): <p>The list of shadows for the specified thing.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListNamedShadowsForThingOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -135,11 +135,11 @@ where
         fluent_builders::ListNamedShadowsForThing::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRetainedMessages`](crate::client::fluent_builders::ListRetainedMessages) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRetainedMessages::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRetainedMessages::into_paginator).
     ///
-    /// - Takes [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListRetainedMessagesInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListRetainedMessagesInput::max_results): <p>The maximum number of results to return at one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRetainedMessages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRetainedMessages::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRetainedMessages::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRetainedMessages::set_max_results): <p>The maximum number of results to return at one time.</p>
     /// - On success, responds with [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput) with field(s):
     ///   - [`retained_topics(Option<Vec<RetainedMessageSummary>>)`](crate::output::ListRetainedMessagesOutput::retained_topics): <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRetainedMessagesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -149,11 +149,11 @@ where
     }
     /// Constructs a fluent builder for the [`Publish`](crate::client::fluent_builders::Publish) operation.
     ///
-    /// - Takes [`PublishInput`](crate::input::PublishInput) with field(s):
-    ///   - [`topic(Option<String>)`](crate::input::PublishInput::topic): <p>The name of the MQTT topic.</p>
-    ///   - [`qos(i32)`](crate::input::PublishInput::qos): <p>The Quality of Service (QoS) level.</p>
-    ///   - [`retain(bool)`](crate::input::PublishInput::retain): <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>  <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>  <p>Valid values: <code>true</code> | <code>false</code> </p>  <p>Default value: <code>false</code> </p>
-    ///   - [`payload(Option<Blob>)`](crate::input::PublishInput::payload): <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>  <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`topic(impl Into<String>)`](crate::client::fluent_builders::Publish::topic) / [`set_topic(Option<String>)`](crate::client::fluent_builders::Publish::set_topic): <p>The name of the MQTT topic.</p>
+    ///   - [`qos(i32)`](crate::client::fluent_builders::Publish::qos) / [`set_qos(i32)`](crate::client::fluent_builders::Publish::set_qos): <p>The Quality of Service (QoS) level.</p>
+    ///   - [`retain(bool)`](crate::client::fluent_builders::Publish::retain) / [`set_retain(bool)`](crate::client::fluent_builders::Publish::set_retain): <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>  <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>  <p>Valid values: <code>true</code> | <code>false</code> </p>  <p>Default value: <code>false</code> </p>
+    ///   - [`payload(Blob)`](crate::client::fluent_builders::Publish::payload) / [`set_payload(Option<Blob>)`](crate::client::fluent_builders::Publish::set_payload): <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>  <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
     /// - On success, responds with [`PublishOutput`](crate::output::PublishOutput)
 
     /// - On failure, responds with [`SdkError<PublishError>`](crate::error::PublishError)
@@ -162,10 +162,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateThingShadow`](crate::client::fluent_builders::UpdateThingShadow) operation.
     ///
-    /// - Takes [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput) with field(s):
-    ///   - [`thing_name(Option<String>)`](crate::input::UpdateThingShadowInput::thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(Option<String>)`](crate::input::UpdateThingShadowInput::shadow_name): <p>The name of the shadow.</p>
-    ///   - [`payload(Option<Blob>)`](crate::input::UpdateThingShadowInput::payload): <p>The state information, in JSON format.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThingShadow::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::UpdateThingShadow::set_thing_name): <p>The name of the thing.</p>
+    ///   - [`shadow_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThingShadow::shadow_name) / [`set_shadow_name(Option<String>)`](crate::client::fluent_builders::UpdateThingShadow::set_shadow_name): <p>The name of the shadow.</p>
+    ///   - [`payload(Blob)`](crate::client::fluent_builders::UpdateThingShadow::payload) / [`set_payload(Option<Blob>)`](crate::client::fluent_builders::UpdateThingShadow::set_payload): <p>The state information, in JSON format.</p>
     /// - On success, responds with [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput) with field(s):
     ///   - [`payload(Option<Blob>)`](crate::output::UpdateThingShadowOutput::payload): <p>The state information, in JSON format.</p>
     /// - On failure, responds with [`SdkError<UpdateThingShadowError>`](crate::error::UpdateThingShadowError)

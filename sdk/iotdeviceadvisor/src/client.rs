@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`CreateSuiteDefinition`](crate::client::fluent_builders::CreateSuiteDefinition) operation.
     ///
-    /// - Takes [`CreateSuiteDefinitionInput`](crate::input::CreateSuiteDefinitionInput) with field(s):
-    ///   - [`suite_definition_configuration(Option<SuiteDefinitionConfiguration>)`](crate::input::CreateSuiteDefinitionInput::suite_definition_configuration): <p>Creates a Device Advisor test suite with suite definition configuration.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSuiteDefinitionInput::tags): <p>The tags to be attached to the suite definition.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`suite_definition_configuration(SuiteDefinitionConfiguration)`](crate::client::fluent_builders::CreateSuiteDefinition::suite_definition_configuration) / [`set_suite_definition_configuration(Option<SuiteDefinitionConfiguration>)`](crate::client::fluent_builders::CreateSuiteDefinition::set_suite_definition_configuration): <p>Creates a Device Advisor test suite with suite definition configuration.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSuiteDefinition::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSuiteDefinition::set_tags): <p>The tags to be attached to the suite definition.</p>
     /// - On success, responds with [`CreateSuiteDefinitionOutput`](crate::output::CreateSuiteDefinitionOutput) with field(s):
     ///   - [`suite_definition_id(Option<String>)`](crate::output::CreateSuiteDefinitionOutput::suite_definition_id): <p>Creates a Device Advisor test suite with suite UUID.</p>
     ///   - [`suite_definition_arn(Option<String>)`](crate::output::CreateSuiteDefinitionOutput::suite_definition_arn): <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
@@ -99,8 +99,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSuiteDefinition`](crate::client::fluent_builders::DeleteSuiteDefinition) operation.
     ///
-    /// - Takes [`DeleteSuiteDefinitionInput`](crate::input::DeleteSuiteDefinitionInput) with field(s):
-    ///   - [`suite_definition_id(Option<String>)`](crate::input::DeleteSuiteDefinitionInput::suite_definition_id): <p>Suite definition ID of the test suite to be deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`suite_definition_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSuiteDefinition::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::client::fluent_builders::DeleteSuiteDefinition::set_suite_definition_id): <p>Suite definition ID of the test suite to be deleted.</p>
     /// - On success, responds with [`DeleteSuiteDefinitionOutput`](crate::output::DeleteSuiteDefinitionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSuiteDefinitionError>`](crate::error::DeleteSuiteDefinitionError)
@@ -109,9 +109,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetEndpoint`](crate::client::fluent_builders::GetEndpoint) operation.
     ///
-    /// - Takes [`GetEndpointInput`](crate::input::GetEndpointInput) with field(s):
-    ///   - [`thing_arn(Option<String>)`](crate::input::GetEndpointInput::thing_arn): <p>The thing ARN of the device. This is an optional parameter.</p>
-    ///   - [`certificate_arn(Option<String>)`](crate::input::GetEndpointInput::certificate_arn): <p>The certificate ARN of the device. This is an optional parameter.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`thing_arn(impl Into<String>)`](crate::client::fluent_builders::GetEndpoint::thing_arn) / [`set_thing_arn(Option<String>)`](crate::client::fluent_builders::GetEndpoint::set_thing_arn): <p>The thing ARN of the device. This is an optional parameter.</p>
+    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::GetEndpoint::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::GetEndpoint::set_certificate_arn): <p>The certificate ARN of the device. This is an optional parameter.</p>
     /// - On success, responds with [`GetEndpointOutput`](crate::output::GetEndpointOutput) with field(s):
     ///   - [`endpoint(Option<String>)`](crate::output::GetEndpointOutput::endpoint): <p>The response of an Device Advisor endpoint.</p>
     /// - On failure, responds with [`SdkError<GetEndpointError>`](crate::error::GetEndpointError)
@@ -120,9 +120,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetSuiteDefinition`](crate::client::fluent_builders::GetSuiteDefinition) operation.
     ///
-    /// - Takes [`GetSuiteDefinitionInput`](crate::input::GetSuiteDefinitionInput) with field(s):
-    ///   - [`suite_definition_id(Option<String>)`](crate::input::GetSuiteDefinitionInput::suite_definition_id): <p>Suite definition ID of the test suite to get.</p>
-    ///   - [`suite_definition_version(Option<String>)`](crate::input::GetSuiteDefinitionInput::suite_definition_version): <p>Suite definition version of the test suite to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`suite_definition_id(impl Into<String>)`](crate::client::fluent_builders::GetSuiteDefinition::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::client::fluent_builders::GetSuiteDefinition::set_suite_definition_id): <p>Suite definition ID of the test suite to get.</p>
+    ///   - [`suite_definition_version(impl Into<String>)`](crate::client::fluent_builders::GetSuiteDefinition::suite_definition_version) / [`set_suite_definition_version(Option<String>)`](crate::client::fluent_builders::GetSuiteDefinition::set_suite_definition_version): <p>Suite definition version of the test suite to get.</p>
     /// - On success, responds with [`GetSuiteDefinitionOutput`](crate::output::GetSuiteDefinitionOutput) with field(s):
     ///   - [`suite_definition_id(Option<String>)`](crate::output::GetSuiteDefinitionOutput::suite_definition_id): <p>Suite definition ID of the suite definition.</p>
     ///   - [`suite_definition_arn(Option<String>)`](crate::output::GetSuiteDefinitionOutput::suite_definition_arn): <p>The ARN of the suite definition.</p>
@@ -138,9 +138,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetSuiteRun`](crate::client::fluent_builders::GetSuiteRun) operation.
     ///
-    /// - Takes [`GetSuiteRunInput`](crate::input::GetSuiteRunInput) with field(s):
-    ///   - [`suite_definition_id(Option<String>)`](crate::input::GetSuiteRunInput::suite_definition_id): <p>Suite definition ID for the test suite run.</p>
-    ///   - [`suite_run_id(Option<String>)`](crate::input::GetSuiteRunInput::suite_run_id): <p>Suite run ID for the test suite run.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`suite_definition_id(impl Into<String>)`](crate::client::fluent_builders::GetSuiteRun::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::client::fluent_builders::GetSuiteRun::set_suite_definition_id): <p>Suite definition ID for the test suite run.</p>
+    ///   - [`suite_run_id(impl Into<String>)`](crate::client::fluent_builders::GetSuiteRun::suite_run_id) / [`set_suite_run_id(Option<String>)`](crate::client::fluent_builders::GetSuiteRun::set_suite_run_id): <p>Suite run ID for the test suite run.</p>
     /// - On success, responds with [`GetSuiteRunOutput`](crate::output::GetSuiteRunOutput) with field(s):
     ///   - [`suite_definition_id(Option<String>)`](crate::output::GetSuiteRunOutput::suite_definition_id): <p>Suite definition ID for the test suite run.</p>
     ///   - [`suite_definition_version(Option<String>)`](crate::output::GetSuiteRunOutput::suite_definition_version): <p>Suite definition version for the test suite run.</p>
@@ -159,9 +159,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetSuiteRunReport`](crate::client::fluent_builders::GetSuiteRunReport) operation.
     ///
-    /// - Takes [`GetSuiteRunReportInput`](crate::input::GetSuiteRunReportInput) with field(s):
-    ///   - [`suite_definition_id(Option<String>)`](crate::input::GetSuiteRunReportInput::suite_definition_id): <p>Suite definition ID of the test suite.</p>
-    ///   - [`suite_run_id(Option<String>)`](crate::input::GetSuiteRunReportInput::suite_run_id): <p>Suite run ID of the test suite run.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`suite_definition_id(impl Into<String>)`](crate::client::fluent_builders::GetSuiteRunReport::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::client::fluent_builders::GetSuiteRunReport::set_suite_definition_id): <p>Suite definition ID of the test suite.</p>
+    ///   - [`suite_run_id(impl Into<String>)`](crate::client::fluent_builders::GetSuiteRunReport::suite_run_id) / [`set_suite_run_id(Option<String>)`](crate::client::fluent_builders::GetSuiteRunReport::set_suite_run_id): <p>Suite run ID of the test suite run.</p>
     /// - On success, responds with [`GetSuiteRunReportOutput`](crate::output::GetSuiteRunReportOutput) with field(s):
     ///   - [`qualification_report_download_url(Option<String>)`](crate::output::GetSuiteRunReportOutput::qualification_report_download_url): <p>Download URL of the qualification report.</p>
     /// - On failure, responds with [`SdkError<GetSuiteRunReportError>`](crate::error::GetSuiteRunReportError)
@@ -169,11 +169,11 @@ where
         fluent_builders::GetSuiteRunReport::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSuiteDefinitions`](crate::client::fluent_builders::ListSuiteDefinitions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSuiteDefinitions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSuiteDefinitions::into_paginator).
     ///
-    /// - Takes [`ListSuiteDefinitionsInput`](crate::input::ListSuiteDefinitionsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListSuiteDefinitionsInput::max_results): <p>The maximum number of results to return at once.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListSuiteDefinitionsInput::next_token): <p>A token used to get the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSuiteDefinitions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSuiteDefinitions::set_max_results): <p>The maximum number of results to return at once.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSuiteDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSuiteDefinitions::set_next_token): <p>A token used to get the next set of results.</p>
     /// - On success, responds with [`ListSuiteDefinitionsOutput`](crate::output::ListSuiteDefinitionsOutput) with field(s):
     ///   - [`suite_definition_information_list(Option<Vec<SuiteDefinitionInformation>>)`](crate::output::ListSuiteDefinitionsOutput::suite_definition_information_list): <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSuiteDefinitionsOutput::next_token): <p>A token used to get the next set of results.</p>
@@ -182,13 +182,13 @@ where
         fluent_builders::ListSuiteDefinitions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSuiteRuns`](crate::client::fluent_builders::ListSuiteRuns) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSuiteRuns::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSuiteRuns::into_paginator).
     ///
-    /// - Takes [`ListSuiteRunsInput`](crate::input::ListSuiteRunsInput) with field(s):
-    ///   - [`suite_definition_id(Option<String>)`](crate::input::ListSuiteRunsInput::suite_definition_id): <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
-    ///   - [`suite_definition_version(Option<String>)`](crate::input::ListSuiteRunsInput::suite_definition_version): <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
-    ///   - [`max_results(i32)`](crate::input::ListSuiteRunsInput::max_results): <p>The maximum number of results to return at once.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListSuiteRunsInput::next_token): <p>A token to retrieve the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`suite_definition_id(impl Into<String>)`](crate::client::fluent_builders::ListSuiteRuns::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::client::fluent_builders::ListSuiteRuns::set_suite_definition_id): <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
+    ///   - [`suite_definition_version(impl Into<String>)`](crate::client::fluent_builders::ListSuiteRuns::suite_definition_version) / [`set_suite_definition_version(Option<String>)`](crate::client::fluent_builders::ListSuiteRuns::set_suite_definition_version): <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSuiteRuns::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSuiteRuns::set_max_results): <p>The maximum number of results to return at once.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSuiteRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSuiteRuns::set_next_token): <p>A token to retrieve the next set of results.</p>
     /// - On success, responds with [`ListSuiteRunsOutput`](crate::output::ListSuiteRunsOutput) with field(s):
     ///   - [`suite_runs_list(Option<Vec<SuiteRunInformation>>)`](crate::output::ListSuiteRunsOutput::suite_runs_list): <p>An array of objects that provide summaries of information about the suite runs in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSuiteRunsOutput::next_token): <p>A token to retrieve the next set of results.</p>
@@ -198,8 +198,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the IoT Device Advisor resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the IoT Device Advisor resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags attached to the IoT Device Advisor resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -208,11 +208,11 @@ where
     }
     /// Constructs a fluent builder for the [`StartSuiteRun`](crate::client::fluent_builders::StartSuiteRun) operation.
     ///
-    /// - Takes [`StartSuiteRunInput`](crate::input::StartSuiteRunInput) with field(s):
-    ///   - [`suite_definition_id(Option<String>)`](crate::input::StartSuiteRunInput::suite_definition_id): <p>Suite definition ID of the test suite.</p>
-    ///   - [`suite_definition_version(Option<String>)`](crate::input::StartSuiteRunInput::suite_definition_version): <p>Suite definition version of the test suite.</p>
-    ///   - [`suite_run_configuration(Option<SuiteRunConfiguration>)`](crate::input::StartSuiteRunInput::suite_run_configuration): <p>Suite run configuration.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::StartSuiteRunInput::tags): <p>The tags to be attached to the suite run.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`suite_definition_id(impl Into<String>)`](crate::client::fluent_builders::StartSuiteRun::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::client::fluent_builders::StartSuiteRun::set_suite_definition_id): <p>Suite definition ID of the test suite.</p>
+    ///   - [`suite_definition_version(impl Into<String>)`](crate::client::fluent_builders::StartSuiteRun::suite_definition_version) / [`set_suite_definition_version(Option<String>)`](crate::client::fluent_builders::StartSuiteRun::set_suite_definition_version): <p>Suite definition version of the test suite.</p>
+    ///   - [`suite_run_configuration(SuiteRunConfiguration)`](crate::client::fluent_builders::StartSuiteRun::suite_run_configuration) / [`set_suite_run_configuration(Option<SuiteRunConfiguration>)`](crate::client::fluent_builders::StartSuiteRun::set_suite_run_configuration): <p>Suite run configuration.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::StartSuiteRun::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartSuiteRun::set_tags): <p>The tags to be attached to the suite run.</p>
     /// - On success, responds with [`StartSuiteRunOutput`](crate::output::StartSuiteRunOutput) with field(s):
     ///   - [`suite_run_id(Option<String>)`](crate::output::StartSuiteRunOutput::suite_run_id): <p>Suite Run ID of the started suite run.</p>
     ///   - [`suite_run_arn(Option<String>)`](crate::output::StartSuiteRunOutput::suite_run_arn): <p>Amazon Resource Name (ARN) of the started suite run.</p>
@@ -223,9 +223,9 @@ where
     }
     /// Constructs a fluent builder for the [`StopSuiteRun`](crate::client::fluent_builders::StopSuiteRun) operation.
     ///
-    /// - Takes [`StopSuiteRunInput`](crate::input::StopSuiteRunInput) with field(s):
-    ///   - [`suite_definition_id(Option<String>)`](crate::input::StopSuiteRunInput::suite_definition_id): <p>Suite definition ID of the test suite run to be stopped.</p>
-    ///   - [`suite_run_id(Option<String>)`](crate::input::StopSuiteRunInput::suite_run_id): <p>Suite run ID of the test suite run to be stopped.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`suite_definition_id(impl Into<String>)`](crate::client::fluent_builders::StopSuiteRun::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::client::fluent_builders::StopSuiteRun::set_suite_definition_id): <p>Suite definition ID of the test suite run to be stopped.</p>
+    ///   - [`suite_run_id(impl Into<String>)`](crate::client::fluent_builders::StopSuiteRun::suite_run_id) / [`set_suite_run_id(Option<String>)`](crate::client::fluent_builders::StopSuiteRun::set_suite_run_id): <p>Suite run ID of the test suite run to be stopped.</p>
     /// - On success, responds with [`StopSuiteRunOutput`](crate::output::StopSuiteRunOutput)
 
     /// - On failure, responds with [`SdkError<StopSuiteRunError>`](crate::error::StopSuiteRunError)
@@ -234,9 +234,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The resource ARN of an IoT Device Advisor resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags to be attached to the IoT Device Advisor resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource ARN of an IoT Device Advisor resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to be attached to the IoT Device Advisor resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -245,9 +245,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The resource ARN of an IoT Device Advisor resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>List of tag keys to remove from the IoT Device Advisor resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource ARN of an IoT Device Advisor resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>List of tag keys to remove from the IoT Device Advisor resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -256,9 +256,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSuiteDefinition`](crate::client::fluent_builders::UpdateSuiteDefinition) operation.
     ///
-    /// - Takes [`UpdateSuiteDefinitionInput`](crate::input::UpdateSuiteDefinitionInput) with field(s):
-    ///   - [`suite_definition_id(Option<String>)`](crate::input::UpdateSuiteDefinitionInput::suite_definition_id): <p>Suite definition ID of the test suite to be updated.</p>
-    ///   - [`suite_definition_configuration(Option<SuiteDefinitionConfiguration>)`](crate::input::UpdateSuiteDefinitionInput::suite_definition_configuration): <p>Updates a Device Advisor test suite with suite definition configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`suite_definition_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSuiteDefinition::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::client::fluent_builders::UpdateSuiteDefinition::set_suite_definition_id): <p>Suite definition ID of the test suite to be updated.</p>
+    ///   - [`suite_definition_configuration(SuiteDefinitionConfiguration)`](crate::client::fluent_builders::UpdateSuiteDefinition::suite_definition_configuration) / [`set_suite_definition_configuration(Option<SuiteDefinitionConfiguration>)`](crate::client::fluent_builders::UpdateSuiteDefinition::set_suite_definition_configuration): <p>Updates a Device Advisor test suite with suite definition configuration.</p>
     /// - On success, responds with [`UpdateSuiteDefinitionOutput`](crate::output::UpdateSuiteDefinitionOutput) with field(s):
     ///   - [`suite_definition_id(Option<String>)`](crate::output::UpdateSuiteDefinitionOutput::suite_definition_id): <p>Suite definition ID of the updated test suite.</p>
     ///   - [`suite_definition_arn(Option<String>)`](crate::output::UpdateSuiteDefinitionOutput::suite_definition_arn): <p>Amazon Resource Name (ARN) of the updated test suite.</p>

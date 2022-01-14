@@ -85,19 +85,19 @@ where
 {
     /// Constructs a fluent builder for the [`CreateDeliveryStream`](crate::client::fluent_builders::CreateDeliveryStream) operation.
     ///
-    /// - Takes [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::CreateDeliveryStreamInput::delivery_stream_name): <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
-    ///   - [`delivery_stream_type(Option<DeliveryStreamType>)`](crate::input::CreateDeliveryStreamInput::delivery_stream_type): <p>The delivery stream type. This parameter can be one of the following values:</p>  <ul>   <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>   <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>  </ul>
-    ///   - [`kinesis_stream_source_configuration(Option<KinesisStreamSourceConfiguration>)`](crate::input::CreateDeliveryStreamInput::kinesis_stream_source_configuration): <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
-    ///   - [`delivery_stream_encryption_configuration_input(Option<DeliveryStreamEncryptionConfigurationInput>)`](crate::input::CreateDeliveryStreamInput::delivery_stream_encryption_configuration_input): <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    ///   - [`s3_destination_configuration(Option<S3DestinationConfiguration>)`](crate::input::CreateDeliveryStreamInput::s3_destination_configuration): <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
-    ///   - [`extended_s3_destination_configuration(Option<ExtendedS3DestinationConfiguration>)`](crate::input::CreateDeliveryStreamInput::extended_s3_destination_configuration): <p>The destination in Amazon S3. You can specify only one destination.</p>
-    ///   - [`redshift_destination_configuration(Option<RedshiftDestinationConfiguration>)`](crate::input::CreateDeliveryStreamInput::redshift_destination_configuration): <p>The destination in Amazon Redshift. You can specify only one destination.</p>
-    ///   - [`elasticsearch_destination_configuration(Option<ElasticsearchDestinationConfiguration>)`](crate::input::CreateDeliveryStreamInput::elasticsearch_destination_configuration): <p>The destination in Amazon ES. You can specify only one destination.</p>
-    ///   - [`amazonopensearchservice_destination_configuration(Option<AmazonopensearchserviceDestinationConfiguration>)`](crate::input::CreateDeliveryStreamInput::amazonopensearchservice_destination_configuration): (undocumented)
-    ///   - [`splunk_destination_configuration(Option<SplunkDestinationConfiguration>)`](crate::input::CreateDeliveryStreamInput::splunk_destination_configuration): <p>The destination in Splunk. You can specify only one destination.</p>
-    ///   - [`http_endpoint_destination_configuration(Option<HttpEndpointDestinationConfiguration>)`](crate::input::CreateDeliveryStreamInput::http_endpoint_destination_configuration): <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDeliveryStreamInput::tags): <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>  <p>You can specify up to 50 tags when creating a delivery stream.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeliveryStream::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::CreateDeliveryStream::set_delivery_stream_name): <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
+    ///   - [`delivery_stream_type(DeliveryStreamType)`](crate::client::fluent_builders::CreateDeliveryStream::delivery_stream_type) / [`set_delivery_stream_type(Option<DeliveryStreamType>)`](crate::client::fluent_builders::CreateDeliveryStream::set_delivery_stream_type): <p>The delivery stream type. This parameter can be one of the following values:</p>  <ul>   <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>   <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>  </ul>
+    ///   - [`kinesis_stream_source_configuration(KinesisStreamSourceConfiguration)`](crate::client::fluent_builders::CreateDeliveryStream::kinesis_stream_source_configuration) / [`set_kinesis_stream_source_configuration(Option<KinesisStreamSourceConfiguration>)`](crate::client::fluent_builders::CreateDeliveryStream::set_kinesis_stream_source_configuration): <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
+    ///   - [`delivery_stream_encryption_configuration_input(DeliveryStreamEncryptionConfigurationInput)`](crate::client::fluent_builders::CreateDeliveryStream::delivery_stream_encryption_configuration_input) / [`set_delivery_stream_encryption_configuration_input(Option<DeliveryStreamEncryptionConfigurationInput>)`](crate::client::fluent_builders::CreateDeliveryStream::set_delivery_stream_encryption_configuration_input): <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
+    ///   - [`s3_destination_configuration(S3DestinationConfiguration)`](crate::client::fluent_builders::CreateDeliveryStream::s3_destination_configuration) / [`set_s3_destination_configuration(Option<S3DestinationConfiguration>)`](crate::client::fluent_builders::CreateDeliveryStream::set_s3_destination_configuration): <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    ///   - [`extended_s3_destination_configuration(ExtendedS3DestinationConfiguration)`](crate::client::fluent_builders::CreateDeliveryStream::extended_s3_destination_configuration) / [`set_extended_s3_destination_configuration(Option<ExtendedS3DestinationConfiguration>)`](crate::client::fluent_builders::CreateDeliveryStream::set_extended_s3_destination_configuration): <p>The destination in Amazon S3. You can specify only one destination.</p>
+    ///   - [`redshift_destination_configuration(RedshiftDestinationConfiguration)`](crate::client::fluent_builders::CreateDeliveryStream::redshift_destination_configuration) / [`set_redshift_destination_configuration(Option<RedshiftDestinationConfiguration>)`](crate::client::fluent_builders::CreateDeliveryStream::set_redshift_destination_configuration): <p>The destination in Amazon Redshift. You can specify only one destination.</p>
+    ///   - [`elasticsearch_destination_configuration(ElasticsearchDestinationConfiguration)`](crate::client::fluent_builders::CreateDeliveryStream::elasticsearch_destination_configuration) / [`set_elasticsearch_destination_configuration(Option<ElasticsearchDestinationConfiguration>)`](crate::client::fluent_builders::CreateDeliveryStream::set_elasticsearch_destination_configuration): <p>The destination in Amazon ES. You can specify only one destination.</p>
+    ///   - [`amazonopensearchservice_destination_configuration(AmazonopensearchserviceDestinationConfiguration)`](crate::client::fluent_builders::CreateDeliveryStream::amazonopensearchservice_destination_configuration) / [`set_amazonopensearchservice_destination_configuration(Option<AmazonopensearchserviceDestinationConfiguration>)`](crate::client::fluent_builders::CreateDeliveryStream::set_amazonopensearchservice_destination_configuration): (undocumented)
+    ///   - [`splunk_destination_configuration(SplunkDestinationConfiguration)`](crate::client::fluent_builders::CreateDeliveryStream::splunk_destination_configuration) / [`set_splunk_destination_configuration(Option<SplunkDestinationConfiguration>)`](crate::client::fluent_builders::CreateDeliveryStream::set_splunk_destination_configuration): <p>The destination in Splunk. You can specify only one destination.</p>
+    ///   - [`http_endpoint_destination_configuration(HttpEndpointDestinationConfiguration)`](crate::client::fluent_builders::CreateDeliveryStream::http_endpoint_destination_configuration) / [`set_http_endpoint_destination_configuration(Option<HttpEndpointDestinationConfiguration>)`](crate::client::fluent_builders::CreateDeliveryStream::set_http_endpoint_destination_configuration): <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDeliveryStream::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDeliveryStream::set_tags): <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>  <p>You can specify up to 50 tags when creating a delivery stream.</p>
     /// - On success, responds with [`CreateDeliveryStreamOutput`](crate::output::CreateDeliveryStreamOutput) with field(s):
     ///   - [`delivery_stream_arn(Option<String>)`](crate::output::CreateDeliveryStreamOutput::delivery_stream_arn): <p>The ARN of the delivery stream.</p>
     /// - On failure, responds with [`SdkError<CreateDeliveryStreamError>`](crate::error::CreateDeliveryStreamError)
@@ -106,9 +106,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDeliveryStream`](crate::client::fluent_builders::DeleteDeliveryStream) operation.
     ///
-    /// - Takes [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::DeleteDeliveryStreamInput::delivery_stream_name): <p>The name of the delivery stream.</p>
-    ///   - [`allow_force_delete(Option<bool>)`](crate::input::DeleteDeliveryStreamInput::allow_force_delete): <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>  <p>The default value is false.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeliveryStream::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::DeleteDeliveryStream::set_delivery_stream_name): <p>The name of the delivery stream.</p>
+    ///   - [`allow_force_delete(bool)`](crate::client::fluent_builders::DeleteDeliveryStream::allow_force_delete) / [`set_allow_force_delete(Option<bool>)`](crate::client::fluent_builders::DeleteDeliveryStream::set_allow_force_delete): <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>  <p>The default value is false.</p>
     /// - On success, responds with [`DeleteDeliveryStreamOutput`](crate::output::DeleteDeliveryStreamOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDeliveryStreamError>`](crate::error::DeleteDeliveryStreamError)
@@ -117,10 +117,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDeliveryStream`](crate::client::fluent_builders::DescribeDeliveryStream) operation.
     ///
-    /// - Takes [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::DescribeDeliveryStreamInput::delivery_stream_name): <p>The name of the delivery stream.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeDeliveryStreamInput::limit): <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
-    ///   - [`exclusive_start_destination_id(Option<String>)`](crate::input::DescribeDeliveryStreamInput::exclusive_start_destination_id): <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDeliveryStream::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeDeliveryStream::set_delivery_stream_name): <p>The name of the delivery stream.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeDeliveryStream::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeDeliveryStream::set_limit): <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    ///   - [`exclusive_start_destination_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDeliveryStream::exclusive_start_destination_id) / [`set_exclusive_start_destination_id(Option<String>)`](crate::client::fluent_builders::DescribeDeliveryStream::set_exclusive_start_destination_id): <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
     /// - On success, responds with [`DescribeDeliveryStreamOutput`](crate::output::DescribeDeliveryStreamOutput) with field(s):
     ///   - [`delivery_stream_description(Option<DeliveryStreamDescription>)`](crate::output::DescribeDeliveryStreamOutput::delivery_stream_description): <p>Information about the delivery stream.</p>
     /// - On failure, responds with [`SdkError<DescribeDeliveryStreamError>`](crate::error::DescribeDeliveryStreamError)
@@ -129,10 +129,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListDeliveryStreams`](crate::client::fluent_builders::ListDeliveryStreams) operation.
     ///
-    /// - Takes [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput) with field(s):
-    ///   - [`limit(Option<i32>)`](crate::input::ListDeliveryStreamsInput::limit): <p>The maximum number of delivery streams to list. The default value is 10.</p>
-    ///   - [`delivery_stream_type(Option<DeliveryStreamType>)`](crate::input::ListDeliveryStreamsInput::delivery_stream_type): <p>The delivery stream type. This can be one of the following values:</p>  <ul>   <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>   <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>  </ul>  <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
-    ///   - [`exclusive_start_delivery_stream_name(Option<String>)`](crate::input::ListDeliveryStreamsInput::exclusive_start_delivery_stream_name): <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListDeliveryStreams::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListDeliveryStreams::set_limit): <p>The maximum number of delivery streams to list. The default value is 10.</p>
+    ///   - [`delivery_stream_type(DeliveryStreamType)`](crate::client::fluent_builders::ListDeliveryStreams::delivery_stream_type) / [`set_delivery_stream_type(Option<DeliveryStreamType>)`](crate::client::fluent_builders::ListDeliveryStreams::set_delivery_stream_type): <p>The delivery stream type. This can be one of the following values:</p>  <ul>   <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>   <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>  </ul>  <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
+    ///   - [`exclusive_start_delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::ListDeliveryStreams::exclusive_start_delivery_stream_name) / [`set_exclusive_start_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::ListDeliveryStreams::set_exclusive_start_delivery_stream_name): <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
     /// - On success, responds with [`ListDeliveryStreamsOutput`](crate::output::ListDeliveryStreamsOutput) with field(s):
     ///   - [`delivery_stream_names(Option<Vec<String>>)`](crate::output::ListDeliveryStreamsOutput::delivery_stream_names): <p>The names of the delivery streams.</p>
     ///   - [`has_more_delivery_streams(Option<bool>)`](crate::output::ListDeliveryStreamsOutput::has_more_delivery_streams): <p>Indicates whether there are more delivery streams available to list.</p>
@@ -142,10 +142,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForDeliveryStream`](crate::client::fluent_builders::ListTagsForDeliveryStream) operation.
     ///
-    /// - Takes [`ListTagsForDeliveryStreamInput`](crate::input::ListTagsForDeliveryStreamInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::ListTagsForDeliveryStreamInput::delivery_stream_name): <p>The name of the delivery stream whose tags you want to list.</p>
-    ///   - [`exclusive_start_tag_key(Option<String>)`](crate::input::ListTagsForDeliveryStreamInput::exclusive_start_tag_key): <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListTagsForDeliveryStreamInput::limit): <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::ListTagsForDeliveryStream::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::ListTagsForDeliveryStream::set_delivery_stream_name): <p>The name of the delivery stream whose tags you want to list.</p>
+    ///   - [`exclusive_start_tag_key(impl Into<String>)`](crate::client::fluent_builders::ListTagsForDeliveryStream::exclusive_start_tag_key) / [`set_exclusive_start_tag_key(Option<String>)`](crate::client::fluent_builders::ListTagsForDeliveryStream::set_exclusive_start_tag_key): <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListTagsForDeliveryStream::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListTagsForDeliveryStream::set_limit): <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
     /// - On success, responds with [`ListTagsForDeliveryStreamOutput`](crate::output::ListTagsForDeliveryStreamOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForDeliveryStreamOutput::tags): <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
     ///   - [`has_more_tags(Option<bool>)`](crate::output::ListTagsForDeliveryStreamOutput::has_more_tags): <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
@@ -157,9 +157,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutRecord`](crate::client::fluent_builders::PutRecord) operation.
     ///
-    /// - Takes [`PutRecordInput`](crate::input::PutRecordInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::PutRecordInput::delivery_stream_name): <p>The name of the delivery stream.</p>
-    ///   - [`record(Option<Record>)`](crate::input::PutRecordInput::record): <p>The record.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::PutRecord::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::PutRecord::set_delivery_stream_name): <p>The name of the delivery stream.</p>
+    ///   - [`record(Record)`](crate::client::fluent_builders::PutRecord::record) / [`set_record(Option<Record>)`](crate::client::fluent_builders::PutRecord::set_record): <p>The record.</p>
     /// - On success, responds with [`PutRecordOutput`](crate::output::PutRecordOutput) with field(s):
     ///   - [`record_id(Option<String>)`](crate::output::PutRecordOutput::record_id): <p>The ID of the record.</p>
     ///   - [`encrypted(Option<bool>)`](crate::output::PutRecordOutput::encrypted): <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
@@ -169,9 +169,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutRecordBatch`](crate::client::fluent_builders::PutRecordBatch) operation.
     ///
-    /// - Takes [`PutRecordBatchInput`](crate::input::PutRecordBatchInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::PutRecordBatchInput::delivery_stream_name): <p>The name of the delivery stream.</p>
-    ///   - [`records(Option<Vec<Record>>)`](crate::input::PutRecordBatchInput::records): <p>One or more records.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::PutRecordBatch::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::PutRecordBatch::set_delivery_stream_name): <p>The name of the delivery stream.</p>
+    ///   - [`records(Vec<Record>)`](crate::client::fluent_builders::PutRecordBatch::records) / [`set_records(Option<Vec<Record>>)`](crate::client::fluent_builders::PutRecordBatch::set_records): <p>One or more records.</p>
     /// - On success, responds with [`PutRecordBatchOutput`](crate::output::PutRecordBatchOutput) with field(s):
     ///   - [`failed_put_count(Option<i32>)`](crate::output::PutRecordBatchOutput::failed_put_count): <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
     ///   - [`encrypted(Option<bool>)`](crate::output::PutRecordBatchOutput::encrypted): <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
@@ -182,9 +182,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartDeliveryStreamEncryption`](crate::client::fluent_builders::StartDeliveryStreamEncryption) operation.
     ///
-    /// - Takes [`StartDeliveryStreamEncryptionInput`](crate::input::StartDeliveryStreamEncryptionInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::StartDeliveryStreamEncryptionInput::delivery_stream_name): <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
-    ///   - [`delivery_stream_encryption_configuration_input(Option<DeliveryStreamEncryptionConfigurationInput>)`](crate::input::StartDeliveryStreamEncryptionInput::delivery_stream_encryption_configuration_input): <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::StartDeliveryStreamEncryption::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::StartDeliveryStreamEncryption::set_delivery_stream_name): <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
+    ///   - [`delivery_stream_encryption_configuration_input(DeliveryStreamEncryptionConfigurationInput)`](crate::client::fluent_builders::StartDeliveryStreamEncryption::delivery_stream_encryption_configuration_input) / [`set_delivery_stream_encryption_configuration_input(Option<DeliveryStreamEncryptionConfigurationInput>)`](crate::client::fluent_builders::StartDeliveryStreamEncryption::set_delivery_stream_encryption_configuration_input): <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
     /// - On success, responds with [`StartDeliveryStreamEncryptionOutput`](crate::output::StartDeliveryStreamEncryptionOutput)
 
     /// - On failure, responds with [`SdkError<StartDeliveryStreamEncryptionError>`](crate::error::StartDeliveryStreamEncryptionError)
@@ -195,8 +195,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopDeliveryStreamEncryption`](crate::client::fluent_builders::StopDeliveryStreamEncryption) operation.
     ///
-    /// - Takes [`StopDeliveryStreamEncryptionInput`](crate::input::StopDeliveryStreamEncryptionInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::StopDeliveryStreamEncryptionInput::delivery_stream_name): <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::StopDeliveryStreamEncryption::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::StopDeliveryStreamEncryption::set_delivery_stream_name): <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
     /// - On success, responds with [`StopDeliveryStreamEncryptionOutput`](crate::output::StopDeliveryStreamEncryptionOutput)
 
     /// - On failure, responds with [`SdkError<StopDeliveryStreamEncryptionError>`](crate::error::StopDeliveryStreamEncryptionError)
@@ -207,9 +207,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagDeliveryStream`](crate::client::fluent_builders::TagDeliveryStream) operation.
     ///
-    /// - Takes [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::TagDeliveryStreamInput::delivery_stream_name): <p>The name of the delivery stream to which you want to add the tags.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagDeliveryStreamInput::tags): <p>A set of key-value pairs to use to create the tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::TagDeliveryStream::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::TagDeliveryStream::set_delivery_stream_name): <p>The name of the delivery stream to which you want to add the tags.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagDeliveryStream::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagDeliveryStream::set_tags): <p>A set of key-value pairs to use to create the tags.</p>
     /// - On success, responds with [`TagDeliveryStreamOutput`](crate::output::TagDeliveryStreamOutput)
 
     /// - On failure, responds with [`SdkError<TagDeliveryStreamError>`](crate::error::TagDeliveryStreamError)
@@ -218,9 +218,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagDeliveryStream`](crate::client::fluent_builders::UntagDeliveryStream) operation.
     ///
-    /// - Takes [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::UntagDeliveryStreamInput::delivery_stream_name): <p>The name of the delivery stream.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagDeliveryStreamInput::tag_keys): <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::UntagDeliveryStream::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::UntagDeliveryStream::set_delivery_stream_name): <p>The name of the delivery stream.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagDeliveryStream::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagDeliveryStream::set_tag_keys): <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
     /// - On success, responds with [`UntagDeliveryStreamOutput`](crate::output::UntagDeliveryStreamOutput)
 
     /// - On failure, responds with [`SdkError<UntagDeliveryStreamError>`](crate::error::UntagDeliveryStreamError)
@@ -229,17 +229,17 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDestination`](crate::client::fluent_builders::UpdateDestination) operation.
     ///
-    /// - Takes [`UpdateDestinationInput`](crate::input::UpdateDestinationInput) with field(s):
-    ///   - [`delivery_stream_name(Option<String>)`](crate::input::UpdateDestinationInput::delivery_stream_name): <p>The name of the delivery stream.</p>
-    ///   - [`current_delivery_stream_version_id(Option<String>)`](crate::input::UpdateDestinationInput::current_delivery_stream_version_id): <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
-    ///   - [`destination_id(Option<String>)`](crate::input::UpdateDestinationInput::destination_id): <p>The ID of the destination.</p>
-    ///   - [`s3_destination_update(Option<S3DestinationUpdate>)`](crate::input::UpdateDestinationInput::s3_destination_update): <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
-    ///   - [`extended_s3_destination_update(Option<ExtendedS3DestinationUpdate>)`](crate::input::UpdateDestinationInput::extended_s3_destination_update): <p>Describes an update for a destination in Amazon S3.</p>
-    ///   - [`redshift_destination_update(Option<RedshiftDestinationUpdate>)`](crate::input::UpdateDestinationInput::redshift_destination_update): <p>Describes an update for a destination in Amazon Redshift.</p>
-    ///   - [`elasticsearch_destination_update(Option<ElasticsearchDestinationUpdate>)`](crate::input::UpdateDestinationInput::elasticsearch_destination_update): <p>Describes an update for a destination in Amazon ES.</p>
-    ///   - [`amazonopensearchservice_destination_update(Option<AmazonopensearchserviceDestinationUpdate>)`](crate::input::UpdateDestinationInput::amazonopensearchservice_destination_update): (undocumented)
-    ///   - [`splunk_destination_update(Option<SplunkDestinationUpdate>)`](crate::input::UpdateDestinationInput::splunk_destination_update): <p>Describes an update for a destination in Splunk.</p>
-    ///   - [`http_endpoint_destination_update(Option<HttpEndpointDestinationUpdate>)`](crate::input::UpdateDestinationInput::http_endpoint_destination_update): <p>Describes an update to the specified HTTP endpoint destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_stream_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_delivery_stream_name): <p>The name of the delivery stream.</p>
+    ///   - [`current_delivery_stream_version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::current_delivery_stream_version_id) / [`set_current_delivery_stream_version_id(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_current_delivery_stream_version_id): <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
+    ///   - [`destination_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::destination_id) / [`set_destination_id(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_destination_id): <p>The ID of the destination.</p>
+    ///   - [`s3_destination_update(S3DestinationUpdate)`](crate::client::fluent_builders::UpdateDestination::s3_destination_update) / [`set_s3_destination_update(Option<S3DestinationUpdate>)`](crate::client::fluent_builders::UpdateDestination::set_s3_destination_update): <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    ///   - [`extended_s3_destination_update(ExtendedS3DestinationUpdate)`](crate::client::fluent_builders::UpdateDestination::extended_s3_destination_update) / [`set_extended_s3_destination_update(Option<ExtendedS3DestinationUpdate>)`](crate::client::fluent_builders::UpdateDestination::set_extended_s3_destination_update): <p>Describes an update for a destination in Amazon S3.</p>
+    ///   - [`redshift_destination_update(RedshiftDestinationUpdate)`](crate::client::fluent_builders::UpdateDestination::redshift_destination_update) / [`set_redshift_destination_update(Option<RedshiftDestinationUpdate>)`](crate::client::fluent_builders::UpdateDestination::set_redshift_destination_update): <p>Describes an update for a destination in Amazon Redshift.</p>
+    ///   - [`elasticsearch_destination_update(ElasticsearchDestinationUpdate)`](crate::client::fluent_builders::UpdateDestination::elasticsearch_destination_update) / [`set_elasticsearch_destination_update(Option<ElasticsearchDestinationUpdate>)`](crate::client::fluent_builders::UpdateDestination::set_elasticsearch_destination_update): <p>Describes an update for a destination in Amazon ES.</p>
+    ///   - [`amazonopensearchservice_destination_update(AmazonopensearchserviceDestinationUpdate)`](crate::client::fluent_builders::UpdateDestination::amazonopensearchservice_destination_update) / [`set_amazonopensearchservice_destination_update(Option<AmazonopensearchserviceDestinationUpdate>)`](crate::client::fluent_builders::UpdateDestination::set_amazonopensearchservice_destination_update): (undocumented)
+    ///   - [`splunk_destination_update(SplunkDestinationUpdate)`](crate::client::fluent_builders::UpdateDestination::splunk_destination_update) / [`set_splunk_destination_update(Option<SplunkDestinationUpdate>)`](crate::client::fluent_builders::UpdateDestination::set_splunk_destination_update): <p>Describes an update for a destination in Splunk.</p>
+    ///   - [`http_endpoint_destination_update(HttpEndpointDestinationUpdate)`](crate::client::fluent_builders::UpdateDestination::http_endpoint_destination_update) / [`set_http_endpoint_destination_update(Option<HttpEndpointDestinationUpdate>)`](crate::client::fluent_builders::UpdateDestination::set_http_endpoint_destination_update): <p>Describes an update to the specified HTTP endpoint destination.</p>
     /// - On success, responds with [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDestinationError>`](crate::error::UpdateDestinationError)

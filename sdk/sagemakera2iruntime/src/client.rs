@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`DeleteHumanLoop`](crate::client::fluent_builders::DeleteHumanLoop) operation.
     ///
-    /// - Takes [`DeleteHumanLoopInput`](crate::input::DeleteHumanLoopInput) with field(s):
-    ///   - [`human_loop_name(Option<String>)`](crate::input::DeleteHumanLoopInput::human_loop_name): <p>The name of the human loop that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`human_loop_name(impl Into<String>)`](crate::client::fluent_builders::DeleteHumanLoop::human_loop_name) / [`set_human_loop_name(Option<String>)`](crate::client::fluent_builders::DeleteHumanLoop::set_human_loop_name): <p>The name of the human loop that you want to delete.</p>
     /// - On success, responds with [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput)
 
     /// - On failure, responds with [`SdkError<DeleteHumanLoopError>`](crate::error::DeleteHumanLoopError)
@@ -95,8 +95,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeHumanLoop`](crate::client::fluent_builders::DescribeHumanLoop) operation.
     ///
-    /// - Takes [`DescribeHumanLoopInput`](crate::input::DescribeHumanLoopInput) with field(s):
-    ///   - [`human_loop_name(Option<String>)`](crate::input::DescribeHumanLoopInput::human_loop_name): <p>The name of the human loop that you want information about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`human_loop_name(impl Into<String>)`](crate::client::fluent_builders::DescribeHumanLoop::human_loop_name) / [`set_human_loop_name(Option<String>)`](crate::client::fluent_builders::DescribeHumanLoop::set_human_loop_name): <p>The name of the human loop that you want information about.</p>
     /// - On success, responds with [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeHumanLoopOutput::creation_time): <p>The creation time when Amazon Augmented AI created the human loop.</p>
     ///   - [`failure_reason(Option<String>)`](crate::output::DescribeHumanLoopOutput::failure_reason): <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
@@ -111,15 +111,15 @@ where
         fluent_builders::DescribeHumanLoop::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListHumanLoops`](crate::client::fluent_builders::ListHumanLoops) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHumanLoops::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHumanLoops::into_paginator).
     ///
-    /// - Takes [`ListHumanLoopsInput`](crate::input::ListHumanLoopsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListHumanLoopsInput::creation_time_after): <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListHumanLoopsInput::creation_time_before): <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    ///   - [`flow_definition_arn(Option<String>)`](crate::input::ListHumanLoopsInput::flow_definition_arn): <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListHumanLoopsInput::sort_order): <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListHumanLoopsInput::next_token): <p>A token to display the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListHumanLoopsInput::max_results): <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListHumanLoops::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListHumanLoops::set_creation_time_after): <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListHumanLoops::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListHumanLoops::set_creation_time_before): <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
+    ///   - [`flow_definition_arn(impl Into<String>)`](crate::client::fluent_builders::ListHumanLoops::flow_definition_arn) / [`set_flow_definition_arn(Option<String>)`](crate::client::fluent_builders::ListHumanLoops::set_flow_definition_arn): <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListHumanLoops::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListHumanLoops::set_sort_order): <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHumanLoops::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHumanLoops::set_next_token): <p>A token to display the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHumanLoops::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHumanLoops::set_max_results): <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
     /// - On success, responds with [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput) with field(s):
     ///   - [`human_loop_summaries(Option<Vec<HumanLoopSummary>>)`](crate::output::ListHumanLoopsOutput::human_loop_summaries): <p>An array of objects that contain information about the human loops.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListHumanLoopsOutput::next_token): <p>A token to display the next page of results.</p>
@@ -129,11 +129,11 @@ where
     }
     /// Constructs a fluent builder for the [`StartHumanLoop`](crate::client::fluent_builders::StartHumanLoop) operation.
     ///
-    /// - Takes [`StartHumanLoopInput`](crate::input::StartHumanLoopInput) with field(s):
-    ///   - [`human_loop_name(Option<String>)`](crate::input::StartHumanLoopInput::human_loop_name): <p>The name of the human loop.</p>
-    ///   - [`flow_definition_arn(Option<String>)`](crate::input::StartHumanLoopInput::flow_definition_arn): <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
-    ///   - [`human_loop_input(Option<HumanLoopInput>)`](crate::input::StartHumanLoopInput::human_loop_input): <p>An object that contains information about the human loop.</p>
-    ///   - [`data_attributes(Option<HumanLoopDataAttributes>)`](crate::input::StartHumanLoopInput::data_attributes): <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`human_loop_name(impl Into<String>)`](crate::client::fluent_builders::StartHumanLoop::human_loop_name) / [`set_human_loop_name(Option<String>)`](crate::client::fluent_builders::StartHumanLoop::set_human_loop_name): <p>The name of the human loop.</p>
+    ///   - [`flow_definition_arn(impl Into<String>)`](crate::client::fluent_builders::StartHumanLoop::flow_definition_arn) / [`set_flow_definition_arn(Option<String>)`](crate::client::fluent_builders::StartHumanLoop::set_flow_definition_arn): <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
+    ///   - [`human_loop_input(HumanLoopInput)`](crate::client::fluent_builders::StartHumanLoop::human_loop_input) / [`set_human_loop_input(Option<HumanLoopInput>)`](crate::client::fluent_builders::StartHumanLoop::set_human_loop_input): <p>An object that contains information about the human loop.</p>
+    ///   - [`data_attributes(HumanLoopDataAttributes)`](crate::client::fluent_builders::StartHumanLoop::data_attributes) / [`set_data_attributes(Option<HumanLoopDataAttributes>)`](crate::client::fluent_builders::StartHumanLoop::set_data_attributes): <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
     /// - On success, responds with [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput) with field(s):
     ///   - [`human_loop_arn(Option<String>)`](crate::output::StartHumanLoopOutput::human_loop_arn): <p>The Amazon Resource Name (ARN) of the human loop.</p>
     /// - On failure, responds with [`SdkError<StartHumanLoopError>`](crate::error::StartHumanLoopError)
@@ -142,8 +142,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopHumanLoop`](crate::client::fluent_builders::StopHumanLoop) operation.
     ///
-    /// - Takes [`StopHumanLoopInput`](crate::input::StopHumanLoopInput) with field(s):
-    ///   - [`human_loop_name(Option<String>)`](crate::input::StopHumanLoopInput::human_loop_name): <p>The name of the human loop that you want to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`human_loop_name(impl Into<String>)`](crate::client::fluent_builders::StopHumanLoop::human_loop_name) / [`set_human_loop_name(Option<String>)`](crate::client::fluent_builders::StopHumanLoop::set_human_loop_name): <p>The name of the human loop that you want to stop.</p>
     /// - On success, responds with [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput)
 
     /// - On failure, responds with [`SdkError<StopHumanLoopError>`](crate::error::StopHumanLoopError)

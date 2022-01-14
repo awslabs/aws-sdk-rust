@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`CreateActivity`](crate::client::fluent_builders::CreateActivity) operation.
     ///
-    /// - Takes [`CreateActivityInput`](crate::input::CreateActivityInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateActivityInput::name): <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateActivityInput::tags): <p>The list of tags to add to a resource.</p>  <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateActivity::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateActivity::set_name): <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateActivity::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateActivity::set_tags): <p>The list of tags to add to a resource.</p>  <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     /// - On success, responds with [`CreateActivityOutput`](crate::output::CreateActivityOutput) with field(s):
     ///   - [`activity_arn(Option<String>)`](crate::output::CreateActivityOutput::activity_arn): <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::CreateActivityOutput::creation_date): <p>The date the activity is created.</p>
@@ -97,14 +97,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateStateMachine`](crate::client::fluent_builders::CreateStateMachine) operation.
     ///
-    /// - Takes [`CreateStateMachineInput`](crate::input::CreateStateMachineInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateStateMachineInput::name): <p>The name of the state machine. </p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    ///   - [`definition(Option<String>)`](crate::input::CreateStateMachineInput::definition): <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateStateMachineInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
-    ///   - [`r#type(Option<StateMachineType>)`](crate::input::CreateStateMachineInput::type): <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
-    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::input::CreateStateMachineInput::logging_configuration): <p>Defines what execution history events are logged and where they are logged.</p> <note>   <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>  </note>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateStateMachineInput::tags): <p>Tags to be added when creating a state machine.</p>  <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    ///   - [`tracing_configuration(Option<TracingConfiguration>)`](crate::input::CreateStateMachineInput::tracing_configuration): <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStateMachine::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStateMachine::set_name): <p>The name of the state machine. </p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    ///   - [`definition(impl Into<String>)`](crate::client::fluent_builders::CreateStateMachine::definition) / [`set_definition(Option<String>)`](crate::client::fluent_builders::CreateStateMachine::set_definition): <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStateMachine::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStateMachine::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
+    ///   - [`r#type(StateMachineType)`](crate::client::fluent_builders::CreateStateMachine::r#type) / [`set_type(Option<StateMachineType>)`](crate::client::fluent_builders::CreateStateMachine::set_type): <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
+    ///   - [`logging_configuration(LoggingConfiguration)`](crate::client::fluent_builders::CreateStateMachine::logging_configuration) / [`set_logging_configuration(Option<LoggingConfiguration>)`](crate::client::fluent_builders::CreateStateMachine::set_logging_configuration): <p>Defines what execution history events are logged and where they are logged.</p> <note>   <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateStateMachine::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateStateMachine::set_tags): <p>Tags to be added when creating a state machine.</p>  <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    ///   - [`tracing_configuration(TracingConfiguration)`](crate::client::fluent_builders::CreateStateMachine::tracing_configuration) / [`set_tracing_configuration(Option<TracingConfiguration>)`](crate::client::fluent_builders::CreateStateMachine::set_tracing_configuration): <p>Selects whether AWS X-Ray tracing is enabled.</p>
     /// - On success, responds with [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput) with field(s):
     ///   - [`state_machine_arn(Option<String>)`](crate::output::CreateStateMachineOutput::state_machine_arn): <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::CreateStateMachineOutput::creation_date): <p>The date the state machine is created.</p>
@@ -114,8 +114,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteActivity`](crate::client::fluent_builders::DeleteActivity) operation.
     ///
-    /// - Takes [`DeleteActivityInput`](crate::input::DeleteActivityInput) with field(s):
-    ///   - [`activity_arn(Option<String>)`](crate::input::DeleteActivityInput::activity_arn): <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`activity_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteActivity::activity_arn) / [`set_activity_arn(Option<String>)`](crate::client::fluent_builders::DeleteActivity::set_activity_arn): <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
     /// - On success, responds with [`DeleteActivityOutput`](crate::output::DeleteActivityOutput)
 
     /// - On failure, responds with [`SdkError<DeleteActivityError>`](crate::error::DeleteActivityError)
@@ -124,8 +124,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteStateMachine`](crate::client::fluent_builders::DeleteStateMachine) operation.
     ///
-    /// - Takes [`DeleteStateMachineInput`](crate::input::DeleteStateMachineInput) with field(s):
-    ///   - [`state_machine_arn(Option<String>)`](crate::input::DeleteStateMachineInput::state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteStateMachine::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::DeleteStateMachine::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
     /// - On success, responds with [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput)
 
     /// - On failure, responds with [`SdkError<DeleteStateMachineError>`](crate::error::DeleteStateMachineError)
@@ -134,8 +134,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeActivity`](crate::client::fluent_builders::DescribeActivity) operation.
     ///
-    /// - Takes [`DescribeActivityInput`](crate::input::DescribeActivityInput) with field(s):
-    ///   - [`activity_arn(Option<String>)`](crate::input::DescribeActivityInput::activity_arn): <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`activity_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeActivity::activity_arn) / [`set_activity_arn(Option<String>)`](crate::client::fluent_builders::DescribeActivity::set_activity_arn): <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
     /// - On success, responds with [`DescribeActivityOutput`](crate::output::DescribeActivityOutput) with field(s):
     ///   - [`activity_arn(Option<String>)`](crate::output::DescribeActivityOutput::activity_arn): <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeActivityOutput::name): <p>The name of the activity.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
@@ -146,8 +146,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeExecution`](crate::client::fluent_builders::DescribeExecution) operation.
     ///
-    /// - Takes [`DescribeExecutionInput`](crate::input::DescribeExecutionInput) with field(s):
-    ///   - [`execution_arn(Option<String>)`](crate::input::DescribeExecutionInput::execution_arn): <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`execution_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeExecution::execution_arn) / [`set_execution_arn(Option<String>)`](crate::client::fluent_builders::DescribeExecution::set_execution_arn): <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
     /// - On success, responds with [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput) with field(s):
     ///   - [`execution_arn(Option<String>)`](crate::output::DescribeExecutionOutput::execution_arn): <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     ///   - [`state_machine_arn(Option<String>)`](crate::output::DescribeExecutionOutput::state_machine_arn): <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
@@ -166,8 +166,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeStateMachine`](crate::client::fluent_builders::DescribeStateMachine) operation.
     ///
-    /// - Takes [`DescribeStateMachineInput`](crate::input::DescribeStateMachineInput) with field(s):
-    ///   - [`state_machine_arn(Option<String>)`](crate::input::DescribeStateMachineInput::state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeStateMachine::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::DescribeStateMachine::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
     /// - On success, responds with [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput) with field(s):
     ///   - [`state_machine_arn(Option<String>)`](crate::output::DescribeStateMachineOutput::state_machine_arn): <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeStateMachineOutput::name): <p>The name of the state machine.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
@@ -184,8 +184,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeStateMachineForExecution`](crate::client::fluent_builders::DescribeStateMachineForExecution) operation.
     ///
-    /// - Takes [`DescribeStateMachineForExecutionInput`](crate::input::DescribeStateMachineForExecutionInput) with field(s):
-    ///   - [`execution_arn(Option<String>)`](crate::input::DescribeStateMachineForExecutionInput::execution_arn): <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`execution_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeStateMachineForExecution::execution_arn) / [`set_execution_arn(Option<String>)`](crate::client::fluent_builders::DescribeStateMachineForExecution::set_execution_arn): <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
     /// - On success, responds with [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput) with field(s):
     ///   - [`state_machine_arn(Option<String>)`](crate::output::DescribeStateMachineForExecutionOutput::state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeStateMachineForExecutionOutput::name): <p>The name of the state machine associated with the execution.</p>
@@ -202,9 +202,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetActivityTask`](crate::client::fluent_builders::GetActivityTask) operation.
     ///
-    /// - Takes [`GetActivityTaskInput`](crate::input::GetActivityTaskInput) with field(s):
-    ///   - [`activity_arn(Option<String>)`](crate::input::GetActivityTaskInput::activity_arn): <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
-    ///   - [`worker_name(Option<String>)`](crate::input::GetActivityTaskInput::worker_name): <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`activity_arn(impl Into<String>)`](crate::client::fluent_builders::GetActivityTask::activity_arn) / [`set_activity_arn(Option<String>)`](crate::client::fluent_builders::GetActivityTask::set_activity_arn): <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
+    ///   - [`worker_name(impl Into<String>)`](crate::client::fluent_builders::GetActivityTask::worker_name) / [`set_worker_name(Option<String>)`](crate::client::fluent_builders::GetActivityTask::set_worker_name): <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
     /// - On success, responds with [`GetActivityTaskOutput`](crate::output::GetActivityTaskOutput) with field(s):
     ///   - [`task_token(Option<String>)`](crate::output::GetActivityTaskOutput::task_token): <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
     ///   - [`input(Option<String>)`](crate::output::GetActivityTaskOutput::input): <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
@@ -213,14 +213,14 @@ where
         fluent_builders::GetActivityTask::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetExecutionHistory`](crate::client::fluent_builders::GetExecutionHistory) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetExecutionHistory::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetExecutionHistory::into_paginator).
     ///
-    /// - Takes [`GetExecutionHistoryInput`](crate::input::GetExecutionHistoryInput) with field(s):
-    ///   - [`execution_arn(Option<String>)`](crate::input::GetExecutionHistoryInput::execution_arn): <p>The Amazon Resource Name (ARN) of the execution.</p>
-    ///   - [`max_results(i32)`](crate::input::GetExecutionHistoryInput::max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-    ///   - [`reverse_order(bool)`](crate::input::GetExecutionHistoryInput::reverse_order): <p>Lists events in descending order of their <code>timeStamp</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetExecutionHistoryInput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    ///   - [`include_execution_data(Option<bool>)`](crate::input::GetExecutionHistoryInput::include_execution_data): <p>You can select whether execution data (input or output of a history event) is returned. The default is <code>true</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`execution_arn(impl Into<String>)`](crate::client::fluent_builders::GetExecutionHistory::execution_arn) / [`set_execution_arn(Option<String>)`](crate::client::fluent_builders::GetExecutionHistory::set_execution_arn): <p>The Amazon Resource Name (ARN) of the execution.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetExecutionHistory::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetExecutionHistory::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    ///   - [`reverse_order(bool)`](crate::client::fluent_builders::GetExecutionHistory::reverse_order) / [`set_reverse_order(bool)`](crate::client::fluent_builders::GetExecutionHistory::set_reverse_order): <p>Lists events in descending order of their <code>timeStamp</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetExecutionHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetExecutionHistory::set_next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    ///   - [`include_execution_data(bool)`](crate::client::fluent_builders::GetExecutionHistory::include_execution_data) / [`set_include_execution_data(Option<bool>)`](crate::client::fluent_builders::GetExecutionHistory::set_include_execution_data): <p>You can select whether execution data (input or output of a history event) is returned. The default is <code>true</code>.</p>
     /// - On success, responds with [`GetExecutionHistoryOutput`](crate::output::GetExecutionHistoryOutput) with field(s):
     ///   - [`events(Option<Vec<HistoryEvent>>)`](crate::output::GetExecutionHistoryOutput::events): <p>The list of events that occurred in the execution.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetExecutionHistoryOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -229,11 +229,11 @@ where
         fluent_builders::GetExecutionHistory::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListActivities`](crate::client::fluent_builders::ListActivities) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActivities::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListActivities::into_paginator).
     ///
-    /// - Takes [`ListActivitiesInput`](crate::input::ListActivitiesInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListActivitiesInput::max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListActivitiesInput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListActivities::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListActivities::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListActivities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListActivities::set_next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// - On success, responds with [`ListActivitiesOutput`](crate::output::ListActivitiesOutput) with field(s):
     ///   - [`activities(Option<Vec<ActivityListItem>>)`](crate::output::ListActivitiesOutput::activities): <p>The list of activities.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListActivitiesOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -242,13 +242,13 @@ where
         fluent_builders::ListActivities::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListExecutions`](crate::client::fluent_builders::ListExecutions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExecutions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExecutions::into_paginator).
     ///
-    /// - Takes [`ListExecutionsInput`](crate::input::ListExecutionsInput) with field(s):
-    ///   - [`state_machine_arn(Option<String>)`](crate::input::ListExecutionsInput::state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
-    ///   - [`status_filter(Option<ExecutionStatus>)`](crate::input::ListExecutionsInput::status_filter): <p>If specified, only list the executions whose current execution status matches the given filter.</p>
-    ///   - [`max_results(i32)`](crate::input::ListExecutionsInput::max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListExecutionsInput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::ListExecutions::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::ListExecutions::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+    ///   - [`status_filter(ExecutionStatus)`](crate::client::fluent_builders::ListExecutions::status_filter) / [`set_status_filter(Option<ExecutionStatus>)`](crate::client::fluent_builders::ListExecutions::set_status_filter): <p>If specified, only list the executions whose current execution status matches the given filter.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExecutions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListExecutions::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExecutions::set_next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// - On success, responds with [`ListExecutionsOutput`](crate::output::ListExecutionsOutput) with field(s):
     ///   - [`executions(Option<Vec<ExecutionListItem>>)`](crate::output::ListExecutionsOutput::executions): <p>The list of matching executions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListExecutionsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -257,11 +257,11 @@ where
         fluent_builders::ListExecutions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListStateMachines`](crate::client::fluent_builders::ListStateMachines) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStateMachines::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStateMachines::into_paginator).
     ///
-    /// - Takes [`ListStateMachinesInput`](crate::input::ListStateMachinesInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListStateMachinesInput::max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListStateMachinesInput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStateMachines::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStateMachines::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>  <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStateMachines::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStateMachines::set_next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// - On success, responds with [`ListStateMachinesOutput`](crate::output::ListStateMachinesOutput) with field(s):
     ///   - [`state_machines(Option<Vec<StateMachineListItem>>)`](crate::output::ListStateMachinesOutput::state_machines): (undocumented)
     ///   - [`next_token(Option<String>)`](crate::output::ListStateMachinesOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -271,8 +271,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array of tags associated with the resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -281,10 +281,10 @@ where
     }
     /// Constructs a fluent builder for the [`SendTaskFailure`](crate::client::fluent_builders::SendTaskFailure) operation.
     ///
-    /// - Takes [`SendTaskFailureInput`](crate::input::SendTaskFailureInput) with field(s):
-    ///   - [`task_token(Option<String>)`](crate::input::SendTaskFailureInput::task_token): <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
-    ///   - [`error(Option<String>)`](crate::input::SendTaskFailureInput::error): <p>The error code of the failure.</p>
-    ///   - [`cause(Option<String>)`](crate::input::SendTaskFailureInput::cause): <p>A more detailed explanation of the cause of the failure.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_token(impl Into<String>)`](crate::client::fluent_builders::SendTaskFailure::task_token) / [`set_task_token(Option<String>)`](crate::client::fluent_builders::SendTaskFailure::set_task_token): <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
+    ///   - [`error(impl Into<String>)`](crate::client::fluent_builders::SendTaskFailure::error) / [`set_error(Option<String>)`](crate::client::fluent_builders::SendTaskFailure::set_error): <p>The error code of the failure.</p>
+    ///   - [`cause(impl Into<String>)`](crate::client::fluent_builders::SendTaskFailure::cause) / [`set_cause(Option<String>)`](crate::client::fluent_builders::SendTaskFailure::set_cause): <p>A more detailed explanation of the cause of the failure.</p>
     /// - On success, responds with [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput)
 
     /// - On failure, responds with [`SdkError<SendTaskFailureError>`](crate::error::SendTaskFailureError)
@@ -293,8 +293,8 @@ where
     }
     /// Constructs a fluent builder for the [`SendTaskHeartbeat`](crate::client::fluent_builders::SendTaskHeartbeat) operation.
     ///
-    /// - Takes [`SendTaskHeartbeatInput`](crate::input::SendTaskHeartbeatInput) with field(s):
-    ///   - [`task_token(Option<String>)`](crate::input::SendTaskHeartbeatInput::task_token): <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_token(impl Into<String>)`](crate::client::fluent_builders::SendTaskHeartbeat::task_token) / [`set_task_token(Option<String>)`](crate::client::fluent_builders::SendTaskHeartbeat::set_task_token): <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
     /// - On success, responds with [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput)
 
     /// - On failure, responds with [`SdkError<SendTaskHeartbeatError>`](crate::error::SendTaskHeartbeatError)
@@ -303,9 +303,9 @@ where
     }
     /// Constructs a fluent builder for the [`SendTaskSuccess`](crate::client::fluent_builders::SendTaskSuccess) operation.
     ///
-    /// - Takes [`SendTaskSuccessInput`](crate::input::SendTaskSuccessInput) with field(s):
-    ///   - [`task_token(Option<String>)`](crate::input::SendTaskSuccessInput::task_token): <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
-    ///   - [`output(Option<String>)`](crate::input::SendTaskSuccessInput::output): <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_token(impl Into<String>)`](crate::client::fluent_builders::SendTaskSuccess::task_token) / [`set_task_token(Option<String>)`](crate::client::fluent_builders::SendTaskSuccess::set_task_token): <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
+    ///   - [`output(impl Into<String>)`](crate::client::fluent_builders::SendTaskSuccess::output) / [`set_output(Option<String>)`](crate::client::fluent_builders::SendTaskSuccess::set_output): <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     /// - On success, responds with [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput)
 
     /// - On failure, responds with [`SdkError<SendTaskSuccessError>`](crate::error::SendTaskSuccessError)
@@ -314,11 +314,11 @@ where
     }
     /// Constructs a fluent builder for the [`StartExecution`](crate::client::fluent_builders::StartExecution) operation.
     ///
-    /// - Takes [`StartExecutionInput`](crate::input::StartExecutionInput) with field(s):
-    ///   - [`state_machine_arn(Option<String>)`](crate::input::StartExecutionInput::state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    ///   - [`name(Option<String>)`](crate::input::StartExecutionInput::name): <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    ///   - [`input(Option<String>)`](crate::input::StartExecutionInput::input): <p>The string that contains the JSON input data for the execution, for example:</p>  <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>   <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>  </note>  <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    ///   - [`trace_header(Option<String>)`](crate::input::StartExecutionInput::trace_header): <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::StartExecution::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::StartExecution::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartExecution::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartExecution::set_name): <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>  <p>A name must <i>not</i> contain:</p>  <ul>   <li> <p>white space</p> </li>   <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>   <li> <p>wildcard characters <code>? *</code> </p> </li>   <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>   <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>  </ul>  <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    ///   - [`input(impl Into<String>)`](crate::client::fluent_builders::StartExecution::input) / [`set_input(Option<String>)`](crate::client::fluent_builders::StartExecution::set_input): <p>The string that contains the JSON input data for the execution, for example:</p>  <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>   <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>  </note>  <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    ///   - [`trace_header(impl Into<String>)`](crate::client::fluent_builders::StartExecution::trace_header) / [`set_trace_header(Option<String>)`](crate::client::fluent_builders::StartExecution::set_trace_header): <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
     /// - On success, responds with [`StartExecutionOutput`](crate::output::StartExecutionOutput) with field(s):
     ///   - [`execution_arn(Option<String>)`](crate::output::StartExecutionOutput::execution_arn): <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     ///   - [`start_date(Option<DateTime>)`](crate::output::StartExecutionOutput::start_date): <p>The date the execution is started.</p>
@@ -328,11 +328,11 @@ where
     }
     /// Constructs a fluent builder for the [`StartSyncExecution`](crate::client::fluent_builders::StartSyncExecution) operation.
     ///
-    /// - Takes [`StartSyncExecutionInput`](crate::input::StartSyncExecutionInput) with field(s):
-    ///   - [`state_machine_arn(Option<String>)`](crate::input::StartSyncExecutionInput::state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    ///   - [`name(Option<String>)`](crate::input::StartSyncExecutionInput::name): <p>The name of the execution.</p>
-    ///   - [`input(Option<String>)`](crate::input::StartSyncExecutionInput::input): <p>The string that contains the JSON input data for the execution, for example:</p>  <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>   <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>  </note>  <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    ///   - [`trace_header(Option<String>)`](crate::input::StartSyncExecutionInput::trace_header): <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::StartSyncExecution::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::StartSyncExecution::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartSyncExecution::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartSyncExecution::set_name): <p>The name of the execution.</p>
+    ///   - [`input(impl Into<String>)`](crate::client::fluent_builders::StartSyncExecution::input) / [`set_input(Option<String>)`](crate::client::fluent_builders::StartSyncExecution::set_input): <p>The string that contains the JSON input data for the execution, for example:</p>  <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>   <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>  </note>  <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    ///   - [`trace_header(impl Into<String>)`](crate::client::fluent_builders::StartSyncExecution::trace_header) / [`set_trace_header(Option<String>)`](crate::client::fluent_builders::StartSyncExecution::set_trace_header): <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
     /// - On success, responds with [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput) with field(s):
     ///   - [`execution_arn(Option<String>)`](crate::output::StartSyncExecutionOutput::execution_arn): <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     ///   - [`state_machine_arn(Option<String>)`](crate::output::StartSyncExecutionOutput::state_machine_arn): <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -354,10 +354,10 @@ where
     }
     /// Constructs a fluent builder for the [`StopExecution`](crate::client::fluent_builders::StopExecution) operation.
     ///
-    /// - Takes [`StopExecutionInput`](crate::input::StopExecutionInput) with field(s):
-    ///   - [`execution_arn(Option<String>)`](crate::input::StopExecutionInput::execution_arn): <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
-    ///   - [`error(Option<String>)`](crate::input::StopExecutionInput::error): <p>The error code of the failure.</p>
-    ///   - [`cause(Option<String>)`](crate::input::StopExecutionInput::cause): <p>A more detailed explanation of the cause of the failure.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`execution_arn(impl Into<String>)`](crate::client::fluent_builders::StopExecution::execution_arn) / [`set_execution_arn(Option<String>)`](crate::client::fluent_builders::StopExecution::set_execution_arn): <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
+    ///   - [`error(impl Into<String>)`](crate::client::fluent_builders::StopExecution::error) / [`set_error(Option<String>)`](crate::client::fluent_builders::StopExecution::set_error): <p>The error code of the failure.</p>
+    ///   - [`cause(impl Into<String>)`](crate::client::fluent_builders::StopExecution::cause) / [`set_cause(Option<String>)`](crate::client::fluent_builders::StopExecution::set_cause): <p>A more detailed explanation of the cause of the failure.</p>
     /// - On success, responds with [`StopExecutionOutput`](crate::output::StopExecutionOutput) with field(s):
     ///   - [`stop_date(Option<DateTime>)`](crate::output::StopExecutionOutput::stop_date): <p>The date the execution is stopped.</p>
     /// - On failure, responds with [`SdkError<StopExecutionError>`](crate::error::StopExecutionError)
@@ -366,9 +366,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The list of tags to add to a resource.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of tags to add to a resource.</p>  <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -377,9 +377,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of tags to remove from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tags to remove from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -388,12 +388,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateStateMachine`](crate::client::fluent_builders::UpdateStateMachine) operation.
     ///
-    /// - Takes [`UpdateStateMachineInput`](crate::input::UpdateStateMachineInput) with field(s):
-    ///   - [`state_machine_arn(Option<String>)`](crate::input::UpdateStateMachineInput::state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    ///   - [`definition(Option<String>)`](crate::input::UpdateStateMachineInput::definition): <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateStateMachineInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
-    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::input::UpdateStateMachineInput::logging_configuration): <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    ///   - [`tracing_configuration(Option<TracingConfiguration>)`](crate::input::UpdateStateMachineInput::tracing_configuration): <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`state_machine_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStateMachine::state_machine_arn) / [`set_state_machine_arn(Option<String>)`](crate::client::fluent_builders::UpdateStateMachine::set_state_machine_arn): <p>The Amazon Resource Name (ARN) of the state machine.</p>
+    ///   - [`definition(impl Into<String>)`](crate::client::fluent_builders::UpdateStateMachine::definition) / [`set_definition(Option<String>)`](crate::client::fluent_builders::UpdateStateMachine::set_definition): <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStateMachine::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStateMachine::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
+    ///   - [`logging_configuration(LoggingConfiguration)`](crate::client::fluent_builders::UpdateStateMachine::logging_configuration) / [`set_logging_configuration(Option<LoggingConfiguration>)`](crate::client::fluent_builders::UpdateStateMachine::set_logging_configuration): <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    ///   - [`tracing_configuration(TracingConfiguration)`](crate::client::fluent_builders::UpdateStateMachine::tracing_configuration) / [`set_tracing_configuration(Option<TracingConfiguration>)`](crate::client::fluent_builders::UpdateStateMachine::set_tracing_configuration): <p>Selects whether AWS X-Ray tracing is enabled.</p>
     /// - On success, responds with [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput) with field(s):
     ///   - [`update_date(Option<DateTime>)`](crate::output::UpdateStateMachineOutput::update_date): <p>The date and time the state machine was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateStateMachineError>`](crate::error::UpdateStateMachineError)

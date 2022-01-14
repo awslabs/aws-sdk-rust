@@ -85,15 +85,15 @@ where
 {
     /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
     ///
-    /// - Takes [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateEnvironmentInput::name): <p>The name of the FinSpace environment to be created.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateEnvironmentInput::description): <p>The description of the FinSpace environment to be created.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateEnvironmentInput::kms_key_id): <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateEnvironmentInput::tags): <p>Add tags to your FinSpace environment.</p>
-    ///   - [`federation_mode(Option<FederationMode>)`](crate::input::CreateEnvironmentInput::federation_mode): <p>Authentication mode for the environment.</p>  <ul>   <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>   <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>  </ul>
-    ///   - [`federation_parameters(Option<FederationParameters>)`](crate::input::CreateEnvironmentInput::federation_parameters): <p>Configuration information when authentication mode is FEDERATED.</p>
-    ///   - [`superuser_parameters(Option<SuperuserParameters>)`](crate::input::CreateEnvironmentInput::superuser_parameters): <p>Configuration information for the superuser.</p>
-    ///   - [`data_bundles(Option<Vec<String>>)`](crate::input::CreateEnvironmentInput::data_bundles): <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>  <ul>   <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>   <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_name): <p>The name of the FinSpace environment to be created.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_description): <p>The description of the FinSpace environment to be created.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_kms_key_id): <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>Add tags to your FinSpace environment.</p>
+    ///   - [`federation_mode(FederationMode)`](crate::client::fluent_builders::CreateEnvironment::federation_mode) / [`set_federation_mode(Option<FederationMode>)`](crate::client::fluent_builders::CreateEnvironment::set_federation_mode): <p>Authentication mode for the environment.</p>  <ul>   <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>   <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>  </ul>
+    ///   - [`federation_parameters(FederationParameters)`](crate::client::fluent_builders::CreateEnvironment::federation_parameters) / [`set_federation_parameters(Option<FederationParameters>)`](crate::client::fluent_builders::CreateEnvironment::set_federation_parameters): <p>Configuration information when authentication mode is FEDERATED.</p>
+    ///   - [`superuser_parameters(SuperuserParameters)`](crate::client::fluent_builders::CreateEnvironment::superuser_parameters) / [`set_superuser_parameters(Option<SuperuserParameters>)`](crate::client::fluent_builders::CreateEnvironment::set_superuser_parameters): <p>Configuration information for the superuser.</p>
+    ///   - [`data_bundles(Vec<String>)`](crate::client::fluent_builders::CreateEnvironment::data_bundles) / [`set_data_bundles(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEnvironment::set_data_bundles): <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>  <ul>   <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>   <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>  </ul>
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
     ///   - [`environment_id(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_id): <p>The unique identifier for FinSpace environment that you created.</p>
     ///   - [`environment_arn(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_arn): <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
@@ -104,8 +104,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) operation.
     ///
-    /// - Takes [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput) with field(s):
-    ///   - [`environment_id(Option<String>)`](crate::input::DeleteEnvironmentInput::environment_id): <p>The identifier for the FinSpace environment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::DeleteEnvironment::set_environment_id): <p>The identifier for the FinSpace environment.</p>
     /// - On success, responds with [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
@@ -114,8 +114,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) operation.
     ///
-    /// - Takes [`GetEnvironmentInput`](crate::input::GetEnvironmentInput) with field(s):
-    ///   - [`environment_id(Option<String>)`](crate::input::GetEnvironmentInput::environment_id): <p>The identifier of the FinSpace environment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::GetEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::GetEnvironment::set_environment_id): <p>The identifier of the FinSpace environment.</p>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::output::GetEnvironmentOutput::environment): <p>The name of the FinSpace environment.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::error::GetEnvironmentError)
@@ -124,9 +124,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) operation.
     ///
-    /// - Takes [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListEnvironmentsInput::next_token): <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
-    ///   - [`max_results(i32)`](crate::input::ListEnvironmentsInput::max_results): <p>The maximum number of results to return in this request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnvironments::set_next_token): <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnvironments::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEnvironments::set_max_results): <p>The maximum number of results to return in this request.</p>
     /// - On success, responds with [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput) with field(s):
     ///   - [`environments(Option<Vec<Environment>>)`](crate::output::ListEnvironmentsOutput::environments): <p>A list of all of your FinSpace environments.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
@@ -136,8 +136,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of all tags for a resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -146,9 +146,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>One or more tags to be assigned to the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>One or more tags to be assigned to the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -157,9 +157,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys (names) of one or more tags to be removed.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys (names) of one or more tags to be removed.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -168,12 +168,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) operation.
     ///
-    /// - Takes [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput) with field(s):
-    ///   - [`environment_id(Option<String>)`](crate::input::UpdateEnvironmentInput::environment_id): <p>The identifier of the FinSpace environment.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateEnvironmentInput::name): <p>The name of the environment.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateEnvironmentInput::description): <p>The description of the environment.</p>
-    ///   - [`federation_mode(Option<FederationMode>)`](crate::input::UpdateEnvironmentInput::federation_mode): <p>Authentication mode for the environment.</p>  <ul>   <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>   <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>  </ul>
-    ///   - [`federation_parameters(Option<FederationParameters>)`](crate::input::UpdateEnvironmentInput::federation_parameters): <p>Configuration information when authentication mode is FEDERATED.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_environment_id): <p>The identifier of the FinSpace environment.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_name): <p>The name of the environment.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_description): <p>The description of the environment.</p>
+    ///   - [`federation_mode(FederationMode)`](crate::client::fluent_builders::UpdateEnvironment::federation_mode) / [`set_federation_mode(Option<FederationMode>)`](crate::client::fluent_builders::UpdateEnvironment::set_federation_mode): <p>Authentication mode for the environment.</p>  <ul>   <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>   <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>  </ul>
+    ///   - [`federation_parameters(FederationParameters)`](crate::client::fluent_builders::UpdateEnvironment::federation_parameters) / [`set_federation_parameters(Option<FederationParameters>)`](crate::client::fluent_builders::UpdateEnvironment::set_federation_parameters): <p>Configuration information when authentication mode is FEDERATED.</p>
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::output::UpdateEnvironmentOutput::environment): <p>Returns the FinSpace environment object.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)

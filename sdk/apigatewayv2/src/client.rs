@@ -85,20 +85,20 @@ where
 {
     /// Constructs a fluent builder for the [`CreateApi`](crate::client::fluent_builders::CreateApi) operation.
     ///
-    /// - Takes [`CreateApiInput`](crate::input::CreateApiInput) with field(s):
-    ///   - [`api_key_selection_expression(Option<String>)`](crate::input::CreateApiInput::api_key_selection_expression): <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    ///   - [`cors_configuration(Option<Cors>)`](crate::input::CreateApiInput::cors_configuration): <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
-    ///   - [`credentials_arn(Option<String>)`](crate::input::CreateApiInput::credentials_arn): <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateApiInput::description): <p>The description of the API.</p>
-    ///   - [`disable_schema_validation(bool)`](crate::input::CreateApiInput::disable_schema_validation): <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
-    ///   - [`disable_execute_api_endpoint(bool)`](crate::input::CreateApiInput::disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateApiInput::name): <p>The name of the API.</p>
-    ///   - [`protocol_type(Option<ProtocolType>)`](crate::input::CreateApiInput::protocol_type): <p>The API protocol.</p>
-    ///   - [`route_key(Option<String>)`](crate::input::CreateApiInput::route_key): <p>This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.</p>
-    ///   - [`route_selection_expression(Option<String>)`](crate::input::CreateApiInput::route_selection_expression): <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateApiInput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    ///   - [`target(Option<String>)`](crate::input::CreateApiInput::target): <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
-    ///   - [`version(Option<String>)`](crate::input::CreateApiInput::version): <p>A version identifier for the API.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_key_selection_expression(impl Into<String>)`](crate::client::fluent_builders::CreateApi::api_key_selection_expression) / [`set_api_key_selection_expression(Option<String>)`](crate::client::fluent_builders::CreateApi::set_api_key_selection_expression): <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    ///   - [`cors_configuration(Cors)`](crate::client::fluent_builders::CreateApi::cors_configuration) / [`set_cors_configuration(Option<Cors>)`](crate::client::fluent_builders::CreateApi::set_cors_configuration): <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
+    ///   - [`credentials_arn(impl Into<String>)`](crate::client::fluent_builders::CreateApi::credentials_arn) / [`set_credentials_arn(Option<String>)`](crate::client::fluent_builders::CreateApi::set_credentials_arn): <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApi::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApi::set_description): <p>The description of the API.</p>
+    ///   - [`disable_schema_validation(bool)`](crate::client::fluent_builders::CreateApi::disable_schema_validation) / [`set_disable_schema_validation(bool)`](crate::client::fluent_builders::CreateApi::set_disable_schema_validation): <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    ///   - [`disable_execute_api_endpoint(bool)`](crate::client::fluent_builders::CreateApi::disable_execute_api_endpoint) / [`set_disable_execute_api_endpoint(bool)`](crate::client::fluent_builders::CreateApi::set_disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApi::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApi::set_name): <p>The name of the API.</p>
+    ///   - [`protocol_type(ProtocolType)`](crate::client::fluent_builders::CreateApi::protocol_type) / [`set_protocol_type(Option<ProtocolType>)`](crate::client::fluent_builders::CreateApi::set_protocol_type): <p>The API protocol.</p>
+    ///   - [`route_key(impl Into<String>)`](crate::client::fluent_builders::CreateApi::route_key) / [`set_route_key(Option<String>)`](crate::client::fluent_builders::CreateApi::set_route_key): <p>This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.</p>
+    ///   - [`route_selection_expression(impl Into<String>)`](crate::client::fluent_builders::CreateApi::route_selection_expression) / [`set_route_selection_expression(Option<String>)`](crate::client::fluent_builders::CreateApi::set_route_selection_expression): <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApi::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApi::set_tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::CreateApi::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::CreateApi::set_target): <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::CreateApi::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::CreateApi::set_version): <p>A version identifier for the API.</p>
     /// - On success, responds with [`CreateApiOutput`](crate::output::CreateApiOutput) with field(s):
     ///   - [`api_endpoint(Option<String>)`](crate::output::CreateApiOutput::api_endpoint): <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     ///   - [`api_gateway_managed(bool)`](crate::output::CreateApiOutput::api_gateway_managed): <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
@@ -122,11 +122,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateApiMapping`](crate::client::fluent_builders::CreateApiMapping) operation.
     ///
-    /// - Takes [`CreateApiMappingInput`](crate::input::CreateApiMappingInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateApiMappingInput::api_id): <p>The API identifier.</p>
-    ///   - [`api_mapping_key(Option<String>)`](crate::input::CreateApiMappingInput::api_mapping_key): The API mapping key.
-    ///   - [`domain_name(Option<String>)`](crate::input::CreateApiMappingInput::domain_name): <p>The domain name.</p>
-    ///   - [`stage(Option<String>)`](crate::input::CreateApiMappingInput::stage): <p>The API stage.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateApiMapping::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateApiMapping::set_api_id): <p>The API identifier.</p>
+    ///   - [`api_mapping_key(impl Into<String>)`](crate::client::fluent_builders::CreateApiMapping::api_mapping_key) / [`set_api_mapping_key(Option<String>)`](crate::client::fluent_builders::CreateApiMapping::set_api_mapping_key): The API mapping key.
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateApiMapping::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateApiMapping::set_domain_name): <p>The domain name.</p>
+    ///   - [`stage(impl Into<String>)`](crate::client::fluent_builders::CreateApiMapping::stage) / [`set_stage(Option<String>)`](crate::client::fluent_builders::CreateApiMapping::set_stage): <p>The API stage.</p>
     /// - On success, responds with [`CreateApiMappingOutput`](crate::output::CreateApiMappingOutput) with field(s):
     ///   - [`api_id(Option<String>)`](crate::output::CreateApiMappingOutput::api_id): <p>The API identifier.</p>
     ///   - [`api_mapping_id(Option<String>)`](crate::output::CreateApiMappingOutput::api_mapping_id): <p>The API mapping identifier.</p>
@@ -138,18 +138,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAuthorizer`](crate::client::fluent_builders::CreateAuthorizer) operation.
     ///
-    /// - Takes [`CreateAuthorizerInput`](crate::input::CreateAuthorizerInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateAuthorizerInput::api_id): <p>The API identifier.</p>
-    ///   - [`authorizer_credentials_arn(Option<String>)`](crate::input::CreateAuthorizerInput::authorizer_credentials_arn): <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
-    ///   - [`authorizer_payload_format_version(Option<String>)`](crate::input::CreateAuthorizerInput::authorizer_payload_format_version): <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
-    ///   - [`authorizer_result_ttl_in_seconds(i32)`](crate::input::CreateAuthorizerInput::authorizer_result_ttl_in_seconds): <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
-    ///   - [`authorizer_type(Option<AuthorizerType>)`](crate::input::CreateAuthorizerInput::authorizer_type): <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
-    ///   - [`authorizer_uri(Option<String>)`](crate::input::CreateAuthorizerInput::authorizer_uri): <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>   {account_id}  </replaceable>:function:<replaceable>   {lambda_function_name}  </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>   {region}  </replaceable>:lambda:path/<replaceable>   {service_api}  </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
-    ///   - [`enable_simple_responses(bool)`](crate::input::CreateAuthorizerInput::enable_simple_responses): <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
-    ///   - [`identity_source(Option<Vec<String>>)`](crate::input::CreateAuthorizerInput::identity_source): <p>The identity source for which authorization is requested.</p>  <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>  <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
-    ///   - [`identity_validation_expression(Option<String>)`](crate::input::CreateAuthorizerInput::identity_validation_expression): <p>This parameter is not used.</p>
-    ///   - [`jwt_configuration(Option<JwtConfiguration>)`](crate::input::CreateAuthorizerInput::jwt_configuration): <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateAuthorizerInput::name): <p>The name of the authorizer.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateAuthorizer::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateAuthorizer::set_api_id): <p>The API identifier.</p>
+    ///   - [`authorizer_credentials_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAuthorizer::authorizer_credentials_arn) / [`set_authorizer_credentials_arn(Option<String>)`](crate::client::fluent_builders::CreateAuthorizer::set_authorizer_credentials_arn): <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
+    ///   - [`authorizer_payload_format_version(impl Into<String>)`](crate::client::fluent_builders::CreateAuthorizer::authorizer_payload_format_version) / [`set_authorizer_payload_format_version(Option<String>)`](crate::client::fluent_builders::CreateAuthorizer::set_authorizer_payload_format_version): <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    ///   - [`authorizer_result_ttl_in_seconds(i32)`](crate::client::fluent_builders::CreateAuthorizer::authorizer_result_ttl_in_seconds) / [`set_authorizer_result_ttl_in_seconds(i32)`](crate::client::fluent_builders::CreateAuthorizer::set_authorizer_result_ttl_in_seconds): <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
+    ///   - [`authorizer_type(AuthorizerType)`](crate::client::fluent_builders::CreateAuthorizer::authorizer_type) / [`set_authorizer_type(Option<AuthorizerType>)`](crate::client::fluent_builders::CreateAuthorizer::set_authorizer_type): <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
+    ///   - [`authorizer_uri(impl Into<String>)`](crate::client::fluent_builders::CreateAuthorizer::authorizer_uri) / [`set_authorizer_uri(Option<String>)`](crate::client::fluent_builders::CreateAuthorizer::set_authorizer_uri): <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>   {account_id}  </replaceable>:function:<replaceable>   {lambda_function_name}  </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>   {region}  </replaceable>:lambda:path/<replaceable>   {service_api}  </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    ///   - [`enable_simple_responses(bool)`](crate::client::fluent_builders::CreateAuthorizer::enable_simple_responses) / [`set_enable_simple_responses(bool)`](crate::client::fluent_builders::CreateAuthorizer::set_enable_simple_responses): <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
+    ///   - [`identity_source(Vec<String>)`](crate::client::fluent_builders::CreateAuthorizer::identity_source) / [`set_identity_source(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAuthorizer::set_identity_source): <p>The identity source for which authorization is requested.</p>  <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>  <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    ///   - [`identity_validation_expression(impl Into<String>)`](crate::client::fluent_builders::CreateAuthorizer::identity_validation_expression) / [`set_identity_validation_expression(Option<String>)`](crate::client::fluent_builders::CreateAuthorizer::set_identity_validation_expression): <p>This parameter is not used.</p>
+    ///   - [`jwt_configuration(JwtConfiguration)`](crate::client::fluent_builders::CreateAuthorizer::jwt_configuration) / [`set_jwt_configuration(Option<JwtConfiguration>)`](crate::client::fluent_builders::CreateAuthorizer::set_jwt_configuration): <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAuthorizer::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAuthorizer::set_name): <p>The name of the authorizer.</p>
     /// - On success, responds with [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput) with field(s):
     ///   - [`authorizer_credentials_arn(Option<String>)`](crate::output::CreateAuthorizerOutput::authorizer_credentials_arn): <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
     ///   - [`authorizer_id(Option<String>)`](crate::output::CreateAuthorizerOutput::authorizer_id): <p>The authorizer identifier.</p>
@@ -168,10 +168,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
     ///
-    /// - Takes [`CreateDeploymentInput`](crate::input::CreateDeploymentInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateDeploymentInput::api_id): <p>The API identifier.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateDeploymentInput::description): <p>The description for the deployment resource.</p>
-    ///   - [`stage_name(Option<String>)`](crate::input::CreateDeploymentInput::stage_name): <p>The name of the Stage resource for the Deployment resource to create.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_api_id): <p>The API identifier.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_description): <p>The description for the deployment resource.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_stage_name): <p>The name of the Stage resource for the Deployment resource to create.</p>
     /// - On success, responds with [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput) with field(s):
     ///   - [`auto_deployed(bool)`](crate::output::CreateDeploymentOutput::auto_deployed): <p>Specifies whether a deployment was automatically released.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::output::CreateDeploymentOutput::created_date): <p>The date and time when the Deployment resource was created.</p>
@@ -185,11 +185,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDomainName`](crate::client::fluent_builders::CreateDomainName) operation.
     ///
-    /// - Takes [`CreateDomainNameInput`](crate::input::CreateDomainNameInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::CreateDomainNameInput::domain_name): <p>The domain name.</p>
-    ///   - [`domain_name_configurations(Option<Vec<DomainNameConfiguration>>)`](crate::input::CreateDomainNameInput::domain_name_configurations): <p>The domain name configurations.</p>
-    ///   - [`mutual_tls_authentication(Option<MutualTlsAuthenticationInput>)`](crate::input::CreateDomainNameInput::mutual_tls_authentication): <p>The mutual TLS authentication configuration for a custom domain name.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDomainNameInput::tags): <p>The collection of tags associated with a domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomainName::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomainName::set_domain_name): <p>The domain name.</p>
+    ///   - [`domain_name_configurations(Vec<DomainNameConfiguration>)`](crate::client::fluent_builders::CreateDomainName::domain_name_configurations) / [`set_domain_name_configurations(Option<Vec<DomainNameConfiguration>>)`](crate::client::fluent_builders::CreateDomainName::set_domain_name_configurations): <p>The domain name configurations.</p>
+    ///   - [`mutual_tls_authentication(MutualTlsAuthenticationInput)`](crate::client::fluent_builders::CreateDomainName::mutual_tls_authentication) / [`set_mutual_tls_authentication(Option<MutualTlsAuthenticationInput>)`](crate::client::fluent_builders::CreateDomainName::set_mutual_tls_authentication): <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDomainName::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDomainName::set_tags): <p>The collection of tags associated with a domain name.</p>
     /// - On success, responds with [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput) with field(s):
     ///   - [`api_mapping_selection_expression(Option<String>)`](crate::output::CreateDomainNameOutput::api_mapping_selection_expression): <p>The API mapping selection expression.</p>
     ///   - [`domain_name(Option<String>)`](crate::output::CreateDomainNameOutput::domain_name): <p>The name of the DomainName resource.</p>
@@ -202,25 +202,25 @@ where
     }
     /// Constructs a fluent builder for the [`CreateIntegration`](crate::client::fluent_builders::CreateIntegration) operation.
     ///
-    /// - Takes [`CreateIntegrationInput`](crate::input::CreateIntegrationInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateIntegrationInput::api_id): <p>The API identifier.</p>
-    ///   - [`connection_id(Option<String>)`](crate::input::CreateIntegrationInput::connection_id): <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
-    ///   - [`connection_type(Option<ConnectionType>)`](crate::input::CreateIntegrationInput::connection_type): <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
-    ///   - [`content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::input::CreateIntegrationInput::content_handling_strategy): <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    ///   - [`credentials_arn(Option<String>)`](crate::input::CreateIntegrationInput::credentials_arn): <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateIntegrationInput::description): <p>The description of the integration.</p>
-    ///   - [`integration_method(Option<String>)`](crate::input::CreateIntegrationInput::integration_method): <p>Specifies the integration's HTTP method type.</p>
-    ///   - [`integration_subtype(Option<String>)`](crate::input::CreateIntegrationInput::integration_subtype): <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
-    ///   - [`integration_type(Option<IntegrationType>)`](crate::input::CreateIntegrationInput::integration_type): <p>The integration type of an integration. One of the following:</p>  <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>  <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>  <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>  <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>  <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
-    ///   - [`integration_uri(Option<String>)`](crate::input::CreateIntegrationInput::integration_uri): <p>For a Lambda integration, specify the URI of a Lambda function.</p>  <p>For an HTTP integration, specify a fully-qualified URL.</p>  <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
-    ///   - [`passthrough_behavior(Option<PassthroughBehavior>)`](crate::input::CreateIntegrationInput::passthrough_behavior): <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>  <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>  <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>  <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
-    ///   - [`payload_format_version(Option<String>)`](crate::input::CreateIntegrationInput::payload_format_version): <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
-    ///   - [`request_parameters(Option<HashMap<String, String>>)`](crate::input::CreateIntegrationInput::request_parameters): <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>   {location}  </replaceable>.<replaceable>   {name}  </replaceable> , where <replaceable>   {location}  </replaceable> is querystring, path, or header; and <replaceable>   {name}  </replaceable> must be a valid and unique method request parameter name.</p>  <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>  <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    ///   - [`request_templates(Option<HashMap<String, String>>)`](crate::input::CreateIntegrationInput::request_templates): <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
-    ///   - [`response_parameters(Option<HashMap<String, HashMap<String, String>>>)`](crate::input::CreateIntegrationInput::response_parameters): <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    ///   - [`template_selection_expression(Option<String>)`](crate::input::CreateIntegrationInput::template_selection_expression): <p>The template selection expression for the integration.</p>
-    ///   - [`timeout_in_millis(i32)`](crate::input::CreateIntegrationInput::timeout_in_millis): <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
-    ///   - [`tls_config(Option<TlsConfigInput>)`](crate::input::CreateIntegrationInput::tls_config): <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateIntegration::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateIntegration::set_api_id): <p>The API identifier.</p>
+    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::CreateIntegration::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::CreateIntegration::set_connection_id): <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
+    ///   - [`connection_type(ConnectionType)`](crate::client::fluent_builders::CreateIntegration::connection_type) / [`set_connection_type(Option<ConnectionType>)`](crate::client::fluent_builders::CreateIntegration::set_connection_type): <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
+    ///   - [`content_handling_strategy(ContentHandlingStrategy)`](crate::client::fluent_builders::CreateIntegration::content_handling_strategy) / [`set_content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::client::fluent_builders::CreateIntegration::set_content_handling_strategy): <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    ///   - [`credentials_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIntegration::credentials_arn) / [`set_credentials_arn(Option<String>)`](crate::client::fluent_builders::CreateIntegration::set_credentials_arn): <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateIntegration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateIntegration::set_description): <p>The description of the integration.</p>
+    ///   - [`integration_method(impl Into<String>)`](crate::client::fluent_builders::CreateIntegration::integration_method) / [`set_integration_method(Option<String>)`](crate::client::fluent_builders::CreateIntegration::set_integration_method): <p>Specifies the integration's HTTP method type.</p>
+    ///   - [`integration_subtype(impl Into<String>)`](crate::client::fluent_builders::CreateIntegration::integration_subtype) / [`set_integration_subtype(Option<String>)`](crate::client::fluent_builders::CreateIntegration::set_integration_subtype): <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
+    ///   - [`integration_type(IntegrationType)`](crate::client::fluent_builders::CreateIntegration::integration_type) / [`set_integration_type(Option<IntegrationType>)`](crate::client::fluent_builders::CreateIntegration::set_integration_type): <p>The integration type of an integration. One of the following:</p>  <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>  <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>  <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>  <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>  <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    ///   - [`integration_uri(impl Into<String>)`](crate::client::fluent_builders::CreateIntegration::integration_uri) / [`set_integration_uri(Option<String>)`](crate::client::fluent_builders::CreateIntegration::set_integration_uri): <p>For a Lambda integration, specify the URI of a Lambda function.</p>  <p>For an HTTP integration, specify a fully-qualified URL.</p>  <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    ///   - [`passthrough_behavior(PassthroughBehavior)`](crate::client::fluent_builders::CreateIntegration::passthrough_behavior) / [`set_passthrough_behavior(Option<PassthroughBehavior>)`](crate::client::fluent_builders::CreateIntegration::set_passthrough_behavior): <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>  <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>  <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>  <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    ///   - [`payload_format_version(impl Into<String>)`](crate::client::fluent_builders::CreateIntegration::payload_format_version) / [`set_payload_format_version(Option<String>)`](crate::client::fluent_builders::CreateIntegration::set_payload_format_version): <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    ///   - [`request_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateIntegration::request_parameters) / [`set_request_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIntegration::set_request_parameters): <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>   {location}  </replaceable>.<replaceable>   {name}  </replaceable> , where <replaceable>   {location}  </replaceable> is querystring, path, or header; and <replaceable>   {name}  </replaceable> must be a valid and unique method request parameter name.</p>  <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>  <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    ///   - [`request_templates(HashMap<String, String>)`](crate::client::fluent_builders::CreateIntegration::request_templates) / [`set_request_templates(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIntegration::set_request_templates): <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
+    ///   - [`response_parameters(HashMap<String, HashMap<String, String>>)`](crate::client::fluent_builders::CreateIntegration::response_parameters) / [`set_response_parameters(Option<HashMap<String, HashMap<String, String>>>)`](crate::client::fluent_builders::CreateIntegration::set_response_parameters): <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    ///   - [`template_selection_expression(impl Into<String>)`](crate::client::fluent_builders::CreateIntegration::template_selection_expression) / [`set_template_selection_expression(Option<String>)`](crate::client::fluent_builders::CreateIntegration::set_template_selection_expression): <p>The template selection expression for the integration.</p>
+    ///   - [`timeout_in_millis(i32)`](crate::client::fluent_builders::CreateIntegration::timeout_in_millis) / [`set_timeout_in_millis(i32)`](crate::client::fluent_builders::CreateIntegration::set_timeout_in_millis): <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
+    ///   - [`tls_config(TlsConfigInput)`](crate::client::fluent_builders::CreateIntegration::tls_config) / [`set_tls_config(Option<TlsConfigInput>)`](crate::client::fluent_builders::CreateIntegration::set_tls_config): <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     /// - On success, responds with [`CreateIntegrationOutput`](crate::output::CreateIntegrationOutput) with field(s):
     ///   - [`api_gateway_managed(bool)`](crate::output::CreateIntegrationOutput::api_gateway_managed): <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     ///   - [`connection_id(Option<String>)`](crate::output::CreateIntegrationOutput::connection_id): <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
@@ -248,14 +248,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateIntegrationResponse`](crate::client::fluent_builders::CreateIntegrationResponse) operation.
     ///
-    /// - Takes [`CreateIntegrationResponseInput`](crate::input::CreateIntegrationResponseInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateIntegrationResponseInput::api_id): <p>The API identifier.</p>
-    ///   - [`content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::input::CreateIntegrationResponseInput::content_handling_strategy): <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    ///   - [`integration_id(Option<String>)`](crate::input::CreateIntegrationResponseInput::integration_id): <p>The integration ID.</p>
-    ///   - [`integration_response_key(Option<String>)`](crate::input::CreateIntegrationResponseInput::integration_response_key): <p>The integration response key.</p>
-    ///   - [`response_parameters(Option<HashMap<String, String>>)`](crate::input::CreateIntegrationResponseInput::response_parameters): <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where {name} is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where {name} is a valid and unique response header name and {JSON-expression} is a valid JSON expression without the $ prefix.</p>
-    ///   - [`response_templates(Option<HashMap<String, String>>)`](crate::input::CreateIntegrationResponseInput::response_templates): <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    ///   - [`template_selection_expression(Option<String>)`](crate::input::CreateIntegrationResponseInput::template_selection_expression): <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationResponse::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateIntegrationResponse::set_api_id): <p>The API identifier.</p>
+    ///   - [`content_handling_strategy(ContentHandlingStrategy)`](crate::client::fluent_builders::CreateIntegrationResponse::content_handling_strategy) / [`set_content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::client::fluent_builders::CreateIntegrationResponse::set_content_handling_strategy): <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    ///   - [`integration_id(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationResponse::integration_id) / [`set_integration_id(Option<String>)`](crate::client::fluent_builders::CreateIntegrationResponse::set_integration_id): <p>The integration ID.</p>
+    ///   - [`integration_response_key(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationResponse::integration_response_key) / [`set_integration_response_key(Option<String>)`](crate::client::fluent_builders::CreateIntegrationResponse::set_integration_response_key): <p>The integration response key.</p>
+    ///   - [`response_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateIntegrationResponse::response_parameters) / [`set_response_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIntegrationResponse::set_response_parameters): <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where {name} is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where {name} is a valid and unique response header name and {JSON-expression} is a valid JSON expression without the $ prefix.</p>
+    ///   - [`response_templates(HashMap<String, String>)`](crate::client::fluent_builders::CreateIntegrationResponse::response_templates) / [`set_response_templates(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIntegrationResponse::set_response_templates): <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    ///   - [`template_selection_expression(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationResponse::template_selection_expression) / [`set_template_selection_expression(Option<String>)`](crate::client::fluent_builders::CreateIntegrationResponse::set_template_selection_expression): <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
     /// - On success, responds with [`CreateIntegrationResponseOutput`](crate::output::CreateIntegrationResponseOutput) with field(s):
     ///   - [`content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::output::CreateIntegrationResponseOutput::content_handling_strategy): <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     ///   - [`integration_response_id(Option<String>)`](crate::output::CreateIntegrationResponseOutput::integration_response_id): <p>The integration response ID.</p>
@@ -271,12 +271,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateModel`](crate::client::fluent_builders::CreateModel) operation.
     ///
-    /// - Takes [`CreateModelInput`](crate::input::CreateModelInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateModelInput::api_id): <p>The API identifier.</p>
-    ///   - [`content_type(Option<String>)`](crate::input::CreateModelInput::content_type): <p>The content-type for the model, for example, "application/json".</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateModelInput::description): <p>The description of the model.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateModelInput::name): <p>The name of the model. Must be alphanumeric.</p>
-    ///   - [`schema(Option<String>)`](crate::input::CreateModelInput::schema): <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateModel::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateModel::set_api_id): <p>The API identifier.</p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::CreateModel::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::CreateModel::set_content_type): <p>The content-type for the model, for example, "application/json".</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateModel::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateModel::set_description): <p>The description of the model.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateModel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateModel::set_name): <p>The name of the model. Must be alphanumeric.</p>
+    ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::CreateModel::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::CreateModel::set_schema): <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     /// - On success, responds with [`CreateModelOutput`](crate::output::CreateModelOutput) with field(s):
     ///   - [`content_type(Option<String>)`](crate::output::CreateModelOutput::content_type): <p>The content-type for the model, for example, "application/json".</p>
     ///   - [`description(Option<String>)`](crate::output::CreateModelOutput::description): <p>The description of the model.</p>
@@ -289,19 +289,19 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRoute`](crate::client::fluent_builders::CreateRoute) operation.
     ///
-    /// - Takes [`CreateRouteInput`](crate::input::CreateRouteInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateRouteInput::api_id): <p>The API identifier.</p>
-    ///   - [`api_key_required(bool)`](crate::input::CreateRouteInput::api_key_required): <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`authorization_scopes(Option<Vec<String>>)`](crate::input::CreateRouteInput::authorization_scopes): <p>The authorization scopes supported by this route.</p>
-    ///   - [`authorization_type(Option<AuthorizationType>)`](crate::input::CreateRouteInput::authorization_type): <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
-    ///   - [`authorizer_id(Option<String>)`](crate::input::CreateRouteInput::authorizer_id): <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-    ///   - [`model_selection_expression(Option<String>)`](crate::input::CreateRouteInput::model_selection_expression): <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`operation_name(Option<String>)`](crate::input::CreateRouteInput::operation_name): <p>The operation name for the route.</p>
-    ///   - [`request_models(Option<HashMap<String, String>>)`](crate::input::CreateRouteInput::request_models): <p>The request models for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`request_parameters(Option<HashMap<String, ParameterConstraints>>)`](crate::input::CreateRouteInput::request_parameters): <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`route_key(Option<String>)`](crate::input::CreateRouteInput::route_key): <p>The route key for the route.</p>
-    ///   - [`route_response_selection_expression(Option<String>)`](crate::input::CreateRouteInput::route_response_selection_expression): <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`target(Option<String>)`](crate::input::CreateRouteInput::target): <p>The target for the route.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_api_id): <p>The API identifier.</p>
+    ///   - [`api_key_required(bool)`](crate::client::fluent_builders::CreateRoute::api_key_required) / [`set_api_key_required(bool)`](crate::client::fluent_builders::CreateRoute::set_api_key_required): <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`authorization_scopes(Vec<String>)`](crate::client::fluent_builders::CreateRoute::authorization_scopes) / [`set_authorization_scopes(Option<Vec<String>>)`](crate::client::fluent_builders::CreateRoute::set_authorization_scopes): <p>The authorization scopes supported by this route.</p>
+    ///   - [`authorization_type(AuthorizationType)`](crate::client::fluent_builders::CreateRoute::authorization_type) / [`set_authorization_type(Option<AuthorizationType>)`](crate::client::fluent_builders::CreateRoute::set_authorization_type): <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
+    ///   - [`authorizer_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::authorizer_id) / [`set_authorizer_id(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_authorizer_id): <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    ///   - [`model_selection_expression(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::model_selection_expression) / [`set_model_selection_expression(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_model_selection_expression): <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`operation_name(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::operation_name) / [`set_operation_name(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_operation_name): <p>The operation name for the route.</p>
+    ///   - [`request_models(HashMap<String, String>)`](crate::client::fluent_builders::CreateRoute::request_models) / [`set_request_models(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRoute::set_request_models): <p>The request models for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`request_parameters(HashMap<String, ParameterConstraints>)`](crate::client::fluent_builders::CreateRoute::request_parameters) / [`set_request_parameters(Option<HashMap<String, ParameterConstraints>>)`](crate::client::fluent_builders::CreateRoute::set_request_parameters): <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`route_key(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::route_key) / [`set_route_key(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_route_key): <p>The route key for the route.</p>
+    ///   - [`route_response_selection_expression(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::route_response_selection_expression) / [`set_route_response_selection_expression(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_route_response_selection_expression): <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_target): <p>The target for the route.</p>
     /// - On success, responds with [`CreateRouteOutput`](crate::output::CreateRouteOutput) with field(s):
     ///   - [`api_gateway_managed(bool)`](crate::output::CreateRouteOutput::api_gateway_managed): <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
     ///   - [`api_key_required(bool)`](crate::output::CreateRouteOutput::api_key_required): <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>
@@ -322,13 +322,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRouteResponse`](crate::client::fluent_builders::CreateRouteResponse) operation.
     ///
-    /// - Takes [`CreateRouteResponseInput`](crate::input::CreateRouteResponseInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::CreateRouteResponseInput::api_id): <p>The API identifier.</p>
-    ///   - [`model_selection_expression(Option<String>)`](crate::input::CreateRouteResponseInput::model_selection_expression): <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
-    ///   - [`response_models(Option<HashMap<String, String>>)`](crate::input::CreateRouteResponseInput::response_models): <p>The response models for the route response.</p>
-    ///   - [`response_parameters(Option<HashMap<String, ParameterConstraints>>)`](crate::input::CreateRouteResponseInput::response_parameters): <p>The route response parameters.</p>
-    ///   - [`route_id(Option<String>)`](crate::input::CreateRouteResponseInput::route_id): <p>The route ID.</p>
-    ///   - [`route_response_key(Option<String>)`](crate::input::CreateRouteResponseInput::route_response_key): <p>The route response key.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateRouteResponse::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateRouteResponse::set_api_id): <p>The API identifier.</p>
+    ///   - [`model_selection_expression(impl Into<String>)`](crate::client::fluent_builders::CreateRouteResponse::model_selection_expression) / [`set_model_selection_expression(Option<String>)`](crate::client::fluent_builders::CreateRouteResponse::set_model_selection_expression): <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
+    ///   - [`response_models(HashMap<String, String>)`](crate::client::fluent_builders::CreateRouteResponse::response_models) / [`set_response_models(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRouteResponse::set_response_models): <p>The response models for the route response.</p>
+    ///   - [`response_parameters(HashMap<String, ParameterConstraints>)`](crate::client::fluent_builders::CreateRouteResponse::response_parameters) / [`set_response_parameters(Option<HashMap<String, ParameterConstraints>>)`](crate::client::fluent_builders::CreateRouteResponse::set_response_parameters): <p>The route response parameters.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::client::fluent_builders::CreateRouteResponse::route_id) / [`set_route_id(Option<String>)`](crate::client::fluent_builders::CreateRouteResponse::set_route_id): <p>The route ID.</p>
+    ///   - [`route_response_key(impl Into<String>)`](crate::client::fluent_builders::CreateRouteResponse::route_response_key) / [`set_route_response_key(Option<String>)`](crate::client::fluent_builders::CreateRouteResponse::set_route_response_key): <p>The route response key.</p>
     /// - On success, responds with [`CreateRouteResponseOutput`](crate::output::CreateRouteResponseOutput) with field(s):
     ///   - [`model_selection_expression(Option<String>)`](crate::output::CreateRouteResponseOutput::model_selection_expression): <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
     ///   - [`response_models(Option<HashMap<String, String>>)`](crate::output::CreateRouteResponseOutput::response_models): <p>Represents the response models of a route response.</p>
@@ -341,18 +341,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateStage`](crate::client::fluent_builders::CreateStage) operation.
     ///
-    /// - Takes [`CreateStageInput`](crate::input::CreateStageInput) with field(s):
-    ///   - [`access_log_settings(Option<AccessLogSettings>)`](crate::input::CreateStageInput::access_log_settings): <p>Settings for logging access in this stage.</p>
-    ///   - [`api_id(Option<String>)`](crate::input::CreateStageInput::api_id): <p>The API identifier.</p>
-    ///   - [`auto_deploy(bool)`](crate::input::CreateStageInput::auto_deploy): <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
-    ///   - [`client_certificate_id(Option<String>)`](crate::input::CreateStageInput::client_certificate_id): <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
-    ///   - [`default_route_settings(Option<RouteSettings>)`](crate::input::CreateStageInput::default_route_settings): <p>The default route settings for the stage.</p>
-    ///   - [`deployment_id(Option<String>)`](crate::input::CreateStageInput::deployment_id): <p>The deployment identifier of the API stage.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateStageInput::description): <p>The description for the API stage.</p>
-    ///   - [`route_settings(Option<HashMap<String, RouteSettings>>)`](crate::input::CreateStageInput::route_settings): <p>Route settings for the stage, by routeKey.</p>
-    ///   - [`stage_name(Option<String>)`](crate::input::CreateStageInput::stage_name): <p>The name of the stage.</p>
-    ///   - [`stage_variables(Option<HashMap<String, String>>)`](crate::input::CreateStageInput::stage_variables): <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateStageInput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`access_log_settings(AccessLogSettings)`](crate::client::fluent_builders::CreateStage::access_log_settings) / [`set_access_log_settings(Option<AccessLogSettings>)`](crate::client::fluent_builders::CreateStage::set_access_log_settings): <p>Settings for logging access in this stage.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::CreateStage::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::CreateStage::set_api_id): <p>The API identifier.</p>
+    ///   - [`auto_deploy(bool)`](crate::client::fluent_builders::CreateStage::auto_deploy) / [`set_auto_deploy(bool)`](crate::client::fluent_builders::CreateStage::set_auto_deploy): <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
+    ///   - [`client_certificate_id(impl Into<String>)`](crate::client::fluent_builders::CreateStage::client_certificate_id) / [`set_client_certificate_id(Option<String>)`](crate::client::fluent_builders::CreateStage::set_client_certificate_id): <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
+    ///   - [`default_route_settings(RouteSettings)`](crate::client::fluent_builders::CreateStage::default_route_settings) / [`set_default_route_settings(Option<RouteSettings>)`](crate::client::fluent_builders::CreateStage::set_default_route_settings): <p>The default route settings for the stage.</p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::CreateStage::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::CreateStage::set_deployment_id): <p>The deployment identifier of the API stage.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStage::set_description): <p>The description for the API stage.</p>
+    ///   - [`route_settings(HashMap<String, RouteSettings>)`](crate::client::fluent_builders::CreateStage::route_settings) / [`set_route_settings(Option<HashMap<String, RouteSettings>>)`](crate::client::fluent_builders::CreateStage::set_route_settings): <p>Route settings for the stage, by routeKey.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::CreateStage::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::CreateStage::set_stage_name): <p>The name of the stage.</p>
+    ///   - [`stage_variables(HashMap<String, String>)`](crate::client::fluent_builders::CreateStage::stage_variables) / [`set_stage_variables(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStage::set_stage_variables): <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStage::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStage::set_tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On success, responds with [`CreateStageOutput`](crate::output::CreateStageOutput) with field(s):
     ///   - [`access_log_settings(Option<AccessLogSettings>)`](crate::output::CreateStageOutput::access_log_settings): <p>Settings for logging access in this stage.</p>
     ///   - [`api_gateway_managed(bool)`](crate::output::CreateStageOutput::api_gateway_managed): <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
@@ -374,11 +374,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateVpcLink`](crate::client::fluent_builders::CreateVpcLink) operation.
     ///
-    /// - Takes [`CreateVpcLinkInput`](crate::input::CreateVpcLinkInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateVpcLinkInput::name): <p>The name of the VPC link.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::CreateVpcLinkInput::security_group_ids): <p>A list of security group IDs for the VPC link.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateVpcLinkInput::subnet_ids): <p>A list of subnet IDs to include in the VPC link.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateVpcLinkInput::tags): <p>A list of tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateVpcLink::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateVpcLink::set_name): <p>The name of the VPC link.</p>
+    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateVpcLink::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVpcLink::set_security_group_ids): <p>A list of security group IDs for the VPC link.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateVpcLink::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVpcLink::set_subnet_ids): <p>A list of subnet IDs to include in the VPC link.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateVpcLink::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateVpcLink::set_tags): <p>A list of tags.</p>
     /// - On success, responds with [`CreateVpcLinkOutput`](crate::output::CreateVpcLinkOutput) with field(s):
     ///   - [`created_date(Option<DateTime>)`](crate::output::CreateVpcLinkOutput::created_date): <p>The timestamp when the VPC link was created.</p>
     ///   - [`name(Option<String>)`](crate::output::CreateVpcLinkOutput::name): <p>The name of the VPC link.</p>
@@ -395,9 +395,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAccessLogSettings`](crate::client::fluent_builders::DeleteAccessLogSettings) operation.
     ///
-    /// - Takes [`DeleteAccessLogSettingsInput`](crate::input::DeleteAccessLogSettingsInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteAccessLogSettingsInput::api_id): <p>The API identifier.</p>
-    ///   - [`stage_name(Option<String>)`](crate::input::DeleteAccessLogSettingsInput::stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessLogSettings::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessLogSettings::set_api_id): <p>The API identifier.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessLogSettings::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::DeleteAccessLogSettings::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     /// - On success, responds with [`DeleteAccessLogSettingsOutput`](crate::output::DeleteAccessLogSettingsOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAccessLogSettingsError>`](crate::error::DeleteAccessLogSettingsError)
@@ -406,8 +406,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApi`](crate::client::fluent_builders::DeleteApi) operation.
     ///
-    /// - Takes [`DeleteApiInput`](crate::input::DeleteApiInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteApiInput::api_id): <p>The API identifier.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApi::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteApi::set_api_id): <p>The API identifier.</p>
     /// - On success, responds with [`DeleteApiOutput`](crate::output::DeleteApiOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApiError>`](crate::error::DeleteApiError)
@@ -416,9 +416,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApiMapping`](crate::client::fluent_builders::DeleteApiMapping) operation.
     ///
-    /// - Takes [`DeleteApiMappingInput`](crate::input::DeleteApiMappingInput) with field(s):
-    ///   - [`api_mapping_id(Option<String>)`](crate::input::DeleteApiMappingInput::api_mapping_id): <p>The API mapping identifier.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteApiMappingInput::domain_name): <p>The domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_mapping_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApiMapping::api_mapping_id) / [`set_api_mapping_id(Option<String>)`](crate::client::fluent_builders::DeleteApiMapping::set_api_mapping_id): <p>The API mapping identifier.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApiMapping::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteApiMapping::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`DeleteApiMappingOutput`](crate::output::DeleteApiMappingOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApiMappingError>`](crate::error::DeleteApiMappingError)
@@ -427,9 +427,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAuthorizer`](crate::client::fluent_builders::DeleteAuthorizer) operation.
     ///
-    /// - Takes [`DeleteAuthorizerInput`](crate::input::DeleteAuthorizerInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteAuthorizerInput::api_id): <p>The API identifier.</p>
-    ///   - [`authorizer_id(Option<String>)`](crate::input::DeleteAuthorizerInput::authorizer_id): <p>The authorizer identifier.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAuthorizer::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteAuthorizer::set_api_id): <p>The API identifier.</p>
+    ///   - [`authorizer_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAuthorizer::authorizer_id) / [`set_authorizer_id(Option<String>)`](crate::client::fluent_builders::DeleteAuthorizer::set_authorizer_id): <p>The authorizer identifier.</p>
     /// - On success, responds with [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAuthorizerError>`](crate::error::DeleteAuthorizerError)
@@ -438,8 +438,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCorsConfiguration`](crate::client::fluent_builders::DeleteCorsConfiguration) operation.
     ///
-    /// - Takes [`DeleteCorsConfigurationInput`](crate::input::DeleteCorsConfigurationInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteCorsConfigurationInput::api_id): <p>The API identifier.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCorsConfiguration::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteCorsConfiguration::set_api_id): <p>The API identifier.</p>
     /// - On success, responds with [`DeleteCorsConfigurationOutput`](crate::output::DeleteCorsConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCorsConfigurationError>`](crate::error::DeleteCorsConfigurationError)
@@ -448,9 +448,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDeployment`](crate::client::fluent_builders::DeleteDeployment) operation.
     ///
-    /// - Takes [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteDeploymentInput::api_id): <p>The API identifier.</p>
-    ///   - [`deployment_id(Option<String>)`](crate::input::DeleteDeploymentInput::deployment_id): <p>The deployment ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDeployment::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteDeployment::set_api_id): <p>The API identifier.</p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::DeleteDeployment::set_deployment_id): <p>The deployment ID.</p>
     /// - On success, responds with [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDeploymentError>`](crate::error::DeleteDeploymentError)
@@ -459,8 +459,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDomainName`](crate::client::fluent_builders::DeleteDomainName) operation.
     ///
-    /// - Takes [`DeleteDomainNameInput`](crate::input::DeleteDomainNameInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::DeleteDomainNameInput::domain_name): <p>The domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDomainName::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteDomainName::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDomainNameError>`](crate::error::DeleteDomainNameError)
@@ -469,9 +469,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteIntegration`](crate::client::fluent_builders::DeleteIntegration) operation.
     ///
-    /// - Takes [`DeleteIntegrationInput`](crate::input::DeleteIntegrationInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteIntegrationInput::api_id): <p>The API identifier.</p>
-    ///   - [`integration_id(Option<String>)`](crate::input::DeleteIntegrationInput::integration_id): <p>The integration ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIntegration::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteIntegration::set_api_id): <p>The API identifier.</p>
+    ///   - [`integration_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIntegration::integration_id) / [`set_integration_id(Option<String>)`](crate::client::fluent_builders::DeleteIntegration::set_integration_id): <p>The integration ID.</p>
     /// - On success, responds with [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteIntegrationError>`](crate::error::DeleteIntegrationError)
@@ -480,10 +480,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteIntegrationResponse`](crate::client::fluent_builders::DeleteIntegrationResponse) operation.
     ///
-    /// - Takes [`DeleteIntegrationResponseInput`](crate::input::DeleteIntegrationResponseInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteIntegrationResponseInput::api_id): <p>The API identifier.</p>
-    ///   - [`integration_id(Option<String>)`](crate::input::DeleteIntegrationResponseInput::integration_id): <p>The integration ID.</p>
-    ///   - [`integration_response_id(Option<String>)`](crate::input::DeleteIntegrationResponseInput::integration_response_id): <p>The integration response ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIntegrationResponse::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteIntegrationResponse::set_api_id): <p>The API identifier.</p>
+    ///   - [`integration_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIntegrationResponse::integration_id) / [`set_integration_id(Option<String>)`](crate::client::fluent_builders::DeleteIntegrationResponse::set_integration_id): <p>The integration ID.</p>
+    ///   - [`integration_response_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIntegrationResponse::integration_response_id) / [`set_integration_response_id(Option<String>)`](crate::client::fluent_builders::DeleteIntegrationResponse::set_integration_response_id): <p>The integration response ID.</p>
     /// - On success, responds with [`DeleteIntegrationResponseOutput`](crate::output::DeleteIntegrationResponseOutput)
 
     /// - On failure, responds with [`SdkError<DeleteIntegrationResponseError>`](crate::error::DeleteIntegrationResponseError)
@@ -494,9 +494,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteModel`](crate::client::fluent_builders::DeleteModel) operation.
     ///
-    /// - Takes [`DeleteModelInput`](crate::input::DeleteModelInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteModelInput::api_id): <p>The API identifier.</p>
-    ///   - [`model_id(Option<String>)`](crate::input::DeleteModelInput::model_id): <p>The model ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteModel::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteModel::set_api_id): <p>The API identifier.</p>
+    ///   - [`model_id(impl Into<String>)`](crate::client::fluent_builders::DeleteModel::model_id) / [`set_model_id(Option<String>)`](crate::client::fluent_builders::DeleteModel::set_model_id): <p>The model ID.</p>
     /// - On success, responds with [`DeleteModelOutput`](crate::output::DeleteModelOutput)
 
     /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::error::DeleteModelError)
@@ -505,9 +505,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRoute`](crate::client::fluent_builders::DeleteRoute) operation.
     ///
-    /// - Takes [`DeleteRouteInput`](crate::input::DeleteRouteInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteRouteInput::api_id): <p>The API identifier.</p>
-    ///   - [`route_id(Option<String>)`](crate::input::DeleteRouteInput::route_id): <p>The route ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_api_id): <p>The API identifier.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::route_id) / [`set_route_id(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_route_id): <p>The route ID.</p>
     /// - On success, responds with [`DeleteRouteOutput`](crate::output::DeleteRouteOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRouteError>`](crate::error::DeleteRouteError)
@@ -516,10 +516,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRouteRequestParameter`](crate::client::fluent_builders::DeleteRouteRequestParameter) operation.
     ///
-    /// - Takes [`DeleteRouteRequestParameterInput`](crate::input::DeleteRouteRequestParameterInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteRouteRequestParameterInput::api_id): <p>The API identifier.</p>
-    ///   - [`request_parameter_key(Option<String>)`](crate::input::DeleteRouteRequestParameterInput::request_parameter_key): <p>The route request parameter key.</p>
-    ///   - [`route_id(Option<String>)`](crate::input::DeleteRouteRequestParameterInput::route_id): <p>The route ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteRequestParameter::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteRouteRequestParameter::set_api_id): <p>The API identifier.</p>
+    ///   - [`request_parameter_key(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteRequestParameter::request_parameter_key) / [`set_request_parameter_key(Option<String>)`](crate::client::fluent_builders::DeleteRouteRequestParameter::set_request_parameter_key): <p>The route request parameter key.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteRequestParameter::route_id) / [`set_route_id(Option<String>)`](crate::client::fluent_builders::DeleteRouteRequestParameter::set_route_id): <p>The route ID.</p>
     /// - On success, responds with [`DeleteRouteRequestParameterOutput`](crate::output::DeleteRouteRequestParameterOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRouteRequestParameterError>`](crate::error::DeleteRouteRequestParameterError)
@@ -530,10 +530,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRouteResponse`](crate::client::fluent_builders::DeleteRouteResponse) operation.
     ///
-    /// - Takes [`DeleteRouteResponseInput`](crate::input::DeleteRouteResponseInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteRouteResponseInput::api_id): <p>The API identifier.</p>
-    ///   - [`route_id(Option<String>)`](crate::input::DeleteRouteResponseInput::route_id): <p>The route ID.</p>
-    ///   - [`route_response_id(Option<String>)`](crate::input::DeleteRouteResponseInput::route_response_id): <p>The route response ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteResponse::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteRouteResponse::set_api_id): <p>The API identifier.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteResponse::route_id) / [`set_route_id(Option<String>)`](crate::client::fluent_builders::DeleteRouteResponse::set_route_id): <p>The route ID.</p>
+    ///   - [`route_response_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteResponse::route_response_id) / [`set_route_response_id(Option<String>)`](crate::client::fluent_builders::DeleteRouteResponse::set_route_response_id): <p>The route response ID.</p>
     /// - On success, responds with [`DeleteRouteResponseOutput`](crate::output::DeleteRouteResponseOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRouteResponseError>`](crate::error::DeleteRouteResponseError)
@@ -542,10 +542,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRouteSettings`](crate::client::fluent_builders::DeleteRouteSettings) operation.
     ///
-    /// - Takes [`DeleteRouteSettingsInput`](crate::input::DeleteRouteSettingsInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteRouteSettingsInput::api_id): <p>The API identifier.</p>
-    ///   - [`route_key(Option<String>)`](crate::input::DeleteRouteSettingsInput::route_key): <p>The route key.</p>
-    ///   - [`stage_name(Option<String>)`](crate::input::DeleteRouteSettingsInput::stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteSettings::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteRouteSettings::set_api_id): <p>The API identifier.</p>
+    ///   - [`route_key(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteSettings::route_key) / [`set_route_key(Option<String>)`](crate::client::fluent_builders::DeleteRouteSettings::set_route_key): <p>The route key.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteSettings::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::DeleteRouteSettings::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     /// - On success, responds with [`DeleteRouteSettingsOutput`](crate::output::DeleteRouteSettingsOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRouteSettingsError>`](crate::error::DeleteRouteSettingsError)
@@ -554,9 +554,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteStage`](crate::client::fluent_builders::DeleteStage) operation.
     ///
-    /// - Takes [`DeleteStageInput`](crate::input::DeleteStageInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::DeleteStageInput::api_id): <p>The API identifier.</p>
-    ///   - [`stage_name(Option<String>)`](crate::input::DeleteStageInput::stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStage::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::DeleteStage::set_api_id): <p>The API identifier.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::DeleteStage::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::DeleteStage::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     /// - On success, responds with [`DeleteStageOutput`](crate::output::DeleteStageOutput)
 
     /// - On failure, responds with [`SdkError<DeleteStageError>`](crate::error::DeleteStageError)
@@ -565,8 +565,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteVpcLink`](crate::client::fluent_builders::DeleteVpcLink) operation.
     ///
-    /// - Takes [`DeleteVpcLinkInput`](crate::input::DeleteVpcLinkInput) with field(s):
-    ///   - [`vpc_link_id(Option<String>)`](crate::input::DeleteVpcLinkInput::vpc_link_id): <p>The ID of the VPC link.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_link_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcLink::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::client::fluent_builders::DeleteVpcLink::set_vpc_link_id): <p>The ID of the VPC link.</p>
     /// - On success, responds with [`DeleteVpcLinkOutput`](crate::output::DeleteVpcLinkOutput)
 
     /// - On failure, responds with [`SdkError<DeleteVpcLinkError>`](crate::error::DeleteVpcLinkError)
@@ -575,13 +575,13 @@ where
     }
     /// Constructs a fluent builder for the [`ExportApi`](crate::client::fluent_builders::ExportApi) operation.
     ///
-    /// - Takes [`ExportApiInput`](crate::input::ExportApiInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::ExportApiInput::api_id): <p>The API identifier.</p>
-    ///   - [`export_version(Option<String>)`](crate::input::ExportApiInput::export_version): <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
-    ///   - [`include_extensions(bool)`](crate::input::ExportApiInput::include_extensions): <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
-    ///   - [`output_type(Option<String>)`](crate::input::ExportApiInput::output_type): <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
-    ///   - [`specification(Option<String>)`](crate::input::ExportApiInput::specification): <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
-    ///   - [`stage_name(Option<String>)`](crate::input::ExportApiInput::stage_name): <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::ExportApi::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::ExportApi::set_api_id): <p>The API identifier.</p>
+    ///   - [`export_version(impl Into<String>)`](crate::client::fluent_builders::ExportApi::export_version) / [`set_export_version(Option<String>)`](crate::client::fluent_builders::ExportApi::set_export_version): <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
+    ///   - [`include_extensions(bool)`](crate::client::fluent_builders::ExportApi::include_extensions) / [`set_include_extensions(bool)`](crate::client::fluent_builders::ExportApi::set_include_extensions): <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
+    ///   - [`output_type(impl Into<String>)`](crate::client::fluent_builders::ExportApi::output_type) / [`set_output_type(Option<String>)`](crate::client::fluent_builders::ExportApi::set_output_type): <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
+    ///   - [`specification(impl Into<String>)`](crate::client::fluent_builders::ExportApi::specification) / [`set_specification(Option<String>)`](crate::client::fluent_builders::ExportApi::set_specification): <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::ExportApi::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::ExportApi::set_stage_name): <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
     /// - On success, responds with [`ExportApiOutput`](crate::output::ExportApiOutput) with field(s):
     ///   - [`body(Option<Blob>)`](crate::output::ExportApiOutput::body): <p>Represents an exported definition of an API in a particular output format, for example, YAML. The API is serialized to the requested specification, for example, OpenAPI 3.0.</p>
     /// - On failure, responds with [`SdkError<ExportApiError>`](crate::error::ExportApiError)
@@ -590,8 +590,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApi`](crate::client::fluent_builders::GetApi) operation.
     ///
-    /// - Takes [`GetApiInput`](crate::input::GetApiInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetApiInput::api_id): <p>The API identifier.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetApi::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetApi::set_api_id): <p>The API identifier.</p>
     /// - On success, responds with [`GetApiOutput`](crate::output::GetApiOutput) with field(s):
     ///   - [`api_endpoint(Option<String>)`](crate::output::GetApiOutput::api_endpoint): <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     ///   - [`api_gateway_managed(bool)`](crate::output::GetApiOutput::api_gateway_managed): <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
@@ -615,9 +615,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetApiMapping`](crate::client::fluent_builders::GetApiMapping) operation.
     ///
-    /// - Takes [`GetApiMappingInput`](crate::input::GetApiMappingInput) with field(s):
-    ///   - [`api_mapping_id(Option<String>)`](crate::input::GetApiMappingInput::api_mapping_id): <p>The API mapping identifier.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::GetApiMappingInput::domain_name): <p>The domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_mapping_id(impl Into<String>)`](crate::client::fluent_builders::GetApiMapping::api_mapping_id) / [`set_api_mapping_id(Option<String>)`](crate::client::fluent_builders::GetApiMapping::set_api_mapping_id): <p>The API mapping identifier.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetApiMapping::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetApiMapping::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`GetApiMappingOutput`](crate::output::GetApiMappingOutput) with field(s):
     ///   - [`api_id(Option<String>)`](crate::output::GetApiMappingOutput::api_id): <p>The API identifier.</p>
     ///   - [`api_mapping_id(Option<String>)`](crate::output::GetApiMappingOutput::api_mapping_id): <p>The API mapping identifier.</p>
@@ -629,10 +629,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetApiMappings`](crate::client::fluent_builders::GetApiMappings) operation.
     ///
-    /// - Takes [`GetApiMappingsInput`](crate::input::GetApiMappingsInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::GetApiMappingsInput::domain_name): <p>The domain name.</p>
-    ///   - [`max_results(Option<String>)`](crate::input::GetApiMappingsInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetApiMappingsInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetApiMappings::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetApiMappings::set_domain_name): <p>The domain name.</p>
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetApiMappings::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetApiMappings::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetApiMappings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetApiMappings::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetApiMappingsOutput`](crate::output::GetApiMappingsOutput) with field(s):
     ///   - [`items(Option<Vec<ApiMapping>>)`](crate::output::GetApiMappingsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetApiMappingsOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -642,9 +642,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetApis`](crate::client::fluent_builders::GetApis) operation.
     ///
-    /// - Takes [`GetApisInput`](crate::input::GetApisInput) with field(s):
-    ///   - [`max_results(Option<String>)`](crate::input::GetApisInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetApisInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetApis::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetApis::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetApis::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetApis::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetApisOutput`](crate::output::GetApisOutput) with field(s):
     ///   - [`items(Option<Vec<Api>>)`](crate::output::GetApisOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetApisOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -654,9 +654,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetAuthorizer`](crate::client::fluent_builders::GetAuthorizer) operation.
     ///
-    /// - Takes [`GetAuthorizerInput`](crate::input::GetAuthorizerInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetAuthorizerInput::api_id): <p>The API identifier.</p>
-    ///   - [`authorizer_id(Option<String>)`](crate::input::GetAuthorizerInput::authorizer_id): <p>The authorizer identifier.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetAuthorizer::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetAuthorizer::set_api_id): <p>The API identifier.</p>
+    ///   - [`authorizer_id(impl Into<String>)`](crate::client::fluent_builders::GetAuthorizer::authorizer_id) / [`set_authorizer_id(Option<String>)`](crate::client::fluent_builders::GetAuthorizer::set_authorizer_id): <p>The authorizer identifier.</p>
     /// - On success, responds with [`GetAuthorizerOutput`](crate::output::GetAuthorizerOutput) with field(s):
     ///   - [`authorizer_credentials_arn(Option<String>)`](crate::output::GetAuthorizerOutput::authorizer_credentials_arn): <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
     ///   - [`authorizer_id(Option<String>)`](crate::output::GetAuthorizerOutput::authorizer_id): <p>The authorizer identifier.</p>
@@ -675,10 +675,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetAuthorizers`](crate::client::fluent_builders::GetAuthorizers) operation.
     ///
-    /// - Takes [`GetAuthorizersInput`](crate::input::GetAuthorizersInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetAuthorizersInput::api_id): <p>The API identifier.</p>
-    ///   - [`max_results(Option<String>)`](crate::input::GetAuthorizersInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetAuthorizersInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetAuthorizers::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetAuthorizers::set_api_id): <p>The API identifier.</p>
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetAuthorizers::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetAuthorizers::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAuthorizers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAuthorizers::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetAuthorizersOutput`](crate::output::GetAuthorizersOutput) with field(s):
     ///   - [`items(Option<Vec<Authorizer>>)`](crate::output::GetAuthorizersOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetAuthorizersOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -688,9 +688,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetDeployment`](crate::client::fluent_builders::GetDeployment) operation.
     ///
-    /// - Takes [`GetDeploymentInput`](crate::input::GetDeploymentInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetDeploymentInput::api_id): <p>The API identifier.</p>
-    ///   - [`deployment_id(Option<String>)`](crate::input::GetDeploymentInput::deployment_id): <p>The deployment ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployment::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetDeployment::set_api_id): <p>The API identifier.</p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::GetDeployment::set_deployment_id): <p>The deployment ID.</p>
     /// - On success, responds with [`GetDeploymentOutput`](crate::output::GetDeploymentOutput) with field(s):
     ///   - [`auto_deployed(bool)`](crate::output::GetDeploymentOutput::auto_deployed): <p>Specifies whether a deployment was automatically released.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::output::GetDeploymentOutput::created_date): <p>The date and time when the Deployment resource was created.</p>
@@ -704,10 +704,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetDeployments`](crate::client::fluent_builders::GetDeployments) operation.
     ///
-    /// - Takes [`GetDeploymentsInput`](crate::input::GetDeploymentsInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetDeploymentsInput::api_id): <p>The API identifier.</p>
-    ///   - [`max_results(Option<String>)`](crate::input::GetDeploymentsInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetDeploymentsInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployments::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetDeployments::set_api_id): <p>The API identifier.</p>
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetDeployments::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetDeployments::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDeployments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDeployments::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput) with field(s):
     ///   - [`items(Option<Vec<Deployment>>)`](crate::output::GetDeploymentsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetDeploymentsOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -717,8 +717,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDomainName`](crate::client::fluent_builders::GetDomainName) operation.
     ///
-    /// - Takes [`GetDomainNameInput`](crate::input::GetDomainNameInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::GetDomainNameInput::domain_name): <p>The domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetDomainName::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetDomainName::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`GetDomainNameOutput`](crate::output::GetDomainNameOutput) with field(s):
     ///   - [`api_mapping_selection_expression(Option<String>)`](crate::output::GetDomainNameOutput::api_mapping_selection_expression): <p>The API mapping selection expression.</p>
     ///   - [`domain_name(Option<String>)`](crate::output::GetDomainNameOutput::domain_name): <p>The name of the DomainName resource.</p>
@@ -731,9 +731,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetDomainNames`](crate::client::fluent_builders::GetDomainNames) operation.
     ///
-    /// - Takes [`GetDomainNamesInput`](crate::input::GetDomainNamesInput) with field(s):
-    ///   - [`max_results(Option<String>)`](crate::input::GetDomainNamesInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetDomainNamesInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetDomainNames::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetDomainNames::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDomainNames::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDomainNames::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetDomainNamesOutput`](crate::output::GetDomainNamesOutput) with field(s):
     ///   - [`items(Option<Vec<DomainName>>)`](crate::output::GetDomainNamesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetDomainNamesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -743,9 +743,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetIntegration`](crate::client::fluent_builders::GetIntegration) operation.
     ///
-    /// - Takes [`GetIntegrationInput`](crate::input::GetIntegrationInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetIntegrationInput::api_id): <p>The API identifier.</p>
-    ///   - [`integration_id(Option<String>)`](crate::input::GetIntegrationInput::integration_id): <p>The integration ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetIntegration::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetIntegration::set_api_id): <p>The API identifier.</p>
+    ///   - [`integration_id(impl Into<String>)`](crate::client::fluent_builders::GetIntegration::integration_id) / [`set_integration_id(Option<String>)`](crate::client::fluent_builders::GetIntegration::set_integration_id): <p>The integration ID.</p>
     /// - On success, responds with [`GetIntegrationOutput`](crate::output::GetIntegrationOutput) with field(s):
     ///   - [`api_gateway_managed(bool)`](crate::output::GetIntegrationOutput::api_gateway_managed): <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     ///   - [`connection_id(Option<String>)`](crate::output::GetIntegrationOutput::connection_id): <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
@@ -773,10 +773,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetIntegrationResponse`](crate::client::fluent_builders::GetIntegrationResponse) operation.
     ///
-    /// - Takes [`GetIntegrationResponseInput`](crate::input::GetIntegrationResponseInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetIntegrationResponseInput::api_id): <p>The API identifier.</p>
-    ///   - [`integration_id(Option<String>)`](crate::input::GetIntegrationResponseInput::integration_id): <p>The integration ID.</p>
-    ///   - [`integration_response_id(Option<String>)`](crate::input::GetIntegrationResponseInput::integration_response_id): <p>The integration response ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetIntegrationResponse::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetIntegrationResponse::set_api_id): <p>The API identifier.</p>
+    ///   - [`integration_id(impl Into<String>)`](crate::client::fluent_builders::GetIntegrationResponse::integration_id) / [`set_integration_id(Option<String>)`](crate::client::fluent_builders::GetIntegrationResponse::set_integration_id): <p>The integration ID.</p>
+    ///   - [`integration_response_id(impl Into<String>)`](crate::client::fluent_builders::GetIntegrationResponse::integration_response_id) / [`set_integration_response_id(Option<String>)`](crate::client::fluent_builders::GetIntegrationResponse::set_integration_response_id): <p>The integration response ID.</p>
     /// - On success, responds with [`GetIntegrationResponseOutput`](crate::output::GetIntegrationResponseOutput) with field(s):
     ///   - [`content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::output::GetIntegrationResponseOutput::content_handling_strategy): <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     ///   - [`integration_response_id(Option<String>)`](crate::output::GetIntegrationResponseOutput::integration_response_id): <p>The integration response ID.</p>
@@ -790,11 +790,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetIntegrationResponses`](crate::client::fluent_builders::GetIntegrationResponses) operation.
     ///
-    /// - Takes [`GetIntegrationResponsesInput`](crate::input::GetIntegrationResponsesInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetIntegrationResponsesInput::api_id): <p>The API identifier.</p>
-    ///   - [`integration_id(Option<String>)`](crate::input::GetIntegrationResponsesInput::integration_id): <p>The integration ID.</p>
-    ///   - [`max_results(Option<String>)`](crate::input::GetIntegrationResponsesInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetIntegrationResponsesInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetIntegrationResponses::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetIntegrationResponses::set_api_id): <p>The API identifier.</p>
+    ///   - [`integration_id(impl Into<String>)`](crate::client::fluent_builders::GetIntegrationResponses::integration_id) / [`set_integration_id(Option<String>)`](crate::client::fluent_builders::GetIntegrationResponses::set_integration_id): <p>The integration ID.</p>
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetIntegrationResponses::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetIntegrationResponses::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetIntegrationResponses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetIntegrationResponses::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetIntegrationResponsesOutput`](crate::output::GetIntegrationResponsesOutput) with field(s):
     ///   - [`items(Option<Vec<IntegrationResponse>>)`](crate::output::GetIntegrationResponsesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetIntegrationResponsesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -804,10 +804,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetIntegrations`](crate::client::fluent_builders::GetIntegrations) operation.
     ///
-    /// - Takes [`GetIntegrationsInput`](crate::input::GetIntegrationsInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetIntegrationsInput::api_id): <p>The API identifier.</p>
-    ///   - [`max_results(Option<String>)`](crate::input::GetIntegrationsInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetIntegrationsInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetIntegrations::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetIntegrations::set_api_id): <p>The API identifier.</p>
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetIntegrations::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetIntegrations::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetIntegrations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetIntegrations::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetIntegrationsOutput`](crate::output::GetIntegrationsOutput) with field(s):
     ///   - [`items(Option<Vec<Integration>>)`](crate::output::GetIntegrationsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetIntegrationsOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -817,9 +817,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetModel`](crate::client::fluent_builders::GetModel) operation.
     ///
-    /// - Takes [`GetModelInput`](crate::input::GetModelInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetModelInput::api_id): <p>The API identifier.</p>
-    ///   - [`model_id(Option<String>)`](crate::input::GetModelInput::model_id): <p>The model ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetModel::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetModel::set_api_id): <p>The API identifier.</p>
+    ///   - [`model_id(impl Into<String>)`](crate::client::fluent_builders::GetModel::model_id) / [`set_model_id(Option<String>)`](crate::client::fluent_builders::GetModel::set_model_id): <p>The model ID.</p>
     /// - On success, responds with [`GetModelOutput`](crate::output::GetModelOutput) with field(s):
     ///   - [`content_type(Option<String>)`](crate::output::GetModelOutput::content_type): <p>The content-type for the model, for example, "application/json".</p>
     ///   - [`description(Option<String>)`](crate::output::GetModelOutput::description): <p>The description of the model.</p>
@@ -832,10 +832,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetModels`](crate::client::fluent_builders::GetModels) operation.
     ///
-    /// - Takes [`GetModelsInput`](crate::input::GetModelsInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetModelsInput::api_id): <p>The API identifier.</p>
-    ///   - [`max_results(Option<String>)`](crate::input::GetModelsInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetModelsInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetModels::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetModels::set_api_id): <p>The API identifier.</p>
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetModels::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetModels::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetModels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetModels::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetModelsOutput`](crate::output::GetModelsOutput) with field(s):
     ///   - [`items(Option<Vec<Model>>)`](crate::output::GetModelsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetModelsOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -845,9 +845,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetModelTemplate`](crate::client::fluent_builders::GetModelTemplate) operation.
     ///
-    /// - Takes [`GetModelTemplateInput`](crate::input::GetModelTemplateInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetModelTemplateInput::api_id): <p>The API identifier.</p>
-    ///   - [`model_id(Option<String>)`](crate::input::GetModelTemplateInput::model_id): <p>The model ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetModelTemplate::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetModelTemplate::set_api_id): <p>The API identifier.</p>
+    ///   - [`model_id(impl Into<String>)`](crate::client::fluent_builders::GetModelTemplate::model_id) / [`set_model_id(Option<String>)`](crate::client::fluent_builders::GetModelTemplate::set_model_id): <p>The model ID.</p>
     /// - On success, responds with [`GetModelTemplateOutput`](crate::output::GetModelTemplateOutput) with field(s):
     ///   - [`value(Option<String>)`](crate::output::GetModelTemplateOutput::value): <p>The template value.</p>
     /// - On failure, responds with [`SdkError<GetModelTemplateError>`](crate::error::GetModelTemplateError)
@@ -856,9 +856,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetRoute`](crate::client::fluent_builders::GetRoute) operation.
     ///
-    /// - Takes [`GetRouteInput`](crate::input::GetRouteInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetRouteInput::api_id): <p>The API identifier.</p>
-    ///   - [`route_id(Option<String>)`](crate::input::GetRouteInput::route_id): <p>The route ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetRoute::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetRoute::set_api_id): <p>The API identifier.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::client::fluent_builders::GetRoute::route_id) / [`set_route_id(Option<String>)`](crate::client::fluent_builders::GetRoute::set_route_id): <p>The route ID.</p>
     /// - On success, responds with [`GetRouteOutput`](crate::output::GetRouteOutput) with field(s):
     ///   - [`api_gateway_managed(bool)`](crate::output::GetRouteOutput::api_gateway_managed): <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
     ///   - [`api_key_required(bool)`](crate::output::GetRouteOutput::api_key_required): <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>
@@ -879,10 +879,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetRouteResponse`](crate::client::fluent_builders::GetRouteResponse) operation.
     ///
-    /// - Takes [`GetRouteResponseInput`](crate::input::GetRouteResponseInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetRouteResponseInput::api_id): <p>The API identifier.</p>
-    ///   - [`route_id(Option<String>)`](crate::input::GetRouteResponseInput::route_id): <p>The route ID.</p>
-    ///   - [`route_response_id(Option<String>)`](crate::input::GetRouteResponseInput::route_response_id): <p>The route response ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetRouteResponse::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetRouteResponse::set_api_id): <p>The API identifier.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::client::fluent_builders::GetRouteResponse::route_id) / [`set_route_id(Option<String>)`](crate::client::fluent_builders::GetRouteResponse::set_route_id): <p>The route ID.</p>
+    ///   - [`route_response_id(impl Into<String>)`](crate::client::fluent_builders::GetRouteResponse::route_response_id) / [`set_route_response_id(Option<String>)`](crate::client::fluent_builders::GetRouteResponse::set_route_response_id): <p>The route response ID.</p>
     /// - On success, responds with [`GetRouteResponseOutput`](crate::output::GetRouteResponseOutput) with field(s):
     ///   - [`model_selection_expression(Option<String>)`](crate::output::GetRouteResponseOutput::model_selection_expression): <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
     ///   - [`response_models(Option<HashMap<String, String>>)`](crate::output::GetRouteResponseOutput::response_models): <p>Represents the response models of a route response.</p>
@@ -895,11 +895,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetRouteResponses`](crate::client::fluent_builders::GetRouteResponses) operation.
     ///
-    /// - Takes [`GetRouteResponsesInput`](crate::input::GetRouteResponsesInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetRouteResponsesInput::api_id): <p>The API identifier.</p>
-    ///   - [`max_results(Option<String>)`](crate::input::GetRouteResponsesInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetRouteResponsesInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-    ///   - [`route_id(Option<String>)`](crate::input::GetRouteResponsesInput::route_id): <p>The route ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetRouteResponses::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetRouteResponses::set_api_id): <p>The API identifier.</p>
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetRouteResponses::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetRouteResponses::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetRouteResponses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetRouteResponses::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::client::fluent_builders::GetRouteResponses::route_id) / [`set_route_id(Option<String>)`](crate::client::fluent_builders::GetRouteResponses::set_route_id): <p>The route ID.</p>
     /// - On success, responds with [`GetRouteResponsesOutput`](crate::output::GetRouteResponsesOutput) with field(s):
     ///   - [`items(Option<Vec<RouteResponse>>)`](crate::output::GetRouteResponsesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetRouteResponsesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -909,10 +909,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetRoutes`](crate::client::fluent_builders::GetRoutes) operation.
     ///
-    /// - Takes [`GetRoutesInput`](crate::input::GetRoutesInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetRoutesInput::api_id): <p>The API identifier.</p>
-    ///   - [`max_results(Option<String>)`](crate::input::GetRoutesInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetRoutesInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetRoutes::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetRoutes::set_api_id): <p>The API identifier.</p>
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetRoutes::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetRoutes::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetRoutes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetRoutes::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetRoutesOutput`](crate::output::GetRoutesOutput) with field(s):
     ///   - [`items(Option<Vec<Route>>)`](crate::output::GetRoutesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetRoutesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -922,9 +922,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetStage`](crate::client::fluent_builders::GetStage) operation.
     ///
-    /// - Takes [`GetStageInput`](crate::input::GetStageInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetStageInput::api_id): <p>The API identifier.</p>
-    ///   - [`stage_name(Option<String>)`](crate::input::GetStageInput::stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetStage::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetStage::set_api_id): <p>The API identifier.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::GetStage::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::GetStage::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     /// - On success, responds with [`GetStageOutput`](crate::output::GetStageOutput) with field(s):
     ///   - [`access_log_settings(Option<AccessLogSettings>)`](crate::output::GetStageOutput::access_log_settings): <p>Settings for logging access in this stage.</p>
     ///   - [`api_gateway_managed(bool)`](crate::output::GetStageOutput::api_gateway_managed): <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
@@ -946,10 +946,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetStages`](crate::client::fluent_builders::GetStages) operation.
     ///
-    /// - Takes [`GetStagesInput`](crate::input::GetStagesInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::GetStagesInput::api_id): <p>The API identifier.</p>
-    ///   - [`max_results(Option<String>)`](crate::input::GetStagesInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetStagesInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::GetStages::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::GetStages::set_api_id): <p>The API identifier.</p>
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetStages::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetStages::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetStages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetStages::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetStagesOutput`](crate::output::GetStagesOutput) with field(s):
     ///   - [`items(Option<Vec<Stage>>)`](crate::output::GetStagesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetStagesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -959,8 +959,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetTags`](crate::client::fluent_builders::GetTags) operation.
     ///
-    /// - Takes [`GetTagsInput`](crate::input::GetTagsInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::GetTagsInput::resource_arn): <p>The resource ARN for the tag.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetTags::set_resource_arn): <p>The resource ARN for the tag.</p>
     /// - On success, responds with [`GetTagsOutput`](crate::output::GetTagsOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetTagsOutput::tags): <p>Represents a collection of tags associated with the resource.</p>
     /// - On failure, responds with [`SdkError<GetTagsError>`](crate::error::GetTagsError)
@@ -969,8 +969,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetVpcLink`](crate::client::fluent_builders::GetVpcLink) operation.
     ///
-    /// - Takes [`GetVpcLinkInput`](crate::input::GetVpcLinkInput) with field(s):
-    ///   - [`vpc_link_id(Option<String>)`](crate::input::GetVpcLinkInput::vpc_link_id): <p>The ID of the VPC link.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_link_id(impl Into<String>)`](crate::client::fluent_builders::GetVpcLink::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::client::fluent_builders::GetVpcLink::set_vpc_link_id): <p>The ID of the VPC link.</p>
     /// - On success, responds with [`GetVpcLinkOutput`](crate::output::GetVpcLinkOutput) with field(s):
     ///   - [`created_date(Option<DateTime>)`](crate::output::GetVpcLinkOutput::created_date): <p>The timestamp when the VPC link was created.</p>
     ///   - [`name(Option<String>)`](crate::output::GetVpcLinkOutput::name): <p>The name of the VPC link.</p>
@@ -987,9 +987,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetVpcLinks`](crate::client::fluent_builders::GetVpcLinks) operation.
     ///
-    /// - Takes [`GetVpcLinksInput`](crate::input::GetVpcLinksInput) with field(s):
-    ///   - [`max_results(Option<String>)`](crate::input::GetVpcLinksInput::max_results): <p>The maximum number of elements to be returned for this resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetVpcLinksInput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(impl Into<String>)`](crate::client::fluent_builders::GetVpcLinks::max_results) / [`set_max_results(Option<String>)`](crate::client::fluent_builders::GetVpcLinks::set_max_results): <p>The maximum number of elements to be returned for this resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetVpcLinks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetVpcLinks::set_next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On success, responds with [`GetVpcLinksOutput`](crate::output::GetVpcLinksOutput) with field(s):
     ///   - [`items(Option<Vec<VpcLink>>)`](crate::output::GetVpcLinksOutput::items): <p>A collection of VPC links.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetVpcLinksOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -999,10 +999,10 @@ where
     }
     /// Constructs a fluent builder for the [`ImportApi`](crate::client::fluent_builders::ImportApi) operation.
     ///
-    /// - Takes [`ImportApiInput`](crate::input::ImportApiInput) with field(s):
-    ///   - [`basepath(Option<String>)`](crate::input::ImportApiInput::basepath): <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
-    ///   - [`body(Option<String>)`](crate::input::ImportApiInput::body): <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
-    ///   - [`fail_on_warnings(bool)`](crate::input::ImportApiInput::fail_on_warnings): <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`basepath(impl Into<String>)`](crate::client::fluent_builders::ImportApi::basepath) / [`set_basepath(Option<String>)`](crate::client::fluent_builders::ImportApi::set_basepath): <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
+    ///   - [`body(impl Into<String>)`](crate::client::fluent_builders::ImportApi::body) / [`set_body(Option<String>)`](crate::client::fluent_builders::ImportApi::set_body): <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    ///   - [`fail_on_warnings(bool)`](crate::client::fluent_builders::ImportApi::fail_on_warnings) / [`set_fail_on_warnings(bool)`](crate::client::fluent_builders::ImportApi::set_fail_on_warnings): <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
     /// - On success, responds with [`ImportApiOutput`](crate::output::ImportApiOutput) with field(s):
     ///   - [`api_endpoint(Option<String>)`](crate::output::ImportApiOutput::api_endpoint): <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     ///   - [`api_gateway_managed(bool)`](crate::output::ImportApiOutput::api_gateway_managed): <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
@@ -1026,11 +1026,11 @@ where
     }
     /// Constructs a fluent builder for the [`ReimportApi`](crate::client::fluent_builders::ReimportApi) operation.
     ///
-    /// - Takes [`ReimportApiInput`](crate::input::ReimportApiInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::ReimportApiInput::api_id): <p>The API identifier.</p>
-    ///   - [`basepath(Option<String>)`](crate::input::ReimportApiInput::basepath): <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
-    ///   - [`body(Option<String>)`](crate::input::ReimportApiInput::body): <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
-    ///   - [`fail_on_warnings(bool)`](crate::input::ReimportApiInput::fail_on_warnings): <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::ReimportApi::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::ReimportApi::set_api_id): <p>The API identifier.</p>
+    ///   - [`basepath(impl Into<String>)`](crate::client::fluent_builders::ReimportApi::basepath) / [`set_basepath(Option<String>)`](crate::client::fluent_builders::ReimportApi::set_basepath): <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
+    ///   - [`body(impl Into<String>)`](crate::client::fluent_builders::ReimportApi::body) / [`set_body(Option<String>)`](crate::client::fluent_builders::ReimportApi::set_body): <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    ///   - [`fail_on_warnings(bool)`](crate::client::fluent_builders::ReimportApi::fail_on_warnings) / [`set_fail_on_warnings(bool)`](crate::client::fluent_builders::ReimportApi::set_fail_on_warnings): <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
     /// - On success, responds with [`ReimportApiOutput`](crate::output::ReimportApiOutput) with field(s):
     ///   - [`api_endpoint(Option<String>)`](crate::output::ReimportApiOutput::api_endpoint): <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     ///   - [`api_gateway_managed(bool)`](crate::output::ReimportApiOutput::api_gateway_managed): <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
@@ -1054,9 +1054,9 @@ where
     }
     /// Constructs a fluent builder for the [`ResetAuthorizersCache`](crate::client::fluent_builders::ResetAuthorizersCache) operation.
     ///
-    /// - Takes [`ResetAuthorizersCacheInput`](crate::input::ResetAuthorizersCacheInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::ResetAuthorizersCacheInput::api_id): <p>The API identifier.</p>
-    ///   - [`stage_name(Option<String>)`](crate::input::ResetAuthorizersCacheInput::stage_name): <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::ResetAuthorizersCache::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::ResetAuthorizersCache::set_api_id): <p>The API identifier.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::ResetAuthorizersCache::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::ResetAuthorizersCache::set_stage_name): <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
     /// - On success, responds with [`ResetAuthorizersCacheOutput`](crate::output::ResetAuthorizersCacheOutput)
 
     /// - On failure, responds with [`SdkError<ResetAuthorizersCacheError>`](crate::error::ResetAuthorizersCacheError)
@@ -1065,9 +1065,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The resource ARN for the tag.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource ARN for the tag.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -1076,9 +1076,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The resource ARN for the tag.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The Tag keys to delete</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource ARN for the tag.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The Tag keys to delete</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -1087,19 +1087,19 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApi`](crate::client::fluent_builders::UpdateApi) operation.
     ///
-    /// - Takes [`UpdateApiInput`](crate::input::UpdateApiInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateApiInput::api_id): <p>The API identifier.</p>
-    ///   - [`api_key_selection_expression(Option<String>)`](crate::input::UpdateApiInput::api_key_selection_expression): <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    ///   - [`cors_configuration(Option<Cors>)`](crate::input::UpdateApiInput::cors_configuration): <p>A CORS configuration. Supported only for HTTP APIs.</p>
-    ///   - [`credentials_arn(Option<String>)`](crate::input::UpdateApiInput::credentials_arn): <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateApiInput::description): <p>The description of the API.</p>
-    ///   - [`disable_schema_validation(bool)`](crate::input::UpdateApiInput::disable_schema_validation): <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
-    ///   - [`disable_execute_api_endpoint(bool)`](crate::input::UpdateApiInput::disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateApiInput::name): <p>The name of the API.</p>
-    ///   - [`route_key(Option<String>)`](crate::input::UpdateApiInput::route_key): <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
-    ///   - [`route_selection_expression(Option<String>)`](crate::input::UpdateApiInput::route_selection_expression): <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    ///   - [`target(Option<String>)`](crate::input::UpdateApiInput::target): <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
-    ///   - [`version(Option<String>)`](crate::input::UpdateApiInput::version): <p>A version identifier for the API.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApi::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateApi::set_api_id): <p>The API identifier.</p>
+    ///   - [`api_key_selection_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateApi::api_key_selection_expression) / [`set_api_key_selection_expression(Option<String>)`](crate::client::fluent_builders::UpdateApi::set_api_key_selection_expression): <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    ///   - [`cors_configuration(Cors)`](crate::client::fluent_builders::UpdateApi::cors_configuration) / [`set_cors_configuration(Option<Cors>)`](crate::client::fluent_builders::UpdateApi::set_cors_configuration): <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    ///   - [`credentials_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateApi::credentials_arn) / [`set_credentials_arn(Option<String>)`](crate::client::fluent_builders::UpdateApi::set_credentials_arn): <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApi::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApi::set_description): <p>The description of the API.</p>
+    ///   - [`disable_schema_validation(bool)`](crate::client::fluent_builders::UpdateApi::disable_schema_validation) / [`set_disable_schema_validation(bool)`](crate::client::fluent_builders::UpdateApi::set_disable_schema_validation): <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    ///   - [`disable_execute_api_endpoint(bool)`](crate::client::fluent_builders::UpdateApi::disable_execute_api_endpoint) / [`set_disable_execute_api_endpoint(bool)`](crate::client::fluent_builders::UpdateApi::set_disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApi::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApi::set_name): <p>The name of the API.</p>
+    ///   - [`route_key(impl Into<String>)`](crate::client::fluent_builders::UpdateApi::route_key) / [`set_route_key(Option<String>)`](crate::client::fluent_builders::UpdateApi::set_route_key): <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
+    ///   - [`route_selection_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateApi::route_selection_expression) / [`set_route_selection_expression(Option<String>)`](crate::client::fluent_builders::UpdateApi::set_route_selection_expression): <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::UpdateApi::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::UpdateApi::set_target): <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::UpdateApi::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::UpdateApi::set_version): <p>A version identifier for the API.</p>
     /// - On success, responds with [`UpdateApiOutput`](crate::output::UpdateApiOutput) with field(s):
     ///   - [`api_endpoint(Option<String>)`](crate::output::UpdateApiOutput::api_endpoint): <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     ///   - [`api_gateway_managed(bool)`](crate::output::UpdateApiOutput::api_gateway_managed): <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
@@ -1123,12 +1123,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApiMapping`](crate::client::fluent_builders::UpdateApiMapping) operation.
     ///
-    /// - Takes [`UpdateApiMappingInput`](crate::input::UpdateApiMappingInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateApiMappingInput::api_id): <p>The API identifier.</p>
-    ///   - [`api_mapping_id(Option<String>)`](crate::input::UpdateApiMappingInput::api_mapping_id): <p>The API mapping identifier.</p>
-    ///   - [`api_mapping_key(Option<String>)`](crate::input::UpdateApiMappingInput::api_mapping_key): <p>The API mapping key.</p>
-    ///   - [`domain_name(Option<String>)`](crate::input::UpdateApiMappingInput::domain_name): <p>The domain name.</p>
-    ///   - [`stage(Option<String>)`](crate::input::UpdateApiMappingInput::stage): <p>The API stage.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApiMapping::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateApiMapping::set_api_id): <p>The API identifier.</p>
+    ///   - [`api_mapping_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApiMapping::api_mapping_id) / [`set_api_mapping_id(Option<String>)`](crate::client::fluent_builders::UpdateApiMapping::set_api_mapping_id): <p>The API mapping identifier.</p>
+    ///   - [`api_mapping_key(impl Into<String>)`](crate::client::fluent_builders::UpdateApiMapping::api_mapping_key) / [`set_api_mapping_key(Option<String>)`](crate::client::fluent_builders::UpdateApiMapping::set_api_mapping_key): <p>The API mapping key.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateApiMapping::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateApiMapping::set_domain_name): <p>The domain name.</p>
+    ///   - [`stage(impl Into<String>)`](crate::client::fluent_builders::UpdateApiMapping::stage) / [`set_stage(Option<String>)`](crate::client::fluent_builders::UpdateApiMapping::set_stage): <p>The API stage.</p>
     /// - On success, responds with [`UpdateApiMappingOutput`](crate::output::UpdateApiMappingOutput) with field(s):
     ///   - [`api_id(Option<String>)`](crate::output::UpdateApiMappingOutput::api_id): <p>The API identifier.</p>
     ///   - [`api_mapping_id(Option<String>)`](crate::output::UpdateApiMappingOutput::api_mapping_id): <p>The API mapping identifier.</p>
@@ -1140,19 +1140,19 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAuthorizer`](crate::client::fluent_builders::UpdateAuthorizer) operation.
     ///
-    /// - Takes [`UpdateAuthorizerInput`](crate::input::UpdateAuthorizerInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateAuthorizerInput::api_id): <p>The API identifier.</p>
-    ///   - [`authorizer_credentials_arn(Option<String>)`](crate::input::UpdateAuthorizerInput::authorizer_credentials_arn): <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter.</p>
-    ///   - [`authorizer_id(Option<String>)`](crate::input::UpdateAuthorizerInput::authorizer_id): <p>The authorizer identifier.</p>
-    ///   - [`authorizer_payload_format_version(Option<String>)`](crate::input::UpdateAuthorizerInput::authorizer_payload_format_version): <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
-    ///   - [`authorizer_result_ttl_in_seconds(i32)`](crate::input::UpdateAuthorizerInput::authorizer_result_ttl_in_seconds): <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
-    ///   - [`authorizer_type(Option<AuthorizerType>)`](crate::input::UpdateAuthorizerInput::authorizer_type): <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
-    ///   - [`authorizer_uri(Option<String>)`](crate::input::UpdateAuthorizerInput::authorizer_uri): <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>   {account_id}  </replaceable>:function:<replaceable>   {lambda_function_name}  </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>   {region}  </replaceable>:lambda:path/<replaceable>   {service_api}  </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
-    ///   - [`enable_simple_responses(bool)`](crate::input::UpdateAuthorizerInput::enable_simple_responses): <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
-    ///   - [`identity_source(Option<Vec<String>>)`](crate::input::UpdateAuthorizerInput::identity_source): <p>The identity source for which authorization is requested.</p>  <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>  <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
-    ///   - [`identity_validation_expression(Option<String>)`](crate::input::UpdateAuthorizerInput::identity_validation_expression): <p>This parameter is not used.</p>
-    ///   - [`jwt_configuration(Option<JwtConfiguration>)`](crate::input::UpdateAuthorizerInput::jwt_configuration): <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateAuthorizerInput::name): <p>The name of the authorizer.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_api_id): <p>The API identifier.</p>
+    ///   - [`authorizer_credentials_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::authorizer_credentials_arn) / [`set_authorizer_credentials_arn(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_authorizer_credentials_arn): <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter.</p>
+    ///   - [`authorizer_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::authorizer_id) / [`set_authorizer_id(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_authorizer_id): <p>The authorizer identifier.</p>
+    ///   - [`authorizer_payload_format_version(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::authorizer_payload_format_version) / [`set_authorizer_payload_format_version(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_authorizer_payload_format_version): <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    ///   - [`authorizer_result_ttl_in_seconds(i32)`](crate::client::fluent_builders::UpdateAuthorizer::authorizer_result_ttl_in_seconds) / [`set_authorizer_result_ttl_in_seconds(i32)`](crate::client::fluent_builders::UpdateAuthorizer::set_authorizer_result_ttl_in_seconds): <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
+    ///   - [`authorizer_type(AuthorizerType)`](crate::client::fluent_builders::UpdateAuthorizer::authorizer_type) / [`set_authorizer_type(Option<AuthorizerType>)`](crate::client::fluent_builders::UpdateAuthorizer::set_authorizer_type): <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
+    ///   - [`authorizer_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::authorizer_uri) / [`set_authorizer_uri(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_authorizer_uri): <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>   {account_id}  </replaceable>:function:<replaceable>   {lambda_function_name}  </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>   {region}  </replaceable>:lambda:path/<replaceable>   {service_api}  </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    ///   - [`enable_simple_responses(bool)`](crate::client::fluent_builders::UpdateAuthorizer::enable_simple_responses) / [`set_enable_simple_responses(bool)`](crate::client::fluent_builders::UpdateAuthorizer::set_enable_simple_responses): <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
+    ///   - [`identity_source(Vec<String>)`](crate::client::fluent_builders::UpdateAuthorizer::identity_source) / [`set_identity_source(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateAuthorizer::set_identity_source): <p>The identity source for which authorization is requested.</p>  <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>  <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    ///   - [`identity_validation_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::identity_validation_expression) / [`set_identity_validation_expression(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_identity_validation_expression): <p>This parameter is not used.</p>
+    ///   - [`jwt_configuration(JwtConfiguration)`](crate::client::fluent_builders::UpdateAuthorizer::jwt_configuration) / [`set_jwt_configuration(Option<JwtConfiguration>)`](crate::client::fluent_builders::UpdateAuthorizer::set_jwt_configuration): <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthorizer::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAuthorizer::set_name): <p>The name of the authorizer.</p>
     /// - On success, responds with [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput) with field(s):
     ///   - [`authorizer_credentials_arn(Option<String>)`](crate::output::UpdateAuthorizerOutput::authorizer_credentials_arn): <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
     ///   - [`authorizer_id(Option<String>)`](crate::output::UpdateAuthorizerOutput::authorizer_id): <p>The authorizer identifier.</p>
@@ -1171,10 +1171,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDeployment`](crate::client::fluent_builders::UpdateDeployment) operation.
     ///
-    /// - Takes [`UpdateDeploymentInput`](crate::input::UpdateDeploymentInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateDeploymentInput::api_id): <p>The API identifier.</p>
-    ///   - [`deployment_id(Option<String>)`](crate::input::UpdateDeploymentInput::deployment_id): <p>The deployment ID.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateDeploymentInput::description): <p>The description for the deployment resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDeployment::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateDeployment::set_api_id): <p>The API identifier.</p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::UpdateDeployment::set_deployment_id): <p>The deployment ID.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDeployment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDeployment::set_description): <p>The description for the deployment resource.</p>
     /// - On success, responds with [`UpdateDeploymentOutput`](crate::output::UpdateDeploymentOutput) with field(s):
     ///   - [`auto_deployed(bool)`](crate::output::UpdateDeploymentOutput::auto_deployed): <p>Specifies whether a deployment was automatically released.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::output::UpdateDeploymentOutput::created_date): <p>The date and time when the Deployment resource was created.</p>
@@ -1188,10 +1188,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDomainName`](crate::client::fluent_builders::UpdateDomainName) operation.
     ///
-    /// - Takes [`UpdateDomainNameInput`](crate::input::UpdateDomainNameInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::UpdateDomainNameInput::domain_name): <p>The domain name.</p>
-    ///   - [`domain_name_configurations(Option<Vec<DomainNameConfiguration>>)`](crate::input::UpdateDomainNameInput::domain_name_configurations): <p>The domain name configurations.</p>
-    ///   - [`mutual_tls_authentication(Option<MutualTlsAuthenticationInput>)`](crate::input::UpdateDomainNameInput::mutual_tls_authentication): <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainName::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainName::set_domain_name): <p>The domain name.</p>
+    ///   - [`domain_name_configurations(Vec<DomainNameConfiguration>)`](crate::client::fluent_builders::UpdateDomainName::domain_name_configurations) / [`set_domain_name_configurations(Option<Vec<DomainNameConfiguration>>)`](crate::client::fluent_builders::UpdateDomainName::set_domain_name_configurations): <p>The domain name configurations.</p>
+    ///   - [`mutual_tls_authentication(MutualTlsAuthenticationInput)`](crate::client::fluent_builders::UpdateDomainName::mutual_tls_authentication) / [`set_mutual_tls_authentication(Option<MutualTlsAuthenticationInput>)`](crate::client::fluent_builders::UpdateDomainName::set_mutual_tls_authentication): <p>The mutual TLS authentication configuration for a custom domain name.</p>
     /// - On success, responds with [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput) with field(s):
     ///   - [`api_mapping_selection_expression(Option<String>)`](crate::output::UpdateDomainNameOutput::api_mapping_selection_expression): <p>The API mapping selection expression.</p>
     ///   - [`domain_name(Option<String>)`](crate::output::UpdateDomainNameOutput::domain_name): <p>The name of the DomainName resource.</p>
@@ -1204,26 +1204,26 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateIntegration`](crate::client::fluent_builders::UpdateIntegration) operation.
     ///
-    /// - Takes [`UpdateIntegrationInput`](crate::input::UpdateIntegrationInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateIntegrationInput::api_id): <p>The API identifier.</p>
-    ///   - [`connection_id(Option<String>)`](crate::input::UpdateIntegrationInput::connection_id): <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
-    ///   - [`connection_type(Option<ConnectionType>)`](crate::input::UpdateIntegrationInput::connection_type): <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
-    ///   - [`content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::input::UpdateIntegrationInput::content_handling_strategy): <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    ///   - [`credentials_arn(Option<String>)`](crate::input::UpdateIntegrationInput::credentials_arn): <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateIntegrationInput::description): <p>The description of the integration</p>
-    ///   - [`integration_id(Option<String>)`](crate::input::UpdateIntegrationInput::integration_id): <p>The integration ID.</p>
-    ///   - [`integration_method(Option<String>)`](crate::input::UpdateIntegrationInput::integration_method): <p>Specifies the integration's HTTP method type.</p>
-    ///   - [`integration_subtype(Option<String>)`](crate::input::UpdateIntegrationInput::integration_subtype): <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
-    ///   - [`integration_type(Option<IntegrationType>)`](crate::input::UpdateIntegrationInput::integration_type): <p>The integration type of an integration. One of the following:</p>  <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>  <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>  <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>  <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>  <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
-    ///   - [`integration_uri(Option<String>)`](crate::input::UpdateIntegrationInput::integration_uri): <p>For a Lambda integration, specify the URI of a Lambda function.</p>  <p>For an HTTP integration, specify a fully-qualified URL.</p>  <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
-    ///   - [`passthrough_behavior(Option<PassthroughBehavior>)`](crate::input::UpdateIntegrationInput::passthrough_behavior): <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>  <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>  <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>  <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
-    ///   - [`payload_format_version(Option<String>)`](crate::input::UpdateIntegrationInput::payload_format_version): <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
-    ///   - [`request_parameters(Option<HashMap<String, String>>)`](crate::input::UpdateIntegrationInput::request_parameters): <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>   {location}  </replaceable>.<replaceable>   {name}  </replaceable> , where <replaceable>   {location}  </replaceable> is querystring, path, or header; and <replaceable>   {name}  </replaceable> must be a valid and unique method request parameter name.</p>  <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>  <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
-    ///   - [`request_templates(Option<HashMap<String, String>>)`](crate::input::UpdateIntegrationInput::request_templates): <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
-    ///   - [`response_parameters(Option<HashMap<String, HashMap<String, String>>>)`](crate::input::UpdateIntegrationInput::response_parameters): <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    ///   - [`template_selection_expression(Option<String>)`](crate::input::UpdateIntegrationInput::template_selection_expression): <p>The template selection expression for the integration.</p>
-    ///   - [`timeout_in_millis(i32)`](crate::input::UpdateIntegrationInput::timeout_in_millis): <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
-    ///   - [`tls_config(Option<TlsConfigInput>)`](crate::input::UpdateIntegrationInput::tls_config): <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_api_id): <p>The API identifier.</p>
+    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_connection_id): <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
+    ///   - [`connection_type(ConnectionType)`](crate::client::fluent_builders::UpdateIntegration::connection_type) / [`set_connection_type(Option<ConnectionType>)`](crate::client::fluent_builders::UpdateIntegration::set_connection_type): <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
+    ///   - [`content_handling_strategy(ContentHandlingStrategy)`](crate::client::fluent_builders::UpdateIntegration::content_handling_strategy) / [`set_content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::client::fluent_builders::UpdateIntegration::set_content_handling_strategy): <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    ///   - [`credentials_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::credentials_arn) / [`set_credentials_arn(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_credentials_arn): <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_description): <p>The description of the integration</p>
+    ///   - [`integration_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::integration_id) / [`set_integration_id(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_integration_id): <p>The integration ID.</p>
+    ///   - [`integration_method(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::integration_method) / [`set_integration_method(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_integration_method): <p>Specifies the integration's HTTP method type.</p>
+    ///   - [`integration_subtype(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::integration_subtype) / [`set_integration_subtype(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_integration_subtype): <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
+    ///   - [`integration_type(IntegrationType)`](crate::client::fluent_builders::UpdateIntegration::integration_type) / [`set_integration_type(Option<IntegrationType>)`](crate::client::fluent_builders::UpdateIntegration::set_integration_type): <p>The integration type of an integration. One of the following:</p>  <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>  <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>  <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>  <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>  <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    ///   - [`integration_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::integration_uri) / [`set_integration_uri(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_integration_uri): <p>For a Lambda integration, specify the URI of a Lambda function.</p>  <p>For an HTTP integration, specify a fully-qualified URL.</p>  <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    ///   - [`passthrough_behavior(PassthroughBehavior)`](crate::client::fluent_builders::UpdateIntegration::passthrough_behavior) / [`set_passthrough_behavior(Option<PassthroughBehavior>)`](crate::client::fluent_builders::UpdateIntegration::set_passthrough_behavior): <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>  <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>  <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>  <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    ///   - [`payload_format_version(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::payload_format_version) / [`set_payload_format_version(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_payload_format_version): <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    ///   - [`request_parameters(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIntegration::request_parameters) / [`set_request_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIntegration::set_request_parameters): <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>   {location}  </replaceable>.<replaceable>   {name}  </replaceable> , where <replaceable>   {location}  </replaceable> is querystring, path, or header; and <replaceable>   {name}  </replaceable> must be a valid and unique method request parameter name.</p>  <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>  <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
+    ///   - [`request_templates(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIntegration::request_templates) / [`set_request_templates(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIntegration::set_request_templates): <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
+    ///   - [`response_parameters(HashMap<String, HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIntegration::response_parameters) / [`set_response_parameters(Option<HashMap<String, HashMap<String, String>>>)`](crate::client::fluent_builders::UpdateIntegration::set_response_parameters): <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    ///   - [`template_selection_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegration::template_selection_expression) / [`set_template_selection_expression(Option<String>)`](crate::client::fluent_builders::UpdateIntegration::set_template_selection_expression): <p>The template selection expression for the integration.</p>
+    ///   - [`timeout_in_millis(i32)`](crate::client::fluent_builders::UpdateIntegration::timeout_in_millis) / [`set_timeout_in_millis(i32)`](crate::client::fluent_builders::UpdateIntegration::set_timeout_in_millis): <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
+    ///   - [`tls_config(TlsConfigInput)`](crate::client::fluent_builders::UpdateIntegration::tls_config) / [`set_tls_config(Option<TlsConfigInput>)`](crate::client::fluent_builders::UpdateIntegration::set_tls_config): <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     /// - On success, responds with [`UpdateIntegrationOutput`](crate::output::UpdateIntegrationOutput) with field(s):
     ///   - [`api_gateway_managed(bool)`](crate::output::UpdateIntegrationOutput::api_gateway_managed): <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     ///   - [`connection_id(Option<String>)`](crate::output::UpdateIntegrationOutput::connection_id): <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
@@ -1251,15 +1251,15 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateIntegrationResponse`](crate::client::fluent_builders::UpdateIntegrationResponse) operation.
     ///
-    /// - Takes [`UpdateIntegrationResponseInput`](crate::input::UpdateIntegrationResponseInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateIntegrationResponseInput::api_id): <p>The API identifier.</p>
-    ///   - [`content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::input::UpdateIntegrationResponseInput::content_handling_strategy): <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    ///   - [`integration_id(Option<String>)`](crate::input::UpdateIntegrationResponseInput::integration_id): <p>The integration ID.</p>
-    ///   - [`integration_response_id(Option<String>)`](crate::input::UpdateIntegrationResponseInput::integration_response_id): <p>The integration response ID.</p>
-    ///   - [`integration_response_key(Option<String>)`](crate::input::UpdateIntegrationResponseInput::integration_response_key): <p>The integration response key.</p>
-    ///   - [`response_parameters(Option<HashMap<String, String>>)`](crate::input::UpdateIntegrationResponseInput::response_parameters): <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>   {name}  </replaceable> , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>   {name}  </replaceable> or integration.response.body.<replaceable>   {JSON-expression}  </replaceable> , where <replaceable>   {name}  </replaceable> is a valid and unique response header name and <replaceable>   {JSON-expression}  </replaceable> is a valid JSON expression without the $ prefix.</p>
-    ///   - [`response_templates(Option<HashMap<String, String>>)`](crate::input::UpdateIntegrationResponseInput::response_templates): <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    ///   - [`template_selection_expression(Option<String>)`](crate::input::UpdateIntegrationResponseInput::template_selection_expression): <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::set_api_id): <p>The API identifier.</p>
+    ///   - [`content_handling_strategy(ContentHandlingStrategy)`](crate::client::fluent_builders::UpdateIntegrationResponse::content_handling_strategy) / [`set_content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::client::fluent_builders::UpdateIntegrationResponse::set_content_handling_strategy): <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    ///   - [`integration_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::integration_id) / [`set_integration_id(Option<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::set_integration_id): <p>The integration ID.</p>
+    ///   - [`integration_response_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::integration_response_id) / [`set_integration_response_id(Option<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::set_integration_response_id): <p>The integration response ID.</p>
+    ///   - [`integration_response_key(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::integration_response_key) / [`set_integration_response_key(Option<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::set_integration_response_key): <p>The integration response key.</p>
+    ///   - [`response_parameters(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::response_parameters) / [`set_response_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIntegrationResponse::set_response_parameters): <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>   {name}  </replaceable> , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>   {name}  </replaceable> or integration.response.body.<replaceable>   {JSON-expression}  </replaceable> , where <replaceable>   {name}  </replaceable> is a valid and unique response header name and <replaceable>   {JSON-expression}  </replaceable> is a valid JSON expression without the $ prefix.</p>
+    ///   - [`response_templates(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::response_templates) / [`set_response_templates(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIntegrationResponse::set_response_templates): <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    ///   - [`template_selection_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::template_selection_expression) / [`set_template_selection_expression(Option<String>)`](crate::client::fluent_builders::UpdateIntegrationResponse::set_template_selection_expression): <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
     /// - On success, responds with [`UpdateIntegrationResponseOutput`](crate::output::UpdateIntegrationResponseOutput) with field(s):
     ///   - [`content_handling_strategy(Option<ContentHandlingStrategy>)`](crate::output::UpdateIntegrationResponseOutput::content_handling_strategy): <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>  <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>  <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>  <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     ///   - [`integration_response_id(Option<String>)`](crate::output::UpdateIntegrationResponseOutput::integration_response_id): <p>The integration response ID.</p>
@@ -1275,13 +1275,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateModel`](crate::client::fluent_builders::UpdateModel) operation.
     ///
-    /// - Takes [`UpdateModelInput`](crate::input::UpdateModelInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateModelInput::api_id): <p>The API identifier.</p>
-    ///   - [`content_type(Option<String>)`](crate::input::UpdateModelInput::content_type): <p>The content-type for the model, for example, "application/json".</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateModelInput::description): <p>The description of the model.</p>
-    ///   - [`model_id(Option<String>)`](crate::input::UpdateModelInput::model_id): <p>The model ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateModelInput::name): <p>The name of the model.</p>
-    ///   - [`schema(Option<String>)`](crate::input::UpdateModelInput::schema): <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateModel::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateModel::set_api_id): <p>The API identifier.</p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::UpdateModel::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::UpdateModel::set_content_type): <p>The content-type for the model, for example, "application/json".</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateModel::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateModel::set_description): <p>The description of the model.</p>
+    ///   - [`model_id(impl Into<String>)`](crate::client::fluent_builders::UpdateModel::model_id) / [`set_model_id(Option<String>)`](crate::client::fluent_builders::UpdateModel::set_model_id): <p>The model ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateModel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateModel::set_name): <p>The name of the model.</p>
+    ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::UpdateModel::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::UpdateModel::set_schema): <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     /// - On success, responds with [`UpdateModelOutput`](crate::output::UpdateModelOutput) with field(s):
     ///   - [`content_type(Option<String>)`](crate::output::UpdateModelOutput::content_type): <p>The content-type for the model, for example, "application/json".</p>
     ///   - [`description(Option<String>)`](crate::output::UpdateModelOutput::description): <p>The description of the model.</p>
@@ -1294,20 +1294,20 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRoute`](crate::client::fluent_builders::UpdateRoute) operation.
     ///
-    /// - Takes [`UpdateRouteInput`](crate::input::UpdateRouteInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateRouteInput::api_id): <p>The API identifier.</p>
-    ///   - [`api_key_required(bool)`](crate::input::UpdateRouteInput::api_key_required): <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`authorization_scopes(Option<Vec<String>>)`](crate::input::UpdateRouteInput::authorization_scopes): <p>The authorization scopes supported by this route.</p>
-    ///   - [`authorization_type(Option<AuthorizationType>)`](crate::input::UpdateRouteInput::authorization_type): <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
-    ///   - [`authorizer_id(Option<String>)`](crate::input::UpdateRouteInput::authorizer_id): <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-    ///   - [`model_selection_expression(Option<String>)`](crate::input::UpdateRouteInput::model_selection_expression): <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`operation_name(Option<String>)`](crate::input::UpdateRouteInput::operation_name): <p>The operation name for the route.</p>
-    ///   - [`request_models(Option<HashMap<String, String>>)`](crate::input::UpdateRouteInput::request_models): <p>The request models for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`request_parameters(Option<HashMap<String, ParameterConstraints>>)`](crate::input::UpdateRouteInput::request_parameters): <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`route_id(Option<String>)`](crate::input::UpdateRouteInput::route_id): <p>The route ID.</p>
-    ///   - [`route_key(Option<String>)`](crate::input::UpdateRouteInput::route_key): <p>The route key for the route.</p>
-    ///   - [`route_response_selection_expression(Option<String>)`](crate::input::UpdateRouteInput::route_response_selection_expression): <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
-    ///   - [`target(Option<String>)`](crate::input::UpdateRouteInput::target): <p>The target for the route.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_api_id): <p>The API identifier.</p>
+    ///   - [`api_key_required(bool)`](crate::client::fluent_builders::UpdateRoute::api_key_required) / [`set_api_key_required(bool)`](crate::client::fluent_builders::UpdateRoute::set_api_key_required): <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`authorization_scopes(Vec<String>)`](crate::client::fluent_builders::UpdateRoute::authorization_scopes) / [`set_authorization_scopes(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRoute::set_authorization_scopes): <p>The authorization scopes supported by this route.</p>
+    ///   - [`authorization_type(AuthorizationType)`](crate::client::fluent_builders::UpdateRoute::authorization_type) / [`set_authorization_type(Option<AuthorizationType>)`](crate::client::fluent_builders::UpdateRoute::set_authorization_type): <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
+    ///   - [`authorizer_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::authorizer_id) / [`set_authorizer_id(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_authorizer_id): <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    ///   - [`model_selection_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::model_selection_expression) / [`set_model_selection_expression(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_model_selection_expression): <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`operation_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::operation_name) / [`set_operation_name(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_operation_name): <p>The operation name for the route.</p>
+    ///   - [`request_models(HashMap<String, String>)`](crate::client::fluent_builders::UpdateRoute::request_models) / [`set_request_models(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateRoute::set_request_models): <p>The request models for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`request_parameters(HashMap<String, ParameterConstraints>)`](crate::client::fluent_builders::UpdateRoute::request_parameters) / [`set_request_parameters(Option<HashMap<String, ParameterConstraints>>)`](crate::client::fluent_builders::UpdateRoute::set_request_parameters): <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::route_id) / [`set_route_id(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_route_id): <p>The route ID.</p>
+    ///   - [`route_key(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::route_key) / [`set_route_key(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_route_key): <p>The route key for the route.</p>
+    ///   - [`route_response_selection_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::route_response_selection_expression) / [`set_route_response_selection_expression(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_route_response_selection_expression): <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
+    ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_target): <p>The target for the route.</p>
     /// - On success, responds with [`UpdateRouteOutput`](crate::output::UpdateRouteOutput) with field(s):
     ///   - [`api_gateway_managed(bool)`](crate::output::UpdateRouteOutput::api_gateway_managed): <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
     ///   - [`api_key_required(bool)`](crate::output::UpdateRouteOutput::api_key_required): <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>
@@ -1328,14 +1328,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRouteResponse`](crate::client::fluent_builders::UpdateRouteResponse) operation.
     ///
-    /// - Takes [`UpdateRouteResponseInput`](crate::input::UpdateRouteResponseInput) with field(s):
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateRouteResponseInput::api_id): <p>The API identifier.</p>
-    ///   - [`model_selection_expression(Option<String>)`](crate::input::UpdateRouteResponseInput::model_selection_expression): <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
-    ///   - [`response_models(Option<HashMap<String, String>>)`](crate::input::UpdateRouteResponseInput::response_models): <p>The response models for the route response.</p>
-    ///   - [`response_parameters(Option<HashMap<String, ParameterConstraints>>)`](crate::input::UpdateRouteResponseInput::response_parameters): <p>The route response parameters.</p>
-    ///   - [`route_id(Option<String>)`](crate::input::UpdateRouteResponseInput::route_id): <p>The route ID.</p>
-    ///   - [`route_response_id(Option<String>)`](crate::input::UpdateRouteResponseInput::route_response_id): <p>The route response ID.</p>
-    ///   - [`route_response_key(Option<String>)`](crate::input::UpdateRouteResponseInput::route_response_key): <p>The route response key.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRouteResponse::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateRouteResponse::set_api_id): <p>The API identifier.</p>
+    ///   - [`model_selection_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateRouteResponse::model_selection_expression) / [`set_model_selection_expression(Option<String>)`](crate::client::fluent_builders::UpdateRouteResponse::set_model_selection_expression): <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
+    ///   - [`response_models(HashMap<String, String>)`](crate::client::fluent_builders::UpdateRouteResponse::response_models) / [`set_response_models(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateRouteResponse::set_response_models): <p>The response models for the route response.</p>
+    ///   - [`response_parameters(HashMap<String, ParameterConstraints>)`](crate::client::fluent_builders::UpdateRouteResponse::response_parameters) / [`set_response_parameters(Option<HashMap<String, ParameterConstraints>>)`](crate::client::fluent_builders::UpdateRouteResponse::set_response_parameters): <p>The route response parameters.</p>
+    ///   - [`route_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRouteResponse::route_id) / [`set_route_id(Option<String>)`](crate::client::fluent_builders::UpdateRouteResponse::set_route_id): <p>The route ID.</p>
+    ///   - [`route_response_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRouteResponse::route_response_id) / [`set_route_response_id(Option<String>)`](crate::client::fluent_builders::UpdateRouteResponse::set_route_response_id): <p>The route response ID.</p>
+    ///   - [`route_response_key(impl Into<String>)`](crate::client::fluent_builders::UpdateRouteResponse::route_response_key) / [`set_route_response_key(Option<String>)`](crate::client::fluent_builders::UpdateRouteResponse::set_route_response_key): <p>The route response key.</p>
     /// - On success, responds with [`UpdateRouteResponseOutput`](crate::output::UpdateRouteResponseOutput) with field(s):
     ///   - [`model_selection_expression(Option<String>)`](crate::output::UpdateRouteResponseOutput::model_selection_expression): <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
     ///   - [`response_models(Option<HashMap<String, String>>)`](crate::output::UpdateRouteResponseOutput::response_models): <p>Represents the response models of a route response.</p>
@@ -1348,17 +1348,17 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateStage`](crate::client::fluent_builders::UpdateStage) operation.
     ///
-    /// - Takes [`UpdateStageInput`](crate::input::UpdateStageInput) with field(s):
-    ///   - [`access_log_settings(Option<AccessLogSettings>)`](crate::input::UpdateStageInput::access_log_settings): <p>Settings for logging access in this stage.</p>
-    ///   - [`api_id(Option<String>)`](crate::input::UpdateStageInput::api_id): <p>The API identifier.</p>
-    ///   - [`auto_deploy(bool)`](crate::input::UpdateStageInput::auto_deploy): <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
-    ///   - [`client_certificate_id(Option<String>)`](crate::input::UpdateStageInput::client_certificate_id): <p>The identifier of a client certificate for a Stage.</p>
-    ///   - [`default_route_settings(Option<RouteSettings>)`](crate::input::UpdateStageInput::default_route_settings): <p>The default route settings for the stage.</p>
-    ///   - [`deployment_id(Option<String>)`](crate::input::UpdateStageInput::deployment_id): <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateStageInput::description): <p>The description for the API stage.</p>
-    ///   - [`route_settings(Option<HashMap<String, RouteSettings>>)`](crate::input::UpdateStageInput::route_settings): <p>Route settings for the stage.</p>
-    ///   - [`stage_name(Option<String>)`](crate::input::UpdateStageInput::stage_name): <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
-    ///   - [`stage_variables(Option<HashMap<String, String>>)`](crate::input::UpdateStageInput::stage_variables): <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`access_log_settings(AccessLogSettings)`](crate::client::fluent_builders::UpdateStage::access_log_settings) / [`set_access_log_settings(Option<AccessLogSettings>)`](crate::client::fluent_builders::UpdateStage::set_access_log_settings): <p>Settings for logging access in this stage.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStage::api_id) / [`set_api_id(Option<String>)`](crate::client::fluent_builders::UpdateStage::set_api_id): <p>The API identifier.</p>
+    ///   - [`auto_deploy(bool)`](crate::client::fluent_builders::UpdateStage::auto_deploy) / [`set_auto_deploy(bool)`](crate::client::fluent_builders::UpdateStage::set_auto_deploy): <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
+    ///   - [`client_certificate_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStage::client_certificate_id) / [`set_client_certificate_id(Option<String>)`](crate::client::fluent_builders::UpdateStage::set_client_certificate_id): <p>The identifier of a client certificate for a Stage.</p>
+    ///   - [`default_route_settings(RouteSettings)`](crate::client::fluent_builders::UpdateStage::default_route_settings) / [`set_default_route_settings(Option<RouteSettings>)`](crate::client::fluent_builders::UpdateStage::set_default_route_settings): <p>The default route settings for the stage.</p>
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStage::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::UpdateStage::set_deployment_id): <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateStage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateStage::set_description): <p>The description for the API stage.</p>
+    ///   - [`route_settings(HashMap<String, RouteSettings>)`](crate::client::fluent_builders::UpdateStage::route_settings) / [`set_route_settings(Option<HashMap<String, RouteSettings>>)`](crate::client::fluent_builders::UpdateStage::set_route_settings): <p>Route settings for the stage.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStage::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::UpdateStage::set_stage_name): <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
+    ///   - [`stage_variables(HashMap<String, String>)`](crate::client::fluent_builders::UpdateStage::stage_variables) / [`set_stage_variables(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateStage::set_stage_variables): <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
     /// - On success, responds with [`UpdateStageOutput`](crate::output::UpdateStageOutput) with field(s):
     ///   - [`access_log_settings(Option<AccessLogSettings>)`](crate::output::UpdateStageOutput::access_log_settings): <p>Settings for logging access in this stage.</p>
     ///   - [`api_gateway_managed(bool)`](crate::output::UpdateStageOutput::api_gateway_managed): <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
@@ -1380,9 +1380,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateVpcLink`](crate::client::fluent_builders::UpdateVpcLink) operation.
     ///
-    /// - Takes [`UpdateVpcLinkInput`](crate::input::UpdateVpcLinkInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::UpdateVpcLinkInput::name): <p>The name of the VPC link.</p>
-    ///   - [`vpc_link_id(Option<String>)`](crate::input::UpdateVpcLinkInput::vpc_link_id): <p>The ID of the VPC link.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateVpcLink::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateVpcLink::set_name): <p>The name of the VPC link.</p>
+    ///   - [`vpc_link_id(impl Into<String>)`](crate::client::fluent_builders::UpdateVpcLink::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::client::fluent_builders::UpdateVpcLink::set_vpc_link_id): <p>The ID of the VPC link.</p>
     /// - On success, responds with [`UpdateVpcLinkOutput`](crate::output::UpdateVpcLinkOutput) with field(s):
     ///   - [`created_date(Option<DateTime>)`](crate::output::UpdateVpcLinkOutput::created_date): <p>The timestamp when the VPC link was created.</p>
     ///   - [`name(Option<String>)`](crate::output::UpdateVpcLinkOutput::name): <p>The name of the VPC link.</p>

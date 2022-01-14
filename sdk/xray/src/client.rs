@@ -84,11 +84,11 @@ where
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
     /// Constructs a fluent builder for the [`BatchGetTraces`](crate::client::fluent_builders::BatchGetTraces) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::BatchGetTraces::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::BatchGetTraces::into_paginator).
     ///
-    /// - Takes [`BatchGetTracesInput`](crate::input::BatchGetTracesInput) with field(s):
-    ///   - [`trace_ids(Option<Vec<String>>)`](crate::input::BatchGetTracesInput::trace_ids): <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::BatchGetTracesInput::next_token): <p>Pagination token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trace_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetTraces::trace_ids) / [`set_trace_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetTraces::set_trace_ids): <p>Specify the trace IDs of requests for which to retrieve segments.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::BatchGetTraces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::BatchGetTraces::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`BatchGetTracesOutput`](crate::output::BatchGetTracesOutput) with field(s):
     ///   - [`traces(Option<Vec<Trace>>)`](crate::output::BatchGetTracesOutput::traces): <p>Full traces for the specified requests.</p>
     ///   - [`unprocessed_trace_ids(Option<Vec<String>>)`](crate::output::BatchGetTracesOutput::unprocessed_trace_ids): <p>Trace IDs of requests that haven't been processed.</p>
@@ -99,11 +99,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
     ///
-    /// - Takes [`CreateGroupInput`](crate::input::CreateGroupInput) with field(s):
-    ///   - [`group_name(Option<String>)`](crate::input::CreateGroupInput::group_name): <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
-    ///   - [`filter_expression(Option<String>)`](crate::input::CreateGroupInput::filter_expression): <p>The filter expression defining criteria by which to group traces.</p>
-    ///   - [`insights_configuration(Option<InsightsConfiguration>)`](crate::input::CreateGroupInput::insights_configuration): <p>The structure containing configurations related to insights.</p>  <ul>   <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>   <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>  </ul>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateGroupInput::tags): <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>   <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>   <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>   <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_group_name): <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
+    ///   - [`filter_expression(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::filter_expression) / [`set_filter_expression(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_filter_expression): <p>The filter expression defining criteria by which to group traces.</p>
+    ///   - [`insights_configuration(InsightsConfiguration)`](crate::client::fluent_builders::CreateGroup::insights_configuration) / [`set_insights_configuration(Option<InsightsConfiguration>)`](crate::client::fluent_builders::CreateGroup::set_insights_configuration): <p>The structure containing configurations related to insights.</p>  <ul>   <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>   <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>  </ul>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGroup::set_tags): <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>   <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>   <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>   <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>  </ul>
     /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::CreateGroupOutput::group): <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
     /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
@@ -112,9 +112,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSamplingRule`](crate::client::fluent_builders::CreateSamplingRule) operation.
     ///
-    /// - Takes [`CreateSamplingRuleInput`](crate::input::CreateSamplingRuleInput) with field(s):
-    ///   - [`sampling_rule(Option<SamplingRule>)`](crate::input::CreateSamplingRuleInput::sampling_rule): <p>The rule definition.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSamplingRuleInput::tags): <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>   <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>   <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>   <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`sampling_rule(SamplingRule)`](crate::client::fluent_builders::CreateSamplingRule::sampling_rule) / [`set_sampling_rule(Option<SamplingRule>)`](crate::client::fluent_builders::CreateSamplingRule::set_sampling_rule): <p>The rule definition.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSamplingRule::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSamplingRule::set_tags): <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>   <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>   <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>   <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>  </ul>
     /// - On success, responds with [`CreateSamplingRuleOutput`](crate::output::CreateSamplingRuleOutput) with field(s):
     ///   - [`sampling_rule_record(Option<SamplingRuleRecord>)`](crate::output::CreateSamplingRuleOutput::sampling_rule_record): <p>The saved rule definition and metadata.</p>
     /// - On failure, responds with [`SdkError<CreateSamplingRuleError>`](crate::error::CreateSamplingRuleError)
@@ -123,9 +123,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
     ///
-    /// - Takes [`DeleteGroupInput`](crate::input::DeleteGroupInput) with field(s):
-    ///   - [`group_name(Option<String>)`](crate::input::DeleteGroupInput::group_name): <p>The case-sensitive name of the group.</p>
-    ///   - [`group_arn(Option<String>)`](crate::input::DeleteGroupInput::group_arn): <p>The ARN of the group that was generated on creation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_name): <p>The case-sensitive name of the group.</p>
+    ///   - [`group_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_arn) / [`set_group_arn(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_arn): <p>The ARN of the group that was generated on creation.</p>
     /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
@@ -134,9 +134,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSamplingRule`](crate::client::fluent_builders::DeleteSamplingRule) operation.
     ///
-    /// - Takes [`DeleteSamplingRuleInput`](crate::input::DeleteSamplingRuleInput) with field(s):
-    ///   - [`rule_name(Option<String>)`](crate::input::DeleteSamplingRuleInput::rule_name): <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    ///   - [`rule_arn(Option<String>)`](crate::input::DeleteSamplingRuleInput::rule_arn): <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSamplingRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteSamplingRule::set_rule_name): <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    ///   - [`rule_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteSamplingRule::rule_arn) / [`set_rule_arn(Option<String>)`](crate::client::fluent_builders::DeleteSamplingRule::set_rule_arn): <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     /// - On success, responds with [`DeleteSamplingRuleOutput`](crate::output::DeleteSamplingRuleOutput) with field(s):
     ///   - [`sampling_rule_record(Option<SamplingRuleRecord>)`](crate::output::DeleteSamplingRuleOutput::sampling_rule_record): <p>The deleted rule definition and metadata.</p>
     /// - On failure, responds with [`SdkError<DeleteSamplingRuleError>`](crate::error::DeleteSamplingRuleError)
@@ -145,7 +145,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetEncryptionConfig`](crate::client::fluent_builders::GetEncryptionConfig) operation.
     ///
-    /// - Takes [`GetEncryptionConfigInput`](crate::input::GetEncryptionConfigInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetEncryptionConfig::send) it.
 
     /// - On success, responds with [`GetEncryptionConfigOutput`](crate::output::GetEncryptionConfigOutput) with field(s):
     ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::output::GetEncryptionConfigOutput::encryption_config): <p>The encryption configuration document.</p>
@@ -155,9 +155,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetGroup`](crate::client::fluent_builders::GetGroup) operation.
     ///
-    /// - Takes [`GetGroupInput`](crate::input::GetGroupInput) with field(s):
-    ///   - [`group_name(Option<String>)`](crate::input::GetGroupInput::group_name): <p>The case-sensitive name of the group.</p>
-    ///   - [`group_arn(Option<String>)`](crate::input::GetGroupInput::group_arn): <p>The ARN of the group that was generated on creation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetGroup::set_group_name): <p>The case-sensitive name of the group.</p>
+    ///   - [`group_arn(impl Into<String>)`](crate::client::fluent_builders::GetGroup::group_arn) / [`set_group_arn(Option<String>)`](crate::client::fluent_builders::GetGroup::set_group_arn): <p>The ARN of the group that was generated on creation.</p>
     /// - On success, responds with [`GetGroupOutput`](crate::output::GetGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::GetGroupOutput::group): <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
     /// - On failure, responds with [`SdkError<GetGroupError>`](crate::error::GetGroupError)
@@ -165,10 +165,10 @@ where
         fluent_builders::GetGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetGroups`](crate::client::fluent_builders::GetGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetGroups::into_paginator).
     ///
-    /// - Takes [`GetGroupsInput`](crate::input::GetGroupsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::GetGroupsInput::next_token): <p>Pagination token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetGroups::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`GetGroupsOutput`](crate::output::GetGroupsOutput) with field(s):
     ///   - [`groups(Option<Vec<GroupSummary>>)`](crate::output::GetGroupsOutput::groups): <p>The collection of all active groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetGroupsOutput::next_token): <p>Pagination token.</p>
@@ -178,8 +178,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetInsight`](crate::client::fluent_builders::GetInsight) operation.
     ///
-    /// - Takes [`GetInsightInput`](crate::input::GetInsightInput) with field(s):
-    ///   - [`insight_id(Option<String>)`](crate::input::GetInsightInput::insight_id): <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_id(impl Into<String>)`](crate::client::fluent_builders::GetInsight::insight_id) / [`set_insight_id(Option<String>)`](crate::client::fluent_builders::GetInsight::set_insight_id): <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     /// - On success, responds with [`GetInsightOutput`](crate::output::GetInsightOutput) with field(s):
     ///   - [`insight(Option<Insight>)`](crate::output::GetInsightOutput::insight): <p>The summary information of an insight.</p>
     /// - On failure, responds with [`SdkError<GetInsightError>`](crate::error::GetInsightError)
@@ -187,12 +187,12 @@ where
         fluent_builders::GetInsight::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetInsightEvents`](crate::client::fluent_builders::GetInsightEvents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInsightEvents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetInsightEvents::into_paginator).
     ///
-    /// - Takes [`GetInsightEventsInput`](crate::input::GetInsightEventsInput) with field(s):
-    ///   - [`insight_id(Option<String>)`](crate::input::GetInsightEventsInput::insight_id): <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetInsightEventsInput::max_results): <p>Used to retrieve at most the specified value of events.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetInsightEventsInput::next_token): <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_id(impl Into<String>)`](crate::client::fluent_builders::GetInsightEvents::insight_id) / [`set_insight_id(Option<String>)`](crate::client::fluent_builders::GetInsightEvents::set_insight_id): <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetInsightEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetInsightEvents::set_max_results): <p>Used to retrieve at most the specified value of events.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetInsightEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetInsightEvents::set_next_token): <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     /// - On success, responds with [`GetInsightEventsOutput`](crate::output::GetInsightEventsOutput) with field(s):
     ///   - [`insight_events(Option<Vec<InsightEvent>>)`](crate::output::GetInsightEventsOutput::insight_events): <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetInsightEventsOutput::next_token): <p>Use this token to retrieve the next page of insight events.</p>
@@ -202,11 +202,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetInsightImpactGraph`](crate::client::fluent_builders::GetInsightImpactGraph) operation.
     ///
-    /// - Takes [`GetInsightImpactGraphInput`](crate::input::GetInsightImpactGraphInput) with field(s):
-    ///   - [`insight_id(Option<String>)`](crate::input::GetInsightImpactGraphInput::insight_id): <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::GetInsightImpactGraphInput::start_time): <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::GetInsightImpactGraphInput::end_time): <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetInsightImpactGraphInput::next_token): <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_id(impl Into<String>)`](crate::client::fluent_builders::GetInsightImpactGraph::insight_id) / [`set_insight_id(Option<String>)`](crate::client::fluent_builders::GetInsightImpactGraph::set_insight_id): <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetInsightImpactGraph::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetInsightImpactGraph::set_start_time): <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetInsightImpactGraph::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetInsightImpactGraph::set_end_time): <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetInsightImpactGraph::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetInsightImpactGraph::set_next_token): <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
     /// - On success, responds with [`GetInsightImpactGraphOutput`](crate::output::GetInsightImpactGraphOutput) with field(s):
     ///   - [`insight_id(Option<String>)`](crate::output::GetInsightImpactGraphOutput::insight_id): <p>The insight's unique identifier.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::output::GetInsightImpactGraphOutput::start_time): <p>The provided start time.</p>
@@ -220,16 +220,16 @@ where
         fluent_builders::GetInsightImpactGraph::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetInsightSummaries`](crate::client::fluent_builders::GetInsightSummaries) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInsightSummaries::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetInsightSummaries::into_paginator).
     ///
-    /// - Takes [`GetInsightSummariesInput`](crate::input::GetInsightSummariesInput) with field(s):
-    ///   - [`states(Option<Vec<InsightState>>)`](crate::input::GetInsightSummariesInput::states): <p>The list of insight states. </p>
-    ///   - [`group_arn(Option<String>)`](crate::input::GetInsightSummariesInput::group_arn): <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
-    ///   - [`group_name(Option<String>)`](crate::input::GetInsightSummariesInput::group_name): <p>The name of the group. Required if the GroupARN isn't provided.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::GetInsightSummariesInput::start_time): <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::GetInsightSummariesInput::end_time): <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetInsightSummariesInput::max_results): <p>The maximum number of results to display.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetInsightSummariesInput::next_token): <p>Pagination token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`states(Vec<InsightState>)`](crate::client::fluent_builders::GetInsightSummaries::states) / [`set_states(Option<Vec<InsightState>>)`](crate::client::fluent_builders::GetInsightSummaries::set_states): <p>The list of insight states. </p>
+    ///   - [`group_arn(impl Into<String>)`](crate::client::fluent_builders::GetInsightSummaries::group_arn) / [`set_group_arn(Option<String>)`](crate::client::fluent_builders::GetInsightSummaries::set_group_arn): <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetInsightSummaries::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetInsightSummaries::set_group_name): <p>The name of the group. Required if the GroupARN isn't provided.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetInsightSummaries::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetInsightSummaries::set_start_time): <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetInsightSummaries::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetInsightSummaries::set_end_time): <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetInsightSummaries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetInsightSummaries::set_max_results): <p>The maximum number of results to display.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetInsightSummaries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetInsightSummaries::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`GetInsightSummariesOutput`](crate::output::GetInsightSummariesOutput) with field(s):
     ///   - [`insight_summaries(Option<Vec<InsightSummary>>)`](crate::output::GetInsightSummariesOutput::insight_summaries): <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetInsightSummariesOutput::next_token): <p>Pagination token.</p>
@@ -238,10 +238,10 @@ where
         fluent_builders::GetInsightSummaries::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetSamplingRules`](crate::client::fluent_builders::GetSamplingRules) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSamplingRules::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetSamplingRules::into_paginator).
     ///
-    /// - Takes [`GetSamplingRulesInput`](crate::input::GetSamplingRulesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::GetSamplingRulesInput::next_token): <p>Pagination token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetSamplingRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetSamplingRules::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`GetSamplingRulesOutput`](crate::output::GetSamplingRulesOutput) with field(s):
     ///   - [`sampling_rule_records(Option<Vec<SamplingRuleRecord>>)`](crate::output::GetSamplingRulesOutput::sampling_rule_records): <p>Rule definitions and metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetSamplingRulesOutput::next_token): <p>Pagination token.</p>
@@ -250,10 +250,10 @@ where
         fluent_builders::GetSamplingRules::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetSamplingStatisticSummaries`](crate::client::fluent_builders::GetSamplingStatisticSummaries) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSamplingStatisticSummaries::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetSamplingStatisticSummaries::into_paginator).
     ///
-    /// - Takes [`GetSamplingStatisticSummariesInput`](crate::input::GetSamplingStatisticSummariesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::GetSamplingStatisticSummariesInput::next_token): <p>Pagination token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetSamplingStatisticSummaries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetSamplingStatisticSummaries::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`GetSamplingStatisticSummariesOutput`](crate::output::GetSamplingStatisticSummariesOutput) with field(s):
     ///   - [`sampling_statistic_summaries(Option<Vec<SamplingStatisticSummary>>)`](crate::output::GetSamplingStatisticSummariesOutput::sampling_statistic_summaries): <p>Information about the number of requests instrumented for each sampling rule.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetSamplingStatisticSummariesOutput::next_token): <p>Pagination token.</p>
@@ -265,8 +265,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSamplingTargets`](crate::client::fluent_builders::GetSamplingTargets) operation.
     ///
-    /// - Takes [`GetSamplingTargetsInput`](crate::input::GetSamplingTargetsInput) with field(s):
-    ///   - [`sampling_statistics_documents(Option<Vec<SamplingStatisticsDocument>>)`](crate::input::GetSamplingTargetsInput::sampling_statistics_documents): <p>Information about rules that the service is using to sample requests.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sampling_statistics_documents(Vec<SamplingStatisticsDocument>)`](crate::client::fluent_builders::GetSamplingTargets::sampling_statistics_documents) / [`set_sampling_statistics_documents(Option<Vec<SamplingStatisticsDocument>>)`](crate::client::fluent_builders::GetSamplingTargets::set_sampling_statistics_documents): <p>Information about rules that the service is using to sample requests.</p>
     /// - On success, responds with [`GetSamplingTargetsOutput`](crate::output::GetSamplingTargetsOutput) with field(s):
     ///   - [`sampling_target_documents(Option<Vec<SamplingTargetDocument>>)`](crate::output::GetSamplingTargetsOutput::sampling_target_documents): <p>Updated rules that the service should use to sample requests.</p>
     ///   - [`last_rule_modification(Option<DateTime>)`](crate::output::GetSamplingTargetsOutput::last_rule_modification): <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
@@ -276,14 +276,14 @@ where
         fluent_builders::GetSamplingTargets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetServiceGraph`](crate::client::fluent_builders::GetServiceGraph) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetServiceGraph::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetServiceGraph::into_paginator).
     ///
-    /// - Takes [`GetServiceGraphInput`](crate::input::GetServiceGraphInput) with field(s):
-    ///   - [`start_time(Option<DateTime>)`](crate::input::GetServiceGraphInput::start_time): <p>The start of the time frame for which to generate a graph.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::GetServiceGraphInput::end_time): <p>The end of the timeframe for which to generate a graph.</p>
-    ///   - [`group_name(Option<String>)`](crate::input::GetServiceGraphInput::group_name): <p>The name of a group based on which you want to generate a graph.</p>
-    ///   - [`group_arn(Option<String>)`](crate::input::GetServiceGraphInput::group_arn): <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetServiceGraphInput::next_token): <p>Pagination token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetServiceGraph::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetServiceGraph::set_start_time): <p>The start of the time frame for which to generate a graph.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetServiceGraph::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetServiceGraph::set_end_time): <p>The end of the timeframe for which to generate a graph.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetServiceGraph::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetServiceGraph::set_group_name): <p>The name of a group based on which you want to generate a graph.</p>
+    ///   - [`group_arn(impl Into<String>)`](crate::client::fluent_builders::GetServiceGraph::group_arn) / [`set_group_arn(Option<String>)`](crate::client::fluent_builders::GetServiceGraph::set_group_arn): <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetServiceGraph::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetServiceGraph::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`GetServiceGraphOutput`](crate::output::GetServiceGraphOutput) with field(s):
     ///   - [`start_time(Option<DateTime>)`](crate::output::GetServiceGraphOutput::start_time): <p>The start of the time frame for which the graph was generated.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::output::GetServiceGraphOutput::end_time): <p>The end of the time frame for which the graph was generated.</p>
@@ -295,17 +295,17 @@ where
         fluent_builders::GetServiceGraph::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetTimeSeriesServiceStatistics`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::into_paginator).
     ///
-    /// - Takes [`GetTimeSeriesServiceStatisticsInput`](crate::input::GetTimeSeriesServiceStatisticsInput) with field(s):
-    ///   - [`start_time(Option<DateTime>)`](crate::input::GetTimeSeriesServiceStatisticsInput::start_time): <p>The start of the time frame for which to aggregate statistics.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::GetTimeSeriesServiceStatisticsInput::end_time): <p>The end of the time frame for which to aggregate statistics.</p>
-    ///   - [`group_name(Option<String>)`](crate::input::GetTimeSeriesServiceStatisticsInput::group_name): <p>The case-sensitive name of the group for which to pull statistics from.</p>
-    ///   - [`group_arn(Option<String>)`](crate::input::GetTimeSeriesServiceStatisticsInput::group_arn): <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
-    ///   - [`entity_selector_expression(Option<String>)`](crate::input::GetTimeSeriesServiceStatisticsInput::entity_selector_expression): <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
-    ///   - [`period(Option<i32>)`](crate::input::GetTimeSeriesServiceStatisticsInput::period): <p>Aggregation period in seconds.</p>
-    ///   - [`forecast_statistics(Option<bool>)`](crate::input::GetTimeSeriesServiceStatisticsInput::forecast_statistics): <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetTimeSeriesServiceStatisticsInput::next_token): <p>Pagination token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::set_start_time): <p>The start of the time frame for which to aggregate statistics.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::set_end_time): <p>The end of the time frame for which to aggregate statistics.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::set_group_name): <p>The case-sensitive name of the group for which to pull statistics from.</p>
+    ///   - [`group_arn(impl Into<String>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::group_arn) / [`set_group_arn(Option<String>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::set_group_arn): <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
+    ///   - [`entity_selector_expression(impl Into<String>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::entity_selector_expression) / [`set_entity_selector_expression(Option<String>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::set_entity_selector_expression): <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
+    ///   - [`period(i32)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::period) / [`set_period(Option<i32>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::set_period): <p>Aggregation period in seconds.</p>
+    ///   - [`forecast_statistics(bool)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::forecast_statistics) / [`set_forecast_statistics(Option<bool>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::set_forecast_statistics): <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`GetTimeSeriesServiceStatisticsOutput`](crate::output::GetTimeSeriesServiceStatisticsOutput) with field(s):
     ///   - [`time_series_service_statistics(Option<Vec<TimeSeriesServiceStatistics>>)`](crate::output::GetTimeSeriesServiceStatisticsOutput::time_series_service_statistics): <p>The collection of statistics.</p>
     ///   - [`contains_old_group_versions(bool)`](crate::output::GetTimeSeriesServiceStatisticsOutput::contains_old_group_versions): <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
@@ -317,11 +317,11 @@ where
         fluent_builders::GetTimeSeriesServiceStatistics::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetTraceGraph`](crate::client::fluent_builders::GetTraceGraph) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTraceGraph::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTraceGraph::into_paginator).
     ///
-    /// - Takes [`GetTraceGraphInput`](crate::input::GetTraceGraphInput) with field(s):
-    ///   - [`trace_ids(Option<Vec<String>>)`](crate::input::GetTraceGraphInput::trace_ids): <p>Trace IDs of requests for which to generate a service graph.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetTraceGraphInput::next_token): <p>Pagination token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trace_ids(Vec<String>)`](crate::client::fluent_builders::GetTraceGraph::trace_ids) / [`set_trace_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetTraceGraph::set_trace_ids): <p>Trace IDs of requests for which to generate a service graph.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetTraceGraph::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetTraceGraph::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`GetTraceGraphOutput`](crate::output::GetTraceGraphOutput) with field(s):
     ///   - [`services(Option<Vec<Service>>)`](crate::output::GetTraceGraphOutput::services): <p>The services that have processed one of the specified requests.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetTraceGraphOutput::next_token): <p>Pagination token.</p>
@@ -330,16 +330,16 @@ where
         fluent_builders::GetTraceGraph::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetTraceSummaries`](crate::client::fluent_builders::GetTraceSummaries) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTraceSummaries::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTraceSummaries::into_paginator).
     ///
-    /// - Takes [`GetTraceSummariesInput`](crate::input::GetTraceSummariesInput) with field(s):
-    ///   - [`start_time(Option<DateTime>)`](crate::input::GetTraceSummariesInput::start_time): <p>The start of the time frame for which to retrieve traces.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::GetTraceSummariesInput::end_time): <p>The end of the time frame for which to retrieve traces.</p>
-    ///   - [`time_range_type(Option<TimeRangeType>)`](crate::input::GetTraceSummariesInput::time_range_type): <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
-    ///   - [`sampling(Option<bool>)`](crate::input::GetTraceSummariesInput::sampling): <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
-    ///   - [`sampling_strategy(Option<SamplingStrategy>)`](crate::input::GetTraceSummariesInput::sampling_strategy): <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
-    ///   - [`filter_expression(Option<String>)`](crate::input::GetTraceSummariesInput::filter_expression): <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetTraceSummariesInput::next_token): <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetTraceSummaries::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetTraceSummaries::set_start_time): <p>The start of the time frame for which to retrieve traces.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetTraceSummaries::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetTraceSummaries::set_end_time): <p>The end of the time frame for which to retrieve traces.</p>
+    ///   - [`time_range_type(TimeRangeType)`](crate::client::fluent_builders::GetTraceSummaries::time_range_type) / [`set_time_range_type(Option<TimeRangeType>)`](crate::client::fluent_builders::GetTraceSummaries::set_time_range_type): <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    ///   - [`sampling(bool)`](crate::client::fluent_builders::GetTraceSummaries::sampling) / [`set_sampling(Option<bool>)`](crate::client::fluent_builders::GetTraceSummaries::set_sampling): <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
+    ///   - [`sampling_strategy(SamplingStrategy)`](crate::client::fluent_builders::GetTraceSummaries::sampling_strategy) / [`set_sampling_strategy(Option<SamplingStrategy>)`](crate::client::fluent_builders::GetTraceSummaries::set_sampling_strategy): <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
+    ///   - [`filter_expression(impl Into<String>)`](crate::client::fluent_builders::GetTraceSummaries::filter_expression) / [`set_filter_expression(Option<String>)`](crate::client::fluent_builders::GetTraceSummaries::set_filter_expression): <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetTraceSummaries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetTraceSummaries::set_next_token): <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
     /// - On success, responds with [`GetTraceSummariesOutput`](crate::output::GetTraceSummariesOutput) with field(s):
     ///   - [`trace_summaries(Option<Vec<TraceSummary>>)`](crate::output::GetTraceSummariesOutput::trace_summaries): <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
     ///   - [`approximate_time(Option<DateTime>)`](crate::output::GetTraceSummariesOutput::approximate_time): <p>The start time of this page of results.</p>
@@ -351,9 +351,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results as the value of this parameter to get the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results as the value of this parameter to get the next page of results.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results to get the next page of results.</p>
@@ -363,9 +363,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutEncryptionConfig`](crate::client::fluent_builders::PutEncryptionConfig) operation.
     ///
-    /// - Takes [`PutEncryptionConfigInput`](crate::input::PutEncryptionConfigInput) with field(s):
-    ///   - [`key_id(Option<String>)`](crate::input::PutEncryptionConfigInput::key_id): <p>An Amazon Web Services KMS key in one of the following formats:</p>  <ul>   <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>   <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>   <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>  </ul>  <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
-    ///   - [`r#type(Option<EncryptionType>)`](crate::input::PutEncryptionConfigInput::type): <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`key_id(impl Into<String>)`](crate::client::fluent_builders::PutEncryptionConfig::key_id) / [`set_key_id(Option<String>)`](crate::client::fluent_builders::PutEncryptionConfig::set_key_id): <p>An Amazon Web Services KMS key in one of the following formats:</p>  <ul>   <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>   <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>   <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>  </ul>  <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
+    ///   - [`r#type(EncryptionType)`](crate::client::fluent_builders::PutEncryptionConfig::r#type) / [`set_type(Option<EncryptionType>)`](crate::client::fluent_builders::PutEncryptionConfig::set_type): <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
     /// - On success, responds with [`PutEncryptionConfigOutput`](crate::output::PutEncryptionConfigOutput) with field(s):
     ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::output::PutEncryptionConfigOutput::encryption_config): <p>The new encryption configuration.</p>
     /// - On failure, responds with [`SdkError<PutEncryptionConfigError>`](crate::error::PutEncryptionConfigError)
@@ -374,11 +374,11 @@ where
     }
     /// Constructs a fluent builder for the [`PutTelemetryRecords`](crate::client::fluent_builders::PutTelemetryRecords) operation.
     ///
-    /// - Takes [`PutTelemetryRecordsInput`](crate::input::PutTelemetryRecordsInput) with field(s):
-    ///   - [`telemetry_records(Option<Vec<TelemetryRecord>>)`](crate::input::PutTelemetryRecordsInput::telemetry_records): <p></p>
-    ///   - [`ec2_instance_id(Option<String>)`](crate::input::PutTelemetryRecordsInput::ec2_instance_id): <p></p>
-    ///   - [`hostname(Option<String>)`](crate::input::PutTelemetryRecordsInput::hostname): <p></p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::PutTelemetryRecordsInput::resource_arn): <p></p>
+    /// - The fluent builder is configurable:
+    ///   - [`telemetry_records(Vec<TelemetryRecord>)`](crate::client::fluent_builders::PutTelemetryRecords::telemetry_records) / [`set_telemetry_records(Option<Vec<TelemetryRecord>>)`](crate::client::fluent_builders::PutTelemetryRecords::set_telemetry_records): <p></p>
+    ///   - [`ec2_instance_id(impl Into<String>)`](crate::client::fluent_builders::PutTelemetryRecords::ec2_instance_id) / [`set_ec2_instance_id(Option<String>)`](crate::client::fluent_builders::PutTelemetryRecords::set_ec2_instance_id): <p></p>
+    ///   - [`hostname(impl Into<String>)`](crate::client::fluent_builders::PutTelemetryRecords::hostname) / [`set_hostname(Option<String>)`](crate::client::fluent_builders::PutTelemetryRecords::set_hostname): <p></p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutTelemetryRecords::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutTelemetryRecords::set_resource_arn): <p></p>
     /// - On success, responds with [`PutTelemetryRecordsOutput`](crate::output::PutTelemetryRecordsOutput)
 
     /// - On failure, responds with [`SdkError<PutTelemetryRecordsError>`](crate::error::PutTelemetryRecordsError)
@@ -387,8 +387,8 @@ where
     }
     /// Constructs a fluent builder for the [`PutTraceSegments`](crate::client::fluent_builders::PutTraceSegments) operation.
     ///
-    /// - Takes [`PutTraceSegmentsInput`](crate::input::PutTraceSegmentsInput) with field(s):
-    ///   - [`trace_segment_documents(Option<Vec<String>>)`](crate::input::PutTraceSegmentsInput::trace_segment_documents): <p>A string containing a JSON document defining one or more segments or subsegments.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trace_segment_documents(Vec<String>)`](crate::client::fluent_builders::PutTraceSegments::trace_segment_documents) / [`set_trace_segment_documents(Option<Vec<String>>)`](crate::client::fluent_builders::PutTraceSegments::set_trace_segment_documents): <p>A string containing a JSON document defining one or more segments or subsegments.</p>
     /// - On success, responds with [`PutTraceSegmentsOutput`](crate::output::PutTraceSegmentsOutput) with field(s):
     ///   - [`unprocessed_trace_segments(Option<Vec<UnprocessedTraceSegment>>)`](crate::output::PutTraceSegmentsOutput::unprocessed_trace_segments): <p>Segments that failed processing.</p>
     /// - On failure, responds with [`SdkError<PutTraceSegmentsError>`](crate::error::PutTraceSegmentsError)
@@ -397,9 +397,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>   <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>   <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>   <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>   <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>   <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>   <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>  </ul>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -408,9 +408,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -419,11 +419,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) operation.
     ///
-    /// - Takes [`UpdateGroupInput`](crate::input::UpdateGroupInput) with field(s):
-    ///   - [`group_name(Option<String>)`](crate::input::UpdateGroupInput::group_name): <p>The case-sensitive name of the group.</p>
-    ///   - [`group_arn(Option<String>)`](crate::input::UpdateGroupInput::group_arn): <p>The ARN that was generated upon creation.</p>
-    ///   - [`filter_expression(Option<String>)`](crate::input::UpdateGroupInput::filter_expression): <p>The updated filter expression defining criteria by which to group traces.</p>
-    ///   - [`insights_configuration(Option<InsightsConfiguration>)`](crate::input::UpdateGroupInput::insights_configuration): <p>The structure containing configurations related to insights.</p>  <ul>   <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>   <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_name): <p>The case-sensitive name of the group.</p>
+    ///   - [`group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_arn) / [`set_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_arn): <p>The ARN that was generated upon creation.</p>
+    ///   - [`filter_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::filter_expression) / [`set_filter_expression(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_filter_expression): <p>The updated filter expression defining criteria by which to group traces.</p>
+    ///   - [`insights_configuration(InsightsConfiguration)`](crate::client::fluent_builders::UpdateGroup::insights_configuration) / [`set_insights_configuration(Option<InsightsConfiguration>)`](crate::client::fluent_builders::UpdateGroup::set_insights_configuration): <p>The structure containing configurations related to insights.</p>  <ul>   <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>   <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>  </ul>
     /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::UpdateGroupOutput::group): <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
     /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::error::UpdateGroupError)
@@ -432,8 +432,8 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSamplingRule`](crate::client::fluent_builders::UpdateSamplingRule) operation.
     ///
-    /// - Takes [`UpdateSamplingRuleInput`](crate::input::UpdateSamplingRuleInput) with field(s):
-    ///   - [`sampling_rule_update(Option<SamplingRuleUpdate>)`](crate::input::UpdateSamplingRuleInput::sampling_rule_update): <p>The rule and fields to change.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sampling_rule_update(SamplingRuleUpdate)`](crate::client::fluent_builders::UpdateSamplingRule::sampling_rule_update) / [`set_sampling_rule_update(Option<SamplingRuleUpdate>)`](crate::client::fluent_builders::UpdateSamplingRule::set_sampling_rule_update): <p>The rule and fields to change.</p>
     /// - On success, responds with [`UpdateSamplingRuleOutput`](crate::output::UpdateSamplingRuleOutput) with field(s):
     ///   - [`sampling_rule_record(Option<SamplingRuleRecord>)`](crate::output::UpdateSamplingRuleOutput::sampling_rule_record): <p>The updated rule definition and metadata.</p>
     /// - On failure, responds with [`SdkError<UpdateSamplingRuleError>`](crate::error::UpdateSamplingRuleError)

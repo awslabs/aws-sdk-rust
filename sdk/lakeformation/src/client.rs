@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`AddLFTagsToResource`](crate::client::fluent_builders::AddLFTagsToResource) operation.
     ///
-    /// - Takes [`AddLfTagsToResourceInput`](crate::input::AddLfTagsToResourceInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::AddLfTagsToResourceInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`resource(Option<Resource>)`](crate::input::AddLfTagsToResourceInput::resource): <p>The database, table, or column resource to which to attach an LF-tag.</p>
-    ///   - [`lf_tags(Option<Vec<LfTagPair>>)`](crate::input::AddLfTagsToResourceInput::lf_tags): <p>The LF-tags to attach to the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::AddLFTagsToResource::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::AddLFTagsToResource::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`resource(Resource)`](crate::client::fluent_builders::AddLFTagsToResource::resource) / [`set_resource(Option<Resource>)`](crate::client::fluent_builders::AddLFTagsToResource::set_resource): <p>The database, table, or column resource to which to attach an LF-tag.</p>
+    ///   - [`lf_tags(Vec<LfTagPair>)`](crate::client::fluent_builders::AddLFTagsToResource::lf_tags) / [`set_lf_tags(Option<Vec<LfTagPair>>)`](crate::client::fluent_builders::AddLFTagsToResource::set_lf_tags): <p>The LF-tags to attach to the resource.</p>
     /// - On success, responds with [`AddLfTagsToResourceOutput`](crate::output::AddLfTagsToResourceOutput) with field(s):
     ///   - [`failures(Option<Vec<LfTagError>>)`](crate::output::AddLfTagsToResourceOutput::failures): <p>A list of failures to tag the resource.</p>
     /// - On failure, responds with [`SdkError<AddLFTagsToResourceError>`](crate::error::AddLFTagsToResourceError)
@@ -97,9 +97,9 @@ where
     }
     /// Constructs a fluent builder for the [`BatchGrantPermissions`](crate::client::fluent_builders::BatchGrantPermissions) operation.
     ///
-    /// - Takes [`BatchGrantPermissionsInput`](crate::input::BatchGrantPermissionsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::BatchGrantPermissionsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`entries(Option<Vec<BatchPermissionsRequestEntry>>)`](crate::input::BatchGrantPermissionsInput::entries): <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::BatchGrantPermissions::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::BatchGrantPermissions::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`entries(Vec<BatchPermissionsRequestEntry>)`](crate::client::fluent_builders::BatchGrantPermissions::entries) / [`set_entries(Option<Vec<BatchPermissionsRequestEntry>>)`](crate::client::fluent_builders::BatchGrantPermissions::set_entries): <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
     /// - On success, responds with [`BatchGrantPermissionsOutput`](crate::output::BatchGrantPermissionsOutput) with field(s):
     ///   - [`failures(Option<Vec<BatchPermissionsFailureEntry>>)`](crate::output::BatchGrantPermissionsOutput::failures): <p>A list of failures to grant permissions to the resources.</p>
     /// - On failure, responds with [`SdkError<BatchGrantPermissionsError>`](crate::error::BatchGrantPermissionsError)
@@ -108,9 +108,9 @@ where
     }
     /// Constructs a fluent builder for the [`BatchRevokePermissions`](crate::client::fluent_builders::BatchRevokePermissions) operation.
     ///
-    /// - Takes [`BatchRevokePermissionsInput`](crate::input::BatchRevokePermissionsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::BatchRevokePermissionsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`entries(Option<Vec<BatchPermissionsRequestEntry>>)`](crate::input::BatchRevokePermissionsInput::entries): <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::BatchRevokePermissions::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::BatchRevokePermissions::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`entries(Vec<BatchPermissionsRequestEntry>)`](crate::client::fluent_builders::BatchRevokePermissions::entries) / [`set_entries(Option<Vec<BatchPermissionsRequestEntry>>)`](crate::client::fluent_builders::BatchRevokePermissions::set_entries): <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
     /// - On success, responds with [`BatchRevokePermissionsOutput`](crate::output::BatchRevokePermissionsOutput) with field(s):
     ///   - [`failures(Option<Vec<BatchPermissionsFailureEntry>>)`](crate::output::BatchRevokePermissionsOutput::failures): <p>A list of failures to revoke permissions to the resources.</p>
     /// - On failure, responds with [`SdkError<BatchRevokePermissionsError>`](crate::error::BatchRevokePermissionsError)
@@ -119,8 +119,8 @@ where
     }
     /// Constructs a fluent builder for the [`CancelTransaction`](crate::client::fluent_builders::CancelTransaction) operation.
     ///
-    /// - Takes [`CancelTransactionInput`](crate::input::CancelTransactionInput) with field(s):
-    ///   - [`transaction_id(Option<String>)`](crate::input::CancelTransactionInput::transaction_id): <p>The transaction to cancel.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::CancelTransaction::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::CancelTransaction::set_transaction_id): <p>The transaction to cancel.</p>
     /// - On success, responds with [`CancelTransactionOutput`](crate::output::CancelTransactionOutput)
 
     /// - On failure, responds with [`SdkError<CancelTransactionError>`](crate::error::CancelTransactionError)
@@ -129,8 +129,8 @@ where
     }
     /// Constructs a fluent builder for the [`CommitTransaction`](crate::client::fluent_builders::CommitTransaction) operation.
     ///
-    /// - Takes [`CommitTransactionInput`](crate::input::CommitTransactionInput) with field(s):
-    ///   - [`transaction_id(Option<String>)`](crate::input::CommitTransactionInput::transaction_id): <p>The transaction to commit.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::CommitTransaction::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::CommitTransaction::set_transaction_id): <p>The transaction to commit.</p>
     /// - On success, responds with [`CommitTransactionOutput`](crate::output::CommitTransactionOutput) with field(s):
     ///   - [`transaction_status(Option<TransactionStatus>)`](crate::output::CommitTransactionOutput::transaction_status): <p>The status of the transaction.</p>
     /// - On failure, responds with [`SdkError<CommitTransactionError>`](crate::error::CommitTransactionError)
@@ -139,8 +139,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDataCellsFilter`](crate::client::fluent_builders::CreateDataCellsFilter) operation.
     ///
-    /// - Takes [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput) with field(s):
-    ///   - [`table_data(Option<DataCellsFilter>)`](crate::input::CreateDataCellsFilterInput::table_data): <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`table_data(DataCellsFilter)`](crate::client::fluent_builders::CreateDataCellsFilter::table_data) / [`set_table_data(Option<DataCellsFilter>)`](crate::client::fluent_builders::CreateDataCellsFilter::set_table_data): <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
     /// - On success, responds with [`CreateDataCellsFilterOutput`](crate::output::CreateDataCellsFilterOutput)
 
     /// - On failure, responds with [`SdkError<CreateDataCellsFilterError>`](crate::error::CreateDataCellsFilterError)
@@ -149,10 +149,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateLFTag`](crate::client::fluent_builders::CreateLFTag) operation.
     ///
-    /// - Takes [`CreateLfTagInput`](crate::input::CreateLfTagInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::CreateLfTagInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`tag_key(Option<String>)`](crate::input::CreateLfTagInput::tag_key): <p>The key-name for the LF-tag.</p>
-    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::CreateLfTagInput::tag_values): <p>A list of possible values an attribute can take.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::CreateLFTag::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::CreateLFTag::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`tag_key(impl Into<String>)`](crate::client::fluent_builders::CreateLFTag::tag_key) / [`set_tag_key(Option<String>)`](crate::client::fluent_builders::CreateLFTag::set_tag_key): <p>The key-name for the LF-tag.</p>
+    ///   - [`tag_values(Vec<String>)`](crate::client::fluent_builders::CreateLFTag::tag_values) / [`set_tag_values(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLFTag::set_tag_values): <p>A list of possible values an attribute can take.</p>
     /// - On success, responds with [`CreateLfTagOutput`](crate::output::CreateLfTagOutput)
 
     /// - On failure, responds with [`SdkError<CreateLFTagError>`](crate::error::CreateLFTagError)
@@ -161,11 +161,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDataCellsFilter`](crate::client::fluent_builders::DeleteDataCellsFilter) operation.
     ///
-    /// - Takes [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput) with field(s):
-    ///   - [`table_catalog_id(Option<String>)`](crate::input::DeleteDataCellsFilterInput::table_catalog_id): <p>The ID of the catalog to which the table belongs.</p>
-    ///   - [`database_name(Option<String>)`](crate::input::DeleteDataCellsFilterInput::database_name): <p>A database in the Glue Data Catalog.</p>
-    ///   - [`table_name(Option<String>)`](crate::input::DeleteDataCellsFilterInput::table_name): <p>A table in the database.</p>
-    ///   - [`name(Option<String>)`](crate::input::DeleteDataCellsFilterInput::name): <p>The name given by the user to the data filter cell.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`table_catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataCellsFilter::table_catalog_id) / [`set_table_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteDataCellsFilter::set_table_catalog_id): <p>The ID of the catalog to which the table belongs.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDataCellsFilter::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::DeleteDataCellsFilter::set_database_name): <p>A database in the Glue Data Catalog.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDataCellsFilter::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::DeleteDataCellsFilter::set_table_name): <p>A table in the database.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteDataCellsFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteDataCellsFilter::set_name): <p>The name given by the user to the data filter cell.</p>
     /// - On success, responds with [`DeleteDataCellsFilterOutput`](crate::output::DeleteDataCellsFilterOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDataCellsFilterError>`](crate::error::DeleteDataCellsFilterError)
@@ -174,9 +174,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteLFTag`](crate::client::fluent_builders::DeleteLFTag) operation.
     ///
-    /// - Takes [`DeleteLfTagInput`](crate::input::DeleteLfTagInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::DeleteLfTagInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`tag_key(Option<String>)`](crate::input::DeleteLfTagInput::tag_key): <p>The key-name for the LF-tag to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLFTag::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteLFTag::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`tag_key(impl Into<String>)`](crate::client::fluent_builders::DeleteLFTag::tag_key) / [`set_tag_key(Option<String>)`](crate::client::fluent_builders::DeleteLFTag::set_tag_key): <p>The key-name for the LF-tag to delete.</p>
     /// - On success, responds with [`DeleteLfTagOutput`](crate::output::DeleteLfTagOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLFTagError>`](crate::error::DeleteLFTagError)
@@ -185,12 +185,12 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteObjectsOnCancel`](crate::client::fluent_builders::DeleteObjectsOnCancel) operation.
     ///
-    /// - Takes [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::DeleteObjectsOnCancelInput::catalog_id): <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
-    ///   - [`database_name(Option<String>)`](crate::input::DeleteObjectsOnCancelInput::database_name): <p>The database that contains the governed table.</p>
-    ///   - [`table_name(Option<String>)`](crate::input::DeleteObjectsOnCancelInput::table_name): <p>The name of the governed table.</p>
-    ///   - [`transaction_id(Option<String>)`](crate::input::DeleteObjectsOnCancelInput::transaction_id): <p>ID of the transaction that the writes occur in.</p>
-    ///   - [`objects(Option<Vec<VirtualObject>>)`](crate::input::DeleteObjectsOnCancelInput::objects): <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::set_catalog_id): <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::set_database_name): <p>The database that contains the governed table.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::set_table_name): <p>The name of the governed table.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::set_transaction_id): <p>ID of the transaction that the writes occur in.</p>
+    ///   - [`objects(Vec<VirtualObject>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::objects) / [`set_objects(Option<Vec<VirtualObject>>)`](crate::client::fluent_builders::DeleteObjectsOnCancel::set_objects): <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
     /// - On success, responds with [`DeleteObjectsOnCancelOutput`](crate::output::DeleteObjectsOnCancelOutput)
 
     /// - On failure, responds with [`SdkError<DeleteObjectsOnCancelError>`](crate::error::DeleteObjectsOnCancelError)
@@ -199,8 +199,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeregisterResource`](crate::client::fluent_builders::DeregisterResource) operation.
     ///
-    /// - Takes [`DeregisterResourceInput`](crate::input::DeregisterResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::DeregisterResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeregisterResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeregisterResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
     /// - On success, responds with [`DeregisterResourceOutput`](crate::output::DeregisterResourceOutput)
 
     /// - On failure, responds with [`SdkError<DeregisterResourceError>`](crate::error::DeregisterResourceError)
@@ -209,8 +209,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeResource`](crate::client::fluent_builders::DescribeResource) operation.
     ///
-    /// - Takes [`DescribeResourceInput`](crate::input::DescribeResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::DescribeResourceInput::resource_arn): <p>The resource ARN.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DescribeResource::set_resource_arn): <p>The resource ARN.</p>
     /// - On success, responds with [`DescribeResourceOutput`](crate::output::DescribeResourceOutput) with field(s):
     ///   - [`resource_info(Option<ResourceInfo>)`](crate::output::DescribeResourceOutput::resource_info): <p>A structure containing information about an Lake Formation resource.</p>
     /// - On failure, responds with [`SdkError<DescribeResourceError>`](crate::error::DescribeResourceError)
@@ -219,8 +219,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTransaction`](crate::client::fluent_builders::DescribeTransaction) operation.
     ///
-    /// - Takes [`DescribeTransactionInput`](crate::input::DescribeTransactionInput) with field(s):
-    ///   - [`transaction_id(Option<String>)`](crate::input::DescribeTransactionInput::transaction_id): <p>The transaction for which to return status.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTransaction::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::DescribeTransaction::set_transaction_id): <p>The transaction for which to return status.</p>
     /// - On success, responds with [`DescribeTransactionOutput`](crate::output::DescribeTransactionOutput) with field(s):
     ///   - [`transaction_description(Option<TransactionDescription>)`](crate::output::DescribeTransactionOutput::transaction_description): <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
     /// - On failure, responds with [`SdkError<DescribeTransactionError>`](crate::error::DescribeTransactionError)
@@ -229,8 +229,8 @@ where
     }
     /// Constructs a fluent builder for the [`ExtendTransaction`](crate::client::fluent_builders::ExtendTransaction) operation.
     ///
-    /// - Takes [`ExtendTransactionInput`](crate::input::ExtendTransactionInput) with field(s):
-    ///   - [`transaction_id(Option<String>)`](crate::input::ExtendTransactionInput::transaction_id): <p>The transaction to extend.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::ExtendTransaction::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::ExtendTransaction::set_transaction_id): <p>The transaction to extend.</p>
     /// - On success, responds with [`ExtendTransactionOutput`](crate::output::ExtendTransactionOutput)
 
     /// - On failure, responds with [`SdkError<ExtendTransactionError>`](crate::error::ExtendTransactionError)
@@ -239,8 +239,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDataLakeSettings`](crate::client::fluent_builders::GetDataLakeSettings) operation.
     ///
-    /// - Takes [`GetDataLakeSettingsInput`](crate::input::GetDataLakeSettingsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::GetDataLakeSettingsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetDataLakeSettings::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetDataLakeSettings::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     /// - On success, responds with [`GetDataLakeSettingsOutput`](crate::output::GetDataLakeSettingsOutput) with field(s):
     ///   - [`data_lake_settings(Option<DataLakeSettings>)`](crate::output::GetDataLakeSettingsOutput::data_lake_settings): <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
     /// - On failure, responds with [`SdkError<GetDataLakeSettingsError>`](crate::error::GetDataLakeSettingsError)
@@ -248,13 +248,13 @@ where
         fluent_builders::GetDataLakeSettings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetEffectivePermissionsForPath`](crate::client::fluent_builders::GetEffectivePermissionsForPath) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEffectivePermissionsForPath::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetEffectivePermissionsForPath::into_paginator).
     ///
-    /// - Takes [`GetEffectivePermissionsForPathInput`](crate::input::GetEffectivePermissionsForPathInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::GetEffectivePermissionsForPathInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::GetEffectivePermissionsForPathInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetEffectivePermissionsForPathInput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetEffectivePermissionsForPathInput::max_results): <p>The maximum number of results to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetEffectivePermissionsForPath::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetEffectivePermissionsForPath::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetEffectivePermissionsForPath::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetEffectivePermissionsForPath::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetEffectivePermissionsForPath::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetEffectivePermissionsForPath::set_next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetEffectivePermissionsForPath::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetEffectivePermissionsForPath::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`GetEffectivePermissionsForPathOutput`](crate::output::GetEffectivePermissionsForPathOutput) with field(s):
     ///   - [`permissions(Option<Vec<PrincipalResourcePermissions>>)`](crate::output::GetEffectivePermissionsForPathOutput::permissions): <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetEffectivePermissionsForPathOutput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -266,9 +266,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetLFTag`](crate::client::fluent_builders::GetLFTag) operation.
     ///
-    /// - Takes [`GetLfTagInput`](crate::input::GetLfTagInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::GetLfTagInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`tag_key(Option<String>)`](crate::input::GetLfTagInput::tag_key): <p>The key-name for the LF-tag.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetLFTag::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetLFTag::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`tag_key(impl Into<String>)`](crate::client::fluent_builders::GetLFTag::tag_key) / [`set_tag_key(Option<String>)`](crate::client::fluent_builders::GetLFTag::set_tag_key): <p>The key-name for the LF-tag.</p>
     /// - On success, responds with [`GetLfTagOutput`](crate::output::GetLfTagOutput) with field(s):
     ///   - [`catalog_id(Option<String>)`](crate::output::GetLfTagOutput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     ///   - [`tag_key(Option<String>)`](crate::output::GetLfTagOutput::tag_key): <p>The key-name for the LF-tag.</p>
@@ -279,8 +279,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetQueryState`](crate::client::fluent_builders::GetQueryState) operation.
     ///
-    /// - Takes [`GetQueryStateInput`](crate::input::GetQueryStateInput) with field(s):
-    ///   - [`query_id(Option<String>)`](crate::input::GetQueryStateInput::query_id): <p>The ID of the plan query operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::GetQueryState::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::GetQueryState::set_query_id): <p>The ID of the plan query operation.</p>
     /// - On success, responds with [`GetQueryStateOutput`](crate::output::GetQueryStateOutput) with field(s):
     ///   - [`error(Option<String>)`](crate::output::GetQueryStateOutput::error): <p>An error message when the operation fails.</p>
     ///   - [`state(Option<QueryStateString>)`](crate::output::GetQueryStateOutput::state): <p>The state of a query previously submitted. The possible states are:</p>  <ul>   <li> <p>PENDING: the query is pending.</p> </li>   <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>   <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>   <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>  </ul>
@@ -290,8 +290,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetQueryStatistics`](crate::client::fluent_builders::GetQueryStatistics) operation.
     ///
-    /// - Takes [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput) with field(s):
-    ///   - [`query_id(Option<String>)`](crate::input::GetQueryStatisticsInput::query_id): <p>The ID of the plan query operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::GetQueryStatistics::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::GetQueryStatistics::set_query_id): <p>The ID of the plan query operation.</p>
     /// - On success, responds with [`GetQueryStatisticsOutput`](crate::output::GetQueryStatisticsOutput) with field(s):
     ///   - [`execution_statistics(Option<ExecutionStatistics>)`](crate::output::GetQueryStatisticsOutput::execution_statistics): <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
     ///   - [`planning_statistics(Option<PlanningStatistics>)`](crate::output::GetQueryStatisticsOutput::planning_statistics): <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
@@ -302,10 +302,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetResourceLFTags`](crate::client::fluent_builders::GetResourceLFTags) operation.
     ///
-    /// - Takes [`GetResourceLfTagsInput`](crate::input::GetResourceLfTagsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::GetResourceLfTagsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`resource(Option<Resource>)`](crate::input::GetResourceLfTagsInput::resource): <p>The database, table, or column resource for which you want to return LF-tags.</p>
-    ///   - [`show_assigned_lf_tags(Option<bool>)`](crate::input::GetResourceLfTagsInput::show_assigned_lf_tags): <p>Indicates whether to show the assigned LF-tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetResourceLFTags::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetResourceLFTags::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`resource(Resource)`](crate::client::fluent_builders::GetResourceLFTags::resource) / [`set_resource(Option<Resource>)`](crate::client::fluent_builders::GetResourceLFTags::set_resource): <p>The database, table, or column resource for which you want to return LF-tags.</p>
+    ///   - [`show_assigned_lf_tags(bool)`](crate::client::fluent_builders::GetResourceLFTags::show_assigned_lf_tags) / [`set_show_assigned_lf_tags(Option<bool>)`](crate::client::fluent_builders::GetResourceLFTags::set_show_assigned_lf_tags): <p>Indicates whether to show the assigned LF-tags.</p>
     /// - On success, responds with [`GetResourceLfTagsOutput`](crate::output::GetResourceLfTagsOutput) with field(s):
     ///   - [`lf_tag_on_database(Option<Vec<LfTagPair>>)`](crate::output::GetResourceLfTagsOutput::lf_tag_on_database): <p>A list of LF-tags applied to a database resource.</p>
     ///   - [`lf_tags_on_table(Option<Vec<LfTagPair>>)`](crate::output::GetResourceLfTagsOutput::lf_tags_on_table): <p>A list of LF-tags applied to a table resource.</p>
@@ -315,17 +315,17 @@ where
         fluent_builders::GetResourceLFTags::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetTableObjects`](crate::client::fluent_builders::GetTableObjects) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTableObjects::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTableObjects::into_paginator).
     ///
-    /// - Takes [`GetTableObjectsInput`](crate::input::GetTableObjectsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::GetTableObjectsInput::catalog_id): <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
-    ///   - [`database_name(Option<String>)`](crate::input::GetTableObjectsInput::database_name): <p>The database containing the governed table.</p>
-    ///   - [`table_name(Option<String>)`](crate::input::GetTableObjectsInput::table_name): <p>The governed table for which to retrieve objects.</p>
-    ///   - [`transaction_id(Option<String>)`](crate::input::GetTableObjectsInput::transaction_id): <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
-    ///   - [`query_as_of_time(Option<DateTime>)`](crate::input::GetTableObjectsInput::query_as_of_time): <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
-    ///   - [`partition_predicate(Option<String>)`](crate::input::GetTableObjectsInput::partition_predicate): <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>  <ul>   <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>   <li> <p>The logical operators supported are: AND</p> </li>   <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>  </ul>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetTableObjectsInput::max_results): <p>Specifies how many values to return in a page.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetTableObjectsInput::next_token): <p>A continuation token if this is not the first call to retrieve these objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetTableObjects::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetTableObjects::set_catalog_id): <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetTableObjects::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetTableObjects::set_database_name): <p>The database containing the governed table.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetTableObjects::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetTableObjects::set_table_name): <p>The governed table for which to retrieve objects.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::GetTableObjects::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::GetTableObjects::set_transaction_id): <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+    ///   - [`query_as_of_time(DateTime)`](crate::client::fluent_builders::GetTableObjects::query_as_of_time) / [`set_query_as_of_time(Option<DateTime>)`](crate::client::fluent_builders::GetTableObjects::set_query_as_of_time): <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
+    ///   - [`partition_predicate(impl Into<String>)`](crate::client::fluent_builders::GetTableObjects::partition_predicate) / [`set_partition_predicate(Option<String>)`](crate::client::fluent_builders::GetTableObjects::set_partition_predicate): <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>  <ul>   <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li>   <li> <p>The logical operators supported are: AND</p> </li>   <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>  </ul>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetTableObjects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetTableObjects::set_max_results): <p>Specifies how many values to return in a page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetTableObjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetTableObjects::set_next_token): <p>A continuation token if this is not the first call to retrieve these objects.</p>
     /// - On success, responds with [`GetTableObjectsOutput`](crate::output::GetTableObjectsOutput) with field(s):
     ///   - [`objects(Option<Vec<PartitionObjects>>)`](crate::output::GetTableObjectsOutput::objects): <p>A list of objects organized by partition keys.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetTableObjectsOutput::next_token): <p>A continuation token indicating whether additional data is available.</p>
@@ -335,13 +335,13 @@ where
     }
     /// Constructs a fluent builder for the [`GetTemporaryGluePartitionCredentials`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials) operation.
     ///
-    /// - Takes [`GetTemporaryGluePartitionCredentialsInput`](crate::input::GetTemporaryGluePartitionCredentialsInput) with field(s):
-    ///   - [`table_arn(Option<String>)`](crate::input::GetTemporaryGluePartitionCredentialsInput::table_arn): <p>The ARN of the partitions' table.</p>
-    ///   - [`partition(Option<PartitionValueList>)`](crate::input::GetTemporaryGluePartitionCredentialsInput::partition): <p>A list of partition values identifying a single partition.</p>
-    ///   - [`permissions(Option<Vec<Permission>>)`](crate::input::GetTemporaryGluePartitionCredentialsInput::permissions): <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    ///   - [`duration_seconds(Option<i32>)`](crate::input::GetTemporaryGluePartitionCredentialsInput::duration_seconds): <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
-    ///   - [`audit_context(Option<AuditContext>)`](crate::input::GetTemporaryGluePartitionCredentialsInput::audit_context): <p>A structure representing context to access a resource (column names, query ID, etc).</p>
-    ///   - [`supported_permission_types(Option<Vec<PermissionType>>)`](crate::input::GetTemporaryGluePartitionCredentialsInput::supported_permission_types): <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`table_arn(impl Into<String>)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::table_arn) / [`set_table_arn(Option<String>)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::set_table_arn): <p>The ARN of the partitions' table.</p>
+    ///   - [`partition(PartitionValueList)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::partition) / [`set_partition(Option<PartitionValueList>)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::set_partition): <p>A list of partition values identifying a single partition.</p>
+    ///   - [`permissions(Vec<Permission>)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::permissions) / [`set_permissions(Option<Vec<Permission>>)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::set_permissions): <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
+    ///   - [`duration_seconds(i32)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::set_duration_seconds): <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
+    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::set_audit_context): <p>A structure representing context to access a resource (column names, query ID, etc).</p>
+    ///   - [`supported_permission_types(Vec<PermissionType>)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::supported_permission_types) / [`set_supported_permission_types(Option<Vec<PermissionType>>)`](crate::client::fluent_builders::GetTemporaryGluePartitionCredentials::set_supported_permission_types): <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
     /// - On success, responds with [`GetTemporaryGluePartitionCredentialsOutput`](crate::output::GetTemporaryGluePartitionCredentialsOutput) with field(s):
     ///   - [`access_key_id(Option<String>)`](crate::output::GetTemporaryGluePartitionCredentialsOutput::access_key_id): <p>The access key ID for the temporary credentials.</p>
     ///   - [`secret_access_key(Option<String>)`](crate::output::GetTemporaryGluePartitionCredentialsOutput::secret_access_key): <p>The secret key for the temporary credentials.</p>
@@ -355,12 +355,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetTemporaryGlueTableCredentials`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials) operation.
     ///
-    /// - Takes [`GetTemporaryGlueTableCredentialsInput`](crate::input::GetTemporaryGlueTableCredentialsInput) with field(s):
-    ///   - [`table_arn(Option<String>)`](crate::input::GetTemporaryGlueTableCredentialsInput::table_arn): <p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>
-    ///   - [`permissions(Option<Vec<Permission>>)`](crate::input::GetTemporaryGlueTableCredentialsInput::permissions): <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    ///   - [`duration_seconds(Option<i32>)`](crate::input::GetTemporaryGlueTableCredentialsInput::duration_seconds): <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
-    ///   - [`audit_context(Option<AuditContext>)`](crate::input::GetTemporaryGlueTableCredentialsInput::audit_context): <p>A structure representing context to access a resource (column names, query ID, etc).</p>
-    ///   - [`supported_permission_types(Option<Vec<PermissionType>>)`](crate::input::GetTemporaryGlueTableCredentialsInput::supported_permission_types): <p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`table_arn(impl Into<String>)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::table_arn) / [`set_table_arn(Option<String>)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::set_table_arn): <p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>
+    ///   - [`permissions(Vec<Permission>)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::permissions) / [`set_permissions(Option<Vec<Permission>>)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::set_permissions): <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
+    ///   - [`duration_seconds(i32)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::set_duration_seconds): <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
+    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::set_audit_context): <p>A structure representing context to access a resource (column names, query ID, etc).</p>
+    ///   - [`supported_permission_types(Vec<PermissionType>)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::supported_permission_types) / [`set_supported_permission_types(Option<Vec<PermissionType>>)`](crate::client::fluent_builders::GetTemporaryGlueTableCredentials::set_supported_permission_types): <p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
     /// - On success, responds with [`GetTemporaryGlueTableCredentialsOutput`](crate::output::GetTemporaryGlueTableCredentialsOutput) with field(s):
     ///   - [`access_key_id(Option<String>)`](crate::output::GetTemporaryGlueTableCredentialsOutput::access_key_id): <p>The access key ID for the temporary credentials.</p>
     ///   - [`secret_access_key(Option<String>)`](crate::output::GetTemporaryGlueTableCredentialsOutput::secret_access_key): <p>The secret key for the temporary credentials.</p>
@@ -374,10 +374,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetWorkUnitResults`](crate::client::fluent_builders::GetWorkUnitResults) operation.
     ///
-    /// - Takes [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput) with field(s):
-    ///   - [`query_id(Option<String>)`](crate::input::GetWorkUnitResultsInput::query_id): <p>The ID of the plan query operation for which to get results.</p>
-    ///   - [`work_unit_id(i64)`](crate::input::GetWorkUnitResultsInput::work_unit_id): <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
-    ///   - [`work_unit_token(Option<String>)`](crate::input::GetWorkUnitResultsInput::work_unit_token): <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::GetWorkUnitResults::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::GetWorkUnitResults::set_query_id): <p>The ID of the plan query operation for which to get results.</p>
+    ///   - [`work_unit_id(i64)`](crate::client::fluent_builders::GetWorkUnitResults::work_unit_id) / [`set_work_unit_id(i64)`](crate::client::fluent_builders::GetWorkUnitResults::set_work_unit_id): <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
+    ///   - [`work_unit_token(impl Into<String>)`](crate::client::fluent_builders::GetWorkUnitResults::work_unit_token) / [`set_work_unit_token(Option<String>)`](crate::client::fluent_builders::GetWorkUnitResults::set_work_unit_token): <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
     /// - On success, responds with [`GetWorkUnitResultsOutput`](crate::output::GetWorkUnitResultsOutput) with field(s):
     ///   - [`result_stream(byte_stream::ByteStream)`](crate::output::GetWorkUnitResultsOutput::result_stream): <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
     /// - On failure, responds with [`SdkError<GetWorkUnitResultsError>`](crate::error::GetWorkUnitResultsError)
@@ -385,12 +385,12 @@ where
         fluent_builders::GetWorkUnitResults::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetWorkUnits`](crate::client::fluent_builders::GetWorkUnits) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetWorkUnits::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetWorkUnits::into_paginator).
     ///
-    /// - Takes [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::GetWorkUnitsInput::next_token): <p>A continuation token, if this is a continuation call.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::GetWorkUnitsInput::page_size): <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
-    ///   - [`query_id(Option<String>)`](crate::input::GetWorkUnitsInput::query_id): <p>The ID of the plan query operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetWorkUnits::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetWorkUnits::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::GetWorkUnits::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::GetWorkUnits::set_page_size): <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::GetWorkUnits::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::GetWorkUnits::set_query_id): <p>The ID of the plan query operation.</p>
     /// - On success, responds with [`GetWorkUnitsOutput`](crate::output::GetWorkUnitsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetWorkUnitsOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     ///   - [`query_id(Option<String>)`](crate::output::GetWorkUnitsOutput::query_id): <p>The ID of the plan query operation.</p>
@@ -401,12 +401,12 @@ where
     }
     /// Constructs a fluent builder for the [`GrantPermissions`](crate::client::fluent_builders::GrantPermissions) operation.
     ///
-    /// - Takes [`GrantPermissionsInput`](crate::input::GrantPermissionsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::GrantPermissionsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`principal(Option<DataLakePrincipal>)`](crate::input::GrantPermissionsInput::principal): <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>  <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>
-    ///   - [`resource(Option<Resource>)`](crate::input::GrantPermissionsInput::resource): <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
-    ///   - [`permissions(Option<Vec<Permission>>)`](crate::input::GrantPermissionsInput::permissions): <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
-    ///   - [`permissions_with_grant_option(Option<Vec<Permission>>)`](crate::input::GrantPermissionsInput::permissions_with_grant_option): <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GrantPermissions::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GrantPermissions::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`principal(DataLakePrincipal)`](crate::client::fluent_builders::GrantPermissions::principal) / [`set_principal(Option<DataLakePrincipal>)`](crate::client::fluent_builders::GrantPermissions::set_principal): <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>  <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>
+    ///   - [`resource(Resource)`](crate::client::fluent_builders::GrantPermissions::resource) / [`set_resource(Option<Resource>)`](crate::client::fluent_builders::GrantPermissions::set_resource): <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
+    ///   - [`permissions(Vec<Permission>)`](crate::client::fluent_builders::GrantPermissions::permissions) / [`set_permissions(Option<Vec<Permission>>)`](crate::client::fluent_builders::GrantPermissions::set_permissions): <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
+    ///   - [`permissions_with_grant_option(Vec<Permission>)`](crate::client::fluent_builders::GrantPermissions::permissions_with_grant_option) / [`set_permissions_with_grant_option(Option<Vec<Permission>>)`](crate::client::fluent_builders::GrantPermissions::set_permissions_with_grant_option): <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
     /// - On success, responds with [`GrantPermissionsOutput`](crate::output::GrantPermissionsOutput)
 
     /// - On failure, responds with [`SdkError<GrantPermissionsError>`](crate::error::GrantPermissionsError)
@@ -414,12 +414,12 @@ where
         fluent_builders::GrantPermissions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDataCellsFilter`](crate::client::fluent_builders::ListDataCellsFilter) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataCellsFilter::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataCellsFilter::into_paginator).
     ///
-    /// - Takes [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput) with field(s):
-    ///   - [`table(Option<TableResource>)`](crate::input::ListDataCellsFilterInput::table): <p>A table in the Glue Data Catalog.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDataCellsFilterInput::next_token): <p>A continuation token, if this is a continuation call.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDataCellsFilterInput::max_results): <p>The maximum size of the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`table(TableResource)`](crate::client::fluent_builders::ListDataCellsFilter::table) / [`set_table(Option<TableResource>)`](crate::client::fluent_builders::ListDataCellsFilter::set_table): <p>A table in the Glue Data Catalog.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataCellsFilter::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataCellsFilter::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataCellsFilter::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataCellsFilter::set_max_results): <p>The maximum size of the response.</p>
     /// - On success, responds with [`ListDataCellsFilterOutput`](crate::output::ListDataCellsFilterOutput) with field(s):
     ///   - [`data_cells_filters(Option<Vec<DataCellsFilter>>)`](crate::output::ListDataCellsFilterOutput::data_cells_filters): <p>A list of <code>DataCellFilter</code> structures.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDataCellsFilterOutput::next_token): <p>A continuation token, if not all requested data cell filters have been returned.</p>
@@ -428,13 +428,13 @@ where
         fluent_builders::ListDataCellsFilter::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListLFTags`](crate::client::fluent_builders::ListLFTags) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLFTags::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLFTags::into_paginator).
     ///
-    /// - Takes [`ListLfTagsInput`](crate::input::ListLfTagsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::ListLfTagsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`resource_share_type(Option<ResourceShareType>)`](crate::input::ListLfTagsInput::resource_share_type): <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListLfTagsInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListLfTagsInput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::ListLFTags::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::ListLFTags::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`resource_share_type(ResourceShareType)`](crate::client::fluent_builders::ListLFTags::resource_share_type) / [`set_resource_share_type(Option<ResourceShareType>)`](crate::client::fluent_builders::ListLFTags::set_resource_share_type): <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLFTags::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLFTags::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLFTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLFTags::set_next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
     /// - On success, responds with [`ListLfTagsOutput`](crate::output::ListLfTagsOutput) with field(s):
     ///   - [`lf_tags(Option<Vec<LfTagPair>>)`](crate::output::ListLfTagsOutput::lf_tags): <p>A list of LF-tags that the requested has permission to view.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLfTagsOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
@@ -443,16 +443,16 @@ where
         fluent_builders::ListLFTags::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPermissions`](crate::client::fluent_builders::ListPermissions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissions::into_paginator).
     ///
-    /// - Takes [`ListPermissionsInput`](crate::input::ListPermissionsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::ListPermissionsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`principal(Option<DataLakePrincipal>)`](crate::input::ListPermissionsInput::principal): <p>Specifies a principal to filter the permissions returned.</p>
-    ///   - [`resource_type(Option<DataLakeResourceType>)`](crate::input::ListPermissionsInput::resource_type): <p>Specifies a resource type to filter the permissions returned.</p>
-    ///   - [`resource(Option<Resource>)`](crate::input::ListPermissionsInput::resource): <p>A resource where you will get a list of the principal permissions.</p>  <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPermissionsInput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPermissionsInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`include_related(Option<String>)`](crate::input::ListPermissionsInput::include_related): <p>Indicates that related permissions should be included in the results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`principal(DataLakePrincipal)`](crate::client::fluent_builders::ListPermissions::principal) / [`set_principal(Option<DataLakePrincipal>)`](crate::client::fluent_builders::ListPermissions::set_principal): <p>Specifies a principal to filter the permissions returned.</p>
+    ///   - [`resource_type(DataLakeResourceType)`](crate::client::fluent_builders::ListPermissions::resource_type) / [`set_resource_type(Option<DataLakeResourceType>)`](crate::client::fluent_builders::ListPermissions::set_resource_type): <p>Specifies a resource type to filter the permissions returned.</p>
+    ///   - [`resource(Resource)`](crate::client::fluent_builders::ListPermissions::resource) / [`set_resource(Option<Resource>)`](crate::client::fluent_builders::ListPermissions::set_resource): <p>A resource where you will get a list of the principal permissions.</p>  <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissions::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`include_related(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::include_related) / [`set_include_related(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_include_related): <p>Indicates that related permissions should be included in the results.</p>
     /// - On success, responds with [`ListPermissionsOutput`](crate::output::ListPermissionsOutput) with field(s):
     ///   - [`principal_resource_permissions(Option<Vec<PrincipalResourcePermissions>>)`](crate::output::ListPermissionsOutput::principal_resource_permissions): <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPermissionsOutput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -461,12 +461,12 @@ where
         fluent_builders::ListPermissions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListResources`](crate::client::fluent_builders::ListResources) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResources::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResources::into_paginator).
     ///
-    /// - Takes [`ListResourcesInput`](crate::input::ListResourcesInput) with field(s):
-    ///   - [`filter_condition_list(Option<Vec<FilterCondition>>)`](crate::input::ListResourcesInput::filter_condition_list): <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListResourcesInput::max_results): <p>The maximum number of resource results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListResourcesInput::next_token): <p>A continuation token, if this is not the first call to retrieve these resources.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter_condition_list(Vec<FilterCondition>)`](crate::client::fluent_builders::ListResources::filter_condition_list) / [`set_filter_condition_list(Option<Vec<FilterCondition>>)`](crate::client::fluent_builders::ListResources::set_filter_condition_list): <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListResources::set_max_results): <p>The maximum number of resource results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResources::set_next_token): <p>A continuation token, if this is not the first call to retrieve these resources.</p>
     /// - On success, responds with [`ListResourcesOutput`](crate::output::ListResourcesOutput) with field(s):
     ///   - [`resource_info_list(Option<Vec<ResourceInfo>>)`](crate::output::ListResourcesOutput::resource_info_list): <p>A summary of the data lake resources.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListResourcesOutput::next_token): <p>A continuation token, if this is not the first call to retrieve these resources.</p>
@@ -475,15 +475,15 @@ where
         fluent_builders::ListResources::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTableStorageOptimizers`](crate::client::fluent_builders::ListTableStorageOptimizers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTableStorageOptimizers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTableStorageOptimizers::into_paginator).
     ///
-    /// - Takes [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::ListTableStorageOptimizersInput::catalog_id): <p>The Catalog ID of the table.</p>
-    ///   - [`database_name(Option<String>)`](crate::input::ListTableStorageOptimizersInput::database_name): <p>Name of the database where the table is present.</p>
-    ///   - [`table_name(Option<String>)`](crate::input::ListTableStorageOptimizersInput::table_name): <p>Name of the table.</p>
-    ///   - [`storage_optimizer_type(Option<OptimizerType>)`](crate::input::ListTableStorageOptimizersInput::storage_optimizer_type): <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTableStorageOptimizersInput::max_results): <p>The number of storage optimizers to return on each call.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTableStorageOptimizersInput::next_token): <p>A continuation token, if this is a continuation call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::ListTableStorageOptimizers::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::ListTableStorageOptimizers::set_catalog_id): <p>The Catalog ID of the table.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::ListTableStorageOptimizers::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::ListTableStorageOptimizers::set_database_name): <p>Name of the database where the table is present.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::ListTableStorageOptimizers::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::ListTableStorageOptimizers::set_table_name): <p>Name of the table.</p>
+    ///   - [`storage_optimizer_type(OptimizerType)`](crate::client::fluent_builders::ListTableStorageOptimizers::storage_optimizer_type) / [`set_storage_optimizer_type(Option<OptimizerType>)`](crate::client::fluent_builders::ListTableStorageOptimizers::set_storage_optimizer_type): <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTableStorageOptimizers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTableStorageOptimizers::set_max_results): <p>The number of storage optimizers to return on each call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTableStorageOptimizers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTableStorageOptimizers::set_next_token): <p>A continuation token, if this is a continuation call.</p>
     /// - On success, responds with [`ListTableStorageOptimizersOutput`](crate::output::ListTableStorageOptimizersOutput) with field(s):
     ///   - [`storage_optimizer_list(Option<Vec<StorageOptimizer>>)`](crate::output::ListTableStorageOptimizersOutput::storage_optimizer_list): <p>A list of the storage optimizers associated with a table.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTableStorageOptimizersOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
@@ -494,13 +494,13 @@ where
         fluent_builders::ListTableStorageOptimizers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTransactions`](crate::client::fluent_builders::ListTransactions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTransactions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTransactions::into_paginator).
     ///
-    /// - Takes [`ListTransactionsInput`](crate::input::ListTransactionsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::ListTransactionsInput::catalog_id): <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
-    ///   - [`status_filter(Option<TransactionStatusFilter>)`](crate::input::ListTransactionsInput::status_filter): <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTransactionsInput::max_results): <p>The maximum number of transactions to return in a single call.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTransactionsInput::next_token): <p>A continuation token if this is not the first call to retrieve transactions.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::ListTransactions::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::ListTransactions::set_catalog_id): <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
+    ///   - [`status_filter(TransactionStatusFilter)`](crate::client::fluent_builders::ListTransactions::status_filter) / [`set_status_filter(Option<TransactionStatusFilter>)`](crate::client::fluent_builders::ListTransactions::set_status_filter): <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTransactions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTransactions::set_max_results): <p>The maximum number of transactions to return in a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTransactions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTransactions::set_next_token): <p>A continuation token if this is not the first call to retrieve transactions.</p>
     /// - On success, responds with [`ListTransactionsOutput`](crate::output::ListTransactionsOutput) with field(s):
     ///   - [`transactions(Option<Vec<TransactionDescription>>)`](crate::output::ListTransactionsOutput::transactions): <p>A list of transactions. The record for each transaction is a <code>TransactionDescription</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTransactionsOutput::next_token): <p>A continuation token indicating whether additional data is available.</p>
@@ -510,9 +510,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutDataLakeSettings`](crate::client::fluent_builders::PutDataLakeSettings) operation.
     ///
-    /// - Takes [`PutDataLakeSettingsInput`](crate::input::PutDataLakeSettingsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::PutDataLakeSettingsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`data_lake_settings(Option<DataLakeSettings>)`](crate::input::PutDataLakeSettingsInput::data_lake_settings): <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::PutDataLakeSettings::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::PutDataLakeSettings::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`data_lake_settings(DataLakeSettings)`](crate::client::fluent_builders::PutDataLakeSettings::data_lake_settings) / [`set_data_lake_settings(Option<DataLakeSettings>)`](crate::client::fluent_builders::PutDataLakeSettings::set_data_lake_settings): <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
     /// - On success, responds with [`PutDataLakeSettingsOutput`](crate::output::PutDataLakeSettingsOutput)
 
     /// - On failure, responds with [`SdkError<PutDataLakeSettingsError>`](crate::error::PutDataLakeSettingsError)
@@ -521,10 +521,10 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterResource`](crate::client::fluent_builders::RegisterResource) operation.
     ///
-    /// - Takes [`RegisterResourceInput`](crate::input::RegisterResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::RegisterResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
-    ///   - [`use_service_linked_role(Option<bool>)`](crate::input::RegisterResourceInput::use_service_linked_role): <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>  <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::RegisterResourceInput::role_arn): <p>The identifier for the role that registers the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::RegisterResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
+    ///   - [`use_service_linked_role(bool)`](crate::client::fluent_builders::RegisterResource::use_service_linked_role) / [`set_use_service_linked_role(Option<bool>)`](crate::client::fluent_builders::RegisterResource::set_use_service_linked_role): <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>  <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterResource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::RegisterResource::set_role_arn): <p>The identifier for the role that registers the resource.</p>
     /// - On success, responds with [`RegisterResourceOutput`](crate::output::RegisterResourceOutput)
 
     /// - On failure, responds with [`SdkError<RegisterResourceError>`](crate::error::RegisterResourceError)
@@ -533,10 +533,10 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveLFTagsFromResource`](crate::client::fluent_builders::RemoveLFTagsFromResource) operation.
     ///
-    /// - Takes [`RemoveLfTagsFromResourceInput`](crate::input::RemoveLfTagsFromResourceInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::RemoveLfTagsFromResourceInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`resource(Option<Resource>)`](crate::input::RemoveLfTagsFromResourceInput::resource): <p>The database, table, or column resource where you want to remove an LF-tag.</p>
-    ///   - [`lf_tags(Option<Vec<LfTagPair>>)`](crate::input::RemoveLfTagsFromResourceInput::lf_tags): <p>The LF-tags to be removed from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::RemoveLFTagsFromResource::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::RemoveLFTagsFromResource::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`resource(Resource)`](crate::client::fluent_builders::RemoveLFTagsFromResource::resource) / [`set_resource(Option<Resource>)`](crate::client::fluent_builders::RemoveLFTagsFromResource::set_resource): <p>The database, table, or column resource where you want to remove an LF-tag.</p>
+    ///   - [`lf_tags(Vec<LfTagPair>)`](crate::client::fluent_builders::RemoveLFTagsFromResource::lf_tags) / [`set_lf_tags(Option<Vec<LfTagPair>>)`](crate::client::fluent_builders::RemoveLFTagsFromResource::set_lf_tags): <p>The LF-tags to be removed from the resource.</p>
     /// - On success, responds with [`RemoveLfTagsFromResourceOutput`](crate::output::RemoveLfTagsFromResourceOutput) with field(s):
     ///   - [`failures(Option<Vec<LfTagError>>)`](crate::output::RemoveLfTagsFromResourceOutput::failures): <p>A list of failures to untag a resource.</p>
     /// - On failure, responds with [`SdkError<RemoveLFTagsFromResourceError>`](crate::error::RemoveLFTagsFromResourceError)
@@ -547,12 +547,12 @@ where
     }
     /// Constructs a fluent builder for the [`RevokePermissions`](crate::client::fluent_builders::RevokePermissions) operation.
     ///
-    /// - Takes [`RevokePermissionsInput`](crate::input::RevokePermissionsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::RevokePermissionsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`principal(Option<DataLakePrincipal>)`](crate::input::RevokePermissionsInput::principal): <p>The principal to be revoked permissions on the resource.</p>
-    ///   - [`resource(Option<Resource>)`](crate::input::RevokePermissionsInput::resource): <p>The resource to which permissions are to be revoked.</p>
-    ///   - [`permissions(Option<Vec<Permission>>)`](crate::input::RevokePermissionsInput::permissions): <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    ///   - [`permissions_with_grant_option(Option<Vec<Permission>>)`](crate::input::RevokePermissionsInput::permissions_with_grant_option): <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::RevokePermissions::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::RevokePermissions::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`principal(DataLakePrincipal)`](crate::client::fluent_builders::RevokePermissions::principal) / [`set_principal(Option<DataLakePrincipal>)`](crate::client::fluent_builders::RevokePermissions::set_principal): <p>The principal to be revoked permissions on the resource.</p>
+    ///   - [`resource(Resource)`](crate::client::fluent_builders::RevokePermissions::resource) / [`set_resource(Option<Resource>)`](crate::client::fluent_builders::RevokePermissions::set_resource): <p>The resource to which permissions are to be revoked.</p>
+    ///   - [`permissions(Vec<Permission>)`](crate::client::fluent_builders::RevokePermissions::permissions) / [`set_permissions(Option<Vec<Permission>>)`](crate::client::fluent_builders::RevokePermissions::set_permissions): <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+    ///   - [`permissions_with_grant_option(Vec<Permission>)`](crate::client::fluent_builders::RevokePermissions::permissions_with_grant_option) / [`set_permissions_with_grant_option(Option<Vec<Permission>>)`](crate::client::fluent_builders::RevokePermissions::set_permissions_with_grant_option): <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
     /// - On success, responds with [`RevokePermissionsOutput`](crate::output::RevokePermissionsOutput)
 
     /// - On failure, responds with [`SdkError<RevokePermissionsError>`](crate::error::RevokePermissionsError)
@@ -560,13 +560,13 @@ where
         fluent_builders::RevokePermissions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SearchDatabasesByLFTags`](crate::client::fluent_builders::SearchDatabasesByLFTags) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchDatabasesByLFTags::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchDatabasesByLFTags::into_paginator).
     ///
-    /// - Takes [`SearchDatabasesByLfTagsInput`](crate::input::SearchDatabasesByLfTagsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::SearchDatabasesByLfTagsInput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchDatabasesByLfTagsInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`catalog_id(Option<String>)`](crate::input::SearchDatabasesByLfTagsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`expression(Option<Vec<LfTag>>)`](crate::input::SearchDatabasesByLfTagsInput::expression): <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchDatabasesByLFTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchDatabasesByLFTags::set_next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchDatabasesByLFTags::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchDatabasesByLFTags::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::SearchDatabasesByLFTags::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::SearchDatabasesByLFTags::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`expression(Vec<LfTag>)`](crate::client::fluent_builders::SearchDatabasesByLFTags::expression) / [`set_expression(Option<Vec<LfTag>>)`](crate::client::fluent_builders::SearchDatabasesByLFTags::set_expression): <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
     /// - On success, responds with [`SearchDatabasesByLfTagsOutput`](crate::output::SearchDatabasesByLfTagsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::SearchDatabasesByLfTagsOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
     ///   - [`database_list(Option<Vec<TaggedDatabase>>)`](crate::output::SearchDatabasesByLfTagsOutput::database_list): <p>A list of databases that meet the LF-tag conditions.</p>
@@ -575,13 +575,13 @@ where
         fluent_builders::SearchDatabasesByLFTags::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SearchTablesByLFTags`](crate::client::fluent_builders::SearchTablesByLFTags) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchTablesByLFTags::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchTablesByLFTags::into_paginator).
     ///
-    /// - Takes [`SearchTablesByLfTagsInput`](crate::input::SearchTablesByLfTagsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::SearchTablesByLfTagsInput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchTablesByLfTagsInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`catalog_id(Option<String>)`](crate::input::SearchTablesByLfTagsInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`expression(Option<Vec<LfTag>>)`](crate::input::SearchTablesByLfTagsInput::expression): <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchTablesByLFTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchTablesByLFTags::set_next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchTablesByLFTags::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchTablesByLFTags::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::SearchTablesByLFTags::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::SearchTablesByLFTags::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`expression(Vec<LfTag>)`](crate::client::fluent_builders::SearchTablesByLFTags::expression) / [`set_expression(Option<Vec<LfTag>>)`](crate::client::fluent_builders::SearchTablesByLFTags::set_expression): <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
     /// - On success, responds with [`SearchTablesByLfTagsOutput`](crate::output::SearchTablesByLfTagsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::SearchTablesByLfTagsOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
     ///   - [`table_list(Option<Vec<TaggedTable>>)`](crate::output::SearchTablesByLfTagsOutput::table_list): <p>A list of tables that meet the LF-tag conditions.</p>
@@ -591,9 +591,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartQueryPlanning`](crate::client::fluent_builders::StartQueryPlanning) operation.
     ///
-    /// - Takes [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput) with field(s):
-    ///   - [`query_planning_context(Option<QueryPlanningContext>)`](crate::input::StartQueryPlanningInput::query_planning_context): <p>A structure containing information about the query plan.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::StartQueryPlanningInput::query_string): <p>A PartiQL query statement used as an input to the planner service.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`query_planning_context(QueryPlanningContext)`](crate::client::fluent_builders::StartQueryPlanning::query_planning_context) / [`set_query_planning_context(Option<QueryPlanningContext>)`](crate::client::fluent_builders::StartQueryPlanning::set_query_planning_context): <p>A structure containing information about the query plan.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::StartQueryPlanning::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::StartQueryPlanning::set_query_string): <p>A PartiQL query statement used as an input to the planner service.</p>
     /// - On success, responds with [`StartQueryPlanningOutput`](crate::output::StartQueryPlanningOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::output::StartQueryPlanningOutput::query_id): <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
     /// - On failure, responds with [`SdkError<StartQueryPlanningError>`](crate::error::StartQueryPlanningError)
@@ -602,8 +602,8 @@ where
     }
     /// Constructs a fluent builder for the [`StartTransaction`](crate::client::fluent_builders::StartTransaction) operation.
     ///
-    /// - Takes [`StartTransactionInput`](crate::input::StartTransactionInput) with field(s):
-    ///   - [`transaction_type(Option<TransactionType>)`](crate::input::StartTransactionInput::transaction_type): <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`transaction_type(TransactionType)`](crate::client::fluent_builders::StartTransaction::transaction_type) / [`set_transaction_type(Option<TransactionType>)`](crate::client::fluent_builders::StartTransaction::set_transaction_type): <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
     /// - On success, responds with [`StartTransactionOutput`](crate::output::StartTransactionOutput) with field(s):
     ///   - [`transaction_id(Option<String>)`](crate::output::StartTransactionOutput::transaction_id): <p>An opaque identifier for the transaction.</p>
     /// - On failure, responds with [`SdkError<StartTransactionError>`](crate::error::StartTransactionError)
@@ -612,11 +612,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateLFTag`](crate::client::fluent_builders::UpdateLFTag) operation.
     ///
-    /// - Takes [`UpdateLfTagInput`](crate::input::UpdateLfTagInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::UpdateLfTagInput::catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`tag_key(Option<String>)`](crate::input::UpdateLfTagInput::tag_key): <p>The key-name for the LF-tag for which to add or delete values.</p>
-    ///   - [`tag_values_to_delete(Option<Vec<String>>)`](crate::input::UpdateLfTagInput::tag_values_to_delete): <p>A list of LF-tag values to delete from the LF-tag.</p>
-    ///   - [`tag_values_to_add(Option<Vec<String>>)`](crate::input::UpdateLfTagInput::tag_values_to_add): <p>A list of LF-tag values to add from the LF-tag.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLFTag::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdateLFTag::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`tag_key(impl Into<String>)`](crate::client::fluent_builders::UpdateLFTag::tag_key) / [`set_tag_key(Option<String>)`](crate::client::fluent_builders::UpdateLFTag::set_tag_key): <p>The key-name for the LF-tag for which to add or delete values.</p>
+    ///   - [`tag_values_to_delete(Vec<String>)`](crate::client::fluent_builders::UpdateLFTag::tag_values_to_delete) / [`set_tag_values_to_delete(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLFTag::set_tag_values_to_delete): <p>A list of LF-tag values to delete from the LF-tag.</p>
+    ///   - [`tag_values_to_add(Vec<String>)`](crate::client::fluent_builders::UpdateLFTag::tag_values_to_add) / [`set_tag_values_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLFTag::set_tag_values_to_add): <p>A list of LF-tag values to add from the LF-tag.</p>
     /// - On success, responds with [`UpdateLfTagOutput`](crate::output::UpdateLfTagOutput)
 
     /// - On failure, responds with [`SdkError<UpdateLFTagError>`](crate::error::UpdateLFTagError)
@@ -625,9 +625,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateResource`](crate::client::fluent_builders::UpdateResource) operation.
     ///
-    /// - Takes [`UpdateResourceInput`](crate::input::UpdateResourceInput) with field(s):
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateResourceInput::role_arn): <p>The new role to use for the given resource registered in Lake Formation.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::UpdateResourceInput::resource_arn): <p>The resource ARN.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateResource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateResource::set_role_arn): <p>The new role to use for the given resource registered in Lake Formation.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UpdateResource::set_resource_arn): <p>The resource ARN.</p>
     /// - On success, responds with [`UpdateResourceOutput`](crate::output::UpdateResourceOutput)
 
     /// - On failure, responds with [`SdkError<UpdateResourceError>`](crate::error::UpdateResourceError)
@@ -636,12 +636,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTableObjects`](crate::client::fluent_builders::UpdateTableObjects) operation.
     ///
-    /// - Takes [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::UpdateTableObjectsInput::catalog_id): <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
-    ///   - [`database_name(Option<String>)`](crate::input::UpdateTableObjectsInput::database_name): <p>The database containing the governed table to update.</p>
-    ///   - [`table_name(Option<String>)`](crate::input::UpdateTableObjectsInput::table_name): <p>The governed table to update.</p>
-    ///   - [`transaction_id(Option<String>)`](crate::input::UpdateTableObjectsInput::transaction_id): <p>The transaction at which to do the write.</p>
-    ///   - [`write_operations(Option<Vec<WriteOperation>>)`](crate::input::UpdateTableObjectsInput::write_operations): <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTableObjects::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdateTableObjects::set_catalog_id): <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTableObjects::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::UpdateTableObjects::set_database_name): <p>The database containing the governed table to update.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTableObjects::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::UpdateTableObjects::set_table_name): <p>The governed table to update.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTableObjects::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::UpdateTableObjects::set_transaction_id): <p>The transaction at which to do the write.</p>
+    ///   - [`write_operations(Vec<WriteOperation>)`](crate::client::fluent_builders::UpdateTableObjects::write_operations) / [`set_write_operations(Option<Vec<WriteOperation>>)`](crate::client::fluent_builders::UpdateTableObjects::set_write_operations): <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
     /// - On success, responds with [`UpdateTableObjectsOutput`](crate::output::UpdateTableObjectsOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTableObjectsError>`](crate::error::UpdateTableObjectsError)
@@ -650,11 +650,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTableStorageOptimizer`](crate::client::fluent_builders::UpdateTableStorageOptimizer) operation.
     ///
-    /// - Takes [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput) with field(s):
-    ///   - [`catalog_id(Option<String>)`](crate::input::UpdateTableStorageOptimizerInput::catalog_id): <p>The Catalog ID of the table.</p>
-    ///   - [`database_name(Option<String>)`](crate::input::UpdateTableStorageOptimizerInput::database_name): <p>Name of the database where the table is present.</p>
-    ///   - [`table_name(Option<String>)`](crate::input::UpdateTableStorageOptimizerInput::table_name): <p>Name of the table for which to enable the storage optimizer.</p>
-    ///   - [`storage_optimizer_config(Option<HashMap<OptimizerType, HashMap<String, String>>>)`](crate::input::UpdateTableStorageOptimizerInput::storage_optimizer_config): <p>Name of the table for which to enable the storage optimizer.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTableStorageOptimizer::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdateTableStorageOptimizer::set_catalog_id): <p>The Catalog ID of the table.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTableStorageOptimizer::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::UpdateTableStorageOptimizer::set_database_name): <p>Name of the database where the table is present.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTableStorageOptimizer::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::UpdateTableStorageOptimizer::set_table_name): <p>Name of the table for which to enable the storage optimizer.</p>
+    ///   - [`storage_optimizer_config(HashMap<OptimizerType, HashMap<String, String>>)`](crate::client::fluent_builders::UpdateTableStorageOptimizer::storage_optimizer_config) / [`set_storage_optimizer_config(Option<HashMap<OptimizerType, HashMap<String, String>>>)`](crate::client::fluent_builders::UpdateTableStorageOptimizer::set_storage_optimizer_config): <p>Name of the table for which to enable the storage optimizer.</p>
     /// - On success, responds with [`UpdateTableStorageOptimizerOutput`](crate::output::UpdateTableStorageOptimizerOutput) with field(s):
     ///   - [`result(Option<String>)`](crate::output::UpdateTableStorageOptimizerOutput::result): <p>A response indicating the success of failure of the operation.</p>
     /// - On failure, responds with [`SdkError<UpdateTableStorageOptimizerError>`](crate::error::UpdateTableStorageOptimizerError)

@@ -85,21 +85,21 @@ where
 {
     /// Constructs a fluent builder for the [`CreateCluster`](crate::client::fluent_builders::CreateCluster) operation.
     ///
-    /// - Takes [`CreateClusterInput`](crate::input::CreateClusterInput) with field(s):
-    ///   - [`cluster_name(Option<String>)`](crate::input::CreateClusterInput::cluster_name): <p>The cluster identifier. This parameter is stored as a lowercase string.</p>  <p> <b>Constraints:</b> </p>  <ul>   <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
-    ///   - [`node_type(Option<String>)`](crate::input::CreateClusterInput::node_type): <p>The compute and memory capacity of the nodes in the cluster.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateClusterInput::description): <p>A description of the cluster.</p>
-    ///   - [`replication_factor(i32)`](crate::input::CreateClusterInput::replication_factor): <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>   <p>AWS recommends that you have at least two read replicas per cluster.</p>  </note>
-    ///   - [`availability_zones(Option<Vec<String>>)`](crate::input::CreateClusterInput::availability_zones): <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    ///   - [`subnet_group_name(Option<String>)`](crate::input::CreateClusterInput::subnet_group_name): <p>The name of the subnet group to be used for the replication group.</p> <important>   <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>  </important>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::CreateClusterInput::security_group_ids): <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>  <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::CreateClusterInput::preferred_maintenance_window): <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>  <ul>   <li> <p> <code>sun</code> </p> </li>   <li> <p> <code>mon</code> </p> </li>   <li> <p> <code>tue</code> </p> </li>   <li> <p> <code>wed</code> </p> </li>   <li> <p> <code>thu</code> </p> </li>   <li> <p> <code>fri</code> </p> </li>   <li> <p> <code>sat</code> </p> </li>  </ul>  <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>   <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>  </note>
-    ///   - [`notification_topic_arn(Option<String>)`](crate::input::CreateClusterInput::notification_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>   <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>  </note>
-    ///   - [`iam_role_arn(Option<String>)`](crate::input::CreateClusterInput::iam_role_arn): <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
-    ///   - [`parameter_group_name(Option<String>)`](crate::input::CreateClusterInput::parameter_group_name): <p>The parameter group to be associated with the DAX cluster.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateClusterInput::tags): <p>A set of tags to associate with the DAX cluster. </p>
-    ///   - [`sse_specification(Option<SseSpecification>)`](crate::input::CreateClusterInput::sse_specification): <p>Represents the settings used to enable server-side encryption on the cluster.</p>
-    ///   - [`cluster_endpoint_encryption_type(Option<ClusterEndpointEncryptionType>)`](crate::input::CreateClusterInput::cluster_endpoint_encryption_type): <p>The type of encryption the cluster's endpoint should support. Values are:</p>  <ul>   <li> <p> <code>NONE</code> for no encryption</p> </li>   <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_cluster_name): <p>The cluster identifier. This parameter is stored as a lowercase string.</p>  <p> <b>Constraints:</b> </p>  <ul>   <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`node_type(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::node_type) / [`set_node_type(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_node_type): <p>The compute and memory capacity of the nodes in the cluster.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_description): <p>A description of the cluster.</p>
+    ///   - [`replication_factor(i32)`](crate::client::fluent_builders::CreateCluster::replication_factor) / [`set_replication_factor(i32)`](crate::client::fluent_builders::CreateCluster::set_replication_factor): <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>   <p>AWS recommends that you have at least two read replicas per cluster.</p>  </note>
+    ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::CreateCluster::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_availability_zones): <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
+    ///   - [`subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::subnet_group_name) / [`set_subnet_group_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_subnet_group_name): <p>The name of the subnet group to be used for the replication group.</p> <important>   <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>  </important>
+    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateCluster::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_security_group_ids): <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>  <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_preferred_maintenance_window): <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>  <ul>   <li> <p> <code>sun</code> </p> </li>   <li> <p> <code>mon</code> </p> </li>   <li> <p> <code>tue</code> </p> </li>   <li> <p> <code>wed</code> </p> </li>   <li> <p> <code>thu</code> </p> </li>   <li> <p> <code>fri</code> </p> </li>   <li> <p> <code>sat</code> </p> </li>  </ul>  <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>   <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>  </note>
+    ///   - [`notification_topic_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::notification_topic_arn) / [`set_notification_topic_arn(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_notification_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>   <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>  </note>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_iam_role_arn): <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
+    ///   - [`parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_parameter_group_name): <p>The parameter group to be associated with the DAX cluster.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCluster::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCluster::set_tags): <p>A set of tags to associate with the DAX cluster. </p>
+    ///   - [`sse_specification(SseSpecification)`](crate::client::fluent_builders::CreateCluster::sse_specification) / [`set_sse_specification(Option<SseSpecification>)`](crate::client::fluent_builders::CreateCluster::set_sse_specification): <p>Represents the settings used to enable server-side encryption on the cluster.</p>
+    ///   - [`cluster_endpoint_encryption_type(ClusterEndpointEncryptionType)`](crate::client::fluent_builders::CreateCluster::cluster_endpoint_encryption_type) / [`set_cluster_endpoint_encryption_type(Option<ClusterEndpointEncryptionType>)`](crate::client::fluent_builders::CreateCluster::set_cluster_endpoint_encryption_type): <p>The type of encryption the cluster's endpoint should support. Values are:</p>  <ul>   <li> <p> <code>NONE</code> for no encryption</p> </li>   <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>  </ul>
     /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>A description of the DAX cluster that you have created.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
@@ -108,9 +108,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateParameterGroup`](crate::client::fluent_builders::CreateParameterGroup) operation.
     ///
-    /// - Takes [`CreateParameterGroupInput`](crate::input::CreateParameterGroupInput) with field(s):
-    ///   - [`parameter_group_name(Option<String>)`](crate::input::CreateParameterGroupInput::parameter_group_name): <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateParameterGroupInput::description): <p>A description of the parameter group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateParameterGroup::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::client::fluent_builders::CreateParameterGroup::set_parameter_group_name): <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateParameterGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateParameterGroup::set_description): <p>A description of the parameter group.</p>
     /// - On success, responds with [`CreateParameterGroupOutput`](crate::output::CreateParameterGroupOutput) with field(s):
     ///   - [`parameter_group(Option<ParameterGroup>)`](crate::output::CreateParameterGroupOutput::parameter_group): <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
     /// - On failure, responds with [`SdkError<CreateParameterGroupError>`](crate::error::CreateParameterGroupError)
@@ -119,10 +119,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSubnetGroup`](crate::client::fluent_builders::CreateSubnetGroup) operation.
     ///
-    /// - Takes [`CreateSubnetGroupInput`](crate::input::CreateSubnetGroupInput) with field(s):
-    ///   - [`subnet_group_name(Option<String>)`](crate::input::CreateSubnetGroupInput::subnet_group_name): <p>A name for the subnet group. This value is stored as a lowercase string. </p>
-    ///   - [`description(Option<String>)`](crate::input::CreateSubnetGroupInput::description): <p>A description for the subnet group</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateSubnetGroupInput::subnet_ids): <p>A list of VPC subnet IDs for the subnet group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateSubnetGroup::subnet_group_name) / [`set_subnet_group_name(Option<String>)`](crate::client::fluent_builders::CreateSubnetGroup::set_subnet_group_name): <p>A name for the subnet group. This value is stored as a lowercase string. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSubnetGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSubnetGroup::set_description): <p>A description for the subnet group</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateSubnetGroup::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSubnetGroup::set_subnet_ids): <p>A list of VPC subnet IDs for the subnet group.</p>
     /// - On success, responds with [`CreateSubnetGroupOutput`](crate::output::CreateSubnetGroupOutput) with field(s):
     ///   - [`subnet_group(Option<SubnetGroup>)`](crate::output::CreateSubnetGroupOutput::subnet_group): <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
     /// - On failure, responds with [`SdkError<CreateSubnetGroupError>`](crate::error::CreateSubnetGroupError)
@@ -131,11 +131,11 @@ where
     }
     /// Constructs a fluent builder for the [`DecreaseReplicationFactor`](crate::client::fluent_builders::DecreaseReplicationFactor) operation.
     ///
-    /// - Takes [`DecreaseReplicationFactorInput`](crate::input::DecreaseReplicationFactorInput) with field(s):
-    ///   - [`cluster_name(Option<String>)`](crate::input::DecreaseReplicationFactorInput::cluster_name): <p>The name of the DAX cluster from which you want to remove nodes.</p>
-    ///   - [`new_replication_factor(i32)`](crate::input::DecreaseReplicationFactorInput::new_replication_factor): <p>The new number of nodes for the DAX cluster.</p>
-    ///   - [`availability_zones(Option<Vec<String>>)`](crate::input::DecreaseReplicationFactorInput::availability_zones): <p>The Availability Zone(s) from which to remove nodes.</p>
-    ///   - [`node_ids_to_remove(Option<Vec<String>>)`](crate::input::DecreaseReplicationFactorInput::node_ids_to_remove): <p>The unique identifiers of the nodes to be removed from the cluster.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::DecreaseReplicationFactor::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::DecreaseReplicationFactor::set_cluster_name): <p>The name of the DAX cluster from which you want to remove nodes.</p>
+    ///   - [`new_replication_factor(i32)`](crate::client::fluent_builders::DecreaseReplicationFactor::new_replication_factor) / [`set_new_replication_factor(i32)`](crate::client::fluent_builders::DecreaseReplicationFactor::set_new_replication_factor): <p>The new number of nodes for the DAX cluster.</p>
+    ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::DecreaseReplicationFactor::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::DecreaseReplicationFactor::set_availability_zones): <p>The Availability Zone(s) from which to remove nodes.</p>
+    ///   - [`node_ids_to_remove(Vec<String>)`](crate::client::fluent_builders::DecreaseReplicationFactor::node_ids_to_remove) / [`set_node_ids_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::DecreaseReplicationFactor::set_node_ids_to_remove): <p>The unique identifiers of the nodes to be removed from the cluster.</p>
     /// - On success, responds with [`DecreaseReplicationFactorOutput`](crate::output::DecreaseReplicationFactorOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::DecreaseReplicationFactorOutput::cluster): <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
     /// - On failure, responds with [`SdkError<DecreaseReplicationFactorError>`](crate::error::DecreaseReplicationFactorError)
@@ -146,8 +146,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) operation.
     ///
-    /// - Takes [`DeleteClusterInput`](crate::input::DeleteClusterInput) with field(s):
-    ///   - [`cluster_name(Option<String>)`](crate::input::DeleteClusterInput::cluster_name): <p>The name of the cluster to be deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCluster::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::DeleteCluster::set_cluster_name): <p>The name of the cluster to be deleted.</p>
     /// - On success, responds with [`DeleteClusterOutput`](crate::output::DeleteClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::DeleteClusterOutput::cluster): <p>A description of the DAX cluster that is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::error::DeleteClusterError)
@@ -156,8 +156,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteParameterGroup`](crate::client::fluent_builders::DeleteParameterGroup) operation.
     ///
-    /// - Takes [`DeleteParameterGroupInput`](crate::input::DeleteParameterGroupInput) with field(s):
-    ///   - [`parameter_group_name(Option<String>)`](crate::input::DeleteParameterGroupInput::parameter_group_name): <p>The name of the parameter group to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteParameterGroup::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::client::fluent_builders::DeleteParameterGroup::set_parameter_group_name): <p>The name of the parameter group to delete.</p>
     /// - On success, responds with [`DeleteParameterGroupOutput`](crate::output::DeleteParameterGroupOutput) with field(s):
     ///   - [`deletion_message(Option<String>)`](crate::output::DeleteParameterGroupOutput::deletion_message): <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
     /// - On failure, responds with [`SdkError<DeleteParameterGroupError>`](crate::error::DeleteParameterGroupError)
@@ -166,8 +166,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSubnetGroup`](crate::client::fluent_builders::DeleteSubnetGroup) operation.
     ///
-    /// - Takes [`DeleteSubnetGroupInput`](crate::input::DeleteSubnetGroupInput) with field(s):
-    ///   - [`subnet_group_name(Option<String>)`](crate::input::DeleteSubnetGroupInput::subnet_group_name): <p>The name of the subnet group to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSubnetGroup::subnet_group_name) / [`set_subnet_group_name(Option<String>)`](crate::client::fluent_builders::DeleteSubnetGroup::set_subnet_group_name): <p>The name of the subnet group to delete.</p>
     /// - On success, responds with [`DeleteSubnetGroupOutput`](crate::output::DeleteSubnetGroupOutput) with field(s):
     ///   - [`deletion_message(Option<String>)`](crate::output::DeleteSubnetGroupOutput::deletion_message): <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
     /// - On failure, responds with [`SdkError<DeleteSubnetGroupError>`](crate::error::DeleteSubnetGroupError)
@@ -176,10 +176,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeClusters`](crate::client::fluent_builders::DescribeClusters) operation.
     ///
-    /// - Takes [`DescribeClustersInput`](crate::input::DescribeClustersInput) with field(s):
-    ///   - [`cluster_names(Option<Vec<String>>)`](crate::input::DescribeClustersInput::cluster_names): <p>The names of the DAX clusters being described.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeClustersInput::max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeClustersInput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_names(Vec<String>)`](crate::client::fluent_builders::DescribeClusters::cluster_names) / [`set_cluster_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeClusters::set_cluster_names): <p>The names of the DAX clusters being described.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeClusters::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeClusters::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeClusters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeClusters::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     /// - On success, responds with [`DescribeClustersOutput`](crate::output::DescribeClustersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::DescribeClustersOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`clusters(Option<Vec<Cluster>>)`](crate::output::DescribeClustersOutput::clusters): <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
@@ -189,9 +189,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDefaultParameters`](crate::client::fluent_builders::DescribeDefaultParameters) operation.
     ///
-    /// - Takes [`DescribeDefaultParametersInput`](crate::input::DescribeDefaultParametersInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeDefaultParametersInput::max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeDefaultParametersInput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeDefaultParameters::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeDefaultParameters::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDefaultParameters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDefaultParameters::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     /// - On success, responds with [`DescribeDefaultParametersOutput`](crate::output::DescribeDefaultParametersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::DescribeDefaultParametersOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::DescribeDefaultParametersOutput::parameters): <p>A list of parameters. Each element in the list represents one parameter.</p>
@@ -203,14 +203,14 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
     ///
-    /// - Takes [`DescribeEventsInput`](crate::input::DescribeEventsInput) with field(s):
-    ///   - [`source_name(Option<String>)`](crate::input::DescribeEventsInput::source_name): <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
-    ///   - [`source_type(Option<SourceType>)`](crate::input::DescribeEventsInput::source_type): <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeEventsInput::start_time): <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeEventsInput::end_time): <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    ///   - [`duration(Option<i32>)`](crate::input::DescribeEventsInput::duration): <p>The number of minutes' worth of events to retrieve.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEventsInput::max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeEventsInput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEvents::source_name) / [`set_source_name(Option<String>)`](crate::client::fluent_builders::DescribeEvents::set_source_name): <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
+    ///   - [`source_type(SourceType)`](crate::client::fluent_builders::DescribeEvents::source_type) / [`set_source_type(Option<SourceType>)`](crate::client::fluent_builders::DescribeEvents::set_source_type): <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::DescribeEvents::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeEvents::set_start_time): <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::DescribeEvents::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeEvents::set_end_time): <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    ///   - [`duration(i32)`](crate::client::fluent_builders::DescribeEvents::duration) / [`set_duration(Option<i32>)`](crate::client::fluent_builders::DescribeEvents::set_duration): <p>The number of minutes' worth of events to retrieve.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeEvents::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeEvents::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     /// - On success, responds with [`DescribeEventsOutput`](crate::output::DescribeEventsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::DescribeEventsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`events(Option<Vec<Event>>)`](crate::output::DescribeEventsOutput::events): <p>An array of events. Each element in the array represents one event.</p>
@@ -220,10 +220,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeParameterGroups`](crate::client::fluent_builders::DescribeParameterGroups) operation.
     ///
-    /// - Takes [`DescribeParameterGroupsInput`](crate::input::DescribeParameterGroupsInput) with field(s):
-    ///   - [`parameter_group_names(Option<Vec<String>>)`](crate::input::DescribeParameterGroupsInput::parameter_group_names): <p>The names of the parameter groups.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeParameterGroupsInput::max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeParameterGroupsInput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`parameter_group_names(Vec<String>)`](crate::client::fluent_builders::DescribeParameterGroups::parameter_group_names) / [`set_parameter_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeParameterGroups::set_parameter_group_names): <p>The names of the parameter groups.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeParameterGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeParameterGroups::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeParameterGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeParameterGroups::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     /// - On success, responds with [`DescribeParameterGroupsOutput`](crate::output::DescribeParameterGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::DescribeParameterGroupsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`parameter_groups(Option<Vec<ParameterGroup>>)`](crate::output::DescribeParameterGroupsOutput::parameter_groups): <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
@@ -233,11 +233,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeParameters`](crate::client::fluent_builders::DescribeParameters) operation.
     ///
-    /// - Takes [`DescribeParametersInput`](crate::input::DescribeParametersInput) with field(s):
-    ///   - [`parameter_group_name(Option<String>)`](crate::input::DescribeParametersInput::parameter_group_name): <p>The name of the parameter group.</p>
-    ///   - [`source(Option<String>)`](crate::input::DescribeParametersInput::source): <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeParametersInput::max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeParametersInput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeParameters::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::client::fluent_builders::DescribeParameters::set_parameter_group_name): <p>The name of the parameter group.</p>
+    ///   - [`source(impl Into<String>)`](crate::client::fluent_builders::DescribeParameters::source) / [`set_source(Option<String>)`](crate::client::fluent_builders::DescribeParameters::set_source): <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeParameters::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeParameters::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeParameters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeParameters::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     /// - On success, responds with [`DescribeParametersOutput`](crate::output::DescribeParametersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::DescribeParametersOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::DescribeParametersOutput::parameters): <p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>
@@ -247,10 +247,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSubnetGroups`](crate::client::fluent_builders::DescribeSubnetGroups) operation.
     ///
-    /// - Takes [`DescribeSubnetGroupsInput`](crate::input::DescribeSubnetGroupsInput) with field(s):
-    ///   - [`subnet_group_names(Option<Vec<String>>)`](crate::input::DescribeSubnetGroupsInput::subnet_group_names): <p>The name of the subnet group.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeSubnetGroupsInput::max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSubnetGroupsInput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`subnet_group_names(Vec<String>)`](crate::client::fluent_builders::DescribeSubnetGroups::subnet_group_names) / [`set_subnet_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSubnetGroups::set_subnet_group_names): <p>The name of the subnet group.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSubnetGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeSubnetGroups::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>  <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSubnetGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSubnetGroups::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     /// - On success, responds with [`DescribeSubnetGroupsOutput`](crate::output::DescribeSubnetGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSubnetGroupsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`subnet_groups(Option<Vec<SubnetGroup>>)`](crate::output::DescribeSubnetGroupsOutput::subnet_groups): <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
@@ -260,10 +260,10 @@ where
     }
     /// Constructs a fluent builder for the [`IncreaseReplicationFactor`](crate::client::fluent_builders::IncreaseReplicationFactor) operation.
     ///
-    /// - Takes [`IncreaseReplicationFactorInput`](crate::input::IncreaseReplicationFactorInput) with field(s):
-    ///   - [`cluster_name(Option<String>)`](crate::input::IncreaseReplicationFactorInput::cluster_name): <p>The name of the DAX cluster that will receive additional nodes.</p>
-    ///   - [`new_replication_factor(i32)`](crate::input::IncreaseReplicationFactorInput::new_replication_factor): <p>The new number of nodes for the DAX cluster.</p>
-    ///   - [`availability_zones(Option<Vec<String>>)`](crate::input::IncreaseReplicationFactorInput::availability_zones): <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::IncreaseReplicationFactor::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::IncreaseReplicationFactor::set_cluster_name): <p>The name of the DAX cluster that will receive additional nodes.</p>
+    ///   - [`new_replication_factor(i32)`](crate::client::fluent_builders::IncreaseReplicationFactor::new_replication_factor) / [`set_new_replication_factor(i32)`](crate::client::fluent_builders::IncreaseReplicationFactor::set_new_replication_factor): <p>The new number of nodes for the DAX cluster.</p>
+    ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::IncreaseReplicationFactor::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::IncreaseReplicationFactor::set_availability_zones): <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
     /// - On success, responds with [`IncreaseReplicationFactorOutput`](crate::output::IncreaseReplicationFactorOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::IncreaseReplicationFactorOutput::cluster): <p>A description of the DAX cluster. with its new replication factor.</p>
     /// - On failure, responds with [`SdkError<IncreaseReplicationFactorError>`](crate::error::IncreaseReplicationFactorError)
@@ -274,9 +274,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     ///
-    /// - Takes [`ListTagsInput`](crate::input::ListTagsInput) with field(s):
-    ///   - [`resource_name(Option<String>)`](crate::input::ListTagsInput::resource_name): <p>The name of the DAX resource to which the tags belong.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTagsInput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::ListTags::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::ListTags::set_resource_name): <p>The name of the DAX resource to which the tags belong.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTags::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
     /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tags): <p>A list of tags currently associated with the DAX cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
@@ -286,9 +286,9 @@ where
     }
     /// Constructs a fluent builder for the [`RebootNode`](crate::client::fluent_builders::RebootNode) operation.
     ///
-    /// - Takes [`RebootNodeInput`](crate::input::RebootNodeInput) with field(s):
-    ///   - [`cluster_name(Option<String>)`](crate::input::RebootNodeInput::cluster_name): <p>The name of the DAX cluster containing the node to be rebooted.</p>
-    ///   - [`node_id(Option<String>)`](crate::input::RebootNodeInput::node_id): <p>The system-assigned ID of the node to be rebooted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::RebootNode::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::RebootNode::set_cluster_name): <p>The name of the DAX cluster containing the node to be rebooted.</p>
+    ///   - [`node_id(impl Into<String>)`](crate::client::fluent_builders::RebootNode::node_id) / [`set_node_id(Option<String>)`](crate::client::fluent_builders::RebootNode::set_node_id): <p>The system-assigned ID of the node to be rebooted.</p>
     /// - On success, responds with [`RebootNodeOutput`](crate::output::RebootNodeOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::RebootNodeOutput::cluster): <p>A description of the DAX cluster after a node has been rebooted.</p>
     /// - On failure, responds with [`SdkError<RebootNodeError>`](crate::error::RebootNodeError)
@@ -297,9 +297,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_name(Option<String>)`](crate::input::TagResourceInput::resource_name): <p>The name of the DAX resource to which tags should be added.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags to be assigned to the DAX resource. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_name): <p>The name of the DAX resource to which tags should be added.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to be assigned to the DAX resource. </p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::TagResourceOutput::tags): <p>The list of tags that are associated with the DAX resource.</p>
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -308,9 +308,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_name(Option<String>)`](crate::input::UntagResourceInput::resource_name): <p>The name of the DAX resource from which the tags should be removed.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_name): <p>The name of the DAX resource from which the tags should be removed.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UntagResourceOutput::tags): <p>The tag keys that have been removed from the cluster.</p>
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -319,14 +319,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateCluster`](crate::client::fluent_builders::UpdateCluster) operation.
     ///
-    /// - Takes [`UpdateClusterInput`](crate::input::UpdateClusterInput) with field(s):
-    ///   - [`cluster_name(Option<String>)`](crate::input::UpdateClusterInput::cluster_name): <p>The name of the DAX cluster to be modified.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateClusterInput::description): <p>A description of the changes being made to the cluster.</p>
-    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::UpdateClusterInput::preferred_maintenance_window): <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
-    ///   - [`notification_topic_arn(Option<String>)`](crate::input::UpdateClusterInput::notification_topic_arn): <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-    ///   - [`notification_topic_status(Option<String>)`](crate::input::UpdateClusterInput::notification_topic_status): <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
-    ///   - [`parameter_group_name(Option<String>)`](crate::input::UpdateClusterInput::parameter_group_name): <p>The name of a parameter group for this cluster.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::UpdateClusterInput::security_group_ids): <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_cluster_name): <p>The name of the DAX cluster to be modified.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_description): <p>A description of the changes being made to the cluster.</p>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_preferred_maintenance_window): <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
+    ///   - [`notification_topic_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::notification_topic_arn) / [`set_notification_topic_arn(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_notification_topic_arn): <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+    ///   - [`notification_topic_status(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::notification_topic_status) / [`set_notification_topic_status(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_notification_topic_status): <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
+    ///   - [`parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_parameter_group_name): <p>The name of a parameter group for this cluster.</p>
+    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateCluster::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCluster::set_security_group_ids): <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
     /// - On success, responds with [`UpdateClusterOutput`](crate::output::UpdateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::output::UpdateClusterOutput::cluster): <p>A description of the DAX cluster, after it has been modified.</p>
     /// - On failure, responds with [`SdkError<UpdateClusterError>`](crate::error::UpdateClusterError)
@@ -335,9 +335,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateParameterGroup`](crate::client::fluent_builders::UpdateParameterGroup) operation.
     ///
-    /// - Takes [`UpdateParameterGroupInput`](crate::input::UpdateParameterGroupInput) with field(s):
-    ///   - [`parameter_group_name(Option<String>)`](crate::input::UpdateParameterGroupInput::parameter_group_name): <p>The name of the parameter group.</p>
-    ///   - [`parameter_name_values(Option<Vec<ParameterNameValue>>)`](crate::input::UpdateParameterGroupInput::parameter_name_values): <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>   <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateParameterGroup::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::client::fluent_builders::UpdateParameterGroup::set_parameter_group_name): <p>The name of the parameter group.</p>
+    ///   - [`parameter_name_values(Vec<ParameterNameValue>)`](crate::client::fluent_builders::UpdateParameterGroup::parameter_name_values) / [`set_parameter_name_values(Option<Vec<ParameterNameValue>>)`](crate::client::fluent_builders::UpdateParameterGroup::set_parameter_name_values): <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>   <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>  </note>
     /// - On success, responds with [`UpdateParameterGroupOutput`](crate::output::UpdateParameterGroupOutput) with field(s):
     ///   - [`parameter_group(Option<ParameterGroup>)`](crate::output::UpdateParameterGroupOutput::parameter_group): <p>The parameter group that has been modified.</p>
     /// - On failure, responds with [`SdkError<UpdateParameterGroupError>`](crate::error::UpdateParameterGroupError)
@@ -346,10 +346,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSubnetGroup`](crate::client::fluent_builders::UpdateSubnetGroup) operation.
     ///
-    /// - Takes [`UpdateSubnetGroupInput`](crate::input::UpdateSubnetGroupInput) with field(s):
-    ///   - [`subnet_group_name(Option<String>)`](crate::input::UpdateSubnetGroupInput::subnet_group_name): <p>The name of the subnet group.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateSubnetGroupInput::description): <p>A description of the subnet group.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::UpdateSubnetGroupInput::subnet_ids): <p>A list of subnet IDs in the subnet group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSubnetGroup::subnet_group_name) / [`set_subnet_group_name(Option<String>)`](crate::client::fluent_builders::UpdateSubnetGroup::set_subnet_group_name): <p>The name of the subnet group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSubnetGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSubnetGroup::set_description): <p>A description of the subnet group.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::UpdateSubnetGroup::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateSubnetGroup::set_subnet_ids): <p>A list of subnet IDs in the subnet group.</p>
     /// - On success, responds with [`UpdateSubnetGroupOutput`](crate::output::UpdateSubnetGroupOutput) with field(s):
     ///   - [`subnet_group(Option<SubnetGroup>)`](crate::output::UpdateSubnetGroupOutput::subnet_group): <p>The subnet group that has been modified.</p>
     /// - On failure, responds with [`SdkError<UpdateSubnetGroupError>`](crate::error::UpdateSubnetGroupError)

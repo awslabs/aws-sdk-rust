@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`BatchGetRecord`](crate::client::fluent_builders::BatchGetRecord) operation.
     ///
-    /// - Takes [`BatchGetRecordInput`](crate::input::BatchGetRecordInput) with field(s):
-    ///   - [`identifiers(Option<Vec<BatchGetRecordIdentifier>>)`](crate::input::BatchGetRecordInput::identifiers): <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`identifiers(Vec<BatchGetRecordIdentifier>)`](crate::client::fluent_builders::BatchGetRecord::identifiers) / [`set_identifiers(Option<Vec<BatchGetRecordIdentifier>>)`](crate::client::fluent_builders::BatchGetRecord::set_identifiers): <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
     /// - On success, responds with [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput) with field(s):
     ///   - [`records(Option<Vec<BatchGetRecordResultDetail>>)`](crate::output::BatchGetRecordOutput::records): <p>A list of Records you requested to be retrieved in batch.</p>
     ///   - [`errors(Option<Vec<BatchGetRecordError>>)`](crate::output::BatchGetRecordOutput::errors): <p>A list of errors that have occured when retrieving a batch of Records.</p>
@@ -97,10 +97,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRecord`](crate::client::fluent_builders::DeleteRecord) operation.
     ///
-    /// - Takes [`DeleteRecordInput`](crate::input::DeleteRecordInput) with field(s):
-    ///   - [`feature_group_name(Option<String>)`](crate::input::DeleteRecordInput::feature_group_name): <p>The name of the feature group to delete the record from. </p>
-    ///   - [`record_identifier_value_as_string(Option<String>)`](crate::input::DeleteRecordInput::record_identifier_value_as_string): <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    ///   - [`event_time(Option<String>)`](crate::input::DeleteRecordInput::event_time): <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`feature_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRecord::feature_group_name) / [`set_feature_group_name(Option<String>)`](crate::client::fluent_builders::DeleteRecord::set_feature_group_name): <p>The name of the feature group to delete the record from. </p>
+    ///   - [`record_identifier_value_as_string(impl Into<String>)`](crate::client::fluent_builders::DeleteRecord::record_identifier_value_as_string) / [`set_record_identifier_value_as_string(Option<String>)`](crate::client::fluent_builders::DeleteRecord::set_record_identifier_value_as_string): <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
+    ///   - [`event_time(impl Into<String>)`](crate::client::fluent_builders::DeleteRecord::event_time) / [`set_event_time(Option<String>)`](crate::client::fluent_builders::DeleteRecord::set_event_time): <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     /// - On success, responds with [`DeleteRecordOutput`](crate::output::DeleteRecordOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRecordError>`](crate::error::DeleteRecordError)
@@ -109,10 +109,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetRecord`](crate::client::fluent_builders::GetRecord) operation.
     ///
-    /// - Takes [`GetRecordInput`](crate::input::GetRecordInput) with field(s):
-    ///   - [`feature_group_name(Option<String>)`](crate::input::GetRecordInput::feature_group_name): <p>The name of the feature group in which you want to put the records.</p>
-    ///   - [`record_identifier_value_as_string(Option<String>)`](crate::input::GetRecordInput::record_identifier_value_as_string): <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    ///   - [`feature_names(Option<Vec<String>>)`](crate::input::GetRecordInput::feature_names): <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`feature_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecord::feature_group_name) / [`set_feature_group_name(Option<String>)`](crate::client::fluent_builders::GetRecord::set_feature_group_name): <p>The name of the feature group in which you want to put the records.</p>
+    ///   - [`record_identifier_value_as_string(impl Into<String>)`](crate::client::fluent_builders::GetRecord::record_identifier_value_as_string) / [`set_record_identifier_value_as_string(Option<String>)`](crate::client::fluent_builders::GetRecord::set_record_identifier_value_as_string): <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
+    ///   - [`feature_names(Vec<String>)`](crate::client::fluent_builders::GetRecord::feature_names) / [`set_feature_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetRecord::set_feature_names): <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
     /// - On success, responds with [`GetRecordOutput`](crate::output::GetRecordOutput) with field(s):
     ///   - [`record(Option<Vec<FeatureValue>>)`](crate::output::GetRecordOutput::record): <p>The record you requested. A list of <code>FeatureValues</code>.</p>
     /// - On failure, responds with [`SdkError<GetRecordError>`](crate::error::GetRecordError)
@@ -121,9 +121,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutRecord`](crate::client::fluent_builders::PutRecord) operation.
     ///
-    /// - Takes [`PutRecordInput`](crate::input::PutRecordInput) with field(s):
-    ///   - [`feature_group_name(Option<String>)`](crate::input::PutRecordInput::feature_group_name): <p>The name of the feature group that you want to insert the record into.</p>
-    ///   - [`record(Option<Vec<FeatureValue>>)`](crate::input::PutRecordInput::record): <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>  <ul>   <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>   <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>   <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`feature_group_name(impl Into<String>)`](crate::client::fluent_builders::PutRecord::feature_group_name) / [`set_feature_group_name(Option<String>)`](crate::client::fluent_builders::PutRecord::set_feature_group_name): <p>The name of the feature group that you want to insert the record into.</p>
+    ///   - [`record(Vec<FeatureValue>)`](crate::client::fluent_builders::PutRecord::record) / [`set_record(Option<Vec<FeatureValue>>)`](crate::client::fluent_builders::PutRecord::set_record): <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>  <ul>   <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>   <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>   <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>  </ul>
     /// - On success, responds with [`PutRecordOutput`](crate::output::PutRecordOutput)
 
     /// - On failure, responds with [`SdkError<PutRecordError>`](crate::error::PutRecordError)

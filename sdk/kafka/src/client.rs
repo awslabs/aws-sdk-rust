@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`BatchAssociateScramSecret`](crate::client::fluent_builders::BatchAssociateScramSecret) operation.
     ///
-    /// - Takes [`BatchAssociateScramSecretInput`](crate::input::BatchAssociateScramSecretInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::BatchAssociateScramSecretInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    ///   - [`secret_arn_list(Option<Vec<String>>)`](crate::input::BatchAssociateScramSecretInput::secret_arn_list): <p>List of AWS Secrets Manager secret ARNs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::BatchAssociateScramSecret::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::BatchAssociateScramSecret::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    ///   - [`secret_arn_list(Vec<String>)`](crate::client::fluent_builders::BatchAssociateScramSecret::secret_arn_list) / [`set_secret_arn_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchAssociateScramSecret::set_secret_arn_list): <p>List of AWS Secrets Manager secret ARNs.</p>
     /// - On success, responds with [`BatchAssociateScramSecretOutput`](crate::output::BatchAssociateScramSecretOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::BatchAssociateScramSecretOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`unprocessed_scram_secrets(Option<Vec<UnprocessedScramSecret>>)`](crate::output::BatchAssociateScramSecretOutput::unprocessed_scram_secrets): <p>List of errors when associating secrets to cluster.</p>
@@ -99,9 +99,9 @@ where
     }
     /// Constructs a fluent builder for the [`BatchDisassociateScramSecret`](crate::client::fluent_builders::BatchDisassociateScramSecret) operation.
     ///
-    /// - Takes [`BatchDisassociateScramSecretInput`](crate::input::BatchDisassociateScramSecretInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::BatchDisassociateScramSecretInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    ///   - [`secret_arn_list(Option<Vec<String>>)`](crate::input::BatchDisassociateScramSecretInput::secret_arn_list): <p>List of AWS Secrets Manager secret ARNs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::BatchDisassociateScramSecret::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::BatchDisassociateScramSecret::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    ///   - [`secret_arn_list(Vec<String>)`](crate::client::fluent_builders::BatchDisassociateScramSecret::secret_arn_list) / [`set_secret_arn_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDisassociateScramSecret::set_secret_arn_list): <p>List of AWS Secrets Manager secret ARNs.</p>
     /// - On success, responds with [`BatchDisassociateScramSecretOutput`](crate::output::BatchDisassociateScramSecretOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::BatchDisassociateScramSecretOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`unprocessed_scram_secrets(Option<Vec<UnprocessedScramSecret>>)`](crate::output::BatchDisassociateScramSecretOutput::unprocessed_scram_secrets): <p>List of errors when disassociating secrets to cluster.</p>
@@ -113,18 +113,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCluster`](crate::client::fluent_builders::CreateCluster) operation.
     ///
-    /// - Takes [`CreateClusterInput`](crate::input::CreateClusterInput) with field(s):
-    ///   - [`broker_node_group_info(Option<BrokerNodeGroupInfo>)`](crate::input::CreateClusterInput::broker_node_group_info): <p>Information about the broker nodes in the cluster.</p>
-    ///   - [`client_authentication(Option<ClientAuthentication>)`](crate::input::CreateClusterInput::client_authentication): <p>Includes all client authentication related information.</p>
-    ///   - [`cluster_name(Option<String>)`](crate::input::CreateClusterInput::cluster_name): <p>The name of the cluster.</p>
-    ///   - [`configuration_info(Option<ConfigurationInfo>)`](crate::input::CreateClusterInput::configuration_info): <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    ///   - [`encryption_info(Option<EncryptionInfo>)`](crate::input::CreateClusterInput::encryption_info): <p>Includes all encryption-related information.</p>
-    ///   - [`enhanced_monitoring(Option<EnhancedMonitoring>)`](crate::input::CreateClusterInput::enhanced_monitoring): <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    ///   - [`open_monitoring(Option<OpenMonitoringInfo>)`](crate::input::CreateClusterInput::open_monitoring): <p>The settings for open monitoring.</p>
-    ///   - [`kafka_version(Option<String>)`](crate::input::CreateClusterInput::kafka_version): <p>The version of Apache Kafka.</p>
-    ///   - [`logging_info(Option<LoggingInfo>)`](crate::input::CreateClusterInput::logging_info): (undocumented)
-    ///   - [`number_of_broker_nodes(i32)`](crate::input::CreateClusterInput::number_of_broker_nodes): <p>The number of broker nodes in the cluster.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateClusterInput::tags): <p>Create tags when creating the cluster.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_node_group_info(BrokerNodeGroupInfo)`](crate::client::fluent_builders::CreateCluster::broker_node_group_info) / [`set_broker_node_group_info(Option<BrokerNodeGroupInfo>)`](crate::client::fluent_builders::CreateCluster::set_broker_node_group_info): <p>Information about the broker nodes in the cluster.</p>
+    ///   - [`client_authentication(ClientAuthentication)`](crate::client::fluent_builders::CreateCluster::client_authentication) / [`set_client_authentication(Option<ClientAuthentication>)`](crate::client::fluent_builders::CreateCluster::set_client_authentication): <p>Includes all client authentication related information.</p>
+    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_cluster_name): <p>The name of the cluster.</p>
+    ///   - [`configuration_info(ConfigurationInfo)`](crate::client::fluent_builders::CreateCluster::configuration_info) / [`set_configuration_info(Option<ConfigurationInfo>)`](crate::client::fluent_builders::CreateCluster::set_configuration_info): <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    ///   - [`encryption_info(EncryptionInfo)`](crate::client::fluent_builders::CreateCluster::encryption_info) / [`set_encryption_info(Option<EncryptionInfo>)`](crate::client::fluent_builders::CreateCluster::set_encryption_info): <p>Includes all encryption-related information.</p>
+    ///   - [`enhanced_monitoring(EnhancedMonitoring)`](crate::client::fluent_builders::CreateCluster::enhanced_monitoring) / [`set_enhanced_monitoring(Option<EnhancedMonitoring>)`](crate::client::fluent_builders::CreateCluster::set_enhanced_monitoring): <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    ///   - [`open_monitoring(OpenMonitoringInfo)`](crate::client::fluent_builders::CreateCluster::open_monitoring) / [`set_open_monitoring(Option<OpenMonitoringInfo>)`](crate::client::fluent_builders::CreateCluster::set_open_monitoring): <p>The settings for open monitoring.</p>
+    ///   - [`kafka_version(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::kafka_version) / [`set_kafka_version(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_kafka_version): <p>The version of Apache Kafka.</p>
+    ///   - [`logging_info(LoggingInfo)`](crate::client::fluent_builders::CreateCluster::logging_info) / [`set_logging_info(Option<LoggingInfo>)`](crate::client::fluent_builders::CreateCluster::set_logging_info): (undocumented)
+    ///   - [`number_of_broker_nodes(i32)`](crate::client::fluent_builders::CreateCluster::number_of_broker_nodes) / [`set_number_of_broker_nodes(i32)`](crate::client::fluent_builders::CreateCluster::set_number_of_broker_nodes): <p>The number of broker nodes in the cluster.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCluster::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCluster::set_tags): <p>Create tags when creating the cluster.</p>
     /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::CreateClusterOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_name(Option<String>)`](crate::output::CreateClusterOutput::cluster_name): <p>The name of the MSK cluster.</p>
@@ -135,11 +135,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateClusterV2`](crate::client::fluent_builders::CreateClusterV2) operation.
     ///
-    /// - Takes [`CreateClusterV2Input`](crate::input::CreateClusterV2Input) with field(s):
-    ///   - [`cluster_name(Option<String>)`](crate::input::CreateClusterV2Input::cluster_name): <p>The name of the cluster.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateClusterV2Input::tags): <p>A map of tags that you want the cluster to have.</p>
-    ///   - [`provisioned(Option<ProvisionedRequest>)`](crate::input::CreateClusterV2Input::provisioned): <p>Information about the provisioned cluster.</p>
-    ///   - [`serverless(Option<ServerlessRequest>)`](crate::input::CreateClusterV2Input::serverless): <p>Information about the serverless cluster.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::CreateClusterV2::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::CreateClusterV2::set_cluster_name): <p>The name of the cluster.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateClusterV2::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateClusterV2::set_tags): <p>A map of tags that you want the cluster to have.</p>
+    ///   - [`provisioned(ProvisionedRequest)`](crate::client::fluent_builders::CreateClusterV2::provisioned) / [`set_provisioned(Option<ProvisionedRequest>)`](crate::client::fluent_builders::CreateClusterV2::set_provisioned): <p>Information about the provisioned cluster.</p>
+    ///   - [`serverless(ServerlessRequest)`](crate::client::fluent_builders::CreateClusterV2::serverless) / [`set_serverless(Option<ServerlessRequest>)`](crate::client::fluent_builders::CreateClusterV2::set_serverless): <p>Information about the serverless cluster.</p>
     /// - On success, responds with [`CreateClusterV2Output`](crate::output::CreateClusterV2Output) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::CreateClusterV2Output::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_name(Option<String>)`](crate::output::CreateClusterV2Output::cluster_name): <p>The name of the MSK cluster.</p>
@@ -151,11 +151,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateConfiguration`](crate::client::fluent_builders::CreateConfiguration) operation.
     ///
-    /// - Takes [`CreateConfigurationInput`](crate::input::CreateConfigurationInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::CreateConfigurationInput::description): <p>The description of the configuration.</p>
-    ///   - [`kafka_versions(Option<Vec<String>>)`](crate::input::CreateConfigurationInput::kafka_versions): <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateConfigurationInput::name): <p>The name of the configuration.</p>
-    ///   - [`server_properties(Option<Blob>)`](crate::input::CreateConfigurationInput::server_properties): <p>Contents of the <filename>   server.properties  </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>   server.properties  </filename> can be in plaintext.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateConfiguration::set_description): <p>The description of the configuration.</p>
+    ///   - [`kafka_versions(Vec<String>)`](crate::client::fluent_builders::CreateConfiguration::kafka_versions) / [`set_kafka_versions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateConfiguration::set_kafka_versions): <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateConfiguration::set_name): <p>The name of the configuration.</p>
+    ///   - [`server_properties(Blob)`](crate::client::fluent_builders::CreateConfiguration::server_properties) / [`set_server_properties(Option<Blob>)`](crate::client::fluent_builders::CreateConfiguration::set_server_properties): <p>Contents of the <filename>   server.properties  </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>   server.properties  </filename> can be in plaintext.</p>
     /// - On success, responds with [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateConfigurationOutput::creation_time): <p>The time when the configuration was created.</p>
@@ -168,9 +168,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) operation.
     ///
-    /// - Takes [`DeleteClusterInput`](crate::input::DeleteClusterInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::DeleteClusterInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::DeleteClusterInput::current_version): <p>The current version of the MSK cluster.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteCluster::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::DeleteCluster::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::DeleteCluster::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::DeleteCluster::set_current_version): <p>The current version of the MSK cluster.</p>
     /// - On success, responds with [`DeleteClusterOutput`](crate::output::DeleteClusterOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::DeleteClusterOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`state(Option<ClusterState>)`](crate::output::DeleteClusterOutput::state): <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
@@ -180,8 +180,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteConfiguration`](crate::client::fluent_builders::DeleteConfiguration) operation.
     ///
-    /// - Takes [`DeleteConfigurationInput`](crate::input::DeleteConfigurationInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::DeleteConfigurationInput::arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteConfiguration::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteConfiguration::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     /// - On success, responds with [`DeleteConfigurationOutput`](crate::output::DeleteConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DeleteConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     ///   - [`state(Option<ConfigurationState>)`](crate::output::DeleteConfigurationOutput::state): <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
@@ -191,8 +191,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCluster`](crate::client::fluent_builders::DescribeCluster) operation.
     ///
-    /// - Takes [`DescribeClusterInput`](crate::input::DescribeClusterInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::DescribeClusterInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeCluster::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::DescribeCluster::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     /// - On success, responds with [`DescribeClusterOutput`](crate::output::DescribeClusterOutput) with field(s):
     ///   - [`cluster_info(Option<ClusterInfo>)`](crate::output::DescribeClusterOutput::cluster_info): <p>The cluster information.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::error::DescribeClusterError)
@@ -201,8 +201,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeClusterOperation`](crate::client::fluent_builders::DescribeClusterOperation) operation.
     ///
-    /// - Takes [`DescribeClusterOperationInput`](crate::input::DescribeClusterOperationInput) with field(s):
-    ///   - [`cluster_operation_arn(Option<String>)`](crate::input::DescribeClusterOperationInput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_operation_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeClusterOperation::cluster_operation_arn) / [`set_cluster_operation_arn(Option<String>)`](crate::client::fluent_builders::DescribeClusterOperation::set_cluster_operation_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
     /// - On success, responds with [`DescribeClusterOperationOutput`](crate::output::DescribeClusterOperationOutput) with field(s):
     ///   - [`cluster_operation_info(Option<ClusterOperationInfo>)`](crate::output::DescribeClusterOperationOutput::cluster_operation_info): <p>Cluster operation information</p>
     /// - On failure, responds with [`SdkError<DescribeClusterOperationError>`](crate::error::DescribeClusterOperationError)
@@ -211,8 +211,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeClusterV2`](crate::client::fluent_builders::DescribeClusterV2) operation.
     ///
-    /// - Takes [`DescribeClusterV2Input`](crate::input::DescribeClusterV2Input) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::DescribeClusterV2Input::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeClusterV2::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::DescribeClusterV2::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     /// - On success, responds with [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output) with field(s):
     ///   - [`cluster_info(Option<Cluster>)`](crate::output::DescribeClusterV2Output::cluster_info): <p>The cluster information.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterV2Error>`](crate::error::DescribeClusterV2Error)
@@ -221,8 +221,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeConfiguration`](crate::client::fluent_builders::DescribeConfiguration) operation.
     ///
-    /// - Takes [`DescribeConfigurationInput`](crate::input::DescribeConfigurationInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::DescribeConfigurationInput::arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DescribeConfiguration::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DescribeConfiguration::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     /// - On success, responds with [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeConfigurationOutput::creation_time): <p>The time when the configuration was created.</p>
@@ -237,9 +237,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeConfigurationRevision`](crate::client::fluent_builders::DescribeConfigurationRevision) operation.
     ///
-    /// - Takes [`DescribeConfigurationRevisionInput`](crate::input::DescribeConfigurationRevisionInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::DescribeConfigurationRevisionInput::arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
-    ///   - [`revision(i64)`](crate::input::DescribeConfigurationRevisionInput::revision): <p>A string that uniquely identifies a revision of an MSK configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DescribeConfigurationRevision::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DescribeConfigurationRevision::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    ///   - [`revision(i64)`](crate::client::fluent_builders::DescribeConfigurationRevision::revision) / [`set_revision(i64)`](crate::client::fluent_builders::DescribeConfigurationRevision::set_revision): <p>A string that uniquely identifies a revision of an MSK configuration.</p>
     /// - On success, responds with [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeConfigurationRevisionOutput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeConfigurationRevisionOutput::creation_time): <p>The time when the configuration was created.</p>
@@ -254,8 +254,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetBootstrapBrokers`](crate::client::fluent_builders::GetBootstrapBrokers) operation.
     ///
-    /// - Takes [`GetBootstrapBrokersInput`](crate::input::GetBootstrapBrokersInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::GetBootstrapBrokersInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::GetBootstrapBrokers::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::GetBootstrapBrokers::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     /// - On success, responds with [`GetBootstrapBrokersOutput`](crate::output::GetBootstrapBrokersOutput) with field(s):
     ///   - [`bootstrap_broker_string(Option<String>)`](crate::output::GetBootstrapBrokersOutput::bootstrap_broker_string): <p>A string containing one or more hostname:port pairs.</p>
     ///   - [`bootstrap_broker_string_tls(Option<String>)`](crate::output::GetBootstrapBrokersOutput::bootstrap_broker_string_tls): <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
@@ -270,8 +270,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetCompatibleKafkaVersions`](crate::client::fluent_builders::GetCompatibleKafkaVersions) operation.
     ///
-    /// - Takes [`GetCompatibleKafkaVersionsInput`](crate::input::GetCompatibleKafkaVersionsInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::GetCompatibleKafkaVersionsInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster check.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::GetCompatibleKafkaVersions::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::GetCompatibleKafkaVersions::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster check.</p>
     /// - On success, responds with [`GetCompatibleKafkaVersionsOutput`](crate::output::GetCompatibleKafkaVersionsOutput) with field(s):
     ///   - [`compatible_kafka_versions(Option<Vec<CompatibleKafkaVersion>>)`](crate::output::GetCompatibleKafkaVersionsOutput::compatible_kafka_versions): <p>A list of CompatibleKafkaVersion objects.</p>
     /// - On failure, responds with [`SdkError<GetCompatibleKafkaVersionsError>`](crate::error::GetCompatibleKafkaVersionsError)
@@ -281,12 +281,12 @@ where
         fluent_builders::GetCompatibleKafkaVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListClusterOperations`](crate::client::fluent_builders::ListClusterOperations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClusterOperations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClusterOperations::into_paginator).
     ///
-    /// - Takes [`ListClusterOperationsInput`](crate::input::ListClusterOperationsInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::ListClusterOperationsInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`max_results(i32)`](crate::input::ListClusterOperationsInput::max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListClusterOperationsInput::next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::ListClusterOperations::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::ListClusterOperations::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListClusterOperations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListClusterOperations::set_max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListClusterOperations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListClusterOperations::set_next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     /// - On success, responds with [`ListClusterOperationsOutput`](crate::output::ListClusterOperationsOutput) with field(s):
     ///   - [`cluster_operation_info_list(Option<Vec<ClusterOperationInfo>>)`](crate::output::ListClusterOperationsOutput::cluster_operation_info_list): <p>An array of cluster operation information objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListClusterOperationsOutput::next_token): <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
@@ -295,12 +295,12 @@ where
         fluent_builders::ListClusterOperations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListClusters`](crate::client::fluent_builders::ListClusters) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
     ///
-    /// - Takes [`ListClustersInput`](crate::input::ListClustersInput) with field(s):
-    ///   - [`cluster_name_filter(Option<String>)`](crate::input::ListClustersInput::cluster_name_filter): <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    ///   - [`max_results(i32)`](crate::input::ListClustersInput::max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListClustersInput::next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_name_filter(impl Into<String>)`](crate::client::fluent_builders::ListClusters::cluster_name_filter) / [`set_cluster_name_filter(Option<String>)`](crate::client::fluent_builders::ListClusters::set_cluster_name_filter): <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListClusters::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListClusters::set_max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListClusters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListClusters::set_next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     /// - On success, responds with [`ListClustersOutput`](crate::output::ListClustersOutput) with field(s):
     ///   - [`cluster_info_list(Option<Vec<ClusterInfo>>)`](crate::output::ListClustersOutput::cluster_info_list): <p>Information on each of the MSK clusters in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListClustersOutput::next_token): <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
@@ -309,13 +309,13 @@ where
         fluent_builders::ListClusters::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListClustersV2`](crate::client::fluent_builders::ListClustersV2) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClustersV2::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClustersV2::into_paginator).
     ///
-    /// - Takes [`ListClustersV2Input`](crate::input::ListClustersV2Input) with field(s):
-    ///   - [`cluster_name_filter(Option<String>)`](crate::input::ListClustersV2Input::cluster_name_filter): <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    ///   - [`cluster_type_filter(Option<String>)`](crate::input::ListClustersV2Input::cluster_type_filter): <p>Specify either PROVISIONED or SERVERLESS.</p>
-    ///   - [`max_results(i32)`](crate::input::ListClustersV2Input::max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListClustersV2Input::next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_name_filter(impl Into<String>)`](crate::client::fluent_builders::ListClustersV2::cluster_name_filter) / [`set_cluster_name_filter(Option<String>)`](crate::client::fluent_builders::ListClustersV2::set_cluster_name_filter): <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
+    ///   - [`cluster_type_filter(impl Into<String>)`](crate::client::fluent_builders::ListClustersV2::cluster_type_filter) / [`set_cluster_type_filter(Option<String>)`](crate::client::fluent_builders::ListClustersV2::set_cluster_type_filter): <p>Specify either PROVISIONED or SERVERLESS.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListClustersV2::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListClustersV2::set_max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListClustersV2::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListClustersV2::set_next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     /// - On success, responds with [`ListClustersV2Output`](crate::output::ListClustersV2Output) with field(s):
     ///   - [`cluster_info_list(Option<Vec<Cluster>>)`](crate::output::ListClustersV2Output::cluster_info_list): <p>Information on each of the MSK clusters in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListClustersV2Output::next_token): <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
@@ -324,12 +324,12 @@ where
         fluent_builders::ListClustersV2::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListConfigurationRevisions`](crate::client::fluent_builders::ListConfigurationRevisions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConfigurationRevisions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConfigurationRevisions::into_paginator).
     ///
-    /// - Takes [`ListConfigurationRevisionsInput`](crate::input::ListConfigurationRevisionsInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::ListConfigurationRevisionsInput::arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
-    ///   - [`max_results(i32)`](crate::input::ListConfigurationRevisionsInput::max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListConfigurationRevisionsInput::next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationRevisions::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListConfigurationRevisions::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfigurationRevisions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListConfigurationRevisions::set_max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationRevisions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurationRevisions::set_next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     /// - On success, responds with [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationRevisionsOutput::next_token): <p>Paginated results marker.</p>
     ///   - [`revisions(Option<Vec<ConfigurationRevision>>)`](crate::output::ListConfigurationRevisionsOutput::revisions): <p>List of ConfigurationRevision objects.</p>
@@ -340,11 +340,11 @@ where
         fluent_builders::ListConfigurationRevisions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListConfigurations`](crate::client::fluent_builders::ListConfigurations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConfigurations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConfigurations::into_paginator).
     ///
-    /// - Takes [`ListConfigurationsInput`](crate::input::ListConfigurationsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListConfigurationsInput::max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListConfigurationsInput::next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListConfigurations::set_max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurations::set_next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     /// - On success, responds with [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput) with field(s):
     ///   - [`configurations(Option<Vec<Configuration>>)`](crate::output::ListConfigurationsOutput::configurations): <p>An array of MSK configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationsOutput::next_token): <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
@@ -353,11 +353,11 @@ where
         fluent_builders::ListConfigurations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListKafkaVersions`](crate::client::fluent_builders::ListKafkaVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListKafkaVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListKafkaVersions::into_paginator).
     ///
-    /// - Takes [`ListKafkaVersionsInput`](crate::input::ListKafkaVersionsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListKafkaVersionsInput::max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListKafkaVersionsInput::next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListKafkaVersions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListKafkaVersions::set_max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListKafkaVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListKafkaVersions::set_next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     /// - On success, responds with [`ListKafkaVersionsOutput`](crate::output::ListKafkaVersionsOutput) with field(s):
     ///   - [`kafka_versions(Option<Vec<KafkaVersion>>)`](crate::output::ListKafkaVersionsOutput::kafka_versions): (undocumented)
     ///   - [`next_token(Option<String>)`](crate::output::ListKafkaVersionsOutput::next_token): (undocumented)
@@ -366,12 +366,12 @@ where
         fluent_builders::ListKafkaVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListNodes`](crate::client::fluent_builders::ListNodes) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNodes::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNodes::into_paginator).
     ///
-    /// - Takes [`ListNodesInput`](crate::input::ListNodesInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::ListNodesInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`max_results(i32)`](crate::input::ListNodesInput::max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListNodesInput::next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::ListNodes::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::ListNodes::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNodes::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListNodes::set_max_results): <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNodes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNodes::set_next_token): <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     /// - On success, responds with [`ListNodesOutput`](crate::output::ListNodesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListNodesOutput::next_token): <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
     ///   - [`node_info_list(Option<Vec<NodeInfo>>)`](crate::output::ListNodesOutput::node_info_list): <p>List containing a NodeInfo object.</p>
@@ -380,12 +380,12 @@ where
         fluent_builders::ListNodes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListScramSecrets`](crate::client::fluent_builders::ListScramSecrets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListScramSecrets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListScramSecrets::into_paginator).
     ///
-    /// - Takes [`ListScramSecretsInput`](crate::input::ListScramSecretsInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::ListScramSecretsInput::cluster_arn): <p>The arn of the cluster.</p>
-    ///   - [`max_results(i32)`](crate::input::ListScramSecretsInput::max_results): <p>The maxResults of the query.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListScramSecretsInput::next_token): <p>The nextToken of the query.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::ListScramSecrets::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::ListScramSecrets::set_cluster_arn): <p>The arn of the cluster.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListScramSecrets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListScramSecrets::set_max_results): <p>The maxResults of the query.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListScramSecrets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListScramSecrets::set_next_token): <p>The nextToken of the query.</p>
     /// - On success, responds with [`ListScramSecretsOutput`](crate::output::ListScramSecretsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListScramSecretsOutput::next_token): <p>Paginated results marker.</p>
     ///   - [`secret_arn_list(Option<Vec<String>>)`](crate::output::ListScramSecretsOutput::secret_arn_list): <p>The list of scram secrets associated with the cluster.</p>
@@ -395,8 +395,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The key-value pair for the resource tag.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -405,9 +405,9 @@ where
     }
     /// Constructs a fluent builder for the [`RebootBroker`](crate::client::fluent_builders::RebootBroker) operation.
     ///
-    /// - Takes [`RebootBrokerInput`](crate::input::RebootBrokerInput) with field(s):
-    ///   - [`broker_ids(Option<Vec<String>>)`](crate::input::RebootBrokerInput::broker_ids): <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
-    ///   - [`cluster_arn(Option<String>)`](crate::input::RebootBrokerInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_ids(Vec<String>)`](crate::client::fluent_builders::RebootBroker::broker_ids) / [`set_broker_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RebootBroker::set_broker_ids): <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::RebootBroker::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::RebootBroker::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     /// - On success, responds with [`RebootBrokerOutput`](crate::output::RebootBrokerOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::RebootBrokerOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::output::RebootBrokerOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
@@ -417,9 +417,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The key-value pair for the resource tag.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The key-value pair for the resource tag.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -428,9 +428,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Tag keys must be unique for a given cluster. In addition, the following restrictions apply:</p>  <ul>   <li> <p>Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the existing key-value pair. </p> </li>   <li> <p>You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin with this prefix on your behalf, but you can't edit or delete them.</p> </li>   <li> <p>Tag keys must be between 1 and 128 Unicode characters in length.</p> </li>   <li> <p>Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following special characters: _ . / = + - @.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Tag keys must be unique for a given cluster. In addition, the following restrictions apply:</p>  <ul>   <li> <p>Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the existing key-value pair. </p> </li>   <li> <p>You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin with this prefix on your behalf, but you can't edit or delete them.</p> </li>   <li> <p>Tag keys must be between 1 and 128 Unicode characters in length.</p> </li>   <li> <p>Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following special characters: _ . / = + - @.</p> </li>  </ul>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -439,10 +439,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBrokerCount`](crate::client::fluent_builders::UpdateBrokerCount) operation.
     ///
-    /// - Takes [`UpdateBrokerCountInput`](crate::input::UpdateBrokerCountInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::UpdateBrokerCountInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::UpdateBrokerCountInput::current_version): <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    ///   - [`target_number_of_broker_nodes(i32)`](crate::input::UpdateBrokerCountInput::target_number_of_broker_nodes): <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateBrokerCount::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::UpdateBrokerCount::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateBrokerCount::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateBrokerCount::set_current_version): <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    ///   - [`target_number_of_broker_nodes(i32)`](crate::client::fluent_builders::UpdateBrokerCount::target_number_of_broker_nodes) / [`set_target_number_of_broker_nodes(i32)`](crate::client::fluent_builders::UpdateBrokerCount::set_target_number_of_broker_nodes): <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
     /// - On success, responds with [`UpdateBrokerCountOutput`](crate::output::UpdateBrokerCountOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::UpdateBrokerCountOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::output::UpdateBrokerCountOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
@@ -452,10 +452,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBrokerStorage`](crate::client::fluent_builders::UpdateBrokerStorage) operation.
     ///
-    /// - Takes [`UpdateBrokerStorageInput`](crate::input::UpdateBrokerStorageInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::UpdateBrokerStorageInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::UpdateBrokerStorageInput::current_version): <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    ///   - [`target_broker_ebs_volume_info(Option<Vec<BrokerEbsVolumeInfo>>)`](crate::input::UpdateBrokerStorageInput::target_broker_ebs_volume_info): <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateBrokerStorage::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::UpdateBrokerStorage::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateBrokerStorage::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateBrokerStorage::set_current_version): <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    ///   - [`target_broker_ebs_volume_info(Vec<BrokerEbsVolumeInfo>)`](crate::client::fluent_builders::UpdateBrokerStorage::target_broker_ebs_volume_info) / [`set_target_broker_ebs_volume_info(Option<Vec<BrokerEbsVolumeInfo>>)`](crate::client::fluent_builders::UpdateBrokerStorage::set_target_broker_ebs_volume_info): <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
     /// - On success, responds with [`UpdateBrokerStorageOutput`](crate::output::UpdateBrokerStorageOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::UpdateBrokerStorageOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::output::UpdateBrokerStorageOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
@@ -465,10 +465,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBrokerType`](crate::client::fluent_builders::UpdateBrokerType) operation.
     ///
-    /// - Takes [`UpdateBrokerTypeInput`](crate::input::UpdateBrokerTypeInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::UpdateBrokerTypeInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::UpdateBrokerTypeInput::current_version): <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
-    ///   - [`target_instance_type(Option<String>)`](crate::input::UpdateBrokerTypeInput::target_instance_type): <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateBrokerType::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::UpdateBrokerType::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateBrokerType::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateBrokerType::set_current_version): <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
+    ///   - [`target_instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateBrokerType::target_instance_type) / [`set_target_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateBrokerType::set_target_instance_type): <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
     /// - On success, responds with [`UpdateBrokerTypeOutput`](crate::output::UpdateBrokerTypeOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::UpdateBrokerTypeOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::output::UpdateBrokerTypeOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
@@ -478,10 +478,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateClusterConfiguration`](crate::client::fluent_builders::UpdateClusterConfiguration) operation.
     ///
-    /// - Takes [`UpdateClusterConfigurationInput`](crate::input::UpdateClusterConfigurationInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::UpdateClusterConfigurationInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`configuration_info(Option<ConfigurationInfo>)`](crate::input::UpdateClusterConfigurationInput::configuration_info): <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::UpdateClusterConfigurationInput::current_version): <p>The version of the cluster that needs to be updated.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateClusterConfiguration::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::UpdateClusterConfiguration::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`configuration_info(ConfigurationInfo)`](crate::client::fluent_builders::UpdateClusterConfiguration::configuration_info) / [`set_configuration_info(Option<ConfigurationInfo>)`](crate::client::fluent_builders::UpdateClusterConfiguration::set_configuration_info): <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateClusterConfiguration::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateClusterConfiguration::set_current_version): <p>The version of the cluster that needs to be updated.</p>
     /// - On success, responds with [`UpdateClusterConfigurationOutput`](crate::output::UpdateClusterConfigurationOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::UpdateClusterConfigurationOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::output::UpdateClusterConfigurationOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
@@ -493,11 +493,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateClusterKafkaVersion`](crate::client::fluent_builders::UpdateClusterKafkaVersion) operation.
     ///
-    /// - Takes [`UpdateClusterKafkaVersionInput`](crate::input::UpdateClusterKafkaVersionInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::UpdateClusterKafkaVersionInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    ///   - [`configuration_info(Option<ConfigurationInfo>)`](crate::input::UpdateClusterKafkaVersionInput::configuration_info): <p>The custom configuration that should be applied on the new version of cluster.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::UpdateClusterKafkaVersionInput::current_version): <p>Current cluster version.</p>
-    ///   - [`target_kafka_version(Option<String>)`](crate::input::UpdateClusterKafkaVersionInput::target_kafka_version): <p>Target Kafka version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateClusterKafkaVersion::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::UpdateClusterKafkaVersion::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    ///   - [`configuration_info(ConfigurationInfo)`](crate::client::fluent_builders::UpdateClusterKafkaVersion::configuration_info) / [`set_configuration_info(Option<ConfigurationInfo>)`](crate::client::fluent_builders::UpdateClusterKafkaVersion::set_configuration_info): <p>The custom configuration that should be applied on the new version of cluster.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateClusterKafkaVersion::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateClusterKafkaVersion::set_current_version): <p>Current cluster version.</p>
+    ///   - [`target_kafka_version(impl Into<String>)`](crate::client::fluent_builders::UpdateClusterKafkaVersion::target_kafka_version) / [`set_target_kafka_version(Option<String>)`](crate::client::fluent_builders::UpdateClusterKafkaVersion::set_target_kafka_version): <p>Target Kafka version.</p>
     /// - On success, responds with [`UpdateClusterKafkaVersionOutput`](crate::output::UpdateClusterKafkaVersionOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::UpdateClusterKafkaVersionOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::output::UpdateClusterKafkaVersionOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
@@ -509,10 +509,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateConfiguration`](crate::client::fluent_builders::UpdateConfiguration) operation.
     ///
-    /// - Takes [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::UpdateConfigurationInput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateConfigurationInput::description): <p>The description of the configuration revision.</p>
-    ///   - [`server_properties(Option<Blob>)`](crate::input::UpdateConfigurationInput::server_properties): <p>Contents of the <filename>   server.properties  </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>   server.properties  </filename> can be in plaintext.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguration::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateConfiguration::set_arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateConfiguration::set_description): <p>The description of the configuration revision.</p>
+    ///   - [`server_properties(Blob)`](crate::client::fluent_builders::UpdateConfiguration::server_properties) / [`set_server_properties(Option<Blob>)`](crate::client::fluent_builders::UpdateConfiguration::set_server_properties): <p>Contents of the <filename>   server.properties  </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>   server.properties  </filename> can be in plaintext.</p>
     /// - On success, responds with [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`latest_revision(Option<ConfigurationRevision>)`](crate::output::UpdateConfigurationOutput::latest_revision): <p>Latest revision of the configuration.</p>
@@ -522,10 +522,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateConnectivity`](crate::client::fluent_builders::UpdateConnectivity) operation.
     ///
-    /// - Takes [`UpdateConnectivityInput`](crate::input::UpdateConnectivityInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::UpdateConnectivityInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    ///   - [`connectivity_info(Option<ConnectivityInfo>)`](crate::input::UpdateConnectivityInput::connectivity_info): <p>Information about the broker access configuration.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::UpdateConnectivityInput::current_version): <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectivity::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::UpdateConnectivity::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    ///   - [`connectivity_info(ConnectivityInfo)`](crate::client::fluent_builders::UpdateConnectivity::connectivity_info) / [`set_connectivity_info(Option<ConnectivityInfo>)`](crate::client::fluent_builders::UpdateConnectivity::set_connectivity_info): <p>Information about the broker access configuration.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectivity::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateConnectivity::set_current_version): <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     /// - On success, responds with [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::UpdateConnectivityOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::output::UpdateConnectivityOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
@@ -535,12 +535,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateMonitoring`](crate::client::fluent_builders::UpdateMonitoring) operation.
     ///
-    /// - Takes [`UpdateMonitoringInput`](crate::input::UpdateMonitoringInput) with field(s):
-    ///   - [`cluster_arn(Option<String>)`](crate::input::UpdateMonitoringInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::UpdateMonitoringInput::current_version): <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    ///   - [`enhanced_monitoring(Option<EnhancedMonitoring>)`](crate::input::UpdateMonitoringInput::enhanced_monitoring): <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    ///   - [`open_monitoring(Option<OpenMonitoringInfo>)`](crate::input::UpdateMonitoringInput::open_monitoring): <p>The settings for open monitoring.</p>
-    ///   - [`logging_info(Option<LoggingInfo>)`](crate::input::UpdateMonitoringInput::logging_info): (undocumented)
+    /// - The fluent builder is configurable:
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateMonitoring::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::UpdateMonitoring::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateMonitoring::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateMonitoring::set_current_version): <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    ///   - [`enhanced_monitoring(EnhancedMonitoring)`](crate::client::fluent_builders::UpdateMonitoring::enhanced_monitoring) / [`set_enhanced_monitoring(Option<EnhancedMonitoring>)`](crate::client::fluent_builders::UpdateMonitoring::set_enhanced_monitoring): <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
+    ///   - [`open_monitoring(OpenMonitoringInfo)`](crate::client::fluent_builders::UpdateMonitoring::open_monitoring) / [`set_open_monitoring(Option<OpenMonitoringInfo>)`](crate::client::fluent_builders::UpdateMonitoring::set_open_monitoring): <p>The settings for open monitoring.</p>
+    ///   - [`logging_info(LoggingInfo)`](crate::client::fluent_builders::UpdateMonitoring::logging_info) / [`set_logging_info(Option<LoggingInfo>)`](crate::client::fluent_builders::UpdateMonitoring::set_logging_info): (undocumented)
     /// - On success, responds with [`UpdateMonitoringOutput`](crate::output::UpdateMonitoringOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::UpdateMonitoringOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::output::UpdateMonitoringOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
@@ -550,11 +550,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSecurity`](crate::client::fluent_builders::UpdateSecurity) operation.
     ///
-    /// - Takes [`UpdateSecurityInput`](crate::input::UpdateSecurityInput) with field(s):
-    ///   - [`client_authentication(Option<ClientAuthentication>)`](crate::input::UpdateSecurityInput::client_authentication): <p>Includes all client authentication related information.</p>
-    ///   - [`cluster_arn(Option<String>)`](crate::input::UpdateSecurityInput::cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::UpdateSecurityInput::current_version): <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    ///   - [`encryption_info(Option<EncryptionInfo>)`](crate::input::UpdateSecurityInput::encryption_info): <p>Includes all encryption-related information.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_authentication(ClientAuthentication)`](crate::client::fluent_builders::UpdateSecurity::client_authentication) / [`set_client_authentication(Option<ClientAuthentication>)`](crate::client::fluent_builders::UpdateSecurity::set_client_authentication): <p>Includes all client authentication related information.</p>
+    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurity::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::UpdateSecurity::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurity::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateSecurity::set_current_version): <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    ///   - [`encryption_info(EncryptionInfo)`](crate::client::fluent_builders::UpdateSecurity::encryption_info) / [`set_encryption_info(Option<EncryptionInfo>)`](crate::client::fluent_builders::UpdateSecurity::set_encryption_info): <p>Includes all encryption-related information.</p>
     /// - On success, responds with [`UpdateSecurityOutput`](crate::output::UpdateSecurityOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::output::UpdateSecurityOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::output::UpdateSecurityOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>

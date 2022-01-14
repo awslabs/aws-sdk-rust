@@ -85,11 +85,11 @@ where
 {
     /// Constructs a fluent builder for the [`CreateComponent`](crate::client::fluent_builders::CreateComponent) operation.
     ///
-    /// - Takes [`CreateComponentInput`](crate::input::CreateComponentInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::CreateComponentInput::app_id): <p>The unique ID of the Amplify app to associate with the component.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::CreateComponentInput::environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateComponentInput::client_token): <p>The unique client token.</p>
-    ///   - [`component_to_create(Option<CreateComponentData>)`](crate::input::CreateComponentInput::component_to_create): <p>Represents the configuration of the component to create.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_app_id): <p>The unique ID of the Amplify app to associate with the component.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateComponent::set_client_token): <p>The unique client token.</p>
+    ///   - [`component_to_create(CreateComponentData)`](crate::client::fluent_builders::CreateComponent::component_to_create) / [`set_component_to_create(Option<CreateComponentData>)`](crate::client::fluent_builders::CreateComponent::set_component_to_create): <p>Represents the configuration of the component to create.</p>
     /// - On success, responds with [`CreateComponentOutput`](crate::output::CreateComponentOutput) with field(s):
     ///   - [`entity(Option<Component>)`](crate::output::CreateComponentOutput::entity): <p>Describes the configuration of the new component.</p>
     /// - On failure, responds with [`SdkError<CreateComponentError>`](crate::error::CreateComponentError)
@@ -98,11 +98,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTheme`](crate::client::fluent_builders::CreateTheme) operation.
     ///
-    /// - Takes [`CreateThemeInput`](crate::input::CreateThemeInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::CreateThemeInput::app_id): <p>The unique ID of the Amplify app associated with the theme.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::CreateThemeInput::environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateThemeInput::client_token): <p>The unique client token.</p>
-    ///   - [`theme_to_create(Option<CreateThemeData>)`](crate::input::CreateThemeInput::theme_to_create): <p>Represents the configuration of the theme to create.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateTheme::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateTheme::set_app_id): <p>The unique ID of the Amplify app associated with the theme.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateTheme::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::CreateTheme::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateTheme::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateTheme::set_client_token): <p>The unique client token.</p>
+    ///   - [`theme_to_create(CreateThemeData)`](crate::client::fluent_builders::CreateTheme::theme_to_create) / [`set_theme_to_create(Option<CreateThemeData>)`](crate::client::fluent_builders::CreateTheme::set_theme_to_create): <p>Represents the configuration of the theme to create.</p>
     /// - On success, responds with [`CreateThemeOutput`](crate::output::CreateThemeOutput) with field(s):
     ///   - [`entity(Option<Theme>)`](crate::output::CreateThemeOutput::entity): <p>Describes the configuration of the new theme.</p>
     /// - On failure, responds with [`SdkError<CreateThemeError>`](crate::error::CreateThemeError)
@@ -111,10 +111,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteComponent`](crate::client::fluent_builders::DeleteComponent) operation.
     ///
-    /// - Takes [`DeleteComponentInput`](crate::input::DeleteComponentInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::DeleteComponentInput::app_id): <p>The unique ID of the Amplify app associated with the component to delete.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::DeleteComponentInput::environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
-    ///   - [`id(Option<String>)`](crate::input::DeleteComponentInput::id): <p>The unique ID of the component to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DeleteComponent::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DeleteComponent::set_app_id): <p>The unique ID of the Amplify app associated with the component to delete.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::DeleteComponent::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::DeleteComponent::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteComponent::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteComponent::set_id): <p>The unique ID of the component to delete.</p>
     /// - On success, responds with [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
 
     /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::error::DeleteComponentError)
@@ -123,10 +123,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTheme`](crate::client::fluent_builders::DeleteTheme) operation.
     ///
-    /// - Takes [`DeleteThemeInput`](crate::input::DeleteThemeInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::DeleteThemeInput::app_id): <p>The unique ID of the Amplify app associated with the theme to delete.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::DeleteThemeInput::environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
-    ///   - [`id(Option<String>)`](crate::input::DeleteThemeInput::id): <p>The unique ID of the theme to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTheme::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DeleteTheme::set_app_id): <p>The unique ID of the Amplify app associated with the theme to delete.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTheme::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::DeleteTheme::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteTheme::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteTheme::set_id): <p>The unique ID of the theme to delete.</p>
     /// - On success, responds with [`DeleteThemeOutput`](crate::output::DeleteThemeOutput)
 
     /// - On failure, responds with [`SdkError<DeleteThemeError>`](crate::error::DeleteThemeError)
@@ -135,9 +135,9 @@ where
     }
     /// Constructs a fluent builder for the [`ExchangeCodeForToken`](crate::client::fluent_builders::ExchangeCodeForToken) operation.
     ///
-    /// - Takes [`ExchangeCodeForTokenInput`](crate::input::ExchangeCodeForTokenInput) with field(s):
-    ///   - [`provider(Option<TokenProviders>)`](crate::input::ExchangeCodeForTokenInput::provider): <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    ///   - [`request(Option<ExchangeCodeForTokenRequestBody>)`](crate::input::ExchangeCodeForTokenInput::request): <p>Describes the configuration of the request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`provider(TokenProviders)`](crate::client::fluent_builders::ExchangeCodeForToken::provider) / [`set_provider(Option<TokenProviders>)`](crate::client::fluent_builders::ExchangeCodeForToken::set_provider): <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    ///   - [`request(ExchangeCodeForTokenRequestBody)`](crate::client::fluent_builders::ExchangeCodeForToken::request) / [`set_request(Option<ExchangeCodeForTokenRequestBody>)`](crate::client::fluent_builders::ExchangeCodeForToken::set_request): <p>Describes the configuration of the request.</p>
     /// - On success, responds with [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput) with field(s):
     ///   - [`access_token(Option<String>)`](crate::output::ExchangeCodeForTokenOutput::access_token): <p>The access token.</p>
     ///   - [`expires_in(Option<i32>)`](crate::output::ExchangeCodeForTokenOutput::expires_in): <p>The date and time when the new access token expires.</p>
@@ -148,9 +148,9 @@ where
     }
     /// Constructs a fluent builder for the [`ExportComponents`](crate::client::fluent_builders::ExportComponents) operation.
     ///
-    /// - Takes [`ExportComponentsInput`](crate::input::ExportComponentsInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::ExportComponentsInput::app_id): <p>The unique ID of the Amplify app to export components to.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::ExportComponentsInput::environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ExportComponents::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ExportComponents::set_app_id): <p>The unique ID of the Amplify app to export components to.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::ExportComponents::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::ExportComponents::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
     /// - On success, responds with [`ExportComponentsOutput`](crate::output::ExportComponentsOutput) with field(s):
     ///   - [`entities(Option<Vec<Component>>)`](crate::output::ExportComponentsOutput::entities): <p>Represents the configuration of the exported components.</p>
     /// - On failure, responds with [`SdkError<ExportComponentsError>`](crate::error::ExportComponentsError)
@@ -159,9 +159,9 @@ where
     }
     /// Constructs a fluent builder for the [`ExportThemes`](crate::client::fluent_builders::ExportThemes) operation.
     ///
-    /// - Takes [`ExportThemesInput`](crate::input::ExportThemesInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::ExportThemesInput::app_id): <p>The unique ID of the Amplify app to export the themes to.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::ExportThemesInput::environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ExportThemes::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ExportThemes::set_app_id): <p>The unique ID of the Amplify app to export the themes to.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::ExportThemes::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::ExportThemes::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
     /// - On success, responds with [`ExportThemesOutput`](crate::output::ExportThemesOutput) with field(s):
     ///   - [`entities(Option<Vec<Theme>>)`](crate::output::ExportThemesOutput::entities): <p>Represents the configuration of the exported themes.</p>
     /// - On failure, responds with [`SdkError<ExportThemesError>`](crate::error::ExportThemesError)
@@ -170,10 +170,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetComponent`](crate::client::fluent_builders::GetComponent) operation.
     ///
-    /// - Takes [`GetComponentInput`](crate::input::GetComponentInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GetComponentInput::app_id): <p>The unique ID of the Amplify app.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::GetComponentInput::environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
-    ///   - [`id(Option<String>)`](crate::input::GetComponentInput::id): <p>The unique ID of the component.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetComponent::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetComponent::set_app_id): <p>The unique ID of the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::GetComponent::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::GetComponent::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetComponent::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetComponent::set_id): <p>The unique ID of the component.</p>
     /// - On success, responds with [`GetComponentOutput`](crate::output::GetComponentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::output::GetComponentOutput::component): <p>Represents the configuration settings for the component.</p>
     /// - On failure, responds with [`SdkError<GetComponentError>`](crate::error::GetComponentError)
@@ -182,10 +182,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetTheme`](crate::client::fluent_builders::GetTheme) operation.
     ///
-    /// - Takes [`GetThemeInput`](crate::input::GetThemeInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GetThemeInput::app_id): <p>The unique ID of the Amplify app.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::GetThemeInput::environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
-    ///   - [`id(Option<String>)`](crate::input::GetThemeInput::id): <p>The unique ID for the theme.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetTheme::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetTheme::set_app_id): <p>The unique ID of the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::GetTheme::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::GetTheme::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetTheme::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetTheme::set_id): <p>The unique ID for the theme.</p>
     /// - On success, responds with [`GetThemeOutput`](crate::output::GetThemeOutput) with field(s):
     ///   - [`theme(Option<Theme>)`](crate::output::GetThemeOutput::theme): <p>Represents the configuration settings for the theme.</p>
     /// - On failure, responds with [`SdkError<GetThemeError>`](crate::error::GetThemeError)
@@ -193,13 +193,13 @@ where
         fluent_builders::GetTheme::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListComponents`](crate::client::fluent_builders::ListComponents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListComponents::into_paginator).
     ///
-    /// - Takes [`ListComponentsInput`](crate::input::ListComponentsInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::ListComponentsInput::app_id): <p>The unique ID for the Amplify app.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::ListComponentsInput::environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListComponentsInput::next_token): <p>The token to request the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListComponentsInput::max_results): <p>The maximum number of components to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ListComponents::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ListComponents::set_app_id): <p>The unique ID for the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::ListComponents::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::ListComponents::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListComponents::set_next_token): <p>The token to request the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListComponents::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListComponents::set_max_results): <p>The maximum number of components to retrieve.</p>
     /// - On success, responds with [`ListComponentsOutput`](crate::output::ListComponentsOutput) with field(s):
     ///   - [`entities(Option<Vec<ComponentSummary>>)`](crate::output::ListComponentsOutput::entities): <p>The list of components for the Amplify app.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListComponentsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
@@ -208,13 +208,13 @@ where
         fluent_builders::ListComponents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThemes`](crate::client::fluent_builders::ListThemes) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThemes::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThemes::into_paginator).
     ///
-    /// - Takes [`ListThemesInput`](crate::input::ListThemesInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::ListThemesInput::app_id): <p>The unique ID for the Amplify app.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::ListThemesInput::environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListThemesInput::next_token): <p>The token to request the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListThemesInput::max_results): <p>The maximum number of theme results to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ListThemes::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ListThemes::set_app_id): <p>The unique ID for the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::ListThemes::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::ListThemes::set_environment_name): <p>The name of the backend environment that is a part of the Amplify app.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThemes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThemes::set_next_token): <p>The token to request the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThemes::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListThemes::set_max_results): <p>The maximum number of theme results to return in the response.</p>
     /// - On success, responds with [`ListThemesOutput`](crate::output::ListThemesOutput) with field(s):
     ///   - [`entities(Option<Vec<ThemeSummary>>)`](crate::output::ListThemesOutput::entities): <p>The list of themes for the Amplify app.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThemesOutput::next_token): <p>The pagination token that's returned if more results are available.</p>
@@ -224,9 +224,9 @@ where
     }
     /// Constructs a fluent builder for the [`RefreshToken`](crate::client::fluent_builders::RefreshToken) operation.
     ///
-    /// - Takes [`RefreshTokenInput`](crate::input::RefreshTokenInput) with field(s):
-    ///   - [`provider(Option<TokenProviders>)`](crate::input::RefreshTokenInput::provider): <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    ///   - [`refresh_token_body(Option<RefreshTokenRequestBody>)`](crate::input::RefreshTokenInput::refresh_token_body): <p>Information about the refresh token request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`provider(TokenProviders)`](crate::client::fluent_builders::RefreshToken::provider) / [`set_provider(Option<TokenProviders>)`](crate::client::fluent_builders::RefreshToken::set_provider): <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
+    ///   - [`refresh_token_body(RefreshTokenRequestBody)`](crate::client::fluent_builders::RefreshToken::refresh_token_body) / [`set_refresh_token_body(Option<RefreshTokenRequestBody>)`](crate::client::fluent_builders::RefreshToken::set_refresh_token_body): <p>Information about the refresh token request.</p>
     /// - On success, responds with [`RefreshTokenOutput`](crate::output::RefreshTokenOutput) with field(s):
     ///   - [`access_token(Option<String>)`](crate::output::RefreshTokenOutput::access_token): <p>The access token.</p>
     ///   - [`expires_in(Option<i32>)`](crate::output::RefreshTokenOutput::expires_in): <p>The date and time when the new access token expires.</p>
@@ -236,12 +236,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateComponent`](crate::client::fluent_builders::UpdateComponent) operation.
     ///
-    /// - Takes [`UpdateComponentInput`](crate::input::UpdateComponentInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::UpdateComponentInput::app_id): <p>The unique ID for the Amplify app.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::UpdateComponentInput::environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
-    ///   - [`id(Option<String>)`](crate::input::UpdateComponentInput::id): <p>The unique ID for the component.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateComponentInput::client_token): <p>The unique client token.</p>
-    ///   - [`updated_component(Option<UpdateComponentData>)`](crate::input::UpdateComponentInput::updated_component): <p>The configuration of the updated component.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_app_id): <p>The unique ID for the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_id): <p>The unique ID for the component.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateComponent::set_client_token): <p>The unique client token.</p>
+    ///   - [`updated_component(UpdateComponentData)`](crate::client::fluent_builders::UpdateComponent::updated_component) / [`set_updated_component(Option<UpdateComponentData>)`](crate::client::fluent_builders::UpdateComponent::set_updated_component): <p>The configuration of the updated component.</p>
     /// - On success, responds with [`UpdateComponentOutput`](crate::output::UpdateComponentOutput) with field(s):
     ///   - [`entity(Option<Component>)`](crate::output::UpdateComponentOutput::entity): <p>Describes the configuration of the updated component.</p>
     /// - On failure, responds with [`SdkError<UpdateComponentError>`](crate::error::UpdateComponentError)
@@ -250,12 +250,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTheme`](crate::client::fluent_builders::UpdateTheme) operation.
     ///
-    /// - Takes [`UpdateThemeInput`](crate::input::UpdateThemeInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::UpdateThemeInput::app_id): <p>The unique ID for the Amplify app.</p>
-    ///   - [`environment_name(Option<String>)`](crate::input::UpdateThemeInput::environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
-    ///   - [`id(Option<String>)`](crate::input::UpdateThemeInput::id): <p>The unique ID for the theme.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateThemeInput::client_token): <p>The unique client token.</p>
-    ///   - [`updated_theme(Option<UpdateThemeData>)`](crate::input::UpdateThemeInput::updated_theme): <p>The configuration of the updated theme.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTheme::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateTheme::set_app_id): <p>The unique ID for the Amplify app.</p>
+    ///   - [`environment_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTheme::environment_name) / [`set_environment_name(Option<String>)`](crate::client::fluent_builders::UpdateTheme::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateTheme::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateTheme::set_id): <p>The unique ID for the theme.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateTheme::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateTheme::set_client_token): <p>The unique client token.</p>
+    ///   - [`updated_theme(UpdateThemeData)`](crate::client::fluent_builders::UpdateTheme::updated_theme) / [`set_updated_theme(Option<UpdateThemeData>)`](crate::client::fluent_builders::UpdateTheme::set_updated_theme): <p>The configuration of the updated theme.</p>
     /// - On success, responds with [`UpdateThemeOutput`](crate::output::UpdateThemeOutput) with field(s):
     ///   - [`entity(Option<Theme>)`](crate::output::UpdateThemeOutput::entity): <p>Describes the configuration of the updated theme.</p>
     /// - On failure, responds with [`SdkError<UpdateThemeError>`](crate::error::UpdateThemeError)

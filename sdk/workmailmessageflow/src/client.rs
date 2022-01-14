@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`GetRawMessageContent`](crate::client::fluent_builders::GetRawMessageContent) operation.
     ///
-    /// - Takes [`GetRawMessageContentInput`](crate::input::GetRawMessageContentInput) with field(s):
-    ///   - [`message_id(Option<String>)`](crate::input::GetRawMessageContentInput::message_id): <p>The identifier of the email message to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::GetRawMessageContent::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::GetRawMessageContent::set_message_id): <p>The identifier of the email message to retrieve.</p>
     /// - On success, responds with [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput) with field(s):
     ///   - [`message_content(byte_stream::ByteStream)`](crate::output::GetRawMessageContentOutput::message_content): <p>The raw content of the email message, in MIME format.</p>
     /// - On failure, responds with [`SdkError<GetRawMessageContentError>`](crate::error::GetRawMessageContentError)
@@ -95,9 +95,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutRawMessageContent`](crate::client::fluent_builders::PutRawMessageContent) operation.
     ///
-    /// - Takes [`PutRawMessageContentInput`](crate::input::PutRawMessageContentInput) with field(s):
-    ///   - [`message_id(Option<String>)`](crate::input::PutRawMessageContentInput::message_id): <p>The identifier of the email message being updated.</p>
-    ///   - [`content(Option<RawMessageContent>)`](crate::input::PutRawMessageContentInput::content): <p>Describes the raw message content of the updated email message.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::PutRawMessageContent::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::PutRawMessageContent::set_message_id): <p>The identifier of the email message being updated.</p>
+    ///   - [`content(RawMessageContent)`](crate::client::fluent_builders::PutRawMessageContent::content) / [`set_content(Option<RawMessageContent>)`](crate::client::fluent_builders::PutRawMessageContent::set_content): <p>Describes the raw message content of the updated email message.</p>
     /// - On success, responds with [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
 
     /// - On failure, responds with [`SdkError<PutRawMessageContentError>`](crate::error::PutRawMessageContentError)

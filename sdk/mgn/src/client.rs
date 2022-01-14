@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`ChangeServerLifeCycleState`](crate::client::fluent_builders::ChangeServerLifeCycleState) operation.
     ///
-    /// - Takes [`ChangeServerLifeCycleStateInput`](crate::input::ChangeServerLifeCycleStateInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::ChangeServerLifeCycleStateInput::source_server_id): <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    ///   - [`life_cycle(Option<ChangeServerLifeCycleStateSourceServerLifecycle>)`](crate::input::ChangeServerLifeCycleStateInput::life_cycle): <p>The request to change the source server migration lifecycle state.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::ChangeServerLifeCycleState::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::ChangeServerLifeCycleState::set_source_server_id): <p>The request to change the source server migration lifecycle state by source server ID.</p>
+    ///   - [`life_cycle(ChangeServerLifeCycleStateSourceServerLifecycle)`](crate::client::fluent_builders::ChangeServerLifeCycleState::life_cycle) / [`set_life_cycle(Option<ChangeServerLifeCycleStateSourceServerLifecycle>)`](crate::client::fluent_builders::ChangeServerLifeCycleState::set_life_cycle): <p>The request to change the source server migration lifecycle state.</p>
     /// - On success, responds with [`ChangeServerLifeCycleStateOutput`](crate::output::ChangeServerLifeCycleStateOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::ChangeServerLifeCycleStateOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::ChangeServerLifeCycleStateOutput::arn): <p>Source server ARN.</p>
@@ -107,20 +107,20 @@ where
     }
     /// Constructs a fluent builder for the [`CreateReplicationConfigurationTemplate`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate) operation.
     ///
-    /// - Takes [`CreateReplicationConfigurationTemplateInput`](crate::input::CreateReplicationConfigurationTemplateInput) with field(s):
-    ///   - [`staging_area_subnet_id(Option<String>)`](crate::input::CreateReplicationConfigurationTemplateInput::staging_area_subnet_id): <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
-    ///   - [`associate_default_security_group(Option<bool>)`](crate::input::CreateReplicationConfigurationTemplateInput::associate_default_security_group): <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::input::CreateReplicationConfigurationTemplateInput::replication_servers_security_groups_i_ds): <p>Request to configure the Replication Server Secuirity group ID during Replication Settings template creation.</p>
-    ///   - [`replication_server_instance_type(Option<String>)`](crate::input::CreateReplicationConfigurationTemplateInput::replication_server_instance_type): <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
-    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::input::CreateReplicationConfigurationTemplateInput::use_dedicated_replication_server): <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
-    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::input::CreateReplicationConfigurationTemplateInput::default_large_staging_disk_type): <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
-    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::input::CreateReplicationConfigurationTemplateInput::ebs_encryption): <p>Request to configure EBS enryption during Replication Settings template creation.</p>
-    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::input::CreateReplicationConfigurationTemplateInput::ebs_encryption_key_arn): <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::input::CreateReplicationConfigurationTemplateInput::bandwidth_throttling): <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
-    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::input::CreateReplicationConfigurationTemplateInput::data_plane_routing): <p>Request to configure data plane routing during Replication Settings template creation.</p>
-    ///   - [`create_public_ip(Option<bool>)`](crate::input::CreateReplicationConfigurationTemplateInput::create_public_ip): <p>Request to create Public IP during Replication Settings template creation.</p>
-    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::input::CreateReplicationConfigurationTemplateInput::staging_area_tags): <p>Request to configure Staiging Area tags during Replication Settings template creation.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateReplicationConfigurationTemplateInput::tags): <p>Request to configure tags during Replication Settings template creation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`staging_area_subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::staging_area_subnet_id) / [`set_staging_area_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_staging_area_subnet_id): <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
+    ///   - [`associate_default_security_group(bool)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::associate_default_security_group) / [`set_associate_default_security_group(Option<bool>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_associate_default_security_group): <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Vec<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::replication_servers_security_groups_i_ds) / [`set_replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_replication_servers_security_groups_i_ds): <p>Request to configure the Replication Server Secuirity group ID during Replication Settings template creation.</p>
+    ///   - [`replication_server_instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::replication_server_instance_type) / [`set_replication_server_instance_type(Option<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_replication_server_instance_type): <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
+    ///   - [`use_dedicated_replication_server(bool)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::use_dedicated_replication_server) / [`set_use_dedicated_replication_server(Option<bool>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_use_dedicated_replication_server): <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
+    ///   - [`default_large_staging_disk_type(ReplicationConfigurationDefaultLargeStagingDiskType)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::default_large_staging_disk_type) / [`set_default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_default_large_staging_disk_type): <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
+    ///   - [`ebs_encryption(ReplicationConfigurationEbsEncryption)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::ebs_encryption) / [`set_ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_ebs_encryption): <p>Request to configure EBS enryption during Replication Settings template creation.</p>
+    ///   - [`ebs_encryption_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::ebs_encryption_key_arn) / [`set_ebs_encryption_key_arn(Option<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_ebs_encryption_key_arn): <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::bandwidth_throttling) / [`set_bandwidth_throttling(i64)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_bandwidth_throttling): <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
+    ///   - [`data_plane_routing(ReplicationConfigurationDataPlaneRouting)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::data_plane_routing) / [`set_data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_data_plane_routing): <p>Request to configure data plane routing during Replication Settings template creation.</p>
+    ///   - [`create_public_ip(bool)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::create_public_ip) / [`set_create_public_ip(Option<bool>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_create_public_ip): <p>Request to create Public IP during Replication Settings template creation.</p>
+    ///   - [`staging_area_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::staging_area_tags) / [`set_staging_area_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_staging_area_tags): <p>Request to configure Staiging Area tags during Replication Settings template creation.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_tags): <p>Request to configure tags during Replication Settings template creation.</p>
     /// - On success, responds with [`CreateReplicationConfigurationTemplateOutput`](crate::output::CreateReplicationConfigurationTemplateOutput) with field(s):
     ///   - [`replication_configuration_template_id(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::replication_configuration_template_id): <p>Replication Configuration template template ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::arn): <p>Replication Configuration template ARN.</p>
@@ -145,8 +145,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteJob`](crate::client::fluent_builders::DeleteJob) operation.
     ///
-    /// - Takes [`DeleteJobInput`](crate::input::DeleteJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DeleteJobInput::job_id): <p>Request to delete Job from service by Job ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DeleteJob::set_job_id): <p>Request to delete Job from service by Job ID.</p>
     /// - On success, responds with [`DeleteJobOutput`](crate::output::DeleteJobOutput)
 
     /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::error::DeleteJobError)
@@ -155,8 +155,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteReplicationConfigurationTemplate`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate) operation.
     ///
-    /// - Takes [`DeleteReplicationConfigurationTemplateInput`](crate::input::DeleteReplicationConfigurationTemplateInput) with field(s):
-    ///   - [`replication_configuration_template_id(Option<String>)`](crate::input::DeleteReplicationConfigurationTemplateInput::replication_configuration_template_id): <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`replication_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate::replication_configuration_template_id) / [`set_replication_configuration_template_id(Option<String>)`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate::set_replication_configuration_template_id): <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
     /// - On success, responds with [`DeleteReplicationConfigurationTemplateOutput`](crate::output::DeleteReplicationConfigurationTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteReplicationConfigurationTemplateError>`](crate::error::DeleteReplicationConfigurationTemplateError)
@@ -167,8 +167,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSourceServer`](crate::client::fluent_builders::DeleteSourceServer) operation.
     ///
-    /// - Takes [`DeleteSourceServerInput`](crate::input::DeleteSourceServerInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::DeleteSourceServerInput::source_server_id): <p>Request to delete Source Server from service by Server ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSourceServer::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::DeleteSourceServer::set_source_server_id): <p>Request to delete Source Server from service by Server ID.</p>
     /// - On success, responds with [`DeleteSourceServerOutput`](crate::output::DeleteSourceServerOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSourceServerError>`](crate::error::DeleteSourceServerError)
@@ -177,8 +177,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteVcenterClient`](crate::client::fluent_builders::DeleteVcenterClient) operation.
     ///
-    /// - Takes [`DeleteVcenterClientInput`](crate::input::DeleteVcenterClientInput) with field(s):
-    ///   - [`vcenter_client_id(Option<String>)`](crate::input::DeleteVcenterClientInput::vcenter_client_id): <p>ID of resource to be deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`vcenter_client_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVcenterClient::vcenter_client_id) / [`set_vcenter_client_id(Option<String>)`](crate::client::fluent_builders::DeleteVcenterClient::set_vcenter_client_id): <p>ID of resource to be deleted.</p>
     /// - On success, responds with [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput)
 
     /// - On failure, responds with [`SdkError<DeleteVcenterClientError>`](crate::error::DeleteVcenterClientError)
@@ -186,12 +186,12 @@ where
         fluent_builders::DeleteVcenterClient::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeJobLogItems`](crate::client::fluent_builders::DescribeJobLogItems) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeJobLogItems::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeJobLogItems::into_paginator).
     ///
-    /// - Takes [`DescribeJobLogItemsInput`](crate::input::DescribeJobLogItemsInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeJobLogItemsInput::job_id): <p>Request to describe Job log job ID.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeJobLogItemsInput::max_results): <p>Request to describe Job log item maximum results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeJobLogItemsInput::next_token): <p>Request to describe Job log next token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJobLogItems::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeJobLogItems::set_job_id): <p>Request to describe Job log job ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeJobLogItems::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeJobLogItems::set_max_results): <p>Request to describe Job log item maximum results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeJobLogItems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeJobLogItems::set_next_token): <p>Request to describe Job log next token.</p>
     /// - On success, responds with [`DescribeJobLogItemsOutput`](crate::output::DescribeJobLogItemsOutput) with field(s):
     ///   - [`items(Option<Vec<JobLog>>)`](crate::output::DescribeJobLogItemsOutput::items): <p>Request to describe Job log response items.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeJobLogItemsOutput::next_token): <p>Request to describe Job log response next token.</p>
@@ -200,12 +200,12 @@ where
         fluent_builders::DescribeJobLogItems::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeJobs`](crate::client::fluent_builders::DescribeJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeJobs::into_paginator).
     ///
-    /// - Takes [`DescribeJobsInput`](crate::input::DescribeJobsInput) with field(s):
-    ///   - [`filters(Option<DescribeJobsRequestFilters>)`](crate::input::DescribeJobsInput::filters): <p>Request to describe Job log filters.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeJobsInput::max_results): <p>Request to describe Job log by max results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeJobsInput::next_token): <p>Request to describe Job logby next token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filters(DescribeJobsRequestFilters)`](crate::client::fluent_builders::DescribeJobs::filters) / [`set_filters(Option<DescribeJobsRequestFilters>)`](crate::client::fluent_builders::DescribeJobs::set_filters): <p>Request to describe Job log filters.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeJobs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeJobs::set_max_results): <p>Request to describe Job log by max results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeJobs::set_next_token): <p>Request to describe Job logby next token.</p>
     /// - On success, responds with [`DescribeJobsOutput`](crate::output::DescribeJobsOutput) with field(s):
     ///   - [`items(Option<Vec<Job>>)`](crate::output::DescribeJobsOutput::items): <p>Request to describe Job log items.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeJobsOutput::next_token): <p>Request to describe Job response by next token.</p>
@@ -214,12 +214,12 @@ where
         fluent_builders::DescribeJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeReplicationConfigurationTemplates`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::into_paginator).
     ///
-    /// - Takes [`DescribeReplicationConfigurationTemplatesInput`](crate::input::DescribeReplicationConfigurationTemplatesInput) with field(s):
-    ///   - [`replication_configuration_template_i_ds(Option<Vec<String>>)`](crate::input::DescribeReplicationConfigurationTemplatesInput::replication_configuration_template_i_ds): <p>Request to describe Replication Configuration template by template IDs.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeReplicationConfigurationTemplatesInput::max_results): <p>Request to describe Replication Configuration template by max results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeReplicationConfigurationTemplatesInput::next_token): <p>Request to describe Replication Configuration template by next token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`replication_configuration_template_i_ds(Vec<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::replication_configuration_template_i_ds) / [`set_replication_configuration_template_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::set_replication_configuration_template_i_ds): <p>Request to describe Replication Configuration template by template IDs.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::set_max_results): <p>Request to describe Replication Configuration template by max results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::set_next_token): <p>Request to describe Replication Configuration template by next token.</p>
     /// - On success, responds with [`DescribeReplicationConfigurationTemplatesOutput`](crate::output::DescribeReplicationConfigurationTemplatesOutput) with field(s):
     ///   - [`items(Option<Vec<ReplicationConfigurationTemplate>>)`](crate::output::DescribeReplicationConfigurationTemplatesOutput::items): <p>Request to describe Replication Configuration template by items.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeReplicationConfigurationTemplatesOutput::next_token): <p>Request to describe Replication Configuration template by next token.</p>
@@ -230,12 +230,12 @@ where
         fluent_builders::DescribeReplicationConfigurationTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeSourceServers`](crate::client::fluent_builders::DescribeSourceServers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSourceServers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSourceServers::into_paginator).
     ///
-    /// - Takes [`DescribeSourceServersInput`](crate::input::DescribeSourceServersInput) with field(s):
-    ///   - [`filters(Option<DescribeSourceServersRequestFilters>)`](crate::input::DescribeSourceServersInput::filters): <p>Request to filter Source Servers list.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeSourceServersInput::max_results): <p>Request to filter Source Servers list by maximum results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSourceServersInput::next_token): <p>Request to filter Source Servers list by next token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filters(DescribeSourceServersRequestFilters)`](crate::client::fluent_builders::DescribeSourceServers::filters) / [`set_filters(Option<DescribeSourceServersRequestFilters>)`](crate::client::fluent_builders::DescribeSourceServers::set_filters): <p>Request to filter Source Servers list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSourceServers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeSourceServers::set_max_results): <p>Request to filter Source Servers list by maximum results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSourceServers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSourceServers::set_next_token): <p>Request to filter Source Servers list by next token.</p>
     /// - On success, responds with [`DescribeSourceServersOutput`](crate::output::DescribeSourceServersOutput) with field(s):
     ///   - [`items(Option<Vec<SourceServer>>)`](crate::output::DescribeSourceServersOutput::items): <p>Request to filter Source Servers list by item.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSourceServersOutput::next_token): <p>Request to filter Source Servers next token.</p>
@@ -244,11 +244,11 @@ where
         fluent_builders::DescribeSourceServers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeVcenterClients`](crate::client::fluent_builders::DescribeVcenterClients) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeVcenterClients::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeVcenterClients::into_paginator).
     ///
-    /// - Takes [`DescribeVcenterClientsInput`](crate::input::DescribeVcenterClientsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::DescribeVcenterClientsInput::max_results): <p>Maximum results to be returned in DescribeVcenterClients.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeVcenterClientsInput::next_token): <p>Next pagination token to be provided for DescribeVcenterClients.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeVcenterClients::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeVcenterClients::set_max_results): <p>Maximum results to be returned in DescribeVcenterClients.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeVcenterClients::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeVcenterClients::set_next_token): <p>Next pagination token to be provided for DescribeVcenterClients.</p>
     /// - On success, responds with [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput) with field(s):
     ///   - [`items(Option<Vec<VcenterClient>>)`](crate::output::DescribeVcenterClientsOutput::items): <p>List of items returned by DescribeVcenterClients.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeVcenterClientsOutput::next_token): <p>Next pagination token returned from DescribeVcenterClients.</p>
@@ -258,8 +258,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisconnectFromService`](crate::client::fluent_builders::DisconnectFromService) operation.
     ///
-    /// - Takes [`DisconnectFromServiceInput`](crate::input::DisconnectFromServiceInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::DisconnectFromServiceInput::source_server_id): <p>Request to disconnect Source Server from service by Server ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::DisconnectFromService::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::DisconnectFromService::set_source_server_id): <p>Request to disconnect Source Server from service by Server ID.</p>
     /// - On success, responds with [`DisconnectFromServiceOutput`](crate::output::DisconnectFromServiceOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::DisconnectFromServiceOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::DisconnectFromServiceOutput::arn): <p>Source server ARN.</p>
@@ -277,8 +277,8 @@ where
     }
     /// Constructs a fluent builder for the [`FinalizeCutover`](crate::client::fluent_builders::FinalizeCutover) operation.
     ///
-    /// - Takes [`FinalizeCutoverInput`](crate::input::FinalizeCutoverInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::FinalizeCutoverInput::source_server_id): <p>Request to finalize Cutover by Soure Server ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::FinalizeCutover::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::FinalizeCutover::set_source_server_id): <p>Request to finalize Cutover by Soure Server ID.</p>
     /// - On success, responds with [`FinalizeCutoverOutput`](crate::output::FinalizeCutoverOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::FinalizeCutoverOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::FinalizeCutoverOutput::arn): <p>Source server ARN.</p>
@@ -296,8 +296,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetLaunchConfiguration`](crate::client::fluent_builders::GetLaunchConfiguration) operation.
     ///
-    /// - Takes [`GetLaunchConfigurationInput`](crate::input::GetLaunchConfigurationInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::GetLaunchConfigurationInput::source_server_id): <p>Request to get Launch Configuration information by Source Server ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchConfiguration::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::GetLaunchConfiguration::set_source_server_id): <p>Request to get Launch Configuration information by Source Server ID.</p>
     /// - On success, responds with [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::GetLaunchConfigurationOutput::source_server_id): <p>Configure launch configuration Source Server ID.</p>
     ///   - [`name(Option<String>)`](crate::output::GetLaunchConfigurationOutput::name): <p>Configure launch configuration name.</p>
@@ -313,8 +313,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetReplicationConfiguration`](crate::client::fluent_builders::GetReplicationConfiguration) operation.
     ///
-    /// - Takes [`GetReplicationConfigurationInput`](crate::input::GetReplicationConfigurationInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::GetReplicationConfigurationInput::source_server_id): <p>Request to get Replication Configuaration by Source Server ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::GetReplicationConfiguration::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::GetReplicationConfiguration::set_source_server_id): <p>Request to get Replication Configuaration by Source Server ID.</p>
     /// - On success, responds with [`GetReplicationConfigurationOutput`](crate::output::GetReplicationConfigurationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::GetReplicationConfigurationOutput::source_server_id): <p>Replication Configuration Source Server ID.</p>
     ///   - [`name(Option<String>)`](crate::output::GetReplicationConfigurationOutput::name): <p>Replication Configuration name.</p>
@@ -339,7 +339,7 @@ where
     }
     /// Constructs a fluent builder for the [`InitializeService`](crate::client::fluent_builders::InitializeService) operation.
     ///
-    /// - Takes [`InitializeServiceInput`](crate::input::InitializeServiceInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::InitializeService::send) it.
 
     /// - On success, responds with [`InitializeServiceOutput`](crate::output::InitializeServiceOutput)
 
@@ -349,8 +349,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>List tags for resource request by ARN.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>List tags for resource request by ARN.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>List tags for resource response.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -359,8 +359,8 @@ where
     }
     /// Constructs a fluent builder for the [`MarkAsArchived`](crate::client::fluent_builders::MarkAsArchived) operation.
     ///
-    /// - Takes [`MarkAsArchivedInput`](crate::input::MarkAsArchivedInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::MarkAsArchivedInput::source_server_id): <p>Mark as archived by Source Server ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::MarkAsArchived::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::MarkAsArchived::set_source_server_id): <p>Mark as archived by Source Server ID.</p>
     /// - On success, responds with [`MarkAsArchivedOutput`](crate::output::MarkAsArchivedOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::MarkAsArchivedOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::MarkAsArchivedOutput::arn): <p>Source server ARN.</p>
@@ -378,8 +378,8 @@ where
     }
     /// Constructs a fluent builder for the [`RetryDataReplication`](crate::client::fluent_builders::RetryDataReplication) operation.
     ///
-    /// - Takes [`RetryDataReplicationInput`](crate::input::RetryDataReplicationInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::RetryDataReplicationInput::source_server_id): <p>Retry data replication for Source Server ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::RetryDataReplication::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::RetryDataReplication::set_source_server_id): <p>Retry data replication for Source Server ID.</p>
     /// - On success, responds with [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::RetryDataReplicationOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::RetryDataReplicationOutput::arn): <p>Source server ARN.</p>
@@ -397,9 +397,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartCutover`](crate::client::fluent_builders::StartCutover) operation.
     ///
-    /// - Takes [`StartCutoverInput`](crate::input::StartCutoverInput) with field(s):
-    ///   - [`source_server_i_ds(Option<Vec<String>>)`](crate::input::StartCutoverInput::source_server_i_ds): <p>Start Cutover by Source Server IDs.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::StartCutoverInput::tags): <p>Start Cutover by Tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::StartCutover::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::StartCutover::set_source_server_i_ds): <p>Start Cutover by Source Server IDs.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::StartCutover::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartCutover::set_tags): <p>Start Cutover by Tags.</p>
     /// - On success, responds with [`StartCutoverOutput`](crate::output::StartCutoverOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::output::StartCutoverOutput::job): <p>Start Cutover Job response.</p>
     /// - On failure, responds with [`SdkError<StartCutoverError>`](crate::error::StartCutoverError)
@@ -408,8 +408,8 @@ where
     }
     /// Constructs a fluent builder for the [`StartReplication`](crate::client::fluent_builders::StartReplication) operation.
     ///
-    /// - Takes [`StartReplicationInput`](crate::input::StartReplicationInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::StartReplicationInput::source_server_id): <p>ID of source server on which to start replication.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::StartReplication::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::StartReplication::set_source_server_id): <p>ID of source server on which to start replication.</p>
     /// - On success, responds with [`StartReplicationOutput`](crate::output::StartReplicationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::StartReplicationOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::StartReplicationOutput::arn): <p>Source server ARN.</p>
@@ -427,9 +427,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartTest`](crate::client::fluent_builders::StartTest) operation.
     ///
-    /// - Takes [`StartTestInput`](crate::input::StartTestInput) with field(s):
-    ///   - [`source_server_i_ds(Option<Vec<String>>)`](crate::input::StartTestInput::source_server_i_ds): <p>Start Test for Source Server IDs.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::StartTestInput::tags): <p>Start Test by Tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::StartTest::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::StartTest::set_source_server_i_ds): <p>Start Test for Source Server IDs.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::StartTest::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartTest::set_tags): <p>Start Test by Tags.</p>
     /// - On success, responds with [`StartTestOutput`](crate::output::StartTestOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::output::StartTestOutput::job): <p>Start Test Job response.</p>
     /// - On failure, responds with [`SdkError<StartTestError>`](crate::error::StartTestError)
@@ -438,9 +438,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>Tag resource by ARN.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>Tag resource by Tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>Tag resource by ARN.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Tag resource by Tags.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -449,9 +449,9 @@ where
     }
     /// Constructs a fluent builder for the [`TerminateTargetInstances`](crate::client::fluent_builders::TerminateTargetInstances) operation.
     ///
-    /// - Takes [`TerminateTargetInstancesInput`](crate::input::TerminateTargetInstancesInput) with field(s):
-    ///   - [`source_server_i_ds(Option<Vec<String>>)`](crate::input::TerminateTargetInstancesInput::source_server_i_ds): <p>Terminate Target instance by Source Server IDs.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TerminateTargetInstancesInput::tags): <p>Terminate Target instance by Tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::TerminateTargetInstances::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::TerminateTargetInstances::set_source_server_i_ds): <p>Terminate Target instance by Source Server IDs.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TerminateTargetInstances::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TerminateTargetInstances::set_tags): <p>Terminate Target instance by Tags.</p>
     /// - On success, responds with [`TerminateTargetInstancesOutput`](crate::output::TerminateTargetInstancesOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::output::TerminateTargetInstancesOutput::job): <p>Terminate Target instance Job response.</p>
     /// - On failure, responds with [`SdkError<TerminateTargetInstancesError>`](crate::error::TerminateTargetInstancesError)
@@ -460,9 +460,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>Untag resource by ARN.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Untag resource by Keys.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>Untag resource by ARN.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Untag resource by Keys.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -471,14 +471,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateLaunchConfiguration`](crate::client::fluent_builders::UpdateLaunchConfiguration) operation.
     ///
-    /// - Takes [`UpdateLaunchConfigurationInput`](crate::input::UpdateLaunchConfigurationInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::UpdateLaunchConfigurationInput::source_server_id): <p>Update Launch configuration by Source Server ID request.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateLaunchConfigurationInput::name): <p>Update Launch configuration name request.</p>
-    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::input::UpdateLaunchConfigurationInput::launch_disposition): <p>Update Launch configuration launch disposition request.</p>
-    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::input::UpdateLaunchConfigurationInput::target_instance_type_right_sizing_method): <p>Update Launch configuration Target instance right sizing request.</p>
-    ///   - [`copy_private_ip(Option<bool>)`](crate::input::UpdateLaunchConfigurationInput::copy_private_ip): <p>Update Launch configuration copy Private IP request.</p>
-    ///   - [`copy_tags(Option<bool>)`](crate::input::UpdateLaunchConfigurationInput::copy_tags): <p>Update Launch configuration copy Tags request.</p>
-    ///   - [`licensing(Option<Licensing>)`](crate::input::UpdateLaunchConfigurationInput::licensing): <p>Update Launch configuration licensing request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_source_server_id): <p>Update Launch configuration by Source Server ID request.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_name): <p>Update Launch configuration name request.</p>
+    ///   - [`launch_disposition(LaunchDisposition)`](crate::client::fluent_builders::UpdateLaunchConfiguration::launch_disposition) / [`set_launch_disposition(Option<LaunchDisposition>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_launch_disposition): <p>Update Launch configuration launch disposition request.</p>
+    ///   - [`target_instance_type_right_sizing_method(TargetInstanceTypeRightSizingMethod)`](crate::client::fluent_builders::UpdateLaunchConfiguration::target_instance_type_right_sizing_method) / [`set_target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_target_instance_type_right_sizing_method): <p>Update Launch configuration Target instance right sizing request.</p>
+    ///   - [`copy_private_ip(bool)`](crate::client::fluent_builders::UpdateLaunchConfiguration::copy_private_ip) / [`set_copy_private_ip(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_copy_private_ip): <p>Update Launch configuration copy Private IP request.</p>
+    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::UpdateLaunchConfiguration::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_copy_tags): <p>Update Launch configuration copy Tags request.</p>
+    ///   - [`licensing(Licensing)`](crate::client::fluent_builders::UpdateLaunchConfiguration::licensing) / [`set_licensing(Option<Licensing>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_licensing): <p>Update Launch configuration licensing request.</p>
     /// - On success, responds with [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::source_server_id): <p>Configure launch configuration Source Server ID.</p>
     ///   - [`name(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::name): <p>Configure launch configuration name.</p>
@@ -496,22 +496,22 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateReplicationConfiguration`](crate::client::fluent_builders::UpdateReplicationConfiguration) operation.
     ///
-    /// - Takes [`UpdateReplicationConfigurationInput`](crate::input::UpdateReplicationConfigurationInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::source_server_id): <p>Update replication configuration Source Server ID request.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::name): <p>Update replication configuration name request.</p>
-    ///   - [`staging_area_subnet_id(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::staging_area_subnet_id): <p>Update replication configuration Staging Area subnet request.</p>
-    ///   - [`associate_default_security_group(Option<bool>)`](crate::input::UpdateReplicationConfigurationInput::associate_default_security_group): <p>Update replication configuration associate default Application Migration Service Security group request.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::input::UpdateReplicationConfigurationInput::replication_servers_security_groups_i_ds): <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    ///   - [`replication_server_instance_type(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::replication_server_instance_type): <p>Update replication configuration Replication Server instance type request.</p>
-    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::input::UpdateReplicationConfigurationInput::use_dedicated_replication_server): <p>Update replication configuration use dedicated Replication Server request.</p>
-    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::input::UpdateReplicationConfigurationInput::default_large_staging_disk_type): <p>Update replication configuration use default large Staging Disk type request.</p>
-    ///   - [`replicated_disks(Option<Vec<ReplicationConfigurationReplicatedDisk>>)`](crate::input::UpdateReplicationConfigurationInput::replicated_disks): <p>Update replication configuration replicated disks request.</p>
-    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::input::UpdateReplicationConfigurationInput::ebs_encryption): <p>Update replication configuration EBS encryption request.</p>
-    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::ebs_encryption_key_arn): <p>Update replication configuration EBS encryption key ARN request.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::input::UpdateReplicationConfigurationInput::bandwidth_throttling): <p>Update replication configuration bandwidth throttling request.</p>
-    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::input::UpdateReplicationConfigurationInput::data_plane_routing): <p>Update replication configuration data plane routing request.</p>
-    ///   - [`create_public_ip(Option<bool>)`](crate::input::UpdateReplicationConfigurationInput::create_public_ip): <p>Update replication configuration create Public IP request.</p>
-    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::input::UpdateReplicationConfigurationInput::staging_area_tags): <p>Update replication configuration Staging Area Tags request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_source_server_id): <p>Update replication configuration Source Server ID request.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_name): <p>Update replication configuration name request.</p>
+    ///   - [`staging_area_subnet_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::staging_area_subnet_id) / [`set_staging_area_subnet_id(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_staging_area_subnet_id): <p>Update replication configuration Staging Area subnet request.</p>
+    ///   - [`associate_default_security_group(bool)`](crate::client::fluent_builders::UpdateReplicationConfiguration::associate_default_security_group) / [`set_associate_default_security_group(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_associate_default_security_group): <p>Update replication configuration associate default Application Migration Service Security group request.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Vec<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::replication_servers_security_groups_i_ds) / [`set_replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_replication_servers_security_groups_i_ds): <p>Update replication configuration Replication Server Security Groups IDs request.</p>
+    ///   - [`replication_server_instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::replication_server_instance_type) / [`set_replication_server_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_replication_server_instance_type): <p>Update replication configuration Replication Server instance type request.</p>
+    ///   - [`use_dedicated_replication_server(bool)`](crate::client::fluent_builders::UpdateReplicationConfiguration::use_dedicated_replication_server) / [`set_use_dedicated_replication_server(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_use_dedicated_replication_server): <p>Update replication configuration use dedicated Replication Server request.</p>
+    ///   - [`default_large_staging_disk_type(ReplicationConfigurationDefaultLargeStagingDiskType)`](crate::client::fluent_builders::UpdateReplicationConfiguration::default_large_staging_disk_type) / [`set_default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_default_large_staging_disk_type): <p>Update replication configuration use default large Staging Disk type request.</p>
+    ///   - [`replicated_disks(Vec<ReplicationConfigurationReplicatedDisk>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::replicated_disks) / [`set_replicated_disks(Option<Vec<ReplicationConfigurationReplicatedDisk>>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_replicated_disks): <p>Update replication configuration replicated disks request.</p>
+    ///   - [`ebs_encryption(ReplicationConfigurationEbsEncryption)`](crate::client::fluent_builders::UpdateReplicationConfiguration::ebs_encryption) / [`set_ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_ebs_encryption): <p>Update replication configuration EBS encryption request.</p>
+    ///   - [`ebs_encryption_key_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::ebs_encryption_key_arn) / [`set_ebs_encryption_key_arn(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_ebs_encryption_key_arn): <p>Update replication configuration EBS encryption key ARN request.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::client::fluent_builders::UpdateReplicationConfiguration::bandwidth_throttling) / [`set_bandwidth_throttling(i64)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_bandwidth_throttling): <p>Update replication configuration bandwidth throttling request.</p>
+    ///   - [`data_plane_routing(ReplicationConfigurationDataPlaneRouting)`](crate::client::fluent_builders::UpdateReplicationConfiguration::data_plane_routing) / [`set_data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_data_plane_routing): <p>Update replication configuration data plane routing request.</p>
+    ///   - [`create_public_ip(bool)`](crate::client::fluent_builders::UpdateReplicationConfiguration::create_public_ip) / [`set_create_public_ip(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_create_public_ip): <p>Update replication configuration create Public IP request.</p>
+    ///   - [`staging_area_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::staging_area_tags) / [`set_staging_area_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_staging_area_tags): <p>Update replication configuration Staging Area Tags request.</p>
     /// - On success, responds with [`UpdateReplicationConfigurationOutput`](crate::output::UpdateReplicationConfigurationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::source_server_id): <p>Replication Configuration Source Server ID.</p>
     ///   - [`name(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::name): <p>Replication Configuration name.</p>
@@ -536,21 +536,21 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateReplicationConfigurationTemplate`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate) operation.
     ///
-    /// - Takes [`UpdateReplicationConfigurationTemplateInput`](crate::input::UpdateReplicationConfigurationTemplateInput) with field(s):
-    ///   - [`replication_configuration_template_id(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::replication_configuration_template_id): <p>Update replication configuration template template ID request.</p>
-    ///   - [`arn(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::arn): <p>Update replication configuration template ARN request.</p>
-    ///   - [`staging_area_subnet_id(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::staging_area_subnet_id): <p>Update replication configuration template Staging Area subnet ID request.</p>
-    ///   - [`associate_default_security_group(Option<bool>)`](crate::input::UpdateReplicationConfigurationTemplateInput::associate_default_security_group): <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::input::UpdateReplicationConfigurationTemplateInput::replication_servers_security_groups_i_ds): <p>Update replication configuration template Replication Server Security groups IDs request.</p>
-    ///   - [`replication_server_instance_type(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::replication_server_instance_type): <p>Update replication configuration template Replication Server instance type request.</p>
-    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::input::UpdateReplicationConfigurationTemplateInput::use_dedicated_replication_server): <p>Update replication configuration template use dedicated Replication Server request.</p>
-    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::input::UpdateReplicationConfigurationTemplateInput::default_large_staging_disk_type): <p>Update replication configuration template use default large Staging Disk type request.</p>
-    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::input::UpdateReplicationConfigurationTemplateInput::ebs_encryption): <p>Update replication configuration template EBS encryption request.</p>
-    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::ebs_encryption_key_arn): <p>Update replication configuration template EBS encryption key ARN request.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::input::UpdateReplicationConfigurationTemplateInput::bandwidth_throttling): <p>Update replication configuration template bandwidth throttling request.</p>
-    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::input::UpdateReplicationConfigurationTemplateInput::data_plane_routing): <p>Update replication configuration template data plane routing request.</p>
-    ///   - [`create_public_ip(Option<bool>)`](crate::input::UpdateReplicationConfigurationTemplateInput::create_public_ip): <p>Update replication configuration template create Public IP request.</p>
-    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::input::UpdateReplicationConfigurationTemplateInput::staging_area_tags): <p>Update replication configuration template Staging Area Tags request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`replication_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::replication_configuration_template_id) / [`set_replication_configuration_template_id(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_replication_configuration_template_id): <p>Update replication configuration template template ID request.</p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_arn): <p>Update replication configuration template ARN request.</p>
+    ///   - [`staging_area_subnet_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::staging_area_subnet_id) / [`set_staging_area_subnet_id(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_staging_area_subnet_id): <p>Update replication configuration template Staging Area subnet ID request.</p>
+    ///   - [`associate_default_security_group(bool)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::associate_default_security_group) / [`set_associate_default_security_group(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_associate_default_security_group): <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Vec<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::replication_servers_security_groups_i_ds) / [`set_replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_replication_servers_security_groups_i_ds): <p>Update replication configuration template Replication Server Security groups IDs request.</p>
+    ///   - [`replication_server_instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::replication_server_instance_type) / [`set_replication_server_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_replication_server_instance_type): <p>Update replication configuration template Replication Server instance type request.</p>
+    ///   - [`use_dedicated_replication_server(bool)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::use_dedicated_replication_server) / [`set_use_dedicated_replication_server(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_use_dedicated_replication_server): <p>Update replication configuration template use dedicated Replication Server request.</p>
+    ///   - [`default_large_staging_disk_type(ReplicationConfigurationDefaultLargeStagingDiskType)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::default_large_staging_disk_type) / [`set_default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_default_large_staging_disk_type): <p>Update replication configuration template use default large Staging Disk type request.</p>
+    ///   - [`ebs_encryption(ReplicationConfigurationEbsEncryption)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::ebs_encryption) / [`set_ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_ebs_encryption): <p>Update replication configuration template EBS encryption request.</p>
+    ///   - [`ebs_encryption_key_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::ebs_encryption_key_arn) / [`set_ebs_encryption_key_arn(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_ebs_encryption_key_arn): <p>Update replication configuration template EBS encryption key ARN request.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::bandwidth_throttling) / [`set_bandwidth_throttling(i64)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_bandwidth_throttling): <p>Update replication configuration template bandwidth throttling request.</p>
+    ///   - [`data_plane_routing(ReplicationConfigurationDataPlaneRouting)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::data_plane_routing) / [`set_data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_data_plane_routing): <p>Update replication configuration template data plane routing request.</p>
+    ///   - [`create_public_ip(bool)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::create_public_ip) / [`set_create_public_ip(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_create_public_ip): <p>Update replication configuration template create Public IP request.</p>
+    ///   - [`staging_area_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::staging_area_tags) / [`set_staging_area_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_staging_area_tags): <p>Update replication configuration template Staging Area Tags request.</p>
     /// - On success, responds with [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput) with field(s):
     ///   - [`replication_configuration_template_id(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::replication_configuration_template_id): <p>Replication Configuration template template ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::arn): <p>Replication Configuration template ARN.</p>
@@ -575,9 +575,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSourceServerReplicationType`](crate::client::fluent_builders::UpdateSourceServerReplicationType) operation.
     ///
-    /// - Takes [`UpdateSourceServerReplicationTypeInput`](crate::input::UpdateSourceServerReplicationTypeInput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::input::UpdateSourceServerReplicationTypeInput::source_server_id): <p>ID of source server on which to update replication type.</p>
-    ///   - [`replication_type(Option<ReplicationType>)`](crate::input::UpdateSourceServerReplicationTypeInput::replication_type): <p>Replication type to which to update source server.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceServerReplicationType::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::UpdateSourceServerReplicationType::set_source_server_id): <p>ID of source server on which to update replication type.</p>
+    ///   - [`replication_type(ReplicationType)`](crate::client::fluent_builders::UpdateSourceServerReplicationType::replication_type) / [`set_replication_type(Option<ReplicationType>)`](crate::client::fluent_builders::UpdateSourceServerReplicationType::set_replication_type): <p>Replication type to which to update source server.</p>
     /// - On success, responds with [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::output::UpdateSourceServerReplicationTypeOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateSourceServerReplicationTypeOutput::arn): <p>Source server ARN.</p>

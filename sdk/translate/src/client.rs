@@ -85,12 +85,12 @@ where
 {
     /// Constructs a fluent builder for the [`CreateParallelData`](crate::client::fluent_builders::CreateParallelData) operation.
     ///
-    /// - Takes [`CreateParallelDataInput`](crate::input::CreateParallelDataInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateParallelDataInput::name): <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateParallelDataInput::description): <p>A custom description for the parallel data resource in Amazon Translate.</p>
-    ///   - [`parallel_data_config(Option<ParallelDataConfig>)`](crate::input::CreateParallelDataInput::parallel_data_config): <p>Specifies the format and S3 location of the parallel data input file.</p>
-    ///   - [`encryption_key(Option<EncryptionKey>)`](crate::input::CreateParallelDataInput::encryption_key): <p>The encryption key used to encrypt this object.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateParallelDataInput::client_token): <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateParallelData::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateParallelData::set_name): <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateParallelData::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateParallelData::set_description): <p>A custom description for the parallel data resource in Amazon Translate.</p>
+    ///   - [`parallel_data_config(ParallelDataConfig)`](crate::client::fluent_builders::CreateParallelData::parallel_data_config) / [`set_parallel_data_config(Option<ParallelDataConfig>)`](crate::client::fluent_builders::CreateParallelData::set_parallel_data_config): <p>Specifies the format and S3 location of the parallel data input file.</p>
+    ///   - [`encryption_key(EncryptionKey)`](crate::client::fluent_builders::CreateParallelData::encryption_key) / [`set_encryption_key(Option<EncryptionKey>)`](crate::client::fluent_builders::CreateParallelData::set_encryption_key): <p>The encryption key used to encrypt this object.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateParallelData::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateParallelData::set_client_token): <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     /// - On success, responds with [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateParallelDataOutput::name): <p>The custom name that you assigned to the parallel data resource.</p>
     ///   - [`status(Option<ParallelDataStatus>)`](crate::output::CreateParallelDataOutput::status): <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
@@ -100,8 +100,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteParallelData`](crate::client::fluent_builders::DeleteParallelData) operation.
     ///
-    /// - Takes [`DeleteParallelDataInput`](crate::input::DeleteParallelDataInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteParallelDataInput::name): <p>The name of the parallel data resource that is being deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteParallelData::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteParallelData::set_name): <p>The name of the parallel data resource that is being deleted.</p>
     /// - On success, responds with [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::DeleteParallelDataOutput::name): <p>The name of the parallel data resource that is being deleted.</p>
     ///   - [`status(Option<ParallelDataStatus>)`](crate::output::DeleteParallelDataOutput::status): <p>The status of the parallel data deletion.</p>
@@ -111,8 +111,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTerminology`](crate::client::fluent_builders::DeleteTerminology) operation.
     ///
-    /// - Takes [`DeleteTerminologyInput`](crate::input::DeleteTerminologyInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteTerminologyInput::name): <p>The name of the custom terminology being deleted. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteTerminology::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteTerminology::set_name): <p>The name of the custom terminology being deleted. </p>
     /// - On success, responds with [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTerminologyError>`](crate::error::DeleteTerminologyError)
@@ -121,8 +121,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTextTranslationJob`](crate::client::fluent_builders::DescribeTextTranslationJob) operation.
     ///
-    /// - Takes [`DescribeTextTranslationJobInput`](crate::input::DescribeTextTranslationJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeTextTranslationJobInput::job_id): <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTextTranslationJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeTextTranslationJob::set_job_id): <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
     /// - On success, responds with [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput) with field(s):
     ///   - [`text_translation_job_properties(Option<TextTranslationJobProperties>)`](crate::output::DescribeTextTranslationJobOutput::text_translation_job_properties): <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
     /// - On failure, responds with [`SdkError<DescribeTextTranslationJobError>`](crate::error::DescribeTextTranslationJobError)
@@ -133,8 +133,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetParallelData`](crate::client::fluent_builders::GetParallelData) operation.
     ///
-    /// - Takes [`GetParallelDataInput`](crate::input::GetParallelDataInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::GetParallelDataInput::name): <p>The name of the parallel data resource that is being retrieved.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetParallelData::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetParallelData::set_name): <p>The name of the parallel data resource that is being retrieved.</p>
     /// - On success, responds with [`GetParallelDataOutput`](crate::output::GetParallelDataOutput) with field(s):
     ///   - [`parallel_data_properties(Option<ParallelDataProperties>)`](crate::output::GetParallelDataOutput::parallel_data_properties): <p>The properties of the parallel data resource that is being retrieved.</p>
     ///   - [`data_location(Option<ParallelDataDataLocation>)`](crate::output::GetParallelDataOutput::data_location): <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>   <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>   <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>   <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>  </important>
@@ -146,9 +146,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetTerminology`](crate::client::fluent_builders::GetTerminology) operation.
     ///
-    /// - Takes [`GetTerminologyInput`](crate::input::GetTerminologyInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::GetTerminologyInput::name): <p>The name of the custom terminology being retrieved.</p>
-    ///   - [`terminology_data_format(Option<TerminologyDataFormat>)`](crate::input::GetTerminologyInput::terminology_data_format): <p>The data format of the custom terminology being retrieved.</p>  <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>  <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetTerminology::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetTerminology::set_name): <p>The name of the custom terminology being retrieved.</p>
+    ///   - [`terminology_data_format(TerminologyDataFormat)`](crate::client::fluent_builders::GetTerminology::terminology_data_format) / [`set_terminology_data_format(Option<TerminologyDataFormat>)`](crate::client::fluent_builders::GetTerminology::set_terminology_data_format): <p>The data format of the custom terminology being retrieved.</p>  <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>  <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     /// - On success, responds with [`GetTerminologyOutput`](crate::output::GetTerminologyOutput) with field(s):
     ///   - [`terminology_properties(Option<TerminologyProperties>)`](crate::output::GetTerminologyOutput::terminology_properties): <p>The properties of the custom terminology being retrieved.</p>
     ///   - [`terminology_data_location(Option<TerminologyDataLocation>)`](crate::output::GetTerminologyOutput::terminology_data_location): <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>   <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>   <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>   <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>  </important>
@@ -159,12 +159,12 @@ where
     }
     /// Constructs a fluent builder for the [`ImportTerminology`](crate::client::fluent_builders::ImportTerminology) operation.
     ///
-    /// - Takes [`ImportTerminologyInput`](crate::input::ImportTerminologyInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::ImportTerminologyInput::name): <p>The name of the custom terminology being imported.</p>
-    ///   - [`merge_strategy(Option<MergeStrategy>)`](crate::input::ImportTerminologyInput::merge_strategy): <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
-    ///   - [`description(Option<String>)`](crate::input::ImportTerminologyInput::description): <p>The description of the custom terminology being imported.</p>
-    ///   - [`terminology_data(Option<TerminologyData>)`](crate::input::ImportTerminologyInput::terminology_data): <p>The terminology data for the custom terminology being imported.</p>
-    ///   - [`encryption_key(Option<EncryptionKey>)`](crate::input::ImportTerminologyInput::encryption_key): <p>The encryption key for the custom terminology being imported.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ImportTerminology::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ImportTerminology::set_name): <p>The name of the custom terminology being imported.</p>
+    ///   - [`merge_strategy(MergeStrategy)`](crate::client::fluent_builders::ImportTerminology::merge_strategy) / [`set_merge_strategy(Option<MergeStrategy>)`](crate::client::fluent_builders::ImportTerminology::set_merge_strategy): <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::ImportTerminology::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::ImportTerminology::set_description): <p>The description of the custom terminology being imported.</p>
+    ///   - [`terminology_data(TerminologyData)`](crate::client::fluent_builders::ImportTerminology::terminology_data) / [`set_terminology_data(Option<TerminologyData>)`](crate::client::fluent_builders::ImportTerminology::set_terminology_data): <p>The terminology data for the custom terminology being imported.</p>
+    ///   - [`encryption_key(EncryptionKey)`](crate::client::fluent_builders::ImportTerminology::encryption_key) / [`set_encryption_key(Option<EncryptionKey>)`](crate::client::fluent_builders::ImportTerminology::set_encryption_key): <p>The encryption key for the custom terminology being imported.</p>
     /// - On success, responds with [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput) with field(s):
     ///   - [`terminology_properties(Option<TerminologyProperties>)`](crate::output::ImportTerminologyOutput::terminology_properties): <p>The properties of the custom terminology being imported.</p>
     ///   - [`auxiliary_data_location(Option<TerminologyDataLocation>)`](crate::output::ImportTerminologyOutput::auxiliary_data_location): <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
@@ -173,11 +173,11 @@ where
         fluent_builders::ImportTerminology::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListParallelData`](crate::client::fluent_builders::ListParallelData) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListParallelData::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListParallelData::into_paginator).
     ///
-    /// - Takes [`ListParallelDataInput`](crate::input::ListParallelDataInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListParallelDataInput::next_token): <p>A string that specifies the next page of results to return in a paginated response.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListParallelDataInput::max_results): <p>The maximum number of parallel data resources returned for each request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListParallelData::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListParallelData::set_next_token): <p>A string that specifies the next page of results to return in a paginated response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListParallelData::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListParallelData::set_max_results): <p>The maximum number of parallel data resources returned for each request.</p>
     /// - On success, responds with [`ListParallelDataOutput`](crate::output::ListParallelDataOutput) with field(s):
     ///   - [`parallel_data_properties_list(Option<Vec<ParallelDataProperties>>)`](crate::output::ListParallelDataOutput::parallel_data_properties_list): <p>The properties of the parallel data resources returned by this request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListParallelDataOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -186,11 +186,11 @@ where
         fluent_builders::ListParallelData::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTerminologies`](crate::client::fluent_builders::ListTerminologies) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTerminologies::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTerminologies::into_paginator).
     ///
-    /// - Takes [`ListTerminologiesInput`](crate::input::ListTerminologiesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListTerminologiesInput::next_token): <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTerminologiesInput::max_results): <p>The maximum number of custom terminologies returned per list request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTerminologies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTerminologies::set_next_token): <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTerminologies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTerminologies::set_max_results): <p>The maximum number of custom terminologies returned per list request.</p>
     /// - On success, responds with [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput) with field(s):
     ///   - [`terminology_properties_list(Option<Vec<TerminologyProperties>>)`](crate::output::ListTerminologiesOutput::terminology_properties_list): <p>The properties list of the custom terminologies returned on the list request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTerminologiesOutput::next_token): <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
@@ -199,12 +199,12 @@ where
         fluent_builders::ListTerminologies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTextTranslationJobs`](crate::client::fluent_builders::ListTextTranslationJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTextTranslationJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTextTranslationJobs::into_paginator).
     ///
-    /// - Takes [`ListTextTranslationJobsInput`](crate::input::ListTextTranslationJobsInput) with field(s):
-    ///   - [`filter(Option<TextTranslationJobFilter>)`](crate::input::ListTextTranslationJobsInput::filter): <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTextTranslationJobsInput::next_token): <p>The token to request the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTextTranslationJobsInput::max_results): <p>The maximum number of results to return in each page. The default value is 100.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter(TextTranslationJobFilter)`](crate::client::fluent_builders::ListTextTranslationJobs::filter) / [`set_filter(Option<TextTranslationJobFilter>)`](crate::client::fluent_builders::ListTextTranslationJobs::set_filter): <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTextTranslationJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTextTranslationJobs::set_next_token): <p>The token to request the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTextTranslationJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTextTranslationJobs::set_max_results): <p>The maximum number of results to return in each page. The default value is 100.</p>
     /// - On success, responds with [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput) with field(s):
     ///   - [`text_translation_job_properties_list(Option<Vec<TextTranslationJobProperties>>)`](crate::output::ListTextTranslationJobsOutput::text_translation_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTextTranslationJobsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -214,17 +214,17 @@ where
     }
     /// Constructs a fluent builder for the [`StartTextTranslationJob`](crate::client::fluent_builders::StartTextTranslationJob) operation.
     ///
-    /// - Takes [`StartTextTranslationJobInput`](crate::input::StartTextTranslationJobInput) with field(s):
-    ///   - [`job_name(Option<String>)`](crate::input::StartTextTranslationJobInput::job_name): <p>The name of the batch translation job to be performed.</p>
-    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartTextTranslationJobInput::input_data_config): <p>Specifies the format and S3 location of the input documents for the translation job.</p>
-    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartTextTranslationJobInput::output_data_config): <p>Specifies the S3 folder to which your job output will be saved. </p>
-    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartTextTranslationJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
-    ///   - [`source_language_code(Option<String>)`](crate::input::StartTextTranslationJobInput::source_language_code): <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>  <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
-    ///   - [`target_language_codes(Option<Vec<String>>)`](crate::input::StartTextTranslationJobInput::target_language_codes): <p>The language code of the output language.</p>
-    ///   - [`terminology_names(Option<Vec<String>>)`](crate::input::StartTextTranslationJobInput::terminology_names): <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>  <p>This parameter accepts only one custom terminology resource.</p>  <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>  <p>For more information, see <code>how-custom-terminology</code>.</p>
-    ///   - [`parallel_data_names(Option<Vec<String>>)`](crate::input::StartTextTranslationJobInput::parallel_data_names): <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>  <p>This parameter accepts only one parallel data resource.</p> <note>   <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>  </note>  <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>  <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::StartTextTranslationJobInput::client_token): <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
-    ///   - [`settings(Option<TranslationSettings>)`](crate::input::StartTextTranslationJobInput::settings): <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_job_name): <p>The name of the batch translation job to be performed.</p>
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartTextTranslationJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartTextTranslationJob::set_input_data_config): <p>Specifies the format and S3 location of the input documents for the translation job.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartTextTranslationJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartTextTranslationJob::set_output_data_config): <p>Specifies the S3 folder to which your job output will be saved. </p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
+    ///   - [`source_language_code(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::source_language_code) / [`set_source_language_code(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_source_language_code): <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>  <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
+    ///   - [`target_language_codes(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::target_language_codes) / [`set_target_language_codes(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_target_language_codes): <p>The language code of the output language.</p>
+    ///   - [`terminology_names(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::terminology_names) / [`set_terminology_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_terminology_names): <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>  <p>This parameter accepts only one custom terminology resource.</p>  <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>  <p>For more information, see <code>how-custom-terminology</code>.</p>
+    ///   - [`parallel_data_names(Vec<String>)`](crate::client::fluent_builders::StartTextTranslationJob::parallel_data_names) / [`set_parallel_data_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartTextTranslationJob::set_parallel_data_names): <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>  <p>This parameter accepts only one parallel data resource.</p> <note>   <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>  </note>  <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>  <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartTextTranslationJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartTextTranslationJob::set_client_token): <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
+    ///   - [`settings(TranslationSettings)`](crate::client::fluent_builders::StartTextTranslationJob::settings) / [`set_settings(Option<TranslationSettings>)`](crate::client::fluent_builders::StartTextTranslationJob::set_settings): <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
     /// - On success, responds with [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartTextTranslationJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::output::StartTextTranslationJobOutput::job_status): <p>The status of the job. Possible values include:</p>  <ul>   <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>   <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>   <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>   <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>   <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>   <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>   <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>  </ul>
@@ -234,8 +234,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopTextTranslationJob`](crate::client::fluent_builders::StopTextTranslationJob) operation.
     ///
-    /// - Takes [`StopTextTranslationJobInput`](crate::input::StopTextTranslationJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::StopTextTranslationJobInput::job_id): <p>The job ID of the job to be stopped.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StopTextTranslationJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StopTextTranslationJob::set_job_id): <p>The job ID of the job to be stopped.</p>
     /// - On success, responds with [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StopTextTranslationJobOutput::job_id): <p>The job ID of the stopped batch translation job.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::output::StopTextTranslationJobOutput::job_status): <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
@@ -245,12 +245,12 @@ where
     }
     /// Constructs a fluent builder for the [`TranslateText`](crate::client::fluent_builders::TranslateText) operation.
     ///
-    /// - Takes [`TranslateTextInput`](crate::input::TranslateTextInput) with field(s):
-    ///   - [`text(Option<String>)`](crate::input::TranslateTextInput::text): <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
-    ///   - [`terminology_names(Option<Vec<String>>)`](crate::input::TranslateTextInput::terminology_names): <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
-    ///   - [`source_language_code(Option<String>)`](crate::input::TranslateTextInput::source_language_code): <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>  <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
-    ///   - [`target_language_code(Option<String>)`](crate::input::TranslateTextInput::target_language_code): <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    ///   - [`settings(Option<TranslationSettings>)`](crate::input::TranslateTextInput::settings): <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::TranslateText::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::TranslateText::set_text): <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
+    ///   - [`terminology_names(Vec<String>)`](crate::client::fluent_builders::TranslateText::terminology_names) / [`set_terminology_names(Option<Vec<String>>)`](crate::client::fluent_builders::TranslateText::set_terminology_names): <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
+    ///   - [`source_language_code(impl Into<String>)`](crate::client::fluent_builders::TranslateText::source_language_code) / [`set_source_language_code(Option<String>)`](crate::client::fluent_builders::TranslateText::set_source_language_code): <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>  <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
+    ///   - [`target_language_code(impl Into<String>)`](crate::client::fluent_builders::TranslateText::target_language_code) / [`set_target_language_code(Option<String>)`](crate::client::fluent_builders::TranslateText::set_target_language_code): <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
+    ///   - [`settings(TranslationSettings)`](crate::client::fluent_builders::TranslateText::settings) / [`set_settings(Option<TranslationSettings>)`](crate::client::fluent_builders::TranslateText::set_settings): <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
     /// - On success, responds with [`TranslateTextOutput`](crate::output::TranslateTextOutput) with field(s):
     ///   - [`translated_text(Option<String>)`](crate::output::TranslateTextOutput::translated_text): <p>The translated text.</p>
     ///   - [`source_language_code(Option<String>)`](crate::output::TranslateTextOutput::source_language_code): <p>The language code for the language of the source text.</p>
@@ -263,11 +263,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateParallelData`](crate::client::fluent_builders::UpdateParallelData) operation.
     ///
-    /// - Takes [`UpdateParallelDataInput`](crate::input::UpdateParallelDataInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::UpdateParallelDataInput::name): <p>The name of the parallel data resource being updated.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateParallelDataInput::description): <p>A custom description for the parallel data resource in Amazon Translate.</p>
-    ///   - [`parallel_data_config(Option<ParallelDataConfig>)`](crate::input::UpdateParallelDataInput::parallel_data_config): <p>Specifies the format and S3 location of the parallel data input file.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateParallelDataInput::client_token): <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateParallelData::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateParallelData::set_name): <p>The name of the parallel data resource being updated.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateParallelData::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateParallelData::set_description): <p>A custom description for the parallel data resource in Amazon Translate.</p>
+    ///   - [`parallel_data_config(ParallelDataConfig)`](crate::client::fluent_builders::UpdateParallelData::parallel_data_config) / [`set_parallel_data_config(Option<ParallelDataConfig>)`](crate::client::fluent_builders::UpdateParallelData::set_parallel_data_config): <p>Specifies the format and S3 location of the parallel data input file.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateParallelData::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateParallelData::set_client_token): <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     /// - On success, responds with [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::UpdateParallelDataOutput::name): <p>The name of the parallel data resource being updated.</p>
     ///   - [`status(Option<ParallelDataStatus>)`](crate::output::UpdateParallelDataOutput::status): <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>

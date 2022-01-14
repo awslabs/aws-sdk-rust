@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`CreateConfigurationSet`](crate::client::fluent_builders::CreateConfigurationSet) operation.
     ///
-    /// - Takes [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::CreateConfigurationSetInput::configuration_set_name): The name that you want to give the configuration set.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationSet::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationSet::set_configuration_set_name): The name that you want to give the configuration set.
     /// - On success, responds with [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput)
 
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::error::CreateConfigurationSetError)
@@ -95,10 +95,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateConfigurationSetEventDestination`](crate::client::fluent_builders::CreateConfigurationSetEventDestination) operation.
     ///
-    /// - Takes [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::CreateConfigurationSetEventDestinationInput::configuration_set_name): ConfigurationSetName
-    ///   - [`event_destination(Option<EventDestinationDefinition>)`](crate::input::CreateConfigurationSetEventDestinationInput::event_destination): An object that defines a single event destination.
-    ///   - [`event_destination_name(Option<String>)`](crate::input::CreateConfigurationSetEventDestinationInput::event_destination_name): A name that identifies the event destination.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::set_configuration_set_name): ConfigurationSetName
+    ///   - [`event_destination(EventDestinationDefinition)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::event_destination) / [`set_event_destination(Option<EventDestinationDefinition>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::set_event_destination): An object that defines a single event destination.
+    ///   - [`event_destination_name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::set_event_destination_name): A name that identifies the event destination.
     /// - On success, responds with [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput)
 
     /// - On failure, responds with [`SdkError<CreateConfigurationSetEventDestinationError>`](crate::error::CreateConfigurationSetEventDestinationError)
@@ -109,8 +109,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteConfigurationSet`](crate::client::fluent_builders::DeleteConfigurationSet) operation.
     ///
-    /// - Takes [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::DeleteConfigurationSetInput::configuration_set_name): ConfigurationSetName
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationSet::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationSet::set_configuration_set_name): ConfigurationSetName
     /// - On success, responds with [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteConfigurationSetError>`](crate::error::DeleteConfigurationSetError)
@@ -119,9 +119,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteConfigurationSetEventDestination`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination) operation.
     ///
-    /// - Takes [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::DeleteConfigurationSetEventDestinationInput::configuration_set_name): ConfigurationSetName
-    ///   - [`event_destination_name(Option<String>)`](crate::input::DeleteConfigurationSetEventDestinationInput::event_destination_name): EventDestinationName
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::set_configuration_set_name): ConfigurationSetName
+    ///   - [`event_destination_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::set_event_destination_name): EventDestinationName
     /// - On success, responds with [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteConfigurationSetEventDestinationError>`](crate::error::DeleteConfigurationSetEventDestinationError)
@@ -132,8 +132,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetConfigurationSetEventDestinations`](crate::client::fluent_builders::GetConfigurationSetEventDestinations) operation.
     ///
-    /// - Takes [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::GetConfigurationSetEventDestinationsInput::configuration_set_name): ConfigurationSetName
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::GetConfigurationSetEventDestinations::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::GetConfigurationSetEventDestinations::set_configuration_set_name): ConfigurationSetName
     /// - On success, responds with [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput) with field(s):
     ///   - [`event_destinations(Option<Vec<EventDestination>>)`](crate::output::GetConfigurationSetEventDestinationsOutput::event_destinations): An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
     /// - On failure, responds with [`SdkError<GetConfigurationSetEventDestinationsError>`](crate::error::GetConfigurationSetEventDestinationsError)
@@ -144,9 +144,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListConfigurationSets`](crate::client::fluent_builders::ListConfigurationSets) operation.
     ///
-    /// - Takes [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListConfigurationSetsInput::next_token): A token returned from a previous call to the API that indicates the position in the list of results.
-    ///   - [`page_size(Option<String>)`](crate::input::ListConfigurationSetsInput::page_size): Used to specify the number of items that should be returned in the response.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurationSets::set_next_token): A token returned from a previous call to the API that indicates the position in the list of results.
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationSets::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::ListConfigurationSets::set_page_size): Used to specify the number of items that should be returned in the response.
     /// - On success, responds with [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput) with field(s):
     ///   - [`configuration_sets(Option<Vec<String>>)`](crate::output::ListConfigurationSetsOutput::configuration_sets): An object that contains a list of configuration sets for your account in the current region.
     ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationSetsOutput::next_token): A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
@@ -156,12 +156,12 @@ where
     }
     /// Constructs a fluent builder for the [`SendVoiceMessage`](crate::client::fluent_builders::SendVoiceMessage) operation.
     ///
-    /// - Takes [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput) with field(s):
-    ///   - [`caller_id(Option<String>)`](crate::input::SendVoiceMessageInput::caller_id): The phone number that appears on recipients' devices when they receive the message.
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::SendVoiceMessageInput::configuration_set_name): The name of the configuration set that you want to use to send the message.
-    ///   - [`content(Option<VoiceMessageContent>)`](crate::input::SendVoiceMessageInput::content): An object that contains a voice message and information about the recipient that you want to send it to.
-    ///   - [`destination_phone_number(Option<String>)`](crate::input::SendVoiceMessageInput::destination_phone_number): The phone number that you want to send the voice message to.
-    ///   - [`origination_phone_number(Option<String>)`](crate::input::SendVoiceMessageInput::origination_phone_number): The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
+    /// - The fluent builder is configurable:
+    ///   - [`caller_id(impl Into<String>)`](crate::client::fluent_builders::SendVoiceMessage::caller_id) / [`set_caller_id(Option<String>)`](crate::client::fluent_builders::SendVoiceMessage::set_caller_id): The phone number that appears on recipients' devices when they receive the message.
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::SendVoiceMessage::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::SendVoiceMessage::set_configuration_set_name): The name of the configuration set that you want to use to send the message.
+    ///   - [`content(VoiceMessageContent)`](crate::client::fluent_builders::SendVoiceMessage::content) / [`set_content(Option<VoiceMessageContent>)`](crate::client::fluent_builders::SendVoiceMessage::set_content): An object that contains a voice message and information about the recipient that you want to send it to.
+    ///   - [`destination_phone_number(impl Into<String>)`](crate::client::fluent_builders::SendVoiceMessage::destination_phone_number) / [`set_destination_phone_number(Option<String>)`](crate::client::fluent_builders::SendVoiceMessage::set_destination_phone_number): The phone number that you want to send the voice message to.
+    ///   - [`origination_phone_number(impl Into<String>)`](crate::client::fluent_builders::SendVoiceMessage::origination_phone_number) / [`set_origination_phone_number(Option<String>)`](crate::client::fluent_builders::SendVoiceMessage::set_origination_phone_number): The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
     /// - On success, responds with [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::output::SendVoiceMessageOutput::message_id): A unique identifier for the voice message.
     /// - On failure, responds with [`SdkError<SendVoiceMessageError>`](crate::error::SendVoiceMessageError)
@@ -170,10 +170,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateConfigurationSetEventDestination`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination) operation.
     ///
-    /// - Takes [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::UpdateConfigurationSetEventDestinationInput::configuration_set_name): ConfigurationSetName
-    ///   - [`event_destination(Option<EventDestinationDefinition>)`](crate::input::UpdateConfigurationSetEventDestinationInput::event_destination): An object that defines a single event destination.
-    ///   - [`event_destination_name(Option<String>)`](crate::input::UpdateConfigurationSetEventDestinationInput::event_destination_name): EventDestinationName
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::set_configuration_set_name): ConfigurationSetName
+    ///   - [`event_destination(EventDestinationDefinition)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::event_destination) / [`set_event_destination(Option<EventDestinationDefinition>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::set_event_destination): An object that defines a single event destination.
+    ///   - [`event_destination_name(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::set_event_destination_name): EventDestinationName
     /// - On success, responds with [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateConfigurationSetEventDestinationError>`](crate::error::UpdateConfigurationSetEventDestinationError)

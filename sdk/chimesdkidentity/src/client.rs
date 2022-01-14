@@ -85,11 +85,11 @@ where
 {
     /// Constructs a fluent builder for the [`CreateAppInstance`](crate::client::fluent_builders::CreateAppInstance) operation.
     ///
-    /// - Takes [`CreateAppInstanceInput`](crate::input::CreateAppInstanceInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateAppInstanceInput::name): <p>The name of the <code>AppInstance</code>.</p>
-    ///   - [`metadata(Option<String>)`](crate::input::CreateAppInstanceInput::metadata): <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateAppInstanceInput::client_request_token): <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAppInstanceInput::tags): <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstance::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAppInstance::set_name): <p>The name of the <code>AppInstance</code>.</p>
+    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstance::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::CreateAppInstance::set_metadata): <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstance::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAppInstance::set_client_request_token): <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAppInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAppInstance::set_tags): <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     /// - On success, responds with [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::output::CreateAppInstanceOutput::app_instance_arn): <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceError>`](crate::error::CreateAppInstanceError)
@@ -98,9 +98,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAppInstanceAdmin`](crate::client::fluent_builders::CreateAppInstanceAdmin) operation.
     ///
-    /// - Takes [`CreateAppInstanceAdminInput`](crate::input::CreateAppInstanceAdminInput) with field(s):
-    ///   - [`app_instance_admin_arn(Option<String>)`](crate::input::CreateAppInstanceAdminInput::app_instance_admin_arn): <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::CreateAppInstanceAdminInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_admin_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceAdmin::app_instance_admin_arn) / [`set_app_instance_admin_arn(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceAdmin::set_app_instance_admin_arn): <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceAdmin::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceAdmin::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On success, responds with [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput) with field(s):
     ///   - [`app_instance_admin(Option<Identity>)`](crate::output::CreateAppInstanceAdminOutput::app_instance_admin): <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
     ///   - [`app_instance_arn(Option<String>)`](crate::output::CreateAppInstanceAdminOutput::app_instance_arn): <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
@@ -110,13 +110,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAppInstanceUser`](crate::client::fluent_builders::CreateAppInstanceUser) operation.
     ///
-    /// - Takes [`CreateAppInstanceUserInput`](crate::input::CreateAppInstanceUserInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::CreateAppInstanceUserInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code> request.</p>
-    ///   - [`app_instance_user_id(Option<String>)`](crate::input::CreateAppInstanceUserInput::app_instance_user_id): <p>The user ID of the <code>AppInstance</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateAppInstanceUserInput::name): <p>The user's name.</p>
-    ///   - [`metadata(Option<String>)`](crate::input::CreateAppInstanceUserInput::metadata): <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateAppInstanceUserInput::client_request_token): <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAppInstanceUserInput::tags): <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code> request.</p>
+    ///   - [`app_instance_user_id(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::app_instance_user_id) / [`set_app_instance_user_id(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_app_instance_user_id): <p>The user ID of the <code>AppInstance</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_name): <p>The user's name.</p>
+    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_metadata): <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_client_request_token): <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAppInstanceUser::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_tags): <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     /// - On success, responds with [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput) with field(s):
     ///   - [`app_instance_user_arn(Option<String>)`](crate::output::CreateAppInstanceUserOutput::app_instance_user_arn): <p>The user's ARN.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceUserError>`](crate::error::CreateAppInstanceUserError)
@@ -125,8 +125,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAppInstance`](crate::client::fluent_builders::DeleteAppInstance) operation.
     ///
-    /// - Takes [`DeleteAppInstanceInput`](crate::input::DeleteAppInstanceInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::DeleteAppInstanceInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppInstance::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppInstance::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On success, responds with [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAppInstanceError>`](crate::error::DeleteAppInstanceError)
@@ -135,9 +135,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAppInstanceAdmin`](crate::client::fluent_builders::DeleteAppInstanceAdmin) operation.
     ///
-    /// - Takes [`DeleteAppInstanceAdminInput`](crate::input::DeleteAppInstanceAdminInput) with field(s):
-    ///   - [`app_instance_admin_arn(Option<String>)`](crate::input::DeleteAppInstanceAdminInput::app_instance_admin_arn): <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::DeleteAppInstanceAdminInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_admin_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppInstanceAdmin::app_instance_admin_arn) / [`set_app_instance_admin_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppInstanceAdmin::set_app_instance_admin_arn): <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppInstanceAdmin::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppInstanceAdmin::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On success, responds with [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAppInstanceAdminError>`](crate::error::DeleteAppInstanceAdminError)
@@ -146,8 +146,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAppInstanceUser`](crate::client::fluent_builders::DeleteAppInstanceUser) operation.
     ///
-    /// - Takes [`DeleteAppInstanceUserInput`](crate::input::DeleteAppInstanceUserInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::DeleteAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the user request being deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the user request being deleted.</p>
     /// - On success, responds with [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAppInstanceUserError>`](crate::error::DeleteAppInstanceUserError)
@@ -156,9 +156,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeregisterAppInstanceUserEndpoint`](crate::client::fluent_builders::DeregisterAppInstanceUserEndpoint) operation.
     ///
-    /// - Takes [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::DeregisterAppInstanceUserEndpointInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    ///   - [`endpoint_id(Option<String>)`](crate::input::DeregisterAppInstanceUserEndpointInput::endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DeregisterAppInstanceUserEndpoint::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DeregisterAppInstanceUserEndpoint::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterAppInstanceUserEndpoint::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::DeregisterAppInstanceUserEndpoint::set_endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     /// - On success, responds with [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput)
 
     /// - On failure, responds with [`SdkError<DeregisterAppInstanceUserEndpointError>`](crate::error::DeregisterAppInstanceUserEndpointError)
@@ -169,8 +169,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAppInstance`](crate::client::fluent_builders::DescribeAppInstance) operation.
     ///
-    /// - Takes [`DescribeAppInstanceInput`](crate::input::DescribeAppInstanceInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::DescribeAppInstanceInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstance::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppInstance::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On success, responds with [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput) with field(s):
     ///   - [`app_instance(Option<AppInstance>)`](crate::output::DescribeAppInstanceOutput::app_instance): <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceError>`](crate::error::DescribeAppInstanceError)
@@ -179,9 +179,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAppInstanceAdmin`](crate::client::fluent_builders::DescribeAppInstanceAdmin) operation.
     ///
-    /// - Takes [`DescribeAppInstanceAdminInput`](crate::input::DescribeAppInstanceAdminInput) with field(s):
-    ///   - [`app_instance_admin_arn(Option<String>)`](crate::input::DescribeAppInstanceAdminInput::app_instance_admin_arn): <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::DescribeAppInstanceAdminInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_admin_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstanceAdmin::app_instance_admin_arn) / [`set_app_instance_admin_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppInstanceAdmin::set_app_instance_admin_arn): <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstanceAdmin::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppInstanceAdmin::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On success, responds with [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput) with field(s):
     ///   - [`app_instance_admin(Option<AppInstanceAdmin>)`](crate::output::DescribeAppInstanceAdminOutput::app_instance_admin): <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceAdminError>`](crate::error::DescribeAppInstanceAdminError)
@@ -192,8 +192,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAppInstanceUser`](crate::client::fluent_builders::DescribeAppInstanceUser) operation.
     ///
-    /// - Takes [`DescribeAppInstanceUserInput`](crate::input::DescribeAppInstanceUserInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::DescribeAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
     /// - On success, responds with [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput) with field(s):
     ///   - [`app_instance_user(Option<AppInstanceUser>)`](crate::output::DescribeAppInstanceUserOutput::app_instance_user): <p>The name of the <code>AppInstanceUser</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceUserError>`](crate::error::DescribeAppInstanceUserError)
@@ -202,9 +202,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAppInstanceUserEndpoint`](crate::client::fluent_builders::DescribeAppInstanceUserEndpoint) operation.
     ///
-    /// - Takes [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::DescribeAppInstanceUserEndpointInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    ///   - [`endpoint_id(Option<String>)`](crate::input::DescribeAppInstanceUserEndpointInput::endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstanceUserEndpoint::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppInstanceUserEndpoint::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstanceUserEndpoint::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::DescribeAppInstanceUserEndpoint::set_endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     /// - On success, responds with [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput) with field(s):
     ///   - [`app_instance_user_endpoint(Option<AppInstanceUserEndpoint>)`](crate::output::DescribeAppInstanceUserEndpointOutput::app_instance_user_endpoint): <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceUserEndpointError>`](crate::error::DescribeAppInstanceUserEndpointError)
@@ -215,8 +215,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetAppInstanceRetentionSettings`](crate::client::fluent_builders::GetAppInstanceRetentionSettings) operation.
     ///
-    /// - Takes [`GetAppInstanceRetentionSettingsInput`](crate::input::GetAppInstanceRetentionSettingsInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::GetAppInstanceRetentionSettingsInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetAppInstanceRetentionSettings::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::GetAppInstanceRetentionSettings::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On success, responds with [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput) with field(s):
     ///   - [`app_instance_retention_settings(Option<AppInstanceRetentionSettings>)`](crate::output::GetAppInstanceRetentionSettingsOutput::app_instance_retention_settings): <p>The retention settings for the <code>AppInstance</code>.</p>
     ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::output::GetAppInstanceRetentionSettingsOutput::initiate_deletion_timestamp): <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
@@ -227,12 +227,12 @@ where
         fluent_builders::GetAppInstanceRetentionSettings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAppInstanceAdmins`](crate::client::fluent_builders::ListAppInstanceAdmins) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceAdmins::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceAdmins::into_paginator).
     ///
-    /// - Takes [`ListAppInstanceAdminsInput`](crate::input::ListAppInstanceAdminsInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::ListAppInstanceAdminsInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAppInstanceAdminsInput::max_results): <p>The maximum number of administrators that you want to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAppInstanceAdminsInput::next_token): <p>The token returned from previous API requests until the number of administrators is reached.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceAdmins::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAppInstanceAdmins::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppInstanceAdmins::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppInstanceAdmins::set_max_results): <p>The maximum number of administrators that you want to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceAdmins::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppInstanceAdmins::set_next_token): <p>The token returned from previous API requests until the number of administrators is reached.</p>
     /// - On success, responds with [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::output::ListAppInstanceAdminsOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     ///   - [`app_instance_admins(Option<Vec<AppInstanceAdminSummary>>)`](crate::output::ListAppInstanceAdminsOutput::app_instance_admins): <p>The information for each administrator.</p>
@@ -242,11 +242,11 @@ where
         fluent_builders::ListAppInstanceAdmins::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAppInstances`](crate::client::fluent_builders::ListAppInstances) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppInstances::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppInstances::into_paginator).
     ///
-    /// - Takes [`ListAppInstancesInput`](crate::input::ListAppInstancesInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAppInstancesInput::max_results): <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAppInstancesInput::next_token): <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppInstances::set_max_results): <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppInstances::set_next_token): <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
     /// - On success, responds with [`ListAppInstancesOutput`](crate::output::ListAppInstancesOutput) with field(s):
     ///   - [`app_instances(Option<Vec<AppInstanceSummary>>)`](crate::output::ListAppInstancesOutput::app_instances): <p>The information for each <code>AppInstance</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAppInstancesOutput::next_token): <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
@@ -255,12 +255,12 @@ where
         fluent_builders::ListAppInstances::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAppInstanceUserEndpoints`](crate::client::fluent_builders::ListAppInstanceUserEndpoints) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceUserEndpoints::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceUserEndpoints::into_paginator).
     ///
-    /// - Takes [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::ListAppInstanceUserEndpointsInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAppInstanceUserEndpointsInput::max_results): <p>The maximum number of endpoints that you want to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAppInstanceUserEndpointsInput::next_token): <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceUserEndpoints::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::ListAppInstanceUserEndpoints::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppInstanceUserEndpoints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppInstanceUserEndpoints::set_max_results): <p>The maximum number of endpoints that you want to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceUserEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppInstanceUserEndpoints::set_next_token): <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     /// - On success, responds with [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput) with field(s):
     ///   - [`app_instance_user_endpoints(Option<Vec<AppInstanceUserEndpointSummary>>)`](crate::output::ListAppInstanceUserEndpointsOutput::app_instance_user_endpoints): <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAppInstanceUserEndpointsOutput::next_token): <p>The token passed by previous API calls until all requested endpoints are returned.</p>
@@ -271,12 +271,12 @@ where
         fluent_builders::ListAppInstanceUserEndpoints::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAppInstanceUsers`](crate::client::fluent_builders::ListAppInstanceUsers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceUsers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceUsers::into_paginator).
     ///
-    /// - Takes [`ListAppInstanceUsersInput`](crate::input::ListAppInstanceUsersInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::ListAppInstanceUsersInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAppInstanceUsersInput::max_results): <p>The maximum number of requests that you want returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAppInstanceUsersInput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceUsers::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAppInstanceUsers::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppInstanceUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppInstanceUsers::set_max_results): <p>The maximum number of requests that you want returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppInstanceUsers::set_next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
     /// - On success, responds with [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::output::ListAppInstanceUsersOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     ///   - [`app_instance_users(Option<Vec<AppInstanceUserSummary>>)`](crate::output::ListAppInstanceUsersOutput::app_instance_users): <p>The information for each requested <code>AppInstanceUser</code>.</p>
@@ -287,8 +287,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tag key-value pairs.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -297,9 +297,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutAppInstanceRetentionSettings`](crate::client::fluent_builders::PutAppInstanceRetentionSettings) operation.
     ///
-    /// - Takes [`PutAppInstanceRetentionSettingsInput`](crate::input::PutAppInstanceRetentionSettingsInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::PutAppInstanceRetentionSettingsInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`app_instance_retention_settings(Option<AppInstanceRetentionSettings>)`](crate::input::PutAppInstanceRetentionSettingsInput::app_instance_retention_settings): <p>The time in days to retain data. Data type: number.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::PutAppInstanceRetentionSettings::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::PutAppInstanceRetentionSettings::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    ///   - [`app_instance_retention_settings(AppInstanceRetentionSettings)`](crate::client::fluent_builders::PutAppInstanceRetentionSettings::app_instance_retention_settings) / [`set_app_instance_retention_settings(Option<AppInstanceRetentionSettings>)`](crate::client::fluent_builders::PutAppInstanceRetentionSettings::set_app_instance_retention_settings): <p>The time in days to retain data. Data type: number.</p>
     /// - On success, responds with [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput) with field(s):
     ///   - [`app_instance_retention_settings(Option<AppInstanceRetentionSettings>)`](crate::output::PutAppInstanceRetentionSettingsOutput::app_instance_retention_settings): <p>The time in days to retain data. Data type: number.</p>
     ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::output::PutAppInstanceRetentionSettingsOutput::initiate_deletion_timestamp): <p>The time at which the API deletes data.</p>
@@ -311,14 +311,14 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterAppInstanceUserEndpoint`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint) operation.
     ///
-    /// - Takes [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::RegisterAppInstanceUserEndpointInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::RegisterAppInstanceUserEndpointInput::name): <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    ///   - [`r#type(Option<AppInstanceUserEndpointType>)`](crate::input::RegisterAppInstanceUserEndpointInput::type): <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>  <ul>   <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>   <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>   <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>  </ul>  <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::RegisterAppInstanceUserEndpointInput::resource_arn): <p>The ARN of the resource to which the endpoint belongs.</p>
-    ///   - [`endpoint_attributes(Option<EndpointAttributes>)`](crate::input::RegisterAppInstanceUserEndpointInput::endpoint_attributes): <p>The attributes of an <code>Endpoint</code>.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::RegisterAppInstanceUserEndpointInput::client_request_token): <p>The idempotency token for each client request. </p>
-    ///   - [`allow_messages(Option<AllowMessages>)`](crate::input::RegisterAppInstanceUserEndpointInput::allow_messages): <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::set_name): <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    ///   - [`r#type(AppInstanceUserEndpointType)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::r#type) / [`set_type(Option<AppInstanceUserEndpointType>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::set_type): <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>  <ul>   <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>   <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>   <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>  </ul>  <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::set_resource_arn): <p>The ARN of the resource to which the endpoint belongs.</p>
+    ///   - [`endpoint_attributes(EndpointAttributes)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::endpoint_attributes) / [`set_endpoint_attributes(Option<EndpointAttributes>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::set_endpoint_attributes): <p>The attributes of an <code>Endpoint</code>.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::set_client_request_token): <p>The idempotency token for each client request. </p>
+    ///   - [`allow_messages(AllowMessages)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::allow_messages) / [`set_allow_messages(Option<AllowMessages>)`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint::set_allow_messages): <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
     /// - On success, responds with [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput) with field(s):
     ///   - [`app_instance_user_arn(Option<String>)`](crate::output::RegisterAppInstanceUserEndpointOutput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
     ///   - [`endpoint_id(Option<String>)`](crate::output::RegisterAppInstanceUserEndpointOutput::endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -330,9 +330,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The resource ARN.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tag key-value pairs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource ARN.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tag key-value pairs.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -341,9 +341,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The resource ARN.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource ARN.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -352,10 +352,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAppInstance`](crate::client::fluent_builders::UpdateAppInstance) operation.
     ///
-    /// - Takes [`UpdateAppInstanceInput`](crate::input::UpdateAppInstanceInput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::input::UpdateAppInstanceInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateAppInstanceInput::name): <p>The name that you want to change.</p>
-    ///   - [`metadata(Option<String>)`](crate::input::UpdateAppInstanceInput::metadata): <p>The metadata that you want to change.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstance::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::UpdateAppInstance::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstance::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAppInstance::set_name): <p>The name that you want to change.</p>
+    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstance::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::UpdateAppInstance::set_metadata): <p>The metadata that you want to change.</p>
     /// - On success, responds with [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::output::UpdateAppInstanceOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateAppInstanceError>`](crate::error::UpdateAppInstanceError)
@@ -364,10 +364,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAppInstanceUser`](crate::client::fluent_builders::UpdateAppInstanceUser) operation.
     ///
-    /// - Takes [`UpdateAppInstanceUserInput`](crate::input::UpdateAppInstanceUserInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::UpdateAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateAppInstanceUserInput::name): <p>The name of the <code>AppInstanceUser</code>.</p>
-    ///   - [`metadata(Option<String>)`](crate::input::UpdateAppInstanceUserInput::metadata): <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::set_name): <p>The name of the <code>AppInstanceUser</code>.</p>
+    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::set_metadata): <p>The metadata of the <code>AppInstanceUser</code>.</p>
     /// - On success, responds with [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput) with field(s):
     ///   - [`app_instance_user_arn(Option<String>)`](crate::output::UpdateAppInstanceUserOutput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateAppInstanceUserError>`](crate::error::UpdateAppInstanceUserError)
@@ -376,11 +376,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAppInstanceUserEndpoint`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint) operation.
     ///
-    /// - Takes [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::UpdateAppInstanceUserEndpointInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    ///   - [`endpoint_id(Option<String>)`](crate::input::UpdateAppInstanceUserEndpointInput::endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateAppInstanceUserEndpointInput::name): <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    ///   - [`allow_messages(Option<AllowMessages>)`](crate::input::UpdateAppInstanceUserEndpointInput::allow_messages): <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint::set_endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint::set_name): <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    ///   - [`allow_messages(AllowMessages)`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint::allow_messages) / [`set_allow_messages(Option<AllowMessages>)`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint::set_allow_messages): <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     /// - On success, responds with [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput) with field(s):
     ///   - [`app_instance_user_arn(Option<String>)`](crate::output::UpdateAppInstanceUserEndpointOutput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
     ///   - [`endpoint_id(Option<String>)`](crate::output::UpdateAppInstanceUserEndpointOutput::endpoint_id): <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
