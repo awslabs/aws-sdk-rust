@@ -63,11 +63,15 @@ jobs:
   # the myriad of test range combinations into GitHub's protected branch rules
   require-tests:
     needs: test
+    # Run this job even if its dependency jobs fail
+    if: always()
     runs-on: ubuntu-latest
     name: Test Matrix Success
     steps:
-      - name: Run
-        run: echo "We should only get this far if the test matrix succeeded."
+      - name: Verify jobs succeeded
+        uses: re-actors/alls-green@3a2de129f0713010a71314c74e33c0e3ef90e696
+        with:
+          jobs: ${{ toJSON(needs) }}
 
   check-manifests:
     runs-on: ubuntu-latest
