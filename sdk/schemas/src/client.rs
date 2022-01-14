@@ -125,7 +125,7 @@ where
     ///   - [`registry_name(Option<String>)`](crate::input::CreateSchemaInput::registry_name): <p>The name of the registry.</p>
     ///   - [`schema_name(Option<String>)`](crate::input::CreateSchemaInput::schema_name): <p>The name of the schema.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSchemaInput::tags): <p>Tags associated with the schema.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::CreateSchemaInput::r#type): <p>The type of schema.</p>
+    ///   - [`r#type(Option<Type>)`](crate::input::CreateSchemaInput::type): <p>The type of schema.</p>
     /// - On success, responds with [`CreateSchemaOutput`](crate::output::CreateSchemaOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::CreateSchemaOutput::description): <p>The description of the schema.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::output::CreateSchemaOutput::last_modified): <p>The date and time that schema was modified.</p>
@@ -133,7 +133,7 @@ where
     ///   - [`schema_name(Option<String>)`](crate::output::CreateSchemaOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_version(Option<String>)`](crate::output::CreateSchemaOutput::schema_version): <p>The version number of the schema</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSchemaOutput::tags): <p>Key-value pairs associated with a resource.</p>
-    ///   - [`r#type(Option<String>)`](crate::output::CreateSchemaOutput::r#type): <p>The type of the schema.</p>
+    ///   - [`r#type(Option<String>)`](crate::output::CreateSchemaOutput::type): <p>The type of the schema.</p>
     ///   - [`version_created_date(Option<DateTime>)`](crate::output::CreateSchemaOutput::version_created_date): <p>The date the schema version was created.</p>
     /// - On failure, responds with [`SdkError<CreateSchemaError>`](crate::error::CreateSchemaError)
     pub fn create_schema(&self) -> fluent_builders::CreateSchema<C, M, R> {
@@ -251,7 +251,7 @@ where
     ///   - [`schema_name(Option<String>)`](crate::output::DescribeSchemaOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_version(Option<String>)`](crate::output::DescribeSchemaOutput::schema_version): <p>The version number of the schema</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeSchemaOutput::tags): <p>Tags associated with the resource.</p>
-    ///   - [`r#type(Option<String>)`](crate::output::DescribeSchemaOutput::r#type): <p>The type of the schema.</p>
+    ///   - [`r#type(Option<String>)`](crate::output::DescribeSchemaOutput::type): <p>The type of the schema.</p>
     ///   - [`version_created_date(Option<DateTime>)`](crate::output::DescribeSchemaOutput::version_created_date): <p>The date the schema version was created.</p>
     /// - On failure, responds with [`SdkError<DescribeSchemaError>`](crate::error::DescribeSchemaError)
     pub fn describe_schema(&self) -> fluent_builders::DescribeSchema<C, M, R> {
@@ -263,13 +263,13 @@ where
     ///   - [`registry_name(Option<String>)`](crate::input::ExportSchemaInput::registry_name): <p>The name of the registry.</p>
     ///   - [`schema_name(Option<String>)`](crate::input::ExportSchemaInput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_version(Option<String>)`](crate::input::ExportSchemaInput::schema_version): <p>Specifying this limits the results to only this schema version.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::ExportSchemaInput::r#type): (undocumented)
+    ///   - [`r#type(Option<String>)`](crate::input::ExportSchemaInput::type): (undocumented)
     /// - On success, responds with [`ExportSchemaOutput`](crate::output::ExportSchemaOutput) with field(s):
     ///   - [`content(Option<String>)`](crate::output::ExportSchemaOutput::content): (undocumented)
     ///   - [`schema_arn(Option<String>)`](crate::output::ExportSchemaOutput::schema_arn): (undocumented)
     ///   - [`schema_name(Option<String>)`](crate::output::ExportSchemaOutput::schema_name): (undocumented)
     ///   - [`schema_version(Option<String>)`](crate::output::ExportSchemaOutput::schema_version): (undocumented)
-    ///   - [`r#type(Option<String>)`](crate::output::ExportSchemaOutput::r#type): (undocumented)
+    ///   - [`r#type(Option<String>)`](crate::output::ExportSchemaOutput::type): (undocumented)
     /// - On failure, responds with [`SdkError<ExportSchemaError>`](crate::error::ExportSchemaError)
     pub fn export_schema(&self) -> fluent_builders::ExportSchema<C, M, R> {
         fluent_builders::ExportSchema::new(self.handle.clone())
@@ -291,7 +291,7 @@ where
     ///
     /// - Takes [`GetDiscoveredSchemaInput`](crate::input::GetDiscoveredSchemaInput) with field(s):
     ///   - [`events(Option<Vec<String>>)`](crate::input::GetDiscoveredSchemaInput::events): <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::GetDiscoveredSchemaInput::r#type): <p>The type of event.</p>
+    ///   - [`r#type(Option<Type>)`](crate::input::GetDiscoveredSchemaInput::type): <p>The type of event.</p>
     /// - On success, responds with [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput) with field(s):
     ///   - [`content(Option<String>)`](crate::output::GetDiscoveredSchemaOutput::content): <p>The source of the schema definition.</p>
     /// - On failure, responds with [`SdkError<GetDiscoveredSchemaError>`](crate::error::GetDiscoveredSchemaError)
@@ -507,7 +507,7 @@ where
     ///   - [`description(Option<String>)`](crate::input::UpdateSchemaInput::description): <p>The description of the schema.</p>
     ///   - [`registry_name(Option<String>)`](crate::input::UpdateSchemaInput::registry_name): <p>The name of the registry.</p>
     ///   - [`schema_name(Option<String>)`](crate::input::UpdateSchemaInput::schema_name): <p>The name of the schema.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::UpdateSchemaInput::r#type): <p>The schema type for the events schema.</p>
+    ///   - [`r#type(Option<Type>)`](crate::input::UpdateSchemaInput::type): <p>The schema type for the events schema.</p>
     /// - On success, responds with [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::UpdateSchemaOutput::description): <p>The description of the schema.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::output::UpdateSchemaOutput::last_modified): <p>The date and time that schema was modified.</p>
@@ -515,7 +515,7 @@ where
     ///   - [`schema_name(Option<String>)`](crate::output::UpdateSchemaOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`schema_version(Option<String>)`](crate::output::UpdateSchemaOutput::schema_version): <p>The version number of the schema</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateSchemaOutput::tags): <p>Key-value pairs associated with a resource.</p>
-    ///   - [`r#type(Option<String>)`](crate::output::UpdateSchemaOutput::r#type): <p>The type of the schema.</p>
+    ///   - [`r#type(Option<String>)`](crate::output::UpdateSchemaOutput::type): <p>The type of the schema.</p>
     ///   - [`version_created_date(Option<DateTime>)`](crate::output::UpdateSchemaOutput::version_created_date): <p>The date the schema version was created.</p>
     /// - On failure, responds with [`SdkError<UpdateSchemaError>`](crate::error::UpdateSchemaError)
     pub fn update_schema(&self) -> fluent_builders::UpdateSchema<C, M, R> {

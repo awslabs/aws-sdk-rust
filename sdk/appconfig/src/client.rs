@@ -107,7 +107,7 @@ where
     ///   - [`retrieval_role_arn(Option<String>)`](crate::input::CreateConfigurationProfileInput::retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>   <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>  </important>
     ///   - [`validators(Option<Vec<Validator>>)`](crate::input::CreateConfigurationProfileInput::validators): <p>A list of methods for validating the configuration.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateConfigurationProfileInput::tags): <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::CreateConfigurationProfileInput::r#type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::CreateConfigurationProfileInput::type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
     /// - On success, responds with [`CreateConfigurationProfileOutput`](crate::output::CreateConfigurationProfileOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::CreateConfigurationProfileOutput::application_id): <p>The application ID.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateConfigurationProfileOutput::id): <p>The configuration profile ID.</p>
@@ -116,7 +116,7 @@ where
     ///   - [`location_uri(Option<String>)`](crate::output::CreateConfigurationProfileOutput::location_uri): <p>The URI location of the configuration.</p>
     ///   - [`retrieval_role_arn(Option<String>)`](crate::output::CreateConfigurationProfileOutput::retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     ///   - [`validators(Option<Vec<Validator>>)`](crate::output::CreateConfigurationProfileOutput::validators): <p>A list of methods for validating the configuration.</p>
-    ///   - [`r#type(Option<String>)`](crate::output::CreateConfigurationProfileOutput::r#type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    ///   - [`r#type(Option<String>)`](crate::output::CreateConfigurationProfileOutput::type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
     /// - On failure, responds with [`SdkError<CreateConfigurationProfileError>`](crate::error::CreateConfigurationProfileError)
     pub fn create_configuration_profile(
         &self,
@@ -287,7 +287,7 @@ where
     ///   - [`location_uri(Option<String>)`](crate::output::GetConfigurationProfileOutput::location_uri): <p>The URI location of the configuration.</p>
     ///   - [`retrieval_role_arn(Option<String>)`](crate::output::GetConfigurationProfileOutput::retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     ///   - [`validators(Option<Vec<Validator>>)`](crate::output::GetConfigurationProfileOutput::validators): <p>A list of methods for validating the configuration.</p>
-    ///   - [`r#type(Option<String>)`](crate::output::GetConfigurationProfileOutput::r#type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    ///   - [`r#type(Option<String>)`](crate::output::GetConfigurationProfileOutput::type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
     /// - On failure, responds with [`SdkError<GetConfigurationProfileError>`](crate::error::GetConfigurationProfileError)
     pub fn get_configuration_profile(&self) -> fluent_builders::GetConfigurationProfile<C, M, R> {
         fluent_builders::GetConfigurationProfile::new(self.handle.clone())
@@ -393,7 +393,7 @@ where
     ///   - [`application_id(Option<String>)`](crate::input::ListConfigurationProfilesInput::application_id): <p>The application ID.</p>
     ///   - [`max_results(Option<i32>)`](crate::input::ListConfigurationProfilesInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     ///   - [`next_token(Option<String>)`](crate::input::ListConfigurationProfilesInput::next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::ListConfigurationProfilesInput::r#type): <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::ListConfigurationProfilesInput::type): <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
     /// - On success, responds with [`ListConfigurationProfilesOutput`](crate::output::ListConfigurationProfilesOutput) with field(s):
     ///   - [`items(Option<Vec<ConfigurationProfileSummary>>)`](crate::output::ListConfigurationProfilesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationProfilesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -587,7 +587,7 @@ where
     ///   - [`location_uri(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::location_uri): <p>The URI location of the configuration.</p>
     ///   - [`retrieval_role_arn(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     ///   - [`validators(Option<Vec<Validator>>)`](crate::output::UpdateConfigurationProfileOutput::validators): <p>A list of methods for validating the configuration.</p>
-    ///   - [`r#type(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::r#type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
+    ///   - [`r#type(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
     /// - On failure, responds with [`SdkError<UpdateConfigurationProfileError>`](crate::error::UpdateConfigurationProfileError)
     pub fn update_configuration_profile(
         &self,

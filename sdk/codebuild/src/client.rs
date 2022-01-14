@@ -183,7 +183,7 @@ where
     ///
     /// - Takes [`CreateReportGroupInput`](crate::input::CreateReportGroupInput) with field(s):
     ///   - [`name(Option<String>)`](crate::input::CreateReportGroupInput::name): <p> The name of the report group. </p>
-    ///   - [`r#type(Option<ReportType>)`](crate::input::CreateReportGroupInput::r#type): <p> The type of report group. </p>
+    ///   - [`r#type(Option<ReportType>)`](crate::input::CreateReportGroupInput::type): <p> The type of report group. </p>
     ///   - [`export_config(Option<ReportExportConfig>)`](crate::input::CreateReportGroupInput::export_config): <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateReportGroupInput::tags): <p> A list of tag key and value pairs associated with this report group. </p>  <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     /// - On success, responds with [`CreateReportGroupOutput`](crate::output::CreateReportGroupOutput) with field(s):

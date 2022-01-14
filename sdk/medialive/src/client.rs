@@ -202,7 +202,7 @@ where
     ///   - [`role_arn(Option<String>)`](crate::input::CreateInputInput::role_arn): The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
     ///   - [`sources(Option<Vec<InputSourceRequest>>)`](crate::input::CreateInputInput::sources): The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateInputInput::tags): A collection of key-value pairs.
-    ///   - [`r#type(Option<InputType>)`](crate::input::CreateInputInput::r#type): The different types of inputs that AWS Elemental MediaLive supports.
+    ///   - [`r#type(Option<InputType>)`](crate::input::CreateInputInput::type): The different types of inputs that AWS Elemental MediaLive supports.
     ///   - [`vpc(Option<InputVpcRequest>)`](crate::input::CreateInputInput::vpc): Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
     /// - On success, responds with [`CreateInputOutput`](crate::output::CreateInputOutput) with field(s):
     ///   - [`input(Option<Input>)`](crate::output::CreateInputOutput::input): Placeholder documentation for Input
@@ -449,7 +449,7 @@ where
     ///   - [`sources(Option<Vec<InputSource>>)`](crate::output::DescribeInputOutput::sources): A list of the sources of the input (PULL-type).
     ///   - [`state(Option<InputState>)`](crate::output::DescribeInputOutput::state): Placeholder documentation for InputState
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeInputOutput::tags): A collection of key-value pairs.
-    ///   - [`r#type(Option<InputType>)`](crate::output::DescribeInputOutput::r#type): The different types of inputs that AWS Elemental MediaLive supports.
+    ///   - [`r#type(Option<InputType>)`](crate::output::DescribeInputOutput::type): The different types of inputs that AWS Elemental MediaLive supports.
     /// - On failure, responds with [`SdkError<DescribeInputError>`](crate::error::DescribeInputError)
     pub fn describe_input(&self) -> fluent_builders::DescribeInput<C, M, R> {
         fluent_builders::DescribeInput::new(self.handle.clone())
@@ -469,7 +469,7 @@ where
     ///   - [`name(Option<String>)`](crate::output::DescribeInputDeviceOutput::name): A name that you specify for the input device.
     ///   - [`network_settings(Option<InputDeviceNetworkSettings>)`](crate::output::DescribeInputDeviceOutput::network_settings): The network settings for the input device.
     ///   - [`serial_number(Option<String>)`](crate::output::DescribeInputDeviceOutput::serial_number): The unique serial number of the input device.
-    ///   - [`r#type(Option<InputDeviceType>)`](crate::output::DescribeInputDeviceOutput::r#type): The type of the input device.
+    ///   - [`r#type(Option<InputDeviceType>)`](crate::output::DescribeInputDeviceOutput::type): The type of the input device.
     ///   - [`uhd_device_settings(Option<InputDeviceUhdSettings>)`](crate::output::DescribeInputDeviceOutput::uhd_device_settings): Settings that describe an input device that is type UHD.
     /// - On failure, responds with [`SdkError<DescribeInputDeviceError>`](crate::error::DescribeInputDeviceError)
     pub fn describe_input_device(&self) -> fluent_builders::DescribeInputDevice<C, M, R> {
@@ -948,7 +948,7 @@ where
     ///   - [`name(Option<String>)`](crate::output::UpdateInputDeviceOutput::name): A name that you specify for the input device.
     ///   - [`network_settings(Option<InputDeviceNetworkSettings>)`](crate::output::UpdateInputDeviceOutput::network_settings): The network settings for the input device.
     ///   - [`serial_number(Option<String>)`](crate::output::UpdateInputDeviceOutput::serial_number): The unique serial number of the input device.
-    ///   - [`r#type(Option<InputDeviceType>)`](crate::output::UpdateInputDeviceOutput::r#type): The type of the input device.
+    ///   - [`r#type(Option<InputDeviceType>)`](crate::output::UpdateInputDeviceOutput::type): The type of the input device.
     ///   - [`uhd_device_settings(Option<InputDeviceUhdSettings>)`](crate::output::UpdateInputDeviceOutput::uhd_device_settings): Settings that describe an input device that is type UHD.
     /// - On failure, responds with [`SdkError<UpdateInputDeviceError>`](crate::error::UpdateInputDeviceError)
     pub fn update_input_device(&self) -> fluent_builders::UpdateInputDevice<C, M, R> {

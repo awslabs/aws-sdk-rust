@@ -102,7 +102,7 @@ where
     ///   - [`transit_encryption_enabled(bool)`](crate::input::CreateApiCacheInput::transit_encryption_enabled): <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
     ///   - [`at_rest_encryption_enabled(bool)`](crate::input::CreateApiCacheInput::at_rest_encryption_enabled): <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
     ///   - [`api_caching_behavior(Option<ApiCachingBehavior>)`](crate::input::CreateApiCacheInput::api_caching_behavior): <p>Caching behavior.</p>  <ul>   <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>   <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>  </ul>
-    ///   - [`r#type(Option<ApiCacheType>)`](crate::input::CreateApiCacheInput::r#type): <p>The cache instance type. Valid values are </p>  <ul>   <li> <p> <code>SMALL</code> </p> </li>   <li> <p> <code>MEDIUM</code> </p> </li>   <li> <p> <code>LARGE</code> </p> </li>   <li> <p> <code>XLARGE</code> </p> </li>   <li> <p> <code>LARGE_2X</code> </p> </li>   <li> <p> <code>LARGE_4X</code> </p> </li>   <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>   <li> <p> <code>LARGE_12X</code> </p> </li>  </ul>  <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>  <p>The following legacy instance types are available, but their use is discouraged:</p>  <ul>   <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>   <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>   <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>   <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>   <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>   <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>   <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>  </ul>
+    ///   - [`r#type(Option<ApiCacheType>)`](crate::input::CreateApiCacheInput::type): <p>The cache instance type. Valid values are </p>  <ul>   <li> <p> <code>SMALL</code> </p> </li>   <li> <p> <code>MEDIUM</code> </p> </li>   <li> <p> <code>LARGE</code> </p> </li>   <li> <p> <code>XLARGE</code> </p> </li>   <li> <p> <code>LARGE_2X</code> </p> </li>   <li> <p> <code>LARGE_4X</code> </p> </li>   <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>   <li> <p> <code>LARGE_12X</code> </p> </li>  </ul>  <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>  <p>The following legacy instance types are available, but their use is discouraged:</p>  <ul>   <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>   <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>   <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>   <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>   <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>   <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>   <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>  </ul>
     /// - On success, responds with [`CreateApiCacheOutput`](crate::output::CreateApiCacheOutput) with field(s):
     ///   - [`api_cache(Option<ApiCache>)`](crate::output::CreateApiCacheOutput::api_cache): <p>The <code>ApiCache</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateApiCacheError>`](crate::error::CreateApiCacheError)
@@ -127,7 +127,7 @@ where
     ///   - [`api_id(Option<String>)`](crate::input::CreateDataSourceInput::api_id): <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
     ///   - [`name(Option<String>)`](crate::input::CreateDataSourceInput::name): <p>A user-supplied name for the <code>DataSource</code>.</p>
     ///   - [`description(Option<String>)`](crate::input::CreateDataSourceInput::description): <p>A description of the <code>DataSource</code>.</p>
-    ///   - [`r#type(Option<DataSourceType>)`](crate::input::CreateDataSourceInput::r#type): <p>The type of the <code>DataSource</code>.</p>
+    ///   - [`r#type(Option<DataSourceType>)`](crate::input::CreateDataSourceInput::type): <p>The type of the <code>DataSource</code>.</p>
     ///   - [`service_role_arn(Option<String>)`](crate::input::CreateDataSourceInput::service_role_arn): <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
     ///   - [`dynamodb_config(Option<DynamodbDataSourceConfig>)`](crate::input::CreateDataSourceInput::dynamodb_config): <p>Amazon DynamoDB settings.</p>
     ///   - [`lambda_config(Option<LambdaDataSourceConfig>)`](crate::input::CreateDataSourceInput::lambda_config): <p>Lambda settings.</p>
@@ -214,7 +214,7 @@ where
     ///   - [`definition(Option<String>)`](crate::input::CreateTypeInput::definition): <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>  <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     ///   - [`format(Option<TypeDefinitionFormat>)`](crate::input::CreateTypeInput::format): <p>The type format: SDL or JSON.</p>
     /// - On success, responds with [`CreateTypeOutput`](crate::output::CreateTypeOutput) with field(s):
-    ///   - [`r#type(Option<Type>)`](crate::output::CreateTypeOutput::r#type): <p>The <code>Type</code> object.</p>
+    ///   - [`r#type(Option<Type>)`](crate::output::CreateTypeOutput::type): <p>The <code>Type</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateTypeError>`](crate::error::CreateTypeError)
     pub fn create_type(&self) -> fluent_builders::CreateType<C, M, R> {
         fluent_builders::CreateType::new(self.handle.clone())
@@ -429,7 +429,7 @@ where
     ///   - [`type_name(Option<String>)`](crate::input::GetTypeInput::type_name): <p>The type name.</p>
     ///   - [`format(Option<TypeDefinitionFormat>)`](crate::input::GetTypeInput::format): <p>The type format: SDL or JSON.</p>
     /// - On success, responds with [`GetTypeOutput`](crate::output::GetTypeOutput) with field(s):
-    ///   - [`r#type(Option<Type>)`](crate::output::GetTypeOutput::r#type): <p>The <code>Type</code> object.</p>
+    ///   - [`r#type(Option<Type>)`](crate::output::GetTypeOutput::type): <p>The <code>Type</code> object.</p>
     /// - On failure, responds with [`SdkError<GetTypeError>`](crate::error::GetTypeError)
     pub fn get_type(&self) -> fluent_builders::GetType<C, M, R> {
         fluent_builders::GetType::new(self.handle.clone())
@@ -588,7 +588,7 @@ where
     ///   - [`api_id(Option<String>)`](crate::input::UpdateApiCacheInput::api_id): <p>The GraphQL API ID.</p>
     ///   - [`ttl(i64)`](crate::input::UpdateApiCacheInput::ttl): <p>TTL in seconds for cache entries.</p>  <p>Valid values are 1–3,600 seconds.</p>
     ///   - [`api_caching_behavior(Option<ApiCachingBehavior>)`](crate::input::UpdateApiCacheInput::api_caching_behavior): <p>Caching behavior.</p>  <ul>   <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>   <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>  </ul>
-    ///   - [`r#type(Option<ApiCacheType>)`](crate::input::UpdateApiCacheInput::r#type): <p>The cache instance type. Valid values are </p>  <ul>   <li> <p> <code>SMALL</code> </p> </li>   <li> <p> <code>MEDIUM</code> </p> </li>   <li> <p> <code>LARGE</code> </p> </li>   <li> <p> <code>XLARGE</code> </p> </li>   <li> <p> <code>LARGE_2X</code> </p> </li>   <li> <p> <code>LARGE_4X</code> </p> </li>   <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>   <li> <p> <code>LARGE_12X</code> </p> </li>  </ul>  <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>  <p>The following legacy instance types are available, but their use is discouraged:</p>  <ul>   <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>   <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>   <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>   <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>   <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>   <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>   <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>  </ul>
+    ///   - [`r#type(Option<ApiCacheType>)`](crate::input::UpdateApiCacheInput::type): <p>The cache instance type. Valid values are </p>  <ul>   <li> <p> <code>SMALL</code> </p> </li>   <li> <p> <code>MEDIUM</code> </p> </li>   <li> <p> <code>LARGE</code> </p> </li>   <li> <p> <code>XLARGE</code> </p> </li>   <li> <p> <code>LARGE_2X</code> </p> </li>   <li> <p> <code>LARGE_4X</code> </p> </li>   <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>   <li> <p> <code>LARGE_12X</code> </p> </li>  </ul>  <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>  <p>The following legacy instance types are available, but their use is discouraged:</p>  <ul>   <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>   <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>   <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>   <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>   <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>   <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>   <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>  </ul>
     /// - On success, responds with [`UpdateApiCacheOutput`](crate::output::UpdateApiCacheOutput) with field(s):
     ///   - [`api_cache(Option<ApiCache>)`](crate::output::UpdateApiCacheOutput::api_cache): <p>The <code>ApiCache</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateApiCacheError>`](crate::error::UpdateApiCacheError)
@@ -614,7 +614,7 @@ where
     ///   - [`api_id(Option<String>)`](crate::input::UpdateDataSourceInput::api_id): <p>The API ID.</p>
     ///   - [`name(Option<String>)`](crate::input::UpdateDataSourceInput::name): <p>The new name for the data source.</p>
     ///   - [`description(Option<String>)`](crate::input::UpdateDataSourceInput::description): <p>The new description for the data source.</p>
-    ///   - [`r#type(Option<DataSourceType>)`](crate::input::UpdateDataSourceInput::r#type): <p>The new data source type.</p>
+    ///   - [`r#type(Option<DataSourceType>)`](crate::input::UpdateDataSourceInput::type): <p>The new data source type.</p>
     ///   - [`service_role_arn(Option<String>)`](crate::input::UpdateDataSourceInput::service_role_arn): <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
     ///   - [`dynamodb_config(Option<DynamodbDataSourceConfig>)`](crate::input::UpdateDataSourceInput::dynamodb_config): <p>The new Amazon DynamoDB configuration.</p>
     ///   - [`lambda_config(Option<LambdaDataSourceConfig>)`](crate::input::UpdateDataSourceInput::lambda_config): <p>The new Lambda configuration.</p>
@@ -702,7 +702,7 @@ where
     ///   - [`definition(Option<String>)`](crate::input::UpdateTypeInput::definition): <p>The new definition.</p>
     ///   - [`format(Option<TypeDefinitionFormat>)`](crate::input::UpdateTypeInput::format): <p>The new type format: SDL or JSON.</p>
     /// - On success, responds with [`UpdateTypeOutput`](crate::output::UpdateTypeOutput) with field(s):
-    ///   - [`r#type(Option<Type>)`](crate::output::UpdateTypeOutput::r#type): <p>The updated <code>Type</code> object.</p>
+    ///   - [`r#type(Option<Type>)`](crate::output::UpdateTypeOutput::type): <p>The updated <code>Type</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateTypeError>`](crate::error::UpdateTypeError)
     pub fn update_type(&self) -> fluent_builders::UpdateType<C, M, R> {
         fluent_builders::UpdateType::new(self.handle.clone())

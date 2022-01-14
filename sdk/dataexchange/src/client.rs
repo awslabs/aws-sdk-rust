@@ -136,7 +136,7 @@ where
     ///
     /// - Takes [`CreateJobInput`](crate::input::CreateJobInput) with field(s):
     ///   - [`details(Option<RequestDetails>)`](crate::input::CreateJobInput::details): <p>The details for the CreateJob request.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::CreateJobInput::r#type): <p>The type of job to be created.</p>
+    ///   - [`r#type(Option<Type>)`](crate::input::CreateJobInput::type): <p>The type of job to be created.</p>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateJobOutput::arn): <p>The ARN for the job.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::CreateJobOutput::created_at): <p>The date and time that the job was created, in ISO 8601 format.</p>
@@ -144,7 +144,7 @@ where
     ///   - [`errors(Option<Vec<JobError>>)`](crate::output::CreateJobOutput::errors): <p>The errors associated with jobs.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateJobOutput::id): <p>The unique identifier for the job.</p>
     ///   - [`state(Option<State>)`](crate::output::CreateJobOutput::state): <p>The state of the job.</p>
-    ///   - [`r#type(Option<Type>)`](crate::output::CreateJobOutput::r#type): <p>The job type.</p>
+    ///   - [`r#type(Option<Type>)`](crate::output::CreateJobOutput::type): <p>The job type.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateJobOutput::updated_at): <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
@@ -280,7 +280,7 @@ where
     ///   - [`errors(Option<Vec<JobError>>)`](crate::output::GetJobOutput::errors): <p>The errors associated with jobs.</p>
     ///   - [`id(Option<String>)`](crate::output::GetJobOutput::id): <p>The unique identifier for the job.</p>
     ///   - [`state(Option<State>)`](crate::output::GetJobOutput::state): <p>The state of the job.</p>
-    ///   - [`r#type(Option<Type>)`](crate::output::GetJobOutput::r#type): <p>The job type.</p>
+    ///   - [`r#type(Option<Type>)`](crate::output::GetJobOutput::type): <p>The job type.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::GetJobOutput::updated_at): <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::error::GetJobError)
     pub fn get_job(&self) -> fluent_builders::GetJob<C, M, R> {

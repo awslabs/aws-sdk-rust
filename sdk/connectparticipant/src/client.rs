@@ -98,7 +98,7 @@ where
     /// Constructs a fluent builder for the [`CreateParticipantConnection`](crate::client::fluent_builders::CreateParticipantConnection) operation.
     ///
     /// - Takes [`CreateParticipantConnectionInput`](crate::input::CreateParticipantConnectionInput) with field(s):
-    ///   - [`r#type(Option<Vec<ConnectionType>>)`](crate::input::CreateParticipantConnectionInput::r#type): <p>Type of connection information required.</p>
+    ///   - [`r#type(Option<Vec<ConnectionType>>)`](crate::input::CreateParticipantConnectionInput::type): <p>Type of connection information required.</p>
     ///   - [`participant_token(Option<String>)`](crate::input::CreateParticipantConnectionInput::participant_token): <p>This is a header parameter.</p>  <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     ///   - [`connect_participant(Option<bool>)`](crate::input::CreateParticipantConnectionInput::connect_participant): <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
     /// - On success, responds with [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput) with field(s):

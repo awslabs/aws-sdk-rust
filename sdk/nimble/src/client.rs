@@ -188,7 +188,7 @@ where
     ///   - [`studio_id(Option<String>)`](crate::input::CreateStudioComponentInput::studio_id): <p>The studio ID. </p>
     ///   - [`subtype(Option<StudioComponentSubtype>)`](crate::input::CreateStudioComponentInput::subtype): <p>The specific subtype of a studio component.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateStudioComponentInput::tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    ///   - [`r#type(Option<StudioComponentType>)`](crate::input::CreateStudioComponentInput::r#type): <p>The type of the studio component.</p>
+    ///   - [`r#type(Option<StudioComponentType>)`](crate::input::CreateStudioComponentInput::type): <p>The type of the studio component.</p>
     /// - On success, responds with [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::output::CreateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<CreateStudioComponentError>`](crate::error::CreateStudioComponentError)
@@ -713,7 +713,7 @@ where
     ///   - [`studio_component_id(Option<String>)`](crate::input::UpdateStudioComponentInput::studio_component_id): <p>The studio component ID.</p>
     ///   - [`studio_id(Option<String>)`](crate::input::UpdateStudioComponentInput::studio_id): <p>The studio ID. </p>
     ///   - [`subtype(Option<StudioComponentSubtype>)`](crate::input::UpdateStudioComponentInput::subtype): <p>The specific subtype of a studio component.</p>
-    ///   - [`r#type(Option<StudioComponentType>)`](crate::input::UpdateStudioComponentInput::r#type): <p>The type of the studio component.</p>
+    ///   - [`r#type(Option<StudioComponentType>)`](crate::input::UpdateStudioComponentInput::type): <p>The type of the studio component.</p>
     /// - On success, responds with [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::output::UpdateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<UpdateStudioComponentError>`](crate::error::UpdateStudioComponentError)

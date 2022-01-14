@@ -247,7 +247,7 @@ where
     ///   - [`name(Option<String>)`](crate::output::DescribeDeviceOutput::name): <p>The device's name.</p>
     ///   - [`arn(Option<String>)`](crate::output::DescribeDeviceOutput::arn): <p>The device's ARN.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeDeviceOutput::description): <p>The device's description.</p>
-    ///   - [`r#type(Option<DeviceType>)`](crate::output::DescribeDeviceOutput::r#type): <p>The device's type.</p>
+    ///   - [`r#type(Option<DeviceType>)`](crate::output::DescribeDeviceOutput::type): <p>The device's type.</p>
     ///   - [`device_connection_status(Option<DeviceConnectionStatus>)`](crate::output::DescribeDeviceOutput::device_connection_status): <p>The device's connection status.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::created_time): <p>When the device was created.</p>
     ///   - [`provisioning_status(Option<DeviceStatus>)`](crate::output::DescribeDeviceOutput::provisioning_status): <p>The device's provisioning status.</p>

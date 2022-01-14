@@ -163,7 +163,7 @@ where
     /// - Takes [`CreateDataSourceInput`](crate::input::CreateDataSourceInput) with field(s):
     ///   - [`name(Option<String>)`](crate::input::CreateDataSourceInput::name): <p>A unique name for the data source. A data source name can't be changed without deleting and recreating the data source.</p>
     ///   - [`index_id(Option<String>)`](crate::input::CreateDataSourceInput::index_id): <p>The identifier of the index that should be associated with this data source.</p>
-    ///   - [`r#type(Option<DataSourceType>)`](crate::input::CreateDataSourceInput::r#type): <p>The type of repository that contains the data source.</p>
+    ///   - [`r#type(Option<DataSourceType>)`](crate::input::CreateDataSourceInput::type): <p>The type of repository that contains the data source.</p>
     ///   - [`configuration(Option<DataSourceConfiguration>)`](crate::input::CreateDataSourceInput::configuration): <p>The connector configuration information that is required to access the repository.</p>  <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
     ///   - [`description(Option<String>)`](crate::input::CreateDataSourceInput::description): <p>A description for the data source.</p>
     ///   - [`schedule(Option<String>)`](crate::input::CreateDataSourceInput::schedule): <p>Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> operation to update the index.</p>  <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
@@ -353,7 +353,7 @@ where
     ///   - [`id(Option<String>)`](crate::output::DescribeDataSourceOutput::id): <p>The identifier of the data source.</p>
     ///   - [`index_id(Option<String>)`](crate::output::DescribeDataSourceOutput::index_id): <p>The identifier of the index that contains the data source.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeDataSourceOutput::name): <p>The name that you gave the data source when it was created.</p>
-    ///   - [`r#type(Option<DataSourceType>)`](crate::output::DescribeDataSourceOutput::r#type): <p>The type of the data source.</p>
+    ///   - [`r#type(Option<DataSourceType>)`](crate::output::DescribeDataSourceOutput::type): <p>The type of the data source.</p>
     ///   - [`configuration(Option<DataSourceConfiguration>)`](crate::output::DescribeDataSourceOutput::configuration): <p>Information that describes where the data source is located and how the data source is configured. The specific information in the description depends on the data source provider.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::created_at): <p>The Unix timestamp of when the data source was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::updated_at): <p>The Unix timestamp of when the data source was last updated.</p>

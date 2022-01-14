@@ -168,7 +168,7 @@ where
     ///   - [`name(Option<String>)`](crate::input::CreateAppInput::name): <p>The app name.</p>
     ///   - [`description(Option<String>)`](crate::input::CreateAppInput::description): <p>A description of the app.</p>
     ///   - [`data_sources(Option<Vec<DataSource>>)`](crate::input::CreateAppInput::data_sources): <p>The app's data source.</p>
-    ///   - [`r#type(Option<AppType>)`](crate::input::CreateAppInput::r#type): <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    ///   - [`r#type(Option<AppType>)`](crate::input::CreateAppInput::type): <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     ///   - [`app_source(Option<Source>)`](crate::input::CreateAppInput::app_source): <p>A <code>Source</code> object that specifies the app repository.</p>
     ///   - [`domains(Option<Vec<String>>)`](crate::input::CreateAppInput::domains): <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     ///   - [`enable_ssl(Option<bool>)`](crate::input::CreateAppInput::enable_ssl): <p>Whether to enable SSL for the app.</p>
@@ -228,7 +228,7 @@ where
     ///
     /// - Takes [`CreateLayerInput`](crate::input::CreateLayerInput) with field(s):
     ///   - [`stack_id(Option<String>)`](crate::input::CreateLayerInput::stack_id): <p>The layer stack ID.</p>
-    ///   - [`r#type(Option<LayerType>)`](crate::input::CreateLayerInput::r#type): <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
+    ///   - [`r#type(Option<LayerType>)`](crate::input::CreateLayerInput::type): <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
     ///   - [`name(Option<String>)`](crate::input::CreateLayerInput::name): <p>The layer name, which is used by the console.</p>
     ///   - [`shortname(Option<String>)`](crate::input::CreateLayerInput::shortname): <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>  <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
     ///   - [`attributes(Option<HashMap<LayerAttributesKeys, String>>)`](crate::input::CreateLayerInput::attributes): <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>  <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
@@ -907,7 +907,7 @@ where
     ///   - [`name(Option<String>)`](crate::input::UpdateAppInput::name): <p>The app name.</p>
     ///   - [`description(Option<String>)`](crate::input::UpdateAppInput::description): <p>A description of the app.</p>
     ///   - [`data_sources(Option<Vec<DataSource>>)`](crate::input::UpdateAppInput::data_sources): <p>The app's data sources.</p>
-    ///   - [`r#type(Option<AppType>)`](crate::input::UpdateAppInput::r#type): <p>The app type.</p>
+    ///   - [`r#type(Option<AppType>)`](crate::input::UpdateAppInput::type): <p>The app type.</p>
     ///   - [`app_source(Option<Source>)`](crate::input::UpdateAppInput::app_source): <p>A <code>Source</code> object that specifies the app repository.</p>
     ///   - [`domains(Option<Vec<String>>)`](crate::input::UpdateAppInput::domains): <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     ///   - [`enable_ssl(Option<bool>)`](crate::input::UpdateAppInput::enable_ssl): <p>Whether SSL is enabled for the app.</p>

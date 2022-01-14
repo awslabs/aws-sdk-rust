@@ -114,7 +114,7 @@ where
     /// - Takes [`CreateContactInput`](crate::input::CreateContactInput) with field(s):
     ///   - [`alias(Option<String>)`](crate::input::CreateContactInput::alias): <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
     ///   - [`display_name(Option<String>)`](crate::input::CreateContactInput::display_name): <p>The full name of the contact or escalation plan. </p>
-    ///   - [`r#type(Option<ContactType>)`](crate::input::CreateContactInput::r#type): <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    ///   - [`r#type(Option<ContactType>)`](crate::input::CreateContactInput::type): <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
     ///   - [`plan(Option<Plan>)`](crate::input::CreateContactInput::plan): <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateContactInput::tags): <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
     ///   - [`idempotency_token(Option<String>)`](crate::input::CreateContactInput::idempotency_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -129,7 +129,7 @@ where
     /// - Takes [`CreateContactChannelInput`](crate::input::CreateContactChannelInput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::input::CreateContactChannelInput::contact_id): <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
     ///   - [`name(Option<String>)`](crate::input::CreateContactChannelInput::name): <p>The name of the contact channel.</p>
-    ///   - [`r#type(Option<ChannelType>)`](crate::input::CreateContactChannelInput::r#type): <p>Incident Manager supports three types of contact channels:</p>  <ul>   <li> <p> <code>SMS</code> </p> </li>   <li> <p> <code>VOICE</code> </p> </li>   <li> <p> <code>EMAIL</code> </p> </li>  </ul>
+    ///   - [`r#type(Option<ChannelType>)`](crate::input::CreateContactChannelInput::type): <p>Incident Manager supports three types of contact channels:</p>  <ul>   <li> <p> <code>SMS</code> </p> </li>   <li> <p> <code>VOICE</code> </p> </li>   <li> <p> <code>EMAIL</code> </p> </li>  </ul>
     ///   - [`delivery_address(Option<ContactChannelAddress>)`](crate::input::CreateContactChannelInput::delivery_address): <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>  <ul>   <li> <p>SMS - '+' followed by the country code and phone number</p> </li>   <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>   <li> <p>EMAIL - any standard email format</p> </li>  </ul>
     ///   - [`defer_activation(Option<bool>)`](crate::input::CreateContactChannelInput::defer_activation): <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
     ///   - [`idempotency_token(Option<String>)`](crate::input::CreateContactChannelInput::idempotency_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -217,7 +217,7 @@ where
     ///   - [`contact_arn(Option<String>)`](crate::output::GetContactOutput::contact_arn): <p>The ARN of the contact or escalation plan.</p>
     ///   - [`alias(Option<String>)`](crate::output::GetContactOutput::alias): <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
     ///   - [`display_name(Option<String>)`](crate::output::GetContactOutput::display_name): <p>The full name of the contact or escalation plan.</p>
-    ///   - [`r#type(Option<ContactType>)`](crate::output::GetContactOutput::r#type): <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>
+    ///   - [`r#type(Option<ContactType>)`](crate::output::GetContactOutput::type): <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>
     ///   - [`plan(Option<Plan>)`](crate::output::GetContactOutput::plan): <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     /// - On failure, responds with [`SdkError<GetContactError>`](crate::error::GetContactError)
     pub fn get_contact(&self) -> fluent_builders::GetContact<C, M, R> {
@@ -231,7 +231,7 @@ where
     ///   - [`contact_arn(Option<String>)`](crate::output::GetContactChannelOutput::contact_arn): <p>The ARN of the contact that the channel belongs to.</p>
     ///   - [`contact_channel_arn(Option<String>)`](crate::output::GetContactChannelOutput::contact_channel_arn): <p>The ARN of the contact channel.</p>
     ///   - [`name(Option<String>)`](crate::output::GetContactChannelOutput::name): <p>The name of the contact channel</p>
-    ///   - [`r#type(Option<ChannelType>)`](crate::output::GetContactChannelOutput::r#type): <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
+    ///   - [`r#type(Option<ChannelType>)`](crate::output::GetContactChannelOutput::type): <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
     ///   - [`delivery_address(Option<ContactChannelAddress>)`](crate::output::GetContactChannelOutput::delivery_address): <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
     ///   - [`activation_status(Option<ActivationStatus>)`](crate::output::GetContactChannelOutput::activation_status): <p>A Boolean value indicating if the contact channel has been activated or not.</p>
     /// - On failure, responds with [`SdkError<GetContactChannelError>`](crate::error::GetContactChannelError)
@@ -270,7 +270,7 @@ where
     ///   - [`next_token(Option<String>)`](crate::input::ListContactsInput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`max_results(Option<i32>)`](crate::input::ListContactsInput::max_results): <p>The maximum number of contacts and escalation plans per page of results.</p>
     ///   - [`alias_prefix(Option<String>)`](crate::input::ListContactsInput::alias_prefix): <p>Used to list only contacts who's aliases start with the specified prefix.</p>
-    ///   - [`r#type(Option<ContactType>)`](crate::input::ListContactsInput::r#type): <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    ///   - [`r#type(Option<ContactType>)`](crate::input::ListContactsInput::type): <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     /// - On success, responds with [`ListContactsOutput`](crate::output::ListContactsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListContactsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`contacts(Option<Vec<Contact>>)`](crate::output::ListContactsOutput::contacts): <p>A list of the contacts and escalation plans in your Incident Manager account.</p>

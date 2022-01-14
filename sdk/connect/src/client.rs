@@ -202,7 +202,7 @@ where
     /// - Takes [`CreateContactFlowInput`](crate::input::CreateContactFlowInput) with field(s):
     ///   - [`instance_id(Option<String>)`](crate::input::CreateContactFlowInput::instance_id): <p>The identifier of the Amazon Connect instance.</p>
     ///   - [`name(Option<String>)`](crate::input::CreateContactFlowInput::name): <p>The name of the contact flow.</p>
-    ///   - [`r#type(Option<ContactFlowType>)`](crate::input::CreateContactFlowInput::r#type): <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    ///   - [`r#type(Option<ContactFlowType>)`](crate::input::CreateContactFlowInput::type): <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     ///   - [`description(Option<String>)`](crate::input::CreateContactFlowInput::description): <p>The description of the contact flow. </p>
     ///   - [`content(Option<String>)`](crate::input::CreateContactFlowInput::content): <p>The content of the contact flow. </p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateContactFlowInput::tags): <p>One or more tags.</p>

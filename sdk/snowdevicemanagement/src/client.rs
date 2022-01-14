@@ -180,7 +180,7 @@ where
     ///
     /// - Takes [`ListDeviceResourcesInput`](crate::input::ListDeviceResourcesInput) with field(s):
     ///   - [`managed_device_id(Option<String>)`](crate::input::ListDeviceResourcesInput::managed_device_id): <p>The ID of the managed device that you are listing the resources of.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::ListDeviceResourcesInput::r#type): <p>A structure used to filter the results by type of resource.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::ListDeviceResourcesInput::type): <p>A structure used to filter the results by type of resource.</p>
     ///   - [`max_results(Option<i32>)`](crate::input::ListDeviceResourcesInput::max_results): <p>The maximum number of resources per page.</p>
     ///   - [`next_token(Option<String>)`](crate::input::ListDeviceResourcesInput::next_token): <p>A pagination token to continue to the next page of results.</p>
     /// - On success, responds with [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput) with field(s):

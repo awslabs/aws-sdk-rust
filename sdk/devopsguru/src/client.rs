@@ -385,7 +385,7 @@ where
     ///   - [`filters(Option<SearchInsightsFilters>)`](crate::input::SearchInsightsInput::filters): <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     ///   - [`max_results(Option<i32>)`](crate::input::SearchInsightsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     ///   - [`next_token(Option<String>)`](crate::input::SearchInsightsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`r#type(Option<InsightType>)`](crate::input::SearchInsightsInput::r#type): <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    ///   - [`r#type(Option<InsightType>)`](crate::input::SearchInsightsInput::type): <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     /// - On success, responds with [`SearchInsightsOutput`](crate::output::SearchInsightsOutput) with field(s):
     ///   - [`proactive_insights(Option<Vec<ProactiveInsightSummary>>)`](crate::output::SearchInsightsOutput::proactive_insights): <p> The returned proactive insights. </p>
     ///   - [`reactive_insights(Option<Vec<ReactiveInsightSummary>>)`](crate::output::SearchInsightsOutput::reactive_insights): <p> The returned reactive insights. </p>
@@ -403,7 +403,7 @@ where
     ///   - [`filters(Option<SearchOrganizationInsightsFilters>)`](crate::input::SearchOrganizationInsightsInput::filters): <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     ///   - [`max_results(Option<i32>)`](crate::input::SearchOrganizationInsightsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     ///   - [`next_token(Option<String>)`](crate::input::SearchOrganizationInsightsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`r#type(Option<InsightType>)`](crate::input::SearchOrganizationInsightsInput::r#type): <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    ///   - [`r#type(Option<InsightType>)`](crate::input::SearchOrganizationInsightsInput::type): <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     /// - On success, responds with [`SearchOrganizationInsightsOutput`](crate::output::SearchOrganizationInsightsOutput) with field(s):
     ///   - [`proactive_insights(Option<Vec<ProactiveInsightSummary>>)`](crate::output::SearchOrganizationInsightsOutput::proactive_insights): <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     ///   - [`reactive_insights(Option<Vec<ReactiveInsightSummary>>)`](crate::output::SearchOrganizationInsightsOutput::reactive_insights): <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>

@@ -351,7 +351,7 @@ where
     /// - Takes [`SubmitFeedbackInput`](crate::input::SubmitFeedbackInput) with field(s):
     ///   - [`profiling_group_name(Option<String>)`](crate::input::SubmitFeedbackInput::profiling_group_name): <p>The name of the profiling group that is associated with the analysis data.</p>
     ///   - [`anomaly_instance_id(Option<String>)`](crate::input::SubmitFeedbackInput::anomaly_instance_id): <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    ///   - [`r#type(Option<FeedbackType>)`](crate::input::SubmitFeedbackInput::r#type): <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    ///   - [`r#type(Option<FeedbackType>)`](crate::input::SubmitFeedbackInput::type): <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
     ///   - [`comment(Option<String>)`](crate::input::SubmitFeedbackInput::comment): <p>Optional feedback about this anomaly.</p>
     /// - On success, responds with [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput)
 

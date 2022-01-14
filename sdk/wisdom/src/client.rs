@@ -88,7 +88,7 @@ where
     /// - Takes [`CreateAssistantInput`](crate::input::CreateAssistantInput) with field(s):
     ///   - [`client_token(Option<String>)`](crate::input::CreateAssistantInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     ///   - [`name(Option<String>)`](crate::input::CreateAssistantInput::name): <p>The name of the assistant.</p>
-    ///   - [`r#type(Option<AssistantType>)`](crate::input::CreateAssistantInput::r#type): <p>The type of assistant.</p>
+    ///   - [`r#type(Option<AssistantType>)`](crate::input::CreateAssistantInput::type): <p>The type of assistant.</p>
     ///   - [`description(Option<String>)`](crate::input::CreateAssistantInput::description): <p>The description of the assistant.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAssistantInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     ///   - [`server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::input::CreateAssistantInput::server_side_encryption_configuration): <p>The KMS key used for encryption.</p>
