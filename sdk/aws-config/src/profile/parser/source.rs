@@ -56,10 +56,10 @@ impl FileKind {
 pub async fn load(proc_env: &os_shim_internal::Env, fs: &os_shim_internal::Fs) -> Source {
     let home = home_dir(proc_env, Os::real());
     let config = load_config_file(FileKind::Config, &home, fs, proc_env)
-        .instrument(tracing::info_span!("load_config_file"))
+        .instrument(tracing::debug_span!("load_config_file"))
         .await;
     let credentials = load_config_file(FileKind::Credentials, &home, fs, proc_env)
-        .instrument(tracing::info_span!("load_credentials_file"))
+        .instrument(tracing::debug_span!("load_credentials_file"))
         .await;
 
     Source {
@@ -104,7 +104,7 @@ async fn load_config_file(
         Err(e) => {
             match e.kind() {
                 ErrorKind::NotFound if path == kind.default_path() => {
-                    tracing::info!(path = %path, "config file not found")
+                    tracing::debug!(path = %path, "config file not found")
                 }
                 ErrorKind::NotFound if path != kind.default_path() => {
                     // in the case where the user overrode the path with an environment variable,
@@ -124,7 +124,7 @@ async fn load_config_file(
             Default::default()
         }
     };
-    tracing::info!(path = %path, size = ?data.len(), "config file loaded");
+    tracing::debug!(path = %path, size = ?data.len(), "config file loaded");
     File {
         // lossy is OK here, the name of this file is just for debugging purposes
         path: expanded.to_string_lossy().into(),
@@ -182,7 +182,7 @@ fn expand_home(
 /// Returns true or false based on whether or not this code is likely running inside an AWS Lambda.
 /// [Lambdas set many environment variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime)
 /// that we can check.
-fn check_is_likely_running_on_a_lambda(environment: &os_shim_internal::Env) -> bool {
+fn check_is_likely_running_on_a_lambda(environment: &aws_types::os_shim_internal::Env) -> bool {
     // LAMBDA_TASK_ROOT – The path to your Lambda function code.
     environment.get("LAMBDA_TASK_ROOT").is_ok()
 }
