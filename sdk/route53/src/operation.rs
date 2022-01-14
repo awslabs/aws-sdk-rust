@@ -1702,8 +1702,8 @@ mod list_resource_record_sets_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "GET");
-        assert_eq!(
+        pretty_assertions::assert_eq!(http_request.method(), "GET");
+        pretty_assertions::assert_eq!(
             http_request.uri().path(),
             "/2013-04-01/hostedzone/IDOFMYHOSTEDZONE/rrset"
         );

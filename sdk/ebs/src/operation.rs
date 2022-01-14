@@ -69,7 +69,7 @@ mod complete_snapshot_request_test {
         if let crate::error::CompleteSnapshotErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -109,7 +109,7 @@ mod complete_snapshot_request_test {
         if let crate::error::CompleteSnapshotErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -196,7 +196,7 @@ mod get_snapshot_block_request_test {
         if let crate::error::GetSnapshotBlockErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -236,7 +236,7 @@ mod get_snapshot_block_request_test {
         if let crate::error::GetSnapshotBlockErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -316,7 +316,7 @@ mod list_changed_blocks_request_test {
         if let crate::error::ListChangedBlocksErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -356,7 +356,7 @@ mod list_changed_blocks_request_test {
         if let crate::error::ListChangedBlocksErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -436,7 +436,7 @@ mod list_snapshot_blocks_request_test {
         if let crate::error::ListSnapshotBlocksErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -476,7 +476,7 @@ mod list_snapshot_blocks_request_test {
         if let crate::error::ListSnapshotBlocksErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -556,7 +556,7 @@ mod put_snapshot_block_request_test {
         if let crate::error::PutSnapshotBlockErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -596,7 +596,7 @@ mod put_snapshot_block_request_test {
         if let crate::error::PutSnapshotBlockErrorKind::ValidationException(actual_error) =
             parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -673,7 +673,7 @@ mod start_snapshot_request_test {
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::StartSnapshotErrorKind::ValidationException(actual_error) = parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -712,7 +712,7 @@ mod start_snapshot_request_test {
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::StartSnapshotErrorKind::ValidationException(actual_error) = parsed.kind
         {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
