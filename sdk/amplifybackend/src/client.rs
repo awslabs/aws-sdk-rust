@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`CloneBackend`](crate::client::fluent_builders::CloneBackend) operation.
     ///
-    /// - Takes [`CloneBackendInput`](crate::input::CloneBackendInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::CloneBackendInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::CloneBackendInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`target_environment_name(Option<String>)`](crate::input::CloneBackendInput::target_environment_name): <p>The name of the destination backend environment to be created.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CloneBackend::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CloneBackend::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::CloneBackend::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::CloneBackend::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`target_environment_name(impl Into<String>)`](crate::client::fluent_builders::CloneBackend::target_environment_name) / [`set_target_environment_name(Option<String>)`](crate::client::fluent_builders::CloneBackend::set_target_environment_name): <p>The name of the destination backend environment to be created.</p>
     /// - On success, responds with [`CloneBackendOutput`](crate::output::CloneBackendOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::CloneBackendOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::CloneBackendOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -102,12 +102,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateBackend`](crate::client::fluent_builders::CreateBackend) operation.
     ///
-    /// - Takes [`CreateBackendInput`](crate::input::CreateBackendInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::CreateBackendInput::app_id): <p>The app ID.</p>
-    ///   - [`app_name(Option<String>)`](crate::input::CreateBackendInput::app_name): <p>The name of the app.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::CreateBackendInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(Option<ResourceConfig>)`](crate::input::CreateBackendInput::resource_config): <p>The resource configuration for creating backend storage.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::CreateBackendInput::resource_name): <p>The name of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackend::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateBackend::set_app_id): <p>The app ID.</p>
+    ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackend::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::CreateBackend::set_app_name): <p>The name of the app.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackend::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::CreateBackend::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_config(ResourceConfig)`](crate::client::fluent_builders::CreateBackend::resource_config) / [`set_resource_config(Option<ResourceConfig>)`](crate::client::fluent_builders::CreateBackend::set_resource_config): <p>The resource configuration for creating backend storage.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackend::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::CreateBackend::set_resource_name): <p>The name of the resource.</p>
     /// - On success, responds with [`CreateBackendOutput`](crate::output::CreateBackendOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::CreateBackendOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::CreateBackendOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -121,11 +121,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateBackendAPI`](crate::client::fluent_builders::CreateBackendAPI) operation.
     ///
-    /// - Takes [`CreateBackendApiInput`](crate::input::CreateBackendApiInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::CreateBackendApiInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::CreateBackendApiInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(Option<BackendApiResourceConfig>)`](crate::input::CreateBackendApiInput::resource_config): <p>The resource configuration for this request.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::CreateBackendApiInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackendAPI::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateBackendAPI::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackendAPI::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::CreateBackendAPI::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_config(BackendApiResourceConfig)`](crate::client::fluent_builders::CreateBackendAPI::resource_config) / [`set_resource_config(Option<BackendApiResourceConfig>)`](crate::client::fluent_builders::CreateBackendAPI::set_resource_config): <p>The resource configuration for this request.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackendAPI::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::CreateBackendAPI::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::CreateBackendApiOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::CreateBackendApiOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -139,11 +139,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateBackendAuth`](crate::client::fluent_builders::CreateBackendAuth) operation.
     ///
-    /// - Takes [`CreateBackendAuthInput`](crate::input::CreateBackendAuthInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::CreateBackendAuthInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::CreateBackendAuthInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(Option<CreateBackendAuthResourceConfig>)`](crate::input::CreateBackendAuthInput::resource_config): <p>The resource configuration for this request object.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::CreateBackendAuthInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackendAuth::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateBackendAuth::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackendAuth::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::CreateBackendAuth::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_config(CreateBackendAuthResourceConfig)`](crate::client::fluent_builders::CreateBackendAuth::resource_config) / [`set_resource_config(Option<CreateBackendAuthResourceConfig>)`](crate::client::fluent_builders::CreateBackendAuth::set_resource_config): <p>The resource configuration for this request object.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackendAuth::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::CreateBackendAuth::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::CreateBackendAuthOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::CreateBackendAuthOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -157,9 +157,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateBackendConfig`](crate::client::fluent_builders::CreateBackendConfig) operation.
     ///
-    /// - Takes [`CreateBackendConfigInput`](crate::input::CreateBackendConfigInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::CreateBackendConfigInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_manager_app_id(Option<String>)`](crate::input::CreateBackendConfigInput::backend_manager_app_id): <p>The app ID for the backend manager.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackendConfig::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateBackendConfig::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_manager_app_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackendConfig::backend_manager_app_id) / [`set_backend_manager_app_id(Option<String>)`](crate::client::fluent_builders::CreateBackendConfig::set_backend_manager_app_id): <p>The app ID for the backend manager.</p>
     /// - On success, responds with [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::CreateBackendConfigOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::CreateBackendConfigOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -171,11 +171,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateBackendStorage`](crate::client::fluent_builders::CreateBackendStorage) operation.
     ///
-    /// - Takes [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::CreateBackendStorageInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::CreateBackendStorageInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(Option<CreateBackendStorageResourceConfig>)`](crate::input::CreateBackendStorageInput::resource_config): <p>The resource configuration for creating backend storage.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::CreateBackendStorageInput::resource_name): <p>The name of the storage resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackendStorage::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateBackendStorage::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackendStorage::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::CreateBackendStorage::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_config(CreateBackendStorageResourceConfig)`](crate::client::fluent_builders::CreateBackendStorage::resource_config) / [`set_resource_config(Option<CreateBackendStorageResourceConfig>)`](crate::client::fluent_builders::CreateBackendStorage::set_resource_config): <p>The resource configuration for creating backend storage.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackendStorage::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::CreateBackendStorage::set_resource_name): <p>The name of the storage resource.</p>
     /// - On success, responds with [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::CreateBackendStorageOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::CreateBackendStorageOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -187,8 +187,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateToken`](crate::client::fluent_builders::CreateToken) operation.
     ///
-    /// - Takes [`CreateTokenInput`](crate::input::CreateTokenInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::CreateTokenInput::app_id): <p>The app ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateToken::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateToken::set_app_id): <p>The app ID.</p>
     /// - On success, responds with [`CreateTokenOutput`](crate::output::CreateTokenOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::CreateTokenOutput::app_id): <p>The app ID.</p>
     ///   - [`challenge_code(Option<String>)`](crate::output::CreateTokenOutput::challenge_code): <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
@@ -200,9 +200,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteBackend`](crate::client::fluent_builders::DeleteBackend) operation.
     ///
-    /// - Takes [`DeleteBackendInput`](crate::input::DeleteBackendInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::DeleteBackendInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::DeleteBackendInput::backend_environment_name): <p>The name of the backend environment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBackend::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DeleteBackend::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackend::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::DeleteBackend::set_backend_environment_name): <p>The name of the backend environment.</p>
     /// - On success, responds with [`DeleteBackendOutput`](crate::output::DeleteBackendOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::DeleteBackendOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::DeleteBackendOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -216,11 +216,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteBackendAPI`](crate::client::fluent_builders::DeleteBackendAPI) operation.
     ///
-    /// - Takes [`DeleteBackendApiInput`](crate::input::DeleteBackendApiInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::DeleteBackendApiInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::DeleteBackendApiInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(Option<BackendApiResourceConfig>)`](crate::input::DeleteBackendApiInput::resource_config): <p>Defines the resource configuration for the data model in your Amplify project.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::DeleteBackendApiInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBackendAPI::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DeleteBackendAPI::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackendAPI::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::DeleteBackendAPI::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_config(BackendApiResourceConfig)`](crate::client::fluent_builders::DeleteBackendAPI::resource_config) / [`set_resource_config(Option<BackendApiResourceConfig>)`](crate::client::fluent_builders::DeleteBackendAPI::set_resource_config): <p>Defines the resource configuration for the data model in your Amplify project.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackendAPI::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::DeleteBackendAPI::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::DeleteBackendApiOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::DeleteBackendApiOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -234,10 +234,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteBackendAuth`](crate::client::fluent_builders::DeleteBackendAuth) operation.
     ///
-    /// - Takes [`DeleteBackendAuthInput`](crate::input::DeleteBackendAuthInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::DeleteBackendAuthInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::DeleteBackendAuthInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::DeleteBackendAuthInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBackendAuth::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DeleteBackendAuth::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackendAuth::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::DeleteBackendAuth::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackendAuth::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::DeleteBackendAuth::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::DeleteBackendAuthOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::DeleteBackendAuthOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -251,11 +251,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteBackendStorage`](crate::client::fluent_builders::DeleteBackendStorage) operation.
     ///
-    /// - Takes [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::DeleteBackendStorageInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::DeleteBackendStorageInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::DeleteBackendStorageInput::resource_name): <p>The name of the storage resource.</p>
-    ///   - [`service_name(Option<ServiceName>)`](crate::input::DeleteBackendStorageInput::service_name): <p>The name of the storage service.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBackendStorage::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DeleteBackendStorage::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackendStorage::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::DeleteBackendStorage::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackendStorage::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::DeleteBackendStorage::set_resource_name): <p>The name of the storage resource.</p>
+    ///   - [`service_name(ServiceName)`](crate::client::fluent_builders::DeleteBackendStorage::service_name) / [`set_service_name(Option<ServiceName>)`](crate::client::fluent_builders::DeleteBackendStorage::set_service_name): <p>The name of the storage service.</p>
     /// - On success, responds with [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::DeleteBackendStorageOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::DeleteBackendStorageOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -267,9 +267,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteToken`](crate::client::fluent_builders::DeleteToken) operation.
     ///
-    /// - Takes [`DeleteTokenInput`](crate::input::DeleteTokenInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::DeleteTokenInput::app_id): <p>The app ID.</p>
-    ///   - [`session_id(Option<String>)`](crate::input::DeleteTokenInput::session_id): <p>The session ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DeleteToken::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DeleteToken::set_app_id): <p>The app ID.</p>
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::DeleteToken::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::DeleteToken::set_session_id): <p>The session ID.</p>
     /// - On success, responds with [`DeleteTokenOutput`](crate::output::DeleteTokenOutput) with field(s):
     ///   - [`is_success(bool)`](crate::output::DeleteTokenOutput::is_success): <p>Indicates whether the request succeeded or failed.</p>
     /// - On failure, responds with [`SdkError<DeleteTokenError>`](crate::error::DeleteTokenError)
@@ -278,10 +278,10 @@ where
     }
     /// Constructs a fluent builder for the [`GenerateBackendAPIModels`](crate::client::fluent_builders::GenerateBackendAPIModels) operation.
     ///
-    /// - Takes [`GenerateBackendApiModelsInput`](crate::input::GenerateBackendApiModelsInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GenerateBackendApiModelsInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::GenerateBackendApiModelsInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::GenerateBackendApiModelsInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GenerateBackendAPIModels::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GenerateBackendAPIModels::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::GenerateBackendAPIModels::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::GenerateBackendAPIModels::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::GenerateBackendAPIModels::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::GenerateBackendAPIModels::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::GenerateBackendApiModelsOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::GenerateBackendApiModelsOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -297,9 +297,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetBackend`](crate::client::fluent_builders::GetBackend) operation.
     ///
-    /// - Takes [`GetBackendInput`](crate::input::GetBackendInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GetBackendInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::GetBackendInput::backend_environment_name): <p>The name of the backend environment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetBackend::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetBackend::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::GetBackend::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::GetBackend::set_backend_environment_name): <p>The name of the backend environment.</p>
     /// - On success, responds with [`GetBackendOutput`](crate::output::GetBackendOutput) with field(s):
     ///   - [`amplify_feature_flags(Option<String>)`](crate::output::GetBackendOutput::amplify_feature_flags): <p>A stringified version of the cli.json file for your Amplify project.</p>
     ///   - [`amplify_meta_config(Option<String>)`](crate::output::GetBackendOutput::amplify_meta_config): <p>A stringified version of the current configs for your Amplify project.</p>
@@ -314,11 +314,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetBackendAPI`](crate::client::fluent_builders::GetBackendAPI) operation.
     ///
-    /// - Takes [`GetBackendApiInput`](crate::input::GetBackendApiInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GetBackendApiInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::GetBackendApiInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(Option<BackendApiResourceConfig>)`](crate::input::GetBackendApiInput::resource_config): <p>Defines the resource configuration for the data model in your Amplify project.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::GetBackendApiInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetBackendAPI::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetBackendAPI::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::GetBackendAPI::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::GetBackendAPI::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_config(BackendApiResourceConfig)`](crate::client::fluent_builders::GetBackendAPI::resource_config) / [`set_resource_config(Option<BackendApiResourceConfig>)`](crate::client::fluent_builders::GetBackendAPI::set_resource_config): <p>Defines the resource configuration for the data model in your Amplify project.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::GetBackendAPI::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::GetBackendAPI::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`GetBackendApiOutput`](crate::output::GetBackendApiOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::GetBackendApiOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::GetBackendApiOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -331,10 +331,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetBackendAPIModels`](crate::client::fluent_builders::GetBackendAPIModels) operation.
     ///
-    /// - Takes [`GetBackendApiModelsInput`](crate::input::GetBackendApiModelsInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GetBackendApiModelsInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::GetBackendApiModelsInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::GetBackendApiModelsInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetBackendAPIModels::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetBackendAPIModels::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::GetBackendAPIModels::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::GetBackendAPIModels::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::GetBackendAPIModels::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::GetBackendAPIModels::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput) with field(s):
     ///   - [`models(Option<String>)`](crate::output::GetBackendApiModelsOutput::models): <p>Stringified JSON of the datastore model.</p>
     ///   - [`status(Option<Status>)`](crate::output::GetBackendApiModelsOutput::status): <p>The current status of the request.</p>
@@ -344,10 +344,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetBackendAuth`](crate::client::fluent_builders::GetBackendAuth) operation.
     ///
-    /// - Takes [`GetBackendAuthInput`](crate::input::GetBackendAuthInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GetBackendAuthInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::GetBackendAuthInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::GetBackendAuthInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetBackendAuth::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetBackendAuth::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::GetBackendAuth::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::GetBackendAuth::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::GetBackendAuth::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::GetBackendAuth::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::GetBackendAuthOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::GetBackendAuthOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -360,10 +360,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetBackendJob`](crate::client::fluent_builders::GetBackendJob) operation.
     ///
-    /// - Takes [`GetBackendJobInput`](crate::input::GetBackendJobInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GetBackendJobInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::GetBackendJobInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::GetBackendJobInput::job_id): <p>The ID for the job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetBackendJob::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetBackendJob::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::GetBackendJob::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::GetBackendJob::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetBackendJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetBackendJob::set_job_id): <p>The ID for the job.</p>
     /// - On success, responds with [`GetBackendJobOutput`](crate::output::GetBackendJobOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::GetBackendJobOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::GetBackendJobOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -379,10 +379,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetBackendStorage`](crate::client::fluent_builders::GetBackendStorage) operation.
     ///
-    /// - Takes [`GetBackendStorageInput`](crate::input::GetBackendStorageInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GetBackendStorageInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::GetBackendStorageInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::GetBackendStorageInput::resource_name): <p>The name of the storage resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetBackendStorage::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetBackendStorage::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::GetBackendStorage::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::GetBackendStorage::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::GetBackendStorage::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::GetBackendStorage::set_resource_name): <p>The name of the storage resource.</p>
     /// - On success, responds with [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::GetBackendStorageOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::GetBackendStorageOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -394,9 +394,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetToken`](crate::client::fluent_builders::GetToken) operation.
     ///
-    /// - Takes [`GetTokenInput`](crate::input::GetTokenInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::GetTokenInput::app_id): <p>The app ID.</p>
-    ///   - [`session_id(Option<String>)`](crate::input::GetTokenInput::session_id): <p>The session ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetToken::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetToken::set_app_id): <p>The app ID.</p>
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::GetToken::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::GetToken::set_session_id): <p>The session ID.</p>
     /// - On success, responds with [`GetTokenOutput`](crate::output::GetTokenOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::GetTokenOutput::app_id): <p>The app ID.</p>
     ///   - [`challenge_code(Option<String>)`](crate::output::GetTokenOutput::challenge_code): <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
@@ -408,13 +408,13 @@ where
     }
     /// Constructs a fluent builder for the [`ImportBackendAuth`](crate::client::fluent_builders::ImportBackendAuth) operation.
     ///
-    /// - Takes [`ImportBackendAuthInput`](crate::input::ImportBackendAuthInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::ImportBackendAuthInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::ImportBackendAuthInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`identity_pool_id(Option<String>)`](crate::input::ImportBackendAuthInput::identity_pool_id): <p>The ID of the Amazon Cognito identity pool.</p>
-    ///   - [`native_client_id(Option<String>)`](crate::input::ImportBackendAuthInput::native_client_id): <p>The ID of the Amazon Cognito native client.</p>
-    ///   - [`user_pool_id(Option<String>)`](crate::input::ImportBackendAuthInput::user_pool_id): <p>The ID of the Amazon Cognito user pool.</p>
-    ///   - [`web_client_id(Option<String>)`](crate::input::ImportBackendAuthInput::web_client_id): <p>The ID of the Amazon Cognito web client.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ImportBackendAuth::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ImportBackendAuth::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::ImportBackendAuth::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::ImportBackendAuth::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::ImportBackendAuth::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::ImportBackendAuth::set_identity_pool_id): <p>The ID of the Amazon Cognito identity pool.</p>
+    ///   - [`native_client_id(impl Into<String>)`](crate::client::fluent_builders::ImportBackendAuth::native_client_id) / [`set_native_client_id(Option<String>)`](crate::client::fluent_builders::ImportBackendAuth::set_native_client_id): <p>The ID of the Amazon Cognito native client.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::ImportBackendAuth::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::ImportBackendAuth::set_user_pool_id): <p>The ID of the Amazon Cognito user pool.</p>
+    ///   - [`web_client_id(impl Into<String>)`](crate::client::fluent_builders::ImportBackendAuth::web_client_id) / [`set_web_client_id(Option<String>)`](crate::client::fluent_builders::ImportBackendAuth::set_web_client_id): <p>The ID of the Amazon Cognito web client.</p>
     /// - On success, responds with [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::ImportBackendAuthOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::ImportBackendAuthOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -428,11 +428,11 @@ where
     }
     /// Constructs a fluent builder for the [`ImportBackendStorage`](crate::client::fluent_builders::ImportBackendStorage) operation.
     ///
-    /// - Takes [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::ImportBackendStorageInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::ImportBackendStorageInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`bucket_name(Option<String>)`](crate::input::ImportBackendStorageInput::bucket_name): <p>The name of the S3 bucket.</p>
-    ///   - [`service_name(Option<ServiceName>)`](crate::input::ImportBackendStorageInput::service_name): <p>The name of the storage service.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ImportBackendStorage::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ImportBackendStorage::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::ImportBackendStorage::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::ImportBackendStorage::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::ImportBackendStorage::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::ImportBackendStorage::set_bucket_name): <p>The name of the S3 bucket.</p>
+    ///   - [`service_name(ServiceName)`](crate::client::fluent_builders::ImportBackendStorage::service_name) / [`set_service_name(Option<ServiceName>)`](crate::client::fluent_builders::ImportBackendStorage::set_service_name): <p>The name of the storage service.</p>
     /// - On success, responds with [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::ImportBackendStorageOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::ImportBackendStorageOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -444,14 +444,14 @@ where
     }
     /// Constructs a fluent builder for the [`ListBackendJobs`](crate::client::fluent_builders::ListBackendJobs) operation.
     ///
-    /// - Takes [`ListBackendJobsInput`](crate::input::ListBackendJobsInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::ListBackendJobsInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::ListBackendJobsInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::ListBackendJobsInput::job_id): <p>The ID for the job.</p>
-    ///   - [`max_results(i32)`](crate::input::ListBackendJobsInput::max_results): <p>The maximum number of results that you want in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListBackendJobsInput::next_token): <p>The token for the next set of results.</p>
-    ///   - [`operation(Option<String>)`](crate::input::ListBackendJobsInput::operation): <p>Filters the list of response objects to include only those with the specified operation name.</p>
-    ///   - [`status(Option<String>)`](crate::input::ListBackendJobsInput::status): <p>Filters the list of response objects to include only those with the specified status.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::ListBackendJobs::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::ListBackendJobs::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::ListBackendJobs::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::ListBackendJobs::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::ListBackendJobs::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::ListBackendJobs::set_job_id): <p>The ID for the job.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBackendJobs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListBackendJobs::set_max_results): <p>The maximum number of results that you want in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBackendJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBackendJobs::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`operation(impl Into<String>)`](crate::client::fluent_builders::ListBackendJobs::operation) / [`set_operation(Option<String>)`](crate::client::fluent_builders::ListBackendJobs::set_operation): <p>Filters the list of response objects to include only those with the specified operation name.</p>
+    ///   - [`status(impl Into<String>)`](crate::client::fluent_builders::ListBackendJobs::status) / [`set_status(Option<String>)`](crate::client::fluent_builders::ListBackendJobs::set_status): <p>Filters the list of response objects to include only those with the specified status.</p>
     /// - On success, responds with [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec<BackendJobRespObj>>)`](crate::output::ListBackendJobsOutput::jobs): <p>An array of jobs and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBackendJobsOutput::next_token): <p>The token for the next set of results.</p>
@@ -461,8 +461,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListS3Buckets`](crate::client::fluent_builders::ListS3Buckets) operation.
     ///
-    /// - Takes [`ListS3BucketsInput`](crate::input::ListS3BucketsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListS3BucketsInput::next_token): <p>Reserved for future use.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListS3Buckets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListS3Buckets::set_next_token): <p>Reserved for future use.</p>
     /// - On success, responds with [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput) with field(s):
     ///   - [`buckets(Option<Vec<S3BucketInfo>>)`](crate::output::ListS3BucketsOutput::buckets): <p>The list of S3 buckets.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListS3BucketsOutput::next_token): <p>Reserved for future use.</p>
@@ -472,9 +472,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveAllBackends`](crate::client::fluent_builders::RemoveAllBackends) operation.
     ///
-    /// - Takes [`RemoveAllBackendsInput`](crate::input::RemoveAllBackendsInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::RemoveAllBackendsInput::app_id): <p>The app ID.</p>
-    ///   - [`clean_amplify_app(bool)`](crate::input::RemoveAllBackendsInput::clean_amplify_app): <p>Cleans up the Amplify Console app if this value is set to true.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::RemoveAllBackends::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::RemoveAllBackends::set_app_id): <p>The app ID.</p>
+    ///   - [`clean_amplify_app(bool)`](crate::client::fluent_builders::RemoveAllBackends::clean_amplify_app) / [`set_clean_amplify_app(bool)`](crate::client::fluent_builders::RemoveAllBackends::set_clean_amplify_app): <p>Cleans up the Amplify Console app if this value is set to true.</p>
     /// - On success, responds with [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::RemoveAllBackendsOutput::app_id): <p>The app ID.</p>
     ///   - [`error(Option<String>)`](crate::output::RemoveAllBackendsOutput::error): <p>If the request fails, this error is returned.</p>
@@ -487,8 +487,8 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveBackendConfig`](crate::client::fluent_builders::RemoveBackendConfig) operation.
     ///
-    /// - Takes [`RemoveBackendConfigInput`](crate::input::RemoveBackendConfigInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::RemoveBackendConfigInput::app_id): <p>The app ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::RemoveBackendConfig::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::RemoveBackendConfig::set_app_id): <p>The app ID.</p>
     /// - On success, responds with [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput) with field(s):
     ///   - [`error(Option<String>)`](crate::output::RemoveBackendConfigOutput::error): <p>If the request fails, this error is returned.</p>
     /// - On failure, responds with [`SdkError<RemoveBackendConfigError>`](crate::error::RemoveBackendConfigError)
@@ -497,11 +497,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBackendAPI`](crate::client::fluent_builders::UpdateBackendAPI) operation.
     ///
-    /// - Takes [`UpdateBackendApiInput`](crate::input::UpdateBackendApiInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::UpdateBackendApiInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::UpdateBackendApiInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(Option<BackendApiResourceConfig>)`](crate::input::UpdateBackendApiInput::resource_config): <p>Defines the resource configuration for the data model in your Amplify project.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::UpdateBackendApiInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendAPI::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateBackendAPI::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendAPI::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::UpdateBackendAPI::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_config(BackendApiResourceConfig)`](crate::client::fluent_builders::UpdateBackendAPI::resource_config) / [`set_resource_config(Option<BackendApiResourceConfig>)`](crate::client::fluent_builders::UpdateBackendAPI::set_resource_config): <p>Defines the resource configuration for the data model in your Amplify project.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendAPI::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::UpdateBackendAPI::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::UpdateBackendApiOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::UpdateBackendApiOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -515,11 +515,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBackendAuth`](crate::client::fluent_builders::UpdateBackendAuth) operation.
     ///
-    /// - Takes [`UpdateBackendAuthInput`](crate::input::UpdateBackendAuthInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::UpdateBackendAuthInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::UpdateBackendAuthInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(Option<UpdateBackendAuthResourceConfig>)`](crate::input::UpdateBackendAuthInput::resource_config): <p>The resource configuration for this request object.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::UpdateBackendAuthInput::resource_name): <p>The name of this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendAuth::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateBackendAuth::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendAuth::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::UpdateBackendAuth::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_config(UpdateBackendAuthResourceConfig)`](crate::client::fluent_builders::UpdateBackendAuth::resource_config) / [`set_resource_config(Option<UpdateBackendAuthResourceConfig>)`](crate::client::fluent_builders::UpdateBackendAuth::set_resource_config): <p>The resource configuration for this request object.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendAuth::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::UpdateBackendAuth::set_resource_name): <p>The name of this resource.</p>
     /// - On success, responds with [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::UpdateBackendAuthOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::UpdateBackendAuthOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -533,9 +533,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBackendConfig`](crate::client::fluent_builders::UpdateBackendConfig) operation.
     ///
-    /// - Takes [`UpdateBackendConfigInput`](crate::input::UpdateBackendConfigInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::UpdateBackendConfigInput::app_id): <p>The app ID.</p>
-    ///   - [`login_auth_config(Option<LoginAuthConfigReqObj>)`](crate::input::UpdateBackendConfigInput::login_auth_config): <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendConfig::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateBackendConfig::set_app_id): <p>The app ID.</p>
+    ///   - [`login_auth_config(LoginAuthConfigReqObj)`](crate::client::fluent_builders::UpdateBackendConfig::login_auth_config) / [`set_login_auth_config(Option<LoginAuthConfigReqObj>)`](crate::client::fluent_builders::UpdateBackendConfig::set_login_auth_config): <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
     /// - On success, responds with [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::UpdateBackendConfigOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_manager_app_id(Option<String>)`](crate::output::UpdateBackendConfigOutput::backend_manager_app_id): <p>The app ID for the backend manager.</p>
@@ -547,12 +547,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBackendJob`](crate::client::fluent_builders::UpdateBackendJob) operation.
     ///
-    /// - Takes [`UpdateBackendJobInput`](crate::input::UpdateBackendJobInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::UpdateBackendJobInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::UpdateBackendJobInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::UpdateBackendJobInput::job_id): <p>The ID for the job.</p>
-    ///   - [`operation(Option<String>)`](crate::input::UpdateBackendJobInput::operation): <p>Filters the list of response objects to include only those with the specified operation name.</p>
-    ///   - [`status(Option<String>)`](crate::input::UpdateBackendJobInput::status): <p>Filters the list of response objects to include only those with the specified status.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendJob::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateBackendJob::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendJob::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::UpdateBackendJob::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::UpdateBackendJob::set_job_id): <p>The ID for the job.</p>
+    ///   - [`operation(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendJob::operation) / [`set_operation(Option<String>)`](crate::client::fluent_builders::UpdateBackendJob::set_operation): <p>Filters the list of response objects to include only those with the specified operation name.</p>
+    ///   - [`status(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendJob::status) / [`set_status(Option<String>)`](crate::client::fluent_builders::UpdateBackendJob::set_status): <p>Filters the list of response objects to include only those with the specified status.</p>
     /// - On success, responds with [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::UpdateBackendJobOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::UpdateBackendJobOutput::backend_environment_name): <p>The name of the backend environment.</p>
@@ -568,11 +568,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBackendStorage`](crate::client::fluent_builders::UpdateBackendStorage) operation.
     ///
-    /// - Takes [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput) with field(s):
-    ///   - [`app_id(Option<String>)`](crate::input::UpdateBackendStorageInput::app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(Option<String>)`](crate::input::UpdateBackendStorageInput::backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`resource_config(Option<UpdateBackendStorageResourceConfig>)`](crate::input::UpdateBackendStorageInput::resource_config): <p>The resource configuration for updating backend storage.</p>
-    ///   - [`resource_name(Option<String>)`](crate::input::UpdateBackendStorageInput::resource_name): <p>The name of the storage resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendStorage::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateBackendStorage::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendStorage::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::client::fluent_builders::UpdateBackendStorage::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`resource_config(UpdateBackendStorageResourceConfig)`](crate::client::fluent_builders::UpdateBackendStorage::resource_config) / [`set_resource_config(Option<UpdateBackendStorageResourceConfig>)`](crate::client::fluent_builders::UpdateBackendStorage::set_resource_config): <p>The resource configuration for updating backend storage.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBackendStorage::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::UpdateBackendStorage::set_resource_name): <p>The name of the storage resource.</p>
     /// - On success, responds with [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::output::UpdateBackendStorageOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::output::UpdateBackendStorageOutput::backend_environment_name): <p>The name of the backend environment.</p>

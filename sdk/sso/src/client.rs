@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`GetRoleCredentials`](crate::client::fluent_builders::GetRoleCredentials) operation.
     ///
-    /// - Takes [`GetRoleCredentialsInput`](crate::input::GetRoleCredentialsInput) with field(s):
-    ///   - [`role_name(Option<String>)`](crate::input::GetRoleCredentialsInput::role_name): <p>The friendly name of the role that is assigned to the user.</p>
-    ///   - [`account_id(Option<String>)`](crate::input::GetRoleCredentialsInput::account_id): <p>The identifier for the AWS account that is assigned to the user.</p>
-    ///   - [`access_token(Option<String>)`](crate::input::GetRoleCredentialsInput::access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::GetRoleCredentials::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::GetRoleCredentials::set_role_name): <p>The friendly name of the role that is assigned to the user.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetRoleCredentials::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetRoleCredentials::set_account_id): <p>The identifier for the AWS account that is assigned to the user.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::GetRoleCredentials::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::GetRoleCredentials::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
     /// - On success, responds with [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput) with field(s):
     ///   - [`role_credentials(Option<RoleCredentials>)`](crate::output::GetRoleCredentialsOutput::role_credentials): <p>The credentials for the role that is assigned to the user.</p>
     /// - On failure, responds with [`SdkError<GetRoleCredentialsError>`](crate::error::GetRoleCredentialsError)
@@ -96,13 +96,13 @@ where
         fluent_builders::GetRoleCredentials::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccountRoles`](crate::client::fluent_builders::ListAccountRoles) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountRoles::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountRoles::into_paginator).
     ///
-    /// - Takes [`ListAccountRolesInput`](crate::input::ListAccountRolesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccountRolesInput::next_token): <p>The page token from the previous response output when you request subsequent pages.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccountRolesInput::max_results): <p>The number of items that clients can request per page.</p>
-    ///   - [`access_token(Option<String>)`](crate::input::ListAccountRolesInput::access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-    ///   - [`account_id(Option<String>)`](crate::input::ListAccountRolesInput::account_id): <p>The identifier for the AWS account that is assigned to the user.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountRoles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountRoles::set_next_token): <p>The page token from the previous response output when you request subsequent pages.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountRoles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountRoles::set_max_results): <p>The number of items that clients can request per page.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountRoles::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ListAccountRoles::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccountRoles::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccountRoles::set_account_id): <p>The identifier for the AWS account that is assigned to the user.</p>
     /// - On success, responds with [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountRolesOutput::next_token): <p>The page token client that is used to retrieve the list of accounts.</p>
     ///   - [`role_list(Option<Vec<RoleInfo>>)`](crate::output::ListAccountRolesOutput::role_list): <p>A paginated response with the list of roles and the next token if more results are available.</p>
@@ -111,12 +111,12 @@ where
         fluent_builders::ListAccountRoles::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccounts`](crate::client::fluent_builders::ListAccounts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccounts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccounts::into_paginator).
     ///
-    /// - Takes [`ListAccountsInput`](crate::input::ListAccountsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccountsInput::next_token): <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccountsInput::max_results): <p>This is the number of items clients can request per page.</p>
-    ///   - [`access_token(Option<String>)`](crate::input::ListAccountsInput::access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccounts::set_next_token): <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccounts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccounts::set_max_results): <p>This is the number of items clients can request per page.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ListAccounts::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ListAccounts::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
     /// - On success, responds with [`ListAccountsOutput`](crate::output::ListAccountsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountsOutput::next_token): <p>The page token client that is used to retrieve the list of accounts.</p>
     ///   - [`account_list(Option<Vec<AccountInfo>>)`](crate::output::ListAccountsOutput::account_list): <p>A paginated response with the list of account information and the next token if more results are available.</p>
@@ -126,8 +126,8 @@ where
     }
     /// Constructs a fluent builder for the [`Logout`](crate::client::fluent_builders::Logout) operation.
     ///
-    /// - Takes [`LogoutInput`](crate::input::LogoutInput) with field(s):
-    ///   - [`access_token(Option<String>)`](crate::input::LogoutInput::access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::Logout::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::Logout::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
     /// - On success, responds with [`LogoutOutput`](crate::output::LogoutOutput)
 
     /// - On failure, responds with [`SdkError<LogoutError>`](crate::error::LogoutError)

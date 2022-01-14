@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`AcceptSharedDirectory`](crate::client::fluent_builders::AcceptSharedDirectory) operation.
     ///
-    /// - Takes [`AcceptSharedDirectoryInput`](crate::input::AcceptSharedDirectoryInput) with field(s):
-    ///   - [`shared_directory_id(Option<String>)`](crate::input::AcceptSharedDirectoryInput::shared_directory_id): <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`shared_directory_id(impl Into<String>)`](crate::client::fluent_builders::AcceptSharedDirectory::shared_directory_id) / [`set_shared_directory_id(Option<String>)`](crate::client::fluent_builders::AcceptSharedDirectory::set_shared_directory_id): <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
     /// - On success, responds with [`AcceptSharedDirectoryOutput`](crate::output::AcceptSharedDirectoryOutput) with field(s):
     ///   - [`shared_directory(Option<SharedDirectory>)`](crate::output::AcceptSharedDirectoryOutput::shared_directory): <p>The shared directory in the directory consumer account.</p>
     /// - On failure, responds with [`SdkError<AcceptSharedDirectoryError>`](crate::error::AcceptSharedDirectoryError)
@@ -95,10 +95,10 @@ where
     }
     /// Constructs a fluent builder for the [`AddIpRoutes`](crate::client::fluent_builders::AddIpRoutes) operation.
     ///
-    /// - Takes [`AddIpRoutesInput`](crate::input::AddIpRoutesInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::AddIpRoutesInput::directory_id): <p>Identifier (ID) of the directory to which to add the address block.</p>
-    ///   - [`ip_routes(Option<Vec<IpRoute>>)`](crate::input::AddIpRoutesInput::ip_routes): <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
-    ///   - [`update_security_group_for_directory_controllers(bool)`](crate::input::AddIpRoutesInput::update_security_group_for_directory_controllers): <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>  <p>Inbound:</p>  <ul>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p> </li>  </ul>  <p></p>  <p>Outbound:</p>  <ul>   <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>  </ul>  <p>These security rules impact an internal network interface that is not exposed publicly.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::AddIpRoutes::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::AddIpRoutes::set_directory_id): <p>Identifier (ID) of the directory to which to add the address block.</p>
+    ///   - [`ip_routes(Vec<IpRoute>)`](crate::client::fluent_builders::AddIpRoutes::ip_routes) / [`set_ip_routes(Option<Vec<IpRoute>>)`](crate::client::fluent_builders::AddIpRoutes::set_ip_routes): <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
+    ///   - [`update_security_group_for_directory_controllers(bool)`](crate::client::fluent_builders::AddIpRoutes::update_security_group_for_directory_controllers) / [`set_update_security_group_for_directory_controllers(bool)`](crate::client::fluent_builders::AddIpRoutes::set_update_security_group_for_directory_controllers): <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>  <p>Inbound:</p>  <ul>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: DNS (TCP), Protocol: TCP, Range: 53, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: LDAP, Protocol: TCP, Range: 389, Source: 0.0.0.0/0</p> </li>   <li> <p>Type: All ICMP, Protocol: All, Range: N/A, Source: 0.0.0.0/0</p> </li>  </ul>  <p></p>  <p>Outbound:</p>  <ul>   <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>  </ul>  <p>These security rules impact an internal network interface that is not exposed publicly.</p>
     /// - On success, responds with [`AddIpRoutesOutput`](crate::output::AddIpRoutesOutput)
 
     /// - On failure, responds with [`SdkError<AddIpRoutesError>`](crate::error::AddIpRoutesError)
@@ -107,10 +107,10 @@ where
     }
     /// Constructs a fluent builder for the [`AddRegion`](crate::client::fluent_builders::AddRegion) operation.
     ///
-    /// - Takes [`AddRegionInput`](crate::input::AddRegionInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::AddRegionInput::directory_id): <p>The identifier of the directory to which you want to add Region replication.</p>
-    ///   - [`region_name(Option<String>)`](crate::input::AddRegionInput::region_name): <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
-    ///   - [`vpc_settings(Option<DirectoryVpcSettings>)`](crate::input::AddRegionInput::vpc_settings): <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::AddRegion::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::AddRegion::set_directory_id): <p>The identifier of the directory to which you want to add Region replication.</p>
+    ///   - [`region_name(impl Into<String>)`](crate::client::fluent_builders::AddRegion::region_name) / [`set_region_name(Option<String>)`](crate::client::fluent_builders::AddRegion::set_region_name): <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
+    ///   - [`vpc_settings(DirectoryVpcSettings)`](crate::client::fluent_builders::AddRegion::vpc_settings) / [`set_vpc_settings(Option<DirectoryVpcSettings>)`](crate::client::fluent_builders::AddRegion::set_vpc_settings): <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     /// - On success, responds with [`AddRegionOutput`](crate::output::AddRegionOutput)
 
     /// - On failure, responds with [`SdkError<AddRegionError>`](crate::error::AddRegionError)
@@ -119,9 +119,9 @@ where
     }
     /// Constructs a fluent builder for the [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) operation.
     ///
-    /// - Takes [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput) with field(s):
-    ///   - [`resource_id(Option<String>)`](crate::input::AddTagsToResourceInput::resource_id): <p>Identifier (ID) for the directory to which to add the tag.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsToResourceInput::tags): <p>The tags to be assigned to the directory.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::AddTagsToResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::AddTagsToResource::set_resource_id): <p>Identifier (ID) for the directory to which to add the tag.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AddTagsToResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTagsToResource::set_tags): <p>The tags to be assigned to the directory.</p>
     /// - On success, responds with [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
 
     /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::error::AddTagsToResourceError)
@@ -130,9 +130,9 @@ where
     }
     /// Constructs a fluent builder for the [`CancelSchemaExtension`](crate::client::fluent_builders::CancelSchemaExtension) operation.
     ///
-    /// - Takes [`CancelSchemaExtensionInput`](crate::input::CancelSchemaExtensionInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::CancelSchemaExtensionInput::directory_id): <p>The identifier of the directory whose schema extension will be canceled.</p>
-    ///   - [`schema_extension_id(Option<String>)`](crate::input::CancelSchemaExtensionInput::schema_extension_id): <p>The identifier of the schema extension that will be canceled.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::CancelSchemaExtension::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::CancelSchemaExtension::set_directory_id): <p>The identifier of the directory whose schema extension will be canceled.</p>
+    ///   - [`schema_extension_id(impl Into<String>)`](crate::client::fluent_builders::CancelSchemaExtension::schema_extension_id) / [`set_schema_extension_id(Option<String>)`](crate::client::fluent_builders::CancelSchemaExtension::set_schema_extension_id): <p>The identifier of the schema extension that will be canceled.</p>
     /// - On success, responds with [`CancelSchemaExtensionOutput`](crate::output::CancelSchemaExtensionOutput)
 
     /// - On failure, responds with [`SdkError<CancelSchemaExtensionError>`](crate::error::CancelSchemaExtensionError)
@@ -141,14 +141,14 @@ where
     }
     /// Constructs a fluent builder for the [`ConnectDirectory`](crate::client::fluent_builders::ConnectDirectory) operation.
     ///
-    /// - Takes [`ConnectDirectoryInput`](crate::input::ConnectDirectoryInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::ConnectDirectoryInput::name): <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
-    ///   - [`short_name(Option<String>)`](crate::input::ConnectDirectoryInput::short_name): <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
-    ///   - [`password(Option<String>)`](crate::input::ConnectDirectoryInput::password): <p>The password for your self-managed user account.</p>
-    ///   - [`description(Option<String>)`](crate::input::ConnectDirectoryInput::description): <p>A description for the directory.</p>
-    ///   - [`size(Option<DirectorySize>)`](crate::input::ConnectDirectoryInput::size): <p>The size of the directory.</p>
-    ///   - [`connect_settings(Option<DirectoryConnectSettings>)`](crate::input::ConnectDirectoryInput::connect_settings): <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::ConnectDirectoryInput::tags): <p>The tags to be assigned to AD Connector.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ConnectDirectory::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ConnectDirectory::set_name): <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
+    ///   - [`short_name(impl Into<String>)`](crate::client::fluent_builders::ConnectDirectory::short_name) / [`set_short_name(Option<String>)`](crate::client::fluent_builders::ConnectDirectory::set_short_name): <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::ConnectDirectory::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::ConnectDirectory::set_password): <p>The password for your self-managed user account.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::ConnectDirectory::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::ConnectDirectory::set_description): <p>A description for the directory.</p>
+    ///   - [`size(DirectorySize)`](crate::client::fluent_builders::ConnectDirectory::size) / [`set_size(Option<DirectorySize>)`](crate::client::fluent_builders::ConnectDirectory::set_size): <p>The size of the directory.</p>
+    ///   - [`connect_settings(DirectoryConnectSettings)`](crate::client::fluent_builders::ConnectDirectory::connect_settings) / [`set_connect_settings(Option<DirectoryConnectSettings>)`](crate::client::fluent_builders::ConnectDirectory::set_connect_settings): <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ConnectDirectory::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ConnectDirectory::set_tags): <p>The tags to be assigned to AD Connector.</p>
     /// - On success, responds with [`ConnectDirectoryOutput`](crate::output::ConnectDirectoryOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::output::ConnectDirectoryOutput::directory_id): <p>The identifier of the new directory.</p>
     /// - On failure, responds with [`SdkError<ConnectDirectoryError>`](crate::error::ConnectDirectoryError)
@@ -157,9 +157,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAlias`](crate::client::fluent_builders::CreateAlias) operation.
     ///
-    /// - Takes [`CreateAliasInput`](crate::input::CreateAliasInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::CreateAliasInput::directory_id): <p>The identifier of the directory for which to create the alias.</p>
-    ///   - [`alias(Option<String>)`](crate::input::CreateAliasInput::alias): <p>The requested alias.</p>  <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::CreateAlias::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::CreateAlias::set_directory_id): <p>The identifier of the directory for which to create the alias.</p>
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::CreateAlias::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::CreateAlias::set_alias): <p>The requested alias.</p>  <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
     /// - On success, responds with [`CreateAliasOutput`](crate::output::CreateAliasOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::output::CreateAliasOutput::directory_id): <p>The identifier of the directory.</p>
     ///   - [`alias(Option<String>)`](crate::output::CreateAliasOutput::alias): <p>The alias for the directory.</p>
@@ -169,12 +169,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateComputer`](crate::client::fluent_builders::CreateComputer) operation.
     ///
-    /// - Takes [`CreateComputerInput`](crate::input::CreateComputerInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::CreateComputerInput::directory_id): <p>The identifier of the directory in which to create the computer account.</p>
-    ///   - [`computer_name(Option<String>)`](crate::input::CreateComputerInput::computer_name): <p>The name of the computer account.</p>
-    ///   - [`password(Option<String>)`](crate::input::CreateComputerInput::password): <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
-    ///   - [`organizational_unit_distinguished_name(Option<String>)`](crate::input::CreateComputerInput::organizational_unit_distinguished_name): <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    ///   - [`computer_attributes(Option<Vec<Attribute>>)`](crate::input::CreateComputerInput::computer_attributes): <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::CreateComputer::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::CreateComputer::set_directory_id): <p>The identifier of the directory in which to create the computer account.</p>
+    ///   - [`computer_name(impl Into<String>)`](crate::client::fluent_builders::CreateComputer::computer_name) / [`set_computer_name(Option<String>)`](crate::client::fluent_builders::CreateComputer::set_computer_name): <p>The name of the computer account.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateComputer::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateComputer::set_password): <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
+    ///   - [`organizational_unit_distinguished_name(impl Into<String>)`](crate::client::fluent_builders::CreateComputer::organizational_unit_distinguished_name) / [`set_organizational_unit_distinguished_name(Option<String>)`](crate::client::fluent_builders::CreateComputer::set_organizational_unit_distinguished_name): <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
+    ///   - [`computer_attributes(Vec<Attribute>)`](crate::client::fluent_builders::CreateComputer::computer_attributes) / [`set_computer_attributes(Option<Vec<Attribute>>)`](crate::client::fluent_builders::CreateComputer::set_computer_attributes): <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
     /// - On success, responds with [`CreateComputerOutput`](crate::output::CreateComputerOutput) with field(s):
     ///   - [`computer(Option<Computer>)`](crate::output::CreateComputerOutput::computer): <p>A <code>Computer</code> object that represents the computer account.</p>
     /// - On failure, responds with [`SdkError<CreateComputerError>`](crate::error::CreateComputerError)
@@ -183,10 +183,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateConditionalForwarder`](crate::client::fluent_builders::CreateConditionalForwarder) operation.
     ///
-    /// - Takes [`CreateConditionalForwarderInput`](crate::input::CreateConditionalForwarderInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::CreateConditionalForwarderInput::directory_id): <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
-    ///   - [`remote_domain_name(Option<String>)`](crate::input::CreateConditionalForwarderInput::remote_domain_name): <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    ///   - [`dns_ip_addrs(Option<Vec<String>>)`](crate::input::CreateConditionalForwarderInput::dns_ip_addrs): <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::CreateConditionalForwarder::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::CreateConditionalForwarder::set_directory_id): <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
+    ///   - [`remote_domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateConditionalForwarder::remote_domain_name) / [`set_remote_domain_name(Option<String>)`](crate::client::fluent_builders::CreateConditionalForwarder::set_remote_domain_name): <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
+    ///   - [`dns_ip_addrs(Vec<String>)`](crate::client::fluent_builders::CreateConditionalForwarder::dns_ip_addrs) / [`set_dns_ip_addrs(Option<Vec<String>>)`](crate::client::fluent_builders::CreateConditionalForwarder::set_dns_ip_addrs): <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
     /// - On success, responds with [`CreateConditionalForwarderOutput`](crate::output::CreateConditionalForwarderOutput)
 
     /// - On failure, responds with [`SdkError<CreateConditionalForwarderError>`](crate::error::CreateConditionalForwarderError)
@@ -197,14 +197,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDirectory`](crate::client::fluent_builders::CreateDirectory) operation.
     ///
-    /// - Takes [`CreateDirectoryInput`](crate::input::CreateDirectoryInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateDirectoryInput::name): <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
-    ///   - [`short_name(Option<String>)`](crate::input::CreateDirectoryInput::short_name): <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
-    ///   - [`password(Option<String>)`](crate::input::CreateDirectoryInput::password): <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>  <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>  <p>The regex pattern for this string is made up of the following conditions:</p>  <ul>   <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li>  </ul>  <p>AND any 3 of the following password complexity rules required by Active Directory:</p>  <ul>   <li> <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li>   <li> <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li>   <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li>   <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>  </ul>  <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateDirectoryInput::description): <p>A description for the directory.</p>
-    ///   - [`size(Option<DirectorySize>)`](crate::input::CreateDirectoryInput::size): <p>The size of the directory.</p>
-    ///   - [`vpc_settings(Option<DirectoryVpcSettings>)`](crate::input::CreateDirectoryInput::vpc_settings): <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDirectoryInput::tags): <p>The tags to be assigned to the Simple AD directory.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDirectory::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDirectory::set_name): <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
+    ///   - [`short_name(impl Into<String>)`](crate::client::fluent_builders::CreateDirectory::short_name) / [`set_short_name(Option<String>)`](crate::client::fluent_builders::CreateDirectory::set_short_name): <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateDirectory::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateDirectory::set_password): <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>  <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>  <p>The regex pattern for this string is made up of the following conditions:</p>  <ul>   <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li>  </ul>  <p>AND any 3 of the following password complexity rules required by Active Directory:</p>  <ul>   <li> <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li>   <li> <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li>   <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li>   <li> <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>  </ul>  <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDirectory::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDirectory::set_description): <p>A description for the directory.</p>
+    ///   - [`size(DirectorySize)`](crate::client::fluent_builders::CreateDirectory::size) / [`set_size(Option<DirectorySize>)`](crate::client::fluent_builders::CreateDirectory::set_size): <p>The size of the directory.</p>
+    ///   - [`vpc_settings(DirectoryVpcSettings)`](crate::client::fluent_builders::CreateDirectory::vpc_settings) / [`set_vpc_settings(Option<DirectoryVpcSettings>)`](crate::client::fluent_builders::CreateDirectory::set_vpc_settings): <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDirectory::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDirectory::set_tags): <p>The tags to be assigned to the Simple AD directory.</p>
     /// - On success, responds with [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::output::CreateDirectoryOutput::directory_id): <p>The identifier of the directory that was created.</p>
     /// - On failure, responds with [`SdkError<CreateDirectoryError>`](crate::error::CreateDirectoryError)
@@ -213,9 +213,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateLogSubscription`](crate::client::fluent_builders::CreateLogSubscription) operation.
     ///
-    /// - Takes [`CreateLogSubscriptionInput`](crate::input::CreateLogSubscriptionInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::CreateLogSubscriptionInput::directory_id): <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
-    ///   - [`log_group_name(Option<String>)`](crate::input::CreateLogSubscriptionInput::log_group_name): <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::CreateLogSubscription::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::CreateLogSubscription::set_directory_id): <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateLogSubscription::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::CreateLogSubscription::set_log_group_name): <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
     /// - On success, responds with [`CreateLogSubscriptionOutput`](crate::output::CreateLogSubscriptionOutput)
 
     /// - On failure, responds with [`SdkError<CreateLogSubscriptionError>`](crate::error::CreateLogSubscriptionError)
@@ -224,14 +224,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMicrosoftAD`](crate::client::fluent_builders::CreateMicrosoftAD) operation.
     ///
-    /// - Takes [`CreateMicrosoftAdInput`](crate::input::CreateMicrosoftAdInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateMicrosoftAdInput::name): <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
-    ///   - [`short_name(Option<String>)`](crate::input::CreateMicrosoftAdInput::short_name): <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
-    ///   - [`password(Option<String>)`](crate::input::CreateMicrosoftAdInput::password): <p>The password for the default administrative user named <code>Admin</code>.</p>  <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateMicrosoftAdInput::description): <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
-    ///   - [`vpc_settings(Option<DirectoryVpcSettings>)`](crate::input::CreateMicrosoftAdInput::vpc_settings): <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    ///   - [`edition(Option<DirectoryEdition>)`](crate::input::CreateMicrosoftAdInput::edition): <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateMicrosoftAdInput::tags): <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateMicrosoftAD::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateMicrosoftAD::set_name): <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
+    ///   - [`short_name(impl Into<String>)`](crate::client::fluent_builders::CreateMicrosoftAD::short_name) / [`set_short_name(Option<String>)`](crate::client::fluent_builders::CreateMicrosoftAD::set_short_name): <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateMicrosoftAD::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateMicrosoftAD::set_password): <p>The password for the default administrative user named <code>Admin</code>.</p>  <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateMicrosoftAD::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateMicrosoftAD::set_description): <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
+    ///   - [`vpc_settings(DirectoryVpcSettings)`](crate::client::fluent_builders::CreateMicrosoftAD::vpc_settings) / [`set_vpc_settings(Option<DirectoryVpcSettings>)`](crate::client::fluent_builders::CreateMicrosoftAD::set_vpc_settings): <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    ///   - [`edition(DirectoryEdition)`](crate::client::fluent_builders::CreateMicrosoftAD::edition) / [`set_edition(Option<DirectoryEdition>)`](crate::client::fluent_builders::CreateMicrosoftAD::set_edition): <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMicrosoftAD::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMicrosoftAD::set_tags): <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
     /// - On success, responds with [`CreateMicrosoftAdOutput`](crate::output::CreateMicrosoftAdOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::output::CreateMicrosoftAdOutput::directory_id): <p>The identifier of the directory that was created.</p>
     /// - On failure, responds with [`SdkError<CreateMicrosoftADError>`](crate::error::CreateMicrosoftADError)
@@ -240,9 +240,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) operation.
     ///
-    /// - Takes [`CreateSnapshotInput`](crate::input::CreateSnapshotInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::CreateSnapshotInput::directory_id): <p>The identifier of the directory of which to take a snapshot.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateSnapshotInput::name): <p>The descriptive name to apply to the snapshot.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshot::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::CreateSnapshot::set_directory_id): <p>The identifier of the directory of which to take a snapshot.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshot::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSnapshot::set_name): <p>The descriptive name to apply to the snapshot.</p>
     /// - On success, responds with [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput) with field(s):
     ///   - [`snapshot_id(Option<String>)`](crate::output::CreateSnapshotOutput::snapshot_id): <p>The identifier of the snapshot that was created.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::error::CreateSnapshotError)
@@ -251,14 +251,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTrust`](crate::client::fluent_builders::CreateTrust) operation.
     ///
-    /// - Takes [`CreateTrustInput`](crate::input::CreateTrustInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::CreateTrustInput::directory_id): <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
-    ///   - [`remote_domain_name(Option<String>)`](crate::input::CreateTrustInput::remote_domain_name): <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
-    ///   - [`trust_password(Option<String>)`](crate::input::CreateTrustInput::trust_password): <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
-    ///   - [`trust_direction(Option<TrustDirection>)`](crate::input::CreateTrustInput::trust_direction): <p>The direction of the trust relationship.</p>
-    ///   - [`trust_type(Option<TrustType>)`](crate::input::CreateTrustInput::trust_type): <p>The trust relationship type. <code>Forest</code> is the default.</p>
-    ///   - [`conditional_forwarder_ip_addrs(Option<Vec<String>>)`](crate::input::CreateTrustInput::conditional_forwarder_ip_addrs): <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    ///   - [`selective_auth(Option<SelectiveAuth>)`](crate::input::CreateTrustInput::selective_auth): <p>Optional parameter to enable selective authentication for the trust.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::CreateTrust::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::CreateTrust::set_directory_id): <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
+    ///   - [`remote_domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrust::remote_domain_name) / [`set_remote_domain_name(Option<String>)`](crate::client::fluent_builders::CreateTrust::set_remote_domain_name): <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
+    ///   - [`trust_password(impl Into<String>)`](crate::client::fluent_builders::CreateTrust::trust_password) / [`set_trust_password(Option<String>)`](crate::client::fluent_builders::CreateTrust::set_trust_password): <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    ///   - [`trust_direction(TrustDirection)`](crate::client::fluent_builders::CreateTrust::trust_direction) / [`set_trust_direction(Option<TrustDirection>)`](crate::client::fluent_builders::CreateTrust::set_trust_direction): <p>The direction of the trust relationship.</p>
+    ///   - [`trust_type(TrustType)`](crate::client::fluent_builders::CreateTrust::trust_type) / [`set_trust_type(Option<TrustType>)`](crate::client::fluent_builders::CreateTrust::set_trust_type): <p>The trust relationship type. <code>Forest</code> is the default.</p>
+    ///   - [`conditional_forwarder_ip_addrs(Vec<String>)`](crate::client::fluent_builders::CreateTrust::conditional_forwarder_ip_addrs) / [`set_conditional_forwarder_ip_addrs(Option<Vec<String>>)`](crate::client::fluent_builders::CreateTrust::set_conditional_forwarder_ip_addrs): <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
+    ///   - [`selective_auth(SelectiveAuth)`](crate::client::fluent_builders::CreateTrust::selective_auth) / [`set_selective_auth(Option<SelectiveAuth>)`](crate::client::fluent_builders::CreateTrust::set_selective_auth): <p>Optional parameter to enable selective authentication for the trust.</p>
     /// - On success, responds with [`CreateTrustOutput`](crate::output::CreateTrustOutput) with field(s):
     ///   - [`trust_id(Option<String>)`](crate::output::CreateTrustOutput::trust_id): <p>A unique identifier for the trust relationship that was created.</p>
     /// - On failure, responds with [`SdkError<CreateTrustError>`](crate::error::CreateTrustError)
@@ -267,9 +267,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteConditionalForwarder`](crate::client::fluent_builders::DeleteConditionalForwarder) operation.
     ///
-    /// - Takes [`DeleteConditionalForwarderInput`](crate::input::DeleteConditionalForwarderInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DeleteConditionalForwarderInput::directory_id): <p>The directory ID for which you are deleting the conditional forwarder.</p>
-    ///   - [`remote_domain_name(Option<String>)`](crate::input::DeleteConditionalForwarderInput::remote_domain_name): <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConditionalForwarder::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DeleteConditionalForwarder::set_directory_id): <p>The directory ID for which you are deleting the conditional forwarder.</p>
+    ///   - [`remote_domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConditionalForwarder::remote_domain_name) / [`set_remote_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteConditionalForwarder::set_remote_domain_name): <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
     /// - On success, responds with [`DeleteConditionalForwarderOutput`](crate::output::DeleteConditionalForwarderOutput)
 
     /// - On failure, responds with [`SdkError<DeleteConditionalForwarderError>`](crate::error::DeleteConditionalForwarderError)
@@ -280,8 +280,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDirectory`](crate::client::fluent_builders::DeleteDirectory) operation.
     ///
-    /// - Takes [`DeleteDirectoryInput`](crate::input::DeleteDirectoryInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DeleteDirectoryInput::directory_id): <p>The identifier of the directory to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDirectory::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DeleteDirectory::set_directory_id): <p>The identifier of the directory to delete.</p>
     /// - On success, responds with [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::output::DeleteDirectoryOutput::directory_id): <p>The directory identifier.</p>
     /// - On failure, responds with [`SdkError<DeleteDirectoryError>`](crate::error::DeleteDirectoryError)
@@ -290,8 +290,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteLogSubscription`](crate::client::fluent_builders::DeleteLogSubscription) operation.
     ///
-    /// - Takes [`DeleteLogSubscriptionInput`](crate::input::DeleteLogSubscriptionInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DeleteLogSubscriptionInput::directory_id): <p>Identifier of the directory whose log subscription you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLogSubscription::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DeleteLogSubscription::set_directory_id): <p>Identifier of the directory whose log subscription you want to delete.</p>
     /// - On success, responds with [`DeleteLogSubscriptionOutput`](crate::output::DeleteLogSubscriptionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLogSubscriptionError>`](crate::error::DeleteLogSubscriptionError)
@@ -300,8 +300,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSnapshot`](crate::client::fluent_builders::DeleteSnapshot) operation.
     ///
-    /// - Takes [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput) with field(s):
-    ///   - [`snapshot_id(Option<String>)`](crate::input::DeleteSnapshotInput::snapshot_id): <p>The identifier of the directory snapshot to be deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSnapshot::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::DeleteSnapshot::set_snapshot_id): <p>The identifier of the directory snapshot to be deleted.</p>
     /// - On success, responds with [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput) with field(s):
     ///   - [`snapshot_id(Option<String>)`](crate::output::DeleteSnapshotOutput::snapshot_id): <p>The identifier of the directory snapshot that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteSnapshotError>`](crate::error::DeleteSnapshotError)
@@ -310,9 +310,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTrust`](crate::client::fluent_builders::DeleteTrust) operation.
     ///
-    /// - Takes [`DeleteTrustInput`](crate::input::DeleteTrustInput) with field(s):
-    ///   - [`trust_id(Option<String>)`](crate::input::DeleteTrustInput::trust_id): <p>The Trust ID of the trust relationship to be deleted.</p>
-    ///   - [`delete_associated_conditional_forwarder(bool)`](crate::input::DeleteTrustInput::delete_associated_conditional_forwarder): <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trust_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTrust::trust_id) / [`set_trust_id(Option<String>)`](crate::client::fluent_builders::DeleteTrust::set_trust_id): <p>The Trust ID of the trust relationship to be deleted.</p>
+    ///   - [`delete_associated_conditional_forwarder(bool)`](crate::client::fluent_builders::DeleteTrust::delete_associated_conditional_forwarder) / [`set_delete_associated_conditional_forwarder(bool)`](crate::client::fluent_builders::DeleteTrust::set_delete_associated_conditional_forwarder): <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
     /// - On success, responds with [`DeleteTrustOutput`](crate::output::DeleteTrustOutput) with field(s):
     ///   - [`trust_id(Option<String>)`](crate::output::DeleteTrustOutput::trust_id): <p>The Trust ID of the trust relationship that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTrustError>`](crate::error::DeleteTrustError)
@@ -321,9 +321,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeregisterCertificate`](crate::client::fluent_builders::DeregisterCertificate) operation.
     ///
-    /// - Takes [`DeregisterCertificateInput`](crate::input::DeregisterCertificateInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DeregisterCertificateInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`certificate_id(Option<String>)`](crate::input::DeregisterCertificateInput::certificate_id): <p>The identifier of the certificate.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterCertificate::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DeregisterCertificate::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::DeregisterCertificate::set_certificate_id): <p>The identifier of the certificate.</p>
     /// - On success, responds with [`DeregisterCertificateOutput`](crate::output::DeregisterCertificateOutput)
 
     /// - On failure, responds with [`SdkError<DeregisterCertificateError>`](crate::error::DeregisterCertificateError)
@@ -332,9 +332,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeregisterEventTopic`](crate::client::fluent_builders::DeregisterEventTopic) operation.
     ///
-    /// - Takes [`DeregisterEventTopicInput`](crate::input::DeregisterEventTopicInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DeregisterEventTopicInput::directory_id): <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
-    ///   - [`topic_name(Option<String>)`](crate::input::DeregisterEventTopicInput::topic_name): <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterEventTopic::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DeregisterEventTopic::set_directory_id): <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
+    ///   - [`topic_name(impl Into<String>)`](crate::client::fluent_builders::DeregisterEventTopic::topic_name) / [`set_topic_name(Option<String>)`](crate::client::fluent_builders::DeregisterEventTopic::set_topic_name): <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
     /// - On success, responds with [`DeregisterEventTopicOutput`](crate::output::DeregisterEventTopicOutput)
 
     /// - On failure, responds with [`SdkError<DeregisterEventTopicError>`](crate::error::DeregisterEventTopicError)
@@ -343,9 +343,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCertificate`](crate::client::fluent_builders::DescribeCertificate) operation.
     ///
-    /// - Takes [`DescribeCertificateInput`](crate::input::DescribeCertificateInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DescribeCertificateInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`certificate_id(Option<String>)`](crate::input::DescribeCertificateInput::certificate_id): <p>The identifier of the certificate.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCertificate::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeCertificate::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::DescribeCertificate::set_certificate_id): <p>The identifier of the certificate.</p>
     /// - On success, responds with [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput) with field(s):
     ///   - [`certificate(Option<Certificate>)`](crate::output::DescribeCertificateOutput::certificate): <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
     /// - On failure, responds with [`SdkError<DescribeCertificateError>`](crate::error::DescribeCertificateError)
@@ -354,11 +354,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeClientAuthenticationSettings`](crate::client::fluent_builders::DescribeClientAuthenticationSettings) operation.
     ///
-    /// - Takes [`DescribeClientAuthenticationSettingsInput`](crate::input::DescribeClientAuthenticationSettingsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DescribeClientAuthenticationSettingsInput::directory_id): <p>The identifier of the directory for which to retrieve information.</p>
-    ///   - [`r#type(Option<ClientAuthenticationType>)`](crate::input::DescribeClientAuthenticationSettingsInput::type): <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeClientAuthenticationSettingsInput::next_token): <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeClientAuthenticationSettingsInput::limit): <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_directory_id): <p>The identifier of the directory for which to retrieve information.</p>
+    ///   - [`r#type(ClientAuthenticationType)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::r#type) / [`set_type(Option<ClientAuthenticationType>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_type): <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_next_token): <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_limit): <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
     /// - On success, responds with [`DescribeClientAuthenticationSettingsOutput`](crate::output::DescribeClientAuthenticationSettingsOutput) with field(s):
     ///   - [`client_authentication_settings_info(Option<Vec<ClientAuthenticationSettingInfo>>)`](crate::output::DescribeClientAuthenticationSettingsOutput::client_authentication_settings_info): <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeClientAuthenticationSettingsOutput::next_token): <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
@@ -370,9 +370,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeConditionalForwarders`](crate::client::fluent_builders::DescribeConditionalForwarders) operation.
     ///
-    /// - Takes [`DescribeConditionalForwardersInput`](crate::input::DescribeConditionalForwardersInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DescribeConditionalForwardersInput::directory_id): <p>The directory ID for which to get the list of associated conditional forwarders.</p>
-    ///   - [`remote_domain_names(Option<Vec<String>>)`](crate::input::DescribeConditionalForwardersInput::remote_domain_names): <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeConditionalForwarders::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeConditionalForwarders::set_directory_id): <p>The directory ID for which to get the list of associated conditional forwarders.</p>
+    ///   - [`remote_domain_names(Vec<String>)`](crate::client::fluent_builders::DescribeConditionalForwarders::remote_domain_names) / [`set_remote_domain_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConditionalForwarders::set_remote_domain_names): <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
     /// - On success, responds with [`DescribeConditionalForwardersOutput`](crate::output::DescribeConditionalForwardersOutput) with field(s):
     ///   - [`conditional_forwarders(Option<Vec<ConditionalForwarder>>)`](crate::output::DescribeConditionalForwardersOutput::conditional_forwarders): <p>The list of conditional forwarders that have been created.</p>
     /// - On failure, responds with [`SdkError<DescribeConditionalForwardersError>`](crate::error::DescribeConditionalForwardersError)
@@ -383,10 +383,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDirectories`](crate::client::fluent_builders::DescribeDirectories) operation.
     ///
-    /// - Takes [`DescribeDirectoriesInput`](crate::input::DescribeDirectoriesInput) with field(s):
-    ///   - [`directory_ids(Option<Vec<String>>)`](crate::input::DescribeDirectoriesInput::directory_ids): <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>  <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeDirectoriesInput::next_token): <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeDirectoriesInput::limit): <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_ids(Vec<String>)`](crate::client::fluent_builders::DescribeDirectories::directory_ids) / [`set_directory_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDirectories::set_directory_ids): <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>  <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDirectories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDirectories::set_next_token): <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeDirectories::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeDirectories::set_limit): <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     /// - On success, responds with [`DescribeDirectoriesOutput`](crate::output::DescribeDirectoriesOutput) with field(s):
     ///   - [`directory_descriptions(Option<Vec<DirectoryDescription>>)`](crate::output::DescribeDirectoriesOutput::directory_descriptions): <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>  <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeDirectoriesOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
@@ -395,13 +395,13 @@ where
         fluent_builders::DescribeDirectories::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDomainControllers`](crate::client::fluent_builders::DescribeDomainControllers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDomainControllers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDomainControllers::into_paginator).
     ///
-    /// - Takes [`DescribeDomainControllersInput`](crate::input::DescribeDomainControllersInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DescribeDomainControllersInput::directory_id): <p>Identifier of the directory for which to retrieve the domain controller information.</p>
-    ///   - [`domain_controller_ids(Option<Vec<String>>)`](crate::input::DescribeDomainControllersInput::domain_controller_ids): <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeDomainControllersInput::next_token): <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeDomainControllersInput::limit): <p>The maximum number of items to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainControllers::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeDomainControllers::set_directory_id): <p>Identifier of the directory for which to retrieve the domain controller information.</p>
+    ///   - [`domain_controller_ids(Vec<String>)`](crate::client::fluent_builders::DescribeDomainControllers::domain_controller_ids) / [`set_domain_controller_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDomainControllers::set_domain_controller_ids): <p>A list of identifiers for the domain controllers whose information will be provided.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDomainControllers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDomainControllers::set_next_token): <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeDomainControllers::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeDomainControllers::set_limit): <p>The maximum number of items to return.</p>
     /// - On success, responds with [`DescribeDomainControllersOutput`](crate::output::DescribeDomainControllersOutput) with field(s):
     ///   - [`domain_controllers(Option<Vec<DomainController>>)`](crate::output::DescribeDomainControllersOutput::domain_controllers): <p>List of the <code>DomainController</code> objects that were retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeDomainControllersOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
@@ -413,9 +413,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEventTopics`](crate::client::fluent_builders::DescribeEventTopics) operation.
     ///
-    /// - Takes [`DescribeEventTopicsInput`](crate::input::DescribeEventTopicsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DescribeEventTopicsInput::directory_id): <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
-    ///   - [`topic_names(Option<Vec<String>>)`](crate::input::DescribeEventTopicsInput::topic_names): <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>  <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeEventTopics::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeEventTopics::set_directory_id): <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
+    ///   - [`topic_names(Vec<String>)`](crate::client::fluent_builders::DescribeEventTopics::topic_names) / [`set_topic_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeEventTopics::set_topic_names): <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>  <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     /// - On success, responds with [`DescribeEventTopicsOutput`](crate::output::DescribeEventTopicsOutput) with field(s):
     ///   - [`event_topics(Option<Vec<EventTopic>>)`](crate::output::DescribeEventTopicsOutput::event_topics): <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
     /// - On failure, responds with [`SdkError<DescribeEventTopicsError>`](crate::error::DescribeEventTopicsError)
@@ -424,11 +424,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeLDAPSSettings`](crate::client::fluent_builders::DescribeLDAPSSettings) operation.
     ///
-    /// - Takes [`DescribeLdapsSettingsInput`](crate::input::DescribeLdapsSettingsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DescribeLdapsSettingsInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(Option<LdapsType>)`](crate::input::DescribeLdapsSettingsInput::type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeLdapsSettingsInput::next_token): <p>The type of next token used for pagination.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeLdapsSettingsInput::limit): <p>Specifies the number of items that should be displayed on one page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`r#type(LdapsType)`](crate::client::fluent_builders::DescribeLDAPSSettings::r#type) / [`set_type(Option<LdapsType>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_next_token): <p>The type of next token used for pagination.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeLDAPSSettings::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_limit): <p>Specifies the number of items that should be displayed on one page.</p>
     /// - On success, responds with [`DescribeLdapsSettingsOutput`](crate::output::DescribeLdapsSettingsOutput) with field(s):
     ///   - [`ldaps_settings_info(Option<Vec<LdapsSettingInfo>>)`](crate::output::DescribeLdapsSettingsOutput::ldaps_settings_info): <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeLdapsSettingsOutput::next_token): <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
@@ -438,10 +438,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeRegions`](crate::client::fluent_builders::DescribeRegions) operation.
     ///
-    /// - Takes [`DescribeRegionsInput`](crate::input::DescribeRegionsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DescribeRegionsInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`region_name(Option<String>)`](crate::input::DescribeRegionsInput::region_name): <p>The name of the Region. For example, <code>us-east-1</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeRegionsInput::next_token): <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRegions::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeRegions::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`region_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRegions::region_name) / [`set_region_name(Option<String>)`](crate::client::fluent_builders::DescribeRegions::set_region_name): <p>The name of the Region. For example, <code>us-east-1</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeRegions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeRegions::set_next_token): <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
     /// - On success, responds with [`DescribeRegionsOutput`](crate::output::DescribeRegionsOutput) with field(s):
     ///   - [`regions_description(Option<Vec<RegionDescription>>)`](crate::output::DescribeRegionsOutput::regions_description): <p>List of Region information related to the directory for each replicated Region.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeRegionsOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
@@ -451,11 +451,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSharedDirectories`](crate::client::fluent_builders::DescribeSharedDirectories) operation.
     ///
-    /// - Takes [`DescribeSharedDirectoriesInput`](crate::input::DescribeSharedDirectoriesInput) with field(s):
-    ///   - [`owner_directory_id(Option<String>)`](crate::input::DescribeSharedDirectoriesInput::owner_directory_id): <p>Returns the identifier of the directory in the directory owner account. </p>
-    ///   - [`shared_directory_ids(Option<Vec<String>>)`](crate::input::DescribeSharedDirectoriesInput::shared_directory_ids): <p>A list of identifiers of all shared directories in your account. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSharedDirectoriesInput::next_token): <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeSharedDirectoriesInput::limit): <p>The number of shared directories to return in the response object.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`owner_directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSharedDirectories::owner_directory_id) / [`set_owner_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeSharedDirectories::set_owner_directory_id): <p>Returns the identifier of the directory in the directory owner account. </p>
+    ///   - [`shared_directory_ids(Vec<String>)`](crate::client::fluent_builders::DescribeSharedDirectories::shared_directory_ids) / [`set_shared_directory_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSharedDirectories::set_shared_directory_ids): <p>A list of identifiers of all shared directories in your account. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSharedDirectories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSharedDirectories::set_next_token): <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeSharedDirectories::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeSharedDirectories::set_limit): <p>The number of shared directories to return in the response object.</p>
     /// - On success, responds with [`DescribeSharedDirectoriesOutput`](crate::output::DescribeSharedDirectoriesOutput) with field(s):
     ///   - [`shared_directories(Option<Vec<SharedDirectory>>)`](crate::output::DescribeSharedDirectoriesOutput::shared_directories): <p>A list of all shared directories in your account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSharedDirectoriesOutput::next_token): <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
@@ -467,11 +467,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) operation.
     ///
-    /// - Takes [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DescribeSnapshotsInput::directory_id): <p>The identifier of the directory for which to retrieve snapshot information.</p>
-    ///   - [`snapshot_ids(Option<Vec<String>>)`](crate::input::DescribeSnapshotsInput::snapshot_ids): <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSnapshotsInput::next_token): <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeSnapshotsInput::limit): <p>The maximum number of objects to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSnapshots::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeSnapshots::set_directory_id): <p>The identifier of the directory for which to retrieve snapshot information.</p>
+    ///   - [`snapshot_ids(Vec<String>)`](crate::client::fluent_builders::DescribeSnapshots::snapshot_ids) / [`set_snapshot_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSnapshots::set_snapshot_ids): <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSnapshots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSnapshots::set_next_token): <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeSnapshots::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeSnapshots::set_limit): <p>The maximum number of objects to return.</p>
     /// - On success, responds with [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput) with field(s):
     ///   - [`snapshots(Option<Vec<Snapshot>>)`](crate::output::DescribeSnapshotsOutput::snapshots): <p>The list of <code>Snapshot</code> objects that were retrieved.</p>  <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSnapshotsOutput::next_token): <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
@@ -481,11 +481,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTrusts`](crate::client::fluent_builders::DescribeTrusts) operation.
     ///
-    /// - Takes [`DescribeTrustsInput`](crate::input::DescribeTrustsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DescribeTrustsInput::directory_id): <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
-    ///   - [`trust_ids(Option<Vec<String>>)`](crate::input::DescribeTrustsInput::trust_ids): <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>  <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeTrustsInput::next_token): <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeTrustsInput::limit): <p>The maximum number of objects to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTrusts::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeTrusts::set_directory_id): <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
+    ///   - [`trust_ids(Vec<String>)`](crate::client::fluent_builders::DescribeTrusts::trust_ids) / [`set_trust_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeTrusts::set_trust_ids): <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>  <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeTrusts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeTrusts::set_next_token): <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeTrusts::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeTrusts::set_limit): <p>The maximum number of objects to return.</p>
     /// - On success, responds with [`DescribeTrustsOutput`](crate::output::DescribeTrustsOutput) with field(s):
     ///   - [`trusts(Option<Vec<Trust>>)`](crate::output::DescribeTrustsOutput::trusts): <p>The list of Trust objects that were retrieved.</p>  <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeTrustsOutput::next_token): <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
@@ -495,9 +495,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisableClientAuthentication`](crate::client::fluent_builders::DisableClientAuthentication) operation.
     ///
-    /// - Takes [`DisableClientAuthenticationInput`](crate::input::DisableClientAuthenticationInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DisableClientAuthenticationInput::directory_id): <p>The identifier of the directory </p>
-    ///   - [`r#type(Option<ClientAuthenticationType>)`](crate::input::DisableClientAuthenticationInput::type): <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DisableClientAuthentication::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DisableClientAuthentication::set_directory_id): <p>The identifier of the directory </p>
+    ///   - [`r#type(ClientAuthenticationType)`](crate::client::fluent_builders::DisableClientAuthentication::r#type) / [`set_type(Option<ClientAuthenticationType>)`](crate::client::fluent_builders::DisableClientAuthentication::set_type): <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
     /// - On success, responds with [`DisableClientAuthenticationOutput`](crate::output::DisableClientAuthenticationOutput)
 
     /// - On failure, responds with [`SdkError<DisableClientAuthenticationError>`](crate::error::DisableClientAuthenticationError)
@@ -508,9 +508,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisableLDAPS`](crate::client::fluent_builders::DisableLDAPS) operation.
     ///
-    /// - Takes [`DisableLdapsInput`](crate::input::DisableLdapsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DisableLdapsInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(Option<LdapsType>)`](crate::input::DisableLdapsInput::type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DisableLDAPS::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DisableLDAPS::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`r#type(LdapsType)`](crate::client::fluent_builders::DisableLDAPS::r#type) / [`set_type(Option<LdapsType>)`](crate::client::fluent_builders::DisableLDAPS::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     /// - On success, responds with [`DisableLdapsOutput`](crate::output::DisableLdapsOutput)
 
     /// - On failure, responds with [`SdkError<DisableLDAPSError>`](crate::error::DisableLDAPSError)
@@ -519,8 +519,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisableRadius`](crate::client::fluent_builders::DisableRadius) operation.
     ///
-    /// - Takes [`DisableRadiusInput`](crate::input::DisableRadiusInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DisableRadiusInput::directory_id): <p>The identifier of the directory for which to disable MFA.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DisableRadius::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DisableRadius::set_directory_id): <p>The identifier of the directory for which to disable MFA.</p>
     /// - On success, responds with [`DisableRadiusOutput`](crate::output::DisableRadiusOutput)
 
     /// - On failure, responds with [`SdkError<DisableRadiusError>`](crate::error::DisableRadiusError)
@@ -529,10 +529,10 @@ where
     }
     /// Constructs a fluent builder for the [`DisableSso`](crate::client::fluent_builders::DisableSso) operation.
     ///
-    /// - Takes [`DisableSsoInput`](crate::input::DisableSsoInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::DisableSsoInput::directory_id): <p>The identifier of the directory for which to disable single-sign on.</p>
-    ///   - [`user_name(Option<String>)`](crate::input::DisableSsoInput::user_name): <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>  <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
-    ///   - [`password(Option<String>)`](crate::input::DisableSsoInput::password): <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DisableSso::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DisableSso::set_directory_id): <p>The identifier of the directory for which to disable single-sign on.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DisableSso::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DisableSso::set_user_name): <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>  <p>If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::DisableSso::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::DisableSso::set_password): <p>The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
     /// - On success, responds with [`DisableSsoOutput`](crate::output::DisableSsoOutput)
 
     /// - On failure, responds with [`SdkError<DisableSsoError>`](crate::error::DisableSsoError)
@@ -541,9 +541,9 @@ where
     }
     /// Constructs a fluent builder for the [`EnableClientAuthentication`](crate::client::fluent_builders::EnableClientAuthentication) operation.
     ///
-    /// - Takes [`EnableClientAuthenticationInput`](crate::input::EnableClientAuthenticationInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::EnableClientAuthenticationInput::directory_id): <p>The identifier of the specified directory. </p>
-    ///   - [`r#type(Option<ClientAuthenticationType>)`](crate::input::EnableClientAuthenticationInput::type): <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::EnableClientAuthentication::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::EnableClientAuthentication::set_directory_id): <p>The identifier of the specified directory. </p>
+    ///   - [`r#type(ClientAuthenticationType)`](crate::client::fluent_builders::EnableClientAuthentication::r#type) / [`set_type(Option<ClientAuthenticationType>)`](crate::client::fluent_builders::EnableClientAuthentication::set_type): <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     /// - On success, responds with [`EnableClientAuthenticationOutput`](crate::output::EnableClientAuthenticationOutput)
 
     /// - On failure, responds with [`SdkError<EnableClientAuthenticationError>`](crate::error::EnableClientAuthenticationError)
@@ -554,9 +554,9 @@ where
     }
     /// Constructs a fluent builder for the [`EnableLDAPS`](crate::client::fluent_builders::EnableLDAPS) operation.
     ///
-    /// - Takes [`EnableLdapsInput`](crate::input::EnableLdapsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::EnableLdapsInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(Option<LdapsType>)`](crate::input::EnableLdapsInput::type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::EnableLDAPS::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::EnableLDAPS::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`r#type(LdapsType)`](crate::client::fluent_builders::EnableLDAPS::r#type) / [`set_type(Option<LdapsType>)`](crate::client::fluent_builders::EnableLDAPS::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     /// - On success, responds with [`EnableLdapsOutput`](crate::output::EnableLdapsOutput)
 
     /// - On failure, responds with [`SdkError<EnableLDAPSError>`](crate::error::EnableLDAPSError)
@@ -565,9 +565,9 @@ where
     }
     /// Constructs a fluent builder for the [`EnableRadius`](crate::client::fluent_builders::EnableRadius) operation.
     ///
-    /// - Takes [`EnableRadiusInput`](crate::input::EnableRadiusInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::EnableRadiusInput::directory_id): <p>The identifier of the directory for which to enable MFA.</p>
-    ///   - [`radius_settings(Option<RadiusSettings>)`](crate::input::EnableRadiusInput::radius_settings): <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::EnableRadius::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::EnableRadius::set_directory_id): <p>The identifier of the directory for which to enable MFA.</p>
+    ///   - [`radius_settings(RadiusSettings)`](crate::client::fluent_builders::EnableRadius::radius_settings) / [`set_radius_settings(Option<RadiusSettings>)`](crate::client::fluent_builders::EnableRadius::set_radius_settings): <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     /// - On success, responds with [`EnableRadiusOutput`](crate::output::EnableRadiusOutput)
 
     /// - On failure, responds with [`SdkError<EnableRadiusError>`](crate::error::EnableRadiusError)
@@ -576,10 +576,10 @@ where
     }
     /// Constructs a fluent builder for the [`EnableSso`](crate::client::fluent_builders::EnableSso) operation.
     ///
-    /// - Takes [`EnableSsoInput`](crate::input::EnableSsoInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::EnableSsoInput::directory_id): <p>The identifier of the directory for which to enable single-sign on.</p>
-    ///   - [`user_name(Option<String>)`](crate::input::EnableSsoInput::user_name): <p>The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.</p>  <p>If the AD Connector service account does not have privileges to add a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to enable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
-    ///   - [`password(Option<String>)`](crate::input::EnableSsoInput::password): <p>The password of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::EnableSso::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::EnableSso::set_directory_id): <p>The identifier of the directory for which to enable single-sign on.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::EnableSso::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::EnableSso::set_user_name): <p>The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.</p>  <p>If the AD Connector service account does not have privileges to add a service principal name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i> parameters. These credentials are only used to enable single sign-on and are not stored by the service. The AD Connector service account is not changed.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::EnableSso::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::EnableSso::set_password): <p>The password of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
     /// - On success, responds with [`EnableSsoOutput`](crate::output::EnableSsoOutput)
 
     /// - On failure, responds with [`SdkError<EnableSsoError>`](crate::error::EnableSsoError)
@@ -588,7 +588,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetDirectoryLimits`](crate::client::fluent_builders::GetDirectoryLimits) operation.
     ///
-    /// - Takes [`GetDirectoryLimitsInput`](crate::input::GetDirectoryLimitsInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetDirectoryLimits::send) it.
 
     /// - On success, responds with [`GetDirectoryLimitsOutput`](crate::output::GetDirectoryLimitsOutput) with field(s):
     ///   - [`directory_limits(Option<DirectoryLimits>)`](crate::output::GetDirectoryLimitsOutput::directory_limits): <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
@@ -598,8 +598,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSnapshotLimits`](crate::client::fluent_builders::GetSnapshotLimits) operation.
     ///
-    /// - Takes [`GetSnapshotLimitsInput`](crate::input::GetSnapshotLimitsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::GetSnapshotLimitsInput::directory_id): <p>Contains the identifier of the directory to obtain the limits for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::GetSnapshotLimits::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::GetSnapshotLimits::set_directory_id): <p>Contains the identifier of the directory to obtain the limits for.</p>
     /// - On success, responds with [`GetSnapshotLimitsOutput`](crate::output::GetSnapshotLimitsOutput) with field(s):
     ///   - [`snapshot_limits(Option<SnapshotLimits>)`](crate::output::GetSnapshotLimitsOutput::snapshot_limits): <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     /// - On failure, responds with [`SdkError<GetSnapshotLimitsError>`](crate::error::GetSnapshotLimitsError)
@@ -608,10 +608,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListCertificates`](crate::client::fluent_builders::ListCertificates) operation.
     ///
-    /// - Takes [`ListCertificatesInput`](crate::input::ListCertificatesInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::ListCertificatesInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListCertificatesInput::next_token): <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListCertificatesInput::limit): <p>The number of items that should show up on one page</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ListCertificates::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ListCertificates::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCertificates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCertificates::set_next_token): <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListCertificates::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListCertificates::set_limit): <p>The number of items that should show up on one page</p>
     /// - On success, responds with [`ListCertificatesOutput`](crate::output::ListCertificatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListCertificatesOutput::next_token): <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
     ///   - [`certificates_info(Option<Vec<CertificateInfo>>)`](crate::output::ListCertificatesOutput::certificates_info): <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
@@ -621,10 +621,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListIpRoutes`](crate::client::fluent_builders::ListIpRoutes) operation.
     ///
-    /// - Takes [`ListIpRoutesInput`](crate::input::ListIpRoutesInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::ListIpRoutesInput::directory_id): <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIpRoutesInput::next_token): <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListIpRoutesInput::limit): <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ListIpRoutes::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ListIpRoutes::set_directory_id): <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIpRoutes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIpRoutes::set_next_token): <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListIpRoutes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListIpRoutes::set_limit): <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     /// - On success, responds with [`ListIpRoutesOutput`](crate::output::ListIpRoutesOutput) with field(s):
     ///   - [`ip_routes_info(Option<Vec<IpRouteInfo>>)`](crate::output::ListIpRoutesOutput::ip_routes_info): <p>A list of <code>IpRoute</code>s.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIpRoutesOutput::next_token): <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
@@ -634,10 +634,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListLogSubscriptions`](crate::client::fluent_builders::ListLogSubscriptions) operation.
     ///
-    /// - Takes [`ListLogSubscriptionsInput`](crate::input::ListLogSubscriptionsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::ListLogSubscriptionsInput::directory_id): <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListLogSubscriptionsInput::next_token): <p>The token for the next set of items to return.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListLogSubscriptionsInput::limit): <p>The maximum number of items returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ListLogSubscriptions::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ListLogSubscriptions::set_directory_id): <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLogSubscriptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLogSubscriptions::set_next_token): <p>The token for the next set of items to return.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListLogSubscriptions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListLogSubscriptions::set_limit): <p>The maximum number of items returned.</p>
     /// - On success, responds with [`ListLogSubscriptionsOutput`](crate::output::ListLogSubscriptionsOutput) with field(s):
     ///   - [`log_subscriptions(Option<Vec<LogSubscription>>)`](crate::output::ListLogSubscriptionsOutput::log_subscriptions): <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLogSubscriptionsOutput::next_token): <p>The token for the next set of items to return.</p>
@@ -647,10 +647,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListSchemaExtensions`](crate::client::fluent_builders::ListSchemaExtensions) operation.
     ///
-    /// - Takes [`ListSchemaExtensionsInput`](crate::input::ListSchemaExtensionsInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::ListSchemaExtensionsInput::directory_id): <p>The identifier of the directory from which to retrieve the schema extension information.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListSchemaExtensionsInput::next_token): <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListSchemaExtensionsInput::limit): <p>The maximum number of items to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ListSchemaExtensions::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ListSchemaExtensions::set_directory_id): <p>The identifier of the directory from which to retrieve the schema extension information.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSchemaExtensions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSchemaExtensions::set_next_token): <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListSchemaExtensions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListSchemaExtensions::set_limit): <p>The maximum number of items to return.</p>
     /// - On success, responds with [`ListSchemaExtensionsOutput`](crate::output::ListSchemaExtensionsOutput) with field(s):
     ///   - [`schema_extensions_info(Option<Vec<SchemaExtensionInfo>>)`](crate::output::ListSchemaExtensionsOutput::schema_extensions_info): <p>Information about the schema extensions applied to the directory.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSchemaExtensionsOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
@@ -660,10 +660,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_id(Option<String>)`](crate::input::ListTagsForResourceInput::resource_id): <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>Reserved for future use.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListTagsForResourceInput::limit): <p>Reserved for future use.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_id): <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>Reserved for future use.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListTagsForResource::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_limit): <p>Reserved for future use.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>List of tags returned by the ListTagsForResource operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>Reserved for future use.</p>
@@ -673,11 +673,11 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterCertificate`](crate::client::fluent_builders::RegisterCertificate) operation.
     ///
-    /// - Takes [`RegisterCertificateInput`](crate::input::RegisterCertificateInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::RegisterCertificateInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`certificate_data(Option<String>)`](crate::input::RegisterCertificateInput::certificate_data): <p>The certificate PEM string that needs to be registered.</p>
-    ///   - [`r#type(Option<CertificateType>)`](crate::input::RegisterCertificateInput::type): <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
-    ///   - [`client_cert_auth_settings(Option<ClientCertAuthSettings>)`](crate::input::RegisterCertificateInput::client_cert_auth_settings): <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::RegisterCertificate::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::RegisterCertificate::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`certificate_data(impl Into<String>)`](crate::client::fluent_builders::RegisterCertificate::certificate_data) / [`set_certificate_data(Option<String>)`](crate::client::fluent_builders::RegisterCertificate::set_certificate_data): <p>The certificate PEM string that needs to be registered.</p>
+    ///   - [`r#type(CertificateType)`](crate::client::fluent_builders::RegisterCertificate::r#type) / [`set_type(Option<CertificateType>)`](crate::client::fluent_builders::RegisterCertificate::set_type): <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    ///   - [`client_cert_auth_settings(ClientCertAuthSettings)`](crate::client::fluent_builders::RegisterCertificate::client_cert_auth_settings) / [`set_client_cert_auth_settings(Option<ClientCertAuthSettings>)`](crate::client::fluent_builders::RegisterCertificate::set_client_cert_auth_settings): <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
     /// - On success, responds with [`RegisterCertificateOutput`](crate::output::RegisterCertificateOutput) with field(s):
     ///   - [`certificate_id(Option<String>)`](crate::output::RegisterCertificateOutput::certificate_id): <p>The identifier of the certificate.</p>
     /// - On failure, responds with [`SdkError<RegisterCertificateError>`](crate::error::RegisterCertificateError)
@@ -686,9 +686,9 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterEventTopic`](crate::client::fluent_builders::RegisterEventTopic) operation.
     ///
-    /// - Takes [`RegisterEventTopicInput`](crate::input::RegisterEventTopicInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::RegisterEventTopicInput::directory_id): <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
-    ///   - [`topic_name(Option<String>)`](crate::input::RegisterEventTopicInput::topic_name): <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::RegisterEventTopic::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::RegisterEventTopic::set_directory_id): <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
+    ///   - [`topic_name(impl Into<String>)`](crate::client::fluent_builders::RegisterEventTopic::topic_name) / [`set_topic_name(Option<String>)`](crate::client::fluent_builders::RegisterEventTopic::set_topic_name): <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
     /// - On success, responds with [`RegisterEventTopicOutput`](crate::output::RegisterEventTopicOutput)
 
     /// - On failure, responds with [`SdkError<RegisterEventTopicError>`](crate::error::RegisterEventTopicError)
@@ -697,8 +697,8 @@ where
     }
     /// Constructs a fluent builder for the [`RejectSharedDirectory`](crate::client::fluent_builders::RejectSharedDirectory) operation.
     ///
-    /// - Takes [`RejectSharedDirectoryInput`](crate::input::RejectSharedDirectoryInput) with field(s):
-    ///   - [`shared_directory_id(Option<String>)`](crate::input::RejectSharedDirectoryInput::shared_directory_id): <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`shared_directory_id(impl Into<String>)`](crate::client::fluent_builders::RejectSharedDirectory::shared_directory_id) / [`set_shared_directory_id(Option<String>)`](crate::client::fluent_builders::RejectSharedDirectory::set_shared_directory_id): <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
     /// - On success, responds with [`RejectSharedDirectoryOutput`](crate::output::RejectSharedDirectoryOutput) with field(s):
     ///   - [`shared_directory_id(Option<String>)`](crate::output::RejectSharedDirectoryOutput::shared_directory_id): <p>Identifier of the shared directory in the directory consumer account.</p>
     /// - On failure, responds with [`SdkError<RejectSharedDirectoryError>`](crate::error::RejectSharedDirectoryError)
@@ -707,9 +707,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveIpRoutes`](crate::client::fluent_builders::RemoveIpRoutes) operation.
     ///
-    /// - Takes [`RemoveIpRoutesInput`](crate::input::RemoveIpRoutesInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::RemoveIpRoutesInput::directory_id): <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
-    ///   - [`cidr_ips(Option<Vec<String>>)`](crate::input::RemoveIpRoutesInput::cidr_ips): <p>IP address blocks that you want to remove.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::RemoveIpRoutes::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::RemoveIpRoutes::set_directory_id): <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
+    ///   - [`cidr_ips(Vec<String>)`](crate::client::fluent_builders::RemoveIpRoutes::cidr_ips) / [`set_cidr_ips(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveIpRoutes::set_cidr_ips): <p>IP address blocks that you want to remove.</p>
     /// - On success, responds with [`RemoveIpRoutesOutput`](crate::output::RemoveIpRoutesOutput)
 
     /// - On failure, responds with [`SdkError<RemoveIpRoutesError>`](crate::error::RemoveIpRoutesError)
@@ -718,8 +718,8 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveRegion`](crate::client::fluent_builders::RemoveRegion) operation.
     ///
-    /// - Takes [`RemoveRegionInput`](crate::input::RemoveRegionInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::RemoveRegionInput::directory_id): <p>The identifier of the directory for which you want to remove Region replication.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::RemoveRegion::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::RemoveRegion::set_directory_id): <p>The identifier of the directory for which you want to remove Region replication.</p>
     /// - On success, responds with [`RemoveRegionOutput`](crate::output::RemoveRegionOutput)
 
     /// - On failure, responds with [`SdkError<RemoveRegionError>`](crate::error::RemoveRegionError)
@@ -728,9 +728,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) operation.
     ///
-    /// - Takes [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput) with field(s):
-    ///   - [`resource_id(Option<String>)`](crate::input::RemoveTagsFromResourceInput::resource_id): <p>Identifier (ID) of the directory from which to remove the tag.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::RemoveTagsFromResourceInput::tag_keys): <p>The tag key (name) of the tag to be removed.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::set_resource_id): <p>Identifier (ID) of the directory from which to remove the tag.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTagsFromResource::set_tag_keys): <p>The tag key (name) of the tag to be removed.</p>
     /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
 
     /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::error::RemoveTagsFromResourceError)
@@ -739,10 +739,10 @@ where
     }
     /// Constructs a fluent builder for the [`ResetUserPassword`](crate::client::fluent_builders::ResetUserPassword) operation.
     ///
-    /// - Takes [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::ResetUserPasswordInput::directory_id): <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
-    ///   - [`user_name(Option<String>)`](crate::input::ResetUserPasswordInput::user_name): <p>The user name of the user whose password will be reset.</p>
-    ///   - [`new_password(Option<String>)`](crate::input::ResetUserPasswordInput::new_password): <p>The new password that will be reset.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ResetUserPassword::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ResetUserPassword::set_directory_id): <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ResetUserPassword::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ResetUserPassword::set_user_name): <p>The user name of the user whose password will be reset.</p>
+    ///   - [`new_password(impl Into<String>)`](crate::client::fluent_builders::ResetUserPassword::new_password) / [`set_new_password(Option<String>)`](crate::client::fluent_builders::ResetUserPassword::set_new_password): <p>The new password that will be reset.</p>
     /// - On success, responds with [`ResetUserPasswordOutput`](crate::output::ResetUserPasswordOutput)
 
     /// - On failure, responds with [`SdkError<ResetUserPasswordError>`](crate::error::ResetUserPasswordError)
@@ -751,8 +751,8 @@ where
     }
     /// Constructs a fluent builder for the [`RestoreFromSnapshot`](crate::client::fluent_builders::RestoreFromSnapshot) operation.
     ///
-    /// - Takes [`RestoreFromSnapshotInput`](crate::input::RestoreFromSnapshotInput) with field(s):
-    ///   - [`snapshot_id(Option<String>)`](crate::input::RestoreFromSnapshotInput::snapshot_id): <p>The identifier of the snapshot to restore from.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::RestoreFromSnapshot::set_snapshot_id): <p>The identifier of the snapshot to restore from.</p>
     /// - On success, responds with [`RestoreFromSnapshotOutput`](crate::output::RestoreFromSnapshotOutput)
 
     /// - On failure, responds with [`SdkError<RestoreFromSnapshotError>`](crate::error::RestoreFromSnapshotError)
@@ -761,11 +761,11 @@ where
     }
     /// Constructs a fluent builder for the [`ShareDirectory`](crate::client::fluent_builders::ShareDirectory) operation.
     ///
-    /// - Takes [`ShareDirectoryInput`](crate::input::ShareDirectoryInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::ShareDirectoryInput::directory_id): <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
-    ///   - [`share_notes(Option<String>)`](crate::input::ShareDirectoryInput::share_notes): <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
-    ///   - [`share_target(Option<ShareTarget>)`](crate::input::ShareDirectoryInput::share_target): <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
-    ///   - [`share_method(Option<ShareMethod>)`](crate::input::ShareDirectoryInput::share_method): <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::ShareDirectory::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::ShareDirectory::set_directory_id): <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
+    ///   - [`share_notes(impl Into<String>)`](crate::client::fluent_builders::ShareDirectory::share_notes) / [`set_share_notes(Option<String>)`](crate::client::fluent_builders::ShareDirectory::set_share_notes): <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
+    ///   - [`share_target(ShareTarget)`](crate::client::fluent_builders::ShareDirectory::share_target) / [`set_share_target(Option<ShareTarget>)`](crate::client::fluent_builders::ShareDirectory::set_share_target): <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
+    ///   - [`share_method(ShareMethod)`](crate::client::fluent_builders::ShareDirectory::share_method) / [`set_share_method(Option<ShareMethod>)`](crate::client::fluent_builders::ShareDirectory::set_share_method): <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
     /// - On success, responds with [`ShareDirectoryOutput`](crate::output::ShareDirectoryOutput) with field(s):
     ///   - [`shared_directory_id(Option<String>)`](crate::output::ShareDirectoryOutput::shared_directory_id): <p>Identifier of the directory that is stored in the directory consumer account that is shared from the specified directory (<code>DirectoryId</code>).</p>
     /// - On failure, responds with [`SdkError<ShareDirectoryError>`](crate::error::ShareDirectoryError)
@@ -774,11 +774,11 @@ where
     }
     /// Constructs a fluent builder for the [`StartSchemaExtension`](crate::client::fluent_builders::StartSchemaExtension) operation.
     ///
-    /// - Takes [`StartSchemaExtensionInput`](crate::input::StartSchemaExtensionInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::StartSchemaExtensionInput::directory_id): <p>The identifier of the directory for which the schema extension will be applied to.</p>
-    ///   - [`create_snapshot_before_schema_extension(bool)`](crate::input::StartSchemaExtensionInput::create_snapshot_before_schema_extension): <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
-    ///   - [`ldif_content(Option<String>)`](crate::input::StartSchemaExtensionInput::ldif_content): <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
-    ///   - [`description(Option<String>)`](crate::input::StartSchemaExtensionInput::description): <p>A description of the schema extension.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::StartSchemaExtension::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::StartSchemaExtension::set_directory_id): <p>The identifier of the directory for which the schema extension will be applied to.</p>
+    ///   - [`create_snapshot_before_schema_extension(bool)`](crate::client::fluent_builders::StartSchemaExtension::create_snapshot_before_schema_extension) / [`set_create_snapshot_before_schema_extension(bool)`](crate::client::fluent_builders::StartSchemaExtension::set_create_snapshot_before_schema_extension): <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
+    ///   - [`ldif_content(impl Into<String>)`](crate::client::fluent_builders::StartSchemaExtension::ldif_content) / [`set_ldif_content(Option<String>)`](crate::client::fluent_builders::StartSchemaExtension::set_ldif_content): <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::StartSchemaExtension::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::StartSchemaExtension::set_description): <p>A description of the schema extension.</p>
     /// - On success, responds with [`StartSchemaExtensionOutput`](crate::output::StartSchemaExtensionOutput) with field(s):
     ///   - [`schema_extension_id(Option<String>)`](crate::output::StartSchemaExtensionOutput::schema_extension_id): <p>The identifier of the schema extension that will be applied.</p>
     /// - On failure, responds with [`SdkError<StartSchemaExtensionError>`](crate::error::StartSchemaExtensionError)
@@ -787,9 +787,9 @@ where
     }
     /// Constructs a fluent builder for the [`UnshareDirectory`](crate::client::fluent_builders::UnshareDirectory) operation.
     ///
-    /// - Takes [`UnshareDirectoryInput`](crate::input::UnshareDirectoryInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::UnshareDirectoryInput::directory_id): <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
-    ///   - [`unshare_target(Option<UnshareTarget>)`](crate::input::UnshareDirectoryInput::unshare_target): <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::UnshareDirectory::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::UnshareDirectory::set_directory_id): <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
+    ///   - [`unshare_target(UnshareTarget)`](crate::client::fluent_builders::UnshareDirectory::unshare_target) / [`set_unshare_target(Option<UnshareTarget>)`](crate::client::fluent_builders::UnshareDirectory::set_unshare_target): <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
     /// - On success, responds with [`UnshareDirectoryOutput`](crate::output::UnshareDirectoryOutput) with field(s):
     ///   - [`shared_directory_id(Option<String>)`](crate::output::UnshareDirectoryOutput::shared_directory_id): <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
     /// - On failure, responds with [`SdkError<UnshareDirectoryError>`](crate::error::UnshareDirectoryError)
@@ -798,10 +798,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateConditionalForwarder`](crate::client::fluent_builders::UpdateConditionalForwarder) operation.
     ///
-    /// - Takes [`UpdateConditionalForwarderInput`](crate::input::UpdateConditionalForwarderInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::UpdateConditionalForwarderInput::directory_id): <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
-    ///   - [`remote_domain_name(Option<String>)`](crate::input::UpdateConditionalForwarderInput::remote_domain_name): <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    ///   - [`dns_ip_addrs(Option<Vec<String>>)`](crate::input::UpdateConditionalForwarderInput::dns_ip_addrs): <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConditionalForwarder::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::UpdateConditionalForwarder::set_directory_id): <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
+    ///   - [`remote_domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateConditionalForwarder::remote_domain_name) / [`set_remote_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateConditionalForwarder::set_remote_domain_name): <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
+    ///   - [`dns_ip_addrs(Vec<String>)`](crate::client::fluent_builders::UpdateConditionalForwarder::dns_ip_addrs) / [`set_dns_ip_addrs(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateConditionalForwarder::set_dns_ip_addrs): <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
     /// - On success, responds with [`UpdateConditionalForwarderOutput`](crate::output::UpdateConditionalForwarderOutput)
 
     /// - On failure, responds with [`SdkError<UpdateConditionalForwarderError>`](crate::error::UpdateConditionalForwarderError)
@@ -812,9 +812,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateNumberOfDomainControllers`](crate::client::fluent_builders::UpdateNumberOfDomainControllers) operation.
     ///
-    /// - Takes [`UpdateNumberOfDomainControllersInput`](crate::input::UpdateNumberOfDomainControllersInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::UpdateNumberOfDomainControllersInput::directory_id): <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
-    ///   - [`desired_number(i32)`](crate::input::UpdateNumberOfDomainControllersInput::desired_number): <p>The number of domain controllers desired in the directory.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::UpdateNumberOfDomainControllers::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::UpdateNumberOfDomainControllers::set_directory_id): <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
+    ///   - [`desired_number(i32)`](crate::client::fluent_builders::UpdateNumberOfDomainControllers::desired_number) / [`set_desired_number(i32)`](crate::client::fluent_builders::UpdateNumberOfDomainControllers::set_desired_number): <p>The number of domain controllers desired in the directory.</p>
     /// - On success, responds with [`UpdateNumberOfDomainControllersOutput`](crate::output::UpdateNumberOfDomainControllersOutput)
 
     /// - On failure, responds with [`SdkError<UpdateNumberOfDomainControllersError>`](crate::error::UpdateNumberOfDomainControllersError)
@@ -825,9 +825,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRadius`](crate::client::fluent_builders::UpdateRadius) operation.
     ///
-    /// - Takes [`UpdateRadiusInput`](crate::input::UpdateRadiusInput) with field(s):
-    ///   - [`directory_id(Option<String>)`](crate::input::UpdateRadiusInput::directory_id): <p>The identifier of the directory for which to update the RADIUS server information.</p>
-    ///   - [`radius_settings(Option<RadiusSettings>)`](crate::input::UpdateRadiusInput::radius_settings): <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRadius::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::UpdateRadius::set_directory_id): <p>The identifier of the directory for which to update the RADIUS server information.</p>
+    ///   - [`radius_settings(RadiusSettings)`](crate::client::fluent_builders::UpdateRadius::radius_settings) / [`set_radius_settings(Option<RadiusSettings>)`](crate::client::fluent_builders::UpdateRadius::set_radius_settings): <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     /// - On success, responds with [`UpdateRadiusOutput`](crate::output::UpdateRadiusOutput)
 
     /// - On failure, responds with [`SdkError<UpdateRadiusError>`](crate::error::UpdateRadiusError)
@@ -836,9 +836,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTrust`](crate::client::fluent_builders::UpdateTrust) operation.
     ///
-    /// - Takes [`UpdateTrustInput`](crate::input::UpdateTrustInput) with field(s):
-    ///   - [`trust_id(Option<String>)`](crate::input::UpdateTrustInput::trust_id): <p>Identifier of the trust relationship.</p>
-    ///   - [`selective_auth(Option<SelectiveAuth>)`](crate::input::UpdateTrustInput::selective_auth): <p>Updates selective authentication for the trust.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trust_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTrust::trust_id) / [`set_trust_id(Option<String>)`](crate::client::fluent_builders::UpdateTrust::set_trust_id): <p>Identifier of the trust relationship.</p>
+    ///   - [`selective_auth(SelectiveAuth)`](crate::client::fluent_builders::UpdateTrust::selective_auth) / [`set_selective_auth(Option<SelectiveAuth>)`](crate::client::fluent_builders::UpdateTrust::set_selective_auth): <p>Updates selective authentication for the trust.</p>
     /// - On success, responds with [`UpdateTrustOutput`](crate::output::UpdateTrustOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::UpdateTrustOutput::request_id): <p>The Amazon Web Services request identifier.</p>
     ///   - [`trust_id(Option<String>)`](crate::output::UpdateTrustOutput::trust_id): <p>Identifier of the trust relationship.</p>
@@ -848,8 +848,8 @@ where
     }
     /// Constructs a fluent builder for the [`VerifyTrust`](crate::client::fluent_builders::VerifyTrust) operation.
     ///
-    /// - Takes [`VerifyTrustInput`](crate::input::VerifyTrustInput) with field(s):
-    ///   - [`trust_id(Option<String>)`](crate::input::VerifyTrustInput::trust_id): <p>The unique Trust ID of the trust relationship to verify.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trust_id(impl Into<String>)`](crate::client::fluent_builders::VerifyTrust::trust_id) / [`set_trust_id(Option<String>)`](crate::client::fluent_builders::VerifyTrust::set_trust_id): <p>The unique Trust ID of the trust relationship to verify.</p>
     /// - On success, responds with [`VerifyTrustOutput`](crate::output::VerifyTrustOutput) with field(s):
     ///   - [`trust_id(Option<String>)`](crate::output::VerifyTrustOutput::trust_id): <p>The unique Trust ID of the trust relationship that was verified.</p>
     /// - On failure, responds with [`SdkError<VerifyTrustError>`](crate::error::VerifyTrustError)

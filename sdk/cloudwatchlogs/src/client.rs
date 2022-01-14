@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`AssociateKmsKey`](crate::client::fluent_builders::AssociateKmsKey) operation.
     ///
-    /// - Takes [`AssociateKmsKeyInput`](crate::input::AssociateKmsKeyInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::AssociateKmsKeyInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::input::AssociateKmsKeyInput::kms_key_id): <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::AssociateKmsKey::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::AssociateKmsKey::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::AssociateKmsKey::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::AssociateKmsKey::set_kms_key_id): <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     /// - On success, responds with [`AssociateKmsKeyOutput`](crate::output::AssociateKmsKeyOutput)
 
     /// - On failure, responds with [`SdkError<AssociateKmsKeyError>`](crate::error::AssociateKmsKeyError)
@@ -96,8 +96,8 @@ where
     }
     /// Constructs a fluent builder for the [`CancelExportTask`](crate::client::fluent_builders::CancelExportTask) operation.
     ///
-    /// - Takes [`CancelExportTaskInput`](crate::input::CancelExportTaskInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::CancelExportTaskInput::task_id): <p>The ID of the export task.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::CancelExportTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::CancelExportTask::set_task_id): <p>The ID of the export task.</p>
     /// - On success, responds with [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput)
 
     /// - On failure, responds with [`SdkError<CancelExportTaskError>`](crate::error::CancelExportTaskError)
@@ -106,14 +106,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateExportTask`](crate::client::fluent_builders::CreateExportTask) operation.
     ///
-    /// - Takes [`CreateExportTaskInput`](crate::input::CreateExportTaskInput) with field(s):
-    ///   - [`task_name(Option<String>)`](crate::input::CreateExportTaskInput::task_name): <p>The name of the export task.</p>
-    ///   - [`log_group_name(Option<String>)`](crate::input::CreateExportTaskInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`log_stream_name_prefix(Option<String>)`](crate::input::CreateExportTaskInput::log_stream_name_prefix): <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
-    ///   - [`from(Option<i64>)`](crate::input::CreateExportTaskInput::from): <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
-    ///   - [`to(Option<i64>)`](crate::input::CreateExportTaskInput::to): <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
-    ///   - [`destination(Option<String>)`](crate::input::CreateExportTaskInput::destination): <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
-    ///   - [`destination_prefix(Option<String>)`](crate::input::CreateExportTaskInput::destination_prefix): <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_name(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::task_name) / [`set_task_name(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_task_name): <p>The name of the export task.</p>
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_log_stream_name_prefix): <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
+    ///   - [`from(i64)`](crate::client::fluent_builders::CreateExportTask::from) / [`set_from(Option<i64>)`](crate::client::fluent_builders::CreateExportTask::set_from): <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
+    ///   - [`to(i64)`](crate::client::fluent_builders::CreateExportTask::to) / [`set_to(Option<i64>)`](crate::client::fluent_builders::CreateExportTask::set_to): <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+    ///   - [`destination(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::destination) / [`set_destination(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_destination): <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
+    ///   - [`destination_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateExportTask::destination_prefix) / [`set_destination_prefix(Option<String>)`](crate::client::fluent_builders::CreateExportTask::set_destination_prefix): <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
     /// - On success, responds with [`CreateExportTaskOutput`](crate::output::CreateExportTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::output::CreateExportTaskOutput::task_id): <p>The ID of the export task.</p>
     /// - On failure, responds with [`SdkError<CreateExportTaskError>`](crate::error::CreateExportTaskError)
@@ -122,10 +122,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateLogGroup`](crate::client::fluent_builders::CreateLogGroup) operation.
     ///
-    /// - Takes [`CreateLogGroupInput`](crate::input::CreateLogGroupInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::CreateLogGroupInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateLogGroupInput::kms_key_id): <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateLogGroupInput::tags): <p>The key-value pairs to use for the tags.</p>  <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateLogGroup::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::CreateLogGroup::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateLogGroup::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateLogGroup::set_kms_key_id): <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLogGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLogGroup::set_tags): <p>The key-value pairs to use for the tags.</p>  <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     /// - On success, responds with [`CreateLogGroupOutput`](crate::output::CreateLogGroupOutput)
 
     /// - On failure, responds with [`SdkError<CreateLogGroupError>`](crate::error::CreateLogGroupError)
@@ -134,9 +134,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateLogStream`](crate::client::fluent_builders::CreateLogStream) operation.
     ///
-    /// - Takes [`CreateLogStreamInput`](crate::input::CreateLogStreamInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::CreateLogStreamInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`log_stream_name(Option<String>)`](crate::input::CreateLogStreamInput::log_stream_name): <p>The name of the log stream.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateLogStream::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::CreateLogStream::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_stream_name(impl Into<String>)`](crate::client::fluent_builders::CreateLogStream::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::client::fluent_builders::CreateLogStream::set_log_stream_name): <p>The name of the log stream.</p>
     /// - On success, responds with [`CreateLogStreamOutput`](crate::output::CreateLogStreamOutput)
 
     /// - On failure, responds with [`SdkError<CreateLogStreamError>`](crate::error::CreateLogStreamError)
@@ -145,8 +145,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDestination`](crate::client::fluent_builders::DeleteDestination) operation.
     ///
-    /// - Takes [`DeleteDestinationInput`](crate::input::DeleteDestinationInput) with field(s):
-    ///   - [`destination_name(Option<String>)`](crate::input::DeleteDestinationInput::destination_name): <p>The name of the destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`destination_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDestination::destination_name) / [`set_destination_name(Option<String>)`](crate::client::fluent_builders::DeleteDestination::set_destination_name): <p>The name of the destination.</p>
     /// - On success, responds with [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDestinationError>`](crate::error::DeleteDestinationError)
@@ -155,8 +155,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteLogGroup`](crate::client::fluent_builders::DeleteLogGroup) operation.
     ///
-    /// - Takes [`DeleteLogGroupInput`](crate::input::DeleteLogGroupInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DeleteLogGroupInput::log_group_name): <p>The name of the log group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLogGroup::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DeleteLogGroup::set_log_group_name): <p>The name of the log group.</p>
     /// - On success, responds with [`DeleteLogGroupOutput`](crate::output::DeleteLogGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLogGroupError>`](crate::error::DeleteLogGroupError)
@@ -165,9 +165,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteLogStream`](crate::client::fluent_builders::DeleteLogStream) operation.
     ///
-    /// - Takes [`DeleteLogStreamInput`](crate::input::DeleteLogStreamInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DeleteLogStreamInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`log_stream_name(Option<String>)`](crate::input::DeleteLogStreamInput::log_stream_name): <p>The name of the log stream.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLogStream::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DeleteLogStream::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_stream_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLogStream::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::client::fluent_builders::DeleteLogStream::set_log_stream_name): <p>The name of the log stream.</p>
     /// - On success, responds with [`DeleteLogStreamOutput`](crate::output::DeleteLogStreamOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLogStreamError>`](crate::error::DeleteLogStreamError)
@@ -176,9 +176,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteMetricFilter`](crate::client::fluent_builders::DeleteMetricFilter) operation.
     ///
-    /// - Takes [`DeleteMetricFilterInput`](crate::input::DeleteMetricFilterInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DeleteMetricFilterInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`filter_name(Option<String>)`](crate::input::DeleteMetricFilterInput::filter_name): <p>The name of the metric filter.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMetricFilter::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DeleteMetricFilter::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`filter_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMetricFilter::filter_name) / [`set_filter_name(Option<String>)`](crate::client::fluent_builders::DeleteMetricFilter::set_filter_name): <p>The name of the metric filter.</p>
     /// - On success, responds with [`DeleteMetricFilterOutput`](crate::output::DeleteMetricFilterOutput)
 
     /// - On failure, responds with [`SdkError<DeleteMetricFilterError>`](crate::error::DeleteMetricFilterError)
@@ -187,8 +187,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteQueryDefinition`](crate::client::fluent_builders::DeleteQueryDefinition) operation.
     ///
-    /// - Takes [`DeleteQueryDefinitionInput`](crate::input::DeleteQueryDefinitionInput) with field(s):
-    ///   - [`query_definition_id(Option<String>)`](crate::input::DeleteQueryDefinitionInput::query_definition_id): <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`query_definition_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQueryDefinition::query_definition_id) / [`set_query_definition_id(Option<String>)`](crate::client::fluent_builders::DeleteQueryDefinition::set_query_definition_id): <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     /// - On success, responds with [`DeleteQueryDefinitionOutput`](crate::output::DeleteQueryDefinitionOutput) with field(s):
     ///   - [`success(bool)`](crate::output::DeleteQueryDefinitionOutput::success): <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation failed.</p>
     /// - On failure, responds with [`SdkError<DeleteQueryDefinitionError>`](crate::error::DeleteQueryDefinitionError)
@@ -197,8 +197,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
-    /// - Takes [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::DeleteResourcePolicyInput::policy_name): <p>The name of the policy to be revoked. This parameter is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_policy_name): <p>The name of the policy to be revoked. This parameter is required.</p>
     /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
@@ -207,8 +207,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRetentionPolicy`](crate::client::fluent_builders::DeleteRetentionPolicy) operation.
     ///
-    /// - Takes [`DeleteRetentionPolicyInput`](crate::input::DeleteRetentionPolicyInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DeleteRetentionPolicyInput::log_group_name): <p>The name of the log group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRetentionPolicy::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DeleteRetentionPolicy::set_log_group_name): <p>The name of the log group.</p>
     /// - On success, responds with [`DeleteRetentionPolicyOutput`](crate::output::DeleteRetentionPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRetentionPolicyError>`](crate::error::DeleteRetentionPolicyError)
@@ -217,9 +217,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSubscriptionFilter`](crate::client::fluent_builders::DeleteSubscriptionFilter) operation.
     ///
-    /// - Takes [`DeleteSubscriptionFilterInput`](crate::input::DeleteSubscriptionFilterInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DeleteSubscriptionFilterInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`filter_name(Option<String>)`](crate::input::DeleteSubscriptionFilterInput::filter_name): <p>The name of the subscription filter.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSubscriptionFilter::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DeleteSubscriptionFilter::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`filter_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSubscriptionFilter::filter_name) / [`set_filter_name(Option<String>)`](crate::client::fluent_builders::DeleteSubscriptionFilter::set_filter_name): <p>The name of the subscription filter.</p>
     /// - On success, responds with [`DeleteSubscriptionFilterOutput`](crate::output::DeleteSubscriptionFilterOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSubscriptionFilterError>`](crate::error::DeleteSubscriptionFilterError)
@@ -227,12 +227,12 @@ where
         fluent_builders::DeleteSubscriptionFilter::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDestinations`](crate::client::fluent_builders::DescribeDestinations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDestinations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDestinations::into_paginator).
     ///
-    /// - Takes [`DescribeDestinationsInput`](crate::input::DescribeDestinationsInput) with field(s):
-    ///   - [`destination_name_prefix(Option<String>)`](crate::input::DescribeDestinationsInput::destination_name_prefix): <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeDestinationsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeDestinationsInput::limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`destination_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeDestinations::destination_name_prefix) / [`set_destination_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeDestinations::set_destination_name_prefix): <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDestinations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDestinations::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeDestinations::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeDestinations::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     /// - On success, responds with [`DescribeDestinationsOutput`](crate::output::DescribeDestinationsOutput) with field(s):
     ///   - [`destinations(Option<Vec<Destination>>)`](crate::output::DescribeDestinationsOutput::destinations): <p>The destinations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeDestinationsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -242,11 +242,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeExportTasks`](crate::client::fluent_builders::DescribeExportTasks) operation.
     ///
-    /// - Takes [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::input::DescribeExportTasksInput::task_id): <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
-    ///   - [`status_code(Option<ExportTaskStatusCode>)`](crate::input::DescribeExportTasksInput::status_code): <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeExportTasksInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeExportTasksInput::limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::DescribeExportTasks::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::DescribeExportTasks::set_task_id): <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
+    ///   - [`status_code(ExportTaskStatusCode)`](crate::client::fluent_builders::DescribeExportTasks::status_code) / [`set_status_code(Option<ExportTaskStatusCode>)`](crate::client::fluent_builders::DescribeExportTasks::set_status_code): <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeExportTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeExportTasks::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeExportTasks::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeExportTasks::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     /// - On success, responds with [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput) with field(s):
     ///   - [`export_tasks(Option<Vec<ExportTask>>)`](crate::output::DescribeExportTasksOutput::export_tasks): <p>The export tasks.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeExportTasksOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -255,12 +255,12 @@ where
         fluent_builders::DescribeExportTasks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeLogGroups`](crate::client::fluent_builders::DescribeLogGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeLogGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLogGroups::into_paginator).
     ///
-    /// - Takes [`DescribeLogGroupsInput`](crate::input::DescribeLogGroupsInput) with field(s):
-    ///   - [`log_group_name_prefix(Option<String>)`](crate::input::DescribeLogGroupsInput::log_group_name_prefix): <p>The prefix to match.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeLogGroupsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeLogGroupsInput::limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeLogGroups::log_group_name_prefix) / [`set_log_group_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeLogGroups::set_log_group_name_prefix): <p>The prefix to match.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLogGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLogGroups::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeLogGroups::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeLogGroups::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     /// - On success, responds with [`DescribeLogGroupsOutput`](crate::output::DescribeLogGroupsOutput) with field(s):
     ///   - [`log_groups(Option<Vec<LogGroup>>)`](crate::output::DescribeLogGroupsOutput::log_groups): <p>The log groups.</p>  <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeLogGroupsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -269,15 +269,15 @@ where
         fluent_builders::DescribeLogGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeLogStreams`](crate::client::fluent_builders::DescribeLogStreams) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeLogStreams::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLogStreams::into_paginator).
     ///
-    /// - Takes [`DescribeLogStreamsInput`](crate::input::DescribeLogStreamsInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DescribeLogStreamsInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`log_stream_name_prefix(Option<String>)`](crate::input::DescribeLogStreamsInput::log_stream_name_prefix): <p>The prefix to match.</p>  <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
-    ///   - [`order_by(Option<OrderBy>)`](crate::input::DescribeLogStreamsInput::order_by): <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>  <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>  <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
-    ///   - [`descending(Option<bool>)`](crate::input::DescribeLogStreamsInput::descending): <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeLogStreamsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeLogStreamsInput::limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_log_stream_name_prefix): <p>The prefix to match.</p>  <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
+    ///   - [`order_by(OrderBy)`](crate::client::fluent_builders::DescribeLogStreams::order_by) / [`set_order_by(Option<OrderBy>)`](crate::client::fluent_builders::DescribeLogStreams::set_order_by): <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>  <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>  <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
+    ///   - [`descending(bool)`](crate::client::fluent_builders::DescribeLogStreams::descending) / [`set_descending(Option<bool>)`](crate::client::fluent_builders::DescribeLogStreams::set_descending): <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLogStreams::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLogStreams::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeLogStreams::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeLogStreams::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     /// - On success, responds with [`DescribeLogStreamsOutput`](crate::output::DescribeLogStreamsOutput) with field(s):
     ///   - [`log_streams(Option<Vec<LogStream>>)`](crate::output::DescribeLogStreamsOutput::log_streams): <p>The log streams.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeLogStreamsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -286,15 +286,15 @@ where
         fluent_builders::DescribeLogStreams::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeMetricFilters`](crate::client::fluent_builders::DescribeMetricFilters) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMetricFilters::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeMetricFilters::into_paginator).
     ///
-    /// - Takes [`DescribeMetricFiltersInput`](crate::input::DescribeMetricFiltersInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DescribeMetricFiltersInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`filter_name_prefix(Option<String>)`](crate::input::DescribeMetricFiltersInput::filter_name_prefix): <p>The prefix to match. CloudWatch Logs uses the value you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeMetricFiltersInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeMetricFiltersInput::limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
-    ///   - [`metric_name(Option<String>)`](crate::input::DescribeMetricFiltersInput::metric_name): <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
-    ///   - [`metric_namespace(Option<String>)`](crate::input::DescribeMetricFiltersInput::metric_namespace): <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`filter_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::filter_name_prefix) / [`set_filter_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_filter_name_prefix): <p>The prefix to match. CloudWatch Logs uses the value you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeMetricFilters::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeMetricFilters::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_metric_name): <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
+    ///   - [`metric_namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricFilters::metric_namespace) / [`set_metric_namespace(Option<String>)`](crate::client::fluent_builders::DescribeMetricFilters::set_metric_namespace): <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
     /// - On success, responds with [`DescribeMetricFiltersOutput`](crate::output::DescribeMetricFiltersOutput) with field(s):
     ///   - [`metric_filters(Option<Vec<MetricFilter>>)`](crate::output::DescribeMetricFiltersOutput::metric_filters): <p>The metric filters.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeMetricFiltersOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -304,11 +304,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeQueries`](crate::client::fluent_builders::DescribeQueries) operation.
     ///
-    /// - Takes [`DescribeQueriesInput`](crate::input::DescribeQueriesInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DescribeQueriesInput::log_group_name): <p>Limits the returned queries to only those for the specified log group.</p>
-    ///   - [`status(Option<QueryStatus>)`](crate::input::DescribeQueriesInput::status): <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeQueriesInput::max_results): <p>Limits the number of returned queries to the specified number.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeQueriesInput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeQueries::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DescribeQueries::set_log_group_name): <p>Limits the returned queries to only those for the specified log group.</p>
+    ///   - [`status(QueryStatus)`](crate::client::fluent_builders::DescribeQueries::status) / [`set_status(Option<QueryStatus>)`](crate::client::fluent_builders::DescribeQueries::set_status): <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeQueries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeQueries::set_max_results): <p>Limits the number of returned queries to the specified number.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeQueries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeQueries::set_next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On success, responds with [`DescribeQueriesOutput`](crate::output::DescribeQueriesOutput) with field(s):
     ///   - [`queries(Option<Vec<QueryInfo>>)`](crate::output::DescribeQueriesOutput::queries): <p>The list of queries that match the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeQueriesOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -318,10 +318,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeQueryDefinitions`](crate::client::fluent_builders::DescribeQueryDefinitions) operation.
     ///
-    /// - Takes [`DescribeQueryDefinitionsInput`](crate::input::DescribeQueryDefinitionsInput) with field(s):
-    ///   - [`query_definition_name_prefix(Option<String>)`](crate::input::DescribeQueryDefinitionsInput::query_definition_name_prefix): <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeQueryDefinitionsInput::max_results): <p>Limits the number of returned query definitions to the specified number.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeQueryDefinitionsInput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`query_definition_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeQueryDefinitions::query_definition_name_prefix) / [`set_query_definition_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeQueryDefinitions::set_query_definition_name_prefix): <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeQueryDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeQueryDefinitions::set_max_results): <p>Limits the number of returned query definitions to the specified number.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeQueryDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeQueryDefinitions::set_next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On success, responds with [`DescribeQueryDefinitionsOutput`](crate::output::DescribeQueryDefinitionsOutput) with field(s):
     ///   - [`query_definitions(Option<Vec<QueryDefinition>>)`](crate::output::DescribeQueryDefinitionsOutput::query_definitions): <p>The list of query definitions that match your request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeQueryDefinitionsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -331,9 +331,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeResourcePolicies`](crate::client::fluent_builders::DescribeResourcePolicies) operation.
     ///
-    /// - Takes [`DescribeResourcePoliciesInput`](crate::input::DescribeResourcePoliciesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeResourcePoliciesInput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeResourcePoliciesInput::limit): <p>The maximum number of resource policies to be displayed with one call of this API.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeResourcePolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeResourcePolicies::set_next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeResourcePolicies::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeResourcePolicies::set_limit): <p>The maximum number of resource policies to be displayed with one call of this API.</p>
     /// - On success, responds with [`DescribeResourcePoliciesOutput`](crate::output::DescribeResourcePoliciesOutput) with field(s):
     ///   - [`resource_policies(Option<Vec<ResourcePolicy>>)`](crate::output::DescribeResourcePoliciesOutput::resource_policies): <p>The resource policies that exist in this account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeResourcePoliciesOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -342,13 +342,13 @@ where
         fluent_builders::DescribeResourcePolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeSubscriptionFilters`](crate::client::fluent_builders::DescribeSubscriptionFilters) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSubscriptionFilters::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSubscriptionFilters::into_paginator).
     ///
-    /// - Takes [`DescribeSubscriptionFiltersInput`](crate::input::DescribeSubscriptionFiltersInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DescribeSubscriptionFiltersInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`filter_name_prefix(Option<String>)`](crate::input::DescribeSubscriptionFiltersInput::filter_name_prefix): <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSubscriptionFiltersInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeSubscriptionFiltersInput::limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSubscriptionFilters::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DescribeSubscriptionFilters::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`filter_name_prefix(impl Into<String>)`](crate::client::fluent_builders::DescribeSubscriptionFilters::filter_name_prefix) / [`set_filter_name_prefix(Option<String>)`](crate::client::fluent_builders::DescribeSubscriptionFilters::set_filter_name_prefix): <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSubscriptionFilters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSubscriptionFilters::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeSubscriptionFilters::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeSubscriptionFilters::set_limit): <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     /// - On success, responds with [`DescribeSubscriptionFiltersOutput`](crate::output::DescribeSubscriptionFiltersOutput) with field(s):
     ///   - [`subscription_filters(Option<Vec<SubscriptionFilter>>)`](crate::output::DescribeSubscriptionFiltersOutput::subscription_filters): <p>The subscription filters.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSubscriptionFiltersOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -360,8 +360,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateKmsKey`](crate::client::fluent_builders::DisassociateKmsKey) operation.
     ///
-    /// - Takes [`DisassociateKmsKeyInput`](crate::input::DisassociateKmsKeyInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::DisassociateKmsKeyInput::log_group_name): <p>The name of the log group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateKmsKey::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::DisassociateKmsKey::set_log_group_name): <p>The name of the log group.</p>
     /// - On success, responds with [`DisassociateKmsKeyOutput`](crate::output::DisassociateKmsKeyOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateKmsKeyError>`](crate::error::DisassociateKmsKeyError)
@@ -369,18 +369,18 @@ where
         fluent_builders::DisassociateKmsKey::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`FilterLogEvents`](crate::client::fluent_builders::FilterLogEvents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::FilterLogEvents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::FilterLogEvents::into_paginator).
     ///
-    /// - Takes [`FilterLogEventsInput`](crate::input::FilterLogEventsInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::FilterLogEventsInput::log_group_name): <p>The name of the log group to search.</p>
-    ///   - [`log_stream_names(Option<Vec<String>>)`](crate::input::FilterLogEventsInput::log_stream_names): <p>Filters the results to only logs from the log streams in this list.</p>  <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    ///   - [`log_stream_name_prefix(Option<String>)`](crate::input::FilterLogEventsInput::log_stream_name_prefix): <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>  <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    ///   - [`start_time(Option<i64>)`](crate::input::FilterLogEventsInput::start_time): <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
-    ///   - [`end_time(Option<i64>)`](crate::input::FilterLogEventsInput::end_time): <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
-    ///   - [`filter_pattern(Option<String>)`](crate::input::FilterLogEventsInput::filter_pattern): <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>  <p>If not provided, all the events are matched.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::FilterLogEventsInput::next_token): <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::FilterLogEventsInput::limit): <p>The maximum number of events to return. The default is 10,000 events.</p>
-    ///   - [`interleaved(Option<bool>)`](crate::input::FilterLogEventsInput::interleaved): <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>  <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_group_name): <p>The name of the log group to search.</p>
+    ///   - [`log_stream_names(Vec<String>)`](crate::client::fluent_builders::FilterLogEvents::log_stream_names) / [`set_log_stream_names(Option<Vec<String>>)`](crate::client::fluent_builders::FilterLogEvents::set_log_stream_names): <p>Filters the results to only logs from the log streams in this list.</p>  <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_log_stream_name_prefix): <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>  <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
+    ///   - [`start_time(i64)`](crate::client::fluent_builders::FilterLogEvents::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::FilterLogEvents::set_start_time): <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
+    ///   - [`end_time(i64)`](crate::client::fluent_builders::FilterLogEvents::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::FilterLogEvents::set_end_time): <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
+    ///   - [`filter_pattern(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::filter_pattern) / [`set_filter_pattern(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_filter_pattern): <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>  <p>If not provided, all the events are matched.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::FilterLogEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::FilterLogEvents::set_next_token): <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::FilterLogEvents::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::FilterLogEvents::set_limit): <p>The maximum number of events to return. The default is 10,000 events.</p>
+    ///   - [`interleaved(bool)`](crate::client::fluent_builders::FilterLogEvents::interleaved) / [`set_interleaved(Option<bool>)`](crate::client::fluent_builders::FilterLogEvents::set_interleaved): <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>  <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
     /// - On success, responds with [`FilterLogEventsOutput`](crate::output::FilterLogEventsOutput) with field(s):
     ///   - [`events(Option<Vec<FilteredLogEvent>>)`](crate::output::FilterLogEventsOutput::events): <p>The matched events.</p>
     ///   - [`searched_log_streams(Option<Vec<SearchedLogStream>>)`](crate::output::FilterLogEventsOutput::searched_log_streams): <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty list after the deprecation occurs.</p>  <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
@@ -390,16 +390,16 @@ where
         fluent_builders::FilterLogEvents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetLogEvents`](crate::client::fluent_builders::GetLogEvents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetLogEvents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetLogEvents::into_paginator).
     ///
-    /// - Takes [`GetLogEventsInput`](crate::input::GetLogEventsInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::GetLogEventsInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`log_stream_name(Option<String>)`](crate::input::GetLogEventsInput::log_stream_name): <p>The name of the log stream.</p>
-    ///   - [`start_time(Option<i64>)`](crate::input::GetLogEventsInput::start_time): <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
-    ///   - [`end_time(Option<i64>)`](crate::input::GetLogEventsInput::end_time): <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetLogEventsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::GetLogEventsInput::limit): <p>The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
-    ///   - [`start_from_head(Option<bool>)`](crate::input::GetLogEventsInput::start_from_head): <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is false.</p>  <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation, you must specify <code>true</code> for <code>startFromHead</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_stream_name(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_log_stream_name): <p>The name of the log stream.</p>
+    ///   - [`start_time(i64)`](crate::client::fluent_builders::GetLogEvents::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::GetLogEvents::set_start_time): <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
+    ///   - [`end_time(i64)`](crate::client::fluent_builders::GetLogEvents::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::GetLogEvents::set_end_time): <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetLogEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetLogEvents::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetLogEvents::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::GetLogEvents::set_limit): <p>The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
+    ///   - [`start_from_head(bool)`](crate::client::fluent_builders::GetLogEvents::start_from_head) / [`set_start_from_head(Option<bool>)`](crate::client::fluent_builders::GetLogEvents::set_start_from_head): <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is false.</p>  <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation, you must specify <code>true</code> for <code>startFromHead</code>.</p>
     /// - On success, responds with [`GetLogEventsOutput`](crate::output::GetLogEventsOutput) with field(s):
     ///   - [`events(Option<Vec<OutputLogEvent>>)`](crate::output::GetLogEventsOutput::events): <p>The events.</p>
     ///   - [`next_forward_token(Option<String>)`](crate::output::GetLogEventsOutput::next_forward_token): <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
@@ -410,9 +410,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetLogGroupFields`](crate::client::fluent_builders::GetLogGroupFields) operation.
     ///
-    /// - Takes [`GetLogGroupFieldsInput`](crate::input::GetLogGroupFieldsInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::GetLogGroupFieldsInput::log_group_name): <p>The name of the log group to search.</p>
-    ///   - [`time(Option<i64>)`](crate::input::GetLogGroupFieldsInput::time): <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.</p>  <p>The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLogGroupFields::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::GetLogGroupFields::set_log_group_name): <p>The name of the log group to search.</p>
+    ///   - [`time(i64)`](crate::client::fluent_builders::GetLogGroupFields::time) / [`set_time(Option<i64>)`](crate::client::fluent_builders::GetLogGroupFields::set_time): <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.</p>  <p>The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
     /// - On success, responds with [`GetLogGroupFieldsOutput`](crate::output::GetLogGroupFieldsOutput) with field(s):
     ///   - [`log_group_fields(Option<Vec<LogGroupField>>)`](crate::output::GetLogGroupFieldsOutput::log_group_fields): <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
     /// - On failure, responds with [`SdkError<GetLogGroupFieldsError>`](crate::error::GetLogGroupFieldsError)
@@ -421,8 +421,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetLogRecord`](crate::client::fluent_builders::GetLogRecord) operation.
     ///
-    /// - Takes [`GetLogRecordInput`](crate::input::GetLogRecordInput) with field(s):
-    ///   - [`log_record_pointer(Option<String>)`](crate::input::GetLogRecordInput::log_record_pointer): <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_record_pointer(impl Into<String>)`](crate::client::fluent_builders::GetLogRecord::log_record_pointer) / [`set_log_record_pointer(Option<String>)`](crate::client::fluent_builders::GetLogRecord::set_log_record_pointer): <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
     /// - On success, responds with [`GetLogRecordOutput`](crate::output::GetLogRecordOutput) with field(s):
     ///   - [`log_record(Option<HashMap<String, String>>)`](crate::output::GetLogRecordOutput::log_record): <p>The requested log event, as a JSON string.</p>
     /// - On failure, responds with [`SdkError<GetLogRecordError>`](crate::error::GetLogRecordError)
@@ -431,8 +431,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetQueryResults`](crate::client::fluent_builders::GetQueryResults) operation.
     ///
-    /// - Takes [`GetQueryResultsInput`](crate::input::GetQueryResultsInput) with field(s):
-    ///   - [`query_id(Option<String>)`](crate::input::GetQueryResultsInput::query_id): <p>The ID number of the query.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::GetQueryResults::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::GetQueryResults::set_query_id): <p>The ID number of the query.</p>
     /// - On success, responds with [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput) with field(s):
     ///   - [`results(Option<Vec<Vec<ResultField>>>)`](crate::output::GetQueryResultsOutput::results): <p>The log events that matched the query criteria during the most recent time it ran.</p>  <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
     ///   - [`statistics(Option<QueryStatistics>)`](crate::output::GetQueryResultsOutput::statistics): <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. These values reflect the full raw results of the query.</p>
@@ -443,8 +443,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsLogGroup`](crate::client::fluent_builders::ListTagsLogGroup) operation.
     ///
-    /// - Takes [`ListTagsLogGroupInput`](crate::input::ListTagsLogGroupInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::ListTagsLogGroupInput::log_group_name): <p>The name of the log group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::ListTagsLogGroup::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::ListTagsLogGroup::set_log_group_name): <p>The name of the log group.</p>
     /// - On success, responds with [`ListTagsLogGroupOutput`](crate::output::ListTagsLogGroupOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsLogGroupOutput::tags): <p>The tags for the log group.</p>
     /// - On failure, responds with [`SdkError<ListTagsLogGroupError>`](crate::error::ListTagsLogGroupError)
@@ -453,10 +453,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutDestination`](crate::client::fluent_builders::PutDestination) operation.
     ///
-    /// - Takes [`PutDestinationInput`](crate::input::PutDestinationInput) with field(s):
-    ///   - [`destination_name(Option<String>)`](crate::input::PutDestinationInput::destination_name): <p>A name for the destination.</p>
-    ///   - [`target_arn(Option<String>)`](crate::input::PutDestinationInput::target_arn): <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::PutDestinationInput::role_arn): <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`destination_name(impl Into<String>)`](crate::client::fluent_builders::PutDestination::destination_name) / [`set_destination_name(Option<String>)`](crate::client::fluent_builders::PutDestination::set_destination_name): <p>A name for the destination.</p>
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::PutDestination::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::PutDestination::set_target_arn): <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::PutDestination::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::PutDestination::set_role_arn): <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
     /// - On success, responds with [`PutDestinationOutput`](crate::output::PutDestinationOutput) with field(s):
     ///   - [`destination(Option<Destination>)`](crate::output::PutDestinationOutput::destination): <p>The destination.</p>
     /// - On failure, responds with [`SdkError<PutDestinationError>`](crate::error::PutDestinationError)
@@ -465,10 +465,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutDestinationPolicy`](crate::client::fluent_builders::PutDestinationPolicy) operation.
     ///
-    /// - Takes [`PutDestinationPolicyInput`](crate::input::PutDestinationPolicyInput) with field(s):
-    ///   - [`destination_name(Option<String>)`](crate::input::PutDestinationPolicyInput::destination_name): <p>A name for an existing destination.</p>
-    ///   - [`access_policy(Option<String>)`](crate::input::PutDestinationPolicyInput::access_policy): <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
-    ///   - [`force_update(Option<bool>)`](crate::input::PutDestinationPolicyInput::force_update): <p>Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual AWS accounts. Before you update a destination policy this way, you must first update the subscription filters in the accounts that send logs to this destination. If you do not, the subscription filters might stop working. By specifying <code>true</code> for <code>forceUpdate</code>, you are affirming that you have already updated the subscription filters. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html"> Updating an existing cross-account subscription</a> </p>  <p>If you omit this parameter, the default of <code>false</code> is used.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`destination_name(impl Into<String>)`](crate::client::fluent_builders::PutDestinationPolicy::destination_name) / [`set_destination_name(Option<String>)`](crate::client::fluent_builders::PutDestinationPolicy::set_destination_name): <p>A name for an existing destination.</p>
+    ///   - [`access_policy(impl Into<String>)`](crate::client::fluent_builders::PutDestinationPolicy::access_policy) / [`set_access_policy(Option<String>)`](crate::client::fluent_builders::PutDestinationPolicy::set_access_policy): <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
+    ///   - [`force_update(bool)`](crate::client::fluent_builders::PutDestinationPolicy::force_update) / [`set_force_update(Option<bool>)`](crate::client::fluent_builders::PutDestinationPolicy::set_force_update): <p>Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual AWS accounts. Before you update a destination policy this way, you must first update the subscription filters in the accounts that send logs to this destination. If you do not, the subscription filters might stop working. By specifying <code>true</code> for <code>forceUpdate</code>, you are affirming that you have already updated the subscription filters. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html"> Updating an existing cross-account subscription</a> </p>  <p>If you omit this parameter, the default of <code>false</code> is used.</p>
     /// - On success, responds with [`PutDestinationPolicyOutput`](crate::output::PutDestinationPolicyOutput)
 
     /// - On failure, responds with [`SdkError<PutDestinationPolicyError>`](crate::error::PutDestinationPolicyError)
@@ -477,11 +477,11 @@ where
     }
     /// Constructs a fluent builder for the [`PutLogEvents`](crate::client::fluent_builders::PutLogEvents) operation.
     ///
-    /// - Takes [`PutLogEventsInput`](crate::input::PutLogEventsInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::PutLogEventsInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`log_stream_name(Option<String>)`](crate::input::PutLogEventsInput::log_stream_name): <p>The name of the log stream.</p>
-    ///   - [`log_events(Option<Vec<InputLogEvent>>)`](crate::input::PutLogEventsInput::log_events): <p>The log events.</p>
-    ///   - [`sequence_token(Option<String>)`](crate::input::PutLogEventsInput::sequence_token): <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::PutLogEvents::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::PutLogEvents::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_stream_name(impl Into<String>)`](crate::client::fluent_builders::PutLogEvents::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::client::fluent_builders::PutLogEvents::set_log_stream_name): <p>The name of the log stream.</p>
+    ///   - [`log_events(Vec<InputLogEvent>)`](crate::client::fluent_builders::PutLogEvents::log_events) / [`set_log_events(Option<Vec<InputLogEvent>>)`](crate::client::fluent_builders::PutLogEvents::set_log_events): <p>The log events.</p>
+    ///   - [`sequence_token(impl Into<String>)`](crate::client::fluent_builders::PutLogEvents::sequence_token) / [`set_sequence_token(Option<String>)`](crate::client::fluent_builders::PutLogEvents::set_sequence_token): <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
     /// - On success, responds with [`PutLogEventsOutput`](crate::output::PutLogEventsOutput) with field(s):
     ///   - [`next_sequence_token(Option<String>)`](crate::output::PutLogEventsOutput::next_sequence_token): <p>The next sequence token.</p>
     ///   - [`rejected_log_events_info(Option<RejectedLogEventsInfo>)`](crate::output::PutLogEventsOutput::rejected_log_events_info): <p>The rejected events.</p>
@@ -491,11 +491,11 @@ where
     }
     /// Constructs a fluent builder for the [`PutMetricFilter`](crate::client::fluent_builders::PutMetricFilter) operation.
     ///
-    /// - Takes [`PutMetricFilterInput`](crate::input::PutMetricFilterInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::PutMetricFilterInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`filter_name(Option<String>)`](crate::input::PutMetricFilterInput::filter_name): <p>A name for the metric filter.</p>
-    ///   - [`filter_pattern(Option<String>)`](crate::input::PutMetricFilterInput::filter_pattern): <p>A filter pattern for extracting metric data out of ingested log events.</p>
-    ///   - [`metric_transformations(Option<Vec<MetricTransformation>>)`](crate::input::PutMetricFilterInput::metric_transformations): <p>A collection of information that defines how metric data gets emitted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::PutMetricFilter::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::PutMetricFilter::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`filter_name(impl Into<String>)`](crate::client::fluent_builders::PutMetricFilter::filter_name) / [`set_filter_name(Option<String>)`](crate::client::fluent_builders::PutMetricFilter::set_filter_name): <p>A name for the metric filter.</p>
+    ///   - [`filter_pattern(impl Into<String>)`](crate::client::fluent_builders::PutMetricFilter::filter_pattern) / [`set_filter_pattern(Option<String>)`](crate::client::fluent_builders::PutMetricFilter::set_filter_pattern): <p>A filter pattern for extracting metric data out of ingested log events.</p>
+    ///   - [`metric_transformations(Vec<MetricTransformation>)`](crate::client::fluent_builders::PutMetricFilter::metric_transformations) / [`set_metric_transformations(Option<Vec<MetricTransformation>>)`](crate::client::fluent_builders::PutMetricFilter::set_metric_transformations): <p>A collection of information that defines how metric data gets emitted.</p>
     /// - On success, responds with [`PutMetricFilterOutput`](crate::output::PutMetricFilterOutput)
 
     /// - On failure, responds with [`SdkError<PutMetricFilterError>`](crate::error::PutMetricFilterError)
@@ -504,11 +504,11 @@ where
     }
     /// Constructs a fluent builder for the [`PutQueryDefinition`](crate::client::fluent_builders::PutQueryDefinition) operation.
     ///
-    /// - Takes [`PutQueryDefinitionInput`](crate::input::PutQueryDefinitionInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::PutQueryDefinitionInput::name): <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
-    ///   - [`query_definition_id(Option<String>)`](crate::input::PutQueryDefinitionInput::query_definition_id): <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>  <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
-    ///   - [`log_group_names(Option<Vec<String>>)`](crate::input::PutQueryDefinitionInput::log_group_names): <p>Use this parameter to include specific log groups as part of your query definition.</p>  <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::PutQueryDefinitionInput::query_string): <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutQueryDefinition::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutQueryDefinition::set_name): <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+    ///   - [`query_definition_id(impl Into<String>)`](crate::client::fluent_builders::PutQueryDefinition::query_definition_id) / [`set_query_definition_id(Option<String>)`](crate::client::fluent_builders::PutQueryDefinition::set_query_definition_id): <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>  <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
+    ///   - [`log_group_names(Vec<String>)`](crate::client::fluent_builders::PutQueryDefinition::log_group_names) / [`set_log_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::PutQueryDefinition::set_log_group_names): <p>Use this parameter to include specific log groups as part of your query definition.</p>  <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::PutQueryDefinition::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::PutQueryDefinition::set_query_string): <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     /// - On success, responds with [`PutQueryDefinitionOutput`](crate::output::PutQueryDefinitionOutput) with field(s):
     ///   - [`query_definition_id(Option<String>)`](crate::output::PutQueryDefinitionOutput::query_definition_id): <p>The ID of the query definition.</p>
     /// - On failure, responds with [`SdkError<PutQueryDefinitionError>`](crate::error::PutQueryDefinitionError)
@@ -517,9 +517,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
-    /// - Takes [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput) with field(s):
-    ///   - [`policy_name(Option<String>)`](crate::input::PutResourcePolicyInput::policy_name): <p>Name of the new policy. This parameter is required.</p>
-    ///   - [`policy_document(Option<String>)`](crate::input::PutResourcePolicyInput::policy_document): <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>  <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>  <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>  <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route&nbsp;53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>  <p></p>  <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_name): <p>Name of the new policy. This parameter is required.</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_document): <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>  <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>  <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>  <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route&nbsp;53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>  <p></p>  <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
     ///   - [`resource_policy(Option<ResourcePolicy>)`](crate::output::PutResourcePolicyOutput::resource_policy): <p>The new policy.</p>
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
@@ -528,9 +528,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutRetentionPolicy`](crate::client::fluent_builders::PutRetentionPolicy) operation.
     ///
-    /// - Takes [`PutRetentionPolicyInput`](crate::input::PutRetentionPolicyInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::PutRetentionPolicyInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`retention_in_days(Option<i32>)`](crate::input::PutRetentionPolicyInput::retention_in_days): <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>  <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::PutRetentionPolicy::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::PutRetentionPolicy::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`retention_in_days(i32)`](crate::client::fluent_builders::PutRetentionPolicy::retention_in_days) / [`set_retention_in_days(Option<i32>)`](crate::client::fluent_builders::PutRetentionPolicy::set_retention_in_days): <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>  <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     /// - On success, responds with [`PutRetentionPolicyOutput`](crate::output::PutRetentionPolicyOutput)
 
     /// - On failure, responds with [`SdkError<PutRetentionPolicyError>`](crate::error::PutRetentionPolicyError)
@@ -539,13 +539,13 @@ where
     }
     /// Constructs a fluent builder for the [`PutSubscriptionFilter`](crate::client::fluent_builders::PutSubscriptionFilter) operation.
     ///
-    /// - Takes [`PutSubscriptionFilterInput`](crate::input::PutSubscriptionFilterInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::PutSubscriptionFilterInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`filter_name(Option<String>)`](crate::input::PutSubscriptionFilterInput::filter_name): <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
-    ///   - [`filter_pattern(Option<String>)`](crate::input::PutSubscriptionFilterInput::filter_pattern): <p>A filter pattern for subscribing to a filtered stream of log events.</p>
-    ///   - [`destination_arn(Option<String>)`](crate::input::PutSubscriptionFilterInput::destination_arn): <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>  <ul>   <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>   <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you are setting up a cross-account subscription, the destination must have an IAM policy associated with it that allows the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>   <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>   <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>  </ul>
-    ///   - [`role_arn(Option<String>)`](crate::input::PutSubscriptionFilterInput::role_arn): <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
-    ///   - [`distribution(Option<Distribution>)`](crate::input::PutSubscriptionFilterInput::distribution): <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`filter_name(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::filter_name) / [`set_filter_name(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_filter_name): <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
+    ///   - [`filter_pattern(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::filter_pattern) / [`set_filter_pattern(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_filter_pattern): <p>A filter pattern for subscribing to a filtered stream of log events.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_destination_arn): <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>  <ul>   <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>   <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you are setting up a cross-account subscription, the destination must have an IAM policy associated with it that allows the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>   <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>   <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>  </ul>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_role_arn): <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
+    ///   - [`distribution(Distribution)`](crate::client::fluent_builders::PutSubscriptionFilter::distribution) / [`set_distribution(Option<Distribution>)`](crate::client::fluent_builders::PutSubscriptionFilter::set_distribution): <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>
     /// - On success, responds with [`PutSubscriptionFilterOutput`](crate::output::PutSubscriptionFilterOutput)
 
     /// - On failure, responds with [`SdkError<PutSubscriptionFilterError>`](crate::error::PutSubscriptionFilterError)
@@ -554,13 +554,13 @@ where
     }
     /// Constructs a fluent builder for the [`StartQuery`](crate::client::fluent_builders::StartQuery) operation.
     ///
-    /// - Takes [`StartQueryInput`](crate::input::StartQueryInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::StartQueryInput::log_group_name): <p>The log group on which to perform the query.</p>  <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
-    ///   - [`log_group_names(Option<Vec<String>>)`](crate::input::StartQueryInput::log_group_names): <p>The list of log groups to be queried. You can include up to 20 log groups.</p>  <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
-    ///   - [`start_time(Option<i64>)`](crate::input::StartQueryInput::start_time): <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
-    ///   - [`end_time(Option<i64>)`](crate::input::StartQueryInput::end_time): <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::StartQueryInput::query_string): <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::StartQueryInput::limit): <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::StartQuery::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::StartQuery::set_log_group_name): <p>The log group on which to perform the query.</p>  <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
+    ///   - [`log_group_names(Vec<String>)`](crate::client::fluent_builders::StartQuery::log_group_names) / [`set_log_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartQuery::set_log_group_names): <p>The list of log groups to be queried. You can include up to 20 log groups.</p>  <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
+    ///   - [`start_time(i64)`](crate::client::fluent_builders::StartQuery::start_time) / [`set_start_time(Option<i64>)`](crate::client::fluent_builders::StartQuery::set_start_time): <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    ///   - [`end_time(i64)`](crate::client::fluent_builders::StartQuery::end_time) / [`set_end_time(Option<i64>)`](crate::client::fluent_builders::StartQuery::set_end_time): <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::StartQuery::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::StartQuery::set_query_string): <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::StartQuery::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::StartQuery::set_limit): <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
     /// - On success, responds with [`StartQueryOutput`](crate::output::StartQueryOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::output::StartQueryOutput::query_id): <p>The unique ID of the query. </p>
     /// - On failure, responds with [`SdkError<StartQueryError>`](crate::error::StartQueryError)
@@ -569,8 +569,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopQuery`](crate::client::fluent_builders::StopQuery) operation.
     ///
-    /// - Takes [`StopQueryInput`](crate::input::StopQueryInput) with field(s):
-    ///   - [`query_id(Option<String>)`](crate::input::StopQueryInput::query_id): <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::StopQuery::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::StopQuery::set_query_id): <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
     /// - On success, responds with [`StopQueryOutput`](crate::output::StopQueryOutput) with field(s):
     ///   - [`success(bool)`](crate::output::StopQueryOutput::success): <p>This is true if the query was stopped by the <code>StopQuery</code> operation.</p>
     /// - On failure, responds with [`SdkError<StopQueryError>`](crate::error::StopQueryError)
@@ -579,9 +579,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagLogGroup`](crate::client::fluent_builders::TagLogGroup) operation.
     ///
-    /// - Takes [`TagLogGroupInput`](crate::input::TagLogGroupInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::TagLogGroupInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagLogGroupInput::tags): <p>The key-value pairs to use for the tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::TagLogGroup::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::TagLogGroup::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagLogGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagLogGroup::set_tags): <p>The key-value pairs to use for the tags.</p>
     /// - On success, responds with [`TagLogGroupOutput`](crate::output::TagLogGroupOutput)
 
     /// - On failure, responds with [`SdkError<TagLogGroupError>`](crate::error::TagLogGroupError)
@@ -590,9 +590,9 @@ where
     }
     /// Constructs a fluent builder for the [`TestMetricFilter`](crate::client::fluent_builders::TestMetricFilter) operation.
     ///
-    /// - Takes [`TestMetricFilterInput`](crate::input::TestMetricFilterInput) with field(s):
-    ///   - [`filter_pattern(Option<String>)`](crate::input::TestMetricFilterInput::filter_pattern): <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-    ///   - [`log_event_messages(Option<Vec<String>>)`](crate::input::TestMetricFilterInput::log_event_messages): <p>The log event messages to test.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter_pattern(impl Into<String>)`](crate::client::fluent_builders::TestMetricFilter::filter_pattern) / [`set_filter_pattern(Option<String>)`](crate::client::fluent_builders::TestMetricFilter::set_filter_pattern): <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
+    ///   - [`log_event_messages(Vec<String>)`](crate::client::fluent_builders::TestMetricFilter::log_event_messages) / [`set_log_event_messages(Option<Vec<String>>)`](crate::client::fluent_builders::TestMetricFilter::set_log_event_messages): <p>The log event messages to test.</p>
     /// - On success, responds with [`TestMetricFilterOutput`](crate::output::TestMetricFilterOutput) with field(s):
     ///   - [`matches(Option<Vec<MetricFilterMatchRecord>>)`](crate::output::TestMetricFilterOutput::matches): <p>The matched events.</p>
     /// - On failure, responds with [`SdkError<TestMetricFilterError>`](crate::error::TestMetricFilterError)
@@ -601,9 +601,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagLogGroup`](crate::client::fluent_builders::UntagLogGroup) operation.
     ///
-    /// - Takes [`UntagLogGroupInput`](crate::input::UntagLogGroupInput) with field(s):
-    ///   - [`log_group_name(Option<String>)`](crate::input::UntagLogGroupInput::log_group_name): <p>The name of the log group.</p>
-    ///   - [`tags(Option<Vec<String>>)`](crate::input::UntagLogGroupInput::tags): <p>The tag keys. The corresponding tags are removed from the log group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`log_group_name(impl Into<String>)`](crate::client::fluent_builders::UntagLogGroup::log_group_name) / [`set_log_group_name(Option<String>)`](crate::client::fluent_builders::UntagLogGroup::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`tags(Vec<String>)`](crate::client::fluent_builders::UntagLogGroup::tags) / [`set_tags(Option<Vec<String>>)`](crate::client::fluent_builders::UntagLogGroup::set_tags): <p>The tag keys. The corresponding tags are removed from the log group.</p>
     /// - On success, responds with [`UntagLogGroupOutput`](crate::output::UntagLogGroupOutput)
 
     /// - On failure, responds with [`SdkError<UntagLogGroupError>`](crate::error::UntagLogGroupError)

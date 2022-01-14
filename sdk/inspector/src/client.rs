@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`AddAttributesToFindings`](crate::client::fluent_builders::AddAttributesToFindings) operation.
     ///
-    /// - Takes [`AddAttributesToFindingsInput`](crate::input::AddAttributesToFindingsInput) with field(s):
-    ///   - [`finding_arns(Option<Vec<String>>)`](crate::input::AddAttributesToFindingsInput::finding_arns): <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    ///   - [`attributes(Option<Vec<Attribute>>)`](crate::input::AddAttributesToFindingsInput::attributes): <p>The array of attributes that you want to assign to specified findings.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_arns(Vec<String>)`](crate::client::fluent_builders::AddAttributesToFindings::finding_arns) / [`set_finding_arns(Option<Vec<String>>)`](crate::client::fluent_builders::AddAttributesToFindings::set_finding_arns): <p>The ARNs that specify the findings that you want to assign attributes to.</p>
+    ///   - [`attributes(Vec<Attribute>)`](crate::client::fluent_builders::AddAttributesToFindings::attributes) / [`set_attributes(Option<Vec<Attribute>>)`](crate::client::fluent_builders::AddAttributesToFindings::set_attributes): <p>The array of attributes that you want to assign to specified findings.</p>
     /// - On success, responds with [`AddAttributesToFindingsOutput`](crate::output::AddAttributesToFindingsOutput) with field(s):
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::output::AddAttributesToFindingsOutput::failed_items): <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<AddAttributesToFindingsError>`](crate::error::AddAttributesToFindingsError)
@@ -96,9 +96,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAssessmentTarget`](crate::client::fluent_builders::CreateAssessmentTarget) operation.
     ///
-    /// - Takes [`CreateAssessmentTargetInput`](crate::input::CreateAssessmentTargetInput) with field(s):
-    ///   - [`assessment_target_name(Option<String>)`](crate::input::CreateAssessmentTargetInput::assessment_target_name): <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
-    ///   - [`resource_group_arn(Option<String>)`](crate::input::CreateAssessmentTargetInput::resource_group_arn): <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_target_name(impl Into<String>)`](crate::client::fluent_builders::CreateAssessmentTarget::assessment_target_name) / [`set_assessment_target_name(Option<String>)`](crate::client::fluent_builders::CreateAssessmentTarget::set_assessment_target_name): <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
+    ///   - [`resource_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAssessmentTarget::resource_group_arn) / [`set_resource_group_arn(Option<String>)`](crate::client::fluent_builders::CreateAssessmentTarget::set_resource_group_arn): <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
     /// - On success, responds with [`CreateAssessmentTargetOutput`](crate::output::CreateAssessmentTargetOutput) with field(s):
     ///   - [`assessment_target_arn(Option<String>)`](crate::output::CreateAssessmentTargetOutput::assessment_target_arn): <p>The ARN that specifies the assessment target that is created.</p>
     /// - On failure, responds with [`SdkError<CreateAssessmentTargetError>`](crate::error::CreateAssessmentTargetError)
@@ -107,12 +107,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAssessmentTemplate`](crate::client::fluent_builders::CreateAssessmentTemplate) operation.
     ///
-    /// - Takes [`CreateAssessmentTemplateInput`](crate::input::CreateAssessmentTemplateInput) with field(s):
-    ///   - [`assessment_target_arn(Option<String>)`](crate::input::CreateAssessmentTemplateInput::assessment_target_arn): <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
-    ///   - [`assessment_template_name(Option<String>)`](crate::input::CreateAssessmentTemplateInput::assessment_template_name): <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
-    ///   - [`duration_in_seconds(i32)`](crate::input::CreateAssessmentTemplateInput::duration_in_seconds): <p>The duration of the assessment run in seconds.</p>
-    ///   - [`rules_package_arns(Option<Vec<String>>)`](crate::input::CreateAssessmentTemplateInput::rules_package_arns): <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-    ///   - [`user_attributes_for_findings(Option<Vec<Attribute>>)`](crate::input::CreateAssessmentTemplateInput::user_attributes_for_findings): <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_target_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAssessmentTemplate::assessment_target_arn) / [`set_assessment_target_arn(Option<String>)`](crate::client::fluent_builders::CreateAssessmentTemplate::set_assessment_target_arn): <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
+    ///   - [`assessment_template_name(impl Into<String>)`](crate::client::fluent_builders::CreateAssessmentTemplate::assessment_template_name) / [`set_assessment_template_name(Option<String>)`](crate::client::fluent_builders::CreateAssessmentTemplate::set_assessment_template_name): <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
+    ///   - [`duration_in_seconds(i32)`](crate::client::fluent_builders::CreateAssessmentTemplate::duration_in_seconds) / [`set_duration_in_seconds(i32)`](crate::client::fluent_builders::CreateAssessmentTemplate::set_duration_in_seconds): <p>The duration of the assessment run in seconds.</p>
+    ///   - [`rules_package_arns(Vec<String>)`](crate::client::fluent_builders::CreateAssessmentTemplate::rules_package_arns) / [`set_rules_package_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAssessmentTemplate::set_rules_package_arns): <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
+    ///   - [`user_attributes_for_findings(Vec<Attribute>)`](crate::client::fluent_builders::CreateAssessmentTemplate::user_attributes_for_findings) / [`set_user_attributes_for_findings(Option<Vec<Attribute>>)`](crate::client::fluent_builders::CreateAssessmentTemplate::set_user_attributes_for_findings): <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
     /// - On success, responds with [`CreateAssessmentTemplateOutput`](crate::output::CreateAssessmentTemplateOutput) with field(s):
     ///   - [`assessment_template_arn(Option<String>)`](crate::output::CreateAssessmentTemplateOutput::assessment_template_arn): <p>The ARN that specifies the assessment template that is created.</p>
     /// - On failure, responds with [`SdkError<CreateAssessmentTemplateError>`](crate::error::CreateAssessmentTemplateError)
@@ -121,8 +121,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateExclusionsPreview`](crate::client::fluent_builders::CreateExclusionsPreview) operation.
     ///
-    /// - Takes [`CreateExclusionsPreviewInput`](crate::input::CreateExclusionsPreviewInput) with field(s):
-    ///   - [`assessment_template_arn(Option<String>)`](crate::input::CreateExclusionsPreviewInput::assessment_template_arn): <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_template_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExclusionsPreview::assessment_template_arn) / [`set_assessment_template_arn(Option<String>)`](crate::client::fluent_builders::CreateExclusionsPreview::set_assessment_template_arn): <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
     /// - On success, responds with [`CreateExclusionsPreviewOutput`](crate::output::CreateExclusionsPreviewOutput) with field(s):
     ///   - [`preview_token(Option<String>)`](crate::output::CreateExclusionsPreviewOutput::preview_token): <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
     /// - On failure, responds with [`SdkError<CreateExclusionsPreviewError>`](crate::error::CreateExclusionsPreviewError)
@@ -131,8 +131,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateResourceGroup`](crate::client::fluent_builders::CreateResourceGroup) operation.
     ///
-    /// - Takes [`CreateResourceGroupInput`](crate::input::CreateResourceGroupInput) with field(s):
-    ///   - [`resource_group_tags(Option<Vec<ResourceGroupTag>>)`](crate::input::CreateResourceGroupInput::resource_group_tags): <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>  <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_group_tags(Vec<ResourceGroupTag>)`](crate::client::fluent_builders::CreateResourceGroup::resource_group_tags) / [`set_resource_group_tags(Option<Vec<ResourceGroupTag>>)`](crate::client::fluent_builders::CreateResourceGroup::set_resource_group_tags): <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>  <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
     /// - On success, responds with [`CreateResourceGroupOutput`](crate::output::CreateResourceGroupOutput) with field(s):
     ///   - [`resource_group_arn(Option<String>)`](crate::output::CreateResourceGroupOutput::resource_group_arn): <p>The ARN that specifies the resource group that is created.</p>
     /// - On failure, responds with [`SdkError<CreateResourceGroupError>`](crate::error::CreateResourceGroupError)
@@ -141,8 +141,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAssessmentRun`](crate::client::fluent_builders::DeleteAssessmentRun) operation.
     ///
-    /// - Takes [`DeleteAssessmentRunInput`](crate::input::DeleteAssessmentRunInput) with field(s):
-    ///   - [`assessment_run_arn(Option<String>)`](crate::input::DeleteAssessmentRunInput::assessment_run_arn): <p>The ARN that specifies the assessment run that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_run_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAssessmentRun::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::client::fluent_builders::DeleteAssessmentRun::set_assessment_run_arn): <p>The ARN that specifies the assessment run that you want to delete.</p>
     /// - On success, responds with [`DeleteAssessmentRunOutput`](crate::output::DeleteAssessmentRunOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAssessmentRunError>`](crate::error::DeleteAssessmentRunError)
@@ -151,8 +151,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAssessmentTarget`](crate::client::fluent_builders::DeleteAssessmentTarget) operation.
     ///
-    /// - Takes [`DeleteAssessmentTargetInput`](crate::input::DeleteAssessmentTargetInput) with field(s):
-    ///   - [`assessment_target_arn(Option<String>)`](crate::input::DeleteAssessmentTargetInput::assessment_target_arn): <p>The ARN that specifies the assessment target that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_target_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAssessmentTarget::assessment_target_arn) / [`set_assessment_target_arn(Option<String>)`](crate::client::fluent_builders::DeleteAssessmentTarget::set_assessment_target_arn): <p>The ARN that specifies the assessment target that you want to delete.</p>
     /// - On success, responds with [`DeleteAssessmentTargetOutput`](crate::output::DeleteAssessmentTargetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAssessmentTargetError>`](crate::error::DeleteAssessmentTargetError)
@@ -161,8 +161,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAssessmentTemplate`](crate::client::fluent_builders::DeleteAssessmentTemplate) operation.
     ///
-    /// - Takes [`DeleteAssessmentTemplateInput`](crate::input::DeleteAssessmentTemplateInput) with field(s):
-    ///   - [`assessment_template_arn(Option<String>)`](crate::input::DeleteAssessmentTemplateInput::assessment_template_arn): <p>The ARN that specifies the assessment template that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_template_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAssessmentTemplate::assessment_template_arn) / [`set_assessment_template_arn(Option<String>)`](crate::client::fluent_builders::DeleteAssessmentTemplate::set_assessment_template_arn): <p>The ARN that specifies the assessment template that you want to delete.</p>
     /// - On success, responds with [`DeleteAssessmentTemplateOutput`](crate::output::DeleteAssessmentTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAssessmentTemplateError>`](crate::error::DeleteAssessmentTemplateError)
@@ -171,8 +171,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAssessmentRuns`](crate::client::fluent_builders::DescribeAssessmentRuns) operation.
     ///
-    /// - Takes [`DescribeAssessmentRunsInput`](crate::input::DescribeAssessmentRunsInput) with field(s):
-    ///   - [`assessment_run_arns(Option<Vec<String>>)`](crate::input::DescribeAssessmentRunsInput::assessment_run_arns): <p>The ARN that specifies the assessment run that you want to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_run_arns(Vec<String>)`](crate::client::fluent_builders::DescribeAssessmentRuns::assessment_run_arns) / [`set_assessment_run_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAssessmentRuns::set_assessment_run_arns): <p>The ARN that specifies the assessment run that you want to describe.</p>
     /// - On success, responds with [`DescribeAssessmentRunsOutput`](crate::output::DescribeAssessmentRunsOutput) with field(s):
     ///   - [`assessment_runs(Option<Vec<AssessmentRun>>)`](crate::output::DescribeAssessmentRunsOutput::assessment_runs): <p>Information about the assessment run.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::output::DescribeAssessmentRunsOutput::failed_items): <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
@@ -182,8 +182,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAssessmentTargets`](crate::client::fluent_builders::DescribeAssessmentTargets) operation.
     ///
-    /// - Takes [`DescribeAssessmentTargetsInput`](crate::input::DescribeAssessmentTargetsInput) with field(s):
-    ///   - [`assessment_target_arns(Option<Vec<String>>)`](crate::input::DescribeAssessmentTargetsInput::assessment_target_arns): <p>The ARNs that specifies the assessment targets that you want to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_target_arns(Vec<String>)`](crate::client::fluent_builders::DescribeAssessmentTargets::assessment_target_arns) / [`set_assessment_target_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAssessmentTargets::set_assessment_target_arns): <p>The ARNs that specifies the assessment targets that you want to describe.</p>
     /// - On success, responds with [`DescribeAssessmentTargetsOutput`](crate::output::DescribeAssessmentTargetsOutput) with field(s):
     ///   - [`assessment_targets(Option<Vec<AssessmentTarget>>)`](crate::output::DescribeAssessmentTargetsOutput::assessment_targets): <p>Information about the assessment targets.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::output::DescribeAssessmentTargetsOutput::failed_items): <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
@@ -195,8 +195,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAssessmentTemplates`](crate::client::fluent_builders::DescribeAssessmentTemplates) operation.
     ///
-    /// - Takes [`DescribeAssessmentTemplatesInput`](crate::input::DescribeAssessmentTemplatesInput) with field(s):
-    ///   - [`assessment_template_arns(Option<Vec<String>>)`](crate::input::DescribeAssessmentTemplatesInput::assessment_template_arns): (undocumented)
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_template_arns(Vec<String>)`](crate::client::fluent_builders::DescribeAssessmentTemplates::assessment_template_arns) / [`set_assessment_template_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAssessmentTemplates::set_assessment_template_arns): (undocumented)
     /// - On success, responds with [`DescribeAssessmentTemplatesOutput`](crate::output::DescribeAssessmentTemplatesOutput) with field(s):
     ///   - [`assessment_templates(Option<Vec<AssessmentTemplate>>)`](crate::output::DescribeAssessmentTemplatesOutput::assessment_templates): <p>Information about the assessment templates.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::output::DescribeAssessmentTemplatesOutput::failed_items): <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
@@ -208,7 +208,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCrossAccountAccessRole`](crate::client::fluent_builders::DescribeCrossAccountAccessRole) operation.
     ///
-    /// - Takes [`DescribeCrossAccountAccessRoleInput`](crate::input::DescribeCrossAccountAccessRoleInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeCrossAccountAccessRole::send) it.
 
     /// - On success, responds with [`DescribeCrossAccountAccessRoleOutput`](crate::output::DescribeCrossAccountAccessRoleOutput) with field(s):
     ///   - [`role_arn(Option<String>)`](crate::output::DescribeCrossAccountAccessRoleOutput::role_arn): <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
@@ -222,9 +222,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeExclusions`](crate::client::fluent_builders::DescribeExclusions) operation.
     ///
-    /// - Takes [`DescribeExclusionsInput`](crate::input::DescribeExclusionsInput) with field(s):
-    ///   - [`exclusion_arns(Option<Vec<String>>)`](crate::input::DescribeExclusionsInput::exclusion_arns): <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    ///   - [`locale(Option<Locale>)`](crate::input::DescribeExclusionsInput::locale): <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`exclusion_arns(Vec<String>)`](crate::client::fluent_builders::DescribeExclusions::exclusion_arns) / [`set_exclusion_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeExclusions::set_exclusion_arns): <p>The list of ARNs that specify the exclusions that you want to describe.</p>
+    ///   - [`locale(Locale)`](crate::client::fluent_builders::DescribeExclusions::locale) / [`set_locale(Option<Locale>)`](crate::client::fluent_builders::DescribeExclusions::set_locale): <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     /// - On success, responds with [`DescribeExclusionsOutput`](crate::output::DescribeExclusionsOutput) with field(s):
     ///   - [`exclusions(Option<HashMap<String, Exclusion>>)`](crate::output::DescribeExclusionsOutput::exclusions): <p>Information about the exclusions.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::output::DescribeExclusionsOutput::failed_items): <p>Exclusion details that cannot be described. An error code is provided for each failed item.</p>
@@ -234,9 +234,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFindings`](crate::client::fluent_builders::DescribeFindings) operation.
     ///
-    /// - Takes [`DescribeFindingsInput`](crate::input::DescribeFindingsInput) with field(s):
-    ///   - [`finding_arns(Option<Vec<String>>)`](crate::input::DescribeFindingsInput::finding_arns): <p>The ARN that specifies the finding that you want to describe.</p>
-    ///   - [`locale(Option<Locale>)`](crate::input::DescribeFindingsInput::locale): <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_arns(Vec<String>)`](crate::client::fluent_builders::DescribeFindings::finding_arns) / [`set_finding_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeFindings::set_finding_arns): <p>The ARN that specifies the finding that you want to describe.</p>
+    ///   - [`locale(Locale)`](crate::client::fluent_builders::DescribeFindings::locale) / [`set_locale(Option<Locale>)`](crate::client::fluent_builders::DescribeFindings::set_locale): <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
     /// - On success, responds with [`DescribeFindingsOutput`](crate::output::DescribeFindingsOutput) with field(s):
     ///   - [`findings(Option<Vec<Finding>>)`](crate::output::DescribeFindingsOutput::findings): <p>Information about the finding.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::output::DescribeFindingsOutput::failed_items): <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
@@ -246,8 +246,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeResourceGroups`](crate::client::fluent_builders::DescribeResourceGroups) operation.
     ///
-    /// - Takes [`DescribeResourceGroupsInput`](crate::input::DescribeResourceGroupsInput) with field(s):
-    ///   - [`resource_group_arns(Option<Vec<String>>)`](crate::input::DescribeResourceGroupsInput::resource_group_arns): <p>The ARN that specifies the resource group that you want to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_group_arns(Vec<String>)`](crate::client::fluent_builders::DescribeResourceGroups::resource_group_arns) / [`set_resource_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeResourceGroups::set_resource_group_arns): <p>The ARN that specifies the resource group that you want to describe.</p>
     /// - On success, responds with [`DescribeResourceGroupsOutput`](crate::output::DescribeResourceGroupsOutput) with field(s):
     ///   - [`resource_groups(Option<Vec<ResourceGroup>>)`](crate::output::DescribeResourceGroupsOutput::resource_groups): <p>Information about a resource group.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::output::DescribeResourceGroupsOutput::failed_items): <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
@@ -257,9 +257,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeRulesPackages`](crate::client::fluent_builders::DescribeRulesPackages) operation.
     ///
-    /// - Takes [`DescribeRulesPackagesInput`](crate::input::DescribeRulesPackagesInput) with field(s):
-    ///   - [`rules_package_arns(Option<Vec<String>>)`](crate::input::DescribeRulesPackagesInput::rules_package_arns): <p>The ARN that specifies the rules package that you want to describe.</p>
-    ///   - [`locale(Option<Locale>)`](crate::input::DescribeRulesPackagesInput::locale): <p>The locale that you want to translate a rules package description into.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rules_package_arns(Vec<String>)`](crate::client::fluent_builders::DescribeRulesPackages::rules_package_arns) / [`set_rules_package_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeRulesPackages::set_rules_package_arns): <p>The ARN that specifies the rules package that you want to describe.</p>
+    ///   - [`locale(Locale)`](crate::client::fluent_builders::DescribeRulesPackages::locale) / [`set_locale(Option<Locale>)`](crate::client::fluent_builders::DescribeRulesPackages::set_locale): <p>The locale that you want to translate a rules package description into.</p>
     /// - On success, responds with [`DescribeRulesPackagesOutput`](crate::output::DescribeRulesPackagesOutput) with field(s):
     ///   - [`rules_packages(Option<Vec<RulesPackage>>)`](crate::output::DescribeRulesPackagesOutput::rules_packages): <p>Information about the rules package.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::output::DescribeRulesPackagesOutput::failed_items): <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
@@ -269,10 +269,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetAssessmentReport`](crate::client::fluent_builders::GetAssessmentReport) operation.
     ///
-    /// - Takes [`GetAssessmentReportInput`](crate::input::GetAssessmentReportInput) with field(s):
-    ///   - [`assessment_run_arn(Option<String>)`](crate::input::GetAssessmentReportInput::assessment_run_arn): <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
-    ///   - [`report_file_format(Option<ReportFileFormat>)`](crate::input::GetAssessmentReportInput::report_file_format): <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
-    ///   - [`report_type(Option<ReportType>)`](crate::input::GetAssessmentReportInput::report_type): <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_run_arn(impl Into<String>)`](crate::client::fluent_builders::GetAssessmentReport::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::client::fluent_builders::GetAssessmentReport::set_assessment_run_arn): <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
+    ///   - [`report_file_format(ReportFileFormat)`](crate::client::fluent_builders::GetAssessmentReport::report_file_format) / [`set_report_file_format(Option<ReportFileFormat>)`](crate::client::fluent_builders::GetAssessmentReport::set_report_file_format): <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
+    ///   - [`report_type(ReportType)`](crate::client::fluent_builders::GetAssessmentReport::report_type) / [`set_report_type(Option<ReportType>)`](crate::client::fluent_builders::GetAssessmentReport::set_report_type): <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
     /// - On success, responds with [`GetAssessmentReportOutput`](crate::output::GetAssessmentReportOutput) with field(s):
     ///   - [`status(Option<ReportStatus>)`](crate::output::GetAssessmentReportOutput::status): <p>Specifies the status of the request to generate an assessment report. </p>
     ///   - [`url(Option<String>)`](crate::output::GetAssessmentReportOutput::url): <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
@@ -281,14 +281,14 @@ where
         fluent_builders::GetAssessmentReport::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetExclusionsPreview`](crate::client::fluent_builders::GetExclusionsPreview) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetExclusionsPreview::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetExclusionsPreview::into_paginator).
     ///
-    /// - Takes [`GetExclusionsPreviewInput`](crate::input::GetExclusionsPreviewInput) with field(s):
-    ///   - [`assessment_template_arn(Option<String>)`](crate::input::GetExclusionsPreviewInput::assessment_template_arn): <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-    ///   - [`preview_token(Option<String>)`](crate::input::GetExclusionsPreviewInput::preview_token): <p>The unique identifier associated of the exclusions preview.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetExclusionsPreviewInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetExclusionsPreviewInput::max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
-    ///   - [`locale(Option<Locale>)`](crate::input::GetExclusionsPreviewInput::locale): <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_template_arn(impl Into<String>)`](crate::client::fluent_builders::GetExclusionsPreview::assessment_template_arn) / [`set_assessment_template_arn(Option<String>)`](crate::client::fluent_builders::GetExclusionsPreview::set_assessment_template_arn): <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
+    ///   - [`preview_token(impl Into<String>)`](crate::client::fluent_builders::GetExclusionsPreview::preview_token) / [`set_preview_token(Option<String>)`](crate::client::fluent_builders::GetExclusionsPreview::set_preview_token): <p>The unique identifier associated of the exclusions preview.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetExclusionsPreview::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetExclusionsPreview::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetExclusionsPreview::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetExclusionsPreview::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
+    ///   - [`locale(Locale)`](crate::client::fluent_builders::GetExclusionsPreview::locale) / [`set_locale(Option<Locale>)`](crate::client::fluent_builders::GetExclusionsPreview::set_locale): <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     /// - On success, responds with [`GetExclusionsPreviewOutput`](crate::output::GetExclusionsPreviewOutput) with field(s):
     ///   - [`preview_status(Option<PreviewStatus>)`](crate::output::GetExclusionsPreviewOutput::preview_status): <p>Specifies the status of the request to generate an exclusions preview.</p>
     ///   - [`exclusion_previews(Option<Vec<ExclusionPreview>>)`](crate::output::GetExclusionsPreviewOutput::exclusion_previews): <p>Information about the exclusions included in the preview.</p>
@@ -299,8 +299,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetTelemetryMetadata`](crate::client::fluent_builders::GetTelemetryMetadata) operation.
     ///
-    /// - Takes [`GetTelemetryMetadataInput`](crate::input::GetTelemetryMetadataInput) with field(s):
-    ///   - [`assessment_run_arn(Option<String>)`](crate::input::GetTelemetryMetadataInput::assessment_run_arn): <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_run_arn(impl Into<String>)`](crate::client::fluent_builders::GetTelemetryMetadata::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::client::fluent_builders::GetTelemetryMetadata::set_assessment_run_arn): <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
     /// - On success, responds with [`GetTelemetryMetadataOutput`](crate::output::GetTelemetryMetadataOutput) with field(s):
     ///   - [`telemetry_metadata(Option<Vec<TelemetryMetadata>>)`](crate::output::GetTelemetryMetadataOutput::telemetry_metadata): <p>Telemetry details.</p>
     /// - On failure, responds with [`SdkError<GetTelemetryMetadataError>`](crate::error::GetTelemetryMetadataError)
@@ -308,13 +308,13 @@ where
         fluent_builders::GetTelemetryMetadata::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssessmentRunAgents`](crate::client::fluent_builders::ListAssessmentRunAgents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentRunAgents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentRunAgents::into_paginator).
     ///
-    /// - Takes [`ListAssessmentRunAgentsInput`](crate::input::ListAssessmentRunAgentsInput) with field(s):
-    ///   - [`assessment_run_arn(Option<String>)`](crate::input::ListAssessmentRunAgentsInput::assessment_run_arn): <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-    ///   - [`filter(Option<AgentFilter>)`](crate::input::ListAssessmentRunAgentsInput::filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssessmentRunAgentsInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssessmentRunAgentsInput::max_results): <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_run_arn(impl Into<String>)`](crate::client::fluent_builders::ListAssessmentRunAgents::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::client::fluent_builders::ListAssessmentRunAgents::set_assessment_run_arn): <p>The ARN that specifies the assessment run whose agents you want to list.</p>
+    ///   - [`filter(AgentFilter)`](crate::client::fluent_builders::ListAssessmentRunAgents::filter) / [`set_filter(Option<AgentFilter>)`](crate::client::fluent_builders::ListAssessmentRunAgents::set_filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssessmentRunAgents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssessmentRunAgents::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssessmentRunAgents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssessmentRunAgents::set_max_results): <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     /// - On success, responds with [`ListAssessmentRunAgentsOutput`](crate::output::ListAssessmentRunAgentsOutput) with field(s):
     ///   - [`assessment_run_agents(Option<Vec<AssessmentRunAgent>>)`](crate::output::ListAssessmentRunAgentsOutput::assessment_run_agents): <p>A list of ARNs that specifies the agents returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssessmentRunAgentsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -323,13 +323,13 @@ where
         fluent_builders::ListAssessmentRunAgents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssessmentRuns`](crate::client::fluent_builders::ListAssessmentRuns) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentRuns::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentRuns::into_paginator).
     ///
-    /// - Takes [`ListAssessmentRunsInput`](crate::input::ListAssessmentRunsInput) with field(s):
-    ///   - [`assessment_template_arns(Option<Vec<String>>)`](crate::input::ListAssessmentRunsInput::assessment_template_arns): <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
-    ///   - [`filter(Option<AssessmentRunFilter>)`](crate::input::ListAssessmentRunsInput::filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssessmentRunsInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssessmentRunsInput::max_results): <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_template_arns(Vec<String>)`](crate::client::fluent_builders::ListAssessmentRuns::assessment_template_arns) / [`set_assessment_template_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListAssessmentRuns::set_assessment_template_arns): <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
+    ///   - [`filter(AssessmentRunFilter)`](crate::client::fluent_builders::ListAssessmentRuns::filter) / [`set_filter(Option<AssessmentRunFilter>)`](crate::client::fluent_builders::ListAssessmentRuns::set_filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssessmentRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssessmentRuns::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssessmentRuns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssessmentRuns::set_max_results): <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     /// - On success, responds with [`ListAssessmentRunsOutput`](crate::output::ListAssessmentRunsOutput) with field(s):
     ///   - [`assessment_run_arns(Option<Vec<String>>)`](crate::output::ListAssessmentRunsOutput::assessment_run_arns): <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssessmentRunsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -338,12 +338,12 @@ where
         fluent_builders::ListAssessmentRuns::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssessmentTargets`](crate::client::fluent_builders::ListAssessmentTargets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentTargets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentTargets::into_paginator).
     ///
-    /// - Takes [`ListAssessmentTargetsInput`](crate::input::ListAssessmentTargetsInput) with field(s):
-    ///   - [`filter(Option<AssessmentTargetFilter>)`](crate::input::ListAssessmentTargetsInput::filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssessmentTargetsInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssessmentTargetsInput::max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter(AssessmentTargetFilter)`](crate::client::fluent_builders::ListAssessmentTargets::filter) / [`set_filter(Option<AssessmentTargetFilter>)`](crate::client::fluent_builders::ListAssessmentTargets::set_filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssessmentTargets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssessmentTargets::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssessmentTargets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssessmentTargets::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     /// - On success, responds with [`ListAssessmentTargetsOutput`](crate::output::ListAssessmentTargetsOutput) with field(s):
     ///   - [`assessment_target_arns(Option<Vec<String>>)`](crate::output::ListAssessmentTargetsOutput::assessment_target_arns): <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssessmentTargetsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -352,13 +352,13 @@ where
         fluent_builders::ListAssessmentTargets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssessmentTemplates`](crate::client::fluent_builders::ListAssessmentTemplates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentTemplates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentTemplates::into_paginator).
     ///
-    /// - Takes [`ListAssessmentTemplatesInput`](crate::input::ListAssessmentTemplatesInput) with field(s):
-    ///   - [`assessment_target_arns(Option<Vec<String>>)`](crate::input::ListAssessmentTemplatesInput::assessment_target_arns): <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    ///   - [`filter(Option<AssessmentTemplateFilter>)`](crate::input::ListAssessmentTemplatesInput::filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssessmentTemplatesInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssessmentTemplatesInput::max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_target_arns(Vec<String>)`](crate::client::fluent_builders::ListAssessmentTemplates::assessment_target_arns) / [`set_assessment_target_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListAssessmentTemplates::set_assessment_target_arns): <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
+    ///   - [`filter(AssessmentTemplateFilter)`](crate::client::fluent_builders::ListAssessmentTemplates::filter) / [`set_filter(Option<AssessmentTemplateFilter>)`](crate::client::fluent_builders::ListAssessmentTemplates::set_filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssessmentTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssessmentTemplates::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssessmentTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssessmentTemplates::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     /// - On success, responds with [`ListAssessmentTemplatesOutput`](crate::output::ListAssessmentTemplatesOutput) with field(s):
     ///   - [`assessment_template_arns(Option<Vec<String>>)`](crate::output::ListAssessmentTemplatesOutput::assessment_template_arns): <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssessmentTemplatesOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -367,12 +367,12 @@ where
         fluent_builders::ListAssessmentTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEventSubscriptions`](crate::client::fluent_builders::ListEventSubscriptions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventSubscriptions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEventSubscriptions::into_paginator).
     ///
-    /// - Takes [`ListEventSubscriptionsInput`](crate::input::ListEventSubscriptionsInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListEventSubscriptionsInput::resource_arn): <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListEventSubscriptionsInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEventSubscriptionsInput::max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListEventSubscriptions::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListEventSubscriptions::set_resource_arn): <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEventSubscriptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEventSubscriptions::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEventSubscriptions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEventSubscriptions::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     /// - On success, responds with [`ListEventSubscriptionsOutput`](crate::output::ListEventSubscriptionsOutput) with field(s):
     ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::output::ListEventSubscriptionsOutput::subscriptions): <p>Details of the returned event subscriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEventSubscriptionsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -381,12 +381,12 @@ where
         fluent_builders::ListEventSubscriptions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListExclusions`](crate::client::fluent_builders::ListExclusions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExclusions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExclusions::into_paginator).
     ///
-    /// - Takes [`ListExclusionsInput`](crate::input::ListExclusionsInput) with field(s):
-    ///   - [`assessment_run_arn(Option<String>)`](crate::input::ListExclusionsInput::assessment_run_arn): <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListExclusionsInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListExclusionsInput::max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_run_arn(impl Into<String>)`](crate::client::fluent_builders::ListExclusions::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::client::fluent_builders::ListExclusions::set_assessment_run_arn): <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExclusions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExclusions::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExclusions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExclusions::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     /// - On success, responds with [`ListExclusionsOutput`](crate::output::ListExclusionsOutput) with field(s):
     ///   - [`exclusion_arns(Option<Vec<String>>)`](crate::output::ListExclusionsOutput::exclusion_arns): <p>A list of exclusions' ARNs returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListExclusionsOutput::next_token): <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -395,13 +395,13 @@ where
         fluent_builders::ListExclusions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFindings`](crate::client::fluent_builders::ListFindings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     ///
-    /// - Takes [`ListFindingsInput`](crate::input::ListFindingsInput) with field(s):
-    ///   - [`assessment_run_arns(Option<Vec<String>>)`](crate::input::ListFindingsInput::assessment_run_arns): <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    ///   - [`filter(Option<FindingFilter>)`](crate::input::ListFindingsInput::filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFindingsInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFindingsInput::max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_run_arns(Vec<String>)`](crate::client::fluent_builders::ListFindings::assessment_run_arns) / [`set_assessment_run_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListFindings::set_assessment_run_arns): <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
+    ///   - [`filter(FindingFilter)`](crate::client::fluent_builders::ListFindings::filter) / [`set_filter(Option<FindingFilter>)`](crate::client::fluent_builders::ListFindings::set_filter): <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>  <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindings::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFindings::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     /// - On success, responds with [`ListFindingsOutput`](crate::output::ListFindingsOutput) with field(s):
     ///   - [`finding_arns(Option<Vec<String>>)`](crate::output::ListFindingsOutput::finding_arns): <p>A list of ARNs that specifies the findings returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFindingsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -410,11 +410,11 @@ where
         fluent_builders::ListFindings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRulesPackages`](crate::client::fluent_builders::ListRulesPackages) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRulesPackages::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRulesPackages::into_paginator).
     ///
-    /// - Takes [`ListRulesPackagesInput`](crate::input::ListRulesPackagesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListRulesPackagesInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListRulesPackagesInput::max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRulesPackages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRulesPackages::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRulesPackages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRulesPackages::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     /// - On success, responds with [`ListRulesPackagesOutput`](crate::output::ListRulesPackagesOutput) with field(s):
     ///   - [`rules_package_arns(Option<Vec<String>>)`](crate::output::ListRulesPackagesOutput::rules_package_arns): <p>The list of ARNs that specifies the rules packages returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRulesPackagesOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -424,8 +424,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN that specifies the assessment template whose tags you want to list.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN that specifies the assessment template whose tags you want to list.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A collection of key and value pairs.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -433,12 +433,12 @@ where
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`PreviewAgents`](crate::client::fluent_builders::PreviewAgents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::PreviewAgents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::PreviewAgents::into_paginator).
     ///
-    /// - Takes [`PreviewAgentsInput`](crate::input::PreviewAgentsInput) with field(s):
-    ///   - [`preview_agents_arn(Option<String>)`](crate::input::PreviewAgentsInput::preview_agents_arn): <p>The ARN of the assessment target whose agents you want to preview.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::PreviewAgentsInput::next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::PreviewAgentsInput::max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`preview_agents_arn(impl Into<String>)`](crate::client::fluent_builders::PreviewAgents::preview_agents_arn) / [`set_preview_agents_arn(Option<String>)`](crate::client::fluent_builders::PreviewAgents::set_preview_agents_arn): <p>The ARN of the assessment target whose agents you want to preview.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::PreviewAgents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::PreviewAgents::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::PreviewAgents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::PreviewAgents::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     /// - On success, responds with [`PreviewAgentsOutput`](crate::output::PreviewAgentsOutput) with field(s):
     ///   - [`agent_previews(Option<Vec<AgentPreview>>)`](crate::output::PreviewAgentsOutput::agent_previews): <p>The resulting list of agents.</p>
     ///   - [`next_token(Option<String>)`](crate::output::PreviewAgentsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -448,8 +448,8 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterCrossAccountAccessRole`](crate::client::fluent_builders::RegisterCrossAccountAccessRole) operation.
     ///
-    /// - Takes [`RegisterCrossAccountAccessRoleInput`](crate::input::RegisterCrossAccountAccessRoleInput) with field(s):
-    ///   - [`role_arn(Option<String>)`](crate::input::RegisterCrossAccountAccessRoleInput::role_arn): <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterCrossAccountAccessRole::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::RegisterCrossAccountAccessRole::set_role_arn): <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
     /// - On success, responds with [`RegisterCrossAccountAccessRoleOutput`](crate::output::RegisterCrossAccountAccessRoleOutput)
 
     /// - On failure, responds with [`SdkError<RegisterCrossAccountAccessRoleError>`](crate::error::RegisterCrossAccountAccessRoleError)
@@ -460,9 +460,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveAttributesFromFindings`](crate::client::fluent_builders::RemoveAttributesFromFindings) operation.
     ///
-    /// - Takes [`RemoveAttributesFromFindingsInput`](crate::input::RemoveAttributesFromFindingsInput) with field(s):
-    ///   - [`finding_arns(Option<Vec<String>>)`](crate::input::RemoveAttributesFromFindingsInput::finding_arns): <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    ///   - [`attribute_keys(Option<Vec<String>>)`](crate::input::RemoveAttributesFromFindingsInput::attribute_keys): <p>The array of attribute keys that you want to remove from specified findings.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_arns(Vec<String>)`](crate::client::fluent_builders::RemoveAttributesFromFindings::finding_arns) / [`set_finding_arns(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveAttributesFromFindings::set_finding_arns): <p>The ARNs that specify the findings that you want to remove attributes from.</p>
+    ///   - [`attribute_keys(Vec<String>)`](crate::client::fluent_builders::RemoveAttributesFromFindings::attribute_keys) / [`set_attribute_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveAttributesFromFindings::set_attribute_keys): <p>The array of attribute keys that you want to remove from specified findings.</p>
     /// - On success, responds with [`RemoveAttributesFromFindingsOutput`](crate::output::RemoveAttributesFromFindingsOutput) with field(s):
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::output::RemoveAttributesFromFindingsOutput::failed_items): <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<RemoveAttributesFromFindingsError>`](crate::error::RemoveAttributesFromFindingsError)
@@ -473,9 +473,9 @@ where
     }
     /// Constructs a fluent builder for the [`SetTagsForResource`](crate::client::fluent_builders::SetTagsForResource) operation.
     ///
-    /// - Takes [`SetTagsForResourceInput`](crate::input::SetTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::SetTagsForResourceInput::resource_arn): <p>The ARN of the assessment template that you want to set tags to.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::SetTagsForResourceInput::tags): <p>A collection of key and value pairs that you want to set to the assessment template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::SetTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::SetTagsForResource::set_resource_arn): <p>The ARN of the assessment template that you want to set tags to.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::SetTagsForResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::SetTagsForResource::set_tags): <p>A collection of key and value pairs that you want to set to the assessment template.</p>
     /// - On success, responds with [`SetTagsForResourceOutput`](crate::output::SetTagsForResourceOutput)
 
     /// - On failure, responds with [`SdkError<SetTagsForResourceError>`](crate::error::SetTagsForResourceError)
@@ -484,9 +484,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartAssessmentRun`](crate::client::fluent_builders::StartAssessmentRun) operation.
     ///
-    /// - Takes [`StartAssessmentRunInput`](crate::input::StartAssessmentRunInput) with field(s):
-    ///   - [`assessment_template_arn(Option<String>)`](crate::input::StartAssessmentRunInput::assessment_template_arn): <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    ///   - [`assessment_run_name(Option<String>)`](crate::input::StartAssessmentRunInput::assessment_run_name): <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_template_arn(impl Into<String>)`](crate::client::fluent_builders::StartAssessmentRun::assessment_template_arn) / [`set_assessment_template_arn(Option<String>)`](crate::client::fluent_builders::StartAssessmentRun::set_assessment_template_arn): <p>The ARN of the assessment template of the assessment run that you want to start.</p>
+    ///   - [`assessment_run_name(impl Into<String>)`](crate::client::fluent_builders::StartAssessmentRun::assessment_run_name) / [`set_assessment_run_name(Option<String>)`](crate::client::fluent_builders::StartAssessmentRun::set_assessment_run_name): <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
     /// - On success, responds with [`StartAssessmentRunOutput`](crate::output::StartAssessmentRunOutput) with field(s):
     ///   - [`assessment_run_arn(Option<String>)`](crate::output::StartAssessmentRunOutput::assessment_run_arn): <p>The ARN of the assessment run that has been started.</p>
     /// - On failure, responds with [`SdkError<StartAssessmentRunError>`](crate::error::StartAssessmentRunError)
@@ -495,9 +495,9 @@ where
     }
     /// Constructs a fluent builder for the [`StopAssessmentRun`](crate::client::fluent_builders::StopAssessmentRun) operation.
     ///
-    /// - Takes [`StopAssessmentRunInput`](crate::input::StopAssessmentRunInput) with field(s):
-    ///   - [`assessment_run_arn(Option<String>)`](crate::input::StopAssessmentRunInput::assessment_run_arn): <p>The ARN of the assessment run that you want to stop.</p>
-    ///   - [`stop_action(Option<StopAction>)`](crate::input::StopAssessmentRunInput::stop_action): <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_run_arn(impl Into<String>)`](crate::client::fluent_builders::StopAssessmentRun::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::client::fluent_builders::StopAssessmentRun::set_assessment_run_arn): <p>The ARN of the assessment run that you want to stop.</p>
+    ///   - [`stop_action(StopAction)`](crate::client::fluent_builders::StopAssessmentRun::stop_action) / [`set_stop_action(Option<StopAction>)`](crate::client::fluent_builders::StopAssessmentRun::set_stop_action): <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
     /// - On success, responds with [`StopAssessmentRunOutput`](crate::output::StopAssessmentRunOutput)
 
     /// - On failure, responds with [`SdkError<StopAssessmentRunError>`](crate::error::StopAssessmentRunError)
@@ -506,10 +506,10 @@ where
     }
     /// Constructs a fluent builder for the [`SubscribeToEvent`](crate::client::fluent_builders::SubscribeToEvent) operation.
     ///
-    /// - Takes [`SubscribeToEventInput`](crate::input::SubscribeToEventInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::SubscribeToEventInput::resource_arn): <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
-    ///   - [`event(Option<InspectorEvent>)`](crate::input::SubscribeToEventInput::event): <p>The event for which you want to receive SNS notifications.</p>
-    ///   - [`topic_arn(Option<String>)`](crate::input::SubscribeToEventInput::topic_arn): <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::SubscribeToEvent::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::SubscribeToEvent::set_resource_arn): <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
+    ///   - [`event(InspectorEvent)`](crate::client::fluent_builders::SubscribeToEvent::event) / [`set_event(Option<InspectorEvent>)`](crate::client::fluent_builders::SubscribeToEvent::set_event): <p>The event for which you want to receive SNS notifications.</p>
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::SubscribeToEvent::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::SubscribeToEvent::set_topic_arn): <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
     /// - On success, responds with [`SubscribeToEventOutput`](crate::output::SubscribeToEventOutput)
 
     /// - On failure, responds with [`SdkError<SubscribeToEventError>`](crate::error::SubscribeToEventError)
@@ -518,10 +518,10 @@ where
     }
     /// Constructs a fluent builder for the [`UnsubscribeFromEvent`](crate::client::fluent_builders::UnsubscribeFromEvent) operation.
     ///
-    /// - Takes [`UnsubscribeFromEventInput`](crate::input::UnsubscribeFromEventInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UnsubscribeFromEventInput::resource_arn): <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
-    ///   - [`event(Option<InspectorEvent>)`](crate::input::UnsubscribeFromEventInput::event): <p>The event for which you want to stop receiving SNS notifications.</p>
-    ///   - [`topic_arn(Option<String>)`](crate::input::UnsubscribeFromEventInput::topic_arn): <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UnsubscribeFromEvent::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UnsubscribeFromEvent::set_resource_arn): <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
+    ///   - [`event(InspectorEvent)`](crate::client::fluent_builders::UnsubscribeFromEvent::event) / [`set_event(Option<InspectorEvent>)`](crate::client::fluent_builders::UnsubscribeFromEvent::set_event): <p>The event for which you want to stop receiving SNS notifications.</p>
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::UnsubscribeFromEvent::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::UnsubscribeFromEvent::set_topic_arn): <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
     /// - On success, responds with [`UnsubscribeFromEventOutput`](crate::output::UnsubscribeFromEventOutput)
 
     /// - On failure, responds with [`SdkError<UnsubscribeFromEventError>`](crate::error::UnsubscribeFromEventError)
@@ -530,10 +530,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAssessmentTarget`](crate::client::fluent_builders::UpdateAssessmentTarget) operation.
     ///
-    /// - Takes [`UpdateAssessmentTargetInput`](crate::input::UpdateAssessmentTargetInput) with field(s):
-    ///   - [`assessment_target_arn(Option<String>)`](crate::input::UpdateAssessmentTargetInput::assessment_target_arn): <p>The ARN of the assessment target that you want to update.</p>
-    ///   - [`assessment_target_name(Option<String>)`](crate::input::UpdateAssessmentTargetInput::assessment_target_name): <p>The name of the assessment target that you want to update.</p>
-    ///   - [`resource_group_arn(Option<String>)`](crate::input::UpdateAssessmentTargetInput::resource_group_arn): <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_target_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAssessmentTarget::assessment_target_arn) / [`set_assessment_target_arn(Option<String>)`](crate::client::fluent_builders::UpdateAssessmentTarget::set_assessment_target_arn): <p>The ARN of the assessment target that you want to update.</p>
+    ///   - [`assessment_target_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAssessmentTarget::assessment_target_name) / [`set_assessment_target_name(Option<String>)`](crate::client::fluent_builders::UpdateAssessmentTarget::set_assessment_target_name): <p>The name of the assessment target that you want to update.</p>
+    ///   - [`resource_group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAssessmentTarget::resource_group_arn) / [`set_resource_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateAssessmentTarget::set_resource_group_arn): <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
     /// - On success, responds with [`UpdateAssessmentTargetOutput`](crate::output::UpdateAssessmentTargetOutput)
 
     /// - On failure, responds with [`SdkError<UpdateAssessmentTargetError>`](crate::error::UpdateAssessmentTargetError)

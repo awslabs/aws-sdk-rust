@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`CreateReplicationSet`](crate::client::fluent_builders::CreateReplicationSet) operation.
     ///
-    /// - Takes [`CreateReplicationSetInput`](crate::input::CreateReplicationSetInput) with field(s):
-    ///   - [`regions(Option<HashMap<String, RegionMapInputValue>>)`](crate::input::CreateReplicationSetInput::regions): <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateReplicationSetInput::client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`regions(HashMap<String, RegionMapInputValue>)`](crate::client::fluent_builders::CreateReplicationSet::regions) / [`set_regions(Option<HashMap<String, RegionMapInputValue>>)`](crate::client::fluent_builders::CreateReplicationSet::set_regions): <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateReplicationSet::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
     /// - On success, responds with [`CreateReplicationSetOutput`](crate::output::CreateReplicationSetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateReplicationSetOutput::arn): <p>The Amazon Resource Name (ARN) of the replication set. </p>
     /// - On failure, responds with [`SdkError<CreateReplicationSetError>`](crate::error::CreateReplicationSetError)
@@ -96,15 +96,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateResponsePlan`](crate::client::fluent_builders::CreateResponsePlan) operation.
     ///
-    /// - Takes [`CreateResponsePlanInput`](crate::input::CreateResponsePlanInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::CreateResponsePlanInput::client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateResponsePlanInput::name): <p>The short format name of the response plan. Can't include spaces.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateResponsePlanInput::display_name): <p>The long format of the response plan name. This field can contain spaces.</p>
-    ///   - [`incident_template(Option<IncidentTemplate>)`](crate::input::CreateResponsePlanInput::incident_template): <p>Details used to create an incident when using this response plan.</p>
-    ///   - [`chat_channel(Option<ChatChannel>)`](crate::input::CreateResponsePlanInput::chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    ///   - [`engagements(Option<Vec<String>>)`](crate::input::CreateResponsePlanInput::engagements): <p>The contacts and escalation plans that the response plan engages during an incident.</p>
-    ///   - [`actions(Option<Vec<Action>>)`](crate::input::CreateResponsePlanInput::actions): <p>The actions that the response plan starts at the beginning of an incident.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateResponsePlanInput::tags): <p>A list of tags that you are adding to the response plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateResponsePlan::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateResponsePlan::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateResponsePlan::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateResponsePlan::set_name): <p>The short format name of the response plan. Can't include spaces.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateResponsePlan::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateResponsePlan::set_display_name): <p>The long format of the response plan name. This field can contain spaces.</p>
+    ///   - [`incident_template(IncidentTemplate)`](crate::client::fluent_builders::CreateResponsePlan::incident_template) / [`set_incident_template(Option<IncidentTemplate>)`](crate::client::fluent_builders::CreateResponsePlan::set_incident_template): <p>Details used to create an incident when using this response plan.</p>
+    ///   - [`chat_channel(ChatChannel)`](crate::client::fluent_builders::CreateResponsePlan::chat_channel) / [`set_chat_channel(Option<ChatChannel>)`](crate::client::fluent_builders::CreateResponsePlan::set_chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>
+    ///   - [`engagements(Vec<String>)`](crate::client::fluent_builders::CreateResponsePlan::engagements) / [`set_engagements(Option<Vec<String>>)`](crate::client::fluent_builders::CreateResponsePlan::set_engagements): <p>The contacts and escalation plans that the response plan engages during an incident.</p>
+    ///   - [`actions(Vec<Action>)`](crate::client::fluent_builders::CreateResponsePlan::actions) / [`set_actions(Option<Vec<Action>>)`](crate::client::fluent_builders::CreateResponsePlan::set_actions): <p>The actions that the response plan starts at the beginning of an incident.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateResponsePlan::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateResponsePlan::set_tags): <p>A list of tags that you are adding to the response plan.</p>
     /// - On success, responds with [`CreateResponsePlanOutput`](crate::output::CreateResponsePlanOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateResponsePlanOutput::arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
     /// - On failure, responds with [`SdkError<CreateResponsePlanError>`](crate::error::CreateResponsePlanError)
@@ -113,12 +113,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTimelineEvent`](crate::client::fluent_builders::CreateTimelineEvent) operation.
     ///
-    /// - Takes [`CreateTimelineEventInput`](crate::input::CreateTimelineEventInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::CreateTimelineEventInput::client_token): <p>A token ensuring that the action is called only once with the specified details.</p>
-    ///   - [`incident_record_arn(Option<String>)`](crate::input::CreateTimelineEventInput::incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
-    ///   - [`event_time(Option<DateTime>)`](crate::input::CreateTimelineEventInput::event_time): <p>The time that the event occurred.</p>
-    ///   - [`event_type(Option<String>)`](crate::input::CreateTimelineEventInput::event_type): <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
-    ///   - [`event_data(Option<String>)`](crate::input::CreateTimelineEventInput::event_data): <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_client_token): <p>A token ensuring that the action is called only once with the specified details.</p>
+    ///   - [`incident_record_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::incident_record_arn) / [`set_incident_record_arn(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
+    ///   - [`event_time(DateTime)`](crate::client::fluent_builders::CreateTimelineEvent::event_time) / [`set_event_time(Option<DateTime>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_time): <p>The time that the event occurred.</p>
+    ///   - [`event_type(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::event_type) / [`set_event_type(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_type): <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
+    ///   - [`event_data(impl Into<String>)`](crate::client::fluent_builders::CreateTimelineEvent::event_data) / [`set_event_data(Option<String>)`](crate::client::fluent_builders::CreateTimelineEvent::set_event_data): <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
     /// - On success, responds with [`CreateTimelineEventOutput`](crate::output::CreateTimelineEventOutput) with field(s):
     ///   - [`incident_record_arn(Option<String>)`](crate::output::CreateTimelineEventOutput::incident_record_arn): <p>The ARN of the incident record that you added the event to.</p>
     ///   - [`event_id(Option<String>)`](crate::output::CreateTimelineEventOutput::event_id): <p>The ID of the event for easy reference later. </p>
@@ -128,8 +128,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteIncidentRecord`](crate::client::fluent_builders::DeleteIncidentRecord) operation.
     ///
-    /// - Takes [`DeleteIncidentRecordInput`](crate::input::DeleteIncidentRecordInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::DeleteIncidentRecordInput::arn): <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteIncidentRecord::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteIncidentRecord::set_arn): <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
     /// - On success, responds with [`DeleteIncidentRecordOutput`](crate::output::DeleteIncidentRecordOutput)
 
     /// - On failure, responds with [`SdkError<DeleteIncidentRecordError>`](crate::error::DeleteIncidentRecordError)
@@ -138,8 +138,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteReplicationSet`](crate::client::fluent_builders::DeleteReplicationSet) operation.
     ///
-    /// - Takes [`DeleteReplicationSetInput`](crate::input::DeleteReplicationSetInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::DeleteReplicationSetInput::arn): <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteReplicationSet::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteReplicationSet::set_arn): <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
     /// - On success, responds with [`DeleteReplicationSetOutput`](crate::output::DeleteReplicationSetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteReplicationSetError>`](crate::error::DeleteReplicationSetError)
@@ -148,9 +148,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
-    /// - Takes [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::DeleteResourcePolicyInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
-    ///   - [`policy_id(Option<String>)`](crate::input::DeleteResourcePolicyInput::policy_id): <p>The ID of the resource policy you're deleting.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
+    ///   - [`policy_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::policy_id) / [`set_policy_id(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_policy_id): <p>The ID of the resource policy you're deleting.</p>
     /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
@@ -159,8 +159,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteResponsePlan`](crate::client::fluent_builders::DeleteResponsePlan) operation.
     ///
-    /// - Takes [`DeleteResponsePlanInput`](crate::input::DeleteResponsePlanInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::DeleteResponsePlanInput::arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResponsePlan::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteResponsePlan::set_arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
     /// - On success, responds with [`DeleteResponsePlanOutput`](crate::output::DeleteResponsePlanOutput)
 
     /// - On failure, responds with [`SdkError<DeleteResponsePlanError>`](crate::error::DeleteResponsePlanError)
@@ -169,9 +169,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTimelineEvent`](crate::client::fluent_builders::DeleteTimelineEvent) operation.
     ///
-    /// - Takes [`DeleteTimelineEventInput`](crate::input::DeleteTimelineEventInput) with field(s):
-    ///   - [`incident_record_arn(Option<String>)`](crate::input::DeleteTimelineEventInput::incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    ///   - [`event_id(Option<String>)`](crate::input::DeleteTimelineEventInput::event_id): <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`incident_record_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTimelineEvent::incident_record_arn) / [`set_incident_record_arn(Option<String>)`](crate::client::fluent_builders::DeleteTimelineEvent::set_incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    ///   - [`event_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTimelineEvent::event_id) / [`set_event_id(Option<String>)`](crate::client::fluent_builders::DeleteTimelineEvent::set_event_id): <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
     /// - On success, responds with [`DeleteTimelineEventOutput`](crate::output::DeleteTimelineEventOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTimelineEventError>`](crate::error::DeleteTimelineEventError)
@@ -180,8 +180,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetIncidentRecord`](crate::client::fluent_builders::GetIncidentRecord) operation.
     ///
-    /// - Takes [`GetIncidentRecordInput`](crate::input::GetIncidentRecordInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::GetIncidentRecordInput::arn): <p>The Amazon Resource Name (ARN) of the incident record.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetIncidentRecord::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetIncidentRecord::set_arn): <p>The Amazon Resource Name (ARN) of the incident record.</p>
     /// - On success, responds with [`GetIncidentRecordOutput`](crate::output::GetIncidentRecordOutput) with field(s):
     ///   - [`incident_record(Option<IncidentRecord>)`](crate::output::GetIncidentRecordOutput::incident_record): <p>Details the structure of the incident record.</p>
     /// - On failure, responds with [`SdkError<GetIncidentRecordError>`](crate::error::GetIncidentRecordError)
@@ -190,8 +190,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetReplicationSet`](crate::client::fluent_builders::GetReplicationSet) operation.
     ///
-    /// - Takes [`GetReplicationSetInput`](crate::input::GetReplicationSetInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::GetReplicationSetInput::arn): <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetReplicationSet::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetReplicationSet::set_arn): <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
     /// - On success, responds with [`GetReplicationSetOutput`](crate::output::GetReplicationSetOutput) with field(s):
     ///   - [`replication_set(Option<ReplicationSet>)`](crate::output::GetReplicationSetOutput::replication_set): <p>Details of the replication set.</p>
     /// - On failure, responds with [`SdkError<GetReplicationSetError>`](crate::error::GetReplicationSetError)
@@ -199,12 +199,12 @@ where
         fluent_builders::GetReplicationSet::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetResourcePolicies`](crate::client::fluent_builders::GetResourcePolicies) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourcePolicies::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetResourcePolicies::into_paginator).
     ///
-    /// - Takes [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::GetResourcePoliciesInput::resource_arn): <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetResourcePoliciesInput::max_results): <p>The maximum number of resource policies to display per page of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetResourcePoliciesInput::next_token): <p>The pagination token to continue to the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicies::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetResourcePolicies::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetResourcePolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetResourcePolicies::set_max_results): <p>The maximum number of resource policies to display per page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetResourcePolicies::set_next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On success, responds with [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput) with field(s):
     ///   - [`resource_policies(Option<Vec<ResourcePolicy>>)`](crate::output::GetResourcePoliciesOutput::resource_policies): <p>Details about the resource policy attached to the response plan.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetResourcePoliciesOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
@@ -214,8 +214,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetResponsePlan`](crate::client::fluent_builders::GetResponsePlan) operation.
     ///
-    /// - Takes [`GetResponsePlanInput`](crate::input::GetResponsePlanInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::GetResponsePlanInput::arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetResponsePlan::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetResponsePlan::set_arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
     /// - On success, responds with [`GetResponsePlanOutput`](crate::output::GetResponsePlanOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetResponsePlanOutput::arn): <p>The ARN of the response plan.</p>
     ///   - [`name(Option<String>)`](crate::output::GetResponsePlanOutput::name): <p>The short format name of the response plan. The name can't contain spaces.</p>
@@ -230,9 +230,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetTimelineEvent`](crate::client::fluent_builders::GetTimelineEvent) operation.
     ///
-    /// - Takes [`GetTimelineEventInput`](crate::input::GetTimelineEventInput) with field(s):
-    ///   - [`incident_record_arn(Option<String>)`](crate::input::GetTimelineEventInput::incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    ///   - [`event_id(Option<String>)`](crate::input::GetTimelineEventInput::event_id): <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`incident_record_arn(impl Into<String>)`](crate::client::fluent_builders::GetTimelineEvent::incident_record_arn) / [`set_incident_record_arn(Option<String>)`](crate::client::fluent_builders::GetTimelineEvent::set_incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    ///   - [`event_id(impl Into<String>)`](crate::client::fluent_builders::GetTimelineEvent::event_id) / [`set_event_id(Option<String>)`](crate::client::fluent_builders::GetTimelineEvent::set_event_id): <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
     /// - On success, responds with [`GetTimelineEventOutput`](crate::output::GetTimelineEventOutput) with field(s):
     ///   - [`event(Option<TimelineEvent>)`](crate::output::GetTimelineEventOutput::event): <p>Details about the timeline event.</p>
     /// - On failure, responds with [`SdkError<GetTimelineEventError>`](crate::error::GetTimelineEventError)
@@ -240,12 +240,12 @@ where
         fluent_builders::GetTimelineEvent::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListIncidentRecords`](crate::client::fluent_builders::ListIncidentRecords) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIncidentRecords::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIncidentRecords::into_paginator).
     ///
-    /// - Takes [`ListIncidentRecordsInput`](crate::input::ListIncidentRecordsInput) with field(s):
-    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListIncidentRecordsInput::filters): <p>Filters the list of incident records through which you are searching. You can filter on the following keys:</p>  <ul>   <li> <p> <code>creationTime</code> </p> </li>   <li> <p> <code>impact</code> </p> </li>   <li> <p> <code>status</code> </p> </li>   <li> <p> <code>createdBy</code> </p> </li>  </ul>  <p>Note the following when deciding how to use Filters:</p>  <ul>   <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>   <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>   <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>  </ul>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIncidentRecordsInput::max_results): <p>The maximum number of results per page.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIncidentRecordsInput::next_token): <p>The pagination token to continue to the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListIncidentRecords::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListIncidentRecords::set_filters): <p>Filters the list of incident records through which you are searching. You can filter on the following keys:</p>  <ul>   <li> <p> <code>creationTime</code> </p> </li>   <li> <p> <code>impact</code> </p> </li>   <li> <p> <code>status</code> </p> </li>   <li> <p> <code>createdBy</code> </p> </li>  </ul>  <p>Note the following when deciding how to use Filters:</p>  <ul>   <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>   <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>   <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>  </ul>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIncidentRecords::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIncidentRecords::set_max_results): <p>The maximum number of results per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIncidentRecords::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIncidentRecords::set_next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On success, responds with [`ListIncidentRecordsOutput`](crate::output::ListIncidentRecordsOutput) with field(s):
     ///   - [`incident_record_summaries(Option<Vec<IncidentRecordSummary>>)`](crate::output::ListIncidentRecordsOutput::incident_record_summaries): <p>The details of each listed incident record.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIncidentRecordsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
@@ -254,12 +254,12 @@ where
         fluent_builders::ListIncidentRecords::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRelatedItems`](crate::client::fluent_builders::ListRelatedItems) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRelatedItems::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRelatedItems::into_paginator).
     ///
-    /// - Takes [`ListRelatedItemsInput`](crate::input::ListRelatedItemsInput) with field(s):
-    ///   - [`incident_record_arn(Option<String>)`](crate::input::ListRelatedItemsInput::incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListRelatedItemsInput::max_results): <p>The maximum number of related items per page.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListRelatedItemsInput::next_token): <p>The pagination token to continue to the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`incident_record_arn(impl Into<String>)`](crate::client::fluent_builders::ListRelatedItems::incident_record_arn) / [`set_incident_record_arn(Option<String>)`](crate::client::fluent_builders::ListRelatedItems::set_incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRelatedItems::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRelatedItems::set_max_results): <p>The maximum number of related items per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRelatedItems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRelatedItems::set_next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On success, responds with [`ListRelatedItemsOutput`](crate::output::ListRelatedItemsOutput) with field(s):
     ///   - [`related_items(Option<Vec<RelatedItem>>)`](crate::output::ListRelatedItemsOutput::related_items): <p>Details about each related item.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRelatedItemsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
@@ -268,11 +268,11 @@ where
         fluent_builders::ListRelatedItems::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListReplicationSets`](crate::client::fluent_builders::ListReplicationSets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReplicationSets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReplicationSets::into_paginator).
     ///
-    /// - Takes [`ListReplicationSetsInput`](crate::input::ListReplicationSetsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListReplicationSetsInput::max_results): <p>The maximum number of results per page. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListReplicationSetsInput::next_token): <p>The pagination token to continue to the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReplicationSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReplicationSets::set_max_results): <p>The maximum number of results per page. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReplicationSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReplicationSets::set_next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On success, responds with [`ListReplicationSetsOutput`](crate::output::ListReplicationSetsOutput) with field(s):
     ///   - [`replication_set_arns(Option<Vec<String>>)`](crate::output::ListReplicationSetsOutput::replication_set_arns): <p>The Amazon Resource Name (ARN) of the list replication set.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListReplicationSetsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
@@ -281,11 +281,11 @@ where
         fluent_builders::ListReplicationSets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListResponsePlans`](crate::client::fluent_builders::ListResponsePlans) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResponsePlans::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResponsePlans::into_paginator).
     ///
-    /// - Takes [`ListResponsePlansInput`](crate::input::ListResponsePlansInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListResponsePlansInput::max_results): <p>The maximum number of response plans per page.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListResponsePlansInput::next_token): <p>The pagination token to continue to the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResponsePlans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListResponsePlans::set_max_results): <p>The maximum number of response plans per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResponsePlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResponsePlans::set_next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On success, responds with [`ListResponsePlansOutput`](crate::output::ListResponsePlansOutput) with field(s):
     ///   - [`response_plan_summaries(Option<Vec<ResponsePlanSummary>>)`](crate::output::ListResponsePlansOutput::response_plan_summaries): <p>Details of each response plan.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListResponsePlansOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
@@ -295,8 +295,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags for the response plan.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -304,15 +304,15 @@ where
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTimelineEvents`](crate::client::fluent_builders::ListTimelineEvents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTimelineEvents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTimelineEvents::into_paginator).
     ///
-    /// - Takes [`ListTimelineEventsInput`](crate::input::ListTimelineEventsInput) with field(s):
-    ///   - [`incident_record_arn(Option<String>)`](crate::input::ListTimelineEventsInput::incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListTimelineEventsInput::filters): <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>  <ul>   <li> <p> <code>eventTime</code> </p> </li>   <li> <p> <code>eventType</code> </p> </li>  </ul>  <p>Note the following when deciding how to use Filters:</p>  <ul>   <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>   <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>   <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>  </ul>
-    ///   - [`sort_by(Option<TimelineEventSort>)`](crate::input::ListTimelineEventsInput::sort_by): <p>Sort by the specified key value pair.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListTimelineEventsInput::sort_order): <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTimelineEventsInput::max_results): <p>The maximum number of results per page.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTimelineEventsInput::next_token): <p>The pagination token to continue to the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`incident_record_arn(impl Into<String>)`](crate::client::fluent_builders::ListTimelineEvents::incident_record_arn) / [`set_incident_record_arn(Option<String>)`](crate::client::fluent_builders::ListTimelineEvents::set_incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListTimelineEvents::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListTimelineEvents::set_filters): <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>  <ul>   <li> <p> <code>eventTime</code> </p> </li>   <li> <p> <code>eventType</code> </p> </li>  </ul>  <p>Note the following when deciding how to use Filters:</p>  <ul>   <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>   <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>   <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>  </ul>
+    ///   - [`sort_by(TimelineEventSort)`](crate::client::fluent_builders::ListTimelineEvents::sort_by) / [`set_sort_by(Option<TimelineEventSort>)`](crate::client::fluent_builders::ListTimelineEvents::set_sort_by): <p>Sort by the specified key value pair.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListTimelineEvents::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListTimelineEvents::set_sort_order): <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTimelineEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTimelineEvents::set_max_results): <p>The maximum number of results per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTimelineEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTimelineEvents::set_next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On success, responds with [`ListTimelineEventsOutput`](crate::output::ListTimelineEventsOutput) with field(s):
     ///   - [`event_summaries(Option<Vec<EventSummary>>)`](crate::output::ListTimelineEventsOutput::event_summaries): <p>Details about each event that occurred during the incident.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTimelineEventsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
@@ -322,9 +322,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
-    /// - Takes [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::PutResourcePolicyInput::resource_arn): <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
-    ///   - [`policy(Option<String>)`](crate::input::PutResourcePolicyInput::policy): <p>Details of the resource policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy): <p>Details of the resource policy.</p>
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
     ///   - [`policy_id(Option<String>)`](crate::output::PutResourcePolicyOutput::policy_id): <p>The ID of the resource policy.</p>
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
@@ -333,13 +333,13 @@ where
     }
     /// Constructs a fluent builder for the [`StartIncident`](crate::client::fluent_builders::StartIncident) operation.
     ///
-    /// - Takes [`StartIncidentInput`](crate::input::StartIncidentInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::StartIncidentInput::client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
-    ///   - [`response_plan_arn(Option<String>)`](crate::input::StartIncidentInput::response_plan_arn): <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    ///   - [`title(Option<String>)`](crate::input::StartIncidentInput::title): <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
-    ///   - [`impact(Option<i32>)`](crate::input::StartIncidentInput::impact): <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>  <p class="title"> <b>Possible impacts:</b> </p>  <ul>   <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>   <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>   <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>   <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>   <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>  </ul>
-    ///   - [`trigger_details(Option<TriggerDetails>)`](crate::input::StartIncidentInput::trigger_details): <p>Details of what created the incident record in Incident Manager.</p>
-    ///   - [`related_items(Option<Vec<RelatedItem>>)`](crate::input::StartIncidentInput::related_items): <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartIncident::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartIncident::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    ///   - [`response_plan_arn(impl Into<String>)`](crate::client::fluent_builders::StartIncident::response_plan_arn) / [`set_response_plan_arn(Option<String>)`](crate::client::fluent_builders::StartIncident::set_response_plan_arn): <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+    ///   - [`title(impl Into<String>)`](crate::client::fluent_builders::StartIncident::title) / [`set_title(Option<String>)`](crate::client::fluent_builders::StartIncident::set_title): <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
+    ///   - [`impact(i32)`](crate::client::fluent_builders::StartIncident::impact) / [`set_impact(Option<i32>)`](crate::client::fluent_builders::StartIncident::set_impact): <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>  <p class="title"> <b>Possible impacts:</b> </p>  <ul>   <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>   <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>   <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>   <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>   <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>  </ul>
+    ///   - [`trigger_details(TriggerDetails)`](crate::client::fluent_builders::StartIncident::trigger_details) / [`set_trigger_details(Option<TriggerDetails>)`](crate::client::fluent_builders::StartIncident::set_trigger_details): <p>Details of what created the incident record in Incident Manager.</p>
+    ///   - [`related_items(Vec<RelatedItem>)`](crate::client::fluent_builders::StartIncident::related_items) / [`set_related_items(Option<Vec<RelatedItem>>)`](crate::client::fluent_builders::StartIncident::set_related_items): <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     /// - On success, responds with [`StartIncidentOutput`](crate::output::StartIncidentOutput) with field(s):
     ///   - [`incident_record_arn(Option<String>)`](crate::output::StartIncidentOutput::incident_record_arn): <p>The ARN of the newly created incident record.</p>
     /// - On failure, responds with [`SdkError<StartIncidentError>`](crate::error::StartIncidentError)
@@ -348,9 +348,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A list of tags that you are adding to the response plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags that you are adding to the response plan.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -359,9 +359,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The name of the tag you're removing from the response plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The name of the tag you're removing from the response plan.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -370,10 +370,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDeletionProtection`](crate::client::fluent_builders::UpdateDeletionProtection) operation.
     ///
-    /// - Takes [`UpdateDeletionProtectionInput`](crate::input::UpdateDeletionProtectionInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::UpdateDeletionProtectionInput::arn): <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
-    ///   - [`deletion_protected(Option<bool>)`](crate::input::UpdateDeletionProtectionInput::deletion_protected): <p>Details if deletion protection is enabled or disabled in your account.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateDeletionProtectionInput::client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::set_arn): <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    ///   - [`deletion_protected(bool)`](crate::client::fluent_builders::UpdateDeletionProtection::deletion_protected) / [`set_deletion_protected(Option<bool>)`](crate::client::fluent_builders::UpdateDeletionProtection::set_deletion_protected): <p>Details if deletion protection is enabled or disabled in your account.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateDeletionProtection::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
     /// - On success, responds with [`UpdateDeletionProtectionOutput`](crate::output::UpdateDeletionProtectionOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDeletionProtectionError>`](crate::error::UpdateDeletionProtectionError)
@@ -382,15 +382,15 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateIncidentRecord`](crate::client::fluent_builders::UpdateIncidentRecord) operation.
     ///
-    /// - Takes [`UpdateIncidentRecordInput`](crate::input::UpdateIncidentRecordInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateIncidentRecordInput::client_token): <p>A token that ensures that the operation is called only once with the specified details.</p>
-    ///   - [`arn(Option<String>)`](crate::input::UpdateIncidentRecordInput::arn): <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-    ///   - [`title(Option<String>)`](crate::input::UpdateIncidentRecordInput::title): <p>A brief description of the incident.</p>
-    ///   - [`summary(Option<String>)`](crate::input::UpdateIncidentRecordInput::summary): <p>A longer description of what occurred during the incident.</p>
-    ///   - [`impact(Option<i32>)`](crate::input::UpdateIncidentRecordInput::impact): <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>  <p class="title"> <b>Possible impacts:</b> </p>  <ul>   <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>   <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>   <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>   <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>   <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>  </ul>
-    ///   - [`status(Option<IncidentRecordStatus>)`](crate::input::UpdateIncidentRecordInput::status): <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
-    ///   - [`chat_channel(Option<ChatChannel>)`](crate::input::UpdateIncidentRecordInput::chat_channel): <p>The Chatbot chat channel where responders can collaborate.</p>
-    ///   - [`notification_targets(Option<Vec<NotificationTargetItem>>)`](crate::input::UpdateIncidentRecordInput::notification_targets): <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>  <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateIncidentRecord::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateIncidentRecord::set_client_token): <p>A token that ensures that the operation is called only once with the specified details.</p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIncidentRecord::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateIncidentRecord::set_arn): <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
+    ///   - [`title(impl Into<String>)`](crate::client::fluent_builders::UpdateIncidentRecord::title) / [`set_title(Option<String>)`](crate::client::fluent_builders::UpdateIncidentRecord::set_title): <p>A brief description of the incident.</p>
+    ///   - [`summary(impl Into<String>)`](crate::client::fluent_builders::UpdateIncidentRecord::summary) / [`set_summary(Option<String>)`](crate::client::fluent_builders::UpdateIncidentRecord::set_summary): <p>A longer description of what occurred during the incident.</p>
+    ///   - [`impact(i32)`](crate::client::fluent_builders::UpdateIncidentRecord::impact) / [`set_impact(Option<i32>)`](crate::client::fluent_builders::UpdateIncidentRecord::set_impact): <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>  <p class="title"> <b>Possible impacts:</b> </p>  <ul>   <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>   <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>   <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>   <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>   <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>  </ul>
+    ///   - [`status(IncidentRecordStatus)`](crate::client::fluent_builders::UpdateIncidentRecord::status) / [`set_status(Option<IncidentRecordStatus>)`](crate::client::fluent_builders::UpdateIncidentRecord::set_status): <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
+    ///   - [`chat_channel(ChatChannel)`](crate::client::fluent_builders::UpdateIncidentRecord::chat_channel) / [`set_chat_channel(Option<ChatChannel>)`](crate::client::fluent_builders::UpdateIncidentRecord::set_chat_channel): <p>The Chatbot chat channel where responders can collaborate.</p>
+    ///   - [`notification_targets(Vec<NotificationTargetItem>)`](crate::client::fluent_builders::UpdateIncidentRecord::notification_targets) / [`set_notification_targets(Option<Vec<NotificationTargetItem>>)`](crate::client::fluent_builders::UpdateIncidentRecord::set_notification_targets): <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>  <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     /// - On success, responds with [`UpdateIncidentRecordOutput`](crate::output::UpdateIncidentRecordOutput)
 
     /// - On failure, responds with [`SdkError<UpdateIncidentRecordError>`](crate::error::UpdateIncidentRecordError)
@@ -399,10 +399,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRelatedItems`](crate::client::fluent_builders::UpdateRelatedItems) operation.
     ///
-    /// - Takes [`UpdateRelatedItemsInput`](crate::input::UpdateRelatedItemsInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateRelatedItemsInput::client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
-    ///   - [`incident_record_arn(Option<String>)`](crate::input::UpdateRelatedItemsInput::incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
-    ///   - [`related_items_update(Option<RelatedItemsUpdate>)`](crate::input::UpdateRelatedItemsInput::related_items_update): <p>Details about the item you are adding or deleting.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRelatedItems::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateRelatedItems::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    ///   - [`incident_record_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRelatedItems::incident_record_arn) / [`set_incident_record_arn(Option<String>)`](crate::client::fluent_builders::UpdateRelatedItems::set_incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
+    ///   - [`related_items_update(RelatedItemsUpdate)`](crate::client::fluent_builders::UpdateRelatedItems::related_items_update) / [`set_related_items_update(Option<RelatedItemsUpdate>)`](crate::client::fluent_builders::UpdateRelatedItems::set_related_items_update): <p>Details about the item you are adding or deleting.</p>
     /// - On success, responds with [`UpdateRelatedItemsOutput`](crate::output::UpdateRelatedItemsOutput)
 
     /// - On failure, responds with [`SdkError<UpdateRelatedItemsError>`](crate::error::UpdateRelatedItemsError)
@@ -411,10 +411,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateReplicationSet`](crate::client::fluent_builders::UpdateReplicationSet) operation.
     ///
-    /// - Takes [`UpdateReplicationSetInput`](crate::input::UpdateReplicationSetInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::UpdateReplicationSetInput::arn): <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
-    ///   - [`actions(Option<Vec<UpdateReplicationSetAction>>)`](crate::input::UpdateReplicationSetInput::actions): <p>An action to add or delete a Region.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateReplicationSetInput::client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationSet::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateReplicationSet::set_arn): <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    ///   - [`actions(Vec<UpdateReplicationSetAction>)`](crate::client::fluent_builders::UpdateReplicationSet::actions) / [`set_actions(Option<Vec<UpdateReplicationSetAction>>)`](crate::client::fluent_builders::UpdateReplicationSet::set_actions): <p>An action to add or delete a Region.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateReplicationSet::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
     /// - On success, responds with [`UpdateReplicationSetOutput`](crate::output::UpdateReplicationSetOutput)
 
     /// - On failure, responds with [`SdkError<UpdateReplicationSetError>`](crate::error::UpdateReplicationSetError)
@@ -423,18 +423,18 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateResponsePlan`](crate::client::fluent_builders::UpdateResponsePlan) operation.
     ///
-    /// - Takes [`UpdateResponsePlanInput`](crate::input::UpdateResponsePlanInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateResponsePlanInput::client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
-    ///   - [`arn(Option<String>)`](crate::input::UpdateResponsePlanInput::arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateResponsePlanInput::display_name): <p>The long format name of the response plan. The display name can't contain spaces.</p>
-    ///   - [`incident_template_title(Option<String>)`](crate::input::UpdateResponsePlanInput::incident_template_title): <p>The short format name of the incident. The title can't contain spaces.</p>
-    ///   - [`incident_template_impact(Option<i32>)`](crate::input::UpdateResponsePlanInput::incident_template_impact): <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>  <p class="title"> <b>Possible impacts:</b> </p>  <ul>   <li> <p> <code>5</code> - Severe impact</p> </li>   <li> <p> <code>4</code> - High impact</p> </li>   <li> <p> <code>3</code> - Medium impact</p> </li>   <li> <p> <code>2</code> - Low impact</p> </li>   <li> <p> <code>1</code> - No impact</p> </li>  </ul>
-    ///   - [`incident_template_summary(Option<String>)`](crate::input::UpdateResponsePlanInput::incident_template_summary): <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
-    ///   - [`incident_template_dedupe_string(Option<String>)`](crate::input::UpdateResponsePlanInput::incident_template_dedupe_string): <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    ///   - [`incident_template_notification_targets(Option<Vec<NotificationTargetItem>>)`](crate::input::UpdateResponsePlanInput::incident_template_notification_targets): <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    ///   - [`chat_channel(Option<ChatChannel>)`](crate::input::UpdateResponsePlanInput::chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>  <p>Use the empty structure to remove the chat channel from the response plan.</p>
-    ///   - [`engagements(Option<Vec<String>>)`](crate::input::UpdateResponsePlanInput::engagements): <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
-    ///   - [`actions(Option<Vec<Action>>)`](crate::input::UpdateResponsePlanInput::actions): <p>The actions that this response plan takes at the beginning of an incident.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateResponsePlan::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateResponsePlan::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateResponsePlan::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateResponsePlan::set_arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResponsePlan::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateResponsePlan::set_display_name): <p>The long format name of the response plan. The display name can't contain spaces.</p>
+    ///   - [`incident_template_title(impl Into<String>)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_title) / [`set_incident_template_title(Option<String>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_title): <p>The short format name of the incident. The title can't contain spaces.</p>
+    ///   - [`incident_template_impact(i32)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_impact) / [`set_incident_template_impact(Option<i32>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_impact): <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>  <p class="title"> <b>Possible impacts:</b> </p>  <ul>   <li> <p> <code>5</code> - Severe impact</p> </li>   <li> <p> <code>4</code> - High impact</p> </li>   <li> <p> <code>3</code> - Medium impact</p> </li>   <li> <p> <code>2</code> - Low impact</p> </li>   <li> <p> <code>1</code> - No impact</p> </li>  </ul>
+    ///   - [`incident_template_summary(impl Into<String>)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_summary) / [`set_incident_template_summary(Option<String>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_summary): <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
+    ///   - [`incident_template_dedupe_string(impl Into<String>)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_dedupe_string) / [`set_incident_template_dedupe_string(Option<String>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_dedupe_string): <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
+    ///   - [`incident_template_notification_targets(Vec<NotificationTargetItem>)`](crate::client::fluent_builders::UpdateResponsePlan::incident_template_notification_targets) / [`set_incident_template_notification_targets(Option<Vec<NotificationTargetItem>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_incident_template_notification_targets): <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    ///   - [`chat_channel(ChatChannel)`](crate::client::fluent_builders::UpdateResponsePlan::chat_channel) / [`set_chat_channel(Option<ChatChannel>)`](crate::client::fluent_builders::UpdateResponsePlan::set_chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>  <p>Use the empty structure to remove the chat channel from the response plan.</p>
+    ///   - [`engagements(Vec<String>)`](crate::client::fluent_builders::UpdateResponsePlan::engagements) / [`set_engagements(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_engagements): <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
+    ///   - [`actions(Vec<Action>)`](crate::client::fluent_builders::UpdateResponsePlan::actions) / [`set_actions(Option<Vec<Action>>)`](crate::client::fluent_builders::UpdateResponsePlan::set_actions): <p>The actions that this response plan takes at the beginning of an incident.</p>
     /// - On success, responds with [`UpdateResponsePlanOutput`](crate::output::UpdateResponsePlanOutput)
 
     /// - On failure, responds with [`SdkError<UpdateResponsePlanError>`](crate::error::UpdateResponsePlanError)
@@ -443,13 +443,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTimelineEvent`](crate::client::fluent_builders::UpdateTimelineEvent) operation.
     ///
-    /// - Takes [`UpdateTimelineEventInput`](crate::input::UpdateTimelineEventInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateTimelineEventInput::client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
-    ///   - [`incident_record_arn(Option<String>)`](crate::input::UpdateTimelineEventInput::incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    ///   - [`event_id(Option<String>)`](crate::input::UpdateTimelineEventInput::event_id): <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
-    ///   - [`event_time(Option<DateTime>)`](crate::input::UpdateTimelineEventInput::event_time): <p>The time that the event occurred.</p>
-    ///   - [`event_type(Option<String>)`](crate::input::UpdateTimelineEventInput::event_type): <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
-    ///   - [`event_data(Option<String>)`](crate::input::UpdateTimelineEventInput::event_data): <p>A short description of the event.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_client_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    ///   - [`incident_record_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::incident_record_arn) / [`set_incident_record_arn(Option<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_incident_record_arn): <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    ///   - [`event_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::event_id) / [`set_event_id(Option<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_event_id): <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
+    ///   - [`event_time(DateTime)`](crate::client::fluent_builders::UpdateTimelineEvent::event_time) / [`set_event_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_event_time): <p>The time that the event occurred.</p>
+    ///   - [`event_type(impl Into<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::event_type) / [`set_event_type(Option<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_event_type): <p>The type of the event. You can update events of type <code>Custom Event</code>.</p>
+    ///   - [`event_data(impl Into<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::event_data) / [`set_event_data(Option<String>)`](crate::client::fluent_builders::UpdateTimelineEvent::set_event_data): <p>A short description of the event.</p>
     /// - On success, responds with [`UpdateTimelineEventOutput`](crate::output::UpdateTimelineEventOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTimelineEventError>`](crate::error::UpdateTimelineEventError)

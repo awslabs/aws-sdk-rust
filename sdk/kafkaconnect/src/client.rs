@@ -85,19 +85,19 @@ where
 {
     /// Constructs a fluent builder for the [`CreateConnector`](crate::client::fluent_builders::CreateConnector) operation.
     ///
-    /// - Takes [`CreateConnectorInput`](crate::input::CreateConnectorInput) with field(s):
-    ///   - [`capacity(Option<Capacity>)`](crate::input::CreateConnectorInput::capacity): <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
-    ///   - [`connector_configuration(Option<HashMap<String, String>>)`](crate::input::CreateConnectorInput::connector_configuration): <p>A map of keys to values that represent the configuration for the connector.</p>
-    ///   - [`connector_description(Option<String>)`](crate::input::CreateConnectorInput::connector_description): <p>A summary description of the connector.</p>
-    ///   - [`connector_name(Option<String>)`](crate::input::CreateConnectorInput::connector_name): <p>The name of the connector.</p>
-    ///   - [`kafka_cluster(Option<KafkaCluster>)`](crate::input::CreateConnectorInput::kafka_cluster): <p>Specifies which Apache Kafka cluster to connect to.</p>
-    ///   - [`kafka_cluster_client_authentication(Option<KafkaClusterClientAuthentication>)`](crate::input::CreateConnectorInput::kafka_cluster_client_authentication): <p>Details of the client authentication used by the Apache Kafka cluster.</p>
-    ///   - [`kafka_cluster_encryption_in_transit(Option<KafkaClusterEncryptionInTransit>)`](crate::input::CreateConnectorInput::kafka_cluster_encryption_in_transit): <p>Details of encryption in transit to the Apache Kafka cluster.</p>
-    ///   - [`kafka_connect_version(Option<String>)`](crate::input::CreateConnectorInput::kafka_connect_version): <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-    ///   - [`log_delivery(Option<LogDelivery>)`](crate::input::CreateConnectorInput::log_delivery): <p>Details about log delivery.</p>
-    ///   - [`plugins(Option<Vec<Plugin>>)`](crate::input::CreateConnectorInput::plugins): <p>Specifies which plugins to use for the connector.</p>
-    ///   - [`service_execution_role_arn(Option<String>)`](crate::input::CreateConnectorInput::service_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
-    ///   - [`worker_configuration(Option<WorkerConfiguration>)`](crate::input::CreateConnectorInput::worker_configuration): <p>Specifies which worker configuration to use with the connector.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`capacity(Capacity)`](crate::client::fluent_builders::CreateConnector::capacity) / [`set_capacity(Option<Capacity>)`](crate::client::fluent_builders::CreateConnector::set_capacity): <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
+    ///   - [`connector_configuration(HashMap<String, String>)`](crate::client::fluent_builders::CreateConnector::connector_configuration) / [`set_connector_configuration(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateConnector::set_connector_configuration): <p>A map of keys to values that represent the configuration for the connector.</p>
+    ///   - [`connector_description(impl Into<String>)`](crate::client::fluent_builders::CreateConnector::connector_description) / [`set_connector_description(Option<String>)`](crate::client::fluent_builders::CreateConnector::set_connector_description): <p>A summary description of the connector.</p>
+    ///   - [`connector_name(impl Into<String>)`](crate::client::fluent_builders::CreateConnector::connector_name) / [`set_connector_name(Option<String>)`](crate::client::fluent_builders::CreateConnector::set_connector_name): <p>The name of the connector.</p>
+    ///   - [`kafka_cluster(KafkaCluster)`](crate::client::fluent_builders::CreateConnector::kafka_cluster) / [`set_kafka_cluster(Option<KafkaCluster>)`](crate::client::fluent_builders::CreateConnector::set_kafka_cluster): <p>Specifies which Apache Kafka cluster to connect to.</p>
+    ///   - [`kafka_cluster_client_authentication(KafkaClusterClientAuthentication)`](crate::client::fluent_builders::CreateConnector::kafka_cluster_client_authentication) / [`set_kafka_cluster_client_authentication(Option<KafkaClusterClientAuthentication>)`](crate::client::fluent_builders::CreateConnector::set_kafka_cluster_client_authentication): <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    ///   - [`kafka_cluster_encryption_in_transit(KafkaClusterEncryptionInTransit)`](crate::client::fluent_builders::CreateConnector::kafka_cluster_encryption_in_transit) / [`set_kafka_cluster_encryption_in_transit(Option<KafkaClusterEncryptionInTransit>)`](crate::client::fluent_builders::CreateConnector::set_kafka_cluster_encryption_in_transit): <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    ///   - [`kafka_connect_version(impl Into<String>)`](crate::client::fluent_builders::CreateConnector::kafka_connect_version) / [`set_kafka_connect_version(Option<String>)`](crate::client::fluent_builders::CreateConnector::set_kafka_connect_version): <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
+    ///   - [`log_delivery(LogDelivery)`](crate::client::fluent_builders::CreateConnector::log_delivery) / [`set_log_delivery(Option<LogDelivery>)`](crate::client::fluent_builders::CreateConnector::set_log_delivery): <p>Details about log delivery.</p>
+    ///   - [`plugins(Vec<Plugin>)`](crate::client::fluent_builders::CreateConnector::plugins) / [`set_plugins(Option<Vec<Plugin>>)`](crate::client::fluent_builders::CreateConnector::set_plugins): <p>Specifies which plugins to use for the connector.</p>
+    ///   - [`service_execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateConnector::service_execution_role_arn) / [`set_service_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateConnector::set_service_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
+    ///   - [`worker_configuration(WorkerConfiguration)`](crate::client::fluent_builders::CreateConnector::worker_configuration) / [`set_worker_configuration(Option<WorkerConfiguration>)`](crate::client::fluent_builders::CreateConnector::set_worker_configuration): <p>Specifies which worker configuration to use with the connector.</p>
     /// - On success, responds with [`CreateConnectorOutput`](crate::output::CreateConnectorOutput) with field(s):
     ///   - [`connector_arn(Option<String>)`](crate::output::CreateConnectorOutput::connector_arn): <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
     ///   - [`connector_name(Option<String>)`](crate::output::CreateConnectorOutput::connector_name): <p>The name of the connector.</p>
@@ -108,11 +108,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCustomPlugin`](crate::client::fluent_builders::CreateCustomPlugin) operation.
     ///
-    /// - Takes [`CreateCustomPluginInput`](crate::input::CreateCustomPluginInput) with field(s):
-    ///   - [`content_type(Option<CustomPluginContentType>)`](crate::input::CreateCustomPluginInput::content_type): <p>The type of the plugin file.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateCustomPluginInput::description): <p>A summary description of the custom plugin.</p>
-    ///   - [`location(Option<CustomPluginLocation>)`](crate::input::CreateCustomPluginInput::location): <p>Information about the location of a custom plugin.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateCustomPluginInput::name): <p>The name of the custom plugin.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`content_type(CustomPluginContentType)`](crate::client::fluent_builders::CreateCustomPlugin::content_type) / [`set_content_type(Option<CustomPluginContentType>)`](crate::client::fluent_builders::CreateCustomPlugin::set_content_type): <p>The type of the plugin file.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCustomPlugin::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCustomPlugin::set_description): <p>A summary description of the custom plugin.</p>
+    ///   - [`location(CustomPluginLocation)`](crate::client::fluent_builders::CreateCustomPlugin::location) / [`set_location(Option<CustomPluginLocation>)`](crate::client::fluent_builders::CreateCustomPlugin::set_location): <p>Information about the location of a custom plugin.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomPlugin::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCustomPlugin::set_name): <p>The name of the custom plugin.</p>
     /// - On success, responds with [`CreateCustomPluginOutput`](crate::output::CreateCustomPluginOutput) with field(s):
     ///   - [`custom_plugin_arn(Option<String>)`](crate::output::CreateCustomPluginOutput::custom_plugin_arn): <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
     ///   - [`custom_plugin_state(Option<CustomPluginState>)`](crate::output::CreateCustomPluginOutput::custom_plugin_state): <p>The state of the custom plugin.</p>
@@ -124,10 +124,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateWorkerConfiguration`](crate::client::fluent_builders::CreateWorkerConfiguration) operation.
     ///
-    /// - Takes [`CreateWorkerConfigurationInput`](crate::input::CreateWorkerConfigurationInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::CreateWorkerConfigurationInput::description): <p>A summary description of the worker configuration.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateWorkerConfigurationInput::name): <p>The name of the worker configuration.</p>
-    ///   - [`properties_file_content(Option<String>)`](crate::input::CreateWorkerConfigurationInput::properties_file_content): <p>Base64 encoded contents of connect-distributed.properties file.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkerConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWorkerConfiguration::set_description): <p>A summary description of the worker configuration.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkerConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWorkerConfiguration::set_name): <p>The name of the worker configuration.</p>
+    ///   - [`properties_file_content(impl Into<String>)`](crate::client::fluent_builders::CreateWorkerConfiguration::properties_file_content) / [`set_properties_file_content(Option<String>)`](crate::client::fluent_builders::CreateWorkerConfiguration::set_properties_file_content): <p>Base64 encoded contents of connect-distributed.properties file.</p>
     /// - On success, responds with [`CreateWorkerConfigurationOutput`](crate::output::CreateWorkerConfigurationOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateWorkerConfigurationOutput::creation_time): <p>The time that the worker configuration was created.</p>
     ///   - [`latest_revision(Option<WorkerConfigurationRevisionSummary>)`](crate::output::CreateWorkerConfigurationOutput::latest_revision): <p>The latest revision of the worker configuration.</p>
@@ -141,9 +141,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteConnector`](crate::client::fluent_builders::DeleteConnector) operation.
     ///
-    /// - Takes [`DeleteConnectorInput`](crate::input::DeleteConnectorInput) with field(s):
-    ///   - [`connector_arn(Option<String>)`](crate::input::DeleteConnectorInput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::DeleteConnectorInput::current_version): <p>The current version of the connector that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`connector_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteConnector::connector_arn) / [`set_connector_arn(Option<String>)`](crate::client::fluent_builders::DeleteConnector::set_connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::DeleteConnector::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::DeleteConnector::set_current_version): <p>The current version of the connector that you want to delete.</p>
     /// - On success, responds with [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput) with field(s):
     ///   - [`connector_arn(Option<String>)`](crate::output::DeleteConnectorOutput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>
     ///   - [`connector_state(Option<ConnectorState>)`](crate::output::DeleteConnectorOutput::connector_state): <p>The state of the connector that you requested to delete.</p>
@@ -153,8 +153,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeConnector`](crate::client::fluent_builders::DescribeConnector) operation.
     ///
-    /// - Takes [`DescribeConnectorInput`](crate::input::DescribeConnectorInput) with field(s):
-    ///   - [`connector_arn(Option<String>)`](crate::input::DescribeConnectorInput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`connector_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeConnector::connector_arn) / [`set_connector_arn(Option<String>)`](crate::client::fluent_builders::DescribeConnector::set_connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
     /// - On success, responds with [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput) with field(s):
     ///   - [`capacity(Option<CapacityDescription>)`](crate::output::DescribeConnectorOutput::capacity): <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
     ///   - [`connector_arn(Option<String>)`](crate::output::DescribeConnectorOutput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector.</p>
@@ -178,8 +178,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCustomPlugin`](crate::client::fluent_builders::DescribeCustomPlugin) operation.
     ///
-    /// - Takes [`DescribeCustomPluginInput`](crate::input::DescribeCustomPluginInput) with field(s):
-    ///   - [`custom_plugin_arn(Option<String>)`](crate::input::DescribeCustomPluginInput::custom_plugin_arn): <p>Returns information about a custom plugin.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`custom_plugin_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeCustomPlugin::custom_plugin_arn) / [`set_custom_plugin_arn(Option<String>)`](crate::client::fluent_builders::DescribeCustomPlugin::set_custom_plugin_arn): <p>Returns information about a custom plugin.</p>
     /// - On success, responds with [`DescribeCustomPluginOutput`](crate::output::DescribeCustomPluginOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeCustomPluginOutput::creation_time): <p>The time that the custom plugin was created.</p>
     ///   - [`custom_plugin_arn(Option<String>)`](crate::output::DescribeCustomPluginOutput::custom_plugin_arn): <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
@@ -193,8 +193,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeWorkerConfiguration`](crate::client::fluent_builders::DescribeWorkerConfiguration) operation.
     ///
-    /// - Takes [`DescribeWorkerConfigurationInput`](crate::input::DescribeWorkerConfigurationInput) with field(s):
-    ///   - [`worker_configuration_arn(Option<String>)`](crate::input::DescribeWorkerConfigurationInput::worker_configuration_arn): <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`worker_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkerConfiguration::worker_configuration_arn) / [`set_worker_configuration_arn(Option<String>)`](crate::client::fluent_builders::DescribeWorkerConfiguration::set_worker_configuration_arn): <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
     /// - On success, responds with [`DescribeWorkerConfigurationOutput`](crate::output::DescribeWorkerConfigurationOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeWorkerConfigurationOutput::creation_time): <p>The time that the worker configuration was created.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeWorkerConfigurationOutput::description): <p>The description of the worker configuration.</p>
@@ -208,12 +208,12 @@ where
         fluent_builders::DescribeWorkerConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListConnectors`](crate::client::fluent_builders::ListConnectors) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConnectors::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConnectors::into_paginator).
     ///
-    /// - Takes [`ListConnectorsInput`](crate::input::ListConnectorsInput) with field(s):
-    ///   - [`connector_name_prefix(Option<String>)`](crate::input::ListConnectorsInput::connector_name_prefix): <p>The name prefix that you want to use to search for and list connectors.</p>
-    ///   - [`max_results(i32)`](crate::input::ListConnectorsInput::max_results): <p>The maximum number of connectors to list in one response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListConnectorsInput::next_token): <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`connector_name_prefix(impl Into<String>)`](crate::client::fluent_builders::ListConnectors::connector_name_prefix) / [`set_connector_name_prefix(Option<String>)`](crate::client::fluent_builders::ListConnectors::set_connector_name_prefix): <p>The name prefix that you want to use to search for and list connectors.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConnectors::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListConnectors::set_max_results): <p>The maximum number of connectors to list in one response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConnectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConnectors::set_next_token): <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     /// - On success, responds with [`ListConnectorsOutput`](crate::output::ListConnectorsOutput) with field(s):
     ///   - [`connectors(Option<Vec<ConnectorSummary>>)`](crate::output::ListConnectorsOutput::connectors): <p>An array of connector descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListConnectorsOutput::next_token): <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where it left off.</p>
@@ -222,11 +222,11 @@ where
         fluent_builders::ListConnectors::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCustomPlugins`](crate::client::fluent_builders::ListCustomPlugins) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomPlugins::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomPlugins::into_paginator).
     ///
-    /// - Takes [`ListCustomPluginsInput`](crate::input::ListCustomPluginsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListCustomPluginsInput::max_results): <p>The maximum number of custom plugins to list in one response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListCustomPluginsInput::next_token): <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCustomPlugins::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCustomPlugins::set_max_results): <p>The maximum number of custom plugins to list in one response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomPlugins::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomPlugins::set_next_token): <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     /// - On success, responds with [`ListCustomPluginsOutput`](crate::output::ListCustomPluginsOutput) with field(s):
     ///   - [`custom_plugins(Option<Vec<CustomPluginSummary>>)`](crate::output::ListCustomPluginsOutput::custom_plugins): <p>An array of custom plugin descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCustomPluginsOutput::next_token): <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -235,11 +235,11 @@ where
         fluent_builders::ListCustomPlugins::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListWorkerConfigurations`](crate::client::fluent_builders::ListWorkerConfigurations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkerConfigurations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkerConfigurations::into_paginator).
     ///
-    /// - Takes [`ListWorkerConfigurationsInput`](crate::input::ListWorkerConfigurationsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListWorkerConfigurationsInput::max_results): <p>The maximum number of worker configurations to list in one response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListWorkerConfigurationsInput::next_token): <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkerConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListWorkerConfigurations::set_max_results): <p>The maximum number of worker configurations to list in one response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkerConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkerConfigurations::set_next_token): <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     /// - On success, responds with [`ListWorkerConfigurationsOutput`](crate::output::ListWorkerConfigurationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListWorkerConfigurationsOutput::next_token): <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     ///   - [`worker_configurations(Option<Vec<WorkerConfigurationSummary>>)`](crate::output::ListWorkerConfigurationsOutput::worker_configurations): <p>An array of worker configuration descriptions.</p>
@@ -249,10 +249,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateConnector`](crate::client::fluent_builders::UpdateConnector) operation.
     ///
-    /// - Takes [`UpdateConnectorInput`](crate::input::UpdateConnectorInput) with field(s):
-    ///   - [`capacity(Option<CapacityUpdate>)`](crate::input::UpdateConnectorInput::capacity): <p>The target capacity.</p>
-    ///   - [`connector_arn(Option<String>)`](crate::input::UpdateConnectorInput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
-    ///   - [`current_version(Option<String>)`](crate::input::UpdateConnectorInput::current_version): <p>The current version of the connector that you want to update.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`capacity(CapacityUpdate)`](crate::client::fluent_builders::UpdateConnector::capacity) / [`set_capacity(Option<CapacityUpdate>)`](crate::client::fluent_builders::UpdateConnector::set_capacity): <p>The target capacity.</p>
+    ///   - [`connector_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateConnector::connector_arn) / [`set_connector_arn(Option<String>)`](crate::client::fluent_builders::UpdateConnector::set_connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateConnector::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateConnector::set_current_version): <p>The current version of the connector that you want to update.</p>
     /// - On success, responds with [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput) with field(s):
     ///   - [`connector_arn(Option<String>)`](crate::output::UpdateConnectorOutput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector.</p>
     ///   - [`connector_state(Option<ConnectorState>)`](crate::output::UpdateConnectorOutput::connector_state): <p>The state of the connector.</p>

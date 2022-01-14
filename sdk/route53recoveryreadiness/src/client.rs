@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`CreateCell`](crate::client::fluent_builders::CreateCell) operation.
     ///
-    /// - Takes [`CreateCellInput`](crate::input::CreateCellInput) with field(s):
-    ///   - [`cell_name(Option<String>)`](crate::input::CreateCellInput::cell_name): The name of the Cell to create
-    ///   - [`cells(Option<Vec<String>>)`](crate::input::CreateCellInput::cells): A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateCellInput::tags): A collection of tags associated with a resource
+    /// - The fluent builder is configurable:
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::CreateCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::CreateCell::set_cell_name): The name of the Cell to create
+    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::CreateCell::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCell::set_cells): A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCell::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCell::set_tags): A collection of tags associated with a resource
     /// - On success, responds with [`CreateCellOutput`](crate::output::CreateCellOutput) with field(s):
     ///   - [`cell_arn(Option<String>)`](crate::output::CreateCellOutput::cell_arn): The arn for the Cell
     ///   - [`cell_name(Option<String>)`](crate::output::CreateCellOutput::cell_name): The name of the Cell
@@ -101,8 +101,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCrossAccountAuthorization`](crate::client::fluent_builders::CreateCrossAccountAuthorization) operation.
     ///
-    /// - Takes [`CreateCrossAccountAuthorizationInput`](crate::input::CreateCrossAccountAuthorizationInput) with field(s):
-    ///   - [`cross_account_authorization(Option<String>)`](crate::input::CreateCrossAccountAuthorizationInput::cross_account_authorization): The cross account authorization
+    /// - The fluent builder is configurable:
+    ///   - [`cross_account_authorization(impl Into<String>)`](crate::client::fluent_builders::CreateCrossAccountAuthorization::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::client::fluent_builders::CreateCrossAccountAuthorization::set_cross_account_authorization): The cross account authorization
     /// - On success, responds with [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput) with field(s):
     ///   - [`cross_account_authorization(Option<String>)`](crate::output::CreateCrossAccountAuthorizationOutput::cross_account_authorization): The cross account authorization
     /// - On failure, responds with [`SdkError<CreateCrossAccountAuthorizationError>`](crate::error::CreateCrossAccountAuthorizationError)
@@ -113,10 +113,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateReadinessCheck`](crate::client::fluent_builders::CreateReadinessCheck) operation.
     ///
-    /// - Takes [`CreateReadinessCheckInput`](crate::input::CreateReadinessCheckInput) with field(s):
-    ///   - [`readiness_check_name(Option<String>)`](crate::input::CreateReadinessCheckInput::readiness_check_name): The name of the ReadinessCheck to create
-    ///   - [`resource_set_name(Option<String>)`](crate::input::CreateReadinessCheckInput::resource_set_name): The name of the ResourceSet to check
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateReadinessCheckInput::tags): A collection of tags associated with a resource
+    /// - The fluent builder is configurable:
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::CreateReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::CreateReadinessCheck::set_readiness_check_name): The name of the ReadinessCheck to create
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateReadinessCheck::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::CreateReadinessCheck::set_resource_set_name): The name of the ResourceSet to check
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReadinessCheck::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReadinessCheck::set_tags): A collection of tags associated with a resource
     /// - On success, responds with [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput) with field(s):
     ///   - [`readiness_check_arn(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_arn): Arn associated with ReadinessCheck
     ///   - [`readiness_check_name(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_name): Name for a ReadinessCheck
@@ -128,10 +128,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRecoveryGroup`](crate::client::fluent_builders::CreateRecoveryGroup) operation.
     ///
-    /// - Takes [`CreateRecoveryGroupInput`](crate::input::CreateRecoveryGroupInput) with field(s):
-    ///   - [`cells(Option<Vec<String>>)`](crate::input::CreateRecoveryGroupInput::cells): A list of Cell arns
-    ///   - [`recovery_group_name(Option<String>)`](crate::input::CreateRecoveryGroupInput::recovery_group_name): The name of the RecoveryGroup to create
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateRecoveryGroupInput::tags): A collection of tags associated with a resource
+    /// - The fluent builder is configurable:
+    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_cells): A list of Cell arns
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_recovery_group_name): The name of the RecoveryGroup to create
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecoveryGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_tags): A collection of tags associated with a resource
     /// - On success, responds with [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput) with field(s):
     ///   - [`cells(Option<Vec<String>>)`](crate::output::CreateRecoveryGroupOutput::cells): A list of Cell arns
     ///   - [`recovery_group_arn(Option<String>)`](crate::output::CreateRecoveryGroupOutput::recovery_group_arn): The arn for the RecoveryGroup
@@ -143,11 +143,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateResourceSet`](crate::client::fluent_builders::CreateResourceSet) operation.
     ///
-    /// - Takes [`CreateResourceSetInput`](crate::input::CreateResourceSetInput) with field(s):
-    ///   - [`resource_set_name(Option<String>)`](crate::input::CreateResourceSetInput::resource_set_name): The name of the ResourceSet to create
-    ///   - [`resource_set_type(Option<String>)`](crate::input::CreateResourceSetInput::resource_set_type): AWS Resource type of the resources in the ResourceSet
-    ///   - [`resources(Option<Vec<Resource>>)`](crate::input::CreateResourceSetInput::resources): A list of Resource objects
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateResourceSetInput::tags): A collection of tags associated with a resource
+    /// - The fluent builder is configurable:
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::CreateResourceSet::set_resource_set_name): The name of the ResourceSet to create
+    ///   - [`resource_set_type(impl Into<String>)`](crate::client::fluent_builders::CreateResourceSet::resource_set_type) / [`set_resource_set_type(Option<String>)`](crate::client::fluent_builders::CreateResourceSet::set_resource_set_type): AWS Resource type of the resources in the ResourceSet
+    ///   - [`resources(Vec<Resource>)`](crate::client::fluent_builders::CreateResourceSet::resources) / [`set_resources(Option<Vec<Resource>>)`](crate::client::fluent_builders::CreateResourceSet::set_resources): A list of Resource objects
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateResourceSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateResourceSet::set_tags): A collection of tags associated with a resource
     /// - On success, responds with [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput) with field(s):
     ///   - [`resource_set_arn(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_arn): The arn for the ResourceSet
     ///   - [`resource_set_name(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_name): The name of the ResourceSet
@@ -160,8 +160,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCell`](crate::client::fluent_builders::DeleteCell) operation.
     ///
-    /// - Takes [`DeleteCellInput`](crate::input::DeleteCellInput) with field(s):
-    ///   - [`cell_name(Option<String>)`](crate::input::DeleteCellInput::cell_name): The Cell to delete
+    /// - The fluent builder is configurable:
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::DeleteCell::set_cell_name): The Cell to delete
     /// - On success, responds with [`DeleteCellOutput`](crate::output::DeleteCellOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCellError>`](crate::error::DeleteCellError)
@@ -170,8 +170,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCrossAccountAuthorization`](crate::client::fluent_builders::DeleteCrossAccountAuthorization) operation.
     ///
-    /// - Takes [`DeleteCrossAccountAuthorizationInput`](crate::input::DeleteCrossAccountAuthorizationInput) with field(s):
-    ///   - [`cross_account_authorization(Option<String>)`](crate::input::DeleteCrossAccountAuthorizationInput::cross_account_authorization): The cross account authorization
+    /// - The fluent builder is configurable:
+    ///   - [`cross_account_authorization(impl Into<String>)`](crate::client::fluent_builders::DeleteCrossAccountAuthorization::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::client::fluent_builders::DeleteCrossAccountAuthorization::set_cross_account_authorization): The cross account authorization
     /// - On success, responds with [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCrossAccountAuthorizationError>`](crate::error::DeleteCrossAccountAuthorizationError)
@@ -182,8 +182,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteReadinessCheck`](crate::client::fluent_builders::DeleteReadinessCheck) operation.
     ///
-    /// - Takes [`DeleteReadinessCheckInput`](crate::input::DeleteReadinessCheckInput) with field(s):
-    ///   - [`readiness_check_name(Option<String>)`](crate::input::DeleteReadinessCheckInput::readiness_check_name): The ReadinessCheck to delete
+    /// - The fluent builder is configurable:
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::DeleteReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::DeleteReadinessCheck::set_readiness_check_name): The ReadinessCheck to delete
     /// - On success, responds with [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput)
 
     /// - On failure, responds with [`SdkError<DeleteReadinessCheckError>`](crate::error::DeleteReadinessCheckError)
@@ -192,8 +192,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRecoveryGroup`](crate::client::fluent_builders::DeleteRecoveryGroup) operation.
     ///
-    /// - Takes [`DeleteRecoveryGroupInput`](crate::input::DeleteRecoveryGroupInput) with field(s):
-    ///   - [`recovery_group_name(Option<String>)`](crate::input::DeleteRecoveryGroupInput::recovery_group_name): The RecoveryGroup to delete
+    /// - The fluent builder is configurable:
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::DeleteRecoveryGroup::set_recovery_group_name): The RecoveryGroup to delete
     /// - On success, responds with [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRecoveryGroupError>`](crate::error::DeleteRecoveryGroupError)
@@ -202,8 +202,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteResourceSet`](crate::client::fluent_builders::DeleteResourceSet) operation.
     ///
-    /// - Takes [`DeleteResourceSetInput`](crate::input::DeleteResourceSetInput) with field(s):
-    ///   - [`resource_set_name(Option<String>)`](crate::input::DeleteResourceSetInput::resource_set_name): The ResourceSet to delete
+    /// - The fluent builder is configurable:
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::DeleteResourceSet::set_resource_set_name): The ResourceSet to delete
     /// - On success, responds with [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteResourceSetError>`](crate::error::DeleteResourceSetError)
@@ -212,10 +212,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetArchitectureRecommendations`](crate::client::fluent_builders::GetArchitectureRecommendations) operation.
     ///
-    /// - Takes [`GetArchitectureRecommendationsInput`](crate::input::GetArchitectureRecommendationsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::GetArchitectureRecommendationsInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::GetArchitectureRecommendationsInput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`recovery_group_name(Option<String>)`](crate::input::GetArchitectureRecommendationsInput::recovery_group_name): Name of RecoveryGroup (top level resource) to be analyzed.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetArchitectureRecommendations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_recovery_group_name): Name of RecoveryGroup (top level resource) to be analyzed.
     /// - On success, responds with [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput) with field(s):
     ///   - [`last_audit_timestamp(Option<DateTime>)`](crate::output::GetArchitectureRecommendationsOutput::last_audit_timestamp): The time a Recovery Group was last assessed for recommendations in UTC ISO-8601 format.
     ///   - [`next_token(Option<String>)`](crate::output::GetArchitectureRecommendationsOutput::next_token): A token that can be used to resume pagination from the end of the collection
@@ -228,8 +228,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetCell`](crate::client::fluent_builders::GetCell) operation.
     ///
-    /// - Takes [`GetCellInput`](crate::input::GetCellInput) with field(s):
-    ///   - [`cell_name(Option<String>)`](crate::input::GetCellInput::cell_name): The Cell to get
+    /// - The fluent builder is configurable:
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::GetCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::GetCell::set_cell_name): The Cell to get
     /// - On success, responds with [`GetCellOutput`](crate::output::GetCellOutput) with field(s):
     ///   - [`cell_arn(Option<String>)`](crate::output::GetCellOutput::cell_arn): The arn for the Cell
     ///   - [`cell_name(Option<String>)`](crate::output::GetCellOutput::cell_name): The name of the Cell
@@ -241,12 +241,12 @@ where
         fluent_builders::GetCell::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetCellReadinessSummary`](crate::client::fluent_builders::GetCellReadinessSummary) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCellReadinessSummary::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetCellReadinessSummary::into_paginator).
     ///
-    /// - Takes [`GetCellReadinessSummaryInput`](crate::input::GetCellReadinessSummaryInput) with field(s):
-    ///   - [`cell_name(Option<String>)`](crate::input::GetCellReadinessSummaryInput::cell_name): The name of the Cell
-    ///   - [`max_results(i32)`](crate::input::GetCellReadinessSummaryInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::GetCellReadinessSummaryInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - The fluent builder is configurable:
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::set_cell_name): The name of the Cell
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCellReadinessSummary::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetCellReadinessSummary::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetCellReadinessSummaryOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`readiness(Option<Readiness>)`](crate::output::GetCellReadinessSummaryOutput::readiness): The readiness at Cell level.
@@ -257,8 +257,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetReadinessCheck`](crate::client::fluent_builders::GetReadinessCheck) operation.
     ///
-    /// - Takes [`GetReadinessCheckInput`](crate::input::GetReadinessCheckInput) with field(s):
-    ///   - [`readiness_check_name(Option<String>)`](crate::input::GetReadinessCheckInput::readiness_check_name): The ReadinessCheck to get
+    /// - The fluent builder is configurable:
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheck::set_readiness_check_name): The ReadinessCheck to get
     /// - On success, responds with [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput) with field(s):
     ///   - [`readiness_check_arn(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_arn): Arn associated with ReadinessCheck
     ///   - [`readiness_check_name(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_name): Name for a ReadinessCheck
@@ -269,13 +269,13 @@ where
         fluent_builders::GetReadinessCheck::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetReadinessCheckResourceStatus`](crate::client::fluent_builders::GetReadinessCheckResourceStatus) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::into_paginator).
     ///
-    /// - Takes [`GetReadinessCheckResourceStatusInput`](crate::input::GetReadinessCheckResourceStatusInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::GetReadinessCheckResourceStatusInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::GetReadinessCheckResourceStatusInput::next_token): A token used to resume pagination from the end of a previous request.
-    ///   - [`readiness_check_name(Option<String>)`](crate::input::GetReadinessCheckResourceStatusInput::readiness_check_name): The ReadinessCheck to get
-    ///   - [`resource_identifier(Option<String>)`](crate::input::GetReadinessCheckResourceStatusInput::resource_identifier): The resource ARN or component Id to get
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_readiness_check_name): The ReadinessCheck to get
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_resource_identifier): The resource ARN or component Id to get
     /// - On success, responds with [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckResourceStatusOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`readiness(Option<Readiness>)`](crate::output::GetReadinessCheckResourceStatusOutput::readiness): The readiness at rule level.
@@ -287,12 +287,12 @@ where
         fluent_builders::GetReadinessCheckResourceStatus::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetReadinessCheckStatus`](crate::client::fluent_builders::GetReadinessCheckStatus) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckStatus::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckStatus::into_paginator).
     ///
-    /// - Takes [`GetReadinessCheckStatusInput`](crate::input::GetReadinessCheckStatusInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::GetReadinessCheckStatusInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::GetReadinessCheckStatusInput::next_token): A token used to resume pagination from the end of a previous request.
-    ///   - [`readiness_check_name(Option<String>)`](crate::input::GetReadinessCheckStatusInput::readiness_check_name): The ReadinessCheck to get
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckStatus::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_readiness_check_name): The ReadinessCheck to get
     /// - On success, responds with [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput) with field(s):
     ///   - [`messages(Option<Vec<Message>>)`](crate::output::GetReadinessCheckStatusOutput::messages): Top level messages for readiness check status
     ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckStatusOutput::next_token): A token that can be used to resume pagination from the end of the collection.
@@ -304,8 +304,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetRecoveryGroup`](crate::client::fluent_builders::GetRecoveryGroup) operation.
     ///
-    /// - Takes [`GetRecoveryGroupInput`](crate::input::GetRecoveryGroupInput) with field(s):
-    ///   - [`recovery_group_name(Option<String>)`](crate::input::GetRecoveryGroupInput::recovery_group_name): The RecoveryGroup to get
+    /// - The fluent builder is configurable:
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroup::set_recovery_group_name): The RecoveryGroup to get
     /// - On success, responds with [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput) with field(s):
     ///   - [`cells(Option<Vec<String>>)`](crate::output::GetRecoveryGroupOutput::cells): A list of Cell arns
     ///   - [`recovery_group_arn(Option<String>)`](crate::output::GetRecoveryGroupOutput::recovery_group_arn): The arn for the RecoveryGroup
@@ -316,12 +316,12 @@ where
         fluent_builders::GetRecoveryGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetRecoveryGroupReadinessSummary`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::into_paginator).
     ///
-    /// - Takes [`GetRecoveryGroupReadinessSummaryInput`](crate::input::GetRecoveryGroupReadinessSummaryInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::GetRecoveryGroupReadinessSummaryInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::GetRecoveryGroupReadinessSummaryInput::next_token): A token used to resume pagination from the end of a previous request.
-    ///   - [`recovery_group_name(Option<String>)`](crate::input::GetRecoveryGroupReadinessSummaryInput::recovery_group_name): The name of the RecoveryGroup
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_recovery_group_name): The name of the RecoveryGroup
     /// - On success, responds with [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`readiness(Option<Readiness>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::readiness): The readiness at RecoveryGroup level.
@@ -334,8 +334,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetResourceSet`](crate::client::fluent_builders::GetResourceSet) operation.
     ///
-    /// - Takes [`GetResourceSetInput`](crate::input::GetResourceSetInput) with field(s):
-    ///   - [`resource_set_name(Option<String>)`](crate::input::GetResourceSetInput::resource_set_name): The ResourceSet to get
+    /// - The fluent builder is configurable:
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::GetResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::GetResourceSet::set_resource_set_name): The ResourceSet to get
     /// - On success, responds with [`GetResourceSetOutput`](crate::output::GetResourceSetOutput) with field(s):
     ///   - [`resource_set_arn(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_arn): The arn for the ResourceSet
     ///   - [`resource_set_name(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_name): The name of the ResourceSet
@@ -347,11 +347,11 @@ where
         fluent_builders::GetResourceSet::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCells`](crate::client::fluent_builders::ListCells) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCells::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCells::into_paginator).
     ///
-    /// - Takes [`ListCellsInput`](crate::input::ListCellsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListCellsInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::ListCellsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCells::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCells::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCells::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCells::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListCellsOutput`](crate::output::ListCellsOutput) with field(s):
     ///   - [`cells(Option<Vec<CellOutput>>)`](crate::output::ListCellsOutput::cells): A list of Cells
     ///   - [`next_token(Option<String>)`](crate::output::ListCellsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
@@ -360,11 +360,11 @@ where
         fluent_builders::ListCells::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCrossAccountAuthorizations`](crate::client::fluent_builders::ListCrossAccountAuthorizations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCrossAccountAuthorizations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCrossAccountAuthorizations::into_paginator).
     ///
-    /// - Takes [`ListCrossAccountAuthorizationsInput`](crate::input::ListCrossAccountAuthorizationsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListCrossAccountAuthorizationsInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::ListCrossAccountAuthorizationsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput) with field(s):
     ///   - [`cross_account_authorizations(Option<Vec<String>>)`](crate::output::ListCrossAccountAuthorizationsOutput::cross_account_authorizations): A list of CrossAccountAuthorizations
     ///   - [`next_token(Option<String>)`](crate::output::ListCrossAccountAuthorizationsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
@@ -375,11 +375,11 @@ where
         fluent_builders::ListCrossAccountAuthorizations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListReadinessChecks`](crate::client::fluent_builders::ListReadinessChecks) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReadinessChecks::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReadinessChecks::into_paginator).
     ///
-    /// - Takes [`ListReadinessChecksInput`](crate::input::ListReadinessChecksInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListReadinessChecksInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::ListReadinessChecksInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReadinessChecks::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListReadinessChecks::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReadinessChecks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReadinessChecks::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListReadinessChecksOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`readiness_checks(Option<Vec<ReadinessCheckOutput>>)`](crate::output::ListReadinessChecksOutput::readiness_checks): A list of ReadinessCheck associated with the account
@@ -388,11 +388,11 @@ where
         fluent_builders::ListReadinessChecks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRecoveryGroups`](crate::client::fluent_builders::ListRecoveryGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryGroups::into_paginator).
     ///
-    /// - Takes [`ListRecoveryGroupsInput`](crate::input::ListRecoveryGroupsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListRecoveryGroupsInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::ListRecoveryGroupsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecoveryGroups::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRecoveryGroups::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecoveryGroups::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryGroupsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`recovery_groups(Option<Vec<RecoveryGroupOutput>>)`](crate::output::ListRecoveryGroupsOutput::recovery_groups): A list of RecoveryGroups
@@ -401,11 +401,11 @@ where
         fluent_builders::ListRecoveryGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListResourceSets`](crate::client::fluent_builders::ListResourceSets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceSets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourceSets::into_paginator).
     ///
-    /// - Takes [`ListResourceSetsInput`](crate::input::ListResourceSetsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListResourceSetsInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::ListResourceSetsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceSets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListResourceSets::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceSets::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListResourceSetsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`resource_sets(Option<Vec<ResourceSetOutput>>)`](crate::output::ListResourceSetsOutput::resource_sets): A list of ResourceSets associated with the account
@@ -414,12 +414,12 @@ where
         fluent_builders::ListResourceSets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRules`](crate::client::fluent_builders::ListRules) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRules::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRules::into_paginator).
     ///
-    /// - Takes [`ListRulesInput`](crate::input::ListRulesInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListRulesInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::ListRulesInput::next_token): A token used to resume pagination from the end of a previous request.
-    ///   - [`resource_type(Option<String>)`](crate::input::ListRulesInput::resource_type): Filter parameter which specifies the rules to return given a resource type.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRules::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRules::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRules::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListRules::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListRules::set_resource_type): Filter parameter which specifies the rules to return given a resource type.
     /// - On success, responds with [`ListRulesOutput`](crate::output::ListRulesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListRulesOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`rules(Option<Vec<ListRulesOutput>>)`](crate::output::ListRulesOutput::rules): A list of rules
@@ -429,8 +429,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResources`](crate::client::fluent_builders::ListTagsForResources) operation.
     ///
-    /// - Takes [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourcesInput::resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResources::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResources::set_resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
     /// - On success, responds with [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourcesOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<ListTagsForResourcesError>`](crate::error::ListTagsForResourcesError)
@@ -439,9 +439,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): A collection of tags associated with a resource
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): A collection of tags associated with a resource
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -450,9 +450,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): A comma-separated list of the tag keys to remove from the resource.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): A comma-separated list of the tag keys to remove from the resource.
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -461,9 +461,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateCell`](crate::client::fluent_builders::UpdateCell) operation.
     ///
-    /// - Takes [`UpdateCellInput`](crate::input::UpdateCellInput) with field(s):
-    ///   - [`cell_name(Option<String>)`](crate::input::UpdateCellInput::cell_name): The Cell to update
-    ///   - [`cells(Option<Vec<String>>)`](crate::input::UpdateCellInput::cells): A list of Cell arns, completely replaces previous list
+    /// - The fluent builder is configurable:
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::UpdateCell::set_cell_name): The Cell to update
+    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::UpdateCell::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCell::set_cells): A list of Cell arns, completely replaces previous list
     /// - On success, responds with [`UpdateCellOutput`](crate::output::UpdateCellOutput) with field(s):
     ///   - [`cell_arn(Option<String>)`](crate::output::UpdateCellOutput::cell_arn): The arn for the Cell
     ///   - [`cell_name(Option<String>)`](crate::output::UpdateCellOutput::cell_name): The name of the Cell
@@ -476,9 +476,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateReadinessCheck`](crate::client::fluent_builders::UpdateReadinessCheck) operation.
     ///
-    /// - Takes [`UpdateReadinessCheckInput`](crate::input::UpdateReadinessCheckInput) with field(s):
-    ///   - [`readiness_check_name(Option<String>)`](crate::input::UpdateReadinessCheckInput::readiness_check_name): The ReadinessCheck to update
-    ///   - [`resource_set_name(Option<String>)`](crate::input::UpdateReadinessCheckInput::resource_set_name): The name of the ResourceSet to check
+    /// - The fluent builder is configurable:
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::set_readiness_check_name): The ReadinessCheck to update
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::set_resource_set_name): The name of the ResourceSet to check
     /// - On success, responds with [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput) with field(s):
     ///   - [`readiness_check_arn(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_arn): Arn associated with ReadinessCheck
     ///   - [`readiness_check_name(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_name): Name for a ReadinessCheck
@@ -490,9 +490,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRecoveryGroup`](crate::client::fluent_builders::UpdateRecoveryGroup) operation.
     ///
-    /// - Takes [`UpdateRecoveryGroupInput`](crate::input::UpdateRecoveryGroupInput) with field(s):
-    ///   - [`cells(Option<Vec<String>>)`](crate::input::UpdateRecoveryGroupInput::cells): A list of Cell arns, completely replaces previous list
-    ///   - [`recovery_group_name(Option<String>)`](crate::input::UpdateRecoveryGroupInput::recovery_group_name): The RecoveryGroup to update
+    /// - The fluent builder is configurable:
+    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRecoveryGroup::set_cells): A list of Cell arns, completely replaces previous list
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::set_recovery_group_name): The RecoveryGroup to update
     /// - On success, responds with [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput) with field(s):
     ///   - [`cells(Option<Vec<String>>)`](crate::output::UpdateRecoveryGroupOutput::cells): A list of Cell arns
     ///   - [`recovery_group_arn(Option<String>)`](crate::output::UpdateRecoveryGroupOutput::recovery_group_arn): The arn for the RecoveryGroup
@@ -504,10 +504,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateResourceSet`](crate::client::fluent_builders::UpdateResourceSet) operation.
     ///
-    /// - Takes [`UpdateResourceSetInput`](crate::input::UpdateResourceSetInput) with field(s):
-    ///   - [`resource_set_name(Option<String>)`](crate::input::UpdateResourceSetInput::resource_set_name): The ResourceSet to update
-    ///   - [`resource_set_type(Option<String>)`](crate::input::UpdateResourceSetInput::resource_set_type): AWS Resource Type of the resources in the ResourceSet
-    ///   - [`resources(Option<Vec<Resource>>)`](crate::input::UpdateResourceSetInput::resources): A list of Resource objects
+    /// - The fluent builder is configurable:
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::UpdateResourceSet::set_resource_set_name): The ResourceSet to update
+    ///   - [`resource_set_type(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceSet::resource_set_type) / [`set_resource_set_type(Option<String>)`](crate::client::fluent_builders::UpdateResourceSet::set_resource_set_type): AWS Resource Type of the resources in the ResourceSet
+    ///   - [`resources(Vec<Resource>)`](crate::client::fluent_builders::UpdateResourceSet::resources) / [`set_resources(Option<Vec<Resource>>)`](crate::client::fluent_builders::UpdateResourceSet::set_resources): A list of Resource objects
     /// - On success, responds with [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput) with field(s):
     ///   - [`resource_set_arn(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_arn): The arn for the ResourceSet
     ///   - [`resource_set_name(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_name): The name of the ResourceSet

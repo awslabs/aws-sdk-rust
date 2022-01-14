@@ -85,11 +85,11 @@ where
 {
     /// Constructs a fluent builder for the [`CreateDiscoverer`](crate::client::fluent_builders::CreateDiscoverer) operation.
     ///
-    /// - Takes [`CreateDiscovererInput`](crate::input::CreateDiscovererInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::CreateDiscovererInput::description): <p>A description for the discoverer.</p>
-    ///   - [`source_arn(Option<String>)`](crate::input::CreateDiscovererInput::source_arn): <p>The ARN of the event bus.</p>
-    ///   - [`cross_account(bool)`](crate::input::CreateDiscovererInput::cross_account): <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDiscovererInput::tags): <p>Tags associated with the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDiscoverer::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDiscoverer::set_description): <p>A description for the discoverer.</p>
+    ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDiscoverer::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::CreateDiscoverer::set_source_arn): <p>The ARN of the event bus.</p>
+    ///   - [`cross_account(bool)`](crate::client::fluent_builders::CreateDiscoverer::cross_account) / [`set_cross_account(bool)`](crate::client::fluent_builders::CreateDiscoverer::set_cross_account): <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDiscoverer::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDiscoverer::set_tags): <p>Tags associated with the resource.</p>
     /// - On success, responds with [`CreateDiscovererOutput`](crate::output::CreateDiscovererOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::CreateDiscovererOutput::description): <p>The description of the discoverer.</p>
     ///   - [`discoverer_arn(Option<String>)`](crate::output::CreateDiscovererOutput::discoverer_arn): <p>The ARN of the discoverer.</p>
@@ -104,10 +104,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRegistry`](crate::client::fluent_builders::CreateRegistry) operation.
     ///
-    /// - Takes [`CreateRegistryInput`](crate::input::CreateRegistryInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::CreateRegistryInput::description): <p>A description of the registry to be created.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::CreateRegistryInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateRegistryInput::tags): <p>Tags to associate with the registry.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRegistry::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRegistry::set_description): <p>A description of the registry to be created.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::CreateRegistry::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::CreateRegistry::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRegistry::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRegistry::set_tags): <p>Tags to associate with the registry.</p>
     /// - On success, responds with [`CreateRegistryOutput`](crate::output::CreateRegistryOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::CreateRegistryOutput::description): <p>The description of the registry.</p>
     ///   - [`registry_arn(Option<String>)`](crate::output::CreateRegistryOutput::registry_arn): <p>The ARN of the registry.</p>
@@ -119,13 +119,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSchema`](crate::client::fluent_builders::CreateSchema) operation.
     ///
-    /// - Takes [`CreateSchemaInput`](crate::input::CreateSchemaInput) with field(s):
-    ///   - [`content(Option<String>)`](crate::input::CreateSchemaInput::content): <p>The source of the schema definition.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateSchemaInput::description): <p>A description of the schema.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::CreateSchemaInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::CreateSchemaInput::schema_name): <p>The name of the schema.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSchemaInput::tags): <p>Tags associated with the schema.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::CreateSchemaInput::type): <p>The type of schema.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_content): <p>The source of the schema definition.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_description): <p>A description of the schema.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_schema_name): <p>The name of the schema.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSchema::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSchema::set_tags): <p>Tags associated with the schema.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::CreateSchema::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::CreateSchema::set_type): <p>The type of schema.</p>
     /// - On success, responds with [`CreateSchemaOutput`](crate::output::CreateSchemaOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::CreateSchemaOutput::description): <p>The description of the schema.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::output::CreateSchemaOutput::last_modified): <p>The date and time that schema was modified.</p>
@@ -141,8 +141,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDiscoverer`](crate::client::fluent_builders::DeleteDiscoverer) operation.
     ///
-    /// - Takes [`DeleteDiscovererInput`](crate::input::DeleteDiscovererInput) with field(s):
-    ///   - [`discoverer_id(Option<String>)`](crate::input::DeleteDiscovererInput::discoverer_id): <p>The ID of the discoverer.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`discoverer_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDiscoverer::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::client::fluent_builders::DeleteDiscoverer::set_discoverer_id): <p>The ID of the discoverer.</p>
     /// - On success, responds with [`DeleteDiscovererOutput`](crate::output::DeleteDiscovererOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDiscovererError>`](crate::error::DeleteDiscovererError)
@@ -151,8 +151,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRegistry`](crate::client::fluent_builders::DeleteRegistry) operation.
     ///
-    /// - Takes [`DeleteRegistryInput`](crate::input::DeleteRegistryInput) with field(s):
-    ///   - [`registry_name(Option<String>)`](crate::input::DeleteRegistryInput::registry_name): <p>The name of the registry.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRegistry::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::DeleteRegistry::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`DeleteRegistryOutput`](crate::output::DeleteRegistryOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRegistryError>`](crate::error::DeleteRegistryError)
@@ -161,8 +161,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
-    /// - Takes [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput) with field(s):
-    ///   - [`registry_name(Option<String>)`](crate::input::DeleteResourcePolicyInput::registry_name): <p>The name of the registry.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
@@ -171,9 +171,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSchema`](crate::client::fluent_builders::DeleteSchema) operation.
     ///
-    /// - Takes [`DeleteSchemaInput`](crate::input::DeleteSchemaInput) with field(s):
-    ///   - [`registry_name(Option<String>)`](crate::input::DeleteSchemaInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::DeleteSchemaInput::schema_name): <p>The name of the schema.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSchema::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::DeleteSchema::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::DeleteSchema::set_schema_name): <p>The name of the schema.</p>
     /// - On success, responds with [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSchemaError>`](crate::error::DeleteSchemaError)
@@ -182,10 +182,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSchemaVersion`](crate::client::fluent_builders::DeleteSchemaVersion) operation.
     ///
-    /// - Takes [`DeleteSchemaVersionInput`](crate::input::DeleteSchemaVersionInput) with field(s):
-    ///   - [`registry_name(Option<String>)`](crate::input::DeleteSchemaVersionInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::DeleteSchemaVersionInput::schema_name): <p>The name of the schema.</p>
-    ///   - [`schema_version(Option<String>)`](crate::input::DeleteSchemaVersionInput::schema_version): The version number of the schema
+    /// - The fluent builder is configurable:
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSchemaVersion::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::DeleteSchemaVersion::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSchemaVersion::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::DeleteSchemaVersion::set_schema_name): <p>The name of the schema.</p>
+    ///   - [`schema_version(impl Into<String>)`](crate::client::fluent_builders::DeleteSchemaVersion::schema_version) / [`set_schema_version(Option<String>)`](crate::client::fluent_builders::DeleteSchemaVersion::set_schema_version): The version number of the schema
     /// - On success, responds with [`DeleteSchemaVersionOutput`](crate::output::DeleteSchemaVersionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSchemaVersionError>`](crate::error::DeleteSchemaVersionError)
@@ -194,11 +194,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCodeBinding`](crate::client::fluent_builders::DescribeCodeBinding) operation.
     ///
-    /// - Takes [`DescribeCodeBindingInput`](crate::input::DescribeCodeBindingInput) with field(s):
-    ///   - [`language(Option<String>)`](crate::input::DescribeCodeBindingInput::language): <p>The language of the code binding.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::DescribeCodeBindingInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::DescribeCodeBindingInput::schema_name): <p>The name of the schema.</p>
-    ///   - [`schema_version(Option<String>)`](crate::input::DescribeCodeBindingInput::schema_version): <p>Specifying this limits the results to only this schema version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeCodeBinding::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeCodeBinding::set_language): <p>The language of the code binding.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::DescribeCodeBinding::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::DescribeCodeBinding::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::DescribeCodeBinding::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::DescribeCodeBinding::set_schema_name): <p>The name of the schema.</p>
+    ///   - [`schema_version(impl Into<String>)`](crate::client::fluent_builders::DescribeCodeBinding::schema_version) / [`set_schema_version(Option<String>)`](crate::client::fluent_builders::DescribeCodeBinding::set_schema_version): <p>Specifying this limits the results to only this schema version.</p>
     /// - On success, responds with [`DescribeCodeBindingOutput`](crate::output::DescribeCodeBindingOutput) with field(s):
     ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeCodeBindingOutput::creation_date): <p>The time and date that the code binding was created.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::output::DescribeCodeBindingOutput::last_modified): <p>The date and time that code bindings were modified.</p>
@@ -210,8 +210,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDiscoverer`](crate::client::fluent_builders::DescribeDiscoverer) operation.
     ///
-    /// - Takes [`DescribeDiscovererInput`](crate::input::DescribeDiscovererInput) with field(s):
-    ///   - [`discoverer_id(Option<String>)`](crate::input::DescribeDiscovererInput::discoverer_id): <p>The ID of the discoverer.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`discoverer_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDiscoverer::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::client::fluent_builders::DescribeDiscoverer::set_discoverer_id): <p>The ID of the discoverer.</p>
     /// - On success, responds with [`DescribeDiscovererOutput`](crate::output::DescribeDiscovererOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::DescribeDiscovererOutput::description): <p>The description of the discoverer.</p>
     ///   - [`discoverer_arn(Option<String>)`](crate::output::DescribeDiscovererOutput::discoverer_arn): <p>The ARN of the discoverer.</p>
@@ -226,8 +226,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeRegistry`](crate::client::fluent_builders::DescribeRegistry) operation.
     ///
-    /// - Takes [`DescribeRegistryInput`](crate::input::DescribeRegistryInput) with field(s):
-    ///   - [`registry_name(Option<String>)`](crate::input::DescribeRegistryInput::registry_name): <p>The name of the registry.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRegistry::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::DescribeRegistry::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::DescribeRegistryOutput::description): <p>The description of the registry.</p>
     ///   - [`registry_arn(Option<String>)`](crate::output::DescribeRegistryOutput::registry_arn): <p>The ARN of the registry.</p>
@@ -239,10 +239,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSchema`](crate::client::fluent_builders::DescribeSchema) operation.
     ///
-    /// - Takes [`DescribeSchemaInput`](crate::input::DescribeSchemaInput) with field(s):
-    ///   - [`registry_name(Option<String>)`](crate::input::DescribeSchemaInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::DescribeSchemaInput::schema_name): <p>The name of the schema.</p>
-    ///   - [`schema_version(Option<String>)`](crate::input::DescribeSchemaInput::schema_version): <p>Specifying this limits the results to only this schema version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSchema::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::DescribeSchema::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::DescribeSchema::set_schema_name): <p>The name of the schema.</p>
+    ///   - [`schema_version(impl Into<String>)`](crate::client::fluent_builders::DescribeSchema::schema_version) / [`set_schema_version(Option<String>)`](crate::client::fluent_builders::DescribeSchema::set_schema_version): <p>Specifying this limits the results to only this schema version.</p>
     /// - On success, responds with [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput) with field(s):
     ///   - [`content(Option<String>)`](crate::output::DescribeSchemaOutput::content): <p>The source of the schema definition.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeSchemaOutput::description): <p>The description of the schema.</p>
@@ -259,11 +259,11 @@ where
     }
     /// Constructs a fluent builder for the [`ExportSchema`](crate::client::fluent_builders::ExportSchema) operation.
     ///
-    /// - Takes [`ExportSchemaInput`](crate::input::ExportSchemaInput) with field(s):
-    ///   - [`registry_name(Option<String>)`](crate::input::ExportSchemaInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::ExportSchemaInput::schema_name): <p>The name of the schema.</p>
-    ///   - [`schema_version(Option<String>)`](crate::input::ExportSchemaInput::schema_version): <p>Specifying this limits the results to only this schema version.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::ExportSchemaInput::type): (undocumented)
+    /// - The fluent builder is configurable:
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::ExportSchema::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::ExportSchema::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::ExportSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::ExportSchema::set_schema_name): <p>The name of the schema.</p>
+    ///   - [`schema_version(impl Into<String>)`](crate::client::fluent_builders::ExportSchema::schema_version) / [`set_schema_version(Option<String>)`](crate::client::fluent_builders::ExportSchema::set_schema_version): <p>Specifying this limits the results to only this schema version.</p>
+    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::ExportSchema::r#type) / [`set_type(Option<String>)`](crate::client::fluent_builders::ExportSchema::set_type): (undocumented)
     /// - On success, responds with [`ExportSchemaOutput`](crate::output::ExportSchemaOutput) with field(s):
     ///   - [`content(Option<String>)`](crate::output::ExportSchemaOutput::content): (undocumented)
     ///   - [`schema_arn(Option<String>)`](crate::output::ExportSchemaOutput::schema_arn): (undocumented)
@@ -276,11 +276,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetCodeBindingSource`](crate::client::fluent_builders::GetCodeBindingSource) operation.
     ///
-    /// - Takes [`GetCodeBindingSourceInput`](crate::input::GetCodeBindingSourceInput) with field(s):
-    ///   - [`language(Option<String>)`](crate::input::GetCodeBindingSourceInput::language): <p>The language of the code binding.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::GetCodeBindingSourceInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::GetCodeBindingSourceInput::schema_name): <p>The name of the schema.</p>
-    ///   - [`schema_version(Option<String>)`](crate::input::GetCodeBindingSourceInput::schema_version): <p>Specifying this limits the results to only this schema version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::GetCodeBindingSource::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::GetCodeBindingSource::set_language): <p>The language of the code binding.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::GetCodeBindingSource::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::GetCodeBindingSource::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::GetCodeBindingSource::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::GetCodeBindingSource::set_schema_name): <p>The name of the schema.</p>
+    ///   - [`schema_version(impl Into<String>)`](crate::client::fluent_builders::GetCodeBindingSource::schema_version) / [`set_schema_version(Option<String>)`](crate::client::fluent_builders::GetCodeBindingSource::set_schema_version): <p>Specifying this limits the results to only this schema version.</p>
     /// - On success, responds with [`GetCodeBindingSourceOutput`](crate::output::GetCodeBindingSourceOutput) with field(s):
     ///   - [`body(Option<Blob>)`](crate::output::GetCodeBindingSourceOutput::body): (undocumented)
     /// - On failure, responds with [`SdkError<GetCodeBindingSourceError>`](crate::error::GetCodeBindingSourceError)
@@ -289,9 +289,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetDiscoveredSchema`](crate::client::fluent_builders::GetDiscoveredSchema) operation.
     ///
-    /// - Takes [`GetDiscoveredSchemaInput`](crate::input::GetDiscoveredSchemaInput) with field(s):
-    ///   - [`events(Option<Vec<String>>)`](crate::input::GetDiscoveredSchemaInput::events): <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::GetDiscoveredSchemaInput::type): <p>The type of event.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`events(Vec<String>)`](crate::client::fluent_builders::GetDiscoveredSchema::events) / [`set_events(Option<Vec<String>>)`](crate::client::fluent_builders::GetDiscoveredSchema::set_events): <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::GetDiscoveredSchema::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::GetDiscoveredSchema::set_type): <p>The type of event.</p>
     /// - On success, responds with [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput) with field(s):
     ///   - [`content(Option<String>)`](crate::output::GetDiscoveredSchemaOutput::content): <p>The source of the schema definition.</p>
     /// - On failure, responds with [`SdkError<GetDiscoveredSchemaError>`](crate::error::GetDiscoveredSchemaError)
@@ -300,8 +300,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) operation.
     ///
-    /// - Takes [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput) with field(s):
-    ///   - [`registry_name(Option<String>)`](crate::input::GetResourcePolicyInput::registry_name): <p>The name of the registry.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicy::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::GetResourcePolicy::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::output::GetResourcePolicyOutput::policy): <p>The resource-based policy.</p>
     ///   - [`revision_id(Option<String>)`](crate::output::GetResourcePolicyOutput::revision_id): <p>The revision ID.</p>
@@ -310,13 +310,13 @@ where
         fluent_builders::GetResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDiscoverers`](crate::client::fluent_builders::ListDiscoverers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDiscoverers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDiscoverers::into_paginator).
     ///
-    /// - Takes [`ListDiscoverersInput`](crate::input::ListDiscoverersInput) with field(s):
-    ///   - [`discoverer_id_prefix(Option<String>)`](crate::input::ListDiscoverersInput::discoverer_id_prefix): <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
-    ///   - [`limit(i32)`](crate::input::ListDiscoverersInput::limit): (undocumented)
-    ///   - [`next_token(Option<String>)`](crate::input::ListDiscoverersInput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    ///   - [`source_arn_prefix(Option<String>)`](crate::input::ListDiscoverersInput::source_arn_prefix): <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`discoverer_id_prefix(impl Into<String>)`](crate::client::fluent_builders::ListDiscoverers::discoverer_id_prefix) / [`set_discoverer_id_prefix(Option<String>)`](crate::client::fluent_builders::ListDiscoverers::set_discoverer_id_prefix): <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListDiscoverers::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListDiscoverers::set_limit): (undocumented)
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDiscoverers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDiscoverers::set_next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    ///   - [`source_arn_prefix(impl Into<String>)`](crate::client::fluent_builders::ListDiscoverers::source_arn_prefix) / [`set_source_arn_prefix(Option<String>)`](crate::client::fluent_builders::ListDiscoverers::set_source_arn_prefix): <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
     /// - On success, responds with [`ListDiscoverersOutput`](crate::output::ListDiscoverersOutput) with field(s):
     ///   - [`discoverers(Option<Vec<DiscovererSummary>>)`](crate::output::ListDiscoverersOutput::discoverers): <p>An array of DiscovererSummary information.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDiscoverersOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -325,13 +325,13 @@ where
         fluent_builders::ListDiscoverers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRegistries`](crate::client::fluent_builders::ListRegistries) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRegistries::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRegistries::into_paginator).
     ///
-    /// - Takes [`ListRegistriesInput`](crate::input::ListRegistriesInput) with field(s):
-    ///   - [`limit(i32)`](crate::input::ListRegistriesInput::limit): (undocumented)
-    ///   - [`next_token(Option<String>)`](crate::input::ListRegistriesInput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    ///   - [`registry_name_prefix(Option<String>)`](crate::input::ListRegistriesInput::registry_name_prefix): <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
-    ///   - [`scope(Option<String>)`](crate::input::ListRegistriesInput::scope): <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListRegistries::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListRegistries::set_limit): (undocumented)
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRegistries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRegistries::set_next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    ///   - [`registry_name_prefix(impl Into<String>)`](crate::client::fluent_builders::ListRegistries::registry_name_prefix) / [`set_registry_name_prefix(Option<String>)`](crate::client::fluent_builders::ListRegistries::set_registry_name_prefix): <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
+    ///   - [`scope(impl Into<String>)`](crate::client::fluent_builders::ListRegistries::scope) / [`set_scope(Option<String>)`](crate::client::fluent_builders::ListRegistries::set_scope): <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
     /// - On success, responds with [`ListRegistriesOutput`](crate::output::ListRegistriesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListRegistriesOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`registries(Option<Vec<RegistrySummary>>)`](crate::output::ListRegistriesOutput::registries): <p>An array of registry summaries.</p>
@@ -340,13 +340,13 @@ where
         fluent_builders::ListRegistries::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSchemas`](crate::client::fluent_builders::ListSchemas) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
     ///
-    /// - Takes [`ListSchemasInput`](crate::input::ListSchemasInput) with field(s):
-    ///   - [`limit(i32)`](crate::input::ListSchemasInput::limit): (undocumented)
-    ///   - [`next_token(Option<String>)`](crate::input::ListSchemasInput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::ListSchemasInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name_prefix(Option<String>)`](crate::input::ListSchemasInput::schema_name_prefix): <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListSchemas::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListSchemas::set_limit): (undocumented)
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSchemas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSchemas::set_next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::ListSchemas::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::ListSchemas::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name_prefix(impl Into<String>)`](crate::client::fluent_builders::ListSchemas::schema_name_prefix) / [`set_schema_name_prefix(Option<String>)`](crate::client::fluent_builders::ListSchemas::set_schema_name_prefix): <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
     /// - On success, responds with [`ListSchemasOutput`](crate::output::ListSchemasOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListSchemasOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`schemas(Option<Vec<SchemaSummary>>)`](crate::output::ListSchemasOutput::schemas): <p>An array of schema summaries.</p>
@@ -355,13 +355,13 @@ where
         fluent_builders::ListSchemas::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSchemaVersions`](crate::client::fluent_builders::ListSchemaVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemaVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSchemaVersions::into_paginator).
     ///
-    /// - Takes [`ListSchemaVersionsInput`](crate::input::ListSchemaVersionsInput) with field(s):
-    ///   - [`limit(i32)`](crate::input::ListSchemaVersionsInput::limit): (undocumented)
-    ///   - [`next_token(Option<String>)`](crate::input::ListSchemaVersionsInput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::ListSchemaVersionsInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::ListSchemaVersionsInput::schema_name): <p>The name of the schema.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListSchemaVersions::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListSchemaVersions::set_limit): (undocumented)
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSchemaVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSchemaVersions::set_next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::ListSchemaVersions::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::ListSchemaVersions::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::ListSchemaVersions::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::ListSchemaVersions::set_schema_name): <p>The name of the schema.</p>
     /// - On success, responds with [`ListSchemaVersionsOutput`](crate::output::ListSchemaVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListSchemaVersionsOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`schema_versions(Option<Vec<SchemaVersionSummary>>)`](crate::output::ListSchemaVersionsOutput::schema_versions): <p>An array of schema version summaries.</p>
@@ -371,8 +371,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Key-value pairs associated with a resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -381,11 +381,11 @@ where
     }
     /// Constructs a fluent builder for the [`PutCodeBinding`](crate::client::fluent_builders::PutCodeBinding) operation.
     ///
-    /// - Takes [`PutCodeBindingInput`](crate::input::PutCodeBindingInput) with field(s):
-    ///   - [`language(Option<String>)`](crate::input::PutCodeBindingInput::language): <p>The language of the code binding.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::PutCodeBindingInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::PutCodeBindingInput::schema_name): <p>The name of the schema.</p>
-    ///   - [`schema_version(Option<String>)`](crate::input::PutCodeBindingInput::schema_version): <p>Specifying this limits the results to only this schema version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::PutCodeBinding::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::PutCodeBinding::set_language): <p>The language of the code binding.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::PutCodeBinding::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::PutCodeBinding::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::PutCodeBinding::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::PutCodeBinding::set_schema_name): <p>The name of the schema.</p>
+    ///   - [`schema_version(impl Into<String>)`](crate::client::fluent_builders::PutCodeBinding::schema_version) / [`set_schema_version(Option<String>)`](crate::client::fluent_builders::PutCodeBinding::set_schema_version): <p>Specifying this limits the results to only this schema version.</p>
     /// - On success, responds with [`PutCodeBindingOutput`](crate::output::PutCodeBindingOutput) with field(s):
     ///   - [`creation_date(Option<DateTime>)`](crate::output::PutCodeBindingOutput::creation_date): <p>The time and date that the code binding was created.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::output::PutCodeBindingOutput::last_modified): <p>The date and time that code bindings were modified.</p>
@@ -397,10 +397,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
-    /// - Takes [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput) with field(s):
-    ///   - [`policy(Option<String>)`](crate::input::PutResourcePolicyInput::policy): <p>The resource-based policy.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::PutResourcePolicyInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`revision_id(Option<String>)`](crate::input::PutResourcePolicyInput::revision_id): <p>The revision ID of the policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy): <p>The resource-based policy.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_revision_id): <p>The revision ID of the policy.</p>
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::output::PutResourcePolicyOutput::policy): <p>The resource-based policy.</p>
     ///   - [`revision_id(Option<String>)`](crate::output::PutResourcePolicyOutput::revision_id): <p>The revision ID of the policy.</p>
@@ -409,13 +409,13 @@ where
         fluent_builders::PutResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SearchSchemas`](crate::client::fluent_builders::SearchSchemas) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchSchemas::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchSchemas::into_paginator).
     ///
-    /// - Takes [`SearchSchemasInput`](crate::input::SearchSchemasInput) with field(s):
-    ///   - [`keywords(Option<String>)`](crate::input::SearchSchemasInput::keywords): <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
-    ///   - [`limit(i32)`](crate::input::SearchSchemasInput::limit): (undocumented)
-    ///   - [`next_token(Option<String>)`](crate::input::SearchSchemasInput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::SearchSchemasInput::registry_name): <p>The name of the registry.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`keywords(impl Into<String>)`](crate::client::fluent_builders::SearchSchemas::keywords) / [`set_keywords(Option<String>)`](crate::client::fluent_builders::SearchSchemas::set_keywords): <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::SearchSchemas::limit) / [`set_limit(i32)`](crate::client::fluent_builders::SearchSchemas::set_limit): (undocumented)
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchSchemas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchSchemas::set_next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::SearchSchemas::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::SearchSchemas::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`SearchSchemasOutput`](crate::output::SearchSchemasOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::SearchSchemasOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`schemas(Option<Vec<SearchSchemaSummary>>)`](crate::output::SearchSchemasOutput::schemas): <p>An array of SearchSchemaSummary information.</p>
@@ -425,8 +425,8 @@ where
     }
     /// Constructs a fluent builder for the [`StartDiscoverer`](crate::client::fluent_builders::StartDiscoverer) operation.
     ///
-    /// - Takes [`StartDiscovererInput`](crate::input::StartDiscovererInput) with field(s):
-    ///   - [`discoverer_id(Option<String>)`](crate::input::StartDiscovererInput::discoverer_id): <p>The ID of the discoverer.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`discoverer_id(impl Into<String>)`](crate::client::fluent_builders::StartDiscoverer::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::client::fluent_builders::StartDiscoverer::set_discoverer_id): <p>The ID of the discoverer.</p>
     /// - On success, responds with [`StartDiscovererOutput`](crate::output::StartDiscovererOutput) with field(s):
     ///   - [`discoverer_id(Option<String>)`](crate::output::StartDiscovererOutput::discoverer_id): <p>The ID of the discoverer.</p>
     ///   - [`state(Option<DiscovererState>)`](crate::output::StartDiscovererOutput::state): <p>The state of the discoverer.</p>
@@ -436,8 +436,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopDiscoverer`](crate::client::fluent_builders::StopDiscoverer) operation.
     ///
-    /// - Takes [`StopDiscovererInput`](crate::input::StopDiscovererInput) with field(s):
-    ///   - [`discoverer_id(Option<String>)`](crate::input::StopDiscovererInput::discoverer_id): <p>The ID of the discoverer.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`discoverer_id(impl Into<String>)`](crate::client::fluent_builders::StopDiscoverer::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::client::fluent_builders::StopDiscoverer::set_discoverer_id): <p>The ID of the discoverer.</p>
     /// - On success, responds with [`StopDiscovererOutput`](crate::output::StopDiscovererOutput) with field(s):
     ///   - [`discoverer_id(Option<String>)`](crate::output::StopDiscovererOutput::discoverer_id): <p>The ID of the discoverer.</p>
     ///   - [`state(Option<DiscovererState>)`](crate::output::StopDiscovererOutput::state): <p>The state of the discoverer.</p>
@@ -447,9 +447,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>Tags associated with the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Tags associated with the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -458,9 +458,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Keys of key-value pairs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Keys of key-value pairs.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -469,10 +469,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDiscoverer`](crate::client::fluent_builders::UpdateDiscoverer) operation.
     ///
-    /// - Takes [`UpdateDiscovererInput`](crate::input::UpdateDiscovererInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::UpdateDiscovererInput::description): <p>The description of the discoverer to update.</p>
-    ///   - [`discoverer_id(Option<String>)`](crate::input::UpdateDiscovererInput::discoverer_id): <p>The ID of the discoverer.</p>
-    ///   - [`cross_account(bool)`](crate::input::UpdateDiscovererInput::cross_account): <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDiscoverer::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDiscoverer::set_description): <p>The description of the discoverer to update.</p>
+    ///   - [`discoverer_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDiscoverer::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::client::fluent_builders::UpdateDiscoverer::set_discoverer_id): <p>The ID of the discoverer.</p>
+    ///   - [`cross_account(bool)`](crate::client::fluent_builders::UpdateDiscoverer::cross_account) / [`set_cross_account(bool)`](crate::client::fluent_builders::UpdateDiscoverer::set_cross_account): <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
     /// - On success, responds with [`UpdateDiscovererOutput`](crate::output::UpdateDiscovererOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::UpdateDiscovererOutput::description): <p>The description of the discoverer.</p>
     ///   - [`discoverer_arn(Option<String>)`](crate::output::UpdateDiscovererOutput::discoverer_arn): <p>The ARN of the discoverer.</p>
@@ -487,9 +487,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRegistry`](crate::client::fluent_builders::UpdateRegistry) operation.
     ///
-    /// - Takes [`UpdateRegistryInput`](crate::input::UpdateRegistryInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::UpdateRegistryInput::description): <p>The description of the registry to update.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::UpdateRegistryInput::registry_name): <p>The name of the registry.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRegistry::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRegistry::set_description): <p>The description of the registry to update.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRegistry::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::UpdateRegistry::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`UpdateRegistryOutput`](crate::output::UpdateRegistryOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::UpdateRegistryOutput::description): <p>The description of the registry.</p>
     ///   - [`registry_arn(Option<String>)`](crate::output::UpdateRegistryOutput::registry_arn): <p>The ARN of the registry.</p>
@@ -501,13 +501,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSchema`](crate::client::fluent_builders::UpdateSchema) operation.
     ///
-    /// - Takes [`UpdateSchemaInput`](crate::input::UpdateSchemaInput) with field(s):
-    ///   - [`client_token_id(Option<String>)`](crate::input::UpdateSchemaInput::client_token_id): <p>The ID of the client token.</p>
-    ///   - [`content(Option<String>)`](crate::input::UpdateSchemaInput::content): <p>The source of the schema definition.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateSchemaInput::description): <p>The description of the schema.</p>
-    ///   - [`registry_name(Option<String>)`](crate::input::UpdateSchemaInput::registry_name): <p>The name of the registry.</p>
-    ///   - [`schema_name(Option<String>)`](crate::input::UpdateSchemaInput::schema_name): <p>The name of the schema.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::UpdateSchemaInput::type): <p>The schema type for the events schema.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::client_token_id) / [`set_client_token_id(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_client_token_id): <p>The ID of the client token.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_content): <p>The source of the schema definition.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_description): <p>The description of the schema.</p>
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_schema_name): <p>The name of the schema.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::UpdateSchema::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::UpdateSchema::set_type): <p>The schema type for the events schema.</p>
     /// - On success, responds with [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::UpdateSchemaOutput::description): <p>The description of the schema.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::output::UpdateSchemaOutput::last_modified): <p>The date and time that schema was modified.</p>

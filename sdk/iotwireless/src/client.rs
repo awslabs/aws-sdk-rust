@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`AssociateAwsAccountWithPartnerAccount`](crate::client::fluent_builders::AssociateAwsAccountWithPartnerAccount) operation.
     ///
-    /// - Takes [`AssociateAwsAccountWithPartnerAccountInput`](crate::input::AssociateAwsAccountWithPartnerAccountInput) with field(s):
-    ///   - [`sidewalk(Option<SidewalkAccountInfo>)`](crate::input::AssociateAwsAccountWithPartnerAccountInput::sidewalk): <p>The Sidewalk account credentials.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::AssociateAwsAccountWithPartnerAccountInput::client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AssociateAwsAccountWithPartnerAccountInput::tags): <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sidewalk(SidewalkAccountInfo)`](crate::client::fluent_builders::AssociateAwsAccountWithPartnerAccount::sidewalk) / [`set_sidewalk(Option<SidewalkAccountInfo>)`](crate::client::fluent_builders::AssociateAwsAccountWithPartnerAccount::set_sidewalk): <p>The Sidewalk account credentials.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::AssociateAwsAccountWithPartnerAccount::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::AssociateAwsAccountWithPartnerAccount::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AssociateAwsAccountWithPartnerAccount::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AssociateAwsAccountWithPartnerAccount::set_tags): <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     /// - On success, responds with [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput) with field(s):
     ///   - [`sidewalk(Option<SidewalkAccountInfo>)`](crate::output::AssociateAwsAccountWithPartnerAccountOutput::sidewalk): <p>The Sidewalk account credentials.</p>
     ///   - [`arn(Option<String>)`](crate::output::AssociateAwsAccountWithPartnerAccountOutput::arn): <p>The Amazon Resource Name of the resource.</p>
@@ -100,9 +100,9 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateMulticastGroupWithFuotaTask`](crate::client::fluent_builders::AssociateMulticastGroupWithFuotaTask) operation.
     ///
-    /// - Takes [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::AssociateMulticastGroupWithFuotaTaskInput::id): <p>The ID of a FUOTA task.</p>
-    ///   - [`multicast_group_id(Option<String>)`](crate::input::AssociateMulticastGroupWithFuotaTaskInput::multicast_group_id): <p>The ID of the multicast group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociateMulticastGroupWithFuotaTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociateMulticastGroupWithFuotaTask::set_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`multicast_group_id(impl Into<String>)`](crate::client::fluent_builders::AssociateMulticastGroupWithFuotaTask::multicast_group_id) / [`set_multicast_group_id(Option<String>)`](crate::client::fluent_builders::AssociateMulticastGroupWithFuotaTask::set_multicast_group_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
 
     /// - On failure, responds with [`SdkError<AssociateMulticastGroupWithFuotaTaskError>`](crate::error::AssociateMulticastGroupWithFuotaTaskError)
@@ -113,9 +113,9 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateWirelessDeviceWithFuotaTask`](crate::client::fluent_builders::AssociateWirelessDeviceWithFuotaTask) operation.
     ///
-    /// - Takes [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput::id): <p>The ID of a FUOTA task.</p>
-    ///   - [`wireless_device_id(Option<String>)`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput::wireless_device_id): <p>The ID of the wireless device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithFuotaTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithFuotaTask::set_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`wireless_device_id(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithFuotaTask::wireless_device_id) / [`set_wireless_device_id(Option<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithFuotaTask::set_wireless_device_id): <p>The ID of the wireless device.</p>
     /// - On success, responds with [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
 
     /// - On failure, responds with [`SdkError<AssociateWirelessDeviceWithFuotaTaskError>`](crate::error::AssociateWirelessDeviceWithFuotaTaskError)
@@ -126,9 +126,9 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateWirelessDeviceWithMulticastGroup`](crate::client::fluent_builders::AssociateWirelessDeviceWithMulticastGroup) operation.
     ///
-    /// - Takes [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput::id): <p>The ID of the multicast group.</p>
-    ///   - [`wireless_device_id(Option<String>)`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput::wireless_device_id): <p>The ID of the wireless device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithMulticastGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithMulticastGroup::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`wireless_device_id(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithMulticastGroup::wireless_device_id) / [`set_wireless_device_id(Option<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithMulticastGroup::set_wireless_device_id): <p>The ID of the wireless device.</p>
     /// - On success, responds with [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
 
     /// - On failure, responds with [`SdkError<AssociateWirelessDeviceWithMulticastGroupError>`](crate::error::AssociateWirelessDeviceWithMulticastGroupError)
@@ -139,9 +139,9 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateWirelessDeviceWithThing`](crate::client::fluent_builders::AssociateWirelessDeviceWithThing) operation.
     ///
-    /// - Takes [`AssociateWirelessDeviceWithThingInput`](crate::input::AssociateWirelessDeviceWithThingInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::AssociateWirelessDeviceWithThingInput::id): <p>The ID of the resource to update.</p>
-    ///   - [`thing_arn(Option<String>)`](crate::input::AssociateWirelessDeviceWithThingInput::thing_arn): <p>The ARN of the thing to associate with the wireless device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithThing::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithThing::set_id): <p>The ID of the resource to update.</p>
+    ///   - [`thing_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithThing::thing_arn) / [`set_thing_arn(Option<String>)`](crate::client::fluent_builders::AssociateWirelessDeviceWithThing::set_thing_arn): <p>The ARN of the thing to associate with the wireless device.</p>
     /// - On success, responds with [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput)
 
     /// - On failure, responds with [`SdkError<AssociateWirelessDeviceWithThingError>`](crate::error::AssociateWirelessDeviceWithThingError)
@@ -152,9 +152,9 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateWirelessGatewayWithCertificate`](crate::client::fluent_builders::AssociateWirelessGatewayWithCertificate) operation.
     ///
-    /// - Takes [`AssociateWirelessGatewayWithCertificateInput`](crate::input::AssociateWirelessGatewayWithCertificateInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::AssociateWirelessGatewayWithCertificateInput::id): <p>The ID of the resource to update.</p>
-    ///   - [`iot_certificate_id(Option<String>)`](crate::input::AssociateWirelessGatewayWithCertificateInput::iot_certificate_id): <p>The ID of the certificate to associate with the wireless gateway.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessGatewayWithCertificate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociateWirelessGatewayWithCertificate::set_id): <p>The ID of the resource to update.</p>
+    ///   - [`iot_certificate_id(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessGatewayWithCertificate::iot_certificate_id) / [`set_iot_certificate_id(Option<String>)`](crate::client::fluent_builders::AssociateWirelessGatewayWithCertificate::set_iot_certificate_id): <p>The ID of the certificate to associate with the wireless gateway.</p>
     /// - On success, responds with [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput) with field(s):
     ///   - [`iot_certificate_id(Option<String>)`](crate::output::AssociateWirelessGatewayWithCertificateOutput::iot_certificate_id): <p>The ID of the certificate associated with the wireless gateway.</p>
     /// - On failure, responds with [`SdkError<AssociateWirelessGatewayWithCertificateError>`](crate::error::AssociateWirelessGatewayWithCertificateError)
@@ -165,9 +165,9 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateWirelessGatewayWithThing`](crate::client::fluent_builders::AssociateWirelessGatewayWithThing) operation.
     ///
-    /// - Takes [`AssociateWirelessGatewayWithThingInput`](crate::input::AssociateWirelessGatewayWithThingInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::AssociateWirelessGatewayWithThingInput::id): <p>The ID of the resource to update.</p>
-    ///   - [`thing_arn(Option<String>)`](crate::input::AssociateWirelessGatewayWithThingInput::thing_arn): <p>The ARN of the thing to associate with the wireless gateway.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessGatewayWithThing::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociateWirelessGatewayWithThing::set_id): <p>The ID of the resource to update.</p>
+    ///   - [`thing_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWirelessGatewayWithThing::thing_arn) / [`set_thing_arn(Option<String>)`](crate::client::fluent_builders::AssociateWirelessGatewayWithThing::set_thing_arn): <p>The ARN of the thing to associate with the wireless gateway.</p>
     /// - On success, responds with [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput)
 
     /// - On failure, responds with [`SdkError<AssociateWirelessGatewayWithThingError>`](crate::error::AssociateWirelessGatewayWithThingError)
@@ -178,8 +178,8 @@ where
     }
     /// Constructs a fluent builder for the [`CancelMulticastGroupSession`](crate::client::fluent_builders::CancelMulticastGroupSession) operation.
     ///
-    /// - Takes [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::CancelMulticastGroupSessionInput::id): <p>The ID of the multicast group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::CancelMulticastGroupSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::CancelMulticastGroupSession::set_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
 
     /// - On failure, responds with [`SdkError<CancelMulticastGroupSessionError>`](crate::error::CancelMulticastGroupSessionError)
@@ -190,14 +190,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDestination`](crate::client::fluent_builders::CreateDestination) operation.
     ///
-    /// - Takes [`CreateDestinationInput`](crate::input::CreateDestinationInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateDestinationInput::name): <p>The name of the new resource.</p>
-    ///   - [`expression_type(Option<ExpressionType>)`](crate::input::CreateDestinationInput::expression_type): <p>The type of value in <code>Expression</code>.</p>
-    ///   - [`expression(Option<String>)`](crate::input::CreateDestinationInput::expression): <p>The rule name or topic rule to send messages to.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateDestinationInput::description): <p>The description of the new resource.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateDestinationInput::role_arn): <p>The ARN of the IAM Role that authorizes the destination.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDestinationInput::tags): <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateDestinationInput::client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDestination::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDestination::set_name): <p>The name of the new resource.</p>
+    ///   - [`expression_type(ExpressionType)`](crate::client::fluent_builders::CreateDestination::expression_type) / [`set_expression_type(Option<ExpressionType>)`](crate::client::fluent_builders::CreateDestination::set_expression_type): <p>The type of value in <code>Expression</code>.</p>
+    ///   - [`expression(impl Into<String>)`](crate::client::fluent_builders::CreateDestination::expression) / [`set_expression(Option<String>)`](crate::client::fluent_builders::CreateDestination::set_expression): <p>The rule name or topic rule to send messages to.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDestination::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDestination::set_description): <p>The description of the new resource.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDestination::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDestination::set_role_arn): <p>The ARN of the IAM Role that authorizes the destination.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDestination::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDestination::set_tags): <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateDestination::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateDestination::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     /// - On success, responds with [`CreateDestinationOutput`](crate::output::CreateDestinationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateDestinationOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`name(Option<String>)`](crate::output::CreateDestinationOutput::name): <p>The name of the new resource.</p>
@@ -207,11 +207,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDeviceProfile`](crate::client::fluent_builders::CreateDeviceProfile) operation.
     ///
-    /// - Takes [`CreateDeviceProfileInput`](crate::input::CreateDeviceProfileInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateDeviceProfileInput::name): <p>The name of the new resource.</p>
-    ///   - [`lo_ra_wan(Option<LoRaWanDeviceProfile>)`](crate::input::CreateDeviceProfileInput::lo_ra_wan): <p>The device profile information to use to create the device profile.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDeviceProfileInput::tags): <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateDeviceProfileInput::client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDeviceProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDeviceProfile::set_name): <p>The name of the new resource.</p>
+    ///   - [`lo_ra_wan(LoRaWanDeviceProfile)`](crate::client::fluent_builders::CreateDeviceProfile::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanDeviceProfile>)`](crate::client::fluent_builders::CreateDeviceProfile::set_lo_ra_wan): <p>The device profile information to use to create the device profile.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDeviceProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDeviceProfile::set_tags): <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateDeviceProfile::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateDeviceProfile::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     /// - On success, responds with [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateDeviceProfileOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateDeviceProfileOutput::id): <p>The ID of the new device profile.</p>
@@ -221,14 +221,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFuotaTask`](crate::client::fluent_builders::CreateFuotaTask) operation.
     ///
-    /// - Takes [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateFuotaTaskInput::name): <p>The name of a FUOTA task.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateFuotaTaskInput::description): <p>The description of the new resource.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateFuotaTaskInput::client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    ///   - [`lo_ra_wan(Option<LoRaWanFuotaTask>)`](crate::input::CreateFuotaTaskInput::lo_ra_wan): <p>The LoRaWAN information used with a FUOTA task.</p>
-    ///   - [`firmware_update_image(Option<String>)`](crate::input::CreateFuotaTaskInput::firmware_update_image): <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    ///   - [`firmware_update_role(Option<String>)`](crate::input::CreateFuotaTaskInput::firmware_update_role): <p>The firmware update role that is to be used with a FUOTA task.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateFuotaTaskInput::tags): <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFuotaTask::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFuotaTask::set_name): <p>The name of a FUOTA task.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFuotaTask::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFuotaTask::set_description): <p>The description of the new resource.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateFuotaTask::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateFuotaTask::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
+    ///   - [`lo_ra_wan(LoRaWanFuotaTask)`](crate::client::fluent_builders::CreateFuotaTask::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanFuotaTask>)`](crate::client::fluent_builders::CreateFuotaTask::set_lo_ra_wan): <p>The LoRaWAN information used with a FUOTA task.</p>
+    ///   - [`firmware_update_image(impl Into<String>)`](crate::client::fluent_builders::CreateFuotaTask::firmware_update_image) / [`set_firmware_update_image(Option<String>)`](crate::client::fluent_builders::CreateFuotaTask::set_firmware_update_image): <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    ///   - [`firmware_update_role(impl Into<String>)`](crate::client::fluent_builders::CreateFuotaTask::firmware_update_role) / [`set_firmware_update_role(Option<String>)`](crate::client::fluent_builders::CreateFuotaTask::set_firmware_update_role): <p>The firmware update role that is to be used with a FUOTA task.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFuotaTask::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFuotaTask::set_tags): <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     /// - On success, responds with [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateFuotaTaskOutput::arn): <p>The arn of a FUOTA task.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateFuotaTaskOutput::id): <p>The ID of a FUOTA task.</p>
@@ -238,12 +238,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMulticastGroup`](crate::client::fluent_builders::CreateMulticastGroup) operation.
     ///
-    /// - Takes [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateMulticastGroupInput::name): <p>The name of the multicast group.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateMulticastGroupInput::description): <p>The description of the multicast group.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateMulticastGroupInput::client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    ///   - [`lo_ra_wan(Option<LoRaWanMulticast>)`](crate::input::CreateMulticastGroupInput::lo_ra_wan): <p>The LoRaWAN information that is to be used with the multicast group.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateMulticastGroupInput::tags): <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateMulticastGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateMulticastGroup::set_name): <p>The name of the multicast group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateMulticastGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateMulticastGroup::set_description): <p>The description of the multicast group.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMulticastGroup::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMulticastGroup::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    ///   - [`lo_ra_wan(LoRaWanMulticast)`](crate::client::fluent_builders::CreateMulticastGroup::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanMulticast>)`](crate::client::fluent_builders::CreateMulticastGroup::set_lo_ra_wan): <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMulticastGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMulticastGroup::set_tags): <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     /// - On success, responds with [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateMulticastGroupOutput::arn): <p>The arn of the multicast group.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateMulticastGroupOutput::id): <p>The ID of the multicast group.</p>
@@ -253,11 +253,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateServiceProfile`](crate::client::fluent_builders::CreateServiceProfile) operation.
     ///
-    /// - Takes [`CreateServiceProfileInput`](crate::input::CreateServiceProfileInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateServiceProfileInput::name): <p>The name of the new resource.</p>
-    ///   - [`lo_ra_wan(Option<LoRaWanServiceProfile>)`](crate::input::CreateServiceProfileInput::lo_ra_wan): <p>The service profile information to use to create the service profile.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateServiceProfileInput::tags): <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateServiceProfileInput::client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateServiceProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateServiceProfile::set_name): <p>The name of the new resource.</p>
+    ///   - [`lo_ra_wan(LoRaWanServiceProfile)`](crate::client::fluent_builders::CreateServiceProfile::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanServiceProfile>)`](crate::client::fluent_builders::CreateServiceProfile::set_lo_ra_wan): <p>The service profile information to use to create the service profile.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateServiceProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateServiceProfile::set_tags): <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateServiceProfile::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateServiceProfile::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     /// - On success, responds with [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateServiceProfileOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateServiceProfileOutput::id): <p>The ID of the new service profile.</p>
@@ -267,14 +267,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateWirelessDevice`](crate::client::fluent_builders::CreateWirelessDevice) operation.
     ///
-    /// - Takes [`CreateWirelessDeviceInput`](crate::input::CreateWirelessDeviceInput) with field(s):
-    ///   - [`r#type(Option<WirelessDeviceType>)`](crate::input::CreateWirelessDeviceInput::type): <p>The wireless device type.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateWirelessDeviceInput::name): <p>The name of the new resource.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateWirelessDeviceInput::description): <p>The description of the new resource.</p>
-    ///   - [`destination_name(Option<String>)`](crate::input::CreateWirelessDeviceInput::destination_name): <p>The name of the destination to assign to the new wireless device.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateWirelessDeviceInput::client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    ///   - [`lo_ra_wan(Option<LoRaWanDevice>)`](crate::input::CreateWirelessDeviceInput::lo_ra_wan): <p>The device configuration information to use to create the wireless device.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateWirelessDeviceInput::tags): <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`r#type(WirelessDeviceType)`](crate::client::fluent_builders::CreateWirelessDevice::r#type) / [`set_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::CreateWirelessDevice::set_type): <p>The wireless device type.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessDevice::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWirelessDevice::set_name): <p>The name of the new resource.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessDevice::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWirelessDevice::set_description): <p>The description of the new resource.</p>
+    ///   - [`destination_name(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessDevice::destination_name) / [`set_destination_name(Option<String>)`](crate::client::fluent_builders::CreateWirelessDevice::set_destination_name): <p>The name of the destination to assign to the new wireless device.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessDevice::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateWirelessDevice::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    ///   - [`lo_ra_wan(LoRaWanDevice)`](crate::client::fluent_builders::CreateWirelessDevice::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanDevice>)`](crate::client::fluent_builders::CreateWirelessDevice::set_lo_ra_wan): <p>The device configuration information to use to create the wireless device.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWirelessDevice::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWirelessDevice::set_tags): <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
     /// - On success, responds with [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateWirelessDeviceOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateWirelessDeviceOutput::id): <p>The ID of the new wireless device.</p>
@@ -284,12 +284,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateWirelessGateway`](crate::client::fluent_builders::CreateWirelessGateway) operation.
     ///
-    /// - Takes [`CreateWirelessGatewayInput`](crate::input::CreateWirelessGatewayInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateWirelessGatewayInput::name): <p>The name of the new resource.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateWirelessGatewayInput::description): <p>The description of the new resource.</p>
-    ///   - [`lo_ra_wan(Option<LoRaWanGateway>)`](crate::input::CreateWirelessGatewayInput::lo_ra_wan): <p>The gateway configuration information to use to create the wireless gateway.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateWirelessGatewayInput::tags): <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateWirelessGatewayInput::client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessGateway::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWirelessGateway::set_name): <p>The name of the new resource.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessGateway::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWirelessGateway::set_description): <p>The description of the new resource.</p>
+    ///   - [`lo_ra_wan(LoRaWanGateway)`](crate::client::fluent_builders::CreateWirelessGateway::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanGateway>)`](crate::client::fluent_builders::CreateWirelessGateway::set_lo_ra_wan): <p>The gateway configuration information to use to create the wireless gateway.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWirelessGateway::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWirelessGateway::set_tags): <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessGateway::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateWirelessGateway::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     /// - On success, responds with [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateWirelessGatewayOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateWirelessGatewayOutput::id): <p>The ID of the new wireless gateway.</p>
@@ -299,9 +299,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateWirelessGatewayTask`](crate::client::fluent_builders::CreateWirelessGatewayTask) operation.
     ///
-    /// - Takes [`CreateWirelessGatewayTaskInput`](crate::input::CreateWirelessGatewayTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::CreateWirelessGatewayTaskInput::id): <p>The ID of the resource to update.</p>
-    ///   - [`wireless_gateway_task_definition_id(Option<String>)`](crate::input::CreateWirelessGatewayTaskInput::wireless_gateway_task_definition_id): <p>The ID of the WirelessGatewayTaskDefinition.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessGatewayTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::CreateWirelessGatewayTask::set_id): <p>The ID of the resource to update.</p>
+    ///   - [`wireless_gateway_task_definition_id(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessGatewayTask::wireless_gateway_task_definition_id) / [`set_wireless_gateway_task_definition_id(Option<String>)`](crate::client::fluent_builders::CreateWirelessGatewayTask::set_wireless_gateway_task_definition_id): <p>The ID of the WirelessGatewayTaskDefinition.</p>
     /// - On success, responds with [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput) with field(s):
     ///   - [`wireless_gateway_task_definition_id(Option<String>)`](crate::output::CreateWirelessGatewayTaskOutput::wireless_gateway_task_definition_id): <p>The ID of the WirelessGatewayTaskDefinition.</p>
     ///   - [`status(Option<WirelessGatewayTaskStatus>)`](crate::output::CreateWirelessGatewayTaskOutput::status): <p>The status of the request.</p>
@@ -313,12 +313,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateWirelessGatewayTaskDefinition`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition) operation.
     ///
-    /// - Takes [`CreateWirelessGatewayTaskDefinitionInput`](crate::input::CreateWirelessGatewayTaskDefinitionInput) with field(s):
-    ///   - [`auto_create_tasks(bool)`](crate::input::CreateWirelessGatewayTaskDefinitionInput::auto_create_tasks): <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateWirelessGatewayTaskDefinitionInput::name): <p>The name of the new resource.</p>
-    ///   - [`update(Option<UpdateWirelessGatewayTaskCreate>)`](crate::input::CreateWirelessGatewayTaskDefinitionInput::update): <p>Information about the gateways to update.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateWirelessGatewayTaskDefinitionInput::client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateWirelessGatewayTaskDefinitionInput::tags): <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_create_tasks(bool)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::auto_create_tasks) / [`set_auto_create_tasks(bool)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::set_auto_create_tasks): <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::set_name): <p>The name of the new resource.</p>
+    ///   - [`update(UpdateWirelessGatewayTaskCreate)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::update) / [`set_update(Option<UpdateWirelessGatewayTaskCreate>)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::set_update): <p>Information about the gateways to update.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::set_client_request_token): <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition::set_tags): <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     /// - On success, responds with [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateWirelessGatewayTaskDefinitionOutput::id): <p>The ID of the new wireless gateway task definition.</p>
     ///   - [`arn(Option<String>)`](crate::output::CreateWirelessGatewayTaskDefinitionOutput::arn): <p>The Amazon Resource Name of the resource.</p>
@@ -330,8 +330,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDestination`](crate::client::fluent_builders::DeleteDestination) operation.
     ///
-    /// - Takes [`DeleteDestinationInput`](crate::input::DeleteDestinationInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteDestinationInput::name): <p>The name of the resource to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteDestination::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteDestination::set_name): <p>The name of the resource to delete.</p>
     /// - On success, responds with [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDestinationError>`](crate::error::DeleteDestinationError)
@@ -340,8 +340,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDeviceProfile`](crate::client::fluent_builders::DeleteDeviceProfile) operation.
     ///
-    /// - Takes [`DeleteDeviceProfileInput`](crate::input::DeleteDeviceProfileInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteDeviceProfileInput::id): <p>The ID of the resource to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDeviceProfile::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDeviceProfile::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDeviceProfileError>`](crate::error::DeleteDeviceProfileError)
@@ -350,8 +350,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFuotaTask`](crate::client::fluent_builders::DeleteFuotaTask) operation.
     ///
-    /// - Takes [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteFuotaTaskInput::id): <p>The ID of a FUOTA task.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteFuotaTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteFuotaTask::set_id): <p>The ID of a FUOTA task.</p>
     /// - On success, responds with [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFuotaTaskError>`](crate::error::DeleteFuotaTaskError)
@@ -360,8 +360,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteMulticastGroup`](crate::client::fluent_builders::DeleteMulticastGroup) operation.
     ///
-    /// - Takes [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteMulticastGroupInput::id): <p>The ID of the multicast group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteMulticastGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteMulticastGroup::set_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteMulticastGroupError>`](crate::error::DeleteMulticastGroupError)
@@ -370,8 +370,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteServiceProfile`](crate::client::fluent_builders::DeleteServiceProfile) operation.
     ///
-    /// - Takes [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteServiceProfileInput::id): <p>The ID of the resource to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteServiceProfile::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteServiceProfile::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput)
 
     /// - On failure, responds with [`SdkError<DeleteServiceProfileError>`](crate::error::DeleteServiceProfileError)
@@ -380,8 +380,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteWirelessDevice`](crate::client::fluent_builders::DeleteWirelessDevice) operation.
     ///
-    /// - Takes [`DeleteWirelessDeviceInput`](crate::input::DeleteWirelessDeviceInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteWirelessDeviceInput::id): <p>The ID of the resource to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteWirelessDevice::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteWirelessDevice::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteWirelessDeviceError>`](crate::error::DeleteWirelessDeviceError)
@@ -390,8 +390,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteWirelessGateway`](crate::client::fluent_builders::DeleteWirelessGateway) operation.
     ///
-    /// - Takes [`DeleteWirelessGatewayInput`](crate::input::DeleteWirelessGatewayInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteWirelessGatewayInput::id): <p>The ID of the resource to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteWirelessGateway::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteWirelessGateway::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput)
 
     /// - On failure, responds with [`SdkError<DeleteWirelessGatewayError>`](crate::error::DeleteWirelessGatewayError)
@@ -400,8 +400,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteWirelessGatewayTask`](crate::client::fluent_builders::DeleteWirelessGatewayTask) operation.
     ///
-    /// - Takes [`DeleteWirelessGatewayTaskInput`](crate::input::DeleteWirelessGatewayTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteWirelessGatewayTaskInput::id): <p>The ID of the resource to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteWirelessGatewayTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteWirelessGatewayTask::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput)
 
     /// - On failure, responds with [`SdkError<DeleteWirelessGatewayTaskError>`](crate::error::DeleteWirelessGatewayTaskError)
@@ -412,8 +412,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteWirelessGatewayTaskDefinition`](crate::client::fluent_builders::DeleteWirelessGatewayTaskDefinition) operation.
     ///
-    /// - Takes [`DeleteWirelessGatewayTaskDefinitionInput`](crate::input::DeleteWirelessGatewayTaskDefinitionInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteWirelessGatewayTaskDefinitionInput::id): <p>The ID of the resource to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteWirelessGatewayTaskDefinition::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteWirelessGatewayTaskDefinition::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteWirelessGatewayTaskDefinitionError>`](crate::error::DeleteWirelessGatewayTaskDefinitionError)
@@ -424,9 +424,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateAwsAccountFromPartnerAccount`](crate::client::fluent_builders::DisassociateAwsAccountFromPartnerAccount) operation.
     ///
-    /// - Takes [`DisassociateAwsAccountFromPartnerAccountInput`](crate::input::DisassociateAwsAccountFromPartnerAccountInput) with field(s):
-    ///   - [`partner_account_id(Option<String>)`](crate::input::DisassociateAwsAccountFromPartnerAccountInput::partner_account_id): <p>The partner account ID to disassociate from the AWS account.</p>
-    ///   - [`partner_type(Option<PartnerType>)`](crate::input::DisassociateAwsAccountFromPartnerAccountInput::partner_type): <p>The partner type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`partner_account_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateAwsAccountFromPartnerAccount::partner_account_id) / [`set_partner_account_id(Option<String>)`](crate::client::fluent_builders::DisassociateAwsAccountFromPartnerAccount::set_partner_account_id): <p>The partner account ID to disassociate from the AWS account.</p>
+    ///   - [`partner_type(PartnerType)`](crate::client::fluent_builders::DisassociateAwsAccountFromPartnerAccount::partner_type) / [`set_partner_type(Option<PartnerType>)`](crate::client::fluent_builders::DisassociateAwsAccountFromPartnerAccount::set_partner_type): <p>The partner type.</p>
     /// - On success, responds with [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateAwsAccountFromPartnerAccountError>`](crate::error::DisassociateAwsAccountFromPartnerAccountError)
@@ -437,9 +437,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateMulticastGroupFromFuotaTask`](crate::client::fluent_builders::DisassociateMulticastGroupFromFuotaTask) operation.
     ///
-    /// - Takes [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput::id): <p>The ID of a FUOTA task.</p>
-    ///   - [`multicast_group_id(Option<String>)`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput::multicast_group_id): <p>The ID of the multicast group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateMulticastGroupFromFuotaTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateMulticastGroupFromFuotaTask::set_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`multicast_group_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateMulticastGroupFromFuotaTask::multicast_group_id) / [`set_multicast_group_id(Option<String>)`](crate::client::fluent_builders::DisassociateMulticastGroupFromFuotaTask::set_multicast_group_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateMulticastGroupFromFuotaTaskError>`](crate::error::DisassociateMulticastGroupFromFuotaTaskError)
@@ -450,9 +450,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateWirelessDeviceFromFuotaTask`](crate::client::fluent_builders::DisassociateWirelessDeviceFromFuotaTask) operation.
     ///
-    /// - Takes [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput::id): <p>The ID of a FUOTA task.</p>
-    ///   - [`wireless_device_id(Option<String>)`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput::wireless_device_id): <p>The ID of the wireless device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromFuotaTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromFuotaTask::set_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`wireless_device_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromFuotaTask::wireless_device_id) / [`set_wireless_device_id(Option<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromFuotaTask::set_wireless_device_id): <p>The ID of the wireless device.</p>
     /// - On success, responds with [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateWirelessDeviceFromFuotaTaskError>`](crate::error::DisassociateWirelessDeviceFromFuotaTaskError)
@@ -463,9 +463,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateWirelessDeviceFromMulticastGroup`](crate::client::fluent_builders::DisassociateWirelessDeviceFromMulticastGroup) operation.
     ///
-    /// - Takes [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput::id): <p>The ID of the multicast group.</p>
-    ///   - [`wireless_device_id(Option<String>)`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput::wireless_device_id): <p>The ID of the wireless device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromMulticastGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromMulticastGroup::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`wireless_device_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromMulticastGroup::wireless_device_id) / [`set_wireless_device_id(Option<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromMulticastGroup::set_wireless_device_id): <p>The ID of the wireless device.</p>
     /// - On success, responds with [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateWirelessDeviceFromMulticastGroupError>`](crate::error::DisassociateWirelessDeviceFromMulticastGroupError)
@@ -476,8 +476,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateWirelessDeviceFromThing`](crate::client::fluent_builders::DisassociateWirelessDeviceFromThing) operation.
     ///
-    /// - Takes [`DisassociateWirelessDeviceFromThingInput`](crate::input::DisassociateWirelessDeviceFromThingInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DisassociateWirelessDeviceFromThingInput::id): <p>The ID of the resource to update.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromThing::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateWirelessDeviceFromThing::set_id): <p>The ID of the resource to update.</p>
     /// - On success, responds with [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateWirelessDeviceFromThingError>`](crate::error::DisassociateWirelessDeviceFromThingError)
@@ -488,8 +488,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateWirelessGatewayFromCertificate`](crate::client::fluent_builders::DisassociateWirelessGatewayFromCertificate) operation.
     ///
-    /// - Takes [`DisassociateWirelessGatewayFromCertificateInput`](crate::input::DisassociateWirelessGatewayFromCertificateInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DisassociateWirelessGatewayFromCertificateInput::id): <p>The ID of the resource to update.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateWirelessGatewayFromCertificate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateWirelessGatewayFromCertificate::set_id): <p>The ID of the resource to update.</p>
     /// - On success, responds with [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateWirelessGatewayFromCertificateError>`](crate::error::DisassociateWirelessGatewayFromCertificateError)
@@ -500,8 +500,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateWirelessGatewayFromThing`](crate::client::fluent_builders::DisassociateWirelessGatewayFromThing) operation.
     ///
-    /// - Takes [`DisassociateWirelessGatewayFromThingInput`](crate::input::DisassociateWirelessGatewayFromThingInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DisassociateWirelessGatewayFromThingInput::id): <p>The ID of the resource to update.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateWirelessGatewayFromThing::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateWirelessGatewayFromThing::set_id): <p>The ID of the resource to update.</p>
     /// - On success, responds with [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateWirelessGatewayFromThingError>`](crate::error::DisassociateWirelessGatewayFromThingError)
@@ -512,8 +512,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDestination`](crate::client::fluent_builders::GetDestination) operation.
     ///
-    /// - Takes [`GetDestinationInput`](crate::input::GetDestinationInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::GetDestinationInput::name): <p>The name of the resource to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetDestination::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetDestination::set_name): <p>The name of the resource to get.</p>
     /// - On success, responds with [`GetDestinationOutput`](crate::output::GetDestinationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetDestinationOutput::arn): <p>The Amazon Resource Name of the resource.</p>
     ///   - [`name(Option<String>)`](crate::output::GetDestinationOutput::name): <p>The name of the resource.</p>
@@ -527,8 +527,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDeviceProfile`](crate::client::fluent_builders::GetDeviceProfile) operation.
     ///
-    /// - Takes [`GetDeviceProfileInput`](crate::input::GetDeviceProfileInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetDeviceProfileInput::id): <p>The ID of the resource to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetDeviceProfile::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetDeviceProfile::set_id): <p>The ID of the resource to get.</p>
     /// - On success, responds with [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetDeviceProfileOutput::arn): <p>The Amazon Resource Name of the resource.</p>
     ///   - [`name(Option<String>)`](crate::output::GetDeviceProfileOutput::name): <p>The name of the resource.</p>
@@ -540,8 +540,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetFuotaTask`](crate::client::fluent_builders::GetFuotaTask) operation.
     ///
-    /// - Takes [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetFuotaTaskInput::id): <p>The ID of a FUOTA task.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFuotaTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFuotaTask::set_id): <p>The ID of a FUOTA task.</p>
     /// - On success, responds with [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetFuotaTaskOutput::arn): <p>The arn of a FUOTA task.</p>
     ///   - [`id(Option<String>)`](crate::output::GetFuotaTaskOutput::id): <p>The ID of a FUOTA task.</p>
@@ -558,7 +558,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetLogLevelsByResourceTypes`](crate::client::fluent_builders::GetLogLevelsByResourceTypes) operation.
     ///
-    /// - Takes [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetLogLevelsByResourceTypes::send) it.
 
     /// - On success, responds with [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput) with field(s):
     ///   - [`default_log_level(Option<LogLevel>)`](crate::output::GetLogLevelsByResourceTypesOutput::default_log_level): <p>The log level for a log message.</p>
@@ -572,8 +572,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetMulticastGroup`](crate::client::fluent_builders::GetMulticastGroup) operation.
     ///
-    /// - Takes [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetMulticastGroupInput::id): <p>The ID of the multicast group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetMulticastGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetMulticastGroup::set_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetMulticastGroupOutput::arn): <p>The arn of the multicast group.</p>
     ///   - [`id(Option<String>)`](crate::output::GetMulticastGroupOutput::id): <p>The ID of the multicast group.</p>
@@ -588,8 +588,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetMulticastGroupSession`](crate::client::fluent_builders::GetMulticastGroupSession) operation.
     ///
-    /// - Takes [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetMulticastGroupSessionInput::id): <p>The ID of the multicast group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetMulticastGroupSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetMulticastGroupSession::set_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput) with field(s):
     ///   - [`lo_ra_wan(Option<LoRaWanMulticastSession>)`](crate::output::GetMulticastGroupSessionOutput::lo_ra_wan): <p>The LoRaWAN information used with the multicast session.</p>
     /// - On failure, responds with [`SdkError<GetMulticastGroupSessionError>`](crate::error::GetMulticastGroupSessionError)
@@ -600,8 +600,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetNetworkAnalyzerConfiguration`](crate::client::fluent_builders::GetNetworkAnalyzerConfiguration) operation.
     ///
-    /// - Takes [`GetNetworkAnalyzerConfigurationInput`](crate::input::GetNetworkAnalyzerConfigurationInput) with field(s):
-    ///   - [`configuration_name(Option<String>)`](crate::input::GetNetworkAnalyzerConfigurationInput::configuration_name): <p>NetworkAnalyzer configuration name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_name(impl Into<String>)`](crate::client::fluent_builders::GetNetworkAnalyzerConfiguration::configuration_name) / [`set_configuration_name(Option<String>)`](crate::client::fluent_builders::GetNetworkAnalyzerConfiguration::set_configuration_name): <p>NetworkAnalyzer configuration name.</p>
     /// - On success, responds with [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput) with field(s):
     ///   - [`trace_content(Option<TraceContent>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::trace_content): <p>Trace Content for resources.</p>
     ///   - [`wireless_devices(Option<Vec<String>>)`](crate::output::GetNetworkAnalyzerConfigurationOutput::wireless_devices): <p>List of WirelessDevices in the NetworkAnalyzerConfiguration.</p>
@@ -614,9 +614,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetPartnerAccount`](crate::client::fluent_builders::GetPartnerAccount) operation.
     ///
-    /// - Takes [`GetPartnerAccountInput`](crate::input::GetPartnerAccountInput) with field(s):
-    ///   - [`partner_account_id(Option<String>)`](crate::input::GetPartnerAccountInput::partner_account_id): <p>The partner account ID to disassociate from the AWS account.</p>
-    ///   - [`partner_type(Option<PartnerType>)`](crate::input::GetPartnerAccountInput::partner_type): <p>The partner type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`partner_account_id(impl Into<String>)`](crate::client::fluent_builders::GetPartnerAccount::partner_account_id) / [`set_partner_account_id(Option<String>)`](crate::client::fluent_builders::GetPartnerAccount::set_partner_account_id): <p>The partner account ID to disassociate from the AWS account.</p>
+    ///   - [`partner_type(PartnerType)`](crate::client::fluent_builders::GetPartnerAccount::partner_type) / [`set_partner_type(Option<PartnerType>)`](crate::client::fluent_builders::GetPartnerAccount::set_partner_type): <p>The partner type.</p>
     /// - On success, responds with [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput) with field(s):
     ///   - [`sidewalk(Option<SidewalkAccountInfoWithFingerprint>)`](crate::output::GetPartnerAccountOutput::sidewalk): <p>The Sidewalk account credentials.</p>
     ///   - [`account_linked(bool)`](crate::output::GetPartnerAccountOutput::account_linked): <p>Whether the partner account is linked to the AWS account.</p>
@@ -626,10 +626,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetResourceEventConfiguration`](crate::client::fluent_builders::GetResourceEventConfiguration) operation.
     ///
-    /// - Takes [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput) with field(s):
-    ///   - [`identifier(Option<String>)`](crate::input::GetResourceEventConfigurationInput::identifier): <p>Resource identifier to opt in for event messaging.</p>
-    ///   - [`identifier_type(Option<IdentifierType>)`](crate::input::GetResourceEventConfigurationInput::identifier_type): <p>Identifier type of the particular resource identifier for event configuration.</p>
-    ///   - [`partner_type(Option<EventNotificationPartnerType>)`](crate::input::GetResourceEventConfigurationInput::partner_type): <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetResourceEventConfiguration::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetResourceEventConfiguration::set_identifier): <p>Resource identifier to opt in for event messaging.</p>
+    ///   - [`identifier_type(IdentifierType)`](crate::client::fluent_builders::GetResourceEventConfiguration::identifier_type) / [`set_identifier_type(Option<IdentifierType>)`](crate::client::fluent_builders::GetResourceEventConfiguration::set_identifier_type): <p>Identifier type of the particular resource identifier for event configuration.</p>
+    ///   - [`partner_type(EventNotificationPartnerType)`](crate::client::fluent_builders::GetResourceEventConfiguration::partner_type) / [`set_partner_type(Option<EventNotificationPartnerType>)`](crate::client::fluent_builders::GetResourceEventConfiguration::set_partner_type): <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
     /// - On success, responds with [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput) with field(s):
     ///   - [`device_registration_state(Option<DeviceRegistrationStateEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::device_registration_state): <p>Event configuration for the device registration state event</p>
     ///   - [`proximity(Option<ProximityEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::proximity): <p>Event configuration for the Proximity event</p>
@@ -641,9 +641,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetResourceLogLevel`](crate::client::fluent_builders::GetResourceLogLevel) operation.
     ///
-    /// - Takes [`GetResourceLogLevelInput`](crate::input::GetResourceLogLevelInput) with field(s):
-    ///   - [`resource_identifier(Option<String>)`](crate::input::GetResourceLogLevelInput::resource_identifier): <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    ///   - [`resource_type(Option<String>)`](crate::input::GetResourceLogLevelInput::resource_type): <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::GetResourceLogLevel::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::GetResourceLogLevel::set_resource_identifier): <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::GetResourceLogLevel::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::GetResourceLogLevel::set_resource_type): <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     /// - On success, responds with [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput) with field(s):
     ///   - [`log_level(Option<LogLevel>)`](crate::output::GetResourceLogLevelOutput::log_level): <p>The log level for a log message.</p>
     /// - On failure, responds with [`SdkError<GetResourceLogLevelError>`](crate::error::GetResourceLogLevelError)
@@ -652,8 +652,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetServiceEndpoint`](crate::client::fluent_builders::GetServiceEndpoint) operation.
     ///
-    /// - Takes [`GetServiceEndpointInput`](crate::input::GetServiceEndpointInput) with field(s):
-    ///   - [`service_type(Option<WirelessGatewayServiceType>)`](crate::input::GetServiceEndpointInput::service_type): <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`service_type(WirelessGatewayServiceType)`](crate::client::fluent_builders::GetServiceEndpoint::service_type) / [`set_service_type(Option<WirelessGatewayServiceType>)`](crate::client::fluent_builders::GetServiceEndpoint::set_service_type): <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
     /// - On success, responds with [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput) with field(s):
     ///   - [`service_type(Option<WirelessGatewayServiceType>)`](crate::output::GetServiceEndpointOutput::service_type): <p>The endpoint's service type.</p>
     ///   - [`service_endpoint(Option<String>)`](crate::output::GetServiceEndpointOutput::service_endpoint): <p>The service endpoint value.</p>
@@ -664,8 +664,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetServiceProfile`](crate::client::fluent_builders::GetServiceProfile) operation.
     ///
-    /// - Takes [`GetServiceProfileInput`](crate::input::GetServiceProfileInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetServiceProfileInput::id): <p>The ID of the resource to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetServiceProfile::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetServiceProfile::set_id): <p>The ID of the resource to get.</p>
     /// - On success, responds with [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetServiceProfileOutput::arn): <p>The Amazon Resource Name of the resource.</p>
     ///   - [`name(Option<String>)`](crate::output::GetServiceProfileOutput::name): <p>The name of the resource.</p>
@@ -677,9 +677,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetWirelessDevice`](crate::client::fluent_builders::GetWirelessDevice) operation.
     ///
-    /// - Takes [`GetWirelessDeviceInput`](crate::input::GetWirelessDeviceInput) with field(s):
-    ///   - [`identifier(Option<String>)`](crate::input::GetWirelessDeviceInput::identifier): <p>The identifier of the wireless device to get.</p>
-    ///   - [`identifier_type(Option<WirelessDeviceIdType>)`](crate::input::GetWirelessDeviceInput::identifier_type): <p>The type of identifier used in <code>identifier</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetWirelessDevice::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetWirelessDevice::set_identifier): <p>The identifier of the wireless device to get.</p>
+    ///   - [`identifier_type(WirelessDeviceIdType)`](crate::client::fluent_builders::GetWirelessDevice::identifier_type) / [`set_identifier_type(Option<WirelessDeviceIdType>)`](crate::client::fluent_builders::GetWirelessDevice::set_identifier_type): <p>The type of identifier used in <code>identifier</code>.</p>
     /// - On success, responds with [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput) with field(s):
     ///   - [`r#type(Option<WirelessDeviceType>)`](crate::output::GetWirelessDeviceOutput::type): <p>The wireless device type.</p>
     ///   - [`name(Option<String>)`](crate::output::GetWirelessDeviceOutput::name): <p>The name of the resource.</p>
@@ -697,8 +697,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetWirelessDeviceStatistics`](crate::client::fluent_builders::GetWirelessDeviceStatistics) operation.
     ///
-    /// - Takes [`GetWirelessDeviceStatisticsInput`](crate::input::GetWirelessDeviceStatisticsInput) with field(s):
-    ///   - [`wireless_device_id(Option<String>)`](crate::input::GetWirelessDeviceStatisticsInput::wireless_device_id): <p>The ID of the wireless device for which to get the data.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`wireless_device_id(impl Into<String>)`](crate::client::fluent_builders::GetWirelessDeviceStatistics::wireless_device_id) / [`set_wireless_device_id(Option<String>)`](crate::client::fluent_builders::GetWirelessDeviceStatistics::set_wireless_device_id): <p>The ID of the wireless device for which to get the data.</p>
     /// - On success, responds with [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput) with field(s):
     ///   - [`wireless_device_id(Option<String>)`](crate::output::GetWirelessDeviceStatisticsOutput::wireless_device_id): <p>The ID of the wireless device.</p>
     ///   - [`last_uplink_received_at(Option<String>)`](crate::output::GetWirelessDeviceStatisticsOutput::last_uplink_received_at): <p>The date and time when the most recent uplink was received.</p>
@@ -712,9 +712,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetWirelessGateway`](crate::client::fluent_builders::GetWirelessGateway) operation.
     ///
-    /// - Takes [`GetWirelessGatewayInput`](crate::input::GetWirelessGatewayInput) with field(s):
-    ///   - [`identifier(Option<String>)`](crate::input::GetWirelessGatewayInput::identifier): <p>The identifier of the wireless gateway to get.</p>
-    ///   - [`identifier_type(Option<WirelessGatewayIdType>)`](crate::input::GetWirelessGatewayInput::identifier_type): <p>The type of identifier used in <code>identifier</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetWirelessGateway::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetWirelessGateway::set_identifier): <p>The identifier of the wireless gateway to get.</p>
+    ///   - [`identifier_type(WirelessGatewayIdType)`](crate::client::fluent_builders::GetWirelessGateway::identifier_type) / [`set_identifier_type(Option<WirelessGatewayIdType>)`](crate::client::fluent_builders::GetWirelessGateway::set_identifier_type): <p>The type of identifier used in <code>identifier</code>.</p>
     /// - On success, responds with [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::GetWirelessGatewayOutput::name): <p>The name of the resource.</p>
     ///   - [`id(Option<String>)`](crate::output::GetWirelessGatewayOutput::id): <p>The ID of the wireless gateway.</p>
@@ -729,8 +729,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetWirelessGatewayCertificate`](crate::client::fluent_builders::GetWirelessGatewayCertificate) operation.
     ///
-    /// - Takes [`GetWirelessGatewayCertificateInput`](crate::input::GetWirelessGatewayCertificateInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetWirelessGatewayCertificateInput::id): <p>The ID of the resource to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetWirelessGatewayCertificate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetWirelessGatewayCertificate::set_id): <p>The ID of the resource to get.</p>
     /// - On success, responds with [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput) with field(s):
     ///   - [`iot_certificate_id(Option<String>)`](crate::output::GetWirelessGatewayCertificateOutput::iot_certificate_id): <p>The ID of the certificate associated with the wireless gateway.</p>
     ///   - [`lo_ra_wan_network_server_certificate_id(Option<String>)`](crate::output::GetWirelessGatewayCertificateOutput::lo_ra_wan_network_server_certificate_id): <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
@@ -742,8 +742,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetWirelessGatewayFirmwareInformation`](crate::client::fluent_builders::GetWirelessGatewayFirmwareInformation) operation.
     ///
-    /// - Takes [`GetWirelessGatewayFirmwareInformationInput`](crate::input::GetWirelessGatewayFirmwareInformationInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetWirelessGatewayFirmwareInformationInput::id): <p>The ID of the resource to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetWirelessGatewayFirmwareInformation::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetWirelessGatewayFirmwareInformation::set_id): <p>The ID of the resource to get.</p>
     /// - On success, responds with [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput) with field(s):
     ///   - [`lo_ra_wan(Option<LoRaWanGatewayCurrentVersion>)`](crate::output::GetWirelessGatewayFirmwareInformationOutput::lo_ra_wan): <p>Information about the wireless gateway's firmware.</p>
     /// - On failure, responds with [`SdkError<GetWirelessGatewayFirmwareInformationError>`](crate::error::GetWirelessGatewayFirmwareInformationError)
@@ -754,8 +754,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetWirelessGatewayStatistics`](crate::client::fluent_builders::GetWirelessGatewayStatistics) operation.
     ///
-    /// - Takes [`GetWirelessGatewayStatisticsInput`](crate::input::GetWirelessGatewayStatisticsInput) with field(s):
-    ///   - [`wireless_gateway_id(Option<String>)`](crate::input::GetWirelessGatewayStatisticsInput::wireless_gateway_id): <p>The ID of the wireless gateway for which to get the data.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`wireless_gateway_id(impl Into<String>)`](crate::client::fluent_builders::GetWirelessGatewayStatistics::wireless_gateway_id) / [`set_wireless_gateway_id(Option<String>)`](crate::client::fluent_builders::GetWirelessGatewayStatistics::set_wireless_gateway_id): <p>The ID of the wireless gateway for which to get the data.</p>
     /// - On success, responds with [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput) with field(s):
     ///   - [`wireless_gateway_id(Option<String>)`](crate::output::GetWirelessGatewayStatisticsOutput::wireless_gateway_id): <p>The ID of the wireless gateway.</p>
     ///   - [`last_uplink_received_at(Option<String>)`](crate::output::GetWirelessGatewayStatisticsOutput::last_uplink_received_at): <p>The date and time when the most recent uplink was received.</p>
@@ -768,8 +768,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetWirelessGatewayTask`](crate::client::fluent_builders::GetWirelessGatewayTask) operation.
     ///
-    /// - Takes [`GetWirelessGatewayTaskInput`](crate::input::GetWirelessGatewayTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetWirelessGatewayTaskInput::id): <p>The ID of the resource to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetWirelessGatewayTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetWirelessGatewayTask::set_id): <p>The ID of the resource to get.</p>
     /// - On success, responds with [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput) with field(s):
     ///   - [`wireless_gateway_id(Option<String>)`](crate::output::GetWirelessGatewayTaskOutput::wireless_gateway_id): <p>The ID of the wireless gateway.</p>
     ///   - [`wireless_gateway_task_definition_id(Option<String>)`](crate::output::GetWirelessGatewayTaskOutput::wireless_gateway_task_definition_id): <p>The ID of the WirelessGatewayTask.</p>
@@ -782,8 +782,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetWirelessGatewayTaskDefinition`](crate::client::fluent_builders::GetWirelessGatewayTaskDefinition) operation.
     ///
-    /// - Takes [`GetWirelessGatewayTaskDefinitionInput`](crate::input::GetWirelessGatewayTaskDefinitionInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetWirelessGatewayTaskDefinitionInput::id): <p>The ID of the resource to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetWirelessGatewayTaskDefinition::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetWirelessGatewayTaskDefinition::set_id): <p>The ID of the resource to get.</p>
     /// - On success, responds with [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput) with field(s):
     ///   - [`auto_create_tasks(bool)`](crate::output::GetWirelessGatewayTaskDefinitionOutput::auto_create_tasks): <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
     ///   - [`name(Option<String>)`](crate::output::GetWirelessGatewayTaskDefinitionOutput::name): <p>The name of the resource.</p>
@@ -796,11 +796,11 @@ where
         fluent_builders::GetWirelessGatewayTaskDefinition::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDestinations`](crate::client::fluent_builders::ListDestinations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDestinations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDestinations::into_paginator).
     ///
-    /// - Takes [`ListDestinationsInput`](crate::input::ListDestinationsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListDestinationsInput::max_results): <p>The maximum number of results to return in this operation.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDestinationsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDestinations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDestinations::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDestinations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDestinations::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     /// - On success, responds with [`ListDestinationsOutput`](crate::output::ListDestinationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListDestinationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`destination_list(Option<Vec<Destinations>>)`](crate::output::ListDestinationsOutput::destination_list): <p>The list of destinations.</p>
@@ -809,11 +809,11 @@ where
         fluent_builders::ListDestinations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDeviceProfiles`](crate::client::fluent_builders::ListDeviceProfiles) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeviceProfiles::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeviceProfiles::into_paginator).
     ///
-    /// - Takes [`ListDeviceProfilesInput`](crate::input::ListDeviceProfilesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDeviceProfilesInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListDeviceProfilesInput::max_results): <p>The maximum number of results to return in this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeviceProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeviceProfiles::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeviceProfiles::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDeviceProfiles::set_max_results): <p>The maximum number of results to return in this operation.</p>
     /// - On success, responds with [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListDeviceProfilesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`device_profile_list(Option<Vec<DeviceProfile>>)`](crate::output::ListDeviceProfilesOutput::device_profile_list): <p>The list of device profiles.</p>
@@ -822,11 +822,11 @@ where
         fluent_builders::ListDeviceProfiles::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFuotaTasks`](crate::client::fluent_builders::ListFuotaTasks) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFuotaTasks::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFuotaTasks::into_paginator).
     ///
-    /// - Takes [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListFuotaTasksInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListFuotaTasksInput::max_results): <p>The maximum number of results to return in this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFuotaTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFuotaTasks::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFuotaTasks::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListFuotaTasks::set_max_results): <p>The maximum number of results to return in this operation.</p>
     /// - On success, responds with [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListFuotaTasksOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`fuota_task_list(Option<Vec<FuotaTask>>)`](crate::output::ListFuotaTasksOutput::fuota_task_list): <p>Lists the FUOTA tasks registered to your AWS account.</p>
@@ -835,11 +835,11 @@ where
         fluent_builders::ListFuotaTasks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMulticastGroups`](crate::client::fluent_builders::ListMulticastGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMulticastGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMulticastGroups::into_paginator).
     ///
-    /// - Takes [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListMulticastGroupsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListMulticastGroupsInput::max_results): <p>The maximum number of results to return in this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMulticastGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMulticastGroups::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMulticastGroups::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMulticastGroups::set_max_results): <p>The maximum number of results to return in this operation.</p>
     /// - On success, responds with [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListMulticastGroupsOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`multicast_group_list(Option<Vec<MulticastGroup>>)`](crate::output::ListMulticastGroupsOutput::multicast_group_list): <p>List of multicast groups.</p>
@@ -848,12 +848,12 @@ where
         fluent_builders::ListMulticastGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMulticastGroupsByFuotaTask`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask::into_paginator).
     ///
-    /// - Takes [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::ListMulticastGroupsByFuotaTaskInput::id): <p>The ID of a FUOTA task.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListMulticastGroupsByFuotaTaskInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListMulticastGroupsByFuotaTaskInput::max_results): <p>The maximum number of results to return in this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask::set_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask::set_max_results): <p>The maximum number of results to return in this operation.</p>
     /// - On success, responds with [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListMulticastGroupsByFuotaTaskOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`multicast_group_list(Option<Vec<MulticastGroupByFuotaTask>>)`](crate::output::ListMulticastGroupsByFuotaTaskOutput::multicast_group_list): <p>List of multicast groups associated with a FUOTA task.</p>
@@ -865,9 +865,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListPartnerAccounts`](crate::client::fluent_builders::ListPartnerAccounts) operation.
     ///
-    /// - Takes [`ListPartnerAccountsInput`](crate::input::ListPartnerAccountsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListPartnerAccountsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListPartnerAccountsInput::max_results): <p>The maximum number of results to return in this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPartnerAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPartnerAccounts::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPartnerAccounts::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPartnerAccounts::set_max_results): <p>The maximum number of results to return in this operation.</p>
     /// - On success, responds with [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListPartnerAccountsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`sidewalk(Option<Vec<SidewalkAccountInfoWithFingerprint>>)`](crate::output::ListPartnerAccountsOutput::sidewalk): <p>The Sidewalk account credentials.</p>
@@ -876,11 +876,11 @@ where
         fluent_builders::ListPartnerAccounts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListServiceProfiles`](crate::client::fluent_builders::ListServiceProfiles) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceProfiles::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServiceProfiles::into_paginator).
     ///
-    /// - Takes [`ListServiceProfilesInput`](crate::input::ListServiceProfilesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListServiceProfilesInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListServiceProfilesInput::max_results): <p>The maximum number of results to return in this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServiceProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServiceProfiles::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListServiceProfiles::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListServiceProfiles::set_max_results): <p>The maximum number of results to return in this operation.</p>
     /// - On success, responds with [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListServiceProfilesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`service_profile_list(Option<Vec<ServiceProfile>>)`](crate::output::ListServiceProfilesOutput::service_profile_list): <p>The list of service profiles.</p>
@@ -890,8 +890,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource for which you want to list tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource for which you want to list tags.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -899,17 +899,17 @@ where
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListWirelessDevices`](crate::client::fluent_builders::ListWirelessDevices) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWirelessDevices::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWirelessDevices::into_paginator).
     ///
-    /// - Takes [`ListWirelessDevicesInput`](crate::input::ListWirelessDevicesInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListWirelessDevicesInput::max_results): <p>The maximum number of results to return in this operation.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListWirelessDevicesInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`destination_name(Option<String>)`](crate::input::ListWirelessDevicesInput::destination_name): <p>A filter to list only the wireless devices that use this destination.</p>
-    ///   - [`device_profile_id(Option<String>)`](crate::input::ListWirelessDevicesInput::device_profile_id): <p>A filter to list only the wireless devices that use this device profile.</p>
-    ///   - [`service_profile_id(Option<String>)`](crate::input::ListWirelessDevicesInput::service_profile_id): <p>A filter to list only the wireless devices that use this service profile.</p>
-    ///   - [`wireless_device_type(Option<WirelessDeviceType>)`](crate::input::ListWirelessDevicesInput::wireless_device_type): <p>A filter to list only the wireless devices that use this wireless device type.</p>
-    ///   - [`fuota_task_id(Option<String>)`](crate::input::ListWirelessDevicesInput::fuota_task_id): <p>The ID of a FUOTA task.</p>
-    ///   - [`multicast_group_id(Option<String>)`](crate::input::ListWirelessDevicesInput::multicast_group_id): <p>The ID of the multicast group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWirelessDevices::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListWirelessDevices::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWirelessDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWirelessDevices::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`destination_name(impl Into<String>)`](crate::client::fluent_builders::ListWirelessDevices::destination_name) / [`set_destination_name(Option<String>)`](crate::client::fluent_builders::ListWirelessDevices::set_destination_name): <p>A filter to list only the wireless devices that use this destination.</p>
+    ///   - [`device_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListWirelessDevices::device_profile_id) / [`set_device_profile_id(Option<String>)`](crate::client::fluent_builders::ListWirelessDevices::set_device_profile_id): <p>A filter to list only the wireless devices that use this device profile.</p>
+    ///   - [`service_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListWirelessDevices::service_profile_id) / [`set_service_profile_id(Option<String>)`](crate::client::fluent_builders::ListWirelessDevices::set_service_profile_id): <p>A filter to list only the wireless devices that use this service profile.</p>
+    ///   - [`wireless_device_type(WirelessDeviceType)`](crate::client::fluent_builders::ListWirelessDevices::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::ListWirelessDevices::set_wireless_device_type): <p>A filter to list only the wireless devices that use this wireless device type.</p>
+    ///   - [`fuota_task_id(impl Into<String>)`](crate::client::fluent_builders::ListWirelessDevices::fuota_task_id) / [`set_fuota_task_id(Option<String>)`](crate::client::fluent_builders::ListWirelessDevices::set_fuota_task_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`multicast_group_id(impl Into<String>)`](crate::client::fluent_builders::ListWirelessDevices::multicast_group_id) / [`set_multicast_group_id(Option<String>)`](crate::client::fluent_builders::ListWirelessDevices::set_multicast_group_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListWirelessDevicesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`wireless_device_list(Option<Vec<WirelessDeviceStatistics>>)`](crate::output::ListWirelessDevicesOutput::wireless_device_list): <p>The ID of the wireless device.</p>
@@ -918,11 +918,11 @@ where
         fluent_builders::ListWirelessDevices::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListWirelessGateways`](crate::client::fluent_builders::ListWirelessGateways) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWirelessGateways::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWirelessGateways::into_paginator).
     ///
-    /// - Takes [`ListWirelessGatewaysInput`](crate::input::ListWirelessGatewaysInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListWirelessGatewaysInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListWirelessGatewaysInput::max_results): <p>The maximum number of results to return in this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWirelessGateways::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWirelessGateways::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWirelessGateways::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListWirelessGateways::set_max_results): <p>The maximum number of results to return in this operation.</p>
     /// - On success, responds with [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListWirelessGatewaysOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`wireless_gateway_list(Option<Vec<WirelessGatewayStatistics>>)`](crate::output::ListWirelessGatewaysOutput::wireless_gateway_list): <p>The ID of the wireless gateway.</p>
@@ -932,10 +932,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListWirelessGatewayTaskDefinitions`](crate::client::fluent_builders::ListWirelessGatewayTaskDefinitions) operation.
     ///
-    /// - Takes [`ListWirelessGatewayTaskDefinitionsInput`](crate::input::ListWirelessGatewayTaskDefinitionsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListWirelessGatewayTaskDefinitionsInput::max_results): <p>The maximum number of results to return in this operation.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListWirelessGatewayTaskDefinitionsInput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`task_definition_type(Option<WirelessGatewayTaskDefinitionType>)`](crate::input::ListWirelessGatewayTaskDefinitionsInput::task_definition_type): <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWirelessGatewayTaskDefinitions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListWirelessGatewayTaskDefinitions::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWirelessGatewayTaskDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWirelessGatewayTaskDefinitions::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`task_definition_type(WirelessGatewayTaskDefinitionType)`](crate::client::fluent_builders::ListWirelessGatewayTaskDefinitions::task_definition_type) / [`set_task_definition_type(Option<WirelessGatewayTaskDefinitionType>)`](crate::client::fluent_builders::ListWirelessGatewayTaskDefinitions::set_task_definition_type): <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
     /// - On success, responds with [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListWirelessGatewayTaskDefinitionsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`task_definitions(Option<Vec<UpdateWirelessGatewayTaskEntry>>)`](crate::output::ListWirelessGatewayTaskDefinitionsOutput::task_definitions): <p>The list of task definitions.</p>
@@ -947,10 +947,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutResourceLogLevel`](crate::client::fluent_builders::PutResourceLogLevel) operation.
     ///
-    /// - Takes [`PutResourceLogLevelInput`](crate::input::PutResourceLogLevelInput) with field(s):
-    ///   - [`resource_identifier(Option<String>)`](crate::input::PutResourceLogLevelInput::resource_identifier): <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    ///   - [`resource_type(Option<String>)`](crate::input::PutResourceLogLevelInput::resource_type): <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    ///   - [`log_level(Option<LogLevel>)`](crate::input::PutResourceLogLevelInput::log_level): <p>The log level for a log message.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::PutResourceLogLevel::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::PutResourceLogLevel::set_resource_identifier): <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::PutResourceLogLevel::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::PutResourceLogLevel::set_resource_type): <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    ///   - [`log_level(LogLevel)`](crate::client::fluent_builders::PutResourceLogLevel::log_level) / [`set_log_level(Option<LogLevel>)`](crate::client::fluent_builders::PutResourceLogLevel::set_log_level): <p>The log level for a log message.</p>
     /// - On success, responds with [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput)
 
     /// - On failure, responds with [`SdkError<PutResourceLogLevelError>`](crate::error::PutResourceLogLevelError)
@@ -959,7 +959,7 @@ where
     }
     /// Constructs a fluent builder for the [`ResetAllResourceLogLevels`](crate::client::fluent_builders::ResetAllResourceLogLevels) operation.
     ///
-    /// - Takes [`ResetAllResourceLogLevelsInput`](crate::input::ResetAllResourceLogLevelsInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::ResetAllResourceLogLevels::send) it.
 
     /// - On success, responds with [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput)
 
@@ -971,9 +971,9 @@ where
     }
     /// Constructs a fluent builder for the [`ResetResourceLogLevel`](crate::client::fluent_builders::ResetResourceLogLevel) operation.
     ///
-    /// - Takes [`ResetResourceLogLevelInput`](crate::input::ResetResourceLogLevelInput) with field(s):
-    ///   - [`resource_identifier(Option<String>)`](crate::input::ResetResourceLogLevelInput::resource_identifier): <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    ///   - [`resource_type(Option<String>)`](crate::input::ResetResourceLogLevelInput::resource_type): <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::ResetResourceLogLevel::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::ResetResourceLogLevel::set_resource_identifier): <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ResetResourceLogLevel::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ResetResourceLogLevel::set_resource_type): <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     /// - On success, responds with [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput)
 
     /// - On failure, responds with [`SdkError<ResetResourceLogLevelError>`](crate::error::ResetResourceLogLevelError)
@@ -982,10 +982,10 @@ where
     }
     /// Constructs a fluent builder for the [`SendDataToMulticastGroup`](crate::client::fluent_builders::SendDataToMulticastGroup) operation.
     ///
-    /// - Takes [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::SendDataToMulticastGroupInput::id): <p>The ID of the multicast group.</p>
-    ///   - [`payload_data(Option<String>)`](crate::input::SendDataToMulticastGroupInput::payload_data): <p>The binary to be sent to the end device, encoded in base64.</p>
-    ///   - [`wireless_metadata(Option<MulticastWirelessMetadata>)`](crate::input::SendDataToMulticastGroupInput::wireless_metadata): <p>Wireless metadata that is to be sent to multicast group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::SendDataToMulticastGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::SendDataToMulticastGroup::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`payload_data(impl Into<String>)`](crate::client::fluent_builders::SendDataToMulticastGroup::payload_data) / [`set_payload_data(Option<String>)`](crate::client::fluent_builders::SendDataToMulticastGroup::set_payload_data): <p>The binary to be sent to the end device, encoded in base64.</p>
+    ///   - [`wireless_metadata(MulticastWirelessMetadata)`](crate::client::fluent_builders::SendDataToMulticastGroup::wireless_metadata) / [`set_wireless_metadata(Option<MulticastWirelessMetadata>)`](crate::client::fluent_builders::SendDataToMulticastGroup::set_wireless_metadata): <p>Wireless metadata that is to be sent to multicast group.</p>
     /// - On success, responds with [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::output::SendDataToMulticastGroupOutput::message_id): <p>ID of a multicast group message.</p>
     /// - On failure, responds with [`SdkError<SendDataToMulticastGroupError>`](crate::error::SendDataToMulticastGroupError)
@@ -996,11 +996,11 @@ where
     }
     /// Constructs a fluent builder for the [`SendDataToWirelessDevice`](crate::client::fluent_builders::SendDataToWirelessDevice) operation.
     ///
-    /// - Takes [`SendDataToWirelessDeviceInput`](crate::input::SendDataToWirelessDeviceInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::SendDataToWirelessDeviceInput::id): <p>The ID of the wireless device to receive the data.</p>
-    ///   - [`transmit_mode(Option<i32>)`](crate::input::SendDataToWirelessDeviceInput::transmit_mode): <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
-    ///   - [`payload_data(Option<String>)`](crate::input::SendDataToWirelessDeviceInput::payload_data): <p>The binary to be sent to the end device, encoded in base64.</p>
-    ///   - [`wireless_metadata(Option<WirelessMetadata>)`](crate::input::SendDataToWirelessDeviceInput::wireless_metadata): <p>Metadata about the message request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::SendDataToWirelessDevice::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::SendDataToWirelessDevice::set_id): <p>The ID of the wireless device to receive the data.</p>
+    ///   - [`transmit_mode(i32)`](crate::client::fluent_builders::SendDataToWirelessDevice::transmit_mode) / [`set_transmit_mode(Option<i32>)`](crate::client::fluent_builders::SendDataToWirelessDevice::set_transmit_mode): <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+    ///   - [`payload_data(impl Into<String>)`](crate::client::fluent_builders::SendDataToWirelessDevice::payload_data) / [`set_payload_data(Option<String>)`](crate::client::fluent_builders::SendDataToWirelessDevice::set_payload_data): <p>The binary to be sent to the end device, encoded in base64.</p>
+    ///   - [`wireless_metadata(WirelessMetadata)`](crate::client::fluent_builders::SendDataToWirelessDevice::wireless_metadata) / [`set_wireless_metadata(Option<WirelessMetadata>)`](crate::client::fluent_builders::SendDataToWirelessDevice::set_wireless_metadata): <p>Metadata about the message request.</p>
     /// - On success, responds with [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::output::SendDataToWirelessDeviceOutput::message_id): <p>The ID of the message sent to the wireless device.</p>
     /// - On failure, responds with [`SdkError<SendDataToWirelessDeviceError>`](crate::error::SendDataToWirelessDeviceError)
@@ -1011,10 +1011,10 @@ where
     }
     /// Constructs a fluent builder for the [`StartBulkAssociateWirelessDeviceWithMulticastGroup`](crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup) operation.
     ///
-    /// - Takes [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput::id): <p>The ID of the multicast group.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput::query_string): <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput::tags): <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup::set_query_string): <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup::set_tags): <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     /// - On success, responds with [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
 
     /// - On failure, responds with [`SdkError<StartBulkAssociateWirelessDeviceWithMulticastGroupError>`](crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError)
@@ -1027,10 +1027,10 @@ where
     }
     /// Constructs a fluent builder for the [`StartBulkDisassociateWirelessDeviceFromMulticastGroup`](crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup) operation.
     ///
-    /// - Takes [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput::id): <p>The ID of the multicast group.</p>
-    ///   - [`query_string(Option<String>)`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput::query_string): <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput::tags): <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`query_string(impl Into<String>)`](crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup::query_string) / [`set_query_string(Option<String>)`](crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup::set_query_string): <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup::set_tags): <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     /// - On success, responds with [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
 
     /// - On failure, responds with [`SdkError<StartBulkDisassociateWirelessDeviceFromMulticastGroupError>`](crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError)
@@ -1043,9 +1043,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartFuotaTask`](crate::client::fluent_builders::StartFuotaTask) operation.
     ///
-    /// - Takes [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::StartFuotaTaskInput::id): <p>The ID of a FUOTA task.</p>
-    ///   - [`lo_ra_wan(Option<LoRaWanStartFuotaTask>)`](crate::input::StartFuotaTaskInput::lo_ra_wan): <p>The LoRaWAN information used to start a FUOTA task.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartFuotaTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartFuotaTask::set_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`lo_ra_wan(LoRaWanStartFuotaTask)`](crate::client::fluent_builders::StartFuotaTask::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanStartFuotaTask>)`](crate::client::fluent_builders::StartFuotaTask::set_lo_ra_wan): <p>The LoRaWAN information used to start a FUOTA task.</p>
     /// - On success, responds with [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
 
     /// - On failure, responds with [`SdkError<StartFuotaTaskError>`](crate::error::StartFuotaTaskError)
@@ -1054,9 +1054,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartMulticastGroupSession`](crate::client::fluent_builders::StartMulticastGroupSession) operation.
     ///
-    /// - Takes [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::StartMulticastGroupSessionInput::id): <p>The ID of the multicast group.</p>
-    ///   - [`lo_ra_wan(Option<LoRaWanMulticastSession>)`](crate::input::StartMulticastGroupSessionInput::lo_ra_wan): <p>The LoRaWAN information used with the multicast session.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartMulticastGroupSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartMulticastGroupSession::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`lo_ra_wan(LoRaWanMulticastSession)`](crate::client::fluent_builders::StartMulticastGroupSession::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanMulticastSession>)`](crate::client::fluent_builders::StartMulticastGroupSession::set_lo_ra_wan): <p>The LoRaWAN information used with the multicast session.</p>
     /// - On success, responds with [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
 
     /// - On failure, responds with [`SdkError<StartMulticastGroupSessionError>`](crate::error::StartMulticastGroupSessionError)
@@ -1067,9 +1067,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource to add tags to.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource to add tags to.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -1078,8 +1078,8 @@ where
     }
     /// Constructs a fluent builder for the [`TestWirelessDevice`](crate::client::fluent_builders::TestWirelessDevice) operation.
     ///
-    /// - Takes [`TestWirelessDeviceInput`](crate::input::TestWirelessDeviceInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::TestWirelessDeviceInput::id): <p>The ID of the wireless device to test.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::TestWirelessDevice::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::TestWirelessDevice::set_id): <p>The ID of the wireless device to test.</p>
     /// - On success, responds with [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput) with field(s):
     ///   - [`result(Option<String>)`](crate::output::TestWirelessDeviceOutput::result): <p>The result returned by the test.</p>
     /// - On failure, responds with [`SdkError<TestWirelessDeviceError>`](crate::error::TestWirelessDeviceError)
@@ -1088,9 +1088,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource to remove tags from.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of the keys of the tags to remove from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource to remove tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of the keys of the tags to remove from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -1099,12 +1099,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDestination`](crate::client::fluent_builders::UpdateDestination) operation.
     ///
-    /// - Takes [`UpdateDestinationInput`](crate::input::UpdateDestinationInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::UpdateDestinationInput::name): <p>The new name of the resource.</p>
-    ///   - [`expression_type(Option<ExpressionType>)`](crate::input::UpdateDestinationInput::expression_type): <p>The type of value in <code>Expression</code>.</p>
-    ///   - [`expression(Option<String>)`](crate::input::UpdateDestinationInput::expression): <p>The new rule name or topic rule to send messages to.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateDestinationInput::description): <p>A new description of the resource.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateDestinationInput::role_arn): <p>The ARN of the IAM Role that authorizes the destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_name): <p>The new name of the resource.</p>
+    ///   - [`expression_type(ExpressionType)`](crate::client::fluent_builders::UpdateDestination::expression_type) / [`set_expression_type(Option<ExpressionType>)`](crate::client::fluent_builders::UpdateDestination::set_expression_type): <p>The type of value in <code>Expression</code>.</p>
+    ///   - [`expression(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::expression) / [`set_expression(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_expression): <p>The new rule name or topic rule to send messages to.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_description): <p>A new description of the resource.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_role_arn): <p>The ARN of the IAM Role that authorizes the destination.</p>
     /// - On success, responds with [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDestinationError>`](crate::error::UpdateDestinationError)
@@ -1113,13 +1113,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFuotaTask`](crate::client::fluent_builders::UpdateFuotaTask) operation.
     ///
-    /// - Takes [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::UpdateFuotaTaskInput::id): <p>The ID of a FUOTA task.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateFuotaTaskInput::name): <p>The name of a FUOTA task.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateFuotaTaskInput::description): <p>The description of the new resource.</p>
-    ///   - [`lo_ra_wan(Option<LoRaWanFuotaTask>)`](crate::input::UpdateFuotaTaskInput::lo_ra_wan): <p>The LoRaWAN information used with a FUOTA task.</p>
-    ///   - [`firmware_update_image(Option<String>)`](crate::input::UpdateFuotaTaskInput::firmware_update_image): <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    ///   - [`firmware_update_role(Option<String>)`](crate::input::UpdateFuotaTaskInput::firmware_update_role): <p>The firmware update role that is to be used with a FUOTA task.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFuotaTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFuotaTask::set_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFuotaTask::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFuotaTask::set_name): <p>The name of a FUOTA task.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFuotaTask::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFuotaTask::set_description): <p>The description of the new resource.</p>
+    ///   - [`lo_ra_wan(LoRaWanFuotaTask)`](crate::client::fluent_builders::UpdateFuotaTask::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanFuotaTask>)`](crate::client::fluent_builders::UpdateFuotaTask::set_lo_ra_wan): <p>The LoRaWAN information used with a FUOTA task.</p>
+    ///   - [`firmware_update_image(impl Into<String>)`](crate::client::fluent_builders::UpdateFuotaTask::firmware_update_image) / [`set_firmware_update_image(Option<String>)`](crate::client::fluent_builders::UpdateFuotaTask::set_firmware_update_image): <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    ///   - [`firmware_update_role(impl Into<String>)`](crate::client::fluent_builders::UpdateFuotaTask::firmware_update_role) / [`set_firmware_update_role(Option<String>)`](crate::client::fluent_builders::UpdateFuotaTask::set_firmware_update_role): <p>The firmware update role that is to be used with a FUOTA task.</p>
     /// - On success, responds with [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
 
     /// - On failure, responds with [`SdkError<UpdateFuotaTaskError>`](crate::error::UpdateFuotaTaskError)
@@ -1128,10 +1128,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateLogLevelsByResourceTypes`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes) operation.
     ///
-    /// - Takes [`UpdateLogLevelsByResourceTypesInput`](crate::input::UpdateLogLevelsByResourceTypesInput) with field(s):
-    ///   - [`default_log_level(Option<LogLevel>)`](crate::input::UpdateLogLevelsByResourceTypesInput::default_log_level): <p>The log level for a log message.</p>
-    ///   - [`wireless_device_log_options(Option<Vec<WirelessDeviceLogOption>>)`](crate::input::UpdateLogLevelsByResourceTypesInput::wireless_device_log_options): <p>The list of wireless device log options.</p>
-    ///   - [`wireless_gateway_log_options(Option<Vec<WirelessGatewayLogOption>>)`](crate::input::UpdateLogLevelsByResourceTypesInput::wireless_gateway_log_options): <p>The list of wireless gateway log options.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`default_log_level(LogLevel)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::default_log_level) / [`set_default_log_level(Option<LogLevel>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::set_default_log_level): <p>The log level for a log message.</p>
+    ///   - [`wireless_device_log_options(Vec<WirelessDeviceLogOption>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::wireless_device_log_options) / [`set_wireless_device_log_options(Option<Vec<WirelessDeviceLogOption>>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::set_wireless_device_log_options): <p>The list of wireless device log options.</p>
+    ///   - [`wireless_gateway_log_options(Vec<WirelessGatewayLogOption>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::wireless_gateway_log_options) / [`set_wireless_gateway_log_options(Option<Vec<WirelessGatewayLogOption>>)`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes::set_wireless_gateway_log_options): <p>The list of wireless gateway log options.</p>
     /// - On success, responds with [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput)
 
     /// - On failure, responds with [`SdkError<UpdateLogLevelsByResourceTypesError>`](crate::error::UpdateLogLevelsByResourceTypesError)
@@ -1142,11 +1142,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateMulticastGroup`](crate::client::fluent_builders::UpdateMulticastGroup) operation.
     ///
-    /// - Takes [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::UpdateMulticastGroupInput::id): <p>The ID of the multicast group.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateMulticastGroupInput::name): <p>The name of the multicast group.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateMulticastGroupInput::description): <p>The description of the new resource.</p>
-    ///   - [`lo_ra_wan(Option<LoRaWanMulticast>)`](crate::input::UpdateMulticastGroupInput::lo_ra_wan): <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateMulticastGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateMulticastGroup::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateMulticastGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateMulticastGroup::set_name): <p>The name of the multicast group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateMulticastGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateMulticastGroup::set_description): <p>The description of the new resource.</p>
+    ///   - [`lo_ra_wan(LoRaWanMulticast)`](crate::client::fluent_builders::UpdateMulticastGroup::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanMulticast>)`](crate::client::fluent_builders::UpdateMulticastGroup::set_lo_ra_wan): <p>The LoRaWAN information that is to be used with the multicast group.</p>
     /// - On success, responds with [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
 
     /// - On failure, responds with [`SdkError<UpdateMulticastGroupError>`](crate::error::UpdateMulticastGroupError)
@@ -1155,13 +1155,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateNetworkAnalyzerConfiguration`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration) operation.
     ///
-    /// - Takes [`UpdateNetworkAnalyzerConfigurationInput`](crate::input::UpdateNetworkAnalyzerConfigurationInput) with field(s):
-    ///   - [`configuration_name(Option<String>)`](crate::input::UpdateNetworkAnalyzerConfigurationInput::configuration_name): <p>NetworkAnalyzer configuration name.</p>
-    ///   - [`trace_content(Option<TraceContent>)`](crate::input::UpdateNetworkAnalyzerConfigurationInput::trace_content): <p>Trace Content for resources.</p>
-    ///   - [`wireless_devices_to_add(Option<Vec<String>>)`](crate::input::UpdateNetworkAnalyzerConfigurationInput::wireless_devices_to_add): <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
-    ///   - [`wireless_devices_to_remove(Option<Vec<String>>)`](crate::input::UpdateNetworkAnalyzerConfigurationInput::wireless_devices_to_remove): <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
-    ///   - [`wireless_gateways_to_add(Option<Vec<String>>)`](crate::input::UpdateNetworkAnalyzerConfigurationInput::wireless_gateways_to_add): <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
-    ///   - [`wireless_gateways_to_remove(Option<Vec<String>>)`](crate::input::UpdateNetworkAnalyzerConfigurationInput::wireless_gateways_to_remove): <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::configuration_name) / [`set_configuration_name(Option<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_configuration_name): <p>NetworkAnalyzer configuration name.</p>
+    ///   - [`trace_content(TraceContent)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::trace_content) / [`set_trace_content(Option<TraceContent>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_trace_content): <p>Trace Content for resources.</p>
+    ///   - [`wireless_devices_to_add(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_devices_to_add) / [`set_wireless_devices_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_devices_to_add): <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
+    ///   - [`wireless_devices_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_devices_to_remove) / [`set_wireless_devices_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_devices_to_remove): <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
+    ///   - [`wireless_gateways_to_add(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_gateways_to_add) / [`set_wireless_gateways_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_gateways_to_add): <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
+    ///   - [`wireless_gateways_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::wireless_gateways_to_remove) / [`set_wireless_gateways_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration::set_wireless_gateways_to_remove): <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
     /// - On success, responds with [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateNetworkAnalyzerConfigurationError>`](crate::error::UpdateNetworkAnalyzerConfigurationError)
@@ -1172,10 +1172,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdatePartnerAccount`](crate::client::fluent_builders::UpdatePartnerAccount) operation.
     ///
-    /// - Takes [`UpdatePartnerAccountInput`](crate::input::UpdatePartnerAccountInput) with field(s):
-    ///   - [`sidewalk(Option<SidewalkUpdateAccount>)`](crate::input::UpdatePartnerAccountInput::sidewalk): <p>The Sidewalk account credentials.</p>
-    ///   - [`partner_account_id(Option<String>)`](crate::input::UpdatePartnerAccountInput::partner_account_id): <p>The ID of the partner account to update.</p>
-    ///   - [`partner_type(Option<PartnerType>)`](crate::input::UpdatePartnerAccountInput::partner_type): <p>The partner type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sidewalk(SidewalkUpdateAccount)`](crate::client::fluent_builders::UpdatePartnerAccount::sidewalk) / [`set_sidewalk(Option<SidewalkUpdateAccount>)`](crate::client::fluent_builders::UpdatePartnerAccount::set_sidewalk): <p>The Sidewalk account credentials.</p>
+    ///   - [`partner_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePartnerAccount::partner_account_id) / [`set_partner_account_id(Option<String>)`](crate::client::fluent_builders::UpdatePartnerAccount::set_partner_account_id): <p>The ID of the partner account to update.</p>
+    ///   - [`partner_type(PartnerType)`](crate::client::fluent_builders::UpdatePartnerAccount::partner_type) / [`set_partner_type(Option<PartnerType>)`](crate::client::fluent_builders::UpdatePartnerAccount::set_partner_type): <p>The partner type.</p>
     /// - On success, responds with [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput)
 
     /// - On failure, responds with [`SdkError<UpdatePartnerAccountError>`](crate::error::UpdatePartnerAccountError)
@@ -1184,12 +1184,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateResourceEventConfiguration`](crate::client::fluent_builders::UpdateResourceEventConfiguration) operation.
     ///
-    /// - Takes [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput) with field(s):
-    ///   - [`identifier(Option<String>)`](crate::input::UpdateResourceEventConfigurationInput::identifier): <p>Resource identifier to opt in for event messaging.</p>
-    ///   - [`identifier_type(Option<IdentifierType>)`](crate::input::UpdateResourceEventConfigurationInput::identifier_type): <p>Identifier type of the particular resource identifier for event configuration.</p>
-    ///   - [`partner_type(Option<EventNotificationPartnerType>)`](crate::input::UpdateResourceEventConfigurationInput::partner_type): <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
-    ///   - [`device_registration_state(Option<DeviceRegistrationStateEventConfiguration>)`](crate::input::UpdateResourceEventConfigurationInput::device_registration_state): <p>Event configuration for the device registration state event</p>
-    ///   - [`proximity(Option<ProximityEventConfiguration>)`](crate::input::UpdateResourceEventConfigurationInput::proximity): <p>Event configuration for the Proximity event</p>
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_identifier): <p>Resource identifier to opt in for event messaging.</p>
+    ///   - [`identifier_type(IdentifierType)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::identifier_type) / [`set_identifier_type(Option<IdentifierType>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_identifier_type): <p>Identifier type of the particular resource identifier for event configuration.</p>
+    ///   - [`partner_type(EventNotificationPartnerType)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::partner_type) / [`set_partner_type(Option<EventNotificationPartnerType>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_partner_type): <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+    ///   - [`device_registration_state(DeviceRegistrationStateEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::device_registration_state) / [`set_device_registration_state(Option<DeviceRegistrationStateEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_device_registration_state): <p>Event configuration for the device registration state event</p>
+    ///   - [`proximity(ProximityEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::proximity) / [`set_proximity(Option<ProximityEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_proximity): <p>Event configuration for the Proximity event</p>
     /// - On success, responds with [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateResourceEventConfigurationError>`](crate::error::UpdateResourceEventConfigurationError)
@@ -1200,12 +1200,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateWirelessDevice`](crate::client::fluent_builders::UpdateWirelessDevice) operation.
     ///
-    /// - Takes [`UpdateWirelessDeviceInput`](crate::input::UpdateWirelessDeviceInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::UpdateWirelessDeviceInput::id): <p>The ID of the resource to update.</p>
-    ///   - [`destination_name(Option<String>)`](crate::input::UpdateWirelessDeviceInput::destination_name): <p>The name of the new destination for the device.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateWirelessDeviceInput::name): <p>The new name of the resource.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateWirelessDeviceInput::description): <p>A new description of the resource.</p>
-    ///   - [`lo_ra_wan(Option<LoRaWanUpdateDevice>)`](crate::input::UpdateWirelessDeviceInput::lo_ra_wan): <p>The updated wireless device's configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::set_id): <p>The ID of the resource to update.</p>
+    ///   - [`destination_name(impl Into<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::destination_name) / [`set_destination_name(Option<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::set_destination_name): <p>The name of the new destination for the device.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::set_name): <p>The new name of the resource.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWirelessDevice::set_description): <p>A new description of the resource.</p>
+    ///   - [`lo_ra_wan(LoRaWanUpdateDevice)`](crate::client::fluent_builders::UpdateWirelessDevice::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanUpdateDevice>)`](crate::client::fluent_builders::UpdateWirelessDevice::set_lo_ra_wan): <p>The updated wireless device's configuration.</p>
     /// - On success, responds with [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput)
 
     /// - On failure, responds with [`SdkError<UpdateWirelessDeviceError>`](crate::error::UpdateWirelessDeviceError)
@@ -1214,12 +1214,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateWirelessGateway`](crate::client::fluent_builders::UpdateWirelessGateway) operation.
     ///
-    /// - Takes [`UpdateWirelessGatewayInput`](crate::input::UpdateWirelessGatewayInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::UpdateWirelessGatewayInput::id): <p>The ID of the resource to update.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateWirelessGatewayInput::name): <p>The new name of the resource.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateWirelessGatewayInput::description): <p>A new description of the resource.</p>
-    ///   - [`join_eui_filters(Option<Vec<Vec<String>>>)`](crate::input::UpdateWirelessGatewayInput::join_eui_filters): <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    ///   - [`net_id_filters(Option<Vec<String>>)`](crate::input::UpdateWirelessGatewayInput::net_id_filters): <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateWirelessGateway::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateWirelessGateway::set_id): <p>The ID of the resource to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWirelessGateway::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWirelessGateway::set_name): <p>The new name of the resource.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWirelessGateway::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWirelessGateway::set_description): <p>A new description of the resource.</p>
+    ///   - [`join_eui_filters(Vec<Vec<String>>)`](crate::client::fluent_builders::UpdateWirelessGateway::join_eui_filters) / [`set_join_eui_filters(Option<Vec<Vec<String>>>)`](crate::client::fluent_builders::UpdateWirelessGateway::set_join_eui_filters): <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
+    ///   - [`net_id_filters(Vec<String>)`](crate::client::fluent_builders::UpdateWirelessGateway::net_id_filters) / [`set_net_id_filters(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateWirelessGateway::set_net_id_filters): <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
     /// - On success, responds with [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput)
 
     /// - On failure, responds with [`SdkError<UpdateWirelessGatewayError>`](crate::error::UpdateWirelessGatewayError)

@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`CreateBudget`](crate::client::fluent_builders::CreateBudget) operation.
     ///
-    /// - Takes [`CreateBudgetInput`](crate::input::CreateBudgetInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::CreateBudgetInput::account_id): <p>The <code>accountId</code> that is associated with the budget.</p>
-    ///   - [`budget(Option<Budget>)`](crate::input::CreateBudgetInput::budget): <p>The budget object that you want to create.</p>
-    ///   - [`notifications_with_subscribers(Option<Vec<NotificationWithSubscribers>>)`](crate::input::CreateBudgetInput::notifications_with_subscribers): <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateBudget::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateBudget::set_account_id): <p>The <code>accountId</code> that is associated with the budget.</p>
+    ///   - [`budget(Budget)`](crate::client::fluent_builders::CreateBudget::budget) / [`set_budget(Option<Budget>)`](crate::client::fluent_builders::CreateBudget::set_budget): <p>The budget object that you want to create.</p>
+    ///   - [`notifications_with_subscribers(Vec<NotificationWithSubscribers>)`](crate::client::fluent_builders::CreateBudget::notifications_with_subscribers) / [`set_notifications_with_subscribers(Option<Vec<NotificationWithSubscribers>>)`](crate::client::fluent_builders::CreateBudget::set_notifications_with_subscribers): <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
     /// - On success, responds with [`CreateBudgetOutput`](crate::output::CreateBudgetOutput)
 
     /// - On failure, responds with [`SdkError<CreateBudgetError>`](crate::error::CreateBudgetError)
@@ -97,16 +97,16 @@ where
     }
     /// Constructs a fluent builder for the [`CreateBudgetAction`](crate::client::fluent_builders::CreateBudgetAction) operation.
     ///
-    /// - Takes [`CreateBudgetActionInput`](crate::input::CreateBudgetActionInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::CreateBudgetActionInput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::CreateBudgetActionInput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    ///   - [`notification_type(Option<NotificationType>)`](crate::input::CreateBudgetActionInput::notification_type): <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    ///   - [`action_type(Option<ActionType>)`](crate::input::CreateBudgetActionInput::action_type): <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
-    ///   - [`action_threshold(Option<ActionThreshold>)`](crate::input::CreateBudgetActionInput::action_threshold): <p> The trigger threshold of the action. </p>
-    ///   - [`definition(Option<Definition>)`](crate::input::CreateBudgetActionInput::definition): <p> Specifies all of the type-specific parameters. </p>
-    ///   - [`execution_role_arn(Option<String>)`](crate::input::CreateBudgetActionInput::execution_role_arn): <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    ///   - [`approval_model(Option<ApprovalModel>)`](crate::input::CreateBudgetActionInput::approval_model): <p> This specifies if the action needs manual or automatic approval. </p>
-    ///   - [`subscribers(Option<Vec<Subscriber>>)`](crate::input::CreateBudgetActionInput::subscribers): <p> A list of subscribers.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::CreateBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::CreateBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    ///   - [`notification_type(NotificationType)`](crate::client::fluent_builders::CreateBudgetAction::notification_type) / [`set_notification_type(Option<NotificationType>)`](crate::client::fluent_builders::CreateBudgetAction::set_notification_type): <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    ///   - [`action_type(ActionType)`](crate::client::fluent_builders::CreateBudgetAction::action_type) / [`set_action_type(Option<ActionType>)`](crate::client::fluent_builders::CreateBudgetAction::set_action_type): <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
+    ///   - [`action_threshold(ActionThreshold)`](crate::client::fluent_builders::CreateBudgetAction::action_threshold) / [`set_action_threshold(Option<ActionThreshold>)`](crate::client::fluent_builders::CreateBudgetAction::set_action_threshold): <p> The trigger threshold of the action. </p>
+    ///   - [`definition(Definition)`](crate::client::fluent_builders::CreateBudgetAction::definition) / [`set_definition(Option<Definition>)`](crate::client::fluent_builders::CreateBudgetAction::set_definition): <p> Specifies all of the type-specific parameters. </p>
+    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBudgetAction::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBudgetAction::set_execution_role_arn): <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    ///   - [`approval_model(ApprovalModel)`](crate::client::fluent_builders::CreateBudgetAction::approval_model) / [`set_approval_model(Option<ApprovalModel>)`](crate::client::fluent_builders::CreateBudgetAction::set_approval_model): <p> This specifies if the action needs manual or automatic approval. </p>
+    ///   - [`subscribers(Vec<Subscriber>)`](crate::client::fluent_builders::CreateBudgetAction::subscribers) / [`set_subscribers(Option<Vec<Subscriber>>)`](crate::client::fluent_builders::CreateBudgetAction::set_subscribers): <p> A list of subscribers.</p>
     /// - On success, responds with [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::output::CreateBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::CreateBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -117,11 +117,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateNotification`](crate::client::fluent_builders::CreateNotification) operation.
     ///
-    /// - Takes [`CreateNotificationInput`](crate::input::CreateNotificationInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::CreateNotificationInput::account_id): <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::CreateNotificationInput::budget_name): <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
-    ///   - [`notification(Option<Notification>)`](crate::input::CreateNotificationInput::notification): <p>The notification that you want to create.</p>
-    ///   - [`subscribers(Option<Vec<Subscriber>>)`](crate::input::CreateNotificationInput::subscribers): <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateNotification::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateNotification::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::CreateNotification::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::CreateNotification::set_budget_name): <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
+    ///   - [`notification(Notification)`](crate::client::fluent_builders::CreateNotification::notification) / [`set_notification(Option<Notification>)`](crate::client::fluent_builders::CreateNotification::set_notification): <p>The notification that you want to create.</p>
+    ///   - [`subscribers(Vec<Subscriber>)`](crate::client::fluent_builders::CreateNotification::subscribers) / [`set_subscribers(Option<Vec<Subscriber>>)`](crate::client::fluent_builders::CreateNotification::set_subscribers): <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
     /// - On success, responds with [`CreateNotificationOutput`](crate::output::CreateNotificationOutput)
 
     /// - On failure, responds with [`SdkError<CreateNotificationError>`](crate::error::CreateNotificationError)
@@ -130,11 +130,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSubscriber`](crate::client::fluent_builders::CreateSubscriber) operation.
     ///
-    /// - Takes [`CreateSubscriberInput`](crate::input::CreateSubscriberInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::CreateSubscriberInput::account_id): <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::CreateSubscriberInput::budget_name): <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
-    ///   - [`notification(Option<Notification>)`](crate::input::CreateSubscriberInput::notification): <p>The notification that you want to create a subscriber for.</p>
-    ///   - [`subscriber(Option<Subscriber>)`](crate::input::CreateSubscriberInput::subscriber): <p>The subscriber that you want to associate with a budget notification.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriber::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateSubscriber::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriber::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::CreateSubscriber::set_budget_name): <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
+    ///   - [`notification(Notification)`](crate::client::fluent_builders::CreateSubscriber::notification) / [`set_notification(Option<Notification>)`](crate::client::fluent_builders::CreateSubscriber::set_notification): <p>The notification that you want to create a subscriber for.</p>
+    ///   - [`subscriber(Subscriber)`](crate::client::fluent_builders::CreateSubscriber::subscriber) / [`set_subscriber(Option<Subscriber>)`](crate::client::fluent_builders::CreateSubscriber::set_subscriber): <p>The subscriber that you want to associate with a budget notification.</p>
     /// - On success, responds with [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput)
 
     /// - On failure, responds with [`SdkError<CreateSubscriberError>`](crate::error::CreateSubscriberError)
@@ -143,9 +143,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteBudget`](crate::client::fluent_builders::DeleteBudget) operation.
     ///
-    /// - Takes [`DeleteBudgetInput`](crate::input::DeleteBudgetInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DeleteBudgetInput::account_id): <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DeleteBudgetInput::budget_name): <p>The name of the budget that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBudget::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteBudget::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBudget::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DeleteBudget::set_budget_name): <p>The name of the budget that you want to delete.</p>
     /// - On success, responds with [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteBudgetError>`](crate::error::DeleteBudgetError)
@@ -154,10 +154,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteBudgetAction`](crate::client::fluent_builders::DeleteBudgetAction) operation.
     ///
-    /// - Takes [`DeleteBudgetActionInput`](crate::input::DeleteBudgetActionInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DeleteBudgetActionInput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DeleteBudgetActionInput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    ///   - [`action_id(Option<String>)`](crate::input::DeleteBudgetActionInput::action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DeleteBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBudgetAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::DeleteBudgetAction::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     /// - On success, responds with [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::output::DeleteBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::DeleteBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -168,10 +168,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteNotification`](crate::client::fluent_builders::DeleteNotification) operation.
     ///
-    /// - Takes [`DeleteNotificationInput`](crate::input::DeleteNotificationInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DeleteNotificationInput::account_id): <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DeleteNotificationInput::budget_name): <p>The name of the budget whose notification you want to delete.</p>
-    ///   - [`notification(Option<Notification>)`](crate::input::DeleteNotificationInput::notification): <p>The notification that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNotification::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteNotification::set_account_id): <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DeleteNotification::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DeleteNotification::set_budget_name): <p>The name of the budget whose notification you want to delete.</p>
+    ///   - [`notification(Notification)`](crate::client::fluent_builders::DeleteNotification::notification) / [`set_notification(Option<Notification>)`](crate::client::fluent_builders::DeleteNotification::set_notification): <p>The notification that you want to delete.</p>
     /// - On success, responds with [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteNotificationError>`](crate::error::DeleteNotificationError)
@@ -180,11 +180,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSubscriber`](crate::client::fluent_builders::DeleteSubscriber) operation.
     ///
-    /// - Takes [`DeleteSubscriberInput`](crate::input::DeleteSubscriberInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DeleteSubscriberInput::account_id): <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DeleteSubscriberInput::budget_name): <p>The name of the budget whose subscriber you want to delete.</p>
-    ///   - [`notification(Option<Notification>)`](crate::input::DeleteSubscriberInput::notification): <p>The notification whose subscriber you want to delete.</p>
-    ///   - [`subscriber(Option<Subscriber>)`](crate::input::DeleteSubscriberInput::subscriber): <p>The subscriber that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSubscriber::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteSubscriber::set_account_id): <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSubscriber::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DeleteSubscriber::set_budget_name): <p>The name of the budget whose subscriber you want to delete.</p>
+    ///   - [`notification(Notification)`](crate::client::fluent_builders::DeleteSubscriber::notification) / [`set_notification(Option<Notification>)`](crate::client::fluent_builders::DeleteSubscriber::set_notification): <p>The notification whose subscriber you want to delete.</p>
+    ///   - [`subscriber(Subscriber)`](crate::client::fluent_builders::DeleteSubscriber::subscriber) / [`set_subscriber(Option<Subscriber>)`](crate::client::fluent_builders::DeleteSubscriber::set_subscriber): <p>The subscriber that you want to delete.</p>
     /// - On success, responds with [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSubscriberError>`](crate::error::DeleteSubscriberError)
@@ -193,9 +193,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeBudget`](crate::client::fluent_builders::DescribeBudget) operation.
     ///
-    /// - Takes [`DescribeBudgetInput`](crate::input::DescribeBudgetInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeBudgetInput::account_id): <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DescribeBudgetInput::budget_name): <p>The name of the budget that you want a description of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudget::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudget::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBudget::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeBudget::set_budget_name): <p>The name of the budget that you want a description of.</p>
     /// - On success, responds with [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput) with field(s):
     ///   - [`budget(Option<Budget>)`](crate::output::DescribeBudgetOutput::budget): <p>The description of the budget.</p>
     /// - On failure, responds with [`SdkError<DescribeBudgetError>`](crate::error::DescribeBudgetError)
@@ -204,10 +204,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeBudgetAction`](crate::client::fluent_builders::DescribeBudgetAction) operation.
     ///
-    /// - Takes [`DescribeBudgetActionInput`](crate::input::DescribeBudgetActionInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeBudgetActionInput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DescribeBudgetActionInput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    ///   - [`action_id(Option<String>)`](crate::input::DescribeBudgetActionInput::action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetAction::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     /// - On success, responds with [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::output::DescribeBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::DescribeBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -217,15 +217,15 @@ where
         fluent_builders::DescribeBudgetAction::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeBudgetActionHistories`](crate::client::fluent_builders::DescribeBudgetActionHistories) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionHistories::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionHistories::into_paginator).
     ///
-    /// - Takes [`DescribeBudgetActionHistoriesInput`](crate::input::DescribeBudgetActionHistoriesInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeBudgetActionHistoriesInput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DescribeBudgetActionHistoriesInput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    ///   - [`action_id(Option<String>)`](crate::input::DescribeBudgetActionHistoriesInput::action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    ///   - [`time_period(Option<TimePeriod>)`](crate::input::DescribeBudgetActionHistoriesInput::time_period): <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeBudgetActionHistoriesInput::max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeBudgetActionHistoriesInput::next_token): <p> A generic string.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    ///   - [`time_period(TimePeriod)`](crate::client::fluent_builders::DescribeBudgetActionHistories::time_period) / [`set_time_period(Option<TimePeriod>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_time_period): <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgetActionHistories::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionHistories::set_next_token): <p> A generic string.</p>
     /// - On success, responds with [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput) with field(s):
     ///   - [`action_histories(Option<Vec<ActionHistory>>)`](crate::output::DescribeBudgetActionHistoriesOutput::action_histories): <p> The historical record of the budget action resource. </p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeBudgetActionHistoriesOutput::next_token): <p> A generic string.</p>
@@ -236,12 +236,12 @@ where
         fluent_builders::DescribeBudgetActionHistories::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeBudgetActionsForAccount`](crate::client::fluent_builders::DescribeBudgetActionsForAccount) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::into_paginator).
     ///
-    /// - Takes [`DescribeBudgetActionsForAccountInput`](crate::input::DescribeBudgetActionsForAccountInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeBudgetActionsForAccountInput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeBudgetActionsForAccountInput::max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeBudgetActionsForAccountInput::next_token): <p> A generic string.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::set_max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::set_next_token): <p> A generic string.</p>
     /// - On success, responds with [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput) with field(s):
     ///   - [`actions(Option<Vec<Action>>)`](crate::output::DescribeBudgetActionsForAccountOutput::actions): <p> A list of the budget action resources information. </p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeBudgetActionsForAccountOutput::next_token): <p> A generic string.</p>
@@ -252,13 +252,13 @@ where
         fluent_builders::DescribeBudgetActionsForAccount::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeBudgetActionsForBudget`](crate::client::fluent_builders::DescribeBudgetActionsForBudget) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::into_paginator).
     ///
-    /// - Takes [`DescribeBudgetActionsForBudgetInput`](crate::input::DescribeBudgetActionsForBudgetInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeBudgetActionsForBudgetInput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DescribeBudgetActionsForBudgetInput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeBudgetActionsForBudgetInput::max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeBudgetActionsForBudgetInput::next_token): <p> A generic string.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::set_max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::set_next_token): <p> A generic string.</p>
     /// - On success, responds with [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput) with field(s):
     ///   - [`actions(Option<Vec<Action>>)`](crate::output::DescribeBudgetActionsForBudgetOutput::actions): <p> A list of the budget action resources information. </p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeBudgetActionsForBudgetOutput::next_token): <p> A generic string.</p>
@@ -269,14 +269,14 @@ where
         fluent_builders::DescribeBudgetActionsForBudget::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeBudgetPerformanceHistory`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::into_paginator).
     ///
-    /// - Takes [`DescribeBudgetPerformanceHistoryInput`](crate::input::DescribeBudgetPerformanceHistoryInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeBudgetPerformanceHistoryInput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DescribeBudgetPerformanceHistoryInput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    ///   - [`time_period(Option<TimePeriod>)`](crate::input::DescribeBudgetPerformanceHistoryInput::time_period): <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeBudgetPerformanceHistoryInput::max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeBudgetPerformanceHistoryInput::next_token): <p> A generic string.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    ///   - [`time_period(TimePeriod)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::time_period) / [`set_time_period(Option<TimePeriod>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_time_period): <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_max_results): <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::set_next_token): <p> A generic string.</p>
     /// - On success, responds with [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput) with field(s):
     ///   - [`budget_performance_history(Option<BudgetPerformanceHistory>)`](crate::output::DescribeBudgetPerformanceHistoryOutput::budget_performance_history): <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>  <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeBudgetPerformanceHistoryOutput::next_token): <p> A generic string.</p>
@@ -287,12 +287,12 @@ where
         fluent_builders::DescribeBudgetPerformanceHistory::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeBudgets`](crate::client::fluent_builders::DescribeBudgets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgets::into_paginator).
     ///
-    /// - Takes [`DescribeBudgetsInput`](crate::input::DescribeBudgetsInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeBudgetsInput::account_id): <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeBudgetsInput::max_results): <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeBudgetsInput::next_token): <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgets::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeBudgets::set_account_id): <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBudgets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBudgets::set_max_results): <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBudgets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBudgets::set_next_token): <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     /// - On success, responds with [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput) with field(s):
     ///   - [`budgets(Option<Vec<Budget>>)`](crate::output::DescribeBudgetsOutput::budgets): <p>A list of budgets.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeBudgetsOutput::next_token): <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
@@ -301,13 +301,13 @@ where
         fluent_builders::DescribeBudgets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeNotificationsForBudget`](crate::client::fluent_builders::DescribeNotificationsForBudget) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeNotificationsForBudget::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeNotificationsForBudget::into_paginator).
     ///
-    /// - Takes [`DescribeNotificationsForBudgetInput`](crate::input::DescribeNotificationsForBudgetInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeNotificationsForBudgetInput::account_id): <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DescribeNotificationsForBudgetInput::budget_name): <p>The name of the budget whose notifications you want descriptions of.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeNotificationsForBudgetInput::max_results): <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeNotificationsForBudgetInput::next_token): <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationsForBudget::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeNotificationsForBudget::set_account_id): <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationsForBudget::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeNotificationsForBudget::set_budget_name): <p>The name of the budget whose notifications you want descriptions of.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeNotificationsForBudget::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeNotificationsForBudget::set_max_results): <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationsForBudget::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeNotificationsForBudget::set_next_token): <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     /// - On success, responds with [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput) with field(s):
     ///   - [`notifications(Option<Vec<Notification>>)`](crate::output::DescribeNotificationsForBudgetOutput::notifications): <p>A list of notifications that are associated with a budget.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeNotificationsForBudgetOutput::next_token): <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
@@ -318,14 +318,14 @@ where
         fluent_builders::DescribeNotificationsForBudget::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeSubscribersForNotification`](crate::client::fluent_builders::DescribeSubscribersForNotification) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSubscribersForNotification::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSubscribersForNotification::into_paginator).
     ///
-    /// - Takes [`DescribeSubscribersForNotificationInput`](crate::input::DescribeSubscribersForNotificationInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeSubscribersForNotificationInput::account_id): <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::DescribeSubscribersForNotificationInput::budget_name): <p>The name of the budget whose subscribers you want descriptions of.</p>
-    ///   - [`notification(Option<Notification>)`](crate::input::DescribeSubscribersForNotificationInput::notification): <p>The notification whose subscribers you want to list.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeSubscribersForNotificationInput::max_results): <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSubscribersForNotificationInput::next_token): <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSubscribersForNotification::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeSubscribersForNotification::set_account_id): <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSubscribersForNotification::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DescribeSubscribersForNotification::set_budget_name): <p>The name of the budget whose subscribers you want descriptions of.</p>
+    ///   - [`notification(Notification)`](crate::client::fluent_builders::DescribeSubscribersForNotification::notification) / [`set_notification(Option<Notification>)`](crate::client::fluent_builders::DescribeSubscribersForNotification::set_notification): <p>The notification whose subscribers you want to list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSubscribersForNotification::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeSubscribersForNotification::set_max_results): <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSubscribersForNotification::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSubscribersForNotification::set_next_token): <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     /// - On success, responds with [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput) with field(s):
     ///   - [`subscribers(Option<Vec<Subscriber>>)`](crate::output::DescribeSubscribersForNotificationOutput::subscribers): <p>A list of subscribers that are associated with a notification.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSubscribersForNotificationOutput::next_token): <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
@@ -337,11 +337,11 @@ where
     }
     /// Constructs a fluent builder for the [`ExecuteBudgetAction`](crate::client::fluent_builders::ExecuteBudgetAction) operation.
     ///
-    /// - Takes [`ExecuteBudgetActionInput`](crate::input::ExecuteBudgetActionInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::ExecuteBudgetActionInput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::ExecuteBudgetActionInput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    ///   - [`action_id(Option<String>)`](crate::input::ExecuteBudgetActionInput::action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    ///   - [`execution_type(Option<ExecutionType>)`](crate::input::ExecuteBudgetActionInput::execution_type): <p> The type of execution. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::ExecuteBudgetAction::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    ///   - [`execution_type(ExecutionType)`](crate::client::fluent_builders::ExecuteBudgetAction::execution_type) / [`set_execution_type(Option<ExecutionType>)`](crate::client::fluent_builders::ExecuteBudgetAction::set_execution_type): <p> The type of execution. </p>
     /// - On success, responds with [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::output::ExecuteBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::ExecuteBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -353,9 +353,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBudget`](crate::client::fluent_builders::UpdateBudget) operation.
     ///
-    /// - Takes [`UpdateBudgetInput`](crate::input::UpdateBudgetInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::UpdateBudgetInput::account_id): <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
-    ///   - [`new_budget(Option<Budget>)`](crate::input::UpdateBudgetInput::new_budget): <p>The budget that you want to update your budget to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBudget::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateBudget::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
+    ///   - [`new_budget(Budget)`](crate::client::fluent_builders::UpdateBudget::new_budget) / [`set_new_budget(Option<Budget>)`](crate::client::fluent_builders::UpdateBudget::set_new_budget): <p>The budget that you want to update your budget to.</p>
     /// - On success, responds with [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput)
 
     /// - On failure, responds with [`SdkError<UpdateBudgetError>`](crate::error::UpdateBudgetError)
@@ -364,16 +364,16 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBudgetAction`](crate::client::fluent_builders::UpdateBudgetAction) operation.
     ///
-    /// - Takes [`UpdateBudgetActionInput`](crate::input::UpdateBudgetActionInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::UpdateBudgetActionInput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::UpdateBudgetActionInput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    ///   - [`action_id(Option<String>)`](crate::input::UpdateBudgetActionInput::action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    ///   - [`notification_type(Option<NotificationType>)`](crate::input::UpdateBudgetActionInput::notification_type): <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    ///   - [`action_threshold(Option<ActionThreshold>)`](crate::input::UpdateBudgetActionInput::action_threshold): <p> The trigger threshold of the action. </p>
-    ///   - [`definition(Option<Definition>)`](crate::input::UpdateBudgetActionInput::definition): <p> Specifies all of the type-specific parameters. </p>
-    ///   - [`execution_role_arn(Option<String>)`](crate::input::UpdateBudgetActionInput::execution_role_arn): <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    ///   - [`approval_model(Option<ApprovalModel>)`](crate::input::UpdateBudgetActionInput::approval_model): <p> This specifies if the action needs manual or automatic approval. </p>
-    ///   - [`subscribers(Option<Vec<Subscriber>>)`](crate::input::UpdateBudgetActionInput::subscribers): <p> A list of subscribers.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBudgetAction::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateBudgetAction::set_account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBudgetAction::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::UpdateBudgetAction::set_budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBudgetAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::UpdateBudgetAction::set_action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    ///   - [`notification_type(NotificationType)`](crate::client::fluent_builders::UpdateBudgetAction::notification_type) / [`set_notification_type(Option<NotificationType>)`](crate::client::fluent_builders::UpdateBudgetAction::set_notification_type): <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    ///   - [`action_threshold(ActionThreshold)`](crate::client::fluent_builders::UpdateBudgetAction::action_threshold) / [`set_action_threshold(Option<ActionThreshold>)`](crate::client::fluent_builders::UpdateBudgetAction::set_action_threshold): <p> The trigger threshold of the action. </p>
+    ///   - [`definition(Definition)`](crate::client::fluent_builders::UpdateBudgetAction::definition) / [`set_definition(Option<Definition>)`](crate::client::fluent_builders::UpdateBudgetAction::set_definition): <p> Specifies all of the type-specific parameters. </p>
+    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateBudgetAction::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateBudgetAction::set_execution_role_arn): <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    ///   - [`approval_model(ApprovalModel)`](crate::client::fluent_builders::UpdateBudgetAction::approval_model) / [`set_approval_model(Option<ApprovalModel>)`](crate::client::fluent_builders::UpdateBudgetAction::set_approval_model): <p> This specifies if the action needs manual or automatic approval. </p>
+    ///   - [`subscribers(Vec<Subscriber>)`](crate::client::fluent_builders::UpdateBudgetAction::subscribers) / [`set_subscribers(Option<Vec<Subscriber>>)`](crate::client::fluent_builders::UpdateBudgetAction::set_subscribers): <p> A list of subscribers.</p>
     /// - On success, responds with [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::output::UpdateBudgetActionOutput::account_id): <p>The account ID of the user. It should be a 12-digit number.</p>
     ///   - [`budget_name(Option<String>)`](crate::output::UpdateBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -385,11 +385,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateNotification`](crate::client::fluent_builders::UpdateNotification) operation.
     ///
-    /// - Takes [`UpdateNotificationInput`](crate::input::UpdateNotificationInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::UpdateNotificationInput::account_id): <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::UpdateNotificationInput::budget_name): <p>The name of the budget whose notification you want to update.</p>
-    ///   - [`old_notification(Option<Notification>)`](crate::input::UpdateNotificationInput::old_notification): <p>The previous notification that is associated with a budget.</p>
-    ///   - [`new_notification(Option<Notification>)`](crate::input::UpdateNotificationInput::new_notification): <p>The updated notification to be associated with a budget.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateNotification::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateNotification::set_account_id): <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotification::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::UpdateNotification::set_budget_name): <p>The name of the budget whose notification you want to update.</p>
+    ///   - [`old_notification(Notification)`](crate::client::fluent_builders::UpdateNotification::old_notification) / [`set_old_notification(Option<Notification>)`](crate::client::fluent_builders::UpdateNotification::set_old_notification): <p>The previous notification that is associated with a budget.</p>
+    ///   - [`new_notification(Notification)`](crate::client::fluent_builders::UpdateNotification::new_notification) / [`set_new_notification(Option<Notification>)`](crate::client::fluent_builders::UpdateNotification::set_new_notification): <p>The updated notification to be associated with a budget.</p>
     /// - On success, responds with [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateNotificationError>`](crate::error::UpdateNotificationError)
@@ -398,12 +398,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSubscriber`](crate::client::fluent_builders::UpdateSubscriber) operation.
     ///
-    /// - Takes [`UpdateSubscriberInput`](crate::input::UpdateSubscriberInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::UpdateSubscriberInput::account_id): <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
-    ///   - [`budget_name(Option<String>)`](crate::input::UpdateSubscriberInput::budget_name): <p>The name of the budget whose subscriber you want to update.</p>
-    ///   - [`notification(Option<Notification>)`](crate::input::UpdateSubscriberInput::notification): <p>The notification whose subscriber you want to update.</p>
-    ///   - [`old_subscriber(Option<Subscriber>)`](crate::input::UpdateSubscriberInput::old_subscriber): <p>The previous subscriber that is associated with a budget notification.</p>
-    ///   - [`new_subscriber(Option<Subscriber>)`](crate::input::UpdateSubscriberInput::new_subscriber): <p>The updated subscriber that is associated with a budget notification.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriber::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateSubscriber::set_account_id): <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
+    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriber::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::UpdateSubscriber::set_budget_name): <p>The name of the budget whose subscriber you want to update.</p>
+    ///   - [`notification(Notification)`](crate::client::fluent_builders::UpdateSubscriber::notification) / [`set_notification(Option<Notification>)`](crate::client::fluent_builders::UpdateSubscriber::set_notification): <p>The notification whose subscriber you want to update.</p>
+    ///   - [`old_subscriber(Subscriber)`](crate::client::fluent_builders::UpdateSubscriber::old_subscriber) / [`set_old_subscriber(Option<Subscriber>)`](crate::client::fluent_builders::UpdateSubscriber::set_old_subscriber): <p>The previous subscriber that is associated with a budget notification.</p>
+    ///   - [`new_subscriber(Subscriber)`](crate::client::fluent_builders::UpdateSubscriber::new_subscriber) / [`set_new_subscriber(Option<Subscriber>)`](crate::client::fluent_builders::UpdateSubscriber::set_new_subscriber): <p>The updated subscriber that is associated with a budget notification.</p>
     /// - On success, responds with [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput)
 
     /// - On failure, responds with [`SdkError<UpdateSubscriberError>`](crate::error::UpdateSubscriberError)

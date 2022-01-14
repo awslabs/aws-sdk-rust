@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`AbortDocumentVersionUpload`](crate::client::fluent_builders::AbortDocumentVersionUpload) operation.
     ///
-    /// - Takes [`AbortDocumentVersionUploadInput`](crate::input::AbortDocumentVersionUploadInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::AbortDocumentVersionUploadInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::AbortDocumentVersionUploadInput::document_id): <p>The ID of the document.</p>
-    ///   - [`version_id(Option<String>)`](crate::input::AbortDocumentVersionUploadInput::version_id): <p>The ID of the version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::AbortDocumentVersionUpload::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::AbortDocumentVersionUpload::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::AbortDocumentVersionUpload::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::AbortDocumentVersionUpload::set_document_id): <p>The ID of the document.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::AbortDocumentVersionUpload::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::AbortDocumentVersionUpload::set_version_id): <p>The ID of the version.</p>
     /// - On success, responds with [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput)
 
     /// - On failure, responds with [`SdkError<AbortDocumentVersionUploadError>`](crate::error::AbortDocumentVersionUploadError)
@@ -99,9 +99,9 @@ where
     }
     /// Constructs a fluent builder for the [`ActivateUser`](crate::client::fluent_builders::ActivateUser) operation.
     ///
-    /// - Takes [`ActivateUserInput`](crate::input::ActivateUserInput) with field(s):
-    ///   - [`user_id(Option<String>)`](crate::input::ActivateUserInput::user_id): <p>The ID of the user.</p>
-    ///   - [`authentication_token(Option<String>)`](crate::input::ActivateUserInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::ActivateUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::ActivateUser::set_user_id): <p>The ID of the user.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::ActivateUser::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::ActivateUser::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     /// - On success, responds with [`ActivateUserOutput`](crate::output::ActivateUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::output::ActivateUserOutput::user): <p>The user information.</p>
     /// - On failure, responds with [`SdkError<ActivateUserError>`](crate::error::ActivateUserError)
@@ -110,11 +110,11 @@ where
     }
     /// Constructs a fluent builder for the [`AddResourcePermissions`](crate::client::fluent_builders::AddResourcePermissions) operation.
     ///
-    /// - Takes [`AddResourcePermissionsInput`](crate::input::AddResourcePermissionsInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::AddResourcePermissionsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`resource_id(Option<String>)`](crate::input::AddResourcePermissionsInput::resource_id): <p>The ID of the resource.</p>
-    ///   - [`principals(Option<Vec<SharePrincipal>>)`](crate::input::AddResourcePermissionsInput::principals): <p>The users, groups, or organization being granted permission.</p>
-    ///   - [`notification_options(Option<NotificationOptions>)`](crate::input::AddResourcePermissionsInput::notification_options): <p>The notification options.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::AddResourcePermissions::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::AddResourcePermissions::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::AddResourcePermissions::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::AddResourcePermissions::set_resource_id): <p>The ID of the resource.</p>
+    ///   - [`principals(Vec<SharePrincipal>)`](crate::client::fluent_builders::AddResourcePermissions::principals) / [`set_principals(Option<Vec<SharePrincipal>>)`](crate::client::fluent_builders::AddResourcePermissions::set_principals): <p>The users, groups, or organization being granted permission.</p>
+    ///   - [`notification_options(NotificationOptions)`](crate::client::fluent_builders::AddResourcePermissions::notification_options) / [`set_notification_options(Option<NotificationOptions>)`](crate::client::fluent_builders::AddResourcePermissions::set_notification_options): <p>The notification options.</p>
     /// - On success, responds with [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput) with field(s):
     ///   - [`share_results(Option<Vec<ShareResult>>)`](crate::output::AddResourcePermissionsOutput::share_results): <p>The share results.</p>
     /// - On failure, responds with [`SdkError<AddResourcePermissionsError>`](crate::error::AddResourcePermissionsError)
@@ -123,15 +123,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateComment`](crate::client::fluent_builders::CreateComment) operation.
     ///
-    /// - Takes [`CreateCommentInput`](crate::input::CreateCommentInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::CreateCommentInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::CreateCommentInput::document_id): <p>The ID of the document.</p>
-    ///   - [`version_id(Option<String>)`](crate::input::CreateCommentInput::version_id): <p>The ID of the document version.</p>
-    ///   - [`parent_id(Option<String>)`](crate::input::CreateCommentInput::parent_id): <p>The ID of the parent comment.</p>
-    ///   - [`thread_id(Option<String>)`](crate::input::CreateCommentInput::thread_id): <p>The ID of the root comment in the thread.</p>
-    ///   - [`text(Option<String>)`](crate::input::CreateCommentInput::text): <p>The text of the comment.</p>
-    ///   - [`visibility(Option<CommentVisibilityType>)`](crate::input::CreateCommentInput::visibility): <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    ///   - [`notify_collaborators(bool)`](crate::input::CreateCommentInput::notify_collaborators): <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::CreateComment::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::CreateComment::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::CreateComment::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::CreateComment::set_document_id): <p>The ID of the document.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::CreateComment::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::CreateComment::set_version_id): <p>The ID of the document version.</p>
+    ///   - [`parent_id(impl Into<String>)`](crate::client::fluent_builders::CreateComment::parent_id) / [`set_parent_id(Option<String>)`](crate::client::fluent_builders::CreateComment::set_parent_id): <p>The ID of the parent comment.</p>
+    ///   - [`thread_id(impl Into<String>)`](crate::client::fluent_builders::CreateComment::thread_id) / [`set_thread_id(Option<String>)`](crate::client::fluent_builders::CreateComment::set_thread_id): <p>The ID of the root comment in the thread.</p>
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::CreateComment::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::CreateComment::set_text): <p>The text of the comment.</p>
+    ///   - [`visibility(CommentVisibilityType)`](crate::client::fluent_builders::CreateComment::visibility) / [`set_visibility(Option<CommentVisibilityType>)`](crate::client::fluent_builders::CreateComment::set_visibility): <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
+    ///   - [`notify_collaborators(bool)`](crate::client::fluent_builders::CreateComment::notify_collaborators) / [`set_notify_collaborators(bool)`](crate::client::fluent_builders::CreateComment::set_notify_collaborators): <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     /// - On success, responds with [`CreateCommentOutput`](crate::output::CreateCommentOutput) with field(s):
     ///   - [`comment(Option<Comment>)`](crate::output::CreateCommentOutput::comment): <p>The comment that has been created.</p>
     /// - On failure, responds with [`SdkError<CreateCommentError>`](crate::error::CreateCommentError)
@@ -140,11 +140,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCustomMetadata`](crate::client::fluent_builders::CreateCustomMetadata) operation.
     ///
-    /// - Takes [`CreateCustomMetadataInput`](crate::input::CreateCustomMetadataInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::CreateCustomMetadataInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`resource_id(Option<String>)`](crate::input::CreateCustomMetadataInput::resource_id): <p>The ID of the resource.</p>
-    ///   - [`version_id(Option<String>)`](crate::input::CreateCustomMetadataInput::version_id): <p>The ID of the version, if the custom metadata is being added to a document version.</p>
-    ///   - [`custom_metadata(Option<HashMap<String, String>>)`](crate::input::CreateCustomMetadataInput::custom_metadata): <p>Custom metadata in the form of name-value pairs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetadata::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::CreateCustomMetadata::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetadata::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::CreateCustomMetadata::set_resource_id): <p>The ID of the resource.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::CreateCustomMetadata::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::CreateCustomMetadata::set_version_id): <p>The ID of the version, if the custom metadata is being added to a document version.</p>
+    ///   - [`custom_metadata(HashMap<String, String>)`](crate::client::fluent_builders::CreateCustomMetadata::custom_metadata) / [`set_custom_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCustomMetadata::set_custom_metadata): <p>Custom metadata in the form of name-value pairs.</p>
     /// - On success, responds with [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput)
 
     /// - On failure, responds with [`SdkError<CreateCustomMetadataError>`](crate::error::CreateCustomMetadataError)
@@ -153,10 +153,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFolder`](crate::client::fluent_builders::CreateFolder) operation.
     ///
-    /// - Takes [`CreateFolderInput`](crate::input::CreateFolderInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::CreateFolderInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateFolderInput::name): <p>The name of the new folder.</p>
-    ///   - [`parent_folder_id(Option<String>)`](crate::input::CreateFolderInput::parent_folder_id): <p>The ID of the parent folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::CreateFolder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::CreateFolder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFolder::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFolder::set_name): <p>The name of the new folder.</p>
+    ///   - [`parent_folder_id(impl Into<String>)`](crate::client::fluent_builders::CreateFolder::parent_folder_id) / [`set_parent_folder_id(Option<String>)`](crate::client::fluent_builders::CreateFolder::set_parent_folder_id): <p>The ID of the parent folder.</p>
     /// - On success, responds with [`CreateFolderOutput`](crate::output::CreateFolderOutput) with field(s):
     ///   - [`metadata(Option<FolderMetadata>)`](crate::output::CreateFolderOutput::metadata): <p>The metadata of the folder.</p>
     /// - On failure, responds with [`SdkError<CreateFolderError>`](crate::error::CreateFolderError)
@@ -165,10 +165,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateLabels`](crate::client::fluent_builders::CreateLabels) operation.
     ///
-    /// - Takes [`CreateLabelsInput`](crate::input::CreateLabelsInput) with field(s):
-    ///   - [`resource_id(Option<String>)`](crate::input::CreateLabelsInput::resource_id): <p>The ID of the resource.</p>
-    ///   - [`labels(Option<Vec<String>>)`](crate::input::CreateLabelsInput::labels): <p>List of labels to add to the resource.</p>
-    ///   - [`authentication_token(Option<String>)`](crate::input::CreateLabelsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::CreateLabels::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::CreateLabels::set_resource_id): <p>The ID of the resource.</p>
+    ///   - [`labels(Vec<String>)`](crate::client::fluent_builders::CreateLabels::labels) / [`set_labels(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLabels::set_labels): <p>List of labels to add to the resource.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::CreateLabels::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::CreateLabels::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     /// - On success, responds with [`CreateLabelsOutput`](crate::output::CreateLabelsOutput)
 
     /// - On failure, responds with [`SdkError<CreateLabelsError>`](crate::error::CreateLabelsError)
@@ -177,11 +177,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateNotificationSubscription`](crate::client::fluent_builders::CreateNotificationSubscription) operation.
     ///
-    /// - Takes [`CreateNotificationSubscriptionInput`](crate::input::CreateNotificationSubscriptionInput) with field(s):
-    ///   - [`organization_id(Option<String>)`](crate::input::CreateNotificationSubscriptionInput::organization_id): <p>The ID of the organization.</p>
-    ///   - [`endpoint(Option<String>)`](crate::input::CreateNotificationSubscriptionInput::endpoint): <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
-    ///   - [`protocol(Option<SubscriptionProtocolType>)`](crate::input::CreateNotificationSubscriptionInput::protocol): <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
-    ///   - [`subscription_type(Option<SubscriptionType>)`](crate::input::CreateNotificationSubscriptionInput::subscription_type): <p>The notification type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::CreateNotificationSubscription::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::CreateNotificationSubscription::set_organization_id): <p>The ID of the organization.</p>
+    ///   - [`endpoint(impl Into<String>)`](crate::client::fluent_builders::CreateNotificationSubscription::endpoint) / [`set_endpoint(Option<String>)`](crate::client::fluent_builders::CreateNotificationSubscription::set_endpoint): <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
+    ///   - [`protocol(SubscriptionProtocolType)`](crate::client::fluent_builders::CreateNotificationSubscription::protocol) / [`set_protocol(Option<SubscriptionProtocolType>)`](crate::client::fluent_builders::CreateNotificationSubscription::set_protocol): <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
+    ///   - [`subscription_type(SubscriptionType)`](crate::client::fluent_builders::CreateNotificationSubscription::subscription_type) / [`set_subscription_type(Option<SubscriptionType>)`](crate::client::fluent_builders::CreateNotificationSubscription::set_subscription_type): <p>The notification type.</p>
     /// - On success, responds with [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput) with field(s):
     ///   - [`subscription(Option<Subscription>)`](crate::output::CreateNotificationSubscriptionOutput::subscription): <p>The subscription.</p>
     /// - On failure, responds with [`SdkError<CreateNotificationSubscriptionError>`](crate::error::CreateNotificationSubscriptionError)
@@ -192,16 +192,16 @@ where
     }
     /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// - Takes [`CreateUserInput`](crate::input::CreateUserInput) with field(s):
-    ///   - [`organization_id(Option<String>)`](crate::input::CreateUserInput::organization_id): <p>The ID of the organization.</p>
-    ///   - [`username(Option<String>)`](crate::input::CreateUserInput::username): <p>The login name of the user.</p>
-    ///   - [`email_address(Option<String>)`](crate::input::CreateUserInput::email_address): <p>The email address of the user.</p>
-    ///   - [`given_name(Option<String>)`](crate::input::CreateUserInput::given_name): <p>The given name of the user.</p>
-    ///   - [`surname(Option<String>)`](crate::input::CreateUserInput::surname): <p>The surname of the user.</p>
-    ///   - [`password(Option<String>)`](crate::input::CreateUserInput::password): <p>The password of the user.</p>
-    ///   - [`time_zone_id(Option<String>)`](crate::input::CreateUserInput::time_zone_id): <p>The time zone ID of the user.</p>
-    ///   - [`storage_rule(Option<StorageRuleType>)`](crate::input::CreateUserInput::storage_rule): <p>The amount of storage for the user.</p>
-    ///   - [`authentication_token(Option<String>)`](crate::input::CreateUserInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_organization_id): <p>The ID of the organization.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::CreateUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::CreateUser::set_username): <p>The login name of the user.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::CreateUser::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::CreateUser::set_email_address): <p>The email address of the user.</p>
+    ///   - [`given_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::given_name) / [`set_given_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_given_name): <p>The given name of the user.</p>
+    ///   - [`surname(impl Into<String>)`](crate::client::fluent_builders::CreateUser::surname) / [`set_surname(Option<String>)`](crate::client::fluent_builders::CreateUser::set_surname): <p>The surname of the user.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateUser::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateUser::set_password): <p>The password of the user.</p>
+    ///   - [`time_zone_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::time_zone_id) / [`set_time_zone_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_time_zone_id): <p>The time zone ID of the user.</p>
+    ///   - [`storage_rule(StorageRuleType)`](crate::client::fluent_builders::CreateUser::storage_rule) / [`set_storage_rule(Option<StorageRuleType>)`](crate::client::fluent_builders::CreateUser::set_storage_rule): <p>The amount of storage for the user.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::CreateUser::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::CreateUser::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::output::CreateUserOutput::user): <p>The user information.</p>
     /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
@@ -210,9 +210,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeactivateUser`](crate::client::fluent_builders::DeactivateUser) operation.
     ///
-    /// - Takes [`DeactivateUserInput`](crate::input::DeactivateUserInput) with field(s):
-    ///   - [`user_id(Option<String>)`](crate::input::DeactivateUserInput::user_id): <p>The ID of the user.</p>
-    ///   - [`authentication_token(Option<String>)`](crate::input::DeactivateUserInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DeactivateUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DeactivateUser::set_user_id): <p>The ID of the user.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DeactivateUser::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DeactivateUser::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     /// - On success, responds with [`DeactivateUserOutput`](crate::output::DeactivateUserOutput)
 
     /// - On failure, responds with [`SdkError<DeactivateUserError>`](crate::error::DeactivateUserError)
@@ -221,11 +221,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteComment`](crate::client::fluent_builders::DeleteComment) operation.
     ///
-    /// - Takes [`DeleteCommentInput`](crate::input::DeleteCommentInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DeleteCommentInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::DeleteCommentInput::document_id): <p>The ID of the document.</p>
-    ///   - [`version_id(Option<String>)`](crate::input::DeleteCommentInput::version_id): <p>The ID of the document version.</p>
-    ///   - [`comment_id(Option<String>)`](crate::input::DeleteCommentInput::comment_id): <p>The ID of the comment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DeleteComment::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DeleteComment::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::DeleteComment::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::DeleteComment::set_document_id): <p>The ID of the document.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::DeleteComment::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::DeleteComment::set_version_id): <p>The ID of the document version.</p>
+    ///   - [`comment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteComment::comment_id) / [`set_comment_id(Option<String>)`](crate::client::fluent_builders::DeleteComment::set_comment_id): <p>The ID of the comment.</p>
     /// - On success, responds with [`DeleteCommentOutput`](crate::output::DeleteCommentOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCommentError>`](crate::error::DeleteCommentError)
@@ -234,12 +234,12 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCustomMetadata`](crate::client::fluent_builders::DeleteCustomMetadata) operation.
     ///
-    /// - Takes [`DeleteCustomMetadataInput`](crate::input::DeleteCustomMetadataInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DeleteCustomMetadataInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`resource_id(Option<String>)`](crate::input::DeleteCustomMetadataInput::resource_id): <p>The ID of the resource, either a document or folder.</p>
-    ///   - [`version_id(Option<String>)`](crate::input::DeleteCustomMetadataInput::version_id): <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
-    ///   - [`keys(Option<Vec<String>>)`](crate::input::DeleteCustomMetadataInput::keys): <p>List of properties to remove.</p>
-    ///   - [`delete_all(bool)`](crate::input::DeleteCustomMetadataInput::delete_all): <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomMetadata::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DeleteCustomMetadata::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomMetadata::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DeleteCustomMetadata::set_resource_id): <p>The ID of the resource, either a document or folder.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomMetadata::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::DeleteCustomMetadata::set_version_id): <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
+    ///   - [`keys(Vec<String>)`](crate::client::fluent_builders::DeleteCustomMetadata::keys) / [`set_keys(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteCustomMetadata::set_keys): <p>List of properties to remove.</p>
+    ///   - [`delete_all(bool)`](crate::client::fluent_builders::DeleteCustomMetadata::delete_all) / [`set_delete_all(bool)`](crate::client::fluent_builders::DeleteCustomMetadata::set_delete_all): <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     /// - On success, responds with [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCustomMetadataError>`](crate::error::DeleteCustomMetadataError)
@@ -248,9 +248,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDocument`](crate::client::fluent_builders::DeleteDocument) operation.
     ///
-    /// - Takes [`DeleteDocumentInput`](crate::input::DeleteDocumentInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DeleteDocumentInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::DeleteDocumentInput::document_id): <p>The ID of the document.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DeleteDocument::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DeleteDocument::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDocument::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::DeleteDocument::set_document_id): <p>The ID of the document.</p>
     /// - On success, responds with [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDocumentError>`](crate::error::DeleteDocumentError)
@@ -259,9 +259,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFolder`](crate::client::fluent_builders::DeleteFolder) operation.
     ///
-    /// - Takes [`DeleteFolderInput`](crate::input::DeleteFolderInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DeleteFolderInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::DeleteFolderInput::folder_id): <p>The ID of the folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DeleteFolder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DeleteFolder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFolder::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::DeleteFolder::set_folder_id): <p>The ID of the folder.</p>
     /// - On success, responds with [`DeleteFolderOutput`](crate::output::DeleteFolderOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFolderError>`](crate::error::DeleteFolderError)
@@ -270,9 +270,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFolderContents`](crate::client::fluent_builders::DeleteFolderContents) operation.
     ///
-    /// - Takes [`DeleteFolderContentsInput`](crate::input::DeleteFolderContentsInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DeleteFolderContentsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::DeleteFolderContentsInput::folder_id): <p>The ID of the folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DeleteFolderContents::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DeleteFolderContents::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFolderContents::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::DeleteFolderContents::set_folder_id): <p>The ID of the folder.</p>
     /// - On success, responds with [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFolderContentsError>`](crate::error::DeleteFolderContentsError)
@@ -281,11 +281,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteLabels`](crate::client::fluent_builders::DeleteLabels) operation.
     ///
-    /// - Takes [`DeleteLabelsInput`](crate::input::DeleteLabelsInput) with field(s):
-    ///   - [`resource_id(Option<String>)`](crate::input::DeleteLabelsInput::resource_id): <p>The ID of the resource.</p>
-    ///   - [`authentication_token(Option<String>)`](crate::input::DeleteLabelsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`labels(Option<Vec<String>>)`](crate::input::DeleteLabelsInput::labels): <p>List of labels to delete from the resource.</p>
-    ///   - [`delete_all(bool)`](crate::input::DeleteLabelsInput::delete_all): <p>Flag to request removal of all labels from the specified resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLabels::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DeleteLabels::set_resource_id): <p>The ID of the resource.</p>
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLabels::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DeleteLabels::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`labels(Vec<String>)`](crate::client::fluent_builders::DeleteLabels::labels) / [`set_labels(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteLabels::set_labels): <p>List of labels to delete from the resource.</p>
+    ///   - [`delete_all(bool)`](crate::client::fluent_builders::DeleteLabels::delete_all) / [`set_delete_all(bool)`](crate::client::fluent_builders::DeleteLabels::set_delete_all): <p>Flag to request removal of all labels from the specified resource.</p>
     /// - On success, responds with [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLabelsError>`](crate::error::DeleteLabelsError)
@@ -294,9 +294,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteNotificationSubscription`](crate::client::fluent_builders::DeleteNotificationSubscription) operation.
     ///
-    /// - Takes [`DeleteNotificationSubscriptionInput`](crate::input::DeleteNotificationSubscriptionInput) with field(s):
-    ///   - [`subscription_id(Option<String>)`](crate::input::DeleteNotificationSubscriptionInput::subscription_id): <p>The ID of the subscription.</p>
-    ///   - [`organization_id(Option<String>)`](crate::input::DeleteNotificationSubscriptionInput::organization_id): <p>The ID of the organization.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNotificationSubscription::subscription_id) / [`set_subscription_id(Option<String>)`](crate::client::fluent_builders::DeleteNotificationSubscription::set_subscription_id): <p>The ID of the subscription.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNotificationSubscription::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DeleteNotificationSubscription::set_organization_id): <p>The ID of the organization.</p>
     /// - On success, responds with [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteNotificationSubscriptionError>`](crate::error::DeleteNotificationSubscriptionError)
@@ -307,9 +307,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// - Takes [`DeleteUserInput`](crate::input::DeleteUserInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DeleteUserInput::authentication_token): <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
-    ///   - [`user_id(Option<String>)`](crate::input::DeleteUserInput::user_id): <p>The ID of the user.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_authentication_token): <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_user_id): <p>The ID of the user.</p>
     /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
 
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
@@ -318,17 +318,17 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeActivities`](crate::client::fluent_builders::DescribeActivities) operation.
     ///
-    /// - Takes [`DescribeActivitiesInput`](crate::input::DescribeActivitiesInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DescribeActivitiesInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeActivitiesInput::start_time): <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeActivitiesInput::end_time): <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
-    ///   - [`organization_id(Option<String>)`](crate::input::DescribeActivitiesInput::organization_id): <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
-    ///   - [`activity_types(Option<String>)`](crate::input::DescribeActivitiesInput::activity_types): <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
-    ///   - [`resource_id(Option<String>)`](crate::input::DescribeActivitiesInput::resource_id): <p>The document or folder ID for which to describe activity types.</p>
-    ///   - [`user_id(Option<String>)`](crate::input::DescribeActivitiesInput::user_id): <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
-    ///   - [`include_indirect_activities(bool)`](crate::input::DescribeActivitiesInput::include_indirect_activities): <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeActivitiesInput::limit): <p>The maximum number of items to return.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeActivitiesInput::marker): <p>The marker for the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DescribeActivities::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DescribeActivities::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::DescribeActivities::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeActivities::set_start_time): <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::DescribeActivities::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeActivities::set_end_time): <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DescribeActivities::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DescribeActivities::set_organization_id): <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
+    ///   - [`activity_types(impl Into<String>)`](crate::client::fluent_builders::DescribeActivities::activity_types) / [`set_activity_types(Option<String>)`](crate::client::fluent_builders::DescribeActivities::set_activity_types): <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DescribeActivities::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DescribeActivities::set_resource_id): <p>The document or folder ID for which to describe activity types.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DescribeActivities::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DescribeActivities::set_user_id): <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
+    ///   - [`include_indirect_activities(bool)`](crate::client::fluent_builders::DescribeActivities::include_indirect_activities) / [`set_include_indirect_activities(bool)`](crate::client::fluent_builders::DescribeActivities::set_include_indirect_activities): <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeActivities::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeActivities::set_limit): <p>The maximum number of items to return.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeActivities::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeActivities::set_marker): <p>The marker for the next set of results.</p>
     /// - On success, responds with [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput) with field(s):
     ///   - [`user_activities(Option<Vec<Activity>>)`](crate::output::DescribeActivitiesOutput::user_activities): <p>The list of activities for the specified user and time period.</p>
     ///   - [`marker(Option<String>)`](crate::output::DescribeActivitiesOutput::marker): <p>The marker for the next set of results.</p>
@@ -338,12 +338,12 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeComments`](crate::client::fluent_builders::DescribeComments) operation.
     ///
-    /// - Takes [`DescribeCommentsInput`](crate::input::DescribeCommentsInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DescribeCommentsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::DescribeCommentsInput::document_id): <p>The ID of the document.</p>
-    ///   - [`version_id(Option<String>)`](crate::input::DescribeCommentsInput::version_id): <p>The ID of the document version.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeCommentsInput::limit): <p>The maximum number of items to return.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeCommentsInput::marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DescribeComments::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DescribeComments::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::DescribeComments::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::DescribeComments::set_document_id): <p>The ID of the document.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::DescribeComments::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::DescribeComments::set_version_id): <p>The ID of the document version.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeComments::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeComments::set_limit): <p>The maximum number of items to return.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeComments::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeComments::set_marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
     /// - On success, responds with [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput) with field(s):
     ///   - [`comments(Option<Vec<Comment>>)`](crate::output::DescribeCommentsOutput::comments): <p>The list of comments for the specified document version.</p>
     ///   - [`marker(Option<String>)`](crate::output::DescribeCommentsOutput::marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
@@ -352,15 +352,15 @@ where
         fluent_builders::DescribeComments::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDocumentVersions`](crate::client::fluent_builders::DescribeDocumentVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDocumentVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDocumentVersions::into_paginator).
     ///
-    /// - Takes [`DescribeDocumentVersionsInput`](crate::input::DescribeDocumentVersionsInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DescribeDocumentVersionsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::DescribeDocumentVersionsInput::document_id): <p>The ID of the document.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeDocumentVersionsInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeDocumentVersionsInput::limit): <p>The maximum number of versions to return with this call.</p>
-    ///   - [`include(Option<String>)`](crate::input::DescribeDocumentVersionsInput::include): <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
-    ///   - [`fields(Option<String>)`](crate::input::DescribeDocumentVersionsInput::fields): <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::set_document_id): <p>The ID of the document.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::set_marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeDocumentVersions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeDocumentVersions::set_limit): <p>The maximum number of versions to return with this call.</p>
+    ///   - [`include(impl Into<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::include) / [`set_include(Option<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::set_include): <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
+    ///   - [`fields(impl Into<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::fields) / [`set_fields(Option<String>)`](crate::client::fluent_builders::DescribeDocumentVersions::set_fields): <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
     /// - On success, responds with [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput) with field(s):
     ///   - [`document_versions(Option<Vec<DocumentVersionMetadata>>)`](crate::output::DescribeDocumentVersionsOutput::document_versions): <p>The document versions.</p>
     ///   - [`marker(Option<String>)`](crate::output::DescribeDocumentVersionsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -369,17 +369,17 @@ where
         fluent_builders::DescribeDocumentVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeFolderContents`](crate::client::fluent_builders::DescribeFolderContents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFolderContents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFolderContents::into_paginator).
     ///
-    /// - Takes [`DescribeFolderContentsInput`](crate::input::DescribeFolderContentsInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DescribeFolderContentsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::DescribeFolderContentsInput::folder_id): <p>The ID of the folder.</p>
-    ///   - [`sort(Option<ResourceSortType>)`](crate::input::DescribeFolderContentsInput::sort): <p>The sorting criteria.</p>
-    ///   - [`order(Option<OrderType>)`](crate::input::DescribeFolderContentsInput::order): <p>The order for the contents of the folder.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeFolderContentsInput::limit): <p>The maximum number of items to return with this call.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeFolderContentsInput::marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
-    ///   - [`r#type(Option<FolderContentType>)`](crate::input::DescribeFolderContentsInput::type): <p>The type of items.</p>
-    ///   - [`include(Option<String>)`](crate::input::DescribeFolderContentsInput::include): <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFolderContents::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DescribeFolderContents::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFolderContents::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::DescribeFolderContents::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`sort(ResourceSortType)`](crate::client::fluent_builders::DescribeFolderContents::sort) / [`set_sort(Option<ResourceSortType>)`](crate::client::fluent_builders::DescribeFolderContents::set_sort): <p>The sorting criteria.</p>
+    ///   - [`order(OrderType)`](crate::client::fluent_builders::DescribeFolderContents::order) / [`set_order(Option<OrderType>)`](crate::client::fluent_builders::DescribeFolderContents::set_order): <p>The order for the contents of the folder.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeFolderContents::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeFolderContents::set_limit): <p>The maximum number of items to return with this call.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeFolderContents::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeFolderContents::set_marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    ///   - [`r#type(FolderContentType)`](crate::client::fluent_builders::DescribeFolderContents::r#type) / [`set_type(Option<FolderContentType>)`](crate::client::fluent_builders::DescribeFolderContents::set_type): <p>The type of items.</p>
+    ///   - [`include(impl Into<String>)`](crate::client::fluent_builders::DescribeFolderContents::include) / [`set_include(Option<String>)`](crate::client::fluent_builders::DescribeFolderContents::set_include): <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     /// - On success, responds with [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput) with field(s):
     ///   - [`folders(Option<Vec<FolderMetadata>>)`](crate::output::DescribeFolderContentsOutput::folders): <p>The subfolders in the specified folder.</p>
     ///   - [`documents(Option<Vec<DocumentMetadata>>)`](crate::output::DescribeFolderContentsOutput::documents): <p>The documents in the specified folder.</p>
@@ -390,12 +390,12 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeGroups`](crate::client::fluent_builders::DescribeGroups) operation.
     ///
-    /// - Takes [`DescribeGroupsInput`](crate::input::DescribeGroupsInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DescribeGroupsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`search_query(Option<String>)`](crate::input::DescribeGroupsInput::search_query): <p>A query to describe groups by group name.</p>
-    ///   - [`organization_id(Option<String>)`](crate::input::DescribeGroupsInput::organization_id): <p>The ID of the organization.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeGroupsInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeGroupsInput::limit): <p>The maximum number of items to return with this call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DescribeGroups::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DescribeGroups::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`search_query(impl Into<String>)`](crate::client::fluent_builders::DescribeGroups::search_query) / [`set_search_query(Option<String>)`](crate::client::fluent_builders::DescribeGroups::set_search_query): <p>A query to describe groups by group name.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroups::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DescribeGroups::set_organization_id): <p>The ID of the organization.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeGroups::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeGroups::set_marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeGroups::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeGroups::set_limit): <p>The maximum number of items to return with this call.</p>
     /// - On success, responds with [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput) with field(s):
     ///   - [`groups(Option<Vec<GroupMetadata>>)`](crate::output::DescribeGroupsOutput::groups): <p>The list of groups.</p>
     ///   - [`marker(Option<String>)`](crate::output::DescribeGroupsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -405,10 +405,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeNotificationSubscriptions`](crate::client::fluent_builders::DescribeNotificationSubscriptions) operation.
     ///
-    /// - Takes [`DescribeNotificationSubscriptionsInput`](crate::input::DescribeNotificationSubscriptionsInput) with field(s):
-    ///   - [`organization_id(Option<String>)`](crate::input::DescribeNotificationSubscriptionsInput::organization_id): <p>The ID of the organization.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeNotificationSubscriptionsInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeNotificationSubscriptionsInput::limit): <p>The maximum number of items to return with this call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationSubscriptions::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DescribeNotificationSubscriptions::set_organization_id): <p>The ID of the organization.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationSubscriptions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeNotificationSubscriptions::set_marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeNotificationSubscriptions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeNotificationSubscriptions::set_limit): <p>The maximum number of items to return with this call.</p>
     /// - On success, responds with [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput) with field(s):
     ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::output::DescribeNotificationSubscriptionsOutput::subscriptions): <p>The subscriptions.</p>
     ///   - [`marker(Option<String>)`](crate::output::DescribeNotificationSubscriptionsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -420,12 +420,12 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeResourcePermissions`](crate::client::fluent_builders::DescribeResourcePermissions) operation.
     ///
-    /// - Takes [`DescribeResourcePermissionsInput`](crate::input::DescribeResourcePermissionsInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DescribeResourcePermissionsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`resource_id(Option<String>)`](crate::input::DescribeResourcePermissionsInput::resource_id): <p>The ID of the resource.</p>
-    ///   - [`principal_id(Option<String>)`](crate::input::DescribeResourcePermissionsInput::principal_id): <p>The ID of the principal to filter permissions by.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeResourcePermissionsInput::limit): <p>The maximum number of items to return with this call.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeResourcePermissionsInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call)</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DescribeResourcePermissions::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DescribeResourcePermissions::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DescribeResourcePermissions::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DescribeResourcePermissions::set_resource_id): <p>The ID of the resource.</p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DescribeResourcePermissions::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DescribeResourcePermissions::set_principal_id): <p>The ID of the principal to filter permissions by.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeResourcePermissions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeResourcePermissions::set_limit): <p>The maximum number of items to return with this call.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeResourcePermissions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeResourcePermissions::set_marker): <p>The marker for the next set of results. (You received this marker from a previous call)</p>
     /// - On success, responds with [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput) with field(s):
     ///   - [`principals(Option<Vec<Principal>>)`](crate::output::DescribeResourcePermissionsOutput::principals): <p>The principals.</p>
     ///   - [`marker(Option<String>)`](crate::output::DescribeResourcePermissionsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -437,10 +437,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeRootFolders`](crate::client::fluent_builders::DescribeRootFolders) operation.
     ///
-    /// - Takes [`DescribeRootFoldersInput`](crate::input::DescribeRootFoldersInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DescribeRootFoldersInput::authentication_token): <p>Amazon WorkDocs authentication token.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeRootFoldersInput::limit): <p>The maximum number of items to return.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeRootFoldersInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DescribeRootFolders::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DescribeRootFolders::set_authentication_token): <p>Amazon WorkDocs authentication token.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeRootFolders::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeRootFolders::set_limit): <p>The maximum number of items to return.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeRootFolders::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeRootFolders::set_marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     /// - On success, responds with [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput) with field(s):
     ///   - [`folders(Option<Vec<FolderMetadata>>)`](crate::output::DescribeRootFoldersOutput::folders): <p>The user's special folders.</p>
     ///   - [`marker(Option<String>)`](crate::output::DescribeRootFoldersOutput::marker): <p>The marker for the next set of results.</p>
@@ -449,19 +449,19 @@ where
         fluent_builders::DescribeRootFolders::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeUsers`](crate::client::fluent_builders::DescribeUsers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeUsers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeUsers::into_paginator).
     ///
-    /// - Takes [`DescribeUsersInput`](crate::input::DescribeUsersInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::DescribeUsersInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`organization_id(Option<String>)`](crate::input::DescribeUsersInput::organization_id): <p>The ID of the organization.</p>
-    ///   - [`user_ids(Option<String>)`](crate::input::DescribeUsersInput::user_ids): <p>The IDs of the users.</p>
-    ///   - [`query(Option<String>)`](crate::input::DescribeUsersInput::query): <p>A query to filter users by user name.</p>
-    ///   - [`include(Option<UserFilterType>)`](crate::input::DescribeUsersInput::include): <p>The state of the users. Specify "ALL" to include inactive users.</p>
-    ///   - [`order(Option<OrderType>)`](crate::input::DescribeUsersInput::order): <p>The order for the results.</p>
-    ///   - [`sort(Option<UserSortType>)`](crate::input::DescribeUsersInput::sort): <p>The sorting criteria.</p>
-    ///   - [`marker(Option<String>)`](crate::input::DescribeUsersInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeUsersInput::limit): <p>The maximum number of items to return.</p>
-    ///   - [`fields(Option<String>)`](crate::input::DescribeUsersInput::fields): <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_organization_id): <p>The ID of the organization.</p>
+    ///   - [`user_ids(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::user_ids) / [`set_user_ids(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_user_ids): <p>The IDs of the users.</p>
+    ///   - [`query(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::query) / [`set_query(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_query): <p>A query to filter users by user name.</p>
+    ///   - [`include(UserFilterType)`](crate::client::fluent_builders::DescribeUsers::include) / [`set_include(Option<UserFilterType>)`](crate::client::fluent_builders::DescribeUsers::set_include): <p>The state of the users. Specify "ALL" to include inactive users.</p>
+    ///   - [`order(OrderType)`](crate::client::fluent_builders::DescribeUsers::order) / [`set_order(Option<OrderType>)`](crate::client::fluent_builders::DescribeUsers::set_order): <p>The order for the results.</p>
+    ///   - [`sort(UserSortType)`](crate::client::fluent_builders::DescribeUsers::sort) / [`set_sort(Option<UserSortType>)`](crate::client::fluent_builders::DescribeUsers::set_sort): <p>The sorting criteria.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeUsers::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeUsers::set_limit): <p>The maximum number of items to return.</p>
+    ///   - [`fields(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::fields) / [`set_fields(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_fields): <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
     /// - On success, responds with [`DescribeUsersOutput`](crate::output::DescribeUsersOutput) with field(s):
     ///   - [`users(Option<Vec<User>>)`](crate::output::DescribeUsersOutput::users): <p>The users.</p>
     ///   - [`total_number_of_users(Option<i64>)`](crate::output::DescribeUsersOutput::total_number_of_users): <p>The total number of users included in the results.</p>
@@ -472,8 +472,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetCurrentUser`](crate::client::fluent_builders::GetCurrentUser) operation.
     ///
-    /// - Takes [`GetCurrentUserInput`](crate::input::GetCurrentUserInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::GetCurrentUserInput::authentication_token): <p>Amazon WorkDocs authentication token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::GetCurrentUser::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::GetCurrentUser::set_authentication_token): <p>Amazon WorkDocs authentication token.</p>
     /// - On success, responds with [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::output::GetCurrentUserOutput::user): <p>Metadata of the user.</p>
     /// - On failure, responds with [`SdkError<GetCurrentUserError>`](crate::error::GetCurrentUserError)
@@ -482,10 +482,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetDocument`](crate::client::fluent_builders::GetDocument) operation.
     ///
-    /// - Takes [`GetDocumentInput`](crate::input::GetDocumentInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::GetDocumentInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::GetDocumentInput::document_id): <p>The ID of the document.</p>
-    ///   - [`include_custom_metadata(bool)`](crate::input::GetDocumentInput::include_custom_metadata): <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::GetDocument::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::GetDocument::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::GetDocument::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::GetDocument::set_document_id): <p>The ID of the document.</p>
+    ///   - [`include_custom_metadata(bool)`](crate::client::fluent_builders::GetDocument::include_custom_metadata) / [`set_include_custom_metadata(bool)`](crate::client::fluent_builders::GetDocument::set_include_custom_metadata): <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
     /// - On success, responds with [`GetDocumentOutput`](crate::output::GetDocumentOutput) with field(s):
     ///   - [`metadata(Option<DocumentMetadata>)`](crate::output::GetDocumentOutput::metadata): <p>The metadata details of the document.</p>
     ///   - [`custom_metadata(Option<HashMap<String, String>>)`](crate::output::GetDocumentOutput::custom_metadata): <p>The custom metadata on the document.</p>
@@ -495,12 +495,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetDocumentPath`](crate::client::fluent_builders::GetDocumentPath) operation.
     ///
-    /// - Takes [`GetDocumentPathInput`](crate::input::GetDocumentPathInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::GetDocumentPathInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::GetDocumentPathInput::document_id): <p>The ID of the document.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::GetDocumentPathInput::limit): <p>The maximum number of levels in the hierarchy to return.</p>
-    ///   - [`fields(Option<String>)`](crate::input::GetDocumentPathInput::fields): <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
-    ///   - [`marker(Option<String>)`](crate::input::GetDocumentPathInput::marker): <p>This value is not supported.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::GetDocumentPath::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::GetDocumentPath::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::GetDocumentPath::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::GetDocumentPath::set_document_id): <p>The ID of the document.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetDocumentPath::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::GetDocumentPath::set_limit): <p>The maximum number of levels in the hierarchy to return.</p>
+    ///   - [`fields(impl Into<String>)`](crate::client::fluent_builders::GetDocumentPath::fields) / [`set_fields(Option<String>)`](crate::client::fluent_builders::GetDocumentPath::set_fields): <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::GetDocumentPath::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::GetDocumentPath::set_marker): <p>This value is not supported.</p>
     /// - On success, responds with [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput) with field(s):
     ///   - [`path(Option<ResourcePath>)`](crate::output::GetDocumentPathOutput::path): <p>The path information.</p>
     /// - On failure, responds with [`SdkError<GetDocumentPathError>`](crate::error::GetDocumentPathError)
@@ -509,12 +509,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetDocumentVersion`](crate::client::fluent_builders::GetDocumentVersion) operation.
     ///
-    /// - Takes [`GetDocumentVersionInput`](crate::input::GetDocumentVersionInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::GetDocumentVersionInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::GetDocumentVersionInput::document_id): <p>The ID of the document.</p>
-    ///   - [`version_id(Option<String>)`](crate::input::GetDocumentVersionInput::version_id): <p>The version ID of the document.</p>
-    ///   - [`fields(Option<String>)`](crate::input::GetDocumentVersionInput::fields): <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
-    ///   - [`include_custom_metadata(bool)`](crate::input::GetDocumentVersionInput::include_custom_metadata): <p>Set this to TRUE to include custom metadata in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::GetDocumentVersion::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::GetDocumentVersion::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::GetDocumentVersion::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::GetDocumentVersion::set_document_id): <p>The ID of the document.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::GetDocumentVersion::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::GetDocumentVersion::set_version_id): <p>The version ID of the document.</p>
+    ///   - [`fields(impl Into<String>)`](crate::client::fluent_builders::GetDocumentVersion::fields) / [`set_fields(Option<String>)`](crate::client::fluent_builders::GetDocumentVersion::set_fields): <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
+    ///   - [`include_custom_metadata(bool)`](crate::client::fluent_builders::GetDocumentVersion::include_custom_metadata) / [`set_include_custom_metadata(bool)`](crate::client::fluent_builders::GetDocumentVersion::set_include_custom_metadata): <p>Set this to TRUE to include custom metadata in the response.</p>
     /// - On success, responds with [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput) with field(s):
     ///   - [`metadata(Option<DocumentVersionMetadata>)`](crate::output::GetDocumentVersionOutput::metadata): <p>The version metadata.</p>
     ///   - [`custom_metadata(Option<HashMap<String, String>>)`](crate::output::GetDocumentVersionOutput::custom_metadata): <p>The custom metadata on the document version.</p>
@@ -524,10 +524,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetFolder`](crate::client::fluent_builders::GetFolder) operation.
     ///
-    /// - Takes [`GetFolderInput`](crate::input::GetFolderInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::GetFolderInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::GetFolderInput::folder_id): <p>The ID of the folder.</p>
-    ///   - [`include_custom_metadata(bool)`](crate::input::GetFolderInput::include_custom_metadata): <p>Set to TRUE to include custom metadata in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::GetFolder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::GetFolder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::GetFolder::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::GetFolder::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`include_custom_metadata(bool)`](crate::client::fluent_builders::GetFolder::include_custom_metadata) / [`set_include_custom_metadata(bool)`](crate::client::fluent_builders::GetFolder::set_include_custom_metadata): <p>Set to TRUE to include custom metadata in the response.</p>
     /// - On success, responds with [`GetFolderOutput`](crate::output::GetFolderOutput) with field(s):
     ///   - [`metadata(Option<FolderMetadata>)`](crate::output::GetFolderOutput::metadata): <p>The metadata of the folder.</p>
     ///   - [`custom_metadata(Option<HashMap<String, String>>)`](crate::output::GetFolderOutput::custom_metadata): <p>The custom metadata on the folder.</p>
@@ -537,12 +537,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetFolderPath`](crate::client::fluent_builders::GetFolderPath) operation.
     ///
-    /// - Takes [`GetFolderPathInput`](crate::input::GetFolderPathInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::GetFolderPathInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::GetFolderPathInput::folder_id): <p>The ID of the folder.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::GetFolderPathInput::limit): <p>The maximum number of levels in the hierarchy to return.</p>
-    ///   - [`fields(Option<String>)`](crate::input::GetFolderPathInput::fields): <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
-    ///   - [`marker(Option<String>)`](crate::input::GetFolderPathInput::marker): <p>This value is not supported.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::GetFolderPath::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::GetFolderPath::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::GetFolderPath::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::GetFolderPath::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetFolderPath::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::GetFolderPath::set_limit): <p>The maximum number of levels in the hierarchy to return.</p>
+    ///   - [`fields(impl Into<String>)`](crate::client::fluent_builders::GetFolderPath::fields) / [`set_fields(Option<String>)`](crate::client::fluent_builders::GetFolderPath::set_fields): <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::GetFolderPath::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::GetFolderPath::set_marker): <p>This value is not supported.</p>
     /// - On success, responds with [`GetFolderPathOutput`](crate::output::GetFolderPathOutput) with field(s):
     ///   - [`path(Option<ResourcePath>)`](crate::output::GetFolderPathOutput::path): <p>The path information.</p>
     /// - On failure, responds with [`SdkError<GetFolderPathError>`](crate::error::GetFolderPathError)
@@ -551,12 +551,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetResources`](crate::client::fluent_builders::GetResources) operation.
     ///
-    /// - Takes [`GetResourcesInput`](crate::input::GetResourcesInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::GetResourcesInput::authentication_token): <p>The Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`user_id(Option<String>)`](crate::input::GetResourcesInput::user_id): <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
-    ///   - [`collection_type(Option<ResourceCollectionType>)`](crate::input::GetResourcesInput::collection_type): <p>The collection type.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::GetResourcesInput::limit): <p>The maximum number of resources to return.</p>
-    ///   - [`marker(Option<String>)`](crate::input::GetResourcesInput::marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::GetResources::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::GetResources::set_authentication_token): <p>The Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::GetResources::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::GetResources::set_user_id): <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
+    ///   - [`collection_type(ResourceCollectionType)`](crate::client::fluent_builders::GetResources::collection_type) / [`set_collection_type(Option<ResourceCollectionType>)`](crate::client::fluent_builders::GetResources::set_collection_type): <p>The collection type.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetResources::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::GetResources::set_limit): <p>The maximum number of resources to return.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::GetResources::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::GetResources::set_marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
     /// - On success, responds with [`GetResourcesOutput`](crate::output::GetResourcesOutput) with field(s):
     ///   - [`folders(Option<Vec<FolderMetadata>>)`](crate::output::GetResourcesOutput::folders): <p>The folders in the specified folder.</p>
     ///   - [`documents(Option<Vec<DocumentMetadata>>)`](crate::output::GetResourcesOutput::documents): <p>The documents in the specified collection.</p>
@@ -567,15 +567,15 @@ where
     }
     /// Constructs a fluent builder for the [`InitiateDocumentVersionUpload`](crate::client::fluent_builders::InitiateDocumentVersionUpload) operation.
     ///
-    /// - Takes [`InitiateDocumentVersionUploadInput`](crate::input::InitiateDocumentVersionUploadInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::InitiateDocumentVersionUploadInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`id(Option<String>)`](crate::input::InitiateDocumentVersionUploadInput::id): <p>The ID of the document.</p>
-    ///   - [`name(Option<String>)`](crate::input::InitiateDocumentVersionUploadInput::name): <p>The name of the document.</p>
-    ///   - [`content_created_timestamp(Option<DateTime>)`](crate::input::InitiateDocumentVersionUploadInput::content_created_timestamp): <p>The timestamp when the content of the document was originally created.</p>
-    ///   - [`content_modified_timestamp(Option<DateTime>)`](crate::input::InitiateDocumentVersionUploadInput::content_modified_timestamp): <p>The timestamp when the content of the document was modified.</p>
-    ///   - [`content_type(Option<String>)`](crate::input::InitiateDocumentVersionUploadInput::content_type): <p>The content type of the document.</p>
-    ///   - [`document_size_in_bytes(Option<i64>)`](crate::input::InitiateDocumentVersionUploadInput::document_size_in_bytes): <p>The size of the document, in bytes.</p>
-    ///   - [`parent_folder_id(Option<String>)`](crate::input::InitiateDocumentVersionUploadInput::parent_folder_id): <p>The ID of the parent folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::set_id): <p>The ID of the document.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::set_name): <p>The name of the document.</p>
+    ///   - [`content_created_timestamp(DateTime)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::content_created_timestamp) / [`set_content_created_timestamp(Option<DateTime>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::set_content_created_timestamp): <p>The timestamp when the content of the document was originally created.</p>
+    ///   - [`content_modified_timestamp(DateTime)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::content_modified_timestamp) / [`set_content_modified_timestamp(Option<DateTime>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::set_content_modified_timestamp): <p>The timestamp when the content of the document was modified.</p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::set_content_type): <p>The content type of the document.</p>
+    ///   - [`document_size_in_bytes(i64)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::document_size_in_bytes) / [`set_document_size_in_bytes(Option<i64>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::set_document_size_in_bytes): <p>The size of the document, in bytes.</p>
+    ///   - [`parent_folder_id(impl Into<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::parent_folder_id) / [`set_parent_folder_id(Option<String>)`](crate::client::fluent_builders::InitiateDocumentVersionUpload::set_parent_folder_id): <p>The ID of the parent folder.</p>
     /// - On success, responds with [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput) with field(s):
     ///   - [`metadata(Option<DocumentMetadata>)`](crate::output::InitiateDocumentVersionUploadOutput::metadata): <p>The document metadata.</p>
     ///   - [`upload_metadata(Option<UploadMetadata>)`](crate::output::InitiateDocumentVersionUploadOutput::upload_metadata): <p>The upload metadata.</p>
@@ -587,9 +587,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveAllResourcePermissions`](crate::client::fluent_builders::RemoveAllResourcePermissions) operation.
     ///
-    /// - Takes [`RemoveAllResourcePermissionsInput`](crate::input::RemoveAllResourcePermissionsInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::RemoveAllResourcePermissionsInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`resource_id(Option<String>)`](crate::input::RemoveAllResourcePermissionsInput::resource_id): <p>The ID of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::RemoveAllResourcePermissions::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::RemoveAllResourcePermissions::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::RemoveAllResourcePermissions::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::RemoveAllResourcePermissions::set_resource_id): <p>The ID of the resource.</p>
     /// - On success, responds with [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput)
 
     /// - On failure, responds with [`SdkError<RemoveAllResourcePermissionsError>`](crate::error::RemoveAllResourcePermissionsError)
@@ -600,11 +600,11 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveResourcePermission`](crate::client::fluent_builders::RemoveResourcePermission) operation.
     ///
-    /// - Takes [`RemoveResourcePermissionInput`](crate::input::RemoveResourcePermissionInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::RemoveResourcePermissionInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`resource_id(Option<String>)`](crate::input::RemoveResourcePermissionInput::resource_id): <p>The ID of the resource.</p>
-    ///   - [`principal_id(Option<String>)`](crate::input::RemoveResourcePermissionInput::principal_id): <p>The principal ID of the resource.</p>
-    ///   - [`principal_type(Option<PrincipalType>)`](crate::input::RemoveResourcePermissionInput::principal_type): <p>The principal type of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::RemoveResourcePermission::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::RemoveResourcePermission::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::RemoveResourcePermission::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::RemoveResourcePermission::set_resource_id): <p>The ID of the resource.</p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::RemoveResourcePermission::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::RemoveResourcePermission::set_principal_id): <p>The principal ID of the resource.</p>
+    ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::RemoveResourcePermission::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::RemoveResourcePermission::set_principal_type): <p>The principal type of the resource.</p>
     /// - On success, responds with [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput)
 
     /// - On failure, responds with [`SdkError<RemoveResourcePermissionError>`](crate::error::RemoveResourcePermissionError)
@@ -613,12 +613,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDocument`](crate::client::fluent_builders::UpdateDocument) operation.
     ///
-    /// - Takes [`UpdateDocumentInput`](crate::input::UpdateDocumentInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::UpdateDocumentInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::UpdateDocumentInput::document_id): <p>The ID of the document.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateDocumentInput::name): <p>The name of the document.</p>
-    ///   - [`parent_folder_id(Option<String>)`](crate::input::UpdateDocumentInput::parent_folder_id): <p>The ID of the parent folder.</p>
-    ///   - [`resource_state(Option<ResourceStateType>)`](crate::input::UpdateDocumentInput::resource_state): <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_document_id): <p>The ID of the document.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_name): <p>The name of the document.</p>
+    ///   - [`parent_folder_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDocument::parent_folder_id) / [`set_parent_folder_id(Option<String>)`](crate::client::fluent_builders::UpdateDocument::set_parent_folder_id): <p>The ID of the parent folder.</p>
+    ///   - [`resource_state(ResourceStateType)`](crate::client::fluent_builders::UpdateDocument::resource_state) / [`set_resource_state(Option<ResourceStateType>)`](crate::client::fluent_builders::UpdateDocument::set_resource_state): <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
     /// - On success, responds with [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDocumentError>`](crate::error::UpdateDocumentError)
@@ -627,11 +627,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDocumentVersion`](crate::client::fluent_builders::UpdateDocumentVersion) operation.
     ///
-    /// - Takes [`UpdateDocumentVersionInput`](crate::input::UpdateDocumentVersionInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::UpdateDocumentVersionInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`document_id(Option<String>)`](crate::input::UpdateDocumentVersionInput::document_id): <p>The ID of the document.</p>
-    ///   - [`version_id(Option<String>)`](crate::input::UpdateDocumentVersionInput::version_id): <p>The version ID of the document.</p>
-    ///   - [`version_status(Option<DocumentVersionStatus>)`](crate::input::UpdateDocumentVersionInput::version_status): <p>The status of the version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDocumentVersion::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::UpdateDocumentVersion::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDocumentVersion::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::UpdateDocumentVersion::set_document_id): <p>The ID of the document.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDocumentVersion::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::UpdateDocumentVersion::set_version_id): <p>The version ID of the document.</p>
+    ///   - [`version_status(DocumentVersionStatus)`](crate::client::fluent_builders::UpdateDocumentVersion::version_status) / [`set_version_status(Option<DocumentVersionStatus>)`](crate::client::fluent_builders::UpdateDocumentVersion::set_version_status): <p>The status of the version.</p>
     /// - On success, responds with [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDocumentVersionError>`](crate::error::UpdateDocumentVersionError)
@@ -640,12 +640,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFolder`](crate::client::fluent_builders::UpdateFolder) operation.
     ///
-    /// - Takes [`UpdateFolderInput`](crate::input::UpdateFolderInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::UpdateFolderInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::UpdateFolderInput::folder_id): <p>The ID of the folder.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateFolderInput::name): <p>The name of the folder.</p>
-    ///   - [`parent_folder_id(Option<String>)`](crate::input::UpdateFolderInput::parent_folder_id): <p>The ID of the parent folder.</p>
-    ///   - [`resource_state(Option<ResourceStateType>)`](crate::input::UpdateFolderInput::resource_state): <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFolder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::UpdateFolder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFolder::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::UpdateFolder::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFolder::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFolder::set_name): <p>The name of the folder.</p>
+    ///   - [`parent_folder_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFolder::parent_folder_id) / [`set_parent_folder_id(Option<String>)`](crate::client::fluent_builders::UpdateFolder::set_parent_folder_id): <p>The ID of the parent folder.</p>
+    ///   - [`resource_state(ResourceStateType)`](crate::client::fluent_builders::UpdateFolder::resource_state) / [`set_resource_state(Option<ResourceStateType>)`](crate::client::fluent_builders::UpdateFolder::set_resource_state): <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
     /// - On success, responds with [`UpdateFolderOutput`](crate::output::UpdateFolderOutput)
 
     /// - On failure, responds with [`SdkError<UpdateFolderError>`](crate::error::UpdateFolderError)
@@ -654,16 +654,16 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateUser`](crate::client::fluent_builders::UpdateUser) operation.
     ///
-    /// - Takes [`UpdateUserInput`](crate::input::UpdateUserInput) with field(s):
-    ///   - [`authentication_token(Option<String>)`](crate::input::UpdateUserInput::authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
-    ///   - [`user_id(Option<String>)`](crate::input::UpdateUserInput::user_id): <p>The ID of the user.</p>
-    ///   - [`given_name(Option<String>)`](crate::input::UpdateUserInput::given_name): <p>The given name of the user.</p>
-    ///   - [`surname(Option<String>)`](crate::input::UpdateUserInput::surname): <p>The surname of the user.</p>
-    ///   - [`r#type(Option<UserType>)`](crate::input::UpdateUserInput::type): <p>The type of the user.</p>
-    ///   - [`storage_rule(Option<StorageRuleType>)`](crate::input::UpdateUserInput::storage_rule): <p>The amount of storage for the user.</p>
-    ///   - [`time_zone_id(Option<String>)`](crate::input::UpdateUserInput::time_zone_id): <p>The time zone ID of the user.</p>
-    ///   - [`locale(Option<LocaleType>)`](crate::input::UpdateUserInput::locale): <p>The locale of the user.</p>
-    ///   - [`grant_poweruser_privileges(Option<BooleanEnumType>)`](crate::input::UpdateUserInput::grant_poweruser_privileges): <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_token(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::authentication_token) / [`set_authentication_token(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_user_id): <p>The ID of the user.</p>
+    ///   - [`given_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::given_name) / [`set_given_name(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_given_name): <p>The given name of the user.</p>
+    ///   - [`surname(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::surname) / [`set_surname(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_surname): <p>The surname of the user.</p>
+    ///   - [`r#type(UserType)`](crate::client::fluent_builders::UpdateUser::r#type) / [`set_type(Option<UserType>)`](crate::client::fluent_builders::UpdateUser::set_type): <p>The type of the user.</p>
+    ///   - [`storage_rule(StorageRuleType)`](crate::client::fluent_builders::UpdateUser::storage_rule) / [`set_storage_rule(Option<StorageRuleType>)`](crate::client::fluent_builders::UpdateUser::set_storage_rule): <p>The amount of storage for the user.</p>
+    ///   - [`time_zone_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::time_zone_id) / [`set_time_zone_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_time_zone_id): <p>The time zone ID of the user.</p>
+    ///   - [`locale(LocaleType)`](crate::client::fluent_builders::UpdateUser::locale) / [`set_locale(Option<LocaleType>)`](crate::client::fluent_builders::UpdateUser::set_locale): <p>The locale of the user.</p>
+    ///   - [`grant_poweruser_privileges(BooleanEnumType)`](crate::client::fluent_builders::UpdateUser::grant_poweruser_privileges) / [`set_grant_poweruser_privileges(Option<BooleanEnumType>)`](crate::client::fluent_builders::UpdateUser::set_grant_poweruser_privileges): <p>Boolean value to determine whether the user is granted Poweruser privileges.</p>
     /// - On success, responds with [`UpdateUserOutput`](crate::output::UpdateUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::output::UpdateUserOutput::user): <p>The user information.</p>
     /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::error::UpdateUserError)

@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`ConfigureLogs`](crate::client::fluent_builders::ConfigureLogs) operation.
     ///
-    /// - Takes [`ConfigureLogsInput`](crate::input::ConfigureLogsInput) with field(s):
-    ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::input::ConfigureLogsInput::egress_access_logs): Configure egress access logging.
-    ///   - [`id(Option<String>)`](crate::input::ConfigureLogsInput::id): The ID of the channel to log subscription.
-    ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::input::ConfigureLogsInput::ingress_access_logs): Configure ingress access logging.
+    /// - The fluent builder is configurable:
+    ///   - [`egress_access_logs(EgressAccessLogs)`](crate::client::fluent_builders::ConfigureLogs::egress_access_logs) / [`set_egress_access_logs(Option<EgressAccessLogs>)`](crate::client::fluent_builders::ConfigureLogs::set_egress_access_logs): Configure egress access logging.
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ConfigureLogs::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ConfigureLogs::set_id): The ID of the channel to log subscription.
+    ///   - [`ingress_access_logs(IngressAccessLogs)`](crate::client::fluent_builders::ConfigureLogs::ingress_access_logs) / [`set_ingress_access_logs(Option<IngressAccessLogs>)`](crate::client::fluent_builders::ConfigureLogs::set_ingress_access_logs): Configure ingress access logging.
     /// - On success, responds with [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::ConfigureLogsOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`description(Option<String>)`](crate::output::ConfigureLogsOutput::description): A short text description of the Channel.
@@ -103,10 +103,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateChannel`](crate::client::fluent_builders::CreateChannel) operation.
     ///
-    /// - Takes [`CreateChannelInput`](crate::input::CreateChannelInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::CreateChannelInput::description): A short text description of the Channel.
-    ///   - [`id(Option<String>)`](crate::input::CreateChannelInput::id): The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateChannelInput::tags): A collection of tags associated with a resource
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_description): A short text description of the Channel.
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_id): The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChannel::set_tags): A collection of tags associated with a resource
     /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateChannelOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`description(Option<String>)`](crate::output::CreateChannelOutput::description): A short text description of the Channel.
@@ -121,12 +121,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateHarvestJob`](crate::client::fluent_builders::CreateHarvestJob) operation.
     ///
-    /// - Takes [`CreateHarvestJobInput`](crate::input::CreateHarvestJobInput) with field(s):
-    ///   - [`end_time(Option<String>)`](crate::input::CreateHarvestJobInput::end_time): The end of the time-window which will be harvested
-    ///   - [`id(Option<String>)`](crate::input::CreateHarvestJobInput::id): The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
-    ///   - [`origin_endpoint_id(Option<String>)`](crate::input::CreateHarvestJobInput::origin_endpoint_id): The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    ///   - [`s3_destination(Option<S3Destination>)`](crate::input::CreateHarvestJobInput::s3_destination): Configuration parameters for where in an S3 bucket to place the harvested content
-    ///   - [`start_time(Option<String>)`](crate::input::CreateHarvestJobInput::start_time): The start of the time-window which will be harvested
+    /// - The fluent builder is configurable:
+    ///   - [`end_time(impl Into<String>)`](crate::client::fluent_builders::CreateHarvestJob::end_time) / [`set_end_time(Option<String>)`](crate::client::fluent_builders::CreateHarvestJob::set_end_time): The end of the time-window which will be harvested
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::CreateHarvestJob::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::CreateHarvestJob::set_id): The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
+    ///   - [`origin_endpoint_id(impl Into<String>)`](crate::client::fluent_builders::CreateHarvestJob::origin_endpoint_id) / [`set_origin_endpoint_id(Option<String>)`](crate::client::fluent_builders::CreateHarvestJob::set_origin_endpoint_id): The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
+    ///   - [`s3_destination(S3Destination)`](crate::client::fluent_builders::CreateHarvestJob::s3_destination) / [`set_s3_destination(Option<S3Destination>)`](crate::client::fluent_builders::CreateHarvestJob::set_s3_destination): Configuration parameters for where in an S3 bucket to place the harvested content
+    ///   - [`start_time(impl Into<String>)`](crate::client::fluent_builders::CreateHarvestJob::start_time) / [`set_start_time(Option<String>)`](crate::client::fluent_builders::CreateHarvestJob::set_start_time): The start of the time-window which will be harvested
     /// - On success, responds with [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateHarvestJobOutput::arn): The Amazon Resource Name (ARN) assigned to the HarvestJob.
     ///   - [`channel_id(Option<String>)`](crate::output::CreateHarvestJobOutput::channel_id): The ID of the Channel that the HarvestJob will harvest from.
@@ -143,21 +143,21 @@ where
     }
     /// Constructs a fluent builder for the [`CreateOriginEndpoint`](crate::client::fluent_builders::CreateOriginEndpoint) operation.
     ///
-    /// - Takes [`CreateOriginEndpointInput`](crate::input::CreateOriginEndpointInput) with field(s):
-    ///   - [`authorization(Option<Authorization>)`](crate::input::CreateOriginEndpointInput::authorization): CDN Authorization credentials
-    ///   - [`channel_id(Option<String>)`](crate::input::CreateOriginEndpointInput::channel_id): The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
-    ///   - [`cmaf_package(Option<CmafPackageCreateOrUpdateParameters>)`](crate::input::CreateOriginEndpointInput::cmaf_package): A Common Media Application Format (CMAF) packaging configuration.
-    ///   - [`dash_package(Option<DashPackage>)`](crate::input::CreateOriginEndpointInput::dash_package): A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    ///   - [`description(Option<String>)`](crate::input::CreateOriginEndpointInput::description): A short text description of the OriginEndpoint.
-    ///   - [`hls_package(Option<HlsPackage>)`](crate::input::CreateOriginEndpointInput::hls_package): An HTTP Live Streaming (HLS) packaging configuration.
-    ///   - [`id(Option<String>)`](crate::input::CreateOriginEndpointInput::id): The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
-    ///   - [`manifest_name(Option<String>)`](crate::input::CreateOriginEndpointInput::manifest_name): A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
-    ///   - [`mss_package(Option<MssPackage>)`](crate::input::CreateOriginEndpointInput::mss_package): A Microsoft Smooth Streaming (MSS) packaging configuration.
-    ///   - [`origination(Option<Origination>)`](crate::input::CreateOriginEndpointInput::origination): Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    ///   - [`startover_window_seconds(i32)`](crate::input::CreateOriginEndpointInput::startover_window_seconds): Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateOriginEndpointInput::tags): A collection of tags associated with a resource
-    ///   - [`time_delay_seconds(i32)`](crate::input::CreateOriginEndpointInput::time_delay_seconds): Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
-    ///   - [`whitelist(Option<Vec<String>>)`](crate::input::CreateOriginEndpointInput::whitelist): A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    /// - The fluent builder is configurable:
+    ///   - [`authorization(Authorization)`](crate::client::fluent_builders::CreateOriginEndpoint::authorization) / [`set_authorization(Option<Authorization>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_authorization): CDN Authorization credentials
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::CreateOriginEndpoint::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_channel_id): The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
+    ///   - [`cmaf_package(CmafPackageCreateOrUpdateParameters)`](crate::client::fluent_builders::CreateOriginEndpoint::cmaf_package) / [`set_cmaf_package(Option<CmafPackageCreateOrUpdateParameters>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_cmaf_package): A Common Media Application Format (CMAF) packaging configuration.
+    ///   - [`dash_package(DashPackage)`](crate::client::fluent_builders::CreateOriginEndpoint::dash_package) / [`set_dash_package(Option<DashPackage>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_dash_package): A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateOriginEndpoint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_description): A short text description of the OriginEndpoint.
+    ///   - [`hls_package(HlsPackage)`](crate::client::fluent_builders::CreateOriginEndpoint::hls_package) / [`set_hls_package(Option<HlsPackage>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_hls_package): An HTTP Live Streaming (HLS) packaging configuration.
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::CreateOriginEndpoint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_id): The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
+    ///   - [`manifest_name(impl Into<String>)`](crate::client::fluent_builders::CreateOriginEndpoint::manifest_name) / [`set_manifest_name(Option<String>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_manifest_name): A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
+    ///   - [`mss_package(MssPackage)`](crate::client::fluent_builders::CreateOriginEndpoint::mss_package) / [`set_mss_package(Option<MssPackage>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_mss_package): A Microsoft Smooth Streaming (MSS) packaging configuration.
+    ///   - [`origination(Origination)`](crate::client::fluent_builders::CreateOriginEndpoint::origination) / [`set_origination(Option<Origination>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_origination): Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    ///   - [`startover_window_seconds(i32)`](crate::client::fluent_builders::CreateOriginEndpoint::startover_window_seconds) / [`set_startover_window_seconds(i32)`](crate::client::fluent_builders::CreateOriginEndpoint::set_startover_window_seconds): Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateOriginEndpoint::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_tags): A collection of tags associated with a resource
+    ///   - [`time_delay_seconds(i32)`](crate::client::fluent_builders::CreateOriginEndpoint::time_delay_seconds) / [`set_time_delay_seconds(i32)`](crate::client::fluent_builders::CreateOriginEndpoint::set_time_delay_seconds): Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
+    ///   - [`whitelist(Vec<String>)`](crate::client::fluent_builders::CreateOriginEndpoint::whitelist) / [`set_whitelist(Option<Vec<String>>)`](crate::client::fluent_builders::CreateOriginEndpoint::set_whitelist): A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     /// - On success, responds with [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateOriginEndpointOutput::arn): The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
     ///   - [`authorization(Option<Authorization>)`](crate::output::CreateOriginEndpointOutput::authorization): CDN Authorization credentials
@@ -181,8 +181,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) operation.
     ///
-    /// - Takes [`DeleteChannelInput`](crate::input::DeleteChannelInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteChannelInput::id): The ID of the Channel to delete.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteChannel::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteChannel::set_id): The ID of the Channel to delete.
     /// - On success, responds with [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
 
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::error::DeleteChannelError)
@@ -191,8 +191,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteOriginEndpoint`](crate::client::fluent_builders::DeleteOriginEndpoint) operation.
     ///
-    /// - Takes [`DeleteOriginEndpointInput`](crate::input::DeleteOriginEndpointInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteOriginEndpointInput::id): The ID of the OriginEndpoint to delete.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginEndpoint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteOriginEndpoint::set_id): The ID of the OriginEndpoint to delete.
     /// - On success, responds with [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput)
 
     /// - On failure, responds with [`SdkError<DeleteOriginEndpointError>`](crate::error::DeleteOriginEndpointError)
@@ -201,8 +201,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) operation.
     ///
-    /// - Takes [`DescribeChannelInput`](crate::input::DescribeChannelInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DescribeChannelInput::id): The ID of a Channel.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeChannel::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeChannel::set_id): The ID of a Channel.
     /// - On success, responds with [`DescribeChannelOutput`](crate::output::DescribeChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeChannelOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`description(Option<String>)`](crate::output::DescribeChannelOutput::description): A short text description of the Channel.
@@ -217,8 +217,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeHarvestJob`](crate::client::fluent_builders::DescribeHarvestJob) operation.
     ///
-    /// - Takes [`DescribeHarvestJobInput`](crate::input::DescribeHarvestJobInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DescribeHarvestJobInput::id): The ID of the HarvestJob.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeHarvestJob::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeHarvestJob::set_id): The ID of the HarvestJob.
     /// - On success, responds with [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeHarvestJobOutput::arn): The Amazon Resource Name (ARN) assigned to the HarvestJob.
     ///   - [`channel_id(Option<String>)`](crate::output::DescribeHarvestJobOutput::channel_id): The ID of the Channel that the HarvestJob will harvest from.
@@ -235,8 +235,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeOriginEndpoint`](crate::client::fluent_builders::DescribeOriginEndpoint) operation.
     ///
-    /// - Takes [`DescribeOriginEndpointInput`](crate::input::DescribeOriginEndpointInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DescribeOriginEndpointInput::id): The ID of the OriginEndpoint.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeOriginEndpoint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeOriginEndpoint::set_id): The ID of the OriginEndpoint.
     /// - On success, responds with [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeOriginEndpointOutput::arn): The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
     ///   - [`authorization(Option<Authorization>)`](crate::output::DescribeOriginEndpointOutput::authorization): CDN Authorization credentials
@@ -259,11 +259,11 @@ where
         fluent_builders::DescribeOriginEndpoint::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChannels`](crate::client::fluent_builders::ListChannels) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
     ///
-    /// - Takes [`ListChannelsInput`](crate::input::ListChannelsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListChannelsInput::max_results): Upper bound on number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::ListChannelsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListChannels::set_max_results): Upper bound on number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
     ///   - [`channels(Option<Vec<Channel>>)`](crate::output::ListChannelsOutput::channels): A list of Channel records.
     ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
@@ -272,13 +272,13 @@ where
         fluent_builders::ListChannels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListHarvestJobs`](crate::client::fluent_builders::ListHarvestJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHarvestJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHarvestJobs::into_paginator).
     ///
-    /// - Takes [`ListHarvestJobsInput`](crate::input::ListHarvestJobsInput) with field(s):
-    ///   - [`include_channel_id(Option<String>)`](crate::input::ListHarvestJobsInput::include_channel_id): When specified, the request will return only HarvestJobs associated with the given Channel ID.
-    ///   - [`include_status(Option<String>)`](crate::input::ListHarvestJobsInput::include_status): When specified, the request will return only HarvestJobs in the given status.
-    ///   - [`max_results(i32)`](crate::input::ListHarvestJobsInput::max_results): The upper bound on the number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::ListHarvestJobsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - The fluent builder is configurable:
+    ///   - [`include_channel_id(impl Into<String>)`](crate::client::fluent_builders::ListHarvestJobs::include_channel_id) / [`set_include_channel_id(Option<String>)`](crate::client::fluent_builders::ListHarvestJobs::set_include_channel_id): When specified, the request will return only HarvestJobs associated with the given Channel ID.
+    ///   - [`include_status(impl Into<String>)`](crate::client::fluent_builders::ListHarvestJobs::include_status) / [`set_include_status(Option<String>)`](crate::client::fluent_builders::ListHarvestJobs::set_include_status): When specified, the request will return only HarvestJobs in the given status.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHarvestJobs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListHarvestJobs::set_max_results): The upper bound on the number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHarvestJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHarvestJobs::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput) with field(s):
     ///   - [`harvest_jobs(Option<Vec<HarvestJob>>)`](crate::output::ListHarvestJobsOutput::harvest_jobs): A list of HarvestJob records.
     ///   - [`next_token(Option<String>)`](crate::output::ListHarvestJobsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
@@ -287,12 +287,12 @@ where
         fluent_builders::ListHarvestJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListOriginEndpoints`](crate::client::fluent_builders::ListOriginEndpoints) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOriginEndpoints::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOriginEndpoints::into_paginator).
     ///
-    /// - Takes [`ListOriginEndpointsInput`](crate::input::ListOriginEndpointsInput) with field(s):
-    ///   - [`channel_id(Option<String>)`](crate::input::ListOriginEndpointsInput::channel_id): When specified, the request will return only OriginEndpoints associated with the given Channel ID.
-    ///   - [`max_results(i32)`](crate::input::ListOriginEndpointsInput::max_results): The upper bound on the number of records to return.
-    ///   - [`next_token(Option<String>)`](crate::input::ListOriginEndpointsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::ListOriginEndpoints::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::ListOriginEndpoints::set_channel_id): When specified, the request will return only OriginEndpoints associated with the given Channel ID.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOriginEndpoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListOriginEndpoints::set_max_results): The upper bound on the number of records to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOriginEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOriginEndpoints::set_next_token): A token used to resume pagination from the end of a previous request.
     /// - On success, responds with [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListOriginEndpointsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`origin_endpoints(Option<Vec<OriginEndpoint>>)`](crate::output::ListOriginEndpointsOutput::origin_endpoints): A list of OriginEndpoint records.
@@ -302,8 +302,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): (undocumented)
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): (undocumented)
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): (undocumented)
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -312,8 +312,8 @@ where
     }
     /// Constructs a fluent builder for the [`RotateChannelCredentials`](crate::client::fluent_builders::RotateChannelCredentials) operation.
     ///
-    /// - Takes [`RotateChannelCredentialsInput`](crate::input::RotateChannelCredentialsInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::RotateChannelCredentialsInput::id): The ID of the channel to update.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::RotateChannelCredentials::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::RotateChannelCredentials::set_id): The ID of the channel to update.
     /// - On success, responds with [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::RotateChannelCredentialsOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`description(Option<String>)`](crate::output::RotateChannelCredentialsOutput::description): A short text description of the Channel.
@@ -328,9 +328,9 @@ where
     }
     /// Constructs a fluent builder for the [`RotateIngestEndpointCredentials`](crate::client::fluent_builders::RotateIngestEndpointCredentials) operation.
     ///
-    /// - Takes [`RotateIngestEndpointCredentialsInput`](crate::input::RotateIngestEndpointCredentialsInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::RotateIngestEndpointCredentialsInput::id): The ID of the channel the IngestEndpoint is on.
-    ///   - [`ingest_endpoint_id(Option<String>)`](crate::input::RotateIngestEndpointCredentialsInput::ingest_endpoint_id): The id of the IngestEndpoint whose credentials should be rotated
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::RotateIngestEndpointCredentials::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::RotateIngestEndpointCredentials::set_id): The ID of the channel the IngestEndpoint is on.
+    ///   - [`ingest_endpoint_id(impl Into<String>)`](crate::client::fluent_builders::RotateIngestEndpointCredentials::ingest_endpoint_id) / [`set_ingest_endpoint_id(Option<String>)`](crate::client::fluent_builders::RotateIngestEndpointCredentials::set_ingest_endpoint_id): The id of the IngestEndpoint whose credentials should be rotated
     /// - On success, responds with [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::RotateIngestEndpointCredentialsOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`description(Option<String>)`](crate::output::RotateIngestEndpointCredentialsOutput::description): A short text description of the Channel.
@@ -347,9 +347,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): (undocumented)
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): (undocumented)
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): (undocumented)
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): (undocumented)
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -358,9 +358,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): (undocumented)
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): The key(s) of tag to be deleted
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): (undocumented)
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): The key(s) of tag to be deleted
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -369,9 +369,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) operation.
     ///
-    /// - Takes [`UpdateChannelInput`](crate::input::UpdateChannelInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::UpdateChannelInput::description): A short text description of the Channel.
-    ///   - [`id(Option<String>)`](crate::input::UpdateChannelInput::id): The ID of the Channel to update.
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_description): A short text description of the Channel.
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_id): The ID of the Channel to update.
     /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateChannelOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`description(Option<String>)`](crate::output::UpdateChannelOutput::description): A short text description of the Channel.
@@ -386,19 +386,19 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateOriginEndpoint`](crate::client::fluent_builders::UpdateOriginEndpoint) operation.
     ///
-    /// - Takes [`UpdateOriginEndpointInput`](crate::input::UpdateOriginEndpointInput) with field(s):
-    ///   - [`authorization(Option<Authorization>)`](crate::input::UpdateOriginEndpointInput::authorization): CDN Authorization credentials
-    ///   - [`cmaf_package(Option<CmafPackageCreateOrUpdateParameters>)`](crate::input::UpdateOriginEndpointInput::cmaf_package): A Common Media Application Format (CMAF) packaging configuration.
-    ///   - [`dash_package(Option<DashPackage>)`](crate::input::UpdateOriginEndpointInput::dash_package): A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    ///   - [`description(Option<String>)`](crate::input::UpdateOriginEndpointInput::description): A short text description of the OriginEndpoint.
-    ///   - [`hls_package(Option<HlsPackage>)`](crate::input::UpdateOriginEndpointInput::hls_package): An HTTP Live Streaming (HLS) packaging configuration.
-    ///   - [`id(Option<String>)`](crate::input::UpdateOriginEndpointInput::id): The ID of the OriginEndpoint to update.
-    ///   - [`manifest_name(Option<String>)`](crate::input::UpdateOriginEndpointInput::manifest_name): A short string that will be appended to the end of the Endpoint URL.
-    ///   - [`mss_package(Option<MssPackage>)`](crate::input::UpdateOriginEndpointInput::mss_package): A Microsoft Smooth Streaming (MSS) packaging configuration.
-    ///   - [`origination(Option<Origination>)`](crate::input::UpdateOriginEndpointInput::origination): Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    ///   - [`startover_window_seconds(i32)`](crate::input::UpdateOriginEndpointInput::startover_window_seconds): Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
-    ///   - [`time_delay_seconds(i32)`](crate::input::UpdateOriginEndpointInput::time_delay_seconds): Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
-    ///   - [`whitelist(Option<Vec<String>>)`](crate::input::UpdateOriginEndpointInput::whitelist): A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    /// - The fluent builder is configurable:
+    ///   - [`authorization(Authorization)`](crate::client::fluent_builders::UpdateOriginEndpoint::authorization) / [`set_authorization(Option<Authorization>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_authorization): CDN Authorization credentials
+    ///   - [`cmaf_package(CmafPackageCreateOrUpdateParameters)`](crate::client::fluent_builders::UpdateOriginEndpoint::cmaf_package) / [`set_cmaf_package(Option<CmafPackageCreateOrUpdateParameters>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_cmaf_package): A Common Media Application Format (CMAF) packaging configuration.
+    ///   - [`dash_package(DashPackage)`](crate::client::fluent_builders::UpdateOriginEndpoint::dash_package) / [`set_dash_package(Option<DashPackage>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_dash_package): A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginEndpoint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_description): A short text description of the OriginEndpoint.
+    ///   - [`hls_package(HlsPackage)`](crate::client::fluent_builders::UpdateOriginEndpoint::hls_package) / [`set_hls_package(Option<HlsPackage>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_hls_package): An HTTP Live Streaming (HLS) packaging configuration.
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginEndpoint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_id): The ID of the OriginEndpoint to update.
+    ///   - [`manifest_name(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginEndpoint::manifest_name) / [`set_manifest_name(Option<String>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_manifest_name): A short string that will be appended to the end of the Endpoint URL.
+    ///   - [`mss_package(MssPackage)`](crate::client::fluent_builders::UpdateOriginEndpoint::mss_package) / [`set_mss_package(Option<MssPackage>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_mss_package): A Microsoft Smooth Streaming (MSS) packaging configuration.
+    ///   - [`origination(Origination)`](crate::client::fluent_builders::UpdateOriginEndpoint::origination) / [`set_origination(Option<Origination>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_origination): Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    ///   - [`startover_window_seconds(i32)`](crate::client::fluent_builders::UpdateOriginEndpoint::startover_window_seconds) / [`set_startover_window_seconds(i32)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_startover_window_seconds): Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
+    ///   - [`time_delay_seconds(i32)`](crate::client::fluent_builders::UpdateOriginEndpoint::time_delay_seconds) / [`set_time_delay_seconds(i32)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_time_delay_seconds): Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
+    ///   - [`whitelist(Vec<String>)`](crate::client::fluent_builders::UpdateOriginEndpoint::whitelist) / [`set_whitelist(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateOriginEndpoint::set_whitelist): A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     /// - On success, responds with [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateOriginEndpointOutput::arn): The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
     ///   - [`authorization(Option<Authorization>)`](crate::output::UpdateOriginEndpointOutput::authorization): CDN Authorization credentials

@@ -85,14 +85,14 @@ where
 {
     /// Constructs a fluent builder for the [`CreateConfigurationSet`](crate::client::fluent_builders::CreateConfigurationSet) operation.
     ///
-    /// - Takes [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::CreateConfigurationSetInput::configuration_set_name): <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
-    ///   - [`tracking_options(Option<TrackingOptions>)`](crate::input::CreateConfigurationSetInput::tracking_options): <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    ///   - [`delivery_options(Option<DeliveryOptions>)`](crate::input::CreateConfigurationSetInput::delivery_options): <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    ///   - [`reputation_options(Option<ReputationOptions>)`](crate::input::CreateConfigurationSetInput::reputation_options): <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
-    ///   - [`sending_options(Option<SendingOptions>)`](crate::input::CreateConfigurationSetInput::sending_options): <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateConfigurationSetInput::tags): <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
-    ///   - [`suppression_options(Option<SuppressionOptions>)`](crate::input::CreateConfigurationSetInput::suppression_options): <p>An object that contains information about the suppression list preferences for your account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationSet::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationSet::set_configuration_set_name): <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
+    ///   - [`tracking_options(TrackingOptions)`](crate::client::fluent_builders::CreateConfigurationSet::tracking_options) / [`set_tracking_options(Option<TrackingOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_tracking_options): <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
+    ///   - [`delivery_options(DeliveryOptions)`](crate::client::fluent_builders::CreateConfigurationSet::delivery_options) / [`set_delivery_options(Option<DeliveryOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_delivery_options): <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
+    ///   - [`reputation_options(ReputationOptions)`](crate::client::fluent_builders::CreateConfigurationSet::reputation_options) / [`set_reputation_options(Option<ReputationOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_reputation_options): <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
+    ///   - [`sending_options(SendingOptions)`](crate::client::fluent_builders::CreateConfigurationSet::sending_options) / [`set_sending_options(Option<SendingOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_sending_options): <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateConfigurationSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateConfigurationSet::set_tags): <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
+    ///   - [`suppression_options(SuppressionOptions)`](crate::client::fluent_builders::CreateConfigurationSet::suppression_options) / [`set_suppression_options(Option<SuppressionOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_suppression_options): <p>An object that contains information about the suppression list preferences for your account.</p>
     /// - On success, responds with [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput)
 
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::error::CreateConfigurationSetError)
@@ -101,10 +101,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateConfigurationSetEventDestination`](crate::client::fluent_builders::CreateConfigurationSetEventDestination) operation.
     ///
-    /// - Takes [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::CreateConfigurationSetEventDestinationInput::configuration_set_name): <p>The name of the configuration set .</p>
-    ///   - [`event_destination_name(Option<String>)`](crate::input::CreateConfigurationSetEventDestinationInput::event_destination_name): <p>A name that identifies the event destination within the configuration set.</p>
-    ///   - [`event_destination(Option<EventDestinationDefinition>)`](crate::input::CreateConfigurationSetEventDestinationInput::event_destination): <p>An object that defines the event destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::set_configuration_set_name): <p>The name of the configuration set .</p>
+    ///   - [`event_destination_name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::set_event_destination_name): <p>A name that identifies the event destination within the configuration set.</p>
+    ///   - [`event_destination(EventDestinationDefinition)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::event_destination) / [`set_event_destination(Option<EventDestinationDefinition>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::set_event_destination): <p>An object that defines the event destination.</p>
     /// - On success, responds with [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput)
 
     /// - On failure, responds with [`SdkError<CreateConfigurationSetEventDestinationError>`](crate::error::CreateConfigurationSetEventDestinationError)
@@ -115,12 +115,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateContact`](crate::client::fluent_builders::CreateContact) operation.
     ///
-    /// - Takes [`CreateContactInput`](crate::input::CreateContactInput) with field(s):
-    ///   - [`contact_list_name(Option<String>)`](crate::input::CreateContactInput::contact_list_name): <p>The name of the contact list to which the contact should be added.</p>
-    ///   - [`email_address(Option<String>)`](crate::input::CreateContactInput::email_address): <p>The contact's email address.</p>
-    ///   - [`topic_preferences(Option<Vec<TopicPreference>>)`](crate::input::CreateContactInput::topic_preferences): <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
-    ///   - [`unsubscribe_all(bool)`](crate::input::CreateContactInput::unsubscribe_all): <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
-    ///   - [`attributes_data(Option<String>)`](crate::input::CreateContactInput::attributes_data): <p>The attribute data attached to a contact.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_list_name(impl Into<String>)`](crate::client::fluent_builders::CreateContact::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::client::fluent_builders::CreateContact::set_contact_list_name): <p>The name of the contact list to which the contact should be added.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::CreateContact::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::CreateContact::set_email_address): <p>The contact's email address.</p>
+    ///   - [`topic_preferences(Vec<TopicPreference>)`](crate::client::fluent_builders::CreateContact::topic_preferences) / [`set_topic_preferences(Option<Vec<TopicPreference>>)`](crate::client::fluent_builders::CreateContact::set_topic_preferences): <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
+    ///   - [`unsubscribe_all(bool)`](crate::client::fluent_builders::CreateContact::unsubscribe_all) / [`set_unsubscribe_all(bool)`](crate::client::fluent_builders::CreateContact::set_unsubscribe_all): <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
+    ///   - [`attributes_data(impl Into<String>)`](crate::client::fluent_builders::CreateContact::attributes_data) / [`set_attributes_data(Option<String>)`](crate::client::fluent_builders::CreateContact::set_attributes_data): <p>The attribute data attached to a contact.</p>
     /// - On success, responds with [`CreateContactOutput`](crate::output::CreateContactOutput)
 
     /// - On failure, responds with [`SdkError<CreateContactError>`](crate::error::CreateContactError)
@@ -129,11 +129,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateContactList`](crate::client::fluent_builders::CreateContactList) operation.
     ///
-    /// - Takes [`CreateContactListInput`](crate::input::CreateContactListInput) with field(s):
-    ///   - [`contact_list_name(Option<String>)`](crate::input::CreateContactListInput::contact_list_name): <p>The name of the contact list.</p>
-    ///   - [`topics(Option<Vec<Topic>>)`](crate::input::CreateContactListInput::topics): <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateContactListInput::description): <p>A description of what the contact list is about.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateContactListInput::tags): <p>The tags associated with a contact list.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_list_name(impl Into<String>)`](crate::client::fluent_builders::CreateContactList::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::client::fluent_builders::CreateContactList::set_contact_list_name): <p>The name of the contact list.</p>
+    ///   - [`topics(Vec<Topic>)`](crate::client::fluent_builders::CreateContactList::topics) / [`set_topics(Option<Vec<Topic>>)`](crate::client::fluent_builders::CreateContactList::set_topics): <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContactList::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContactList::set_description): <p>A description of what the contact list is about.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateContactList::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateContactList::set_tags): <p>The tags associated with a contact list.</p>
     /// - On success, responds with [`CreateContactListOutput`](crate::output::CreateContactListOutput)
 
     /// - On failure, responds with [`SdkError<CreateContactListError>`](crate::error::CreateContactListError)
@@ -142,13 +142,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCustomVerificationEmailTemplate`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate) operation.
     ///
-    /// - Takes [`CreateCustomVerificationEmailTemplateInput`](crate::input::CreateCustomVerificationEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::CreateCustomVerificationEmailTemplateInput::template_name): <p>The name of the custom verification email template.</p>
-    ///   - [`from_email_address(Option<String>)`](crate::input::CreateCustomVerificationEmailTemplateInput::from_email_address): <p>The email address that the custom verification email is sent from.</p>
-    ///   - [`template_subject(Option<String>)`](crate::input::CreateCustomVerificationEmailTemplateInput::template_subject): <p>The subject line of the custom verification email.</p>
-    ///   - [`template_content(Option<String>)`](crate::input::CreateCustomVerificationEmailTemplateInput::template_content): <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
-    ///   - [`success_redirection_url(Option<String>)`](crate::input::CreateCustomVerificationEmailTemplateInput::success_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
-    ///   - [`failure_redirection_url(Option<String>)`](crate::input::CreateCustomVerificationEmailTemplateInput::failure_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_template_name): <p>The name of the custom verification email template.</p>
+    ///   - [`from_email_address(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::from_email_address) / [`set_from_email_address(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_from_email_address): <p>The email address that the custom verification email is sent from.</p>
+    ///   - [`template_subject(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::template_subject) / [`set_template_subject(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_template_subject): <p>The subject line of the custom verification email.</p>
+    ///   - [`template_content(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::template_content) / [`set_template_content(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_template_content): <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    ///   - [`success_redirection_url(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::success_redirection_url) / [`set_success_redirection_url(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_success_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
+    ///   - [`failure_redirection_url(impl Into<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::failure_redirection_url) / [`set_failure_redirection_url(Option<String>)`](crate::client::fluent_builders::CreateCustomVerificationEmailTemplate::set_failure_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     /// - On success, responds with [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput)
 
     /// - On failure, responds with [`SdkError<CreateCustomVerificationEmailTemplateError>`](crate::error::CreateCustomVerificationEmailTemplateError)
@@ -159,9 +159,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDedicatedIpPool`](crate::client::fluent_builders::CreateDedicatedIpPool) operation.
     ///
-    /// - Takes [`CreateDedicatedIpPoolInput`](crate::input::CreateDedicatedIpPoolInput) with field(s):
-    ///   - [`pool_name(Option<String>)`](crate::input::CreateDedicatedIpPoolInput::pool_name): <p>The name of the dedicated IP pool.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDedicatedIpPoolInput::tags): <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::CreateDedicatedIpPool::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::CreateDedicatedIpPool::set_pool_name): <p>The name of the dedicated IP pool.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDedicatedIpPool::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDedicatedIpPool::set_tags): <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
     /// - On success, responds with [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput)
 
     /// - On failure, responds with [`SdkError<CreateDedicatedIpPoolError>`](crate::error::CreateDedicatedIpPoolError)
@@ -170,11 +170,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDeliverabilityTestReport`](crate::client::fluent_builders::CreateDeliverabilityTestReport) operation.
     ///
-    /// - Takes [`CreateDeliverabilityTestReportInput`](crate::input::CreateDeliverabilityTestReportInput) with field(s):
-    ///   - [`report_name(Option<String>)`](crate::input::CreateDeliverabilityTestReportInput::report_name): <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    ///   - [`from_email_address(Option<String>)`](crate::input::CreateDeliverabilityTestReportInput::from_email_address): <p>The email address that the predictive inbox placement test email was sent from.</p>
-    ///   - [`content(Option<EmailContent>)`](crate::input::CreateDeliverabilityTestReportInput::content): <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDeliverabilityTestReportInput::tags): <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`report_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::report_name) / [`set_report_name(Option<String>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::set_report_name): <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
+    ///   - [`from_email_address(impl Into<String>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::from_email_address) / [`set_from_email_address(Option<String>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::set_from_email_address): <p>The email address that the predictive inbox placement test email was sent from.</p>
+    ///   - [`content(EmailContent)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::content) / [`set_content(Option<EmailContent>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::set_content): <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::set_tags): <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
     /// - On success, responds with [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::output::CreateDeliverabilityTestReportOutput::report_id): <p>A unique string that identifies the predictive inbox placement test.</p>
     ///   - [`deliverability_test_status(Option<DeliverabilityTestStatus>)`](crate::output::CreateDeliverabilityTestReportOutput::deliverability_test_status): <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
@@ -186,11 +186,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEmailIdentity`](crate::client::fluent_builders::CreateEmailIdentity) operation.
     ///
-    /// - Takes [`CreateEmailIdentityInput`](crate::input::CreateEmailIdentityInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::CreateEmailIdentityInput::email_identity): <p>The email address or domain to verify.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEmailIdentityInput::tags): <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
-    ///   - [`dkim_signing_attributes(Option<DkimSigningAttributes>)`](crate::input::CreateEmailIdentityInput::dkim_signing_attributes): <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>  <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::CreateEmailIdentityInput::configuration_set_name): <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::CreateEmailIdentity::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::CreateEmailIdentity::set_email_identity): <p>The email address or domain to verify.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEmailIdentity::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEmailIdentity::set_tags): <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
+    ///   - [`dkim_signing_attributes(DkimSigningAttributes)`](crate::client::fluent_builders::CreateEmailIdentity::dkim_signing_attributes) / [`set_dkim_signing_attributes(Option<DkimSigningAttributes>)`](crate::client::fluent_builders::CreateEmailIdentity::set_dkim_signing_attributes): <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>  <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateEmailIdentity::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::CreateEmailIdentity::set_configuration_set_name): <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
     /// - On success, responds with [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput) with field(s):
     ///   - [`identity_type(Option<IdentityType>)`](crate::output::CreateEmailIdentityOutput::identity_type): <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     ///   - [`verified_for_sending_status(bool)`](crate::output::CreateEmailIdentityOutput::verified_for_sending_status): <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
@@ -201,10 +201,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEmailIdentityPolicy`](crate::client::fluent_builders::CreateEmailIdentityPolicy) operation.
     ///
-    /// - Takes [`CreateEmailIdentityPolicyInput`](crate::input::CreateEmailIdentityPolicyInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::CreateEmailIdentityPolicyInput::email_identity): <p>The email identity.</p>
-    ///   - [`policy_name(Option<String>)`](crate::input::CreateEmailIdentityPolicyInput::policy_name): <p>The name of the policy.</p>  <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-    ///   - [`policy(Option<String>)`](crate::input::CreateEmailIdentityPolicyInput::policy): <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>  <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::CreateEmailIdentityPolicy::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::CreateEmailIdentityPolicy::set_email_identity): <p>The email identity.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::CreateEmailIdentityPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::CreateEmailIdentityPolicy::set_policy_name): <p>The name of the policy.</p>  <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::CreateEmailIdentityPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::CreateEmailIdentityPolicy::set_policy): <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>  <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     /// - On success, responds with [`CreateEmailIdentityPolicyOutput`](crate::output::CreateEmailIdentityPolicyOutput)
 
     /// - On failure, responds with [`SdkError<CreateEmailIdentityPolicyError>`](crate::error::CreateEmailIdentityPolicyError)
@@ -215,9 +215,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEmailTemplate`](crate::client::fluent_builders::CreateEmailTemplate) operation.
     ///
-    /// - Takes [`CreateEmailTemplateInput`](crate::input::CreateEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::CreateEmailTemplateInput::template_name): <p>The name of the template.</p>
-    ///   - [`template_content(Option<EmailTemplateContent>)`](crate::input::CreateEmailTemplateInput::template_content): <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateEmailTemplate::set_template_name): <p>The name of the template.</p>
+    ///   - [`template_content(EmailTemplateContent)`](crate::client::fluent_builders::CreateEmailTemplate::template_content) / [`set_template_content(Option<EmailTemplateContent>)`](crate::client::fluent_builders::CreateEmailTemplate::set_template_content): <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     /// - On success, responds with [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput)
 
     /// - On failure, responds with [`SdkError<CreateEmailTemplateError>`](crate::error::CreateEmailTemplateError)
@@ -226,9 +226,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateImportJob`](crate::client::fluent_builders::CreateImportJob) operation.
     ///
-    /// - Takes [`CreateImportJobInput`](crate::input::CreateImportJobInput) with field(s):
-    ///   - [`import_destination(Option<ImportDestination>)`](crate::input::CreateImportJobInput::import_destination): <p>The destination for the import job.</p>
-    ///   - [`import_data_source(Option<ImportDataSource>)`](crate::input::CreateImportJobInput::import_data_source): <p>The data source for the import job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`import_destination(ImportDestination)`](crate::client::fluent_builders::CreateImportJob::import_destination) / [`set_import_destination(Option<ImportDestination>)`](crate::client::fluent_builders::CreateImportJob::set_import_destination): <p>The destination for the import job.</p>
+    ///   - [`import_data_source(ImportDataSource)`](crate::client::fluent_builders::CreateImportJob::import_data_source) / [`set_import_data_source(Option<ImportDataSource>)`](crate::client::fluent_builders::CreateImportJob::set_import_data_source): <p>The data source for the import job.</p>
     /// - On success, responds with [`CreateImportJobOutput`](crate::output::CreateImportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::CreateImportJobOutput::job_id): <p>A string that represents the import job ID.</p>
     /// - On failure, responds with [`SdkError<CreateImportJobError>`](crate::error::CreateImportJobError)
@@ -237,8 +237,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteConfigurationSet`](crate::client::fluent_builders::DeleteConfigurationSet) operation.
     ///
-    /// - Takes [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::DeleteConfigurationSetInput::configuration_set_name): <p>The name of the configuration set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationSet::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationSet::set_configuration_set_name): <p>The name of the configuration set.</p>
     /// - On success, responds with [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteConfigurationSetError>`](crate::error::DeleteConfigurationSetError)
@@ -247,9 +247,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteConfigurationSetEventDestination`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination) operation.
     ///
-    /// - Takes [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::DeleteConfigurationSetEventDestinationInput::configuration_set_name): <p>The name of the configuration set that contains the event destination to delete.</p>
-    ///   - [`event_destination_name(Option<String>)`](crate::input::DeleteConfigurationSetEventDestinationInput::event_destination_name): <p>The name of the event destination to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::set_configuration_set_name): <p>The name of the configuration set that contains the event destination to delete.</p>
+    ///   - [`event_destination_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::set_event_destination_name): <p>The name of the event destination to delete.</p>
     /// - On success, responds with [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteConfigurationSetEventDestinationError>`](crate::error::DeleteConfigurationSetEventDestinationError)
@@ -260,9 +260,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteContact`](crate::client::fluent_builders::DeleteContact) operation.
     ///
-    /// - Takes [`DeleteContactInput`](crate::input::DeleteContactInput) with field(s):
-    ///   - [`contact_list_name(Option<String>)`](crate::input::DeleteContactInput::contact_list_name): <p>The name of the contact list from which the contact should be removed.</p>
-    ///   - [`email_address(Option<String>)`](crate::input::DeleteContactInput::email_address): <p>The contact's email address.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_list_name(impl Into<String>)`](crate::client::fluent_builders::DeleteContact::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::client::fluent_builders::DeleteContact::set_contact_list_name): <p>The name of the contact list from which the contact should be removed.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::DeleteContact::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::DeleteContact::set_email_address): <p>The contact's email address.</p>
     /// - On success, responds with [`DeleteContactOutput`](crate::output::DeleteContactOutput)
 
     /// - On failure, responds with [`SdkError<DeleteContactError>`](crate::error::DeleteContactError)
@@ -271,8 +271,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteContactList`](crate::client::fluent_builders::DeleteContactList) operation.
     ///
-    /// - Takes [`DeleteContactListInput`](crate::input::DeleteContactListInput) with field(s):
-    ///   - [`contact_list_name(Option<String>)`](crate::input::DeleteContactListInput::contact_list_name): <p>The name of the contact list.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_list_name(impl Into<String>)`](crate::client::fluent_builders::DeleteContactList::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::client::fluent_builders::DeleteContactList::set_contact_list_name): <p>The name of the contact list.</p>
     /// - On success, responds with [`DeleteContactListOutput`](crate::output::DeleteContactListOutput)
 
     /// - On failure, responds with [`SdkError<DeleteContactListError>`](crate::error::DeleteContactListError)
@@ -281,8 +281,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCustomVerificationEmailTemplate`](crate::client::fluent_builders::DeleteCustomVerificationEmailTemplate) operation.
     ///
-    /// - Takes [`DeleteCustomVerificationEmailTemplateInput`](crate::input::DeleteCustomVerificationEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DeleteCustomVerificationEmailTemplateInput::template_name): <p>The name of the custom verification email template that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomVerificationEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteCustomVerificationEmailTemplate::set_template_name): <p>The name of the custom verification email template that you want to delete.</p>
     /// - On success, responds with [`DeleteCustomVerificationEmailTemplateOutput`](crate::output::DeleteCustomVerificationEmailTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCustomVerificationEmailTemplateError>`](crate::error::DeleteCustomVerificationEmailTemplateError)
@@ -293,8 +293,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDedicatedIpPool`](crate::client::fluent_builders::DeleteDedicatedIpPool) operation.
     ///
-    /// - Takes [`DeleteDedicatedIpPoolInput`](crate::input::DeleteDedicatedIpPoolInput) with field(s):
-    ///   - [`pool_name(Option<String>)`](crate::input::DeleteDedicatedIpPoolInput::pool_name): <p>The name of the dedicated IP pool that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDedicatedIpPool::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::DeleteDedicatedIpPool::set_pool_name): <p>The name of the dedicated IP pool that you want to delete.</p>
     /// - On success, responds with [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDedicatedIpPoolError>`](crate::error::DeleteDedicatedIpPoolError)
@@ -303,8 +303,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEmailIdentity`](crate::client::fluent_builders::DeleteEmailIdentity) operation.
     ///
-    /// - Takes [`DeleteEmailIdentityInput`](crate::input::DeleteEmailIdentityInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::DeleteEmailIdentityInput::email_identity): <p>The identity (that is, the email address or domain) to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::DeleteEmailIdentity::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::DeleteEmailIdentity::set_email_identity): <p>The identity (that is, the email address or domain) to delete.</p>
     /// - On success, responds with [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEmailIdentityError>`](crate::error::DeleteEmailIdentityError)
@@ -313,9 +313,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEmailIdentityPolicy`](crate::client::fluent_builders::DeleteEmailIdentityPolicy) operation.
     ///
-    /// - Takes [`DeleteEmailIdentityPolicyInput`](crate::input::DeleteEmailIdentityPolicyInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::DeleteEmailIdentityPolicyInput::email_identity): <p>The email identity.</p>
-    ///   - [`policy_name(Option<String>)`](crate::input::DeleteEmailIdentityPolicyInput::policy_name): <p>The name of the policy.</p>  <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::DeleteEmailIdentityPolicy::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::DeleteEmailIdentityPolicy::set_email_identity): <p>The email identity.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeleteEmailIdentityPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeleteEmailIdentityPolicy::set_policy_name): <p>The name of the policy.</p>  <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     /// - On success, responds with [`DeleteEmailIdentityPolicyOutput`](crate::output::DeleteEmailIdentityPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEmailIdentityPolicyError>`](crate::error::DeleteEmailIdentityPolicyError)
@@ -326,8 +326,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEmailTemplate`](crate::client::fluent_builders::DeleteEmailTemplate) operation.
     ///
-    /// - Takes [`DeleteEmailTemplateInput`](crate::input::DeleteEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DeleteEmailTemplateInput::template_name): <p>The name of the template to be deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteEmailTemplate::set_template_name): <p>The name of the template to be deleted.</p>
     /// - On success, responds with [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEmailTemplateError>`](crate::error::DeleteEmailTemplateError)
@@ -336,8 +336,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSuppressedDestination`](crate::client::fluent_builders::DeleteSuppressedDestination) operation.
     ///
-    /// - Takes [`DeleteSuppressedDestinationInput`](crate::input::DeleteSuppressedDestinationInput) with field(s):
-    ///   - [`email_address(Option<String>)`](crate::input::DeleteSuppressedDestinationInput::email_address): <p>The suppressed email destination to remove from the account suppression list.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::DeleteSuppressedDestination::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::DeleteSuppressedDestination::set_email_address): <p>The suppressed email destination to remove from the account suppression list.</p>
     /// - On success, responds with [`DeleteSuppressedDestinationOutput`](crate::output::DeleteSuppressedDestinationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSuppressedDestinationError>`](crate::error::DeleteSuppressedDestinationError)
@@ -348,7 +348,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetAccount`](crate::client::fluent_builders::GetAccount) operation.
     ///
-    /// - Takes [`GetAccountInput`](crate::input::GetAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAccount::send) it.
 
     /// - On success, responds with [`GetAccountOutput`](crate::output::GetAccountOutput) with field(s):
     ///   - [`dedicated_ip_auto_warmup_enabled(bool)`](crate::output::GetAccountOutput::dedicated_ip_auto_warmup_enabled): <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
@@ -364,8 +364,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetBlacklistReports`](crate::client::fluent_builders::GetBlacklistReports) operation.
     ///
-    /// - Takes [`GetBlacklistReportsInput`](crate::input::GetBlacklistReportsInput) with field(s):
-    ///   - [`blacklist_item_names(Option<Vec<String>>)`](crate::input::GetBlacklistReportsInput::blacklist_item_names): <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`blacklist_item_names(Vec<String>)`](crate::client::fluent_builders::GetBlacklistReports::blacklist_item_names) / [`set_blacklist_item_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetBlacklistReports::set_blacklist_item_names): <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
     /// - On success, responds with [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput) with field(s):
     ///   - [`blacklist_report(Option<HashMap<String, Vec<BlacklistEntry>>>)`](crate::output::GetBlacklistReportsOutput::blacklist_report): <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
     /// - On failure, responds with [`SdkError<GetBlacklistReportsError>`](crate::error::GetBlacklistReportsError)
@@ -374,8 +374,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetConfigurationSet`](crate::client::fluent_builders::GetConfigurationSet) operation.
     ///
-    /// - Takes [`GetConfigurationSetInput`](crate::input::GetConfigurationSetInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::GetConfigurationSetInput::configuration_set_name): <p>The name of the configuration set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::GetConfigurationSet::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::GetConfigurationSet::set_configuration_set_name): <p>The name of the configuration set.</p>
     /// - On success, responds with [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput) with field(s):
     ///   - [`configuration_set_name(Option<String>)`](crate::output::GetConfigurationSetOutput::configuration_set_name): <p>The name of the configuration set.</p>
     ///   - [`tracking_options(Option<TrackingOptions>)`](crate::output::GetConfigurationSetOutput::tracking_options): <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
@@ -390,8 +390,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetConfigurationSetEventDestinations`](crate::client::fluent_builders::GetConfigurationSetEventDestinations) operation.
     ///
-    /// - Takes [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::GetConfigurationSetEventDestinationsInput::configuration_set_name): <p>The name of the configuration set that contains the event destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::GetConfigurationSetEventDestinations::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::GetConfigurationSetEventDestinations::set_configuration_set_name): <p>The name of the configuration set that contains the event destination.</p>
     /// - On success, responds with [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput) with field(s):
     ///   - [`event_destinations(Option<Vec<EventDestination>>)`](crate::output::GetConfigurationSetEventDestinationsOutput::event_destinations): <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
     /// - On failure, responds with [`SdkError<GetConfigurationSetEventDestinationsError>`](crate::error::GetConfigurationSetEventDestinationsError)
@@ -402,9 +402,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetContact`](crate::client::fluent_builders::GetContact) operation.
     ///
-    /// - Takes [`GetContactInput`](crate::input::GetContactInput) with field(s):
-    ///   - [`contact_list_name(Option<String>)`](crate::input::GetContactInput::contact_list_name): <p>The name of the contact list to which the contact belongs.</p>
-    ///   - [`email_address(Option<String>)`](crate::input::GetContactInput::email_address): <p>The contact's email addres.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_list_name(impl Into<String>)`](crate::client::fluent_builders::GetContact::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::client::fluent_builders::GetContact::set_contact_list_name): <p>The name of the contact list to which the contact belongs.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::GetContact::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::GetContact::set_email_address): <p>The contact's email addres.</p>
     /// - On success, responds with [`GetContactOutput`](crate::output::GetContactOutput) with field(s):
     ///   - [`contact_list_name(Option<String>)`](crate::output::GetContactOutput::contact_list_name): <p>The name of the contact list to which the contact belongs.</p>
     ///   - [`email_address(Option<String>)`](crate::output::GetContactOutput::email_address): <p>The contact's email addres.</p>
@@ -420,8 +420,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetContactList`](crate::client::fluent_builders::GetContactList) operation.
     ///
-    /// - Takes [`GetContactListInput`](crate::input::GetContactListInput) with field(s):
-    ///   - [`contact_list_name(Option<String>)`](crate::input::GetContactListInput::contact_list_name): <p>The name of the contact list.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_list_name(impl Into<String>)`](crate::client::fluent_builders::GetContactList::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::client::fluent_builders::GetContactList::set_contact_list_name): <p>The name of the contact list.</p>
     /// - On success, responds with [`GetContactListOutput`](crate::output::GetContactListOutput) with field(s):
     ///   - [`contact_list_name(Option<String>)`](crate::output::GetContactListOutput::contact_list_name): <p>The name of the contact list.</p>
     ///   - [`topics(Option<Vec<Topic>>)`](crate::output::GetContactListOutput::topics): <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
@@ -435,8 +435,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetCustomVerificationEmailTemplate`](crate::client::fluent_builders::GetCustomVerificationEmailTemplate) operation.
     ///
-    /// - Takes [`GetCustomVerificationEmailTemplateInput`](crate::input::GetCustomVerificationEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::GetCustomVerificationEmailTemplateInput::template_name): <p>The name of the custom verification email template that you want to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetCustomVerificationEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetCustomVerificationEmailTemplate::set_template_name): <p>The name of the custom verification email template that you want to retrieve.</p>
     /// - On success, responds with [`GetCustomVerificationEmailTemplateOutput`](crate::output::GetCustomVerificationEmailTemplateOutput) with field(s):
     ///   - [`template_name(Option<String>)`](crate::output::GetCustomVerificationEmailTemplateOutput::template_name): <p>The name of the custom verification email template.</p>
     ///   - [`from_email_address(Option<String>)`](crate::output::GetCustomVerificationEmailTemplateOutput::from_email_address): <p>The email address that the custom verification email is sent from.</p>
@@ -452,8 +452,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDedicatedIp`](crate::client::fluent_builders::GetDedicatedIp) operation.
     ///
-    /// - Takes [`GetDedicatedIpInput`](crate::input::GetDedicatedIpInput) with field(s):
-    ///   - [`ip(Option<String>)`](crate::input::GetDedicatedIpInput::ip): <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ip(impl Into<String>)`](crate::client::fluent_builders::GetDedicatedIp::ip) / [`set_ip(Option<String>)`](crate::client::fluent_builders::GetDedicatedIp::set_ip): <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
     /// - On success, responds with [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput) with field(s):
     ///   - [`dedicated_ip(Option<DedicatedIp>)`](crate::output::GetDedicatedIpOutput::dedicated_ip): <p>An object that contains information about a dedicated IP address.</p>
     /// - On failure, responds with [`SdkError<GetDedicatedIpError>`](crate::error::GetDedicatedIpError)
@@ -461,12 +461,12 @@ where
         fluent_builders::GetDedicatedIp::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetDedicatedIps`](crate::client::fluent_builders::GetDedicatedIps) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDedicatedIps::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDedicatedIps::into_paginator).
     ///
-    /// - Takes [`GetDedicatedIpsInput`](crate::input::GetDedicatedIpsInput) with field(s):
-    ///   - [`pool_name(Option<String>)`](crate::input::GetDedicatedIpsInput::pool_name): <p>The name of the IP pool that the dedicated IP address is associated with.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetDedicatedIpsInput::next_token): <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::GetDedicatedIpsInput::page_size): <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::GetDedicatedIps::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::GetDedicatedIps::set_pool_name): <p>The name of the IP pool that the dedicated IP address is associated with.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDedicatedIps::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDedicatedIps::set_next_token): <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::GetDedicatedIps::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::GetDedicatedIps::set_page_size): <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// - On success, responds with [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput) with field(s):
     ///   - [`dedicated_ips(Option<Vec<DedicatedIp>>)`](crate::output::GetDedicatedIpsOutput::dedicated_ips): <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetDedicatedIpsOutput::next_token): <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
@@ -476,7 +476,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetDeliverabilityDashboardOptions`](crate::client::fluent_builders::GetDeliverabilityDashboardOptions) operation.
     ///
-    /// - Takes [`GetDeliverabilityDashboardOptionsInput`](crate::input::GetDeliverabilityDashboardOptionsInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetDeliverabilityDashboardOptions::send) it.
 
     /// - On success, responds with [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput) with field(s):
     ///   - [`dashboard_enabled(bool)`](crate::output::GetDeliverabilityDashboardOptionsOutput::dashboard_enabled): <p>Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>, the dashboard is enabled.</p>
@@ -492,8 +492,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDeliverabilityTestReport`](crate::client::fluent_builders::GetDeliverabilityTestReport) operation.
     ///
-    /// - Takes [`GetDeliverabilityTestReportInput`](crate::input::GetDeliverabilityTestReportInput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::input::GetDeliverabilityTestReportInput::report_id): <p>A unique string that identifies the predictive inbox placement test.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::GetDeliverabilityTestReport::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::GetDeliverabilityTestReport::set_report_id): <p>A unique string that identifies the predictive inbox placement test.</p>
     /// - On success, responds with [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput) with field(s):
     ///   - [`deliverability_test_report(Option<DeliverabilityTestReport>)`](crate::output::GetDeliverabilityTestReportOutput::deliverability_test_report): <p>An object that contains the results of the predictive inbox placement test.</p>
     ///   - [`overall_placement(Option<PlacementStatistics>)`](crate::output::GetDeliverabilityTestReportOutput::overall_placement): <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
@@ -508,8 +508,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDomainDeliverabilityCampaign`](crate::client::fluent_builders::GetDomainDeliverabilityCampaign) operation.
     ///
-    /// - Takes [`GetDomainDeliverabilityCampaignInput`](crate::input::GetDomainDeliverabilityCampaignInput) with field(s):
-    ///   - [`campaign_id(Option<String>)`](crate::input::GetDomainDeliverabilityCampaignInput::campaign_id): <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::GetDomainDeliverabilityCampaign::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::GetDomainDeliverabilityCampaign::set_campaign_id): <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
     /// - On success, responds with [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput) with field(s):
     ///   - [`domain_deliverability_campaign(Option<DomainDeliverabilityCampaign>)`](crate::output::GetDomainDeliverabilityCampaignOutput::domain_deliverability_campaign): <p>An object that contains the deliverability data for the campaign.</p>
     /// - On failure, responds with [`SdkError<GetDomainDeliverabilityCampaignError>`](crate::error::GetDomainDeliverabilityCampaignError)
@@ -520,10 +520,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetDomainStatisticsReport`](crate::client::fluent_builders::GetDomainStatisticsReport) operation.
     ///
-    /// - Takes [`GetDomainStatisticsReportInput`](crate::input::GetDomainStatisticsReportInput) with field(s):
-    ///   - [`domain(Option<String>)`](crate::input::GetDomainStatisticsReportInput::domain): <p>The domain that you want to obtain deliverability metrics for.</p>
-    ///   - [`start_date(Option<DateTime>)`](crate::input::GetDomainStatisticsReportInput::start_date): <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
-    ///   - [`end_date(Option<DateTime>)`](crate::input::GetDomainStatisticsReportInput::end_date): <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetDomainStatisticsReport::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetDomainStatisticsReport::set_domain): <p>The domain that you want to obtain deliverability metrics for.</p>
+    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::GetDomainStatisticsReport::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::GetDomainStatisticsReport::set_start_date): <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
+    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::GetDomainStatisticsReport::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::GetDomainStatisticsReport::set_end_date): <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
     /// - On success, responds with [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput) with field(s):
     ///   - [`overall_volume(Option<OverallVolume>)`](crate::output::GetDomainStatisticsReportOutput::overall_volume): <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     ///   - [`daily_volumes(Option<Vec<DailyVolume>>)`](crate::output::GetDomainStatisticsReportOutput::daily_volumes): <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
@@ -535,8 +535,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetEmailIdentity`](crate::client::fluent_builders::GetEmailIdentity) operation.
     ///
-    /// - Takes [`GetEmailIdentityInput`](crate::input::GetEmailIdentityInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::GetEmailIdentityInput::email_identity): <p>The email identity.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::GetEmailIdentity::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::GetEmailIdentity::set_email_identity): <p>The email identity.</p>
     /// - On success, responds with [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput) with field(s):
     ///   - [`identity_type(Option<IdentityType>)`](crate::output::GetEmailIdentityOutput::identity_type): <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     ///   - [`feedback_forwarding_status(bool)`](crate::output::GetEmailIdentityOutput::feedback_forwarding_status): <p>The feedback forwarding configuration for the identity.</p>  <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>  <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
@@ -552,8 +552,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetEmailIdentityPolicies`](crate::client::fluent_builders::GetEmailIdentityPolicies) operation.
     ///
-    /// - Takes [`GetEmailIdentityPoliciesInput`](crate::input::GetEmailIdentityPoliciesInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::GetEmailIdentityPoliciesInput::email_identity): <p>The email identity.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::GetEmailIdentityPolicies::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::GetEmailIdentityPolicies::set_email_identity): <p>The email identity.</p>
     /// - On success, responds with [`GetEmailIdentityPoliciesOutput`](crate::output::GetEmailIdentityPoliciesOutput) with field(s):
     ///   - [`policies(Option<HashMap<String, String>>)`](crate::output::GetEmailIdentityPoliciesOutput::policies): <p>A map of policy names to policies.</p>
     /// - On failure, responds with [`SdkError<GetEmailIdentityPoliciesError>`](crate::error::GetEmailIdentityPoliciesError)
@@ -564,8 +564,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetEmailTemplate`](crate::client::fluent_builders::GetEmailTemplate) operation.
     ///
-    /// - Takes [`GetEmailTemplateInput`](crate::input::GetEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::GetEmailTemplateInput::template_name): <p>The name of the template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetEmailTemplate::set_template_name): <p>The name of the template.</p>
     /// - On success, responds with [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput) with field(s):
     ///   - [`template_name(Option<String>)`](crate::output::GetEmailTemplateOutput::template_name): <p>The name of the template.</p>
     ///   - [`template_content(Option<EmailTemplateContent>)`](crate::output::GetEmailTemplateOutput::template_content): <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
@@ -575,8 +575,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetImportJob`](crate::client::fluent_builders::GetImportJob) operation.
     ///
-    /// - Takes [`GetImportJobInput`](crate::input::GetImportJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::GetImportJobInput::job_id): <p>The ID of the import job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetImportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetImportJob::set_job_id): <p>The ID of the import job.</p>
     /// - On success, responds with [`GetImportJobOutput`](crate::output::GetImportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::GetImportJobOutput::job_id): <p>A string that represents the import job ID.</p>
     ///   - [`import_destination(Option<ImportDestination>)`](crate::output::GetImportJobOutput::import_destination): <p>The destination of the import job.</p>
@@ -593,8 +593,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSuppressedDestination`](crate::client::fluent_builders::GetSuppressedDestination) operation.
     ///
-    /// - Takes [`GetSuppressedDestinationInput`](crate::input::GetSuppressedDestinationInput) with field(s):
-    ///   - [`email_address(Option<String>)`](crate::input::GetSuppressedDestinationInput::email_address): <p>The email address that's on the account suppression list.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::GetSuppressedDestination::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::GetSuppressedDestination::set_email_address): <p>The email address that's on the account suppression list.</p>
     /// - On success, responds with [`GetSuppressedDestinationOutput`](crate::output::GetSuppressedDestinationOutput) with field(s):
     ///   - [`suppressed_destination(Option<SuppressedDestination>)`](crate::output::GetSuppressedDestinationOutput::suppressed_destination): <p>An object containing information about the suppressed email address.</p>
     /// - On failure, responds with [`SdkError<GetSuppressedDestinationError>`](crate::error::GetSuppressedDestinationError)
@@ -602,11 +602,11 @@ where
         fluent_builders::GetSuppressedDestination::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListConfigurationSets`](crate::client::fluent_builders::ListConfigurationSets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConfigurationSets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConfigurationSets::into_paginator).
     ///
-    /// - Takes [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListConfigurationSetsInput::next_token): <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListConfigurationSetsInput::page_size): <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurationSets::set_next_token): <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListConfigurationSets::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListConfigurationSets::set_page_size): <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// - On success, responds with [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput) with field(s):
     ///   - [`configuration_sets(Option<Vec<String>>)`](crate::output::ListConfigurationSetsOutput::configuration_sets): <p>An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationSetsOutput::next_token): <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
@@ -615,11 +615,11 @@ where
         fluent_builders::ListConfigurationSets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListContactLists`](crate::client::fluent_builders::ListContactLists) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactLists::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContactLists::into_paginator).
     ///
-    /// - Takes [`ListContactListsInput`](crate::input::ListContactListsInput) with field(s):
-    ///   - [`page_size(Option<i32>)`](crate::input::ListContactListsInput::page_size): <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListContactListsInput::next_token): <p>A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListContactLists::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListContactLists::set_page_size): <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContactLists::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContactLists::set_next_token): <p>A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.</p>
     /// - On success, responds with [`ListContactListsOutput`](crate::output::ListContactListsOutput) with field(s):
     ///   - [`contact_lists(Option<Vec<ContactList>>)`](crate::output::ListContactListsOutput::contact_lists): <p>The available contact lists.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListContactListsOutput::next_token): <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
@@ -628,13 +628,13 @@ where
         fluent_builders::ListContactLists::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListContacts`](crate::client::fluent_builders::ListContacts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContacts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContacts::into_paginator).
     ///
-    /// - Takes [`ListContactsInput`](crate::input::ListContactsInput) with field(s):
-    ///   - [`contact_list_name(Option<String>)`](crate::input::ListContactsInput::contact_list_name): <p>The name of the contact list.</p>
-    ///   - [`filter(Option<ListContactsFilter>)`](crate::input::ListContactsInput::filter): <p>A filter that can be applied to a list of contacts.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListContactsInput::page_size): <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListContactsInput::next_token): <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_list_name(impl Into<String>)`](crate::client::fluent_builders::ListContacts::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::client::fluent_builders::ListContacts::set_contact_list_name): <p>The name of the contact list.</p>
+    ///   - [`filter(ListContactsFilter)`](crate::client::fluent_builders::ListContacts::filter) / [`set_filter(Option<ListContactsFilter>)`](crate::client::fluent_builders::ListContacts::set_filter): <p>A filter that can be applied to a list of contacts.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListContacts::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListContacts::set_page_size): <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContacts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContacts::set_next_token): <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
     /// - On success, responds with [`ListContactsOutput`](crate::output::ListContactsOutput) with field(s):
     ///   - [`contacts(Option<Vec<Contact>>)`](crate::output::ListContactsOutput::contacts): <p>The contacts present in a specific contact list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListContactsOutput::next_token): <p>A string token indicating that there might be additional contacts available to be listed. Copy this token to a subsequent call to <code>ListContacts</code> with the same parameters to retrieve the next page of contacts.</p>
@@ -643,11 +643,11 @@ where
         fluent_builders::ListContacts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCustomVerificationEmailTemplates`](crate::client::fluent_builders::ListCustomVerificationEmailTemplates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomVerificationEmailTemplates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomVerificationEmailTemplates::into_paginator).
     ///
-    /// - Takes [`ListCustomVerificationEmailTemplatesInput`](crate::input::ListCustomVerificationEmailTemplatesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListCustomVerificationEmailTemplatesInput::next_token): <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListCustomVerificationEmailTemplatesInput::page_size): <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 1, and can be no more than 50.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomVerificationEmailTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomVerificationEmailTemplates::set_next_token): <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListCustomVerificationEmailTemplates::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListCustomVerificationEmailTemplates::set_page_size): <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 1, and can be no more than 50.</p>
     /// - On success, responds with [`ListCustomVerificationEmailTemplatesOutput`](crate::output::ListCustomVerificationEmailTemplatesOutput) with field(s):
     ///   - [`custom_verification_email_templates(Option<Vec<CustomVerificationEmailTemplateMetadata>>)`](crate::output::ListCustomVerificationEmailTemplatesOutput::custom_verification_email_templates): <p>A list of the custom verification email templates that exist in your account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCustomVerificationEmailTemplatesOutput::next_token): <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom verification email templates.</p>
@@ -658,11 +658,11 @@ where
         fluent_builders::ListCustomVerificationEmailTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDedicatedIpPools`](crate::client::fluent_builders::ListDedicatedIpPools) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDedicatedIpPools::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDedicatedIpPools::into_paginator).
     ///
-    /// - Takes [`ListDedicatedIpPoolsInput`](crate::input::ListDedicatedIpPoolsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDedicatedIpPoolsInput::next_token): <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListDedicatedIpPoolsInput::page_size): <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDedicatedIpPools::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDedicatedIpPools::set_next_token): <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListDedicatedIpPools::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListDedicatedIpPools::set_page_size): <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// - On success, responds with [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput) with field(s):
     ///   - [`dedicated_ip_pools(Option<Vec<String>>)`](crate::output::ListDedicatedIpPoolsOutput::dedicated_ip_pools): <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDedicatedIpPoolsOutput::next_token): <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
@@ -671,11 +671,11 @@ where
         fluent_builders::ListDedicatedIpPools::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDeliverabilityTestReports`](crate::client::fluent_builders::ListDeliverabilityTestReports) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeliverabilityTestReports::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeliverabilityTestReports::into_paginator).
     ///
-    /// - Takes [`ListDeliverabilityTestReportsInput`](crate::input::ListDeliverabilityTestReportsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDeliverabilityTestReportsInput::next_token): <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListDeliverabilityTestReportsInput::page_size): <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeliverabilityTestReports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeliverabilityTestReports::set_next_token): <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListDeliverabilityTestReports::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListDeliverabilityTestReports::set_page_size): <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     /// - On success, responds with [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput) with field(s):
     ///   - [`deliverability_test_reports(Option<Vec<DeliverabilityTestReport>>)`](crate::output::ListDeliverabilityTestReportsOutput::deliverability_test_reports): <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDeliverabilityTestReportsOutput::next_token): <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
@@ -686,14 +686,14 @@ where
         fluent_builders::ListDeliverabilityTestReports::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDomainDeliverabilityCampaigns`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::into_paginator).
     ///
-    /// - Takes [`ListDomainDeliverabilityCampaignsInput`](crate::input::ListDomainDeliverabilityCampaignsInput) with field(s):
-    ///   - [`start_date(Option<DateTime>)`](crate::input::ListDomainDeliverabilityCampaignsInput::start_date): <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
-    ///   - [`end_date(Option<DateTime>)`](crate::input::ListDomainDeliverabilityCampaignsInput::end_date): <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
-    ///   - [`subscribed_domain(Option<String>)`](crate::input::ListDomainDeliverabilityCampaignsInput::subscribed_domain): <p>The domain to obtain deliverability data for.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDomainDeliverabilityCampaignsInput::next_token): <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListDomainDeliverabilityCampaignsInput::page_size): <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_start_date): <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
+    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_end_date): <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
+    ///   - [`subscribed_domain(impl Into<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::subscribed_domain) / [`set_subscribed_domain(Option<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_subscribed_domain): <p>The domain to obtain deliverability data for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_next_token): <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_page_size): <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// - On success, responds with [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput) with field(s):
     ///   - [`domain_deliverability_campaigns(Option<Vec<DomainDeliverabilityCampaign>>)`](crate::output::ListDomainDeliverabilityCampaignsOutput::domain_deliverability_campaigns): <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDomainDeliverabilityCampaignsOutput::next_token): <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
@@ -704,11 +704,11 @@ where
         fluent_builders::ListDomainDeliverabilityCampaigns::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEmailIdentities`](crate::client::fluent_builders::ListEmailIdentities) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEmailIdentities::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEmailIdentities::into_paginator).
     ///
-    /// - Takes [`ListEmailIdentitiesInput`](crate::input::ListEmailIdentitiesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListEmailIdentitiesInput::next_token): <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListEmailIdentitiesInput::page_size): <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEmailIdentities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEmailIdentities::set_next_token): <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListEmailIdentities::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListEmailIdentities::set_page_size): <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     /// - On success, responds with [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput) with field(s):
     ///   - [`email_identities(Option<Vec<IdentityInfo>>)`](crate::output::ListEmailIdentitiesOutput::email_identities): <p>An array that includes all of the email identities associated with your Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEmailIdentitiesOutput::next_token): <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
@@ -717,11 +717,11 @@ where
         fluent_builders::ListEmailIdentities::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEmailTemplates`](crate::client::fluent_builders::ListEmailTemplates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEmailTemplates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEmailTemplates::into_paginator).
     ///
-    /// - Takes [`ListEmailTemplatesInput`](crate::input::ListEmailTemplatesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListEmailTemplatesInput::next_token): <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListEmailTemplatesInput::page_size): <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 1, and can be no more than 10.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEmailTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEmailTemplates::set_next_token): <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListEmailTemplates::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListEmailTemplates::set_page_size): <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 1, and can be no more than 10.</p>
     /// - On success, responds with [`ListEmailTemplatesOutput`](crate::output::ListEmailTemplatesOutput) with field(s):
     ///   - [`templates_metadata(Option<Vec<EmailTemplateMetadata>>)`](crate::output::ListEmailTemplatesOutput::templates_metadata): <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEmailTemplatesOutput::next_token): <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent <code>ListEmailTemplates</code> call to retrieve the next 10 email templates.</p>
@@ -730,12 +730,12 @@ where
         fluent_builders::ListEmailTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListImportJobs`](crate::client::fluent_builders::ListImportJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImportJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListImportJobs::into_paginator).
     ///
-    /// - Takes [`ListImportJobsInput`](crate::input::ListImportJobsInput) with field(s):
-    ///   - [`import_destination_type(Option<ImportDestinationType>)`](crate::input::ListImportJobsInput::import_destination_type): <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListImportJobsInput::next_token): <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListImportJobsInput::page_size): <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`import_destination_type(ImportDestinationType)`](crate::client::fluent_builders::ListImportJobs::import_destination_type) / [`set_import_destination_type(Option<ImportDestinationType>)`](crate::client::fluent_builders::ListImportJobs::set_import_destination_type): <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListImportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListImportJobs::set_next_token): <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListImportJobs::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListImportJobs::set_page_size): <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
     /// - On success, responds with [`ListImportJobsOutput`](crate::output::ListImportJobsOutput) with field(s):
     ///   - [`import_jobs(Option<Vec<ImportJobSummary>>)`](crate::output::ListImportJobsOutput::import_jobs): <p>A list of the import job summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListImportJobsOutput::next_token): <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
@@ -744,14 +744,14 @@ where
         fluent_builders::ListImportJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSuppressedDestinations`](crate::client::fluent_builders::ListSuppressedDestinations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSuppressedDestinations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSuppressedDestinations::into_paginator).
     ///
-    /// - Takes [`ListSuppressedDestinationsInput`](crate::input::ListSuppressedDestinationsInput) with field(s):
-    ///   - [`reasons(Option<Vec<SuppressionListReason>>)`](crate::input::ListSuppressedDestinationsInput::reasons): <p>The factors that caused the email address to be added to .</p>
-    ///   - [`start_date(Option<DateTime>)`](crate::input::ListSuppressedDestinationsInput::start_date): <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
-    ///   - [`end_date(Option<DateTime>)`](crate::input::ListSuppressedDestinationsInput::end_date): <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListSuppressedDestinationsInput::next_token): <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
-    ///   - [`page_size(Option<i32>)`](crate::input::ListSuppressedDestinationsInput::page_size): <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`reasons(Vec<SuppressionListReason>)`](crate::client::fluent_builders::ListSuppressedDestinations::reasons) / [`set_reasons(Option<Vec<SuppressionListReason>>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_reasons): <p>The factors that caused the email address to be added to .</p>
+    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::ListSuppressedDestinations::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_start_date): <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
+    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::ListSuppressedDestinations::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_end_date): <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSuppressedDestinations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_next_token): <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
+    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListSuppressedDestinations::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListSuppressedDestinations::set_page_size): <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// - On success, responds with [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput) with field(s):
     ///   - [`suppressed_destination_summaries(Option<Vec<SuppressedDestinationSummary>>)`](crate::output::ListSuppressedDestinationsOutput::suppressed_destination_summaries): <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSuppressedDestinationsOutput::next_token): <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
@@ -763,8 +763,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -773,8 +773,8 @@ where
     }
     /// Constructs a fluent builder for the [`PutAccountDedicatedIpWarmupAttributes`](crate::client::fluent_builders::PutAccountDedicatedIpWarmupAttributes) operation.
     ///
-    /// - Takes [`PutAccountDedicatedIpWarmupAttributesInput`](crate::input::PutAccountDedicatedIpWarmupAttributesInput) with field(s):
-    ///   - [`auto_warmup_enabled(bool)`](crate::input::PutAccountDedicatedIpWarmupAttributesInput::auto_warmup_enabled): <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_warmup_enabled(bool)`](crate::client::fluent_builders::PutAccountDedicatedIpWarmupAttributes::auto_warmup_enabled) / [`set_auto_warmup_enabled(bool)`](crate::client::fluent_builders::PutAccountDedicatedIpWarmupAttributes::set_auto_warmup_enabled): <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
     /// - On success, responds with [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput)
 
     /// - On failure, responds with [`SdkError<PutAccountDedicatedIpWarmupAttributesError>`](crate::error::PutAccountDedicatedIpWarmupAttributesError)
@@ -785,13 +785,13 @@ where
     }
     /// Constructs a fluent builder for the [`PutAccountDetails`](crate::client::fluent_builders::PutAccountDetails) operation.
     ///
-    /// - Takes [`PutAccountDetailsInput`](crate::input::PutAccountDetailsInput) with field(s):
-    ///   - [`mail_type(Option<MailType>)`](crate::input::PutAccountDetailsInput::mail_type): <p>The type of email your account will send.</p>
-    ///   - [`website_url(Option<String>)`](crate::input::PutAccountDetailsInput::website_url): <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
-    ///   - [`contact_language(Option<ContactLanguage>)`](crate::input::PutAccountDetailsInput::contact_language): <p>The language you would prefer to be contacted with.</p>
-    ///   - [`use_case_description(Option<String>)`](crate::input::PutAccountDetailsInput::use_case_description): <p>A description of the types of email that you plan to send.</p>
-    ///   - [`additional_contact_email_addresses(Option<Vec<String>>)`](crate::input::PutAccountDetailsInput::additional_contact_email_addresses): <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
-    ///   - [`production_access_enabled(Option<bool>)`](crate::input::PutAccountDetailsInput::production_access_enabled): <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>  <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>  <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`mail_type(MailType)`](crate::client::fluent_builders::PutAccountDetails::mail_type) / [`set_mail_type(Option<MailType>)`](crate::client::fluent_builders::PutAccountDetails::set_mail_type): <p>The type of email your account will send.</p>
+    ///   - [`website_url(impl Into<String>)`](crate::client::fluent_builders::PutAccountDetails::website_url) / [`set_website_url(Option<String>)`](crate::client::fluent_builders::PutAccountDetails::set_website_url): <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
+    ///   - [`contact_language(ContactLanguage)`](crate::client::fluent_builders::PutAccountDetails::contact_language) / [`set_contact_language(Option<ContactLanguage>)`](crate::client::fluent_builders::PutAccountDetails::set_contact_language): <p>The language you would prefer to be contacted with.</p>
+    ///   - [`use_case_description(impl Into<String>)`](crate::client::fluent_builders::PutAccountDetails::use_case_description) / [`set_use_case_description(Option<String>)`](crate::client::fluent_builders::PutAccountDetails::set_use_case_description): <p>A description of the types of email that you plan to send.</p>
+    ///   - [`additional_contact_email_addresses(Vec<String>)`](crate::client::fluent_builders::PutAccountDetails::additional_contact_email_addresses) / [`set_additional_contact_email_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::PutAccountDetails::set_additional_contact_email_addresses): <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
+    ///   - [`production_access_enabled(bool)`](crate::client::fluent_builders::PutAccountDetails::production_access_enabled) / [`set_production_access_enabled(Option<bool>)`](crate::client::fluent_builders::PutAccountDetails::set_production_access_enabled): <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>  <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>  <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     /// - On success, responds with [`PutAccountDetailsOutput`](crate::output::PutAccountDetailsOutput)
 
     /// - On failure, responds with [`SdkError<PutAccountDetailsError>`](crate::error::PutAccountDetailsError)
@@ -800,8 +800,8 @@ where
     }
     /// Constructs a fluent builder for the [`PutAccountSendingAttributes`](crate::client::fluent_builders::PutAccountSendingAttributes) operation.
     ///
-    /// - Takes [`PutAccountSendingAttributesInput`](crate::input::PutAccountSendingAttributesInput) with field(s):
-    ///   - [`sending_enabled(bool)`](crate::input::PutAccountSendingAttributesInput::sending_enabled): <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>   <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`sending_enabled(bool)`](crate::client::fluent_builders::PutAccountSendingAttributes::sending_enabled) / [`set_sending_enabled(bool)`](crate::client::fluent_builders::PutAccountSendingAttributes::set_sending_enabled): <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>   <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>  </note>
     /// - On success, responds with [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput)
 
     /// - On failure, responds with [`SdkError<PutAccountSendingAttributesError>`](crate::error::PutAccountSendingAttributesError)
@@ -812,8 +812,8 @@ where
     }
     /// Constructs a fluent builder for the [`PutAccountSuppressionAttributes`](crate::client::fluent_builders::PutAccountSuppressionAttributes) operation.
     ///
-    /// - Takes [`PutAccountSuppressionAttributesInput`](crate::input::PutAccountSuppressionAttributesInput) with field(s):
-    ///   - [`suppressed_reasons(Option<Vec<SuppressionListReason>>)`](crate::input::PutAccountSuppressionAttributesInput::suppressed_reasons): <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>  <ul>   <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>   <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`suppressed_reasons(Vec<SuppressionListReason>)`](crate::client::fluent_builders::PutAccountSuppressionAttributes::suppressed_reasons) / [`set_suppressed_reasons(Option<Vec<SuppressionListReason>>)`](crate::client::fluent_builders::PutAccountSuppressionAttributes::set_suppressed_reasons): <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>  <ul>   <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>   <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>  </ul>
     /// - On success, responds with [`PutAccountSuppressionAttributesOutput`](crate::output::PutAccountSuppressionAttributesOutput)
 
     /// - On failure, responds with [`SdkError<PutAccountSuppressionAttributesError>`](crate::error::PutAccountSuppressionAttributesError)
@@ -824,10 +824,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutConfigurationSetDeliveryOptions`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions) operation.
     ///
-    /// - Takes [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::PutConfigurationSetDeliveryOptionsInput::configuration_set_name): <p>The name of the configuration set to associate with a dedicated IP pool.</p>
-    ///   - [`tls_policy(Option<TlsPolicy>)`](crate::input::PutConfigurationSetDeliveryOptionsInput::tls_policy): <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-    ///   - [`sending_pool_name(Option<String>)`](crate::input::PutConfigurationSetDeliveryOptionsInput::sending_pool_name): <p>The name of the dedicated IP pool to associate with the configuration set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::set_configuration_set_name): <p>The name of the configuration set to associate with a dedicated IP pool.</p>
+    ///   - [`tls_policy(TlsPolicy)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::tls_policy) / [`set_tls_policy(Option<TlsPolicy>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::set_tls_policy): <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    ///   - [`sending_pool_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::sending_pool_name) / [`set_sending_pool_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::set_sending_pool_name): <p>The name of the dedicated IP pool to associate with the configuration set.</p>
     /// - On success, responds with [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput)
 
     /// - On failure, responds with [`SdkError<PutConfigurationSetDeliveryOptionsError>`](crate::error::PutConfigurationSetDeliveryOptionsError)
@@ -838,9 +838,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutConfigurationSetReputationOptions`](crate::client::fluent_builders::PutConfigurationSetReputationOptions) operation.
     ///
-    /// - Takes [`PutConfigurationSetReputationOptionsInput`](crate::input::PutConfigurationSetReputationOptionsInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::PutConfigurationSetReputationOptionsInput::configuration_set_name): <p>The name of the configuration set.</p>
-    ///   - [`reputation_metrics_enabled(bool)`](crate::input::PutConfigurationSetReputationOptionsInput::reputation_metrics_enabled): <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetReputationOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetReputationOptions::set_configuration_set_name): <p>The name of the configuration set.</p>
+    ///   - [`reputation_metrics_enabled(bool)`](crate::client::fluent_builders::PutConfigurationSetReputationOptions::reputation_metrics_enabled) / [`set_reputation_metrics_enabled(bool)`](crate::client::fluent_builders::PutConfigurationSetReputationOptions::set_reputation_metrics_enabled): <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     /// - On success, responds with [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput)
 
     /// - On failure, responds with [`SdkError<PutConfigurationSetReputationOptionsError>`](crate::error::PutConfigurationSetReputationOptionsError)
@@ -851,9 +851,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutConfigurationSetSendingOptions`](crate::client::fluent_builders::PutConfigurationSetSendingOptions) operation.
     ///
-    /// - Takes [`PutConfigurationSetSendingOptionsInput`](crate::input::PutConfigurationSetSendingOptionsInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::PutConfigurationSetSendingOptionsInput::configuration_set_name): <p>The name of the configuration set to enable or disable email sending for.</p>
-    ///   - [`sending_enabled(bool)`](crate::input::PutConfigurationSetSendingOptionsInput::sending_enabled): <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetSendingOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetSendingOptions::set_configuration_set_name): <p>The name of the configuration set to enable or disable email sending for.</p>
+    ///   - [`sending_enabled(bool)`](crate::client::fluent_builders::PutConfigurationSetSendingOptions::sending_enabled) / [`set_sending_enabled(bool)`](crate::client::fluent_builders::PutConfigurationSetSendingOptions::set_sending_enabled): <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     /// - On success, responds with [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput)
 
     /// - On failure, responds with [`SdkError<PutConfigurationSetSendingOptionsError>`](crate::error::PutConfigurationSetSendingOptionsError)
@@ -864,9 +864,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutConfigurationSetSuppressionOptions`](crate::client::fluent_builders::PutConfigurationSetSuppressionOptions) operation.
     ///
-    /// - Takes [`PutConfigurationSetSuppressionOptionsInput`](crate::input::PutConfigurationSetSuppressionOptionsInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::PutConfigurationSetSuppressionOptionsInput::configuration_set_name): <p>The name of the configuration set to change the suppression list preferences for.</p>
-    ///   - [`suppressed_reasons(Option<Vec<SuppressionListReason>>)`](crate::input::PutConfigurationSetSuppressionOptionsInput::suppressed_reasons): <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>  <ul>   <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>   <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetSuppressionOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetSuppressionOptions::set_configuration_set_name): <p>The name of the configuration set to change the suppression list preferences for.</p>
+    ///   - [`suppressed_reasons(Vec<SuppressionListReason>)`](crate::client::fluent_builders::PutConfigurationSetSuppressionOptions::suppressed_reasons) / [`set_suppressed_reasons(Option<Vec<SuppressionListReason>>)`](crate::client::fluent_builders::PutConfigurationSetSuppressionOptions::set_suppressed_reasons): <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>  <ul>   <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>   <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>  </ul>
     /// - On success, responds with [`PutConfigurationSetSuppressionOptionsOutput`](crate::output::PutConfigurationSetSuppressionOptionsOutput)
 
     /// - On failure, responds with [`SdkError<PutConfigurationSetSuppressionOptionsError>`](crate::error::PutConfigurationSetSuppressionOptionsError)
@@ -877,9 +877,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutConfigurationSetTrackingOptions`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions) operation.
     ///
-    /// - Takes [`PutConfigurationSetTrackingOptionsInput`](crate::input::PutConfigurationSetTrackingOptionsInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::PutConfigurationSetTrackingOptionsInput::configuration_set_name): <p>The name of the configuration set.</p>
-    ///   - [`custom_redirect_domain(Option<String>)`](crate::input::PutConfigurationSetTrackingOptionsInput::custom_redirect_domain): <p>The domain to use to track open and click events.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions::set_configuration_set_name): <p>The name of the configuration set.</p>
+    ///   - [`custom_redirect_domain(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions::custom_redirect_domain) / [`set_custom_redirect_domain(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions::set_custom_redirect_domain): <p>The domain to use to track open and click events.</p>
     /// - On success, responds with [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput)
 
     /// - On failure, responds with [`SdkError<PutConfigurationSetTrackingOptionsError>`](crate::error::PutConfigurationSetTrackingOptionsError)
@@ -890,9 +890,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutDedicatedIpInPool`](crate::client::fluent_builders::PutDedicatedIpInPool) operation.
     ///
-    /// - Takes [`PutDedicatedIpInPoolInput`](crate::input::PutDedicatedIpInPoolInput) with field(s):
-    ///   - [`ip(Option<String>)`](crate::input::PutDedicatedIpInPoolInput::ip): <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
-    ///   - [`destination_pool_name(Option<String>)`](crate::input::PutDedicatedIpInPoolInput::destination_pool_name): <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ip(impl Into<String>)`](crate::client::fluent_builders::PutDedicatedIpInPool::ip) / [`set_ip(Option<String>)`](crate::client::fluent_builders::PutDedicatedIpInPool::set_ip): <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+    ///   - [`destination_pool_name(impl Into<String>)`](crate::client::fluent_builders::PutDedicatedIpInPool::destination_pool_name) / [`set_destination_pool_name(Option<String>)`](crate::client::fluent_builders::PutDedicatedIpInPool::set_destination_pool_name): <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     /// - On success, responds with [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput)
 
     /// - On failure, responds with [`SdkError<PutDedicatedIpInPoolError>`](crate::error::PutDedicatedIpInPoolError)
@@ -901,9 +901,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutDedicatedIpWarmupAttributes`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes) operation.
     ///
-    /// - Takes [`PutDedicatedIpWarmupAttributesInput`](crate::input::PutDedicatedIpWarmupAttributesInput) with field(s):
-    ///   - [`ip(Option<String>)`](crate::input::PutDedicatedIpWarmupAttributesInput::ip): <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-    ///   - [`warmup_percentage(Option<i32>)`](crate::input::PutDedicatedIpWarmupAttributesInput::warmup_percentage): <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ip(impl Into<String>)`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes::ip) / [`set_ip(Option<String>)`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes::set_ip): <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
+    ///   - [`warmup_percentage(i32)`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes::warmup_percentage) / [`set_warmup_percentage(Option<i32>)`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes::set_warmup_percentage): <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
     /// - On success, responds with [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput)
 
     /// - On failure, responds with [`SdkError<PutDedicatedIpWarmupAttributesError>`](crate::error::PutDedicatedIpWarmupAttributesError)
@@ -914,9 +914,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutDeliverabilityDashboardOption`](crate::client::fluent_builders::PutDeliverabilityDashboardOption) operation.
     ///
-    /// - Takes [`PutDeliverabilityDashboardOptionInput`](crate::input::PutDeliverabilityDashboardOptionInput) with field(s):
-    ///   - [`dashboard_enabled(bool)`](crate::input::PutDeliverabilityDashboardOptionInput::dashboard_enabled): <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
-    ///   - [`subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::input::PutDeliverabilityDashboardOptionInput::subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dashboard_enabled(bool)`](crate::client::fluent_builders::PutDeliverabilityDashboardOption::dashboard_enabled) / [`set_dashboard_enabled(bool)`](crate::client::fluent_builders::PutDeliverabilityDashboardOption::set_dashboard_enabled): <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
+    ///   - [`subscribed_domains(Vec<DomainDeliverabilityTrackingOption>)`](crate::client::fluent_builders::PutDeliverabilityDashboardOption::subscribed_domains) / [`set_subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::client::fluent_builders::PutDeliverabilityDashboardOption::set_subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
     /// - On success, responds with [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput)
 
     /// - On failure, responds with [`SdkError<PutDeliverabilityDashboardOptionError>`](crate::error::PutDeliverabilityDashboardOptionError)
@@ -927,9 +927,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutEmailIdentityConfigurationSetAttributes`](crate::client::fluent_builders::PutEmailIdentityConfigurationSetAttributes) operation.
     ///
-    /// - Takes [`PutEmailIdentityConfigurationSetAttributesInput`](crate::input::PutEmailIdentityConfigurationSetAttributesInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::PutEmailIdentityConfigurationSetAttributesInput::email_identity): <p>The email address or domain to associate with a configuration set.</p>
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::PutEmailIdentityConfigurationSetAttributesInput::configuration_set_name): <p>The configuration set to associate with an email identity.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityConfigurationSetAttributes::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityConfigurationSetAttributes::set_email_identity): <p>The email address or domain to associate with a configuration set.</p>
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityConfigurationSetAttributes::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityConfigurationSetAttributes::set_configuration_set_name): <p>The configuration set to associate with an email identity.</p>
     /// - On success, responds with [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::output::PutEmailIdentityConfigurationSetAttributesOutput)
 
     /// - On failure, responds with [`SdkError<PutEmailIdentityConfigurationSetAttributesError>`](crate::error::PutEmailIdentityConfigurationSetAttributesError)
@@ -940,9 +940,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutEmailIdentityDkimAttributes`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes) operation.
     ///
-    /// - Takes [`PutEmailIdentityDkimAttributesInput`](crate::input::PutEmailIdentityDkimAttributesInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::PutEmailIdentityDkimAttributesInput::email_identity): <p>The email identity.</p>
-    ///   - [`signing_enabled(bool)`](crate::input::PutEmailIdentityDkimAttributesInput::signing_enabled): <p>Sets the DKIM signing configuration for the identity.</p>  <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes::set_email_identity): <p>The email identity.</p>
+    ///   - [`signing_enabled(bool)`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes::signing_enabled) / [`set_signing_enabled(bool)`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes::set_signing_enabled): <p>Sets the DKIM signing configuration for the identity.</p>  <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     /// - On success, responds with [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput)
 
     /// - On failure, responds with [`SdkError<PutEmailIdentityDkimAttributesError>`](crate::error::PutEmailIdentityDkimAttributesError)
@@ -953,10 +953,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutEmailIdentityDkimSigningAttributes`](crate::client::fluent_builders::PutEmailIdentityDkimSigningAttributes) operation.
     ///
-    /// - Takes [`PutEmailIdentityDkimSigningAttributesInput`](crate::input::PutEmailIdentityDkimSigningAttributesInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::PutEmailIdentityDkimSigningAttributesInput::email_identity): <p>The email identity.</p>
-    ///   - [`signing_attributes_origin(Option<DkimSigningAttributesOrigin>)`](crate::input::PutEmailIdentityDkimSigningAttributesInput::signing_attributes_origin): <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>  <ul>   <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>   <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>  </ul>
-    ///   - [`signing_attributes(Option<DkimSigningAttributes>)`](crate::input::PutEmailIdentityDkimSigningAttributesInput::signing_attributes): <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityDkimSigningAttributes::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityDkimSigningAttributes::set_email_identity): <p>The email identity.</p>
+    ///   - [`signing_attributes_origin(DkimSigningAttributesOrigin)`](crate::client::fluent_builders::PutEmailIdentityDkimSigningAttributes::signing_attributes_origin) / [`set_signing_attributes_origin(Option<DkimSigningAttributesOrigin>)`](crate::client::fluent_builders::PutEmailIdentityDkimSigningAttributes::set_signing_attributes_origin): <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>  <ul>   <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>   <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>  </ul>
+    ///   - [`signing_attributes(DkimSigningAttributes)`](crate::client::fluent_builders::PutEmailIdentityDkimSigningAttributes::signing_attributes) / [`set_signing_attributes(Option<DkimSigningAttributes>)`](crate::client::fluent_builders::PutEmailIdentityDkimSigningAttributes::set_signing_attributes): <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     /// - On success, responds with [`PutEmailIdentityDkimSigningAttributesOutput`](crate::output::PutEmailIdentityDkimSigningAttributesOutput) with field(s):
     ///   - [`dkim_status(Option<DkimStatus>)`](crate::output::PutEmailIdentityDkimSigningAttributesOutput::dkim_status): <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p>  <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p>  <p>The status can be one of the following:</p>  <ul>   <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li>   <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>   <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li>   <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>   <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>  </ul>
     ///   - [`dkim_tokens(Option<Vec<String>>)`](crate::output::PutEmailIdentityDkimSigningAttributesOutput::dkim_tokens): <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>  <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>  <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
@@ -968,9 +968,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutEmailIdentityFeedbackAttributes`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes) operation.
     ///
-    /// - Takes [`PutEmailIdentityFeedbackAttributesInput`](crate::input::PutEmailIdentityFeedbackAttributesInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::PutEmailIdentityFeedbackAttributesInput::email_identity): <p>The email identity.</p>
-    ///   - [`email_forwarding_enabled(bool)`](crate::input::PutEmailIdentityFeedbackAttributesInput::email_forwarding_enabled): <p>Sets the feedback forwarding configuration for the identity.</p>  <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>  <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes::set_email_identity): <p>The email identity.</p>
+    ///   - [`email_forwarding_enabled(bool)`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes::email_forwarding_enabled) / [`set_email_forwarding_enabled(bool)`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes::set_email_forwarding_enabled): <p>Sets the feedback forwarding configuration for the identity.</p>  <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>  <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
     /// - On success, responds with [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput)
 
     /// - On failure, responds with [`SdkError<PutEmailIdentityFeedbackAttributesError>`](crate::error::PutEmailIdentityFeedbackAttributesError)
@@ -981,10 +981,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutEmailIdentityMailFromAttributes`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes) operation.
     ///
-    /// - Takes [`PutEmailIdentityMailFromAttributesInput`](crate::input::PutEmailIdentityMailFromAttributesInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::PutEmailIdentityMailFromAttributesInput::email_identity): <p>The verified email identity.</p>
-    ///   - [`mail_from_domain(Option<String>)`](crate::input::PutEmailIdentityMailFromAttributesInput::mail_from_domain): <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>  <ul>   <li> <p>It has to be a subdomain of the verified identity.</p> </li>   <li> <p>It can't be used to receive email.</p> </li>   <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>  </ul>
-    ///   - [`behavior_on_mx_failure(Option<BehaviorOnMxFailure>)`](crate::input::PutEmailIdentityMailFromAttributesInput::behavior_on_mx_failure): <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>  <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::set_email_identity): <p>The verified email identity.</p>
+    ///   - [`mail_from_domain(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::mail_from_domain) / [`set_mail_from_domain(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::set_mail_from_domain): <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>  <ul>   <li> <p>It has to be a subdomain of the verified identity.</p> </li>   <li> <p>It can't be used to receive email.</p> </li>   <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>  </ul>
+    ///   - [`behavior_on_mx_failure(BehaviorOnMxFailure)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::behavior_on_mx_failure) / [`set_behavior_on_mx_failure(Option<BehaviorOnMxFailure>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::set_behavior_on_mx_failure): <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>  <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     /// - On success, responds with [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput)
 
     /// - On failure, responds with [`SdkError<PutEmailIdentityMailFromAttributesError>`](crate::error::PutEmailIdentityMailFromAttributesError)
@@ -995,9 +995,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutSuppressedDestination`](crate::client::fluent_builders::PutSuppressedDestination) operation.
     ///
-    /// - Takes [`PutSuppressedDestinationInput`](crate::input::PutSuppressedDestinationInput) with field(s):
-    ///   - [`email_address(Option<String>)`](crate::input::PutSuppressedDestinationInput::email_address): <p>The email address that should be added to the suppression list for your account.</p>
-    ///   - [`reason(Option<SuppressionListReason>)`](crate::input::PutSuppressedDestinationInput::reason): <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::PutSuppressedDestination::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::PutSuppressedDestination::set_email_address): <p>The email address that should be added to the suppression list for your account.</p>
+    ///   - [`reason(SuppressionListReason)`](crate::client::fluent_builders::PutSuppressedDestination::reason) / [`set_reason(Option<SuppressionListReason>)`](crate::client::fluent_builders::PutSuppressedDestination::set_reason): <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
     /// - On success, responds with [`PutSuppressedDestinationOutput`](crate::output::PutSuppressedDestinationOutput)
 
     /// - On failure, responds with [`SdkError<PutSuppressedDestinationError>`](crate::error::PutSuppressedDestinationError)
@@ -1006,16 +1006,16 @@ where
     }
     /// Constructs a fluent builder for the [`SendBulkEmail`](crate::client::fluent_builders::SendBulkEmail) operation.
     ///
-    /// - Takes [`SendBulkEmailInput`](crate::input::SendBulkEmailInput) with field(s):
-    ///   - [`from_email_address(Option<String>)`](crate::input::SendBulkEmailInput::from_email_address): <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
-    ///   - [`from_email_address_identity_arn(Option<String>)`](crate::input::SendBulkEmailInput::from_email_address_identity_arn): <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>  <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>  <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    ///   - [`reply_to_addresses(Option<Vec<String>>)`](crate::input::SendBulkEmailInput::reply_to_addresses): <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    ///   - [`feedback_forwarding_email_address(Option<String>)`](crate::input::SendBulkEmailInput::feedback_forwarding_email_address): <p>The address that you want bounce and complaint notifications to be sent to.</p>
-    ///   - [`feedback_forwarding_email_address_identity_arn(Option<String>)`](crate::input::SendBulkEmailInput::feedback_forwarding_email_address_identity_arn): <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>  <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>  <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    ///   - [`default_email_tags(Option<Vec<MessageTag>>)`](crate::input::SendBulkEmailInput::default_email_tags): <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    ///   - [`default_content(Option<BulkEmailContent>)`](crate::input::SendBulkEmailInput::default_content): <p>An object that contains the body of the message. You can specify a template message.</p>
-    ///   - [`bulk_email_entries(Option<Vec<BulkEmailEntry>>)`](crate::input::SendBulkEmailInput::bulk_email_entries): <p>The list of bulk email entry objects.</p>
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::SendBulkEmailInput::configuration_set_name): <p>The name of the configuration set to use when sending the email.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`from_email_address(impl Into<String>)`](crate::client::fluent_builders::SendBulkEmail::from_email_address) / [`set_from_email_address(Option<String>)`](crate::client::fluent_builders::SendBulkEmail::set_from_email_address): <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
+    ///   - [`from_email_address_identity_arn(impl Into<String>)`](crate::client::fluent_builders::SendBulkEmail::from_email_address_identity_arn) / [`set_from_email_address_identity_arn(Option<String>)`](crate::client::fluent_builders::SendBulkEmail::set_from_email_address_identity_arn): <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>  <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>  <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    ///   - [`reply_to_addresses(Vec<String>)`](crate::client::fluent_builders::SendBulkEmail::reply_to_addresses) / [`set_reply_to_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::SendBulkEmail::set_reply_to_addresses): <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
+    ///   - [`feedback_forwarding_email_address(impl Into<String>)`](crate::client::fluent_builders::SendBulkEmail::feedback_forwarding_email_address) / [`set_feedback_forwarding_email_address(Option<String>)`](crate::client::fluent_builders::SendBulkEmail::set_feedback_forwarding_email_address): <p>The address that you want bounce and complaint notifications to be sent to.</p>
+    ///   - [`feedback_forwarding_email_address_identity_arn(impl Into<String>)`](crate::client::fluent_builders::SendBulkEmail::feedback_forwarding_email_address_identity_arn) / [`set_feedback_forwarding_email_address_identity_arn(Option<String>)`](crate::client::fluent_builders::SendBulkEmail::set_feedback_forwarding_email_address_identity_arn): <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>  <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>  <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    ///   - [`default_email_tags(Vec<MessageTag>)`](crate::client::fluent_builders::SendBulkEmail::default_email_tags) / [`set_default_email_tags(Option<Vec<MessageTag>>)`](crate::client::fluent_builders::SendBulkEmail::set_default_email_tags): <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    ///   - [`default_content(BulkEmailContent)`](crate::client::fluent_builders::SendBulkEmail::default_content) / [`set_default_content(Option<BulkEmailContent>)`](crate::client::fluent_builders::SendBulkEmail::set_default_content): <p>An object that contains the body of the message. You can specify a template message.</p>
+    ///   - [`bulk_email_entries(Vec<BulkEmailEntry>)`](crate::client::fluent_builders::SendBulkEmail::bulk_email_entries) / [`set_bulk_email_entries(Option<Vec<BulkEmailEntry>>)`](crate::client::fluent_builders::SendBulkEmail::set_bulk_email_entries): <p>The list of bulk email entry objects.</p>
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::SendBulkEmail::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::SendBulkEmail::set_configuration_set_name): <p>The name of the configuration set to use when sending the email.</p>
     /// - On success, responds with [`SendBulkEmailOutput`](crate::output::SendBulkEmailOutput) with field(s):
     ///   - [`bulk_email_entry_results(Option<Vec<BulkEmailEntryResult>>)`](crate::output::SendBulkEmailOutput::bulk_email_entry_results): <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
     /// - On failure, responds with [`SdkError<SendBulkEmailError>`](crate::error::SendBulkEmailError)
@@ -1024,10 +1024,10 @@ where
     }
     /// Constructs a fluent builder for the [`SendCustomVerificationEmail`](crate::client::fluent_builders::SendCustomVerificationEmail) operation.
     ///
-    /// - Takes [`SendCustomVerificationEmailInput`](crate::input::SendCustomVerificationEmailInput) with field(s):
-    ///   - [`email_address(Option<String>)`](crate::input::SendCustomVerificationEmailInput::email_address): <p>The email address to verify.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::SendCustomVerificationEmailInput::template_name): <p>The name of the custom verification email template to use when sending the verification email.</p>
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::SendCustomVerificationEmailInput::configuration_set_name): <p>Name of a configuration set to use when sending the verification email.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::SendCustomVerificationEmail::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::SendCustomVerificationEmail::set_email_address): <p>The email address to verify.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::SendCustomVerificationEmail::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::SendCustomVerificationEmail::set_template_name): <p>The name of the custom verification email template to use when sending the verification email.</p>
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::SendCustomVerificationEmail::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::SendCustomVerificationEmail::set_configuration_set_name): <p>Name of a configuration set to use when sending the verification email.</p>
     /// - On success, responds with [`SendCustomVerificationEmailOutput`](crate::output::SendCustomVerificationEmailOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::output::SendCustomVerificationEmailOutput::message_id): <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
     /// - On failure, responds with [`SdkError<SendCustomVerificationEmailError>`](crate::error::SendCustomVerificationEmailError)
@@ -1038,17 +1038,17 @@ where
     }
     /// Constructs a fluent builder for the [`SendEmail`](crate::client::fluent_builders::SendEmail) operation.
     ///
-    /// - Takes [`SendEmailInput`](crate::input::SendEmailInput) with field(s):
-    ///   - [`from_email_address(Option<String>)`](crate::input::SendEmailInput::from_email_address): <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    ///   - [`from_email_address_identity_arn(Option<String>)`](crate::input::SendEmailInput::from_email_address_identity_arn): <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>  <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>  <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>  <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
-    ///   - [`destination(Option<Destination>)`](crate::input::SendEmailInput::destination): <p>An object that contains the recipients of the email message.</p>
-    ///   - [`reply_to_addresses(Option<Vec<String>>)`](crate::input::SendEmailInput::reply_to_addresses): <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    ///   - [`feedback_forwarding_email_address(Option<String>)`](crate::input::SendEmailInput::feedback_forwarding_email_address): <p>The address that you want bounce and complaint notifications to be sent to.</p>
-    ///   - [`feedback_forwarding_email_address_identity_arn(Option<String>)`](crate::input::SendEmailInput::feedback_forwarding_email_address_identity_arn): <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>  <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>  <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    ///   - [`content(Option<EmailContent>)`](crate::input::SendEmailInput::content): <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
-    ///   - [`email_tags(Option<Vec<MessageTag>>)`](crate::input::SendEmailInput::email_tags): <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::SendEmailInput::configuration_set_name): <p>The name of the configuration set to use when sending the email.</p>
-    ///   - [`list_management_options(Option<ListManagementOptions>)`](crate::input::SendEmailInput::list_management_options): <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`from_email_address(impl Into<String>)`](crate::client::fluent_builders::SendEmail::from_email_address) / [`set_from_email_address(Option<String>)`](crate::client::fluent_builders::SendEmail::set_from_email_address): <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
+    ///   - [`from_email_address_identity_arn(impl Into<String>)`](crate::client::fluent_builders::SendEmail::from_email_address_identity_arn) / [`set_from_email_address_identity_arn(Option<String>)`](crate::client::fluent_builders::SendEmail::set_from_email_address_identity_arn): <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>  <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>  <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>  <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
+    ///   - [`destination(Destination)`](crate::client::fluent_builders::SendEmail::destination) / [`set_destination(Option<Destination>)`](crate::client::fluent_builders::SendEmail::set_destination): <p>An object that contains the recipients of the email message.</p>
+    ///   - [`reply_to_addresses(Vec<String>)`](crate::client::fluent_builders::SendEmail::reply_to_addresses) / [`set_reply_to_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::SendEmail::set_reply_to_addresses): <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
+    ///   - [`feedback_forwarding_email_address(impl Into<String>)`](crate::client::fluent_builders::SendEmail::feedback_forwarding_email_address) / [`set_feedback_forwarding_email_address(Option<String>)`](crate::client::fluent_builders::SendEmail::set_feedback_forwarding_email_address): <p>The address that you want bounce and complaint notifications to be sent to.</p>
+    ///   - [`feedback_forwarding_email_address_identity_arn(impl Into<String>)`](crate::client::fluent_builders::SendEmail::feedback_forwarding_email_address_identity_arn) / [`set_feedback_forwarding_email_address_identity_arn(Option<String>)`](crate::client::fluent_builders::SendEmail::set_feedback_forwarding_email_address_identity_arn): <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>  <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>  <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    ///   - [`content(EmailContent)`](crate::client::fluent_builders::SendEmail::content) / [`set_content(Option<EmailContent>)`](crate::client::fluent_builders::SendEmail::set_content): <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+    ///   - [`email_tags(Vec<MessageTag>)`](crate::client::fluent_builders::SendEmail::email_tags) / [`set_email_tags(Option<Vec<MessageTag>>)`](crate::client::fluent_builders::SendEmail::set_email_tags): <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::SendEmail::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::SendEmail::set_configuration_set_name): <p>The name of the configuration set to use when sending the email.</p>
+    ///   - [`list_management_options(ListManagementOptions)`](crate::client::fluent_builders::SendEmail::list_management_options) / [`set_list_management_options(Option<ListManagementOptions>)`](crate::client::fluent_builders::SendEmail::set_list_management_options): <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     /// - On success, responds with [`SendEmailOutput`](crate::output::SendEmailOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::output::SendEmailOutput::message_id): <p>A unique identifier for the message that is generated when the message is accepted.</p> <note>   <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>  </note>
     /// - On failure, responds with [`SdkError<SendEmailError>`](crate::error::SendEmailError)
@@ -1057,9 +1057,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -1068,9 +1068,9 @@ where
     }
     /// Constructs a fluent builder for the [`TestRenderEmailTemplate`](crate::client::fluent_builders::TestRenderEmailTemplate) operation.
     ///
-    /// - Takes [`TestRenderEmailTemplateInput`](crate::input::TestRenderEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::TestRenderEmailTemplateInput::template_name): <p>The name of the template.</p>
-    ///   - [`template_data(Option<String>)`](crate::input::TestRenderEmailTemplateInput::template_data): <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::TestRenderEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::TestRenderEmailTemplate::set_template_name): <p>The name of the template.</p>
+    ///   - [`template_data(impl Into<String>)`](crate::client::fluent_builders::TestRenderEmailTemplate::template_data) / [`set_template_data(Option<String>)`](crate::client::fluent_builders::TestRenderEmailTemplate::set_template_data): <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     /// - On success, responds with [`TestRenderEmailTemplateOutput`](crate::output::TestRenderEmailTemplateOutput) with field(s):
     ///   - [`rendered_template(Option<String>)`](crate::output::TestRenderEmailTemplateOutput::rendered_template): <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
     /// - On failure, responds with [`SdkError<TestRenderEmailTemplateError>`](crate::error::TestRenderEmailTemplateError)
@@ -1079,9 +1079,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>  <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v2/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>  <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v2/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -1090,10 +1090,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateConfigurationSetEventDestination`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination) operation.
     ///
-    /// - Takes [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::input::UpdateConfigurationSetEventDestinationInput::configuration_set_name): <p>The name of the configuration set that contains the event destination to modify.</p>
-    ///   - [`event_destination_name(Option<String>)`](crate::input::UpdateConfigurationSetEventDestinationInput::event_destination_name): <p>The name of the event destination.</p>
-    ///   - [`event_destination(Option<EventDestinationDefinition>)`](crate::input::UpdateConfigurationSetEventDestinationInput::event_destination): <p>An object that defines the event destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::set_configuration_set_name): <p>The name of the configuration set that contains the event destination to modify.</p>
+    ///   - [`event_destination_name(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::set_event_destination_name): <p>The name of the event destination.</p>
+    ///   - [`event_destination(EventDestinationDefinition)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::event_destination) / [`set_event_destination(Option<EventDestinationDefinition>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::set_event_destination): <p>An object that defines the event destination.</p>
     /// - On success, responds with [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateConfigurationSetEventDestinationError>`](crate::error::UpdateConfigurationSetEventDestinationError)
@@ -1104,12 +1104,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateContact`](crate::client::fluent_builders::UpdateContact) operation.
     ///
-    /// - Takes [`UpdateContactInput`](crate::input::UpdateContactInput) with field(s):
-    ///   - [`contact_list_name(Option<String>)`](crate::input::UpdateContactInput::contact_list_name): <p>The name of the contact list.</p>
-    ///   - [`email_address(Option<String>)`](crate::input::UpdateContactInput::email_address): <p>The contact's email addres.</p>
-    ///   - [`topic_preferences(Option<Vec<TopicPreference>>)`](crate::input::UpdateContactInput::topic_preferences): <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
-    ///   - [`unsubscribe_all(bool)`](crate::input::UpdateContactInput::unsubscribe_all): <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
-    ///   - [`attributes_data(Option<String>)`](crate::input::UpdateContactInput::attributes_data): <p>The attribute data attached to a contact.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_list_name(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_contact_list_name): <p>The name of the contact list.</p>
+    ///   - [`email_address(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::email_address) / [`set_email_address(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_email_address): <p>The contact's email addres.</p>
+    ///   - [`topic_preferences(Vec<TopicPreference>)`](crate::client::fluent_builders::UpdateContact::topic_preferences) / [`set_topic_preferences(Option<Vec<TopicPreference>>)`](crate::client::fluent_builders::UpdateContact::set_topic_preferences): <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
+    ///   - [`unsubscribe_all(bool)`](crate::client::fluent_builders::UpdateContact::unsubscribe_all) / [`set_unsubscribe_all(bool)`](crate::client::fluent_builders::UpdateContact::set_unsubscribe_all): <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
+    ///   - [`attributes_data(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::attributes_data) / [`set_attributes_data(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_attributes_data): <p>The attribute data attached to a contact.</p>
     /// - On success, responds with [`UpdateContactOutput`](crate::output::UpdateContactOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactError>`](crate::error::UpdateContactError)
@@ -1118,10 +1118,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateContactList`](crate::client::fluent_builders::UpdateContactList) operation.
     ///
-    /// - Takes [`UpdateContactListInput`](crate::input::UpdateContactListInput) with field(s):
-    ///   - [`contact_list_name(Option<String>)`](crate::input::UpdateContactListInput::contact_list_name): <p>The name of the contact list.</p>
-    ///   - [`topics(Option<Vec<Topic>>)`](crate::input::UpdateContactListInput::topics): <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateContactListInput::description): <p>A description of what the contact list is about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_list_name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactList::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::client::fluent_builders::UpdateContactList::set_contact_list_name): <p>The name of the contact list.</p>
+    ///   - [`topics(Vec<Topic>)`](crate::client::fluent_builders::UpdateContactList::topics) / [`set_topics(Option<Vec<Topic>>)`](crate::client::fluent_builders::UpdateContactList::set_topics): <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactList::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactList::set_description): <p>A description of what the contact list is about.</p>
     /// - On success, responds with [`UpdateContactListOutput`](crate::output::UpdateContactListOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactListError>`](crate::error::UpdateContactListError)
@@ -1130,13 +1130,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateCustomVerificationEmailTemplate`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate) operation.
     ///
-    /// - Takes [`UpdateCustomVerificationEmailTemplateInput`](crate::input::UpdateCustomVerificationEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::UpdateCustomVerificationEmailTemplateInput::template_name): <p>The name of the custom verification email template that you want to update.</p>
-    ///   - [`from_email_address(Option<String>)`](crate::input::UpdateCustomVerificationEmailTemplateInput::from_email_address): <p>The email address that the custom verification email is sent from.</p>
-    ///   - [`template_subject(Option<String>)`](crate::input::UpdateCustomVerificationEmailTemplateInput::template_subject): <p>The subject line of the custom verification email.</p>
-    ///   - [`template_content(Option<String>)`](crate::input::UpdateCustomVerificationEmailTemplateInput::template_content): <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
-    ///   - [`success_redirection_url(Option<String>)`](crate::input::UpdateCustomVerificationEmailTemplateInput::success_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
-    ///   - [`failure_redirection_url(Option<String>)`](crate::input::UpdateCustomVerificationEmailTemplateInput::failure_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_template_name): <p>The name of the custom verification email template that you want to update.</p>
+    ///   - [`from_email_address(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::from_email_address) / [`set_from_email_address(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_from_email_address): <p>The email address that the custom verification email is sent from.</p>
+    ///   - [`template_subject(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::template_subject) / [`set_template_subject(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_template_subject): <p>The subject line of the custom verification email.</p>
+    ///   - [`template_content(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::template_content) / [`set_template_content(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_template_content): <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    ///   - [`success_redirection_url(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::success_redirection_url) / [`set_success_redirection_url(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_success_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
+    ///   - [`failure_redirection_url(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::failure_redirection_url) / [`set_failure_redirection_url(Option<String>)`](crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate::set_failure_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     /// - On success, responds with [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput)
 
     /// - On failure, responds with [`SdkError<UpdateCustomVerificationEmailTemplateError>`](crate::error::UpdateCustomVerificationEmailTemplateError)
@@ -1147,10 +1147,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEmailIdentityPolicy`](crate::client::fluent_builders::UpdateEmailIdentityPolicy) operation.
     ///
-    /// - Takes [`UpdateEmailIdentityPolicyInput`](crate::input::UpdateEmailIdentityPolicyInput) with field(s):
-    ///   - [`email_identity(Option<String>)`](crate::input::UpdateEmailIdentityPolicyInput::email_identity): <p>The email identity.</p>
-    ///   - [`policy_name(Option<String>)`](crate::input::UpdateEmailIdentityPolicyInput::policy_name): <p>The name of the policy.</p>  <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-    ///   - [`policy(Option<String>)`](crate::input::UpdateEmailIdentityPolicyInput::policy): <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>  <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::UpdateEmailIdentityPolicy::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::UpdateEmailIdentityPolicy::set_email_identity): <p>The email identity.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEmailIdentityPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::UpdateEmailIdentityPolicy::set_policy_name): <p>The name of the policy.</p>  <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::UpdateEmailIdentityPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::UpdateEmailIdentityPolicy::set_policy): <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>  <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     /// - On success, responds with [`UpdateEmailIdentityPolicyOutput`](crate::output::UpdateEmailIdentityPolicyOutput)
 
     /// - On failure, responds with [`SdkError<UpdateEmailIdentityPolicyError>`](crate::error::UpdateEmailIdentityPolicyError)
@@ -1161,9 +1161,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEmailTemplate`](crate::client::fluent_builders::UpdateEmailTemplate) operation.
     ///
-    /// - Takes [`UpdateEmailTemplateInput`](crate::input::UpdateEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::UpdateEmailTemplateInput::template_name): <p>The name of the template.</p>
-    ///   - [`template_content(Option<EmailTemplateContent>)`](crate::input::UpdateEmailTemplateInput::template_content): <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateEmailTemplate::set_template_name): <p>The name of the template.</p>
+    ///   - [`template_content(EmailTemplateContent)`](crate::client::fluent_builders::UpdateEmailTemplate::template_content) / [`set_template_content(Option<EmailTemplateContent>)`](crate::client::fluent_builders::UpdateEmailTemplate::set_template_content): <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     /// - On success, responds with [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput)
 
     /// - On failure, responds with [`SdkError<UpdateEmailTemplateError>`](crate::error::UpdateEmailTemplateError)

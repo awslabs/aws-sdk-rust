@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`ActivateAnomalyDetector`](crate::client::fluent_builders::ActivateAnomalyDetector) operation.
     ///
-    /// - Takes [`ActivateAnomalyDetectorInput`](crate::input::ActivateAnomalyDetectorInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::ActivateAnomalyDetectorInput::anomaly_detector_arn): <p>The ARN of the anomaly detector.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::ActivateAnomalyDetector::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::ActivateAnomalyDetector::set_anomaly_detector_arn): <p>The ARN of the anomaly detector.</p>
     /// - On success, responds with [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput)
 
     /// - On failure, responds with [`SdkError<ActivateAnomalyDetectorError>`](crate::error::ActivateAnomalyDetectorError)
@@ -95,8 +95,8 @@ where
     }
     /// Constructs a fluent builder for the [`BackTestAnomalyDetector`](crate::client::fluent_builders::BackTestAnomalyDetector) operation.
     ///
-    /// - Takes [`BackTestAnomalyDetectorInput`](crate::input::BackTestAnomalyDetectorInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::BackTestAnomalyDetectorInput::anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::BackTestAnomalyDetector::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::BackTestAnomalyDetector::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     /// - On success, responds with [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput)
 
     /// - On failure, responds with [`SdkError<BackTestAnomalyDetectorError>`](crate::error::BackTestAnomalyDetectorError)
@@ -105,13 +105,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAlert`](crate::client::fluent_builders::CreateAlert) operation.
     ///
-    /// - Takes [`CreateAlertInput`](crate::input::CreateAlertInput) with field(s):
-    ///   - [`alert_name(Option<String>)`](crate::input::CreateAlertInput::alert_name): <p>The name of the alert.</p>
-    ///   - [`alert_sensitivity_threshold(i32)`](crate::input::CreateAlertInput::alert_sensitivity_threshold): <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-    ///   - [`alert_description(Option<String>)`](crate::input::CreateAlertInput::alert_description): <p>A description of the alert.</p>
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::CreateAlertInput::anomaly_detector_arn): <p>The ARN of the detector to which the alert is attached.</p>
-    ///   - [`action(Option<Action>)`](crate::input::CreateAlertInput::action): <p>Action that will be triggered when there is an alert.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAlertInput::tags): <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`alert_name(impl Into<String>)`](crate::client::fluent_builders::CreateAlert::alert_name) / [`set_alert_name(Option<String>)`](crate::client::fluent_builders::CreateAlert::set_alert_name): <p>The name of the alert.</p>
+    ///   - [`alert_sensitivity_threshold(i32)`](crate::client::fluent_builders::CreateAlert::alert_sensitivity_threshold) / [`set_alert_sensitivity_threshold(i32)`](crate::client::fluent_builders::CreateAlert::set_alert_sensitivity_threshold): <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
+    ///   - [`alert_description(impl Into<String>)`](crate::client::fluent_builders::CreateAlert::alert_description) / [`set_alert_description(Option<String>)`](crate::client::fluent_builders::CreateAlert::set_alert_description): <p>A description of the alert.</p>
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAlert::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::CreateAlert::set_anomaly_detector_arn): <p>The ARN of the detector to which the alert is attached.</p>
+    ///   - [`action(Action)`](crate::client::fluent_builders::CreateAlert::action) / [`set_action(Option<Action>)`](crate::client::fluent_builders::CreateAlert::set_action): <p>Action that will be triggered when there is an alert.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAlert::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAlert::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
     /// - On success, responds with [`CreateAlertOutput`](crate::output::CreateAlertOutput) with field(s):
     ///   - [`alert_arn(Option<String>)`](crate::output::CreateAlertOutput::alert_arn): <p>The ARN of the alert.</p>
     /// - On failure, responds with [`SdkError<CreateAlertError>`](crate::error::CreateAlertError)
@@ -120,12 +120,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAnomalyDetector`](crate::client::fluent_builders::CreateAnomalyDetector) operation.
     ///
-    /// - Takes [`CreateAnomalyDetectorInput`](crate::input::CreateAnomalyDetectorInput) with field(s):
-    ///   - [`anomaly_detector_name(Option<String>)`](crate::input::CreateAnomalyDetectorInput::anomaly_detector_name): <p>The name of the detector.</p>
-    ///   - [`anomaly_detector_description(Option<String>)`](crate::input::CreateAnomalyDetectorInput::anomaly_detector_description): <p>A description of the detector.</p>
-    ///   - [`anomaly_detector_config(Option<AnomalyDetectorConfig>)`](crate::input::CreateAnomalyDetectorInput::anomaly_detector_config): <p>Contains information about the configuration of the anomaly detector.</p>
-    ///   - [`kms_key_arn(Option<String>)`](crate::input::CreateAnomalyDetectorInput::kms_key_arn): <p>The ARN of the KMS key to use to encrypt your data.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAnomalyDetectorInput::tags): <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_name(impl Into<String>)`](crate::client::fluent_builders::CreateAnomalyDetector::anomaly_detector_name) / [`set_anomaly_detector_name(Option<String>)`](crate::client::fluent_builders::CreateAnomalyDetector::set_anomaly_detector_name): <p>The name of the detector.</p>
+    ///   - [`anomaly_detector_description(impl Into<String>)`](crate::client::fluent_builders::CreateAnomalyDetector::anomaly_detector_description) / [`set_anomaly_detector_description(Option<String>)`](crate::client::fluent_builders::CreateAnomalyDetector::set_anomaly_detector_description): <p>A description of the detector.</p>
+    ///   - [`anomaly_detector_config(AnomalyDetectorConfig)`](crate::client::fluent_builders::CreateAnomalyDetector::anomaly_detector_config) / [`set_anomaly_detector_config(Option<AnomalyDetectorConfig>)`](crate::client::fluent_builders::CreateAnomalyDetector::set_anomaly_detector_config): <p>Contains information about the configuration of the anomaly detector.</p>
+    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAnomalyDetector::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::CreateAnomalyDetector::set_kms_key_arn): <p>The ARN of the KMS key to use to encrypt your data.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAnomalyDetector::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAnomalyDetector::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
     /// - On success, responds with [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput) with field(s):
     ///   - [`anomaly_detector_arn(Option<String>)`](crate::output::CreateAnomalyDetectorOutput::anomaly_detector_arn): <p>The ARN of the detector.</p>
     /// - On failure, responds with [`SdkError<CreateAnomalyDetectorError>`](crate::error::CreateAnomalyDetectorError)
@@ -134,18 +134,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMetricSet`](crate::client::fluent_builders::CreateMetricSet) operation.
     ///
-    /// - Takes [`CreateMetricSetInput`](crate::input::CreateMetricSetInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::CreateMetricSetInput::anomaly_detector_arn): <p>The ARN of the anomaly detector that will use the dataset.</p>
-    ///   - [`metric_set_name(Option<String>)`](crate::input::CreateMetricSetInput::metric_set_name): <p>The name of the dataset.</p>
-    ///   - [`metric_set_description(Option<String>)`](crate::input::CreateMetricSetInput::metric_set_description): <p>A description of the dataset you are creating.</p>
-    ///   - [`metric_list(Option<Vec<Metric>>)`](crate::input::CreateMetricSetInput::metric_list): <p>A list of metrics that the dataset will contain.</p>
-    ///   - [`offset(Option<i32>)`](crate::input::CreateMetricSetInput::offset): <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
-    ///   - [`timestamp_column(Option<TimestampColumn>)`](crate::input::CreateMetricSetInput::timestamp_column): <p>Contains information about the column used for tracking time in your source data.</p>
-    ///   - [`dimension_list(Option<Vec<String>>)`](crate::input::CreateMetricSetInput::dimension_list): <p>A list of the fields you want to treat as dimensions.</p>
-    ///   - [`metric_set_frequency(Option<Frequency>)`](crate::input::CreateMetricSetInput::metric_set_frequency): <p>The frequency with which the source data will be analyzed for anomalies.</p>
-    ///   - [`metric_source(Option<MetricSource>)`](crate::input::CreateMetricSetInput::metric_source): <p>Contains information about how the source data should be interpreted.</p>
-    ///   - [`timezone(Option<String>)`](crate::input::CreateMetricSetInput::timezone): <p>The time zone in which your source data was recorded.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateMetricSetInput::tags): <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMetricSet::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::CreateMetricSet::set_anomaly_detector_arn): <p>The ARN of the anomaly detector that will use the dataset.</p>
+    ///   - [`metric_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateMetricSet::metric_set_name) / [`set_metric_set_name(Option<String>)`](crate::client::fluent_builders::CreateMetricSet::set_metric_set_name): <p>The name of the dataset.</p>
+    ///   - [`metric_set_description(impl Into<String>)`](crate::client::fluent_builders::CreateMetricSet::metric_set_description) / [`set_metric_set_description(Option<String>)`](crate::client::fluent_builders::CreateMetricSet::set_metric_set_description): <p>A description of the dataset you are creating.</p>
+    ///   - [`metric_list(Vec<Metric>)`](crate::client::fluent_builders::CreateMetricSet::metric_list) / [`set_metric_list(Option<Vec<Metric>>)`](crate::client::fluent_builders::CreateMetricSet::set_metric_list): <p>A list of metrics that the dataset will contain.</p>
+    ///   - [`offset(i32)`](crate::client::fluent_builders::CreateMetricSet::offset) / [`set_offset(Option<i32>)`](crate::client::fluent_builders::CreateMetricSet::set_offset): <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    ///   - [`timestamp_column(TimestampColumn)`](crate::client::fluent_builders::CreateMetricSet::timestamp_column) / [`set_timestamp_column(Option<TimestampColumn>)`](crate::client::fluent_builders::CreateMetricSet::set_timestamp_column): <p>Contains information about the column used for tracking time in your source data.</p>
+    ///   - [`dimension_list(Vec<String>)`](crate::client::fluent_builders::CreateMetricSet::dimension_list) / [`set_dimension_list(Option<Vec<String>>)`](crate::client::fluent_builders::CreateMetricSet::set_dimension_list): <p>A list of the fields you want to treat as dimensions.</p>
+    ///   - [`metric_set_frequency(Frequency)`](crate::client::fluent_builders::CreateMetricSet::metric_set_frequency) / [`set_metric_set_frequency(Option<Frequency>)`](crate::client::fluent_builders::CreateMetricSet::set_metric_set_frequency): <p>The frequency with which the source data will be analyzed for anomalies.</p>
+    ///   - [`metric_source(MetricSource)`](crate::client::fluent_builders::CreateMetricSet::metric_source) / [`set_metric_source(Option<MetricSource>)`](crate::client::fluent_builders::CreateMetricSet::set_metric_source): <p>Contains information about how the source data should be interpreted.</p>
+    ///   - [`timezone(impl Into<String>)`](crate::client::fluent_builders::CreateMetricSet::timezone) / [`set_timezone(Option<String>)`](crate::client::fluent_builders::CreateMetricSet::set_timezone): <p>The time zone in which your source data was recorded.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateMetricSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateMetricSet::set_tags): <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
     /// - On success, responds with [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput) with field(s):
     ///   - [`metric_set_arn(Option<String>)`](crate::output::CreateMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
     /// - On failure, responds with [`SdkError<CreateMetricSetError>`](crate::error::CreateMetricSetError)
@@ -154,8 +154,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAlert`](crate::client::fluent_builders::DeleteAlert) operation.
     ///
-    /// - Takes [`DeleteAlertInput`](crate::input::DeleteAlertInput) with field(s):
-    ///   - [`alert_arn(Option<String>)`](crate::input::DeleteAlertInput::alert_arn): <p>The ARN of the alert to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`alert_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAlert::alert_arn) / [`set_alert_arn(Option<String>)`](crate::client::fluent_builders::DeleteAlert::set_alert_arn): <p>The ARN of the alert to delete.</p>
     /// - On success, responds with [`DeleteAlertOutput`](crate::output::DeleteAlertOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAlertError>`](crate::error::DeleteAlertError)
@@ -164,8 +164,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAnomalyDetector`](crate::client::fluent_builders::DeleteAnomalyDetector) operation.
     ///
-    /// - Takes [`DeleteAnomalyDetectorInput`](crate::input::DeleteAnomalyDetectorInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::DeleteAnomalyDetectorInput::anomaly_detector_arn): <p>The ARN of the detector to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAnomalyDetector::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::DeleteAnomalyDetector::set_anomaly_detector_arn): <p>The ARN of the detector to delete.</p>
     /// - On success, responds with [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAnomalyDetectorError>`](crate::error::DeleteAnomalyDetectorError)
@@ -174,8 +174,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAlert`](crate::client::fluent_builders::DescribeAlert) operation.
     ///
-    /// - Takes [`DescribeAlertInput`](crate::input::DescribeAlertInput) with field(s):
-    ///   - [`alert_arn(Option<String>)`](crate::input::DescribeAlertInput::alert_arn): <p>The ARN of the alert to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`alert_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAlert::alert_arn) / [`set_alert_arn(Option<String>)`](crate::client::fluent_builders::DescribeAlert::set_alert_arn): <p>The ARN of the alert to describe.</p>
     /// - On success, responds with [`DescribeAlertOutput`](crate::output::DescribeAlertOutput) with field(s):
     ///   - [`alert(Option<Alert>)`](crate::output::DescribeAlertOutput::alert): <p>Contains information about an alert.</p>
     /// - On failure, responds with [`SdkError<DescribeAlertError>`](crate::error::DescribeAlertError)
@@ -183,13 +183,13 @@ where
         fluent_builders::DescribeAlert::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeAnomalyDetectionExecutions`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::into_paginator).
     ///
-    /// - Takes [`DescribeAnomalyDetectionExecutionsInput`](crate::input::DescribeAnomalyDetectionExecutionsInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::DescribeAnomalyDetectionExecutionsInput::anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    ///   - [`timestamp(Option<String>)`](crate::input::DescribeAnomalyDetectionExecutionsInput::timestamp): <p>The timestamp of the anomaly detection job.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAnomalyDetectionExecutionsInput::max_results): <p>The number of items to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeAnomalyDetectionExecutionsInput::next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    ///   - [`timestamp(impl Into<String>)`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::timestamp) / [`set_timestamp(Option<String>)`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::set_timestamp): <p>The timestamp of the anomaly detection job.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::set_max_results): <p>The number of items to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::set_next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     /// - On success, responds with [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput) with field(s):
     ///   - [`execution_list(Option<Vec<ExecutionStatus>>)`](crate::output::DescribeAnomalyDetectionExecutionsOutput::execution_list): <p>A list of detection jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeAnomalyDetectionExecutionsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
@@ -201,8 +201,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAnomalyDetector`](crate::client::fluent_builders::DescribeAnomalyDetector) operation.
     ///
-    /// - Takes [`DescribeAnomalyDetectorInput`](crate::input::DescribeAnomalyDetectorInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::DescribeAnomalyDetectorInput::anomaly_detector_arn): <p>The ARN of the detector to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAnomalyDetector::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::DescribeAnomalyDetector::set_anomaly_detector_arn): <p>The ARN of the detector to describe.</p>
     /// - On success, responds with [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput) with field(s):
     ///   - [`anomaly_detector_arn(Option<String>)`](crate::output::DescribeAnomalyDetectorOutput::anomaly_detector_arn): <p>The ARN of the detector.</p>
     ///   - [`anomaly_detector_name(Option<String>)`](crate::output::DescribeAnomalyDetectorOutput::anomaly_detector_name): <p>The name of the detector.</p>
@@ -219,8 +219,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeMetricSet`](crate::client::fluent_builders::DescribeMetricSet) operation.
     ///
-    /// - Takes [`DescribeMetricSetInput`](crate::input::DescribeMetricSetInput) with field(s):
-    ///   - [`metric_set_arn(Option<String>)`](crate::input::DescribeMetricSetInput::metric_set_arn): <p>The ARN of the dataset.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_set_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeMetricSet::metric_set_arn) / [`set_metric_set_arn(Option<String>)`](crate::client::fluent_builders::DescribeMetricSet::set_metric_set_arn): <p>The ARN of the dataset.</p>
     /// - On success, responds with [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput) with field(s):
     ///   - [`metric_set_arn(Option<String>)`](crate::output::DescribeMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
     ///   - [`anomaly_detector_arn(Option<String>)`](crate::output::DescribeMetricSetOutput::anomaly_detector_arn): <p>The ARN of the detector that contains the dataset.</p>
@@ -241,9 +241,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetAnomalyGroup`](crate::client::fluent_builders::GetAnomalyGroup) operation.
     ///
-    /// - Takes [`GetAnomalyGroupInput`](crate::input::GetAnomalyGroupInput) with field(s):
-    ///   - [`anomaly_group_id(Option<String>)`](crate::input::GetAnomalyGroupInput::anomaly_group_id): <p>The ID of the anomaly group.</p>
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::GetAnomalyGroupInput::anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_group_id(impl Into<String>)`](crate::client::fluent_builders::GetAnomalyGroup::anomaly_group_id) / [`set_anomaly_group_id(Option<String>)`](crate::client::fluent_builders::GetAnomalyGroup::set_anomaly_group_id): <p>The ID of the anomaly group.</p>
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::GetAnomalyGroup::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::GetAnomalyGroup::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     /// - On success, responds with [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput) with field(s):
     ///   - [`anomaly_group(Option<AnomalyGroup>)`](crate::output::GetAnomalyGroupOutput::anomaly_group): <p>Details about the anomaly group.</p>
     /// - On failure, responds with [`SdkError<GetAnomalyGroupError>`](crate::error::GetAnomalyGroupError)
@@ -251,13 +251,13 @@ where
         fluent_builders::GetAnomalyGroup::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetFeedback`](crate::client::fluent_builders::GetFeedback) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFeedback::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetFeedback::into_paginator).
     ///
-    /// - Takes [`GetFeedbackInput`](crate::input::GetFeedbackInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::GetFeedbackInput::anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    ///   - [`anomaly_group_time_series_feedback(Option<AnomalyGroupTimeSeries>)`](crate::input::GetFeedbackInput::anomaly_group_time_series_feedback): <p>The anomalous metric and group ID.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetFeedbackInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetFeedbackInput::next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::GetFeedback::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::GetFeedback::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    ///   - [`anomaly_group_time_series_feedback(AnomalyGroupTimeSeries)`](crate::client::fluent_builders::GetFeedback::anomaly_group_time_series_feedback) / [`set_anomaly_group_time_series_feedback(Option<AnomalyGroupTimeSeries>)`](crate::client::fluent_builders::GetFeedback::set_anomaly_group_time_series_feedback): <p>The anomalous metric and group ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetFeedback::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetFeedback::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetFeedback::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetFeedback::set_next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     /// - On success, responds with [`GetFeedbackOutput`](crate::output::GetFeedbackOutput) with field(s):
     ///   - [`anomaly_group_time_series_feedback(Option<Vec<TimeSeriesFeedback>>)`](crate::output::GetFeedbackOutput::anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetFeedbackOutput::next_token): <p>The pagination token that's included if more results are available.</p>
@@ -267,8 +267,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSampleData`](crate::client::fluent_builders::GetSampleData) operation.
     ///
-    /// - Takes [`GetSampleDataInput`](crate::input::GetSampleDataInput) with field(s):
-    ///   - [`s3_source_config(Option<SampleDataS3SourceConfig>)`](crate::input::GetSampleDataInput::s3_source_config): <p>A datasource bucket in Amazon S3.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`s3_source_config(SampleDataS3SourceConfig)`](crate::client::fluent_builders::GetSampleData::s3_source_config) / [`set_s3_source_config(Option<SampleDataS3SourceConfig>)`](crate::client::fluent_builders::GetSampleData::set_s3_source_config): <p>A datasource bucket in Amazon S3.</p>
     /// - On success, responds with [`GetSampleDataOutput`](crate::output::GetSampleDataOutput) with field(s):
     ///   - [`header_values(Option<Vec<String>>)`](crate::output::GetSampleDataOutput::header_values): <p>A list of header labels for the records.</p>
     ///   - [`sample_rows(Option<Vec<Vec<String>>>)`](crate::output::GetSampleDataOutput::sample_rows): <p>A list of records.</p>
@@ -277,12 +277,12 @@ where
         fluent_builders::GetSampleData::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAlerts`](crate::client::fluent_builders::ListAlerts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAlerts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAlerts::into_paginator).
     ///
-    /// - Takes [`ListAlertsInput`](crate::input::ListAlertsInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::ListAlertsInput::anomaly_detector_arn): <p>The ARN of the alert's detector.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAlertsInput::next_token): <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAlertsInput::max_results): <p>The maximum number of results that will be displayed by the request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::ListAlerts::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::ListAlerts::set_anomaly_detector_arn): <p>The ARN of the alert's detector.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlerts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlerts::set_next_token): <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAlerts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAlerts::set_max_results): <p>The maximum number of results that will be displayed by the request.</p>
     /// - On success, responds with [`ListAlertsOutput`](crate::output::ListAlertsOutput) with field(s):
     ///   - [`alert_summary_list(Option<Vec<AlertSummary>>)`](crate::output::ListAlertsOutput::alert_summary_list): <p>Contains information about an alert.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAlertsOutput::next_token): <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
@@ -291,11 +291,11 @@ where
         fluent_builders::ListAlerts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAnomalyDetectors`](crate::client::fluent_builders::ListAnomalyDetectors) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyDetectors::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyDetectors::into_paginator).
     ///
-    /// - Takes [`ListAnomalyDetectorsInput`](crate::input::ListAnomalyDetectorsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAnomalyDetectorsInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAnomalyDetectorsInput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnomalyDetectors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnomalyDetectors::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyDetectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnomalyDetectors::set_next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     /// - On success, responds with [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput) with field(s):
     ///   - [`anomaly_detector_summary_list(Option<Vec<AnomalyDetectorSummary>>)`](crate::output::ListAnomalyDetectorsOutput::anomaly_detector_summary_list): <p>A list of anomaly detectors in the account in the current region.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnomalyDetectorsOutput::next_token): <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
@@ -304,14 +304,14 @@ where
         fluent_builders::ListAnomalyDetectors::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAnomalyGroupRelatedMetrics`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::into_paginator).
     ///
-    /// - Takes [`ListAnomalyGroupRelatedMetricsInput`](crate::input::ListAnomalyGroupRelatedMetricsInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::ListAnomalyGroupRelatedMetricsInput::anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    ///   - [`anomaly_group_id(Option<String>)`](crate::input::ListAnomalyGroupRelatedMetricsInput::anomaly_group_id): <p>The ID of the anomaly group.</p>
-    ///   - [`relationship_type_filter(Option<RelationshipType>)`](crate::input::ListAnomalyGroupRelatedMetricsInput::relationship_type_filter): <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAnomalyGroupRelatedMetricsInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAnomalyGroupRelatedMetricsInput::next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    ///   - [`anomaly_group_id(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::anomaly_group_id) / [`set_anomaly_group_id(Option<String>)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::set_anomaly_group_id): <p>The ID of the anomaly group.</p>
+    ///   - [`relationship_type_filter(RelationshipType)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::relationship_type_filter) / [`set_relationship_type_filter(Option<RelationshipType>)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::set_relationship_type_filter): <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::set_next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     /// - On success, responds with [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput) with field(s):
     ///   - [`inter_metric_impact_list(Option<Vec<InterMetricImpactDetails>>)`](crate::output::ListAnomalyGroupRelatedMetricsOutput::inter_metric_impact_list): <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnomalyGroupRelatedMetricsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
@@ -322,13 +322,13 @@ where
         fluent_builders::ListAnomalyGroupRelatedMetrics::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAnomalyGroupSummaries`](crate::client::fluent_builders::ListAnomalyGroupSummaries) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupSummaries::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupSummaries::into_paginator).
     ///
-    /// - Takes [`ListAnomalyGroupSummariesInput`](crate::input::ListAnomalyGroupSummariesInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::ListAnomalyGroupSummariesInput::anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    ///   - [`sensitivity_threshold(i32)`](crate::input::ListAnomalyGroupSummariesInput::sensitivity_threshold): <p>The minimum severity score for inclusion in the output.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAnomalyGroupSummariesInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAnomalyGroupSummariesInput::next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyGroupSummaries::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::ListAnomalyGroupSummaries::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    ///   - [`sensitivity_threshold(i32)`](crate::client::fluent_builders::ListAnomalyGroupSummaries::sensitivity_threshold) / [`set_sensitivity_threshold(i32)`](crate::client::fluent_builders::ListAnomalyGroupSummaries::set_sensitivity_threshold): <p>The minimum severity score for inclusion in the output.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnomalyGroupSummaries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnomalyGroupSummaries::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyGroupSummaries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnomalyGroupSummaries::set_next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     /// - On success, responds with [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput) with field(s):
     ///   - [`anomaly_group_summary_list(Option<Vec<AnomalyGroupSummary>>)`](crate::output::ListAnomalyGroupSummariesOutput::anomaly_group_summary_list): <p>A list of anomaly group summaries.</p>
     ///   - [`anomaly_group_statistics(Option<AnomalyGroupStatistics>)`](crate::output::ListAnomalyGroupSummariesOutput::anomaly_group_statistics): <p>Aggregated details about the anomaly groups.</p>
@@ -340,14 +340,14 @@ where
         fluent_builders::ListAnomalyGroupSummaries::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAnomalyGroupTimeSeries`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::into_paginator).
     ///
-    /// - Takes [`ListAnomalyGroupTimeSeriesInput`](crate::input::ListAnomalyGroupTimeSeriesInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::ListAnomalyGroupTimeSeriesInput::anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    ///   - [`anomaly_group_id(Option<String>)`](crate::input::ListAnomalyGroupTimeSeriesInput::anomaly_group_id): <p>The ID of the anomaly group.</p>
-    ///   - [`metric_name(Option<String>)`](crate::input::ListAnomalyGroupTimeSeriesInput::metric_name): <p>The name of the measure field.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAnomalyGroupTimeSeriesInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAnomalyGroupTimeSeriesInput::next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    ///   - [`anomaly_group_id(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::anomaly_group_id) / [`set_anomaly_group_id(Option<String>)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::set_anomaly_group_id): <p>The ID of the anomaly group.</p>
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::set_metric_name): <p>The name of the measure field.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::set_next_token): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     /// - On success, responds with [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput) with field(s):
     ///   - [`anomaly_group_id(Option<String>)`](crate::output::ListAnomalyGroupTimeSeriesOutput::anomaly_group_id): <p>The ID of the anomaly group.</p>
     ///   - [`metric_name(Option<String>)`](crate::output::ListAnomalyGroupTimeSeriesOutput::metric_name): <p>The name of the measure field.</p>
@@ -361,12 +361,12 @@ where
         fluent_builders::ListAnomalyGroupTimeSeries::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMetricSets`](crate::client::fluent_builders::ListMetricSets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMetricSets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMetricSets::into_paginator).
     ///
-    /// - Takes [`ListMetricSetsInput`](crate::input::ListMetricSetsInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::ListMetricSetsInput::anomaly_detector_arn): <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListMetricSetsInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListMetricSetsInput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::ListMetricSets::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::ListMetricSets::set_anomaly_detector_arn): <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMetricSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMetricSets::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMetricSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMetricSets::set_next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     /// - On success, responds with [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput) with field(s):
     ///   - [`metric_set_summary_list(Option<Vec<MetricSetSummary>>)`](crate::output::ListMetricSetsOutput::metric_set_summary_list): <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMetricSetsOutput::next_token): <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
@@ -376,8 +376,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The resource's tags.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -386,9 +386,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutFeedback`](crate::client::fluent_builders::PutFeedback) operation.
     ///
-    /// - Takes [`PutFeedbackInput`](crate::input::PutFeedbackInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::PutFeedbackInput::anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    ///   - [`anomaly_group_time_series_feedback(Option<AnomalyGroupTimeSeriesFeedback>)`](crate::input::PutFeedbackInput::anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::PutFeedback::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::PutFeedback::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    ///   - [`anomaly_group_time_series_feedback(AnomalyGroupTimeSeriesFeedback)`](crate::client::fluent_builders::PutFeedback::anomaly_group_time_series_feedback) / [`set_anomaly_group_time_series_feedback(Option<AnomalyGroupTimeSeriesFeedback>)`](crate::client::fluent_builders::PutFeedback::set_anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
     /// - On success, responds with [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
 
     /// - On failure, responds with [`SdkError<PutFeedbackError>`](crate::error::PutFeedbackError)
@@ -397,9 +397,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -408,9 +408,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Keys to remove from the resource's tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Keys to remove from the resource's tags.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -419,11 +419,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAnomalyDetector`](crate::client::fluent_builders::UpdateAnomalyDetector) operation.
     ///
-    /// - Takes [`UpdateAnomalyDetectorInput`](crate::input::UpdateAnomalyDetectorInput) with field(s):
-    ///   - [`anomaly_detector_arn(Option<String>)`](crate::input::UpdateAnomalyDetectorInput::anomaly_detector_arn): <p>The ARN of the detector to update.</p>
-    ///   - [`kms_key_arn(Option<String>)`](crate::input::UpdateAnomalyDetectorInput::kms_key_arn): <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
-    ///   - [`anomaly_detector_description(Option<String>)`](crate::input::UpdateAnomalyDetectorInput::anomaly_detector_description): <p>The updated detector description.</p>
-    ///   - [`anomaly_detector_config(Option<AnomalyDetectorConfig>)`](crate::input::UpdateAnomalyDetectorInput::anomaly_detector_config): <p>Contains information about the configuration to which the detector will be updated.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAnomalyDetector::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::UpdateAnomalyDetector::set_anomaly_detector_arn): <p>The ARN of the detector to update.</p>
+    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAnomalyDetector::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::UpdateAnomalyDetector::set_kms_key_arn): <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
+    ///   - [`anomaly_detector_description(impl Into<String>)`](crate::client::fluent_builders::UpdateAnomalyDetector::anomaly_detector_description) / [`set_anomaly_detector_description(Option<String>)`](crate::client::fluent_builders::UpdateAnomalyDetector::set_anomaly_detector_description): <p>The updated detector description.</p>
+    ///   - [`anomaly_detector_config(AnomalyDetectorConfig)`](crate::client::fluent_builders::UpdateAnomalyDetector::anomaly_detector_config) / [`set_anomaly_detector_config(Option<AnomalyDetectorConfig>)`](crate::client::fluent_builders::UpdateAnomalyDetector::set_anomaly_detector_config): <p>Contains information about the configuration to which the detector will be updated.</p>
     /// - On success, responds with [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput) with field(s):
     ///   - [`anomaly_detector_arn(Option<String>)`](crate::output::UpdateAnomalyDetectorOutput::anomaly_detector_arn): <p>The ARN of the updated detector.</p>
     /// - On failure, responds with [`SdkError<UpdateAnomalyDetectorError>`](crate::error::UpdateAnomalyDetectorError)
@@ -432,15 +432,15 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateMetricSet`](crate::client::fluent_builders::UpdateMetricSet) operation.
     ///
-    /// - Takes [`UpdateMetricSetInput`](crate::input::UpdateMetricSetInput) with field(s):
-    ///   - [`metric_set_arn(Option<String>)`](crate::input::UpdateMetricSetInput::metric_set_arn): <p>The ARN of the dataset to update.</p>
-    ///   - [`metric_set_description(Option<String>)`](crate::input::UpdateMetricSetInput::metric_set_description): <p>The dataset's description.</p>
-    ///   - [`metric_list(Option<Vec<Metric>>)`](crate::input::UpdateMetricSetInput::metric_list): <p>The metric list.</p>
-    ///   - [`offset(Option<i32>)`](crate::input::UpdateMetricSetInput::offset): <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
-    ///   - [`timestamp_column(Option<TimestampColumn>)`](crate::input::UpdateMetricSetInput::timestamp_column): <p>The timestamp column.</p>
-    ///   - [`dimension_list(Option<Vec<String>>)`](crate::input::UpdateMetricSetInput::dimension_list): <p>The dimension list.</p>
-    ///   - [`metric_set_frequency(Option<Frequency>)`](crate::input::UpdateMetricSetInput::metric_set_frequency): <p>The dataset's interval.</p>
-    ///   - [`metric_source(Option<MetricSource>)`](crate::input::UpdateMetricSetInput::metric_source): <p>Contains information about source data used to generate a metric.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`metric_set_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateMetricSet::metric_set_arn) / [`set_metric_set_arn(Option<String>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_set_arn): <p>The ARN of the dataset to update.</p>
+    ///   - [`metric_set_description(impl Into<String>)`](crate::client::fluent_builders::UpdateMetricSet::metric_set_description) / [`set_metric_set_description(Option<String>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_set_description): <p>The dataset's description.</p>
+    ///   - [`metric_list(Vec<Metric>)`](crate::client::fluent_builders::UpdateMetricSet::metric_list) / [`set_metric_list(Option<Vec<Metric>>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_list): <p>The metric list.</p>
+    ///   - [`offset(i32)`](crate::client::fluent_builders::UpdateMetricSet::offset) / [`set_offset(Option<i32>)`](crate::client::fluent_builders::UpdateMetricSet::set_offset): <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
+    ///   - [`timestamp_column(TimestampColumn)`](crate::client::fluent_builders::UpdateMetricSet::timestamp_column) / [`set_timestamp_column(Option<TimestampColumn>)`](crate::client::fluent_builders::UpdateMetricSet::set_timestamp_column): <p>The timestamp column.</p>
+    ///   - [`dimension_list(Vec<String>)`](crate::client::fluent_builders::UpdateMetricSet::dimension_list) / [`set_dimension_list(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateMetricSet::set_dimension_list): <p>The dimension list.</p>
+    ///   - [`metric_set_frequency(Frequency)`](crate::client::fluent_builders::UpdateMetricSet::metric_set_frequency) / [`set_metric_set_frequency(Option<Frequency>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_set_frequency): <p>The dataset's interval.</p>
+    ///   - [`metric_source(MetricSource)`](crate::client::fluent_builders::UpdateMetricSet::metric_source) / [`set_metric_source(Option<MetricSource>)`](crate::client::fluent_builders::UpdateMetricSet::set_metric_source): <p>Contains information about source data used to generate a metric.</p>
     /// - On success, responds with [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput) with field(s):
     ///   - [`metric_set_arn(Option<String>)`](crate::output::UpdateMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
     /// - On failure, responds with [`SdkError<UpdateMetricSetError>`](crate::error::UpdateMetricSetError)

@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`AcceptInvitation`](crate::client::fluent_builders::AcceptInvitation) operation.
     ///
-    /// - Takes [`AcceptInvitationInput`](crate::input::AcceptInvitationInput) with field(s):
-    ///   - [`administrator_account_id(Option<String>)`](crate::input::AcceptInvitationInput::administrator_account_id): <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-    ///   - [`invitation_id(Option<String>)`](crate::input::AcceptInvitationInput::invitation_id): <p>The unique identifier for the invitation to accept.</p>
-    ///   - [`master_account(Option<String>)`](crate::input::AcceptInvitationInput::master_account): <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`administrator_account_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInvitation::administrator_account_id) / [`set_administrator_account_id(Option<String>)`](crate::client::fluent_builders::AcceptInvitation::set_administrator_account_id): <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
+    ///   - [`invitation_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInvitation::invitation_id) / [`set_invitation_id(Option<String>)`](crate::client::fluent_builders::AcceptInvitation::set_invitation_id): <p>The unique identifier for the invitation to accept.</p>
+    ///   - [`master_account(impl Into<String>)`](crate::client::fluent_builders::AcceptInvitation::master_account) / [`set_master_account(Option<String>)`](crate::client::fluent_builders::AcceptInvitation::set_master_account): <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     /// - On success, responds with [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
 
     /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::error::AcceptInvitationError)
@@ -97,8 +97,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchGetCustomDataIdentifiers`](crate::client::fluent_builders::BatchGetCustomDataIdentifiers) operation.
     ///
-    /// - Takes [`BatchGetCustomDataIdentifiersInput`](crate::input::BatchGetCustomDataIdentifiersInput) with field(s):
-    ///   - [`ids(Option<Vec<String>>)`](crate::input::BatchGetCustomDataIdentifiersInput::ids): <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ids(Vec<String>)`](crate::client::fluent_builders::BatchGetCustomDataIdentifiers::ids) / [`set_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetCustomDataIdentifiers::set_ids): <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
     /// - On success, responds with [`BatchGetCustomDataIdentifiersOutput`](crate::output::BatchGetCustomDataIdentifiersOutput) with field(s):
     ///   - [`custom_data_identifiers(Option<Vec<BatchGetCustomDataIdentifierSummary>>)`](crate::output::BatchGetCustomDataIdentifiersOutput::custom_data_identifiers): <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
     ///   - [`not_found_identifier_ids(Option<Vec<String>>)`](crate::output::BatchGetCustomDataIdentifiersOutput::not_found_identifier_ids): <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
@@ -110,19 +110,19 @@ where
     }
     /// Constructs a fluent builder for the [`CreateClassificationJob`](crate::client::fluent_builders::CreateClassificationJob) operation.
     ///
-    /// - Takes [`CreateClassificationJobInput`](crate::input::CreateClassificationJobInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::CreateClassificationJobInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    ///   - [`custom_data_identifier_ids(Option<Vec<String>>)`](crate::input::CreateClassificationJobInput::custom_data_identifier_ids): <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateClassificationJobInput::description): <p>A custom description of the job. The description can contain as many as 200 characters.</p>
-    ///   - [`initial_run(bool)`](crate::input::CreateClassificationJobInput::initial_run): <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p> <p>If you configure the job to run only once, don't specify a value for this property.</p>
-    ///   - [`job_type(Option<JobType>)`](crate::input::CreateClassificationJobInput::job_type): <p>The schedule for running the job. Valid values are:</p>  <ul>  <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>   <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li> </ul>
-    ///   - [`managed_data_identifier_ids(Option<Vec<String>>)`](crate::input::CreateClassificationJobInput::managed_data_identifier_ids): <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
-    ///   - [`managed_data_identifier_selector(Option<ManagedDataIdentifierSelector>)`](crate::input::CreateClassificationJobInput::managed_data_identifier_selector): <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>  <ul>  <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>   <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li> </ul>  <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateClassificationJobInput::name): <p>A custom name for the job. The name can contain as many as 500 characters.</p>
-    ///   - [`s3_job_definition(Option<S3JobDefinition>)`](crate::input::CreateClassificationJobInput::s3_job_definition): <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-    ///   - [`sampling_percentage(i32)`](crate::input::CreateClassificationJobInput::sampling_percentage): <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
-    ///   - [`schedule_frequency(Option<JobScheduleFrequency>)`](crate::input::CreateClassificationJobInput::schedule_frequency): <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateClassificationJobInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the job.</p>  <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateClassificationJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateClassificationJob::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`custom_data_identifier_ids(Vec<String>)`](crate::client::fluent_builders::CreateClassificationJob::custom_data_identifier_ids) / [`set_custom_data_identifier_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateClassificationJob::set_custom_data_identifier_ids): <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateClassificationJob::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateClassificationJob::set_description): <p>A custom description of the job. The description can contain as many as 200 characters.</p>
+    ///   - [`initial_run(bool)`](crate::client::fluent_builders::CreateClassificationJob::initial_run) / [`set_initial_run(bool)`](crate::client::fluent_builders::CreateClassificationJob::set_initial_run): <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p> <p>If you configure the job to run only once, don't specify a value for this property.</p>
+    ///   - [`job_type(JobType)`](crate::client::fluent_builders::CreateClassificationJob::job_type) / [`set_job_type(Option<JobType>)`](crate::client::fluent_builders::CreateClassificationJob::set_job_type): <p>The schedule for running the job. Valid values are:</p>  <ul>  <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>   <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li> </ul>
+    ///   - [`managed_data_identifier_ids(Vec<String>)`](crate::client::fluent_builders::CreateClassificationJob::managed_data_identifier_ids) / [`set_managed_data_identifier_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateClassificationJob::set_managed_data_identifier_ids): <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+    ///   - [`managed_data_identifier_selector(ManagedDataIdentifierSelector)`](crate::client::fluent_builders::CreateClassificationJob::managed_data_identifier_selector) / [`set_managed_data_identifier_selector(Option<ManagedDataIdentifierSelector>)`](crate::client::fluent_builders::CreateClassificationJob::set_managed_data_identifier_selector): <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>  <ul>  <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>   <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li> </ul>  <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateClassificationJob::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateClassificationJob::set_name): <p>A custom name for the job. The name can contain as many as 500 characters.</p>
+    ///   - [`s3_job_definition(S3JobDefinition)`](crate::client::fluent_builders::CreateClassificationJob::s3_job_definition) / [`set_s3_job_definition(Option<S3JobDefinition>)`](crate::client::fluent_builders::CreateClassificationJob::set_s3_job_definition): <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
+    ///   - [`sampling_percentage(i32)`](crate::client::fluent_builders::CreateClassificationJob::sampling_percentage) / [`set_sampling_percentage(i32)`](crate::client::fluent_builders::CreateClassificationJob::set_sampling_percentage): <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
+    ///   - [`schedule_frequency(JobScheduleFrequency)`](crate::client::fluent_builders::CreateClassificationJob::schedule_frequency) / [`set_schedule_frequency(Option<JobScheduleFrequency>)`](crate::client::fluent_builders::CreateClassificationJob::set_schedule_frequency): <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateClassificationJob::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateClassificationJob::set_tags): <p>A map of key-value pairs that specifies the tags to associate with the job.</p>  <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     /// - On success, responds with [`CreateClassificationJobOutput`](crate::output::CreateClassificationJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::output::CreateClassificationJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the job.</p>
     ///   - [`job_id(Option<String>)`](crate::output::CreateClassificationJobOutput::job_id): <p>The unique identifier for the job.</p>
@@ -132,16 +132,16 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCustomDataIdentifier`](crate::client::fluent_builders::CreateCustomDataIdentifier) operation.
     ///
-    /// - Takes [`CreateCustomDataIdentifierInput`](crate::input::CreateCustomDataIdentifierInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::CreateCustomDataIdentifierInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateCustomDataIdentifierInput::description): <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-    ///   - [`ignore_words(Option<Vec<String>>)`](crate::input::CreateCustomDataIdentifierInput::ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    ///   - [`keywords(Option<Vec<String>>)`](crate::input::CreateCustomDataIdentifierInput::keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    ///   - [`maximum_match_distance(i32)`](crate::input::CreateCustomDataIdentifierInput::maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateCustomDataIdentifierInput::name): <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-    ///   - [`regex(Option<String>)`](crate::input::CreateCustomDataIdentifierInput::regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
-    ///   - [`severity_levels(Option<Vec<SeverityLevel>>)`](crate::input::CreateCustomDataIdentifierInput::severity_levels): <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>  <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateCustomDataIdentifierInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>  <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_description): <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`ignore_words(Vec<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::ignore_words) / [`set_ignore_words(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
+    ///   - [`keywords(Vec<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::keywords) / [`set_keywords(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    ///   - [`maximum_match_distance(i32)`](crate::client::fluent_builders::CreateCustomDataIdentifier::maximum_match_distance) / [`set_maximum_match_distance(i32)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_name): <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`regex(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::regex) / [`set_regex(Option<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    ///   - [`severity_levels(Vec<SeverityLevel>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::severity_levels) / [`set_severity_levels(Option<Vec<SeverityLevel>>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_severity_levels): <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>  <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_tags): <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>  <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     /// - On success, responds with [`CreateCustomDataIdentifierOutput`](crate::output::CreateCustomDataIdentifierOutput) with field(s):
     ///   - [`custom_data_identifier_id(Option<String>)`](crate::output::CreateCustomDataIdentifierOutput::custom_data_identifier_id): <p>The unique identifier for the custom data identifier that was created.</p>
     /// - On failure, responds with [`SdkError<CreateCustomDataIdentifierError>`](crate::error::CreateCustomDataIdentifierError)
@@ -152,14 +152,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFindingsFilter`](crate::client::fluent_builders::CreateFindingsFilter) operation.
     ///
-    /// - Takes [`CreateFindingsFilterInput`](crate::input::CreateFindingsFilterInput) with field(s):
-    ///   - [`action(Option<FindingsFilterAction>)`](crate::input::CreateFindingsFilterInput::action): <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateFindingsFilterInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateFindingsFilterInput::description): <p>A custom description of the filter. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::input::CreateFindingsFilterInput::finding_criteria): <p>The criteria to use to filter findings.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateFindingsFilterInput::name): <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-    ///   - [`position(i32)`](crate::input::CreateFindingsFilterInput::position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFindingsFilterInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>  <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action(FindingsFilterAction)`](crate::client::fluent_builders::CreateFindingsFilter::action) / [`set_action(Option<FindingsFilterAction>)`](crate::client::fluent_builders::CreateFindingsFilter::set_action): <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFindingsFilter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFindingsFilter::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFindingsFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFindingsFilter::set_description): <p>A custom description of the filter. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::CreateFindingsFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::CreateFindingsFilter::set_finding_criteria): <p>The criteria to use to filter findings.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFindingsFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFindingsFilter::set_name): <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`position(i32)`](crate::client::fluent_builders::CreateFindingsFilter::position) / [`set_position(i32)`](crate::client::fluent_builders::CreateFindingsFilter::set_position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFindingsFilter::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFindingsFilter::set_tags): <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>  <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     /// - On success, responds with [`CreateFindingsFilterOutput`](crate::output::CreateFindingsFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter that was created.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateFindingsFilterOutput::id): <p>The unique identifier for the filter that was created.</p>
@@ -169,10 +169,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateInvitations`](crate::client::fluent_builders::CreateInvitations) operation.
     ///
-    /// - Takes [`CreateInvitationsInput`](crate::input::CreateInvitationsInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::CreateInvitationsInput::account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-    ///   - [`disable_email_notification(bool)`](crate::input::CreateInvitationsInput::disable_email_notification): <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
-    ///   - [`message(Option<String>)`](crate::input::CreateInvitationsInput::message): <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::CreateInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateInvitations::set_account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
+    ///   - [`disable_email_notification(bool)`](crate::client::fluent_builders::CreateInvitations::disable_email_notification) / [`set_disable_email_notification(bool)`](crate::client::fluent_builders::CreateInvitations::set_disable_email_notification): <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
+    ///   - [`message(impl Into<String>)`](crate::client::fluent_builders::CreateInvitations::message) / [`set_message(Option<String>)`](crate::client::fluent_builders::CreateInvitations::set_message): <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
     /// - On success, responds with [`CreateInvitationsOutput`](crate::output::CreateInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::CreateInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
     /// - On failure, responds with [`SdkError<CreateInvitationsError>`](crate::error::CreateInvitationsError)
@@ -181,9 +181,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMember`](crate::client::fluent_builders::CreateMember) operation.
     ///
-    /// - Takes [`CreateMemberInput`](crate::input::CreateMemberInput) with field(s):
-    ///   - [`account(Option<AccountDetail>)`](crate::input::CreateMemberInput::account): <p>The details of the account to associate with the administrator account.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateMemberInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>  <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account(AccountDetail)`](crate::client::fluent_builders::CreateMember::account) / [`set_account(Option<AccountDetail>)`](crate::client::fluent_builders::CreateMember::set_account): <p>The details of the account to associate with the administrator account.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateMember::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateMember::set_tags): <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>  <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     /// - On success, responds with [`CreateMemberOutput`](crate::output::CreateMemberOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateMemberOutput::arn): <p>The Amazon Resource Name (ARN) of the account that was associated with the administrator account.</p>
     /// - On failure, responds with [`SdkError<CreateMemberError>`](crate::error::CreateMemberError)
@@ -192,8 +192,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSampleFindings`](crate::client::fluent_builders::CreateSampleFindings) operation.
     ///
-    /// - Takes [`CreateSampleFindingsInput`](crate::input::CreateSampleFindingsInput) with field(s):
-    ///   - [`finding_types(Option<Vec<FindingType>>)`](crate::input::CreateSampleFindingsInput::finding_types): <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_types(Vec<FindingType>)`](crate::client::fluent_builders::CreateSampleFindings::finding_types) / [`set_finding_types(Option<Vec<FindingType>>)`](crate::client::fluent_builders::CreateSampleFindings::set_finding_types): <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
     /// - On success, responds with [`CreateSampleFindingsOutput`](crate::output::CreateSampleFindingsOutput)
 
     /// - On failure, responds with [`SdkError<CreateSampleFindingsError>`](crate::error::CreateSampleFindingsError)
@@ -202,8 +202,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeclineInvitations`](crate::client::fluent_builders::DeclineInvitations) operation.
     ///
-    /// - Takes [`DeclineInvitationsInput`](crate::input::DeclineInvitationsInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DeclineInvitationsInput::account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeclineInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeclineInvitations::set_account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
     /// - On success, responds with [`DeclineInvitationsOutput`](crate::output::DeclineInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeclineInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     /// - On failure, responds with [`SdkError<DeclineInvitationsError>`](crate::error::DeclineInvitationsError)
@@ -212,8 +212,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCustomDataIdentifier`](crate::client::fluent_builders::DeleteCustomDataIdentifier) operation.
     ///
-    /// - Takes [`DeleteCustomDataIdentifierInput`](crate::input::DeleteCustomDataIdentifierInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteCustomDataIdentifierInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomDataIdentifier::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteCustomDataIdentifier::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     /// - On success, responds with [`DeleteCustomDataIdentifierOutput`](crate::output::DeleteCustomDataIdentifierOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCustomDataIdentifierError>`](crate::error::DeleteCustomDataIdentifierError)
@@ -224,8 +224,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFindingsFilter`](crate::client::fluent_builders::DeleteFindingsFilter) operation.
     ///
-    /// - Takes [`DeleteFindingsFilterInput`](crate::input::DeleteFindingsFilterInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteFindingsFilterInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     /// - On success, responds with [`DeleteFindingsFilterOutput`](crate::output::DeleteFindingsFilterOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFindingsFilterError>`](crate::error::DeleteFindingsFilterError)
@@ -234,8 +234,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteInvitations`](crate::client::fluent_builders::DeleteInvitations) operation.
     ///
-    /// - Takes [`DeleteInvitationsInput`](crate::input::DeleteInvitationsInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DeleteInvitationsInput::account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeleteInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteInvitations::set_account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
     /// - On success, responds with [`DeleteInvitationsOutput`](crate::output::DeleteInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeleteInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     /// - On failure, responds with [`SdkError<DeleteInvitationsError>`](crate::error::DeleteInvitationsError)
@@ -244,8 +244,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteMember`](crate::client::fluent_builders::DeleteMember) operation.
     ///
-    /// - Takes [`DeleteMemberInput`](crate::input::DeleteMemberInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DeleteMemberInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteMember::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteMember::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     /// - On success, responds with [`DeleteMemberOutput`](crate::output::DeleteMemberOutput)
 
     /// - On failure, responds with [`SdkError<DeleteMemberError>`](crate::error::DeleteMemberError)
@@ -253,13 +253,13 @@ where
         fluent_builders::DeleteMember::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeBuckets`](crate::client::fluent_builders::DescribeBuckets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBuckets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBuckets::into_paginator).
     ///
-    /// - Takes [`DescribeBucketsInput`](crate::input::DescribeBucketsInput) with field(s):
-    ///   - [`criteria(Option<HashMap<String, BucketCriteriaAdditionalProperties>>)`](crate::input::DescribeBucketsInput::criteria): <p>The criteria to use to filter the query results.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeBucketsInput::max_results): <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeBucketsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    ///   - [`sort_criteria(Option<BucketSortCriteria>)`](crate::input::DescribeBucketsInput::sort_criteria): <p>The criteria to use to sort the query results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`criteria(HashMap<String, BucketCriteriaAdditionalProperties>)`](crate::client::fluent_builders::DescribeBuckets::criteria) / [`set_criteria(Option<HashMap<String, BucketCriteriaAdditionalProperties>>)`](crate::client::fluent_builders::DescribeBuckets::set_criteria): <p>The criteria to use to filter the query results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBuckets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeBuckets::set_max_results): <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBuckets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBuckets::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_criteria(BucketSortCriteria)`](crate::client::fluent_builders::DescribeBuckets::sort_criteria) / [`set_sort_criteria(Option<BucketSortCriteria>)`](crate::client::fluent_builders::DescribeBuckets::set_sort_criteria): <p>The criteria to use to sort the query results.</p>
     /// - On success, responds with [`DescribeBucketsOutput`](crate::output::DescribeBucketsOutput) with field(s):
     ///   - [`buckets(Option<Vec<BucketMetadata>>)`](crate::output::DescribeBucketsOutput::buckets): <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeBucketsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -269,8 +269,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeClassificationJob`](crate::client::fluent_builders::DescribeClassificationJob) operation.
     ///
-    /// - Takes [`DescribeClassificationJobInput`](crate::input::DescribeClassificationJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeClassificationJobInput::job_id): <p>The unique identifier for the classification job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeClassificationJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeClassificationJob::set_job_id): <p>The unique identifier for the classification job.</p>
     /// - On success, responds with [`DescribeClassificationJobOutput`](crate::output::DescribeClassificationJobOutput) with field(s):
     ///   - [`client_token(Option<String>)`](crate::output::DescribeClassificationJobOutput::client_token): <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeClassificationJobOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
@@ -300,7 +300,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) operation.
     ///
-    /// - Takes [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeOrganizationConfiguration::send) it.
 
     /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput) with field(s):
     ///   - [`auto_enable(bool)`](crate::output::DescribeOrganizationConfigurationOutput::auto_enable): <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
@@ -313,7 +313,7 @@ where
     }
     /// Constructs a fluent builder for the [`DisableMacie`](crate::client::fluent_builders::DisableMacie) operation.
     ///
-    /// - Takes [`DisableMacieInput`](crate::input::DisableMacieInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DisableMacie::send) it.
 
     /// - On success, responds with [`DisableMacieOutput`](crate::output::DisableMacieOutput)
 
@@ -323,8 +323,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) operation.
     ///
-    /// - Takes [`DisableOrganizationAdminAccountInput`](crate::input::DisableOrganizationAdminAccountInput) with field(s):
-    ///   - [`admin_account_id(Option<String>)`](crate::input::DisableOrganizationAdminAccountInput::admin_account_id): <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::set_admin_account_id): <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
     /// - On success, responds with [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput)
 
     /// - On failure, responds with [`SdkError<DisableOrganizationAdminAccountError>`](crate::error::DisableOrganizationAdminAccountError)
@@ -335,7 +335,7 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateFromAdministratorAccount`](crate::client::fluent_builders::DisassociateFromAdministratorAccount) operation.
     ///
-    /// - Takes [`DisassociateFromAdministratorAccountInput`](crate::input::DisassociateFromAdministratorAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DisassociateFromAdministratorAccount::send) it.
 
     /// - On success, responds with [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput)
 
@@ -347,7 +347,7 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateFromMasterAccount`](crate::client::fluent_builders::DisassociateFromMasterAccount) operation.
     ///
-    /// - Takes [`DisassociateFromMasterAccountInput`](crate::input::DisassociateFromMasterAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DisassociateFromMasterAccount::send) it.
 
     /// - On success, responds with [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput)
 
@@ -359,8 +359,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateMember`](crate::client::fluent_builders::DisassociateMember) operation.
     ///
-    /// - Takes [`DisassociateMemberInput`](crate::input::DisassociateMemberInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DisassociateMemberInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateMember::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateMember::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     /// - On success, responds with [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateMemberError>`](crate::error::DisassociateMemberError)
@@ -369,10 +369,10 @@ where
     }
     /// Constructs a fluent builder for the [`EnableMacie`](crate::client::fluent_builders::EnableMacie) operation.
     ///
-    /// - Takes [`EnableMacieInput`](crate::input::EnableMacieInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::EnableMacieInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::input::EnableMacieInput::finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
-    ///   - [`status(Option<MacieStatus>)`](crate::input::EnableMacieInput::status): <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::EnableMacie::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::EnableMacie::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`finding_publishing_frequency(FindingPublishingFrequency)`](crate::client::fluent_builders::EnableMacie::finding_publishing_frequency) / [`set_finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::client::fluent_builders::EnableMacie::set_finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    ///   - [`status(MacieStatus)`](crate::client::fluent_builders::EnableMacie::status) / [`set_status(Option<MacieStatus>)`](crate::client::fluent_builders::EnableMacie::set_status): <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
     /// - On success, responds with [`EnableMacieOutput`](crate::output::EnableMacieOutput)
 
     /// - On failure, responds with [`SdkError<EnableMacieError>`](crate::error::EnableMacieError)
@@ -381,9 +381,9 @@ where
     }
     /// Constructs a fluent builder for the [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) operation.
     ///
-    /// - Takes [`EnableOrganizationAdminAccountInput`](crate::input::EnableOrganizationAdminAccountInput) with field(s):
-    ///   - [`admin_account_id(Option<String>)`](crate::input::EnableOrganizationAdminAccountInput::admin_account_id): <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::EnableOrganizationAdminAccountInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::set_admin_account_id): <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput)
 
     /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::error::EnableOrganizationAdminAccountError)
@@ -394,7 +394,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetAdministratorAccount`](crate::client::fluent_builders::GetAdministratorAccount) operation.
     ///
-    /// - Takes [`GetAdministratorAccountInput`](crate::input::GetAdministratorAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAdministratorAccount::send) it.
 
     /// - On success, responds with [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput) with field(s):
     ///   - [`administrator(Option<Invitation>)`](crate::output::GetAdministratorAccountOutput::administrator): <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
@@ -404,8 +404,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetBucketStatistics`](crate::client::fluent_builders::GetBucketStatistics) operation.
     ///
-    /// - Takes [`GetBucketStatisticsInput`](crate::input::GetBucketStatisticsInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::GetBucketStatisticsInput::account_id): <p>The unique identifier for the Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetBucketStatistics::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetBucketStatistics::set_account_id): <p>The unique identifier for the Amazon Web Services account.</p>
     /// - On success, responds with [`GetBucketStatisticsOutput`](crate::output::GetBucketStatisticsOutput) with field(s):
     ///   - [`bucket_count(i64)`](crate::output::GetBucketStatisticsOutput::bucket_count): <p>The total number of buckets.</p>
     ///   - [`bucket_count_by_effective_permission(Option<BucketCountByEffectivePermission>)`](crate::output::GetBucketStatisticsOutput::bucket_count_by_effective_permission): <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
@@ -426,7 +426,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetClassificationExportConfiguration`](crate::client::fluent_builders::GetClassificationExportConfiguration) operation.
     ///
-    /// - Takes [`GetClassificationExportConfigurationInput`](crate::input::GetClassificationExportConfigurationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetClassificationExportConfiguration::send) it.
 
     /// - On success, responds with [`GetClassificationExportConfigurationOutput`](crate::output::GetClassificationExportConfigurationOutput) with field(s):
     ///   - [`configuration(Option<ClassificationExportConfiguration>)`](crate::output::GetClassificationExportConfigurationOutput::configuration): <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
@@ -438,8 +438,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetCustomDataIdentifier`](crate::client::fluent_builders::GetCustomDataIdentifier) operation.
     ///
-    /// - Takes [`GetCustomDataIdentifierInput`](crate::input::GetCustomDataIdentifierInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetCustomDataIdentifierInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCustomDataIdentifier::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCustomDataIdentifier::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     /// - On success, responds with [`GetCustomDataIdentifierOutput`](crate::output::GetCustomDataIdentifierOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::arn): <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::GetCustomDataIdentifierOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
@@ -459,9 +459,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetFindings`](crate::client::fluent_builders::GetFindings) operation.
     ///
-    /// - Takes [`GetFindingsInput`](crate::input::GetFindingsInput) with field(s):
-    ///   - [`finding_ids(Option<Vec<String>>)`](crate::input::GetFindingsInput::finding_ids): <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
-    ///   - [`sort_criteria(Option<SortCriteria>)`](crate::input::GetFindingsInput::sort_criteria): <p>The criteria for sorting the results of the request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_ids(Vec<String>)`](crate::client::fluent_builders::GetFindings::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetFindings::set_finding_ids): <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+    ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::GetFindings::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::GetFindings::set_sort_criteria): <p>The criteria for sorting the results of the request.</p>
     /// - On success, responds with [`GetFindingsOutput`](crate::output::GetFindingsOutput) with field(s):
     ///   - [`findings(Option<Vec<Finding>>)`](crate::output::GetFindingsOutput::findings): <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
     /// - On failure, responds with [`SdkError<GetFindingsError>`](crate::error::GetFindingsError)
@@ -470,8 +470,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetFindingsFilter`](crate::client::fluent_builders::GetFindingsFilter) operation.
     ///
-    /// - Takes [`GetFindingsFilterInput`](crate::input::GetFindingsFilterInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetFindingsFilterInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     /// - On success, responds with [`GetFindingsFilterOutput`](crate::output::GetFindingsFilterOutput) with field(s):
     ///   - [`action(Option<FindingsFilterAction>)`](crate::output::GetFindingsFilterOutput::action): <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     ///   - [`arn(Option<String>)`](crate::output::GetFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter.</p>
@@ -487,7 +487,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetFindingsPublicationConfiguration`](crate::client::fluent_builders::GetFindingsPublicationConfiguration) operation.
     ///
-    /// - Takes [`GetFindingsPublicationConfigurationInput`](crate::input::GetFindingsPublicationConfigurationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetFindingsPublicationConfiguration::send) it.
 
     /// - On success, responds with [`GetFindingsPublicationConfigurationOutput`](crate::output::GetFindingsPublicationConfigurationOutput) with field(s):
     ///   - [`security_hub_configuration(Option<SecurityHubConfiguration>)`](crate::output::GetFindingsPublicationConfigurationOutput::security_hub_configuration): <p>The configuration settings that determine which findings are published to Security Hub.</p>
@@ -499,11 +499,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetFindingStatistics`](crate::client::fluent_builders::GetFindingStatistics) operation.
     ///
-    /// - Takes [`GetFindingStatisticsInput`](crate::input::GetFindingStatisticsInput) with field(s):
-    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::input::GetFindingStatisticsInput::finding_criteria): <p>The criteria to use to filter the query results.</p>
-    ///   - [`group_by(Option<GroupBy>)`](crate::input::GetFindingStatisticsInput::group_by): <p>The finding property to use to group the query results. Valid values are:</p>  <ul>  <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>   <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>   <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>   <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li> </ul>
-    ///   - [`size(i32)`](crate::input::GetFindingStatisticsInput::size): <p>The maximum number of items to include in each page of the response.</p>
-    ///   - [`sort_criteria(Option<FindingStatisticsSortCriteria>)`](crate::input::GetFindingStatisticsInput::sort_criteria): <p>The criteria to use to sort the query results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::GetFindingStatistics::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::GetFindingStatistics::set_finding_criteria): <p>The criteria to use to filter the query results.</p>
+    ///   - [`group_by(GroupBy)`](crate::client::fluent_builders::GetFindingStatistics::group_by) / [`set_group_by(Option<GroupBy>)`](crate::client::fluent_builders::GetFindingStatistics::set_group_by): <p>The finding property to use to group the query results. Valid values are:</p>  <ul>  <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>   <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>   <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>   <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li> </ul>
+    ///   - [`size(i32)`](crate::client::fluent_builders::GetFindingStatistics::size) / [`set_size(i32)`](crate::client::fluent_builders::GetFindingStatistics::set_size): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`sort_criteria(FindingStatisticsSortCriteria)`](crate::client::fluent_builders::GetFindingStatistics::sort_criteria) / [`set_sort_criteria(Option<FindingStatisticsSortCriteria>)`](crate::client::fluent_builders::GetFindingStatistics::set_sort_criteria): <p>The criteria to use to sort the query results.</p>
     /// - On success, responds with [`GetFindingStatisticsOutput`](crate::output::GetFindingStatisticsOutput) with field(s):
     ///   - [`counts_by_group(Option<Vec<GroupCount>>)`](crate::output::GetFindingStatisticsOutput::counts_by_group): <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
     /// - On failure, responds with [`SdkError<GetFindingStatisticsError>`](crate::error::GetFindingStatisticsError)
@@ -512,7 +512,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetInvitationsCount`](crate::client::fluent_builders::GetInvitationsCount) operation.
     ///
-    /// - Takes [`GetInvitationsCountInput`](crate::input::GetInvitationsCountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetInvitationsCount::send) it.
 
     /// - On success, responds with [`GetInvitationsCountOutput`](crate::output::GetInvitationsCountOutput) with field(s):
     ///   - [`invitations_count(i64)`](crate::output::GetInvitationsCountOutput::invitations_count): <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
@@ -522,7 +522,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetMacieSession`](crate::client::fluent_builders::GetMacieSession) operation.
     ///
-    /// - Takes [`GetMacieSessionInput`](crate::input::GetMacieSessionInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetMacieSession::send) it.
 
     /// - On success, responds with [`GetMacieSessionOutput`](crate::output::GetMacieSessionOutput) with field(s):
     ///   - [`created_at(Option<DateTime>)`](crate::output::GetMacieSessionOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
@@ -536,7 +536,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetMasterAccount`](crate::client::fluent_builders::GetMasterAccount) operation.
     ///
-    /// - Takes [`GetMasterAccountInput`](crate::input::GetMasterAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetMasterAccount::send) it.
 
     /// - On success, responds with [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput) with field(s):
     ///   - [`master(Option<Invitation>)`](crate::output::GetMasterAccountOutput::master): <p>(Deprecated) The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
@@ -546,8 +546,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetMember`](crate::client::fluent_builders::GetMember) operation.
     ///
-    /// - Takes [`GetMemberInput`](crate::input::GetMemberInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetMemberInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetMember::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetMember::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     /// - On success, responds with [`GetMemberOutput`](crate::output::GetMemberOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::output::GetMemberOutput::account_id): <p>The Amazon Web Services account ID for the account.</p>
     ///   - [`administrator_account_id(Option<String>)`](crate::output::GetMemberOutput::administrator_account_id): <p>The Amazon Web Services account ID for the administrator account.</p>
@@ -563,14 +563,14 @@ where
         fluent_builders::GetMember::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetUsageStatistics`](crate::client::fluent_builders::GetUsageStatistics) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUsageStatistics::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetUsageStatistics::into_paginator).
     ///
-    /// - Takes [`GetUsageStatisticsInput`](crate::input::GetUsageStatisticsInput) with field(s):
-    ///   - [`filter_by(Option<Vec<UsageStatisticsFilter>>)`](crate::input::GetUsageStatisticsInput::filter_by): <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-    ///   - [`max_results(i32)`](crate::input::GetUsageStatisticsInput::max_results): <p>The maximum number of items to include in each page of the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetUsageStatisticsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    ///   - [`sort_by(Option<UsageStatisticsSortBy>)`](crate::input::GetUsageStatisticsInput::sort_by): <p>The criteria to use to sort the query results.</p>
-    ///   - [`time_range(Option<TimeRange>)`](crate::input::GetUsageStatisticsInput::time_range): <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter_by(Vec<UsageStatisticsFilter>)`](crate::client::fluent_builders::GetUsageStatistics::filter_by) / [`set_filter_by(Option<Vec<UsageStatisticsFilter>>)`](crate::client::fluent_builders::GetUsageStatistics::set_filter_by): <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetUsageStatistics::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetUsageStatistics::set_max_results): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetUsageStatistics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetUsageStatistics::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_by(UsageStatisticsSortBy)`](crate::client::fluent_builders::GetUsageStatistics::sort_by) / [`set_sort_by(Option<UsageStatisticsSortBy>)`](crate::client::fluent_builders::GetUsageStatistics::set_sort_by): <p>The criteria to use to sort the query results.</p>
+    ///   - [`time_range(TimeRange)`](crate::client::fluent_builders::GetUsageStatistics::time_range) / [`set_time_range(Option<TimeRange>)`](crate::client::fluent_builders::GetUsageStatistics::set_time_range): <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
     /// - On success, responds with [`GetUsageStatisticsOutput`](crate::output::GetUsageStatisticsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetUsageStatisticsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     ///   - [`records(Option<Vec<UsageRecord>>)`](crate::output::GetUsageStatisticsOutput::records): <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
@@ -581,8 +581,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetUsageTotals`](crate::client::fluent_builders::GetUsageTotals) operation.
     ///
-    /// - Takes [`GetUsageTotalsInput`](crate::input::GetUsageTotalsInput) with field(s):
-    ///   - [`time_range(Option<String>)`](crate::input::GetUsageTotalsInput::time_range): <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`time_range(impl Into<String>)`](crate::client::fluent_builders::GetUsageTotals::time_range) / [`set_time_range(Option<String>)`](crate::client::fluent_builders::GetUsageTotals::set_time_range): <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
     /// - On success, responds with [`GetUsageTotalsOutput`](crate::output::GetUsageTotalsOutput) with field(s):
     ///   - [`time_range(Option<TimeRange>)`](crate::output::GetUsageTotalsOutput::time_range): <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     ///   - [`usage_totals(Option<Vec<UsageTotal>>)`](crate::output::GetUsageTotalsOutput::usage_totals): <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
@@ -591,13 +591,13 @@ where
         fluent_builders::GetUsageTotals::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListClassificationJobs`](crate::client::fluent_builders::ListClassificationJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClassificationJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClassificationJobs::into_paginator).
     ///
-    /// - Takes [`ListClassificationJobsInput`](crate::input::ListClassificationJobsInput) with field(s):
-    ///   - [`filter_criteria(Option<ListJobsFilterCriteria>)`](crate::input::ListClassificationJobsInput::filter_criteria): <p>The criteria to use to filter the results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListClassificationJobsInput::max_results): <p>The maximum number of items to include in each page of the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListClassificationJobsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    ///   - [`sort_criteria(Option<ListJobsSortCriteria>)`](crate::input::ListClassificationJobsInput::sort_criteria): <p>The criteria to use to sort the results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter_criteria(ListJobsFilterCriteria)`](crate::client::fluent_builders::ListClassificationJobs::filter_criteria) / [`set_filter_criteria(Option<ListJobsFilterCriteria>)`](crate::client::fluent_builders::ListClassificationJobs::set_filter_criteria): <p>The criteria to use to filter the results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListClassificationJobs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListClassificationJobs::set_max_results): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListClassificationJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListClassificationJobs::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_criteria(ListJobsSortCriteria)`](crate::client::fluent_builders::ListClassificationJobs::sort_criteria) / [`set_sort_criteria(Option<ListJobsSortCriteria>)`](crate::client::fluent_builders::ListClassificationJobs::set_sort_criteria): <p>The criteria to use to sort the results.</p>
     /// - On success, responds with [`ListClassificationJobsOutput`](crate::output::ListClassificationJobsOutput) with field(s):
     ///   - [`items(Option<Vec<JobSummary>>)`](crate::output::ListClassificationJobsOutput::items): <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListClassificationJobsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -606,11 +606,11 @@ where
         fluent_builders::ListClassificationJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCustomDataIdentifiers`](crate::client::fluent_builders::ListCustomDataIdentifiers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomDataIdentifiers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCustomDataIdentifiers::into_paginator).
     ///
-    /// - Takes [`ListCustomDataIdentifiersInput`](crate::input::ListCustomDataIdentifiersInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListCustomDataIdentifiersInput::max_results): <p>The maximum number of items to include in each page of the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListCustomDataIdentifiersInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCustomDataIdentifiers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCustomDataIdentifiers::set_max_results): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCustomDataIdentifiers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCustomDataIdentifiers::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`ListCustomDataIdentifiersOutput`](crate::output::ListCustomDataIdentifiersOutput) with field(s):
     ///   - [`items(Option<Vec<CustomDataIdentifierSummary>>)`](crate::output::ListCustomDataIdentifiersOutput::items): <p>An array of objects, one for each custom data identifier.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCustomDataIdentifiersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -621,13 +621,13 @@ where
         fluent_builders::ListCustomDataIdentifiers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFindings`](crate::client::fluent_builders::ListFindings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     ///
-    /// - Takes [`ListFindingsInput`](crate::input::ListFindingsInput) with field(s):
-    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::input::ListFindingsInput::finding_criteria): <p>The criteria to use to filter the results.</p>
-    ///   - [`max_results(i32)`](crate::input::ListFindingsInput::max_results): <p>The maximum number of items to include in each page of the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFindingsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    ///   - [`sort_criteria(Option<SortCriteria>)`](crate::input::ListFindingsInput::sort_criteria): <p>The criteria to use to sort the results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::ListFindings::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::ListFindings::set_finding_criteria): <p>The criteria to use to filter the results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindings::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListFindings::set_max_results): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindings::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::ListFindings::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::ListFindings::set_sort_criteria): <p>The criteria to use to sort the results.</p>
     /// - On success, responds with [`ListFindingsOutput`](crate::output::ListFindingsOutput) with field(s):
     ///   - [`finding_ids(Option<Vec<String>>)`](crate::output::ListFindingsOutput::finding_ids): <p>An array of strings, where each string is the unique identifier for a finding that meets the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFindingsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -636,11 +636,11 @@ where
         fluent_builders::ListFindings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFindingsFilters`](crate::client::fluent_builders::ListFindingsFilters) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindingsFilters::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFindingsFilters::into_paginator).
     ///
-    /// - Takes [`ListFindingsFiltersInput`](crate::input::ListFindingsFiltersInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListFindingsFiltersInput::max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFindingsFiltersInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindingsFilters::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListFindingsFilters::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindingsFilters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindingsFilters::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`ListFindingsFiltersOutput`](crate::output::ListFindingsFiltersOutput) with field(s):
     ///   - [`findings_filter_list_items(Option<Vec<FindingsFilterListItem>>)`](crate::output::ListFindingsFiltersOutput::findings_filter_list_items): <p>An array of objects, one for each filter that's associated with the account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFindingsFiltersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -649,11 +649,11 @@ where
         fluent_builders::ListFindingsFilters::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListInvitations`](crate::client::fluent_builders::ListInvitations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     ///
-    /// - Takes [`ListInvitationsInput`](crate::input::ListInvitationsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListInvitationsInput::max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListInvitationsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInvitations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListInvitations::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInvitations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInvitations::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`ListInvitationsOutput`](crate::output::ListInvitationsOutput) with field(s):
     ///   - [`invitations(Option<Vec<Invitation>>)`](crate::output::ListInvitationsOutput::invitations): <p>An array of objects, one for each invitation that was received by the account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListInvitationsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -663,8 +663,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListManagedDataIdentifiers`](crate::client::fluent_builders::ListManagedDataIdentifiers) operation.
     ///
-    /// - Takes [`ListManagedDataIdentifiersInput`](crate::input::ListManagedDataIdentifiersInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListManagedDataIdentifiersInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListManagedDataIdentifiers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListManagedDataIdentifiers::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput) with field(s):
     ///   - [`items(Option<Vec<ManagedDataIdentifierSummary>>)`](crate::output::ListManagedDataIdentifiersOutput::items): <p>An array of objects, one for each managed data identifier.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListManagedDataIdentifiersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -675,12 +675,12 @@ where
         fluent_builders::ListManagedDataIdentifiers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMembers`](crate::client::fluent_builders::ListMembers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     ///
-    /// - Takes [`ListMembersInput`](crate::input::ListMembersInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListMembersInput::max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListMembersInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    ///   - [`only_associated(Option<String>)`](crate::input::ListMembersInput::only_associated): <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMembers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMembers::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`only_associated(impl Into<String>)`](crate::client::fluent_builders::ListMembers::only_associated) / [`set_only_associated(Option<String>)`](crate::client::fluent_builders::ListMembers::set_only_associated): <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
     /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
     ///   - [`members(Option<Vec<Member>>)`](crate::output::ListMembersOutput::members): <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -689,11 +689,11 @@ where
         fluent_builders::ListMembers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
     ///
-    /// - Takes [`ListOrganizationAdminAccountsInput`](crate::input::ListOrganizationAdminAccountsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListOrganizationAdminAccountsInput::max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListOrganizationAdminAccountsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput) with field(s):
     ///   - [`admin_accounts(Option<Vec<AdminAccount>>)`](crate::output::ListOrganizationAdminAccountsOutput::admin_accounts): <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationAdminAccountsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -705,8 +705,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -715,8 +715,8 @@ where
     }
     /// Constructs a fluent builder for the [`PutClassificationExportConfiguration`](crate::client::fluent_builders::PutClassificationExportConfiguration) operation.
     ///
-    /// - Takes [`PutClassificationExportConfigurationInput`](crate::input::PutClassificationExportConfigurationInput) with field(s):
-    ///   - [`configuration(Option<ClassificationExportConfiguration>)`](crate::input::PutClassificationExportConfigurationInput::configuration): <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration(ClassificationExportConfiguration)`](crate::client::fluent_builders::PutClassificationExportConfiguration::configuration) / [`set_configuration(Option<ClassificationExportConfiguration>)`](crate::client::fluent_builders::PutClassificationExportConfiguration::set_configuration): <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
     /// - On success, responds with [`PutClassificationExportConfigurationOutput`](crate::output::PutClassificationExportConfigurationOutput) with field(s):
     ///   - [`configuration(Option<ClassificationExportConfiguration>)`](crate::output::PutClassificationExportConfigurationOutput::configuration): <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
     /// - On failure, responds with [`SdkError<PutClassificationExportConfigurationError>`](crate::error::PutClassificationExportConfigurationError)
@@ -727,9 +727,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutFindingsPublicationConfiguration`](crate::client::fluent_builders::PutFindingsPublicationConfiguration) operation.
     ///
-    /// - Takes [`PutFindingsPublicationConfigurationInput`](crate::input::PutFindingsPublicationConfigurationInput) with field(s):
-    ///   - [`client_token(Option<String>)`](crate::input::PutFindingsPublicationConfigurationInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    ///   - [`security_hub_configuration(Option<SecurityHubConfiguration>)`](crate::input::PutFindingsPublicationConfigurationInput::security_hub_configuration): <p>The configuration settings that determine which findings to publish to Security Hub.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutFindingsPublicationConfiguration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutFindingsPublicationConfiguration::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`security_hub_configuration(SecurityHubConfiguration)`](crate::client::fluent_builders::PutFindingsPublicationConfiguration::security_hub_configuration) / [`set_security_hub_configuration(Option<SecurityHubConfiguration>)`](crate::client::fluent_builders::PutFindingsPublicationConfiguration::set_security_hub_configuration): <p>The configuration settings that determine which findings to publish to Security Hub.</p>
     /// - On success, responds with [`PutFindingsPublicationConfigurationOutput`](crate::output::PutFindingsPublicationConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<PutFindingsPublicationConfigurationError>`](crate::error::PutFindingsPublicationConfigurationError)
@@ -739,13 +739,13 @@ where
         fluent_builders::PutFindingsPublicationConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SearchResources`](crate::client::fluent_builders::SearchResources) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchResources::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchResources::into_paginator).
     ///
-    /// - Takes [`SearchResourcesInput`](crate::input::SearchResourcesInput) with field(s):
-    ///   - [`bucket_criteria(Option<SearchResourcesBucketCriteria>)`](crate::input::SearchResourcesInput::bucket_criteria): <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
-    ///   - [`max_results(i32)`](crate::input::SearchResourcesInput::max_results): <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::SearchResourcesInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    ///   - [`sort_criteria(Option<SearchResourcesSortCriteria>)`](crate::input::SearchResourcesInput::sort_criteria): <p>The criteria to use to sort the results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_criteria(SearchResourcesBucketCriteria)`](crate::client::fluent_builders::SearchResources::bucket_criteria) / [`set_bucket_criteria(Option<SearchResourcesBucketCriteria>)`](crate::client::fluent_builders::SearchResources::set_bucket_criteria): <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchResources::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::SearchResources::set_max_results): <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchResources::set_next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_criteria(SearchResourcesSortCriteria)`](crate::client::fluent_builders::SearchResources::sort_criteria) / [`set_sort_criteria(Option<SearchResourcesSortCriteria>)`](crate::client::fluent_builders::SearchResources::set_sort_criteria): <p>The criteria to use to sort the results.</p>
     /// - On success, responds with [`SearchResourcesOutput`](crate::output::SearchResourcesOutput) with field(s):
     ///   - [`matching_resources(Option<Vec<MatchingResource>>)`](crate::output::SearchResourcesOutput::matching_resources): <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchResourcesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -755,9 +755,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>  <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>  <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -766,12 +766,12 @@ where
     }
     /// Constructs a fluent builder for the [`TestCustomDataIdentifier`](crate::client::fluent_builders::TestCustomDataIdentifier) operation.
     ///
-    /// - Takes [`TestCustomDataIdentifierInput`](crate::input::TestCustomDataIdentifierInput) with field(s):
-    ///   - [`ignore_words(Option<Vec<String>>)`](crate::input::TestCustomDataIdentifierInput::ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    ///   - [`keywords(Option<Vec<String>>)`](crate::input::TestCustomDataIdentifierInput::keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    ///   - [`maximum_match_distance(i32)`](crate::input::TestCustomDataIdentifierInput::maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
-    ///   - [`regex(Option<String>)`](crate::input::TestCustomDataIdentifierInput::regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
-    ///   - [`sample_text(Option<String>)`](crate::input::TestCustomDataIdentifierInput::sample_text): <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ignore_words(Vec<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::ignore_words) / [`set_ignore_words(Option<Vec<String>>)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
+    ///   - [`keywords(Vec<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::keywords) / [`set_keywords(Option<Vec<String>>)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    ///   - [`maximum_match_distance(i32)`](crate::client::fluent_builders::TestCustomDataIdentifier::maximum_match_distance) / [`set_maximum_match_distance(i32)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    ///   - [`regex(impl Into<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::regex) / [`set_regex(Option<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    ///   - [`sample_text(impl Into<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::sample_text) / [`set_sample_text(Option<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_sample_text): <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
     /// - On success, responds with [`TestCustomDataIdentifierOutput`](crate::output::TestCustomDataIdentifierOutput) with field(s):
     ///   - [`match_count(i32)`](crate::output::TestCustomDataIdentifierOutput::match_count): <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
     /// - On failure, responds with [`SdkError<TestCustomDataIdentifierError>`](crate::error::TestCustomDataIdentifierError)
@@ -782,9 +782,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -793,9 +793,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateClassificationJob`](crate::client::fluent_builders::UpdateClassificationJob) operation.
     ///
-    /// - Takes [`UpdateClassificationJobInput`](crate::input::UpdateClassificationJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::UpdateClassificationJobInput::job_id): <p>The unique identifier for the classification job.</p>
-    ///   - [`job_status(Option<JobStatus>)`](crate::input::UpdateClassificationJobInput::job_status): <p>The new status for the job. Valid values are:</p>  <ul>  <li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li>   <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>   <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::UpdateClassificationJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::UpdateClassificationJob::set_job_id): <p>The unique identifier for the classification job.</p>
+    ///   - [`job_status(JobStatus)`](crate::client::fluent_builders::UpdateClassificationJob::job_status) / [`set_job_status(Option<JobStatus>)`](crate::client::fluent_builders::UpdateClassificationJob::set_job_status): <p>The new status for the job. Valid values are:</p>  <ul>  <li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li>   <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>   <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li> </ul>
     /// - On success, responds with [`UpdateClassificationJobOutput`](crate::output::UpdateClassificationJobOutput)
 
     /// - On failure, responds with [`SdkError<UpdateClassificationJobError>`](crate::error::UpdateClassificationJobError)
@@ -804,14 +804,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFindingsFilter`](crate::client::fluent_builders::UpdateFindingsFilter) operation.
     ///
-    /// - Takes [`UpdateFindingsFilterInput`](crate::input::UpdateFindingsFilterInput) with field(s):
-    ///   - [`action(Option<FindingsFilterAction>)`](crate::input::UpdateFindingsFilterInput::action): <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateFindingsFilterInput::description): <p>A custom description of the filter. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::input::UpdateFindingsFilterInput::finding_criteria): <p>The criteria to use to filter findings.</p>
-    ///   - [`id(Option<String>)`](crate::input::UpdateFindingsFilterInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateFindingsFilterInput::name): <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-    ///   - [`position(i32)`](crate::input::UpdateFindingsFilterInput::position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateFindingsFilterInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action(FindingsFilterAction)`](crate::client::fluent_builders::UpdateFindingsFilter::action) / [`set_action(Option<FindingsFilterAction>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_action): <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_description): <p>A custom description of the filter. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::UpdateFindingsFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_finding_criteria): <p>The criteria to use to filter findings.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_name): <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`position(i32)`](crate::client::fluent_builders::UpdateFindingsFilter::position) / [`set_position(i32)`](crate::client::fluent_builders::UpdateFindingsFilter::set_position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFilter::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`UpdateFindingsFilterOutput`](crate::output::UpdateFindingsFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
     ///   - [`id(Option<String>)`](crate::output::UpdateFindingsFilterOutput::id): <p>The unique identifier for the filter that was updated.</p>
@@ -821,9 +821,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateMacieSession`](crate::client::fluent_builders::UpdateMacieSession) operation.
     ///
-    /// - Takes [`UpdateMacieSessionInput`](crate::input::UpdateMacieSessionInput) with field(s):
-    ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::input::UpdateMacieSessionInput::finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
-    ///   - [`status(Option<MacieStatus>)`](crate::input::UpdateMacieSessionInput::status): <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_publishing_frequency(FindingPublishingFrequency)`](crate::client::fluent_builders::UpdateMacieSession::finding_publishing_frequency) / [`set_finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::client::fluent_builders::UpdateMacieSession::set_finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    ///   - [`status(MacieStatus)`](crate::client::fluent_builders::UpdateMacieSession::status) / [`set_status(Option<MacieStatus>)`](crate::client::fluent_builders::UpdateMacieSession::set_status): <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     /// - On success, responds with [`UpdateMacieSessionOutput`](crate::output::UpdateMacieSessionOutput)
 
     /// - On failure, responds with [`SdkError<UpdateMacieSessionError>`](crate::error::UpdateMacieSessionError)
@@ -832,9 +832,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateMemberSession`](crate::client::fluent_builders::UpdateMemberSession) operation.
     ///
-    /// - Takes [`UpdateMemberSessionInput`](crate::input::UpdateMemberSessionInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::UpdateMemberSessionInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-    ///   - [`status(Option<MacieStatus>)`](crate::input::UpdateMemberSessionInput::status): <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateMemberSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateMemberSession::set_id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`status(MacieStatus)`](crate::client::fluent_builders::UpdateMemberSession::status) / [`set_status(Option<MacieStatus>)`](crate::client::fluent_builders::UpdateMemberSession::set_status): <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     /// - On success, responds with [`UpdateMemberSessionOutput`](crate::output::UpdateMemberSessionOutput)
 
     /// - On failure, responds with [`SdkError<UpdateMemberSessionError>`](crate::error::UpdateMemberSessionError)
@@ -843,8 +843,8 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) operation.
     ///
-    /// - Takes [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput) with field(s):
-    ///   - [`auto_enable(bool)`](crate::input::UpdateOrganizationConfigurationInput::auto_enable): <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::auto_enable) / [`set_auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_auto_enable): <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
     /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::error::UpdateOrganizationConfigurationError)

@@ -85,13 +85,13 @@ where
 {
     /// Constructs a fluent builder for the [`AcceptPage`](crate::client::fluent_builders::AcceptPage) operation.
     ///
-    /// - Takes [`AcceptPageInput`](crate::input::AcceptPageInput) with field(s):
-    ///   - [`page_id(Option<String>)`](crate::input::AcceptPageInput::page_id): <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-    ///   - [`contact_channel_id(Option<String>)`](crate::input::AcceptPageInput::contact_channel_id): <p>The ARN of the contact channel.</p>
-    ///   - [`accept_type(Option<AcceptType>)`](crate::input::AcceptPageInput::accept_type): <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
-    ///   - [`note(Option<String>)`](crate::input::AcceptPageInput::note): <p>Information provided by the user when the user acknowledges the page.</p>
-    ///   - [`accept_code(Option<String>)`](crate::input::AcceptPageInput::accept_code): <p>The accept code is a 6-digit code used to acknowledge the page.</p>
-    ///   - [`accept_code_validation(Option<AcceptCodeValidation>)`](crate::input::AcceptPageInput::accept_code_validation): <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>  <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_id(impl Into<String>)`](crate::client::fluent_builders::AcceptPage::page_id) / [`set_page_id(Option<String>)`](crate::client::fluent_builders::AcceptPage::set_page_id): <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
+    ///   - [`contact_channel_id(impl Into<String>)`](crate::client::fluent_builders::AcceptPage::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::client::fluent_builders::AcceptPage::set_contact_channel_id): <p>The ARN of the contact channel.</p>
+    ///   - [`accept_type(AcceptType)`](crate::client::fluent_builders::AcceptPage::accept_type) / [`set_accept_type(Option<AcceptType>)`](crate::client::fluent_builders::AcceptPage::set_accept_type): <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
+    ///   - [`note(impl Into<String>)`](crate::client::fluent_builders::AcceptPage::note) / [`set_note(Option<String>)`](crate::client::fluent_builders::AcceptPage::set_note): <p>Information provided by the user when the user acknowledges the page.</p>
+    ///   - [`accept_code(impl Into<String>)`](crate::client::fluent_builders::AcceptPage::accept_code) / [`set_accept_code(Option<String>)`](crate::client::fluent_builders::AcceptPage::set_accept_code): <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+    ///   - [`accept_code_validation(AcceptCodeValidation)`](crate::client::fluent_builders::AcceptPage::accept_code_validation) / [`set_accept_code_validation(Option<AcceptCodeValidation>)`](crate::client::fluent_builders::AcceptPage::set_accept_code_validation): <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>  <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
     /// - On success, responds with [`AcceptPageOutput`](crate::output::AcceptPageOutput)
 
     /// - On failure, responds with [`SdkError<AcceptPageError>`](crate::error::AcceptPageError)
@@ -100,9 +100,9 @@ where
     }
     /// Constructs a fluent builder for the [`ActivateContactChannel`](crate::client::fluent_builders::ActivateContactChannel) operation.
     ///
-    /// - Takes [`ActivateContactChannelInput`](crate::input::ActivateContactChannelInput) with field(s):
-    ///   - [`contact_channel_id(Option<String>)`](crate::input::ActivateContactChannelInput::contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    ///   - [`activation_code(Option<String>)`](crate::input::ActivateContactChannelInput::activation_code): <p>The code sent to the contact channel when it was created in the contact. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_channel_id(impl Into<String>)`](crate::client::fluent_builders::ActivateContactChannel::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::client::fluent_builders::ActivateContactChannel::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    ///   - [`activation_code(impl Into<String>)`](crate::client::fluent_builders::ActivateContactChannel::activation_code) / [`set_activation_code(Option<String>)`](crate::client::fluent_builders::ActivateContactChannel::set_activation_code): <p>The code sent to the contact channel when it was created in the contact. </p>
     /// - On success, responds with [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput)
 
     /// - On failure, responds with [`SdkError<ActivateContactChannelError>`](crate::error::ActivateContactChannelError)
@@ -111,13 +111,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateContact`](crate::client::fluent_builders::CreateContact) operation.
     ///
-    /// - Takes [`CreateContactInput`](crate::input::CreateContactInput) with field(s):
-    ///   - [`alias(Option<String>)`](crate::input::CreateContactInput::alias): <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateContactInput::display_name): <p>The full name of the contact or escalation plan. </p>
-    ///   - [`r#type(Option<ContactType>)`](crate::input::CreateContactInput::type): <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
-    ///   - [`plan(Option<Plan>)`](crate::input::CreateContactInput::plan): <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateContactInput::tags): <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
-    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateContactInput::idempotency_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::CreateContact::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::CreateContact::set_alias): <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateContact::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateContact::set_display_name): <p>The full name of the contact or escalation plan. </p>
+    ///   - [`r#type(ContactType)`](crate::client::fluent_builders::CreateContact::r#type) / [`set_type(Option<ContactType>)`](crate::client::fluent_builders::CreateContact::set_type): <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    ///   - [`plan(Plan)`](crate::client::fluent_builders::CreateContact::plan) / [`set_plan(Option<Plan>)`](crate::client::fluent_builders::CreateContact::set_plan): <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateContact::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateContact::set_tags): <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateContact::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateContact::set_idempotency_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
     /// - On success, responds with [`CreateContactOutput`](crate::output::CreateContactOutput) with field(s):
     ///   - [`contact_arn(Option<String>)`](crate::output::CreateContactOutput::contact_arn): <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
     /// - On failure, responds with [`SdkError<CreateContactError>`](crate::error::CreateContactError)
@@ -126,13 +126,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateContactChannel`](crate::client::fluent_builders::CreateContactChannel) operation.
     ///
-    /// - Takes [`CreateContactChannelInput`](crate::input::CreateContactChannelInput) with field(s):
-    ///   - [`contact_id(Option<String>)`](crate::input::CreateContactChannelInput::contact_id): <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateContactChannelInput::name): <p>The name of the contact channel.</p>
-    ///   - [`r#type(Option<ChannelType>)`](crate::input::CreateContactChannelInput::type): <p>Incident Manager supports three types of contact channels:</p>  <ul>   <li> <p> <code>SMS</code> </p> </li>   <li> <p> <code>VOICE</code> </p> </li>   <li> <p> <code>EMAIL</code> </p> </li>  </ul>
-    ///   - [`delivery_address(Option<ContactChannelAddress>)`](crate::input::CreateContactChannelInput::delivery_address): <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>  <ul>   <li> <p>SMS - '+' followed by the country code and phone number</p> </li>   <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>   <li> <p>EMAIL - any standard email format</p> </li>  </ul>
-    ///   - [`defer_activation(Option<bool>)`](crate::input::CreateContactChannelInput::defer_activation): <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
-    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateContactChannelInput::idempotency_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::CreateContactChannel::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::CreateContactChannel::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateContactChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateContactChannel::set_name): <p>The name of the contact channel.</p>
+    ///   - [`r#type(ChannelType)`](crate::client::fluent_builders::CreateContactChannel::r#type) / [`set_type(Option<ChannelType>)`](crate::client::fluent_builders::CreateContactChannel::set_type): <p>Incident Manager supports three types of contact channels:</p>  <ul>   <li> <p> <code>SMS</code> </p> </li>   <li> <p> <code>VOICE</code> </p> </li>   <li> <p> <code>EMAIL</code> </p> </li>  </ul>
+    ///   - [`delivery_address(ContactChannelAddress)`](crate::client::fluent_builders::CreateContactChannel::delivery_address) / [`set_delivery_address(Option<ContactChannelAddress>)`](crate::client::fluent_builders::CreateContactChannel::set_delivery_address): <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>  <ul>   <li> <p>SMS - '+' followed by the country code and phone number</p> </li>   <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>   <li> <p>EMAIL - any standard email format</p> </li>  </ul>
+    ///   - [`defer_activation(bool)`](crate::client::fluent_builders::CreateContactChannel::defer_activation) / [`set_defer_activation(Option<bool>)`](crate::client::fluent_builders::CreateContactChannel::set_defer_activation): <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateContactChannel::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateContactChannel::set_idempotency_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
     /// - On success, responds with [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput) with field(s):
     ///   - [`contact_channel_arn(Option<String>)`](crate::output::CreateContactChannelOutput::contact_channel_arn): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     /// - On failure, responds with [`SdkError<CreateContactChannelError>`](crate::error::CreateContactChannelError)
@@ -141,8 +141,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeactivateContactChannel`](crate::client::fluent_builders::DeactivateContactChannel) operation.
     ///
-    /// - Takes [`DeactivateContactChannelInput`](crate::input::DeactivateContactChannelInput) with field(s):
-    ///   - [`contact_channel_id(Option<String>)`](crate::input::DeactivateContactChannelInput::contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_channel_id(impl Into<String>)`](crate::client::fluent_builders::DeactivateContactChannel::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::client::fluent_builders::DeactivateContactChannel::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
     /// - On success, responds with [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput)
 
     /// - On failure, responds with [`SdkError<DeactivateContactChannelError>`](crate::error::DeactivateContactChannelError)
@@ -151,8 +151,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteContact`](crate::client::fluent_builders::DeleteContact) operation.
     ///
-    /// - Takes [`DeleteContactInput`](crate::input::DeleteContactInput) with field(s):
-    ///   - [`contact_id(Option<String>)`](crate::input::DeleteContactInput::contact_id): <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::DeleteContact::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
     /// - On success, responds with [`DeleteContactOutput`](crate::output::DeleteContactOutput)
 
     /// - On failure, responds with [`SdkError<DeleteContactError>`](crate::error::DeleteContactError)
@@ -161,8 +161,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteContactChannel`](crate::client::fluent_builders::DeleteContactChannel) operation.
     ///
-    /// - Takes [`DeleteContactChannelInput`](crate::input::DeleteContactChannelInput) with field(s):
-    ///   - [`contact_channel_id(Option<String>)`](crate::input::DeleteContactChannelInput::contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_channel_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactChannel::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::client::fluent_builders::DeleteContactChannel::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     /// - On success, responds with [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput)
 
     /// - On failure, responds with [`SdkError<DeleteContactChannelError>`](crate::error::DeleteContactChannelError)
@@ -171,8 +171,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEngagement`](crate::client::fluent_builders::DescribeEngagement) operation.
     ///
-    /// - Takes [`DescribeEngagementInput`](crate::input::DescribeEngagementInput) with field(s):
-    ///   - [`engagement_id(Option<String>)`](crate::input::DescribeEngagementInput::engagement_id): <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`engagement_id(impl Into<String>)`](crate::client::fluent_builders::DescribeEngagement::engagement_id) / [`set_engagement_id(Option<String>)`](crate::client::fluent_builders::DescribeEngagement::set_engagement_id): <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
     /// - On success, responds with [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput) with field(s):
     ///   - [`contact_arn(Option<String>)`](crate::output::DescribeEngagementOutput::contact_arn): <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
     ///   - [`engagement_arn(Option<String>)`](crate::output::DescribeEngagementOutput::engagement_arn): <p>The ARN of the engagement.</p>
@@ -190,8 +190,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribePage`](crate::client::fluent_builders::DescribePage) operation.
     ///
-    /// - Takes [`DescribePageInput`](crate::input::DescribePageInput) with field(s):
-    ///   - [`page_id(Option<String>)`](crate::input::DescribePageInput::page_id): <p>The ID of the engagement to a contact channel.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_id(impl Into<String>)`](crate::client::fluent_builders::DescribePage::page_id) / [`set_page_id(Option<String>)`](crate::client::fluent_builders::DescribePage::set_page_id): <p>The ID of the engagement to a contact channel.</p>
     /// - On success, responds with [`DescribePageOutput`](crate::output::DescribePageOutput) with field(s):
     ///   - [`page_arn(Option<String>)`](crate::output::DescribePageOutput::page_arn): <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
     ///   - [`engagement_arn(Option<String>)`](crate::output::DescribePageOutput::engagement_arn): <p>The ARN of the engagement that engaged the contact channel.</p>
@@ -211,8 +211,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetContact`](crate::client::fluent_builders::GetContact) operation.
     ///
-    /// - Takes [`GetContactInput`](crate::input::GetContactInput) with field(s):
-    ///   - [`contact_id(Option<String>)`](crate::input::GetContactInput::contact_id): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::GetContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::GetContact::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     /// - On success, responds with [`GetContactOutput`](crate::output::GetContactOutput) with field(s):
     ///   - [`contact_arn(Option<String>)`](crate::output::GetContactOutput::contact_arn): <p>The ARN of the contact or escalation plan.</p>
     ///   - [`alias(Option<String>)`](crate::output::GetContactOutput::alias): <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
@@ -225,8 +225,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetContactChannel`](crate::client::fluent_builders::GetContactChannel) operation.
     ///
-    /// - Takes [`GetContactChannelInput`](crate::input::GetContactChannelInput) with field(s):
-    ///   - [`contact_channel_id(Option<String>)`](crate::input::GetContactChannelInput::contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_channel_id(impl Into<String>)`](crate::client::fluent_builders::GetContactChannel::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::client::fluent_builders::GetContactChannel::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
     /// - On success, responds with [`GetContactChannelOutput`](crate::output::GetContactChannelOutput) with field(s):
     ///   - [`contact_arn(Option<String>)`](crate::output::GetContactChannelOutput::contact_arn): <p>The ARN of the contact that the channel belongs to.</p>
     ///   - [`contact_channel_arn(Option<String>)`](crate::output::GetContactChannelOutput::contact_channel_arn): <p>The ARN of the contact channel.</p>
@@ -240,8 +240,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetContactPolicy`](crate::client::fluent_builders::GetContactPolicy) operation.
     ///
-    /// - Takes [`GetContactPolicyInput`](crate::input::GetContactPolicyInput) with field(s):
-    ///   - [`contact_arn(Option<String>)`](crate::input::GetContactPolicyInput::contact_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_arn(impl Into<String>)`](crate::client::fluent_builders::GetContactPolicy::contact_arn) / [`set_contact_arn(Option<String>)`](crate::client::fluent_builders::GetContactPolicy::set_contact_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     /// - On success, responds with [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput) with field(s):
     ///   - [`contact_arn(Option<String>)`](crate::output::GetContactPolicyOutput::contact_arn): <p>The ARN of the contact or escalation plan.</p>
     ///   - [`policy(Option<String>)`](crate::output::GetContactPolicyOutput::policy): <p>Details about the resource policy attached to the contact or escalation plan.</p>
@@ -250,12 +250,12 @@ where
         fluent_builders::GetContactPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListContactChannels`](crate::client::fluent_builders::ListContactChannels) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactChannels::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContactChannels::into_paginator).
     ///
-    /// - Takes [`ListContactChannelsInput`](crate::input::ListContactChannelsInput) with field(s):
-    ///   - [`contact_id(Option<String>)`](crate::input::ListContactChannelsInput::contact_id): <p>The Amazon Resource Name (ARN) of the contact. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListContactChannelsInput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListContactChannelsInput::max_results): <p>The maximum number of contact channels per page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::ListContactChannels::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::ListContactChannels::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContactChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContactChannels::set_next_token): <p>The pagination token to continue to the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContactChannels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListContactChannels::set_max_results): <p>The maximum number of contact channels per page.</p>
     /// - On success, responds with [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListContactChannelsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`contact_channels(Option<Vec<ContactChannel>>)`](crate::output::ListContactChannelsOutput::contact_channels): <p>A list of contact channels related to the specified contact.</p>
@@ -264,13 +264,13 @@ where
         fluent_builders::ListContactChannels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListContacts`](crate::client::fluent_builders::ListContacts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContacts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContacts::into_paginator).
     ///
-    /// - Takes [`ListContactsInput`](crate::input::ListContactsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListContactsInput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListContactsInput::max_results): <p>The maximum number of contacts and escalation plans per page of results.</p>
-    ///   - [`alias_prefix(Option<String>)`](crate::input::ListContactsInput::alias_prefix): <p>Used to list only contacts who's aliases start with the specified prefix.</p>
-    ///   - [`r#type(Option<ContactType>)`](crate::input::ListContactsInput::type): <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContacts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContacts::set_next_token): <p>The pagination token to continue to the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContacts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListContacts::set_max_results): <p>The maximum number of contacts and escalation plans per page of results.</p>
+    ///   - [`alias_prefix(impl Into<String>)`](crate::client::fluent_builders::ListContacts::alias_prefix) / [`set_alias_prefix(Option<String>)`](crate::client::fluent_builders::ListContacts::set_alias_prefix): <p>Used to list only contacts who's aliases start with the specified prefix.</p>
+    ///   - [`r#type(ContactType)`](crate::client::fluent_builders::ListContacts::r#type) / [`set_type(Option<ContactType>)`](crate::client::fluent_builders::ListContacts::set_type): <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     /// - On success, responds with [`ListContactsOutput`](crate::output::ListContactsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListContactsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`contacts(Option<Vec<Contact>>)`](crate::output::ListContactsOutput::contacts): <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
@@ -279,13 +279,13 @@ where
         fluent_builders::ListContacts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEngagements`](crate::client::fluent_builders::ListEngagements) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEngagements::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEngagements::into_paginator).
     ///
-    /// - Takes [`ListEngagementsInput`](crate::input::ListEngagementsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListEngagementsInput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEngagementsInput::max_results): <p>The maximum number of engagements per page of results.</p>
-    ///   - [`incident_id(Option<String>)`](crate::input::ListEngagementsInput::incident_id): <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
-    ///   - [`time_range_value(Option<TimeRange>)`](crate::input::ListEngagementsInput::time_range_value): <p>The time range to lists engagements for an incident.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEngagements::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEngagements::set_next_token): <p>The pagination token to continue to the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEngagements::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEngagements::set_max_results): <p>The maximum number of engagements per page of results.</p>
+    ///   - [`incident_id(impl Into<String>)`](crate::client::fluent_builders::ListEngagements::incident_id) / [`set_incident_id(Option<String>)`](crate::client::fluent_builders::ListEngagements::set_incident_id): <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
+    ///   - [`time_range_value(TimeRange)`](crate::client::fluent_builders::ListEngagements::time_range_value) / [`set_time_range_value(Option<TimeRange>)`](crate::client::fluent_builders::ListEngagements::set_time_range_value): <p>The time range to lists engagements for an incident.</p>
     /// - On success, responds with [`ListEngagementsOutput`](crate::output::ListEngagementsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListEngagementsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`engagements(Option<Vec<Engagement>>)`](crate::output::ListEngagementsOutput::engagements): <p>A list of each engagement that occurred during the specified time range of an incident.</p>
@@ -294,12 +294,12 @@ where
         fluent_builders::ListEngagements::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPageReceipts`](crate::client::fluent_builders::ListPageReceipts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPageReceipts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPageReceipts::into_paginator).
     ///
-    /// - Takes [`ListPageReceiptsInput`](crate::input::ListPageReceiptsInput) with field(s):
-    ///   - [`page_id(Option<String>)`](crate::input::ListPageReceiptsInput::page_id): <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPageReceiptsInput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPageReceiptsInput::max_results): <p>The maximum number of acknowledgements per page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_id(impl Into<String>)`](crate::client::fluent_builders::ListPageReceipts::page_id) / [`set_page_id(Option<String>)`](crate::client::fluent_builders::ListPageReceipts::set_page_id): <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPageReceipts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPageReceipts::set_next_token): <p>The pagination token to continue to the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPageReceipts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPageReceipts::set_max_results): <p>The maximum number of acknowledgements per page of results.</p>
     /// - On success, responds with [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListPageReceiptsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`receipts(Option<Vec<Receipt>>)`](crate::output::ListPageReceiptsOutput::receipts): <p>A list of each acknowledgement.</p>
@@ -308,12 +308,12 @@ where
         fluent_builders::ListPageReceipts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPagesByContact`](crate::client::fluent_builders::ListPagesByContact) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPagesByContact::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPagesByContact::into_paginator).
     ///
-    /// - Takes [`ListPagesByContactInput`](crate::input::ListPagesByContactInput) with field(s):
-    ///   - [`contact_id(Option<String>)`](crate::input::ListPagesByContactInput::contact_id): <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPagesByContactInput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPagesByContactInput::max_results): <p>The maximum number of engagements to contact channels to list per page of results. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::ListPagesByContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::ListPagesByContact::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPagesByContact::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPagesByContact::set_next_token): <p>The pagination token to continue to the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPagesByContact::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPagesByContact::set_max_results): <p>The maximum number of engagements to contact channels to list per page of results. </p>
     /// - On success, responds with [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListPagesByContactOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`pages(Option<Vec<Page>>)`](crate::output::ListPagesByContactOutput::pages): <p>The list of engagements to a contact's contact channel.</p>
@@ -322,12 +322,12 @@ where
         fluent_builders::ListPagesByContact::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPagesByEngagement`](crate::client::fluent_builders::ListPagesByEngagement) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPagesByEngagement::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPagesByEngagement::into_paginator).
     ///
-    /// - Takes [`ListPagesByEngagementInput`](crate::input::ListPagesByEngagementInput) with field(s):
-    ///   - [`engagement_id(Option<String>)`](crate::input::ListPagesByEngagementInput::engagement_id): <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPagesByEngagementInput::next_token): <p>The pagination token to continue to the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPagesByEngagementInput::max_results): <p>The maximum number of engagements to contact channels to list per page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`engagement_id(impl Into<String>)`](crate::client::fluent_builders::ListPagesByEngagement::engagement_id) / [`set_engagement_id(Option<String>)`](crate::client::fluent_builders::ListPagesByEngagement::set_engagement_id): <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPagesByEngagement::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPagesByEngagement::set_next_token): <p>The pagination token to continue to the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPagesByEngagement::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPagesByEngagement::set_max_results): <p>The maximum number of engagements to contact channels to list per page of results.</p>
     /// - On success, responds with [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListPagesByEngagementOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`pages(Option<Vec<Page>>)`](crate::output::ListPagesByEngagementOutput::pages): <p>The list of engagements to contact channels.</p>
@@ -337,8 +337,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags related to the contact or escalation plan.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -347,9 +347,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutContactPolicy`](crate::client::fluent_builders::PutContactPolicy) operation.
     ///
-    /// - Takes [`PutContactPolicyInput`](crate::input::PutContactPolicyInput) with field(s):
-    ///   - [`contact_arn(Option<String>)`](crate::input::PutContactPolicyInput::contact_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    ///   - [`policy(Option<String>)`](crate::input::PutContactPolicyInput::policy): <p>Details of the resource policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_arn(impl Into<String>)`](crate::client::fluent_builders::PutContactPolicy::contact_arn) / [`set_contact_arn(Option<String>)`](crate::client::fluent_builders::PutContactPolicy::set_contact_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutContactPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutContactPolicy::set_policy): <p>Details of the resource policy.</p>
     /// - On success, responds with [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput)
 
     /// - On failure, responds with [`SdkError<PutContactPolicyError>`](crate::error::PutContactPolicyError)
@@ -358,8 +358,8 @@ where
     }
     /// Constructs a fluent builder for the [`SendActivationCode`](crate::client::fluent_builders::SendActivationCode) operation.
     ///
-    /// - Takes [`SendActivationCodeInput`](crate::input::SendActivationCodeInput) with field(s):
-    ///   - [`contact_channel_id(Option<String>)`](crate::input::SendActivationCodeInput::contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_channel_id(impl Into<String>)`](crate::client::fluent_builders::SendActivationCode::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::client::fluent_builders::SendActivationCode::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     /// - On success, responds with [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput)
 
     /// - On failure, responds with [`SdkError<SendActivationCodeError>`](crate::error::SendActivationCodeError)
@@ -368,15 +368,15 @@ where
     }
     /// Constructs a fluent builder for the [`StartEngagement`](crate::client::fluent_builders::StartEngagement) operation.
     ///
-    /// - Takes [`StartEngagementInput`](crate::input::StartEngagementInput) with field(s):
-    ///   - [`contact_id(Option<String>)`](crate::input::StartEngagementInput::contact_id): <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
-    ///   - [`sender(Option<String>)`](crate::input::StartEngagementInput::sender): <p>The user that started the engagement.</p>
-    ///   - [`subject(Option<String>)`](crate::input::StartEngagementInput::subject): <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-    ///   - [`content(Option<String>)`](crate::input::StartEngagementInput::content): <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-    ///   - [`public_subject(Option<String>)`](crate::input::StartEngagementInput::public_subject): <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    ///   - [`public_content(Option<String>)`](crate::input::StartEngagementInput::public_content): <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    ///   - [`incident_id(Option<String>)`](crate::input::StartEngagementInput::incident_id): <p>The ARN of the incident that the engagement is part of.</p>
-    ///   - [`idempotency_token(Option<String>)`](crate::input::StartEngagementInput::idempotency_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::StartEngagement::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::StartEngagement::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
+    ///   - [`sender(impl Into<String>)`](crate::client::fluent_builders::StartEngagement::sender) / [`set_sender(Option<String>)`](crate::client::fluent_builders::StartEngagement::set_sender): <p>The user that started the engagement.</p>
+    ///   - [`subject(impl Into<String>)`](crate::client::fluent_builders::StartEngagement::subject) / [`set_subject(Option<String>)`](crate::client::fluent_builders::StartEngagement::set_subject): <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::StartEngagement::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::StartEngagement::set_content): <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    ///   - [`public_subject(impl Into<String>)`](crate::client::fluent_builders::StartEngagement::public_subject) / [`set_public_subject(Option<String>)`](crate::client::fluent_builders::StartEngagement::set_public_subject): <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    ///   - [`public_content(impl Into<String>)`](crate::client::fluent_builders::StartEngagement::public_content) / [`set_public_content(Option<String>)`](crate::client::fluent_builders::StartEngagement::set_public_content): <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+    ///   - [`incident_id(impl Into<String>)`](crate::client::fluent_builders::StartEngagement::incident_id) / [`set_incident_id(Option<String>)`](crate::client::fluent_builders::StartEngagement::set_incident_id): <p>The ARN of the incident that the engagement is part of.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartEngagement::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartEngagement::set_idempotency_token): <p>A token ensuring that the operation is called only once with the specified details.</p>
     /// - On success, responds with [`StartEngagementOutput`](crate::output::StartEngagementOutput) with field(s):
     ///   - [`engagement_arn(Option<String>)`](crate::output::StartEngagementOutput::engagement_arn): <p>The ARN of the engagement.</p>
     /// - On failure, responds with [`SdkError<StartEngagementError>`](crate::error::StartEngagementError)
@@ -385,9 +385,9 @@ where
     }
     /// Constructs a fluent builder for the [`StopEngagement`](crate::client::fluent_builders::StopEngagement) operation.
     ///
-    /// - Takes [`StopEngagementInput`](crate::input::StopEngagementInput) with field(s):
-    ///   - [`engagement_id(Option<String>)`](crate::input::StopEngagementInput::engagement_id): <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    ///   - [`reason(Option<String>)`](crate::input::StopEngagementInput::reason): <p>The reason that you're stopping the engagement. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`engagement_id(impl Into<String>)`](crate::client::fluent_builders::StopEngagement::engagement_id) / [`set_engagement_id(Option<String>)`](crate::client::fluent_builders::StopEngagement::set_engagement_id): <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::StopEngagement::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::StopEngagement::set_reason): <p>The reason that you're stopping the engagement. </p>
     /// - On success, responds with [`StopEngagementOutput`](crate::output::StopEngagementOutput)
 
     /// - On failure, responds with [`SdkError<StopEngagementError>`](crate::error::StopEngagementError)
@@ -396,9 +396,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A list of tags that you are adding to the contact or escalation plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags that you are adding to the contact or escalation plan.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -407,9 +407,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The key of the tag that you want to remove.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The key of the tag that you want to remove.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -418,10 +418,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateContact`](crate::client::fluent_builders::UpdateContact) operation.
     ///
-    /// - Takes [`UpdateContactInput`](crate::input::UpdateContactInput) with field(s):
-    ///   - [`contact_id(Option<String>)`](crate::input::UpdateContactInput::contact_id): <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateContactInput::display_name): <p>The full name of the contact or escalation plan.</p>
-    ///   - [`plan(Option<Plan>)`](crate::input::UpdateContactInput::plan): <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_display_name): <p>The full name of the contact or escalation plan.</p>
+    ///   - [`plan(Plan)`](crate::client::fluent_builders::UpdateContact::plan) / [`set_plan(Option<Plan>)`](crate::client::fluent_builders::UpdateContact::set_plan): <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
     /// - On success, responds with [`UpdateContactOutput`](crate::output::UpdateContactOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactError>`](crate::error::UpdateContactError)
@@ -430,10 +430,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateContactChannel`](crate::client::fluent_builders::UpdateContactChannel) operation.
     ///
-    /// - Takes [`UpdateContactChannelInput`](crate::input::UpdateContactChannelInput) with field(s):
-    ///   - [`contact_channel_id(Option<String>)`](crate::input::UpdateContactChannelInput::contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateContactChannelInput::name): <p>The name of the contact channel.</p>
-    ///   - [`delivery_address(Option<ContactChannelAddress>)`](crate::input::UpdateContactChannelInput::delivery_address): <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_channel_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactChannel::contact_channel_id) / [`set_contact_channel_id(Option<String>)`](crate::client::fluent_builders::UpdateContactChannel::set_contact_channel_id): <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactChannel::set_name): <p>The name of the contact channel.</p>
+    ///   - [`delivery_address(ContactChannelAddress)`](crate::client::fluent_builders::UpdateContactChannel::delivery_address) / [`set_delivery_address(Option<ContactChannelAddress>)`](crate::client::fluent_builders::UpdateContactChannel::set_delivery_address): <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
     /// - On success, responds with [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput)
 
     /// - On failure, responds with [`SdkError<UpdateContactChannelError>`](crate::error::UpdateContactChannelError)

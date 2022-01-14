@@ -85,26 +85,26 @@ where
 {
     /// Constructs a fluent builder for the [`CreateBroker`](crate::client::fluent_builders::CreateBroker) operation.
     ///
-    /// - Takes [`CreateBrokerInput`](crate::input::CreateBrokerInput) with field(s):
-    ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::input::CreateBrokerInput::authentication_strategy): <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    ///   - [`auto_minor_version_upgrade(bool)`](crate::input::CreateBrokerInput::auto_minor_version_upgrade): <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
-    ///   - [`broker_name(Option<String>)`](crate::input::CreateBrokerInput::broker_name): <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-    ///   - [`configuration(Option<ConfigurationId>)`](crate::input::CreateBrokerInput::configuration): <p>A list of information about the configuration.</p>
-    ///   - [`creator_request_id(Option<String>)`](crate::input::CreateBrokerInput::creator_request_id): <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
-    ///   - [`deployment_mode(Option<DeploymentMode>)`](crate::input::CreateBrokerInput::deployment_mode): <p>Required. The broker's deployment mode.</p>
-    ///   - [`encryption_options(Option<EncryptionOptions>)`](crate::input::CreateBrokerInput::encryption_options): <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
-    ///   - [`engine_type(Option<EngineType>)`](crate::input::CreateBrokerInput::engine_type): <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    ///   - [`engine_version(Option<String>)`](crate::input::CreateBrokerInput::engine_version): <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    ///   - [`host_instance_type(Option<String>)`](crate::input::CreateBrokerInput::host_instance_type): <p>Required. The broker's instance type.</p>
-    ///   - [`ldap_server_metadata(Option<LdapServerMetadataInput>)`](crate::input::CreateBrokerInput::ldap_server_metadata): <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    ///   - [`logs(Option<Logs>)`](crate::input::CreateBrokerInput::logs): <p>Enables Amazon CloudWatch logging for brokers.</p>
-    ///   - [`maintenance_window_start_time(Option<WeeklyStartTime>)`](crate::input::CreateBrokerInput::maintenance_window_start_time): <p>The parameters that determine the WeeklyStartTime.</p>
-    ///   - [`publicly_accessible(bool)`](crate::input::CreateBrokerInput::publicly_accessible): <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
-    ///   - [`security_groups(Option<Vec<String>>)`](crate::input::CreateBrokerInput::security_groups): <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    ///   - [`storage_type(Option<BrokerStorageType>)`](crate::input::CreateBrokerInput::storage_type): <p>The broker's storage type.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateBrokerInput::subnet_ids): <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>  <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p> </important>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateBrokerInput::tags): <p>Create tags when creating the broker.</p>
-    ///   - [`users(Option<Vec<User>>)`](crate::input::CreateBrokerInput::users): <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>  <title>Amazon MQ for RabbitMQ</title>   <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p> </important>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_strategy(AuthenticationStrategy)`](crate::client::fluent_builders::CreateBroker::authentication_strategy) / [`set_authentication_strategy(Option<AuthenticationStrategy>)`](crate::client::fluent_builders::CreateBroker::set_authentication_strategy): <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
+    ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::CreateBroker::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::CreateBroker::set_auto_minor_version_upgrade): <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
+    ///   - [`broker_name(impl Into<String>)`](crate::client::fluent_builders::CreateBroker::broker_name) / [`set_broker_name(Option<String>)`](crate::client::fluent_builders::CreateBroker::set_broker_name): <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    ///   - [`configuration(ConfigurationId)`](crate::client::fluent_builders::CreateBroker::configuration) / [`set_configuration(Option<ConfigurationId>)`](crate::client::fluent_builders::CreateBroker::set_configuration): <p>A list of information about the configuration.</p>
+    ///   - [`creator_request_id(impl Into<String>)`](crate::client::fluent_builders::CreateBroker::creator_request_id) / [`set_creator_request_id(Option<String>)`](crate::client::fluent_builders::CreateBroker::set_creator_request_id): <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    ///   - [`deployment_mode(DeploymentMode)`](crate::client::fluent_builders::CreateBroker::deployment_mode) / [`set_deployment_mode(Option<DeploymentMode>)`](crate::client::fluent_builders::CreateBroker::set_deployment_mode): <p>Required. The broker's deployment mode.</p>
+    ///   - [`encryption_options(EncryptionOptions)`](crate::client::fluent_builders::CreateBroker::encryption_options) / [`set_encryption_options(Option<EncryptionOptions>)`](crate::client::fluent_builders::CreateBroker::set_encryption_options): <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::CreateBroker::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::CreateBroker::set_engine_type): <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateBroker::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateBroker::set_engine_version): <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    ///   - [`host_instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateBroker::host_instance_type) / [`set_host_instance_type(Option<String>)`](crate::client::fluent_builders::CreateBroker::set_host_instance_type): <p>Required. The broker's instance type.</p>
+    ///   - [`ldap_server_metadata(LdapServerMetadataInput)`](crate::client::fluent_builders::CreateBroker::ldap_server_metadata) / [`set_ldap_server_metadata(Option<LdapServerMetadataInput>)`](crate::client::fluent_builders::CreateBroker::set_ldap_server_metadata): <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
+    ///   - [`logs(Logs)`](crate::client::fluent_builders::CreateBroker::logs) / [`set_logs(Option<Logs>)`](crate::client::fluent_builders::CreateBroker::set_logs): <p>Enables Amazon CloudWatch logging for brokers.</p>
+    ///   - [`maintenance_window_start_time(WeeklyStartTime)`](crate::client::fluent_builders::CreateBroker::maintenance_window_start_time) / [`set_maintenance_window_start_time(Option<WeeklyStartTime>)`](crate::client::fluent_builders::CreateBroker::set_maintenance_window_start_time): <p>The parameters that determine the WeeklyStartTime.</p>
+    ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateBroker::publicly_accessible) / [`set_publicly_accessible(bool)`](crate::client::fluent_builders::CreateBroker::set_publicly_accessible): <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
+    ///   - [`security_groups(Vec<String>)`](crate::client::fluent_builders::CreateBroker::security_groups) / [`set_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateBroker::set_security_groups): <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
+    ///   - [`storage_type(BrokerStorageType)`](crate::client::fluent_builders::CreateBroker::storage_type) / [`set_storage_type(Option<BrokerStorageType>)`](crate::client::fluent_builders::CreateBroker::set_storage_type): <p>The broker's storage type.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateBroker::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateBroker::set_subnet_ids): <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>  <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p> </important>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateBroker::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateBroker::set_tags): <p>Create tags when creating the broker.</p>
+    ///   - [`users(Vec<User>)`](crate::client::fluent_builders::CreateBroker::users) / [`set_users(Option<Vec<User>>)`](crate::client::fluent_builders::CreateBroker::set_users): <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>  <title>Amazon MQ for RabbitMQ</title>   <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p> </important>
     /// - On success, responds with [`CreateBrokerOutput`](crate::output::CreateBrokerOutput) with field(s):
     ///   - [`broker_arn(Option<String>)`](crate::output::CreateBrokerOutput::broker_arn): <p>The broker's Amazon Resource Name (ARN).</p>
     ///   - [`broker_id(Option<String>)`](crate::output::CreateBrokerOutput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -114,12 +114,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateConfiguration`](crate::client::fluent_builders::CreateConfiguration) operation.
     ///
-    /// - Takes [`CreateConfigurationInput`](crate::input::CreateConfigurationInput) with field(s):
-    ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::input::CreateConfigurationInput::authentication_strategy): <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
-    ///   - [`engine_type(Option<EngineType>)`](crate::input::CreateConfigurationInput::engine_type): <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    ///   - [`engine_version(Option<String>)`](crate::input::CreateConfigurationInput::engine_version): <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateConfigurationInput::name): <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateConfigurationInput::tags): <p>Create tags when creating the configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_strategy(AuthenticationStrategy)`](crate::client::fluent_builders::CreateConfiguration::authentication_strategy) / [`set_authentication_strategy(Option<AuthenticationStrategy>)`](crate::client::fluent_builders::CreateConfiguration::set_authentication_strategy): <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::CreateConfiguration::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::CreateConfiguration::set_engine_type): <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguration::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateConfiguration::set_engine_version): <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateConfiguration::set_name): <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateConfiguration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateConfiguration::set_tags): <p>Create tags when creating the configuration.</p>
     /// - On success, responds with [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateConfigurationOutput::arn): <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::output::CreateConfigurationOutput::authentication_strategy): <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
@@ -133,9 +133,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTags`](crate::client::fluent_builders::CreateTags) operation.
     ///
-    /// - Takes [`CreateTagsInput`](crate::input::CreateTagsInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::CreateTagsInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource tag.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateTagsInput::tags): <p>The key-value pair for the resource tag.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::CreateTags::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource tag.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateTags::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTags::set_tags): <p>The key-value pair for the resource tag.</p>
     /// - On success, responds with [`CreateTagsOutput`](crate::output::CreateTagsOutput)
 
     /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::error::CreateTagsError)
@@ -144,12 +144,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// - Takes [`CreateUserInput`](crate::input::CreateUserInput) with field(s):
-    ///   - [`broker_id(Option<String>)`](crate::input::CreateUserInput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
-    ///   - [`console_access(bool)`](crate::input::CreateUserInput::console_access): <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
-    ///   - [`groups(Option<Vec<String>>)`](crate::input::CreateUserInput::groups): <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    ///   - [`password(Option<String>)`](crate::input::CreateUserInput::password): <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
-    ///   - [`username(Option<String>)`](crate::input::CreateUserInput::username): <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    ///   - [`console_access(bool)`](crate::client::fluent_builders::CreateUser::console_access) / [`set_console_access(bool)`](crate::client::fluent_builders::CreateUser::set_console_access): <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
+    ///   - [`groups(Vec<String>)`](crate::client::fluent_builders::CreateUser::groups) / [`set_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUser::set_groups): <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateUser::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateUser::set_password): <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::CreateUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::CreateUser::set_username): <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput)
 
     /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
@@ -158,8 +158,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteBroker`](crate::client::fluent_builders::DeleteBroker) operation.
     ///
-    /// - Takes [`DeleteBrokerInput`](crate::input::DeleteBrokerInput) with field(s):
-    ///   - [`broker_id(Option<String>)`](crate::input::DeleteBrokerInput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBroker::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::DeleteBroker::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On success, responds with [`DeleteBrokerOutput`](crate::output::DeleteBrokerOutput) with field(s):
     ///   - [`broker_id(Option<String>)`](crate::output::DeleteBrokerOutput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On failure, responds with [`SdkError<DeleteBrokerError>`](crate::error::DeleteBrokerError)
@@ -168,9 +168,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
     ///
-    /// - Takes [`DeleteTagsInput`](crate::input::DeleteTagsInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::DeleteTagsInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource tag.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DeleteTagsInput::tag_keys): <p>An array of tag keys to delete</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteTags::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource tag.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::DeleteTags::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteTags::set_tag_keys): <p>An array of tag keys to delete</p>
     /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
@@ -179,9 +179,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// - Takes [`DeleteUserInput`](crate::input::DeleteUserInput) with field(s):
-    ///   - [`broker_id(Option<String>)`](crate::input::DeleteUserInput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
-    ///   - [`username(Option<String>)`](crate::input::DeleteUserInput::username): <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_username): <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
 
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
@@ -190,8 +190,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeBroker`](crate::client::fluent_builders::DescribeBroker) operation.
     ///
-    /// - Takes [`DescribeBrokerInput`](crate::input::DescribeBrokerInput) with field(s):
-    ///   - [`broker_id(Option<String>)`](crate::input::DescribeBrokerInput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBroker::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::DescribeBroker::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On success, responds with [`DescribeBrokerOutput`](crate::output::DescribeBrokerOutput) with field(s):
     ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::output::DescribeBrokerOutput::authentication_strategy): <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     ///   - [`auto_minor_version_upgrade(bool)`](crate::output::DescribeBrokerOutput::auto_minor_version_upgrade): <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
@@ -227,10 +227,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeBrokerEngineTypes`](crate::client::fluent_builders::DescribeBrokerEngineTypes) operation.
     ///
-    /// - Takes [`DescribeBrokerEngineTypesInput`](crate::input::DescribeBrokerEngineTypesInput) with field(s):
-    ///   - [`engine_type(Option<String>)`](crate::input::DescribeBrokerEngineTypesInput::engine_type): <p>Filter response by engine type.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeBrokerEngineTypesInput::max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeBrokerEngineTypesInput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`engine_type(impl Into<String>)`](crate::client::fluent_builders::DescribeBrokerEngineTypes::engine_type) / [`set_engine_type(Option<String>)`](crate::client::fluent_builders::DescribeBrokerEngineTypes::set_engine_type): <p>Filter response by engine type.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBrokerEngineTypes::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeBrokerEngineTypes::set_max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBrokerEngineTypes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBrokerEngineTypes::set_next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     /// - On success, responds with [`DescribeBrokerEngineTypesOutput`](crate::output::DescribeBrokerEngineTypesOutput) with field(s):
     ///   - [`broker_engine_types(Option<Vec<BrokerEngineType>>)`](crate::output::DescribeBrokerEngineTypesOutput::broker_engine_types): <p>List of available engine types and versions.</p>
     ///   - [`max_results(i32)`](crate::output::DescribeBrokerEngineTypesOutput::max_results): <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -243,12 +243,12 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeBrokerInstanceOptions`](crate::client::fluent_builders::DescribeBrokerInstanceOptions) operation.
     ///
-    /// - Takes [`DescribeBrokerInstanceOptionsInput`](crate::input::DescribeBrokerInstanceOptionsInput) with field(s):
-    ///   - [`engine_type(Option<String>)`](crate::input::DescribeBrokerInstanceOptionsInput::engine_type): <p>Filter response by engine type.</p>
-    ///   - [`host_instance_type(Option<String>)`](crate::input::DescribeBrokerInstanceOptionsInput::host_instance_type): <p>Filter response by host instance type.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeBrokerInstanceOptionsInput::max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeBrokerInstanceOptionsInput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    ///   - [`storage_type(Option<String>)`](crate::input::DescribeBrokerInstanceOptionsInput::storage_type): <p>Filter response by storage type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`engine_type(impl Into<String>)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::engine_type) / [`set_engine_type(Option<String>)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::set_engine_type): <p>Filter response by engine type.</p>
+    ///   - [`host_instance_type(impl Into<String>)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::host_instance_type) / [`set_host_instance_type(Option<String>)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::set_host_instance_type): <p>Filter response by host instance type.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::set_max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::set_next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    ///   - [`storage_type(impl Into<String>)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::storage_type) / [`set_storage_type(Option<String>)`](crate::client::fluent_builders::DescribeBrokerInstanceOptions::set_storage_type): <p>Filter response by storage type.</p>
     /// - On success, responds with [`DescribeBrokerInstanceOptionsOutput`](crate::output::DescribeBrokerInstanceOptionsOutput) with field(s):
     ///   - [`broker_instance_options(Option<Vec<BrokerInstanceOption>>)`](crate::output::DescribeBrokerInstanceOptionsOutput::broker_instance_options): <p>List of available broker instance options.</p>
     ///   - [`max_results(i32)`](crate::output::DescribeBrokerInstanceOptionsOutput::max_results): <p>Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -261,8 +261,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeConfiguration`](crate::client::fluent_builders::DescribeConfiguration) operation.
     ///
-    /// - Takes [`DescribeConfigurationInput`](crate::input::DescribeConfigurationInput) with field(s):
-    ///   - [`configuration_id(Option<String>)`](crate::input::DescribeConfigurationInput::configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_id(impl Into<String>)`](crate::client::fluent_builders::DescribeConfiguration::configuration_id) / [`set_configuration_id(Option<String>)`](crate::client::fluent_builders::DescribeConfiguration::set_configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
     /// - On success, responds with [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeConfigurationOutput::arn): <p>Required. The ARN of the configuration.</p>
     ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::output::DescribeConfigurationOutput::authentication_strategy): <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
@@ -280,9 +280,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeConfigurationRevision`](crate::client::fluent_builders::DescribeConfigurationRevision) operation.
     ///
-    /// - Takes [`DescribeConfigurationRevisionInput`](crate::input::DescribeConfigurationRevisionInput) with field(s):
-    ///   - [`configuration_id(Option<String>)`](crate::input::DescribeConfigurationRevisionInput::configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    ///   - [`configuration_revision(Option<String>)`](crate::input::DescribeConfigurationRevisionInput::configuration_revision): <p>The revision of the configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_id(impl Into<String>)`](crate::client::fluent_builders::DescribeConfigurationRevision::configuration_id) / [`set_configuration_id(Option<String>)`](crate::client::fluent_builders::DescribeConfigurationRevision::set_configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    ///   - [`configuration_revision(impl Into<String>)`](crate::client::fluent_builders::DescribeConfigurationRevision::configuration_revision) / [`set_configuration_revision(Option<String>)`](crate::client::fluent_builders::DescribeConfigurationRevision::set_configuration_revision): <p>The revision of the configuration.</p>
     /// - On success, responds with [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput) with field(s):
     ///   - [`configuration_id(Option<String>)`](crate::output::DescribeConfigurationRevisionOutput::configuration_id): <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     ///   - [`created(Option<DateTime>)`](crate::output::DescribeConfigurationRevisionOutput::created): <p>Required. The date and time of the configuration.</p>
@@ -296,9 +296,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeUser`](crate::client::fluent_builders::DescribeUser) operation.
     ///
-    /// - Takes [`DescribeUserInput`](crate::input::DescribeUserInput) with field(s):
-    ///   - [`broker_id(Option<String>)`](crate::input::DescribeUserInput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
-    ///   - [`username(Option<String>)`](crate::input::DescribeUserInput::username): <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_username): <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     /// - On success, responds with [`DescribeUserOutput`](crate::output::DescribeUserOutput) with field(s):
     ///   - [`broker_id(Option<String>)`](crate::output::DescribeUserOutput::broker_id): <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     ///   - [`console_access(bool)`](crate::output::DescribeUserOutput::console_access): <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
@@ -310,11 +310,11 @@ where
         fluent_builders::DescribeUser::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListBrokers`](crate::client::fluent_builders::ListBrokers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBrokers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBrokers::into_paginator).
     ///
-    /// - Takes [`ListBrokersInput`](crate::input::ListBrokersInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListBrokersInput::max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListBrokersInput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBrokers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListBrokers::set_max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBrokers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBrokers::set_next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     /// - On success, responds with [`ListBrokersOutput`](crate::output::ListBrokersOutput) with field(s):
     ///   - [`broker_summaries(Option<Vec<BrokerSummary>>)`](crate::output::ListBrokersOutput::broker_summaries): <p>A list of information about all brokers.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBrokersOutput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -324,10 +324,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListConfigurationRevisions`](crate::client::fluent_builders::ListConfigurationRevisions) operation.
     ///
-    /// - Takes [`ListConfigurationRevisionsInput`](crate::input::ListConfigurationRevisionsInput) with field(s):
-    ///   - [`configuration_id(Option<String>)`](crate::input::ListConfigurationRevisionsInput::configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    ///   - [`max_results(i32)`](crate::input::ListConfigurationRevisionsInput::max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListConfigurationRevisionsInput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_id(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationRevisions::configuration_id) / [`set_configuration_id(Option<String>)`](crate::client::fluent_builders::ListConfigurationRevisions::set_configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfigurationRevisions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListConfigurationRevisions::set_max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationRevisions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurationRevisions::set_next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     /// - On success, responds with [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput) with field(s):
     ///   - [`configuration_id(Option<String>)`](crate::output::ListConfigurationRevisionsOutput::configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
     ///   - [`max_results(i32)`](crate::output::ListConfigurationRevisionsOutput::max_results): <p>The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -341,9 +341,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListConfigurations`](crate::client::fluent_builders::ListConfigurations) operation.
     ///
-    /// - Takes [`ListConfigurationsInput`](crate::input::ListConfigurationsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListConfigurationsInput::max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListConfigurationsInput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListConfigurations::set_max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurations::set_next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     /// - On success, responds with [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput) with field(s):
     ///   - [`configurations(Option<Vec<Configuration>>)`](crate::output::ListConfigurationsOutput::configurations): <p>The list of all revisions for the specified configuration.</p>
     ///   - [`max_results(i32)`](crate::output::ListConfigurationsOutput::max_results): <p>The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -354,8 +354,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     ///
-    /// - Takes [`ListTagsInput`](crate::input::ListTagsInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource tag.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTags::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsOutput::tags): <p>The key-value pair for the resource tag.</p>
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
@@ -364,10 +364,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
     ///
-    /// - Takes [`ListUsersInput`](crate::input::ListUsersInput) with field(s):
-    ///   - [`broker_id(Option<String>)`](crate::input::ListUsersInput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
-    ///   - [`max_results(i32)`](crate::input::ListUsersInput::max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListUsersInput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::ListUsers::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::ListUsers::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListUsers::set_max_results): <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsers::set_next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
     ///   - [`broker_id(Option<String>)`](crate::output::ListUsersOutput::broker_id): <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     ///   - [`max_results(i32)`](crate::output::ListUsersOutput::max_results): <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -379,8 +379,8 @@ where
     }
     /// Constructs a fluent builder for the [`RebootBroker`](crate::client::fluent_builders::RebootBroker) operation.
     ///
-    /// - Takes [`RebootBrokerInput`](crate::input::RebootBrokerInput) with field(s):
-    ///   - [`broker_id(Option<String>)`](crate::input::RebootBrokerInput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::RebootBroker::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::RebootBroker::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On success, responds with [`RebootBrokerOutput`](crate::output::RebootBrokerOutput)
 
     /// - On failure, responds with [`SdkError<RebootBrokerError>`](crate::error::RebootBrokerError)
@@ -389,17 +389,17 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBroker`](crate::client::fluent_builders::UpdateBroker) operation.
     ///
-    /// - Takes [`UpdateBrokerInput`](crate::input::UpdateBrokerInput) with field(s):
-    ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::input::UpdateBrokerInput::authentication_strategy): <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    ///   - [`auto_minor_version_upgrade(bool)`](crate::input::UpdateBrokerInput::auto_minor_version_upgrade): <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
-    ///   - [`broker_id(Option<String>)`](crate::input::UpdateBrokerInput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
-    ///   - [`configuration(Option<ConfigurationId>)`](crate::input::UpdateBrokerInput::configuration): <p>A list of information about the configuration.</p>
-    ///   - [`engine_version(Option<String>)`](crate::input::UpdateBrokerInput::engine_version): <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    ///   - [`host_instance_type(Option<String>)`](crate::input::UpdateBrokerInput::host_instance_type): <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    ///   - [`ldap_server_metadata(Option<LdapServerMetadataInput>)`](crate::input::UpdateBrokerInput::ldap_server_metadata): <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    ///   - [`logs(Option<Logs>)`](crate::input::UpdateBrokerInput::logs): <p>Enables Amazon CloudWatch logging for brokers.</p>
-    ///   - [`maintenance_window_start_time(Option<WeeklyStartTime>)`](crate::input::UpdateBrokerInput::maintenance_window_start_time): <p>The parameters that determine the WeeklyStartTime.</p>
-    ///   - [`security_groups(Option<Vec<String>>)`](crate::input::UpdateBrokerInput::security_groups): <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_strategy(AuthenticationStrategy)`](crate::client::fluent_builders::UpdateBroker::authentication_strategy) / [`set_authentication_strategy(Option<AuthenticationStrategy>)`](crate::client::fluent_builders::UpdateBroker::set_authentication_strategy): <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
+    ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::UpdateBroker::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::UpdateBroker::set_auto_minor_version_upgrade): <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
+    ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBroker::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::UpdateBroker::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    ///   - [`configuration(ConfigurationId)`](crate::client::fluent_builders::UpdateBroker::configuration) / [`set_configuration(Option<ConfigurationId>)`](crate::client::fluent_builders::UpdateBroker::set_configuration): <p>A list of information about the configuration.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::UpdateBroker::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::UpdateBroker::set_engine_version): <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    ///   - [`host_instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateBroker::host_instance_type) / [`set_host_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateBroker::set_host_instance_type): <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
+    ///   - [`ldap_server_metadata(LdapServerMetadataInput)`](crate::client::fluent_builders::UpdateBroker::ldap_server_metadata) / [`set_ldap_server_metadata(Option<LdapServerMetadataInput>)`](crate::client::fluent_builders::UpdateBroker::set_ldap_server_metadata): <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
+    ///   - [`logs(Logs)`](crate::client::fluent_builders::UpdateBroker::logs) / [`set_logs(Option<Logs>)`](crate::client::fluent_builders::UpdateBroker::set_logs): <p>Enables Amazon CloudWatch logging for brokers.</p>
+    ///   - [`maintenance_window_start_time(WeeklyStartTime)`](crate::client::fluent_builders::UpdateBroker::maintenance_window_start_time) / [`set_maintenance_window_start_time(Option<WeeklyStartTime>)`](crate::client::fluent_builders::UpdateBroker::set_maintenance_window_start_time): <p>The parameters that determine the WeeklyStartTime.</p>
+    ///   - [`security_groups(Vec<String>)`](crate::client::fluent_builders::UpdateBroker::security_groups) / [`set_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateBroker::set_security_groups): <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     /// - On success, responds with [`UpdateBrokerOutput`](crate::output::UpdateBrokerOutput) with field(s):
     ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::output::UpdateBrokerOutput::authentication_strategy): <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     ///   - [`auto_minor_version_upgrade(bool)`](crate::output::UpdateBrokerOutput::auto_minor_version_upgrade): <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
@@ -417,10 +417,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateConfiguration`](crate::client::fluent_builders::UpdateConfiguration) operation.
     ///
-    /// - Takes [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput) with field(s):
-    ///   - [`configuration_id(Option<String>)`](crate::input::UpdateConfigurationInput::configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    ///   - [`data(Option<String>)`](crate::input::UpdateConfigurationInput::data): <p>Required. The base64-encoded XML configuration.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateConfigurationInput::description): <p>The description of the configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguration::configuration_id) / [`set_configuration_id(Option<String>)`](crate::client::fluent_builders::UpdateConfiguration::set_configuration_id): <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    ///   - [`data(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguration::data) / [`set_data(Option<String>)`](crate::client::fluent_builders::UpdateConfiguration::set_data): <p>Required. The base64-encoded XML configuration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateConfiguration::set_description): <p>The description of the configuration.</p>
     /// - On success, responds with [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateConfigurationOutput::arn): <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`created(Option<DateTime>)`](crate::output::UpdateConfigurationOutput::created): <p>Required. The date and time of the configuration.</p>
@@ -434,12 +434,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateUser`](crate::client::fluent_builders::UpdateUser) operation.
     ///
-    /// - Takes [`UpdateUserInput`](crate::input::UpdateUserInput) with field(s):
-    ///   - [`broker_id(Option<String>)`](crate::input::UpdateUserInput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
-    ///   - [`console_access(bool)`](crate::input::UpdateUserInput::console_access): <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
-    ///   - [`groups(Option<Vec<String>>)`](crate::input::UpdateUserInput::groups): <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    ///   - [`password(Option<String>)`](crate::input::UpdateUserInput::password): <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
-    ///   - [`username(Option<String>)`](crate::input::UpdateUserInput::username): <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`broker_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::broker_id) / [`set_broker_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    ///   - [`console_access(bool)`](crate::client::fluent_builders::UpdateUser::console_access) / [`set_console_access(bool)`](crate::client::fluent_builders::UpdateUser::set_console_access): <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
+    ///   - [`groups(Vec<String>)`](crate::client::fluent_builders::UpdateUser::groups) / [`set_groups(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUser::set_groups): <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_password): <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_username): <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     /// - On success, responds with [`UpdateUserOutput`](crate::output::UpdateUserOutput)
 
     /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::error::UpdateUserError)

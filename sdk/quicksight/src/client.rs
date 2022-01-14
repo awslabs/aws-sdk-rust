@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`CancelIngestion`](crate::client::fluent_builders::CancelIngestion) operation.
     ///
-    /// - Takes [`CancelIngestionInput`](crate::input::CancelIngestionInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CancelIngestionInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_set_id(Option<String>)`](crate::input::CancelIngestionInput::data_set_id): <p>The ID of the dataset used in the ingestion.</p>
-    ///   - [`ingestion_id(Option<String>)`](crate::input::CancelIngestionInput::ingestion_id): <p>An ID for the ingestion.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CancelIngestion::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CancelIngestion::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::CancelIngestion::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::CancelIngestion::set_data_set_id): <p>The ID of the dataset used in the ingestion.</p>
+    ///   - [`ingestion_id(impl Into<String>)`](crate::client::fluent_builders::CancelIngestion::ingestion_id) / [`set_ingestion_id(Option<String>)`](crate::client::fluent_builders::CancelIngestion::set_ingestion_id): <p>An ID for the ingestion.</p>
     /// - On success, responds with [`CancelIngestionOutput`](crate::output::CancelIngestionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CancelIngestionOutput::arn): <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
     ///   - [`ingestion_id(Option<String>)`](crate::output::CancelIngestionOutput::ingestion_id): <p>An ID for the ingestion.</p>
@@ -100,11 +100,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAccountCustomization`](crate::client::fluent_builders::CreateAccountCustomization) operation.
     ///
-    /// - Takes [`CreateAccountCustomizationInput`](crate::input::CreateAccountCustomizationInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateAccountCustomizationInput::aws_account_id): <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::CreateAccountCustomizationInput::namespace): <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
-    ///   - [`account_customization(Option<AccountCustomization>)`](crate::input::CreateAccountCustomizationInput::account_customization): <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace. </p>  <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAccountCustomizationInput::tags): <p>A list of the tags that you want to attach to this resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccountCustomization::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateAccountCustomization::set_aws_account_id): <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CreateAccountCustomization::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CreateAccountCustomization::set_namespace): <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
+    ///   - [`account_customization(AccountCustomization)`](crate::client::fluent_builders::CreateAccountCustomization::account_customization) / [`set_account_customization(Option<AccountCustomization>)`](crate::client::fluent_builders::CreateAccountCustomization::set_account_customization): <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace. </p>  <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAccountCustomization::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAccountCustomization::set_tags): <p>A list of the tags that you want to attach to this resource.</p>
     /// - On success, responds with [`CreateAccountCustomizationOutput`](crate::output::CreateAccountCustomizationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateAccountCustomizationOutput::arn): <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
     ///   - [`aws_account_id(Option<String>)`](crate::output::CreateAccountCustomizationOutput::aws_account_id): <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
@@ -120,15 +120,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAnalysis`](crate::client::fluent_builders::CreateAnalysis) operation.
     ///
-    /// - Takes [`CreateAnalysisInput`](crate::input::CreateAnalysisInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateAnalysisInput::aws_account_id): <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
-    ///   - [`analysis_id(Option<String>)`](crate::input::CreateAnalysisInput::analysis_id): <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateAnalysisInput::name): <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
-    ///   - [`parameters(Option<Parameters>)`](crate::input::CreateAnalysisInput::parameters): <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::input::CreateAnalysisInput::permissions): <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>  <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    ///   - [`source_entity(Option<AnalysisSourceEntity>)`](crate::input::CreateAnalysisInput::source_entity): <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
-    ///   - [`theme_arn(Option<String>)`](crate::input::CreateAnalysisInput::theme_arn): <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAnalysisInput::tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateAnalysis::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateAnalysis::set_aws_account_id): <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::CreateAnalysis::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::CreateAnalysis::set_analysis_id): <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAnalysis::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAnalysis::set_name): <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. </p>
+    ///   - [`parameters(Parameters)`](crate::client::fluent_builders::CreateAnalysis::parameters) / [`set_parameters(Option<Parameters>)`](crate::client::fluent_builders::CreateAnalysis::set_parameters): <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
+    ///   - [`permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::CreateAnalysis::permissions) / [`set_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::CreateAnalysis::set_permissions): <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>  <p>To specify no permissions, omit <code>Permissions</code>.</p>
+    ///   - [`source_entity(AnalysisSourceEntity)`](crate::client::fluent_builders::CreateAnalysis::source_entity) / [`set_source_entity(Option<AnalysisSourceEntity>)`](crate::client::fluent_builders::CreateAnalysis::set_source_entity): <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    ///   - [`theme_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAnalysis::theme_arn) / [`set_theme_arn(Option<String>)`](crate::client::fluent_builders::CreateAnalysis::set_theme_arn): <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAnalysis::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAnalysis::set_tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
     /// - On success, responds with [`CreateAnalysisOutput`](crate::output::CreateAnalysisOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateAnalysisOutput::arn): <p>The ARN for the analysis.</p>
     ///   - [`analysis_id(Option<String>)`](crate::output::CreateAnalysisOutput::analysis_id): <p>The ID of the analysis.</p>
@@ -141,17 +141,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDashboard`](crate::client::fluent_builders::CreateDashboard) operation.
     ///
-    /// - Takes [`CreateDashboardInput`](crate::input::CreateDashboardInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateDashboardInput::aws_account_id): <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
-    ///   - [`dashboard_id(Option<String>)`](crate::input::CreateDashboardInput::dashboard_id): <p>The ID for the dashboard, also added to the IAM policy.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateDashboardInput::name): <p>The display name of the dashboard.</p>
-    ///   - [`parameters(Option<Parameters>)`](crate::input::CreateDashboardInput::parameters): <p>The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. </p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::input::CreateDashboardInput::permissions): <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p>  <p>To specify no permissions, omit the permissions list.</p>
-    ///   - [`source_entity(Option<DashboardSourceEntity>)`](crate::input::CreateDashboardInput::source_entity): <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDashboardInput::tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.</p>
-    ///   - [`version_description(Option<String>)`](crate::input::CreateDashboardInput::version_description): <p>A description for the first version of the dashboard being created.</p>
-    ///   - [`dashboard_publish_options(Option<DashboardPublishOptions>)`](crate::input::CreateDashboardInput::dashboard_publish_options): <p>Options for publishing the dashboard when you create it:</p>  <ul>   <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>  </ul>
-    ///   - [`theme_arn(Option<String>)`](crate::input::CreateDashboardInput::theme_arn): <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_aws_account_id): <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_dashboard_id): <p>The ID for the dashboard, also added to the IAM policy.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_name): <p>The display name of the dashboard.</p>
+    ///   - [`parameters(Parameters)`](crate::client::fluent_builders::CreateDashboard::parameters) / [`set_parameters(Option<Parameters>)`](crate::client::fluent_builders::CreateDashboard::set_parameters): <p>The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. </p>
+    ///   - [`permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::CreateDashboard::permissions) / [`set_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::CreateDashboard::set_permissions): <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p>  <p>To specify no permissions, omit the permissions list.</p>
+    ///   - [`source_entity(DashboardSourceEntity)`](crate::client::fluent_builders::CreateDashboard::source_entity) / [`set_source_entity(Option<DashboardSourceEntity>)`](crate::client::fluent_builders::CreateDashboard::set_source_entity): <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDashboard::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDashboard::set_tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.</p>
+    ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_version_description): <p>A description for the first version of the dashboard being created.</p>
+    ///   - [`dashboard_publish_options(DashboardPublishOptions)`](crate::client::fluent_builders::CreateDashboard::dashboard_publish_options) / [`set_dashboard_publish_options(Option<DashboardPublishOptions>)`](crate::client::fluent_builders::CreateDashboard::set_dashboard_publish_options): <p>Options for publishing the dashboard when you create it:</p>  <ul>   <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>  </ul>
+    ///   - [`theme_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDashboard::theme_arn) / [`set_theme_arn(Option<String>)`](crate::client::fluent_builders::CreateDashboard::set_theme_arn): <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
     /// - On success, responds with [`CreateDashboardOutput`](crate::output::CreateDashboardOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateDashboardOutput::arn): <p>The ARN of the dashboard.</p>
     ///   - [`version_arn(Option<String>)`](crate::output::CreateDashboardOutput::version_arn): <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
@@ -165,21 +165,21 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDataSet`](crate::client::fluent_builders::CreateDataSet) operation.
     ///
-    /// - Takes [`CreateDataSetInput`](crate::input::CreateDataSetInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateDataSetInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_set_id(Option<String>)`](crate::input::CreateDataSetInput::data_set_id): <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateDataSetInput::name): <p>The display name for the dataset.</p>
-    ///   - [`physical_table_map(Option<HashMap<String, PhysicalTable>>)`](crate::input::CreateDataSetInput::physical_table_map): <p>Declares the physical tables that are available in the underlying data sources.</p>
-    ///   - [`logical_table_map(Option<HashMap<String, LogicalTable>>)`](crate::input::CreateDataSetInput::logical_table_map): <p>Configures the combination and transformation of the data from the physical tables.</p>
-    ///   - [`import_mode(Option<DataSetImportMode>)`](crate::input::CreateDataSetInput::import_mode): <p>Indicates whether you want to import the data into SPICE.</p>
-    ///   - [`column_groups(Option<Vec<ColumnGroup>>)`](crate::input::CreateDataSetInput::column_groups): <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    ///   - [`field_folders(Option<HashMap<String, FieldFolder>>)`](crate::input::CreateDataSetInput::field_folders): <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::input::CreateDataSetInput::permissions): <p>A list of resource permissions on the dataset.</p>
-    ///   - [`row_level_permission_data_set(Option<RowLevelPermissionDataSet>)`](crate::input::CreateDataSetInput::row_level_permission_data_set): <p>The row-level security configuration for the data that you want to create.</p>
-    ///   - [`row_level_permission_tag_configuration(Option<RowLevelPermissionTagConfiguration>)`](crate::input::CreateDataSetInput::row_level_permission_tag_configuration): <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
-    ///   - [`column_level_permission_rules(Option<Vec<ColumnLevelPermissionRule>>)`](crate::input::CreateDataSetInput::column_level_permission_rules): <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDataSetInput::tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
-    ///   - [`data_set_usage_configuration(Option<DataSetUsageConfiguration>)`](crate::input::CreateDataSetInput::data_set_usage_configuration): <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSet::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateDataSet::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSet::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::CreateDataSet::set_data_set_id): <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSet::set_name): <p>The display name for the dataset.</p>
+    ///   - [`physical_table_map(HashMap<String, PhysicalTable>)`](crate::client::fluent_builders::CreateDataSet::physical_table_map) / [`set_physical_table_map(Option<HashMap<String, PhysicalTable>>)`](crate::client::fluent_builders::CreateDataSet::set_physical_table_map): <p>Declares the physical tables that are available in the underlying data sources.</p>
+    ///   - [`logical_table_map(HashMap<String, LogicalTable>)`](crate::client::fluent_builders::CreateDataSet::logical_table_map) / [`set_logical_table_map(Option<HashMap<String, LogicalTable>>)`](crate::client::fluent_builders::CreateDataSet::set_logical_table_map): <p>Configures the combination and transformation of the data from the physical tables.</p>
+    ///   - [`import_mode(DataSetImportMode)`](crate::client::fluent_builders::CreateDataSet::import_mode) / [`set_import_mode(Option<DataSetImportMode>)`](crate::client::fluent_builders::CreateDataSet::set_import_mode): <p>Indicates whether you want to import the data into SPICE.</p>
+    ///   - [`column_groups(Vec<ColumnGroup>)`](crate::client::fluent_builders::CreateDataSet::column_groups) / [`set_column_groups(Option<Vec<ColumnGroup>>)`](crate::client::fluent_builders::CreateDataSet::set_column_groups): <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    ///   - [`field_folders(HashMap<String, FieldFolder>)`](crate::client::fluent_builders::CreateDataSet::field_folders) / [`set_field_folders(Option<HashMap<String, FieldFolder>>)`](crate::client::fluent_builders::CreateDataSet::set_field_folders): <p>The folder that contains fields and nested subfolders for your dataset.</p>
+    ///   - [`permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::CreateDataSet::permissions) / [`set_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::CreateDataSet::set_permissions): <p>A list of resource permissions on the dataset.</p>
+    ///   - [`row_level_permission_data_set(RowLevelPermissionDataSet)`](crate::client::fluent_builders::CreateDataSet::row_level_permission_data_set) / [`set_row_level_permission_data_set(Option<RowLevelPermissionDataSet>)`](crate::client::fluent_builders::CreateDataSet::set_row_level_permission_data_set): <p>The row-level security configuration for the data that you want to create.</p>
+    ///   - [`row_level_permission_tag_configuration(RowLevelPermissionTagConfiguration)`](crate::client::fluent_builders::CreateDataSet::row_level_permission_tag_configuration) / [`set_row_level_permission_tag_configuration(Option<RowLevelPermissionTagConfiguration>)`](crate::client::fluent_builders::CreateDataSet::set_row_level_permission_tag_configuration): <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    ///   - [`column_level_permission_rules(Vec<ColumnLevelPermissionRule>)`](crate::client::fluent_builders::CreateDataSet::column_level_permission_rules) / [`set_column_level_permission_rules(Option<Vec<ColumnLevelPermissionRule>>)`](crate::client::fluent_builders::CreateDataSet::set_column_level_permission_rules): <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataSet::set_tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
+    ///   - [`data_set_usage_configuration(DataSetUsageConfiguration)`](crate::client::fluent_builders::CreateDataSet::data_set_usage_configuration) / [`set_data_set_usage_configuration(Option<DataSetUsageConfiguration>)`](crate::client::fluent_builders::CreateDataSet::set_data_set_usage_configuration): <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     /// - On success, responds with [`CreateDataSetOutput`](crate::output::CreateDataSetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateDataSetOutput::arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
     ///   - [`data_set_id(Option<String>)`](crate::output::CreateDataSetOutput::data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -193,17 +193,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDataSource`](crate::client::fluent_builders::CreateDataSource) operation.
     ///
-    /// - Takes [`CreateDataSourceInput`](crate::input::CreateDataSourceInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateDataSourceInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_source_id(Option<String>)`](crate::input::CreateDataSourceInput::data_source_id): <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    ///   - [`name(Option<String>)`](crate::input::CreateDataSourceInput::name): <p>A display name for the data source.</p>
-    ///   - [`r#type(Option<DataSourceType>)`](crate::input::CreateDataSourceInput::type): <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>  <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
-    ///   - [`data_source_parameters(Option<DataSourceParameters>)`](crate::input::CreateDataSourceInput::data_source_parameters): <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
-    ///   - [`credentials(Option<DataSourceCredentials>)`](crate::input::CreateDataSourceInput::credentials): <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::input::CreateDataSourceInput::permissions): <p>A list of resource permissions on the data source.</p>
-    ///   - [`vpc_connection_properties(Option<VpcConnectionProperties>)`](crate::input::CreateDataSourceInput::vpc_connection_properties): <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    ///   - [`ssl_properties(Option<SslProperties>)`](crate::input::CreateDataSourceInput::ssl_properties): <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDataSourceInput::tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_data_source_id): <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_name): <p>A display name for the data source.</p>
+    ///   - [`r#type(DataSourceType)`](crate::client::fluent_builders::CreateDataSource::r#type) / [`set_type(Option<DataSourceType>)`](crate::client::fluent_builders::CreateDataSource::set_type): <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>  <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
+    ///   - [`data_source_parameters(DataSourceParameters)`](crate::client::fluent_builders::CreateDataSource::data_source_parameters) / [`set_data_source_parameters(Option<DataSourceParameters>)`](crate::client::fluent_builders::CreateDataSource::set_data_source_parameters): <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
+    ///   - [`credentials(DataSourceCredentials)`](crate::client::fluent_builders::CreateDataSource::credentials) / [`set_credentials(Option<DataSourceCredentials>)`](crate::client::fluent_builders::CreateDataSource::set_credentials): <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    ///   - [`permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::CreateDataSource::permissions) / [`set_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::CreateDataSource::set_permissions): <p>A list of resource permissions on the data source.</p>
+    ///   - [`vpc_connection_properties(VpcConnectionProperties)`](crate::client::fluent_builders::CreateDataSource::vpc_connection_properties) / [`set_vpc_connection_properties(Option<VpcConnectionProperties>)`](crate::client::fluent_builders::CreateDataSource::set_vpc_connection_properties): <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    ///   - [`ssl_properties(SslProperties)`](crate::client::fluent_builders::CreateDataSource::ssl_properties) / [`set_ssl_properties(Option<SslProperties>)`](crate::client::fluent_builders::CreateDataSource::set_ssl_properties): <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataSource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataSource::set_tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
     /// - On success, responds with [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateDataSourceOutput::arn): <p>The Amazon Resource Name (ARN) of the data source.</p>
     ///   - [`data_source_id(Option<String>)`](crate::output::CreateDataSourceOutput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -216,14 +216,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFolder`](crate::client::fluent_builders::CreateFolder) operation.
     ///
-    /// - Takes [`CreateFolderInput`](crate::input::CreateFolderInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateFolderInput::aws_account_id): <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::CreateFolderInput::folder_id): <p>The ID of the folder.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateFolderInput::name): <p>The name of the folder.</p>
-    ///   - [`folder_type(Option<FolderType>)`](crate::input::CreateFolderInput::folder_type): <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
-    ///   - [`parent_folder_arn(Option<String>)`](crate::input::CreateFolderInput::parent_folder_arn): <p>The Amazon Resource Name (ARN) for the parent folder.</p>  <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::input::CreateFolderInput::permissions): <p>A structure that describes the principals and the resource-level permissions of a folder.</p>  <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateFolderInput::tags): <p>Tags for the folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateFolder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateFolder::set_aws_account_id): <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::CreateFolder::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::CreateFolder::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFolder::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFolder::set_name): <p>The name of the folder.</p>
+    ///   - [`folder_type(FolderType)`](crate::client::fluent_builders::CreateFolder::folder_type) / [`set_folder_type(Option<FolderType>)`](crate::client::fluent_builders::CreateFolder::set_folder_type): <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
+    ///   - [`parent_folder_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFolder::parent_folder_arn) / [`set_parent_folder_arn(Option<String>)`](crate::client::fluent_builders::CreateFolder::set_parent_folder_arn): <p>The Amazon Resource Name (ARN) for the parent folder.</p>  <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    ///   - [`permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::CreateFolder::permissions) / [`set_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::CreateFolder::set_permissions): <p>A structure that describes the principals and the resource-level permissions of a folder.</p>  <p>To specify no permissions, omit <code>Permissions</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFolder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFolder::set_tags): <p>Tags for the folder.</p>
     /// - On success, responds with [`CreateFolderOutput`](crate::output::CreateFolderOutput) with field(s):
     ///   - [`status(i32)`](crate::output::CreateFolderOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::output::CreateFolderOutput::arn): <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
@@ -235,11 +235,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFolderMembership`](crate::client::fluent_builders::CreateFolderMembership) operation.
     ///
-    /// - Takes [`CreateFolderMembershipInput`](crate::input::CreateFolderMembershipInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateFolderMembershipInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::CreateFolderMembershipInput::folder_id): <p>The ID of the folder.</p>
-    ///   - [`member_id(Option<String>)`](crate::input::CreateFolderMembershipInput::member_id): <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
-    ///   - [`member_type(Option<MemberType>)`](crate::input::CreateFolderMembershipInput::member_type): <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateFolderMembership::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateFolderMembership::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::CreateFolderMembership::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::CreateFolderMembership::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::CreateFolderMembership::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::CreateFolderMembership::set_member_id): <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
+    ///   - [`member_type(MemberType)`](crate::client::fluent_builders::CreateFolderMembership::member_type) / [`set_member_type(Option<MemberType>)`](crate::client::fluent_builders::CreateFolderMembership::set_member_type): <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
     /// - On success, responds with [`CreateFolderMembershipOutput`](crate::output::CreateFolderMembershipOutput) with field(s):
     ///   - [`status(i32)`](crate::output::CreateFolderMembershipOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_member(Option<FolderMember>)`](crate::output::CreateFolderMembershipOutput::folder_member): <p>Information about the member in the folder.</p>
@@ -250,11 +250,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
     ///
-    /// - Takes [`CreateGroupInput`](crate::input::CreateGroupInput) with field(s):
-    ///   - [`group_name(Option<String>)`](crate::input::CreateGroupInput::group_name): <p>A name for the group that you want to create.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateGroupInput::description): <p>A description for the group that you want to create.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateGroupInput::aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::CreateGroupInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_group_name): <p>A name for the group that you want to create.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_description): <p>A description for the group that you want to create.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::CreateGroupOutput::group): <p>The name of the group.</p>
     ///   - [`request_id(Option<String>)`](crate::output::CreateGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -265,11 +265,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateGroupMembership`](crate::client::fluent_builders::CreateGroupMembership) operation.
     ///
-    /// - Takes [`CreateGroupMembershipInput`](crate::input::CreateGroupMembershipInput) with field(s):
-    ///   - [`member_name(Option<String>)`](crate::input::CreateGroupMembershipInput::member_name): <p>The name of the user that you want to add to the group membership.</p>
-    ///   - [`group_name(Option<String>)`](crate::input::CreateGroupMembershipInput::group_name): <p>The name of the group that you want to add the user to.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateGroupMembershipInput::aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::CreateGroupMembershipInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`member_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::member_name) / [`set_member_name(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_member_name): <p>The name of the user that you want to add to the group membership.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_group_name): <p>The name of the group that you want to add the user to.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`CreateGroupMembershipOutput`](crate::output::CreateGroupMembershipOutput) with field(s):
     ///   - [`group_member(Option<GroupMember>)`](crate::output::CreateGroupMembershipOutput::group_member): <p>The group member.</p>
     ///   - [`request_id(Option<String>)`](crate::output::CreateGroupMembershipOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -280,13 +280,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateIAMPolicyAssignment`](crate::client::fluent_builders::CreateIAMPolicyAssignment) operation.
     ///
-    /// - Takes [`CreateIamPolicyAssignmentInput`](crate::input::CreateIamPolicyAssignmentInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateIamPolicyAssignmentInput::aws_account_id): <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
-    ///   - [`assignment_name(Option<String>)`](crate::input::CreateIamPolicyAssignmentInput::assignment_name): <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
-    ///   - [`assignment_status(Option<AssignmentStatus>)`](crate::input::CreateIamPolicyAssignmentInput::assignment_status): <p>The status of the assignment. Possible values are as follows:</p>  <ul>   <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>   <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>   <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>  </ul>
-    ///   - [`policy_arn(Option<String>)`](crate::input::CreateIamPolicyAssignmentInput::policy_arn): <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
-    ///   - [`identities(Option<HashMap<String, Vec<String>>>)`](crate::input::CreateIamPolicyAssignmentInput::identities): <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::CreateIamPolicyAssignmentInput::namespace): <p>The namespace that contains the assignment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::set_aws_account_id): <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
+    ///   - [`assignment_name(impl Into<String>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::assignment_name) / [`set_assignment_name(Option<String>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::set_assignment_name): <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
+    ///   - [`assignment_status(AssignmentStatus)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::assignment_status) / [`set_assignment_status(Option<AssignmentStatus>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::set_assignment_status): <p>The status of the assignment. Possible values are as follows:</p>  <ul>   <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>   <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>   <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>  </ul>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::set_policy_arn): <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
+    ///   - [`identities(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::identities) / [`set_identities(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::set_identities): <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CreateIAMPolicyAssignment::set_namespace): <p>The namespace that contains the assignment.</p>
     /// - On success, responds with [`CreateIamPolicyAssignmentOutput`](crate::output::CreateIamPolicyAssignmentOutput) with field(s):
     ///   - [`assignment_name(Option<String>)`](crate::output::CreateIamPolicyAssignmentOutput::assignment_name): <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
     ///   - [`assignment_id(Option<String>)`](crate::output::CreateIamPolicyAssignmentOutput::assignment_id): <p>The ID for the assignment.</p>
@@ -303,11 +303,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateIngestion`](crate::client::fluent_builders::CreateIngestion) operation.
     ///
-    /// - Takes [`CreateIngestionInput`](crate::input::CreateIngestionInput) with field(s):
-    ///   - [`data_set_id(Option<String>)`](crate::input::CreateIngestionInput::data_set_id): <p>The ID of the dataset used in the ingestion.</p>
-    ///   - [`ingestion_id(Option<String>)`](crate::input::CreateIngestionInput::ingestion_id): <p>An ID for the ingestion.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateIngestionInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`ingestion_type(Option<IngestionType>)`](crate::input::CreateIngestionInput::ingestion_type): <p>The type of ingestion that you want to create.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::CreateIngestion::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::CreateIngestion::set_data_set_id): <p>The ID of the dataset used in the ingestion.</p>
+    ///   - [`ingestion_id(impl Into<String>)`](crate::client::fluent_builders::CreateIngestion::ingestion_id) / [`set_ingestion_id(Option<String>)`](crate::client::fluent_builders::CreateIngestion::set_ingestion_id): <p>An ID for the ingestion.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateIngestion::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateIngestion::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`ingestion_type(IngestionType)`](crate::client::fluent_builders::CreateIngestion::ingestion_type) / [`set_ingestion_type(Option<IngestionType>)`](crate::client::fluent_builders::CreateIngestion::set_ingestion_type): <p>The type of ingestion that you want to create.</p>
     /// - On success, responds with [`CreateIngestionOutput`](crate::output::CreateIngestionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateIngestionOutput::arn): <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
     ///   - [`ingestion_id(Option<String>)`](crate::output::CreateIngestionOutput::ingestion_id): <p>An ID for the ingestion.</p>
@@ -320,11 +320,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateNamespace`](crate::client::fluent_builders::CreateNamespace) operation.
     ///
-    /// - Takes [`CreateNamespaceInput`](crate::input::CreateNamespaceInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateNamespaceInput::aws_account_id): <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::CreateNamespaceInput::namespace): <p>The name that you want to use to describe the new namespace.</p>
-    ///   - [`identity_store(Option<IdentityStore>)`](crate::input::CreateNamespaceInput::identity_store): <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateNamespaceInput::tags): <p>The tags that you want to associate with the namespace that you're creating.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateNamespace::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateNamespace::set_aws_account_id): <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::CreateNamespace::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::CreateNamespace::set_namespace): <p>The name that you want to use to describe the new namespace.</p>
+    ///   - [`identity_store(IdentityStore)`](crate::client::fluent_builders::CreateNamespace::identity_store) / [`set_identity_store(Option<IdentityStore>)`](crate::client::fluent_builders::CreateNamespace::set_identity_store): <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateNamespace::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateNamespace::set_tags): <p>The tags that you want to associate with the namespace that you're creating.</p>
     /// - On success, responds with [`CreateNamespaceOutput`](crate::output::CreateNamespaceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateNamespaceOutput::arn): <p>The ARN of the Amazon QuickSight namespace you created. </p>
     ///   - [`name(Option<String>)`](crate::output::CreateNamespaceOutput::name): <p>The name of the new namespace that you created.</p>
@@ -339,14 +339,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTemplate`](crate::client::fluent_builders::CreateTemplate) operation.
     ///
-    /// - Takes [`CreateTemplateInput`](crate::input::CreateTemplateInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateTemplateInput::aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::CreateTemplateInput::template_id): <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateTemplateInput::name): <p>A display name for the template.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::input::CreateTemplateInput::permissions): <p>A list of resource permissions to be set on the template. </p>
-    ///   - [`source_entity(Option<TemplateSourceEntity>)`](crate::input::CreateTemplateInput::source_entity): <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTemplateInput::tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
-    ///   - [`version_description(Option<String>)`](crate::input::CreateTemplateInput::version_description): <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateTemplate::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateTemplate::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::CreateTemplate::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::CreateTemplate::set_template_id): <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTemplate::set_name): <p>A display name for the template.</p>
+    ///   - [`permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::CreateTemplate::permissions) / [`set_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::CreateTemplate::set_permissions): <p>A list of resource permissions to be set on the template. </p>
+    ///   - [`source_entity(TemplateSourceEntity)`](crate::client::fluent_builders::CreateTemplate::source_entity) / [`set_source_entity(Option<TemplateSourceEntity>)`](crate::client::fluent_builders::CreateTemplate::set_source_entity): <p>The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTemplate::set_tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
+    ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::CreateTemplate::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::CreateTemplate::set_version_description): <p>A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     /// - On success, responds with [`CreateTemplateOutput`](crate::output::CreateTemplateOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateTemplateOutput::arn): <p>The ARN for the template.</p>
     ///   - [`version_arn(Option<String>)`](crate::output::CreateTemplateOutput::version_arn): <p>The ARN for the template, including the version information of the first version.</p>
@@ -360,11 +360,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTemplateAlias`](crate::client::fluent_builders::CreateTemplateAlias) operation.
     ///
-    /// - Takes [`CreateTemplateAliasInput`](crate::input::CreateTemplateAliasInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateTemplateAliasInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::CreateTemplateAliasInput::template_id): <p>An ID for the template.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::CreateTemplateAliasInput::alias_name): <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
-    ///   - [`template_version_number(Option<i64>)`](crate::input::CreateTemplateAliasInput::template_version_number): <p>The version number of the template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateTemplateAlias::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateTemplateAlias::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::CreateTemplateAlias::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::CreateTemplateAlias::set_template_id): <p>An ID for the template.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::CreateTemplateAlias::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::CreateTemplateAlias::set_alias_name): <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
+    ///   - [`template_version_number(i64)`](crate::client::fluent_builders::CreateTemplateAlias::template_version_number) / [`set_template_version_number(Option<i64>)`](crate::client::fluent_builders::CreateTemplateAlias::set_template_version_number): <p>The version number of the template.</p>
     /// - On success, responds with [`CreateTemplateAliasOutput`](crate::output::CreateTemplateAliasOutput) with field(s):
     ///   - [`template_alias(Option<TemplateAlias>)`](crate::output::CreateTemplateAliasOutput::template_alias): <p>Information about the template alias.</p>
     ///   - [`status(i32)`](crate::output::CreateTemplateAliasOutput::status): <p>The HTTP status of the request.</p>
@@ -375,15 +375,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTheme`](crate::client::fluent_builders::CreateTheme) operation.
     ///
-    /// - Takes [`CreateThemeInput`](crate::input::CreateThemeInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateThemeInput::aws_account_id): <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
-    ///   - [`theme_id(Option<String>)`](crate::input::CreateThemeInput::theme_id): <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateThemeInput::name): <p>A display name for the theme.</p>
-    ///   - [`base_theme_id(Option<String>)`](crate::input::CreateThemeInput::base_theme_id): <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
-    ///   - [`version_description(Option<String>)`](crate::input::CreateThemeInput::version_description): <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
-    ///   - [`configuration(Option<ThemeConfiguration>)`](crate::input::CreateThemeInput::configuration): <p>The theme configuration, which contains the theme display properties.</p>
-    ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::input::CreateThemeInput::permissions): <p>A valid grouping of resource permissions to apply to the new theme. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateThemeInput::tags): <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateTheme::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateTheme::set_aws_account_id): <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::CreateTheme::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::CreateTheme::set_theme_id): <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTheme::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTheme::set_name): <p>A display name for the theme.</p>
+    ///   - [`base_theme_id(impl Into<String>)`](crate::client::fluent_builders::CreateTheme::base_theme_id) / [`set_base_theme_id(Option<String>)`](crate::client::fluent_builders::CreateTheme::set_base_theme_id): <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::CreateTheme::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::CreateTheme::set_version_description): <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
+    ///   - [`configuration(ThemeConfiguration)`](crate::client::fluent_builders::CreateTheme::configuration) / [`set_configuration(Option<ThemeConfiguration>)`](crate::client::fluent_builders::CreateTheme::set_configuration): <p>The theme configuration, which contains the theme display properties.</p>
+    ///   - [`permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::CreateTheme::permissions) / [`set_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::CreateTheme::set_permissions): <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTheme::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTheme::set_tags): <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
     /// - On success, responds with [`CreateThemeOutput`](crate::output::CreateThemeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateThemeOutput::arn): <p>The Amazon Resource Name (ARN) for the theme.</p>
     ///   - [`version_arn(Option<String>)`](crate::output::CreateThemeOutput::version_arn): <p>The Amazon Resource Name (ARN) for the new theme.</p>
@@ -397,11 +397,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateThemeAlias`](crate::client::fluent_builders::CreateThemeAlias) operation.
     ///
-    /// - Takes [`CreateThemeAliasInput`](crate::input::CreateThemeAliasInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::CreateThemeAliasInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::CreateThemeAliasInput::theme_id): <p>An ID for the theme alias.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::CreateThemeAliasInput::alias_name): <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
-    ///   - [`theme_version_number(Option<i64>)`](crate::input::CreateThemeAliasInput::theme_version_number): <p>The version number of the theme.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateThemeAlias::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::CreateThemeAlias::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::CreateThemeAlias::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::CreateThemeAlias::set_theme_id): <p>An ID for the theme alias.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::CreateThemeAlias::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::CreateThemeAlias::set_alias_name): <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
+    ///   - [`theme_version_number(i64)`](crate::client::fluent_builders::CreateThemeAlias::theme_version_number) / [`set_theme_version_number(Option<i64>)`](crate::client::fluent_builders::CreateThemeAlias::set_theme_version_number): <p>The version number of the theme.</p>
     /// - On success, responds with [`CreateThemeAliasOutput`](crate::output::CreateThemeAliasOutput) with field(s):
     ///   - [`theme_alias(Option<ThemeAlias>)`](crate::output::CreateThemeAliasOutput::theme_alias): <p>Information about the theme alias.</p>
     ///   - [`status(i32)`](crate::output::CreateThemeAliasOutput::status): <p>The HTTP status of the request.</p>
@@ -412,9 +412,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAccountCustomization`](crate::client::fluent_builders::DeleteAccountCustomization) operation.
     ///
-    /// - Takes [`DeleteAccountCustomizationInput`](crate::input::DeleteAccountCustomizationInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteAccountCustomizationInput::aws_account_id): <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DeleteAccountCustomizationInput::namespace): <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountCustomization::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAccountCustomization::set_aws_account_id): <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountCustomization::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteAccountCustomization::set_namespace): <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
     /// - On success, responds with [`DeleteAccountCustomizationOutput`](crate::output::DeleteAccountCustomizationOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::DeleteAccountCustomizationOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::DeleteAccountCustomizationOutput::status): <p>The HTTP status of the request.</p>
@@ -426,11 +426,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAnalysis`](crate::client::fluent_builders::DeleteAnalysis) operation.
     ///
-    /// - Takes [`DeleteAnalysisInput`](crate::input::DeleteAnalysisInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteAnalysisInput::aws_account_id): <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    ///   - [`analysis_id(Option<String>)`](crate::input::DeleteAnalysisInput::analysis_id): <p>The ID of the analysis that you're deleting.</p>
-    ///   - [`recovery_window_in_days(Option<i64>)`](crate::input::DeleteAnalysisInput::recovery_window_in_days): <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
-    ///   - [`force_delete_without_recovery(bool)`](crate::input::DeleteAnalysisInput::force_delete_without_recovery): <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAnalysis::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAnalysis::set_aws_account_id): <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAnalysis::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::DeleteAnalysis::set_analysis_id): <p>The ID of the analysis that you're deleting.</p>
+    ///   - [`recovery_window_in_days(i64)`](crate::client::fluent_builders::DeleteAnalysis::recovery_window_in_days) / [`set_recovery_window_in_days(Option<i64>)`](crate::client::fluent_builders::DeleteAnalysis::set_recovery_window_in_days): <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    ///   - [`force_delete_without_recovery(bool)`](crate::client::fluent_builders::DeleteAnalysis::force_delete_without_recovery) / [`set_force_delete_without_recovery(bool)`](crate::client::fluent_builders::DeleteAnalysis::set_force_delete_without_recovery): <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     /// - On success, responds with [`DeleteAnalysisOutput`](crate::output::DeleteAnalysisOutput) with field(s):
     ///   - [`status(i32)`](crate::output::DeleteAnalysisOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::output::DeleteAnalysisOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted analysis.</p>
@@ -443,10 +443,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDashboard`](crate::client::fluent_builders::DeleteDashboard) operation.
     ///
-    /// - Takes [`DeleteDashboardInput`](crate::input::DeleteDashboardInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteDashboardInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
-    ///   - [`dashboard_id(Option<String>)`](crate::input::DeleteDashboardInput::dashboard_id): <p>The ID for the dashboard.</p>
-    ///   - [`version_number(Option<i64>)`](crate::input::DeleteDashboardInput::version_number): <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDashboard::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteDashboard::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDashboard::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::DeleteDashboard::set_dashboard_id): <p>The ID for the dashboard.</p>
+    ///   - [`version_number(i64)`](crate::client::fluent_builders::DeleteDashboard::version_number) / [`set_version_number(Option<i64>)`](crate::client::fluent_builders::DeleteDashboard::set_version_number): <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
     /// - On success, responds with [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput) with field(s):
     ///   - [`status(i32)`](crate::output::DeleteDashboardOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::output::DeleteDashboardOutput::arn): <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
@@ -458,9 +458,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDataSet`](crate::client::fluent_builders::DeleteDataSet) operation.
     ///
-    /// - Takes [`DeleteDataSetInput`](crate::input::DeleteDataSetInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteDataSetInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_set_id(Option<String>)`](crate::input::DeleteDataSetInput::data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSet::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSet::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSet::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSet::set_data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     /// - On success, responds with [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DeleteDataSetOutput::arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
     ///   - [`data_set_id(Option<String>)`](crate::output::DeleteDataSetOutput::data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -472,9 +472,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDataSource`](crate::client::fluent_builders::DeleteDataSource) operation.
     ///
-    /// - Takes [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteDataSourceInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_source_id(Option<String>)`](crate::input::DeleteDataSourceInput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     /// - On success, responds with [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DeleteDataSourceOutput::arn): <p>The Amazon Resource Name (ARN) of the data source that you deleted.</p>
     ///   - [`data_source_id(Option<String>)`](crate::output::DeleteDataSourceOutput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -486,9 +486,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFolder`](crate::client::fluent_builders::DeleteFolder) operation.
     ///
-    /// - Takes [`DeleteFolderInput`](crate::input::DeleteFolderInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteFolderInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::DeleteFolderInput::folder_id): <p>The ID of the folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFolder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteFolder::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFolder::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::DeleteFolder::set_folder_id): <p>The ID of the folder.</p>
     /// - On success, responds with [`DeleteFolderOutput`](crate::output::DeleteFolderOutput) with field(s):
     ///   - [`status(i32)`](crate::output::DeleteFolderOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::output::DeleteFolderOutput::arn): <p>The Amazon Resource Name of the deleted folder.</p>
@@ -500,11 +500,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFolderMembership`](crate::client::fluent_builders::DeleteFolderMembership) operation.
     ///
-    /// - Takes [`DeleteFolderMembershipInput`](crate::input::DeleteFolderMembershipInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteFolderMembershipInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::DeleteFolderMembershipInput::folder_id): <p>The Folder ID.</p>
-    ///   - [`member_id(Option<String>)`](crate::input::DeleteFolderMembershipInput::member_id): <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
-    ///   - [`member_type(Option<MemberType>)`](crate::input::DeleteFolderMembershipInput::member_type): <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFolderMembership::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteFolderMembership::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFolderMembership::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::DeleteFolderMembership::set_folder_id): <p>The Folder ID.</p>
+    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFolderMembership::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::DeleteFolderMembership::set_member_id): <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
+    ///   - [`member_type(MemberType)`](crate::client::fluent_builders::DeleteFolderMembership::member_type) / [`set_member_type(Option<MemberType>)`](crate::client::fluent_builders::DeleteFolderMembership::set_member_type): <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
     /// - On success, responds with [`DeleteFolderMembershipOutput`](crate::output::DeleteFolderMembershipOutput) with field(s):
     ///   - [`status(i32)`](crate::output::DeleteFolderMembershipOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DeleteFolderMembershipOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -514,10 +514,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
     ///
-    /// - Takes [`DeleteGroupInput`](crate::input::DeleteGroupInput) with field(s):
-    ///   - [`group_name(Option<String>)`](crate::input::DeleteGroupInput::group_name): <p>The name of the group that you want to delete.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteGroupInput::aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DeleteGroupInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_name): <p>The name of the group that you want to delete.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::DeleteGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::DeleteGroupOutput::status): <p>The HTTP status of the request.</p>
@@ -527,11 +527,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteGroupMembership`](crate::client::fluent_builders::DeleteGroupMembership) operation.
     ///
-    /// - Takes [`DeleteGroupMembershipInput`](crate::input::DeleteGroupMembershipInput) with field(s):
-    ///   - [`member_name(Option<String>)`](crate::input::DeleteGroupMembershipInput::member_name): <p>The name of the user that you want to delete from the group membership.</p>
-    ///   - [`group_name(Option<String>)`](crate::input::DeleteGroupMembershipInput::group_name): <p>The name of the group that you want to delete the user from.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteGroupMembershipInput::aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DeleteGroupMembershipInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`member_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::member_name) / [`set_member_name(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_member_name): <p>The name of the user that you want to delete from the group membership.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_group_name): <p>The name of the group that you want to delete the user from.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`DeleteGroupMembershipOutput`](crate::output::DeleteGroupMembershipOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::DeleteGroupMembershipOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::DeleteGroupMembershipOutput::status): <p>The HTTP status of the request.</p>
@@ -541,10 +541,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteIAMPolicyAssignment`](crate::client::fluent_builders::DeleteIAMPolicyAssignment) operation.
     ///
-    /// - Takes [`DeleteIamPolicyAssignmentInput`](crate::input::DeleteIamPolicyAssignmentInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteIamPolicyAssignmentInput::aws_account_id): <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
-    ///   - [`assignment_name(Option<String>)`](crate::input::DeleteIamPolicyAssignmentInput::assignment_name): <p>The name of the assignment. </p>
-    ///   - [`namespace(Option<String>)`](crate::input::DeleteIamPolicyAssignmentInput::namespace): <p>The namespace that contains the assignment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIAMPolicyAssignment::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteIAMPolicyAssignment::set_aws_account_id): <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
+    ///   - [`assignment_name(impl Into<String>)`](crate::client::fluent_builders::DeleteIAMPolicyAssignment::assignment_name) / [`set_assignment_name(Option<String>)`](crate::client::fluent_builders::DeleteIAMPolicyAssignment::set_assignment_name): <p>The name of the assignment. </p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteIAMPolicyAssignment::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteIAMPolicyAssignment::set_namespace): <p>The namespace that contains the assignment.</p>
     /// - On success, responds with [`DeleteIamPolicyAssignmentOutput`](crate::output::DeleteIamPolicyAssignmentOutput) with field(s):
     ///   - [`assignment_name(Option<String>)`](crate::output::DeleteIamPolicyAssignmentOutput::assignment_name): <p>The name of the assignment. </p>
     ///   - [`request_id(Option<String>)`](crate::output::DeleteIamPolicyAssignmentOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -557,9 +557,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteNamespace`](crate::client::fluent_builders::DeleteNamespace) operation.
     ///
-    /// - Takes [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteNamespaceInput::aws_account_id): <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DeleteNamespaceInput::namespace): <p>The namespace that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNamespace::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteNamespace::set_aws_account_id): <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteNamespace::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteNamespace::set_namespace): <p>The namespace that you want to delete.</p>
     /// - On success, responds with [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::DeleteNamespaceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::DeleteNamespaceOutput::status): <p>The HTTP status of the request.</p>
@@ -569,10 +569,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTemplate`](crate::client::fluent_builders::DeleteTemplate) operation.
     ///
-    /// - Takes [`DeleteTemplateInput`](crate::input::DeleteTemplateInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteTemplateInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::DeleteTemplateInput::template_id): <p>An ID for the template you want to delete.</p>
-    ///   - [`version_number(Option<i64>)`](crate::input::DeleteTemplateInput::version_number): <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTemplate::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteTemplate::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTemplate::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::DeleteTemplate::set_template_id): <p>An ID for the template you want to delete.</p>
+    ///   - [`version_number(i64)`](crate::client::fluent_builders::DeleteTemplate::version_number) / [`set_version_number(Option<i64>)`](crate::client::fluent_builders::DeleteTemplate::set_version_number): <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
     /// - On success, responds with [`DeleteTemplateOutput`](crate::output::DeleteTemplateOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::DeleteTemplateOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`arn(Option<String>)`](crate::output::DeleteTemplateOutput::arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -584,10 +584,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTemplateAlias`](crate::client::fluent_builders::DeleteTemplateAlias) operation.
     ///
-    /// - Takes [`DeleteTemplateAliasInput`](crate::input::DeleteTemplateAliasInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteTemplateAliasInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::DeleteTemplateAliasInput::template_id): <p>The ID for the template that the specified alias is for.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::DeleteTemplateAliasInput::alias_name): <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTemplateAlias::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteTemplateAlias::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTemplateAlias::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::DeleteTemplateAlias::set_template_id): <p>The ID for the template that the specified alias is for.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTemplateAlias::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::DeleteTemplateAlias::set_alias_name): <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
     /// - On success, responds with [`DeleteTemplateAliasOutput`](crate::output::DeleteTemplateAliasOutput) with field(s):
     ///   - [`status(i32)`](crate::output::DeleteTemplateAliasOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`template_id(Option<String>)`](crate::output::DeleteTemplateAliasOutput::template_id): <p>An ID for the template associated with the deletion.</p>
@@ -600,10 +600,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTheme`](crate::client::fluent_builders::DeleteTheme) operation.
     ///
-    /// - Takes [`DeleteThemeInput`](crate::input::DeleteThemeInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteThemeInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::DeleteThemeInput::theme_id): <p>An ID for the theme that you want to delete.</p>
-    ///   - [`version_number(Option<i64>)`](crate::input::DeleteThemeInput::version_number): <p>The version of the theme that you want to delete. </p>  <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTheme::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteTheme::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTheme::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::DeleteTheme::set_theme_id): <p>An ID for the theme that you want to delete.</p>
+    ///   - [`version_number(i64)`](crate::client::fluent_builders::DeleteTheme::version_number) / [`set_version_number(Option<i64>)`](crate::client::fluent_builders::DeleteTheme::set_version_number): <p>The version of the theme that you want to delete. </p>  <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     /// - On success, responds with [`DeleteThemeOutput`](crate::output::DeleteThemeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DeleteThemeOutput::arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DeleteThemeOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -615,10 +615,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteThemeAlias`](crate::client::fluent_builders::DeleteThemeAlias) operation.
     ///
-    /// - Takes [`DeleteThemeAliasInput`](crate::input::DeleteThemeAliasInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteThemeAliasInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::DeleteThemeAliasInput::theme_id): <p>The ID for the theme that the specified alias is for.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::DeleteThemeAliasInput::alias_name): <p>The unique name for the theme alias to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteThemeAlias::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteThemeAlias::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::DeleteThemeAlias::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::DeleteThemeAlias::set_theme_id): <p>The ID for the theme that the specified alias is for.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThemeAlias::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::DeleteThemeAlias::set_alias_name): <p>The unique name for the theme alias to delete.</p>
     /// - On success, responds with [`DeleteThemeAliasOutput`](crate::output::DeleteThemeAliasOutput) with field(s):
     ///   - [`alias_name(Option<String>)`](crate::output::DeleteThemeAliasOutput::alias_name): <p>The name for the theme alias.</p>
     ///   - [`arn(Option<String>)`](crate::output::DeleteThemeAliasOutput::arn): <p>The Amazon Resource Name (ARN) of the theme resource using the deleted alias.</p>
@@ -631,10 +631,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// - Takes [`DeleteUserInput`](crate::input::DeleteUserInput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::input::DeleteUserInput::user_name): <p>The name of the user that you want to delete.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteUserInput::aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DeleteUserInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_user_name): <p>The name of the user that you want to delete.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::DeleteUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::DeleteUserOutput::status): <p>The HTTP status of the request.</p>
@@ -644,10 +644,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteUserByPrincipalId`](crate::client::fluent_builders::DeleteUserByPrincipalId) operation.
     ///
-    /// - Takes [`DeleteUserByPrincipalIdInput`](crate::input::DeleteUserByPrincipalIdInput) with field(s):
-    ///   - [`principal_id(Option<String>)`](crate::input::DeleteUserByPrincipalIdInput::principal_id): <p>The principal ID of the user.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DeleteUserByPrincipalIdInput::aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DeleteUserByPrincipalIdInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserByPrincipalId::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteUserByPrincipalId::set_principal_id): <p>The principal ID of the user.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserByPrincipalId::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DeleteUserByPrincipalId::set_aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DeleteUserByPrincipalId::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DeleteUserByPrincipalId::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`DeleteUserByPrincipalIdOutput`](crate::output::DeleteUserByPrincipalIdOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::DeleteUserByPrincipalIdOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::DeleteUserByPrincipalIdOutput::status): <p>The HTTP status of the request.</p>
@@ -657,10 +657,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAccountCustomization`](crate::client::fluent_builders::DescribeAccountCustomization) operation.
     ///
-    /// - Takes [`DescribeAccountCustomizationInput`](crate::input::DescribeAccountCustomizationInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeAccountCustomizationInput::aws_account_id): <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DescribeAccountCustomizationInput::namespace): <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
-    ///   - [`resolved(bool)`](crate::input::DescribeAccountCustomizationInput::resolved): <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountCustomization::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAccountCustomization::set_aws_account_id): <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountCustomization::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribeAccountCustomization::set_namespace): <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.</p>
+    ///   - [`resolved(bool)`](crate::client::fluent_builders::DescribeAccountCustomization::resolved) / [`set_resolved(bool)`](crate::client::fluent_builders::DescribeAccountCustomization::set_resolved): <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Amazon QuickSight customizations is returned. You can add this flag to your command to use the same view that Amazon QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels. </p>
     /// - On success, responds with [`DescribeAccountCustomizationOutput`](crate::output::DescribeAccountCustomizationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DescribeAccountCustomizationOutput::arn): <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
     ///   - [`aws_account_id(Option<String>)`](crate::output::DescribeAccountCustomizationOutput::aws_account_id): <p>The ID for the Amazon Web Services account that you're describing.</p>
@@ -676,8 +676,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAccountSettings`](crate::client::fluent_builders::DescribeAccountSettings) operation.
     ///
-    /// - Takes [`DescribeAccountSettingsInput`](crate::input::DescribeAccountSettingsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeAccountSettingsInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountSettings::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAccountSettings::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
     /// - On success, responds with [`DescribeAccountSettingsOutput`](crate::output::DescribeAccountSettingsOutput) with field(s):
     ///   - [`account_settings(Option<AccountSettings>)`](crate::output::DescribeAccountSettingsOutput::account_settings): <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeAccountSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -688,9 +688,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAnalysis`](crate::client::fluent_builders::DescribeAnalysis) operation.
     ///
-    /// - Takes [`DescribeAnalysisInput`](crate::input::DescribeAnalysisInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeAnalysisInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
-    ///   - [`analysis_id(Option<String>)`](crate::input::DescribeAnalysisInput::analysis_id): <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAnalysis::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAnalysis::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAnalysis::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::DescribeAnalysis::set_analysis_id): <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
     /// - On success, responds with [`DescribeAnalysisOutput`](crate::output::DescribeAnalysisOutput) with field(s):
     ///   - [`analysis(Option<Analysis>)`](crate::output::DescribeAnalysisOutput::analysis): <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
     ///   - [`status(i32)`](crate::output::DescribeAnalysisOutput::status): <p>The HTTP status of the request.</p>
@@ -701,9 +701,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAnalysisPermissions`](crate::client::fluent_builders::DescribeAnalysisPermissions) operation.
     ///
-    /// - Takes [`DescribeAnalysisPermissionsInput`](crate::input::DescribeAnalysisPermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeAnalysisPermissionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
-    ///   - [`analysis_id(Option<String>)`](crate::input::DescribeAnalysisPermissionsInput::analysis_id): <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAnalysisPermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAnalysisPermissions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAnalysisPermissions::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::DescribeAnalysisPermissions::set_analysis_id): <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
     /// - On success, responds with [`DescribeAnalysisPermissionsOutput`](crate::output::DescribeAnalysisPermissionsOutput) with field(s):
     ///   - [`analysis_id(Option<String>)`](crate::output::DescribeAnalysisPermissionsOutput::analysis_id): <p>The ID of the analysis whose permissions you're describing.</p>
     ///   - [`analysis_arn(Option<String>)`](crate::output::DescribeAnalysisPermissionsOutput::analysis_arn): <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
@@ -718,11 +718,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDashboard`](crate::client::fluent_builders::DescribeDashboard) operation.
     ///
-    /// - Takes [`DescribeDashboardInput`](crate::input::DescribeDashboardInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeDashboardInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    ///   - [`dashboard_id(Option<String>)`](crate::input::DescribeDashboardInput::dashboard_id): <p>The ID for the dashboard.</p>
-    ///   - [`version_number(Option<i64>)`](crate::input::DescribeDashboardInput::version_number): <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
-    ///   - [`alias_name(Option<String>)`](crate::input::DescribeDashboardInput::alias_name): <p>The alias name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDashboard::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeDashboard::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDashboard::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::DescribeDashboard::set_dashboard_id): <p>The ID for the dashboard.</p>
+    ///   - [`version_number(i64)`](crate::client::fluent_builders::DescribeDashboard::version_number) / [`set_version_number(Option<i64>)`](crate::client::fluent_builders::DescribeDashboard::set_version_number): <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDashboard::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::DescribeDashboard::set_alias_name): <p>The alias name.</p>
     /// - On success, responds with [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput) with field(s):
     ///   - [`dashboard(Option<Dashboard>)`](crate::output::DescribeDashboardOutput::dashboard): <p>Information about the dashboard.</p>
     ///   - [`status(i32)`](crate::output::DescribeDashboardOutput::status): <p>The HTTP status of this request.</p>
@@ -733,9 +733,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDashboardPermissions`](crate::client::fluent_builders::DescribeDashboardPermissions) operation.
     ///
-    /// - Takes [`DescribeDashboardPermissionsInput`](crate::input::DescribeDashboardPermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeDashboardPermissionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
-    ///   - [`dashboard_id(Option<String>)`](crate::input::DescribeDashboardPermissionsInput::dashboard_id): <p>The ID for the dashboard, also added to the IAM policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDashboardPermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeDashboardPermissions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDashboardPermissions::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::DescribeDashboardPermissions::set_dashboard_id): <p>The ID for the dashboard, also added to the IAM policy.</p>
     /// - On success, responds with [`DescribeDashboardPermissionsOutput`](crate::output::DescribeDashboardPermissionsOutput) with field(s):
     ///   - [`dashboard_id(Option<String>)`](crate::output::DescribeDashboardPermissionsOutput::dashboard_id): <p>The ID for the dashboard.</p>
     ///   - [`dashboard_arn(Option<String>)`](crate::output::DescribeDashboardPermissionsOutput::dashboard_arn): <p>The Amazon Resource Name (ARN) of the dashboard.</p>
@@ -751,9 +751,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDataSet`](crate::client::fluent_builders::DescribeDataSet) operation.
     ///
-    /// - Takes [`DescribeDataSetInput`](crate::input::DescribeDataSetInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeDataSetInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_set_id(Option<String>)`](crate::input::DescribeDataSetInput::data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSet::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSet::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSet::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSet::set_data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeDataSetOutput`](crate::output::DescribeDataSetOutput) with field(s):
     ///   - [`data_set(Option<DataSet>)`](crate::output::DescribeDataSetOutput::data_set): <p>Information on the dataset.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeDataSetOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -764,9 +764,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDataSetPermissions`](crate::client::fluent_builders::DescribeDataSetPermissions) operation.
     ///
-    /// - Takes [`DescribeDataSetPermissionsInput`](crate::input::DescribeDataSetPermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeDataSetPermissionsInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_set_id(Option<String>)`](crate::input::DescribeDataSetPermissionsInput::data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSetPermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSetPermissions::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSetPermissions::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSetPermissions::set_data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeDataSetPermissionsOutput`](crate::output::DescribeDataSetPermissionsOutput) with field(s):
     ///   - [`data_set_arn(Option<String>)`](crate::output::DescribeDataSetPermissionsOutput::data_set_arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
     ///   - [`data_set_id(Option<String>)`](crate::output::DescribeDataSetPermissionsOutput::data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -781,9 +781,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDataSource`](crate::client::fluent_builders::DescribeDataSource) operation.
     ///
-    /// - Takes [`DescribeDataSourceInput`](crate::input::DescribeDataSourceInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeDataSourceInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_source_id(Option<String>)`](crate::input::DescribeDataSourceInput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput) with field(s):
     ///   - [`data_source(Option<DataSource>)`](crate::output::DescribeDataSourceOutput::data_source): <p>The information on the data source.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeDataSourceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -794,9 +794,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDataSourcePermissions`](crate::client::fluent_builders::DescribeDataSourcePermissions) operation.
     ///
-    /// - Takes [`DescribeDataSourcePermissionsInput`](crate::input::DescribeDataSourcePermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeDataSourcePermissionsInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_source_id(Option<String>)`](crate::input::DescribeDataSourcePermissionsInput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSourcePermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSourcePermissions::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSourcePermissions::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSourcePermissions::set_data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeDataSourcePermissionsOutput`](crate::output::DescribeDataSourcePermissionsOutput) with field(s):
     ///   - [`data_source_arn(Option<String>)`](crate::output::DescribeDataSourcePermissionsOutput::data_source_arn): <p>The Amazon Resource Name (ARN) of the data source.</p>
     ///   - [`data_source_id(Option<String>)`](crate::output::DescribeDataSourcePermissionsOutput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -811,9 +811,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFolder`](crate::client::fluent_builders::DescribeFolder) operation.
     ///
-    /// - Takes [`DescribeFolderInput`](crate::input::DescribeFolderInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeFolderInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::DescribeFolderInput::folder_id): <p>The ID of the folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFolder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeFolder::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFolder::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::DescribeFolder::set_folder_id): <p>The ID of the folder.</p>
     /// - On success, responds with [`DescribeFolderOutput`](crate::output::DescribeFolderOutput) with field(s):
     ///   - [`status(i32)`](crate::output::DescribeFolderOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder(Option<Folder>)`](crate::output::DescribeFolderOutput::folder): <p>Information about the folder.</p>
@@ -824,9 +824,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFolderPermissions`](crate::client::fluent_builders::DescribeFolderPermissions) operation.
     ///
-    /// - Takes [`DescribeFolderPermissionsInput`](crate::input::DescribeFolderPermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeFolderPermissionsInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::DescribeFolderPermissionsInput::folder_id): <p>The ID of the folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFolderPermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeFolderPermissions::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFolderPermissions::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::DescribeFolderPermissions::set_folder_id): <p>The ID of the folder.</p>
     /// - On success, responds with [`DescribeFolderPermissionsOutput`](crate::output::DescribeFolderPermissionsOutput) with field(s):
     ///   - [`status(i32)`](crate::output::DescribeFolderPermissionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_id(Option<String>)`](crate::output::DescribeFolderPermissionsOutput::folder_id): <p>The ID of the folder.</p>
@@ -841,9 +841,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFolderResolvedPermissions`](crate::client::fluent_builders::DescribeFolderResolvedPermissions) operation.
     ///
-    /// - Takes [`DescribeFolderResolvedPermissionsInput`](crate::input::DescribeFolderResolvedPermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeFolderResolvedPermissionsInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::DescribeFolderResolvedPermissionsInput::folder_id): <p>The ID of the folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFolderResolvedPermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeFolderResolvedPermissions::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFolderResolvedPermissions::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::DescribeFolderResolvedPermissions::set_folder_id): <p>The ID of the folder.</p>
     /// - On success, responds with [`DescribeFolderResolvedPermissionsOutput`](crate::output::DescribeFolderResolvedPermissionsOutput) with field(s):
     ///   - [`status(i32)`](crate::output::DescribeFolderResolvedPermissionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_id(Option<String>)`](crate::output::DescribeFolderResolvedPermissionsOutput::folder_id): <p>The ID of the folder.</p>
@@ -858,10 +858,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeGroup`](crate::client::fluent_builders::DescribeGroup) operation.
     ///
-    /// - Takes [`DescribeGroupInput`](crate::input::DescribeGroupInput) with field(s):
-    ///   - [`group_name(Option<String>)`](crate::input::DescribeGroupInput::group_name): <p>The name of the group that you want to describe.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeGroupInput::aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DescribeGroupInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_group_name): <p>The name of the group that you want to describe.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`DescribeGroupOutput`](crate::output::DescribeGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::DescribeGroupOutput::group): <p>The name of the group.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -872,10 +872,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeIAMPolicyAssignment`](crate::client::fluent_builders::DescribeIAMPolicyAssignment) operation.
     ///
-    /// - Takes [`DescribeIamPolicyAssignmentInput`](crate::input::DescribeIamPolicyAssignmentInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeIamPolicyAssignmentInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
-    ///   - [`assignment_name(Option<String>)`](crate::input::DescribeIamPolicyAssignmentInput::assignment_name): <p>The name of the assignment, also called a rule.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DescribeIamPolicyAssignmentInput::namespace): <p>The namespace that contains the assignment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIAMPolicyAssignment::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeIAMPolicyAssignment::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
+    ///   - [`assignment_name(impl Into<String>)`](crate::client::fluent_builders::DescribeIAMPolicyAssignment::assignment_name) / [`set_assignment_name(Option<String>)`](crate::client::fluent_builders::DescribeIAMPolicyAssignment::set_assignment_name): <p>The name of the assignment, also called a rule.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeIAMPolicyAssignment::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribeIAMPolicyAssignment::set_namespace): <p>The namespace that contains the assignment.</p>
     /// - On success, responds with [`DescribeIamPolicyAssignmentOutput`](crate::output::DescribeIamPolicyAssignmentOutput) with field(s):
     ///   - [`iam_policy_assignment(Option<IamPolicyAssignment>)`](crate::output::DescribeIamPolicyAssignmentOutput::iam_policy_assignment): <p>Information describing the IAM policy assignment.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeIamPolicyAssignmentOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -888,10 +888,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeIngestion`](crate::client::fluent_builders::DescribeIngestion) operation.
     ///
-    /// - Takes [`DescribeIngestionInput`](crate::input::DescribeIngestionInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeIngestionInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_set_id(Option<String>)`](crate::input::DescribeIngestionInput::data_set_id): <p>The ID of the dataset used in the ingestion.</p>
-    ///   - [`ingestion_id(Option<String>)`](crate::input::DescribeIngestionInput::ingestion_id): <p>An ID for the ingestion.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIngestion::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeIngestion::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIngestion::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::DescribeIngestion::set_data_set_id): <p>The ID of the dataset used in the ingestion.</p>
+    ///   - [`ingestion_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIngestion::ingestion_id) / [`set_ingestion_id(Option<String>)`](crate::client::fluent_builders::DescribeIngestion::set_ingestion_id): <p>An ID for the ingestion.</p>
     /// - On success, responds with [`DescribeIngestionOutput`](crate::output::DescribeIngestionOutput) with field(s):
     ///   - [`ingestion(Option<Ingestion>)`](crate::output::DescribeIngestionOutput::ingestion): <p>Information about the ingestion.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeIngestionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -902,8 +902,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeIpRestriction`](crate::client::fluent_builders::DescribeIpRestriction) operation.
     ///
-    /// - Takes [`DescribeIpRestrictionInput`](crate::input::DescribeIpRestrictionInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeIpRestrictionInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIpRestriction::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeIpRestriction::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     /// - On success, responds with [`DescribeIpRestrictionOutput`](crate::output::DescribeIpRestrictionOutput) with field(s):
     ///   - [`aws_account_id(Option<String>)`](crate::output::DescribeIpRestrictionOutput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     ///   - [`ip_restriction_rule_map(Option<HashMap<String, String>>)`](crate::output::DescribeIpRestrictionOutput::ip_restriction_rule_map): <p>A map that describes the IP rules with CIDR range and description.</p>
@@ -916,9 +916,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeNamespace`](crate::client::fluent_builders::DescribeNamespace) operation.
     ///
-    /// - Takes [`DescribeNamespaceInput`](crate::input::DescribeNamespaceInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeNamespaceInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DescribeNamespaceInput::namespace): <p>The namespace that you want to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeNamespace::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeNamespace::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeNamespace::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribeNamespace::set_namespace): <p>The namespace that you want to describe.</p>
     /// - On success, responds with [`DescribeNamespaceOutput`](crate::output::DescribeNamespaceOutput) with field(s):
     ///   - [`namespace(Option<NamespaceInfoV2>)`](crate::output::DescribeNamespaceOutput::namespace): <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeNamespaceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -929,11 +929,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTemplate`](crate::client::fluent_builders::DescribeTemplate) operation.
     ///
-    /// - Takes [`DescribeTemplateInput`](crate::input::DescribeTemplateInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeTemplateInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::DescribeTemplateInput::template_id): <p>The ID for the template.</p>
-    ///   - [`version_number(Option<i64>)`](crate::input::DescribeTemplateInput::version_number): <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::DescribeTemplateInput::alias_name): <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplate::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeTemplate::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplate::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::DescribeTemplate::set_template_id): <p>The ID for the template.</p>
+    ///   - [`version_number(i64)`](crate::client::fluent_builders::DescribeTemplate::version_number) / [`set_version_number(Option<i64>)`](crate::client::fluent_builders::DescribeTemplate::set_version_number): <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplate::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::DescribeTemplate::set_alias_name): <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     /// - On success, responds with [`DescribeTemplateOutput`](crate::output::DescribeTemplateOutput) with field(s):
     ///   - [`template(Option<Template>)`](crate::output::DescribeTemplateOutput::template): <p>The template structure for the object you want to describe.</p>
     ///   - [`status(i32)`](crate::output::DescribeTemplateOutput::status): <p>The HTTP status of the request.</p>
@@ -944,10 +944,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTemplateAlias`](crate::client::fluent_builders::DescribeTemplateAlias) operation.
     ///
-    /// - Takes [`DescribeTemplateAliasInput`](crate::input::DescribeTemplateAliasInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeTemplateAliasInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::DescribeTemplateAliasInput::template_id): <p>The ID for the template.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::DescribeTemplateAliasInput::alias_name): <p>The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplateAlias::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeTemplateAlias::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplateAlias::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::DescribeTemplateAlias::set_template_id): <p>The ID for the template.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplateAlias::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::DescribeTemplateAlias::set_alias_name): <p>The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     /// - On success, responds with [`DescribeTemplateAliasOutput`](crate::output::DescribeTemplateAliasOutput) with field(s):
     ///   - [`template_alias(Option<TemplateAlias>)`](crate::output::DescribeTemplateAliasOutput::template_alias): <p>Information about the template alias.</p>
     ///   - [`status(i32)`](crate::output::DescribeTemplateAliasOutput::status): <p>The HTTP status of the request.</p>
@@ -958,9 +958,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTemplatePermissions`](crate::client::fluent_builders::DescribeTemplatePermissions) operation.
     ///
-    /// - Takes [`DescribeTemplatePermissionsInput`](crate::input::DescribeTemplatePermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeTemplatePermissionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::DescribeTemplatePermissionsInput::template_id): <p>The ID for the template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplatePermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeTemplatePermissions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTemplatePermissions::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::DescribeTemplatePermissions::set_template_id): <p>The ID for the template.</p>
     /// - On success, responds with [`DescribeTemplatePermissionsOutput`](crate::output::DescribeTemplatePermissionsOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::output::DescribeTemplatePermissionsOutput::template_id): <p>The ID for the template.</p>
     ///   - [`template_arn(Option<String>)`](crate::output::DescribeTemplatePermissionsOutput::template_arn): <p>The Amazon Resource Name (ARN) of the template.</p>
@@ -975,11 +975,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTheme`](crate::client::fluent_builders::DescribeTheme) operation.
     ///
-    /// - Takes [`DescribeThemeInput`](crate::input::DescribeThemeInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeThemeInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::DescribeThemeInput::theme_id): <p>The ID for the theme.</p>
-    ///   - [`version_number(Option<i64>)`](crate::input::DescribeThemeInput::version_number): <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::DescribeThemeInput::alias_name): <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTheme::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeTheme::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTheme::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::DescribeTheme::set_theme_id): <p>The ID for the theme.</p>
+    ///   - [`version_number(i64)`](crate::client::fluent_builders::DescribeTheme::version_number) / [`set_version_number(Option<i64>)`](crate::client::fluent_builders::DescribeTheme::set_version_number): <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTheme::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::DescribeTheme::set_alias_name): <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
     /// - On success, responds with [`DescribeThemeOutput`](crate::output::DescribeThemeOutput) with field(s):
     ///   - [`theme(Option<Theme>)`](crate::output::DescribeThemeOutput::theme): <p>The information about the theme that you are describing.</p>
     ///   - [`status(i32)`](crate::output::DescribeThemeOutput::status): <p>The HTTP status of the request.</p>
@@ -990,10 +990,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeThemeAlias`](crate::client::fluent_builders::DescribeThemeAlias) operation.
     ///
-    /// - Takes [`DescribeThemeAliasInput`](crate::input::DescribeThemeAliasInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeThemeAliasInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::DescribeThemeAliasInput::theme_id): <p>The ID for the theme.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::DescribeThemeAliasInput::alias_name): <p>The name of the theme alias that you want to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeThemeAlias::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeThemeAlias::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::DescribeThemeAlias::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::DescribeThemeAlias::set_theme_id): <p>The ID for the theme.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::DescribeThemeAlias::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::DescribeThemeAlias::set_alias_name): <p>The name of the theme alias that you want to describe.</p>
     /// - On success, responds with [`DescribeThemeAliasOutput`](crate::output::DescribeThemeAliasOutput) with field(s):
     ///   - [`theme_alias(Option<ThemeAlias>)`](crate::output::DescribeThemeAliasOutput::theme_alias): <p>Information about the theme alias.</p>
     ///   - [`status(i32)`](crate::output::DescribeThemeAliasOutput::status): <p>The HTTP status of the request.</p>
@@ -1004,9 +1004,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeThemePermissions`](crate::client::fluent_builders::DescribeThemePermissions) operation.
     ///
-    /// - Takes [`DescribeThemePermissionsInput`](crate::input::DescribeThemePermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeThemePermissionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::DescribeThemePermissionsInput::theme_id): <p>The ID for the theme that you want to describe permissions for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeThemePermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeThemePermissions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::DescribeThemePermissions::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::DescribeThemePermissions::set_theme_id): <p>The ID for the theme that you want to describe permissions for.</p>
     /// - On success, responds with [`DescribeThemePermissionsOutput`](crate::output::DescribeThemePermissionsOutput) with field(s):
     ///   - [`theme_id(Option<String>)`](crate::output::DescribeThemePermissionsOutput::theme_id): <p>The ID for the theme.</p>
     ///   - [`theme_arn(Option<String>)`](crate::output::DescribeThemePermissionsOutput::theme_arn): <p>The Amazon Resource Name (ARN) of the theme.</p>
@@ -1019,10 +1019,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeUser`](crate::client::fluent_builders::DescribeUser) operation.
     ///
-    /// - Takes [`DescribeUserInput`](crate::input::DescribeUserInput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::input::DescribeUserInput::user_name): <p>The name of the user that you want to describe.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::DescribeUserInput::aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::DescribeUserInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_user_name): <p>The name of the user that you want to describe.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`DescribeUserOutput`](crate::output::DescribeUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::output::DescribeUserOutput::user): <p>The user name.</p>
     ///   - [`request_id(Option<String>)`](crate::output::DescribeUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -1033,13 +1033,13 @@ where
     }
     /// Constructs a fluent builder for the [`GenerateEmbedUrlForAnonymousUser`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser) operation.
     ///
-    /// - Takes [`GenerateEmbedUrlForAnonymousUserInput`](crate::input::GenerateEmbedUrlForAnonymousUserInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::GenerateEmbedUrlForAnonymousUserInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    ///   - [`session_lifetime_in_minutes(Option<i64>)`](crate::input::GenerateEmbedUrlForAnonymousUserInput::session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::GenerateEmbedUrlForAnonymousUserInput::namespace): <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
-    ///   - [`session_tags(Option<Vec<SessionTag>>)`](crate::input::GenerateEmbedUrlForAnonymousUserInput::session_tags): <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>  <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
-    ///   - [`authorized_resource_arns(Option<Vec<String>>)`](crate::input::GenerateEmbedUrlForAnonymousUserInput::authorized_resource_arns): <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
-    ///   - [`experience_configuration(Option<AnonymousUserEmbeddingExperienceConfiguration>)`](crate::input::GenerateEmbedUrlForAnonymousUserInput::experience_configuration): <p>The configuration of the experience you are embedding.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    ///   - [`session_lifetime_in_minutes(i64)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::session_lifetime_in_minutes) / [`set_session_lifetime_in_minutes(Option<i64>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_namespace): <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+    ///   - [`session_tags(Vec<SessionTag>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::session_tags) / [`set_session_tags(Option<Vec<SessionTag>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_session_tags): <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>  <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
+    ///   - [`authorized_resource_arns(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::authorized_resource_arns) / [`set_authorized_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_authorized_resource_arns): <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    ///   - [`experience_configuration(AnonymousUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::experience_configuration) / [`set_experience_configuration(Option<AnonymousUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_experience_configuration): <p>The configuration of the experience you are embedding.</p>
     /// - On success, responds with [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::embed_url): <p>The embed URL for the dashboard.</p>
     ///   - [`status(i32)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::status): <p>The HTTP status of the request.</p>
@@ -1052,11 +1052,11 @@ where
     }
     /// Constructs a fluent builder for the [`GenerateEmbedUrlForRegisteredUser`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser) operation.
     ///
-    /// - Takes [`GenerateEmbedUrlForRegisteredUserInput`](crate::input::GenerateEmbedUrlForRegisteredUserInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::GenerateEmbedUrlForRegisteredUserInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    ///   - [`session_lifetime_in_minutes(Option<i64>)`](crate::input::GenerateEmbedUrlForRegisteredUserInput::session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
-    ///   - [`user_arn(Option<String>)`](crate::input::GenerateEmbedUrlForRegisteredUserInput::user_arn): <p>The Amazon Resource Name for the registered user.</p>
-    ///   - [`experience_configuration(Option<RegisteredUserEmbeddingExperienceConfiguration>)`](crate::input::GenerateEmbedUrlForRegisteredUserInput::experience_configuration): <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    ///   - [`session_lifetime_in_minutes(i64)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::session_lifetime_in_minutes) / [`set_session_lifetime_in_minutes(Option<i64>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_user_arn): <p>The Amazon Resource Name for the registered user.</p>
+    ///   - [`experience_configuration(RegisteredUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::experience_configuration) / [`set_experience_configuration(Option<RegisteredUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_experience_configuration): <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
     /// - On success, responds with [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::embed_url): <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
     ///   - [`status(i32)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::status): <p>The HTTP status of the request.</p>
@@ -1069,17 +1069,17 @@ where
     }
     /// Constructs a fluent builder for the [`GetDashboardEmbedUrl`](crate::client::fluent_builders::GetDashboardEmbedUrl) operation.
     ///
-    /// - Takes [`GetDashboardEmbedUrlInput`](crate::input::GetDashboardEmbedUrlInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::GetDashboardEmbedUrlInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    ///   - [`dashboard_id(Option<String>)`](crate::input::GetDashboardEmbedUrlInput::dashboard_id): <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
-    ///   - [`identity_type(Option<EmbeddingIdentityType>)`](crate::input::GetDashboardEmbedUrlInput::identity_type): <p>The authentication method that the user uses to sign in.</p>
-    ///   - [`session_lifetime_in_minutes(Option<i64>)`](crate::input::GetDashboardEmbedUrlInput::session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
-    ///   - [`undo_redo_disabled(bool)`](crate::input::GetDashboardEmbedUrlInput::undo_redo_disabled): <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
-    ///   - [`reset_disabled(bool)`](crate::input::GetDashboardEmbedUrlInput::reset_disabled): <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
-    ///   - [`state_persistence_enabled(bool)`](crate::input::GetDashboardEmbedUrlInput::state_persistence_enabled): <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
-    ///   - [`user_arn(Option<String>)`](crate::input::GetDashboardEmbedUrlInput::user_arn): <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>  <ul>   <li> <p>Active Directory (AD) users or group members</p> </li>   <li> <p>Invited nonfederated users</p> </li>   <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>  </ul>  <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::GetDashboardEmbedUrlInput::namespace): <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
-    ///   - [`additional_dashboard_ids(Option<Vec<String>>)`](crate::input::GetDashboardEmbedUrlInput::additional_dashboard_ids): <p>A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_dashboard_id): <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
+    ///   - [`identity_type(EmbeddingIdentityType)`](crate::client::fluent_builders::GetDashboardEmbedUrl::identity_type) / [`set_identity_type(Option<EmbeddingIdentityType>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_identity_type): <p>The authentication method that the user uses to sign in.</p>
+    ///   - [`session_lifetime_in_minutes(i64)`](crate::client::fluent_builders::GetDashboardEmbedUrl::session_lifetime_in_minutes) / [`set_session_lifetime_in_minutes(Option<i64>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
+    ///   - [`undo_redo_disabled(bool)`](crate::client::fluent_builders::GetDashboardEmbedUrl::undo_redo_disabled) / [`set_undo_redo_disabled(bool)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_undo_redo_disabled): <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
+    ///   - [`reset_disabled(bool)`](crate::client::fluent_builders::GetDashboardEmbedUrl::reset_disabled) / [`set_reset_disabled(bool)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_reset_disabled): <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
+    ///   - [`state_persistence_enabled(bool)`](crate::client::fluent_builders::GetDashboardEmbedUrl::state_persistence_enabled) / [`set_state_persistence_enabled(bool)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_state_persistence_enabled): <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
+    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_user_arn): <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>  <ul>   <li> <p>Active Directory (AD) users or group members</p> </li>   <li> <p>Invited nonfederated users</p> </li>   <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>  </ul>  <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_namespace): <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
+    ///   - [`additional_dashboard_ids(Vec<String>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::additional_dashboard_ids) / [`set_additional_dashboard_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetDashboardEmbedUrl::set_additional_dashboard_ids): <p>A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards. </p>
     /// - On success, responds with [`GetDashboardEmbedUrlOutput`](crate::output::GetDashboardEmbedUrlOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GetDashboardEmbedUrlOutput::embed_url): <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     ///   - [`status(i32)`](crate::output::GetDashboardEmbedUrlOutput::status): <p>The HTTP status of the request.</p>
@@ -1090,11 +1090,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetSessionEmbedUrl`](crate::client::fluent_builders::GetSessionEmbedUrl) operation.
     ///
-    /// - Takes [`GetSessionEmbedUrlInput`](crate::input::GetSessionEmbedUrlInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::GetSessionEmbedUrlInput::aws_account_id): <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
-    ///   - [`entry_point(Option<String>)`](crate::input::GetSessionEmbedUrlInput::entry_point): <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>  <ul>   <li> <p> <code>/start</code> </p> </li>   <li> <p> <code>/start/analyses</code> </p> </li>   <li> <p> <code>/start/dashboards</code> </p> </li>   <li> <p> <code>/start/favorites</code> </p> </li>   <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>   <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>  </ul>
-    ///   - [`session_lifetime_in_minutes(Option<i64>)`](crate::input::GetSessionEmbedUrlInput::session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
-    ///   - [`user_arn(Option<String>)`](crate::input::GetSessionEmbedUrlInput::user_arn): <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>  <ol>   <li> <p>Active Directory (AD) users or group members</p> </li>   <li> <p>Invited nonfederated users</p> </li>   <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>  </ol>  <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::GetSessionEmbedUrl::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::GetSessionEmbedUrl::set_aws_account_id): <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
+    ///   - [`entry_point(impl Into<String>)`](crate::client::fluent_builders::GetSessionEmbedUrl::entry_point) / [`set_entry_point(Option<String>)`](crate::client::fluent_builders::GetSessionEmbedUrl::set_entry_point): <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>  <ul>   <li> <p> <code>/start</code> </p> </li>   <li> <p> <code>/start/analyses</code> </p> </li>   <li> <p> <code>/start/dashboards</code> </p> </li>   <li> <p> <code>/start/favorites</code> </p> </li>   <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>   <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>  </ul>
+    ///   - [`session_lifetime_in_minutes(i64)`](crate::client::fluent_builders::GetSessionEmbedUrl::session_lifetime_in_minutes) / [`set_session_lifetime_in_minutes(Option<i64>)`](crate::client::fluent_builders::GetSessionEmbedUrl::set_session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
+    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::GetSessionEmbedUrl::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::GetSessionEmbedUrl::set_user_arn): <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>  <ol>   <li> <p>Active Directory (AD) users or group members</p> </li>   <li> <p>Invited nonfederated users</p> </li>   <li> <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>  </ol>  <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     /// - On success, responds with [`GetSessionEmbedUrlOutput`](crate::output::GetSessionEmbedUrlOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GetSessionEmbedUrlOutput::embed_url): <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     ///   - [`status(i32)`](crate::output::GetSessionEmbedUrlOutput::status): <p>The HTTP status of the request.</p>
@@ -1104,12 +1104,12 @@ where
         fluent_builders::GetSessionEmbedUrl::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAnalyses`](crate::client::fluent_builders::ListAnalyses) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnalyses::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnalyses::into_paginator).
     ///
-    /// - Takes [`ListAnalysesInput`](crate::input::ListAnalysesInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListAnalysesInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the analyses.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAnalysesInput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAnalysesInput::max_results): <p>The maximum number of results to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListAnalyses::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListAnalyses::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analyses.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnalyses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnalyses::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnalyses::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnalyses::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`ListAnalysesOutput`](crate::output::ListAnalysesOutput) with field(s):
     ///   - [`analysis_summary_list(Option<Vec<AnalysisSummary>>)`](crate::output::ListAnalysesOutput::analysis_summary_list): <p>Metadata describing each of the analyses that are listed.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnalysesOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
@@ -1120,12 +1120,12 @@ where
         fluent_builders::ListAnalyses::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDashboards`](crate::client::fluent_builders::ListDashboards) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDashboards::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDashboards::into_paginator).
     ///
-    /// - Takes [`ListDashboardsInput`](crate::input::ListDashboardsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListDashboardsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboards that you're listing.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDashboardsInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDashboardsInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListDashboards::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListDashboards::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboards that you're listing.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDashboards::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDashboards::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDashboards::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDashboards::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListDashboardsOutput`](crate::output::ListDashboardsOutput) with field(s):
     ///   - [`dashboard_summary_list(Option<Vec<DashboardSummary>>)`](crate::output::ListDashboardsOutput::dashboard_summary_list): <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDashboardsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1136,13 +1136,13 @@ where
         fluent_builders::ListDashboards::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDashboardVersions`](crate::client::fluent_builders::ListDashboardVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDashboardVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDashboardVersions::into_paginator).
     ///
-    /// - Takes [`ListDashboardVersionsInput`](crate::input::ListDashboardVersionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListDashboardVersionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
-    ///   - [`dashboard_id(Option<String>)`](crate::input::ListDashboardVersionsInput::dashboard_id): <p>The ID for the dashboard.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDashboardVersionsInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDashboardVersionsInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListDashboardVersions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListDashboardVersions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::ListDashboardVersions::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::ListDashboardVersions::set_dashboard_id): <p>The ID for the dashboard.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDashboardVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDashboardVersions::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDashboardVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDashboardVersions::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListDashboardVersionsOutput`](crate::output::ListDashboardVersionsOutput) with field(s):
     ///   - [`dashboard_version_summary_list(Option<Vec<DashboardVersionSummary>>)`](crate::output::ListDashboardVersionsOutput::dashboard_version_summary_list): <p>A structure that contains information about each version of the dashboard.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDashboardVersionsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1153,12 +1153,12 @@ where
         fluent_builders::ListDashboardVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDataSets`](crate::client::fluent_builders::ListDataSets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataSets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSets::into_paginator).
     ///
-    /// - Takes [`ListDataSetsInput`](crate::input::ListDataSetsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListDataSetsInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDataSetsInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDataSetsInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSets::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListDataSets::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSets::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSets::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListDataSetsOutput`](crate::output::ListDataSetsOutput) with field(s):
     ///   - [`data_set_summaries(Option<Vec<DataSetSummary>>)`](crate::output::ListDataSetsOutput::data_set_summaries): <p>The list of dataset summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDataSetsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1169,12 +1169,12 @@ where
         fluent_builders::ListDataSets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDataSources`](crate::client::fluent_builders::ListDataSources) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataSources::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSources::into_paginator).
     ///
-    /// - Takes [`ListDataSourcesInput`](crate::input::ListDataSourcesInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListDataSourcesInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDataSourcesInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDataSourcesInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSources::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput) with field(s):
     ///   - [`data_sources(Option<Vec<DataSource>>)`](crate::output::ListDataSourcesOutput::data_sources): <p>A list of data sources.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDataSourcesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1186,11 +1186,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListFolderMembers`](crate::client::fluent_builders::ListFolderMembers) operation.
     ///
-    /// - Takes [`ListFolderMembersInput`](crate::input::ListFolderMembersInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListFolderMembersInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::ListFolderMembersInput::folder_id): <p>The ID of the folder.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFolderMembersInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFolderMembersInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListFolderMembers::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListFolderMembers::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::ListFolderMembers::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::ListFolderMembers::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFolderMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFolderMembers::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFolderMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFolderMembers::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListFolderMembersOutput`](crate::output::ListFolderMembersOutput) with field(s):
     ///   - [`status(i32)`](crate::output::ListFolderMembersOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_member_list(Option<Vec<MemberIdArnPair>>)`](crate::output::ListFolderMembersOutput::folder_member_list): <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
@@ -1202,10 +1202,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListFolders`](crate::client::fluent_builders::ListFolders) operation.
     ///
-    /// - Takes [`ListFoldersInput`](crate::input::ListFoldersInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListFoldersInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFoldersInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFoldersInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListFolders::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListFolders::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFolders::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFolders::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFolders::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFolders::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListFoldersOutput`](crate::output::ListFoldersOutput) with field(s):
     ///   - [`status(i32)`](crate::output::ListFoldersOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_summary_list(Option<Vec<FolderSummary>>)`](crate::output::ListFoldersOutput::folder_summary_list): <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
@@ -1217,12 +1217,12 @@ where
     }
     /// Constructs a fluent builder for the [`ListGroupMemberships`](crate::client::fluent_builders::ListGroupMemberships) operation.
     ///
-    /// - Takes [`ListGroupMembershipsInput`](crate::input::ListGroupMembershipsInput) with field(s):
-    ///   - [`group_name(Option<String>)`](crate::input::ListGroupMembershipsInput::group_name): <p>The name of the group that you want to see a membership list of.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListGroupMembershipsInput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListGroupMembershipsInput::max_results): <p>The maximum number of results to return from this request.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListGroupMembershipsInput::aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::ListGroupMembershipsInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_group_name): <p>The name of the group that you want to see a membership list of.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupMemberships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupMemberships::set_max_results): <p>The maximum number of results to return from this request.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`ListGroupMembershipsOutput`](crate::output::ListGroupMembershipsOutput) with field(s):
     ///   - [`group_member_list(Option<Vec<GroupMember>>)`](crate::output::ListGroupMembershipsOutput::group_member_list): <p>The list of the members of the group.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGroupMembershipsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
@@ -1234,11 +1234,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
     ///
-    /// - Takes [`ListGroupsInput`](crate::input::ListGroupsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListGroupsInput::aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListGroupsInput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListGroupsInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::ListGroupsInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListGroups::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListGroups::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroups::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListGroups::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListGroups::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
     ///   - [`group_list(Option<Vec<Group>>)`](crate::output::ListGroupsOutput::group_list): <p>The list of the groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
@@ -1250,12 +1250,12 @@ where
     }
     /// Constructs a fluent builder for the [`ListIAMPolicyAssignments`](crate::client::fluent_builders::ListIAMPolicyAssignments) operation.
     ///
-    /// - Takes [`ListIamPolicyAssignmentsInput`](crate::input::ListIamPolicyAssignmentsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListIamPolicyAssignmentsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
-    ///   - [`assignment_status(Option<AssignmentStatus>)`](crate::input::ListIamPolicyAssignmentsInput::assignment_status): <p>The status of the assignments.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::ListIamPolicyAssignmentsInput::namespace): <p>The namespace for the assignments.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIamPolicyAssignmentsInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIamPolicyAssignmentsInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignments::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignments::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
+    ///   - [`assignment_status(AssignmentStatus)`](crate::client::fluent_builders::ListIAMPolicyAssignments::assignment_status) / [`set_assignment_status(Option<AssignmentStatus>)`](crate::client::fluent_builders::ListIAMPolicyAssignments::set_assignment_status): <p>The status of the assignments.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignments::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignments::set_namespace): <p>The namespace for the assignments.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignments::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIAMPolicyAssignments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIAMPolicyAssignments::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListIamPolicyAssignmentsOutput`](crate::output::ListIamPolicyAssignmentsOutput) with field(s):
     ///   - [`iam_policy_assignments(Option<Vec<IamPolicyAssignmentSummary>>)`](crate::output::ListIamPolicyAssignmentsOutput::iam_policy_assignments): <p>Information describing the IAM policy assignments.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIamPolicyAssignmentsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1269,12 +1269,12 @@ where
     }
     /// Constructs a fluent builder for the [`ListIAMPolicyAssignmentsForUser`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser) operation.
     ///
-    /// - Takes [`ListIamPolicyAssignmentsForUserInput`](crate::input::ListIamPolicyAssignmentsForUserInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListIamPolicyAssignmentsForUserInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the assignments.</p>
-    ///   - [`user_name(Option<String>)`](crate::input::ListIamPolicyAssignmentsForUserInput::user_name): <p>The name of the user.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIamPolicyAssignmentsForUserInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIamPolicyAssignmentsForUserInput::max_results): <p>The maximum number of results to be returned per request.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::ListIamPolicyAssignmentsForUserInput::namespace): <p>The namespace of the assignment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the assignments.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::set_user_name): <p>The name of the user.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListIAMPolicyAssignmentsForUser::set_namespace): <p>The namespace of the assignment.</p>
     /// - On success, responds with [`ListIamPolicyAssignmentsForUserOutput`](crate::output::ListIamPolicyAssignmentsForUserOutput) with field(s):
     ///   - [`active_assignments(Option<Vec<ActiveIamPolicyAssignment>>)`](crate::output::ListIamPolicyAssignmentsForUserOutput::active_assignments): <p>The active assignments for this user.</p>
     ///   - [`request_id(Option<String>)`](crate::output::ListIamPolicyAssignmentsForUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -1287,13 +1287,13 @@ where
         fluent_builders::ListIAMPolicyAssignmentsForUser::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListIngestions`](crate::client::fluent_builders::ListIngestions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIngestions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIngestions::into_paginator).
     ///
-    /// - Takes [`ListIngestionsInput`](crate::input::ListIngestionsInput) with field(s):
-    ///   - [`data_set_id(Option<String>)`](crate::input::ListIngestionsInput::data_set_id): <p>The ID of the dataset used in the ingestion.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIngestionsInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListIngestionsInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIngestionsInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::ListIngestions::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::ListIngestions::set_data_set_id): <p>The ID of the dataset used in the ingestion.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIngestions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIngestions::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListIngestions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListIngestions::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIngestions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIngestions::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListIngestionsOutput`](crate::output::ListIngestionsOutput) with field(s):
     ///   - [`ingestions(Option<Vec<Ingestion>>)`](crate::output::ListIngestionsOutput::ingestions): <p>A list of the ingestions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIngestionsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1304,12 +1304,12 @@ where
         fluent_builders::ListIngestions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListNamespaces`](crate::client::fluent_builders::ListNamespaces) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNamespaces::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNamespaces::into_paginator).
     ///
-    /// - Takes [`ListNamespacesInput`](crate::input::ListNamespacesInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListNamespacesInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListNamespacesInput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListNamespacesInput::max_results): <p>The maximum number of results to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListNamespaces::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListNamespaces::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNamespaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNamespaces::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNamespaces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNamespaces::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`ListNamespacesOutput`](crate::output::ListNamespacesOutput) with field(s):
     ///   - [`namespaces(Option<Vec<NamespaceInfoV2>>)`](crate::output::ListNamespacesOutput::namespaces): <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListNamespacesOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
@@ -1321,8 +1321,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags for.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     ///   - [`request_id(Option<String>)`](crate::output::ListTagsForResourceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -1332,13 +1332,13 @@ where
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTemplateAliases`](crate::client::fluent_builders::ListTemplateAliases) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTemplateAliases::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTemplateAliases::into_paginator).
     ///
-    /// - Takes [`ListTemplateAliasesInput`](crate::input::ListTemplateAliasesInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListTemplateAliasesInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::ListTemplateAliasesInput::template_id): <p>The ID for the template.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTemplateAliasesInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTemplateAliasesInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListTemplateAliases::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListTemplateAliases::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::ListTemplateAliases::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::ListTemplateAliases::set_template_id): <p>The ID for the template.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTemplateAliases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTemplateAliases::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTemplateAliases::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTemplateAliases::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListTemplateAliasesOutput`](crate::output::ListTemplateAliasesOutput) with field(s):
     ///   - [`template_alias_list(Option<Vec<TemplateAlias>>)`](crate::output::ListTemplateAliasesOutput::template_alias_list): <p>A structure containing the list of the template's aliases.</p>
     ///   - [`status(i32)`](crate::output::ListTemplateAliasesOutput::status): <p>The HTTP status of the request.</p>
@@ -1349,12 +1349,12 @@ where
         fluent_builders::ListTemplateAliases::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTemplates`](crate::client::fluent_builders::ListTemplates) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTemplates::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTemplates::into_paginator).
     ///
-    /// - Takes [`ListTemplatesInput`](crate::input::ListTemplatesInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListTemplatesInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTemplatesInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTemplatesInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListTemplates::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListTemplates::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTemplates::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTemplates::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListTemplatesOutput`](crate::output::ListTemplatesOutput) with field(s):
     ///   - [`template_summary_list(Option<Vec<TemplateSummary>>)`](crate::output::ListTemplatesOutput::template_summary_list): <p>A structure containing information about the templates in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTemplatesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1365,13 +1365,13 @@ where
         fluent_builders::ListTemplates::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTemplateVersions`](crate::client::fluent_builders::ListTemplateVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTemplateVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTemplateVersions::into_paginator).
     ///
-    /// - Takes [`ListTemplateVersionsInput`](crate::input::ListTemplateVersionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListTemplateVersionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::ListTemplateVersionsInput::template_id): <p>The ID for the template.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTemplateVersionsInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTemplateVersionsInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListTemplateVersions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListTemplateVersions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::ListTemplateVersions::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::ListTemplateVersions::set_template_id): <p>The ID for the template.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTemplateVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTemplateVersions::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTemplateVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTemplateVersions::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput) with field(s):
     ///   - [`template_version_summary_list(Option<Vec<TemplateVersionSummary>>)`](crate::output::ListTemplateVersionsOutput::template_version_summary_list): <p>A structure containing a list of all the versions of the specified template.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTemplateVersionsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1383,11 +1383,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListThemeAliases`](crate::client::fluent_builders::ListThemeAliases) operation.
     ///
-    /// - Takes [`ListThemeAliasesInput`](crate::input::ListThemeAliasesInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListThemeAliasesInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::ListThemeAliasesInput::theme_id): <p>The ID for the theme.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListThemeAliasesInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThemeAliasesInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListThemeAliases::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListThemeAliases::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::ListThemeAliases::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::ListThemeAliases::set_theme_id): <p>The ID for the theme.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThemeAliases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThemeAliases::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThemeAliases::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThemeAliases::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListThemeAliasesOutput`](crate::output::ListThemeAliasesOutput) with field(s):
     ///   - [`theme_alias_list(Option<Vec<ThemeAlias>>)`](crate::output::ListThemeAliasesOutput::theme_alias_list): <p>A structure containing the list of the theme's aliases.</p>
     ///   - [`status(i32)`](crate::output::ListThemeAliasesOutput::status): <p>The HTTP status of the request.</p>
@@ -1398,13 +1398,13 @@ where
         fluent_builders::ListThemeAliases::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThemes`](crate::client::fluent_builders::ListThemes) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThemes::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThemes::into_paginator).
     ///
-    /// - Takes [`ListThemesInput`](crate::input::ListThemesInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListThemesInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListThemesInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThemesInput::max_results): <p>The maximum number of results to be returned per request.</p>
-    ///   - [`r#type(Option<ThemeType>)`](crate::input::ListThemesInput::type): <p>The type of themes that you want to list. Valid options include the following:</p>  <ul>   <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>   <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>   <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListThemes::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListThemes::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThemes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThemes::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThemes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThemes::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    ///   - [`r#type(ThemeType)`](crate::client::fluent_builders::ListThemes::r#type) / [`set_type(Option<ThemeType>)`](crate::client::fluent_builders::ListThemes::set_type): <p>The type of themes that you want to list. Valid options include the following:</p>  <ul>   <li> <p> <code>ALL (default)</code>- Display all existing themes.</p> </li>   <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>   <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>  </ul>
     /// - On success, responds with [`ListThemesOutput`](crate::output::ListThemesOutput) with field(s):
     ///   - [`theme_summary_list(Option<Vec<ThemeSummary>>)`](crate::output::ListThemesOutput::theme_summary_list): <p>Information about the themes in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThemesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1415,13 +1415,13 @@ where
         fluent_builders::ListThemes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListThemeVersions`](crate::client::fluent_builders::ListThemeVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThemeVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThemeVersions::into_paginator).
     ///
-    /// - Takes [`ListThemeVersionsInput`](crate::input::ListThemeVersionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListThemeVersionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::ListThemeVersionsInput::theme_id): <p>The ID for the theme.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListThemeVersionsInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListThemeVersionsInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListThemeVersions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListThemeVersions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::ListThemeVersions::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::ListThemeVersions::set_theme_id): <p>The ID for the theme.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThemeVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThemeVersions::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThemeVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThemeVersions::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListThemeVersionsOutput`](crate::output::ListThemeVersionsOutput) with field(s):
     ///   - [`theme_version_summary_list(Option<Vec<ThemeVersionSummary>>)`](crate::output::ListThemeVersionsOutput::theme_version_summary_list): <p>A structure containing a list of all the versions of the specified theme.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListThemeVersionsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1433,12 +1433,12 @@ where
     }
     /// Constructs a fluent builder for the [`ListUserGroups`](crate::client::fluent_builders::ListUserGroups) operation.
     ///
-    /// - Takes [`ListUserGroupsInput`](crate::input::ListUserGroupsInput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::input::ListUserGroupsInput::user_name): <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListUserGroupsInput::aws_account_id): <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::ListUserGroupsInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListUserGroupsInput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListUserGroupsInput::max_results): <p>The maximum number of results to return from this request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListUserGroups::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListUserGroups::set_user_name): <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListUserGroups::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListUserGroups::set_aws_account_id): <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListUserGroups::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListUserGroups::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUserGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUserGroups::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUserGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUserGroups::set_max_results): <p>The maximum number of results to return from this request.</p>
     /// - On success, responds with [`ListUserGroupsOutput`](crate::output::ListUserGroupsOutput) with field(s):
     ///   - [`group_list(Option<Vec<Group>>)`](crate::output::ListUserGroupsOutput::group_list): <p>The list of groups the user is a member of.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListUserGroupsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
@@ -1450,11 +1450,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
     ///
-    /// - Takes [`ListUsersInput`](crate::input::ListUsersInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::ListUsersInput::aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListUsersInput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListUsersInput::max_results): <p>The maximum number of results to return from this request.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::ListUsersInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListUsers::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListUsers::set_aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsers::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_max_results): <p>The maximum number of results to return from this request.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListUsers::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListUsers::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
     ///   - [`user_list(Option<Vec<User>>)`](crate::output::ListUsersOutput::user_list): <p>The list of users.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListUsersOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
@@ -1466,19 +1466,19 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterUser`](crate::client::fluent_builders::RegisterUser) operation.
     ///
-    /// - Takes [`RegisterUserInput`](crate::input::RegisterUserInput) with field(s):
-    ///   - [`identity_type(Option<IdentityType>)`](crate::input::RegisterUserInput::identity_type): <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>  <ul>   <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>   <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>  </ul>
-    ///   - [`email(Option<String>)`](crate::input::RegisterUserInput::email): <p>The email address of the user that you want to register.</p>
-    ///   - [`user_role(Option<UserRole>)`](crate::input::RegisterUserInput::user_role): <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>  <ul>   <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>   <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>   <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>   <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>   <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>  </ul>
-    ///   - [`iam_arn(Option<String>)`](crate::input::RegisterUserInput::iam_arn): <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
-    ///   - [`session_name(Option<String>)`](crate::input::RegisterUserInput::session_name): <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::RegisterUserInput::aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::RegisterUserInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-    ///   - [`user_name(Option<String>)`](crate::input::RegisterUserInput::user_name): <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
-    ///   - [`custom_permissions_name(Option<String>)`](crate::input::RegisterUserInput::custom_permissions_name): <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>  <ul>   <li> <p>Create and update data sources</p> </li>   <li> <p>Create and update datasets</p> </li>   <li> <p>Create and update email reports</p> </li>   <li> <p>Subscribe to email reports</p> </li>  </ul>  <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>  <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>  <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>  <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-    ///   - [`external_login_federation_provider_type(Option<String>)`](crate::input::RegisterUserInput::external_login_federation_provider_type): <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>  <ul>   <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>   <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>  </ul>
-    ///   - [`custom_federation_provider_url(Option<String>)`](crate::input::RegisterUserInput::custom_federation_provider_url): <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
-    ///   - [`external_login_id(Option<String>)`](crate::input::RegisterUserInput::external_login_id): <p>The identity ID for a user in the external login provider.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::RegisterUser::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::RegisterUser::set_identity_type): <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>  <ul>   <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>   <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>  </ul>
+    ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_email): <p>The email address of the user that you want to register.</p>
+    ///   - [`user_role(UserRole)`](crate::client::fluent_builders::RegisterUser::user_role) / [`set_user_role(Option<UserRole>)`](crate::client::fluent_builders::RegisterUser::set_user_role): <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>  <ul>   <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>   <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>   <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>   <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>   <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>  </ul>
+    ///   - [`iam_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::iam_arn) / [`set_iam_arn(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_iam_arn): <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
+    ///   - [`session_name(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::session_name) / [`set_session_name(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_session_name): <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_user_name): <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
+    ///   - [`custom_permissions_name(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::custom_permissions_name) / [`set_custom_permissions_name(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_custom_permissions_name): <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>  <ul>   <li> <p>Create and update data sources</p> </li>   <li> <p>Create and update datasets</p> </li>   <li> <p>Create and update email reports</p> </li>   <li> <p>Subscribe to email reports</p> </li>  </ul>  <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>  <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>  <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>  <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    ///   - [`external_login_federation_provider_type(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::external_login_federation_provider_type) / [`set_external_login_federation_provider_type(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_external_login_federation_provider_type): <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>  <ul>   <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>   <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>  </ul>
+    ///   - [`custom_federation_provider_url(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::custom_federation_provider_url) / [`set_custom_federation_provider_url(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_custom_federation_provider_url): <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    ///   - [`external_login_id(impl Into<String>)`](crate::client::fluent_builders::RegisterUser::external_login_id) / [`set_external_login_id(Option<String>)`](crate::client::fluent_builders::RegisterUser::set_external_login_id): <p>The identity ID for a user in the external login provider.</p>
     /// - On success, responds with [`RegisterUserOutput`](crate::output::RegisterUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::output::RegisterUserOutput::user): <p>The user's user name.</p>
     ///   - [`user_invitation_url(Option<String>)`](crate::output::RegisterUserOutput::user_invitation_url): <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
@@ -1490,9 +1490,9 @@ where
     }
     /// Constructs a fluent builder for the [`RestoreAnalysis`](crate::client::fluent_builders::RestoreAnalysis) operation.
     ///
-    /// - Takes [`RestoreAnalysisInput`](crate::input::RestoreAnalysisInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::RestoreAnalysisInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-    ///   - [`analysis_id(Option<String>)`](crate::input::RestoreAnalysisInput::analysis_id): <p>The ID of the analysis that you're restoring.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::RestoreAnalysis::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::RestoreAnalysis::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis.</p>
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::RestoreAnalysis::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::RestoreAnalysis::set_analysis_id): <p>The ID of the analysis that you're restoring.</p>
     /// - On success, responds with [`RestoreAnalysisOutput`](crate::output::RestoreAnalysisOutput) with field(s):
     ///   - [`status(i32)`](crate::output::RestoreAnalysisOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::output::RestoreAnalysisOutput::arn): <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
@@ -1503,13 +1503,13 @@ where
         fluent_builders::RestoreAnalysis::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SearchAnalyses`](crate::client::fluent_builders::SearchAnalyses) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchAnalyses::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchAnalyses::into_paginator).
     ///
-    /// - Takes [`SearchAnalysesInput`](crate::input::SearchAnalysesInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::SearchAnalysesInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
-    ///   - [`filters(Option<Vec<AnalysisSearchFilter>>)`](crate::input::SearchAnalysesInput::filters): <p>The structure for the search filters that you want to apply to your search. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::SearchAnalysesInput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchAnalysesInput::max_results): <p>The maximum number of results to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::SearchAnalyses::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::SearchAnalyses::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analyses that you're searching for.</p>
+    ///   - [`filters(Vec<AnalysisSearchFilter>)`](crate::client::fluent_builders::SearchAnalyses::filters) / [`set_filters(Option<Vec<AnalysisSearchFilter>>)`](crate::client::fluent_builders::SearchAnalyses::set_filters): <p>The structure for the search filters that you want to apply to your search. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchAnalyses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchAnalyses::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchAnalyses::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchAnalyses::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`SearchAnalysesOutput`](crate::output::SearchAnalysesOutput) with field(s):
     ///   - [`analysis_summary_list(Option<Vec<AnalysisSummary>>)`](crate::output::SearchAnalysesOutput::analysis_summary_list): <p>Metadata describing the analyses that you searched for.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchAnalysesOutput::next_token): <p>A pagination token that can be used in a subsequent request. </p>
@@ -1520,13 +1520,13 @@ where
         fluent_builders::SearchAnalyses::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SearchDashboards`](crate::client::fluent_builders::SearchDashboards) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchDashboards::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchDashboards::into_paginator).
     ///
-    /// - Takes [`SearchDashboardsInput`](crate::input::SearchDashboardsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::SearchDashboardsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
-    ///   - [`filters(Option<Vec<DashboardSearchFilter>>)`](crate::input::SearchDashboardsInput::filters): <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
-    ///   - [`next_token(Option<String>)`](crate::input::SearchDashboardsInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchDashboardsInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::SearchDashboards::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::SearchDashboards::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
+    ///   - [`filters(Vec<DashboardSearchFilter>)`](crate::client::fluent_builders::SearchDashboards::filters) / [`set_filters(Option<Vec<DashboardSearchFilter>>)`](crate::client::fluent_builders::SearchDashboards::set_filters): <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchDashboards::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchDashboards::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchDashboards::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchDashboards::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`SearchDashboardsOutput`](crate::output::SearchDashboardsOutput) with field(s):
     ///   - [`dashboard_summary_list(Option<Vec<DashboardSummary>>)`](crate::output::SearchDashboardsOutput::dashboard_summary_list): <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchDashboardsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1538,11 +1538,11 @@ where
     }
     /// Constructs a fluent builder for the [`SearchFolders`](crate::client::fluent_builders::SearchFolders) operation.
     ///
-    /// - Takes [`SearchFoldersInput`](crate::input::SearchFoldersInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::SearchFoldersInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`filters(Option<Vec<FolderSearchFilter>>)`](crate::input::SearchFoldersInput::filters): <p>The filters to apply to the search. Currently, you can search only by the parent folder ARN. For example, <code>"Filters": [ { "Name": "PARENT_FOLDER_ARN", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:folder/folderId" } ]</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::SearchFoldersInput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchFoldersInput::max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::SearchFolders::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::SearchFolders::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`filters(Vec<FolderSearchFilter>)`](crate::client::fluent_builders::SearchFolders::filters) / [`set_filters(Option<Vec<FolderSearchFilter>>)`](crate::client::fluent_builders::SearchFolders::set_filters): <p>The filters to apply to the search. Currently, you can search only by the parent folder ARN. For example, <code>"Filters": [ { "Name": "PARENT_FOLDER_ARN", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:folder/folderId" } ]</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchFolders::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchFolders::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchFolders::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchFolders::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`SearchFoldersOutput`](crate::output::SearchFoldersOutput) with field(s):
     ///   - [`status(i32)`](crate::output::SearchFoldersOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_summary_list(Option<Vec<FolderSummary>>)`](crate::output::SearchFoldersOutput::folder_summary_list): <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
@@ -1554,9 +1554,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::TagResourceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::TagResourceOutput::status): <p>The HTTP status of the request.</p>
@@ -1566,9 +1566,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The keys of the key-value pairs for the resource tag or tags assigned to the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::UntagResourceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::UntagResourceOutput::status): <p>The HTTP status of the request.</p>
@@ -1578,10 +1578,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAccountCustomization`](crate::client::fluent_builders::UpdateAccountCustomization) operation.
     ///
-    /// - Takes [`UpdateAccountCustomizationInput`](crate::input::UpdateAccountCustomizationInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateAccountCustomizationInput::aws_account_id): <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::UpdateAccountCustomizationInput::namespace): <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
-    ///   - [`account_customization(Option<AccountCustomization>)`](crate::input::UpdateAccountCustomizationInput::account_customization): <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountCustomization::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateAccountCustomization::set_aws_account_id): <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountCustomization::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdateAccountCustomization::set_namespace): <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
+    ///   - [`account_customization(AccountCustomization)`](crate::client::fluent_builders::UpdateAccountCustomization::account_customization) / [`set_account_customization(Option<AccountCustomization>)`](crate::client::fluent_builders::UpdateAccountCustomization::set_account_customization): <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
     /// - On success, responds with [`UpdateAccountCustomizationOutput`](crate::output::UpdateAccountCustomizationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateAccountCustomizationOutput::arn): <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
     ///   - [`aws_account_id(Option<String>)`](crate::output::UpdateAccountCustomizationOutput::aws_account_id): <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
@@ -1597,10 +1597,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAccountSettings`](crate::client::fluent_builders::UpdateAccountSettings) operation.
     ///
-    /// - Takes [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateAccountSettingsInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
-    ///   - [`default_namespace(Option<String>)`](crate::input::UpdateAccountSettingsInput::default_namespace): <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email that becomes associated with the default namespace.</p>
-    ///   - [`notification_email(Option<String>)`](crate::input::UpdateAccountSettingsInput::notification_email): <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
+    ///   - [`default_namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::default_namespace) / [`set_default_namespace(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_default_namespace): <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. Identity and Access Management (IAM) users that register for the first time with Amazon QuickSight provide an email that becomes associated with the default namespace.</p>
+    ///   - [`notification_email(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::notification_email) / [`set_notification_email(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_notification_email): <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::output::UpdateAccountSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::UpdateAccountSettingsOutput::status): <p>The HTTP status of the request.</p>
@@ -1610,13 +1610,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAnalysis`](crate::client::fluent_builders::UpdateAnalysis) operation.
     ///
-    /// - Takes [`UpdateAnalysisInput`](crate::input::UpdateAnalysisInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateAnalysisInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    ///   - [`analysis_id(Option<String>)`](crate::input::UpdateAnalysisInput::analysis_id): <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateAnalysisInput::name): <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
-    ///   - [`parameters(Option<Parameters>)`](crate::input::UpdateAnalysisInput::parameters): <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    ///   - [`source_entity(Option<AnalysisSourceEntity>)`](crate::input::UpdateAnalysisInput::source_entity): <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
-    ///   - [`theme_arn(Option<String>)`](crate::input::UpdateAnalysisInput::theme_arn): <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAnalysis::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateAnalysis::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAnalysis::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::UpdateAnalysis::set_analysis_id): <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAnalysis::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAnalysis::set_name): <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    ///   - [`parameters(Parameters)`](crate::client::fluent_builders::UpdateAnalysis::parameters) / [`set_parameters(Option<Parameters>)`](crate::client::fluent_builders::UpdateAnalysis::set_parameters): <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
+    ///   - [`source_entity(AnalysisSourceEntity)`](crate::client::fluent_builders::UpdateAnalysis::source_entity) / [`set_source_entity(Option<AnalysisSourceEntity>)`](crate::client::fluent_builders::UpdateAnalysis::set_source_entity): <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    ///   - [`theme_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAnalysis::theme_arn) / [`set_theme_arn(Option<String>)`](crate::client::fluent_builders::UpdateAnalysis::set_theme_arn): <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
     /// - On success, responds with [`UpdateAnalysisOutput`](crate::output::UpdateAnalysisOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateAnalysisOutput::arn): <p>The ARN of the analysis that you're updating.</p>
     ///   - [`analysis_id(Option<String>)`](crate::output::UpdateAnalysisOutput::analysis_id): <p>The ID of the analysis.</p>
@@ -1629,11 +1629,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAnalysisPermissions`](crate::client::fluent_builders::UpdateAnalysisPermissions) operation.
     ///
-    /// - Takes [`UpdateAnalysisPermissionsInput`](crate::input::UpdateAnalysisPermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateAnalysisPermissionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
-    ///   - [`analysis_id(Option<String>)`](crate::input::UpdateAnalysisPermissionsInput::analysis_id): <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
-    ///   - [`grant_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateAnalysisPermissionsInput::grant_permissions): <p>A structure that describes the permissions to add and the principal to add them to.</p>
-    ///   - [`revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateAnalysisPermissionsInput::revoke_permissions): <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAnalysisPermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateAnalysisPermissions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAnalysisPermissions::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::UpdateAnalysisPermissions::set_analysis_id): <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
+    ///   - [`grant_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateAnalysisPermissions::grant_permissions) / [`set_grant_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateAnalysisPermissions::set_grant_permissions): <p>A structure that describes the permissions to add and the principal to add them to.</p>
+    ///   - [`revoke_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateAnalysisPermissions::revoke_permissions) / [`set_revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateAnalysisPermissions::set_revoke_permissions): <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
     /// - On success, responds with [`UpdateAnalysisPermissionsOutput`](crate::output::UpdateAnalysisPermissionsOutput) with field(s):
     ///   - [`analysis_arn(Option<String>)`](crate::output::UpdateAnalysisPermissionsOutput::analysis_arn): <p>The Amazon Resource Name (ARN) of the analysis that you updated.</p>
     ///   - [`analysis_id(Option<String>)`](crate::output::UpdateAnalysisPermissionsOutput::analysis_id): <p>The ID of the analysis that you updated permissions for.</p>
@@ -1648,15 +1648,15 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDashboard`](crate::client::fluent_builders::UpdateDashboard) operation.
     ///
-    /// - Takes [`UpdateDashboardInput`](crate::input::UpdateDashboardInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateDashboardInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
-    ///   - [`dashboard_id(Option<String>)`](crate::input::UpdateDashboardInput::dashboard_id): <p>The ID for the dashboard.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateDashboardInput::name): <p>The display name of the dashboard.</p>
-    ///   - [`source_entity(Option<DashboardSourceEntity>)`](crate::input::UpdateDashboardInput::source_entity): <p>The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only update a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
-    ///   - [`parameters(Option<Parameters>)`](crate::input::UpdateDashboardInput::parameters): <p>A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A dashboard can have any type of parameters, and some parameters might accept multiple values.</p>
-    ///   - [`version_description(Option<String>)`](crate::input::UpdateDashboardInput::version_description): <p>A description for the first version of the dashboard being created.</p>
-    ///   - [`dashboard_publish_options(Option<DashboardPublishOptions>)`](crate::input::UpdateDashboardInput::dashboard_publish_options): <p>Options for publishing the dashboard when you create it:</p>  <ul>   <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>  </ul>
-    ///   - [`theme_arn(Option<String>)`](crate::input::UpdateDashboardInput::theme_arn): <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_dashboard_id): <p>The ID for the dashboard.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_name): <p>The display name of the dashboard.</p>
+    ///   - [`source_entity(DashboardSourceEntity)`](crate::client::fluent_builders::UpdateDashboard::source_entity) / [`set_source_entity(Option<DashboardSourceEntity>)`](crate::client::fluent_builders::UpdateDashboard::set_source_entity): <p>The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only update a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to update a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
+    ///   - [`parameters(Parameters)`](crate::client::fluent_builders::UpdateDashboard::parameters) / [`set_parameters(Option<Parameters>)`](crate::client::fluent_builders::UpdateDashboard::set_parameters): <p>A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A dashboard can have any type of parameters, and some parameters might accept multiple values.</p>
+    ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_version_description): <p>A description for the first version of the dashboard being created.</p>
+    ///   - [`dashboard_publish_options(DashboardPublishOptions)`](crate::client::fluent_builders::UpdateDashboard::dashboard_publish_options) / [`set_dashboard_publish_options(Option<DashboardPublishOptions>)`](crate::client::fluent_builders::UpdateDashboard::set_dashboard_publish_options): <p>Options for publishing the dashboard when you create it:</p>  <ul>   <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>   <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>  </ul>
+    ///   - [`theme_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboard::theme_arn) / [`set_theme_arn(Option<String>)`](crate::client::fluent_builders::UpdateDashboard::set_theme_arn): <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that was originally associated with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
     /// - On success, responds with [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateDashboardOutput::arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     ///   - [`version_arn(Option<String>)`](crate::output::UpdateDashboardOutput::version_arn): <p>The ARN of the dashboard, including the version number.</p>
@@ -1670,13 +1670,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDashboardPermissions`](crate::client::fluent_builders::UpdateDashboardPermissions) operation.
     ///
-    /// - Takes [`UpdateDashboardPermissionsInput`](crate::input::UpdateDashboardPermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateDashboardPermissionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
-    ///   - [`dashboard_id(Option<String>)`](crate::input::UpdateDashboardPermissionsInput::dashboard_id): <p>The ID for the dashboard.</p>
-    ///   - [`grant_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateDashboardPermissionsInput::grant_permissions): <p>The permissions that you want to grant on this resource.</p>
-    ///   - [`revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateDashboardPermissionsInput::revoke_permissions): <p>The permissions that you want to revoke from this resource.</p>
-    ///   - [`grant_link_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateDashboardPermissionsInput::grant_link_permissions): <p>Grants link permissions to all users in a defined namespace.</p>
-    ///   - [`revoke_link_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateDashboardPermissionsInput::revoke_link_permissions): <p>Revokes link permissions from all users in a defined namespace.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboardPermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateDashboardPermissions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboardPermissions::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::UpdateDashboardPermissions::set_dashboard_id): <p>The ID for the dashboard.</p>
+    ///   - [`grant_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateDashboardPermissions::grant_permissions) / [`set_grant_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateDashboardPermissions::set_grant_permissions): <p>The permissions that you want to grant on this resource.</p>
+    ///   - [`revoke_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateDashboardPermissions::revoke_permissions) / [`set_revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateDashboardPermissions::set_revoke_permissions): <p>The permissions that you want to revoke from this resource.</p>
+    ///   - [`grant_link_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateDashboardPermissions::grant_link_permissions) / [`set_grant_link_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateDashboardPermissions::set_grant_link_permissions): <p>Grants link permissions to all users in a defined namespace.</p>
+    ///   - [`revoke_link_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateDashboardPermissions::revoke_link_permissions) / [`set_revoke_link_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateDashboardPermissions::set_revoke_link_permissions): <p>Revokes link permissions from all users in a defined namespace.</p>
     /// - On success, responds with [`UpdateDashboardPermissionsOutput`](crate::output::UpdateDashboardPermissionsOutput) with field(s):
     ///   - [`dashboard_arn(Option<String>)`](crate::output::UpdateDashboardPermissionsOutput::dashboard_arn): <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     ///   - [`dashboard_id(Option<String>)`](crate::output::UpdateDashboardPermissionsOutput::dashboard_id): <p>The ID for the dashboard.</p>
@@ -1692,10 +1692,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDashboardPublishedVersion`](crate::client::fluent_builders::UpdateDashboardPublishedVersion) operation.
     ///
-    /// - Takes [`UpdateDashboardPublishedVersionInput`](crate::input::UpdateDashboardPublishedVersionInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateDashboardPublishedVersionInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
-    ///   - [`dashboard_id(Option<String>)`](crate::input::UpdateDashboardPublishedVersionInput::dashboard_id): <p>The ID for the dashboard.</p>
-    ///   - [`version_number(Option<i64>)`](crate::input::UpdateDashboardPublishedVersionInput::version_number): <p>The version number of the dashboard.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboardPublishedVersion::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateDashboardPublishedVersion::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDashboardPublishedVersion::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::client::fluent_builders::UpdateDashboardPublishedVersion::set_dashboard_id): <p>The ID for the dashboard.</p>
+    ///   - [`version_number(i64)`](crate::client::fluent_builders::UpdateDashboardPublishedVersion::version_number) / [`set_version_number(Option<i64>)`](crate::client::fluent_builders::UpdateDashboardPublishedVersion::set_version_number): <p>The version number of the dashboard.</p>
     /// - On success, responds with [`UpdateDashboardPublishedVersionOutput`](crate::output::UpdateDashboardPublishedVersionOutput) with field(s):
     ///   - [`dashboard_id(Option<String>)`](crate::output::UpdateDashboardPublishedVersionOutput::dashboard_id): <p>The ID for the dashboard.</p>
     ///   - [`dashboard_arn(Option<String>)`](crate::output::UpdateDashboardPublishedVersionOutput::dashboard_arn): <p>The Amazon Resource Name (ARN) of the dashboard.</p>
@@ -1709,19 +1709,19 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDataSet`](crate::client::fluent_builders::UpdateDataSet) operation.
     ///
-    /// - Takes [`UpdateDataSetInput`](crate::input::UpdateDataSetInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateDataSetInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_set_id(Option<String>)`](crate::input::UpdateDataSetInput::data_set_id): <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateDataSetInput::name): <p>The display name for the dataset.</p>
-    ///   - [`physical_table_map(Option<HashMap<String, PhysicalTable>>)`](crate::input::UpdateDataSetInput::physical_table_map): <p>Declares the physical tables that are available in the underlying data sources.</p>
-    ///   - [`logical_table_map(Option<HashMap<String, LogicalTable>>)`](crate::input::UpdateDataSetInput::logical_table_map): <p>Configures the combination and transformation of the data from the physical tables.</p>
-    ///   - [`import_mode(Option<DataSetImportMode>)`](crate::input::UpdateDataSetInput::import_mode): <p>Indicates whether you want to import the data into SPICE.</p>
-    ///   - [`column_groups(Option<Vec<ColumnGroup>>)`](crate::input::UpdateDataSetInput::column_groups): <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    ///   - [`field_folders(Option<HashMap<String, FieldFolder>>)`](crate::input::UpdateDataSetInput::field_folders): <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    ///   - [`row_level_permission_data_set(Option<RowLevelPermissionDataSet>)`](crate::input::UpdateDataSetInput::row_level_permission_data_set): <p>The row-level security configuration for the data you want to create.</p>
-    ///   - [`row_level_permission_tag_configuration(Option<RowLevelPermissionTagConfiguration>)`](crate::input::UpdateDataSetInput::row_level_permission_tag_configuration): <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
-    ///   - [`column_level_permission_rules(Option<Vec<ColumnLevelPermissionRule>>)`](crate::input::UpdateDataSetInput::column_level_permission_rules): <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    ///   - [`data_set_usage_configuration(Option<DataSetUsageConfiguration>)`](crate::input::UpdateDataSetInput::data_set_usage_configuration): <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSet::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSet::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSet::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSet::set_data_set_id): <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSet::set_name): <p>The display name for the dataset.</p>
+    ///   - [`physical_table_map(HashMap<String, PhysicalTable>)`](crate::client::fluent_builders::UpdateDataSet::physical_table_map) / [`set_physical_table_map(Option<HashMap<String, PhysicalTable>>)`](crate::client::fluent_builders::UpdateDataSet::set_physical_table_map): <p>Declares the physical tables that are available in the underlying data sources.</p>
+    ///   - [`logical_table_map(HashMap<String, LogicalTable>)`](crate::client::fluent_builders::UpdateDataSet::logical_table_map) / [`set_logical_table_map(Option<HashMap<String, LogicalTable>>)`](crate::client::fluent_builders::UpdateDataSet::set_logical_table_map): <p>Configures the combination and transformation of the data from the physical tables.</p>
+    ///   - [`import_mode(DataSetImportMode)`](crate::client::fluent_builders::UpdateDataSet::import_mode) / [`set_import_mode(Option<DataSetImportMode>)`](crate::client::fluent_builders::UpdateDataSet::set_import_mode): <p>Indicates whether you want to import the data into SPICE.</p>
+    ///   - [`column_groups(Vec<ColumnGroup>)`](crate::client::fluent_builders::UpdateDataSet::column_groups) / [`set_column_groups(Option<Vec<ColumnGroup>>)`](crate::client::fluent_builders::UpdateDataSet::set_column_groups): <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    ///   - [`field_folders(HashMap<String, FieldFolder>)`](crate::client::fluent_builders::UpdateDataSet::field_folders) / [`set_field_folders(Option<HashMap<String, FieldFolder>>)`](crate::client::fluent_builders::UpdateDataSet::set_field_folders): <p>The folder that contains fields and nested subfolders for your dataset.</p>
+    ///   - [`row_level_permission_data_set(RowLevelPermissionDataSet)`](crate::client::fluent_builders::UpdateDataSet::row_level_permission_data_set) / [`set_row_level_permission_data_set(Option<RowLevelPermissionDataSet>)`](crate::client::fluent_builders::UpdateDataSet::set_row_level_permission_data_set): <p>The row-level security configuration for the data you want to create.</p>
+    ///   - [`row_level_permission_tag_configuration(RowLevelPermissionTagConfiguration)`](crate::client::fluent_builders::UpdateDataSet::row_level_permission_tag_configuration) / [`set_row_level_permission_tag_configuration(Option<RowLevelPermissionTagConfiguration>)`](crate::client::fluent_builders::UpdateDataSet::set_row_level_permission_tag_configuration): <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    ///   - [`column_level_permission_rules(Vec<ColumnLevelPermissionRule>)`](crate::client::fluent_builders::UpdateDataSet::column_level_permission_rules) / [`set_column_level_permission_rules(Option<Vec<ColumnLevelPermissionRule>>)`](crate::client::fluent_builders::UpdateDataSet::set_column_level_permission_rules): <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
+    ///   - [`data_set_usage_configuration(DataSetUsageConfiguration)`](crate::client::fluent_builders::UpdateDataSet::data_set_usage_configuration) / [`set_data_set_usage_configuration(Option<DataSetUsageConfiguration>)`](crate::client::fluent_builders::UpdateDataSet::set_data_set_usage_configuration): <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     /// - On success, responds with [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateDataSetOutput::arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
     ///   - [`data_set_id(Option<String>)`](crate::output::UpdateDataSetOutput::data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -1735,11 +1735,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDataSetPermissions`](crate::client::fluent_builders::UpdateDataSetPermissions) operation.
     ///
-    /// - Takes [`UpdateDataSetPermissionsInput`](crate::input::UpdateDataSetPermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateDataSetPermissionsInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_set_id(Option<String>)`](crate::input::UpdateDataSetPermissionsInput::data_set_id): <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    ///   - [`grant_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateDataSetPermissionsInput::grant_permissions): <p>The resource permissions that you want to grant to the dataset.</p>
-    ///   - [`revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateDataSetPermissionsInput::revoke_permissions): <p>The resource permissions that you want to revoke from the dataset.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSetPermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSetPermissions::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSetPermissions::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSetPermissions::set_data_set_id): <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    ///   - [`grant_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateDataSetPermissions::grant_permissions) / [`set_grant_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateDataSetPermissions::set_grant_permissions): <p>The resource permissions that you want to grant to the dataset.</p>
+    ///   - [`revoke_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateDataSetPermissions::revoke_permissions) / [`set_revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateDataSetPermissions::set_revoke_permissions): <p>The resource permissions that you want to revoke from the dataset.</p>
     /// - On success, responds with [`UpdateDataSetPermissionsOutput`](crate::output::UpdateDataSetPermissionsOutput) with field(s):
     ///   - [`data_set_arn(Option<String>)`](crate::output::UpdateDataSetPermissionsOutput::data_set_arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
     ///   - [`data_set_id(Option<String>)`](crate::output::UpdateDataSetPermissionsOutput::data_set_id): <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -1753,14 +1753,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDataSource`](crate::client::fluent_builders::UpdateDataSource) operation.
     ///
-    /// - Takes [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateDataSourceInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_source_id(Option<String>)`](crate::input::UpdateDataSourceInput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateDataSourceInput::name): <p>A display name for the data source.</p>
-    ///   - [`data_source_parameters(Option<DataSourceParameters>)`](crate::input::UpdateDataSourceInput::data_source_parameters): <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
-    ///   - [`credentials(Option<DataSourceCredentials>)`](crate::input::UpdateDataSourceInput::credentials): <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
-    ///   - [`vpc_connection_properties(Option<VpcConnectionProperties>)`](crate::input::UpdateDataSourceInput::vpc_connection_properties): <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    ///   - [`ssl_properties(Option<SslProperties>)`](crate::input::UpdateDataSourceInput::ssl_properties): <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_name): <p>A display name for the data source.</p>
+    ///   - [`data_source_parameters(DataSourceParameters)`](crate::client::fluent_builders::UpdateDataSource::data_source_parameters) / [`set_data_source_parameters(Option<DataSourceParameters>)`](crate::client::fluent_builders::UpdateDataSource::set_data_source_parameters): <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
+    ///   - [`credentials(DataSourceCredentials)`](crate::client::fluent_builders::UpdateDataSource::credentials) / [`set_credentials(Option<DataSourceCredentials>)`](crate::client::fluent_builders::UpdateDataSource::set_credentials): <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    ///   - [`vpc_connection_properties(VpcConnectionProperties)`](crate::client::fluent_builders::UpdateDataSource::vpc_connection_properties) / [`set_vpc_connection_properties(Option<VpcConnectionProperties>)`](crate::client::fluent_builders::UpdateDataSource::set_vpc_connection_properties): <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    ///   - [`ssl_properties(SslProperties)`](crate::client::fluent_builders::UpdateDataSource::ssl_properties) / [`set_ssl_properties(Option<SslProperties>)`](crate::client::fluent_builders::UpdateDataSource::set_ssl_properties): <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     /// - On success, responds with [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateDataSourceOutput::arn): <p>The Amazon Resource Name (ARN) of the data source.</p>
     ///   - [`data_source_id(Option<String>)`](crate::output::UpdateDataSourceOutput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -1773,11 +1773,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDataSourcePermissions`](crate::client::fluent_builders::UpdateDataSourcePermissions) operation.
     ///
-    /// - Takes [`UpdateDataSourcePermissionsInput`](crate::input::UpdateDataSourcePermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateDataSourcePermissionsInput::aws_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`data_source_id(Option<String>)`](crate::input::UpdateDataSourcePermissionsInput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    ///   - [`grant_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateDataSourcePermissionsInput::grant_permissions): <p>A list of resource permissions that you want to grant on the data source.</p>
-    ///   - [`revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateDataSourcePermissionsInput::revoke_permissions): <p>A list of resource permissions that you want to revoke on the data source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSourcePermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSourcePermissions::set_aws_account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSourcePermissions::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSourcePermissions::set_data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    ///   - [`grant_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateDataSourcePermissions::grant_permissions) / [`set_grant_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateDataSourcePermissions::set_grant_permissions): <p>A list of resource permissions that you want to grant on the data source.</p>
+    ///   - [`revoke_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateDataSourcePermissions::revoke_permissions) / [`set_revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateDataSourcePermissions::set_revoke_permissions): <p>A list of resource permissions that you want to revoke on the data source.</p>
     /// - On success, responds with [`UpdateDataSourcePermissionsOutput`](crate::output::UpdateDataSourcePermissionsOutput) with field(s):
     ///   - [`data_source_arn(Option<String>)`](crate::output::UpdateDataSourcePermissionsOutput::data_source_arn): <p>The Amazon Resource Name (ARN) of the data source.</p>
     ///   - [`data_source_id(Option<String>)`](crate::output::UpdateDataSourcePermissionsOutput::data_source_id): <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -1791,10 +1791,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFolder`](crate::client::fluent_builders::UpdateFolder) operation.
     ///
-    /// - Takes [`UpdateFolderInput`](crate::input::UpdateFolderInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateFolderInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::UpdateFolderInput::folder_id): <p>The ID of the folder.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateFolderInput::name): <p>The name of the folder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFolder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateFolder::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFolder::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::UpdateFolder::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFolder::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFolder::set_name): <p>The name of the folder.</p>
     /// - On success, responds with [`UpdateFolderOutput`](crate::output::UpdateFolderOutput) with field(s):
     ///   - [`status(i32)`](crate::output::UpdateFolderOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateFolderOutput::arn): <p>The Amazon Resource Name (ARN) of the folder.</p>
@@ -1806,11 +1806,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFolderPermissions`](crate::client::fluent_builders::UpdateFolderPermissions) operation.
     ///
-    /// - Takes [`UpdateFolderPermissionsInput`](crate::input::UpdateFolderPermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateFolderPermissionsInput::aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-    ///   - [`folder_id(Option<String>)`](crate::input::UpdateFolderPermissionsInput::folder_id): <p>The ID of the folder.</p>
-    ///   - [`grant_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateFolderPermissionsInput::grant_permissions): <p>The permissions that you want to grant on a resource.</p>
-    ///   - [`revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateFolderPermissionsInput::revoke_permissions): <p>The permissions that you want to revoke from a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFolderPermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateFolderPermissions::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
+    ///   - [`folder_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFolderPermissions::folder_id) / [`set_folder_id(Option<String>)`](crate::client::fluent_builders::UpdateFolderPermissions::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`grant_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateFolderPermissions::grant_permissions) / [`set_grant_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateFolderPermissions::set_grant_permissions): <p>The permissions that you want to grant on a resource.</p>
+    ///   - [`revoke_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateFolderPermissions::revoke_permissions) / [`set_revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateFolderPermissions::set_revoke_permissions): <p>The permissions that you want to revoke from a resource.</p>
     /// - On success, responds with [`UpdateFolderPermissionsOutput`](crate::output::UpdateFolderPermissionsOutput) with field(s):
     ///   - [`status(i32)`](crate::output::UpdateFolderPermissionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateFolderPermissionsOutput::arn): <p>The Amazon Resource Name (ARN) of the folder.</p>
@@ -1823,11 +1823,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) operation.
     ///
-    /// - Takes [`UpdateGroupInput`](crate::input::UpdateGroupInput) with field(s):
-    ///   - [`group_name(Option<String>)`](crate::input::UpdateGroupInput::group_name): <p>The name of the group that you want to update.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateGroupInput::description): <p>The description for the group that you want to update.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateGroupInput::aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::UpdateGroupInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_name): <p>The name of the group that you want to update.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_description): <p>The description for the group that you want to update.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_aws_account_id): <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::output::UpdateGroupOutput::group): <p>The name of the group.</p>
     ///   - [`request_id(Option<String>)`](crate::output::UpdateGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -1838,13 +1838,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateIAMPolicyAssignment`](crate::client::fluent_builders::UpdateIAMPolicyAssignment) operation.
     ///
-    /// - Takes [`UpdateIamPolicyAssignmentInput`](crate::input::UpdateIamPolicyAssignmentInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateIamPolicyAssignmentInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
-    ///   - [`assignment_name(Option<String>)`](crate::input::UpdateIamPolicyAssignmentInput::assignment_name): <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::UpdateIamPolicyAssignmentInput::namespace): <p>The namespace of the assignment.</p>
-    ///   - [`assignment_status(Option<AssignmentStatus>)`](crate::input::UpdateIamPolicyAssignmentInput::assignment_status): <p>The status of the assignment. Possible values are as follows:</p>  <ul>   <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>   <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>   <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>  </ul>
-    ///   - [`policy_arn(Option<String>)`](crate::input::UpdateIamPolicyAssignmentInput::policy_arn): <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
-    ///   - [`identities(Option<HashMap<String, Vec<String>>>)`](crate::input::UpdateIamPolicyAssignmentInput::identities): <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
+    ///   - [`assignment_name(impl Into<String>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::assignment_name) / [`set_assignment_name(Option<String>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::set_assignment_name): <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::set_namespace): <p>The namespace of the assignment.</p>
+    ///   - [`assignment_status(AssignmentStatus)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::assignment_status) / [`set_assignment_status(Option<AssignmentStatus>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::set_assignment_status): <p>The status of the assignment. Possible values are as follows:</p>  <ul>   <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>   <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>   <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>  </ul>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::set_policy_arn): <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
+    ///   - [`identities(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::identities) / [`set_identities(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::UpdateIAMPolicyAssignment::set_identities): <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
     /// - On success, responds with [`UpdateIamPolicyAssignmentOutput`](crate::output::UpdateIamPolicyAssignmentOutput) with field(s):
     ///   - [`assignment_name(Option<String>)`](crate::output::UpdateIamPolicyAssignmentOutput::assignment_name): <p>The name of the assignment or rule.</p>
     ///   - [`assignment_id(Option<String>)`](crate::output::UpdateIamPolicyAssignmentOutput::assignment_id): <p>The ID of the assignment.</p>
@@ -1861,10 +1861,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateIpRestriction`](crate::client::fluent_builders::UpdateIpRestriction) operation.
     ///
-    /// - Takes [`UpdateIpRestrictionInput`](crate::input::UpdateIpRestrictionInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateIpRestrictionInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    ///   - [`ip_restriction_rule_map(Option<HashMap<String, String>>)`](crate::input::UpdateIpRestrictionInput::ip_restriction_rule_map): <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
-    ///   - [`enabled(Option<bool>)`](crate::input::UpdateIpRestrictionInput::enabled): <p>A value that specifies whether IP rules are turned on.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIpRestriction::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateIpRestriction::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    ///   - [`ip_restriction_rule_map(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIpRestriction::ip_restriction_rule_map) / [`set_ip_restriction_rule_map(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIpRestriction::set_ip_restriction_rule_map): <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateIpRestriction::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateIpRestriction::set_enabled): <p>A value that specifies whether IP rules are turned on.</p>
     /// - On success, responds with [`UpdateIpRestrictionOutput`](crate::output::UpdateIpRestrictionOutput) with field(s):
     ///   - [`aws_account_id(Option<String>)`](crate::output::UpdateIpRestrictionOutput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     ///   - [`request_id(Option<String>)`](crate::output::UpdateIpRestrictionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
@@ -1875,12 +1875,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTemplate`](crate::client::fluent_builders::UpdateTemplate) operation.
     ///
-    /// - Takes [`UpdateTemplateInput`](crate::input::UpdateTemplateInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateTemplateInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::UpdateTemplateInput::template_id): <p>The ID for the template.</p>
-    ///   - [`source_entity(Option<TemplateSourceEntity>)`](crate::input::UpdateTemplateInput::source_entity): <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
-    ///   - [`version_description(Option<String>)`](crate::input::UpdateTemplateInput::version_description): <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateTemplateInput::name): <p>The name for the template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplate::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateTemplate::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplate::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::UpdateTemplate::set_template_id): <p>The ID for the template.</p>
+    ///   - [`source_entity(TemplateSourceEntity)`](crate::client::fluent_builders::UpdateTemplate::source_entity) / [`set_source_entity(Option<TemplateSourceEntity>)`](crate::client::fluent_builders::UpdateTemplate::set_source_entity): <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>  <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
+    ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplate::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::UpdateTemplate::set_version_description): <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTemplate::set_name): <p>The name for the template.</p>
     /// - On success, responds with [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::output::UpdateTemplateOutput::template_id): <p>The ID for the template.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateTemplateOutput::arn): <p>The Amazon Resource Name (ARN) for the template.</p>
@@ -1894,11 +1894,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTemplateAlias`](crate::client::fluent_builders::UpdateTemplateAlias) operation.
     ///
-    /// - Takes [`UpdateTemplateAliasInput`](crate::input::UpdateTemplateAliasInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateTemplateAliasInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::UpdateTemplateAliasInput::template_id): <p>The ID for the template.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::UpdateTemplateAliasInput::alias_name): <p>The alias of the template that you want to update. If you name a specific alias, you update the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
-    ///   - [`template_version_number(Option<i64>)`](crate::input::UpdateTemplateAliasInput::template_version_number): <p>The version number of the template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateAlias::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateTemplateAlias::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateAlias::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::UpdateTemplateAlias::set_template_id): <p>The ID for the template.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateAlias::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::UpdateTemplateAlias::set_alias_name): <p>The alias of the template that you want to update. If you name a specific alias, you update the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    ///   - [`template_version_number(i64)`](crate::client::fluent_builders::UpdateTemplateAlias::template_version_number) / [`set_template_version_number(Option<i64>)`](crate::client::fluent_builders::UpdateTemplateAlias::set_template_version_number): <p>The version number of the template.</p>
     /// - On success, responds with [`UpdateTemplateAliasOutput`](crate::output::UpdateTemplateAliasOutput) with field(s):
     ///   - [`template_alias(Option<TemplateAlias>)`](crate::output::UpdateTemplateAliasOutput::template_alias): <p>The template alias.</p>
     ///   - [`status(i32)`](crate::output::UpdateTemplateAliasOutput::status): <p>The HTTP status of the request.</p>
@@ -1909,11 +1909,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTemplatePermissions`](crate::client::fluent_builders::UpdateTemplatePermissions) operation.
     ///
-    /// - Takes [`UpdateTemplatePermissionsInput`](crate::input::UpdateTemplatePermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateTemplatePermissionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the template.</p>
-    ///   - [`template_id(Option<String>)`](crate::input::UpdateTemplatePermissionsInput::template_id): <p>The ID for the template.</p>
-    ///   - [`grant_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateTemplatePermissionsInput::grant_permissions): <p>A list of resource permissions to be granted on the template. </p>
-    ///   - [`revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateTemplatePermissionsInput::revoke_permissions): <p>A list of resource permissions to be revoked from the template. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplatePermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateTemplatePermissions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the template.</p>
+    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplatePermissions::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::UpdateTemplatePermissions::set_template_id): <p>The ID for the template.</p>
+    ///   - [`grant_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateTemplatePermissions::grant_permissions) / [`set_grant_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateTemplatePermissions::set_grant_permissions): <p>A list of resource permissions to be granted on the template. </p>
+    ///   - [`revoke_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateTemplatePermissions::revoke_permissions) / [`set_revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateTemplatePermissions::set_revoke_permissions): <p>A list of resource permissions to be revoked from the template. </p>
     /// - On success, responds with [`UpdateTemplatePermissionsOutput`](crate::output::UpdateTemplatePermissionsOutput) with field(s):
     ///   - [`template_id(Option<String>)`](crate::output::UpdateTemplatePermissionsOutput::template_id): <p>The ID for the template.</p>
     ///   - [`template_arn(Option<String>)`](crate::output::UpdateTemplatePermissionsOutput::template_arn): <p>The Amazon Resource Name (ARN) of the template.</p>
@@ -1928,13 +1928,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTheme`](crate::client::fluent_builders::UpdateTheme) operation.
     ///
-    /// - Takes [`UpdateThemeInput`](crate::input::UpdateThemeInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateThemeInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::UpdateThemeInput::theme_id): <p>The ID for the theme.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateThemeInput::name): <p>The name for the theme.</p>
-    ///   - [`base_theme_id(Option<String>)`](crate::input::UpdateThemeInput::base_theme_id): <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
-    ///   - [`version_description(Option<String>)`](crate::input::UpdateThemeInput::version_description): <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
-    ///   - [`configuration(Option<ThemeConfiguration>)`](crate::input::UpdateThemeInput::configuration): <p>The theme configuration, which contains the theme display properties.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTheme::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateTheme::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTheme::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::UpdateTheme::set_theme_id): <p>The ID for the theme.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTheme::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTheme::set_name): <p>The name for the theme.</p>
+    ///   - [`base_theme_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTheme::base_theme_id) / [`set_base_theme_id(Option<String>)`](crate::client::fluent_builders::UpdateTheme::set_base_theme_id): <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    ///   - [`version_description(impl Into<String>)`](crate::client::fluent_builders::UpdateTheme::version_description) / [`set_version_description(Option<String>)`](crate::client::fluent_builders::UpdateTheme::set_version_description): <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
+    ///   - [`configuration(ThemeConfiguration)`](crate::client::fluent_builders::UpdateTheme::configuration) / [`set_configuration(Option<ThemeConfiguration>)`](crate::client::fluent_builders::UpdateTheme::set_configuration): <p>The theme configuration, which contains the theme display properties.</p>
     /// - On success, responds with [`UpdateThemeOutput`](crate::output::UpdateThemeOutput) with field(s):
     ///   - [`theme_id(Option<String>)`](crate::output::UpdateThemeOutput::theme_id): <p>The ID for the theme.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateThemeOutput::arn): <p>The Amazon Resource Name (ARN) for the theme.</p>
@@ -1948,11 +1948,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateThemeAlias`](crate::client::fluent_builders::UpdateThemeAlias) operation.
     ///
-    /// - Takes [`UpdateThemeAliasInput`](crate::input::UpdateThemeAliasInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateThemeAliasInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::UpdateThemeAliasInput::theme_id): <p>The ID for the theme.</p>
-    ///   - [`alias_name(Option<String>)`](crate::input::UpdateThemeAliasInput::alias_name): <p>The name of the theme alias that you want to update.</p>
-    ///   - [`theme_version_number(Option<i64>)`](crate::input::UpdateThemeAliasInput::theme_version_number): <p>The version number of the theme that the alias should reference.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateThemeAlias::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateThemeAlias::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::UpdateThemeAlias::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::UpdateThemeAlias::set_theme_id): <p>The ID for the theme.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThemeAlias::alias_name) / [`set_alias_name(Option<String>)`](crate::client::fluent_builders::UpdateThemeAlias::set_alias_name): <p>The name of the theme alias that you want to update.</p>
+    ///   - [`theme_version_number(i64)`](crate::client::fluent_builders::UpdateThemeAlias::theme_version_number) / [`set_theme_version_number(Option<i64>)`](crate::client::fluent_builders::UpdateThemeAlias::set_theme_version_number): <p>The version number of the theme that the alias should reference.</p>
     /// - On success, responds with [`UpdateThemeAliasOutput`](crate::output::UpdateThemeAliasOutput) with field(s):
     ///   - [`theme_alias(Option<ThemeAlias>)`](crate::output::UpdateThemeAliasOutput::theme_alias): <p>Information about the theme alias.</p>
     ///   - [`status(i32)`](crate::output::UpdateThemeAliasOutput::status): <p>The HTTP status of the request.</p>
@@ -1963,11 +1963,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateThemePermissions`](crate::client::fluent_builders::UpdateThemePermissions) operation.
     ///
-    /// - Takes [`UpdateThemePermissionsInput`](crate::input::UpdateThemePermissionsInput) with field(s):
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateThemePermissionsInput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme.</p>
-    ///   - [`theme_id(Option<String>)`](crate::input::UpdateThemePermissionsInput::theme_id): <p>The ID for the theme.</p>
-    ///   - [`grant_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateThemePermissionsInput::grant_permissions): <p>A list of resource permissions to be granted for the theme.</p>
-    ///   - [`revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::input::UpdateThemePermissionsInput::revoke_permissions): <p>A list of resource permissions to be revoked from the theme.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateThemePermissions::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateThemePermissions::set_aws_account_id): <p>The ID of the Amazon Web Services account that contains the theme.</p>
+    ///   - [`theme_id(impl Into<String>)`](crate::client::fluent_builders::UpdateThemePermissions::theme_id) / [`set_theme_id(Option<String>)`](crate::client::fluent_builders::UpdateThemePermissions::set_theme_id): <p>The ID for the theme.</p>
+    ///   - [`grant_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateThemePermissions::grant_permissions) / [`set_grant_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateThemePermissions::set_grant_permissions): <p>A list of resource permissions to be granted for the theme.</p>
+    ///   - [`revoke_permissions(Vec<ResourcePermission>)`](crate::client::fluent_builders::UpdateThemePermissions::revoke_permissions) / [`set_revoke_permissions(Option<Vec<ResourcePermission>>)`](crate::client::fluent_builders::UpdateThemePermissions::set_revoke_permissions): <p>A list of resource permissions to be revoked from the theme.</p>
     /// - On success, responds with [`UpdateThemePermissionsOutput`](crate::output::UpdateThemePermissionsOutput) with field(s):
     ///   - [`theme_id(Option<String>)`](crate::output::UpdateThemePermissionsOutput::theme_id): <p>The ID for the theme.</p>
     ///   - [`theme_arn(Option<String>)`](crate::output::UpdateThemePermissionsOutput::theme_arn): <p>The Amazon Resource Name (ARN) of the theme.</p>
@@ -1980,17 +1980,17 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateUser`](crate::client::fluent_builders::UpdateUser) operation.
     ///
-    /// - Takes [`UpdateUserInput`](crate::input::UpdateUserInput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::input::UpdateUserInput::user_name): <p>The Amazon QuickSight user name that you want to update.</p>
-    ///   - [`aws_account_id(Option<String>)`](crate::input::UpdateUserInput::aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    ///   - [`namespace(Option<String>)`](crate::input::UpdateUserInput::namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-    ///   - [`email(Option<String>)`](crate::input::UpdateUserInput::email): <p>The email address of the user that you want to update.</p>
-    ///   - [`role(Option<UserRole>)`](crate::input::UpdateUserInput::role): <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>  <ul>   <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>   <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>   <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>  </ul>  <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
-    ///   - [`custom_permissions_name(Option<String>)`](crate::input::UpdateUserInput::custom_permissions_name): <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>  <ul>   <li> <p>Create and update data sources</p> </li>   <li> <p>Create and update datasets</p> </li>   <li> <p>Create and update email reports</p> </li>   <li> <p>Subscribe to email reports</p> </li>  </ul>  <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>  <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>  <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-    ///   - [`unapply_custom_permissions(bool)`](crate::input::UpdateUserInput::unapply_custom_permissions): <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
-    ///   - [`external_login_federation_provider_type(Option<String>)`](crate::input::UpdateUserInput::external_login_federation_provider_type): <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>  <ul>   <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>   <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>   <li> <p> <code>NONE</code>: This clears all the previously saved external login information for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a> </code> API operation to check the external login information.</p> </li>  </ul>
-    ///   - [`custom_federation_provider_url(Option<String>)`](crate::input::UpdateUserInput::custom_federation_provider_url): <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
-    ///   - [`external_login_id(Option<String>)`](crate::input::UpdateUserInput::external_login_id): <p>The identity ID for a user in the external login provider.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_user_name): <p>The Amazon QuickSight user name that you want to update.</p>
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_aws_account_id): <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_namespace): <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_email): <p>The email address of the user that you want to update.</p>
+    ///   - [`role(UserRole)`](crate::client::fluent_builders::UpdateUser::role) / [`set_role(Option<UserRole>)`](crate::client::fluent_builders::UpdateUser::set_role): <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>  <ul>   <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>   <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>   <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>  </ul>  <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
+    ///   - [`custom_permissions_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::custom_permissions_name) / [`set_custom_permissions_name(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_custom_permissions_name): <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>  <ul>   <li> <p>Create and update data sources</p> </li>   <li> <p>Create and update datasets</p> </li>   <li> <p>Create and update email reports</p> </li>   <li> <p>Subscribe to email reports</p> </li>  </ul>  <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user. </p>  <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>  <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    ///   - [`unapply_custom_permissions(bool)`](crate::client::fluent_builders::UpdateUser::unapply_custom_permissions) / [`set_unapply_custom_permissions(bool)`](crate::client::fluent_builders::UpdateUser::set_unapply_custom_permissions): <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
+    ///   - [`external_login_federation_provider_type(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::external_login_federation_provider_type) / [`set_external_login_federation_provider_type(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_external_login_federation_provider_type): <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>  <ul>   <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p> </li>   <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>   <li> <p> <code>NONE</code>: This clears all the previously saved external login information for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a> </code> API operation to check the external login information.</p> </li>  </ul>
+    ///   - [`custom_federation_provider_url(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::custom_federation_provider_url) / [`set_custom_federation_provider_url(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_custom_federation_provider_url): <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    ///   - [`external_login_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::external_login_id) / [`set_external_login_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_external_login_id): <p>The identity ID for a user in the external login provider.</p>
     /// - On success, responds with [`UpdateUserOutput`](crate::output::UpdateUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::output::UpdateUserOutput::user): <p>The Amazon QuickSight user.</p>
     ///   - [`request_id(Option<String>)`](crate::output::UpdateUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>

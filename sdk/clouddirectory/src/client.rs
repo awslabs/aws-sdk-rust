@@ -85,11 +85,11 @@ where
 {
     /// Constructs a fluent builder for the [`AddFacetToObject`](crate::client::fluent_builders::AddFacetToObject) operation.
     ///
-    /// - Takes [`AddFacetToObjectInput`](crate::input::AddFacetToObjectInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::AddFacetToObjectInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    ///   - [`schema_facet(Option<SchemaFacet>)`](crate::input::AddFacetToObjectInput::schema_facet): <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
-    ///   - [`object_attribute_list(Option<Vec<AttributeKeyAndValue>>)`](crate::input::AddFacetToObjectInput::object_attribute_list): <p>Attributes on the facet that you are adding to the object.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::AddFacetToObjectInput::object_reference): <p>A reference to the object you are adding the specified facet to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::AddFacetToObject::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::AddFacetToObject::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    ///   - [`schema_facet(SchemaFacet)`](crate::client::fluent_builders::AddFacetToObject::schema_facet) / [`set_schema_facet(Option<SchemaFacet>)`](crate::client::fluent_builders::AddFacetToObject::set_schema_facet): <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
+    ///   - [`object_attribute_list(Vec<AttributeKeyAndValue>)`](crate::client::fluent_builders::AddFacetToObject::object_attribute_list) / [`set_object_attribute_list(Option<Vec<AttributeKeyAndValue>>)`](crate::client::fluent_builders::AddFacetToObject::set_object_attribute_list): <p>Attributes on the facet that you are adding to the object.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::AddFacetToObject::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::AddFacetToObject::set_object_reference): <p>A reference to the object you are adding the specified facet to.</p>
     /// - On success, responds with [`AddFacetToObjectOutput`](crate::output::AddFacetToObjectOutput)
 
     /// - On failure, responds with [`SdkError<AddFacetToObjectError>`](crate::error::AddFacetToObjectError)
@@ -98,9 +98,9 @@ where
     }
     /// Constructs a fluent builder for the [`ApplySchema`](crate::client::fluent_builders::ApplySchema) operation.
     ///
-    /// - Takes [`ApplySchemaInput`](crate::input::ApplySchemaInput) with field(s):
-    ///   - [`published_schema_arn(Option<String>)`](crate::input::ApplySchemaInput::published_schema_arn): <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
-    ///   - [`directory_arn(Option<String>)`](crate::input::ApplySchemaInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`published_schema_arn(impl Into<String>)`](crate::client::fluent_builders::ApplySchema::published_schema_arn) / [`set_published_schema_arn(Option<String>)`](crate::client::fluent_builders::ApplySchema::set_published_schema_arn): <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ApplySchema::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ApplySchema::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
     /// - On success, responds with [`ApplySchemaOutput`](crate::output::ApplySchemaOutput) with field(s):
     ///   - [`applied_schema_arn(Option<String>)`](crate::output::ApplySchemaOutput::applied_schema_arn): <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
     ///   - [`directory_arn(Option<String>)`](crate::output::ApplySchemaOutput::directory_arn): <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
@@ -110,11 +110,11 @@ where
     }
     /// Constructs a fluent builder for the [`AttachObject`](crate::client::fluent_builders::AttachObject) operation.
     ///
-    /// - Takes [`AttachObjectInput`](crate::input::AttachObjectInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::AttachObjectInput::directory_arn): <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
-    ///   - [`parent_reference(Option<ObjectReference>)`](crate::input::AttachObjectInput::parent_reference): <p>The parent object reference.</p>
-    ///   - [`child_reference(Option<ObjectReference>)`](crate::input::AttachObjectInput::child_reference): <p>The child object reference to be attached to the object.</p>
-    ///   - [`link_name(Option<String>)`](crate::input::AttachObjectInput::link_name): <p>The link name with which the child object is attached to the parent.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::AttachObject::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::AttachObject::set_directory_arn): <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+    ///   - [`parent_reference(ObjectReference)`](crate::client::fluent_builders::AttachObject::parent_reference) / [`set_parent_reference(Option<ObjectReference>)`](crate::client::fluent_builders::AttachObject::set_parent_reference): <p>The parent object reference.</p>
+    ///   - [`child_reference(ObjectReference)`](crate::client::fluent_builders::AttachObject::child_reference) / [`set_child_reference(Option<ObjectReference>)`](crate::client::fluent_builders::AttachObject::set_child_reference): <p>The child object reference to be attached to the object.</p>
+    ///   - [`link_name(impl Into<String>)`](crate::client::fluent_builders::AttachObject::link_name) / [`set_link_name(Option<String>)`](crate::client::fluent_builders::AttachObject::set_link_name): <p>The link name with which the child object is attached to the parent.</p>
     /// - On success, responds with [`AttachObjectOutput`](crate::output::AttachObjectOutput) with field(s):
     ///   - [`attached_object_identifier(Option<String>)`](crate::output::AttachObjectOutput::attached_object_identifier): <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
     /// - On failure, responds with [`SdkError<AttachObjectError>`](crate::error::AttachObjectError)
@@ -123,10 +123,10 @@ where
     }
     /// Constructs a fluent builder for the [`AttachPolicy`](crate::client::fluent_builders::AttachPolicy) operation.
     ///
-    /// - Takes [`AttachPolicyInput`](crate::input::AttachPolicyInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::AttachPolicyInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
-    ///   - [`policy_reference(Option<ObjectReference>)`](crate::input::AttachPolicyInput::policy_reference): <p>The reference that is associated with the policy object.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::AttachPolicyInput::object_reference): <p>The reference that identifies the object to which the policy will be attached.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::AttachPolicy::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::AttachPolicy::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+    ///   - [`policy_reference(ObjectReference)`](crate::client::fluent_builders::AttachPolicy::policy_reference) / [`set_policy_reference(Option<ObjectReference>)`](crate::client::fluent_builders::AttachPolicy::set_policy_reference): <p>The reference that is associated with the policy object.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::AttachPolicy::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::AttachPolicy::set_object_reference): <p>The reference that identifies the object to which the policy will be attached.</p>
     /// - On success, responds with [`AttachPolicyOutput`](crate::output::AttachPolicyOutput)
 
     /// - On failure, responds with [`SdkError<AttachPolicyError>`](crate::error::AttachPolicyError)
@@ -135,10 +135,10 @@ where
     }
     /// Constructs a fluent builder for the [`AttachToIndex`](crate::client::fluent_builders::AttachToIndex) operation.
     ///
-    /// - Takes [`AttachToIndexInput`](crate::input::AttachToIndexInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::AttachToIndexInput::directory_arn): <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
-    ///   - [`index_reference(Option<ObjectReference>)`](crate::input::AttachToIndexInput::index_reference): <p>A reference to the index that you are attaching the object to.</p>
-    ///   - [`target_reference(Option<ObjectReference>)`](crate::input::AttachToIndexInput::target_reference): <p>A reference to the object that you are attaching to the index.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::AttachToIndex::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::AttachToIndex::set_directory_arn): <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
+    ///   - [`index_reference(ObjectReference)`](crate::client::fluent_builders::AttachToIndex::index_reference) / [`set_index_reference(Option<ObjectReference>)`](crate::client::fluent_builders::AttachToIndex::set_index_reference): <p>A reference to the index that you are attaching the object to.</p>
+    ///   - [`target_reference(ObjectReference)`](crate::client::fluent_builders::AttachToIndex::target_reference) / [`set_target_reference(Option<ObjectReference>)`](crate::client::fluent_builders::AttachToIndex::set_target_reference): <p>A reference to the object that you are attaching to the index.</p>
     /// - On success, responds with [`AttachToIndexOutput`](crate::output::AttachToIndexOutput) with field(s):
     ///   - [`attached_object_identifier(Option<String>)`](crate::output::AttachToIndexOutput::attached_object_identifier): <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     /// - On failure, responds with [`SdkError<AttachToIndexError>`](crate::error::AttachToIndexError)
@@ -147,12 +147,12 @@ where
     }
     /// Constructs a fluent builder for the [`AttachTypedLink`](crate::client::fluent_builders::AttachTypedLink) operation.
     ///
-    /// - Takes [`AttachTypedLinkInput`](crate::input::AttachTypedLinkInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::AttachTypedLinkInput::directory_arn): <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
-    ///   - [`source_object_reference(Option<ObjectReference>)`](crate::input::AttachTypedLinkInput::source_object_reference): <p>Identifies the source object that the typed link will attach to.</p>
-    ///   - [`target_object_reference(Option<ObjectReference>)`](crate::input::AttachTypedLinkInput::target_object_reference): <p>Identifies the target object that the typed link will attach to.</p>
-    ///   - [`typed_link_facet(Option<TypedLinkSchemaAndFacetName>)`](crate::input::AttachTypedLinkInput::typed_link_facet): <p>Identifies the typed link facet that is associated with the typed link.</p>
-    ///   - [`attributes(Option<Vec<AttributeNameAndValue>>)`](crate::input::AttachTypedLinkInput::attributes): <p>A set of attributes that are associated with the typed link.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::AttachTypedLink::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::AttachTypedLink::set_directory_arn): <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
+    ///   - [`source_object_reference(ObjectReference)`](crate::client::fluent_builders::AttachTypedLink::source_object_reference) / [`set_source_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::AttachTypedLink::set_source_object_reference): <p>Identifies the source object that the typed link will attach to.</p>
+    ///   - [`target_object_reference(ObjectReference)`](crate::client::fluent_builders::AttachTypedLink::target_object_reference) / [`set_target_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::AttachTypedLink::set_target_object_reference): <p>Identifies the target object that the typed link will attach to.</p>
+    ///   - [`typed_link_facet(TypedLinkSchemaAndFacetName)`](crate::client::fluent_builders::AttachTypedLink::typed_link_facet) / [`set_typed_link_facet(Option<TypedLinkSchemaAndFacetName>)`](crate::client::fluent_builders::AttachTypedLink::set_typed_link_facet): <p>Identifies the typed link facet that is associated with the typed link.</p>
+    ///   - [`attributes(Vec<AttributeNameAndValue>)`](crate::client::fluent_builders::AttachTypedLink::attributes) / [`set_attributes(Option<Vec<AttributeNameAndValue>>)`](crate::client::fluent_builders::AttachTypedLink::set_attributes): <p>A set of attributes that are associated with the typed link.</p>
     /// - On success, responds with [`AttachTypedLinkOutput`](crate::output::AttachTypedLinkOutput) with field(s):
     ///   - [`typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::output::AttachTypedLinkOutput::typed_link_specifier): <p>Returns a typed link specifier as output.</p>
     /// - On failure, responds with [`SdkError<AttachTypedLinkError>`](crate::error::AttachTypedLinkError)
@@ -161,10 +161,10 @@ where
     }
     /// Constructs a fluent builder for the [`BatchRead`](crate::client::fluent_builders::BatchRead) operation.
     ///
-    /// - Takes [`BatchReadInput`](crate::input::BatchReadInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::BatchReadInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    ///   - [`operations(Option<Vec<BatchReadOperation>>)`](crate::input::BatchReadInput::operations): <p>A list of operations that are part of the batch.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::BatchReadInput::consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::BatchRead::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::BatchRead::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    ///   - [`operations(Vec<BatchReadOperation>)`](crate::client::fluent_builders::BatchRead::operations) / [`set_operations(Option<Vec<BatchReadOperation>>)`](crate::client::fluent_builders::BatchRead::set_operations): <p>A list of operations that are part of the batch.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::BatchRead::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::BatchRead::set_consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     /// - On success, responds with [`BatchReadOutput`](crate::output::BatchReadOutput) with field(s):
     ///   - [`responses(Option<Vec<BatchReadOperationResponse>>)`](crate::output::BatchReadOutput::responses): <p>A list of all the responses for each batch read.</p>
     /// - On failure, responds with [`SdkError<BatchReadError>`](crate::error::BatchReadError)
@@ -173,9 +173,9 @@ where
     }
     /// Constructs a fluent builder for the [`BatchWrite`](crate::client::fluent_builders::BatchWrite) operation.
     ///
-    /// - Takes [`BatchWriteInput`](crate::input::BatchWriteInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::BatchWriteInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    ///   - [`operations(Option<Vec<BatchWriteOperation>>)`](crate::input::BatchWriteInput::operations): <p>A list of operations that are part of the batch.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::BatchWrite::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::BatchWrite::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    ///   - [`operations(Vec<BatchWriteOperation>)`](crate::client::fluent_builders::BatchWrite::operations) / [`set_operations(Option<Vec<BatchWriteOperation>>)`](crate::client::fluent_builders::BatchWrite::set_operations): <p>A list of operations that are part of the batch.</p>
     /// - On success, responds with [`BatchWriteOutput`](crate::output::BatchWriteOutput) with field(s):
     ///   - [`responses(Option<Vec<BatchWriteOperationResponse>>)`](crate::output::BatchWriteOutput::responses): <p>A list of all the responses for each batch write.</p>
     /// - On failure, responds with [`SdkError<BatchWriteError>`](crate::error::BatchWriteError)
@@ -184,9 +184,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDirectory`](crate::client::fluent_builders::CreateDirectory) operation.
     ///
-    /// - Takes [`CreateDirectoryInput`](crate::input::CreateDirectoryInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateDirectoryInput::name): <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
-    ///   - [`schema_arn(Option<String>)`](crate::input::CreateDirectoryInput::schema_arn): <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDirectory::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDirectory::set_name): <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDirectory::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::CreateDirectory::set_schema_arn): <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
     /// - On success, responds with [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput) with field(s):
     ///   - [`directory_arn(Option<String>)`](crate::output::CreateDirectoryOutput::directory_arn): <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     ///   - [`name(Option<String>)`](crate::output::CreateDirectoryOutput::name): <p>The name of the <code>Directory</code>.</p>
@@ -198,12 +198,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFacet`](crate::client::fluent_builders::CreateFacet) operation.
     ///
-    /// - Takes [`CreateFacetInput`](crate::input::CreateFacetInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::CreateFacetInput::schema_arn): <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateFacetInput::name): <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
-    ///   - [`attributes(Option<Vec<FacetAttribute>>)`](crate::input::CreateFacetInput::attributes): <p>The attributes that are associated with the <code>Facet</code>.</p>
-    ///   - [`object_type(Option<ObjectType>)`](crate::input::CreateFacetInput::object_type): <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>  <ul>   <li> <p>Node: Can have multiple children but one parent.</p> </li>  </ul>  <ul>   <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>  </ul>  <ul>   <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>  </ul>  <ul>   <li> <p>Index: Can be created with the Index API.</p> </li>  </ul>
-    ///   - [`facet_style(Option<FacetStyle>)`](crate::input::CreateFacetInput::facet_style): <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFacet::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::CreateFacet::set_schema_arn): <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFacet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFacet::set_name): <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
+    ///   - [`attributes(Vec<FacetAttribute>)`](crate::client::fluent_builders::CreateFacet::attributes) / [`set_attributes(Option<Vec<FacetAttribute>>)`](crate::client::fluent_builders::CreateFacet::set_attributes): <p>The attributes that are associated with the <code>Facet</code>.</p>
+    ///   - [`object_type(ObjectType)`](crate::client::fluent_builders::CreateFacet::object_type) / [`set_object_type(Option<ObjectType>)`](crate::client::fluent_builders::CreateFacet::set_object_type): <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>  <ul>   <li> <p>Node: Can have multiple children but one parent.</p> </li>  </ul>  <ul>   <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>  </ul>  <ul>   <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>  </ul>  <ul>   <li> <p>Index: Can be created with the Index API.</p> </li>  </ul>
+    ///   - [`facet_style(FacetStyle)`](crate::client::fluent_builders::CreateFacet::facet_style) / [`set_facet_style(Option<FacetStyle>)`](crate::client::fluent_builders::CreateFacet::set_facet_style): <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     /// - On success, responds with [`CreateFacetOutput`](crate::output::CreateFacetOutput)
 
     /// - On failure, responds with [`SdkError<CreateFacetError>`](crate::error::CreateFacetError)
@@ -212,12 +212,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateIndex`](crate::client::fluent_builders::CreateIndex) operation.
     ///
-    /// - Takes [`CreateIndexInput`](crate::input::CreateIndexInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::CreateIndexInput::directory_arn): <p>The ARN of the directory where the index should be created.</p>
-    ///   - [`ordered_indexed_attribute_list(Option<Vec<AttributeKey>>)`](crate::input::CreateIndexInput::ordered_indexed_attribute_list): <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    ///   - [`is_unique(bool)`](crate::input::CreateIndexInput::is_unique): <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
-    ///   - [`parent_reference(Option<ObjectReference>)`](crate::input::CreateIndexInput::parent_reference): <p>A reference to the parent object that contains the index object.</p>
-    ///   - [`link_name(Option<String>)`](crate::input::CreateIndexInput::link_name): <p>The name of the link between the parent object and the index object.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_directory_arn): <p>The ARN of the directory where the index should be created.</p>
+    ///   - [`ordered_indexed_attribute_list(Vec<AttributeKey>)`](crate::client::fluent_builders::CreateIndex::ordered_indexed_attribute_list) / [`set_ordered_indexed_attribute_list(Option<Vec<AttributeKey>>)`](crate::client::fluent_builders::CreateIndex::set_ordered_indexed_attribute_list): <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
+    ///   - [`is_unique(bool)`](crate::client::fluent_builders::CreateIndex::is_unique) / [`set_is_unique(bool)`](crate::client::fluent_builders::CreateIndex::set_is_unique): <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
+    ///   - [`parent_reference(ObjectReference)`](crate::client::fluent_builders::CreateIndex::parent_reference) / [`set_parent_reference(Option<ObjectReference>)`](crate::client::fluent_builders::CreateIndex::set_parent_reference): <p>A reference to the parent object that contains the index object.</p>
+    ///   - [`link_name(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::link_name) / [`set_link_name(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_link_name): <p>The name of the link between the parent object and the index object.</p>
     /// - On success, responds with [`CreateIndexOutput`](crate::output::CreateIndexOutput) with field(s):
     ///   - [`object_identifier(Option<String>)`](crate::output::CreateIndexOutput::object_identifier): <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     /// - On failure, responds with [`SdkError<CreateIndexError>`](crate::error::CreateIndexError)
@@ -226,12 +226,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateObject`](crate::client::fluent_builders::CreateObject) operation.
     ///
-    /// - Takes [`CreateObjectInput`](crate::input::CreateObjectInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::CreateObjectInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
-    ///   - [`schema_facets(Option<Vec<SchemaFacet>>)`](crate::input::CreateObjectInput::schema_facets): <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
-    ///   - [`object_attribute_list(Option<Vec<AttributeKeyAndValue>>)`](crate::input::CreateObjectInput::object_attribute_list): <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
-    ///   - [`parent_reference(Option<ObjectReference>)`](crate::input::CreateObjectInput::parent_reference): <p>If specified, the parent reference to which this object will be attached.</p>
-    ///   - [`link_name(Option<String>)`](crate::input::CreateObjectInput::link_name): <p>The name of link that is used to attach this object to a parent.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::CreateObject::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::CreateObject::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
+    ///   - [`schema_facets(Vec<SchemaFacet>)`](crate::client::fluent_builders::CreateObject::schema_facets) / [`set_schema_facets(Option<Vec<SchemaFacet>>)`](crate::client::fluent_builders::CreateObject::set_schema_facets): <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
+    ///   - [`object_attribute_list(Vec<AttributeKeyAndValue>)`](crate::client::fluent_builders::CreateObject::object_attribute_list) / [`set_object_attribute_list(Option<Vec<AttributeKeyAndValue>>)`](crate::client::fluent_builders::CreateObject::set_object_attribute_list): <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
+    ///   - [`parent_reference(ObjectReference)`](crate::client::fluent_builders::CreateObject::parent_reference) / [`set_parent_reference(Option<ObjectReference>)`](crate::client::fluent_builders::CreateObject::set_parent_reference): <p>If specified, the parent reference to which this object will be attached.</p>
+    ///   - [`link_name(impl Into<String>)`](crate::client::fluent_builders::CreateObject::link_name) / [`set_link_name(Option<String>)`](crate::client::fluent_builders::CreateObject::set_link_name): <p>The name of link that is used to attach this object to a parent.</p>
     /// - On success, responds with [`CreateObjectOutput`](crate::output::CreateObjectOutput) with field(s):
     ///   - [`object_identifier(Option<String>)`](crate::output::CreateObjectOutput::object_identifier): <p>The identifier that is associated with the object.</p>
     /// - On failure, responds with [`SdkError<CreateObjectError>`](crate::error::CreateObjectError)
@@ -240,8 +240,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSchema`](crate::client::fluent_builders::CreateSchema) operation.
     ///
-    /// - Takes [`CreateSchemaInput`](crate::input::CreateSchemaInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateSchemaInput::name): <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_name): <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
     /// - On success, responds with [`CreateSchemaOutput`](crate::output::CreateSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::output::CreateSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<CreateSchemaError>`](crate::error::CreateSchemaError)
@@ -250,9 +250,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTypedLinkFacet`](crate::client::fluent_builders::CreateTypedLinkFacet) operation.
     ///
-    /// - Takes [`CreateTypedLinkFacetInput`](crate::input::CreateTypedLinkFacetInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::CreateTypedLinkFacetInput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    ///   - [`facet(Option<TypedLinkFacet>)`](crate::input::CreateTypedLinkFacetInput::facet): <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTypedLinkFacet::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::CreateTypedLinkFacet::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    ///   - [`facet(TypedLinkFacet)`](crate::client::fluent_builders::CreateTypedLinkFacet::facet) / [`set_facet(Option<TypedLinkFacet>)`](crate::client::fluent_builders::CreateTypedLinkFacet::set_facet): <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     /// - On success, responds with [`CreateTypedLinkFacetOutput`](crate::output::CreateTypedLinkFacetOutput)
 
     /// - On failure, responds with [`SdkError<CreateTypedLinkFacetError>`](crate::error::CreateTypedLinkFacetError)
@@ -261,8 +261,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDirectory`](crate::client::fluent_builders::DeleteDirectory) operation.
     ///
-    /// - Takes [`DeleteDirectoryInput`](crate::input::DeleteDirectoryInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::DeleteDirectoryInput::directory_arn): <p>The ARN of the directory to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteDirectory::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::DeleteDirectory::set_directory_arn): <p>The ARN of the directory to delete.</p>
     /// - On success, responds with [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput) with field(s):
     ///   - [`directory_arn(Option<String>)`](crate::output::DeleteDirectoryOutput::directory_arn): <p>The ARN of the deleted directory.</p>
     /// - On failure, responds with [`SdkError<DeleteDirectoryError>`](crate::error::DeleteDirectoryError)
@@ -271,9 +271,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFacet`](crate::client::fluent_builders::DeleteFacet) operation.
     ///
-    /// - Takes [`DeleteFacetInput`](crate::input::DeleteFacetInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::DeleteFacetInput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::DeleteFacetInput::name): <p>The name of the facet to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteFacet::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::DeleteFacet::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteFacet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteFacet::set_name): <p>The name of the facet to delete.</p>
     /// - On success, responds with [`DeleteFacetOutput`](crate::output::DeleteFacetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFacetError>`](crate::error::DeleteFacetError)
@@ -282,9 +282,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteObject`](crate::client::fluent_builders::DeleteObject) operation.
     ///
-    /// - Takes [`DeleteObjectInput`](crate::input::DeleteObjectInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::DeleteObjectInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::DeleteObjectInput::object_reference): <p>A reference that identifies the object.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteObject::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::DeleteObject::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::DeleteObject::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::DeleteObject::set_object_reference): <p>A reference that identifies the object.</p>
     /// - On success, responds with [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
 
     /// - On failure, responds with [`SdkError<DeleteObjectError>`](crate::error::DeleteObjectError)
@@ -293,8 +293,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSchema`](crate::client::fluent_builders::DeleteSchema) operation.
     ///
-    /// - Takes [`DeleteSchemaInput`](crate::input::DeleteSchemaInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::DeleteSchemaInput::schema_arn): <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteSchema::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::DeleteSchema::set_schema_arn): <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
     /// - On success, responds with [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::output::DeleteSchemaOutput::schema_arn): <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteSchemaError>`](crate::error::DeleteSchemaError)
@@ -303,9 +303,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTypedLinkFacet`](crate::client::fluent_builders::DeleteTypedLinkFacet) operation.
     ///
-    /// - Takes [`DeleteTypedLinkFacetInput`](crate::input::DeleteTypedLinkFacetInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::DeleteTypedLinkFacetInput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::DeleteTypedLinkFacetInput::name): <p>The unique name of the typed link facet.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTypedLinkFacet::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::DeleteTypedLinkFacet::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteTypedLinkFacet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteTypedLinkFacet::set_name): <p>The unique name of the typed link facet.</p>
     /// - On success, responds with [`DeleteTypedLinkFacetOutput`](crate::output::DeleteTypedLinkFacetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTypedLinkFacetError>`](crate::error::DeleteTypedLinkFacetError)
@@ -314,10 +314,10 @@ where
     }
     /// Constructs a fluent builder for the [`DetachFromIndex`](crate::client::fluent_builders::DetachFromIndex) operation.
     ///
-    /// - Takes [`DetachFromIndexInput`](crate::input::DetachFromIndexInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::DetachFromIndexInput::directory_arn): <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
-    ///   - [`index_reference(Option<ObjectReference>)`](crate::input::DetachFromIndexInput::index_reference): <p>A reference to the index object.</p>
-    ///   - [`target_reference(Option<ObjectReference>)`](crate::input::DetachFromIndexInput::target_reference): <p>A reference to the object being detached from the index.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::DetachFromIndex::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::DetachFromIndex::set_directory_arn): <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
+    ///   - [`index_reference(ObjectReference)`](crate::client::fluent_builders::DetachFromIndex::index_reference) / [`set_index_reference(Option<ObjectReference>)`](crate::client::fluent_builders::DetachFromIndex::set_index_reference): <p>A reference to the index object.</p>
+    ///   - [`target_reference(ObjectReference)`](crate::client::fluent_builders::DetachFromIndex::target_reference) / [`set_target_reference(Option<ObjectReference>)`](crate::client::fluent_builders::DetachFromIndex::set_target_reference): <p>A reference to the object being detached from the index.</p>
     /// - On success, responds with [`DetachFromIndexOutput`](crate::output::DetachFromIndexOutput) with field(s):
     ///   - [`detached_object_identifier(Option<String>)`](crate::output::DetachFromIndexOutput::detached_object_identifier): <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     /// - On failure, responds with [`SdkError<DetachFromIndexError>`](crate::error::DetachFromIndexError)
@@ -326,10 +326,10 @@ where
     }
     /// Constructs a fluent builder for the [`DetachObject`](crate::client::fluent_builders::DetachObject) operation.
     ///
-    /// - Takes [`DetachObjectInput`](crate::input::DetachObjectInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::DetachObjectInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    ///   - [`parent_reference(Option<ObjectReference>)`](crate::input::DetachObjectInput::parent_reference): <p>The parent reference from which the object with the specified link name is detached.</p>
-    ///   - [`link_name(Option<String>)`](crate::input::DetachObjectInput::link_name): <p>The link name associated with the object that needs to be detached.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::DetachObject::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::DetachObject::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    ///   - [`parent_reference(ObjectReference)`](crate::client::fluent_builders::DetachObject::parent_reference) / [`set_parent_reference(Option<ObjectReference>)`](crate::client::fluent_builders::DetachObject::set_parent_reference): <p>The parent reference from which the object with the specified link name is detached.</p>
+    ///   - [`link_name(impl Into<String>)`](crate::client::fluent_builders::DetachObject::link_name) / [`set_link_name(Option<String>)`](crate::client::fluent_builders::DetachObject::set_link_name): <p>The link name associated with the object that needs to be detached.</p>
     /// - On success, responds with [`DetachObjectOutput`](crate::output::DetachObjectOutput) with field(s):
     ///   - [`detached_object_identifier(Option<String>)`](crate::output::DetachObjectOutput::detached_object_identifier): <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
     /// - On failure, responds with [`SdkError<DetachObjectError>`](crate::error::DetachObjectError)
@@ -338,10 +338,10 @@ where
     }
     /// Constructs a fluent builder for the [`DetachPolicy`](crate::client::fluent_builders::DetachPolicy) operation.
     ///
-    /// - Takes [`DetachPolicyInput`](crate::input::DetachPolicyInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::DetachPolicyInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
-    ///   - [`policy_reference(Option<ObjectReference>)`](crate::input::DetachPolicyInput::policy_reference): <p>Reference that identifies the policy object.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::DetachPolicyInput::object_reference): <p>Reference that identifies the object whose policy object will be detached.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::DetachPolicy::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::DetachPolicy::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+    ///   - [`policy_reference(ObjectReference)`](crate::client::fluent_builders::DetachPolicy::policy_reference) / [`set_policy_reference(Option<ObjectReference>)`](crate::client::fluent_builders::DetachPolicy::set_policy_reference): <p>Reference that identifies the policy object.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::DetachPolicy::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::DetachPolicy::set_object_reference): <p>Reference that identifies the object whose policy object will be detached.</p>
     /// - On success, responds with [`DetachPolicyOutput`](crate::output::DetachPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DetachPolicyError>`](crate::error::DetachPolicyError)
@@ -350,9 +350,9 @@ where
     }
     /// Constructs a fluent builder for the [`DetachTypedLink`](crate::client::fluent_builders::DetachTypedLink) operation.
     ///
-    /// - Takes [`DetachTypedLinkInput`](crate::input::DetachTypedLinkInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::DetachTypedLinkInput::directory_arn): <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
-    ///   - [`typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::input::DetachTypedLinkInput::typed_link_specifier): <p>Used to accept a typed link specifier as input.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::DetachTypedLink::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::DetachTypedLink::set_directory_arn): <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
+    ///   - [`typed_link_specifier(TypedLinkSpecifier)`](crate::client::fluent_builders::DetachTypedLink::typed_link_specifier) / [`set_typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::client::fluent_builders::DetachTypedLink::set_typed_link_specifier): <p>Used to accept a typed link specifier as input.</p>
     /// - On success, responds with [`DetachTypedLinkOutput`](crate::output::DetachTypedLinkOutput)
 
     /// - On failure, responds with [`SdkError<DetachTypedLinkError>`](crate::error::DetachTypedLinkError)
@@ -361,8 +361,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisableDirectory`](crate::client::fluent_builders::DisableDirectory) operation.
     ///
-    /// - Takes [`DisableDirectoryInput`](crate::input::DisableDirectoryInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::DisableDirectoryInput::directory_arn): <p>The ARN of the directory to disable.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::DisableDirectory::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::DisableDirectory::set_directory_arn): <p>The ARN of the directory to disable.</p>
     /// - On success, responds with [`DisableDirectoryOutput`](crate::output::DisableDirectoryOutput) with field(s):
     ///   - [`directory_arn(Option<String>)`](crate::output::DisableDirectoryOutput::directory_arn): <p>The ARN of the directory that has been disabled.</p>
     /// - On failure, responds with [`SdkError<DisableDirectoryError>`](crate::error::DisableDirectoryError)
@@ -371,8 +371,8 @@ where
     }
     /// Constructs a fluent builder for the [`EnableDirectory`](crate::client::fluent_builders::EnableDirectory) operation.
     ///
-    /// - Takes [`EnableDirectoryInput`](crate::input::EnableDirectoryInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::EnableDirectoryInput::directory_arn): <p>The ARN of the directory to enable.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::EnableDirectory::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::EnableDirectory::set_directory_arn): <p>The ARN of the directory to enable.</p>
     /// - On success, responds with [`EnableDirectoryOutput`](crate::output::EnableDirectoryOutput) with field(s):
     ///   - [`directory_arn(Option<String>)`](crate::output::EnableDirectoryOutput::directory_arn): <p>The ARN of the enabled directory.</p>
     /// - On failure, responds with [`SdkError<EnableDirectoryError>`](crate::error::EnableDirectoryError)
@@ -381,8 +381,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetAppliedSchemaVersion`](crate::client::fluent_builders::GetAppliedSchemaVersion) operation.
     ///
-    /// - Takes [`GetAppliedSchemaVersionInput`](crate::input::GetAppliedSchemaVersionInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::GetAppliedSchemaVersionInput::schema_arn): <p>The ARN of the applied schema.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::GetAppliedSchemaVersion::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::GetAppliedSchemaVersion::set_schema_arn): <p>The ARN of the applied schema.</p>
     /// - On success, responds with [`GetAppliedSchemaVersionOutput`](crate::output::GetAppliedSchemaVersionOutput) with field(s):
     ///   - [`applied_schema_arn(Option<String>)`](crate::output::GetAppliedSchemaVersionOutput::applied_schema_arn): <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
     /// - On failure, responds with [`SdkError<GetAppliedSchemaVersionError>`](crate::error::GetAppliedSchemaVersionError)
@@ -391,8 +391,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDirectory`](crate::client::fluent_builders::GetDirectory) operation.
     ///
-    /// - Takes [`GetDirectoryInput`](crate::input::GetDirectoryInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::GetDirectoryInput::directory_arn): <p>The ARN of the directory.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::GetDirectory::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::GetDirectory::set_directory_arn): <p>The ARN of the directory.</p>
     /// - On success, responds with [`GetDirectoryOutput`](crate::output::GetDirectoryOutput) with field(s):
     ///   - [`directory(Option<Directory>)`](crate::output::GetDirectoryOutput::directory): <p>Metadata about the directory.</p>
     /// - On failure, responds with [`SdkError<GetDirectoryError>`](crate::error::GetDirectoryError)
@@ -401,9 +401,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetFacet`](crate::client::fluent_builders::GetFacet) operation.
     ///
-    /// - Takes [`GetFacetInput`](crate::input::GetFacetInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::GetFacetInput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::GetFacetInput::name): <p>The name of the facet to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::GetFacet::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::GetFacet::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetFacet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetFacet::set_name): <p>The name of the facet to retrieve.</p>
     /// - On success, responds with [`GetFacetOutput`](crate::output::GetFacetOutput) with field(s):
     ///   - [`facet(Option<Facet>)`](crate::output::GetFacetOutput::facet): <p>The <code>Facet</code> structure that is associated with the facet.</p>
     /// - On failure, responds with [`SdkError<GetFacetError>`](crate::error::GetFacetError)
@@ -412,11 +412,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetLinkAttributes`](crate::client::fluent_builders::GetLinkAttributes) operation.
     ///
-    /// - Takes [`GetLinkAttributesInput`](crate::input::GetLinkAttributesInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::GetLinkAttributesInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    ///   - [`typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::input::GetLinkAttributesInput::typed_link_specifier): <p>Allows a typed link specifier to be accepted as input.</p>
-    ///   - [`attribute_names(Option<Vec<String>>)`](crate::input::GetLinkAttributesInput::attribute_names): <p>A list of attribute names whose values will be retrieved.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::GetLinkAttributesInput::consistency_level): <p>The consistency level at which to retrieve the attributes on a typed link.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::GetLinkAttributes::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::GetLinkAttributes::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    ///   - [`typed_link_specifier(TypedLinkSpecifier)`](crate::client::fluent_builders::GetLinkAttributes::typed_link_specifier) / [`set_typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::client::fluent_builders::GetLinkAttributes::set_typed_link_specifier): <p>Allows a typed link specifier to be accepted as input.</p>
+    ///   - [`attribute_names(Vec<String>)`](crate::client::fluent_builders::GetLinkAttributes::attribute_names) / [`set_attribute_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetLinkAttributes::set_attribute_names): <p>A list of attribute names whose values will be retrieved.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::GetLinkAttributes::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::GetLinkAttributes::set_consistency_level): <p>The consistency level at which to retrieve the attributes on a typed link.</p>
     /// - On success, responds with [`GetLinkAttributesOutput`](crate::output::GetLinkAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<AttributeKeyAndValue>>)`](crate::output::GetLinkAttributesOutput::attributes): <p>The attributes that are associated with the typed link.</p>
     /// - On failure, responds with [`SdkError<GetLinkAttributesError>`](crate::error::GetLinkAttributesError)
@@ -425,12 +425,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetObjectAttributes`](crate::client::fluent_builders::GetObjectAttributes) operation.
     ///
-    /// - Takes [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::GetObjectAttributesInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::GetObjectAttributesInput::object_reference): <p>Reference that identifies the object whose attributes will be retrieved.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::GetObjectAttributesInput::consistency_level): <p>The consistency level at which to retrieve the attributes on an object.</p>
-    ///   - [`schema_facet(Option<SchemaFacet>)`](crate::input::GetObjectAttributesInput::schema_facet): <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
-    ///   - [`attribute_names(Option<Vec<String>>)`](crate::input::GetObjectAttributesInput::attribute_names): <p>List of attribute names whose values will be retrieved.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::GetObjectAttributes::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::GetObjectAttributes::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::GetObjectAttributes::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::GetObjectAttributes::set_object_reference): <p>Reference that identifies the object whose attributes will be retrieved.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::GetObjectAttributes::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::GetObjectAttributes::set_consistency_level): <p>The consistency level at which to retrieve the attributes on an object.</p>
+    ///   - [`schema_facet(SchemaFacet)`](crate::client::fluent_builders::GetObjectAttributes::schema_facet) / [`set_schema_facet(Option<SchemaFacet>)`](crate::client::fluent_builders::GetObjectAttributes::set_schema_facet): <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
+    ///   - [`attribute_names(Vec<String>)`](crate::client::fluent_builders::GetObjectAttributes::attribute_names) / [`set_attribute_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetObjectAttributes::set_attribute_names): <p>List of attribute names whose values will be retrieved.</p>
     /// - On success, responds with [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<AttributeKeyAndValue>>)`](crate::output::GetObjectAttributesOutput::attributes): <p>The attributes that are associated with the object.</p>
     /// - On failure, responds with [`SdkError<GetObjectAttributesError>`](crate::error::GetObjectAttributesError)
@@ -439,10 +439,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetObjectInformation`](crate::client::fluent_builders::GetObjectInformation) operation.
     ///
-    /// - Takes [`GetObjectInformationInput`](crate::input::GetObjectInformationInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::GetObjectInformationInput::directory_arn): <p>The ARN of the directory being retrieved.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::GetObjectInformationInput::object_reference): <p>A reference to the object.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::GetObjectInformationInput::consistency_level): <p>The consistency level at which to retrieve the object information.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::GetObjectInformation::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::GetObjectInformation::set_directory_arn): <p>The ARN of the directory being retrieved.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::GetObjectInformation::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::GetObjectInformation::set_object_reference): <p>A reference to the object.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::GetObjectInformation::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::GetObjectInformation::set_consistency_level): <p>The consistency level at which to retrieve the object information.</p>
     /// - On success, responds with [`GetObjectInformationOutput`](crate::output::GetObjectInformationOutput) with field(s):
     ///   - [`schema_facets(Option<Vec<SchemaFacet>>)`](crate::output::GetObjectInformationOutput::schema_facets): <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
     ///   - [`object_identifier(Option<String>)`](crate::output::GetObjectInformationOutput::object_identifier): <p>The <code>ObjectIdentifier</code> of the specified object.</p>
@@ -452,8 +452,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSchemaAsJson`](crate::client::fluent_builders::GetSchemaAsJson) operation.
     ///
-    /// - Takes [`GetSchemaAsJsonInput`](crate::input::GetSchemaAsJsonInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::GetSchemaAsJsonInput::schema_arn): <p>The ARN of the schema to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::GetSchemaAsJson::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::GetSchemaAsJson::set_schema_arn): <p>The ARN of the schema to retrieve.</p>
     /// - On success, responds with [`GetSchemaAsJsonOutput`](crate::output::GetSchemaAsJsonOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::GetSchemaAsJsonOutput::name): <p>The name of the retrieved schema.</p>
     ///   - [`document(Option<String>)`](crate::output::GetSchemaAsJsonOutput::document): <p>The JSON representation of the schema document.</p>
@@ -463,9 +463,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetTypedLinkFacetInformation`](crate::client::fluent_builders::GetTypedLinkFacetInformation) operation.
     ///
-    /// - Takes [`GetTypedLinkFacetInformationInput`](crate::input::GetTypedLinkFacetInformationInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::GetTypedLinkFacetInformationInput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::GetTypedLinkFacetInformationInput::name): <p>The unique name of the typed link facet.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::GetTypedLinkFacetInformation::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::GetTypedLinkFacetInformation::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetTypedLinkFacetInformation::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetTypedLinkFacetInformation::set_name): <p>The unique name of the typed link facet.</p>
     /// - On success, responds with [`GetTypedLinkFacetInformationOutput`](crate::output::GetTypedLinkFacetInformationOutput) with field(s):
     ///   - [`identity_attribute_order(Option<Vec<String>>)`](crate::output::GetTypedLinkFacetInformationOutput::identity_attribute_order): <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     /// - On failure, responds with [`SdkError<GetTypedLinkFacetInformationError>`](crate::error::GetTypedLinkFacetInformationError)
@@ -475,13 +475,13 @@ where
         fluent_builders::GetTypedLinkFacetInformation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAppliedSchemaArns`](crate::client::fluent_builders::ListAppliedSchemaArns) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppliedSchemaArns::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppliedSchemaArns::into_paginator).
     ///
-    /// - Takes [`ListAppliedSchemaArnsInput`](crate::input::ListAppliedSchemaArnsInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListAppliedSchemaArnsInput::directory_arn): <p>The ARN of the directory you are listing.</p>
-    ///   - [`schema_arn(Option<String>)`](crate::input::ListAppliedSchemaArnsInput::schema_arn): <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAppliedSchemaArnsInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAppliedSchemaArnsInput::max_results): <p>The maximum number of results to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppliedSchemaArns::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListAppliedSchemaArns::set_directory_arn): <p>The ARN of the directory you are listing.</p>
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppliedSchemaArns::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::ListAppliedSchemaArns::set_schema_arn): <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppliedSchemaArns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppliedSchemaArns::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppliedSchemaArns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppliedSchemaArns::set_max_results): <p>The maximum number of results to retrieve.</p>
     /// - On success, responds with [`ListAppliedSchemaArnsOutput`](crate::output::ListAppliedSchemaArnsOutput) with field(s):
     ///   - [`schema_arns(Option<Vec<String>>)`](crate::output::ListAppliedSchemaArnsOutput::schema_arns): <p>The ARNs of schemas that are applied to the directory.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAppliedSchemaArnsOutput::next_token): <p>The pagination token.</p>
@@ -490,14 +490,14 @@ where
         fluent_builders::ListAppliedSchemaArns::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAttachedIndices`](crate::client::fluent_builders::ListAttachedIndices) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttachedIndices::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttachedIndices::into_paginator).
     ///
-    /// - Takes [`ListAttachedIndicesInput`](crate::input::ListAttachedIndicesInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListAttachedIndicesInput::directory_arn): <p>The ARN of the directory.</p>
-    ///   - [`target_reference(Option<ObjectReference>)`](crate::input::ListAttachedIndicesInput::target_reference): <p>A reference to the object that has indices attached.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAttachedIndicesInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAttachedIndicesInput::max_results): <p>The maximum number of results to retrieve.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::ListAttachedIndicesInput::consistency_level): <p>The consistency level to use for this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListAttachedIndices::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListAttachedIndices::set_directory_arn): <p>The ARN of the directory.</p>
+    ///   - [`target_reference(ObjectReference)`](crate::client::fluent_builders::ListAttachedIndices::target_reference) / [`set_target_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListAttachedIndices::set_target_reference): <p>A reference to the object that has indices attached.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAttachedIndices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAttachedIndices::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAttachedIndices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAttachedIndices::set_max_results): <p>The maximum number of results to retrieve.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::ListAttachedIndices::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::ListAttachedIndices::set_consistency_level): <p>The consistency level to use for this operation.</p>
     /// - On success, responds with [`ListAttachedIndicesOutput`](crate::output::ListAttachedIndicesOutput) with field(s):
     ///   - [`index_attachments(Option<Vec<IndexAttachment>>)`](crate::output::ListAttachedIndicesOutput::index_attachments): <p>The indices attached to the specified object.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAttachedIndicesOutput::next_token): <p>The pagination token.</p>
@@ -506,11 +506,11 @@ where
         fluent_builders::ListAttachedIndices::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDevelopmentSchemaArns`](crate::client::fluent_builders::ListDevelopmentSchemaArns) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevelopmentSchemaArns::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevelopmentSchemaArns::into_paginator).
     ///
-    /// - Takes [`ListDevelopmentSchemaArnsInput`](crate::input::ListDevelopmentSchemaArnsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDevelopmentSchemaArnsInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDevelopmentSchemaArnsInput::max_results): <p>The maximum number of results to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevelopmentSchemaArns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevelopmentSchemaArns::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevelopmentSchemaArns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDevelopmentSchemaArns::set_max_results): <p>The maximum number of results to retrieve.</p>
     /// - On success, responds with [`ListDevelopmentSchemaArnsOutput`](crate::output::ListDevelopmentSchemaArnsOutput) with field(s):
     ///   - [`schema_arns(Option<Vec<String>>)`](crate::output::ListDevelopmentSchemaArnsOutput::schema_arns): <p>The ARNs of retrieved development schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDevelopmentSchemaArnsOutput::next_token): <p>The pagination token.</p>
@@ -521,12 +521,12 @@ where
         fluent_builders::ListDevelopmentSchemaArns::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDirectories`](crate::client::fluent_builders::ListDirectories) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDirectories::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDirectories::into_paginator).
     ///
-    /// - Takes [`ListDirectoriesInput`](crate::input::ListDirectoriesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDirectoriesInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDirectoriesInput::max_results): <p>The maximum number of results to retrieve.</p>
-    ///   - [`state(Option<DirectoryState>)`](crate::input::ListDirectoriesInput::state): <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDirectories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDirectories::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDirectories::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDirectories::set_max_results): <p>The maximum number of results to retrieve.</p>
+    ///   - [`state(DirectoryState)`](crate::client::fluent_builders::ListDirectories::state) / [`set_state(Option<DirectoryState>)`](crate::client::fluent_builders::ListDirectories::set_state): <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
     /// - On success, responds with [`ListDirectoriesOutput`](crate::output::ListDirectoriesOutput) with field(s):
     ///   - [`directories(Option<Vec<Directory>>)`](crate::output::ListDirectoriesOutput::directories): <p>Lists all directories that are associated with your account in pagination fashion.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDirectoriesOutput::next_token): <p>The pagination token.</p>
@@ -535,13 +535,13 @@ where
         fluent_builders::ListDirectories::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFacetAttributes`](crate::client::fluent_builders::ListFacetAttributes) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFacetAttributes::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFacetAttributes::into_paginator).
     ///
-    /// - Takes [`ListFacetAttributesInput`](crate::input::ListFacetAttributesInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::ListFacetAttributesInput::schema_arn): <p>The ARN of the schema where the facet resides.</p>
-    ///   - [`name(Option<String>)`](crate::input::ListFacetAttributesInput::name): <p>The name of the facet whose attributes will be retrieved.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFacetAttributesInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFacetAttributesInput::max_results): <p>The maximum number of results to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::ListFacetAttributes::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::ListFacetAttributes::set_schema_arn): <p>The ARN of the schema where the facet resides.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListFacetAttributes::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListFacetAttributes::set_name): <p>The name of the facet whose attributes will be retrieved.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFacetAttributes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFacetAttributes::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFacetAttributes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFacetAttributes::set_max_results): <p>The maximum number of results to retrieve.</p>
     /// - On success, responds with [`ListFacetAttributesOutput`](crate::output::ListFacetAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<FacetAttribute>>)`](crate::output::ListFacetAttributesOutput::attributes): <p>The attributes attached to the facet.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFacetAttributesOutput::next_token): <p>The pagination token.</p>
@@ -550,12 +550,12 @@ where
         fluent_builders::ListFacetAttributes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFacetNames`](crate::client::fluent_builders::ListFacetNames) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFacetNames::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFacetNames::into_paginator).
     ///
-    /// - Takes [`ListFacetNamesInput`](crate::input::ListFacetNamesInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::ListFacetNamesInput::schema_arn): <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFacetNamesInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFacetNamesInput::max_results): <p>The maximum number of results to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::ListFacetNames::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::ListFacetNames::set_schema_arn): <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFacetNames::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFacetNames::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFacetNames::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFacetNames::set_max_results): <p>The maximum number of results to retrieve.</p>
     /// - On success, responds with [`ListFacetNamesOutput`](crate::output::ListFacetNamesOutput) with field(s):
     ///   - [`facet_names(Option<Vec<String>>)`](crate::output::ListFacetNamesOutput::facet_names): <p>The names of facets that exist within the schema.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFacetNamesOutput::next_token): <p>The pagination token.</p>
@@ -565,14 +565,14 @@ where
     }
     /// Constructs a fluent builder for the [`ListIncomingTypedLinks`](crate::client::fluent_builders::ListIncomingTypedLinks) operation.
     ///
-    /// - Takes [`ListIncomingTypedLinksInput`](crate::input::ListIncomingTypedLinksInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListIncomingTypedLinksInput::directory_arn): <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::ListIncomingTypedLinksInput::object_reference): <p>Reference that identifies the object whose attributes will be listed.</p>
-    ///   - [`filter_attribute_ranges(Option<Vec<TypedLinkAttributeRange>>)`](crate::input::ListIncomingTypedLinksInput::filter_attribute_ranges): <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    ///   - [`filter_typed_link(Option<TypedLinkSchemaAndFacetName>)`](crate::input::ListIncomingTypedLinksInput::filter_typed_link): <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIncomingTypedLinksInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIncomingTypedLinksInput::max_results): <p>The maximum number of results to retrieve.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::ListIncomingTypedLinksInput::consistency_level): <p>The consistency level to execute the request at.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListIncomingTypedLinks::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListIncomingTypedLinks::set_directory_arn): <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::ListIncomingTypedLinks::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListIncomingTypedLinks::set_object_reference): <p>Reference that identifies the object whose attributes will be listed.</p>
+    ///   - [`filter_attribute_ranges(Vec<TypedLinkAttributeRange>)`](crate::client::fluent_builders::ListIncomingTypedLinks::filter_attribute_ranges) / [`set_filter_attribute_ranges(Option<Vec<TypedLinkAttributeRange>>)`](crate::client::fluent_builders::ListIncomingTypedLinks::set_filter_attribute_ranges): <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
+    ///   - [`filter_typed_link(TypedLinkSchemaAndFacetName)`](crate::client::fluent_builders::ListIncomingTypedLinks::filter_typed_link) / [`set_filter_typed_link(Option<TypedLinkSchemaAndFacetName>)`](crate::client::fluent_builders::ListIncomingTypedLinks::set_filter_typed_link): <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIncomingTypedLinks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIncomingTypedLinks::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIncomingTypedLinks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIncomingTypedLinks::set_max_results): <p>The maximum number of results to retrieve.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::ListIncomingTypedLinks::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::ListIncomingTypedLinks::set_consistency_level): <p>The consistency level to execute the request at.</p>
     /// - On success, responds with [`ListIncomingTypedLinksOutput`](crate::output::ListIncomingTypedLinksOutput) with field(s):
     ///   - [`link_specifiers(Option<Vec<TypedLinkSpecifier>>)`](crate::output::ListIncomingTypedLinksOutput::link_specifiers): <p>Returns one or more typed link specifiers as output.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIncomingTypedLinksOutput::next_token): <p>The pagination token.</p>
@@ -581,15 +581,15 @@ where
         fluent_builders::ListIncomingTypedLinks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListIndex`](crate::client::fluent_builders::ListIndex) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIndex::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIndex::into_paginator).
     ///
-    /// - Takes [`ListIndexInput`](crate::input::ListIndexInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListIndexInput::directory_arn): <p>The ARN of the directory that the index exists in.</p>
-    ///   - [`ranges_on_indexed_values(Option<Vec<ObjectAttributeRange>>)`](crate::input::ListIndexInput::ranges_on_indexed_values): <p>Specifies the ranges of indexed values that you want to query.</p>
-    ///   - [`index_reference(Option<ObjectReference>)`](crate::input::ListIndexInput::index_reference): <p>The reference to the index to list.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIndexInput::max_results): <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIndexInput::next_token): <p>The pagination token.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::ListIndexInput::consistency_level): <p>The consistency level to execute the request at.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListIndex::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListIndex::set_directory_arn): <p>The ARN of the directory that the index exists in.</p>
+    ///   - [`ranges_on_indexed_values(Vec<ObjectAttributeRange>)`](crate::client::fluent_builders::ListIndex::ranges_on_indexed_values) / [`set_ranges_on_indexed_values(Option<Vec<ObjectAttributeRange>>)`](crate::client::fluent_builders::ListIndex::set_ranges_on_indexed_values): <p>Specifies the ranges of indexed values that you want to query.</p>
+    ///   - [`index_reference(ObjectReference)`](crate::client::fluent_builders::ListIndex::index_reference) / [`set_index_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListIndex::set_index_reference): <p>The reference to the index to list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIndex::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIndex::set_max_results): <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIndex::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIndex::set_next_token): <p>The pagination token.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::ListIndex::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::ListIndex::set_consistency_level): <p>The consistency level to execute the request at.</p>
     /// - On success, responds with [`ListIndexOutput`](crate::output::ListIndexOutput) with field(s):
     ///   - [`index_attachments(Option<Vec<IndexAttachment>>)`](crate::output::ListIndexOutput::index_attachments): <p>The objects and indexed values attached to the index.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIndexOutput::next_token): <p>The pagination token.</p>
@@ -598,12 +598,12 @@ where
         fluent_builders::ListIndex::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListManagedSchemaArns`](crate::client::fluent_builders::ListManagedSchemaArns) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListManagedSchemaArns::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListManagedSchemaArns::into_paginator).
     ///
-    /// - Takes [`ListManagedSchemaArnsInput`](crate::input::ListManagedSchemaArnsInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::ListManagedSchemaArnsInput::schema_arn): <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListManagedSchemaArnsInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListManagedSchemaArnsInput::max_results): <p>The maximum number of results to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::ListManagedSchemaArns::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::ListManagedSchemaArns::set_schema_arn): <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListManagedSchemaArns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListManagedSchemaArns::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListManagedSchemaArns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListManagedSchemaArns::set_max_results): <p>The maximum number of results to retrieve.</p>
     /// - On success, responds with [`ListManagedSchemaArnsOutput`](crate::output::ListManagedSchemaArnsOutput) with field(s):
     ///   - [`schema_arns(Option<Vec<String>>)`](crate::output::ListManagedSchemaArnsOutput::schema_arns): <p>The ARNs for all AWS managed schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListManagedSchemaArnsOutput::next_token): <p>The pagination token.</p>
@@ -612,15 +612,15 @@ where
         fluent_builders::ListManagedSchemaArns::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListObjectAttributes`](crate::client::fluent_builders::ListObjectAttributes) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectAttributes::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListObjectAttributes::into_paginator).
     ///
-    /// - Takes [`ListObjectAttributesInput`](crate::input::ListObjectAttributesInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListObjectAttributesInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::ListObjectAttributesInput::object_reference): <p>The reference that identifies the object whose attributes will be listed.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListObjectAttributesInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListObjectAttributesInput::max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::ListObjectAttributesInput::consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    ///   - [`facet_filter(Option<SchemaFacet>)`](crate::input::ListObjectAttributesInput::facet_filter): <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListObjectAttributes::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListObjectAttributes::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::ListObjectAttributes::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListObjectAttributes::set_object_reference): <p>The reference that identifies the object whose attributes will be listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListObjectAttributes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListObjectAttributes::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListObjectAttributes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListObjectAttributes::set_max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::ListObjectAttributes::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::ListObjectAttributes::set_consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    ///   - [`facet_filter(SchemaFacet)`](crate::client::fluent_builders::ListObjectAttributes::facet_filter) / [`set_facet_filter(Option<SchemaFacet>)`](crate::client::fluent_builders::ListObjectAttributes::set_facet_filter): <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
     /// - On success, responds with [`ListObjectAttributesOutput`](crate::output::ListObjectAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<AttributeKeyAndValue>>)`](crate::output::ListObjectAttributesOutput::attributes): <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListObjectAttributesOutput::next_token): <p>The pagination token.</p>
@@ -629,14 +629,14 @@ where
         fluent_builders::ListObjectAttributes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListObjectChildren`](crate::client::fluent_builders::ListObjectChildren) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectChildren::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListObjectChildren::into_paginator).
     ///
-    /// - Takes [`ListObjectChildrenInput`](crate::input::ListObjectChildrenInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListObjectChildrenInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::ListObjectChildrenInput::object_reference): <p>The reference that identifies the object for which child objects are being listed.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListObjectChildrenInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListObjectChildrenInput::max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::ListObjectChildrenInput::consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListObjectChildren::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListObjectChildren::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::ListObjectChildren::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListObjectChildren::set_object_reference): <p>The reference that identifies the object for which child objects are being listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListObjectChildren::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListObjectChildren::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListObjectChildren::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListObjectChildren::set_max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::ListObjectChildren::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::ListObjectChildren::set_consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     /// - On success, responds with [`ListObjectChildrenOutput`](crate::output::ListObjectChildrenOutput) with field(s):
     ///   - [`children(Option<HashMap<String, String>>)`](crate::output::ListObjectChildrenOutput::children): <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListObjectChildrenOutput::next_token): <p>The pagination token.</p>
@@ -645,13 +645,13 @@ where
         fluent_builders::ListObjectChildren::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListObjectParentPaths`](crate::client::fluent_builders::ListObjectParentPaths) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectParentPaths::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListObjectParentPaths::into_paginator).
     ///
-    /// - Takes [`ListObjectParentPathsInput`](crate::input::ListObjectParentPathsInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListObjectParentPathsInput::directory_arn): <p>The ARN of the directory to which the parent path applies.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::ListObjectParentPathsInput::object_reference): <p>The reference that identifies the object whose parent paths are listed.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListObjectParentPathsInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListObjectParentPathsInput::max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListObjectParentPaths::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListObjectParentPaths::set_directory_arn): <p>The ARN of the directory to which the parent path applies.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::ListObjectParentPaths::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListObjectParentPaths::set_object_reference): <p>The reference that identifies the object whose parent paths are listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListObjectParentPaths::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListObjectParentPaths::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListObjectParentPaths::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListObjectParentPaths::set_max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     /// - On success, responds with [`ListObjectParentPathsOutput`](crate::output::ListObjectParentPathsOutput) with field(s):
     ///   - [`path_to_object_identifiers_list(Option<Vec<PathToObjectIdentifiers>>)`](crate::output::ListObjectParentPathsOutput::path_to_object_identifiers_list): <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListObjectParentPathsOutput::next_token): <p>The pagination token.</p>
@@ -660,15 +660,15 @@ where
         fluent_builders::ListObjectParentPaths::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListObjectParents`](crate::client::fluent_builders::ListObjectParents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectParents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListObjectParents::into_paginator).
     ///
-    /// - Takes [`ListObjectParentsInput`](crate::input::ListObjectParentsInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListObjectParentsInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::ListObjectParentsInput::object_reference): <p>The reference that identifies the object for which parent objects are being listed.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListObjectParentsInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListObjectParentsInput::max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::ListObjectParentsInput::consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    ///   - [`include_all_links_to_each_parent(bool)`](crate::input::ListObjectParentsInput::include_all_links_to_each_parent): <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListObjectParents::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListObjectParents::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::ListObjectParents::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListObjectParents::set_object_reference): <p>The reference that identifies the object for which parent objects are being listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListObjectParents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListObjectParents::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListObjectParents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListObjectParents::set_max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::ListObjectParents::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::ListObjectParents::set_consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    ///   - [`include_all_links_to_each_parent(bool)`](crate::client::fluent_builders::ListObjectParents::include_all_links_to_each_parent) / [`set_include_all_links_to_each_parent(bool)`](crate::client::fluent_builders::ListObjectParents::set_include_all_links_to_each_parent): <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
     /// - On success, responds with [`ListObjectParentsOutput`](crate::output::ListObjectParentsOutput) with field(s):
     ///   - [`parents(Option<HashMap<String, String>>)`](crate::output::ListObjectParentsOutput::parents): <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListObjectParentsOutput::next_token): <p>The pagination token.</p>
@@ -678,14 +678,14 @@ where
         fluent_builders::ListObjectParents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListObjectPolicies`](crate::client::fluent_builders::ListObjectPolicies) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectPolicies::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListObjectPolicies::into_paginator).
     ///
-    /// - Takes [`ListObjectPoliciesInput`](crate::input::ListObjectPoliciesInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListObjectPoliciesInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::ListObjectPoliciesInput::object_reference): <p>Reference that identifies the object for which policies will be listed.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListObjectPoliciesInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListObjectPoliciesInput::max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::ListObjectPoliciesInput::consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListObjectPolicies::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListObjectPolicies::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::ListObjectPolicies::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListObjectPolicies::set_object_reference): <p>Reference that identifies the object for which policies will be listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListObjectPolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListObjectPolicies::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListObjectPolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListObjectPolicies::set_max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::ListObjectPolicies::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::ListObjectPolicies::set_consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     /// - On success, responds with [`ListObjectPoliciesOutput`](crate::output::ListObjectPoliciesOutput) with field(s):
     ///   - [`attached_policy_ids(Option<Vec<String>>)`](crate::output::ListObjectPoliciesOutput::attached_policy_ids): <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListObjectPoliciesOutput::next_token): <p>The pagination token.</p>
@@ -695,14 +695,14 @@ where
     }
     /// Constructs a fluent builder for the [`ListOutgoingTypedLinks`](crate::client::fluent_builders::ListOutgoingTypedLinks) operation.
     ///
-    /// - Takes [`ListOutgoingTypedLinksInput`](crate::input::ListOutgoingTypedLinksInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListOutgoingTypedLinksInput::directory_arn): <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::ListOutgoingTypedLinksInput::object_reference): <p>A reference that identifies the object whose attributes will be listed.</p>
-    ///   - [`filter_attribute_ranges(Option<Vec<TypedLinkAttributeRange>>)`](crate::input::ListOutgoingTypedLinksInput::filter_attribute_ranges): <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    ///   - [`filter_typed_link(Option<TypedLinkSchemaAndFacetName>)`](crate::input::ListOutgoingTypedLinksInput::filter_typed_link): <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListOutgoingTypedLinksInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListOutgoingTypedLinksInput::max_results): <p>The maximum number of results to retrieve.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::ListOutgoingTypedLinksInput::consistency_level): <p>The consistency level to execute the request at.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::set_directory_arn): <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::ListOutgoingTypedLinks::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::set_object_reference): <p>A reference that identifies the object whose attributes will be listed.</p>
+    ///   - [`filter_attribute_ranges(Vec<TypedLinkAttributeRange>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::filter_attribute_ranges) / [`set_filter_attribute_ranges(Option<Vec<TypedLinkAttributeRange>>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::set_filter_attribute_ranges): <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
+    ///   - [`filter_typed_link(TypedLinkSchemaAndFacetName)`](crate::client::fluent_builders::ListOutgoingTypedLinks::filter_typed_link) / [`set_filter_typed_link(Option<TypedLinkSchemaAndFacetName>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::set_filter_typed_link): <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOutgoingTypedLinks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::set_max_results): <p>The maximum number of results to retrieve.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::ListOutgoingTypedLinks::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::ListOutgoingTypedLinks::set_consistency_level): <p>The consistency level to execute the request at.</p>
     /// - On success, responds with [`ListOutgoingTypedLinksOutput`](crate::output::ListOutgoingTypedLinksOutput) with field(s):
     ///   - [`typed_link_specifiers(Option<Vec<TypedLinkSpecifier>>)`](crate::output::ListOutgoingTypedLinksOutput::typed_link_specifiers): <p>Returns a typed link specifier as output.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListOutgoingTypedLinksOutput::next_token): <p>The pagination token.</p>
@@ -711,14 +711,14 @@ where
         fluent_builders::ListOutgoingTypedLinks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPolicyAttachments`](crate::client::fluent_builders::ListPolicyAttachments) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicyAttachments::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPolicyAttachments::into_paginator).
     ///
-    /// - Takes [`ListPolicyAttachmentsInput`](crate::input::ListPolicyAttachmentsInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::ListPolicyAttachmentsInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    ///   - [`policy_reference(Option<ObjectReference>)`](crate::input::ListPolicyAttachmentsInput::policy_reference): <p>The reference that identifies the policy object.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPolicyAttachmentsInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPolicyAttachmentsInput::max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
-    ///   - [`consistency_level(Option<ConsistencyLevel>)`](crate::input::ListPolicyAttachmentsInput::consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::ListPolicyAttachments::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::ListPolicyAttachments::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+    ///   - [`policy_reference(ObjectReference)`](crate::client::fluent_builders::ListPolicyAttachments::policy_reference) / [`set_policy_reference(Option<ObjectReference>)`](crate::client::fluent_builders::ListPolicyAttachments::set_policy_reference): <p>The reference that identifies the policy object.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPolicyAttachments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPolicyAttachments::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPolicyAttachments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPolicyAttachments::set_max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    ///   - [`consistency_level(ConsistencyLevel)`](crate::client::fluent_builders::ListPolicyAttachments::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::client::fluent_builders::ListPolicyAttachments::set_consistency_level): <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     /// - On success, responds with [`ListPolicyAttachmentsOutput`](crate::output::ListPolicyAttachmentsOutput) with field(s):
     ///   - [`object_identifiers(Option<Vec<String>>)`](crate::output::ListPolicyAttachmentsOutput::object_identifiers): <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPolicyAttachmentsOutput::next_token): <p>The pagination token.</p>
@@ -727,12 +727,12 @@ where
         fluent_builders::ListPolicyAttachments::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPublishedSchemaArns`](crate::client::fluent_builders::ListPublishedSchemaArns) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPublishedSchemaArns::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPublishedSchemaArns::into_paginator).
     ///
-    /// - Takes [`ListPublishedSchemaArnsInput`](crate::input::ListPublishedSchemaArnsInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::ListPublishedSchemaArnsInput::schema_arn): <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPublishedSchemaArnsInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPublishedSchemaArnsInput::max_results): <p>The maximum number of results to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::ListPublishedSchemaArns::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::ListPublishedSchemaArns::set_schema_arn): <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPublishedSchemaArns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPublishedSchemaArns::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPublishedSchemaArns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPublishedSchemaArns::set_max_results): <p>The maximum number of results to retrieve.</p>
     /// - On success, responds with [`ListPublishedSchemaArnsOutput`](crate::output::ListPublishedSchemaArnsOutput) with field(s):
     ///   - [`schema_arns(Option<Vec<String>>)`](crate::output::ListPublishedSchemaArnsOutput::schema_arns): <p>The ARNs of published schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPublishedSchemaArnsOutput::next_token): <p>The pagination token.</p>
@@ -741,12 +741,12 @@ where
         fluent_builders::ListPublishedSchemaArns::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsForResourceInput::max_results): <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tag key value pairs that are associated with the response.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -755,13 +755,13 @@ where
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTypedLinkFacetAttributes`](crate::client::fluent_builders::ListTypedLinkFacetAttributes) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::into_paginator).
     ///
-    /// - Takes [`ListTypedLinkFacetAttributesInput`](crate::input::ListTypedLinkFacetAttributesInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::ListTypedLinkFacetAttributesInput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::ListTypedLinkFacetAttributesInput::name): <p>The unique name of the typed link facet.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTypedLinkFacetAttributesInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTypedLinkFacetAttributesInput::max_results): <p>The maximum number of results to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::set_name): <p>The unique name of the typed link facet.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::set_max_results): <p>The maximum number of results to retrieve.</p>
     /// - On success, responds with [`ListTypedLinkFacetAttributesOutput`](crate::output::ListTypedLinkFacetAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<TypedLinkAttributeDefinition>>)`](crate::output::ListTypedLinkFacetAttributesOutput::attributes): <p>An ordered set of attributes associate with the typed link.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTypedLinkFacetAttributesOutput::next_token): <p>The pagination token.</p>
@@ -772,12 +772,12 @@ where
         fluent_builders::ListTypedLinkFacetAttributes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTypedLinkFacetNames`](crate::client::fluent_builders::ListTypedLinkFacetNames) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTypedLinkFacetNames::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTypedLinkFacetNames::into_paginator).
     ///
-    /// - Takes [`ListTypedLinkFacetNamesInput`](crate::input::ListTypedLinkFacetNamesInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::ListTypedLinkFacetNamesInput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTypedLinkFacetNamesInput::next_token): <p>The pagination token.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTypedLinkFacetNamesInput::max_results): <p>The maximum number of results to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::ListTypedLinkFacetNames::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::ListTypedLinkFacetNames::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTypedLinkFacetNames::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTypedLinkFacetNames::set_next_token): <p>The pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTypedLinkFacetNames::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTypedLinkFacetNames::set_max_results): <p>The maximum number of results to retrieve.</p>
     /// - On success, responds with [`ListTypedLinkFacetNamesOutput`](crate::output::ListTypedLinkFacetNamesOutput) with field(s):
     ///   - [`facet_names(Option<Vec<String>>)`](crate::output::ListTypedLinkFacetNamesOutput::facet_names): <p>The names of typed link facets that exist within the schema.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTypedLinkFacetNamesOutput::next_token): <p>The pagination token.</p>
@@ -786,13 +786,13 @@ where
         fluent_builders::ListTypedLinkFacetNames::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`LookupPolicy`](crate::client::fluent_builders::LookupPolicy) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::LookupPolicy::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::LookupPolicy::into_paginator).
     ///
-    /// - Takes [`LookupPolicyInput`](crate::input::LookupPolicyInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::LookupPolicyInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::LookupPolicyInput::object_reference): <p>Reference that identifies the object whose policies will be looked up.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::LookupPolicyInput::next_token): <p>The token to request the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::LookupPolicyInput::max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::LookupPolicy::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::LookupPolicy::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::LookupPolicy::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::LookupPolicy::set_object_reference): <p>Reference that identifies the object whose policies will be looked up.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::LookupPolicy::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::LookupPolicy::set_next_token): <p>The token to request the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::LookupPolicy::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::LookupPolicy::set_max_results): <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     /// - On success, responds with [`LookupPolicyOutput`](crate::output::LookupPolicyOutput) with field(s):
     ///   - [`policy_to_path_list(Option<Vec<PolicyToPath>>)`](crate::output::LookupPolicyOutput::policy_to_path_list): <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::output::LookupPolicyOutput::next_token): <p>The pagination token.</p>
@@ -802,11 +802,11 @@ where
     }
     /// Constructs a fluent builder for the [`PublishSchema`](crate::client::fluent_builders::PublishSchema) operation.
     ///
-    /// - Takes [`PublishSchemaInput`](crate::input::PublishSchemaInput) with field(s):
-    ///   - [`development_schema_arn(Option<String>)`](crate::input::PublishSchemaInput::development_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
-    ///   - [`version(Option<String>)`](crate::input::PublishSchemaInput::version): <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
-    ///   - [`minor_version(Option<String>)`](crate::input::PublishSchemaInput::minor_version): <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
-    ///   - [`name(Option<String>)`](crate::input::PublishSchemaInput::name): <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`development_schema_arn(impl Into<String>)`](crate::client::fluent_builders::PublishSchema::development_schema_arn) / [`set_development_schema_arn(Option<String>)`](crate::client::fluent_builders::PublishSchema::set_development_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::PublishSchema::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::PublishSchema::set_version): <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
+    ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::PublishSchema::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::PublishSchema::set_minor_version): <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PublishSchema::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PublishSchema::set_name): <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
     /// - On success, responds with [`PublishSchemaOutput`](crate::output::PublishSchemaOutput) with field(s):
     ///   - [`published_schema_arn(Option<String>)`](crate::output::PublishSchemaOutput::published_schema_arn): <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<PublishSchemaError>`](crate::error::PublishSchemaError)
@@ -815,9 +815,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutSchemaFromJson`](crate::client::fluent_builders::PutSchemaFromJson) operation.
     ///
-    /// - Takes [`PutSchemaFromJsonInput`](crate::input::PutSchemaFromJsonInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::PutSchemaFromJsonInput::schema_arn): <p>The ARN of the schema to update.</p>
-    ///   - [`document(Option<String>)`](crate::input::PutSchemaFromJsonInput::document): <p>The replacement JSON schema.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::PutSchemaFromJson::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::PutSchemaFromJson::set_schema_arn): <p>The ARN of the schema to update.</p>
+    ///   - [`document(impl Into<String>)`](crate::client::fluent_builders::PutSchemaFromJson::document) / [`set_document(Option<String>)`](crate::client::fluent_builders::PutSchemaFromJson::set_document): <p>The replacement JSON schema.</p>
     /// - On success, responds with [`PutSchemaFromJsonOutput`](crate::output::PutSchemaFromJsonOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::PutSchemaFromJsonOutput::arn): <p>The ARN of the schema to update.</p>
     /// - On failure, responds with [`SdkError<PutSchemaFromJsonError>`](crate::error::PutSchemaFromJsonError)
@@ -826,10 +826,10 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveFacetFromObject`](crate::client::fluent_builders::RemoveFacetFromObject) operation.
     ///
-    /// - Takes [`RemoveFacetFromObjectInput`](crate::input::RemoveFacetFromObjectInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::RemoveFacetFromObjectInput::directory_arn): <p>The ARN of the directory in which the object resides.</p>
-    ///   - [`schema_facet(Option<SchemaFacet>)`](crate::input::RemoveFacetFromObjectInput::schema_facet): <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::RemoveFacetFromObjectInput::object_reference): <p>A reference to the object to remove the facet from.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveFacetFromObject::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::RemoveFacetFromObject::set_directory_arn): <p>The ARN of the directory in which the object resides.</p>
+    ///   - [`schema_facet(SchemaFacet)`](crate::client::fluent_builders::RemoveFacetFromObject::schema_facet) / [`set_schema_facet(Option<SchemaFacet>)`](crate::client::fluent_builders::RemoveFacetFromObject::set_schema_facet): <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::RemoveFacetFromObject::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::RemoveFacetFromObject::set_object_reference): <p>A reference to the object to remove the facet from.</p>
     /// - On success, responds with [`RemoveFacetFromObjectOutput`](crate::output::RemoveFacetFromObjectOutput)
 
     /// - On failure, responds with [`SdkError<RemoveFacetFromObjectError>`](crate::error::RemoveFacetFromObjectError)
@@ -838,9 +838,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A list of tag key-value pairs.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tag key-value pairs.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -849,9 +849,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Keys of the tag that need to be removed from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Keys of the tag that need to be removed from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -860,11 +860,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFacet`](crate::client::fluent_builders::UpdateFacet) operation.
     ///
-    /// - Takes [`UpdateFacetInput`](crate::input::UpdateFacetInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::UpdateFacetInput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateFacetInput::name): <p>The name of the facet.</p>
-    ///   - [`attribute_updates(Option<Vec<FacetAttributeUpdate>>)`](crate::input::UpdateFacetInput::attribute_updates): <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
-    ///   - [`object_type(Option<ObjectType>)`](crate::input::UpdateFacetInput::object_type): <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFacet::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::UpdateFacet::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFacet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFacet::set_name): <p>The name of the facet.</p>
+    ///   - [`attribute_updates(Vec<FacetAttributeUpdate>)`](crate::client::fluent_builders::UpdateFacet::attribute_updates) / [`set_attribute_updates(Option<Vec<FacetAttributeUpdate>>)`](crate::client::fluent_builders::UpdateFacet::set_attribute_updates): <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    ///   - [`object_type(ObjectType)`](crate::client::fluent_builders::UpdateFacet::object_type) / [`set_object_type(Option<ObjectType>)`](crate::client::fluent_builders::UpdateFacet::set_object_type): <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     /// - On success, responds with [`UpdateFacetOutput`](crate::output::UpdateFacetOutput)
 
     /// - On failure, responds with [`SdkError<UpdateFacetError>`](crate::error::UpdateFacetError)
@@ -873,10 +873,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateLinkAttributes`](crate::client::fluent_builders::UpdateLinkAttributes) operation.
     ///
-    /// - Takes [`UpdateLinkAttributesInput`](crate::input::UpdateLinkAttributesInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::UpdateLinkAttributesInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    ///   - [`typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::input::UpdateLinkAttributesInput::typed_link_specifier): <p>Allows a typed link specifier to be accepted as input.</p>
-    ///   - [`attribute_updates(Option<Vec<LinkAttributeUpdate>>)`](crate::input::UpdateLinkAttributesInput::attribute_updates): <p>The attributes update structure.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLinkAttributes::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::UpdateLinkAttributes::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    ///   - [`typed_link_specifier(TypedLinkSpecifier)`](crate::client::fluent_builders::UpdateLinkAttributes::typed_link_specifier) / [`set_typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::client::fluent_builders::UpdateLinkAttributes::set_typed_link_specifier): <p>Allows a typed link specifier to be accepted as input.</p>
+    ///   - [`attribute_updates(Vec<LinkAttributeUpdate>)`](crate::client::fluent_builders::UpdateLinkAttributes::attribute_updates) / [`set_attribute_updates(Option<Vec<LinkAttributeUpdate>>)`](crate::client::fluent_builders::UpdateLinkAttributes::set_attribute_updates): <p>The attributes update structure.</p>
     /// - On success, responds with [`UpdateLinkAttributesOutput`](crate::output::UpdateLinkAttributesOutput)
 
     /// - On failure, responds with [`SdkError<UpdateLinkAttributesError>`](crate::error::UpdateLinkAttributesError)
@@ -885,10 +885,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateObjectAttributes`](crate::client::fluent_builders::UpdateObjectAttributes) operation.
     ///
-    /// - Takes [`UpdateObjectAttributesInput`](crate::input::UpdateObjectAttributesInput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::input::UpdateObjectAttributesInput::directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    ///   - [`object_reference(Option<ObjectReference>)`](crate::input::UpdateObjectAttributesInput::object_reference): <p>The reference that identifies the object.</p>
-    ///   - [`attribute_updates(Option<Vec<ObjectAttributeUpdate>>)`](crate::input::UpdateObjectAttributesInput::attribute_updates): <p>The attributes update structure.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateObjectAttributes::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::UpdateObjectAttributes::set_directory_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    ///   - [`object_reference(ObjectReference)`](crate::client::fluent_builders::UpdateObjectAttributes::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::client::fluent_builders::UpdateObjectAttributes::set_object_reference): <p>The reference that identifies the object.</p>
+    ///   - [`attribute_updates(Vec<ObjectAttributeUpdate>)`](crate::client::fluent_builders::UpdateObjectAttributes::attribute_updates) / [`set_attribute_updates(Option<Vec<ObjectAttributeUpdate>>)`](crate::client::fluent_builders::UpdateObjectAttributes::set_attribute_updates): <p>The attributes update structure.</p>
     /// - On success, responds with [`UpdateObjectAttributesOutput`](crate::output::UpdateObjectAttributesOutput) with field(s):
     ///   - [`object_identifier(Option<String>)`](crate::output::UpdateObjectAttributesOutput::object_identifier): <p>The <code>ObjectIdentifier</code> of the updated object.</p>
     /// - On failure, responds with [`SdkError<UpdateObjectAttributesError>`](crate::error::UpdateObjectAttributesError)
@@ -897,9 +897,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSchema`](crate::client::fluent_builders::UpdateSchema) operation.
     ///
-    /// - Takes [`UpdateSchemaInput`](crate::input::UpdateSchemaInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::UpdateSchemaInput::schema_arn): <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateSchemaInput::name): <p>The name of the schema.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_schema_arn): <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_name): <p>The name of the schema.</p>
     /// - On success, responds with [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::output::UpdateSchemaOutput::schema_arn): <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateSchemaError>`](crate::error::UpdateSchemaError)
@@ -908,11 +908,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTypedLinkFacet`](crate::client::fluent_builders::UpdateTypedLinkFacet) operation.
     ///
-    /// - Takes [`UpdateTypedLinkFacetInput`](crate::input::UpdateTypedLinkFacetInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::UpdateTypedLinkFacetInput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateTypedLinkFacetInput::name): <p>The unique name of the typed link facet.</p>
-    ///   - [`attribute_updates(Option<Vec<TypedLinkFacetAttributeUpdate>>)`](crate::input::UpdateTypedLinkFacetInput::attribute_updates): <p>Attributes update structure.</p>
-    ///   - [`identity_attribute_order(Option<Vec<String>>)`](crate::input::UpdateTypedLinkFacetInput::identity_attribute_order): <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTypedLinkFacet::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::UpdateTypedLinkFacet::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTypedLinkFacet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTypedLinkFacet::set_name): <p>The unique name of the typed link facet.</p>
+    ///   - [`attribute_updates(Vec<TypedLinkFacetAttributeUpdate>)`](crate::client::fluent_builders::UpdateTypedLinkFacet::attribute_updates) / [`set_attribute_updates(Option<Vec<TypedLinkFacetAttributeUpdate>>)`](crate::client::fluent_builders::UpdateTypedLinkFacet::set_attribute_updates): <p>Attributes update structure.</p>
+    ///   - [`identity_attribute_order(Vec<String>)`](crate::client::fluent_builders::UpdateTypedLinkFacet::identity_attribute_order) / [`set_identity_attribute_order(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateTypedLinkFacet::set_identity_attribute_order): <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     /// - On success, responds with [`UpdateTypedLinkFacetOutput`](crate::output::UpdateTypedLinkFacetOutput)
 
     /// - On failure, responds with [`SdkError<UpdateTypedLinkFacetError>`](crate::error::UpdateTypedLinkFacetError)
@@ -921,10 +921,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpgradeAppliedSchema`](crate::client::fluent_builders::UpgradeAppliedSchema) operation.
     ///
-    /// - Takes [`UpgradeAppliedSchemaInput`](crate::input::UpgradeAppliedSchemaInput) with field(s):
-    ///   - [`published_schema_arn(Option<String>)`](crate::input::UpgradeAppliedSchemaInput::published_schema_arn): <p>The revision of the published schema to upgrade the directory to.</p>
-    ///   - [`directory_arn(Option<String>)`](crate::input::UpgradeAppliedSchemaInput::directory_arn): <p>The ARN for the directory to which the upgraded schema will be applied.</p>
-    ///   - [`dry_run(bool)`](crate::input::UpgradeAppliedSchemaInput::dry_run): <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`published_schema_arn(impl Into<String>)`](crate::client::fluent_builders::UpgradeAppliedSchema::published_schema_arn) / [`set_published_schema_arn(Option<String>)`](crate::client::fluent_builders::UpgradeAppliedSchema::set_published_schema_arn): <p>The revision of the published schema to upgrade the directory to.</p>
+    ///   - [`directory_arn(impl Into<String>)`](crate::client::fluent_builders::UpgradeAppliedSchema::directory_arn) / [`set_directory_arn(Option<String>)`](crate::client::fluent_builders::UpgradeAppliedSchema::set_directory_arn): <p>The ARN for the directory to which the upgraded schema will be applied.</p>
+    ///   - [`dry_run(bool)`](crate::client::fluent_builders::UpgradeAppliedSchema::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::UpgradeAppliedSchema::set_dry_run): <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
     /// - On success, responds with [`UpgradeAppliedSchemaOutput`](crate::output::UpgradeAppliedSchemaOutput) with field(s):
     ///   - [`upgraded_schema_arn(Option<String>)`](crate::output::UpgradeAppliedSchemaOutput::upgraded_schema_arn): <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     ///   - [`directory_arn(Option<String>)`](crate::output::UpgradeAppliedSchemaOutput::directory_arn): <p>The ARN of the directory that is returned as part of the response.</p>
@@ -934,11 +934,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpgradePublishedSchema`](crate::client::fluent_builders::UpgradePublishedSchema) operation.
     ///
-    /// - Takes [`UpgradePublishedSchemaInput`](crate::input::UpgradePublishedSchemaInput) with field(s):
-    ///   - [`development_schema_arn(Option<String>)`](crate::input::UpgradePublishedSchemaInput::development_schema_arn): <p>The ARN of the development schema with the changes used for the upgrade.</p>
-    ///   - [`published_schema_arn(Option<String>)`](crate::input::UpgradePublishedSchemaInput::published_schema_arn): <p>The ARN of the published schema to be upgraded.</p>
-    ///   - [`minor_version(Option<String>)`](crate::input::UpgradePublishedSchemaInput::minor_version): <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
-    ///   - [`dry_run(bool)`](crate::input::UpgradePublishedSchemaInput::dry_run): <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`development_schema_arn(impl Into<String>)`](crate::client::fluent_builders::UpgradePublishedSchema::development_schema_arn) / [`set_development_schema_arn(Option<String>)`](crate::client::fluent_builders::UpgradePublishedSchema::set_development_schema_arn): <p>The ARN of the development schema with the changes used for the upgrade.</p>
+    ///   - [`published_schema_arn(impl Into<String>)`](crate::client::fluent_builders::UpgradePublishedSchema::published_schema_arn) / [`set_published_schema_arn(Option<String>)`](crate::client::fluent_builders::UpgradePublishedSchema::set_published_schema_arn): <p>The ARN of the published schema to be upgraded.</p>
+    ///   - [`minor_version(impl Into<String>)`](crate::client::fluent_builders::UpgradePublishedSchema::minor_version) / [`set_minor_version(Option<String>)`](crate::client::fluent_builders::UpgradePublishedSchema::set_minor_version): <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
+    ///   - [`dry_run(bool)`](crate::client::fluent_builders::UpgradePublishedSchema::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::UpgradePublishedSchema::set_dry_run): <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
     /// - On success, responds with [`UpgradePublishedSchemaOutput`](crate::output::UpgradePublishedSchemaOutput) with field(s):
     ///   - [`upgraded_schema_arn(Option<String>)`](crate::output::UpgradePublishedSchemaOutput::upgraded_schema_arn): <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     /// - On failure, responds with [`SdkError<UpgradePublishedSchemaError>`](crate::error::UpgradePublishedSchemaError)

@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`CancelChangeSet`](crate::client::fluent_builders::CancelChangeSet) operation.
     ///
-    /// - Takes [`CancelChangeSetInput`](crate::input::CancelChangeSetInput) with field(s):
-    ///   - [`catalog(Option<String>)`](crate::input::CancelChangeSetInput::catalog): <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
-    ///   - [`change_set_id(Option<String>)`](crate::input::CancelChangeSetInput::change_set_id): <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::CancelChangeSet::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::CancelChangeSet::set_catalog): <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
+    ///   - [`change_set_id(impl Into<String>)`](crate::client::fluent_builders::CancelChangeSet::change_set_id) / [`set_change_set_id(Option<String>)`](crate::client::fluent_builders::CancelChangeSet::set_change_set_id): <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
     /// - On success, responds with [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput) with field(s):
     ///   - [`change_set_id(Option<String>)`](crate::output::CancelChangeSetOutput::change_set_id): <p>The unique identifier for the change set referenced in this request.</p>
     ///   - [`change_set_arn(Option<String>)`](crate::output::CancelChangeSetOutput::change_set_arn): <p>The ARN associated with the change set referenced in this request.</p>
@@ -97,9 +97,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeChangeSet`](crate::client::fluent_builders::DescribeChangeSet) operation.
     ///
-    /// - Takes [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput) with field(s):
-    ///   - [`catalog(Option<String>)`](crate::input::DescribeChangeSetInput::catalog): <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`change_set_id(Option<String>)`](crate::input::DescribeChangeSetInput::change_set_id): <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::DescribeChangeSet::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::DescribeChangeSet::set_catalog): <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    ///   - [`change_set_id(impl Into<String>)`](crate::client::fluent_builders::DescribeChangeSet::change_set_id) / [`set_change_set_id(Option<String>)`](crate::client::fluent_builders::DescribeChangeSet::set_change_set_id): <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
     /// - On success, responds with [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput) with field(s):
     ///   - [`change_set_id(Option<String>)`](crate::output::DescribeChangeSetOutput::change_set_id): <p>Required. The unique identifier for the change set referenced in this request.</p>
     ///   - [`change_set_arn(Option<String>)`](crate::output::DescribeChangeSetOutput::change_set_arn): <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
@@ -116,9 +116,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEntity`](crate::client::fluent_builders::DescribeEntity) operation.
     ///
-    /// - Takes [`DescribeEntityInput`](crate::input::DescribeEntityInput) with field(s):
-    ///   - [`catalog(Option<String>)`](crate::input::DescribeEntityInput::catalog): <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`entity_id(Option<String>)`](crate::input::DescribeEntityInput::entity_id): <p>Required. The unique ID of the entity to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::DescribeEntity::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::DescribeEntity::set_catalog): <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    ///   - [`entity_id(impl Into<String>)`](crate::client::fluent_builders::DescribeEntity::entity_id) / [`set_entity_id(Option<String>)`](crate::client::fluent_builders::DescribeEntity::set_entity_id): <p>Required. The unique ID of the entity to describe.</p>
     /// - On success, responds with [`DescribeEntityOutput`](crate::output::DescribeEntityOutput) with field(s):
     ///   - [`entity_type(Option<String>)`](crate::output::DescribeEntityOutput::entity_type): <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
     ///   - [`entity_identifier(Option<String>)`](crate::output::DescribeEntityOutput::entity_identifier): <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
@@ -130,14 +130,14 @@ where
         fluent_builders::DescribeEntity::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListChangeSets`](crate::client::fluent_builders::ListChangeSets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChangeSets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChangeSets::into_paginator).
     ///
-    /// - Takes [`ListChangeSetsInput`](crate::input::ListChangeSetsInput) with field(s):
-    ///   - [`catalog(Option<String>)`](crate::input::ListChangeSetsInput::catalog): <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`filter_list(Option<Vec<Filter>>)`](crate::input::ListChangeSetsInput::filter_list): <p>An array of filter objects.</p>
-    ///   - [`sort(Option<Sort>)`](crate::input::ListChangeSetsInput::sort): <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListChangeSetsInput::max_results): <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListChangeSetsInput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::ListChangeSets::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::ListChangeSets::set_catalog): <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    ///   - [`filter_list(Vec<Filter>)`](crate::client::fluent_builders::ListChangeSets::filter_list) / [`set_filter_list(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListChangeSets::set_filter_list): <p>An array of filter objects.</p>
+    ///   - [`sort(Sort)`](crate::client::fluent_builders::ListChangeSets::sort) / [`set_sort(Option<Sort>)`](crate::client::fluent_builders::ListChangeSets::set_sort): <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChangeSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChangeSets::set_max_results): <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChangeSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChangeSets::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     /// - On success, responds with [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput) with field(s):
     ///   - [`change_set_summary_list(Option<Vec<ChangeSetSummaryListItem>>)`](crate::output::ListChangeSetsOutput::change_set_summary_list): <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListChangeSetsOutput::next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
@@ -146,15 +146,15 @@ where
         fluent_builders::ListChangeSets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEntities`](crate::client::fluent_builders::ListEntities) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEntities::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEntities::into_paginator).
     ///
-    /// - Takes [`ListEntitiesInput`](crate::input::ListEntitiesInput) with field(s):
-    ///   - [`catalog(Option<String>)`](crate::input::ListEntitiesInput::catalog): <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`entity_type(Option<String>)`](crate::input::ListEntitiesInput::entity_type): <p>The type of entities to retrieve.</p>
-    ///   - [`filter_list(Option<Vec<Filter>>)`](crate::input::ListEntitiesInput::filter_list): <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    ///   - [`sort(Option<Sort>)`](crate::input::ListEntitiesInput::sort): <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListEntitiesInput::next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEntitiesInput::max_results): <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::ListEntities::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::ListEntities::set_catalog): <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    ///   - [`entity_type(impl Into<String>)`](crate::client::fluent_builders::ListEntities::entity_type) / [`set_entity_type(Option<String>)`](crate::client::fluent_builders::ListEntities::set_entity_type): <p>The type of entities to retrieve.</p>
+    ///   - [`filter_list(Vec<Filter>)`](crate::client::fluent_builders::ListEntities::filter_list) / [`set_filter_list(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListEntities::set_filter_list): <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
+    ///   - [`sort(Sort)`](crate::client::fluent_builders::ListEntities::sort) / [`set_sort(Option<Sort>)`](crate::client::fluent_builders::ListEntities::set_sort): <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEntities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEntities::set_next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEntities::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEntities::set_max_results): <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
     /// - On success, responds with [`ListEntitiesOutput`](crate::output::ListEntitiesOutput) with field(s):
     ///   - [`entity_summary_list(Option<Vec<EntitySummary>>)`](crate::output::ListEntitiesOutput::entity_summary_list): <p> Array of <code>EntitySummary</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEntitiesOutput::next_token): <p>The value of the next token if it exists. Null if there is no more result.</p>
@@ -164,11 +164,11 @@ where
     }
     /// Constructs a fluent builder for the [`StartChangeSet`](crate::client::fluent_builders::StartChangeSet) operation.
     ///
-    /// - Takes [`StartChangeSetInput`](crate::input::StartChangeSetInput) with field(s):
-    ///   - [`catalog(Option<String>)`](crate::input::StartChangeSetInput::catalog): <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    ///   - [`change_set(Option<Vec<Change>>)`](crate::input::StartChangeSetInput::change_set): <p>Array of <code>change</code> object.</p>
-    ///   - [`change_set_name(Option<String>)`](crate::input::StartChangeSetInput::change_set_name): <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StartChangeSetInput::client_request_token): <p>A unique token to identify the request to ensure idempotency.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`catalog(impl Into<String>)`](crate::client::fluent_builders::StartChangeSet::catalog) / [`set_catalog(Option<String>)`](crate::client::fluent_builders::StartChangeSet::set_catalog): <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    ///   - [`change_set(Vec<Change>)`](crate::client::fluent_builders::StartChangeSet::change_set) / [`set_change_set(Option<Vec<Change>>)`](crate::client::fluent_builders::StartChangeSet::set_change_set): <p>Array of <code>change</code> object.</p>
+    ///   - [`change_set_name(impl Into<String>)`](crate::client::fluent_builders::StartChangeSet::change_set_name) / [`set_change_set_name(Option<String>)`](crate::client::fluent_builders::StartChangeSet::set_change_set_name): <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartChangeSet::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartChangeSet::set_client_request_token): <p>A unique token to identify the request to ensure idempotency.</p>
     /// - On success, responds with [`StartChangeSetOutput`](crate::output::StartChangeSetOutput) with field(s):
     ///   - [`change_set_id(Option<String>)`](crate::output::StartChangeSetOutput::change_set_id): <p>Unique identifier generated for the request.</p>
     ///   - [`change_set_arn(Option<String>)`](crate::output::StartChangeSetOutput::change_set_arn): <p>The ARN associated to the unique identifier generated for the request.</p>

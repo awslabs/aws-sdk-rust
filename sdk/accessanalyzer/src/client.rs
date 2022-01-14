@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`ApplyArchiveRule`](crate::client::fluent_builders::ApplyArchiveRule) operation.
     ///
-    /// - Takes [`ApplyArchiveRuleInput`](crate::input::ApplyArchiveRuleInput) with field(s):
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::ApplyArchiveRuleInput::analyzer_arn): <p>The Amazon resource name (ARN) of the analyzer.</p>
-    ///   - [`rule_name(Option<String>)`](crate::input::ApplyArchiveRuleInput::rule_name): <p>The name of the rule to apply.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::ApplyArchiveRuleInput::client_token): <p>A client token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::ApplyArchiveRule::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::ApplyArchiveRule::set_analyzer_arn): <p>The Amazon resource name (ARN) of the analyzer.</p>
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::ApplyArchiveRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::ApplyArchiveRule::set_rule_name): <p>The name of the rule to apply.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::ApplyArchiveRule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::ApplyArchiveRule::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`ApplyArchiveRuleOutput`](crate::output::ApplyArchiveRuleOutput)
 
     /// - On failure, responds with [`SdkError<ApplyArchiveRuleError>`](crate::error::ApplyArchiveRuleError)
@@ -97,8 +97,8 @@ where
     }
     /// Constructs a fluent builder for the [`CancelPolicyGeneration`](crate::client::fluent_builders::CancelPolicyGeneration) operation.
     ///
-    /// - Takes [`CancelPolicyGenerationInput`](crate::input::CancelPolicyGenerationInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::CancelPolicyGenerationInput::job_id): <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::CancelPolicyGeneration::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::CancelPolicyGeneration::set_job_id): <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     /// - On success, responds with [`CancelPolicyGenerationOutput`](crate::output::CancelPolicyGenerationOutput)
 
     /// - On failure, responds with [`SdkError<CancelPolicyGenerationError>`](crate::error::CancelPolicyGenerationError)
@@ -107,10 +107,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAccessPreview`](crate::client::fluent_builders::CreateAccessPreview) operation.
     ///
-    /// - Takes [`CreateAccessPreviewInput`](crate::input::CreateAccessPreviewInput) with field(s):
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::CreateAccessPreviewInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
-    ///   - [`configurations(Option<HashMap<String, Configuration>>)`](crate::input::CreateAccessPreviewInput::configurations): <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateAccessPreviewInput::client_token): <p>A client token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPreview::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::CreateAccessPreview::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
+    ///   - [`configurations(HashMap<String, Configuration>)`](crate::client::fluent_builders::CreateAccessPreview::configurations) / [`set_configurations(Option<HashMap<String, Configuration>>)`](crate::client::fluent_builders::CreateAccessPreview::set_configurations): <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPreview::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAccessPreview::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`CreateAccessPreviewOutput`](crate::output::CreateAccessPreviewOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateAccessPreviewOutput::id): <p>The unique ID for the access preview.</p>
     /// - On failure, responds with [`SdkError<CreateAccessPreviewError>`](crate::error::CreateAccessPreviewError)
@@ -119,12 +119,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAnalyzer`](crate::client::fluent_builders::CreateAnalyzer) operation.
     ///
-    /// - Takes [`CreateAnalyzerInput`](crate::input::CreateAnalyzerInput) with field(s):
-    ///   - [`analyzer_name(Option<String>)`](crate::input::CreateAnalyzerInput::analyzer_name): <p>The name of the analyzer to create.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::CreateAnalyzerInput::type): <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
-    ///   - [`archive_rules(Option<Vec<InlineArchiveRule>>)`](crate::input::CreateAnalyzerInput::archive_rules): <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAnalyzerInput::tags): <p>The tags to apply to the analyzer.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateAnalyzerInput::client_token): <p>A client token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_name(impl Into<String>)`](crate::client::fluent_builders::CreateAnalyzer::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::client::fluent_builders::CreateAnalyzer::set_analyzer_name): <p>The name of the analyzer to create.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::CreateAnalyzer::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::CreateAnalyzer::set_type): <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    ///   - [`archive_rules(Vec<InlineArchiveRule>)`](crate::client::fluent_builders::CreateAnalyzer::archive_rules) / [`set_archive_rules(Option<Vec<InlineArchiveRule>>)`](crate::client::fluent_builders::CreateAnalyzer::set_archive_rules): <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAnalyzer::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAnalyzer::set_tags): <p>The tags to apply to the analyzer.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAnalyzer::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAnalyzer::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`CreateAnalyzerOutput`](crate::output::CreateAnalyzerOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateAnalyzerOutput::arn): <p>The ARN of the analyzer that was created by the request.</p>
     /// - On failure, responds with [`SdkError<CreateAnalyzerError>`](crate::error::CreateAnalyzerError)
@@ -133,11 +133,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateArchiveRule`](crate::client::fluent_builders::CreateArchiveRule) operation.
     ///
-    /// - Takes [`CreateArchiveRuleInput`](crate::input::CreateArchiveRuleInput) with field(s):
-    ///   - [`analyzer_name(Option<String>)`](crate::input::CreateArchiveRuleInput::analyzer_name): <p>The name of the created analyzer.</p>
-    ///   - [`rule_name(Option<String>)`](crate::input::CreateArchiveRuleInput::rule_name): <p>The name of the rule to create.</p>
-    ///   - [`filter(Option<HashMap<String, Criterion>>)`](crate::input::CreateArchiveRuleInput::filter): <p>The criteria for the rule.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateArchiveRuleInput::client_token): <p>A client token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_name(impl Into<String>)`](crate::client::fluent_builders::CreateArchiveRule::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::client::fluent_builders::CreateArchiveRule::set_analyzer_name): <p>The name of the created analyzer.</p>
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::CreateArchiveRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::CreateArchiveRule::set_rule_name): <p>The name of the rule to create.</p>
+    ///   - [`filter(HashMap<String, Criterion>)`](crate::client::fluent_builders::CreateArchiveRule::filter) / [`set_filter(Option<HashMap<String, Criterion>>)`](crate::client::fluent_builders::CreateArchiveRule::set_filter): <p>The criteria for the rule.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateArchiveRule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateArchiveRule::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`CreateArchiveRuleOutput`](crate::output::CreateArchiveRuleOutput)
 
     /// - On failure, responds with [`SdkError<CreateArchiveRuleError>`](crate::error::CreateArchiveRuleError)
@@ -146,9 +146,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAnalyzer`](crate::client::fluent_builders::DeleteAnalyzer) operation.
     ///
-    /// - Takes [`DeleteAnalyzerInput`](crate::input::DeleteAnalyzerInput) with field(s):
-    ///   - [`analyzer_name(Option<String>)`](crate::input::DeleteAnalyzerInput::analyzer_name): <p>The name of the analyzer to delete.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteAnalyzerInput::client_token): <p>A client token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAnalyzer::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::client::fluent_builders::DeleteAnalyzer::set_analyzer_name): <p>The name of the analyzer to delete.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteAnalyzer::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteAnalyzer::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`DeleteAnalyzerOutput`](crate::output::DeleteAnalyzerOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAnalyzerError>`](crate::error::DeleteAnalyzerError)
@@ -157,10 +157,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteArchiveRule`](crate::client::fluent_builders::DeleteArchiveRule) operation.
     ///
-    /// - Takes [`DeleteArchiveRuleInput`](crate::input::DeleteArchiveRuleInput) with field(s):
-    ///   - [`analyzer_name(Option<String>)`](crate::input::DeleteArchiveRuleInput::analyzer_name): <p>The name of the analyzer that associated with the archive rule to delete.</p>
-    ///   - [`rule_name(Option<String>)`](crate::input::DeleteArchiveRuleInput::rule_name): <p>The name of the rule to delete.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteArchiveRuleInput::client_token): <p>A client token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_name(impl Into<String>)`](crate::client::fluent_builders::DeleteArchiveRule::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::client::fluent_builders::DeleteArchiveRule::set_analyzer_name): <p>The name of the analyzer that associated with the archive rule to delete.</p>
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteArchiveRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteArchiveRule::set_rule_name): <p>The name of the rule to delete.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteArchiveRule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteArchiveRule::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`DeleteArchiveRuleOutput`](crate::output::DeleteArchiveRuleOutput)
 
     /// - On failure, responds with [`SdkError<DeleteArchiveRuleError>`](crate::error::DeleteArchiveRuleError)
@@ -169,9 +169,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetAccessPreview`](crate::client::fluent_builders::GetAccessPreview) operation.
     ///
-    /// - Takes [`GetAccessPreviewInput`](crate::input::GetAccessPreviewInput) with field(s):
-    ///   - [`access_preview_id(Option<String>)`](crate::input::GetAccessPreviewInput::access_preview_id): <p>The unique ID for the access preview.</p>
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::GetAccessPreviewInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`access_preview_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPreview::access_preview_id) / [`set_access_preview_id(Option<String>)`](crate::client::fluent_builders::GetAccessPreview::set_access_preview_id): <p>The unique ID for the access preview.</p>
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::GetAccessPreview::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::GetAccessPreview::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     /// - On success, responds with [`GetAccessPreviewOutput`](crate::output::GetAccessPreviewOutput) with field(s):
     ///   - [`access_preview(Option<AccessPreview>)`](crate::output::GetAccessPreviewOutput::access_preview): <p>An object that contains information about the access preview.</p>
     /// - On failure, responds with [`SdkError<GetAccessPreviewError>`](crate::error::GetAccessPreviewError)
@@ -180,9 +180,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetAnalyzedResource`](crate::client::fluent_builders::GetAnalyzedResource) operation.
     ///
-    /// - Takes [`GetAnalyzedResourceInput`](crate::input::GetAnalyzedResourceInput) with field(s):
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::GetAnalyzedResourceInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::GetAnalyzedResourceInput::resource_arn): <p>The ARN of the resource to retrieve information about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::GetAnalyzedResource::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::GetAnalyzedResource::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetAnalyzedResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetAnalyzedResource::set_resource_arn): <p>The ARN of the resource to retrieve information about.</p>
     /// - On success, responds with [`GetAnalyzedResourceOutput`](crate::output::GetAnalyzedResourceOutput) with field(s):
     ///   - [`resource(Option<AnalyzedResource>)`](crate::output::GetAnalyzedResourceOutput::resource): <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
     /// - On failure, responds with [`SdkError<GetAnalyzedResourceError>`](crate::error::GetAnalyzedResourceError)
@@ -191,8 +191,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetAnalyzer`](crate::client::fluent_builders::GetAnalyzer) operation.
     ///
-    /// - Takes [`GetAnalyzerInput`](crate::input::GetAnalyzerInput) with field(s):
-    ///   - [`analyzer_name(Option<String>)`](crate::input::GetAnalyzerInput::analyzer_name): <p>The name of the analyzer retrieved.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_name(impl Into<String>)`](crate::client::fluent_builders::GetAnalyzer::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::client::fluent_builders::GetAnalyzer::set_analyzer_name): <p>The name of the analyzer retrieved.</p>
     /// - On success, responds with [`GetAnalyzerOutput`](crate::output::GetAnalyzerOutput) with field(s):
     ///   - [`analyzer(Option<AnalyzerSummary>)`](crate::output::GetAnalyzerOutput::analyzer): <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
     /// - On failure, responds with [`SdkError<GetAnalyzerError>`](crate::error::GetAnalyzerError)
@@ -201,9 +201,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetArchiveRule`](crate::client::fluent_builders::GetArchiveRule) operation.
     ///
-    /// - Takes [`GetArchiveRuleInput`](crate::input::GetArchiveRuleInput) with field(s):
-    ///   - [`analyzer_name(Option<String>)`](crate::input::GetArchiveRuleInput::analyzer_name): <p>The name of the analyzer to retrieve rules from.</p>
-    ///   - [`rule_name(Option<String>)`](crate::input::GetArchiveRuleInput::rule_name): <p>The name of the rule to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_name(impl Into<String>)`](crate::client::fluent_builders::GetArchiveRule::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::client::fluent_builders::GetArchiveRule::set_analyzer_name): <p>The name of the analyzer to retrieve rules from.</p>
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::GetArchiveRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::GetArchiveRule::set_rule_name): <p>The name of the rule to retrieve.</p>
     /// - On success, responds with [`GetArchiveRuleOutput`](crate::output::GetArchiveRuleOutput) with field(s):
     ///   - [`archive_rule(Option<ArchiveRuleSummary>)`](crate::output::GetArchiveRuleOutput::archive_rule): <p>Contains information about an archive rule.</p>
     /// - On failure, responds with [`SdkError<GetArchiveRuleError>`](crate::error::GetArchiveRuleError)
@@ -212,9 +212,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetFinding`](crate::client::fluent_builders::GetFinding) operation.
     ///
-    /// - Takes [`GetFindingInput`](crate::input::GetFindingInput) with field(s):
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::GetFindingInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
-    ///   - [`id(Option<String>)`](crate::input::GetFindingInput::id): <p>The ID of the finding to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::GetFinding::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::GetFinding::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFinding::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFinding::set_id): <p>The ID of the finding to retrieve.</p>
     /// - On success, responds with [`GetFindingOutput`](crate::output::GetFindingOutput) with field(s):
     ///   - [`finding(Option<Finding>)`](crate::output::GetFindingOutput::finding): <p>A <code>finding</code> object that contains finding details.</p>
     /// - On failure, responds with [`SdkError<GetFindingError>`](crate::error::GetFindingError)
@@ -223,10 +223,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetGeneratedPolicy`](crate::client::fluent_builders::GetGeneratedPolicy) operation.
     ///
-    /// - Takes [`GetGeneratedPolicyInput`](crate::input::GetGeneratedPolicyInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::GetGeneratedPolicyInput::job_id): <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    ///   - [`include_resource_placeholders(Option<bool>)`](crate::input::GetGeneratedPolicyInput::include_resource_placeholders): <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>  <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
-    ///   - [`include_service_level_template(Option<bool>)`](crate::input::GetGeneratedPolicyInput::include_service_level_template): <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>  <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetGeneratedPolicy::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetGeneratedPolicy::set_job_id): <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    ///   - [`include_resource_placeholders(bool)`](crate::client::fluent_builders::GetGeneratedPolicy::include_resource_placeholders) / [`set_include_resource_placeholders(Option<bool>)`](crate::client::fluent_builders::GetGeneratedPolicy::set_include_resource_placeholders): <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>  <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+    ///   - [`include_service_level_template(bool)`](crate::client::fluent_builders::GetGeneratedPolicy::include_service_level_template) / [`set_include_service_level_template(Option<bool>)`](crate::client::fluent_builders::GetGeneratedPolicy::set_include_service_level_template): <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>  <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     /// - On success, responds with [`GetGeneratedPolicyOutput`](crate::output::GetGeneratedPolicyOutput) with field(s):
     ///   - [`job_details(Option<JobDetails>)`](crate::output::GetGeneratedPolicyOutput::job_details): <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
     ///   - [`generated_policy_result(Option<GeneratedPolicyResult>)`](crate::output::GetGeneratedPolicyOutput::generated_policy_result): <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
@@ -235,14 +235,14 @@ where
         fluent_builders::GetGeneratedPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccessPreviewFindings`](crate::client::fluent_builders::ListAccessPreviewFindings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccessPreviewFindings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessPreviewFindings::into_paginator).
     ///
-    /// - Takes [`ListAccessPreviewFindingsInput`](crate::input::ListAccessPreviewFindingsInput) with field(s):
-    ///   - [`access_preview_id(Option<String>)`](crate::input::ListAccessPreviewFindingsInput::access_preview_id): <p>The unique ID for the access preview.</p>
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::ListAccessPreviewFindingsInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
-    ///   - [`filter(Option<HashMap<String, Criterion>>)`](crate::input::ListAccessPreviewFindingsInput::filter): <p>Criteria to filter the returned findings.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccessPreviewFindingsInput::next_token): <p>A token used for pagination of results returned.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccessPreviewFindingsInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`access_preview_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPreviewFindings::access_preview_id) / [`set_access_preview_id(Option<String>)`](crate::client::fluent_builders::ListAccessPreviewFindings::set_access_preview_id): <p>The unique ID for the access preview.</p>
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccessPreviewFindings::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::ListAccessPreviewFindings::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
+    ///   - [`filter(HashMap<String, Criterion>)`](crate::client::fluent_builders::ListAccessPreviewFindings::filter) / [`set_filter(Option<HashMap<String, Criterion>>)`](crate::client::fluent_builders::ListAccessPreviewFindings::set_filter): <p>Criteria to filter the returned findings.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessPreviewFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessPreviewFindings::set_next_token): <p>A token used for pagination of results returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessPreviewFindings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccessPreviewFindings::set_max_results): <p>The maximum number of results to return in the response.</p>
     /// - On success, responds with [`ListAccessPreviewFindingsOutput`](crate::output::ListAccessPreviewFindingsOutput) with field(s):
     ///   - [`findings(Option<Vec<AccessPreviewFinding>>)`](crate::output::ListAccessPreviewFindingsOutput::findings): <p>A list of access preview findings that match the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccessPreviewFindingsOutput::next_token): <p>A token used for pagination of results returned.</p>
@@ -253,12 +253,12 @@ where
         fluent_builders::ListAccessPreviewFindings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccessPreviews`](crate::client::fluent_builders::ListAccessPreviews) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccessPreviews::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessPreviews::into_paginator).
     ///
-    /// - Takes [`ListAccessPreviewsInput`](crate::input::ListAccessPreviewsInput) with field(s):
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::ListAccessPreviewsInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccessPreviewsInput::next_token): <p>A token used for pagination of results returned.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccessPreviewsInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccessPreviews::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::ListAccessPreviews::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessPreviews::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessPreviews::set_next_token): <p>A token used for pagination of results returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessPreviews::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccessPreviews::set_max_results): <p>The maximum number of results to return in the response.</p>
     /// - On success, responds with [`ListAccessPreviewsOutput`](crate::output::ListAccessPreviewsOutput) with field(s):
     ///   - [`access_previews(Option<Vec<AccessPreviewSummary>>)`](crate::output::ListAccessPreviewsOutput::access_previews): <p>A list of access previews retrieved for the analyzer.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccessPreviewsOutput::next_token): <p>A token used for pagination of results returned.</p>
@@ -267,13 +267,13 @@ where
         fluent_builders::ListAccessPreviews::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAnalyzedResources`](crate::client::fluent_builders::ListAnalyzedResources) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnalyzedResources::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnalyzedResources::into_paginator).
     ///
-    /// - Takes [`ListAnalyzedResourcesInput`](crate::input::ListAnalyzedResourcesInput) with field(s):
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::ListAnalyzedResourcesInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
-    ///   - [`resource_type(Option<ResourceType>)`](crate::input::ListAnalyzedResourcesInput::resource_type): <p>The type of resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAnalyzedResourcesInput::next_token): <p>A token used for pagination of results returned.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAnalyzedResourcesInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::ListAnalyzedResources::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::ListAnalyzedResources::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListAnalyzedResources::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListAnalyzedResources::set_resource_type): <p>The type of resource.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnalyzedResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnalyzedResources::set_next_token): <p>A token used for pagination of results returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnalyzedResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnalyzedResources::set_max_results): <p>The maximum number of results to return in the response.</p>
     /// - On success, responds with [`ListAnalyzedResourcesOutput`](crate::output::ListAnalyzedResourcesOutput) with field(s):
     ///   - [`analyzed_resources(Option<Vec<AnalyzedResourceSummary>>)`](crate::output::ListAnalyzedResourcesOutput::analyzed_resources): <p>A list of resources that were analyzed.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnalyzedResourcesOutput::next_token): <p>A token used for pagination of results returned.</p>
@@ -282,12 +282,12 @@ where
         fluent_builders::ListAnalyzedResources::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAnalyzers`](crate::client::fluent_builders::ListAnalyzers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnalyzers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnalyzers::into_paginator).
     ///
-    /// - Takes [`ListAnalyzersInput`](crate::input::ListAnalyzersInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListAnalyzersInput::next_token): <p>A token used for pagination of results returned.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAnalyzersInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::ListAnalyzersInput::type): <p>The type of analyzer.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnalyzers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnalyzers::set_next_token): <p>A token used for pagination of results returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnalyzers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnalyzers::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::ListAnalyzers::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::ListAnalyzers::set_type): <p>The type of analyzer.</p>
     /// - On success, responds with [`ListAnalyzersOutput`](crate::output::ListAnalyzersOutput) with field(s):
     ///   - [`analyzers(Option<Vec<AnalyzerSummary>>)`](crate::output::ListAnalyzersOutput::analyzers): <p>The analyzers retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnalyzersOutput::next_token): <p>A token used for pagination of results returned.</p>
@@ -296,12 +296,12 @@ where
         fluent_builders::ListAnalyzers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListArchiveRules`](crate::client::fluent_builders::ListArchiveRules) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListArchiveRules::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListArchiveRules::into_paginator).
     ///
-    /// - Takes [`ListArchiveRulesInput`](crate::input::ListArchiveRulesInput) with field(s):
-    ///   - [`analyzer_name(Option<String>)`](crate::input::ListArchiveRulesInput::analyzer_name): <p>The name of the analyzer to retrieve rules from.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListArchiveRulesInput::next_token): <p>A token used for pagination of results returned.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListArchiveRulesInput::max_results): <p>The maximum number of results to return in the request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_name(impl Into<String>)`](crate::client::fluent_builders::ListArchiveRules::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::client::fluent_builders::ListArchiveRules::set_analyzer_name): <p>The name of the analyzer to retrieve rules from.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListArchiveRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListArchiveRules::set_next_token): <p>A token used for pagination of results returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListArchiveRules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListArchiveRules::set_max_results): <p>The maximum number of results to return in the request.</p>
     /// - On success, responds with [`ListArchiveRulesOutput`](crate::output::ListArchiveRulesOutput) with field(s):
     ///   - [`archive_rules(Option<Vec<ArchiveRuleSummary>>)`](crate::output::ListArchiveRulesOutput::archive_rules): <p>A list of archive rules created for the specified analyzer.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListArchiveRulesOutput::next_token): <p>A token used for pagination of results returned.</p>
@@ -310,14 +310,14 @@ where
         fluent_builders::ListArchiveRules::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFindings`](crate::client::fluent_builders::ListFindings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     ///
-    /// - Takes [`ListFindingsInput`](crate::input::ListFindingsInput) with field(s):
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::ListFindingsInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
-    ///   - [`filter(Option<HashMap<String, Criterion>>)`](crate::input::ListFindingsInput::filter): <p>A filter to match for the findings to return.</p>
-    ///   - [`sort(Option<SortCriteria>)`](crate::input::ListFindingsInput::sort): <p>The sort order for the findings returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFindingsInput::next_token): <p>A token used for pagination of results returned.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFindingsInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::ListFindings::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::ListFindings::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
+    ///   - [`filter(HashMap<String, Criterion>)`](crate::client::fluent_builders::ListFindings::filter) / [`set_filter(Option<HashMap<String, Criterion>>)`](crate::client::fluent_builders::ListFindings::set_filter): <p>A filter to match for the findings to return.</p>
+    ///   - [`sort(SortCriteria)`](crate::client::fluent_builders::ListFindings::sort) / [`set_sort(Option<SortCriteria>)`](crate::client::fluent_builders::ListFindings::set_sort): <p>The sort order for the findings returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindings::set_next_token): <p>A token used for pagination of results returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFindings::set_max_results): <p>The maximum number of results to return in the response.</p>
     /// - On success, responds with [`ListFindingsOutput`](crate::output::ListFindingsOutput) with field(s):
     ///   - [`findings(Option<Vec<FindingSummary>>)`](crate::output::ListFindingsOutput::findings): <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFindingsOutput::next_token): <p>A token used for pagination of results returned.</p>
@@ -326,12 +326,12 @@ where
         fluent_builders::ListFindings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPolicyGenerations`](crate::client::fluent_builders::ListPolicyGenerations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicyGenerations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPolicyGenerations::into_paginator).
     ///
-    /// - Takes [`ListPolicyGenerationsInput`](crate::input::ListPolicyGenerationsInput) with field(s):
-    ///   - [`principal_arn(Option<String>)`](crate::input::ListPolicyGenerationsInput::principal_arn): <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPolicyGenerationsInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPolicyGenerationsInput::next_token): <p>A token used for pagination of results returned.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`principal_arn(impl Into<String>)`](crate::client::fluent_builders::ListPolicyGenerations::principal_arn) / [`set_principal_arn(Option<String>)`](crate::client::fluent_builders::ListPolicyGenerations::set_principal_arn): <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPolicyGenerations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPolicyGenerations::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPolicyGenerations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPolicyGenerations::set_next_token): <p>A token used for pagination of results returned.</p>
     /// - On success, responds with [`ListPolicyGenerationsOutput`](crate::output::ListPolicyGenerationsOutput) with field(s):
     ///   - [`policy_generations(Option<Vec<PolicyGeneration>>)`](crate::output::ListPolicyGenerationsOutput::policy_generations): <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPolicyGenerationsOutput::next_token): <p>A token used for pagination of results returned.</p>
@@ -341,8 +341,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource to retrieve tags from.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource to retrieve tags from.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags that are applied to the specified resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -351,10 +351,10 @@ where
     }
     /// Constructs a fluent builder for the [`StartPolicyGeneration`](crate::client::fluent_builders::StartPolicyGeneration) operation.
     ///
-    /// - Takes [`StartPolicyGenerationInput`](crate::input::StartPolicyGenerationInput) with field(s):
-    ///   - [`policy_generation_details(Option<PolicyGenerationDetails>)`](crate::input::StartPolicyGenerationInput::policy_generation_details): <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    ///   - [`cloud_trail_details(Option<CloudTrailDetails>)`](crate::input::StartPolicyGenerationInput::cloud_trail_details): <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::StartPolicyGenerationInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>  <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`policy_generation_details(PolicyGenerationDetails)`](crate::client::fluent_builders::StartPolicyGeneration::policy_generation_details) / [`set_policy_generation_details(Option<PolicyGenerationDetails>)`](crate::client::fluent_builders::StartPolicyGeneration::set_policy_generation_details): <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    ///   - [`cloud_trail_details(CloudTrailDetails)`](crate::client::fluent_builders::StartPolicyGeneration::cloud_trail_details) / [`set_cloud_trail_details(Option<CloudTrailDetails>)`](crate::client::fluent_builders::StartPolicyGeneration::set_cloud_trail_details): <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartPolicyGeneration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartPolicyGeneration::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>  <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
     /// - On success, responds with [`StartPolicyGenerationOutput`](crate::output::StartPolicyGenerationOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartPolicyGenerationOutput::job_id): <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     /// - On failure, responds with [`SdkError<StartPolicyGenerationError>`](crate::error::StartPolicyGenerationError)
@@ -363,9 +363,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartResourceScan`](crate::client::fluent_builders::StartResourceScan) operation.
     ///
-    /// - Takes [`StartResourceScanInput`](crate::input::StartResourceScanInput) with field(s):
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::StartResourceScanInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::StartResourceScanInput::resource_arn): <p>The ARN of the resource to scan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::StartResourceScan::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::StartResourceScan::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::StartResourceScan::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::StartResourceScan::set_resource_arn): <p>The ARN of the resource to scan.</p>
     /// - On success, responds with [`StartResourceScanOutput`](crate::output::StartResourceScanOutput)
 
     /// - On failure, responds with [`SdkError<StartResourceScanError>`](crate::error::StartResourceScanError)
@@ -374,9 +374,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource to add the tag to.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags to add to the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource to add the tag to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to add to the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -385,9 +385,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource to remove the tag from.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The key for the tag to add.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource to remove the tag from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The key for the tag to add.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -396,11 +396,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateArchiveRule`](crate::client::fluent_builders::UpdateArchiveRule) operation.
     ///
-    /// - Takes [`UpdateArchiveRuleInput`](crate::input::UpdateArchiveRuleInput) with field(s):
-    ///   - [`analyzer_name(Option<String>)`](crate::input::UpdateArchiveRuleInput::analyzer_name): <p>The name of the analyzer to update the archive rules for.</p>
-    ///   - [`rule_name(Option<String>)`](crate::input::UpdateArchiveRuleInput::rule_name): <p>The name of the rule to update.</p>
-    ///   - [`filter(Option<HashMap<String, Criterion>>)`](crate::input::UpdateArchiveRuleInput::filter): <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateArchiveRuleInput::client_token): <p>A client token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_name(impl Into<String>)`](crate::client::fluent_builders::UpdateArchiveRule::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::client::fluent_builders::UpdateArchiveRule::set_analyzer_name): <p>The name of the analyzer to update the archive rules for.</p>
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::UpdateArchiveRule::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::UpdateArchiveRule::set_rule_name): <p>The name of the rule to update.</p>
+    ///   - [`filter(HashMap<String, Criterion>)`](crate::client::fluent_builders::UpdateArchiveRule::filter) / [`set_filter(Option<HashMap<String, Criterion>>)`](crate::client::fluent_builders::UpdateArchiveRule::set_filter): <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateArchiveRule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateArchiveRule::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`UpdateArchiveRuleOutput`](crate::output::UpdateArchiveRuleOutput)
 
     /// - On failure, responds with [`SdkError<UpdateArchiveRuleError>`](crate::error::UpdateArchiveRuleError)
@@ -409,12 +409,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFindings`](crate::client::fluent_builders::UpdateFindings) operation.
     ///
-    /// - Takes [`UpdateFindingsInput`](crate::input::UpdateFindingsInput) with field(s):
-    ///   - [`analyzer_arn(Option<String>)`](crate::input::UpdateFindingsInput::analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
-    ///   - [`status(Option<FindingStatusUpdate>)`](crate::input::UpdateFindingsInput::status): <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
-    ///   - [`ids(Option<Vec<String>>)`](crate::input::UpdateFindingsInput::ids): <p>The IDs of the findings to update.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::UpdateFindingsInput::resource_arn): <p>The ARN of the resource identified in the finding.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateFindingsInput::client_token): <p>A client token.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`analyzer_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFindings::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::client::fluent_builders::UpdateFindings::set_analyzer_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
+    ///   - [`status(FindingStatusUpdate)`](crate::client::fluent_builders::UpdateFindings::status) / [`set_status(Option<FindingStatusUpdate>)`](crate::client::fluent_builders::UpdateFindings::set_status): <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+    ///   - [`ids(Vec<String>)`](crate::client::fluent_builders::UpdateFindings::ids) / [`set_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFindings::set_ids): <p>The IDs of the findings to update.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFindings::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UpdateFindings::set_resource_arn): <p>The ARN of the resource identified in the finding.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFindings::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateFindings::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`UpdateFindingsOutput`](crate::output::UpdateFindingsOutput)
 
     /// - On failure, responds with [`SdkError<UpdateFindingsError>`](crate::error::UpdateFindingsError)
@@ -422,15 +422,15 @@ where
         fluent_builders::UpdateFindings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ValidatePolicy`](crate::client::fluent_builders::ValidatePolicy) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ValidatePolicy::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ValidatePolicy::into_paginator).
     ///
-    /// - Takes [`ValidatePolicyInput`](crate::input::ValidatePolicyInput) with field(s):
-    ///   - [`locale(Option<Locale>)`](crate::input::ValidatePolicyInput::locale): <p>The locale to use for localizing the findings.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ValidatePolicyInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ValidatePolicyInput::next_token): <p>A token used for pagination of results returned.</p>
-    ///   - [`policy_document(Option<String>)`](crate::input::ValidatePolicyInput::policy_document): <p>The JSON policy document to use as the content for the policy.</p>
-    ///   - [`policy_type(Option<PolicyType>)`](crate::input::ValidatePolicyInput::policy_type): <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>  <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
-    ///   - [`validate_policy_resource_type(Option<ValidatePolicyResourceType>)`](crate::input::ValidatePolicyInput::validate_policy_resource_type): <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>  <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`locale(Locale)`](crate::client::fluent_builders::ValidatePolicy::locale) / [`set_locale(Option<Locale>)`](crate::client::fluent_builders::ValidatePolicy::set_locale): <p>The locale to use for localizing the findings.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ValidatePolicy::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ValidatePolicy::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ValidatePolicy::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ValidatePolicy::set_next_token): <p>A token used for pagination of results returned.</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::ValidatePolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::ValidatePolicy::set_policy_document): <p>The JSON policy document to use as the content for the policy.</p>
+    ///   - [`policy_type(PolicyType)`](crate::client::fluent_builders::ValidatePolicy::policy_type) / [`set_policy_type(Option<PolicyType>)`](crate::client::fluent_builders::ValidatePolicy::set_policy_type): <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>  <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
+    ///   - [`validate_policy_resource_type(ValidatePolicyResourceType)`](crate::client::fluent_builders::ValidatePolicy::validate_policy_resource_type) / [`set_validate_policy_resource_type(Option<ValidatePolicyResourceType>)`](crate::client::fluent_builders::ValidatePolicy::set_validate_policy_resource_type): <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>  <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
     /// - On success, responds with [`ValidatePolicyOutput`](crate::output::ValidatePolicyOutput) with field(s):
     ///   - [`findings(Option<Vec<ValidatePolicyFinding>>)`](crate::output::ValidatePolicyOutput::findings): <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ValidatePolicyOutput::next_token): <p>A token used for pagination of results returned.</p>

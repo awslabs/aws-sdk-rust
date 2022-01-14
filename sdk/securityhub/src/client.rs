@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`AcceptAdministratorInvitation`](crate::client::fluent_builders::AcceptAdministratorInvitation) operation.
     ///
-    /// - Takes [`AcceptAdministratorInvitationInput`](crate::input::AcceptAdministratorInvitationInput) with field(s):
-    ///   - [`administrator_id(Option<String>)`](crate::input::AcceptAdministratorInvitationInput::administrator_id): <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-    ///   - [`invitation_id(Option<String>)`](crate::input::AcceptAdministratorInvitationInput::invitation_id): <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`administrator_id(impl Into<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::administrator_id) / [`set_administrator_id(Option<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::set_administrator_id): <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    ///   - [`invitation_id(impl Into<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::invitation_id) / [`set_invitation_id(Option<String>)`](crate::client::fluent_builders::AcceptAdministratorInvitation::set_invitation_id): <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     /// - On success, responds with [`AcceptAdministratorInvitationOutput`](crate::output::AcceptAdministratorInvitationOutput)
 
     /// - On failure, responds with [`SdkError<AcceptAdministratorInvitationError>`](crate::error::AcceptAdministratorInvitationError)
@@ -98,9 +98,9 @@ where
     }
     /// Constructs a fluent builder for the [`AcceptInvitation`](crate::client::fluent_builders::AcceptInvitation) operation.
     ///
-    /// - Takes [`AcceptInvitationInput`](crate::input::AcceptInvitationInput) with field(s):
-    ///   - [`master_id(Option<String>)`](crate::input::AcceptInvitationInput::master_id): <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-    ///   - [`invitation_id(Option<String>)`](crate::input::AcceptInvitationInput::invitation_id): <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`master_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInvitation::master_id) / [`set_master_id(Option<String>)`](crate::client::fluent_builders::AcceptInvitation::set_master_id): <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    ///   - [`invitation_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInvitation::invitation_id) / [`set_invitation_id(Option<String>)`](crate::client::fluent_builders::AcceptInvitation::set_invitation_id): <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     /// - On success, responds with [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
 
     /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::error::AcceptInvitationError)
@@ -109,8 +109,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchDisableStandards`](crate::client::fluent_builders::BatchDisableStandards) operation.
     ///
-    /// - Takes [`BatchDisableStandardsInput`](crate::input::BatchDisableStandardsInput) with field(s):
-    ///   - [`standards_subscription_arns(Option<Vec<String>>)`](crate::input::BatchDisableStandardsInput::standards_subscription_arns): <p>The ARNs of the standards subscriptions to disable.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`standards_subscription_arns(Vec<String>)`](crate::client::fluent_builders::BatchDisableStandards::standards_subscription_arns) / [`set_standards_subscription_arns(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDisableStandards::set_standards_subscription_arns): <p>The ARNs of the standards subscriptions to disable.</p>
     /// - On success, responds with [`BatchDisableStandardsOutput`](crate::output::BatchDisableStandardsOutput) with field(s):
     ///   - [`standards_subscriptions(Option<Vec<StandardsSubscription>>)`](crate::output::BatchDisableStandardsOutput::standards_subscriptions): <p>The details of the standards subscriptions that were disabled.</p>
     /// - On failure, responds with [`SdkError<BatchDisableStandardsError>`](crate::error::BatchDisableStandardsError)
@@ -119,8 +119,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchEnableStandards`](crate::client::fluent_builders::BatchEnableStandards) operation.
     ///
-    /// - Takes [`BatchEnableStandardsInput`](crate::input::BatchEnableStandardsInput) with field(s):
-    ///   - [`standards_subscription_requests(Option<Vec<StandardsSubscriptionRequest>>)`](crate::input::BatchEnableStandardsInput::standards_subscription_requests): <p>The list of standards checks to enable.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`standards_subscription_requests(Vec<StandardsSubscriptionRequest>)`](crate::client::fluent_builders::BatchEnableStandards::standards_subscription_requests) / [`set_standards_subscription_requests(Option<Vec<StandardsSubscriptionRequest>>)`](crate::client::fluent_builders::BatchEnableStandards::set_standards_subscription_requests): <p>The list of standards checks to enable.</p>
     /// - On success, responds with [`BatchEnableStandardsOutput`](crate::output::BatchEnableStandardsOutput) with field(s):
     ///   - [`standards_subscriptions(Option<Vec<StandardsSubscription>>)`](crate::output::BatchEnableStandardsOutput::standards_subscriptions): <p>The details of the standards subscriptions that were enabled.</p>
     /// - On failure, responds with [`SdkError<BatchEnableStandardsError>`](crate::error::BatchEnableStandardsError)
@@ -129,8 +129,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchImportFindings`](crate::client::fluent_builders::BatchImportFindings) operation.
     ///
-    /// - Takes [`BatchImportFindingsInput`](crate::input::BatchImportFindingsInput) with field(s):
-    ///   - [`findings(Option<Vec<AwsSecurityFinding>>)`](crate::input::BatchImportFindingsInput::findings): <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`findings(Vec<AwsSecurityFinding>)`](crate::client::fluent_builders::BatchImportFindings::findings) / [`set_findings(Option<Vec<AwsSecurityFinding>>)`](crate::client::fluent_builders::BatchImportFindings::set_findings): <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
     /// - On success, responds with [`BatchImportFindingsOutput`](crate::output::BatchImportFindingsOutput) with field(s):
     ///   - [`failed_count(i32)`](crate::output::BatchImportFindingsOutput::failed_count): <p>The number of findings that failed to import.</p>
     ///   - [`success_count(i32)`](crate::output::BatchImportFindingsOutput::success_count): <p>The number of findings that were successfully imported.</p>
@@ -141,17 +141,17 @@ where
     }
     /// Constructs a fluent builder for the [`BatchUpdateFindings`](crate::client::fluent_builders::BatchUpdateFindings) operation.
     ///
-    /// - Takes [`BatchUpdateFindingsInput`](crate::input::BatchUpdateFindingsInput) with field(s):
-    ///   - [`finding_identifiers(Option<Vec<AwsSecurityFindingIdentifier>>)`](crate::input::BatchUpdateFindingsInput::finding_identifiers): <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>  <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    ///   - [`note(Option<NoteUpdate>)`](crate::input::BatchUpdateFindingsInput::note): <p>The updated note.</p>
-    ///   - [`severity(Option<SeverityUpdate>)`](crate::input::BatchUpdateFindingsInput::severity): <p>Used to update the finding severity.</p>
-    ///   - [`verification_state(Option<VerificationState>)`](crate::input::BatchUpdateFindingsInput::verification_state): <p>Indicates the veracity of a finding.</p>  <p>The available values for <code>VerificationState</code> are as follows.</p>  <ul>   <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>   <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>   <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>   <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>  </ul>
-    ///   - [`confidence(i32)`](crate::input::BatchUpdateFindingsInput::confidence): <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>  <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    ///   - [`criticality(i32)`](crate::input::BatchUpdateFindingsInput::criticality): <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>  <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
-    ///   - [`types(Option<Vec<String>>)`](crate::input::BatchUpdateFindingsInput::types): <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>  <p>Valid namespace values are as follows.</p>  <ul>   <li> <p>Software and Configuration Checks</p> </li>   <li> <p>TTPs</p> </li>   <li> <p>Effects</p> </li>   <li> <p>Unusual Behaviors</p> </li>   <li> <p>Sensitive Data Identifications </p> </li>  </ul>
-    ///   - [`user_defined_fields(Option<HashMap<String, String>>)`](crate::input::BatchUpdateFindingsInput::user_defined_fields): <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
-    ///   - [`workflow(Option<WorkflowUpdate>)`](crate::input::BatchUpdateFindingsInput::workflow): <p>Used to update the workflow status of a finding.</p>  <p>The workflow status indicates the progress of the investigation into the finding. </p>
-    ///   - [`related_findings(Option<Vec<RelatedFinding>>)`](crate::input::BatchUpdateFindingsInput::related_findings): <p>A list of findings that are related to the updated findings.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_identifiers(Vec<AwsSecurityFindingIdentifier>)`](crate::client::fluent_builders::BatchUpdateFindings::finding_identifiers) / [`set_finding_identifiers(Option<Vec<AwsSecurityFindingIdentifier>>)`](crate::client::fluent_builders::BatchUpdateFindings::set_finding_identifiers): <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>  <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
+    ///   - [`note(NoteUpdate)`](crate::client::fluent_builders::BatchUpdateFindings::note) / [`set_note(Option<NoteUpdate>)`](crate::client::fluent_builders::BatchUpdateFindings::set_note): <p>The updated note.</p>
+    ///   - [`severity(SeverityUpdate)`](crate::client::fluent_builders::BatchUpdateFindings::severity) / [`set_severity(Option<SeverityUpdate>)`](crate::client::fluent_builders::BatchUpdateFindings::set_severity): <p>Used to update the finding severity.</p>
+    ///   - [`verification_state(VerificationState)`](crate::client::fluent_builders::BatchUpdateFindings::verification_state) / [`set_verification_state(Option<VerificationState>)`](crate::client::fluent_builders::BatchUpdateFindings::set_verification_state): <p>Indicates the veracity of a finding.</p>  <p>The available values for <code>VerificationState</code> are as follows.</p>  <ul>   <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>   <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>   <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>   <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>  </ul>
+    ///   - [`confidence(i32)`](crate::client::fluent_builders::BatchUpdateFindings::confidence) / [`set_confidence(i32)`](crate::client::fluent_builders::BatchUpdateFindings::set_confidence): <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>  <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
+    ///   - [`criticality(i32)`](crate::client::fluent_builders::BatchUpdateFindings::criticality) / [`set_criticality(i32)`](crate::client::fluent_builders::BatchUpdateFindings::set_criticality): <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>  <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
+    ///   - [`types(Vec<String>)`](crate::client::fluent_builders::BatchUpdateFindings::types) / [`set_types(Option<Vec<String>>)`](crate::client::fluent_builders::BatchUpdateFindings::set_types): <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>  <p>Valid namespace values are as follows.</p>  <ul>   <li> <p>Software and Configuration Checks</p> </li>   <li> <p>TTPs</p> </li>   <li> <p>Effects</p> </li>   <li> <p>Unusual Behaviors</p> </li>   <li> <p>Sensitive Data Identifications </p> </li>  </ul>
+    ///   - [`user_defined_fields(HashMap<String, String>)`](crate::client::fluent_builders::BatchUpdateFindings::user_defined_fields) / [`set_user_defined_fields(Option<HashMap<String, String>>)`](crate::client::fluent_builders::BatchUpdateFindings::set_user_defined_fields): <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
+    ///   - [`workflow(WorkflowUpdate)`](crate::client::fluent_builders::BatchUpdateFindings::workflow) / [`set_workflow(Option<WorkflowUpdate>)`](crate::client::fluent_builders::BatchUpdateFindings::set_workflow): <p>Used to update the workflow status of a finding.</p>  <p>The workflow status indicates the progress of the investigation into the finding. </p>
+    ///   - [`related_findings(Vec<RelatedFinding>)`](crate::client::fluent_builders::BatchUpdateFindings::related_findings) / [`set_related_findings(Option<Vec<RelatedFinding>>)`](crate::client::fluent_builders::BatchUpdateFindings::set_related_findings): <p>A list of findings that are related to the updated findings.</p>
     /// - On success, responds with [`BatchUpdateFindingsOutput`](crate::output::BatchUpdateFindingsOutput) with field(s):
     ///   - [`processed_findings(Option<Vec<AwsSecurityFindingIdentifier>>)`](crate::output::BatchUpdateFindingsOutput::processed_findings): <p>The list of findings that were updated successfully.</p>
     ///   - [`unprocessed_findings(Option<Vec<BatchUpdateFindingsUnprocessedFinding>>)`](crate::output::BatchUpdateFindingsOutput::unprocessed_findings): <p>The list of findings that were not updated.</p>
@@ -161,10 +161,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateActionTarget`](crate::client::fluent_builders::CreateActionTarget) operation.
     ///
-    /// - Takes [`CreateActionTargetInput`](crate::input::CreateActionTargetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateActionTargetInput::name): <p>The name of the custom action target. Can contain up to 20 characters.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateActionTargetInput::description): <p>The description for the custom action target.</p>
-    ///   - [`id(Option<String>)`](crate::input::CreateActionTargetInput::id): <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateActionTarget::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateActionTarget::set_name): <p>The name of the custom action target. Can contain up to 20 characters.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateActionTarget::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateActionTarget::set_description): <p>The description for the custom action target.</p>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::CreateActionTarget::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::CreateActionTarget::set_id): <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
     /// - On success, responds with [`CreateActionTargetOutput`](crate::output::CreateActionTargetOutput) with field(s):
     ///   - [`action_target_arn(Option<String>)`](crate::output::CreateActionTargetOutput::action_target_arn): <p>The ARN for the custom action target.</p>
     /// - On failure, responds with [`SdkError<CreateActionTargetError>`](crate::error::CreateActionTargetError)
@@ -173,9 +173,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFindingAggregator`](crate::client::fluent_builders::CreateFindingAggregator) operation.
     ///
-    /// - Takes [`CreateFindingAggregatorInput`](crate::input::CreateFindingAggregatorInput) with field(s):
-    ///   - [`region_linking_mode(Option<String>)`](crate::input::CreateFindingAggregatorInput::region_linking_mode): <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>  <p>The selected option also determines how to use the Regions provided in the Regions list.</p>  <p>The options are as follows:</p>  <ul>   <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>  </ul>
-    ///   - [`regions(Option<Vec<String>>)`](crate::input::CreateFindingAggregatorInput::regions): <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>  <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`region_linking_mode(impl Into<String>)`](crate::client::fluent_builders::CreateFindingAggregator::region_linking_mode) / [`set_region_linking_mode(Option<String>)`](crate::client::fluent_builders::CreateFindingAggregator::set_region_linking_mode): <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>  <p>The selected option also determines how to use the Regions provided in the Regions list.</p>  <p>The options are as follows:</p>  <ul>   <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>  </ul>
+    ///   - [`regions(Vec<String>)`](crate::client::fluent_builders::CreateFindingAggregator::regions) / [`set_regions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFindingAggregator::set_regions): <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>  <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
     /// - On success, responds with [`CreateFindingAggregatorOutput`](crate::output::CreateFindingAggregatorOutput) with field(s):
     ///   - [`finding_aggregator_arn(Option<String>)`](crate::output::CreateFindingAggregatorOutput::finding_aggregator_arn): <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and stop finding aggregation.</p>
     ///   - [`finding_aggregation_region(Option<String>)`](crate::output::CreateFindingAggregatorOutput::finding_aggregation_region): <p>The aggregation Region.</p>
@@ -187,10 +187,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateInsight`](crate::client::fluent_builders::CreateInsight) operation.
     ///
-    /// - Takes [`CreateInsightInput`](crate::input::CreateInsightInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateInsightInput::name): <p>The name of the custom insight to create.</p>
-    ///   - [`filters(Option<AwsSecurityFindingFilters>)`](crate::input::CreateInsightInput::filters): <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
-    ///   - [`group_by_attribute(Option<String>)`](crate::input::CreateInsightInput::group_by_attribute): <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateInsight::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateInsight::set_name): <p>The name of the custom insight to create.</p>
+    ///   - [`filters(AwsSecurityFindingFilters)`](crate::client::fluent_builders::CreateInsight::filters) / [`set_filters(Option<AwsSecurityFindingFilters>)`](crate::client::fluent_builders::CreateInsight::set_filters): <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+    ///   - [`group_by_attribute(impl Into<String>)`](crate::client::fluent_builders::CreateInsight::group_by_attribute) / [`set_group_by_attribute(Option<String>)`](crate::client::fluent_builders::CreateInsight::set_group_by_attribute): <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     /// - On success, responds with [`CreateInsightOutput`](crate::output::CreateInsightOutput) with field(s):
     ///   - [`insight_arn(Option<String>)`](crate::output::CreateInsightOutput::insight_arn): <p>The ARN of the insight created.</p>
     /// - On failure, responds with [`SdkError<CreateInsightError>`](crate::error::CreateInsightError)
@@ -199,8 +199,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMembers`](crate::client::fluent_builders::CreateMembers) operation.
     ///
-    /// - Takes [`CreateMembersInput`](crate::input::CreateMembersInput) with field(s):
-    ///   - [`account_details(Option<Vec<AccountDetails>>)`](crate::input::CreateMembersInput::account_details): <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_details(Vec<AccountDetails>)`](crate::client::fluent_builders::CreateMembers::account_details) / [`set_account_details(Option<Vec<AccountDetails>>)`](crate::client::fluent_builders::CreateMembers::set_account_details): <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
     /// - On success, responds with [`CreateMembersOutput`](crate::output::CreateMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::output::CreateMembersOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<CreateMembersError>`](crate::error::CreateMembersError)
@@ -209,8 +209,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeclineInvitations`](crate::client::fluent_builders::DeclineInvitations) operation.
     ///
-    /// - Takes [`DeclineInvitationsInput`](crate::input::DeclineInvitationsInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DeclineInvitationsInput::account_ids): <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeclineInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeclineInvitations::set_account_ids): <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
     /// - On success, responds with [`DeclineInvitationsOutput`](crate::output::DeclineInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::output::DeclineInvitationsOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<DeclineInvitationsError>`](crate::error::DeclineInvitationsError)
@@ -219,8 +219,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteActionTarget`](crate::client::fluent_builders::DeleteActionTarget) operation.
     ///
-    /// - Takes [`DeleteActionTargetInput`](crate::input::DeleteActionTargetInput) with field(s):
-    ///   - [`action_target_arn(Option<String>)`](crate::input::DeleteActionTargetInput::action_target_arn): <p>The ARN of the custom action target to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_target_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteActionTarget::action_target_arn) / [`set_action_target_arn(Option<String>)`](crate::client::fluent_builders::DeleteActionTarget::set_action_target_arn): <p>The ARN of the custom action target to delete.</p>
     /// - On success, responds with [`DeleteActionTargetOutput`](crate::output::DeleteActionTargetOutput) with field(s):
     ///   - [`action_target_arn(Option<String>)`](crate::output::DeleteActionTargetOutput::action_target_arn): <p>The ARN of the custom action target that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteActionTargetError>`](crate::error::DeleteActionTargetError)
@@ -229,8 +229,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFindingAggregator`](crate::client::fluent_builders::DeleteFindingAggregator) operation.
     ///
-    /// - Takes [`DeleteFindingAggregatorInput`](crate::input::DeleteFindingAggregatorInput) with field(s):
-    ///   - [`finding_aggregator_arn(Option<String>)`](crate::input::DeleteFindingAggregatorInput::finding_aggregator_arn): <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_aggregator_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteFindingAggregator::finding_aggregator_arn) / [`set_finding_aggregator_arn(Option<String>)`](crate::client::fluent_builders::DeleteFindingAggregator::set_finding_aggregator_arn): <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     /// - On success, responds with [`DeleteFindingAggregatorOutput`](crate::output::DeleteFindingAggregatorOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFindingAggregatorError>`](crate::error::DeleteFindingAggregatorError)
@@ -239,8 +239,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteInsight`](crate::client::fluent_builders::DeleteInsight) operation.
     ///
-    /// - Takes [`DeleteInsightInput`](crate::input::DeleteInsightInput) with field(s):
-    ///   - [`insight_arn(Option<String>)`](crate::input::DeleteInsightInput::insight_arn): <p>The ARN of the insight to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInsight::insight_arn) / [`set_insight_arn(Option<String>)`](crate::client::fluent_builders::DeleteInsight::set_insight_arn): <p>The ARN of the insight to delete.</p>
     /// - On success, responds with [`DeleteInsightOutput`](crate::output::DeleteInsightOutput) with field(s):
     ///   - [`insight_arn(Option<String>)`](crate::output::DeleteInsightOutput::insight_arn): <p>The ARN of the insight that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteInsightError>`](crate::error::DeleteInsightError)
@@ -249,8 +249,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteInvitations`](crate::client::fluent_builders::DeleteInvitations) operation.
     ///
-    /// - Takes [`DeleteInvitationsInput`](crate::input::DeleteInvitationsInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DeleteInvitationsInput::account_ids): <p>The list of the account IDs that sent the invitations to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeleteInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteInvitations::set_account_ids): <p>The list of the account IDs that sent the invitations to delete.</p>
     /// - On success, responds with [`DeleteInvitationsOutput`](crate::output::DeleteInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::output::DeleteInvitationsOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<DeleteInvitationsError>`](crate::error::DeleteInvitationsError)
@@ -259,8 +259,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteMembers`](crate::client::fluent_builders::DeleteMembers) operation.
     ///
-    /// - Takes [`DeleteMembersInput`](crate::input::DeleteMembersInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DeleteMembersInput::account_ids): <p>The list of account IDs for the member accounts to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeleteMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteMembers::set_account_ids): <p>The list of account IDs for the member accounts to delete.</p>
     /// - On success, responds with [`DeleteMembersOutput`](crate::output::DeleteMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::output::DeleteMembersOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<DeleteMembersError>`](crate::error::DeleteMembersError)
@@ -268,12 +268,12 @@ where
         fluent_builders::DeleteMembers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeActionTargets`](crate::client::fluent_builders::DescribeActionTargets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeActionTargets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeActionTargets::into_paginator).
     ///
-    /// - Takes [`DescribeActionTargetsInput`](crate::input::DescribeActionTargetsInput) with field(s):
-    ///   - [`action_target_arns(Option<Vec<String>>)`](crate::input::DescribeActionTargetsInput::action_target_arns): <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeActionTargetsInput::next_token): <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeActionTargetsInput::max_results): <p>The maximum number of results to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_target_arns(Vec<String>)`](crate::client::fluent_builders::DescribeActionTargets::action_target_arns) / [`set_action_target_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeActionTargets::set_action_target_arns): <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeActionTargets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeActionTargets::set_next_token): <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeActionTargets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeActionTargets::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`DescribeActionTargetsOutput`](crate::output::DescribeActionTargetsOutput) with field(s):
     ///   - [`action_targets(Option<Vec<ActionTarget>>)`](crate::output::DescribeActionTargetsOutput::action_targets): <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeActionTargetsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -283,8 +283,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeHub`](crate::client::fluent_builders::DescribeHub) operation.
     ///
-    /// - Takes [`DescribeHubInput`](crate::input::DescribeHubInput) with field(s):
-    ///   - [`hub_arn(Option<String>)`](crate::input::DescribeHubInput::hub_arn): <p>The ARN of the Hub resource to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`hub_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeHub::hub_arn) / [`set_hub_arn(Option<String>)`](crate::client::fluent_builders::DescribeHub::set_hub_arn): <p>The ARN of the Hub resource to retrieve.</p>
     /// - On success, responds with [`DescribeHubOutput`](crate::output::DescribeHubOutput) with field(s):
     ///   - [`hub_arn(Option<String>)`](crate::output::DescribeHubOutput::hub_arn): <p>The ARN of the Hub resource that was retrieved.</p>
     ///   - [`subscribed_at(Option<String>)`](crate::output::DescribeHubOutput::subscribed_at): <p>The date and time when Security Hub was enabled in the account.</p>
@@ -295,7 +295,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) operation.
     ///
-    /// - Takes [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeOrganizationConfiguration::send) it.
 
     /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput) with field(s):
     ///   - [`auto_enable(bool)`](crate::output::DescribeOrganizationConfigurationOutput::auto_enable): <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>  <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
@@ -307,12 +307,12 @@ where
         fluent_builders::DescribeOrganizationConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeProducts`](crate::client::fluent_builders::DescribeProducts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeProducts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeProducts::into_paginator).
     ///
-    /// - Takes [`DescribeProductsInput`](crate::input::DescribeProductsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeProductsInput::next_token): <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeProductsInput::max_results): <p>The maximum number of results to return.</p>
-    ///   - [`product_arn(Option<String>)`](crate::input::DescribeProductsInput::product_arn): <p>The ARN of the integration to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeProducts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeProducts::set_next_token): <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeProducts::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeProducts::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`product_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeProducts::product_arn) / [`set_product_arn(Option<String>)`](crate::client::fluent_builders::DescribeProducts::set_product_arn): <p>The ARN of the integration to return.</p>
     /// - On success, responds with [`DescribeProductsOutput`](crate::output::DescribeProductsOutput) with field(s):
     ///   - [`products(Option<Vec<Product>>)`](crate::output::DescribeProductsOutput::products): <p>A list of products, including details for each product.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeProductsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -321,11 +321,11 @@ where
         fluent_builders::DescribeProducts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeStandards`](crate::client::fluent_builders::DescribeStandards) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeStandards::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeStandards::into_paginator).
     ///
-    /// - Takes [`DescribeStandardsInput`](crate::input::DescribeStandardsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeStandardsInput::next_token): <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeStandardsInput::max_results): <p>The maximum number of standards to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeStandards::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeStandards::set_next_token): <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeStandards::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeStandards::set_max_results): <p>The maximum number of standards to return.</p>
     /// - On success, responds with [`DescribeStandardsOutput`](crate::output::DescribeStandardsOutput) with field(s):
     ///   - [`standards(Option<Vec<Standard>>)`](crate::output::DescribeStandardsOutput::standards): <p>A list of available standards.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeStandardsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -334,12 +334,12 @@ where
         fluent_builders::DescribeStandards::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeStandardsControls`](crate::client::fluent_builders::DescribeStandardsControls) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeStandardsControls::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeStandardsControls::into_paginator).
     ///
-    /// - Takes [`DescribeStandardsControlsInput`](crate::input::DescribeStandardsControlsInput) with field(s):
-    ///   - [`standards_subscription_arn(Option<String>)`](crate::input::DescribeStandardsControlsInput::standards_subscription_arn): <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeStandardsControlsInput::next_token): <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeStandardsControlsInput::max_results): <p>The maximum number of security standard controls to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`standards_subscription_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeStandardsControls::standards_subscription_arn) / [`set_standards_subscription_arn(Option<String>)`](crate::client::fluent_builders::DescribeStandardsControls::set_standards_subscription_arn): <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeStandardsControls::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeStandardsControls::set_next_token): <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeStandardsControls::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeStandardsControls::set_max_results): <p>The maximum number of security standard controls to return.</p>
     /// - On success, responds with [`DescribeStandardsControlsOutput`](crate::output::DescribeStandardsControlsOutput) with field(s):
     ///   - [`controls(Option<Vec<StandardsControl>>)`](crate::output::DescribeStandardsControlsOutput::controls): <p>A list of security standards controls.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeStandardsControlsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -351,8 +351,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisableImportFindingsForProduct`](crate::client::fluent_builders::DisableImportFindingsForProduct) operation.
     ///
-    /// - Takes [`DisableImportFindingsForProductInput`](crate::input::DisableImportFindingsForProductInput) with field(s):
-    ///   - [`product_subscription_arn(Option<String>)`](crate::input::DisableImportFindingsForProductInput::product_subscription_arn): <p>The ARN of the integrated product to disable the integration for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`product_subscription_arn(impl Into<String>)`](crate::client::fluent_builders::DisableImportFindingsForProduct::product_subscription_arn) / [`set_product_subscription_arn(Option<String>)`](crate::client::fluent_builders::DisableImportFindingsForProduct::set_product_subscription_arn): <p>The ARN of the integrated product to disable the integration for.</p>
     /// - On success, responds with [`DisableImportFindingsForProductOutput`](crate::output::DisableImportFindingsForProductOutput)
 
     /// - On failure, responds with [`SdkError<DisableImportFindingsForProductError>`](crate::error::DisableImportFindingsForProductError)
@@ -363,8 +363,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) operation.
     ///
-    /// - Takes [`DisableOrganizationAdminAccountInput`](crate::input::DisableOrganizationAdminAccountInput) with field(s):
-    ///   - [`admin_account_id(Option<String>)`](crate::input::DisableOrganizationAdminAccountInput::admin_account_id): <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::set_admin_account_id): <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
     /// - On success, responds with [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput)
 
     /// - On failure, responds with [`SdkError<DisableOrganizationAdminAccountError>`](crate::error::DisableOrganizationAdminAccountError)
@@ -375,7 +375,7 @@ where
     }
     /// Constructs a fluent builder for the [`DisableSecurityHub`](crate::client::fluent_builders::DisableSecurityHub) operation.
     ///
-    /// - Takes [`DisableSecurityHubInput`](crate::input::DisableSecurityHubInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DisableSecurityHub::send) it.
 
     /// - On success, responds with [`DisableSecurityHubOutput`](crate::output::DisableSecurityHubOutput)
 
@@ -385,7 +385,7 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateFromAdministratorAccount`](crate::client::fluent_builders::DisassociateFromAdministratorAccount) operation.
     ///
-    /// - Takes [`DisassociateFromAdministratorAccountInput`](crate::input::DisassociateFromAdministratorAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DisassociateFromAdministratorAccount::send) it.
 
     /// - On success, responds with [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput)
 
@@ -397,7 +397,7 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateFromMasterAccount`](crate::client::fluent_builders::DisassociateFromMasterAccount) operation.
     ///
-    /// - Takes [`DisassociateFromMasterAccountInput`](crate::input::DisassociateFromMasterAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DisassociateFromMasterAccount::send) it.
 
     /// - On success, responds with [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput)
 
@@ -409,8 +409,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateMembers`](crate::client::fluent_builders::DisassociateMembers) operation.
     ///
-    /// - Takes [`DisassociateMembersInput`](crate::input::DisassociateMembersInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DisassociateMembersInput::account_ids): <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DisassociateMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateMembers::set_account_ids): <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
     /// - On success, responds with [`DisassociateMembersOutput`](crate::output::DisassociateMembersOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateMembersError>`](crate::error::DisassociateMembersError)
@@ -419,8 +419,8 @@ where
     }
     /// Constructs a fluent builder for the [`EnableImportFindingsForProduct`](crate::client::fluent_builders::EnableImportFindingsForProduct) operation.
     ///
-    /// - Takes [`EnableImportFindingsForProductInput`](crate::input::EnableImportFindingsForProductInput) with field(s):
-    ///   - [`product_arn(Option<String>)`](crate::input::EnableImportFindingsForProductInput::product_arn): <p>The ARN of the product to enable the integration for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`product_arn(impl Into<String>)`](crate::client::fluent_builders::EnableImportFindingsForProduct::product_arn) / [`set_product_arn(Option<String>)`](crate::client::fluent_builders::EnableImportFindingsForProduct::set_product_arn): <p>The ARN of the product to enable the integration for.</p>
     /// - On success, responds with [`EnableImportFindingsForProductOutput`](crate::output::EnableImportFindingsForProductOutput) with field(s):
     ///   - [`product_subscription_arn(Option<String>)`](crate::output::EnableImportFindingsForProductOutput::product_subscription_arn): <p>The ARN of your subscription to the product to enable integrations for.</p>
     /// - On failure, responds with [`SdkError<EnableImportFindingsForProductError>`](crate::error::EnableImportFindingsForProductError)
@@ -431,8 +431,8 @@ where
     }
     /// Constructs a fluent builder for the [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) operation.
     ///
-    /// - Takes [`EnableOrganizationAdminAccountInput`](crate::input::EnableOrganizationAdminAccountInput) with field(s):
-    ///   - [`admin_account_id(Option<String>)`](crate::input::EnableOrganizationAdminAccountInput::admin_account_id): <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::set_admin_account_id): <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
     /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput)
 
     /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::error::EnableOrganizationAdminAccountError)
@@ -443,9 +443,9 @@ where
     }
     /// Constructs a fluent builder for the [`EnableSecurityHub`](crate::client::fluent_builders::EnableSecurityHub) operation.
     ///
-    /// - Takes [`EnableSecurityHubInput`](crate::input::EnableSecurityHubInput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::EnableSecurityHubInput::tags): <p>The tags to add to the hub resource when you enable Security Hub.</p>
-    ///   - [`enable_default_standards(bool)`](crate::input::EnableSecurityHubInput::enable_default_standards): <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::EnableSecurityHub::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::EnableSecurityHub::set_tags): <p>The tags to add to the hub resource when you enable Security Hub.</p>
+    ///   - [`enable_default_standards(bool)`](crate::client::fluent_builders::EnableSecurityHub::enable_default_standards) / [`set_enable_default_standards(bool)`](crate::client::fluent_builders::EnableSecurityHub::set_enable_default_standards): <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     /// - On success, responds with [`EnableSecurityHubOutput`](crate::output::EnableSecurityHubOutput)
 
     /// - On failure, responds with [`SdkError<EnableSecurityHubError>`](crate::error::EnableSecurityHubError)
@@ -454,7 +454,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetAdministratorAccount`](crate::client::fluent_builders::GetAdministratorAccount) operation.
     ///
-    /// - Takes [`GetAdministratorAccountInput`](crate::input::GetAdministratorAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAdministratorAccount::send) it.
 
     /// - On success, responds with [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput) with field(s):
     ///   - [`administrator(Option<Invitation>)`](crate::output::GetAdministratorAccountOutput::administrator): <p>Details about an invitation.</p>
@@ -463,12 +463,12 @@ where
         fluent_builders::GetAdministratorAccount::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetEnabledStandards`](crate::client::fluent_builders::GetEnabledStandards) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEnabledStandards::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetEnabledStandards::into_paginator).
     ///
-    /// - Takes [`GetEnabledStandardsInput`](crate::input::GetEnabledStandardsInput) with field(s):
-    ///   - [`standards_subscription_arns(Option<Vec<String>>)`](crate::input::GetEnabledStandardsInput::standards_subscription_arns): <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetEnabledStandardsInput::next_token): <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    ///   - [`max_results(i32)`](crate::input::GetEnabledStandardsInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`standards_subscription_arns(Vec<String>)`](crate::client::fluent_builders::GetEnabledStandards::standards_subscription_arns) / [`set_standards_subscription_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GetEnabledStandards::set_standards_subscription_arns): <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetEnabledStandards::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetEnabledStandards::set_next_token): <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetEnabledStandards::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetEnabledStandards::set_max_results): <p>The maximum number of results to return in the response.</p>
     /// - On success, responds with [`GetEnabledStandardsOutput`](crate::output::GetEnabledStandardsOutput) with field(s):
     ///   - [`standards_subscriptions(Option<Vec<StandardsSubscription>>)`](crate::output::GetEnabledStandardsOutput::standards_subscriptions): <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetEnabledStandardsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -478,8 +478,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetFindingAggregator`](crate::client::fluent_builders::GetFindingAggregator) operation.
     ///
-    /// - Takes [`GetFindingAggregatorInput`](crate::input::GetFindingAggregatorInput) with field(s):
-    ///   - [`finding_aggregator_arn(Option<String>)`](crate::input::GetFindingAggregatorInput::finding_aggregator_arn): <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_aggregator_arn(impl Into<String>)`](crate::client::fluent_builders::GetFindingAggregator::finding_aggregator_arn) / [`set_finding_aggregator_arn(Option<String>)`](crate::client::fluent_builders::GetFindingAggregator::set_finding_aggregator_arn): <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     /// - On success, responds with [`GetFindingAggregatorOutput`](crate::output::GetFindingAggregatorOutput) with field(s):
     ///   - [`finding_aggregator_arn(Option<String>)`](crate::output::GetFindingAggregatorOutput::finding_aggregator_arn): <p>The ARN of the finding aggregator.</p>
     ///   - [`finding_aggregation_region(Option<String>)`](crate::output::GetFindingAggregatorOutput::finding_aggregation_region): <p>The aggregation Region.</p>
@@ -490,13 +490,13 @@ where
         fluent_builders::GetFindingAggregator::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetFindings`](crate::client::fluent_builders::GetFindings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFindings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetFindings::into_paginator).
     ///
-    /// - Takes [`GetFindingsInput`](crate::input::GetFindingsInput) with field(s):
-    ///   - [`filters(Option<AwsSecurityFindingFilters>)`](crate::input::GetFindingsInput::filters): <p>The finding attributes used to define a condition to filter the returned findings.</p>  <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>  <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
-    ///   - [`sort_criteria(Option<Vec<SortCriterion>>)`](crate::input::GetFindingsInput::sort_criteria): <p>The finding attributes used to sort the list of returned findings.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetFindingsInput::next_token): <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    ///   - [`max_results(i32)`](crate::input::GetFindingsInput::max_results): <p>The maximum number of findings to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filters(AwsSecurityFindingFilters)`](crate::client::fluent_builders::GetFindings::filters) / [`set_filters(Option<AwsSecurityFindingFilters>)`](crate::client::fluent_builders::GetFindings::set_filters): <p>The finding attributes used to define a condition to filter the returned findings.</p>  <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>  <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+    ///   - [`sort_criteria(Vec<SortCriterion>)`](crate::client::fluent_builders::GetFindings::sort_criteria) / [`set_sort_criteria(Option<Vec<SortCriterion>>)`](crate::client::fluent_builders::GetFindings::set_sort_criteria): <p>The finding attributes used to sort the list of returned findings.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetFindings::set_next_token): <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetFindings::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetFindings::set_max_results): <p>The maximum number of findings to return.</p>
     /// - On success, responds with [`GetFindingsOutput`](crate::output::GetFindingsOutput) with field(s):
     ///   - [`findings(Option<Vec<AwsSecurityFinding>>)`](crate::output::GetFindingsOutput::findings): <p>The findings that matched the filters specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetFindingsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -506,8 +506,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetInsightResults`](crate::client::fluent_builders::GetInsightResults) operation.
     ///
-    /// - Takes [`GetInsightResultsInput`](crate::input::GetInsightResultsInput) with field(s):
-    ///   - [`insight_arn(Option<String>)`](crate::input::GetInsightResultsInput::insight_arn): <p>The ARN of the insight for which to return results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_arn(impl Into<String>)`](crate::client::fluent_builders::GetInsightResults::insight_arn) / [`set_insight_arn(Option<String>)`](crate::client::fluent_builders::GetInsightResults::set_insight_arn): <p>The ARN of the insight for which to return results.</p>
     /// - On success, responds with [`GetInsightResultsOutput`](crate::output::GetInsightResultsOutput) with field(s):
     ///   - [`insight_results(Option<InsightResults>)`](crate::output::GetInsightResultsOutput::insight_results): <p>The insight results returned by the operation.</p>
     /// - On failure, responds with [`SdkError<GetInsightResultsError>`](crate::error::GetInsightResultsError)
@@ -515,12 +515,12 @@ where
         fluent_builders::GetInsightResults::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetInsights`](crate::client::fluent_builders::GetInsights) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInsights::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetInsights::into_paginator).
     ///
-    /// - Takes [`GetInsightsInput`](crate::input::GetInsightsInput) with field(s):
-    ///   - [`insight_arns(Option<Vec<String>>)`](crate::input::GetInsightsInput::insight_arns): <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetInsightsInput::next_token): <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    ///   - [`max_results(i32)`](crate::input::GetInsightsInput::max_results): <p>The maximum number of items to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_arns(Vec<String>)`](crate::client::fluent_builders::GetInsights::insight_arns) / [`set_insight_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GetInsights::set_insight_arns): <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetInsights::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetInsights::set_next_token): <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetInsights::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetInsights::set_max_results): <p>The maximum number of items to return in the response.</p>
     /// - On success, responds with [`GetInsightsOutput`](crate::output::GetInsightsOutput) with field(s):
     ///   - [`insights(Option<Vec<Insight>>)`](crate::output::GetInsightsOutput::insights): <p>The insights returned by the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetInsightsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -530,7 +530,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetInvitationsCount`](crate::client::fluent_builders::GetInvitationsCount) operation.
     ///
-    /// - Takes [`GetInvitationsCountInput`](crate::input::GetInvitationsCountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetInvitationsCount::send) it.
 
     /// - On success, responds with [`GetInvitationsCountOutput`](crate::output::GetInvitationsCountOutput) with field(s):
     ///   - [`invitations_count(i32)`](crate::output::GetInvitationsCountOutput::invitations_count): <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
@@ -540,7 +540,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetMasterAccount`](crate::client::fluent_builders::GetMasterAccount) operation.
     ///
-    /// - Takes [`GetMasterAccountInput`](crate::input::GetMasterAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetMasterAccount::send) it.
 
     /// - On success, responds with [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput) with field(s):
     ///   - [`master(Option<Invitation>)`](crate::output::GetMasterAccountOutput::master): <p>A list of details about the Security Hub administrator account for the current member account. </p>
@@ -550,8 +550,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetMembers`](crate::client::fluent_builders::GetMembers) operation.
     ///
-    /// - Takes [`GetMembersInput`](crate::input::GetMembersInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::GetMembersInput::account_ids): <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetMembers::set_account_ids): <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
     /// - On success, responds with [`GetMembersOutput`](crate::output::GetMembersOutput) with field(s):
     ///   - [`members(Option<Vec<Member>>)`](crate::output::GetMembersOutput::members): <p>The list of details about the Security Hub member accounts.</p>
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::output::GetMembersOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
@@ -561,8 +561,8 @@ where
     }
     /// Constructs a fluent builder for the [`InviteMembers`](crate::client::fluent_builders::InviteMembers) operation.
     ///
-    /// - Takes [`InviteMembersInput`](crate::input::InviteMembersInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::InviteMembersInput::account_ids): <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::InviteMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::InviteMembers::set_account_ids): <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
     /// - On success, responds with [`InviteMembersOutput`](crate::output::InviteMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::output::InviteMembersOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<InviteMembersError>`](crate::error::InviteMembersError)
@@ -570,11 +570,11 @@ where
         fluent_builders::InviteMembers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEnabledProductsForImport`](crate::client::fluent_builders::ListEnabledProductsForImport) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnabledProductsForImport::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEnabledProductsForImport::into_paginator).
     ///
-    /// - Takes [`ListEnabledProductsForImportInput`](crate::input::ListEnabledProductsForImportInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListEnabledProductsForImportInput::next_token): <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    ///   - [`max_results(i32)`](crate::input::ListEnabledProductsForImportInput::max_results): <p>The maximum number of items to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnabledProductsForImport::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnabledProductsForImport::set_next_token): <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnabledProductsForImport::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEnabledProductsForImport::set_max_results): <p>The maximum number of items to return in the response.</p>
     /// - On success, responds with [`ListEnabledProductsForImportOutput`](crate::output::ListEnabledProductsForImportOutput) with field(s):
     ///   - [`product_subscriptions(Option<Vec<String>>)`](crate::output::ListEnabledProductsForImportOutput::product_subscriptions): <p>The list of ARNs for the resources that represent your subscriptions to products. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEnabledProductsForImportOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -585,11 +585,11 @@ where
         fluent_builders::ListEnabledProductsForImport::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFindingAggregators`](crate::client::fluent_builders::ListFindingAggregators) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindingAggregators::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFindingAggregators::into_paginator).
     ///
-    /// - Takes [`ListFindingAggregatorsInput`](crate::input::ListFindingAggregatorsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListFindingAggregatorsInput::next_token): <p>The token returned with the previous set of results. Identifies the next set of results to return.</p>
-    ///   - [`max_results(i32)`](crate::input::ListFindingAggregatorsInput::max_results): <p>The maximum number of results to return. This operation currently only returns a single result.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindingAggregators::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindingAggregators::set_next_token): <p>The token returned with the previous set of results. Identifies the next set of results to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindingAggregators::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListFindingAggregators::set_max_results): <p>The maximum number of results to return. This operation currently only returns a single result.</p>
     /// - On success, responds with [`ListFindingAggregatorsOutput`](crate::output::ListFindingAggregatorsOutput) with field(s):
     ///   - [`finding_aggregators(Option<Vec<FindingAggregator>>)`](crate::output::ListFindingAggregatorsOutput::finding_aggregators): <p>The list of finding aggregators. This operation currently only returns a single result.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFindingAggregatorsOutput::next_token): <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>  <p>This operation currently only returns a single result. </p>
@@ -598,11 +598,11 @@ where
         fluent_builders::ListFindingAggregators::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListInvitations`](crate::client::fluent_builders::ListInvitations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     ///
-    /// - Takes [`ListInvitationsInput`](crate::input::ListInvitationsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListInvitationsInput::max_results): <p>The maximum number of items to return in the response. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListInvitationsInput::next_token): <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInvitations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListInvitations::set_max_results): <p>The maximum number of items to return in the response. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInvitations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInvitations::set_next_token): <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     /// - On success, responds with [`ListInvitationsOutput`](crate::output::ListInvitationsOutput) with field(s):
     ///   - [`invitations(Option<Vec<Invitation>>)`](crate::output::ListInvitationsOutput::invitations): <p>The details of the invitations returned by the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListInvitationsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -611,12 +611,12 @@ where
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMembers`](crate::client::fluent_builders::ListMembers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     ///
-    /// - Takes [`ListMembersInput`](crate::input::ListMembersInput) with field(s):
-    ///   - [`only_associated(bool)`](crate::input::ListMembersInput::only_associated): <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>  <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>  <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
-    ///   - [`max_results(i32)`](crate::input::ListMembersInput::max_results): <p>The maximum number of items to return in the response. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListMembersInput::next_token): <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`only_associated(bool)`](crate::client::fluent_builders::ListMembers::only_associated) / [`set_only_associated(bool)`](crate::client::fluent_builders::ListMembers::set_only_associated): <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>  <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>  <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMembers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMembers::set_max_results): <p>The maximum number of items to return in the response. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>  <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
     ///   - [`members(Option<Vec<Member>>)`](crate::output::ListMembersOutput::members): <p>Member details returned by the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -625,11 +625,11 @@ where
         fluent_builders::ListMembers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
     ///
-    /// - Takes [`ListOrganizationAdminAccountsInput`](crate::input::ListOrganizationAdminAccountsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListOrganizationAdminAccountsInput::max_results): <p>The maximum number of items to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListOrganizationAdminAccountsInput::next_token): <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_max_results): <p>The maximum number of items to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_next_token): <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
     /// - On success, responds with [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput) with field(s):
     ///   - [`admin_accounts(Option<Vec<AdminAccount>>)`](crate::output::ListOrganizationAdminAccountsOutput::admin_accounts): <p>The list of Security Hub administrator accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationAdminAccountsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
@@ -641,8 +641,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource to retrieve tags for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource to retrieve tags for.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -651,9 +651,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource to apply the tags to.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128 characters. The tag values can be no longer than 256 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource to apply the tags to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128 characters. The tag values can be no longer than 256 characters.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -662,9 +662,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource to remove the tags from.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource to remove the tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -673,10 +673,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateActionTarget`](crate::client::fluent_builders::UpdateActionTarget) operation.
     ///
-    /// - Takes [`UpdateActionTargetInput`](crate::input::UpdateActionTargetInput) with field(s):
-    ///   - [`action_target_arn(Option<String>)`](crate::input::UpdateActionTargetInput::action_target_arn): <p>The ARN of the custom action target to update.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateActionTargetInput::name): <p>The updated name of the custom action target.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateActionTargetInput::description): <p>The updated description for the custom action target.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_target_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateActionTarget::action_target_arn) / [`set_action_target_arn(Option<String>)`](crate::client::fluent_builders::UpdateActionTarget::set_action_target_arn): <p>The ARN of the custom action target to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateActionTarget::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateActionTarget::set_name): <p>The updated name of the custom action target.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateActionTarget::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateActionTarget::set_description): <p>The updated description for the custom action target.</p>
     /// - On success, responds with [`UpdateActionTargetOutput`](crate::output::UpdateActionTargetOutput)
 
     /// - On failure, responds with [`SdkError<UpdateActionTargetError>`](crate::error::UpdateActionTargetError)
@@ -685,10 +685,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFindingAggregator`](crate::client::fluent_builders::UpdateFindingAggregator) operation.
     ///
-    /// - Takes [`UpdateFindingAggregatorInput`](crate::input::UpdateFindingAggregatorInput) with field(s):
-    ///   - [`finding_aggregator_arn(Option<String>)`](crate::input::UpdateFindingAggregatorInput::finding_aggregator_arn): <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    ///   - [`region_linking_mode(Option<String>)`](crate::input::UpdateFindingAggregatorInput::region_linking_mode): <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>  <p>The selected option also determines how to use the Regions provided in the Regions list.</p>  <p>The options are as follows:</p>  <ul>   <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>  </ul>
-    ///   - [`regions(Option<Vec<String>>)`](crate::input::UpdateFindingAggregatorInput::regions): <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>  <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`finding_aggregator_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::finding_aggregator_arn) / [`set_finding_aggregator_arn(Option<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::set_finding_aggregator_arn): <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    ///   - [`region_linking_mode(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::region_linking_mode) / [`set_region_linking_mode(Option<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::set_region_linking_mode): <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>  <p>The selected option also determines how to use the Regions provided in the Regions list.</p>  <p>The options are as follows:</p>  <ul>   <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>   <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>  </ul>
+    ///   - [`regions(Vec<String>)`](crate::client::fluent_builders::UpdateFindingAggregator::regions) / [`set_regions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFindingAggregator::set_regions): <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>  <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.</p>
     /// - On success, responds with [`UpdateFindingAggregatorOutput`](crate::output::UpdateFindingAggregatorOutput) with field(s):
     ///   - [`finding_aggregator_arn(Option<String>)`](crate::output::UpdateFindingAggregatorOutput::finding_aggregator_arn): <p>The ARN of the finding aggregator.</p>
     ///   - [`finding_aggregation_region(Option<String>)`](crate::output::UpdateFindingAggregatorOutput::finding_aggregation_region): <p>The aggregation Region.</p>
@@ -700,10 +700,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFindings`](crate::client::fluent_builders::UpdateFindings) operation.
     ///
-    /// - Takes [`UpdateFindingsInput`](crate::input::UpdateFindingsInput) with field(s):
-    ///   - [`filters(Option<AwsSecurityFindingFilters>)`](crate::input::UpdateFindingsInput::filters): <p>A collection of attributes that specify which findings you want to update.</p>
-    ///   - [`note(Option<NoteUpdate>)`](crate::input::UpdateFindingsInput::note): <p>The updated note for the finding.</p>
-    ///   - [`record_state(Option<RecordState>)`](crate::input::UpdateFindingsInput::record_state): <p>The updated record state for the finding.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filters(AwsSecurityFindingFilters)`](crate::client::fluent_builders::UpdateFindings::filters) / [`set_filters(Option<AwsSecurityFindingFilters>)`](crate::client::fluent_builders::UpdateFindings::set_filters): <p>A collection of attributes that specify which findings you want to update.</p>
+    ///   - [`note(NoteUpdate)`](crate::client::fluent_builders::UpdateFindings::note) / [`set_note(Option<NoteUpdate>)`](crate::client::fluent_builders::UpdateFindings::set_note): <p>The updated note for the finding.</p>
+    ///   - [`record_state(RecordState)`](crate::client::fluent_builders::UpdateFindings::record_state) / [`set_record_state(Option<RecordState>)`](crate::client::fluent_builders::UpdateFindings::set_record_state): <p>The updated record state for the finding.</p>
     /// - On success, responds with [`UpdateFindingsOutput`](crate::output::UpdateFindingsOutput)
 
     /// - On failure, responds with [`SdkError<UpdateFindingsError>`](crate::error::UpdateFindingsError)
@@ -712,11 +712,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateInsight`](crate::client::fluent_builders::UpdateInsight) operation.
     ///
-    /// - Takes [`UpdateInsightInput`](crate::input::UpdateInsightInput) with field(s):
-    ///   - [`insight_arn(Option<String>)`](crate::input::UpdateInsightInput::insight_arn): <p>The ARN of the insight that you want to update.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateInsightInput::name): <p>The updated name for the insight.</p>
-    ///   - [`filters(Option<AwsSecurityFindingFilters>)`](crate::input::UpdateInsightInput::filters): <p>The updated filters that define this insight.</p>
-    ///   - [`group_by_attribute(Option<String>)`](crate::input::UpdateInsightInput::group_by_attribute): <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateInsight::insight_arn) / [`set_insight_arn(Option<String>)`](crate::client::fluent_builders::UpdateInsight::set_insight_arn): <p>The ARN of the insight that you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateInsight::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateInsight::set_name): <p>The updated name for the insight.</p>
+    ///   - [`filters(AwsSecurityFindingFilters)`](crate::client::fluent_builders::UpdateInsight::filters) / [`set_filters(Option<AwsSecurityFindingFilters>)`](crate::client::fluent_builders::UpdateInsight::set_filters): <p>The updated filters that define this insight.</p>
+    ///   - [`group_by_attribute(impl Into<String>)`](crate::client::fluent_builders::UpdateInsight::group_by_attribute) / [`set_group_by_attribute(Option<String>)`](crate::client::fluent_builders::UpdateInsight::set_group_by_attribute): <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
     /// - On success, responds with [`UpdateInsightOutput`](crate::output::UpdateInsightOutput)
 
     /// - On failure, responds with [`SdkError<UpdateInsightError>`](crate::error::UpdateInsightError)
@@ -725,8 +725,8 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) operation.
     ///
-    /// - Takes [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput) with field(s):
-    ///   - [`auto_enable(bool)`](crate::input::UpdateOrganizationConfigurationInput::auto_enable): <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>  <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>  <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::auto_enable) / [`set_auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_auto_enable): <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>  <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>  <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
     /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::error::UpdateOrganizationConfigurationError)
@@ -737,8 +737,8 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSecurityHubConfiguration`](crate::client::fluent_builders::UpdateSecurityHubConfiguration) operation.
     ///
-    /// - Takes [`UpdateSecurityHubConfigurationInput`](crate::input::UpdateSecurityHubConfigurationInput) with field(s):
-    ///   - [`auto_enable_controls(bool)`](crate::input::UpdateSecurityHubConfigurationInput::auto_enable_controls): <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>  <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_enable_controls(bool)`](crate::client::fluent_builders::UpdateSecurityHubConfiguration::auto_enable_controls) / [`set_auto_enable_controls(bool)`](crate::client::fluent_builders::UpdateSecurityHubConfiguration::set_auto_enable_controls): <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>  <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
     /// - On success, responds with [`UpdateSecurityHubConfigurationOutput`](crate::output::UpdateSecurityHubConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateSecurityHubConfigurationError>`](crate::error::UpdateSecurityHubConfigurationError)
@@ -749,10 +749,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateStandardsControl`](crate::client::fluent_builders::UpdateStandardsControl) operation.
     ///
-    /// - Takes [`UpdateStandardsControlInput`](crate::input::UpdateStandardsControlInput) with field(s):
-    ///   - [`standards_control_arn(Option<String>)`](crate::input::UpdateStandardsControlInput::standards_control_arn): <p>The ARN of the security standard control to enable or disable.</p>
-    ///   - [`control_status(Option<ControlStatus>)`](crate::input::UpdateStandardsControlInput::control_status): <p>The updated status of the security standard control.</p>
-    ///   - [`disabled_reason(Option<String>)`](crate::input::UpdateStandardsControlInput::disabled_reason): <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`standards_control_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStandardsControl::standards_control_arn) / [`set_standards_control_arn(Option<String>)`](crate::client::fluent_builders::UpdateStandardsControl::set_standards_control_arn): <p>The ARN of the security standard control to enable or disable.</p>
+    ///   - [`control_status(ControlStatus)`](crate::client::fluent_builders::UpdateStandardsControl::control_status) / [`set_control_status(Option<ControlStatus>)`](crate::client::fluent_builders::UpdateStandardsControl::set_control_status): <p>The updated status of the security standard control.</p>
+    ///   - [`disabled_reason(impl Into<String>)`](crate::client::fluent_builders::UpdateStandardsControl::disabled_reason) / [`set_disabled_reason(Option<String>)`](crate::client::fluent_builders::UpdateStandardsControl::set_disabled_reason): <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
     /// - On success, responds with [`UpdateStandardsControlOutput`](crate::output::UpdateStandardsControlOutput)
 
     /// - On failure, responds with [`SdkError<UpdateStandardsControlError>`](crate::error::UpdateStandardsControlError)

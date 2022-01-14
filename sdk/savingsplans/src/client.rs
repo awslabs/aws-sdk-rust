@@ -85,13 +85,13 @@ where
 {
     /// Constructs a fluent builder for the [`CreateSavingsPlan`](crate::client::fluent_builders::CreateSavingsPlan) operation.
     ///
-    /// - Takes [`CreateSavingsPlanInput`](crate::input::CreateSavingsPlanInput) with field(s):
-    ///   - [`savings_plan_offering_id(Option<String>)`](crate::input::CreateSavingsPlanInput::savings_plan_offering_id): <p>The ID of the offering.</p>
-    ///   - [`commitment(Option<String>)`](crate::input::CreateSavingsPlanInput::commitment): <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
-    ///   - [`upfront_payment_amount(Option<String>)`](crate::input::CreateSavingsPlanInput::upfront_payment_amount): <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
-    ///   - [`purchase_time(Option<DateTime>)`](crate::input::CreateSavingsPlanInput::purchase_time): <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateSavingsPlanInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSavingsPlanInput::tags): <p>One or more tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`savings_plan_offering_id(impl Into<String>)`](crate::client::fluent_builders::CreateSavingsPlan::savings_plan_offering_id) / [`set_savings_plan_offering_id(Option<String>)`](crate::client::fluent_builders::CreateSavingsPlan::set_savings_plan_offering_id): <p>The ID of the offering.</p>
+    ///   - [`commitment(impl Into<String>)`](crate::client::fluent_builders::CreateSavingsPlan::commitment) / [`set_commitment(Option<String>)`](crate::client::fluent_builders::CreateSavingsPlan::set_commitment): <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    ///   - [`upfront_payment_amount(impl Into<String>)`](crate::client::fluent_builders::CreateSavingsPlan::upfront_payment_amount) / [`set_upfront_payment_amount(Option<String>)`](crate::client::fluent_builders::CreateSavingsPlan::set_upfront_payment_amount): <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    ///   - [`purchase_time(DateTime)`](crate::client::fluent_builders::CreateSavingsPlan::purchase_time) / [`set_purchase_time(Option<DateTime>)`](crate::client::fluent_builders::CreateSavingsPlan::set_purchase_time): <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateSavingsPlan::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateSavingsPlan::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSavingsPlan::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSavingsPlan::set_tags): <p>One or more tags.</p>
     /// - On success, responds with [`CreateSavingsPlanOutput`](crate::output::CreateSavingsPlanOutput) with field(s):
     ///   - [`savings_plan_id(Option<String>)`](crate::output::CreateSavingsPlanOutput::savings_plan_id): <p>The ID of the Savings Plan.</p>
     /// - On failure, responds with [`SdkError<CreateSavingsPlanError>`](crate::error::CreateSavingsPlanError)
@@ -100,8 +100,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteQueuedSavingsPlan`](crate::client::fluent_builders::DeleteQueuedSavingsPlan) operation.
     ///
-    /// - Takes [`DeleteQueuedSavingsPlanInput`](crate::input::DeleteQueuedSavingsPlanInput) with field(s):
-    ///   - [`savings_plan_id(Option<String>)`](crate::input::DeleteQueuedSavingsPlanInput::savings_plan_id): <p>The ID of the Savings Plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`savings_plan_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQueuedSavingsPlan::savings_plan_id) / [`set_savings_plan_id(Option<String>)`](crate::client::fluent_builders::DeleteQueuedSavingsPlan::set_savings_plan_id): <p>The ID of the Savings Plan.</p>
     /// - On success, responds with [`DeleteQueuedSavingsPlanOutput`](crate::output::DeleteQueuedSavingsPlanOutput)
 
     /// - On failure, responds with [`SdkError<DeleteQueuedSavingsPlanError>`](crate::error::DeleteQueuedSavingsPlanError)
@@ -110,11 +110,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSavingsPlanRates`](crate::client::fluent_builders::DescribeSavingsPlanRates) operation.
     ///
-    /// - Takes [`DescribeSavingsPlanRatesInput`](crate::input::DescribeSavingsPlanRatesInput) with field(s):
-    ///   - [`savings_plan_id(Option<String>)`](crate::input::DescribeSavingsPlanRatesInput::savings_plan_id): <p>The ID of the Savings Plan.</p>
-    ///   - [`filters(Option<Vec<SavingsPlanRateFilter>>)`](crate::input::DescribeSavingsPlanRatesInput::filters): <p>The filters.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSavingsPlanRatesInput::next_token): <p>The token for the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeSavingsPlanRatesInput::max_results): <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`savings_plan_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSavingsPlanRates::savings_plan_id) / [`set_savings_plan_id(Option<String>)`](crate::client::fluent_builders::DescribeSavingsPlanRates::set_savings_plan_id): <p>The ID of the Savings Plan.</p>
+    ///   - [`filters(Vec<SavingsPlanRateFilter>)`](crate::client::fluent_builders::DescribeSavingsPlanRates::filters) / [`set_filters(Option<Vec<SavingsPlanRateFilter>>)`](crate::client::fluent_builders::DescribeSavingsPlanRates::set_filters): <p>The filters.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSavingsPlanRates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSavingsPlanRates::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSavingsPlanRates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeSavingsPlanRates::set_max_results): <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     /// - On success, responds with [`DescribeSavingsPlanRatesOutput`](crate::output::DescribeSavingsPlanRatesOutput) with field(s):
     ///   - [`savings_plan_id(Option<String>)`](crate::output::DescribeSavingsPlanRatesOutput::savings_plan_id): <p>The ID of the Savings Plan.</p>
     ///   - [`search_results(Option<Vec<SavingsPlanRate>>)`](crate::output::DescribeSavingsPlanRatesOutput::search_results): <p>Information about the Savings Plans rates.</p>
@@ -127,13 +127,13 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSavingsPlans`](crate::client::fluent_builders::DescribeSavingsPlans) operation.
     ///
-    /// - Takes [`DescribeSavingsPlansInput`](crate::input::DescribeSavingsPlansInput) with field(s):
-    ///   - [`savings_plan_arns(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansInput::savings_plan_arns): <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    ///   - [`savings_plan_ids(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansInput::savings_plan_ids): <p>The IDs of the Savings Plans.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSavingsPlansInput::next_token): <p>The token for the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeSavingsPlansInput::max_results): <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
-    ///   - [`states(Option<Vec<SavingsPlanState>>)`](crate::input::DescribeSavingsPlansInput::states): <p>The states.</p>
-    ///   - [`filters(Option<Vec<SavingsPlanFilter>>)`](crate::input::DescribeSavingsPlansInput::filters): <p>The filters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`savings_plan_arns(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlans::savings_plan_arns) / [`set_savings_plan_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlans::set_savings_plan_arns): <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
+    ///   - [`savings_plan_ids(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlans::savings_plan_ids) / [`set_savings_plan_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlans::set_savings_plan_ids): <p>The IDs of the Savings Plans.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSavingsPlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSavingsPlans::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSavingsPlans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeSavingsPlans::set_max_results): <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    ///   - [`states(Vec<SavingsPlanState>)`](crate::client::fluent_builders::DescribeSavingsPlans::states) / [`set_states(Option<Vec<SavingsPlanState>>)`](crate::client::fluent_builders::DescribeSavingsPlans::set_states): <p>The states.</p>
+    ///   - [`filters(Vec<SavingsPlanFilter>)`](crate::client::fluent_builders::DescribeSavingsPlans::filters) / [`set_filters(Option<Vec<SavingsPlanFilter>>)`](crate::client::fluent_builders::DescribeSavingsPlans::set_filters): <p>The filters.</p>
     /// - On success, responds with [`DescribeSavingsPlansOutput`](crate::output::DescribeSavingsPlansOutput) with field(s):
     ///   - [`savings_plans(Option<Vec<SavingsPlan>>)`](crate::output::DescribeSavingsPlansOutput::savings_plans): <p>Information about the Savings Plans.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSavingsPlansOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -143,17 +143,17 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSavingsPlansOfferingRates`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates) operation.
     ///
-    /// - Takes [`DescribeSavingsPlansOfferingRatesInput`](crate::input::DescribeSavingsPlansOfferingRatesInput) with field(s):
-    ///   - [`savings_plan_offering_ids(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansOfferingRatesInput::savings_plan_offering_ids): <p>The IDs of the offerings.</p>
-    ///   - [`savings_plan_payment_options(Option<Vec<SavingsPlanPaymentOption>>)`](crate::input::DescribeSavingsPlansOfferingRatesInput::savings_plan_payment_options): <p>The payment options.</p>
-    ///   - [`savings_plan_types(Option<Vec<SavingsPlanType>>)`](crate::input::DescribeSavingsPlansOfferingRatesInput::savings_plan_types): <p>The plan types.</p>
-    ///   - [`products(Option<Vec<SavingsPlanProductType>>)`](crate::input::DescribeSavingsPlansOfferingRatesInput::products): <p>The AWS products.</p>
-    ///   - [`service_codes(Option<Vec<SavingsPlanRateServiceCode>>)`](crate::input::DescribeSavingsPlansOfferingRatesInput::service_codes): <p>The services.</p>
-    ///   - [`usage_types(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansOfferingRatesInput::usage_types): <p>The usage details of the line item in the billing report.</p>
-    ///   - [`operations(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansOfferingRatesInput::operations): <p>The specific AWS operation for the line item in the billing report.</p>
-    ///   - [`filters(Option<Vec<SavingsPlanOfferingRateFilterElement>>)`](crate::input::DescribeSavingsPlansOfferingRatesInput::filters): <p>The filters.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSavingsPlansOfferingRatesInput::next_token): <p>The token for the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeSavingsPlansOfferingRatesInput::max_results): <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`savings_plan_offering_ids(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::savings_plan_offering_ids) / [`set_savings_plan_offering_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_savings_plan_offering_ids): <p>The IDs of the offerings.</p>
+    ///   - [`savings_plan_payment_options(Vec<SavingsPlanPaymentOption>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::savings_plan_payment_options) / [`set_savings_plan_payment_options(Option<Vec<SavingsPlanPaymentOption>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_savings_plan_payment_options): <p>The payment options.</p>
+    ///   - [`savings_plan_types(Vec<SavingsPlanType>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::savings_plan_types) / [`set_savings_plan_types(Option<Vec<SavingsPlanType>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_savings_plan_types): <p>The plan types.</p>
+    ///   - [`products(Vec<SavingsPlanProductType>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::products) / [`set_products(Option<Vec<SavingsPlanProductType>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_products): <p>The AWS products.</p>
+    ///   - [`service_codes(Vec<SavingsPlanRateServiceCode>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::service_codes) / [`set_service_codes(Option<Vec<SavingsPlanRateServiceCode>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_service_codes): <p>The services.</p>
+    ///   - [`usage_types(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::usage_types) / [`set_usage_types(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_usage_types): <p>The usage details of the line item in the billing report.</p>
+    ///   - [`operations(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::operations) / [`set_operations(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_operations): <p>The specific AWS operation for the line item in the billing report.</p>
+    ///   - [`filters(Vec<SavingsPlanOfferingRateFilterElement>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::filters) / [`set_filters(Option<Vec<SavingsPlanOfferingRateFilterElement>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_filters): <p>The filters.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeSavingsPlansOfferingRates::set_max_results): <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     /// - On success, responds with [`DescribeSavingsPlansOfferingRatesOutput`](crate::output::DescribeSavingsPlansOfferingRatesOutput) with field(s):
     ///   - [`search_results(Option<Vec<SavingsPlanOfferingRate>>)`](crate::output::DescribeSavingsPlansOfferingRatesOutput::search_results): <p>Information about the Savings Plans offering rates.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSavingsPlansOfferingRatesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -165,20 +165,20 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSavingsPlansOfferings`](crate::client::fluent_builders::DescribeSavingsPlansOfferings) operation.
     ///
-    /// - Takes [`DescribeSavingsPlansOfferingsInput`](crate::input::DescribeSavingsPlansOfferingsInput) with field(s):
-    ///   - [`offering_ids(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansOfferingsInput::offering_ids): <p>The IDs of the offerings.</p>
-    ///   - [`payment_options(Option<Vec<SavingsPlanPaymentOption>>)`](crate::input::DescribeSavingsPlansOfferingsInput::payment_options): <p>The payment options.</p>
-    ///   - [`product_type(Option<SavingsPlanProductType>)`](crate::input::DescribeSavingsPlansOfferingsInput::product_type): <p>The product type.</p>
-    ///   - [`plan_types(Option<Vec<SavingsPlanType>>)`](crate::input::DescribeSavingsPlansOfferingsInput::plan_types): <p>The plan type.</p>
-    ///   - [`durations(Option<Vec<i64>>)`](crate::input::DescribeSavingsPlansOfferingsInput::durations): <p>The durations, in seconds.</p>
-    ///   - [`currencies(Option<Vec<CurrencyCode>>)`](crate::input::DescribeSavingsPlansOfferingsInput::currencies): <p>The currencies.</p>
-    ///   - [`descriptions(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansOfferingsInput::descriptions): <p>The descriptions.</p>
-    ///   - [`service_codes(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansOfferingsInput::service_codes): <p>The services.</p>
-    ///   - [`usage_types(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansOfferingsInput::usage_types): <p>The usage details of the line item in the billing report.</p>
-    ///   - [`operations(Option<Vec<String>>)`](crate::input::DescribeSavingsPlansOfferingsInput::operations): <p>The specific AWS operation for the line item in the billing report.</p>
-    ///   - [`filters(Option<Vec<SavingsPlanOfferingFilterElement>>)`](crate::input::DescribeSavingsPlansOfferingsInput::filters): <p>The filters.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSavingsPlansOfferingsInput::next_token): <p>The token for the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::input::DescribeSavingsPlansOfferingsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`offering_ids(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::offering_ids) / [`set_offering_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_offering_ids): <p>The IDs of the offerings.</p>
+    ///   - [`payment_options(Vec<SavingsPlanPaymentOption>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::payment_options) / [`set_payment_options(Option<Vec<SavingsPlanPaymentOption>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_payment_options): <p>The payment options.</p>
+    ///   - [`product_type(SavingsPlanProductType)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::product_type) / [`set_product_type(Option<SavingsPlanProductType>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_product_type): <p>The product type.</p>
+    ///   - [`plan_types(Vec<SavingsPlanType>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::plan_types) / [`set_plan_types(Option<Vec<SavingsPlanType>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_plan_types): <p>The plan type.</p>
+    ///   - [`durations(Vec<i64>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::durations) / [`set_durations(Option<Vec<i64>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_durations): <p>The durations, in seconds.</p>
+    ///   - [`currencies(Vec<CurrencyCode>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::currencies) / [`set_currencies(Option<Vec<CurrencyCode>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_currencies): <p>The currencies.</p>
+    ///   - [`descriptions(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::descriptions) / [`set_descriptions(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_descriptions): <p>The descriptions.</p>
+    ///   - [`service_codes(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::service_codes) / [`set_service_codes(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_service_codes): <p>The services.</p>
+    ///   - [`usage_types(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::usage_types) / [`set_usage_types(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_usage_types): <p>The usage details of the line item in the billing report.</p>
+    ///   - [`operations(Vec<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::operations) / [`set_operations(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_operations): <p>The specific AWS operation for the line item in the billing report.</p>
+    ///   - [`filters(Vec<SavingsPlanOfferingFilterElement>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::filters) / [`set_filters(Option<Vec<SavingsPlanOfferingFilterElement>>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_filters): <p>The filters.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeSavingsPlansOfferings::set_max_results): <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     /// - On success, responds with [`DescribeSavingsPlansOfferingsOutput`](crate::output::DescribeSavingsPlansOfferingsOutput) with field(s):
     ///   - [`search_results(Option<Vec<SavingsPlanOffering>>)`](crate::output::DescribeSavingsPlansOfferingsOutput::search_results): <p>Information about the Savings Plans offerings.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSavingsPlansOfferingsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -190,8 +190,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Information about the tags.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -200,9 +200,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -211,9 +211,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)

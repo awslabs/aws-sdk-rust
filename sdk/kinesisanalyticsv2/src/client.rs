@@ -85,11 +85,11 @@ where
 {
     /// Constructs a fluent builder for the [`AddApplicationCloudWatchLoggingOption`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption) operation.
     ///
-    /// - Takes [`AddApplicationCloudWatchLoggingOptionInput`](crate::input::AddApplicationCloudWatchLoggingOptionInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::AddApplicationCloudWatchLoggingOptionInput::application_name): <p>The Kinesis Data Analytics application name.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::AddApplicationCloudWatchLoggingOptionInput::current_application_version_id): <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    ///   - [`cloud_watch_logging_option(Option<CloudWatchLoggingOption>)`](crate::input::AddApplicationCloudWatchLoggingOptionInput::cloud_watch_logging_option): <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-    ///   - [`conditional_token(Option<String>)`](crate::input::AddApplicationCloudWatchLoggingOptionInput::conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption::set_application_name): <p>The Kinesis Data Analytics application name.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption::set_current_application_version_id): <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    ///   - [`cloud_watch_logging_option(CloudWatchLoggingOption)`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption::cloud_watch_logging_option) / [`set_cloud_watch_logging_option(Option<CloudWatchLoggingOption>)`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption::set_cloud_watch_logging_option): <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    ///   - [`conditional_token(impl Into<String>)`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption::conditional_token) / [`set_conditional_token(Option<String>)`](crate::client::fluent_builders::AddApplicationCloudWatchLoggingOption::set_conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     /// - On success, responds with [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::AddApplicationCloudWatchLoggingOptionOutput::application_arn): <p>The application's ARN.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::AddApplicationCloudWatchLoggingOptionOutput::application_version_id): <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
@@ -102,10 +102,10 @@ where
     }
     /// Constructs a fluent builder for the [`AddApplicationInput`](crate::client::fluent_builders::AddApplicationInput) operation.
     ///
-    /// - Takes [`AddApplicationInputInput`](crate::input::AddApplicationInputInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::AddApplicationInputInput::application_name): <p>The name of your existing application to which you want to add the streaming source.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::AddApplicationInputInput::current_application_version_id): <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
-    ///   - [`input(Option<Input>)`](crate::input::AddApplicationInputInput::input): <p>The <code>Input</code> to add.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::AddApplicationInput::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::AddApplicationInput::set_application_name): <p>The name of your existing application to which you want to add the streaming source.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::AddApplicationInput::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::AddApplicationInput::set_current_application_version_id): <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
+    ///   - [`input(Input)`](crate::client::fluent_builders::AddApplicationInput::input) / [`set_input(Option<Input>)`](crate::client::fluent_builders::AddApplicationInput::set_input): <p>The <code>Input</code> to add.</p>
     /// - On success, responds with [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::AddApplicationInputOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::AddApplicationInputOutput::application_version_id): <p>Provides the current application version.</p>
@@ -116,11 +116,11 @@ where
     }
     /// Constructs a fluent builder for the [`AddApplicationInputProcessingConfiguration`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration) operation.
     ///
-    /// - Takes [`AddApplicationInputProcessingConfigurationInput`](crate::input::AddApplicationInputProcessingConfigurationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::AddApplicationInputProcessingConfigurationInput::application_name): <p>The name of the application to which you want to add the input processing configuration.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::AddApplicationInputProcessingConfigurationInput::current_application_version_id): <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
-    ///   - [`input_id(Option<String>)`](crate::input::AddApplicationInputProcessingConfigurationInput::input_id): <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
-    ///   - [`input_processing_configuration(Option<InputProcessingConfiguration>)`](crate::input::AddApplicationInputProcessingConfigurationInput::input_processing_configuration): <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration::set_application_name): <p>The name of the application to which you want to add the input processing configuration.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration::set_current_application_version_id): <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    ///   - [`input_id(impl Into<String>)`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration::input_id) / [`set_input_id(Option<String>)`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration::set_input_id): <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
+    ///   - [`input_processing_configuration(InputProcessingConfiguration)`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration::input_processing_configuration) / [`set_input_processing_configuration(Option<InputProcessingConfiguration>)`](crate::client::fluent_builders::AddApplicationInputProcessingConfiguration::set_input_processing_configuration): <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
     /// - On success, responds with [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::AddApplicationInputProcessingConfigurationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::AddApplicationInputProcessingConfigurationOutput::application_version_id): <p>Provides the current application version. </p>
@@ -134,10 +134,10 @@ where
     }
     /// Constructs a fluent builder for the [`AddApplicationOutput`](crate::client::fluent_builders::AddApplicationOutput) operation.
     ///
-    /// - Takes [`AddApplicationOutputInput`](crate::input::AddApplicationOutputInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::AddApplicationOutputInput::application_name): <p>The name of the application to which you want to add the output configuration.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::AddApplicationOutputInput::current_application_version_id): <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
-    ///   - [`output(Option<Output>)`](crate::input::AddApplicationOutputInput::output): <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::AddApplicationOutput::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::AddApplicationOutput::set_application_name): <p>The name of the application to which you want to add the output configuration.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::AddApplicationOutput::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::AddApplicationOutput::set_current_application_version_id): <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    ///   - [`output(Output)`](crate::client::fluent_builders::AddApplicationOutput::output) / [`set_output(Option<Output>)`](crate::client::fluent_builders::AddApplicationOutput::set_output): <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
     /// - On success, responds with [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::AddApplicationOutputOutput::application_arn): <p>The application Amazon Resource Name (ARN).</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::AddApplicationOutputOutput::application_version_id): <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
@@ -148,10 +148,10 @@ where
     }
     /// Constructs a fluent builder for the [`AddApplicationReferenceDataSource`](crate::client::fluent_builders::AddApplicationReferenceDataSource) operation.
     ///
-    /// - Takes [`AddApplicationReferenceDataSourceInput`](crate::input::AddApplicationReferenceDataSourceInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::AddApplicationReferenceDataSourceInput::application_name): <p>The name of an existing application.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::AddApplicationReferenceDataSourceInput::current_application_version_id): <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
-    ///   - [`reference_data_source(Option<ReferenceDataSource>)`](crate::input::AddApplicationReferenceDataSourceInput::reference_data_source): <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::AddApplicationReferenceDataSource::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::AddApplicationReferenceDataSource::set_application_name): <p>The name of an existing application.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::AddApplicationReferenceDataSource::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::AddApplicationReferenceDataSource::set_current_application_version_id): <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    ///   - [`reference_data_source(ReferenceDataSource)`](crate::client::fluent_builders::AddApplicationReferenceDataSource::reference_data_source) / [`set_reference_data_source(Option<ReferenceDataSource>)`](crate::client::fluent_builders::AddApplicationReferenceDataSource::set_reference_data_source): <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
     /// - On success, responds with [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::AddApplicationReferenceDataSourceOutput::application_arn): <p>The application Amazon Resource Name (ARN).</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::AddApplicationReferenceDataSourceOutput::application_version_id): <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
@@ -164,11 +164,11 @@ where
     }
     /// Constructs a fluent builder for the [`AddApplicationVpcConfiguration`](crate::client::fluent_builders::AddApplicationVpcConfiguration) operation.
     ///
-    /// - Takes [`AddApplicationVpcConfigurationInput`](crate::input::AddApplicationVpcConfigurationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::AddApplicationVpcConfigurationInput::application_name): <p>The name of an existing application.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::AddApplicationVpcConfigurationInput::current_application_version_id): <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    ///   - [`vpc_configuration(Option<VpcConfiguration>)`](crate::input::AddApplicationVpcConfigurationInput::vpc_configuration): <p>Description of the VPC to add to the application.</p>
-    ///   - [`conditional_token(Option<String>)`](crate::input::AddApplicationVpcConfigurationInput::conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::AddApplicationVpcConfiguration::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::AddApplicationVpcConfiguration::set_application_name): <p>The name of an existing application.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::AddApplicationVpcConfiguration::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::AddApplicationVpcConfiguration::set_current_application_version_id): <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    ///   - [`vpc_configuration(VpcConfiguration)`](crate::client::fluent_builders::AddApplicationVpcConfiguration::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::client::fluent_builders::AddApplicationVpcConfiguration::set_vpc_configuration): <p>Description of the VPC to add to the application.</p>
+    ///   - [`conditional_token(impl Into<String>)`](crate::client::fluent_builders::AddApplicationVpcConfiguration::conditional_token) / [`set_conditional_token(Option<String>)`](crate::client::fluent_builders::AddApplicationVpcConfiguration::set_conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     /// - On success, responds with [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::AddApplicationVpcConfigurationOutput::application_arn): <p>The ARN of the application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::AddApplicationVpcConfigurationOutput::application_version_id): <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
@@ -181,15 +181,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
-    /// - Takes [`CreateApplicationInput`](crate::input::CreateApplicationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::CreateApplicationInput::application_name): <p>The name of your application (for example, <code>sample-app</code>).</p>
-    ///   - [`application_description(Option<String>)`](crate::input::CreateApplicationInput::application_description): <p>A summary description of the application.</p>
-    ///   - [`runtime_environment(Option<RuntimeEnvironment>)`](crate::input::CreateApplicationInput::runtime_environment): <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
-    ///   - [`service_execution_role(Option<String>)`](crate::input::CreateApplicationInput::service_execution_role): <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
-    ///   - [`application_configuration(Option<ApplicationConfiguration>)`](crate::input::CreateApplicationInput::application_configuration): <p>Use this parameter to configure the application.</p>
-    ///   - [`cloud_watch_logging_options(Option<Vec<CloudWatchLoggingOption>>)`](crate::input::CreateApplicationInput::cloud_watch_logging_options): <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateApplicationInput::tags): <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    ///   - [`application_mode(Option<ApplicationMode>)`](crate::input::CreateApplicationInput::application_mode): <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_application_name): <p>The name of your application (for example, <code>sample-app</code>).</p>
+    ///   - [`application_description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::application_description) / [`set_application_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_application_description): <p>A summary description of the application.</p>
+    ///   - [`runtime_environment(RuntimeEnvironment)`](crate::client::fluent_builders::CreateApplication::runtime_environment) / [`set_runtime_environment(Option<RuntimeEnvironment>)`](crate::client::fluent_builders::CreateApplication::set_runtime_environment): <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    ///   - [`service_execution_role(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::service_execution_role) / [`set_service_execution_role(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_service_execution_role): <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
+    ///   - [`application_configuration(ApplicationConfiguration)`](crate::client::fluent_builders::CreateApplication::application_configuration) / [`set_application_configuration(Option<ApplicationConfiguration>)`](crate::client::fluent_builders::CreateApplication::set_application_configuration): <p>Use this parameter to configure the application.</p>
+    ///   - [`cloud_watch_logging_options(Vec<CloudWatchLoggingOption>)`](crate::client::fluent_builders::CreateApplication::cloud_watch_logging_options) / [`set_cloud_watch_logging_options(Option<Vec<CloudWatchLoggingOption>>)`](crate::client::fluent_builders::CreateApplication::set_cloud_watch_logging_options): <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    ///   - [`application_mode(ApplicationMode)`](crate::client::fluent_builders::CreateApplication::application_mode) / [`set_application_mode(Option<ApplicationMode>)`](crate::client::fluent_builders::CreateApplication::set_application_mode): <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`application_detail(Option<ApplicationDetail>)`](crate::output::CreateApplicationOutput::application_detail): <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
@@ -198,10 +198,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateApplicationPresignedUrl`](crate::client::fluent_builders::CreateApplicationPresignedUrl) operation.
     ///
-    /// - Takes [`CreateApplicationPresignedUrlInput`](crate::input::CreateApplicationPresignedUrlInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::CreateApplicationPresignedUrlInput::application_name): <p>The name of the application.</p>
-    ///   - [`url_type(Option<UrlType>)`](crate::input::CreateApplicationPresignedUrlInput::url_type): <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
-    ///   - [`session_expiration_duration_in_seconds(Option<i64>)`](crate::input::CreateApplicationPresignedUrlInput::session_expiration_duration_in_seconds): <p>The duration in seconds for which the returned URL will be valid.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplicationPresignedUrl::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateApplicationPresignedUrl::set_application_name): <p>The name of the application.</p>
+    ///   - [`url_type(UrlType)`](crate::client::fluent_builders::CreateApplicationPresignedUrl::url_type) / [`set_url_type(Option<UrlType>)`](crate::client::fluent_builders::CreateApplicationPresignedUrl::set_url_type): <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+    ///   - [`session_expiration_duration_in_seconds(i64)`](crate::client::fluent_builders::CreateApplicationPresignedUrl::session_expiration_duration_in_seconds) / [`set_session_expiration_duration_in_seconds(Option<i64>)`](crate::client::fluent_builders::CreateApplicationPresignedUrl::set_session_expiration_duration_in_seconds): <p>The duration in seconds for which the returned URL will be valid.</p>
     /// - On success, responds with [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput) with field(s):
     ///   - [`authorized_url(Option<String>)`](crate::output::CreateApplicationPresignedUrlOutput::authorized_url): <p>The URL of the extension.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationPresignedUrlError>`](crate::error::CreateApplicationPresignedUrlError)
@@ -212,9 +212,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateApplicationSnapshot`](crate::client::fluent_builders::CreateApplicationSnapshot) operation.
     ///
-    /// - Takes [`CreateApplicationSnapshotInput`](crate::input::CreateApplicationSnapshotInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::CreateApplicationSnapshotInput::application_name): <p>The name of an existing application</p>
-    ///   - [`snapshot_name(Option<String>)`](crate::input::CreateApplicationSnapshotInput::snapshot_name): <p>An identifier for the application snapshot.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplicationSnapshot::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateApplicationSnapshot::set_application_name): <p>The name of an existing application</p>
+    ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplicationSnapshot::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateApplicationSnapshot::set_snapshot_name): <p>An identifier for the application snapshot.</p>
     /// - On success, responds with [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput)
 
     /// - On failure, responds with [`SdkError<CreateApplicationSnapshotError>`](crate::error::CreateApplicationSnapshotError)
@@ -225,9 +225,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
     ///
-    /// - Takes [`DeleteApplicationInput`](crate::input::DeleteApplicationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DeleteApplicationInput::application_name): <p>The name of the application to delete.</p>
-    ///   - [`create_timestamp(Option<DateTime>)`](crate::input::DeleteApplicationInput::create_timestamp): <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_name): <p>The name of the application to delete.</p>
+    ///   - [`create_timestamp(DateTime)`](crate::client::fluent_builders::DeleteApplication::create_timestamp) / [`set_create_timestamp(Option<DateTime>)`](crate::client::fluent_builders::DeleteApplication::set_create_timestamp): <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
@@ -236,11 +236,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplicationCloudWatchLoggingOption`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption) operation.
     ///
-    /// - Takes [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::input::DeleteApplicationCloudWatchLoggingOptionInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DeleteApplicationCloudWatchLoggingOptionInput::application_name): <p>The application name.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::DeleteApplicationCloudWatchLoggingOptionInput::current_application_version_id): <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    ///   - [`cloud_watch_logging_option_id(Option<String>)`](crate::input::DeleteApplicationCloudWatchLoggingOptionInput::cloud_watch_logging_option_id): <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
-    ///   - [`conditional_token(Option<String>)`](crate::input::DeleteApplicationCloudWatchLoggingOptionInput::conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption::set_application_name): <p>The application name.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption::set_current_application_version_id): <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    ///   - [`cloud_watch_logging_option_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption::cloud_watch_logging_option_id) / [`set_cloud_watch_logging_option_id(Option<String>)`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption::set_cloud_watch_logging_option_id): <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
+    ///   - [`conditional_token(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption::conditional_token) / [`set_conditional_token(Option<String>)`](crate::client::fluent_builders::DeleteApplicationCloudWatchLoggingOption::set_conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     /// - On success, responds with [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput::application_arn): <p>The application's Amazon Resource Name (ARN).</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput::application_version_id): <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
@@ -253,10 +253,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplicationInputProcessingConfiguration`](crate::client::fluent_builders::DeleteApplicationInputProcessingConfiguration) operation.
     ///
-    /// - Takes [`DeleteApplicationInputProcessingConfigurationInput`](crate::input::DeleteApplicationInputProcessingConfigurationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DeleteApplicationInputProcessingConfigurationInput::application_name): <p>The name of the application.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::DeleteApplicationInputProcessingConfigurationInput::current_application_version_id): <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
-    ///   - [`input_id(Option<String>)`](crate::input::DeleteApplicationInputProcessingConfigurationInput::input_id): <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationInputProcessingConfiguration::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplicationInputProcessingConfiguration::set_application_name): <p>The name of the application.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::DeleteApplicationInputProcessingConfiguration::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::DeleteApplicationInputProcessingConfiguration::set_current_application_version_id): <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    ///   - [`input_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationInputProcessingConfiguration::input_id) / [`set_input_id(Option<String>)`](crate::client::fluent_builders::DeleteApplicationInputProcessingConfiguration::set_input_id): <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
     /// - On success, responds with [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::DeleteApplicationInputProcessingConfigurationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::DeleteApplicationInputProcessingConfigurationOutput::application_version_id): <p>The current application version ID.</p>
@@ -268,10 +268,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplicationOutput`](crate::client::fluent_builders::DeleteApplicationOutput) operation.
     ///
-    /// - Takes [`DeleteApplicationOutputInput`](crate::input::DeleteApplicationOutputInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DeleteApplicationOutputInput::application_name): <p>The application name.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::DeleteApplicationOutputInput::current_application_version_id): <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
-    ///   - [`output_id(Option<String>)`](crate::input::DeleteApplicationOutputInput::output_id): <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationOutput::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplicationOutput::set_application_name): <p>The application name.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::DeleteApplicationOutput::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::DeleteApplicationOutput::set_current_application_version_id): <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    ///   - [`output_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationOutput::output_id) / [`set_output_id(Option<String>)`](crate::client::fluent_builders::DeleteApplicationOutput::set_output_id): <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
     /// - On success, responds with [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::DeleteApplicationOutputOutput::application_arn): <p>The application Amazon Resource Name (ARN).</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::DeleteApplicationOutputOutput::application_version_id): <p>The current application version ID.</p>
@@ -281,10 +281,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplicationReferenceDataSource`](crate::client::fluent_builders::DeleteApplicationReferenceDataSource) operation.
     ///
-    /// - Takes [`DeleteApplicationReferenceDataSourceInput`](crate::input::DeleteApplicationReferenceDataSourceInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DeleteApplicationReferenceDataSourceInput::application_name): <p>The name of an existing application.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::DeleteApplicationReferenceDataSourceInput::current_application_version_id): <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
-    ///   - [`reference_id(Option<String>)`](crate::input::DeleteApplicationReferenceDataSourceInput::reference_id): <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationReferenceDataSource::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplicationReferenceDataSource::set_application_name): <p>The name of an existing application.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::DeleteApplicationReferenceDataSource::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::DeleteApplicationReferenceDataSource::set_current_application_version_id): <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    ///   - [`reference_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationReferenceDataSource::reference_id) / [`set_reference_id(Option<String>)`](crate::client::fluent_builders::DeleteApplicationReferenceDataSource::set_reference_id): <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
     /// - On success, responds with [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::DeleteApplicationReferenceDataSourceOutput::application_arn): <p>The application Amazon Resource Name (ARN).</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::DeleteApplicationReferenceDataSourceOutput::application_version_id): <p>The updated version ID of the application.</p>
@@ -296,10 +296,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplicationSnapshot`](crate::client::fluent_builders::DeleteApplicationSnapshot) operation.
     ///
-    /// - Takes [`DeleteApplicationSnapshotInput`](crate::input::DeleteApplicationSnapshotInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DeleteApplicationSnapshotInput::application_name): <p>The name of an existing application.</p>
-    ///   - [`snapshot_name(Option<String>)`](crate::input::DeleteApplicationSnapshotInput::snapshot_name): <p>The identifier for the snapshot delete.</p>
-    ///   - [`snapshot_creation_timestamp(Option<DateTime>)`](crate::input::DeleteApplicationSnapshotInput::snapshot_creation_timestamp): <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationSnapshot::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplicationSnapshot::set_application_name): <p>The name of an existing application.</p>
+    ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationSnapshot::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::DeleteApplicationSnapshot::set_snapshot_name): <p>The identifier for the snapshot delete.</p>
+    ///   - [`snapshot_creation_timestamp(DateTime)`](crate::client::fluent_builders::DeleteApplicationSnapshot::snapshot_creation_timestamp) / [`set_snapshot_creation_timestamp(Option<DateTime>)`](crate::client::fluent_builders::DeleteApplicationSnapshot::set_snapshot_creation_timestamp): <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
     /// - On success, responds with [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApplicationSnapshotError>`](crate::error::DeleteApplicationSnapshotError)
@@ -310,11 +310,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplicationVpcConfiguration`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration) operation.
     ///
-    /// - Takes [`DeleteApplicationVpcConfigurationInput`](crate::input::DeleteApplicationVpcConfigurationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DeleteApplicationVpcConfigurationInput::application_name): <p>The name of an existing application.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::DeleteApplicationVpcConfigurationInput::current_application_version_id): <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    ///   - [`vpc_configuration_id(Option<String>)`](crate::input::DeleteApplicationVpcConfigurationInput::vpc_configuration_id): <p>The ID of the VPC configuration to delete.</p>
-    ///   - [`conditional_token(Option<String>)`](crate::input::DeleteApplicationVpcConfigurationInput::conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration::set_application_name): <p>The name of an existing application.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration::set_current_application_version_id): <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    ///   - [`vpc_configuration_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration::vpc_configuration_id) / [`set_vpc_configuration_id(Option<String>)`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration::set_vpc_configuration_id): <p>The ID of the VPC configuration to delete.</p>
+    ///   - [`conditional_token(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration::conditional_token) / [`set_conditional_token(Option<String>)`](crate::client::fluent_builders::DeleteApplicationVpcConfiguration::set_conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     /// - On success, responds with [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::DeleteApplicationVpcConfigurationOutput::application_arn): <p>The ARN of the Kinesis Data Analytics application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::output::DeleteApplicationVpcConfigurationOutput::application_version_id): <p>The updated version ID of the application.</p>
@@ -326,9 +326,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeApplication`](crate::client::fluent_builders::DescribeApplication) operation.
     ///
-    /// - Takes [`DescribeApplicationInput`](crate::input::DescribeApplicationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DescribeApplicationInput::application_name): <p>The name of the application.</p>
-    ///   - [`include_additional_details(Option<bool>)`](crate::input::DescribeApplicationInput::include_additional_details): <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DescribeApplication::set_application_name): <p>The name of the application.</p>
+    ///   - [`include_additional_details(bool)`](crate::client::fluent_builders::DescribeApplication::include_additional_details) / [`set_include_additional_details(Option<bool>)`](crate::client::fluent_builders::DescribeApplication::set_include_additional_details): <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
     /// - On success, responds with [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput) with field(s):
     ///   - [`application_detail(Option<ApplicationDetail>)`](crate::output::DescribeApplicationOutput::application_detail): <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationError>`](crate::error::DescribeApplicationError)
@@ -337,9 +337,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeApplicationSnapshot`](crate::client::fluent_builders::DescribeApplicationSnapshot) operation.
     ///
-    /// - Takes [`DescribeApplicationSnapshotInput`](crate::input::DescribeApplicationSnapshotInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DescribeApplicationSnapshotInput::application_name): <p>The name of an existing application.</p>
-    ///   - [`snapshot_name(Option<String>)`](crate::input::DescribeApplicationSnapshotInput::snapshot_name): <p>The identifier of an application snapshot. You can retrieve this value using .</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicationSnapshot::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DescribeApplicationSnapshot::set_application_name): <p>The name of an existing application.</p>
+    ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicationSnapshot::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::DescribeApplicationSnapshot::set_snapshot_name): <p>The identifier of an application snapshot. You can retrieve this value using .</p>
     /// - On success, responds with [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput) with field(s):
     ///   - [`snapshot_details(Option<SnapshotDetails>)`](crate::output::DescribeApplicationSnapshotOutput::snapshot_details): <p>An object containing information about the application snapshot.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationSnapshotError>`](crate::error::DescribeApplicationSnapshotError)
@@ -350,9 +350,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeApplicationVersion`](crate::client::fluent_builders::DescribeApplicationVersion) operation.
     ///
-    /// - Takes [`DescribeApplicationVersionInput`](crate::input::DescribeApplicationVersionInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::DescribeApplicationVersionInput::application_name): <p>The name of the application for which you want to get the version description.</p>
-    ///   - [`application_version_id(Option<i64>)`](crate::input::DescribeApplicationVersionInput::application_version_id): <p>The ID of the application version for which you want to get the description.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicationVersion::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DescribeApplicationVersion::set_application_name): <p>The name of the application for which you want to get the version description.</p>
+    ///   - [`application_version_id(i64)`](crate::client::fluent_builders::DescribeApplicationVersion::application_version_id) / [`set_application_version_id(Option<i64>)`](crate::client::fluent_builders::DescribeApplicationVersion::set_application_version_id): <p>The ID of the application version for which you want to get the description.</p>
     /// - On success, responds with [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput) with field(s):
     ///   - [`application_version_detail(Option<ApplicationDetail>)`](crate::output::DescribeApplicationVersionOutput::application_version_detail): <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationVersionError>`](crate::error::DescribeApplicationVersionError)
@@ -363,12 +363,12 @@ where
     }
     /// Constructs a fluent builder for the [`DiscoverInputSchema`](crate::client::fluent_builders::DiscoverInputSchema) operation.
     ///
-    /// - Takes [`DiscoverInputSchemaInput`](crate::input::DiscoverInputSchemaInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::DiscoverInputSchemaInput::resource_arn): <p>The Amazon Resource Name (ARN) of the streaming source.</p>
-    ///   - [`service_execution_role(Option<String>)`](crate::input::DiscoverInputSchemaInput::service_execution_role): <p>The ARN of the role that is used to access the streaming source.</p>
-    ///   - [`input_starting_position_configuration(Option<InputStartingPositionConfiguration>)`](crate::input::DiscoverInputSchemaInput::input_starting_position_configuration): <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
-    ///   - [`s3_configuration(Option<S3Configuration>)`](crate::input::DiscoverInputSchemaInput::s3_configuration): <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
-    ///   - [`input_processing_configuration(Option<InputProcessingConfiguration>)`](crate::input::DiscoverInputSchemaInput::input_processing_configuration): <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DiscoverInputSchema::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DiscoverInputSchema::set_resource_arn): <p>The Amazon Resource Name (ARN) of the streaming source.</p>
+    ///   - [`service_execution_role(impl Into<String>)`](crate::client::fluent_builders::DiscoverInputSchema::service_execution_role) / [`set_service_execution_role(Option<String>)`](crate::client::fluent_builders::DiscoverInputSchema::set_service_execution_role): <p>The ARN of the role that is used to access the streaming source.</p>
+    ///   - [`input_starting_position_configuration(InputStartingPositionConfiguration)`](crate::client::fluent_builders::DiscoverInputSchema::input_starting_position_configuration) / [`set_input_starting_position_configuration(Option<InputStartingPositionConfiguration>)`](crate::client::fluent_builders::DiscoverInputSchema::set_input_starting_position_configuration): <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
+    ///   - [`s3_configuration(S3Configuration)`](crate::client::fluent_builders::DiscoverInputSchema::s3_configuration) / [`set_s3_configuration(Option<S3Configuration>)`](crate::client::fluent_builders::DiscoverInputSchema::set_s3_configuration): <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
+    ///   - [`input_processing_configuration(InputProcessingConfiguration)`](crate::client::fluent_builders::DiscoverInputSchema::input_processing_configuration) / [`set_input_processing_configuration(Option<InputProcessingConfiguration>)`](crate::client::fluent_builders::DiscoverInputSchema::set_input_processing_configuration): <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
     /// - On success, responds with [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput) with field(s):
     ///   - [`input_schema(Option<SourceSchema>)`](crate::output::DiscoverInputSchemaOutput::input_schema): <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
     ///   - [`parsed_input_records(Option<Vec<Vec<String>>>)`](crate::output::DiscoverInputSchemaOutput::parsed_input_records): <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
@@ -380,9 +380,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
     ///
-    /// - Takes [`ListApplicationsInput`](crate::input::ListApplicationsInput) with field(s):
-    ///   - [`limit(Option<i32>)`](crate::input::ListApplicationsInput::limit): <p>The maximum number of applications to list.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationsInput::next_token): <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListApplications::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListApplications::set_limit): <p>The maximum number of applications to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
     ///   - [`application_summaries(Option<Vec<ApplicationSummary>>)`](crate::output::ListApplicationsOutput::application_summaries): <p>A list of <code>ApplicationSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
@@ -392,10 +392,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListApplicationSnapshots`](crate::client::fluent_builders::ListApplicationSnapshots) operation.
     ///
-    /// - Takes [`ListApplicationSnapshotsInput`](crate::input::ListApplicationSnapshotsInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::ListApplicationSnapshotsInput::application_name): <p>The name of an existing application.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListApplicationSnapshotsInput::limit): <p>The maximum number of application snapshots to list.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationSnapshotsInput::next_token): <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListApplicationSnapshots::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListApplicationSnapshots::set_application_name): <p>The name of an existing application.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListApplicationSnapshots::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListApplicationSnapshots::set_limit): <p>The maximum number of application snapshots to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplicationSnapshots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplicationSnapshots::set_next_token): <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
     /// - On success, responds with [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput) with field(s):
     ///   - [`snapshot_summaries(Option<Vec<SnapshotDetails>>)`](crate::output::ListApplicationSnapshotsOutput::snapshot_summaries): <p>A collection of objects containing information about the application snapshots.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListApplicationSnapshotsOutput::next_token): <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -405,10 +405,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListApplicationVersions`](crate::client::fluent_builders::ListApplicationVersions) operation.
     ///
-    /// - Takes [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::ListApplicationVersionsInput::application_name): <p>The name of the application for which you want to list all versions.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::ListApplicationVersionsInput::limit): <p>The maximum number of versions to list in this invocation of the operation.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationVersionsInput::next_token): <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListApplicationVersions::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListApplicationVersions::set_application_name): <p>The name of the application for which you want to list all versions.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListApplicationVersions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListApplicationVersions::set_limit): <p>The maximum number of versions to list in this invocation of the operation.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplicationVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplicationVersions::set_next_token): <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     /// - On success, responds with [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput) with field(s):
     ///   - [`application_version_summaries(Option<Vec<ApplicationVersionSummary>>)`](crate::output::ListApplicationVersionsOutput::application_version_summaries): <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>  <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListApplicationVersionsOutput::next_token): <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
@@ -418,8 +418,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the application for which to retrieve tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the application for which to retrieve tags.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The key-value tags assigned to the application.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -428,9 +428,9 @@ where
     }
     /// Constructs a fluent builder for the [`RollbackApplication`](crate::client::fluent_builders::RollbackApplication) operation.
     ///
-    /// - Takes [`RollbackApplicationInput`](crate::input::RollbackApplicationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::RollbackApplicationInput::application_name): <p>The name of the application.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::RollbackApplicationInput::current_application_version_id): <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::RollbackApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::RollbackApplication::set_application_name): <p>The name of the application.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::RollbackApplication::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::RollbackApplication::set_current_application_version_id): <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
     /// - On success, responds with [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput) with field(s):
     ///   - [`application_detail(Option<ApplicationDetail>)`](crate::output::RollbackApplicationOutput::application_detail): <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     /// - On failure, responds with [`SdkError<RollbackApplicationError>`](crate::error::RollbackApplicationError)
@@ -439,9 +439,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartApplication`](crate::client::fluent_builders::StartApplication) operation.
     ///
-    /// - Takes [`StartApplicationInput`](crate::input::StartApplicationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::StartApplicationInput::application_name): <p>The name of the application.</p>
-    ///   - [`run_configuration(Option<RunConfiguration>)`](crate::input::StartApplicationInput::run_configuration): <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::StartApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::StartApplication::set_application_name): <p>The name of the application.</p>
+    ///   - [`run_configuration(RunConfiguration)`](crate::client::fluent_builders::StartApplication::run_configuration) / [`set_run_configuration(Option<RunConfiguration>)`](crate::client::fluent_builders::StartApplication::set_run_configuration): <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
     /// - On success, responds with [`StartApplicationOutput`](crate::output::StartApplicationOutput)
 
     /// - On failure, responds with [`SdkError<StartApplicationError>`](crate::error::StartApplicationError)
@@ -450,9 +450,9 @@ where
     }
     /// Constructs a fluent builder for the [`StopApplication`](crate::client::fluent_builders::StopApplication) operation.
     ///
-    /// - Takes [`StopApplicationInput`](crate::input::StopApplicationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::StopApplicationInput::application_name): <p>The name of the running application to stop.</p>
-    ///   - [`force(Option<bool>)`](crate::input::StopApplicationInput::force): <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>   <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>  </note>  <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>  <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::StopApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::StopApplication::set_application_name): <p>The name of the running application to stop.</p>
+    ///   - [`force(bool)`](crate::client::fluent_builders::StopApplication::force) / [`set_force(Option<bool>)`](crate::client::fluent_builders::StopApplication::set_force): <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>   <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>  </note>  <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>  <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
     /// - On success, responds with [`StopApplicationOutput`](crate::output::StopApplicationOutput)
 
     /// - On failure, responds with [`SdkError<StopApplicationError>`](crate::error::StopApplicationError)
@@ -461,9 +461,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the application to assign the tags.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The key-value tags to assign to the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the application to assign the tags.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The key-value tags to assign to the application.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -472,9 +472,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the Kinesis Data Analytics application from which to remove the tags.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of keys of tags to remove from the specified application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the Kinesis Data Analytics application from which to remove the tags.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of keys of tags to remove from the specified application.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -483,14 +483,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
     ///
-    /// - Takes [`UpdateApplicationInput`](crate::input::UpdateApplicationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::UpdateApplicationInput::application_name): <p>The name of the application to update.</p>
-    ///   - [`current_application_version_id(Option<i64>)`](crate::input::UpdateApplicationInput::current_application_version_id): <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    ///   - [`application_configuration_update(Option<ApplicationConfigurationUpdate>)`](crate::input::UpdateApplicationInput::application_configuration_update): <p>Describes application configuration updates.</p>
-    ///   - [`service_execution_role_update(Option<String>)`](crate::input::UpdateApplicationInput::service_execution_role_update): <p>Describes updates to the service execution role.</p>
-    ///   - [`run_configuration_update(Option<RunConfigurationUpdate>)`](crate::input::UpdateApplicationInput::run_configuration_update): <p>Describes updates to the application's starting parameters.</p>
-    ///   - [`cloud_watch_logging_option_updates(Option<Vec<CloudWatchLoggingOptionUpdate>>)`](crate::input::UpdateApplicationInput::cloud_watch_logging_option_updates): <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    ///   - [`conditional_token(Option<String>)`](crate::input::UpdateApplicationInput::conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_name): <p>The name of the application to update.</p>
+    ///   - [`current_application_version_id(i64)`](crate::client::fluent_builders::UpdateApplication::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::client::fluent_builders::UpdateApplication::set_current_application_version_id): <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    ///   - [`application_configuration_update(ApplicationConfigurationUpdate)`](crate::client::fluent_builders::UpdateApplication::application_configuration_update) / [`set_application_configuration_update(Option<ApplicationConfigurationUpdate>)`](crate::client::fluent_builders::UpdateApplication::set_application_configuration_update): <p>Describes application configuration updates.</p>
+    ///   - [`service_execution_role_update(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::service_execution_role_update) / [`set_service_execution_role_update(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_service_execution_role_update): <p>Describes updates to the service execution role.</p>
+    ///   - [`run_configuration_update(RunConfigurationUpdate)`](crate::client::fluent_builders::UpdateApplication::run_configuration_update) / [`set_run_configuration_update(Option<RunConfigurationUpdate>)`](crate::client::fluent_builders::UpdateApplication::set_run_configuration_update): <p>Describes updates to the application's starting parameters.</p>
+    ///   - [`cloud_watch_logging_option_updates(Vec<CloudWatchLoggingOptionUpdate>)`](crate::client::fluent_builders::UpdateApplication::cloud_watch_logging_option_updates) / [`set_cloud_watch_logging_option_updates(Option<Vec<CloudWatchLoggingOptionUpdate>>)`](crate::client::fluent_builders::UpdateApplication::set_cloud_watch_logging_option_updates): <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
+    ///   - [`conditional_token(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::conditional_token) / [`set_conditional_token(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_conditional_token): <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
     ///   - [`application_detail(Option<ApplicationDetail>)`](crate::output::UpdateApplicationOutput::application_detail): <p>Describes application updates.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
@@ -499,9 +499,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApplicationMaintenanceConfiguration`](crate::client::fluent_builders::UpdateApplicationMaintenanceConfiguration) operation.
     ///
-    /// - Takes [`UpdateApplicationMaintenanceConfigurationInput`](crate::input::UpdateApplicationMaintenanceConfigurationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::UpdateApplicationMaintenanceConfigurationInput::application_name): <p>The name of the application for which you want to update the maintenance configuration.</p>
-    ///   - [`application_maintenance_configuration_update(Option<ApplicationMaintenanceConfigurationUpdate>)`](crate::input::UpdateApplicationMaintenanceConfigurationInput::application_maintenance_configuration_update): <p>Describes the application maintenance configuration update.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplicationMaintenanceConfiguration::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::UpdateApplicationMaintenanceConfiguration::set_application_name): <p>The name of the application for which you want to update the maintenance configuration.</p>
+    ///   - [`application_maintenance_configuration_update(ApplicationMaintenanceConfigurationUpdate)`](crate::client::fluent_builders::UpdateApplicationMaintenanceConfiguration::application_maintenance_configuration_update) / [`set_application_maintenance_configuration_update(Option<ApplicationMaintenanceConfigurationUpdate>)`](crate::client::fluent_builders::UpdateApplicationMaintenanceConfiguration::set_application_maintenance_configuration_update): <p>Describes the application maintenance configuration update.</p>
     /// - On success, responds with [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::output::UpdateApplicationMaintenanceConfigurationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
     ///   - [`application_maintenance_configuration_description(Option<ApplicationMaintenanceConfigurationDescription>)`](crate::output::UpdateApplicationMaintenanceConfigurationOutput::application_maintenance_configuration_description): <p>The application maintenance configuration description after the update.</p>

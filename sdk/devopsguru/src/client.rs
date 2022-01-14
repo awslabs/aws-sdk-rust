@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`AddNotificationChannel`](crate::client::fluent_builders::AddNotificationChannel) operation.
     ///
-    /// - Takes [`AddNotificationChannelInput`](crate::input::AddNotificationChannelInput) with field(s):
-    ///   - [`config(Option<NotificationChannelConfig>)`](crate::input::AddNotificationChannelInput::config): <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// - The fluent builder is configurable:
+    ///   - [`config(NotificationChannelConfig)`](crate::client::fluent_builders::AddNotificationChannel::config) / [`set_config(Option<NotificationChannelConfig>)`](crate::client::fluent_builders::AddNotificationChannel::set_config): <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
     /// - On success, responds with [`AddNotificationChannelOutput`](crate::output::AddNotificationChannelOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::AddNotificationChannelOutput::id): <p> The ID of the added notification channel. </p>
     /// - On failure, responds with [`SdkError<AddNotificationChannelError>`](crate::error::AddNotificationChannelError)
@@ -95,7 +95,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAccountHealth`](crate::client::fluent_builders::DescribeAccountHealth) operation.
     ///
-    /// - Takes [`DescribeAccountHealthInput`](crate::input::DescribeAccountHealthInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAccountHealth::send) it.
 
     /// - On success, responds with [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput) with field(s):
     ///   - [`open_reactive_insights(i32)`](crate::output::DescribeAccountHealthOutput::open_reactive_insights): <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
@@ -108,9 +108,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAccountOverview`](crate::client::fluent_builders::DescribeAccountOverview) operation.
     ///
-    /// - Takes [`DescribeAccountOverviewInput`](crate::input::DescribeAccountOverviewInput) with field(s):
-    ///   - [`from_time(Option<DateTime>)`](crate::input::DescribeAccountOverviewInput::from_time): <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    ///   - [`to_time(Option<DateTime>)`](crate::input::DescribeAccountOverviewInput::to_time): <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`from_time(DateTime)`](crate::client::fluent_builders::DescribeAccountOverview::from_time) / [`set_from_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeAccountOverview::set_from_time): <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    ///   - [`to_time(DateTime)`](crate::client::fluent_builders::DescribeAccountOverview::to_time) / [`set_to_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeAccountOverview::set_to_time): <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     /// - On success, responds with [`DescribeAccountOverviewOutput`](crate::output::DescribeAccountOverviewOutput) with field(s):
     ///   - [`reactive_insights(i32)`](crate::output::DescribeAccountOverviewOutput::reactive_insights): <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
     ///   - [`proactive_insights(i32)`](crate::output::DescribeAccountOverviewOutput::proactive_insights): <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
@@ -121,9 +121,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAnomaly`](crate::client::fluent_builders::DescribeAnomaly) operation.
     ///
-    /// - Takes [`DescribeAnomalyInput`](crate::input::DescribeAnomalyInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DescribeAnomalyInput::id): <p> The ID of the anomaly. </p>
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeAnomalyInput::account_id): <p>The ID of the member account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeAnomaly::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeAnomaly::set_id): <p> The ID of the anomaly. </p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAnomaly::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeAnomaly::set_account_id): <p>The ID of the member account.</p>
     /// - On success, responds with [`DescribeAnomalyOutput`](crate::output::DescribeAnomalyOutput) with field(s):
     ///   - [`proactive_anomaly(Option<ProactiveAnomaly>)`](crate::output::DescribeAnomalyOutput::proactive_anomaly): <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     ///   - [`reactive_anomaly(Option<ReactiveAnomaly>)`](crate::output::DescribeAnomalyOutput::reactive_anomaly): <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
@@ -133,8 +133,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFeedback`](crate::client::fluent_builders::DescribeFeedback) operation.
     ///
-    /// - Takes [`DescribeFeedbackInput`](crate::input::DescribeFeedbackInput) with field(s):
-    ///   - [`insight_id(Option<String>)`](crate::input::DescribeFeedbackInput::insight_id): <p> The ID of the insight for which the feedback was provided. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFeedback::insight_id) / [`set_insight_id(Option<String>)`](crate::client::fluent_builders::DescribeFeedback::set_insight_id): <p> The ID of the insight for which the feedback was provided. </p>
     /// - On success, responds with [`DescribeFeedbackOutput`](crate::output::DescribeFeedbackOutput) with field(s):
     ///   - [`insight_feedback(Option<InsightFeedback>)`](crate::output::DescribeFeedbackOutput::insight_feedback): <p> Information about insight feedback received from a customer. </p>
     /// - On failure, responds with [`SdkError<DescribeFeedbackError>`](crate::error::DescribeFeedbackError)
@@ -143,9 +143,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeInsight`](crate::client::fluent_builders::DescribeInsight) operation.
     ///
-    /// - Takes [`DescribeInsightInput`](crate::input::DescribeInsightInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::DescribeInsightInput::id): <p> The ID of the insight. </p>
-    ///   - [`account_id(Option<String>)`](crate::input::DescribeInsightInput::account_id): <p>The ID of the member account in the organization.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeInsight::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeInsight::set_id): <p> The ID of the insight. </p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInsight::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeInsight::set_account_id): <p>The ID of the member account in the organization.</p>
     /// - On success, responds with [`DescribeInsightOutput`](crate::output::DescribeInsightOutput) with field(s):
     ///   - [`proactive_insight(Option<ProactiveInsight>)`](crate::output::DescribeInsightOutput::proactive_insight): <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
     ///   - [`reactive_insight(Option<ReactiveInsight>)`](crate::output::DescribeInsightOutput::reactive_insight): <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
@@ -155,9 +155,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeOrganizationHealth`](crate::client::fluent_builders::DescribeOrganizationHealth) operation.
     ///
-    /// - Takes [`DescribeOrganizationHealthInput`](crate::input::DescribeOrganizationHealthInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DescribeOrganizationHealthInput::account_ids): <p>The ID of the Amazon Web Services account.</p>
-    ///   - [`organizational_unit_ids(Option<Vec<String>>)`](crate::input::DescribeOrganizationHealthInput::organizational_unit_ids): <p>The ID of the organizational unit.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationHealth::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationHealth::set_account_ids): <p>The ID of the Amazon Web Services account.</p>
+    ///   - [`organizational_unit_ids(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationHealth::organizational_unit_ids) / [`set_organizational_unit_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationHealth::set_organizational_unit_ids): <p>The ID of the organizational unit.</p>
     /// - On success, responds with [`DescribeOrganizationHealthOutput`](crate::output::DescribeOrganizationHealthOutput) with field(s):
     ///   - [`open_reactive_insights(i32)`](crate::output::DescribeOrganizationHealthOutput::open_reactive_insights): <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     ///   - [`open_proactive_insights(i32)`](crate::output::DescribeOrganizationHealthOutput::open_proactive_insights): <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
@@ -171,11 +171,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeOrganizationOverview`](crate::client::fluent_builders::DescribeOrganizationOverview) operation.
     ///
-    /// - Takes [`DescribeOrganizationOverviewInput`](crate::input::DescribeOrganizationOverviewInput) with field(s):
-    ///   - [`from_time(Option<DateTime>)`](crate::input::DescribeOrganizationOverviewInput::from_time): <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    ///   - [`to_time(Option<DateTime>)`](crate::input::DescribeOrganizationOverviewInput::to_time): <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DescribeOrganizationOverviewInput::account_ids): <p>The ID of the Amazon Web Services account.</p>
-    ///   - [`organizational_unit_ids(Option<Vec<String>>)`](crate::input::DescribeOrganizationOverviewInput::organizational_unit_ids): <p>The ID of the organizational unit.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`from_time(DateTime)`](crate::client::fluent_builders::DescribeOrganizationOverview::from_time) / [`set_from_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeOrganizationOverview::set_from_time): <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    ///   - [`to_time(DateTime)`](crate::client::fluent_builders::DescribeOrganizationOverview::to_time) / [`set_to_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeOrganizationOverview::set_to_time): <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationOverview::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationOverview::set_account_ids): <p>The ID of the Amazon Web Services account.</p>
+    ///   - [`organizational_unit_ids(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationOverview::organizational_unit_ids) / [`set_organizational_unit_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationOverview::set_organizational_unit_ids): <p>The ID of the organizational unit.</p>
     /// - On success, responds with [`DescribeOrganizationOverviewOutput`](crate::output::DescribeOrganizationOverviewOutput) with field(s):
     ///   - [`reactive_insights(i32)`](crate::output::DescribeOrganizationOverviewOutput::reactive_insights): <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     ///   - [`proactive_insights(i32)`](crate::output::DescribeOrganizationOverviewOutput::proactive_insights): <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
@@ -186,14 +186,14 @@ where
         fluent_builders::DescribeOrganizationOverview::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeOrganizationResourceCollectionHealth`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::into_paginator).
     ///
-    /// - Takes [`DescribeOrganizationResourceCollectionHealthInput`](crate::input::DescribeOrganizationResourceCollectionHealthInput) with field(s):
-    ///   - [`organization_resource_collection_type(Option<OrganizationResourceCollectionType>)`](crate::input::DescribeOrganizationResourceCollectionHealthInput::organization_resource_collection_type): <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DescribeOrganizationResourceCollectionHealthInput::account_ids): <p>The ID of the Amazon Web Services account.</p>
-    ///   - [`organizational_unit_ids(Option<Vec<String>>)`](crate::input::DescribeOrganizationResourceCollectionHealthInput::organizational_unit_ids): <p>The ID of the organizational unit.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeOrganizationResourceCollectionHealthInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeOrganizationResourceCollectionHealthInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`organization_resource_collection_type(OrganizationResourceCollectionType)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::organization_resource_collection_type) / [`set_organization_resource_collection_type(Option<OrganizationResourceCollectionType>)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::set_organization_resource_collection_type): <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::set_account_ids): <p>The ID of the Amazon Web Services account.</p>
+    ///   - [`organizational_unit_ids(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::organizational_unit_ids) / [`set_organizational_unit_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::set_organizational_unit_ids): <p>The ID of the organizational unit.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// - On success, responds with [`DescribeOrganizationResourceCollectionHealthOutput`](crate::output::DescribeOrganizationResourceCollectionHealthOutput) with field(s):
     ///   - [`cloud_formation(Option<Vec<CloudFormationHealth>>)`](crate::output::DescribeOrganizationResourceCollectionHealthOutput::cloud_formation): <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
     ///   - [`service(Option<Vec<ServiceHealth>>)`](crate::output::DescribeOrganizationResourceCollectionHealthOutput::service): <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
@@ -207,11 +207,11 @@ where
         fluent_builders::DescribeOrganizationResourceCollectionHealth::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeResourceCollectionHealth`](crate::client::fluent_builders::DescribeResourceCollectionHealth) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeResourceCollectionHealth::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeResourceCollectionHealth::into_paginator).
     ///
-    /// - Takes [`DescribeResourceCollectionHealthInput`](crate::input::DescribeResourceCollectionHealthInput) with field(s):
-    ///   - [`resource_collection_type(Option<ResourceCollectionType>)`](crate::input::DescribeResourceCollectionHealthInput::resource_collection_type): <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeResourceCollectionHealthInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_collection_type(ResourceCollectionType)`](crate::client::fluent_builders::DescribeResourceCollectionHealth::resource_collection_type) / [`set_resource_collection_type(Option<ResourceCollectionType>)`](crate::client::fluent_builders::DescribeResourceCollectionHealth::set_resource_collection_type): <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeResourceCollectionHealth::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeResourceCollectionHealth::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeResourceCollectionHealthOutput`](crate::output::DescribeResourceCollectionHealthOutput) with field(s):
     ///   - [`cloud_formation(Option<Vec<CloudFormationHealth>>)`](crate::output::DescribeResourceCollectionHealthOutput::cloud_formation): <p> The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information. </p>
     ///   - [`service(Option<Vec<ServiceHealth>>)`](crate::output::DescribeResourceCollectionHealthOutput::service): <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
@@ -225,7 +225,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeServiceIntegration`](crate::client::fluent_builders::DescribeServiceIntegration) operation.
     ///
-    /// - Takes [`DescribeServiceIntegrationInput`](crate::input::DescribeServiceIntegrationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeServiceIntegration::send) it.
 
     /// - On success, responds with [`DescribeServiceIntegrationOutput`](crate::output::DescribeServiceIntegrationOutput) with field(s):
     ///   - [`service_integration(Option<ServiceIntegrationConfig>)`](crate::output::DescribeServiceIntegrationOutput::service_integration): <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
@@ -236,10 +236,10 @@ where
         fluent_builders::DescribeServiceIntegration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetCostEstimation`](crate::client::fluent_builders::GetCostEstimation) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCostEstimation::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetCostEstimation::into_paginator).
     ///
-    /// - Takes [`GetCostEstimationInput`](crate::input::GetCostEstimationInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::GetCostEstimationInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCostEstimation::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCostEstimation::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`GetCostEstimationOutput`](crate::output::GetCostEstimationOutput) with field(s):
     ///   - [`resource_collection(Option<CostEstimationResourceCollectionFilter>)`](crate::output::GetCostEstimationOutput::resource_collection): <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
     ///   - [`status(Option<CostEstimationStatus>)`](crate::output::GetCostEstimationOutput::status): <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
@@ -252,11 +252,11 @@ where
         fluent_builders::GetCostEstimation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetResourceCollection`](crate::client::fluent_builders::GetResourceCollection) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceCollection::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetResourceCollection::into_paginator).
     ///
-    /// - Takes [`GetResourceCollectionInput`](crate::input::GetResourceCollectionInput) with field(s):
-    ///   - [`resource_collection_type(Option<ResourceCollectionType>)`](crate::input::GetResourceCollectionInput::resource_collection_type): <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetResourceCollectionInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_collection_type(ResourceCollectionType)`](crate::client::fluent_builders::GetResourceCollection::resource_collection_type) / [`set_resource_collection_type(Option<ResourceCollectionType>)`](crate::client::fluent_builders::GetResourceCollection::set_resource_collection_type): <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetResourceCollection::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetResourceCollection::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`GetResourceCollectionOutput`](crate::output::GetResourceCollectionOutput) with field(s):
     ///   - [`resource_collection(Option<ResourceCollectionFilter>)`](crate::output::GetResourceCollectionOutput::resource_collection): <p> The requested list of Amazon Web Services resource collections. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     ///   - [`next_token(Option<String>)`](crate::output::GetResourceCollectionOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -265,14 +265,14 @@ where
         fluent_builders::GetResourceCollection::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAnomaliesForInsight`](crate::client::fluent_builders::ListAnomaliesForInsight) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomaliesForInsight::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAnomaliesForInsight::into_paginator).
     ///
-    /// - Takes [`ListAnomaliesForInsightInput`](crate::input::ListAnomaliesForInsightInput) with field(s):
-    ///   - [`insight_id(Option<String>)`](crate::input::ListAnomaliesForInsightInput::insight_id): <p> The ID of the insight. The returned anomalies belong to this insight. </p>
-    ///   - [`start_time_range(Option<StartTimeRange>)`](crate::input::ListAnomaliesForInsightInput::start_time_range): <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAnomaliesForInsightInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAnomaliesForInsightInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`account_id(Option<String>)`](crate::input::ListAnomaliesForInsightInput::account_id): <p>The ID of the Amazon Web Services account. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_id(impl Into<String>)`](crate::client::fluent_builders::ListAnomaliesForInsight::insight_id) / [`set_insight_id(Option<String>)`](crate::client::fluent_builders::ListAnomaliesForInsight::set_insight_id): <p> The ID of the insight. The returned anomalies belong to this insight. </p>
+    ///   - [`start_time_range(StartTimeRange)`](crate::client::fluent_builders::ListAnomaliesForInsight::start_time_range) / [`set_start_time_range(Option<StartTimeRange>)`](crate::client::fluent_builders::ListAnomaliesForInsight::set_start_time_range): <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnomaliesForInsight::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnomaliesForInsight::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnomaliesForInsight::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnomaliesForInsight::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAnomaliesForInsight::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAnomaliesForInsight::set_account_id): <p>The ID of the Amazon Web Services account. </p>
     /// - On success, responds with [`ListAnomaliesForInsightOutput`](crate::output::ListAnomaliesForInsightOutput) with field(s):
     ///   - [`proactive_anomalies(Option<Vec<ProactiveAnomalySummary>>)`](crate::output::ListAnomaliesForInsightOutput::proactive_anomalies): <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
     ///   - [`reactive_anomalies(Option<Vec<ReactiveAnomalySummary>>)`](crate::output::ListAnomaliesForInsightOutput::reactive_anomalies): <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
@@ -282,13 +282,13 @@ where
         fluent_builders::ListAnomaliesForInsight::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEvents`](crate::client::fluent_builders::ListEvents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEvents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEvents::into_paginator).
     ///
-    /// - Takes [`ListEventsInput`](crate::input::ListEventsInput) with field(s):
-    ///   - [`filters(Option<ListEventsFilters>)`](crate::input::ListEventsInput::filters): <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEventsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListEventsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`account_id(Option<String>)`](crate::input::ListEventsInput::account_id): <p>The ID of the Amazon Web Services account. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`filters(ListEventsFilters)`](crate::client::fluent_builders::ListEvents::filters) / [`set_filters(Option<ListEventsFilters>)`](crate::client::fluent_builders::ListEvents::set_filters): <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEvents::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEvents::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListEvents::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListEvents::set_account_id): <p>The ID of the Amazon Web Services account. </p>
     /// - On success, responds with [`ListEventsOutput`](crate::output::ListEventsOutput) with field(s):
     ///   - [`events(Option<Vec<Event>>)`](crate::output::ListEventsOutput::events): <p> A list of the requested events. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEventsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -297,12 +297,12 @@ where
         fluent_builders::ListEvents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListInsights`](crate::client::fluent_builders::ListInsights) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInsights::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInsights::into_paginator).
     ///
-    /// - Takes [`ListInsightsInput`](crate::input::ListInsightsInput) with field(s):
-    ///   - [`status_filter(Option<ListInsightsStatusFilter>)`](crate::input::ListInsightsInput::status_filter): <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListInsightsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListInsightsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`status_filter(ListInsightsStatusFilter)`](crate::client::fluent_builders::ListInsights::status_filter) / [`set_status_filter(Option<ListInsightsStatusFilter>)`](crate::client::fluent_builders::ListInsights::set_status_filter): <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInsights::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInsights::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInsights::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInsights::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`ListInsightsOutput`](crate::output::ListInsightsOutput) with field(s):
     ///   - [`proactive_insights(Option<Vec<ProactiveInsightSummary>>)`](crate::output::ListInsightsOutput::proactive_insights): <p> The returned list of proactive insights. </p>
     ///   - [`reactive_insights(Option<Vec<ReactiveInsightSummary>>)`](crate::output::ListInsightsOutput::reactive_insights): <p> The returned list of reactive insights. </p>
@@ -312,10 +312,10 @@ where
         fluent_builders::ListInsights::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListNotificationChannels`](crate::client::fluent_builders::ListNotificationChannels) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotificationChannels::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNotificationChannels::into_paginator).
     ///
-    /// - Takes [`ListNotificationChannelsInput`](crate::input::ListNotificationChannelsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListNotificationChannelsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNotificationChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNotificationChannels::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`ListNotificationChannelsOutput`](crate::output::ListNotificationChannelsOutput) with field(s):
     ///   - [`channels(Option<Vec<NotificationChannel>>)`](crate::output::ListNotificationChannelsOutput::channels): <p> An array that contains the requested notification channels. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListNotificationChannelsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -324,14 +324,14 @@ where
         fluent_builders::ListNotificationChannels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListOrganizationInsights`](crate::client::fluent_builders::ListOrganizationInsights) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationInsights::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationInsights::into_paginator).
     ///
-    /// - Takes [`ListOrganizationInsightsInput`](crate::input::ListOrganizationInsightsInput) with field(s):
-    ///   - [`status_filter(Option<ListInsightsStatusFilter>)`](crate::input::ListOrganizationInsightsInput::status_filter): <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListOrganizationInsightsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::ListOrganizationInsightsInput::account_ids): <p>The ID of the Amazon Web Services account. </p>
-    ///   - [`organizational_unit_ids(Option<Vec<String>>)`](crate::input::ListOrganizationInsightsInput::organizational_unit_ids): <p>The ID of the organizational unit.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListOrganizationInsightsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`status_filter(ListInsightsStatusFilter)`](crate::client::fluent_builders::ListOrganizationInsights::status_filter) / [`set_status_filter(Option<ListInsightsStatusFilter>)`](crate::client::fluent_builders::ListOrganizationInsights::set_status_filter): <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOrganizationInsights::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOrganizationInsights::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::ListOrganizationInsights::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListOrganizationInsights::set_account_ids): <p>The ID of the Amazon Web Services account. </p>
+    ///   - [`organizational_unit_ids(Vec<String>)`](crate::client::fluent_builders::ListOrganizationInsights::organizational_unit_ids) / [`set_organizational_unit_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListOrganizationInsights::set_organizational_unit_ids): <p>The ID of the organizational unit.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationInsights::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationInsights::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`ListOrganizationInsightsOutput`](crate::output::ListOrganizationInsightsOutput) with field(s):
     ///   - [`proactive_insights(Option<Vec<ProactiveOrganizationInsightSummary>>)`](crate::output::ListOrganizationInsightsOutput::proactive_insights): <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     ///   - [`reactive_insights(Option<Vec<ReactiveOrganizationInsightSummary>>)`](crate::output::ListOrganizationInsightsOutput::reactive_insights): <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
@@ -341,13 +341,13 @@ where
         fluent_builders::ListOrganizationInsights::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRecommendations`](crate::client::fluent_builders::ListRecommendations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecommendations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecommendations::into_paginator).
     ///
-    /// - Takes [`ListRecommendationsInput`](crate::input::ListRecommendationsInput) with field(s):
-    ///   - [`insight_id(Option<String>)`](crate::input::ListRecommendationsInput::insight_id): <p> The ID of the requested insight. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListRecommendationsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`locale(Option<Locale>)`](crate::input::ListRecommendationsInput::locale): <p>A locale that specifies the language to use for recommendations.</p>
-    ///   - [`account_id(Option<String>)`](crate::input::ListRecommendationsInput::account_id): <p>The ID of the Amazon Web Services account. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_id(impl Into<String>)`](crate::client::fluent_builders::ListRecommendations::insight_id) / [`set_insight_id(Option<String>)`](crate::client::fluent_builders::ListRecommendations::set_insight_id): <p> The ID of the requested insight. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecommendations::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`locale(Locale)`](crate::client::fluent_builders::ListRecommendations::locale) / [`set_locale(Option<Locale>)`](crate::client::fluent_builders::ListRecommendations::set_locale): <p>A locale that specifies the language to use for recommendations.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListRecommendations::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListRecommendations::set_account_id): <p>The ID of the Amazon Web Services account. </p>
     /// - On success, responds with [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput) with field(s):
     ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::output::ListRecommendationsOutput::recommendations): <p> An array of the requested recommendations. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRecommendationsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -357,8 +357,8 @@ where
     }
     /// Constructs a fluent builder for the [`PutFeedback`](crate::client::fluent_builders::PutFeedback) operation.
     ///
-    /// - Takes [`PutFeedbackInput`](crate::input::PutFeedbackInput) with field(s):
-    ///   - [`insight_feedback(Option<InsightFeedback>)`](crate::input::PutFeedbackInput::insight_feedback): <p> The feedback from customers is about the recommendations in this insight. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`insight_feedback(InsightFeedback)`](crate::client::fluent_builders::PutFeedback::insight_feedback) / [`set_insight_feedback(Option<InsightFeedback>)`](crate::client::fluent_builders::PutFeedback::set_insight_feedback): <p> The feedback from customers is about the recommendations in this insight. </p>
     /// - On success, responds with [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
 
     /// - On failure, responds with [`SdkError<PutFeedbackError>`](crate::error::PutFeedbackError)
@@ -367,8 +367,8 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveNotificationChannel`](crate::client::fluent_builders::RemoveNotificationChannel) operation.
     ///
-    /// - Takes [`RemoveNotificationChannelInput`](crate::input::RemoveNotificationChannelInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::RemoveNotificationChannelInput::id): <p> The ID of the notification channel to be removed. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::RemoveNotificationChannel::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::RemoveNotificationChannel::set_id): <p> The ID of the notification channel to be removed. </p>
     /// - On success, responds with [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput)
 
     /// - On failure, responds with [`SdkError<RemoveNotificationChannelError>`](crate::error::RemoveNotificationChannelError)
@@ -378,14 +378,14 @@ where
         fluent_builders::RemoveNotificationChannel::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SearchInsights`](crate::client::fluent_builders::SearchInsights) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchInsights::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchInsights::into_paginator).
     ///
-    /// - Takes [`SearchInsightsInput`](crate::input::SearchInsightsInput) with field(s):
-    ///   - [`start_time_range(Option<StartTimeRange>)`](crate::input::SearchInsightsInput::start_time_range): <p> The start of the time range passed in. Returned insights occurred after this time. </p>
-    ///   - [`filters(Option<SearchInsightsFilters>)`](crate::input::SearchInsightsInput::filters): <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchInsightsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::SearchInsightsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`r#type(Option<InsightType>)`](crate::input::SearchInsightsInput::type): <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// - The fluent builder is configurable:
+    ///   - [`start_time_range(StartTimeRange)`](crate::client::fluent_builders::SearchInsights::start_time_range) / [`set_start_time_range(Option<StartTimeRange>)`](crate::client::fluent_builders::SearchInsights::set_start_time_range): <p> The start of the time range passed in. Returned insights occurred after this time. </p>
+    ///   - [`filters(SearchInsightsFilters)`](crate::client::fluent_builders::SearchInsights::filters) / [`set_filters(Option<SearchInsightsFilters>)`](crate::client::fluent_builders::SearchInsights::set_filters): <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchInsights::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchInsights::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchInsights::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchInsights::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`r#type(InsightType)`](crate::client::fluent_builders::SearchInsights::r#type) / [`set_type(Option<InsightType>)`](crate::client::fluent_builders::SearchInsights::set_type): <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     /// - On success, responds with [`SearchInsightsOutput`](crate::output::SearchInsightsOutput) with field(s):
     ///   - [`proactive_insights(Option<Vec<ProactiveInsightSummary>>)`](crate::output::SearchInsightsOutput::proactive_insights): <p> The returned proactive insights. </p>
     ///   - [`reactive_insights(Option<Vec<ReactiveInsightSummary>>)`](crate::output::SearchInsightsOutput::reactive_insights): <p> The returned reactive insights. </p>
@@ -395,15 +395,15 @@ where
         fluent_builders::SearchInsights::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`SearchOrganizationInsights`](crate::client::fluent_builders::SearchOrganizationInsights) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchOrganizationInsights::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchOrganizationInsights::into_paginator).
     ///
-    /// - Takes [`SearchOrganizationInsightsInput`](crate::input::SearchOrganizationInsightsInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::SearchOrganizationInsightsInput::account_ids): <p>The ID of the Amazon Web Services account. </p>
-    ///   - [`start_time_range(Option<StartTimeRange>)`](crate::input::SearchOrganizationInsightsInput::start_time_range): <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
-    ///   - [`filters(Option<SearchOrganizationInsightsFilters>)`](crate::input::SearchOrganizationInsightsInput::filters): <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchOrganizationInsightsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::SearchOrganizationInsightsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`r#type(Option<InsightType>)`](crate::input::SearchOrganizationInsightsInput::type): <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::SearchOrganizationInsights::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::SearchOrganizationInsights::set_account_ids): <p>The ID of the Amazon Web Services account. </p>
+    ///   - [`start_time_range(StartTimeRange)`](crate::client::fluent_builders::SearchOrganizationInsights::start_time_range) / [`set_start_time_range(Option<StartTimeRange>)`](crate::client::fluent_builders::SearchOrganizationInsights::set_start_time_range): <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
+    ///   - [`filters(SearchOrganizationInsightsFilters)`](crate::client::fluent_builders::SearchOrganizationInsights::filters) / [`set_filters(Option<SearchOrganizationInsightsFilters>)`](crate::client::fluent_builders::SearchOrganizationInsights::set_filters): <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchOrganizationInsights::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchOrganizationInsights::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchOrganizationInsights::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchOrganizationInsights::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`r#type(InsightType)`](crate::client::fluent_builders::SearchOrganizationInsights::r#type) / [`set_type(Option<InsightType>)`](crate::client::fluent_builders::SearchOrganizationInsights::set_type): <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     /// - On success, responds with [`SearchOrganizationInsightsOutput`](crate::output::SearchOrganizationInsightsOutput) with field(s):
     ///   - [`proactive_insights(Option<Vec<ProactiveInsightSummary>>)`](crate::output::SearchOrganizationInsightsOutput::proactive_insights): <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     ///   - [`reactive_insights(Option<Vec<ReactiveInsightSummary>>)`](crate::output::SearchOrganizationInsightsOutput::reactive_insights): <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
@@ -416,9 +416,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartCostEstimation`](crate::client::fluent_builders::StartCostEstimation) operation.
     ///
-    /// - Takes [`StartCostEstimationInput`](crate::input::StartCostEstimationInput) with field(s):
-    ///   - [`resource_collection(Option<CostEstimationResourceCollectionFilter>)`](crate::input::StartCostEstimationInput::resource_collection): <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::StartCostEstimationInput::client_token): <p>The idempotency token used to identify each cost estimate request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_collection(CostEstimationResourceCollectionFilter)`](crate::client::fluent_builders::StartCostEstimation::resource_collection) / [`set_resource_collection(Option<CostEstimationResourceCollectionFilter>)`](crate::client::fluent_builders::StartCostEstimation::set_resource_collection): <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartCostEstimation::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartCostEstimation::set_client_token): <p>The idempotency token used to identify each cost estimate request.</p>
     /// - On success, responds with [`StartCostEstimationOutput`](crate::output::StartCostEstimationOutput)
 
     /// - On failure, responds with [`SdkError<StartCostEstimationError>`](crate::error::StartCostEstimationError)
@@ -427,9 +427,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateResourceCollection`](crate::client::fluent_builders::UpdateResourceCollection) operation.
     ///
-    /// - Takes [`UpdateResourceCollectionInput`](crate::input::UpdateResourceCollectionInput) with field(s):
-    ///   - [`action(Option<UpdateResourceCollectionAction>)`](crate::input::UpdateResourceCollectionInput::action): <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
-    ///   - [`resource_collection(Option<UpdateResourceCollectionFilter>)`](crate::input::UpdateResourceCollectionInput::resource_collection): <p> Contains information used to update a collection of Amazon Web Services resources. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`action(UpdateResourceCollectionAction)`](crate::client::fluent_builders::UpdateResourceCollection::action) / [`set_action(Option<UpdateResourceCollectionAction>)`](crate::client::fluent_builders::UpdateResourceCollection::set_action): <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
+    ///   - [`resource_collection(UpdateResourceCollectionFilter)`](crate::client::fluent_builders::UpdateResourceCollection::resource_collection) / [`set_resource_collection(Option<UpdateResourceCollectionFilter>)`](crate::client::fluent_builders::UpdateResourceCollection::set_resource_collection): <p> Contains information used to update a collection of Amazon Web Services resources. </p>
     /// - On success, responds with [`UpdateResourceCollectionOutput`](crate::output::UpdateResourceCollectionOutput)
 
     /// - On failure, responds with [`SdkError<UpdateResourceCollectionError>`](crate::error::UpdateResourceCollectionError)
@@ -438,8 +438,8 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateServiceIntegration`](crate::client::fluent_builders::UpdateServiceIntegration) operation.
     ///
-    /// - Takes [`UpdateServiceIntegrationInput`](crate::input::UpdateServiceIntegrationInput) with field(s):
-    ///   - [`service_integration(Option<UpdateServiceIntegrationConfig>)`](crate::input::UpdateServiceIntegrationInput::service_integration): <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`service_integration(UpdateServiceIntegrationConfig)`](crate::client::fluent_builders::UpdateServiceIntegration::service_integration) / [`set_service_integration(Option<UpdateServiceIntegrationConfig>)`](crate::client::fluent_builders::UpdateServiceIntegration::set_service_integration): <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
     /// - On success, responds with [`UpdateServiceIntegrationOutput`](crate::output::UpdateServiceIntegrationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateServiceIntegrationError>`](crate::error::UpdateServiceIntegrationError)

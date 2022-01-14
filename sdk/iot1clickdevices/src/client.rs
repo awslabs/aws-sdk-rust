@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`ClaimDevicesByClaimCode`](crate::client::fluent_builders::ClaimDevicesByClaimCode) operation.
     ///
-    /// - Takes [`ClaimDevicesByClaimCodeInput`](crate::input::ClaimDevicesByClaimCodeInput) with field(s):
-    ///   - [`claim_code(Option<String>)`](crate::input::ClaimDevicesByClaimCodeInput::claim_code): <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`claim_code(impl Into<String>)`](crate::client::fluent_builders::ClaimDevicesByClaimCode::claim_code) / [`set_claim_code(Option<String>)`](crate::client::fluent_builders::ClaimDevicesByClaimCode::set_claim_code): <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
     /// - On success, responds with [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput) with field(s):
     ///   - [`claim_code(Option<String>)`](crate::output::ClaimDevicesByClaimCodeOutput::claim_code): <p>The claim code provided by the device manufacturer.</p>
     ///   - [`total(i32)`](crate::output::ClaimDevicesByClaimCodeOutput::total): <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
@@ -96,8 +96,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) operation.
     ///
-    /// - Takes [`DescribeDeviceInput`](crate::input::DescribeDeviceInput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::input::DescribeDeviceInput::device_id): <p>The unique identifier of the device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDevice::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::DescribeDevice::set_device_id): <p>The unique identifier of the device.</p>
     /// - On success, responds with [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput) with field(s):
     ///   - [`device_description(Option<DeviceDescription>)`](crate::output::DescribeDeviceOutput::device_description): <p>Device details.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
@@ -106,9 +106,9 @@ where
     }
     /// Constructs a fluent builder for the [`FinalizeDeviceClaim`](crate::client::fluent_builders::FinalizeDeviceClaim) operation.
     ///
-    /// - Takes [`FinalizeDeviceClaimInput`](crate::input::FinalizeDeviceClaimInput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::input::FinalizeDeviceClaimInput::device_id): <p>The unique identifier of the device.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::FinalizeDeviceClaimInput::tags): <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p> <p> </p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::FinalizeDeviceClaim::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::FinalizeDeviceClaim::set_device_id): <p>The unique identifier of the device.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::FinalizeDeviceClaim::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::FinalizeDeviceClaim::set_tags): <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p> <p> </p>
     /// - On success, responds with [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput) with field(s):
     ///   - [`state(Option<String>)`](crate::output::FinalizeDeviceClaimOutput::state): <p>The device's final claim state.</p>
     /// - On failure, responds with [`SdkError<FinalizeDeviceClaimError>`](crate::error::FinalizeDeviceClaimError)
@@ -117,8 +117,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDeviceMethods`](crate::client::fluent_builders::GetDeviceMethods) operation.
     ///
-    /// - Takes [`GetDeviceMethodsInput`](crate::input::GetDeviceMethodsInput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::input::GetDeviceMethodsInput::device_id): <p>The unique identifier of the device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::GetDeviceMethods::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::GetDeviceMethods::set_device_id): <p>The unique identifier of the device.</p>
     /// - On success, responds with [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput) with field(s):
     ///   - [`device_methods(Option<Vec<DeviceMethod>>)`](crate::output::GetDeviceMethodsOutput::device_methods): <p>List of available device APIs.</p>
     /// - On failure, responds with [`SdkError<GetDeviceMethodsError>`](crate::error::GetDeviceMethodsError)
@@ -127,8 +127,8 @@ where
     }
     /// Constructs a fluent builder for the [`InitiateDeviceClaim`](crate::client::fluent_builders::InitiateDeviceClaim) operation.
     ///
-    /// - Takes [`InitiateDeviceClaimInput`](crate::input::InitiateDeviceClaimInput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::input::InitiateDeviceClaimInput::device_id): <p>The unique identifier of the device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::InitiateDeviceClaim::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::InitiateDeviceClaim::set_device_id): <p>The unique identifier of the device.</p>
     /// - On success, responds with [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput) with field(s):
     ///   - [`state(Option<String>)`](crate::output::InitiateDeviceClaimOutput::state): <p>The device's final claim state.</p>
     /// - On failure, responds with [`SdkError<InitiateDeviceClaimError>`](crate::error::InitiateDeviceClaimError)
@@ -137,10 +137,10 @@ where
     }
     /// Constructs a fluent builder for the [`InvokeDeviceMethod`](crate::client::fluent_builders::InvokeDeviceMethod) operation.
     ///
-    /// - Takes [`InvokeDeviceMethodInput`](crate::input::InvokeDeviceMethodInput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::input::InvokeDeviceMethodInput::device_id): <p>The unique identifier of the device.</p>
-    ///   - [`device_method(Option<DeviceMethod>)`](crate::input::InvokeDeviceMethodInput::device_method): <p>The device method to invoke.</p>
-    ///   - [`device_method_parameters(Option<String>)`](crate::input::InvokeDeviceMethodInput::device_method_parameters): <p>A JSON encoded string containing the device method request parameters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::InvokeDeviceMethod::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::InvokeDeviceMethod::set_device_id): <p>The unique identifier of the device.</p>
+    ///   - [`device_method(DeviceMethod)`](crate::client::fluent_builders::InvokeDeviceMethod::device_method) / [`set_device_method(Option<DeviceMethod>)`](crate::client::fluent_builders::InvokeDeviceMethod::set_device_method): <p>The device method to invoke.</p>
+    ///   - [`device_method_parameters(impl Into<String>)`](crate::client::fluent_builders::InvokeDeviceMethod::device_method_parameters) / [`set_device_method_parameters(Option<String>)`](crate::client::fluent_builders::InvokeDeviceMethod::set_device_method_parameters): <p>A JSON encoded string containing the device method request parameters.</p>
     /// - On success, responds with [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput) with field(s):
     ///   - [`device_method_response(Option<String>)`](crate::output::InvokeDeviceMethodOutput::device_method_response): <p>A JSON encoded string containing the device method response.</p>
     /// - On failure, responds with [`SdkError<InvokeDeviceMethodError>`](crate::error::InvokeDeviceMethodError)
@@ -149,12 +149,12 @@ where
     }
     /// Constructs a fluent builder for the [`ListDeviceEvents`](crate::client::fluent_builders::ListDeviceEvents) operation.
     ///
-    /// - Takes [`ListDeviceEventsInput`](crate::input::ListDeviceEventsInput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::input::ListDeviceEventsInput::device_id): <p>The unique identifier of the device.</p>
-    ///   - [`from_time_stamp(Option<DateTime>)`](crate::input::ListDeviceEventsInput::from_time_stamp): <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-    ///   - [`max_results(i32)`](crate::input::ListDeviceEventsInput::max_results): <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDeviceEventsInput::next_token): <p>The token to retrieve the next set of results.</p>
-    ///   - [`to_time_stamp(Option<DateTime>)`](crate::input::ListDeviceEventsInput::to_time_stamp): <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::ListDeviceEvents::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::ListDeviceEvents::set_device_id): <p>The unique identifier of the device.</p>
+    ///   - [`from_time_stamp(DateTime)`](crate::client::fluent_builders::ListDeviceEvents::from_time_stamp) / [`set_from_time_stamp(Option<DateTime>)`](crate::client::fluent_builders::ListDeviceEvents::set_from_time_stamp): <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeviceEvents::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDeviceEvents::set_max_results): <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeviceEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeviceEvents::set_next_token): <p>The token to retrieve the next set of results.</p>
+    ///   - [`to_time_stamp(DateTime)`](crate::client::fluent_builders::ListDeviceEvents::to_time_stamp) / [`set_to_time_stamp(Option<DateTime>)`](crate::client::fluent_builders::ListDeviceEvents::set_to_time_stamp): <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     /// - On success, responds with [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput) with field(s):
     ///   - [`events(Option<Vec<DeviceEvent>>)`](crate::output::ListDeviceEventsOutput::events): <p>An array of zero or more elements describing the event(s) associated with the device.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDeviceEventsOutput::next_token): <p>The token to retrieve the next set of results.</p>
@@ -164,10 +164,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListDevices`](crate::client::fluent_builders::ListDevices) operation.
     ///
-    /// - Takes [`ListDevicesInput`](crate::input::ListDevicesInput) with field(s):
-    ///   - [`device_type(Option<String>)`](crate::input::ListDevicesInput::device_type): <p>The type of the device, such as "button".</p>
-    ///   - [`max_results(i32)`](crate::input::ListDevicesInput::max_results): <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDevicesInput::next_token): <p>The token to retrieve the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_type(impl Into<String>)`](crate::client::fluent_builders::ListDevices::device_type) / [`set_device_type(Option<String>)`](crate::client::fluent_builders::ListDevices::set_device_type): <p>The type of the device, such as "button".</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevices::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDevices::set_max_results): <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevices::set_next_token): <p>The token to retrieve the next set of results.</p>
     /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
     ///   - [`devices(Option<Vec<DeviceDescription>>)`](crate::output::ListDevicesOutput::devices): <p>A list of devices.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>The token to retrieve the next set of results.</p>
@@ -177,8 +177,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p> <p> </p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -187,9 +187,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p> <p> </p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p> <p> </p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -198,8 +198,8 @@ where
     }
     /// Constructs a fluent builder for the [`UnclaimDevice`](crate::client::fluent_builders::UnclaimDevice) operation.
     ///
-    /// - Takes [`UnclaimDeviceInput`](crate::input::UnclaimDeviceInput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::input::UnclaimDeviceInput::device_id): <p>The unique identifier of the device.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::UnclaimDevice::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::UnclaimDevice::set_device_id): <p>The unique identifier of the device.</p>
     /// - On success, responds with [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput) with field(s):
     ///   - [`state(Option<String>)`](crate::output::UnclaimDeviceOutput::state): <p>The device's final claim state.</p>
     /// - On failure, responds with [`SdkError<UnclaimDeviceError>`](crate::error::UnclaimDeviceError)
@@ -208,9 +208,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A collections of tag keys. For example, {"key1","key2"}</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A collections of tag keys. For example, {"key1","key2"}</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -219,9 +219,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDeviceState`](crate::client::fluent_builders::UpdateDeviceState) operation.
     ///
-    /// - Takes [`UpdateDeviceStateInput`](crate::input::UpdateDeviceStateInput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::input::UpdateDeviceStateInput::device_id): <p>The unique identifier of the device.</p>
-    ///   - [`enabled(bool)`](crate::input::UpdateDeviceStateInput::enabled): <p>If true, the device is enabled. If false, the device is disabled.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDeviceState::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::UpdateDeviceState::set_device_id): <p>The unique identifier of the device.</p>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateDeviceState::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::UpdateDeviceState::set_enabled): <p>If true, the device is enabled. If false, the device is disabled.</p>
     /// - On success, responds with [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDeviceStateError>`](crate::error::UpdateDeviceStateError)

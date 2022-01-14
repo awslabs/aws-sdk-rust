@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`GetApplicationComponentDetails`](crate::client::fluent_builders::GetApplicationComponentDetails) operation.
     ///
-    /// - Takes [`GetApplicationComponentDetailsInput`](crate::input::GetApplicationComponentDetailsInput) with field(s):
-    ///   - [`application_component_id(Option<String>)`](crate::input::GetApplicationComponentDetailsInput::application_component_id): <p> The ID of the application component. The ID is unique within an AWS account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_component_id(impl Into<String>)`](crate::client::fluent_builders::GetApplicationComponentDetails::application_component_id) / [`set_application_component_id(Option<String>)`](crate::client::fluent_builders::GetApplicationComponentDetails::set_application_component_id): <p> The ID of the application component. The ID is unique within an AWS account.</p>
     /// - On success, responds with [`GetApplicationComponentDetailsOutput`](crate::output::GetApplicationComponentDetailsOutput) with field(s):
     ///   - [`application_component_detail(Option<ApplicationComponentDetail>)`](crate::output::GetApplicationComponentDetailsOutput::application_component_detail): <p> Detailed information about an application component. </p>
     ///   - [`associated_applications(Option<Vec<AssociatedApplication>>)`](crate::output::GetApplicationComponentDetailsOutput::associated_applications): <p> The associated application group as defined in AWS Application Discovery Service. </p>
@@ -100,8 +100,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApplicationComponentStrategies`](crate::client::fluent_builders::GetApplicationComponentStrategies) operation.
     ///
-    /// - Takes [`GetApplicationComponentStrategiesInput`](crate::input::GetApplicationComponentStrategiesInput) with field(s):
-    ///   - [`application_component_id(Option<String>)`](crate::input::GetApplicationComponentStrategiesInput::application_component_id): <p> The ID of the application component. The ID is unique within an AWS account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_component_id(impl Into<String>)`](crate::client::fluent_builders::GetApplicationComponentStrategies::application_component_id) / [`set_application_component_id(Option<String>)`](crate::client::fluent_builders::GetApplicationComponentStrategies::set_application_component_id): <p> The ID of the application component. The ID is unique within an AWS account.</p>
     /// - On success, responds with [`GetApplicationComponentStrategiesOutput`](crate::output::GetApplicationComponentStrategiesOutput) with field(s):
     ///   - [`application_component_strategies(Option<Vec<ApplicationComponentStrategy>>)`](crate::output::GetApplicationComponentStrategiesOutput::application_component_strategies): <p> A list of application component strategy recommendations. </p>
     /// - On failure, responds with [`SdkError<GetApplicationComponentStrategiesError>`](crate::error::GetApplicationComponentStrategiesError)
@@ -112,8 +112,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetAssessment`](crate::client::fluent_builders::GetAssessment) operation.
     ///
-    /// - Takes [`GetAssessmentInput`](crate::input::GetAssessmentInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetAssessmentInput::id): <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetAssessment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetAssessment::set_id): <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     /// - On success, responds with [`GetAssessmentOutput`](crate::output::GetAssessmentOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::GetAssessmentOutput::id): <p> The ID for the specific assessment task. </p>
     ///   - [`data_collection_details(Option<DataCollectionDetails>)`](crate::output::GetAssessmentOutput::data_collection_details): <p> Detailed information about the assessment. </p>
@@ -123,8 +123,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetImportFileTask`](crate::client::fluent_builders::GetImportFileTask) operation.
     ///
-    /// - Takes [`GetImportFileTaskInput`](crate::input::GetImportFileTaskInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetImportFileTaskInput::id): <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetImportFileTask::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetImportFileTask::set_id): <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
     /// - On success, responds with [`GetImportFileTaskOutput`](crate::output::GetImportFileTaskOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::GetImportFileTaskOutput::id): <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
     ///   - [`status(Option<ImportFileTaskStatus>)`](crate::output::GetImportFileTaskOutput::status): <p> Status of import file task. </p>
@@ -143,7 +143,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetPortfolioPreferences`](crate::client::fluent_builders::GetPortfolioPreferences) operation.
     ///
-    /// - Takes [`GetPortfolioPreferencesInput`](crate::input::GetPortfolioPreferencesInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetPortfolioPreferences::send) it.
 
     /// - On success, responds with [`GetPortfolioPreferencesOutput`](crate::output::GetPortfolioPreferencesOutput) with field(s):
     ///   - [`prioritize_business_goals(Option<PrioritizeBusinessGoals>)`](crate::output::GetPortfolioPreferencesOutput::prioritize_business_goals): <p> The rank of business goals based on priority. </p>
@@ -155,7 +155,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetPortfolioSummary`](crate::client::fluent_builders::GetPortfolioSummary) operation.
     ///
-    /// - Takes [`GetPortfolioSummaryInput`](crate::input::GetPortfolioSummaryInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetPortfolioSummary::send) it.
 
     /// - On success, responds with [`GetPortfolioSummaryOutput`](crate::output::GetPortfolioSummaryOutput) with field(s):
     ///   - [`assessment_summary(Option<AssessmentSummary>)`](crate::output::GetPortfolioSummaryOutput::assessment_summary): <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
@@ -165,8 +165,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetRecommendationReportDetails`](crate::client::fluent_builders::GetRecommendationReportDetails) operation.
     ///
-    /// - Takes [`GetRecommendationReportDetailsInput`](crate::input::GetRecommendationReportDetailsInput) with field(s):
-    ///   - [`id(Option<String>)`](crate::input::GetRecommendationReportDetailsInput::id): <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetRecommendationReportDetails::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetRecommendationReportDetails::set_id): <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
     /// - On success, responds with [`GetRecommendationReportDetailsOutput`](crate::output::GetRecommendationReportDetailsOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::GetRecommendationReportDetailsOutput::id): <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
     ///   - [`recommendation_report_details(Option<RecommendationReportDetails>)`](crate::output::GetRecommendationReportDetailsOutput::recommendation_report_details): <p> Detailed information about the recommendation report. </p>
@@ -177,12 +177,12 @@ where
         fluent_builders::GetRecommendationReportDetails::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetServerDetails`](crate::client::fluent_builders::GetServerDetails) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetServerDetails::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetServerDetails::into_paginator).
     ///
-    /// - Takes [`GetServerDetailsInput`](crate::input::GetServerDetailsInput) with field(s):
-    ///   - [`server_id(Option<String>)`](crate::input::GetServerDetailsInput::server_id): <p> The ID of the server. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetServerDetailsInput::next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::GetServerDetailsInput::max_results): <p> The maximum number of items to include in the response. The maximum value is 100. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::GetServerDetails::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::GetServerDetails::set_server_id): <p> The ID of the server. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetServerDetails::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetServerDetails::set_next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetServerDetails::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetServerDetails::set_max_results): <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     /// - On success, responds with [`GetServerDetailsOutput`](crate::output::GetServerDetailsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::GetServerDetailsOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     ///   - [`server_detail(Option<ServerDetail>)`](crate::output::GetServerDetailsOutput::server_detail): <p> Detailed information about the server. </p>
@@ -193,8 +193,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetServerStrategies`](crate::client::fluent_builders::GetServerStrategies) operation.
     ///
-    /// - Takes [`GetServerStrategiesInput`](crate::input::GetServerStrategiesInput) with field(s):
-    ///   - [`server_id(Option<String>)`](crate::input::GetServerStrategiesInput::server_id): <p> The ID of the server. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::GetServerStrategies::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::GetServerStrategies::set_server_id): <p> The ID of the server. </p>
     /// - On success, responds with [`GetServerStrategiesOutput`](crate::output::GetServerStrategiesOutput) with field(s):
     ///   - [`server_strategies(Option<Vec<ServerStrategy>>)`](crate::output::GetServerStrategiesOutput::server_strategies): <p> A list of strategy recommendations for the server. </p>
     /// - On failure, responds with [`SdkError<GetServerStrategiesError>`](crate::error::GetServerStrategiesError)
@@ -202,15 +202,15 @@ where
         fluent_builders::GetServerStrategies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListApplicationComponents`](crate::client::fluent_builders::ListApplicationComponents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationComponents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplicationComponents::into_paginator).
     ///
-    /// - Takes [`ListApplicationComponentsInput`](crate::input::ListApplicationComponentsInput) with field(s):
-    ///   - [`application_component_criteria(Option<ApplicationComponentCriteria>)`](crate::input::ListApplicationComponentsInput::application_component_criteria): <p> Criteria for filtering the list of application components. </p>
-    ///   - [`filter_value(Option<String>)`](crate::input::ListApplicationComponentsInput::filter_value): <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
-    ///   - [`sort(Option<SortOrder>)`](crate::input::ListApplicationComponentsInput::sort): <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
-    ///   - [`group_id_filter(Option<Vec<Group>>)`](crate::input::ListApplicationComponentsInput::group_id_filter): <p> The group ID specified in to filter on. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationComponentsInput::next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListApplicationComponentsInput::max_results): <p> The maximum number of items to include in the response. The maximum value is 100. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_component_criteria(ApplicationComponentCriteria)`](crate::client::fluent_builders::ListApplicationComponents::application_component_criteria) / [`set_application_component_criteria(Option<ApplicationComponentCriteria>)`](crate::client::fluent_builders::ListApplicationComponents::set_application_component_criteria): <p> Criteria for filtering the list of application components. </p>
+    ///   - [`filter_value(impl Into<String>)`](crate::client::fluent_builders::ListApplicationComponents::filter_value) / [`set_filter_value(Option<String>)`](crate::client::fluent_builders::ListApplicationComponents::set_filter_value): <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
+    ///   - [`sort(SortOrder)`](crate::client::fluent_builders::ListApplicationComponents::sort) / [`set_sort(Option<SortOrder>)`](crate::client::fluent_builders::ListApplicationComponents::set_sort): <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
+    ///   - [`group_id_filter(Vec<Group>)`](crate::client::fluent_builders::ListApplicationComponents::group_id_filter) / [`set_group_id_filter(Option<Vec<Group>>)`](crate::client::fluent_builders::ListApplicationComponents::set_group_id_filter): <p> The group ID specified in to filter on. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplicationComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplicationComponents::set_next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplicationComponents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApplicationComponents::set_max_results): <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     /// - On success, responds with [`ListApplicationComponentsOutput`](crate::output::ListApplicationComponentsOutput) with field(s):
     ///   - [`application_component_infos(Option<Vec<ApplicationComponentDetail>>)`](crate::output::ListApplicationComponentsOutput::application_component_infos): <p> The list of application components with detailed information about each component. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListApplicationComponentsOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
@@ -221,11 +221,11 @@ where
         fluent_builders::ListApplicationComponents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCollectors`](crate::client::fluent_builders::ListCollectors) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCollectors::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCollectors::into_paginator).
     ///
-    /// - Takes [`ListCollectorsInput`](crate::input::ListCollectorsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListCollectorsInput::next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListCollectorsInput::max_results): <p> The maximum number of items to include in the response. The maximum value is 100. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCollectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCollectors::set_next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCollectors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCollectors::set_max_results): <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     /// - On success, responds with [`ListCollectorsOutput`](crate::output::ListCollectorsOutput) with field(s):
     ///   - [`collectors(Option<Vec<Collector>>)`](crate::output::ListCollectorsOutput::collectors): <p> The list of all the installed collectors. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCollectorsOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
@@ -234,11 +234,11 @@ where
         fluent_builders::ListCollectors::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListImportFileTask`](crate::client::fluent_builders::ListImportFileTask) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImportFileTask::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListImportFileTask::into_paginator).
     ///
-    /// - Takes [`ListImportFileTaskInput`](crate::input::ListImportFileTaskInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListImportFileTaskInput::next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListImportFileTaskInput::max_results): <p> The total number of items to return. The maximum value is 100. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListImportFileTask::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListImportFileTask::set_next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListImportFileTask::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListImportFileTask::set_max_results): <p> The total number of items to return. The maximum value is 100. </p>
     /// - On success, responds with [`ListImportFileTaskOutput`](crate::output::ListImportFileTaskOutput) with field(s):
     ///   - [`task_infos(Option<Vec<ImportFileTaskInformation>>)`](crate::output::ListImportFileTaskOutput::task_infos): <p> Lists information about the files you import.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListImportFileTaskOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
@@ -247,15 +247,15 @@ where
         fluent_builders::ListImportFileTask::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListServers`](crate::client::fluent_builders::ListServers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServers::into_paginator).
     ///
-    /// - Takes [`ListServersInput`](crate::input::ListServersInput) with field(s):
-    ///   - [`server_criteria(Option<ServerCriteria>)`](crate::input::ListServersInput::server_criteria): <p> Criteria for filtering servers. </p>
-    ///   - [`filter_value(Option<String>)`](crate::input::ListServersInput::filter_value): <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
-    ///   - [`sort(Option<SortOrder>)`](crate::input::ListServersInput::sort): <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
-    ///   - [`group_id_filter(Option<Vec<Group>>)`](crate::input::ListServersInput::group_id_filter): <p> Specifies the group ID to filter on. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListServersInput::next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListServersInput::max_results): <p> The maximum number of items to include in the response. The maximum value is 100. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`server_criteria(ServerCriteria)`](crate::client::fluent_builders::ListServers::server_criteria) / [`set_server_criteria(Option<ServerCriteria>)`](crate::client::fluent_builders::ListServers::set_server_criteria): <p> Criteria for filtering servers. </p>
+    ///   - [`filter_value(impl Into<String>)`](crate::client::fluent_builders::ListServers::filter_value) / [`set_filter_value(Option<String>)`](crate::client::fluent_builders::ListServers::set_filter_value): <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
+    ///   - [`sort(SortOrder)`](crate::client::fluent_builders::ListServers::sort) / [`set_sort(Option<SortOrder>)`](crate::client::fluent_builders::ListServers::set_sort): <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
+    ///   - [`group_id_filter(Vec<Group>)`](crate::client::fluent_builders::ListServers::group_id_filter) / [`set_group_id_filter(Option<Vec<Group>>)`](crate::client::fluent_builders::ListServers::set_group_id_filter): <p> Specifies the group ID to filter on. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServers::set_next_token): <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListServers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListServers::set_max_results): <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     /// - On success, responds with [`ListServersOutput`](crate::output::ListServersOutput) with field(s):
     ///   - [`server_infos(Option<Vec<ServerDetail>>)`](crate::output::ListServersOutput::server_infos): <p> The list of servers with detailed information about each server. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListServersOutput::next_token): <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
@@ -265,10 +265,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutPortfolioPreferences`](crate::client::fluent_builders::PutPortfolioPreferences) operation.
     ///
-    /// - Takes [`PutPortfolioPreferencesInput`](crate::input::PutPortfolioPreferencesInput) with field(s):
-    ///   - [`prioritize_business_goals(Option<PrioritizeBusinessGoals>)`](crate::input::PutPortfolioPreferencesInput::prioritize_business_goals): <p> The rank of the business goals based on priority. </p>
-    ///   - [`application_preferences(Option<ApplicationPreferences>)`](crate::input::PutPortfolioPreferencesInput::application_preferences): <p> The transformation preferences for non-database applications. </p>
-    ///   - [`database_preferences(Option<DatabasePreferences>)`](crate::input::PutPortfolioPreferencesInput::database_preferences): <p> The transformation preferences for database applications. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`prioritize_business_goals(PrioritizeBusinessGoals)`](crate::client::fluent_builders::PutPortfolioPreferences::prioritize_business_goals) / [`set_prioritize_business_goals(Option<PrioritizeBusinessGoals>)`](crate::client::fluent_builders::PutPortfolioPreferences::set_prioritize_business_goals): <p> The rank of the business goals based on priority. </p>
+    ///   - [`application_preferences(ApplicationPreferences)`](crate::client::fluent_builders::PutPortfolioPreferences::application_preferences) / [`set_application_preferences(Option<ApplicationPreferences>)`](crate::client::fluent_builders::PutPortfolioPreferences::set_application_preferences): <p> The transformation preferences for non-database applications. </p>
+    ///   - [`database_preferences(DatabasePreferences)`](crate::client::fluent_builders::PutPortfolioPreferences::database_preferences) / [`set_database_preferences(Option<DatabasePreferences>)`](crate::client::fluent_builders::PutPortfolioPreferences::set_database_preferences): <p> The transformation preferences for database applications. </p>
     /// - On success, responds with [`PutPortfolioPreferencesOutput`](crate::output::PutPortfolioPreferencesOutput)
 
     /// - On failure, responds with [`SdkError<PutPortfolioPreferencesError>`](crate::error::PutPortfolioPreferencesError)
@@ -277,9 +277,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartAssessment`](crate::client::fluent_builders::StartAssessment) operation.
     ///
-    /// - Takes [`StartAssessmentInput`](crate::input::StartAssessmentInput) with field(s):
-    ///   - [`s3bucket_for_analysis_data(Option<String>)`](crate::input::StartAssessmentInput::s3bucket_for_analysis_data): <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-    ///   - [`s3bucket_for_report_data(Option<String>)`](crate::input::StartAssessmentInput::s3bucket_for_report_data): <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`s3bucket_for_analysis_data(impl Into<String>)`](crate::client::fluent_builders::StartAssessment::s3bucket_for_analysis_data) / [`set_s3bucket_for_analysis_data(Option<String>)`](crate::client::fluent_builders::StartAssessment::set_s3bucket_for_analysis_data): <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
+    ///   - [`s3bucket_for_report_data(impl Into<String>)`](crate::client::fluent_builders::StartAssessment::s3bucket_for_report_data) / [`set_s3bucket_for_report_data(Option<String>)`](crate::client::fluent_builders::StartAssessment::set_s3bucket_for_report_data): <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
     /// - On success, responds with [`StartAssessmentOutput`](crate::output::StartAssessmentOutput) with field(s):
     ///   - [`assessment_id(Option<String>)`](crate::output::StartAssessmentOutput::assessment_id): <p> The ID of the assessment. </p>
     /// - On failure, responds with [`SdkError<StartAssessmentError>`](crate::error::StartAssessmentError)
@@ -288,13 +288,13 @@ where
     }
     /// Constructs a fluent builder for the [`StartImportFileTask`](crate::client::fluent_builders::StartImportFileTask) operation.
     ///
-    /// - Takes [`StartImportFileTaskInput`](crate::input::StartImportFileTaskInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::StartImportFileTaskInput::name): <p> A descriptive name for the request. </p>
-    ///   - [`s3_bucket(Option<String>)`](crate::input::StartImportFileTaskInput::s3_bucket): <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
-    ///   - [`s3key(Option<String>)`](crate::input::StartImportFileTaskInput::s3key): <p> The Amazon S3 key name of the import file. </p>
-    ///   - [`data_source_type(Option<DataSourceType>)`](crate::input::StartImportFileTaskInput::data_source_type): <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
-    ///   - [`group_id(Option<Vec<Group>>)`](crate::input::StartImportFileTaskInput::group_id): <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
-    ///   - [`s3bucket_for_report_data(Option<String>)`](crate::input::StartImportFileTaskInput::s3bucket_for_report_data): <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartImportFileTask::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartImportFileTask::set_name): <p> A descriptive name for the request. </p>
+    ///   - [`s3_bucket(impl Into<String>)`](crate::client::fluent_builders::StartImportFileTask::s3_bucket) / [`set_s3_bucket(Option<String>)`](crate::client::fluent_builders::StartImportFileTask::set_s3_bucket): <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
+    ///   - [`s3key(impl Into<String>)`](crate::client::fluent_builders::StartImportFileTask::s3key) / [`set_s3key(Option<String>)`](crate::client::fluent_builders::StartImportFileTask::set_s3key): <p> The Amazon S3 key name of the import file. </p>
+    ///   - [`data_source_type(DataSourceType)`](crate::client::fluent_builders::StartImportFileTask::data_source_type) / [`set_data_source_type(Option<DataSourceType>)`](crate::client::fluent_builders::StartImportFileTask::set_data_source_type): <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
+    ///   - [`group_id(Vec<Group>)`](crate::client::fluent_builders::StartImportFileTask::group_id) / [`set_group_id(Option<Vec<Group>>)`](crate::client::fluent_builders::StartImportFileTask::set_group_id): <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
+    ///   - [`s3bucket_for_report_data(impl Into<String>)`](crate::client::fluent_builders::StartImportFileTask::s3bucket_for_report_data) / [`set_s3bucket_for_report_data(Option<String>)`](crate::client::fluent_builders::StartImportFileTask::set_s3bucket_for_report_data): <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
     /// - On success, responds with [`StartImportFileTaskOutput`](crate::output::StartImportFileTaskOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::StartImportFileTaskOutput::id): <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
     /// - On failure, responds with [`SdkError<StartImportFileTaskError>`](crate::error::StartImportFileTaskError)
@@ -303,9 +303,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartRecommendationReportGeneration`](crate::client::fluent_builders::StartRecommendationReportGeneration) operation.
     ///
-    /// - Takes [`StartRecommendationReportGenerationInput`](crate::input::StartRecommendationReportGenerationInput) with field(s):
-    ///   - [`output_format(Option<OutputFormat>)`](crate::input::StartRecommendationReportGenerationInput::output_format): <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
-    ///   - [`group_id_filter(Option<Vec<Group>>)`](crate::input::StartRecommendationReportGenerationInput::group_id_filter): <p> Groups the resources in the recommendation report with a unique name. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`output_format(OutputFormat)`](crate::client::fluent_builders::StartRecommendationReportGeneration::output_format) / [`set_output_format(Option<OutputFormat>)`](crate::client::fluent_builders::StartRecommendationReportGeneration::set_output_format): <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
+    ///   - [`group_id_filter(Vec<Group>)`](crate::client::fluent_builders::StartRecommendationReportGeneration::group_id_filter) / [`set_group_id_filter(Option<Vec<Group>>)`](crate::client::fluent_builders::StartRecommendationReportGeneration::set_group_id_filter): <p> Groups the resources in the recommendation report with a unique name. </p>
     /// - On success, responds with [`StartRecommendationReportGenerationOutput`](crate::output::StartRecommendationReportGenerationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::StartRecommendationReportGenerationOutput::id): <p> The ID of the recommendation report generation task. </p>
     /// - On failure, responds with [`SdkError<StartRecommendationReportGenerationError>`](crate::error::StartRecommendationReportGenerationError)
@@ -316,8 +316,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopAssessment`](crate::client::fluent_builders::StopAssessment) operation.
     ///
-    /// - Takes [`StopAssessmentInput`](crate::input::StopAssessmentInput) with field(s):
-    ///   - [`assessment_id(Option<String>)`](crate::input::StopAssessmentInput::assessment_id): <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`assessment_id(impl Into<String>)`](crate::client::fluent_builders::StopAssessment::assessment_id) / [`set_assessment_id(Option<String>)`](crate::client::fluent_builders::StopAssessment::set_assessment_id): <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     /// - On success, responds with [`StopAssessmentOutput`](crate::output::StopAssessmentOutput)
 
     /// - On failure, responds with [`SdkError<StopAssessmentError>`](crate::error::StopAssessmentError)
@@ -326,12 +326,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApplicationComponentConfig`](crate::client::fluent_builders::UpdateApplicationComponentConfig) operation.
     ///
-    /// - Takes [`UpdateApplicationComponentConfigInput`](crate::input::UpdateApplicationComponentConfigInput) with field(s):
-    ///   - [`application_component_id(Option<String>)`](crate::input::UpdateApplicationComponentConfigInput::application_component_id): <p> The ID of the application component. The ID is unique within an AWS account. </p>
-    ///   - [`inclusion_status(Option<InclusionStatus>)`](crate::input::UpdateApplicationComponentConfigInput::inclusion_status): <p> Indicates whether the application component has been included for server recommendation or not. </p>
-    ///   - [`strategy_option(Option<StrategyOption>)`](crate::input::UpdateApplicationComponentConfigInput::strategy_option): <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
-    ///   - [`source_code_list(Option<Vec<SourceCode>>)`](crate::input::UpdateApplicationComponentConfigInput::source_code_list): <p> The list of source code configurations to update for the application component. </p>
-    ///   - [`secrets_manager_key(Option<String>)`](crate::input::UpdateApplicationComponentConfigInput::secrets_manager_key): <p> Database credentials. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_component_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::application_component_id) / [`set_application_component_id(Option<String>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_application_component_id): <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    ///   - [`inclusion_status(InclusionStatus)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::inclusion_status) / [`set_inclusion_status(Option<InclusionStatus>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_inclusion_status): <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    ///   - [`strategy_option(StrategyOption)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::strategy_option) / [`set_strategy_option(Option<StrategyOption>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_strategy_option): <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
+    ///   - [`source_code_list(Vec<SourceCode>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::source_code_list) / [`set_source_code_list(Option<Vec<SourceCode>>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_source_code_list): <p> The list of source code configurations to update for the application component. </p>
+    ///   - [`secrets_manager_key(impl Into<String>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::secrets_manager_key) / [`set_secrets_manager_key(Option<String>)`](crate::client::fluent_builders::UpdateApplicationComponentConfig::set_secrets_manager_key): <p> Database credentials. </p>
     /// - On success, responds with [`UpdateApplicationComponentConfigOutput`](crate::output::UpdateApplicationComponentConfigOutput)
 
     /// - On failure, responds with [`SdkError<UpdateApplicationComponentConfigError>`](crate::error::UpdateApplicationComponentConfigError)
@@ -342,9 +342,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateServerConfig`](crate::client::fluent_builders::UpdateServerConfig) operation.
     ///
-    /// - Takes [`UpdateServerConfigInput`](crate::input::UpdateServerConfigInput) with field(s):
-    ///   - [`server_id(Option<String>)`](crate::input::UpdateServerConfigInput::server_id): <p> The ID of the server. </p>
-    ///   - [`strategy_option(Option<StrategyOption>)`](crate::input::UpdateServerConfigInput::strategy_option): <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateServerConfig::server_id) / [`set_server_id(Option<String>)`](crate::client::fluent_builders::UpdateServerConfig::set_server_id): <p> The ID of the server. </p>
+    ///   - [`strategy_option(StrategyOption)`](crate::client::fluent_builders::UpdateServerConfig::strategy_option) / [`set_strategy_option(Option<StrategyOption>)`](crate::client::fluent_builders::UpdateServerConfig::set_strategy_option): <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     /// - On success, responds with [`UpdateServerConfigOutput`](crate::output::UpdateServerConfigOutput)
 
     /// - On failure, responds with [`SdkError<UpdateServerConfigError>`](crate::error::UpdateServerConfigError)

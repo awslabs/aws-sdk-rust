@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`AssociateWebACL`](crate::client::fluent_builders::AssociateWebACL) operation.
     ///
-    /// - Takes [`AssociateWebAclInput`](crate::input::AssociateWebAclInput) with field(s):
-    ///   - [`web_acl_id(Option<String>)`](crate::input::AssociateWebAclInput::web_acl_id): <p>A unique identifier (ID) for the web ACL. </p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::AssociateWebAclInput::resource_arn): <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p>  <p>The ARN should be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::AssociateWebACL::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::AssociateWebACL::set_web_acl_id): <p>A unique identifier (ID) for the web ACL. </p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWebACL::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::AssociateWebACL::set_resource_arn): <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p>  <p>The ARN should be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>  </ul>
     /// - On success, responds with [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput)
 
     /// - On failure, responds with [`SdkError<AssociateWebACLError>`](crate::error::AssociateWebACLError)
@@ -96,9 +96,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateByteMatchSet`](crate::client::fluent_builders::CreateByteMatchSet) operation.
     ///
-    /// - Takes [`CreateByteMatchSetInput`](crate::input::CreateByteMatchSetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateByteMatchSetInput::name): <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateByteMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateByteMatchSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateByteMatchSet::set_name): <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateByteMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateByteMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput) with field(s):
     ///   - [`byte_match_set(Option<ByteMatchSet>)`](crate::output::CreateByteMatchSetOutput::byte_match_set): <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateByteMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -108,9 +108,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateGeoMatchSet`](crate::client::fluent_builders::CreateGeoMatchSet) operation.
     ///
-    /// - Takes [`CreateGeoMatchSetInput`](crate::input::CreateGeoMatchSetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateGeoMatchSetInput::name): <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateGeoMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateGeoMatchSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateGeoMatchSet::set_name): <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateGeoMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateGeoMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput) with field(s):
     ///   - [`geo_match_set(Option<GeoMatchSet>)`](crate::output::CreateGeoMatchSetOutput::geo_match_set): <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateGeoMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -120,9 +120,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateIPSet`](crate::client::fluent_builders::CreateIPSet) operation.
     ///
-    /// - Takes [`CreateIpSetInput`](crate::input::CreateIpSetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateIpSetInput::name): <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateIpSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_name): <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`CreateIpSetOutput`](crate::output::CreateIpSetOutput) with field(s):
     ///   - [`ip_set(Option<IpSet>)`](crate::output::CreateIpSetOutput::ip_set): <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateIpSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -132,13 +132,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRateBasedRule`](crate::client::fluent_builders::CreateRateBasedRule) operation.
     ///
-    /// - Takes [`CreateRateBasedRuleInput`](crate::input::CreateRateBasedRuleInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateRateBasedRuleInput::name): <p>A friendly name or description of the <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
-    ///   - [`metric_name(Option<String>)`](crate::input::CreateRateBasedRuleInput::metric_name): <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
-    ///   - [`rate_key(Option<RateKey>)`](crate::input::CreateRateBasedRuleInput::rate_key): <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
-    ///   - [`rate_limit(i64)`](crate::input::CreateRateBasedRuleInput::rate_limit): <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateRateBasedRuleInput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateRateBasedRuleInput::tags): <p></p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRateBasedRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRateBasedRule::set_name): <p>A friendly name or description of the <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::CreateRateBasedRule::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::CreateRateBasedRule::set_metric_name): <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
+    ///   - [`rate_key(RateKey)`](crate::client::fluent_builders::CreateRateBasedRule::rate_key) / [`set_rate_key(Option<RateKey>)`](crate::client::fluent_builders::CreateRateBasedRule::set_rate_key): <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
+    ///   - [`rate_limit(i64)`](crate::client::fluent_builders::CreateRateBasedRule::rate_limit) / [`set_rate_limit(i64)`](crate::client::fluent_builders::CreateRateBasedRule::set_rate_limit): <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateRateBasedRule::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateRateBasedRule::set_change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRateBasedRule::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRateBasedRule::set_tags): <p></p>
     /// - On success, responds with [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput) with field(s):
     ///   - [`rule(Option<RateBasedRule>)`](crate::output::CreateRateBasedRuleOutput::rule): <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateRateBasedRuleOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -148,9 +148,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRegexMatchSet`](crate::client::fluent_builders::CreateRegexMatchSet) operation.
     ///
-    /// - Takes [`CreateRegexMatchSetInput`](crate::input::CreateRegexMatchSetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateRegexMatchSetInput::name): <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateRegexMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRegexMatchSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRegexMatchSet::set_name): <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateRegexMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateRegexMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput) with field(s):
     ///   - [`regex_match_set(Option<RegexMatchSet>)`](crate::output::CreateRegexMatchSetOutput::regex_match_set): <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateRegexMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -160,9 +160,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRegexPatternSet`](crate::client::fluent_builders::CreateRegexPatternSet) operation.
     ///
-    /// - Takes [`CreateRegexPatternSetInput`](crate::input::CreateRegexPatternSetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateRegexPatternSetInput::name): <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateRegexPatternSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_name): <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput) with field(s):
     ///   - [`regex_pattern_set(Option<RegexPatternSet>)`](crate::output::CreateRegexPatternSetOutput::regex_pattern_set): <p>A <code>RegexPatternSet</code> that contains no objects.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateRegexPatternSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -172,11 +172,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRule`](crate::client::fluent_builders::CreateRule) operation.
     ///
-    /// - Takes [`CreateRuleInput`](crate::input::CreateRuleInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateRuleInput::name): <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
-    ///   - [`metric_name(Option<String>)`](crate::input::CreateRuleInput::metric_name): <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateRuleInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateRuleInput::tags): <p></p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRule::set_name): <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::CreateRule::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::CreateRule::set_metric_name): <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateRule::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateRule::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRule::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRule::set_tags): <p></p>
     /// - On success, responds with [`CreateRuleOutput`](crate::output::CreateRuleOutput) with field(s):
     ///   - [`rule(Option<Rule>)`](crate::output::CreateRuleOutput::rule): <p>The <code>Rule</code> returned in the <code>CreateRule</code> response.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateRuleOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -186,11 +186,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRuleGroup`](crate::client::fluent_builders::CreateRuleGroup) operation.
     ///
-    /// - Takes [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateRuleGroupInput::name): <p>A friendly name or description of the <code>RuleGroup</code>. You can't change <code>Name</code> after you create a <code>RuleGroup</code>.</p>
-    ///   - [`metric_name(Option<String>)`](crate::input::CreateRuleGroupInput::metric_name): <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateRuleGroupInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateRuleGroupInput::tags): <p></p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRuleGroup::set_name): <p>A friendly name or description of the <code>RuleGroup</code>. You can't change <code>Name</code> after you create a <code>RuleGroup</code>.</p>
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::CreateRuleGroup::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::CreateRuleGroup::set_metric_name): <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateRuleGroup::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateRuleGroup::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRuleGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRuleGroup::set_tags): <p></p>
     /// - On success, responds with [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput) with field(s):
     ///   - [`rule_group(Option<RuleGroup>)`](crate::output::CreateRuleGroupOutput::rule_group): <p>An empty <code>RuleGroup</code>.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateRuleGroupOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -200,9 +200,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSizeConstraintSet`](crate::client::fluent_builders::CreateSizeConstraintSet) operation.
     ///
-    /// - Takes [`CreateSizeConstraintSetInput`](crate::input::CreateSizeConstraintSetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateSizeConstraintSetInput::name): <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateSizeConstraintSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSizeConstraintSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSizeConstraintSet::set_name): <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateSizeConstraintSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateSizeConstraintSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput) with field(s):
     ///   - [`size_constraint_set(Option<SizeConstraintSet>)`](crate::output::CreateSizeConstraintSetOutput::size_constraint_set): <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateSizeConstraintSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -212,9 +212,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSqlInjectionMatchSet`](crate::client::fluent_builders::CreateSqlInjectionMatchSet) operation.
     ///
-    /// - Takes [`CreateSqlInjectionMatchSetInput`](crate::input::CreateSqlInjectionMatchSetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateSqlInjectionMatchSetInput::name): <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateSqlInjectionMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSqlInjectionMatchSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSqlInjectionMatchSet::set_name): <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateSqlInjectionMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateSqlInjectionMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput) with field(s):
     ///   - [`sql_injection_match_set(Option<SqlInjectionMatchSet>)`](crate::output::CreateSqlInjectionMatchSetOutput::sql_injection_match_set): <p>A <code>SqlInjectionMatchSet</code>.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateSqlInjectionMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -226,12 +226,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateWebACL`](crate::client::fluent_builders::CreateWebACL) operation.
     ///
-    /// - Takes [`CreateWebAclInput`](crate::input::CreateWebAclInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateWebAclInput::name): <p>A friendly name or description of the <code>WebACL</code>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
-    ///   - [`metric_name(Option<String>)`](crate::input::CreateWebAclInput::metric_name): <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
-    ///   - [`default_action(Option<WafAction>)`](crate::input::CreateWebAclInput::default_action): <p>The action that you want AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateWebAclInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateWebAclInput::tags): <p></p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWebACL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWebACL::set_name): <p>A friendly name or description of the <code>WebACL</code>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
+    ///   - [`metric_name(impl Into<String>)`](crate::client::fluent_builders::CreateWebACL::metric_name) / [`set_metric_name(Option<String>)`](crate::client::fluent_builders::CreateWebACL::set_metric_name): <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
+    ///   - [`default_action(WafAction)`](crate::client::fluent_builders::CreateWebACL::default_action) / [`set_default_action(Option<WafAction>)`](crate::client::fluent_builders::CreateWebACL::set_default_action): <p>The action that you want AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateWebACL::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateWebACL::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWebACL::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWebACL::set_tags): <p></p>
     /// - On success, responds with [`CreateWebAclOutput`](crate::output::CreateWebAclOutput) with field(s):
     ///   - [`web_acl(Option<WebAcl>)`](crate::output::CreateWebAclOutput::web_acl): <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateWebAclOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -241,10 +241,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateWebACLMigrationStack`](crate::client::fluent_builders::CreateWebACLMigrationStack) operation.
     ///
-    /// - Takes [`CreateWebAclMigrationStackInput`](crate::input::CreateWebAclMigrationStackInput) with field(s):
-    ///   - [`web_acl_id(Option<String>)`](crate::input::CreateWebAclMigrationStackInput::web_acl_id): <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
-    ///   - [`s3_bucket_name(Option<String>)`](crate::input::CreateWebAclMigrationStackInput::s3_bucket_name): <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration: </p>  <ul>   <li> <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p> </li>   <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>   <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>  </ul>
-    ///   - [`ignore_unsupported_type(Option<bool>)`](crate::input::CreateWebAclMigrationStackInput::ignore_unsupported_type): <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::CreateWebACLMigrationStack::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::CreateWebACLMigrationStack::set_web_acl_id): <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
+    ///   - [`s3_bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateWebACLMigrationStack::s3_bucket_name) / [`set_s3_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateWebACLMigrationStack::set_s3_bucket_name): <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration: </p>  <ul>   <li> <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p> </li>   <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>   <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>  </ul>
+    ///   - [`ignore_unsupported_type(bool)`](crate::client::fluent_builders::CreateWebACLMigrationStack::ignore_unsupported_type) / [`set_ignore_unsupported_type(Option<bool>)`](crate::client::fluent_builders::CreateWebACLMigrationStack::set_ignore_unsupported_type): <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
     /// - On success, responds with [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput) with field(s):
     ///   - [`s3_object_url(Option<String>)`](crate::output::CreateWebAclMigrationStackOutput::s3_object_url): <p>The URL of the template created in Amazon S3. </p>
     /// - On failure, responds with [`SdkError<CreateWebACLMigrationStackError>`](crate::error::CreateWebACLMigrationStackError)
@@ -255,9 +255,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateXssMatchSet`](crate::client::fluent_builders::CreateXssMatchSet) operation.
     ///
-    /// - Takes [`CreateXssMatchSetInput`](crate::input::CreateXssMatchSetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateXssMatchSetInput::name): <p>A friendly name or description for the <code>XssMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::CreateXssMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateXssMatchSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateXssMatchSet::set_name): <p>A friendly name or description for the <code>XssMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::CreateXssMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::CreateXssMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput) with field(s):
     ///   - [`xss_match_set(Option<XssMatchSet>)`](crate::output::CreateXssMatchSetOutput::xss_match_set): <p>An <code>XssMatchSet</code>.</p>
     ///   - [`change_token(Option<String>)`](crate::output::CreateXssMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -267,9 +267,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteByteMatchSet`](crate::client::fluent_builders::DeleteByteMatchSet) operation.
     ///
-    /// - Takes [`DeleteByteMatchSetInput`](crate::input::DeleteByteMatchSetInput) with field(s):
-    ///   - [`byte_match_set_id(Option<String>)`](crate::input::DeleteByteMatchSetInput::byte_match_set_id): <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteByteMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`byte_match_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteByteMatchSet::byte_match_set_id) / [`set_byte_match_set_id(Option<String>)`](crate::client::fluent_builders::DeleteByteMatchSet::set_byte_match_set_id): <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteByteMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteByteMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteByteMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteByteMatchSetError>`](crate::error::DeleteByteMatchSetError)
@@ -278,9 +278,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteGeoMatchSet`](crate::client::fluent_builders::DeleteGeoMatchSet) operation.
     ///
-    /// - Takes [`DeleteGeoMatchSetInput`](crate::input::DeleteGeoMatchSetInput) with field(s):
-    ///   - [`geo_match_set_id(Option<String>)`](crate::input::DeleteGeoMatchSetInput::geo_match_set_id): <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteGeoMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`geo_match_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGeoMatchSet::geo_match_set_id) / [`set_geo_match_set_id(Option<String>)`](crate::client::fluent_builders::DeleteGeoMatchSet::set_geo_match_set_id): <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteGeoMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteGeoMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteGeoMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteGeoMatchSetError>`](crate::error::DeleteGeoMatchSetError)
@@ -289,9 +289,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteIPSet`](crate::client::fluent_builders::DeleteIPSet) operation.
     ///
-    /// - Takes [`DeleteIpSetInput`](crate::input::DeleteIpSetInput) with field(s):
-    ///   - [`ip_set_id(Option<String>)`](crate::input::DeleteIpSetInput::ip_set_id): <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to delete. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteIpSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ip_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::ip_set_id) / [`set_ip_set_id(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_ip_set_id): <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to delete. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteIpSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteIPSetError>`](crate::error::DeleteIPSetError)
@@ -300,8 +300,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteLoggingConfiguration`](crate::client::fluent_builders::DeleteLoggingConfiguration) operation.
     ///
-    /// - Takes [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::DeleteLoggingConfigurationInput::resource_arn): <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::set_resource_arn): <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     /// - On success, responds with [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLoggingConfigurationError>`](crate::error::DeleteLoggingConfigurationError)
@@ -312,8 +312,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeletePermissionPolicy`](crate::client::fluent_builders::DeletePermissionPolicy) operation.
     ///
-    /// - Takes [`DeletePermissionPolicyInput`](crate::input::DeletePermissionPolicyInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::DeletePermissionPolicyInput::resource_arn): <p>The Amazon Resource Name (ARN) of the RuleGroup from which you want to delete the policy.</p>  <p>The user making the request must be the owner of the RuleGroup.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionPolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionPolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the RuleGroup from which you want to delete the policy.</p>  <p>The user making the request must be the owner of the RuleGroup.</p>
     /// - On success, responds with [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeletePermissionPolicyError>`](crate::error::DeletePermissionPolicyError)
@@ -322,9 +322,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRateBasedRule`](crate::client::fluent_builders::DeleteRateBasedRule) operation.
     ///
-    /// - Takes [`DeleteRateBasedRuleInput`](crate::input::DeleteRateBasedRuleInput) with field(s):
-    ///   - [`rule_id(Option<String>)`](crate::input::DeleteRateBasedRuleInput::rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteRateBasedRuleInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRateBasedRule::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::DeleteRateBasedRule::set_rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteRateBasedRule::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteRateBasedRule::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteRateBasedRuleOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteRateBasedRuleError>`](crate::error::DeleteRateBasedRuleError)
@@ -333,9 +333,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRegexMatchSet`](crate::client::fluent_builders::DeleteRegexMatchSet) operation.
     ///
-    /// - Takes [`DeleteRegexMatchSetInput`](crate::input::DeleteRegexMatchSetInput) with field(s):
-    ///   - [`regex_match_set_id(Option<String>)`](crate::input::DeleteRegexMatchSetInput::regex_match_set_id): <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteRegexMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`regex_match_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexMatchSet::regex_match_set_id) / [`set_regex_match_set_id(Option<String>)`](crate::client::fluent_builders::DeleteRegexMatchSet::set_regex_match_set_id): <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteRegexMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteRegexMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteRegexMatchSetError>`](crate::error::DeleteRegexMatchSetError)
@@ -344,9 +344,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRegexPatternSet`](crate::client::fluent_builders::DeleteRegexPatternSet) operation.
     ///
-    /// - Takes [`DeleteRegexPatternSetInput`](crate::input::DeleteRegexPatternSetInput) with field(s):
-    ///   - [`regex_pattern_set_id(Option<String>)`](crate::input::DeleteRegexPatternSetInput::regex_pattern_set_id): <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteRegexPatternSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`regex_pattern_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::regex_pattern_set_id) / [`set_regex_pattern_set_id(Option<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_regex_pattern_set_id): <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteRegexPatternSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteRegexPatternSetError>`](crate::error::DeleteRegexPatternSetError)
@@ -355,9 +355,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRule`](crate::client::fluent_builders::DeleteRule) operation.
     ///
-    /// - Takes [`DeleteRuleInput`](crate::input::DeleteRuleInput) with field(s):
-    ///   - [`rule_id(Option<String>)`](crate::input::DeleteRuleInput::rule_id): <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteRuleInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRule::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::DeleteRule::set_rule_id): <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteRule::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteRule::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteRuleOutput`](crate::output::DeleteRuleOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteRuleOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteRuleError>`](crate::error::DeleteRuleError)
@@ -366,9 +366,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRuleGroup`](crate::client::fluent_builders::DeleteRuleGroup) operation.
     ///
-    /// - Takes [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput) with field(s):
-    ///   - [`rule_group_id(Option<String>)`](crate::input::DeleteRuleGroupInput::rule_group_id): <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteRuleGroupInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_group_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRuleGroup::rule_group_id) / [`set_rule_group_id(Option<String>)`](crate::client::fluent_builders::DeleteRuleGroup::set_rule_group_id): <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteRuleGroup::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteRuleGroup::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteRuleGroupOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteRuleGroupError>`](crate::error::DeleteRuleGroupError)
@@ -377,9 +377,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSizeConstraintSet`](crate::client::fluent_builders::DeleteSizeConstraintSet) operation.
     ///
-    /// - Takes [`DeleteSizeConstraintSetInput`](crate::input::DeleteSizeConstraintSetInput) with field(s):
-    ///   - [`size_constraint_set_id(Option<String>)`](crate::input::DeleteSizeConstraintSetInput::size_constraint_set_id): <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteSizeConstraintSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`size_constraint_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSizeConstraintSet::size_constraint_set_id) / [`set_size_constraint_set_id(Option<String>)`](crate::client::fluent_builders::DeleteSizeConstraintSet::set_size_constraint_set_id): <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteSizeConstraintSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteSizeConstraintSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteSizeConstraintSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteSizeConstraintSetError>`](crate::error::DeleteSizeConstraintSetError)
@@ -388,9 +388,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSqlInjectionMatchSet`](crate::client::fluent_builders::DeleteSqlInjectionMatchSet) operation.
     ///
-    /// - Takes [`DeleteSqlInjectionMatchSetInput`](crate::input::DeleteSqlInjectionMatchSetInput) with field(s):
-    ///   - [`sql_injection_match_set_id(Option<String>)`](crate::input::DeleteSqlInjectionMatchSetInput::sql_injection_match_set_id): <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteSqlInjectionMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sql_injection_match_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSqlInjectionMatchSet::sql_injection_match_set_id) / [`set_sql_injection_match_set_id(Option<String>)`](crate::client::fluent_builders::DeleteSqlInjectionMatchSet::set_sql_injection_match_set_id): <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteSqlInjectionMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteSqlInjectionMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteSqlInjectionMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteSqlInjectionMatchSetError>`](crate::error::DeleteSqlInjectionMatchSetError)
@@ -401,9 +401,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteWebACL`](crate::client::fluent_builders::DeleteWebACL) operation.
     ///
-    /// - Takes [`DeleteWebAclInput`](crate::input::DeleteWebAclInput) with field(s):
-    ///   - [`web_acl_id(Option<String>)`](crate::input::DeleteWebAclInput::web_acl_id): <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteWebAclInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWebACL::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::DeleteWebACL::set_web_acl_id): <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteWebACL::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteWebACL::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteWebAclOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteWebACLError>`](crate::error::DeleteWebACLError)
@@ -412,9 +412,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteXssMatchSet`](crate::client::fluent_builders::DeleteXssMatchSet) operation.
     ///
-    /// - Takes [`DeleteXssMatchSetInput`](crate::input::DeleteXssMatchSetInput) with field(s):
-    ///   - [`xss_match_set_id(Option<String>)`](crate::input::DeleteXssMatchSetInput::xss_match_set_id): <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::DeleteXssMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`xss_match_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteXssMatchSet::xss_match_set_id) / [`set_xss_match_set_id(Option<String>)`](crate::client::fluent_builders::DeleteXssMatchSet::set_xss_match_set_id): <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::DeleteXssMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::DeleteXssMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::DeleteXssMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteXssMatchSetError>`](crate::error::DeleteXssMatchSetError)
@@ -423,8 +423,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateWebACL`](crate::client::fluent_builders::DisassociateWebACL) operation.
     ///
-    /// - Takes [`DisassociateWebAclInput`](crate::input::DisassociateWebAclInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::DisassociateWebAclInput::resource_arn): <p>The ARN (Amazon Resource Name) of the resource from which the web ACL is being removed, either an application load balancer or Amazon API Gateway stage.</p>  <p>The ARN should be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateWebACL::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DisassociateWebACL::set_resource_arn): <p>The ARN (Amazon Resource Name) of the resource from which the web ACL is being removed, either an application load balancer or Amazon API Gateway stage.</p>  <p>The ARN should be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>  </ul>
     /// - On success, responds with [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateWebACLError>`](crate::error::DisassociateWebACLError)
@@ -433,8 +433,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetByteMatchSet`](crate::client::fluent_builders::GetByteMatchSet) operation.
     ///
-    /// - Takes [`GetByteMatchSetInput`](crate::input::GetByteMatchSetInput) with field(s):
-    ///   - [`byte_match_set_id(Option<String>)`](crate::input::GetByteMatchSetInput::byte_match_set_id): <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`byte_match_set_id(impl Into<String>)`](crate::client::fluent_builders::GetByteMatchSet::byte_match_set_id) / [`set_byte_match_set_id(Option<String>)`](crate::client::fluent_builders::GetByteMatchSet::set_byte_match_set_id): <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     /// - On success, responds with [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput) with field(s):
     ///   - [`byte_match_set(Option<ByteMatchSet>)`](crate::output::GetByteMatchSetOutput::byte_match_set): <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li>   <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetByteMatchSetError>`](crate::error::GetByteMatchSetError)
@@ -443,7 +443,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetChangeToken`](crate::client::fluent_builders::GetChangeToken) operation.
     ///
-    /// - Takes [`GetChangeTokenInput`](crate::input::GetChangeTokenInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetChangeToken::send) it.
 
     /// - On success, responds with [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::GetChangeTokenOutput::change_token): <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>
@@ -453,8 +453,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetChangeTokenStatus`](crate::client::fluent_builders::GetChangeTokenStatus) operation.
     ///
-    /// - Takes [`GetChangeTokenStatusInput`](crate::input::GetChangeTokenStatusInput) with field(s):
-    ///   - [`change_token(Option<String>)`](crate::input::GetChangeTokenStatusInput::change_token): <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::GetChangeTokenStatus::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::GetChangeTokenStatus::set_change_token): <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
     /// - On success, responds with [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput) with field(s):
     ///   - [`change_token_status(Option<ChangeTokenStatus>)`](crate::output::GetChangeTokenStatusOutput::change_token_status): <p>The status of the change token.</p>
     /// - On failure, responds with [`SdkError<GetChangeTokenStatusError>`](crate::error::GetChangeTokenStatusError)
@@ -463,8 +463,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetGeoMatchSet`](crate::client::fluent_builders::GetGeoMatchSet) operation.
     ///
-    /// - Takes [`GetGeoMatchSetInput`](crate::input::GetGeoMatchSetInput) with field(s):
-    ///   - [`geo_match_set_id(Option<String>)`](crate::input::GetGeoMatchSetInput::geo_match_set_id): <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`geo_match_set_id(impl Into<String>)`](crate::client::fluent_builders::GetGeoMatchSet::geo_match_set_id) / [`set_geo_match_set_id(Option<String>)`](crate::client::fluent_builders::GetGeoMatchSet::set_geo_match_set_id): <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     /// - On success, responds with [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput) with field(s):
     ///   - [`geo_match_set(Option<GeoMatchSet>)`](crate::output::GetGeoMatchSetOutput::geo_match_set): <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
     /// - On failure, responds with [`SdkError<GetGeoMatchSetError>`](crate::error::GetGeoMatchSetError)
@@ -473,8 +473,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetIPSet`](crate::client::fluent_builders::GetIPSet) operation.
     ///
-    /// - Takes [`GetIpSetInput`](crate::input::GetIpSetInput) with field(s):
-    ///   - [`ip_set_id(Option<String>)`](crate::input::GetIpSetInput::ip_set_id): <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ip_set_id(impl Into<String>)`](crate::client::fluent_builders::GetIPSet::ip_set_id) / [`set_ip_set_id(Option<String>)`](crate::client::fluent_builders::GetIPSet::set_ip_set_id): <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     /// - On success, responds with [`GetIpSetOutput`](crate::output::GetIpSetOutput) with field(s):
     ///   - [`ip_set(Option<IpSet>)`](crate::output::GetIpSetOutput::ip_set): <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>   <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetIPSetError>`](crate::error::GetIPSetError)
@@ -483,8 +483,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetLoggingConfiguration`](crate::client::fluent_builders::GetLoggingConfiguration) operation.
     ///
-    /// - Takes [`GetLoggingConfigurationInput`](crate::input::GetLoggingConfigurationInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::GetLoggingConfigurationInput::resource_arn): <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetLoggingConfiguration::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetLoggingConfiguration::set_resource_arn): <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
     /// - On success, responds with [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::GetLoggingConfigurationOutput::logging_configuration): <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
     /// - On failure, responds with [`SdkError<GetLoggingConfigurationError>`](crate::error::GetLoggingConfigurationError)
@@ -493,8 +493,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetPermissionPolicy`](crate::client::fluent_builders::GetPermissionPolicy) operation.
     ///
-    /// - Takes [`GetPermissionPolicyInput`](crate::input::GetPermissionPolicyInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::GetPermissionPolicyInput::resource_arn): <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetPermissionPolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetPermissionPolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
     /// - On success, responds with [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::output::GetPermissionPolicyOutput::policy): <p>The IAM policy attached to the specified RuleGroup.</p>
     /// - On failure, responds with [`SdkError<GetPermissionPolicyError>`](crate::error::GetPermissionPolicyError)
@@ -503,8 +503,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetRateBasedRule`](crate::client::fluent_builders::GetRateBasedRule) operation.
     ///
-    /// - Takes [`GetRateBasedRuleInput`](crate::input::GetRateBasedRuleInput) with field(s):
-    ///   - [`rule_id(Option<String>)`](crate::input::GetRateBasedRuleInput::rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedRule::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::GetRateBasedRule::set_rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     /// - On success, responds with [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput) with field(s):
     ///   - [`rule(Option<RateBasedRule>)`](crate::output::GetRateBasedRuleOutput::rule): <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
     /// - On failure, responds with [`SdkError<GetRateBasedRuleError>`](crate::error::GetRateBasedRuleError)
@@ -513,9 +513,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetRateBasedRuleManagedKeys`](crate::client::fluent_builders::GetRateBasedRuleManagedKeys) operation.
     ///
-    /// - Takes [`GetRateBasedRuleManagedKeysInput`](crate::input::GetRateBasedRuleManagedKeysInput) with field(s):
-    ///   - [`rule_id(Option<String>)`](crate::input::GetRateBasedRuleManagedKeysInput::rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
-    ///   - [`next_marker(Option<String>)`](crate::input::GetRateBasedRuleManagedKeysInput::next_marker): <p>A null value and not currently used. Do not include this in your request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedRuleManagedKeys::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::GetRateBasedRuleManagedKeys::set_rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedRuleManagedKeys::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::GetRateBasedRuleManagedKeys::set_next_marker): <p>A null value and not currently used. Do not include this in your request.</p>
     /// - On success, responds with [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput) with field(s):
     ///   - [`managed_keys(Option<Vec<String>>)`](crate::output::GetRateBasedRuleManagedKeysOutput::managed_keys): <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
     ///   - [`next_marker(Option<String>)`](crate::output::GetRateBasedRuleManagedKeysOutput::next_marker): <p>A null value and not currently used.</p>
@@ -527,8 +527,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetRegexMatchSet`](crate::client::fluent_builders::GetRegexMatchSet) operation.
     ///
-    /// - Takes [`GetRegexMatchSetInput`](crate::input::GetRegexMatchSetInput) with field(s):
-    ///   - [`regex_match_set_id(Option<String>)`](crate::input::GetRegexMatchSetInput::regex_match_set_id): <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`regex_match_set_id(impl Into<String>)`](crate::client::fluent_builders::GetRegexMatchSet::regex_match_set_id) / [`set_regex_match_set_id(Option<String>)`](crate::client::fluent_builders::GetRegexMatchSet::set_regex_match_set_id): <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     /// - On success, responds with [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput) with field(s):
     ///   - [`regex_match_set(Option<RegexMatchSet>)`](crate::output::GetRegexMatchSetOutput::regex_match_set): <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
     /// - On failure, responds with [`SdkError<GetRegexMatchSetError>`](crate::error::GetRegexMatchSetError)
@@ -537,8 +537,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetRegexPatternSet`](crate::client::fluent_builders::GetRegexPatternSet) operation.
     ///
-    /// - Takes [`GetRegexPatternSetInput`](crate::input::GetRegexPatternSetInput) with field(s):
-    ///   - [`regex_pattern_set_id(Option<String>)`](crate::input::GetRegexPatternSetInput::regex_pattern_set_id): <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`regex_pattern_set_id(impl Into<String>)`](crate::client::fluent_builders::GetRegexPatternSet::regex_pattern_set_id) / [`set_regex_pattern_set_id(Option<String>)`](crate::client::fluent_builders::GetRegexPatternSet::set_regex_pattern_set_id): <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     /// - On success, responds with [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput) with field(s):
     ///   - [`regex_pattern_set(Option<RegexPatternSet>)`](crate::output::GetRegexPatternSetOutput::regex_pattern_set): <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
     /// - On failure, responds with [`SdkError<GetRegexPatternSetError>`](crate::error::GetRegexPatternSetError)
@@ -547,8 +547,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetRule`](crate::client::fluent_builders::GetRule) operation.
     ///
-    /// - Takes [`GetRuleInput`](crate::input::GetRuleInput) with field(s):
-    ///   - [`rule_id(Option<String>)`](crate::input::GetRuleInput::rule_id): <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::GetRule::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::GetRule::set_rule_id): <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     /// - On success, responds with [`GetRuleOutput`](crate::output::GetRuleOutput) with field(s):
     ///   - [`rule(Option<Rule>)`](crate::output::GetRuleOutput::rule): <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>   <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetRuleError>`](crate::error::GetRuleError)
@@ -557,8 +557,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetRuleGroup`](crate::client::fluent_builders::GetRuleGroup) operation.
     ///
-    /// - Takes [`GetRuleGroupInput`](crate::input::GetRuleGroupInput) with field(s):
-    ///   - [`rule_group_id(Option<String>)`](crate::input::GetRuleGroupInput::rule_group_id): <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_group_id(impl Into<String>)`](crate::client::fluent_builders::GetRuleGroup::rule_group_id) / [`set_rule_group_id(Option<String>)`](crate::client::fluent_builders::GetRuleGroup::set_rule_group_id): <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     /// - On success, responds with [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput) with field(s):
     ///   - [`rule_group(Option<RuleGroup>)`](crate::output::GetRuleGroupOutput::rule_group): <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     /// - On failure, responds with [`SdkError<GetRuleGroupError>`](crate::error::GetRuleGroupError)
@@ -567,11 +567,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetSampledRequests`](crate::client::fluent_builders::GetSampledRequests) operation.
     ///
-    /// - Takes [`GetSampledRequestsInput`](crate::input::GetSampledRequestsInput) with field(s):
-    ///   - [`web_acl_id(Option<String>)`](crate::input::GetSampledRequestsInput::web_acl_id): <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
-    ///   - [`rule_id(Option<String>)`](crate::input::GetSampledRequestsInput::rule_id): <p> <code>RuleId</code> is one of three values:</p>  <ul>   <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>   <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>  </ul>
-    ///   - [`time_window(Option<TimeWindow>)`](crate::input::GetSampledRequestsInput::time_window): <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-    ///   - [`max_items(i64)`](crate::input::GetSampledRequestsInput::max_items): <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::GetSampledRequests::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::GetSampledRequests::set_web_acl_id): <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::GetSampledRequests::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::GetSampledRequests::set_rule_id): <p> <code>RuleId</code> is one of three values:</p>  <ul>   <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>   <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>  </ul>
+    ///   - [`time_window(TimeWindow)`](crate::client::fluent_builders::GetSampledRequests::time_window) / [`set_time_window(Option<TimeWindow>)`](crate::client::fluent_builders::GetSampledRequests::set_time_window): <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    ///   - [`max_items(i64)`](crate::client::fluent_builders::GetSampledRequests::max_items) / [`set_max_items(i64)`](crate::client::fluent_builders::GetSampledRequests::set_max_items): <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
     /// - On success, responds with [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput) with field(s):
     ///   - [`sampled_requests(Option<Vec<SampledHttpRequest>>)`](crate::output::GetSampledRequestsOutput::sampled_requests): <p>A complex type that contains detailed information about each of the requests in the sample.</p>
     ///   - [`population_size(i64)`](crate::output::GetSampledRequestsOutput::population_size): <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource received during the specified time range.</p>
@@ -582,8 +582,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSizeConstraintSet`](crate::client::fluent_builders::GetSizeConstraintSet) operation.
     ///
-    /// - Takes [`GetSizeConstraintSetInput`](crate::input::GetSizeConstraintSetInput) with field(s):
-    ///   - [`size_constraint_set_id(Option<String>)`](crate::input::GetSizeConstraintSetInput::size_constraint_set_id): <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`size_constraint_set_id(impl Into<String>)`](crate::client::fluent_builders::GetSizeConstraintSet::size_constraint_set_id) / [`set_size_constraint_set_id(Option<String>)`](crate::client::fluent_builders::GetSizeConstraintSet::set_size_constraint_set_id): <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     /// - On success, responds with [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput) with field(s):
     ///   - [`size_constraint_set(Option<SizeConstraintSet>)`](crate::output::GetSizeConstraintSetOutput::size_constraint_set): <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li>   <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetSizeConstraintSetError>`](crate::error::GetSizeConstraintSetError)
@@ -592,8 +592,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSqlInjectionMatchSet`](crate::client::fluent_builders::GetSqlInjectionMatchSet) operation.
     ///
-    /// - Takes [`GetSqlInjectionMatchSetInput`](crate::input::GetSqlInjectionMatchSetInput) with field(s):
-    ///   - [`sql_injection_match_set_id(Option<String>)`](crate::input::GetSqlInjectionMatchSetInput::sql_injection_match_set_id): <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sql_injection_match_set_id(impl Into<String>)`](crate::client::fluent_builders::GetSqlInjectionMatchSet::sql_injection_match_set_id) / [`set_sql_injection_match_set_id(Option<String>)`](crate::client::fluent_builders::GetSqlInjectionMatchSet::set_sql_injection_match_set_id): <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     /// - On success, responds with [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput) with field(s):
     ///   - [`sql_injection_match_set(Option<SqlInjectionMatchSet>)`](crate::output::GetSqlInjectionMatchSetOutput::sql_injection_match_set): <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>   <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetSqlInjectionMatchSetError>`](crate::error::GetSqlInjectionMatchSetError)
@@ -602,8 +602,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetWebACL`](crate::client::fluent_builders::GetWebACL) operation.
     ///
-    /// - Takes [`GetWebAclInput`](crate::input::GetWebAclInput) with field(s):
-    ///   - [`web_acl_id(Option<String>)`](crate::input::GetWebAclInput::web_acl_id): <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::GetWebACL::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::GetWebACL::set_web_acl_id): <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     /// - On success, responds with [`GetWebAclOutput`](crate::output::GetWebAclOutput) with field(s):
     ///   - [`web_acl(Option<WebAcl>)`](crate::output::GetWebAclOutput::web_acl): <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>   <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>   <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>   <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetWebACLError>`](crate::error::GetWebACLError)
@@ -612,8 +612,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetWebACLForResource`](crate::client::fluent_builders::GetWebACLForResource) operation.
     ///
-    /// - Takes [`GetWebAclForResourceInput`](crate::input::GetWebAclForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::GetWebAclForResourceInput::resource_arn): <p>The ARN (Amazon Resource Name) of the resource for which to get the web ACL, either an application load balancer or Amazon API Gateway stage.</p>  <p>The ARN should be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetWebACLForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetWebACLForResource::set_resource_arn): <p>The ARN (Amazon Resource Name) of the resource for which to get the web ACL, either an application load balancer or Amazon API Gateway stage.</p>  <p>The ARN should be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>  </ul>
     /// - On success, responds with [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput) with field(s):
     ///   - [`web_acl_summary(Option<WebAclSummary>)`](crate::output::GetWebAclForResourceOutput::web_acl_summary): <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
     /// - On failure, responds with [`SdkError<GetWebACLForResourceError>`](crate::error::GetWebACLForResourceError)
@@ -622,8 +622,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetXssMatchSet`](crate::client::fluent_builders::GetXssMatchSet) operation.
     ///
-    /// - Takes [`GetXssMatchSetInput`](crate::input::GetXssMatchSetInput) with field(s):
-    ///   - [`xss_match_set_id(Option<String>)`](crate::input::GetXssMatchSetInput::xss_match_set_id): <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`xss_match_set_id(impl Into<String>)`](crate::client::fluent_builders::GetXssMatchSet::xss_match_set_id) / [`set_xss_match_set_id(Option<String>)`](crate::client::fluent_builders::GetXssMatchSet::set_xss_match_set_id): <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     /// - On success, responds with [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput) with field(s):
     ///   - [`xss_match_set(Option<XssMatchSet>)`](crate::output::GetXssMatchSetOutput::xss_match_set): <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>   <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetXssMatchSetError>`](crate::error::GetXssMatchSetError)
@@ -632,10 +632,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListActivatedRulesInRuleGroup`](crate::client::fluent_builders::ListActivatedRulesInRuleGroup) operation.
     ///
-    /// - Takes [`ListActivatedRulesInRuleGroupInput`](crate::input::ListActivatedRulesInRuleGroupInput) with field(s):
-    ///   - [`rule_group_id(Option<String>)`](crate::input::ListActivatedRulesInRuleGroupInput::rule_group_id): <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
-    ///   - [`next_marker(Option<String>)`](crate::input::ListActivatedRulesInRuleGroupInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>. For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListActivatedRulesInRuleGroupInput::limit): <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_group_id(impl Into<String>)`](crate::client::fluent_builders::ListActivatedRulesInRuleGroup::rule_group_id) / [`set_rule_group_id(Option<String>)`](crate::client::fluent_builders::ListActivatedRulesInRuleGroup::set_rule_group_id): <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListActivatedRulesInRuleGroup::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListActivatedRulesInRuleGroup::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>. For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListActivatedRulesInRuleGroup::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListActivatedRulesInRuleGroup::set_limit): <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
     /// - On success, responds with [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListActivatedRulesInRuleGroupOutput::next_marker): <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`activated_rules(Option<Vec<ActivatedRule>>)`](crate::output::ListActivatedRulesInRuleGroupOutput::activated_rules): <p>An array of <code>ActivatedRules</code> objects.</p>
@@ -647,9 +647,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListByteMatchSets`](crate::client::fluent_builders::ListByteMatchSets) operation.
     ///
-    /// - Takes [`ListByteMatchSetsInput`](crate::input::ListByteMatchSetsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListByteMatchSetsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListByteMatchSetsInput::limit): <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListByteMatchSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListByteMatchSets::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListByteMatchSets::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListByteMatchSets::set_limit): <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
     /// - On success, responds with [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListByteMatchSetsOutput::next_marker): <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`byte_match_sets(Option<Vec<ByteMatchSetSummary>>)`](crate::output::ListByteMatchSetsOutput::byte_match_sets): <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
@@ -659,9 +659,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListGeoMatchSets`](crate::client::fluent_builders::ListGeoMatchSets) operation.
     ///
-    /// - Takes [`ListGeoMatchSetsInput`](crate::input::ListGeoMatchSetsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListGeoMatchSetsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects. For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
-    ///   - [`limit(i32)`](crate::input::ListGeoMatchSetsInput::limit): <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListGeoMatchSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListGeoMatchSets::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects. For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListGeoMatchSets::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListGeoMatchSets::set_limit): <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
     /// - On success, responds with [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListGeoMatchSetsOutput::next_marker): <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`geo_match_sets(Option<Vec<GeoMatchSetSummary>>)`](crate::output::ListGeoMatchSetsOutput::geo_match_sets): <p>An array of <code>GeoMatchSetSummary</code> objects.</p>
@@ -671,9 +671,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListIPSets`](crate::client::fluent_builders::ListIPSets) operation.
     ///
-    /// - Takes [`ListIpSetsInput`](crate::input::ListIpSetsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListIpSetsInput::next_marker): <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>IPSets</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListIpSetsInput::limit): <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListIPSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListIPSets::set_next_marker): <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>IPSets</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListIPSets::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListIPSets::set_limit): <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
     /// - On success, responds with [`ListIpSetsOutput`](crate::output::ListIpSetsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListIpSetsOutput::next_marker): <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
     ///   - [`ip_sets(Option<Vec<IpSetSummary>>)`](crate::output::ListIpSetsOutput::ip_sets): <p>An array of <code>IPSetSummary</code> objects.</p>
@@ -683,9 +683,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListLoggingConfigurations`](crate::client::fluent_builders::ListLoggingConfigurations) operation.
     ///
-    /// - Takes [`ListLoggingConfigurationsInput`](crate::input::ListLoggingConfigurationsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListLoggingConfigurationsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListLoggingConfigurationsInput::limit): <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListLoggingConfigurations::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListLoggingConfigurations::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListLoggingConfigurations::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListLoggingConfigurations::set_limit): <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
     /// - On success, responds with [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput) with field(s):
     ///   - [`logging_configurations(Option<Vec<LoggingConfiguration>>)`](crate::output::ListLoggingConfigurationsOutput::logging_configurations): <p>An array of <code>LoggingConfiguration</code> objects.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListLoggingConfigurationsOutput::next_marker): <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -697,9 +697,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListRateBasedRules`](crate::client::fluent_builders::ListRateBasedRules) operation.
     ///
-    /// - Takes [`ListRateBasedRulesInput`](crate::input::ListRateBasedRulesInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListRateBasedRulesInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRateBasedRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListRateBasedRulesInput::limit): <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListRateBasedRules::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListRateBasedRules::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRateBasedRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListRateBasedRules::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListRateBasedRules::set_limit): <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     /// - On success, responds with [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListRateBasedRulesOutput::next_marker): <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`rules(Option<Vec<RuleSummary>>)`](crate::output::ListRateBasedRulesOutput::rules): <p>An array of <code>RuleSummary</code> objects.</p>
@@ -709,9 +709,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListRegexMatchSets`](crate::client::fluent_builders::ListRegexMatchSets) operation.
     ///
-    /// - Takes [`ListRegexMatchSetsInput`](crate::input::ListRegexMatchSetsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListRegexMatchSetsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
-    ///   - [`limit(i32)`](crate::input::ListRegexMatchSetsInput::limit): <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListRegexMatchSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListRegexMatchSets::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListRegexMatchSets::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListRegexMatchSets::set_limit): <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
     /// - On success, responds with [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListRegexMatchSetsOutput::next_marker): <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`regex_match_sets(Option<Vec<RegexMatchSetSummary>>)`](crate::output::ListRegexMatchSetsOutput::regex_match_sets): <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
@@ -721,9 +721,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListRegexPatternSets`](crate::client::fluent_builders::ListRegexPatternSets) operation.
     ///
-    /// - Takes [`ListRegexPatternSetsInput`](crate::input::ListRegexPatternSetsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListRegexPatternSetsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects. For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
-    ///   - [`limit(i32)`](crate::input::ListRegexPatternSetsInput::limit): <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListRegexPatternSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListRegexPatternSets::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects. For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListRegexPatternSets::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListRegexPatternSets::set_limit): <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
     /// - On success, responds with [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListRegexPatternSetsOutput::next_marker): <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`regex_pattern_sets(Option<Vec<RegexPatternSetSummary>>)`](crate::output::ListRegexPatternSetsOutput::regex_pattern_sets): <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
@@ -733,9 +733,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListResourcesForWebACL`](crate::client::fluent_builders::ListResourcesForWebACL) operation.
     ///
-    /// - Takes [`ListResourcesForWebAclInput`](crate::input::ListResourcesForWebAclInput) with field(s):
-    ///   - [`web_acl_id(Option<String>)`](crate::input::ListResourcesForWebAclInput::web_acl_id): <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
-    ///   - [`resource_type(Option<ResourceType>)`](crate::input::ListResourcesForWebAclInput::resource_type): <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::ListResourcesForWebACL::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::ListResourcesForWebACL::set_web_acl_id): <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListResourcesForWebACL::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListResourcesForWebACL::set_resource_type): <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
     /// - On success, responds with [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput) with field(s):
     ///   - [`resource_arns(Option<Vec<String>>)`](crate::output::ListResourcesForWebAclOutput::resource_arns): <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
     /// - On failure, responds with [`SdkError<ListResourcesForWebACLError>`](crate::error::ListResourcesForWebACLError)
@@ -744,9 +744,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListRuleGroups`](crate::client::fluent_builders::ListRuleGroups) operation.
     ///
-    /// - Takes [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListRuleGroupsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListRuleGroupsInput::limit): <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListRuleGroups::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListRuleGroups::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListRuleGroups::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListRuleGroups::set_limit): <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
     /// - On success, responds with [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListRuleGroupsOutput::next_marker): <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`rule_groups(Option<Vec<RuleGroupSummary>>)`](crate::output::ListRuleGroupsOutput::rule_groups): <p>An array of <code>RuleGroup</code> objects.</p>
@@ -756,9 +756,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListRules`](crate::client::fluent_builders::ListRules) operation.
     ///
-    /// - Takes [`ListRulesInput`](crate::input::ListRulesInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListRulesInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListRulesInput::limit): <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListRules::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListRules::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListRules::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListRules::set_limit): <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     /// - On success, responds with [`ListRulesOutput`](crate::output::ListRulesOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListRulesOutput::next_marker): <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`rules(Option<Vec<RuleSummary>>)`](crate::output::ListRulesOutput::rules): <p>An array of <code>RuleSummary</code> objects.</p>
@@ -768,9 +768,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListSizeConstraintSets`](crate::client::fluent_builders::ListSizeConstraintSets) operation.
     ///
-    /// - Takes [`ListSizeConstraintSetsInput`](crate::input::ListSizeConstraintSetsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListSizeConstraintSetsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListSizeConstraintSetsInput::limit): <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListSizeConstraintSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListSizeConstraintSets::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListSizeConstraintSets::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListSizeConstraintSets::set_limit): <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
     /// - On success, responds with [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListSizeConstraintSetsOutput::next_marker): <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`size_constraint_sets(Option<Vec<SizeConstraintSetSummary>>)`](crate::output::ListSizeConstraintSetsOutput::size_constraint_sets): <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
@@ -780,9 +780,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListSqlInjectionMatchSets`](crate::client::fluent_builders::ListSqlInjectionMatchSets) operation.
     ///
-    /// - Takes [`ListSqlInjectionMatchSetsInput`](crate::input::ListSqlInjectionMatchSetsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListSqlInjectionMatchSetsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>SqlInjectionMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListSqlInjectionMatchSetsInput::limit): <p>Specifies the number of <code>SqlInjectionMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListSqlInjectionMatchSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListSqlInjectionMatchSets::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>SqlInjectionMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListSqlInjectionMatchSets::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListSqlInjectionMatchSets::set_limit): <p>Specifies the number of <code>SqlInjectionMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     /// - On success, responds with [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListSqlInjectionMatchSetsOutput::next_marker): <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`sql_injection_match_sets(Option<Vec<SqlInjectionMatchSetSummary>>)`](crate::output::ListSqlInjectionMatchSetsOutput::sql_injection_match_sets): <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
@@ -794,9 +794,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListSubscribedRuleGroups`](crate::client::fluent_builders::ListSubscribedRuleGroups) operation.
     ///
-    /// - Takes [`ListSubscribedRuleGroupsInput`](crate::input::ListSubscribedRuleGroupsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListSubscribedRuleGroupsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
-    ///   - [`limit(i32)`](crate::input::ListSubscribedRuleGroupsInput::limit): <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListSubscribedRuleGroups::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListSubscribedRuleGroups::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListSubscribedRuleGroups::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListSubscribedRuleGroups::set_limit): <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
     /// - On success, responds with [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListSubscribedRuleGroupsOutput::next_marker): <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`rule_groups(Option<Vec<SubscribedRuleGroupSummary>>)`](crate::output::ListSubscribedRuleGroupsOutput::rule_groups): <p>An array of <code>RuleGroup</code> objects.</p>
@@ -808,10 +808,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListTagsForResourceInput::next_marker): <p></p>
-    ///   - [`limit(i32)`](crate::input::ListTagsForResourceInput::limit): <p></p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p></p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_marker): <p></p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListTagsForResource::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListTagsForResource::set_limit): <p></p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p></p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListTagsForResourceOutput::next_marker): <p></p>
     ///   - [`tag_info_for_resource(Option<TagInfoForResource>)`](crate::output::ListTagsForResourceOutput::tag_info_for_resource): <p></p>
@@ -821,9 +821,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListWebACLs`](crate::client::fluent_builders::ListWebACLs) operation.
     ///
-    /// - Takes [`ListWebAcLsInput`](crate::input::ListWebAcLsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListWebAcLsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
-    ///   - [`limit(i32)`](crate::input::ListWebAcLsInput::limit): <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListWebACLs::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListWebACLs::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListWebACLs::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListWebACLs::set_limit): <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
     /// - On success, responds with [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListWebAcLsOutput::next_marker): <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`web_ac_ls(Option<Vec<WebAclSummary>>)`](crate::output::ListWebAcLsOutput::web_ac_ls): <p>An array of <code>WebACLSummary</code> objects.</p>
@@ -833,9 +833,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListXssMatchSets`](crate::client::fluent_builders::ListXssMatchSets) operation.
     ///
-    /// - Takes [`ListXssMatchSetsInput`](crate::input::ListXssMatchSetsInput) with field(s):
-    ///   - [`next_marker(Option<String>)`](crate::input::ListXssMatchSetsInput::next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
-    ///   - [`limit(i32)`](crate::input::ListXssMatchSetsInput::limit): <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListXssMatchSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListXssMatchSets::set_next_marker): <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListXssMatchSets::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListXssMatchSets::set_limit): <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     /// - On success, responds with [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::output::ListXssMatchSetsOutput::next_marker): <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`xss_match_sets(Option<Vec<XssMatchSetSummary>>)`](crate::output::ListXssMatchSetsOutput::xss_match_sets): <p>An array of <code>XssMatchSetSummary</code> objects.</p>
@@ -845,8 +845,8 @@ where
     }
     /// Constructs a fluent builder for the [`PutLoggingConfiguration`](crate::client::fluent_builders::PutLoggingConfiguration) operation.
     ///
-    /// - Takes [`PutLoggingConfigurationInput`](crate::input::PutLoggingConfigurationInput) with field(s):
-    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::input::PutLoggingConfigurationInput::logging_configuration): <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>   <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`logging_configuration(LoggingConfiguration)`](crate::client::fluent_builders::PutLoggingConfiguration::logging_configuration) / [`set_logging_configuration(Option<LoggingConfiguration>)`](crate::client::fluent_builders::PutLoggingConfiguration::set_logging_configuration): <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>   <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>  </note>
     /// - On success, responds with [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::PutLoggingConfigurationOutput::logging_configuration): <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
     /// - On failure, responds with [`SdkError<PutLoggingConfigurationError>`](crate::error::PutLoggingConfigurationError)
@@ -855,9 +855,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutPermissionPolicy`](crate::client::fluent_builders::PutPermissionPolicy) operation.
     ///
-    /// - Takes [`PutPermissionPolicyInput`](crate::input::PutPermissionPolicyInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::PutPermissionPolicyInput::resource_arn): <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
-    ///   - [`policy(Option<String>)`](crate::input::PutPermissionPolicyInput::policy): <p>The policy to attach to the specified RuleGroup.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutPermissionPolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutPermissionPolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutPermissionPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutPermissionPolicy::set_policy): <p>The policy to attach to the specified RuleGroup.</p>
     /// - On success, responds with [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput)
 
     /// - On failure, responds with [`SdkError<PutPermissionPolicyError>`](crate::error::PutPermissionPolicyError)
@@ -866,9 +866,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p></p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p></p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p></p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p></p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -877,9 +877,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p></p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p></p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p></p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p></p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -888,10 +888,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateByteMatchSet`](crate::client::fluent_builders::UpdateByteMatchSet) operation.
     ///
-    /// - Takes [`UpdateByteMatchSetInput`](crate::input::UpdateByteMatchSetInput) with field(s):
-    ///   - [`byte_match_set_id(Option<String>)`](crate::input::UpdateByteMatchSetInput::byte_match_set_id): <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateByteMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`updates(Option<Vec<ByteMatchSetUpdate>>)`](crate::input::UpdateByteMatchSetInput::updates): <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </p> </li>   <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`byte_match_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateByteMatchSet::byte_match_set_id) / [`set_byte_match_set_id(Option<String>)`](crate::client::fluent_builders::UpdateByteMatchSet::set_byte_match_set_id): <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateByteMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateByteMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`updates(Vec<ByteMatchSetUpdate>)`](crate::client::fluent_builders::UpdateByteMatchSet::updates) / [`set_updates(Option<Vec<ByteMatchSetUpdate>>)`](crate::client::fluent_builders::UpdateByteMatchSet::set_updates): <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </p> </li>   <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateByteMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateByteMatchSetError>`](crate::error::UpdateByteMatchSetError)
@@ -900,10 +900,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateGeoMatchSet`](crate::client::fluent_builders::UpdateGeoMatchSet) operation.
     ///
-    /// - Takes [`UpdateGeoMatchSetInput`](crate::input::UpdateGeoMatchSetInput) with field(s):
-    ///   - [`geo_match_set_id(Option<String>)`](crate::input::UpdateGeoMatchSetInput::geo_match_set_id): <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateGeoMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`updates(Option<Vec<GeoMatchSetUpdate>>)`](crate::input::UpdateGeoMatchSetInput::updates): <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>   <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`geo_match_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGeoMatchSet::geo_match_set_id) / [`set_geo_match_set_id(Option<String>)`](crate::client::fluent_builders::UpdateGeoMatchSet::set_geo_match_set_id): <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateGeoMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateGeoMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`updates(Vec<GeoMatchSetUpdate>)`](crate::client::fluent_builders::UpdateGeoMatchSet::updates) / [`set_updates(Option<Vec<GeoMatchSetUpdate>>)`](crate::client::fluent_builders::UpdateGeoMatchSet::set_updates): <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>   <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>  </ul>
     /// - On success, responds with [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateGeoMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateGeoMatchSetError>`](crate::error::UpdateGeoMatchSetError)
@@ -912,10 +912,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateIPSet`](crate::client::fluent_builders::UpdateIPSet) operation.
     ///
-    /// - Takes [`UpdateIpSetInput`](crate::input::UpdateIpSetInput) with field(s):
-    ///   - [`ip_set_id(Option<String>)`](crate::input::UpdateIpSetInput::ip_set_id): <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateIpSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`updates(Option<Vec<IpSetUpdate>>)`](crate::input::UpdateIpSetInput::updates): <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>   <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>  </ul>  <p>You can insert a maximum of 1000 addresses in a single request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ip_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::ip_set_id) / [`set_ip_set_id(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_ip_set_id): <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`updates(Vec<IpSetUpdate>)`](crate::client::fluent_builders::UpdateIPSet::updates) / [`set_updates(Option<Vec<IpSetUpdate>>)`](crate::client::fluent_builders::UpdateIPSet::set_updates): <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>   <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>  </ul>  <p>You can insert a maximum of 1000 addresses in a single request.</p>
     /// - On success, responds with [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateIpSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateIPSetError>`](crate::error::UpdateIPSetError)
@@ -924,11 +924,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRateBasedRule`](crate::client::fluent_builders::UpdateRateBasedRule) operation.
     ///
-    /// - Takes [`UpdateRateBasedRuleInput`](crate::input::UpdateRateBasedRuleInput) with field(s):
-    ///   - [`rule_id(Option<String>)`](crate::input::UpdateRateBasedRuleInput::rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateRateBasedRuleInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`updates(Option<Vec<RuleUpdate>>)`](crate::input::UpdateRateBasedRuleInput::updates): <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
-    ///   - [`rate_limit(i64)`](crate::input::UpdateRateBasedRuleInput::rate_limit): <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRateBasedRule::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::UpdateRateBasedRule::set_rule_id): <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRateBasedRule::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateRateBasedRule::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`updates(Vec<RuleUpdate>)`](crate::client::fluent_builders::UpdateRateBasedRule::updates) / [`set_updates(Option<Vec<RuleUpdate>>)`](crate::client::fluent_builders::UpdateRateBasedRule::set_updates): <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
+    ///   - [`rate_limit(i64)`](crate::client::fluent_builders::UpdateRateBasedRule::rate_limit) / [`set_rate_limit(i64)`](crate::client::fluent_builders::UpdateRateBasedRule::set_rate_limit): <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     /// - On success, responds with [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateRateBasedRuleOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateRateBasedRuleError>`](crate::error::UpdateRateBasedRuleError)
@@ -937,10 +937,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRegexMatchSet`](crate::client::fluent_builders::UpdateRegexMatchSet) operation.
     ///
-    /// - Takes [`UpdateRegexMatchSetInput`](crate::input::UpdateRegexMatchSetInput) with field(s):
-    ///   - [`regex_match_set_id(Option<String>)`](crate::input::UpdateRegexMatchSetInput::regex_match_set_id): <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    ///   - [`updates(Option<Vec<RegexMatchSetUpdate>>)`](crate::input::UpdateRegexMatchSetInput::updates): <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateRegexMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`regex_match_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexMatchSet::regex_match_set_id) / [`set_regex_match_set_id(Option<String>)`](crate::client::fluent_builders::UpdateRegexMatchSet::set_regex_match_set_id): <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    ///   - [`updates(Vec<RegexMatchSetUpdate>)`](crate::client::fluent_builders::UpdateRegexMatchSet::updates) / [`set_updates(Option<Vec<RegexMatchSetUpdate>>)`](crate::client::fluent_builders::UpdateRegexMatchSet::set_updates): <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateRegexMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateRegexMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateRegexMatchSetError>`](crate::error::UpdateRegexMatchSetError)
@@ -949,10 +949,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRegexPatternSet`](crate::client::fluent_builders::UpdateRegexPatternSet) operation.
     ///
-    /// - Takes [`UpdateRegexPatternSetInput`](crate::input::UpdateRegexPatternSetInput) with field(s):
-    ///   - [`regex_pattern_set_id(Option<String>)`](crate::input::UpdateRegexPatternSetInput::regex_pattern_set_id): <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    ///   - [`updates(Option<Vec<RegexPatternSetUpdate>>)`](crate::input::UpdateRegexPatternSetInput::updates): <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateRegexPatternSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`regex_pattern_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::regex_pattern_set_id) / [`set_regex_pattern_set_id(Option<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_regex_pattern_set_id): <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    ///   - [`updates(Vec<RegexPatternSetUpdate>)`](crate::client::fluent_builders::UpdateRegexPatternSet::updates) / [`set_updates(Option<Vec<RegexPatternSetUpdate>>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_updates): <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateRegexPatternSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateRegexPatternSetError>`](crate::error::UpdateRegexPatternSetError)
@@ -961,10 +961,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRule`](crate::client::fluent_builders::UpdateRule) operation.
     ///
-    /// - Takes [`UpdateRuleInput`](crate::input::UpdateRuleInput) with field(s):
-    ///   - [`rule_id(Option<String>)`](crate::input::UpdateRuleInput::rule_id): <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateRuleInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`updates(Option<Vec<RuleUpdate>>)`](crate::input::UpdateRuleInput::updates): <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>   <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::rule_id) / [`set_rule_id(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_rule_id): <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRule::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateRule::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`updates(Vec<RuleUpdate>)`](crate::client::fluent_builders::UpdateRule::updates) / [`set_updates(Option<Vec<RuleUpdate>>)`](crate::client::fluent_builders::UpdateRule::set_updates): <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>   <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateRuleOutput`](crate::output::UpdateRuleOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateRuleOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateRuleError>`](crate::error::UpdateRuleError)
@@ -973,10 +973,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRuleGroup`](crate::client::fluent_builders::UpdateRuleGroup) operation.
     ///
-    /// - Takes [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput) with field(s):
-    ///   - [`rule_group_id(Option<String>)`](crate::input::UpdateRuleGroupInput::rule_group_id): <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    ///   - [`updates(Option<Vec<RuleGroupUpdate>>)`](crate::input::UpdateRuleGroupInput::updates): <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>  <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>  <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateRuleGroupInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`rule_group_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::rule_group_id) / [`set_rule_group_id(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_rule_group_id): <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    ///   - [`updates(Vec<RuleGroupUpdate>)`](crate::client::fluent_builders::UpdateRuleGroup::updates) / [`set_updates(Option<Vec<RuleGroupUpdate>>)`](crate::client::fluent_builders::UpdateRuleGroup::set_updates): <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>  <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>  <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     /// - On success, responds with [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateRuleGroupOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateRuleGroupError>`](crate::error::UpdateRuleGroupError)
@@ -985,10 +985,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSizeConstraintSet`](crate::client::fluent_builders::UpdateSizeConstraintSet) operation.
     ///
-    /// - Takes [`UpdateSizeConstraintSetInput`](crate::input::UpdateSizeConstraintSetInput) with field(s):
-    ///   - [`size_constraint_set_id(Option<String>)`](crate::input::UpdateSizeConstraintSetInput::size_constraint_set_id): <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateSizeConstraintSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`updates(Option<Vec<SizeConstraintSetUpdate>>)`](crate::input::UpdateSizeConstraintSetInput::updates): <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>   <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`size_constraint_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSizeConstraintSet::size_constraint_set_id) / [`set_size_constraint_set_id(Option<String>)`](crate::client::fluent_builders::UpdateSizeConstraintSet::set_size_constraint_set_id): <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSizeConstraintSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateSizeConstraintSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`updates(Vec<SizeConstraintSetUpdate>)`](crate::client::fluent_builders::UpdateSizeConstraintSet::updates) / [`set_updates(Option<Vec<SizeConstraintSetUpdate>>)`](crate::client::fluent_builders::UpdateSizeConstraintSet::set_updates): <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>   <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateSizeConstraintSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateSizeConstraintSetError>`](crate::error::UpdateSizeConstraintSetError)
@@ -997,10 +997,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSqlInjectionMatchSet`](crate::client::fluent_builders::UpdateSqlInjectionMatchSet) operation.
     ///
-    /// - Takes [`UpdateSqlInjectionMatchSetInput`](crate::input::UpdateSqlInjectionMatchSetInput) with field(s):
-    ///   - [`sql_injection_match_set_id(Option<String>)`](crate::input::UpdateSqlInjectionMatchSetInput::sql_injection_match_set_id): <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateSqlInjectionMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`updates(Option<Vec<SqlInjectionMatchSetUpdate>>)`](crate::input::UpdateSqlInjectionMatchSetInput::updates): <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code> </p> </li>   <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`sql_injection_match_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSqlInjectionMatchSet::sql_injection_match_set_id) / [`set_sql_injection_match_set_id(Option<String>)`](crate::client::fluent_builders::UpdateSqlInjectionMatchSet::set_sql_injection_match_set_id): <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSqlInjectionMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateSqlInjectionMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`updates(Vec<SqlInjectionMatchSetUpdate>)`](crate::client::fluent_builders::UpdateSqlInjectionMatchSet::updates) / [`set_updates(Option<Vec<SqlInjectionMatchSetUpdate>>)`](crate::client::fluent_builders::UpdateSqlInjectionMatchSet::set_updates): <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code> </p> </li>   <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateSqlInjectionMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateSqlInjectionMatchSetError>`](crate::error::UpdateSqlInjectionMatchSetError)
@@ -1011,11 +1011,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateWebACL`](crate::client::fluent_builders::UpdateWebACL) operation.
     ///
-    /// - Takes [`UpdateWebAclInput`](crate::input::UpdateWebAclInput) with field(s):
-    ///   - [`web_acl_id(Option<String>)`](crate::input::UpdateWebAclInput::web_acl_id): <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateWebAclInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`updates(Option<Vec<WebAclUpdate>>)`](crate::input::UpdateWebAclInput::updates): <p>An array of updates to make to the <code>WebACL</code>.</p>  <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>   <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>   <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>  </ul>
-    ///   - [`default_action(Option<WafAction>)`](crate::input::UpdateWebAclInput::default_action): <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_web_acl_id): <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`updates(Vec<WebAclUpdate>)`](crate::client::fluent_builders::UpdateWebACL::updates) / [`set_updates(Option<Vec<WebAclUpdate>>)`](crate::client::fluent_builders::UpdateWebACL::set_updates): <p>An array of updates to make to the <code>WebACL</code>.</p>  <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>   <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>   <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>  </ul>
+    ///   - [`default_action(WafAction)`](crate::client::fluent_builders::UpdateWebACL::default_action) / [`set_default_action(Option<WafAction>)`](crate::client::fluent_builders::UpdateWebACL::set_default_action): <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
     /// - On success, responds with [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateWebAclOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateWebACLError>`](crate::error::UpdateWebACLError)
@@ -1024,10 +1024,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateXssMatchSet`](crate::client::fluent_builders::UpdateXssMatchSet) operation.
     ///
-    /// - Takes [`UpdateXssMatchSetInput`](crate::input::UpdateXssMatchSetInput) with field(s):
-    ///   - [`xss_match_set_id(Option<String>)`](crate::input::UpdateXssMatchSetInput::xss_match_set_id): <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    ///   - [`change_token(Option<String>)`](crate::input::UpdateXssMatchSetInput::change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    ///   - [`updates(Option<Vec<XssMatchSetUpdate>>)`](crate::input::UpdateXssMatchSetInput::updates): <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an <code>XssMatchSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>XssMatchSetUpdate</code>: Contains <code>Action</code> and <code>XssMatchTuple</code> </p> </li>   <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`xss_match_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateXssMatchSet::xss_match_set_id) / [`set_xss_match_set_id(Option<String>)`](crate::client::fluent_builders::UpdateXssMatchSet::set_xss_match_set_id): <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    ///   - [`change_token(impl Into<String>)`](crate::client::fluent_builders::UpdateXssMatchSet::change_token) / [`set_change_token(Option<String>)`](crate::client::fluent_builders::UpdateXssMatchSet::set_change_token): <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    ///   - [`updates(Vec<XssMatchSetUpdate>)`](crate::client::fluent_builders::UpdateXssMatchSet::updates) / [`set_updates(Option<Vec<XssMatchSetUpdate>>)`](crate::client::fluent_builders::UpdateXssMatchSet::set_updates): <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an <code>XssMatchSet</code>. For more information, see the applicable data types:</p>  <ul>   <li> <p> <code>XssMatchSetUpdate</code>: Contains <code>Action</code> and <code>XssMatchTuple</code> </p> </li>   <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::output::UpdateXssMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateXssMatchSetError>`](crate::error::UpdateXssMatchSetError)

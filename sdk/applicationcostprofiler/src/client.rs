@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`DeleteReportDefinition`](crate::client::fluent_builders::DeleteReportDefinition) operation.
     ///
-    /// - Takes [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::input::DeleteReportDefinitionInput::report_id): <p>Required. ID of the report to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::DeleteReportDefinition::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::DeleteReportDefinition::set_report_id): <p>Required. ID of the report to delete.</p>
     /// - On success, responds with [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::output::DeleteReportDefinitionOutput::report_id): <p>ID of the report that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteReportDefinitionError>`](crate::error::DeleteReportDefinitionError)
@@ -95,8 +95,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetReportDefinition`](crate::client::fluent_builders::GetReportDefinition) operation.
     ///
-    /// - Takes [`GetReportDefinitionInput`](crate::input::GetReportDefinitionInput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::input::GetReportDefinitionInput::report_id): <p>ID of the report to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::GetReportDefinition::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::GetReportDefinition::set_report_id): <p>ID of the report to retrieve.</p>
     /// - On success, responds with [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::output::GetReportDefinitionOutput::report_id): <p>ID of the report retrieved.</p>
     ///   - [`report_description(Option<String>)`](crate::output::GetReportDefinitionOutput::report_description): <p>Description of the report.</p>
@@ -111,8 +111,8 @@ where
     }
     /// Constructs a fluent builder for the [`ImportApplicationUsage`](crate::client::fluent_builders::ImportApplicationUsage) operation.
     ///
-    /// - Takes [`ImportApplicationUsageInput`](crate::input::ImportApplicationUsageInput) with field(s):
-    ///   - [`source_s3_location(Option<SourceS3Location>)`](crate::input::ImportApplicationUsageInput::source_s3_location): <p>Amazon S3 location to import application usage data from.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_s3_location(SourceS3Location)`](crate::client::fluent_builders::ImportApplicationUsage::source_s3_location) / [`set_source_s3_location(Option<SourceS3Location>)`](crate::client::fluent_builders::ImportApplicationUsage::set_source_s3_location): <p>Amazon S3 location to import application usage data from.</p>
     /// - On success, responds with [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::output::ImportApplicationUsageOutput::import_id): <p>ID of the import request.</p>
     /// - On failure, responds with [`SdkError<ImportApplicationUsageError>`](crate::error::ImportApplicationUsageError)
@@ -120,11 +120,11 @@ where
         fluent_builders::ImportApplicationUsage::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListReportDefinitions`](crate::client::fluent_builders::ListReportDefinitions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReportDefinitions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReportDefinitions::into_paginator).
     ///
-    /// - Takes [`ListReportDefinitionsInput`](crate::input::ListReportDefinitionsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListReportDefinitionsInput::next_token): <p>The token value from a previous call to access the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListReportDefinitionsInput::max_results): <p>The maximum number of results to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReportDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReportDefinitions::set_next_token): <p>The token value from a previous call to access the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReportDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReportDefinitions::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput) with field(s):
     ///   - [`report_definitions(Option<Vec<ReportDefinition>>)`](crate::output::ListReportDefinitionsOutput::report_definitions): <p>The retrieved reports.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListReportDefinitionsOutput::next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
@@ -134,12 +134,12 @@ where
     }
     /// Constructs a fluent builder for the [`PutReportDefinition`](crate::client::fluent_builders::PutReportDefinition) operation.
     ///
-    /// - Takes [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::input::PutReportDefinitionInput::report_id): <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
-    ///   - [`report_description(Option<String>)`](crate::input::PutReportDefinitionInput::report_description): <p>Required. Description of the report.</p>
-    ///   - [`report_frequency(Option<ReportFrequency>)`](crate::input::PutReportDefinitionInput::report_frequency): <p>Required. The cadence to generate the report.</p>
-    ///   - [`format(Option<Format>)`](crate::input::PutReportDefinitionInput::format): <p>Required. The format to use for the generated report.</p>
-    ///   - [`destination_s3_location(Option<S3Location>)`](crate::input::PutReportDefinitionInput::destination_s3_location): <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::PutReportDefinition::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::PutReportDefinition::set_report_id): <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
+    ///   - [`report_description(impl Into<String>)`](crate::client::fluent_builders::PutReportDefinition::report_description) / [`set_report_description(Option<String>)`](crate::client::fluent_builders::PutReportDefinition::set_report_description): <p>Required. Description of the report.</p>
+    ///   - [`report_frequency(ReportFrequency)`](crate::client::fluent_builders::PutReportDefinition::report_frequency) / [`set_report_frequency(Option<ReportFrequency>)`](crate::client::fluent_builders::PutReportDefinition::set_report_frequency): <p>Required. The cadence to generate the report.</p>
+    ///   - [`format(Format)`](crate::client::fluent_builders::PutReportDefinition::format) / [`set_format(Option<Format>)`](crate::client::fluent_builders::PutReportDefinition::set_format): <p>Required. The format to use for the generated report.</p>
+    ///   - [`destination_s3_location(S3Location)`](crate::client::fluent_builders::PutReportDefinition::destination_s3_location) / [`set_destination_s3_location(Option<S3Location>)`](crate::client::fluent_builders::PutReportDefinition::set_destination_s3_location): <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
     /// - On success, responds with [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::output::PutReportDefinitionOutput::report_id): <p>ID of the report.</p>
     /// - On failure, responds with [`SdkError<PutReportDefinitionError>`](crate::error::PutReportDefinitionError)
@@ -148,12 +148,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateReportDefinition`](crate::client::fluent_builders::UpdateReportDefinition) operation.
     ///
-    /// - Takes [`UpdateReportDefinitionInput`](crate::input::UpdateReportDefinitionInput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::input::UpdateReportDefinitionInput::report_id): <p>Required. ID of the report to update.</p>
-    ///   - [`report_description(Option<String>)`](crate::input::UpdateReportDefinitionInput::report_description): <p>Required. Description of the report.</p>
-    ///   - [`report_frequency(Option<ReportFrequency>)`](crate::input::UpdateReportDefinitionInput::report_frequency): <p>Required. The cadence to generate the report.</p>
-    ///   - [`format(Option<Format>)`](crate::input::UpdateReportDefinitionInput::format): <p>Required. The format to use for the generated report.</p>
-    ///   - [`destination_s3_location(Option<S3Location>)`](crate::input::UpdateReportDefinitionInput::destination_s3_location): <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReportDefinition::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::UpdateReportDefinition::set_report_id): <p>Required. ID of the report to update.</p>
+    ///   - [`report_description(impl Into<String>)`](crate::client::fluent_builders::UpdateReportDefinition::report_description) / [`set_report_description(Option<String>)`](crate::client::fluent_builders::UpdateReportDefinition::set_report_description): <p>Required. Description of the report.</p>
+    ///   - [`report_frequency(ReportFrequency)`](crate::client::fluent_builders::UpdateReportDefinition::report_frequency) / [`set_report_frequency(Option<ReportFrequency>)`](crate::client::fluent_builders::UpdateReportDefinition::set_report_frequency): <p>Required. The cadence to generate the report.</p>
+    ///   - [`format(Format)`](crate::client::fluent_builders::UpdateReportDefinition::format) / [`set_format(Option<Format>)`](crate::client::fluent_builders::UpdateReportDefinition::set_format): <p>Required. The format to use for the generated report.</p>
+    ///   - [`destination_s3_location(S3Location)`](crate::client::fluent_builders::UpdateReportDefinition::destination_s3_location) / [`set_destination_s3_location(Option<S3Location>)`](crate::client::fluent_builders::UpdateReportDefinition::set_destination_s3_location): <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
     /// - On success, responds with [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::output::UpdateReportDefinitionOutput::report_id): <p>ID of the report.</p>
     /// - On failure, responds with [`SdkError<UpdateReportDefinitionError>`](crate::error::UpdateReportDefinitionError)

@@ -85,15 +85,15 @@ where
 {
     /// Constructs a fluent builder for the [`CreateBatchInferenceJob`](crate::client::fluent_builders::CreateBatchInferenceJob) operation.
     ///
-    /// - Takes [`CreateBatchInferenceJobInput`](crate::input::CreateBatchInferenceJobInput) with field(s):
-    ///   - [`job_name(Option<String>)`](crate::input::CreateBatchInferenceJobInput::job_name): <p>The name of the batch inference job to create.</p>
-    ///   - [`solution_version_arn(Option<String>)`](crate::input::CreateBatchInferenceJobInput::solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
-    ///   - [`filter_arn(Option<String>)`](crate::input::CreateBatchInferenceJobInput::filter_arn): <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
-    ///   - [`num_results(Option<i32>)`](crate::input::CreateBatchInferenceJobInput::num_results): <p>The number of recommendations to retreive.</p>
-    ///   - [`job_input(Option<BatchInferenceJobInput>)`](crate::input::CreateBatchInferenceJobInput::job_input): <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
-    ///   - [`job_output(Option<BatchInferenceJobOutput>)`](crate::input::CreateBatchInferenceJobInput::job_output): <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateBatchInferenceJobInput::role_arn): <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
-    ///   - [`batch_inference_job_config(Option<BatchInferenceJobConfig>)`](crate::input::CreateBatchInferenceJobInput::batch_inference_job_config): <p>The configuration details of a batch inference job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_job_name): <p>The name of the batch inference job to create.</p>
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
+    ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_filter_arn): <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+    ///   - [`num_results(i32)`](crate::client::fluent_builders::CreateBatchInferenceJob::num_results) / [`set_num_results(Option<i32>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_num_results): <p>The number of recommendations to retreive.</p>
+    ///   - [`job_input(BatchInferenceJobInput)`](crate::client::fluent_builders::CreateBatchInferenceJob::job_input) / [`set_job_input(Option<BatchInferenceJobInput>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_job_input): <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
+    ///   - [`job_output(BatchInferenceJobOutput)`](crate::client::fluent_builders::CreateBatchInferenceJob::job_output) / [`set_job_output(Option<BatchInferenceJobOutput>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_job_output): <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_role_arn): <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
+    ///   - [`batch_inference_job_config(BatchInferenceJobConfig)`](crate::client::fluent_builders::CreateBatchInferenceJob::batch_inference_job_config) / [`set_batch_inference_job_config(Option<BatchInferenceJobConfig>)`](crate::client::fluent_builders::CreateBatchInferenceJob::set_batch_inference_job_config): <p>The configuration details of a batch inference job.</p>
     /// - On success, responds with [`CreateBatchInferenceJobOutput`](crate::output::CreateBatchInferenceJobOutput) with field(s):
     ///   - [`batch_inference_job_arn(Option<String>)`](crate::output::CreateBatchInferenceJobOutput::batch_inference_job_arn): <p>The ARN of the batch inference job.</p>
     /// - On failure, responds with [`SdkError<CreateBatchInferenceJobError>`](crate::error::CreateBatchInferenceJobError)
@@ -102,14 +102,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateBatchSegmentJob`](crate::client::fluent_builders::CreateBatchSegmentJob) operation.
     ///
-    /// - Takes [`CreateBatchSegmentJobInput`](crate::input::CreateBatchSegmentJobInput) with field(s):
-    ///   - [`job_name(Option<String>)`](crate::input::CreateBatchSegmentJobInput::job_name): <p>The name of the batch segment job to create.</p>
-    ///   - [`solution_version_arn(Option<String>)`](crate::input::CreateBatchSegmentJobInput::solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
-    ///   - [`filter_arn(Option<String>)`](crate::input::CreateBatchSegmentJobInput::filter_arn): <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
-    ///   - [`num_results(Option<i32>)`](crate::input::CreateBatchSegmentJobInput::num_results): <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
-    ///   - [`job_input(Option<BatchSegmentJobInput>)`](crate::input::CreateBatchSegmentJobInput::job_input): <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
-    ///   - [`job_output(Option<BatchSegmentJobOutput>)`](crate::input::CreateBatchSegmentJobInput::job_output): <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateBatchSegmentJobInput::role_arn): <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_job_name): <p>The name of the batch segment job to create.</p>
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
+    ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_filter_arn): <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
+    ///   - [`num_results(i32)`](crate::client::fluent_builders::CreateBatchSegmentJob::num_results) / [`set_num_results(Option<i32>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_num_results): <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
+    ///   - [`job_input(BatchSegmentJobInput)`](crate::client::fluent_builders::CreateBatchSegmentJob::job_input) / [`set_job_input(Option<BatchSegmentJobInput>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_job_input): <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
+    ///   - [`job_output(BatchSegmentJobOutput)`](crate::client::fluent_builders::CreateBatchSegmentJob::job_output) / [`set_job_output(Option<BatchSegmentJobOutput>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_job_output): <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBatchSegmentJob::set_role_arn): <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     /// - On success, responds with [`CreateBatchSegmentJobOutput`](crate::output::CreateBatchSegmentJobOutput) with field(s):
     ///   - [`batch_segment_job_arn(Option<String>)`](crate::output::CreateBatchSegmentJobOutput::batch_segment_job_arn): <p>The ARN of the batch segment job.</p>
     /// - On failure, responds with [`SdkError<CreateBatchSegmentJobError>`](crate::error::CreateBatchSegmentJobError)
@@ -118,11 +118,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCampaign`](crate::client::fluent_builders::CreateCampaign) operation.
     ///
-    /// - Takes [`CreateCampaignInput`](crate::input::CreateCampaignInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateCampaignInput::name): <p>A name for the new campaign. The campaign name must be unique within your account.</p>
-    ///   - [`solution_version_arn(Option<String>)`](crate::input::CreateCampaignInput::solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
-    ///   - [`min_provisioned_tps(Option<i32>)`](crate::input::CreateCampaignInput::min_provisioned_tps): <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
-    ///   - [`campaign_config(Option<CampaignConfig>)`](crate::input::CreateCampaignInput::campaign_config): <p>The configuration details of a campaign.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCampaign::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCampaign::set_name): <p>A name for the new campaign. The campaign name must be unique within your account.</p>
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCampaign::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::CreateCampaign::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    ///   - [`min_provisioned_tps(i32)`](crate::client::fluent_builders::CreateCampaign::min_provisioned_tps) / [`set_min_provisioned_tps(Option<i32>)`](crate::client::fluent_builders::CreateCampaign::set_min_provisioned_tps): <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
+    ///   - [`campaign_config(CampaignConfig)`](crate::client::fluent_builders::CreateCampaign::campaign_config) / [`set_campaign_config(Option<CampaignConfig>)`](crate::client::fluent_builders::CreateCampaign::set_campaign_config): <p>The configuration details of a campaign.</p>
     /// - On success, responds with [`CreateCampaignOutput`](crate::output::CreateCampaignOutput) with field(s):
     ///   - [`campaign_arn(Option<String>)`](crate::output::CreateCampaignOutput::campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign.</p>
     /// - On failure, responds with [`SdkError<CreateCampaignError>`](crate::error::CreateCampaignError)
@@ -131,11 +131,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
-    /// - Takes [`CreateDatasetInput`](crate::input::CreateDatasetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateDatasetInput::name): <p>The name for the dataset.</p>
-    ///   - [`schema_arn(Option<String>)`](crate::input::CreateDatasetInput::schema_arn): <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::CreateDatasetInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
-    ///   - [`dataset_type(Option<String>)`](crate::input::CreateDatasetInput::dataset_type): <p>The type of dataset.</p>  <p>One of the following (case insensitive) values:</p>  <ul>   <li> <p>Interactions</p> </li>   <li> <p>Items</p> </li>   <li> <p>Users</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_name): <p>The name for the dataset.</p>
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_schema_arn): <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
+    ///   - [`dataset_type(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_type) / [`set_dataset_type(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_type): <p>The type of dataset.</p>  <p>One of the following (case insensitive) values:</p>  <ul>   <li> <p>Interactions</p> </li>   <li> <p>Items</p> </li>   <li> <p>Users</p> </li>  </ul>
     /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
     ///   - [`dataset_arn(Option<String>)`](crate::output::CreateDatasetOutput::dataset_arn): <p>The ARN of the dataset.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
@@ -144,12 +144,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDatasetExportJob`](crate::client::fluent_builders::CreateDatasetExportJob) operation.
     ///
-    /// - Takes [`CreateDatasetExportJobInput`](crate::input::CreateDatasetExportJobInput) with field(s):
-    ///   - [`job_name(Option<String>)`](crate::input::CreateDatasetExportJobInput::job_name): <p>The name for the dataset export job.</p>
-    ///   - [`dataset_arn(Option<String>)`](crate::input::CreateDatasetExportJobInput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
-    ///   - [`ingestion_mode(Option<IngestionMode>)`](crate::input::CreateDatasetExportJobInput::ingestion_mode): <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateDatasetExportJobInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
-    ///   - [`job_output(Option<DatasetExportJobOutput>)`](crate::input::CreateDatasetExportJobInput::job_output): <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetExportJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::CreateDatasetExportJob::set_job_name): <p>The name for the dataset export job.</p>
+    ///   - [`dataset_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetExportJob::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetExportJob::set_dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
+    ///   - [`ingestion_mode(IngestionMode)`](crate::client::fluent_builders::CreateDatasetExportJob::ingestion_mode) / [`set_ingestion_mode(Option<IngestionMode>)`](crate::client::fluent_builders::CreateDatasetExportJob::set_ingestion_mode): <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetExportJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetExportJob::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
+    ///   - [`job_output(DatasetExportJobOutput)`](crate::client::fluent_builders::CreateDatasetExportJob::job_output) / [`set_job_output(Option<DatasetExportJobOutput>)`](crate::client::fluent_builders::CreateDatasetExportJob::set_job_output): <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
     /// - On success, responds with [`CreateDatasetExportJobOutput`](crate::output::CreateDatasetExportJobOutput) with field(s):
     ///   - [`dataset_export_job_arn(Option<String>)`](crate::output::CreateDatasetExportJobOutput::dataset_export_job_arn): <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetExportJobError>`](crate::error::CreateDatasetExportJobError)
@@ -158,11 +158,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDatasetGroup`](crate::client::fluent_builders::CreateDatasetGroup) operation.
     ///
-    /// - Takes [`CreateDatasetGroupInput`](crate::input::CreateDatasetGroupInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateDatasetGroupInput::name): <p>The name for the new dataset group.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateDatasetGroupInput::role_arn): <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
-    ///   - [`kms_key_arn(Option<String>)`](crate::input::CreateDatasetGroupInput::kms_key_arn): <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
-    ///   - [`domain(Option<Domain>)`](crate::input::CreateDatasetGroupInput::domain): <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDatasetGroup::set_name): <p>The name for the new dataset group.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetGroup::set_role_arn): <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
+    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetGroup::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetGroup::set_kms_key_arn): <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
+    ///   - [`domain(Domain)`](crate::client::fluent_builders::CreateDatasetGroup::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::CreateDatasetGroup::set_domain): <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
     /// - On success, responds with [`CreateDatasetGroupOutput`](crate::output::CreateDatasetGroupOutput) with field(s):
     ///   - [`dataset_group_arn(Option<String>)`](crate::output::CreateDatasetGroupOutput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
     ///   - [`domain(Option<Domain>)`](crate::output::CreateDatasetGroupOutput::domain): <p>The domain for the new Domain dataset group.</p>
@@ -172,11 +172,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDatasetImportJob`](crate::client::fluent_builders::CreateDatasetImportJob) operation.
     ///
-    /// - Takes [`CreateDatasetImportJobInput`](crate::input::CreateDatasetImportJobInput) with field(s):
-    ///   - [`job_name(Option<String>)`](crate::input::CreateDatasetImportJobInput::job_name): <p>The name for the dataset import job.</p>
-    ///   - [`dataset_arn(Option<String>)`](crate::input::CreateDatasetImportJobInput::dataset_arn): <p>The ARN of the dataset that receives the imported data.</p>
-    ///   - [`data_source(Option<DataSource>)`](crate::input::CreateDatasetImportJobInput::data_source): <p>The Amazon S3 bucket that contains the training data to import.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateDatasetImportJobInput::role_arn): <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_job_name): <p>The name for the dataset import job.</p>
+    ///   - [`dataset_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_dataset_arn): <p>The ARN of the dataset that receives the imported data.</p>
+    ///   - [`data_source(DataSource)`](crate::client::fluent_builders::CreateDatasetImportJob::data_source) / [`set_data_source(Option<DataSource>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_data_source): <p>The Amazon S3 bucket that contains the training data to import.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDatasetImportJob::set_role_arn): <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
     /// - On success, responds with [`CreateDatasetImportJobOutput`](crate::output::CreateDatasetImportJobOutput) with field(s):
     ///   - [`dataset_import_job_arn(Option<String>)`](crate::output::CreateDatasetImportJobOutput::dataset_import_job_arn): <p>The ARN of the dataset import job.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetImportJobError>`](crate::error::CreateDatasetImportJobError)
@@ -185,9 +185,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEventTracker`](crate::client::fluent_builders::CreateEventTracker) operation.
     ///
-    /// - Takes [`CreateEventTrackerInput`](crate::input::CreateEventTrackerInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateEventTrackerInput::name): <p>The name for the event tracker.</p>
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::CreateEventTrackerInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEventTracker::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEventTracker::set_name): <p>The name for the event tracker.</p>
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEventTracker::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateEventTracker::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     /// - On success, responds with [`CreateEventTrackerOutput`](crate::output::CreateEventTrackerOutput) with field(s):
     ///   - [`event_tracker_arn(Option<String>)`](crate::output::CreateEventTrackerOutput::event_tracker_arn): <p>The ARN of the event tracker.</p>
     ///   - [`tracking_id(Option<String>)`](crate::output::CreateEventTrackerOutput::tracking_id): <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
@@ -197,10 +197,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFilter`](crate::client::fluent_builders::CreateFilter) operation.
     ///
-    /// - Takes [`CreateFilterInput`](crate::input::CreateFilterInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateFilterInput::name): <p>The name of the filter to create.</p>
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::CreateFilterInput::dataset_group_arn): <p>The ARN of the dataset group that the filter will belong to.</p>
-    ///   - [`filter_expression(Option<String>)`](crate::input::CreateFilterInput::filter_expression): <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_name): <p>The name of the filter to create.</p>
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_dataset_group_arn): <p>The ARN of the dataset group that the filter will belong to.</p>
+    ///   - [`filter_expression(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::filter_expression) / [`set_filter_expression(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_filter_expression): <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
     /// - On success, responds with [`CreateFilterOutput`](crate::output::CreateFilterOutput) with field(s):
     ///   - [`filter_arn(Option<String>)`](crate::output::CreateFilterOutput::filter_arn): <p>The ARN of the new filter.</p>
     /// - On failure, responds with [`SdkError<CreateFilterError>`](crate::error::CreateFilterError)
@@ -209,11 +209,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRecommender`](crate::client::fluent_builders::CreateRecommender) operation.
     ///
-    /// - Takes [`CreateRecommenderInput`](crate::input::CreateRecommenderInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateRecommenderInput::name): <p>The name of the recommender.</p>
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::CreateRecommenderInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
-    ///   - [`recipe_arn(Option<String>)`](crate::input::CreateRecommenderInput::recipe_arn): <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
-    ///   - [`recommender_config(Option<RecommenderConfig>)`](crate::input::CreateRecommenderInput::recommender_config): <p>The configuration details of the recommender.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRecommender::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRecommender::set_name): <p>The name of the recommender.</p>
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRecommender::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateRecommender::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
+    ///   - [`recipe_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRecommender::recipe_arn) / [`set_recipe_arn(Option<String>)`](crate::client::fluent_builders::CreateRecommender::set_recipe_arn): <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
+    ///   - [`recommender_config(RecommenderConfig)`](crate::client::fluent_builders::CreateRecommender::recommender_config) / [`set_recommender_config(Option<RecommenderConfig>)`](crate::client::fluent_builders::CreateRecommender::set_recommender_config): <p>The configuration details of the recommender.</p>
     /// - On success, responds with [`CreateRecommenderOutput`](crate::output::CreateRecommenderOutput) with field(s):
     ///   - [`recommender_arn(Option<String>)`](crate::output::CreateRecommenderOutput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender.</p>
     /// - On failure, responds with [`SdkError<CreateRecommenderError>`](crate::error::CreateRecommenderError)
@@ -222,10 +222,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSchema`](crate::client::fluent_builders::CreateSchema) operation.
     ///
-    /// - Takes [`CreateSchemaInput`](crate::input::CreateSchemaInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateSchemaInput::name): <p>The name for the schema.</p>
-    ///   - [`schema(Option<String>)`](crate::input::CreateSchemaInput::schema): <p>A schema in Avro JSON format.</p>
-    ///   - [`domain(Option<Domain>)`](crate::input::CreateSchemaInput::domain): <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_name): <p>The name for the schema.</p>
+    ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_schema): <p>A schema in Avro JSON format.</p>
+    ///   - [`domain(Domain)`](crate::client::fluent_builders::CreateSchema::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::CreateSchema::set_domain): <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
     /// - On success, responds with [`CreateSchemaOutput`](crate::output::CreateSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::output::CreateSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the created schema.</p>
     /// - On failure, responds with [`SdkError<CreateSchemaError>`](crate::error::CreateSchemaError)
@@ -234,14 +234,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSolution`](crate::client::fluent_builders::CreateSolution) operation.
     ///
-    /// - Takes [`CreateSolutionInput`](crate::input::CreateSolutionInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateSolutionInput::name): <p>The name for the solution.</p>
-    ///   - [`perform_hpo(Option<bool>)`](crate::input::CreateSolutionInput::perform_hpo): <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>  <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
-    ///   - [`perform_auto_ml(bool)`](crate::input::CreateSolutionInput::perform_auto_ml): <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>  <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
-    ///   - [`recipe_arn(Option<String>)`](crate::input::CreateSolutionInput::recipe_arn): <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::CreateSolutionInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    ///   - [`event_type(Option<String>)`](crate::input::CreateSolutionInput::event_type): <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>  <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
-    ///   - [`solution_config(Option<SolutionConfig>)`](crate::input::CreateSolutionInput::solution_config): <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>   <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSolution::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSolution::set_name): <p>The name for the solution.</p>
+    ///   - [`perform_hpo(bool)`](crate::client::fluent_builders::CreateSolution::perform_hpo) / [`set_perform_hpo(Option<bool>)`](crate::client::fluent_builders::CreateSolution::set_perform_hpo): <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>  <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
+    ///   - [`perform_auto_ml(bool)`](crate::client::fluent_builders::CreateSolution::perform_auto_ml) / [`set_perform_auto_ml(bool)`](crate::client::fluent_builders::CreateSolution::set_perform_auto_ml): <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>  <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+    ///   - [`recipe_arn(impl Into<String>)`](crate::client::fluent_builders::CreateSolution::recipe_arn) / [`set_recipe_arn(Option<String>)`](crate::client::fluent_builders::CreateSolution::set_recipe_arn): <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateSolution::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::CreateSolution::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
+    ///   - [`event_type(impl Into<String>)`](crate::client::fluent_builders::CreateSolution::event_type) / [`set_event_type(Option<String>)`](crate::client::fluent_builders::CreateSolution::set_event_type): <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>  <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
+    ///   - [`solution_config(SolutionConfig)`](crate::client::fluent_builders::CreateSolution::solution_config) / [`set_solution_config(Option<SolutionConfig>)`](crate::client::fluent_builders::CreateSolution::set_solution_config): <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>   <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>  </note>
     /// - On success, responds with [`CreateSolutionOutput`](crate::output::CreateSolutionOutput) with field(s):
     ///   - [`solution_arn(Option<String>)`](crate::output::CreateSolutionOutput::solution_arn): <p>The ARN of the solution.</p>
     /// - On failure, responds with [`SdkError<CreateSolutionError>`](crate::error::CreateSolutionError)
@@ -250,9 +250,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSolutionVersion`](crate::client::fluent_builders::CreateSolutionVersion) operation.
     ///
-    /// - Takes [`CreateSolutionVersionInput`](crate::input::CreateSolutionVersionInput) with field(s):
-    ///   - [`solution_arn(Option<String>)`](crate::input::CreateSolutionVersionInput::solution_arn): <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
-    ///   - [`training_mode(Option<TrainingMode>)`](crate::input::CreateSolutionVersionInput::training_mode): <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>   <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>  </important>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_arn(impl Into<String>)`](crate::client::fluent_builders::CreateSolutionVersion::solution_arn) / [`set_solution_arn(Option<String>)`](crate::client::fluent_builders::CreateSolutionVersion::set_solution_arn): <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
+    ///   - [`training_mode(TrainingMode)`](crate::client::fluent_builders::CreateSolutionVersion::training_mode) / [`set_training_mode(Option<TrainingMode>)`](crate::client::fluent_builders::CreateSolutionVersion::set_training_mode): <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>   <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>  </important>
     /// - On success, responds with [`CreateSolutionVersionOutput`](crate::output::CreateSolutionVersionOutput) with field(s):
     ///   - [`solution_version_arn(Option<String>)`](crate::output::CreateSolutionVersionOutput::solution_version_arn): <p>The ARN of the new solution version.</p>
     /// - On failure, responds with [`SdkError<CreateSolutionVersionError>`](crate::error::CreateSolutionVersionError)
@@ -261,8 +261,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCampaign`](crate::client::fluent_builders::DeleteCampaign) operation.
     ///
-    /// - Takes [`DeleteCampaignInput`](crate::input::DeleteCampaignInput) with field(s):
-    ///   - [`campaign_arn(Option<String>)`](crate::input::DeleteCampaignInput::campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`campaign_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteCampaign::campaign_arn) / [`set_campaign_arn(Option<String>)`](crate::client::fluent_builders::DeleteCampaign::set_campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
     /// - On success, responds with [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCampaignError>`](crate::error::DeleteCampaignError)
@@ -271,8 +271,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
-    /// - Takes [`DeleteDatasetInput`](crate::input::DeleteDatasetInput) with field(s):
-    ///   - [`dataset_arn(Option<String>)`](crate::input::DeleteDatasetInput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
     /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
@@ -281,8 +281,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDatasetGroup`](crate::client::fluent_builders::DeleteDatasetGroup) operation.
     ///
-    /// - Takes [`DeleteDatasetGroupInput`](crate::input::DeleteDatasetGroupInput) with field(s):
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::DeleteDatasetGroupInput::dataset_group_arn): <p>The ARN of the dataset group to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteDatasetGroup::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::DeleteDatasetGroup::set_dataset_group_arn): <p>The ARN of the dataset group to delete.</p>
     /// - On success, responds with [`DeleteDatasetGroupOutput`](crate::output::DeleteDatasetGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDatasetGroupError>`](crate::error::DeleteDatasetGroupError)
@@ -291,8 +291,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEventTracker`](crate::client::fluent_builders::DeleteEventTracker) operation.
     ///
-    /// - Takes [`DeleteEventTrackerInput`](crate::input::DeleteEventTrackerInput) with field(s):
-    ///   - [`event_tracker_arn(Option<String>)`](crate::input::DeleteEventTrackerInput::event_tracker_arn): <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`event_tracker_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteEventTracker::event_tracker_arn) / [`set_event_tracker_arn(Option<String>)`](crate::client::fluent_builders::DeleteEventTracker::set_event_tracker_arn): <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
     /// - On success, responds with [`DeleteEventTrackerOutput`](crate::output::DeleteEventTrackerOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEventTrackerError>`](crate::error::DeleteEventTrackerError)
@@ -301,8 +301,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFilter`](crate::client::fluent_builders::DeleteFilter) operation.
     ///
-    /// - Takes [`DeleteFilterInput`](crate::input::DeleteFilterInput) with field(s):
-    ///   - [`filter_arn(Option<String>)`](crate::input::DeleteFilterInput::filter_arn): <p>The ARN of the filter to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteFilter::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::DeleteFilter::set_filter_arn): <p>The ARN of the filter to delete.</p>
     /// - On success, responds with [`DeleteFilterOutput`](crate::output::DeleteFilterOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::error::DeleteFilterError)
@@ -311,8 +311,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRecommender`](crate::client::fluent_builders::DeleteRecommender) operation.
     ///
-    /// - Takes [`DeleteRecommenderInput`](crate::input::DeleteRecommenderInput) with field(s):
-    ///   - [`recommender_arn(Option<String>)`](crate::input::DeleteRecommenderInput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`recommender_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteRecommender::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::client::fluent_builders::DeleteRecommender::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
     /// - On success, responds with [`DeleteRecommenderOutput`](crate::output::DeleteRecommenderOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRecommenderError>`](crate::error::DeleteRecommenderError)
@@ -321,8 +321,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSchema`](crate::client::fluent_builders::DeleteSchema) operation.
     ///
-    /// - Takes [`DeleteSchemaInput`](crate::input::DeleteSchemaInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::DeleteSchemaInput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteSchema::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::DeleteSchema::set_schema_arn): <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
     /// - On success, responds with [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSchemaError>`](crate::error::DeleteSchemaError)
@@ -331,8 +331,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSolution`](crate::client::fluent_builders::DeleteSolution) operation.
     ///
-    /// - Takes [`DeleteSolutionInput`](crate::input::DeleteSolutionInput) with field(s):
-    ///   - [`solution_arn(Option<String>)`](crate::input::DeleteSolutionInput::solution_arn): <p>The ARN of the solution to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteSolution::solution_arn) / [`set_solution_arn(Option<String>)`](crate::client::fluent_builders::DeleteSolution::set_solution_arn): <p>The ARN of the solution to delete.</p>
     /// - On success, responds with [`DeleteSolutionOutput`](crate::output::DeleteSolutionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSolutionError>`](crate::error::DeleteSolutionError)
@@ -341,8 +341,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAlgorithm`](crate::client::fluent_builders::DescribeAlgorithm) operation.
     ///
-    /// - Takes [`DescribeAlgorithmInput`](crate::input::DescribeAlgorithmInput) with field(s):
-    ///   - [`algorithm_arn(Option<String>)`](crate::input::DescribeAlgorithmInput::algorithm_arn): <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`algorithm_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAlgorithm::algorithm_arn) / [`set_algorithm_arn(Option<String>)`](crate::client::fluent_builders::DescribeAlgorithm::set_algorithm_arn): <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
     /// - On success, responds with [`DescribeAlgorithmOutput`](crate::output::DescribeAlgorithmOutput) with field(s):
     ///   - [`algorithm(Option<Algorithm>)`](crate::output::DescribeAlgorithmOutput::algorithm): <p>A listing of the properties of the algorithm.</p>
     /// - On failure, responds with [`SdkError<DescribeAlgorithmError>`](crate::error::DescribeAlgorithmError)
@@ -351,8 +351,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeBatchInferenceJob`](crate::client::fluent_builders::DescribeBatchInferenceJob) operation.
     ///
-    /// - Takes [`DescribeBatchInferenceJobInput`](crate::input::DescribeBatchInferenceJobInput) with field(s):
-    ///   - [`batch_inference_job_arn(Option<String>)`](crate::input::DescribeBatchInferenceJobInput::batch_inference_job_arn): <p>The ARN of the batch inference job to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`batch_inference_job_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeBatchInferenceJob::batch_inference_job_arn) / [`set_batch_inference_job_arn(Option<String>)`](crate::client::fluent_builders::DescribeBatchInferenceJob::set_batch_inference_job_arn): <p>The ARN of the batch inference job to describe.</p>
     /// - On success, responds with [`DescribeBatchInferenceJobOutput`](crate::output::DescribeBatchInferenceJobOutput) with field(s):
     ///   - [`batch_inference_job(Option<BatchInferenceJob>)`](crate::output::DescribeBatchInferenceJobOutput::batch_inference_job): <p>Information on the specified batch inference job.</p>
     /// - On failure, responds with [`SdkError<DescribeBatchInferenceJobError>`](crate::error::DescribeBatchInferenceJobError)
@@ -363,8 +363,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeBatchSegmentJob`](crate::client::fluent_builders::DescribeBatchSegmentJob) operation.
     ///
-    /// - Takes [`DescribeBatchSegmentJobInput`](crate::input::DescribeBatchSegmentJobInput) with field(s):
-    ///   - [`batch_segment_job_arn(Option<String>)`](crate::input::DescribeBatchSegmentJobInput::batch_segment_job_arn): <p>The ARN of the batch segment job to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`batch_segment_job_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeBatchSegmentJob::batch_segment_job_arn) / [`set_batch_segment_job_arn(Option<String>)`](crate::client::fluent_builders::DescribeBatchSegmentJob::set_batch_segment_job_arn): <p>The ARN of the batch segment job to describe.</p>
     /// - On success, responds with [`DescribeBatchSegmentJobOutput`](crate::output::DescribeBatchSegmentJobOutput) with field(s):
     ///   - [`batch_segment_job(Option<BatchSegmentJob>)`](crate::output::DescribeBatchSegmentJobOutput::batch_segment_job): <p>Information on the specified batch segment job.</p>
     /// - On failure, responds with [`SdkError<DescribeBatchSegmentJobError>`](crate::error::DescribeBatchSegmentJobError)
@@ -373,8 +373,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCampaign`](crate::client::fluent_builders::DescribeCampaign) operation.
     ///
-    /// - Takes [`DescribeCampaignInput`](crate::input::DescribeCampaignInput) with field(s):
-    ///   - [`campaign_arn(Option<String>)`](crate::input::DescribeCampaignInput::campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`campaign_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeCampaign::campaign_arn) / [`set_campaign_arn(Option<String>)`](crate::client::fluent_builders::DescribeCampaign::set_campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign.</p>
     /// - On success, responds with [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput) with field(s):
     ///   - [`campaign(Option<Campaign>)`](crate::output::DescribeCampaignOutput::campaign): <p>The properties of the campaign.</p>
     /// - On failure, responds with [`SdkError<DescribeCampaignError>`](crate::error::DescribeCampaignError)
@@ -383,8 +383,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) operation.
     ///
-    /// - Takes [`DescribeDatasetInput`](crate::input::DescribeDatasetInput) with field(s):
-    ///   - [`dataset_arn(Option<String>)`](crate::input::DescribeDatasetInput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeDataset::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::client::fluent_builders::DescribeDataset::set_dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
     /// - On success, responds with [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput) with field(s):
     ///   - [`dataset(Option<Dataset>)`](crate::output::DescribeDatasetOutput::dataset): <p>A listing of the dataset's properties.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
@@ -393,8 +393,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDatasetExportJob`](crate::client::fluent_builders::DescribeDatasetExportJob) operation.
     ///
-    /// - Takes [`DescribeDatasetExportJobInput`](crate::input::DescribeDatasetExportJobInput) with field(s):
-    ///   - [`dataset_export_job_arn(Option<String>)`](crate::input::DescribeDatasetExportJobInput::dataset_export_job_arn): <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_export_job_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeDatasetExportJob::dataset_export_job_arn) / [`set_dataset_export_job_arn(Option<String>)`](crate::client::fluent_builders::DescribeDatasetExportJob::set_dataset_export_job_arn): <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
     /// - On success, responds with [`DescribeDatasetExportJobOutput`](crate::output::DescribeDatasetExportJobOutput) with field(s):
     ///   - [`dataset_export_job(Option<DatasetExportJob>)`](crate::output::DescribeDatasetExportJobOutput::dataset_export_job): <p>Information about the dataset export job, including the status.</p>  <p>The status is one of the following values:</p>  <ul>   <li> <p>CREATE PENDING</p> </li>   <li> <p>CREATE IN_PROGRESS</p> </li>   <li> <p>ACTIVE</p> </li>   <li> <p>CREATE FAILED</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeDatasetExportJobError>`](crate::error::DescribeDatasetExportJobError)
@@ -405,8 +405,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDatasetGroup`](crate::client::fluent_builders::DescribeDatasetGroup) operation.
     ///
-    /// - Takes [`DescribeDatasetGroupInput`](crate::input::DescribeDatasetGroupInput) with field(s):
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::DescribeDatasetGroupInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeDatasetGroup::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::DescribeDatasetGroup::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
     /// - On success, responds with [`DescribeDatasetGroupOutput`](crate::output::DescribeDatasetGroupOutput) with field(s):
     ///   - [`dataset_group(Option<DatasetGroup>)`](crate::output::DescribeDatasetGroupOutput::dataset_group): <p>A listing of the dataset group's properties.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetGroupError>`](crate::error::DescribeDatasetGroupError)
@@ -415,8 +415,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDatasetImportJob`](crate::client::fluent_builders::DescribeDatasetImportJob) operation.
     ///
-    /// - Takes [`DescribeDatasetImportJobInput`](crate::input::DescribeDatasetImportJobInput) with field(s):
-    ///   - [`dataset_import_job_arn(Option<String>)`](crate::input::DescribeDatasetImportJobInput::dataset_import_job_arn): <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_import_job_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeDatasetImportJob::dataset_import_job_arn) / [`set_dataset_import_job_arn(Option<String>)`](crate::client::fluent_builders::DescribeDatasetImportJob::set_dataset_import_job_arn): <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
     /// - On success, responds with [`DescribeDatasetImportJobOutput`](crate::output::DescribeDatasetImportJobOutput) with field(s):
     ///   - [`dataset_import_job(Option<DatasetImportJob>)`](crate::output::DescribeDatasetImportJobOutput::dataset_import_job): <p>Information about the dataset import job, including the status.</p>  <p>The status is one of the following values:</p>  <ul>   <li> <p>CREATE PENDING</p> </li>   <li> <p>CREATE IN_PROGRESS</p> </li>   <li> <p>ACTIVE</p> </li>   <li> <p>CREATE FAILED</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeDatasetImportJobError>`](crate::error::DescribeDatasetImportJobError)
@@ -427,8 +427,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEventTracker`](crate::client::fluent_builders::DescribeEventTracker) operation.
     ///
-    /// - Takes [`DescribeEventTrackerInput`](crate::input::DescribeEventTrackerInput) with field(s):
-    ///   - [`event_tracker_arn(Option<String>)`](crate::input::DescribeEventTrackerInput::event_tracker_arn): <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`event_tracker_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeEventTracker::event_tracker_arn) / [`set_event_tracker_arn(Option<String>)`](crate::client::fluent_builders::DescribeEventTracker::set_event_tracker_arn): <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
     /// - On success, responds with [`DescribeEventTrackerOutput`](crate::output::DescribeEventTrackerOutput) with field(s):
     ///   - [`event_tracker(Option<EventTracker>)`](crate::output::DescribeEventTrackerOutput::event_tracker): <p>An object that describes the event tracker.</p>
     /// - On failure, responds with [`SdkError<DescribeEventTrackerError>`](crate::error::DescribeEventTrackerError)
@@ -437,8 +437,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFeatureTransformation`](crate::client::fluent_builders::DescribeFeatureTransformation) operation.
     ///
-    /// - Takes [`DescribeFeatureTransformationInput`](crate::input::DescribeFeatureTransformationInput) with field(s):
-    ///   - [`feature_transformation_arn(Option<String>)`](crate::input::DescribeFeatureTransformationInput::feature_transformation_arn): <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`feature_transformation_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeFeatureTransformation::feature_transformation_arn) / [`set_feature_transformation_arn(Option<String>)`](crate::client::fluent_builders::DescribeFeatureTransformation::set_feature_transformation_arn): <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
     /// - On success, responds with [`DescribeFeatureTransformationOutput`](crate::output::DescribeFeatureTransformationOutput) with field(s):
     ///   - [`feature_transformation(Option<FeatureTransformation>)`](crate::output::DescribeFeatureTransformationOutput::feature_transformation): <p>A listing of the FeatureTransformation properties.</p>
     /// - On failure, responds with [`SdkError<DescribeFeatureTransformationError>`](crate::error::DescribeFeatureTransformationError)
@@ -449,8 +449,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFilter`](crate::client::fluent_builders::DescribeFilter) operation.
     ///
-    /// - Takes [`DescribeFilterInput`](crate::input::DescribeFilterInput) with field(s):
-    ///   - [`filter_arn(Option<String>)`](crate::input::DescribeFilterInput::filter_arn): <p>The ARN of the filter to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeFilter::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::DescribeFilter::set_filter_arn): <p>The ARN of the filter to describe.</p>
     /// - On success, responds with [`DescribeFilterOutput`](crate::output::DescribeFilterOutput) with field(s):
     ///   - [`filter(Option<Filter>)`](crate::output::DescribeFilterOutput::filter): <p>The filter's details.</p>
     /// - On failure, responds with [`SdkError<DescribeFilterError>`](crate::error::DescribeFilterError)
@@ -459,8 +459,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeRecipe`](crate::client::fluent_builders::DescribeRecipe) operation.
     ///
-    /// - Takes [`DescribeRecipeInput`](crate::input::DescribeRecipeInput) with field(s):
-    ///   - [`recipe_arn(Option<String>)`](crate::input::DescribeRecipeInput::recipe_arn): <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`recipe_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeRecipe::recipe_arn) / [`set_recipe_arn(Option<String>)`](crate::client::fluent_builders::DescribeRecipe::set_recipe_arn): <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
     /// - On success, responds with [`DescribeRecipeOutput`](crate::output::DescribeRecipeOutput) with field(s):
     ///   - [`recipe(Option<Recipe>)`](crate::output::DescribeRecipeOutput::recipe): <p>An object that describes the recipe.</p>
     /// - On failure, responds with [`SdkError<DescribeRecipeError>`](crate::error::DescribeRecipeError)
@@ -469,8 +469,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeRecommender`](crate::client::fluent_builders::DescribeRecommender) operation.
     ///
-    /// - Takes [`DescribeRecommenderInput`](crate::input::DescribeRecommenderInput) with field(s):
-    ///   - [`recommender_arn(Option<String>)`](crate::input::DescribeRecommenderInput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`recommender_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeRecommender::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::client::fluent_builders::DescribeRecommender::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
     /// - On success, responds with [`DescribeRecommenderOutput`](crate::output::DescribeRecommenderOutput) with field(s):
     ///   - [`recommender(Option<Recommender>)`](crate::output::DescribeRecommenderOutput::recommender): <p>The properties of the recommender.</p>
     /// - On failure, responds with [`SdkError<DescribeRecommenderError>`](crate::error::DescribeRecommenderError)
@@ -479,8 +479,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSchema`](crate::client::fluent_builders::DescribeSchema) operation.
     ///
-    /// - Takes [`DescribeSchemaInput`](crate::input::DescribeSchemaInput) with field(s):
-    ///   - [`schema_arn(Option<String>)`](crate::input::DescribeSchemaInput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`schema_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeSchema::schema_arn) / [`set_schema_arn(Option<String>)`](crate::client::fluent_builders::DescribeSchema::set_schema_arn): <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
     /// - On success, responds with [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput) with field(s):
     ///   - [`schema(Option<DatasetSchema>)`](crate::output::DescribeSchemaOutput::schema): <p>The requested schema.</p>
     /// - On failure, responds with [`SdkError<DescribeSchemaError>`](crate::error::DescribeSchemaError)
@@ -489,8 +489,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSolution`](crate::client::fluent_builders::DescribeSolution) operation.
     ///
-    /// - Takes [`DescribeSolutionInput`](crate::input::DescribeSolutionInput) with field(s):
-    ///   - [`solution_arn(Option<String>)`](crate::input::DescribeSolutionInput::solution_arn): <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeSolution::solution_arn) / [`set_solution_arn(Option<String>)`](crate::client::fluent_builders::DescribeSolution::set_solution_arn): <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
     /// - On success, responds with [`DescribeSolutionOutput`](crate::output::DescribeSolutionOutput) with field(s):
     ///   - [`solution(Option<Solution>)`](crate::output::DescribeSolutionOutput::solution): <p>An object that describes the solution.</p>
     /// - On failure, responds with [`SdkError<DescribeSolutionError>`](crate::error::DescribeSolutionError)
@@ -499,8 +499,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSolutionVersion`](crate::client::fluent_builders::DescribeSolutionVersion) operation.
     ///
-    /// - Takes [`DescribeSolutionVersionInput`](crate::input::DescribeSolutionVersionInput) with field(s):
-    ///   - [`solution_version_arn(Option<String>)`](crate::input::DescribeSolutionVersionInput::solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeSolutionVersion::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::DescribeSolutionVersion::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version.</p>
     /// - On success, responds with [`DescribeSolutionVersionOutput`](crate::output::DescribeSolutionVersionOutput) with field(s):
     ///   - [`solution_version(Option<SolutionVersion>)`](crate::output::DescribeSolutionVersionOutput::solution_version): <p>The solution version.</p>
     /// - On failure, responds with [`SdkError<DescribeSolutionVersionError>`](crate::error::DescribeSolutionVersionError)
@@ -509,8 +509,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSolutionMetrics`](crate::client::fluent_builders::GetSolutionMetrics) operation.
     ///
-    /// - Takes [`GetSolutionMetricsInput`](crate::input::GetSolutionMetricsInput) with field(s):
-    ///   - [`solution_version_arn(Option<String>)`](crate::input::GetSolutionMetricsInput::solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::GetSolutionMetrics::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::GetSolutionMetrics::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
     /// - On success, responds with [`GetSolutionMetricsOutput`](crate::output::GetSolutionMetricsOutput) with field(s):
     ///   - [`solution_version_arn(Option<String>)`](crate::output::GetSolutionMetricsOutput::solution_version_arn): <p>The same solution version ARN as specified in the request.</p>
     ///   - [`metrics(Option<HashMap<String, f64>>)`](crate::output::GetSolutionMetricsOutput::metrics): <p>The metrics for the solution version.</p>
@@ -519,12 +519,12 @@ where
         fluent_builders::GetSolutionMetrics::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListBatchInferenceJobs`](crate::client::fluent_builders::ListBatchInferenceJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBatchInferenceJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBatchInferenceJobs::into_paginator).
     ///
-    /// - Takes [`ListBatchInferenceJobsInput`](crate::input::ListBatchInferenceJobsInput) with field(s):
-    ///   - [`solution_version_arn(Option<String>)`](crate::input::ListBatchInferenceJobsInput::solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListBatchInferenceJobsInput::next_token): <p>The token to request the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListBatchInferenceJobsInput::max_results): <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::ListBatchInferenceJobs::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::ListBatchInferenceJobs::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBatchInferenceJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBatchInferenceJobs::set_next_token): <p>The token to request the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBatchInferenceJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBatchInferenceJobs::set_max_results): <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
     /// - On success, responds with [`ListBatchInferenceJobsOutput`](crate::output::ListBatchInferenceJobsOutput) with field(s):
     ///   - [`batch_inference_jobs(Option<Vec<BatchInferenceJobSummary>>)`](crate::output::ListBatchInferenceJobsOutput::batch_inference_jobs): <p>A list containing information on each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBatchInferenceJobsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
@@ -533,12 +533,12 @@ where
         fluent_builders::ListBatchInferenceJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListBatchSegmentJobs`](crate::client::fluent_builders::ListBatchSegmentJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBatchSegmentJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBatchSegmentJobs::into_paginator).
     ///
-    /// - Takes [`ListBatchSegmentJobsInput`](crate::input::ListBatchSegmentJobsInput) with field(s):
-    ///   - [`solution_version_arn(Option<String>)`](crate::input::ListBatchSegmentJobsInput::solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListBatchSegmentJobsInput::next_token): <p>The token to request the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListBatchSegmentJobsInput::max_results): <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::ListBatchSegmentJobs::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::ListBatchSegmentJobs::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBatchSegmentJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBatchSegmentJobs::set_next_token): <p>The token to request the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBatchSegmentJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBatchSegmentJobs::set_max_results): <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
     /// - On success, responds with [`ListBatchSegmentJobsOutput`](crate::output::ListBatchSegmentJobsOutput) with field(s):
     ///   - [`batch_segment_jobs(Option<Vec<BatchSegmentJobSummary>>)`](crate::output::ListBatchSegmentJobsOutput::batch_segment_jobs): <p>A list containing information on each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBatchSegmentJobsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
@@ -547,12 +547,12 @@ where
         fluent_builders::ListBatchSegmentJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCampaigns`](crate::client::fluent_builders::ListCampaigns) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCampaigns::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCampaigns::into_paginator).
     ///
-    /// - Takes [`ListCampaignsInput`](crate::input::ListCampaignsInput) with field(s):
-    ///   - [`solution_arn(Option<String>)`](crate::input::ListCampaignsInput::solution_arn): <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListCampaignsInput::next_token): <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListCampaignsInput::max_results): <p>The maximum number of campaigns to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_arn(impl Into<String>)`](crate::client::fluent_builders::ListCampaigns::solution_arn) / [`set_solution_arn(Option<String>)`](crate::client::fluent_builders::ListCampaigns::set_solution_arn): <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCampaigns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCampaigns::set_next_token): <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCampaigns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCampaigns::set_max_results): <p>The maximum number of campaigns to return.</p>
     /// - On success, responds with [`ListCampaignsOutput`](crate::output::ListCampaignsOutput) with field(s):
     ///   - [`campaigns(Option<Vec<CampaignSummary>>)`](crate::output::ListCampaignsOutput::campaigns): <p>A list of the campaigns.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCampaignsOutput::next_token): <p>A token for getting the next set of campaigns (if they exist).</p>
@@ -561,12 +561,12 @@ where
         fluent_builders::ListCampaigns::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDatasetExportJobs`](crate::client::fluent_builders::ListDatasetExportJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetExportJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatasetExportJobs::into_paginator).
     ///
-    /// - Takes [`ListDatasetExportJobsInput`](crate::input::ListDatasetExportJobsInput) with field(s):
-    ///   - [`dataset_arn(Option<String>)`](crate::input::ListDatasetExportJobsInput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetExportJobsInput::next_token): <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetExportJobsInput::max_results): <p>The maximum number of dataset export jobs to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_arn(impl Into<String>)`](crate::client::fluent_builders::ListDatasetExportJobs::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::client::fluent_builders::ListDatasetExportJobs::set_dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatasetExportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatasetExportJobs::set_next_token): <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDatasetExportJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDatasetExportJobs::set_max_results): <p>The maximum number of dataset export jobs to return.</p>
     /// - On success, responds with [`ListDatasetExportJobsOutput`](crate::output::ListDatasetExportJobsOutput) with field(s):
     ///   - [`dataset_export_jobs(Option<Vec<DatasetExportJobSummary>>)`](crate::output::ListDatasetExportJobsOutput::dataset_export_jobs): <p>The list of dataset export jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDatasetExportJobsOutput::next_token): <p>A token for getting the next set of dataset export jobs (if they exist).</p>
@@ -575,11 +575,11 @@ where
         fluent_builders::ListDatasetExportJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDatasetGroups`](crate::client::fluent_builders::ListDatasetGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatasetGroups::into_paginator).
     ///
-    /// - Takes [`ListDatasetGroupsInput`](crate::input::ListDatasetGroupsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetGroupsInput::next_token): <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetGroupsInput::max_results): <p>The maximum number of dataset groups to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatasetGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatasetGroups::set_next_token): <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDatasetGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDatasetGroups::set_max_results): <p>The maximum number of dataset groups to return.</p>
     /// - On success, responds with [`ListDatasetGroupsOutput`](crate::output::ListDatasetGroupsOutput) with field(s):
     ///   - [`dataset_groups(Option<Vec<DatasetGroupSummary>>)`](crate::output::ListDatasetGroupsOutput::dataset_groups): <p>The list of your dataset groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDatasetGroupsOutput::next_token): <p>A token for getting the next set of dataset groups (if they exist).</p>
@@ -588,12 +588,12 @@ where
         fluent_builders::ListDatasetGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDatasetImportJobs`](crate::client::fluent_builders::ListDatasetImportJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetImportJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatasetImportJobs::into_paginator).
     ///
-    /// - Takes [`ListDatasetImportJobsInput`](crate::input::ListDatasetImportJobsInput) with field(s):
-    ///   - [`dataset_arn(Option<String>)`](crate::input::ListDatasetImportJobsInput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetImportJobsInput::next_token): <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetImportJobsInput::max_results): <p>The maximum number of dataset import jobs to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_arn(impl Into<String>)`](crate::client::fluent_builders::ListDatasetImportJobs::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::client::fluent_builders::ListDatasetImportJobs::set_dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatasetImportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatasetImportJobs::set_next_token): <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDatasetImportJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDatasetImportJobs::set_max_results): <p>The maximum number of dataset import jobs to return.</p>
     /// - On success, responds with [`ListDatasetImportJobsOutput`](crate::output::ListDatasetImportJobsOutput) with field(s):
     ///   - [`dataset_import_jobs(Option<Vec<DatasetImportJobSummary>>)`](crate::output::ListDatasetImportJobsOutput::dataset_import_jobs): <p>The list of dataset import jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDatasetImportJobsOutput::next_token): <p>A token for getting the next set of dataset import jobs (if they exist).</p>
@@ -602,12 +602,12 @@ where
         fluent_builders::ListDatasetImportJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDatasets`](crate::client::fluent_builders::ListDatasets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
     ///
-    /// - Takes [`ListDatasetsInput`](crate::input::ListDatasetsInput) with field(s):
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::ListDatasetsInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetsInput::next_token): <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetsInput::max_results): <p>The maximum number of datasets to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListDatasets::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::ListDatasets::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatasets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatasets::set_next_token): <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDatasets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDatasets::set_max_results): <p>The maximum number of datasets to return.</p>
     /// - On success, responds with [`ListDatasetsOutput`](crate::output::ListDatasetsOutput) with field(s):
     ///   - [`datasets(Option<Vec<DatasetSummary>>)`](crate::output::ListDatasetsOutput::datasets): <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDatasetsOutput::next_token): <p>A token for getting the next set of datasets (if they exist).</p>
@@ -616,12 +616,12 @@ where
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEventTrackers`](crate::client::fluent_builders::ListEventTrackers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventTrackers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEventTrackers::into_paginator).
     ///
-    /// - Takes [`ListEventTrackersInput`](crate::input::ListEventTrackersInput) with field(s):
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::ListEventTrackersInput::dataset_group_arn): <p>The ARN of a dataset group used to filter the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListEventTrackersInput::next_token): <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEventTrackersInput::max_results): <p>The maximum number of event trackers to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListEventTrackers::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::ListEventTrackers::set_dataset_group_arn): <p>The ARN of a dataset group used to filter the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEventTrackers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEventTrackers::set_next_token): <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEventTrackers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEventTrackers::set_max_results): <p>The maximum number of event trackers to return.</p>
     /// - On success, responds with [`ListEventTrackersOutput`](crate::output::ListEventTrackersOutput) with field(s):
     ///   - [`event_trackers(Option<Vec<EventTrackerSummary>>)`](crate::output::ListEventTrackersOutput::event_trackers): <p>A list of event trackers.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEventTrackersOutput::next_token): <p>A token for getting the next set of event trackers (if they exist).</p>
@@ -630,12 +630,12 @@ where
         fluent_builders::ListEventTrackers::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFilters`](crate::client::fluent_builders::ListFilters) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFilters::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFilters::into_paginator).
     ///
-    /// - Takes [`ListFiltersInput`](crate::input::ListFiltersInput) with field(s):
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::ListFiltersInput::dataset_group_arn): <p>The ARN of the dataset group that contains the filters.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFiltersInput::next_token): <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFiltersInput::max_results): <p>The maximum number of filters to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListFilters::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::ListFilters::set_dataset_group_arn): <p>The ARN of the dataset group that contains the filters.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFilters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFilters::set_next_token): <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFilters::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFilters::set_max_results): <p>The maximum number of filters to return.</p>
     /// - On success, responds with [`ListFiltersOutput`](crate::output::ListFiltersOutput) with field(s):
     ///   - [`filters(Option<Vec<FilterSummary>>)`](crate::output::ListFiltersOutput::filters): <p>A list of returned filters.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFiltersOutput::next_token): <p>A token for getting the next set of filters (if they exist).</p>
@@ -644,13 +644,13 @@ where
         fluent_builders::ListFilters::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRecipes`](crate::client::fluent_builders::ListRecipes) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecipes::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecipes::into_paginator).
     ///
-    /// - Takes [`ListRecipesInput`](crate::input::ListRecipesInput) with field(s):
-    ///   - [`recipe_provider(Option<RecipeProvider>)`](crate::input::ListRecipesInput::recipe_provider): <p>The default is <code>SERVICE</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListRecipesInput::next_token): <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListRecipesInput::max_results): <p>The maximum number of recipes to return.</p>
-    ///   - [`domain(Option<Domain>)`](crate::input::ListRecipesInput::domain): <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`recipe_provider(RecipeProvider)`](crate::client::fluent_builders::ListRecipes::recipe_provider) / [`set_recipe_provider(Option<RecipeProvider>)`](crate::client::fluent_builders::ListRecipes::set_recipe_provider): <p>The default is <code>SERVICE</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecipes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecipes::set_next_token): <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecipes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRecipes::set_max_results): <p>The maximum number of recipes to return.</p>
+    ///   - [`domain(Domain)`](crate::client::fluent_builders::ListRecipes::domain) / [`set_domain(Option<Domain>)`](crate::client::fluent_builders::ListRecipes::set_domain): <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
     /// - On success, responds with [`ListRecipesOutput`](crate::output::ListRecipesOutput) with field(s):
     ///   - [`recipes(Option<Vec<RecipeSummary>>)`](crate::output::ListRecipesOutput::recipes): <p>The list of available recipes.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRecipesOutput::next_token): <p>A token for getting the next set of recipes.</p>
@@ -659,12 +659,12 @@ where
         fluent_builders::ListRecipes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRecommenders`](crate::client::fluent_builders::ListRecommenders) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecommenders::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecommenders::into_paginator).
     ///
-    /// - Takes [`ListRecommendersInput`](crate::input::ListRecommendersInput) with field(s):
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::ListRecommendersInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListRecommendersInput::next_token): <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListRecommendersInput::max_results): <p>The maximum number of recommenders to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListRecommenders::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::ListRecommenders::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecommenders::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecommenders::set_next_token): <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecommenders::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRecommenders::set_max_results): <p>The maximum number of recommenders to return.</p>
     /// - On success, responds with [`ListRecommendersOutput`](crate::output::ListRecommendersOutput) with field(s):
     ///   - [`recommenders(Option<Vec<RecommenderSummary>>)`](crate::output::ListRecommendersOutput::recommenders): <p>A list of the recommenders.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRecommendersOutput::next_token): <p>A token for getting the next set of recommenders (if they exist).</p>
@@ -673,11 +673,11 @@ where
         fluent_builders::ListRecommenders::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSchemas`](crate::client::fluent_builders::ListSchemas) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
     ///
-    /// - Takes [`ListSchemasInput`](crate::input::ListSchemasInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListSchemasInput::next_token): <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListSchemasInput::max_results): <p>The maximum number of schemas to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSchemas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSchemas::set_next_token): <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSchemas::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSchemas::set_max_results): <p>The maximum number of schemas to return.</p>
     /// - On success, responds with [`ListSchemasOutput`](crate::output::ListSchemasOutput) with field(s):
     ///   - [`schemas(Option<Vec<DatasetSchemaSummary>>)`](crate::output::ListSchemasOutput::schemas): <p>A list of schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSchemasOutput::next_token): <p>A token used to get the next set of schemas (if they exist).</p>
@@ -686,12 +686,12 @@ where
         fluent_builders::ListSchemas::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSolutions`](crate::client::fluent_builders::ListSolutions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSolutions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSolutions::into_paginator).
     ///
-    /// - Takes [`ListSolutionsInput`](crate::input::ListSolutionsInput) with field(s):
-    ///   - [`dataset_group_arn(Option<String>)`](crate::input::ListSolutionsInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListSolutionsInput::next_token): <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListSolutionsInput::max_results): <p>The maximum number of solutions to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListSolutions::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::client::fluent_builders::ListSolutions::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSolutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSolutions::set_next_token): <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSolutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSolutions::set_max_results): <p>The maximum number of solutions to return.</p>
     /// - On success, responds with [`ListSolutionsOutput`](crate::output::ListSolutionsOutput) with field(s):
     ///   - [`solutions(Option<Vec<SolutionSummary>>)`](crate::output::ListSolutionsOutput::solutions): <p>A list of the current solutions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSolutionsOutput::next_token): <p>A token for getting the next set of solutions (if they exist).</p>
@@ -700,12 +700,12 @@ where
         fluent_builders::ListSolutions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSolutionVersions`](crate::client::fluent_builders::ListSolutionVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSolutionVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSolutionVersions::into_paginator).
     ///
-    /// - Takes [`ListSolutionVersionsInput`](crate::input::ListSolutionVersionsInput) with field(s):
-    ///   - [`solution_arn(Option<String>)`](crate::input::ListSolutionVersionsInput::solution_arn): <p>The Amazon Resource Name (ARN) of the solution.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListSolutionVersionsInput::next_token): <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListSolutionVersionsInput::max_results): <p>The maximum number of solution versions to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_arn(impl Into<String>)`](crate::client::fluent_builders::ListSolutionVersions::solution_arn) / [`set_solution_arn(Option<String>)`](crate::client::fluent_builders::ListSolutionVersions::set_solution_arn): <p>The Amazon Resource Name (ARN) of the solution.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSolutionVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSolutionVersions::set_next_token): <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSolutionVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSolutionVersions::set_max_results): <p>The maximum number of solution versions to return.</p>
     /// - On success, responds with [`ListSolutionVersionsOutput`](crate::output::ListSolutionVersionsOutput) with field(s):
     ///   - [`solution_versions(Option<Vec<SolutionVersionSummary>>)`](crate::output::ListSolutionVersionsOutput::solution_versions): <p>A list of solution versions describing the version properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSolutionVersionsOutput::next_token): <p>A token for getting the next set of solution versions (if they exist).</p>
@@ -715,8 +715,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopSolutionVersionCreation`](crate::client::fluent_builders::StopSolutionVersionCreation) operation.
     ///
-    /// - Takes [`StopSolutionVersionCreationInput`](crate::input::StopSolutionVersionCreationInput) with field(s):
-    ///   - [`solution_version_arn(Option<String>)`](crate::input::StopSolutionVersionCreationInput::solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::StopSolutionVersionCreation::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::StopSolutionVersionCreation::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
     /// - On success, responds with [`StopSolutionVersionCreationOutput`](crate::output::StopSolutionVersionCreationOutput)
 
     /// - On failure, responds with [`SdkError<StopSolutionVersionCreationError>`](crate::error::StopSolutionVersionCreationError)
@@ -727,11 +727,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateCampaign`](crate::client::fluent_builders::UpdateCampaign) operation.
     ///
-    /// - Takes [`UpdateCampaignInput`](crate::input::UpdateCampaignInput) with field(s):
-    ///   - [`campaign_arn(Option<String>)`](crate::input::UpdateCampaignInput::campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign.</p>
-    ///   - [`solution_version_arn(Option<String>)`](crate::input::UpdateCampaignInput::solution_version_arn): <p>The ARN of a new solution version to deploy.</p>
-    ///   - [`min_provisioned_tps(Option<i32>)`](crate::input::UpdateCampaignInput::min_provisioned_tps): <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
-    ///   - [`campaign_config(Option<CampaignConfig>)`](crate::input::UpdateCampaignInput::campaign_config): <p>The configuration details of a campaign.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`campaign_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaign::campaign_arn) / [`set_campaign_arn(Option<String>)`](crate::client::fluent_builders::UpdateCampaign::set_campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaign::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::client::fluent_builders::UpdateCampaign::set_solution_version_arn): <p>The ARN of a new solution version to deploy.</p>
+    ///   - [`min_provisioned_tps(i32)`](crate::client::fluent_builders::UpdateCampaign::min_provisioned_tps) / [`set_min_provisioned_tps(Option<i32>)`](crate::client::fluent_builders::UpdateCampaign::set_min_provisioned_tps): <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
+    ///   - [`campaign_config(CampaignConfig)`](crate::client::fluent_builders::UpdateCampaign::campaign_config) / [`set_campaign_config(Option<CampaignConfig>)`](crate::client::fluent_builders::UpdateCampaign::set_campaign_config): <p>The configuration details of a campaign.</p>
     /// - On success, responds with [`UpdateCampaignOutput`](crate::output::UpdateCampaignOutput) with field(s):
     ///   - [`campaign_arn(Option<String>)`](crate::output::UpdateCampaignOutput::campaign_arn): <p>The same campaign ARN as given in the request.</p>
     /// - On failure, responds with [`SdkError<UpdateCampaignError>`](crate::error::UpdateCampaignError)
@@ -740,9 +740,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRecommender`](crate::client::fluent_builders::UpdateRecommender) operation.
     ///
-    /// - Takes [`UpdateRecommenderInput`](crate::input::UpdateRecommenderInput) with field(s):
-    ///   - [`recommender_arn(Option<String>)`](crate::input::UpdateRecommenderInput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
-    ///   - [`recommender_config(Option<RecommenderConfig>)`](crate::input::UpdateRecommenderInput::recommender_config): <p>The configuration details of the recommender.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`recommender_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRecommender::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::client::fluent_builders::UpdateRecommender::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
+    ///   - [`recommender_config(RecommenderConfig)`](crate::client::fluent_builders::UpdateRecommender::recommender_config) / [`set_recommender_config(Option<RecommenderConfig>)`](crate::client::fluent_builders::UpdateRecommender::set_recommender_config): <p>The configuration details of the recommender.</p>
     /// - On success, responds with [`UpdateRecommenderOutput`](crate::output::UpdateRecommenderOutput) with field(s):
     ///   - [`recommender_arn(Option<String>)`](crate::output::UpdateRecommenderOutput::recommender_arn): <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
     /// - On failure, responds with [`SdkError<UpdateRecommenderError>`](crate::error::UpdateRecommenderError)

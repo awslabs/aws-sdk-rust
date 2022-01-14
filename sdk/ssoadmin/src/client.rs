@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`AttachManagedPolicyToPermissionSet`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet) operation.
     ///
-    /// - Takes [`AttachManagedPolicyToPermissionSetInput`](crate::input::AttachManagedPolicyToPermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::AttachManagedPolicyToPermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::AttachManagedPolicyToPermissionSetInput::permission_set_arn): <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
-    ///   - [`managed_policy_arn(Option<String>)`](crate::input::AttachManagedPolicyToPermissionSetInput::managed_policy_arn): <p>The IAM managed policy ARN to be attached to a permission set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
+    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet::set_managed_policy_arn): <p>The IAM managed policy ARN to be attached to a permission set.</p>
     /// - On success, responds with [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<AttachManagedPolicyToPermissionSetError>`](crate::error::AttachManagedPolicyToPermissionSetError)
@@ -99,13 +99,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAccountAssignment`](crate::client::fluent_builders::CreateAccountAssignment) operation.
     ///
-    /// - Takes [`CreateAccountAssignmentInput`](crate::input::CreateAccountAssignmentInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::CreateAccountAssignmentInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`target_id(Option<String>)`](crate::input::CreateAccountAssignmentInput::target_id): <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    ///   - [`target_type(Option<TargetType>)`](crate::input::CreateAccountAssignmentInput::target_type): <p>The entity type for which the assignment will be created.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::CreateAccountAssignmentInput::permission_set_arn): <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-    ///   - [`principal_type(Option<PrincipalType>)`](crate::input::CreateAccountAssignmentInput::principal_type): <p>The entity type for which the assignment will be created.</p>
-    ///   - [`principal_id(Option<String>)`](crate::input::CreateAccountAssignmentInput::principal_id): <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_target_id): <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    ///   - [`target_type(TargetType)`](crate::client::fluent_builders::CreateAccountAssignment::target_type) / [`set_target_type(Option<TargetType>)`](crate::client::fluent_builders::CreateAccountAssignment::set_target_type): <p>The entity type for which the assignment will be created.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_permission_set_arn): <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
+    ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::CreateAccountAssignment::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::CreateAccountAssignment::set_principal_type): <p>The entity type for which the assignment will be created.</p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAssignment::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::CreateAccountAssignment::set_principal_id): <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
     /// - On success, responds with [`CreateAccountAssignmentOutput`](crate::output::CreateAccountAssignmentOutput) with field(s):
     ///   - [`account_assignment_creation_status(Option<AccountAssignmentOperationStatus>)`](crate::output::CreateAccountAssignmentOutput::account_assignment_creation_status): <p>The status object for the account assignment creation operation.</p>
     /// - On failure, responds with [`SdkError<CreateAccountAssignmentError>`](crate::error::CreateAccountAssignmentError)
@@ -114,9 +114,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateInstanceAccessControlAttributeConfiguration`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration) operation.
     ///
-    /// - Takes [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed.</p>
-    ///   - [`instance_access_control_attribute_configuration(Option<InstanceAccessControlAttributeConfiguration>)`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput::instance_access_control_attribute_configuration): <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value from the Amazon Web Services SSO identity store.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed.</p>
+    ///   - [`instance_access_control_attribute_configuration(InstanceAccessControlAttributeConfiguration)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::instance_access_control_attribute_configuration) / [`set_instance_access_control_attribute_configuration(Option<InstanceAccessControlAttributeConfiguration>)`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration::set_instance_access_control_attribute_configuration): <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value from the Amazon Web Services SSO identity store.</p>
     /// - On success, responds with [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<CreateInstanceAccessControlAttributeConfigurationError>`](crate::error::CreateInstanceAccessControlAttributeConfigurationError)
@@ -127,13 +127,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreatePermissionSet`](crate::client::fluent_builders::CreatePermissionSet) operation.
     ///
-    /// - Takes [`CreatePermissionSetInput`](crate::input::CreatePermissionSetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreatePermissionSetInput::name): <p>The name of the <code>PermissionSet</code>.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreatePermissionSetInput::description): <p>The description of the <code>PermissionSet</code>.</p>
-    ///   - [`instance_arn(Option<String>)`](crate::input::CreatePermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`session_duration(Option<String>)`](crate::input::CreatePermissionSetInput::session_duration): <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
-    ///   - [`relay_state(Option<String>)`](crate::input::CreatePermissionSetInput::relay_state): <p>Used to redirect users within the application during the federation authentication process.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePermissionSetInput::tags): <p>The tags to attach to the new <code>PermissionSet</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_name): <p>The name of the <code>PermissionSet</code>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_description): <p>The description of the <code>PermissionSet</code>.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`session_duration(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::session_duration) / [`set_session_duration(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_session_duration): <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
+    ///   - [`relay_state(impl Into<String>)`](crate::client::fluent_builders::CreatePermissionSet::relay_state) / [`set_relay_state(Option<String>)`](crate::client::fluent_builders::CreatePermissionSet::set_relay_state): <p>Used to redirect users within the application during the federation authentication process.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePermissionSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePermissionSet::set_tags): <p>The tags to attach to the new <code>PermissionSet</code>.</p>
     /// - On success, responds with [`CreatePermissionSetOutput`](crate::output::CreatePermissionSetOutput) with field(s):
     ///   - [`permission_set(Option<PermissionSet>)`](crate::output::CreatePermissionSetOutput::permission_set): <p>Defines the level of access on an Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<CreatePermissionSetError>`](crate::error::CreatePermissionSetError)
@@ -142,13 +142,13 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAccountAssignment`](crate::client::fluent_builders::DeleteAccountAssignment) operation.
     ///
-    /// - Takes [`DeleteAccountAssignmentInput`](crate::input::DeleteAccountAssignmentInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DeleteAccountAssignmentInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`target_id(Option<String>)`](crate::input::DeleteAccountAssignmentInput::target_id): <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    ///   - [`target_type(Option<TargetType>)`](crate::input::DeleteAccountAssignmentInput::target_type): <p>The entity type for which the assignment will be deleted.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::DeleteAccountAssignmentInput::permission_set_arn): <p>The ARN of the permission set that will be used to remove access.</p>
-    ///   - [`principal_type(Option<PrincipalType>)`](crate::input::DeleteAccountAssignmentInput::principal_type): <p>The entity type for which the assignment will be deleted.</p>
-    ///   - [`principal_id(Option<String>)`](crate::input::DeleteAccountAssignmentInput::principal_id): <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_target_id): <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    ///   - [`target_type(TargetType)`](crate::client::fluent_builders::DeleteAccountAssignment::target_type) / [`set_target_type(Option<TargetType>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_target_type): <p>The entity type for which the assignment will be deleted.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_permission_set_arn): <p>The ARN of the permission set that will be used to remove access.</p>
+    ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::DeleteAccountAssignment::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_principal_type): <p>The entity type for which the assignment will be deleted.</p>
+    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteAccountAssignment::set_principal_id): <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
     /// - On success, responds with [`DeleteAccountAssignmentOutput`](crate::output::DeleteAccountAssignmentOutput) with field(s):
     ///   - [`account_assignment_deletion_status(Option<AccountAssignmentOperationStatus>)`](crate::output::DeleteAccountAssignmentOutput::account_assignment_deletion_status): <p>The status object for the account assignment deletion operation.</p>
     /// - On failure, responds with [`SdkError<DeleteAccountAssignmentError>`](crate::error::DeleteAccountAssignmentError)
@@ -157,9 +157,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteInlinePolicyFromPermissionSet`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet) operation.
     ///
-    /// - Takes [`DeleteInlinePolicyFromPermissionSetInput`](crate::input::DeleteInlinePolicyFromPermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DeleteInlinePolicyFromPermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::DeleteInlinePolicyFromPermissionSetInput::permission_set_arn): <p>The ARN of the permission set that will be used to remove access.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet::set_permission_set_arn): <p>The ARN of the permission set that will be used to remove access.</p>
     /// - On success, responds with [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteInlinePolicyFromPermissionSetError>`](crate::error::DeleteInlinePolicyFromPermissionSetError)
@@ -170,8 +170,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteInstanceAccessControlAttributeConfiguration`](crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration) operation.
     ///
-    /// - Takes [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed.</p>
     /// - On success, responds with [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteInstanceAccessControlAttributeConfigurationError>`](crate::error::DeleteInstanceAccessControlAttributeConfigurationError)
@@ -182,9 +182,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeletePermissionSet`](crate::client::fluent_builders::DeletePermissionSet) operation.
     ///
-    /// - Takes [`DeletePermissionSetInput`](crate::input::DeletePermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DeletePermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::DeletePermissionSetInput::permission_set_arn): <p>The ARN of the permission set that should be deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionSet::set_permission_set_arn): <p>The ARN of the permission set that should be deleted.</p>
     /// - On success, responds with [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<DeletePermissionSetError>`](crate::error::DeletePermissionSetError)
@@ -193,9 +193,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAccountAssignmentCreationStatus`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus) operation.
     ///
-    /// - Takes [`DescribeAccountAssignmentCreationStatusInput`](crate::input::DescribeAccountAssignmentCreationStatusInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DescribeAccountAssignmentCreationStatusInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`account_assignment_creation_request_id(Option<String>)`](crate::input::DescribeAccountAssignmentCreationStatusInput::account_assignment_creation_request_id): <p>The identifier that is used to track the request operation progress.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`account_assignment_creation_request_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::account_assignment_creation_request_id) / [`set_account_assignment_creation_request_id(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus::set_account_assignment_creation_request_id): <p>The identifier that is used to track the request operation progress.</p>
     /// - On success, responds with [`DescribeAccountAssignmentCreationStatusOutput`](crate::output::DescribeAccountAssignmentCreationStatusOutput) with field(s):
     ///   - [`account_assignment_creation_status(Option<AccountAssignmentOperationStatus>)`](crate::output::DescribeAccountAssignmentCreationStatusOutput::account_assignment_creation_status): <p>The status object for the account assignment creation operation.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountAssignmentCreationStatusError>`](crate::error::DescribeAccountAssignmentCreationStatusError)
@@ -206,9 +206,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAccountAssignmentDeletionStatus`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus) operation.
     ///
-    /// - Takes [`DescribeAccountAssignmentDeletionStatusInput`](crate::input::DescribeAccountAssignmentDeletionStatusInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DescribeAccountAssignmentDeletionStatusInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`account_assignment_deletion_request_id(Option<String>)`](crate::input::DescribeAccountAssignmentDeletionStatusInput::account_assignment_deletion_request_id): <p>The identifier that is used to track the request operation progress.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`account_assignment_deletion_request_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::account_assignment_deletion_request_id) / [`set_account_assignment_deletion_request_id(Option<String>)`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus::set_account_assignment_deletion_request_id): <p>The identifier that is used to track the request operation progress.</p>
     /// - On success, responds with [`DescribeAccountAssignmentDeletionStatusOutput`](crate::output::DescribeAccountAssignmentDeletionStatusOutput) with field(s):
     ///   - [`account_assignment_deletion_status(Option<AccountAssignmentOperationStatus>)`](crate::output::DescribeAccountAssignmentDeletionStatusOutput::account_assignment_deletion_status): <p>The status object for the account assignment deletion operation.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountAssignmentDeletionStatusError>`](crate::error::DescribeAccountAssignmentDeletionStatusError)
@@ -219,8 +219,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeInstanceAccessControlAttributeConfiguration`](crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration) operation.
     ///
-    /// - Takes [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed.</p>
     /// - On success, responds with [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput) with field(s):
     ///   - [`status(Option<InstanceAccessControlAttributeConfigurationStatus>)`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput::status): <p>The status of the attribute configuration process.</p>
     ///   - [`status_reason(Option<String>)`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput::status_reason): <p>Provides more details about the current status of the specified attribute.</p>
@@ -235,9 +235,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribePermissionSet`](crate::client::fluent_builders::DescribePermissionSet) operation.
     ///
-    /// - Takes [`DescribePermissionSetInput`](crate::input::DescribePermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DescribePermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::DescribePermissionSetInput::permission_set_arn): <p>The ARN of the permission set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribePermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DescribePermissionSet::set_permission_set_arn): <p>The ARN of the permission set.</p>
     /// - On success, responds with [`DescribePermissionSetOutput`](crate::output::DescribePermissionSetOutput) with field(s):
     ///   - [`permission_set(Option<PermissionSet>)`](crate::output::DescribePermissionSetOutput::permission_set): <p>Describes the level of access on an Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<DescribePermissionSetError>`](crate::error::DescribePermissionSetError)
@@ -246,9 +246,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribePermissionSetProvisioningStatus`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus) operation.
     ///
-    /// - Takes [`DescribePermissionSetProvisioningStatusInput`](crate::input::DescribePermissionSetProvisioningStatusInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DescribePermissionSetProvisioningStatusInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`provision_permission_set_request_id(Option<String>)`](crate::input::DescribePermissionSetProvisioningStatusInput::provision_permission_set_request_id): <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`provision_permission_set_request_id(impl Into<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::provision_permission_set_request_id) / [`set_provision_permission_set_request_id(Option<String>)`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus::set_provision_permission_set_request_id): <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
     /// - On success, responds with [`DescribePermissionSetProvisioningStatusOutput`](crate::output::DescribePermissionSetProvisioningStatusOutput) with field(s):
     ///   - [`permission_set_provisioning_status(Option<PermissionSetProvisioningStatus>)`](crate::output::DescribePermissionSetProvisioningStatusOutput::permission_set_provisioning_status): <p>The status object for the permission set provisioning operation.</p>
     /// - On failure, responds with [`SdkError<DescribePermissionSetProvisioningStatusError>`](crate::error::DescribePermissionSetProvisioningStatusError)
@@ -259,10 +259,10 @@ where
     }
     /// Constructs a fluent builder for the [`DetachManagedPolicyFromPermissionSet`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet) operation.
     ///
-    /// - Takes [`DetachManagedPolicyFromPermissionSetInput`](crate::input::DetachManagedPolicyFromPermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::DetachManagedPolicyFromPermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::DetachManagedPolicyFromPermissionSetInput::permission_set_arn): <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
-    ///   - [`managed_policy_arn(Option<String>)`](crate::input::DetachManagedPolicyFromPermissionSetInput::managed_policy_arn): <p>The IAM managed policy ARN to be attached to a permission set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
+    ///   - [`managed_policy_arn(impl Into<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet::set_managed_policy_arn): <p>The IAM managed policy ARN to be attached to a permission set.</p>
     /// - On success, responds with [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<DetachManagedPolicyFromPermissionSetError>`](crate::error::DetachManagedPolicyFromPermissionSetError)
@@ -273,9 +273,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetInlinePolicyForPermissionSet`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet) operation.
     ///
-    /// - Takes [`GetInlinePolicyForPermissionSetInput`](crate::input::GetInlinePolicyForPermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::GetInlinePolicyForPermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::GetInlinePolicyForPermissionSetInput::permission_set_arn): <p>The ARN of the permission set.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet::set_permission_set_arn): <p>The ARN of the permission set.</p>
     /// - On success, responds with [`GetInlinePolicyForPermissionSetOutput`](crate::output::GetInlinePolicyForPermissionSetOutput) with field(s):
     ///   - [`inline_policy(Option<String>)`](crate::output::GetInlinePolicyForPermissionSetOutput::inline_policy): <p>The IAM inline policy that is attached to the permission set.</p>
     /// - On failure, responds with [`SdkError<GetInlinePolicyForPermissionSetError>`](crate::error::GetInlinePolicyForPermissionSetError)
@@ -285,13 +285,13 @@ where
         fluent_builders::GetInlinePolicyForPermissionSet::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccountAssignmentCreationStatus`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::into_paginator).
     ///
-    /// - Takes [`ListAccountAssignmentCreationStatusInput`](crate::input::ListAccountAssignmentCreationStatusInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ListAccountAssignmentCreationStatusInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccountAssignmentCreationStatusInput::max_results): <p>The maximum number of results to display for the assignment.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccountAssignmentCreationStatusInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    ///   - [`filter(Option<OperationStatusFilter>)`](crate::input::ListAccountAssignmentCreationStatusInput::filter): <p>Filters results based on the passed attribute value.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::set_max_results): <p>The maximum number of results to display for the assignment.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    ///   - [`filter(OperationStatusFilter)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::filter) / [`set_filter(Option<OperationStatusFilter>)`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::set_filter): <p>Filters results based on the passed attribute value.</p>
     /// - On success, responds with [`ListAccountAssignmentCreationStatusOutput`](crate::output::ListAccountAssignmentCreationStatusOutput) with field(s):
     ///   - [`account_assignments_creation_status(Option<Vec<AccountAssignmentOperationStatusMetadata>>)`](crate::output::ListAccountAssignmentCreationStatusOutput::account_assignments_creation_status): <p>The status object for the account assignment creation operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountAssignmentCreationStatusOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -302,13 +302,13 @@ where
         fluent_builders::ListAccountAssignmentCreationStatus::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccountAssignmentDeletionStatus`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::into_paginator).
     ///
-    /// - Takes [`ListAccountAssignmentDeletionStatusInput`](crate::input::ListAccountAssignmentDeletionStatusInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ListAccountAssignmentDeletionStatusInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccountAssignmentDeletionStatusInput::max_results): <p>The maximum number of results to display for the assignment.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccountAssignmentDeletionStatusInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    ///   - [`filter(Option<OperationStatusFilter>)`](crate::input::ListAccountAssignmentDeletionStatusInput::filter): <p>Filters results based on the passed attribute value.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::set_max_results): <p>The maximum number of results to display for the assignment.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    ///   - [`filter(OperationStatusFilter)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::filter) / [`set_filter(Option<OperationStatusFilter>)`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::set_filter): <p>Filters results based on the passed attribute value.</p>
     /// - On success, responds with [`ListAccountAssignmentDeletionStatusOutput`](crate::output::ListAccountAssignmentDeletionStatusOutput) with field(s):
     ///   - [`account_assignments_deletion_status(Option<Vec<AccountAssignmentOperationStatusMetadata>>)`](crate::output::ListAccountAssignmentDeletionStatusOutput::account_assignments_deletion_status): <p>The status object for the account assignment deletion operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountAssignmentDeletionStatusOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -319,14 +319,14 @@ where
         fluent_builders::ListAccountAssignmentDeletionStatus::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccountAssignments`](crate::client::fluent_builders::ListAccountAssignments) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignments::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignments::into_paginator).
     ///
-    /// - Takes [`ListAccountAssignmentsInput`](crate::input::ListAccountAssignmentsInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ListAccountAssignmentsInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`account_id(Option<String>)`](crate::input::ListAccountAssignmentsInput::account_id): <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::ListAccountAssignmentsInput::permission_set_arn): <p>The ARN of the permission set from which to list assignments.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccountAssignmentsInput::max_results): <p>The maximum number of results to display for the assignment.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccountAssignmentsInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_account_id): <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_permission_set_arn): <p>The ARN of the permission set from which to list assignments.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountAssignments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountAssignments::set_max_results): <p>The maximum number of results to display for the assignment.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountAssignments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountAssignments::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListAccountAssignmentsOutput`](crate::output::ListAccountAssignmentsOutput) with field(s):
     ///   - [`account_assignments(Option<Vec<AccountAssignment>>)`](crate::output::ListAccountAssignmentsOutput::account_assignments): <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountAssignmentsOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -335,14 +335,14 @@ where
         fluent_builders::ListAccountAssignments::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccountsForProvisionedPermissionSet`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::into_paginator).
     ///
-    /// - Takes [`ListAccountsForProvisionedPermissionSetInput`](crate::input::ListAccountsForProvisionedPermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ListAccountsForProvisionedPermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::ListAccountsForProvisionedPermissionSetInput::permission_set_arn): <p>The ARN of the <code>PermissionSet</code> from which the associated Amazon Web Services accounts will be listed.</p>
-    ///   - [`provisioning_status(Option<ProvisioningStatus>)`](crate::input::ListAccountsForProvisionedPermissionSetInput::provisioning_status): <p>The permission set provisioning status for an Amazon Web Services account.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccountsForProvisionedPermissionSetInput::max_results): <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccountsForProvisionedPermissionSetInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> from which the associated Amazon Web Services accounts will be listed.</p>
+    ///   - [`provisioning_status(ProvisioningStatus)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::provisioning_status) / [`set_provisioning_status(Option<ProvisioningStatus>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_provisioning_status): <p>The permission set provisioning status for an Amazon Web Services account.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_max_results): <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListAccountsForProvisionedPermissionSetOutput`](crate::output::ListAccountsForProvisionedPermissionSetOutput) with field(s):
     ///   - [`account_ids(Option<Vec<String>>)`](crate::output::ListAccountsForProvisionedPermissionSetOutput::account_ids): <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountsForProvisionedPermissionSetOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -353,11 +353,11 @@ where
         fluent_builders::ListAccountsForProvisionedPermissionSet::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListInstances`](crate::client::fluent_builders::ListInstances) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
     ///
-    /// - Takes [`ListInstancesInput`](crate::input::ListInstancesInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListInstancesInput::max_results): <p>The maximum number of results to display for the instance.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListInstancesInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInstances::set_max_results): <p>The maximum number of results to display for the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstances::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListInstancesOutput`](crate::output::ListInstancesOutput) with field(s):
     ///   - [`instances(Option<Vec<InstanceMetadata>>)`](crate::output::ListInstancesOutput::instances): <p>Lists the SSO instances that the caller has access to.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListInstancesOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -366,13 +366,13 @@ where
         fluent_builders::ListInstances::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListManagedPoliciesInPermissionSet`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::into_paginator).
     ///
-    /// - Takes [`ListManagedPoliciesInPermissionSetInput`](crate::input::ListManagedPoliciesInPermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ListManagedPoliciesInPermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::ListManagedPoliciesInPermissionSetInput::permission_set_arn): <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListManagedPoliciesInPermissionSetInput::max_results): <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListManagedPoliciesInPermissionSetInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::set_max_results): <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListManagedPoliciesInPermissionSetOutput`](crate::output::ListManagedPoliciesInPermissionSetOutput) with field(s):
     ///   - [`attached_managed_policies(Option<Vec<AttachedManagedPolicy>>)`](crate::output::ListManagedPoliciesInPermissionSetOutput::attached_managed_policies): <p>The array of the <code>AttachedManagedPolicy</code> data type object.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListManagedPoliciesInPermissionSetOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -383,13 +383,13 @@ where
         fluent_builders::ListManagedPoliciesInPermissionSet::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPermissionSetProvisioningStatus`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::into_paginator).
     ///
-    /// - Takes [`ListPermissionSetProvisioningStatusInput`](crate::input::ListPermissionSetProvisioningStatusInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ListPermissionSetProvisioningStatusInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPermissionSetProvisioningStatusInput::max_results): <p>The maximum number of results to display for the assignment.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPermissionSetProvisioningStatusInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    ///   - [`filter(Option<OperationStatusFilter>)`](crate::input::ListPermissionSetProvisioningStatusInput::filter): <p>Filters results based on the passed attribute value.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::set_max_results): <p>The maximum number of results to display for the assignment.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    ///   - [`filter(OperationStatusFilter)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::filter) / [`set_filter(Option<OperationStatusFilter>)`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::set_filter): <p>Filters results based on the passed attribute value.</p>
     /// - On success, responds with [`ListPermissionSetProvisioningStatusOutput`](crate::output::ListPermissionSetProvisioningStatusOutput) with field(s):
     ///   - [`permission_sets_provisioning_status(Option<Vec<PermissionSetProvisioningStatusMetadata>>)`](crate::output::ListPermissionSetProvisioningStatusOutput::permission_sets_provisioning_status): <p>The status object for the permission set provisioning operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPermissionSetProvisioningStatusOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -400,12 +400,12 @@ where
         fluent_builders::ListPermissionSetProvisioningStatus::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPermissionSets`](crate::client::fluent_builders::ListPermissionSets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSets::into_paginator).
     ///
-    /// - Takes [`ListPermissionSetsInput`](crate::input::ListPermissionSetsInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ListPermissionSetsInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPermissionSetsInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPermissionSetsInput::max_results): <p>The maximum number of results to display for the assignment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSets::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionSets::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissionSets::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissionSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissionSets::set_max_results): <p>The maximum number of results to display for the assignment.</p>
     /// - On success, responds with [`ListPermissionSetsOutput`](crate::output::ListPermissionSetsOutput) with field(s):
     ///   - [`permission_sets(Option<Vec<String>>)`](crate::output::ListPermissionSetsOutput::permission_sets): <p>Defines the level of access on an Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPermissionSetsOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -414,14 +414,14 @@ where
         fluent_builders::ListPermissionSets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPermissionSetsProvisionedToAccount`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::into_paginator).
     ///
-    /// - Takes [`ListPermissionSetsProvisionedToAccountInput`](crate::input::ListPermissionSetsProvisionedToAccountInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ListPermissionSetsProvisionedToAccountInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`account_id(Option<String>)`](crate::input::ListPermissionSetsProvisionedToAccountInput::account_id): <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
-    ///   - [`provisioning_status(Option<ProvisioningStatus>)`](crate::input::ListPermissionSetsProvisionedToAccountInput::provisioning_status): <p>The status object for the permission set provisioning operation.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPermissionSetsProvisionedToAccountInput::max_results): <p>The maximum number of results to display for the assignment.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPermissionSetsProvisionedToAccountInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_account_id): <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    ///   - [`provisioning_status(ProvisioningStatus)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::provisioning_status) / [`set_provisioning_status(Option<ProvisioningStatus>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_provisioning_status): <p>The status object for the permission set provisioning operation.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_max_results): <p>The maximum number of results to display for the assignment.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListPermissionSetsProvisionedToAccountOutput`](crate::output::ListPermissionSetsProvisionedToAccountOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListPermissionSetsProvisionedToAccountOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     ///   - [`permission_sets(Option<Vec<String>>)`](crate::output::ListPermissionSetsProvisionedToAccountOutput::permission_sets): <p>Defines the level of access that an Amazon Web Services account has.</p>
@@ -432,12 +432,12 @@ where
         fluent_builders::ListPermissionSetsProvisionedToAccount::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ListTagsForResourceInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource with the tags to be listed.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource with the tags to be listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A set of key-value pairs that are used to manage the resource.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -447,11 +447,11 @@ where
     }
     /// Constructs a fluent builder for the [`ProvisionPermissionSet`](crate::client::fluent_builders::ProvisionPermissionSet) operation.
     ///
-    /// - Takes [`ProvisionPermissionSetInput`](crate::input::ProvisionPermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::ProvisionPermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::ProvisionPermissionSetInput::permission_set_arn): <p>The ARN of the permission set.</p>
-    ///   - [`target_id(Option<String>)`](crate::input::ProvisionPermissionSetInput::target_id): <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    ///   - [`target_type(Option<ProvisionTargetType>)`](crate::input::ProvisionPermissionSetInput::target_type): <p>The entity type for which the assignment will be created.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_permission_set_arn): <p>The ARN of the permission set.</p>
+    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_target_id): <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    ///   - [`target_type(ProvisionTargetType)`](crate::client::fluent_builders::ProvisionPermissionSet::target_type) / [`set_target_type(Option<ProvisionTargetType>)`](crate::client::fluent_builders::ProvisionPermissionSet::set_target_type): <p>The entity type for which the assignment will be created.</p>
     /// - On success, responds with [`ProvisionPermissionSetOutput`](crate::output::ProvisionPermissionSetOutput) with field(s):
     ///   - [`permission_set_provisioning_status(Option<PermissionSetProvisioningStatus>)`](crate::output::ProvisionPermissionSetOutput::permission_set_provisioning_status): <p>The status object for the permission set provisioning operation.</p>
     /// - On failure, responds with [`SdkError<ProvisionPermissionSetError>`](crate::error::ProvisionPermissionSetError)
@@ -460,10 +460,10 @@ where
     }
     /// Constructs a fluent builder for the [`PutInlinePolicyToPermissionSet`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet) operation.
     ///
-    /// - Takes [`PutInlinePolicyToPermissionSetInput`](crate::input::PutInlinePolicyToPermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::PutInlinePolicyToPermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::PutInlinePolicyToPermissionSetInput::permission_set_arn): <p>The ARN of the permission set.</p>
-    ///   - [`inline_policy(Option<String>)`](crate::input::PutInlinePolicyToPermissionSetInput::inline_policy): <p>The IAM inline policy to attach to a <code>PermissionSet</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::set_permission_set_arn): <p>The ARN of the permission set.</p>
+    ///   - [`inline_policy(impl Into<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::inline_policy) / [`set_inline_policy(Option<String>)`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet::set_inline_policy): <p>The IAM inline policy to attach to a <code>PermissionSet</code>.</p>
     /// - On success, responds with [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<PutInlinePolicyToPermissionSetError>`](crate::error::PutInlinePolicyToPermissionSetError)
@@ -474,10 +474,10 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::TagResourceInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource with the tags to be listed.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A set of key-value pairs that are used to manage the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource with the tags to be listed.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A set of key-value pairs that are used to manage the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -486,10 +486,10 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::UntagResourceInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource with the tags to be listed.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The keys of tags that are attached to the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource with the tags to be listed.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of tags that are attached to the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -498,9 +498,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateInstanceAccessControlAttributeConfiguration`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration) operation.
     ///
-    /// - Takes [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed.</p>
-    ///   - [`instance_access_control_attribute_configuration(Option<InstanceAccessControlAttributeConfiguration>)`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput::instance_access_control_attribute_configuration): <p>Updates the attributes for your ABAC configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed.</p>
+    ///   - [`instance_access_control_attribute_configuration(InstanceAccessControlAttributeConfiguration)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::instance_access_control_attribute_configuration) / [`set_instance_access_control_attribute_configuration(Option<InstanceAccessControlAttributeConfiguration>)`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration::set_instance_access_control_attribute_configuration): <p>Updates the attributes for your ABAC configuration.</p>
     /// - On success, responds with [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateInstanceAccessControlAttributeConfigurationError>`](crate::error::UpdateInstanceAccessControlAttributeConfigurationError)
@@ -511,12 +511,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdatePermissionSet`](crate::client::fluent_builders::UpdatePermissionSet) operation.
     ///
-    /// - Takes [`UpdatePermissionSetInput`](crate::input::UpdatePermissionSetInput) with field(s):
-    ///   - [`instance_arn(Option<String>)`](crate::input::UpdatePermissionSetInput::instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`permission_set_arn(Option<String>)`](crate::input::UpdatePermissionSetInput::permission_set_arn): <p>The ARN of the permission set.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdatePermissionSetInput::description): <p>The description of the <code>PermissionSet</code>.</p>
-    ///   - [`session_duration(Option<String>)`](crate::input::UpdatePermissionSetInput::session_duration): <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    ///   - [`relay_state(Option<String>)`](crate::input::UpdatePermissionSetInput::relay_state): <p>Used to redirect users within the application during the federation authentication process.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_instance_arn): <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`permission_set_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_permission_set_arn): <p>The ARN of the permission set.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_description): <p>The description of the <code>PermissionSet</code>.</p>
+    ///   - [`session_duration(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::session_duration) / [`set_session_duration(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_session_duration): <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
+    ///   - [`relay_state(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissionSet::relay_state) / [`set_relay_state(Option<String>)`](crate::client::fluent_builders::UpdatePermissionSet::set_relay_state): <p>Used to redirect users within the application during the federation authentication process.</p>
     /// - On success, responds with [`UpdatePermissionSetOutput`](crate::output::UpdatePermissionSetOutput)
 
     /// - On failure, responds with [`SdkError<UpdatePermissionSetError>`](crate::error::UpdatePermissionSetError)

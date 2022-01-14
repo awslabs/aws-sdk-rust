@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`DescribeEntitiesDetectionV2Job`](crate::client::fluent_builders::DescribeEntitiesDetectionV2Job) operation.
     ///
-    /// - Takes [`DescribeEntitiesDetectionV2JobInput`](crate::input::DescribeEntitiesDetectionV2JobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeEntitiesDetectionV2JobInput::job_id): <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeEntitiesDetectionV2Job::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeEntitiesDetectionV2Job::set_job_id): <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
     /// - On success, responds with [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribeEntitiesDetectionV2JobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeEntitiesDetectionV2JobError>`](crate::error::DescribeEntitiesDetectionV2JobError)
@@ -97,8 +97,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeICD10CMInferenceJob`](crate::client::fluent_builders::DescribeICD10CMInferenceJob) operation.
     ///
-    /// - Takes [`DescribeIcd10CmInferenceJobInput`](crate::input::DescribeIcd10CmInferenceJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeIcd10CmInferenceJobInput::job_id): <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeICD10CMInferenceJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeICD10CMInferenceJob::set_job_id): <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     /// - On success, responds with [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribeIcd10CmInferenceJobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeICD10CMInferenceJobError>`](crate::error::DescribeICD10CMInferenceJobError)
@@ -109,8 +109,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribePHIDetectionJob`](crate::client::fluent_builders::DescribePHIDetectionJob) operation.
     ///
-    /// - Takes [`DescribePhiDetectionJobInput`](crate::input::DescribePhiDetectionJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribePhiDetectionJobInput::job_id): <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribePHIDetectionJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribePHIDetectionJob::set_job_id): <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
     /// - On success, responds with [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribePhiDetectionJobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
     /// - On failure, responds with [`SdkError<DescribePHIDetectionJobError>`](crate::error::DescribePHIDetectionJobError)
@@ -119,8 +119,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeRxNormInferenceJob`](crate::client::fluent_builders::DescribeRxNormInferenceJob) operation.
     ///
-    /// - Takes [`DescribeRxNormInferenceJobInput`](crate::input::DescribeRxNormInferenceJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeRxNormInferenceJobInput::job_id): <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRxNormInferenceJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeRxNormInferenceJob::set_job_id): <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
     /// - On success, responds with [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribeRxNormInferenceJobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeRxNormInferenceJobError>`](crate::error::DescribeRxNormInferenceJobError)
@@ -131,8 +131,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSNOMEDCTInferenceJob`](crate::client::fluent_builders::DescribeSNOMEDCTInferenceJob) operation.
     ///
-    /// - Takes [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::DescribeSnomedctInferenceJobInput::job_id): <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSNOMEDCTInferenceJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeSNOMEDCTInferenceJob::set_job_id): <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
     /// - On success, responds with [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::output::DescribeSnomedctInferenceJobOutput::comprehend_medical_async_job_properties): <p>Provides information about a detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeSNOMEDCTInferenceJobError>`](crate::error::DescribeSNOMEDCTInferenceJobError)
@@ -143,8 +143,8 @@ where
     }
     /// Constructs a fluent builder for the [`DetectEntities`](crate::client::fluent_builders::DetectEntities) operation.
     ///
-    /// - Takes [`DetectEntitiesInput`](crate::input::DetectEntitiesInput) with field(s):
-    ///   - [`text(Option<String>)`](crate::input::DetectEntitiesInput::text): <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectEntities::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectEntities::set_text): <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     /// - On success, responds with [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput) with field(s):
     ///   - [`entities(Option<Vec<Entity>>)`](crate::output::DetectEntitiesOutput::entities): <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the entity are also returned.</p>
     ///   - [`unmapped_attributes(Option<Vec<UnmappedAttribute>>)`](crate::output::DetectEntitiesOutput::unmapped_attributes): <p> Attributes extracted from the input text that we were unable to relate to an entity.</p>
@@ -156,8 +156,8 @@ where
     }
     /// Constructs a fluent builder for the [`DetectEntitiesV2`](crate::client::fluent_builders::DetectEntitiesV2) operation.
     ///
-    /// - Takes [`DetectEntitiesV2Input`](crate::input::DetectEntitiesV2Input) with field(s):
-    ///   - [`text(Option<String>)`](crate::input::DetectEntitiesV2Input::text): <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectEntitiesV2::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectEntitiesV2::set_text): <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     /// - On success, responds with [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output) with field(s):
     ///   - [`entities(Option<Vec<Entity>>)`](crate::output::DetectEntitiesV2Output::entities): <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
     ///   - [`unmapped_attributes(Option<Vec<UnmappedAttribute>>)`](crate::output::DetectEntitiesV2Output::unmapped_attributes): <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
@@ -169,8 +169,8 @@ where
     }
     /// Constructs a fluent builder for the [`DetectPHI`](crate::client::fluent_builders::DetectPHI) operation.
     ///
-    /// - Takes [`DetectPhiInput`](crate::input::DetectPhiInput) with field(s):
-    ///   - [`text(Option<String>)`](crate::input::DetectPhiInput::text): <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::DetectPHI::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::DetectPHI::set_text): <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     /// - On success, responds with [`DetectPhiOutput`](crate::output::DetectPhiOutput) with field(s):
     ///   - [`entities(Option<Vec<Entity>>)`](crate::output::DetectPhiOutput::entities): <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
     ///   - [`pagination_token(Option<String>)`](crate::output::DetectPhiOutput::pagination_token): <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
@@ -181,8 +181,8 @@ where
     }
     /// Constructs a fluent builder for the [`InferICD10CM`](crate::client::fluent_builders::InferICD10CM) operation.
     ///
-    /// - Takes [`InferIcd10CmInput`](crate::input::InferIcd10CmInput) with field(s):
-    ///   - [`text(Option<String>)`](crate::input::InferIcd10CmInput::text): <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::InferICD10CM::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::InferICD10CM::set_text): <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     /// - On success, responds with [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput) with field(s):
     ///   - [`entities(Option<Vec<Icd10CmEntity>>)`](crate::output::InferIcd10CmOutput::entities): <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     ///   - [`pagination_token(Option<String>)`](crate::output::InferIcd10CmOutput::pagination_token): <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
@@ -193,8 +193,8 @@ where
     }
     /// Constructs a fluent builder for the [`InferRxNorm`](crate::client::fluent_builders::InferRxNorm) operation.
     ///
-    /// - Takes [`InferRxNormInput`](crate::input::InferRxNormInput) with field(s):
-    ///   - [`text(Option<String>)`](crate::input::InferRxNormInput::text): <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::InferRxNorm::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::InferRxNorm::set_text): <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
     /// - On success, responds with [`InferRxNormOutput`](crate::output::InferRxNormOutput) with field(s):
     ///   - [`entities(Option<Vec<RxNormEntity>>)`](crate::output::InferRxNormOutput::entities): <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     ///   - [`pagination_token(Option<String>)`](crate::output::InferRxNormOutput::pagination_token): <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
@@ -205,8 +205,8 @@ where
     }
     /// Constructs a fluent builder for the [`InferSNOMEDCT`](crate::client::fluent_builders::InferSNOMEDCT) operation.
     ///
-    /// - Takes [`InferSnomedctInput`](crate::input::InferSnomedctInput) with field(s):
-    ///   - [`text(Option<String>)`](crate::input::InferSnomedctInput::text): <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::InferSNOMEDCT::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::InferSNOMEDCT::set_text): <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
     /// - On success, responds with [`InferSnomedctOutput`](crate::output::InferSnomedctOutput) with field(s):
     ///   - [`entities(Option<Vec<SnomedctEntity>>)`](crate::output::InferSnomedctOutput::entities): <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
     ///   - [`pagination_token(Option<String>)`](crate::output::InferSnomedctOutput::pagination_token): <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
@@ -219,10 +219,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListEntitiesDetectionV2Jobs`](crate::client::fluent_builders::ListEntitiesDetectionV2Jobs) operation.
     ///
-    /// - Takes [`ListEntitiesDetectionV2JobsInput`](crate::input::ListEntitiesDetectionV2JobsInput) with field(s):
-    ///   - [`filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::input::ListEntitiesDetectionV2JobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListEntitiesDetectionV2JobsInput::next_token): <p>Identifies the next page of results to return.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEntitiesDetectionV2JobsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter(ComprehendMedicalAsyncJobFilter)`](crate::client::fluent_builders::ListEntitiesDetectionV2Jobs::filter) / [`set_filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::client::fluent_builders::ListEntitiesDetectionV2Jobs::set_filter): <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEntitiesDetectionV2Jobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEntitiesDetectionV2Jobs::set_next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEntitiesDetectionV2Jobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEntitiesDetectionV2Jobs::set_max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
     /// - On success, responds with [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListEntitiesDetectionV2JobsOutput::comprehend_medical_async_job_properties_list): <p>A list containing the properties of each job returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEntitiesDetectionV2JobsOutput::next_token): <p>Identifies the next page of results to return.</p>
@@ -234,10 +234,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListICD10CMInferenceJobs`](crate::client::fluent_builders::ListICD10CMInferenceJobs) operation.
     ///
-    /// - Takes [`ListIcd10CmInferenceJobsInput`](crate::input::ListIcd10CmInferenceJobsInput) with field(s):
-    ///   - [`filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::input::ListIcd10CmInferenceJobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListIcd10CmInferenceJobsInput::next_token): <p>Identifies the next page of results to return.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListIcd10CmInferenceJobsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter(ComprehendMedicalAsyncJobFilter)`](crate::client::fluent_builders::ListICD10CMInferenceJobs::filter) / [`set_filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::client::fluent_builders::ListICD10CMInferenceJobs::set_filter): <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListICD10CMInferenceJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListICD10CMInferenceJobs::set_next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListICD10CMInferenceJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListICD10CMInferenceJobs::set_max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
     /// - On success, responds with [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListIcd10CmInferenceJobsOutput::comprehend_medical_async_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListIcd10CmInferenceJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
@@ -249,10 +249,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListPHIDetectionJobs`](crate::client::fluent_builders::ListPHIDetectionJobs) operation.
     ///
-    /// - Takes [`ListPhiDetectionJobsInput`](crate::input::ListPhiDetectionJobsInput) with field(s):
-    ///   - [`filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::input::ListPhiDetectionJobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPhiDetectionJobsInput::next_token): <p>Identifies the next page of results to return.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPhiDetectionJobsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter(ComprehendMedicalAsyncJobFilter)`](crate::client::fluent_builders::ListPHIDetectionJobs::filter) / [`set_filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::client::fluent_builders::ListPHIDetectionJobs::set_filter): <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPHIDetectionJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPHIDetectionJobs::set_next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPHIDetectionJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPHIDetectionJobs::set_max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
     /// - On success, responds with [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListPhiDetectionJobsOutput::comprehend_medical_async_job_properties_list): <p>A list containing the properties of each job returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPhiDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
@@ -262,10 +262,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListRxNormInferenceJobs`](crate::client::fluent_builders::ListRxNormInferenceJobs) operation.
     ///
-    /// - Takes [`ListRxNormInferenceJobsInput`](crate::input::ListRxNormInferenceJobsInput) with field(s):
-    ///   - [`filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::input::ListRxNormInferenceJobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListRxNormInferenceJobsInput::next_token): <p>Identifies the next page of results to return.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListRxNormInferenceJobsInput::max_results): <p>Identifies the next page of results to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter(ComprehendMedicalAsyncJobFilter)`](crate::client::fluent_builders::ListRxNormInferenceJobs::filter) / [`set_filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::client::fluent_builders::ListRxNormInferenceJobs::set_filter): <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRxNormInferenceJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRxNormInferenceJobs::set_next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRxNormInferenceJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRxNormInferenceJobs::set_max_results): <p>Identifies the next page of results to return.</p>
     /// - On success, responds with [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListRxNormInferenceJobsOutput::comprehend_medical_async_job_properties_list): <p>The maximum number of results to return in each page. The default is 100.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRxNormInferenceJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
@@ -275,10 +275,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListSNOMEDCTInferenceJobs`](crate::client::fluent_builders::ListSNOMEDCTInferenceJobs) operation.
     ///
-    /// - Takes [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput) with field(s):
-    ///   - [`filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::input::ListSnomedctInferenceJobsInput::filter): <p>Provides information for filtering a list of detection jobs.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListSnomedctInferenceJobsInput::next_token): <p> Identifies the next page of InferSNOMEDCT results to return. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListSnomedctInferenceJobsInput::max_results): <p> The maximum number of results to return in each page. The default is 100. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter(ComprehendMedicalAsyncJobFilter)`](crate::client::fluent_builders::ListSNOMEDCTInferenceJobs::filter) / [`set_filter(Option<ComprehendMedicalAsyncJobFilter>)`](crate::client::fluent_builders::ListSNOMEDCTInferenceJobs::set_filter): <p>Provides information for filtering a list of detection jobs.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSNOMEDCTInferenceJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSNOMEDCTInferenceJobs::set_next_token): <p> Identifies the next page of InferSNOMEDCT results to return. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSNOMEDCTInferenceJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSNOMEDCTInferenceJobs::set_max_results): <p> The maximum number of results to return in each page. The default is 100. </p>
     /// - On success, responds with [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::output::ListSnomedctInferenceJobsOutput::comprehend_medical_async_job_properties_list): <p> A list containing the properties of each job that is returned. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSnomedctInferenceJobsOutput::next_token): <p> Identifies the next page of results to return. </p>
@@ -290,14 +290,14 @@ where
     }
     /// Constructs a fluent builder for the [`StartEntitiesDetectionV2Job`](crate::client::fluent_builders::StartEntitiesDetectionV2Job) operation.
     ///
-    /// - Takes [`StartEntitiesDetectionV2JobInput`](crate::input::StartEntitiesDetectionV2JobInput) with field(s):
-    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartEntitiesDetectionV2JobInput::input_data_config): <p>The input configuration that specifies the format and location of the input data for the job.</p>
-    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartEntitiesDetectionV2JobInput::output_data_config): <p>The output configuration that specifies where to send the output files.</p>
-    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartEntitiesDetectionV2JobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    ///   - [`job_name(Option<String>)`](crate::input::StartEntitiesDetectionV2JobInput::job_name): <p>The identifier of the job.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StartEntitiesDetectionV2JobInput::client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
-    ///   - [`kms_key(Option<String>)`](crate::input::StartEntitiesDetectionV2JobInput::kms_key): <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartEntitiesDetectionV2JobInput::language_code): <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::set_input_data_config): <p>The input configuration that specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::set_output_data_config): <p>The output configuration that specifies where to send the output files.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::set_job_name): <p>The identifier of the job.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::set_client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
+    ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::set_kms_key): <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartEntitiesDetectionV2Job::set_language_code): <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
     /// - On success, responds with [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartEntitiesDetectionV2JobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
     /// - On failure, responds with [`SdkError<StartEntitiesDetectionV2JobError>`](crate::error::StartEntitiesDetectionV2JobError)
@@ -308,14 +308,14 @@ where
     }
     /// Constructs a fluent builder for the [`StartICD10CMInferenceJob`](crate::client::fluent_builders::StartICD10CMInferenceJob) operation.
     ///
-    /// - Takes [`StartIcd10CmInferenceJobInput`](crate::input::StartIcd10CmInferenceJobInput) with field(s):
-    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartIcd10CmInferenceJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
-    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartIcd10CmInferenceJobInput::output_data_config): <p>Specifies where to send the output files.</p>
-    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartIcd10CmInferenceJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    ///   - [`job_name(Option<String>)`](crate::input::StartIcd10CmInferenceJobInput::job_name): <p>The identifier of the job.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StartIcd10CmInferenceJobInput::client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-    ///   - [`kms_key(Option<String>)`](crate::input::StartIcd10CmInferenceJobInput::kms_key): <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartIcd10CmInferenceJobInput::language_code): <p>The language of the input documents. All documents must be in the same language.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartICD10CMInferenceJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::set_input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartICD10CMInferenceJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::set_output_data_config): <p>Specifies where to send the output files.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::set_job_name): <p>The identifier of the job.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::set_client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
+    ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::set_kms_key): <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartICD10CMInferenceJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartICD10CMInferenceJob::set_language_code): <p>The language of the input documents. All documents must be in the same language.</p>
     /// - On success, responds with [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartIcd10CmInferenceJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StartICD10CMInferenceJobError>`](crate::error::StartICD10CMInferenceJobError)
@@ -326,14 +326,14 @@ where
     }
     /// Constructs a fluent builder for the [`StartPHIDetectionJob`](crate::client::fluent_builders::StartPHIDetectionJob) operation.
     ///
-    /// - Takes [`StartPhiDetectionJobInput`](crate::input::StartPhiDetectionJobInput) with field(s):
-    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartPhiDetectionJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
-    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartPhiDetectionJobInput::output_data_config): <p>Specifies where to send the output files.</p>
-    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartPhiDetectionJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    ///   - [`job_name(Option<String>)`](crate::input::StartPhiDetectionJobInput::job_name): <p>The identifier of the job.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StartPhiDetectionJobInput::client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-    ///   - [`kms_key(Option<String>)`](crate::input::StartPhiDetectionJobInput::kms_key): <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartPhiDetectionJobInput::language_code): <p>The language of the input documents. All documents must be in the same language.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartPHIDetectionJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartPHIDetectionJob::set_input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartPHIDetectionJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartPHIDetectionJob::set_output_data_config): <p>Specifies where to send the output files.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartPHIDetectionJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartPHIDetectionJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartPHIDetectionJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartPHIDetectionJob::set_job_name): <p>The identifier of the job.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartPHIDetectionJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartPHIDetectionJob::set_client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
+    ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::StartPHIDetectionJob::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::StartPHIDetectionJob::set_kms_key): <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartPHIDetectionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartPHIDetectionJob::set_language_code): <p>The language of the input documents. All documents must be in the same language.</p>
     /// - On success, responds with [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartPhiDetectionJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StartPHIDetectionJobError>`](crate::error::StartPHIDetectionJobError)
@@ -342,14 +342,14 @@ where
     }
     /// Constructs a fluent builder for the [`StartRxNormInferenceJob`](crate::client::fluent_builders::StartRxNormInferenceJob) operation.
     ///
-    /// - Takes [`StartRxNormInferenceJobInput`](crate::input::StartRxNormInferenceJobInput) with field(s):
-    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartRxNormInferenceJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
-    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartRxNormInferenceJobInput::output_data_config): <p>Specifies where to send the output files.</p>
-    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartRxNormInferenceJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    ///   - [`job_name(Option<String>)`](crate::input::StartRxNormInferenceJobInput::job_name): <p>The identifier of the job.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StartRxNormInferenceJobInput::client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-    ///   - [`kms_key(Option<String>)`](crate::input::StartRxNormInferenceJobInput::kms_key): <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartRxNormInferenceJobInput::language_code): <p>The language of the input documents. All documents must be in the same language.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartRxNormInferenceJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartRxNormInferenceJob::set_input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartRxNormInferenceJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartRxNormInferenceJob::set_output_data_config): <p>Specifies where to send the output files.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartRxNormInferenceJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartRxNormInferenceJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartRxNormInferenceJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartRxNormInferenceJob::set_job_name): <p>The identifier of the job.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartRxNormInferenceJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartRxNormInferenceJob::set_client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
+    ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::StartRxNormInferenceJob::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::StartRxNormInferenceJob::set_kms_key): <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartRxNormInferenceJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartRxNormInferenceJob::set_language_code): <p>The language of the input documents. All documents must be in the same language.</p>
     /// - On success, responds with [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartRxNormInferenceJobOutput::job_id): <p>The identifier of the job.</p>
     /// - On failure, responds with [`SdkError<StartRxNormInferenceJobError>`](crate::error::StartRxNormInferenceJobError)
@@ -358,14 +358,14 @@ where
     }
     /// Constructs a fluent builder for the [`StartSNOMEDCTInferenceJob`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob) operation.
     ///
-    /// - Takes [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput) with field(s):
-    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartSnomedctInferenceJobInput::input_data_config): <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
-    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartSnomedctInferenceJobInput::output_data_config): <p>The output properties for a detection job.</p>
-    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartSnomedctInferenceJobInput::data_access_role_arn): <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
-    ///   - [`job_name(Option<String>)`](crate::input::StartSnomedctInferenceJobInput::job_name): <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StartSnomedctInferenceJobInput::client_request_token): <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
-    ///   - [`kms_key(Option<String>)`](crate::input::StartSnomedctInferenceJobInput::kms_key): <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
-    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartSnomedctInferenceJobInput::language_code): <p> The language of the input documents. All documents must be in the same language. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::set_input_data_config): <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::set_output_data_config): <p>The output properties for a detection job.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::set_data_access_role_arn): <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::set_job_name): <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::set_client_request_token): <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+    ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::set_kms_key): <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartSNOMEDCTInferenceJob::set_language_code): <p> The language of the input documents. All documents must be in the same language. </p>
     /// - On success, responds with [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StartSnomedctInferenceJobOutput::job_id): <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
     /// - On failure, responds with [`SdkError<StartSNOMEDCTInferenceJobError>`](crate::error::StartSNOMEDCTInferenceJobError)
@@ -376,8 +376,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopEntitiesDetectionV2Job`](crate::client::fluent_builders::StopEntitiesDetectionV2Job) operation.
     ///
-    /// - Takes [`StopEntitiesDetectionV2JobInput`](crate::input::StopEntitiesDetectionV2JobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::StopEntitiesDetectionV2JobInput::job_id): <p>The identifier of the medical entities job to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StopEntitiesDetectionV2Job::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StopEntitiesDetectionV2Job::set_job_id): <p>The identifier of the medical entities job to stop.</p>
     /// - On success, responds with [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StopEntitiesDetectionV2JobOutput::job_id): <p>The identifier of the medical entities detection job that was stopped.</p>
     /// - On failure, responds with [`SdkError<StopEntitiesDetectionV2JobError>`](crate::error::StopEntitiesDetectionV2JobError)
@@ -388,8 +388,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopICD10CMInferenceJob`](crate::client::fluent_builders::StopICD10CMInferenceJob) operation.
     ///
-    /// - Takes [`StopIcd10CmInferenceJobInput`](crate::input::StopIcd10CmInferenceJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::StopIcd10CmInferenceJobInput::job_id): <p>The identifier of the job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StopICD10CMInferenceJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StopICD10CMInferenceJob::set_job_id): <p>The identifier of the job.</p>
     /// - On success, responds with [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StopIcd10CmInferenceJobOutput::job_id): <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeICD10CMInferenceJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StopICD10CMInferenceJobError>`](crate::error::StopICD10CMInferenceJobError)
@@ -398,8 +398,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopPHIDetectionJob`](crate::client::fluent_builders::StopPHIDetectionJob) operation.
     ///
-    /// - Takes [`StopPhiDetectionJobInput`](crate::input::StopPhiDetectionJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::StopPhiDetectionJobInput::job_id): <p>The identifier of the PHI detection job to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StopPHIDetectionJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StopPHIDetectionJob::set_job_id): <p>The identifier of the PHI detection job to stop.</p>
     /// - On success, responds with [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StopPhiDetectionJobOutput::job_id): <p>The identifier of the PHI detection job that was stopped.</p>
     /// - On failure, responds with [`SdkError<StopPHIDetectionJobError>`](crate::error::StopPHIDetectionJobError)
@@ -408,8 +408,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopRxNormInferenceJob`](crate::client::fluent_builders::StopRxNormInferenceJob) operation.
     ///
-    /// - Takes [`StopRxNormInferenceJobInput`](crate::input::StopRxNormInferenceJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::StopRxNormInferenceJobInput::job_id): <p>The identifier of the job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StopRxNormInferenceJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StopRxNormInferenceJob::set_job_id): <p>The identifier of the job.</p>
     /// - On success, responds with [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StopRxNormInferenceJobOutput::job_id): <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StopRxNormInferenceJobError>`](crate::error::StopRxNormInferenceJobError)
@@ -418,8 +418,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopSNOMEDCTInferenceJob`](crate::client::fluent_builders::StopSNOMEDCTInferenceJob) operation.
     ///
-    /// - Takes [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::input::StopSnomedctInferenceJobInput::job_id): <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StopSNOMEDCTInferenceJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StopSNOMEDCTInferenceJob::set_job_id): <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
     /// - On success, responds with [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::output::StopSnomedctInferenceJobOutput::job_id): <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
     /// - On failure, responds with [`SdkError<StopSNOMEDCTInferenceJobError>`](crate::error::StopSNOMEDCTInferenceJobError)

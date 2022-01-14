@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`BatchMeterUsage`](crate::client::fluent_builders::BatchMeterUsage) operation.
     ///
-    /// - Takes [`BatchMeterUsageInput`](crate::input::BatchMeterUsageInput) with field(s):
-    ///   - [`usage_records(Option<Vec<UsageRecord>>)`](crate::input::BatchMeterUsageInput::usage_records): <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>
-    ///   - [`product_code(Option<String>)`](crate::input::BatchMeterUsageInput::product_code): <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`usage_records(Vec<UsageRecord>)`](crate::client::fluent_builders::BatchMeterUsage::usage_records) / [`set_usage_records(Option<Vec<UsageRecord>>)`](crate::client::fluent_builders::BatchMeterUsage::set_usage_records): <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>
+    ///   - [`product_code(impl Into<String>)`](crate::client::fluent_builders::BatchMeterUsage::product_code) / [`set_product_code(Option<String>)`](crate::client::fluent_builders::BatchMeterUsage::set_product_code): <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     /// - On success, responds with [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput) with field(s):
     ///   - [`results(Option<Vec<UsageRecordResult>>)`](crate::output::BatchMeterUsageOutput::results): <p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>
     ///   - [`unprocessed_records(Option<Vec<UsageRecord>>)`](crate::output::BatchMeterUsageOutput::unprocessed_records): <p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>
@@ -97,13 +97,13 @@ where
     }
     /// Constructs a fluent builder for the [`MeterUsage`](crate::client::fluent_builders::MeterUsage) operation.
     ///
-    /// - Takes [`MeterUsageInput`](crate::input::MeterUsageInput) with field(s):
-    ///   - [`product_code(Option<String>)`](crate::input::MeterUsageInput::product_code): <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    ///   - [`timestamp(Option<DateTime>)`](crate::input::MeterUsageInput::timestamp): <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
-    ///   - [`usage_dimension(Option<String>)`](crate::input::MeterUsageInput::usage_dimension): <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
-    ///   - [`usage_quantity(Option<i32>)`](crate::input::MeterUsageInput::usage_quantity): <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
-    ///   - [`dry_run(Option<bool>)`](crate::input::MeterUsageInput::dry_run): <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not specified.</p>
-    ///   - [`usage_allocations(Option<Vec<UsageAllocation>>)`](crate::input::MeterUsageInput::usage_allocations): <p>The set of UsageAllocations to submit.</p>  <p>The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each UsageAllocation must have a unique set of tags (include no tags).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`product_code(impl Into<String>)`](crate::client::fluent_builders::MeterUsage::product_code) / [`set_product_code(Option<String>)`](crate::client::fluent_builders::MeterUsage::set_product_code): <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    ///   - [`timestamp(DateTime)`](crate::client::fluent_builders::MeterUsage::timestamp) / [`set_timestamp(Option<DateTime>)`](crate::client::fluent_builders::MeterUsage::set_timestamp): <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
+    ///   - [`usage_dimension(impl Into<String>)`](crate::client::fluent_builders::MeterUsage::usage_dimension) / [`set_usage_dimension(Option<String>)`](crate::client::fluent_builders::MeterUsage::set_usage_dimension): <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
+    ///   - [`usage_quantity(i32)`](crate::client::fluent_builders::MeterUsage::usage_quantity) / [`set_usage_quantity(Option<i32>)`](crate::client::fluent_builders::MeterUsage::set_usage_quantity): <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    ///   - [`dry_run(bool)`](crate::client::fluent_builders::MeterUsage::dry_run) / [`set_dry_run(Option<bool>)`](crate::client::fluent_builders::MeterUsage::set_dry_run): <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not specified.</p>
+    ///   - [`usage_allocations(Vec<UsageAllocation>)`](crate::client::fluent_builders::MeterUsage::usage_allocations) / [`set_usage_allocations(Option<Vec<UsageAllocation>>)`](crate::client::fluent_builders::MeterUsage::set_usage_allocations): <p>The set of UsageAllocations to submit.</p>  <p>The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each UsageAllocation must have a unique set of tags (include no tags).</p>
     /// - On success, responds with [`MeterUsageOutput`](crate::output::MeterUsageOutput) with field(s):
     ///   - [`metering_record_id(Option<String>)`](crate::output::MeterUsageOutput::metering_record_id): <p>Metering record id.</p>
     /// - On failure, responds with [`SdkError<MeterUsageError>`](crate::error::MeterUsageError)
@@ -112,10 +112,10 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterUsage`](crate::client::fluent_builders::RegisterUsage) operation.
     ///
-    /// - Takes [`RegisterUsageInput`](crate::input::RegisterUsageInput) with field(s):
-    ///   - [`product_code(Option<String>)`](crate::input::RegisterUsageInput::product_code): <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    ///   - [`public_key_version(Option<i32>)`](crate::input::RegisterUsageInput::public_key_version): <p>Public Key Version provided by AWS Marketplace</p>
-    ///   - [`nonce(Option<String>)`](crate::input::RegisterUsageInput::nonce): <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`product_code(impl Into<String>)`](crate::client::fluent_builders::RegisterUsage::product_code) / [`set_product_code(Option<String>)`](crate::client::fluent_builders::RegisterUsage::set_product_code): <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    ///   - [`public_key_version(i32)`](crate::client::fluent_builders::RegisterUsage::public_key_version) / [`set_public_key_version(Option<i32>)`](crate::client::fluent_builders::RegisterUsage::set_public_key_version): <p>Public Key Version provided by AWS Marketplace</p>
+    ///   - [`nonce(impl Into<String>)`](crate::client::fluent_builders::RegisterUsage::nonce) / [`set_nonce(Option<String>)`](crate::client::fluent_builders::RegisterUsage::set_nonce): <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
     /// - On success, responds with [`RegisterUsageOutput`](crate::output::RegisterUsageOutput) with field(s):
     ///   - [`public_key_rotation_timestamp(Option<DateTime>)`](crate::output::RegisterUsageOutput::public_key_rotation_timestamp): <p>(Optional) Only included when public key version has expired</p>
     ///   - [`signature(Option<String>)`](crate::output::RegisterUsageOutput::signature): <p>JWT Token</p>
@@ -125,8 +125,8 @@ where
     }
     /// Constructs a fluent builder for the [`ResolveCustomer`](crate::client::fluent_builders::ResolveCustomer) operation.
     ///
-    /// - Takes [`ResolveCustomerInput`](crate::input::ResolveCustomerInput) with field(s):
-    ///   - [`registration_token(Option<String>)`](crate::input::ResolveCustomerInput::registration_token): <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`registration_token(impl Into<String>)`](crate::client::fluent_builders::ResolveCustomer::registration_token) / [`set_registration_token(Option<String>)`](crate::client::fluent_builders::ResolveCustomer::set_registration_token): <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>
     /// - On success, responds with [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput) with field(s):
     ///   - [`customer_identifier(Option<String>)`](crate::output::ResolveCustomerOutput::customer_identifier): <p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>
     ///   - [`product_code(Option<String>)`](crate::output::ResolveCustomerOutput::product_code): <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>

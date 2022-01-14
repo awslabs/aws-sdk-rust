@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`CreateApp`](crate::client::fluent_builders::CreateApp) operation.
     ///
-    /// - Takes [`CreateAppInput`](crate::input::CreateAppInput) with field(s):
-    ///   - [`create_application_request(Option<CreateApplicationRequest>)`](crate::input::CreateAppInput::create_application_request): <p>Specifies the display name of an application and the tags to associate with the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`create_application_request(CreateApplicationRequest)`](crate::client::fluent_builders::CreateApp::create_application_request) / [`set_create_application_request(Option<CreateApplicationRequest>)`](crate::client::fluent_builders::CreateApp::set_create_application_request): <p>Specifies the display name of an application and the tags to associate with the application.</p>
     /// - On success, responds with [`CreateAppOutput`](crate::output::CreateAppOutput) with field(s):
     ///   - [`application_response(Option<ApplicationResponse>)`](crate::output::CreateAppOutput::application_response): <p>Provides information about an application.</p>
     /// - On failure, responds with [`SdkError<CreateAppError>`](crate::error::CreateAppError)
@@ -95,9 +95,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCampaign`](crate::client::fluent_builders::CreateCampaign) operation.
     ///
-    /// - Takes [`CreateCampaignInput`](crate::input::CreateCampaignInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::CreateCampaignInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`write_campaign_request(Option<WriteCampaignRequest>)`](crate::input::CreateCampaignInput::write_campaign_request): <p>Specifies the configuration and other settings for a campaign.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateCampaign::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateCampaign::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`write_campaign_request(WriteCampaignRequest)`](crate::client::fluent_builders::CreateCampaign::write_campaign_request) / [`set_write_campaign_request(Option<WriteCampaignRequest>)`](crate::client::fluent_builders::CreateCampaign::set_write_campaign_request): <p>Specifies the configuration and other settings for a campaign.</p>
     /// - On success, responds with [`CreateCampaignOutput`](crate::output::CreateCampaignOutput) with field(s):
     ///   - [`campaign_response(Option<CampaignResponse>)`](crate::output::CreateCampaignOutput::campaign_response): <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     /// - On failure, responds with [`SdkError<CreateCampaignError>`](crate::error::CreateCampaignError)
@@ -106,9 +106,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEmailTemplate`](crate::client::fluent_builders::CreateEmailTemplate) operation.
     ///
-    /// - Takes [`CreateEmailTemplateInput`](crate::input::CreateEmailTemplateInput) with field(s):
-    ///   - [`email_template_request(Option<EmailTemplateRequest>)`](crate::input::CreateEmailTemplateInput::email_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::CreateEmailTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`email_template_request(EmailTemplateRequest)`](crate::client::fluent_builders::CreateEmailTemplate::email_template_request) / [`set_email_template_request(Option<EmailTemplateRequest>)`](crate::client::fluent_builders::CreateEmailTemplate::set_email_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateEmailTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     /// - On success, responds with [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput) with field(s):
     ///   - [`create_template_message_body(Option<CreateTemplateMessageBody>)`](crate::output::CreateEmailTemplateOutput::create_template_message_body): <p>Provides information about a request to create a message template.</p>
     /// - On failure, responds with [`SdkError<CreateEmailTemplateError>`](crate::error::CreateEmailTemplateError)
@@ -117,9 +117,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateExportJob`](crate::client::fluent_builders::CreateExportJob) operation.
     ///
-    /// - Takes [`CreateExportJobInput`](crate::input::CreateExportJobInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::CreateExportJobInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`export_job_request(Option<ExportJobRequest>)`](crate::input::CreateExportJobInput::export_job_request): <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateExportJob::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateExportJob::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`export_job_request(ExportJobRequest)`](crate::client::fluent_builders::CreateExportJob::export_job_request) / [`set_export_job_request(Option<ExportJobRequest>)`](crate::client::fluent_builders::CreateExportJob::set_export_job_request): <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
     /// - On success, responds with [`CreateExportJobOutput`](crate::output::CreateExportJobOutput) with field(s):
     ///   - [`export_job_response(Option<ExportJobResponse>)`](crate::output::CreateExportJobOutput::export_job_response): <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     /// - On failure, responds with [`SdkError<CreateExportJobError>`](crate::error::CreateExportJobError)
@@ -128,9 +128,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateImportJob`](crate::client::fluent_builders::CreateImportJob) operation.
     ///
-    /// - Takes [`CreateImportJobInput`](crate::input::CreateImportJobInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::CreateImportJobInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`import_job_request(Option<ImportJobRequest>)`](crate::input::CreateImportJobInput::import_job_request): <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateImportJob::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateImportJob::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`import_job_request(ImportJobRequest)`](crate::client::fluent_builders::CreateImportJob::import_job_request) / [`set_import_job_request(Option<ImportJobRequest>)`](crate::client::fluent_builders::CreateImportJob::set_import_job_request): <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
     /// - On success, responds with [`CreateImportJobOutput`](crate::output::CreateImportJobOutput) with field(s):
     ///   - [`import_job_response(Option<ImportJobResponse>)`](crate::output::CreateImportJobOutput::import_job_response): <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
     /// - On failure, responds with [`SdkError<CreateImportJobError>`](crate::error::CreateImportJobError)
@@ -139,9 +139,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateInAppTemplate`](crate::client::fluent_builders::CreateInAppTemplate) operation.
     ///
-    /// - Takes [`CreateInAppTemplateInput`](crate::input::CreateInAppTemplateInput) with field(s):
-    ///   - [`in_app_template_request(Option<InAppTemplateRequest>)`](crate::input::CreateInAppTemplateInput::in_app_template_request): <p>InApp Template Request.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::CreateInAppTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`in_app_template_request(InAppTemplateRequest)`](crate::client::fluent_builders::CreateInAppTemplate::in_app_template_request) / [`set_in_app_template_request(Option<InAppTemplateRequest>)`](crate::client::fluent_builders::CreateInAppTemplate::set_in_app_template_request): <p>InApp Template Request.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateInAppTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateInAppTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     /// - On success, responds with [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput) with field(s):
     ///   - [`template_create_message_body(Option<TemplateCreateMessageBody>)`](crate::output::CreateInAppTemplateOutput::template_create_message_body): <p>Provides information about a request to create a message template.</p>
     /// - On failure, responds with [`SdkError<CreateInAppTemplateError>`](crate::error::CreateInAppTemplateError)
@@ -150,9 +150,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateJourney`](crate::client::fluent_builders::CreateJourney) operation.
     ///
-    /// - Takes [`CreateJourneyInput`](crate::input::CreateJourneyInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::CreateJourneyInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`write_journey_request(Option<WriteJourneyRequest>)`](crate::input::CreateJourneyInput::write_journey_request): <p>Specifies the configuration and other settings for a journey.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateJourney::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateJourney::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`write_journey_request(WriteJourneyRequest)`](crate::client::fluent_builders::CreateJourney::write_journey_request) / [`set_write_journey_request(Option<WriteJourneyRequest>)`](crate::client::fluent_builders::CreateJourney::set_write_journey_request): <p>Specifies the configuration and other settings for a journey.</p>
     /// - On success, responds with [`CreateJourneyOutput`](crate::output::CreateJourneyOutput) with field(s):
     ///   - [`journey_response(Option<JourneyResponse>)`](crate::output::CreateJourneyOutput::journey_response): <p>Provides information about the status, configuration, and other settings for a journey.</p>
     /// - On failure, responds with [`SdkError<CreateJourneyError>`](crate::error::CreateJourneyError)
@@ -161,9 +161,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreatePushTemplate`](crate::client::fluent_builders::CreatePushTemplate) operation.
     ///
-    /// - Takes [`CreatePushTemplateInput`](crate::input::CreatePushTemplateInput) with field(s):
-    ///   - [`push_notification_template_request(Option<PushNotificationTemplateRequest>)`](crate::input::CreatePushTemplateInput::push_notification_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::CreatePushTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`push_notification_template_request(PushNotificationTemplateRequest)`](crate::client::fluent_builders::CreatePushTemplate::push_notification_template_request) / [`set_push_notification_template_request(Option<PushNotificationTemplateRequest>)`](crate::client::fluent_builders::CreatePushTemplate::set_push_notification_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreatePushTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreatePushTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     /// - On success, responds with [`CreatePushTemplateOutput`](crate::output::CreatePushTemplateOutput) with field(s):
     ///   - [`create_template_message_body(Option<CreateTemplateMessageBody>)`](crate::output::CreatePushTemplateOutput::create_template_message_body): <p>Provides information about a request to create a message template.</p>
     /// - On failure, responds with [`SdkError<CreatePushTemplateError>`](crate::error::CreatePushTemplateError)
@@ -172,8 +172,8 @@ where
     }
     /// Constructs a fluent builder for the [`CreateRecommenderConfiguration`](crate::client::fluent_builders::CreateRecommenderConfiguration) operation.
     ///
-    /// - Takes [`CreateRecommenderConfigurationInput`](crate::input::CreateRecommenderConfigurationInput) with field(s):
-    ///   - [`create_recommender_configuration(Option<CreateRecommenderConfigurationShape>)`](crate::input::CreateRecommenderConfigurationInput::create_recommender_configuration): <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`create_recommender_configuration(CreateRecommenderConfigurationShape)`](crate::client::fluent_builders::CreateRecommenderConfiguration::create_recommender_configuration) / [`set_create_recommender_configuration(Option<CreateRecommenderConfigurationShape>)`](crate::client::fluent_builders::CreateRecommenderConfiguration::set_create_recommender_configuration): <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     /// - On success, responds with [`CreateRecommenderConfigurationOutput`](crate::output::CreateRecommenderConfigurationOutput) with field(s):
     ///   - [`recommender_configuration_response(Option<RecommenderConfigurationResponse>)`](crate::output::CreateRecommenderConfigurationOutput::recommender_configuration_response): <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     /// - On failure, responds with [`SdkError<CreateRecommenderConfigurationError>`](crate::error::CreateRecommenderConfigurationError)
@@ -184,9 +184,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSegment`](crate::client::fluent_builders::CreateSegment) operation.
     ///
-    /// - Takes [`CreateSegmentInput`](crate::input::CreateSegmentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::CreateSegmentInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`write_segment_request(Option<WriteSegmentRequest>)`](crate::input::CreateSegmentInput::write_segment_request): <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateSegment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateSegment::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`write_segment_request(WriteSegmentRequest)`](crate::client::fluent_builders::CreateSegment::write_segment_request) / [`set_write_segment_request(Option<WriteSegmentRequest>)`](crate::client::fluent_builders::CreateSegment::set_write_segment_request): <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
     /// - On success, responds with [`CreateSegmentOutput`](crate::output::CreateSegmentOutput) with field(s):
     ///   - [`segment_response(Option<SegmentResponse>)`](crate::output::CreateSegmentOutput::segment_response): <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     /// - On failure, responds with [`SdkError<CreateSegmentError>`](crate::error::CreateSegmentError)
@@ -195,9 +195,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateSmsTemplate`](crate::client::fluent_builders::CreateSmsTemplate) operation.
     ///
-    /// - Takes [`CreateSmsTemplateInput`](crate::input::CreateSmsTemplateInput) with field(s):
-    ///   - [`sms_template_request(Option<SmsTemplateRequest>)`](crate::input::CreateSmsTemplateInput::sms_template_request): <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::CreateSmsTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sms_template_request(SmsTemplateRequest)`](crate::client::fluent_builders::CreateSmsTemplate::sms_template_request) / [`set_sms_template_request(Option<SmsTemplateRequest>)`](crate::client::fluent_builders::CreateSmsTemplate::set_sms_template_request): <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateSmsTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateSmsTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     /// - On success, responds with [`CreateSmsTemplateOutput`](crate::output::CreateSmsTemplateOutput) with field(s):
     ///   - [`create_template_message_body(Option<CreateTemplateMessageBody>)`](crate::output::CreateSmsTemplateOutput::create_template_message_body): <p>Provides information about a request to create a message template.</p>
     /// - On failure, responds with [`SdkError<CreateSmsTemplateError>`](crate::error::CreateSmsTemplateError)
@@ -206,9 +206,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateVoiceTemplate`](crate::client::fluent_builders::CreateVoiceTemplate) operation.
     ///
-    /// - Takes [`CreateVoiceTemplateInput`](crate::input::CreateVoiceTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::CreateVoiceTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`voice_template_request(Option<VoiceTemplateRequest>)`](crate::input::CreateVoiceTemplateInput::voice_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateVoiceTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateVoiceTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`voice_template_request(VoiceTemplateRequest)`](crate::client::fluent_builders::CreateVoiceTemplate::voice_template_request) / [`set_voice_template_request(Option<VoiceTemplateRequest>)`](crate::client::fluent_builders::CreateVoiceTemplate::set_voice_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     /// - On success, responds with [`CreateVoiceTemplateOutput`](crate::output::CreateVoiceTemplateOutput) with field(s):
     ///   - [`create_template_message_body(Option<CreateTemplateMessageBody>)`](crate::output::CreateVoiceTemplateOutput::create_template_message_body): <p>Provides information about a request to create a message template.</p>
     /// - On failure, responds with [`SdkError<CreateVoiceTemplateError>`](crate::error::CreateVoiceTemplateError)
@@ -217,8 +217,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAdmChannel`](crate::client::fluent_builders::DeleteAdmChannel) operation.
     ///
-    /// - Takes [`DeleteAdmChannelInput`](crate::input::DeleteAdmChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteAdmChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAdmChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteAdmChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteAdmChannelOutput`](crate::output::DeleteAdmChannelOutput) with field(s):
     ///   - [`adm_channel_response(Option<AdmChannelResponse>)`](crate::output::DeleteAdmChannelOutput::adm_channel_response): <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteAdmChannelError>`](crate::error::DeleteAdmChannelError)
@@ -227,8 +227,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApnsChannel`](crate::client::fluent_builders::DeleteApnsChannel) operation.
     ///
-    /// - Takes [`DeleteApnsChannelInput`](crate::input::DeleteApnsChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteApnsChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApnsChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApnsChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteApnsChannelOutput`](crate::output::DeleteApnsChannelOutput) with field(s):
     ///   - [`apns_channel_response(Option<ApnsChannelResponse>)`](crate::output::DeleteApnsChannelOutput::apns_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteApnsChannelError>`](crate::error::DeleteApnsChannelError)
@@ -237,8 +237,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApnsSandboxChannel`](crate::client::fluent_builders::DeleteApnsSandboxChannel) operation.
     ///
-    /// - Takes [`DeleteApnsSandboxChannelInput`](crate::input::DeleteApnsSandboxChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteApnsSandboxChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApnsSandboxChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApnsSandboxChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteApnsSandboxChannelOutput`](crate::output::DeleteApnsSandboxChannelOutput) with field(s):
     ///   - [`apns_sandbox_channel_response(Option<ApnsSandboxChannelResponse>)`](crate::output::DeleteApnsSandboxChannelOutput::apns_sandbox_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteApnsSandboxChannelError>`](crate::error::DeleteApnsSandboxChannelError)
@@ -249,8 +249,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApnsVoipChannel`](crate::client::fluent_builders::DeleteApnsVoipChannel) operation.
     ///
-    /// - Takes [`DeleteApnsVoipChannelInput`](crate::input::DeleteApnsVoipChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteApnsVoipChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApnsVoipChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApnsVoipChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteApnsVoipChannelOutput`](crate::output::DeleteApnsVoipChannelOutput) with field(s):
     ///   - [`apns_voip_channel_response(Option<ApnsVoipChannelResponse>)`](crate::output::DeleteApnsVoipChannelOutput::apns_voip_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteApnsVoipChannelError>`](crate::error::DeleteApnsVoipChannelError)
@@ -259,8 +259,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApnsVoipSandboxChannel`](crate::client::fluent_builders::DeleteApnsVoipSandboxChannel) operation.
     ///
-    /// - Takes [`DeleteApnsVoipSandboxChannelInput`](crate::input::DeleteApnsVoipSandboxChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteApnsVoipSandboxChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApnsVoipSandboxChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApnsVoipSandboxChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteApnsVoipSandboxChannelOutput`](crate::output::DeleteApnsVoipSandboxChannelOutput) with field(s):
     ///   - [`apns_voip_sandbox_channel_response(Option<ApnsVoipSandboxChannelResponse>)`](crate::output::DeleteApnsVoipSandboxChannelOutput::apns_voip_sandbox_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteApnsVoipSandboxChannelError>`](crate::error::DeleteApnsVoipSandboxChannelError)
@@ -271,8 +271,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApp`](crate::client::fluent_builders::DeleteApp) operation.
     ///
-    /// - Takes [`DeleteAppInput`](crate::input::DeleteAppInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteAppInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteAppOutput`](crate::output::DeleteAppOutput) with field(s):
     ///   - [`application_response(Option<ApplicationResponse>)`](crate::output::DeleteAppOutput::application_response): <p>Provides information about an application.</p>
     /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::error::DeleteAppError)
@@ -281,8 +281,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteBaiduChannel`](crate::client::fluent_builders::DeleteBaiduChannel) operation.
     ///
-    /// - Takes [`DeleteBaiduChannelInput`](crate::input::DeleteBaiduChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteBaiduChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBaiduChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteBaiduChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteBaiduChannelOutput`](crate::output::DeleteBaiduChannelOutput) with field(s):
     ///   - [`baidu_channel_response(Option<BaiduChannelResponse>)`](crate::output::DeleteBaiduChannelOutput::baidu_channel_response): <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteBaiduChannelError>`](crate::error::DeleteBaiduChannelError)
@@ -291,9 +291,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCampaign`](crate::client::fluent_builders::DeleteCampaign) operation.
     ///
-    /// - Takes [`DeleteCampaignInput`](crate::input::DeleteCampaignInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteCampaignInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`campaign_id(Option<String>)`](crate::input::DeleteCampaignInput::campaign_id): <p>The unique identifier for the campaign.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCampaign::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteCampaign::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCampaign::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::DeleteCampaign::set_campaign_id): <p>The unique identifier for the campaign.</p>
     /// - On success, responds with [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput) with field(s):
     ///   - [`campaign_response(Option<CampaignResponse>)`](crate::output::DeleteCampaignOutput::campaign_response): <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     /// - On failure, responds with [`SdkError<DeleteCampaignError>`](crate::error::DeleteCampaignError)
@@ -302,8 +302,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEmailChannel`](crate::client::fluent_builders::DeleteEmailChannel) operation.
     ///
-    /// - Takes [`DeleteEmailChannelInput`](crate::input::DeleteEmailChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteEmailChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEmailChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteEmailChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteEmailChannelOutput`](crate::output::DeleteEmailChannelOutput) with field(s):
     ///   - [`email_channel_response(Option<EmailChannelResponse>)`](crate::output::DeleteEmailChannelOutput::email_channel_response): <p>Provides information about the status and settings of the email channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteEmailChannelError>`](crate::error::DeleteEmailChannelError)
@@ -312,9 +312,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEmailTemplate`](crate::client::fluent_builders::DeleteEmailTemplate) operation.
     ///
-    /// - Takes [`DeleteEmailTemplateInput`](crate::input::DeleteEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DeleteEmailTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::DeleteEmailTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteEmailTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::DeleteEmailTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::DeleteEmailTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::DeleteEmailTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeleteEmailTemplateError>`](crate::error::DeleteEmailTemplateError)
@@ -323,9 +323,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) operation.
     ///
-    /// - Takes [`DeleteEndpointInput`](crate::input::DeleteEndpointInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteEndpointInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`endpoint_id(Option<String>)`](crate::input::DeleteEndpointInput::endpoint_id): <p>The unique identifier for the endpoint.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_endpoint_id): <p>The unique identifier for the endpoint.</p>
     /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput) with field(s):
     ///   - [`endpoint_response(Option<EndpointResponse>)`](crate::output::DeleteEndpointOutput::endpoint_response): <p>Provides information about the channel type and other settings for an endpoint.</p>
     /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
@@ -334,8 +334,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEventStream`](crate::client::fluent_builders::DeleteEventStream) operation.
     ///
-    /// - Takes [`DeleteEventStreamInput`](crate::input::DeleteEventStreamInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteEventStreamInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEventStream::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteEventStream::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteEventStreamOutput`](crate::output::DeleteEventStreamOutput) with field(s):
     ///   - [`event_stream(Option<EventStream>)`](crate::output::DeleteEventStreamOutput::event_stream): <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     /// - On failure, responds with [`SdkError<DeleteEventStreamError>`](crate::error::DeleteEventStreamError)
@@ -344,8 +344,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteGcmChannel`](crate::client::fluent_builders::DeleteGcmChannel) operation.
     ///
-    /// - Takes [`DeleteGcmChannelInput`](crate::input::DeleteGcmChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteGcmChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGcmChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteGcmChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteGcmChannelOutput`](crate::output::DeleteGcmChannelOutput) with field(s):
     ///   - [`gcm_channel_response(Option<GcmChannelResponse>)`](crate::output::DeleteGcmChannelOutput::gcm_channel_response): <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     /// - On failure, responds with [`SdkError<DeleteGcmChannelError>`](crate::error::DeleteGcmChannelError)
@@ -354,9 +354,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteInAppTemplate`](crate::client::fluent_builders::DeleteInAppTemplate) operation.
     ///
-    /// - Takes [`DeleteInAppTemplateInput`](crate::input::DeleteInAppTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DeleteInAppTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::DeleteInAppTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteInAppTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteInAppTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::DeleteInAppTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::DeleteInAppTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::DeleteInAppTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeleteInAppTemplateError>`](crate::error::DeleteInAppTemplateError)
@@ -365,9 +365,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteJourney`](crate::client::fluent_builders::DeleteJourney) operation.
     ///
-    /// - Takes [`DeleteJourneyInput`](crate::input::DeleteJourneyInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteJourneyInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`journey_id(Option<String>)`](crate::input::DeleteJourneyInput::journey_id): <p>The unique identifier for the journey.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJourney::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteJourney::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`journey_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJourney::journey_id) / [`set_journey_id(Option<String>)`](crate::client::fluent_builders::DeleteJourney::set_journey_id): <p>The unique identifier for the journey.</p>
     /// - On success, responds with [`DeleteJourneyOutput`](crate::output::DeleteJourneyOutput) with field(s):
     ///   - [`journey_response(Option<JourneyResponse>)`](crate::output::DeleteJourneyOutput::journey_response): <p>Provides information about the status, configuration, and other settings for a journey.</p>
     /// - On failure, responds with [`SdkError<DeleteJourneyError>`](crate::error::DeleteJourneyError)
@@ -376,9 +376,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeletePushTemplate`](crate::client::fluent_builders::DeletePushTemplate) operation.
     ///
-    /// - Takes [`DeletePushTemplateInput`](crate::input::DeletePushTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DeletePushTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::DeletePushTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeletePushTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeletePushTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::DeletePushTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::DeletePushTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`DeletePushTemplateOutput`](crate::output::DeletePushTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::DeletePushTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeletePushTemplateError>`](crate::error::DeletePushTemplateError)
@@ -387,8 +387,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteRecommenderConfiguration`](crate::client::fluent_builders::DeleteRecommenderConfiguration) operation.
     ///
-    /// - Takes [`DeleteRecommenderConfigurationInput`](crate::input::DeleteRecommenderConfigurationInput) with field(s):
-    ///   - [`recommender_id(Option<String>)`](crate::input::DeleteRecommenderConfigurationInput::recommender_id): <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`recommender_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRecommenderConfiguration::recommender_id) / [`set_recommender_id(Option<String>)`](crate::client::fluent_builders::DeleteRecommenderConfiguration::set_recommender_id): <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteRecommenderConfigurationOutput`](crate::output::DeleteRecommenderConfigurationOutput) with field(s):
     ///   - [`recommender_configuration_response(Option<RecommenderConfigurationResponse>)`](crate::output::DeleteRecommenderConfigurationOutput::recommender_configuration_response): <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     /// - On failure, responds with [`SdkError<DeleteRecommenderConfigurationError>`](crate::error::DeleteRecommenderConfigurationError)
@@ -399,9 +399,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSegment`](crate::client::fluent_builders::DeleteSegment) operation.
     ///
-    /// - Takes [`DeleteSegmentInput`](crate::input::DeleteSegmentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteSegmentInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`segment_id(Option<String>)`](crate::input::DeleteSegmentInput::segment_id): <p>The unique identifier for the segment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSegment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteSegment::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`segment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSegment::segment_id) / [`set_segment_id(Option<String>)`](crate::client::fluent_builders::DeleteSegment::set_segment_id): <p>The unique identifier for the segment.</p>
     /// - On success, responds with [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput) with field(s):
     ///   - [`segment_response(Option<SegmentResponse>)`](crate::output::DeleteSegmentOutput::segment_response): <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     /// - On failure, responds with [`SdkError<DeleteSegmentError>`](crate::error::DeleteSegmentError)
@@ -410,8 +410,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSmsChannel`](crate::client::fluent_builders::DeleteSmsChannel) operation.
     ///
-    /// - Takes [`DeleteSmsChannelInput`](crate::input::DeleteSmsChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteSmsChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSmsChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteSmsChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteSmsChannelOutput`](crate::output::DeleteSmsChannelOutput) with field(s):
     ///   - [`sms_channel_response(Option<SmsChannelResponse>)`](crate::output::DeleteSmsChannelOutput::sms_channel_response): <p>Provides information about the status and settings of the SMS channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteSmsChannelError>`](crate::error::DeleteSmsChannelError)
@@ -420,9 +420,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteSmsTemplate`](crate::client::fluent_builders::DeleteSmsTemplate) operation.
     ///
-    /// - Takes [`DeleteSmsTemplateInput`](crate::input::DeleteSmsTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DeleteSmsTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::DeleteSmsTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSmsTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteSmsTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::DeleteSmsTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::DeleteSmsTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`DeleteSmsTemplateOutput`](crate::output::DeleteSmsTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::DeleteSmsTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeleteSmsTemplateError>`](crate::error::DeleteSmsTemplateError)
@@ -431,9 +431,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteUserEndpoints`](crate::client::fluent_builders::DeleteUserEndpoints) operation.
     ///
-    /// - Takes [`DeleteUserEndpointsInput`](crate::input::DeleteUserEndpointsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteUserEndpointsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`user_id(Option<String>)`](crate::input::DeleteUserEndpointsInput::user_id): <p>The unique identifier for the user.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserEndpoints::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteUserEndpoints::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserEndpoints::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DeleteUserEndpoints::set_user_id): <p>The unique identifier for the user.</p>
     /// - On success, responds with [`DeleteUserEndpointsOutput`](crate::output::DeleteUserEndpointsOutput) with field(s):
     ///   - [`endpoints_response(Option<EndpointsResponse>)`](crate::output::DeleteUserEndpointsOutput::endpoints_response): <p>Provides information about all the endpoints that are associated with a user ID.</p>
     /// - On failure, responds with [`SdkError<DeleteUserEndpointsError>`](crate::error::DeleteUserEndpointsError)
@@ -442,8 +442,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteVoiceChannel`](crate::client::fluent_builders::DeleteVoiceChannel) operation.
     ///
-    /// - Takes [`DeleteVoiceChannelInput`](crate::input::DeleteVoiceChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteVoiceChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteVoiceChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteVoiceChannelOutput`](crate::output::DeleteVoiceChannelOutput) with field(s):
     ///   - [`voice_channel_response(Option<VoiceChannelResponse>)`](crate::output::DeleteVoiceChannelOutput::voice_channel_response): <p>Provides information about the status and settings of the voice channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteVoiceChannelError>`](crate::error::DeleteVoiceChannelError)
@@ -452,9 +452,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteVoiceTemplate`](crate::client::fluent_builders::DeleteVoiceTemplate) operation.
     ///
-    /// - Takes [`DeleteVoiceTemplateInput`](crate::input::DeleteVoiceTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::DeleteVoiceTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::DeleteVoiceTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteVoiceTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::DeleteVoiceTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`DeleteVoiceTemplateOutput`](crate::output::DeleteVoiceTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::DeleteVoiceTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeleteVoiceTemplateError>`](crate::error::DeleteVoiceTemplateError)
@@ -463,8 +463,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetAdmChannel`](crate::client::fluent_builders::GetAdmChannel) operation.
     ///
-    /// - Takes [`GetAdmChannelInput`](crate::input::GetAdmChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetAdmChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetAdmChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetAdmChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetAdmChannelOutput`](crate::output::GetAdmChannelOutput) with field(s):
     ///   - [`adm_channel_response(Option<AdmChannelResponse>)`](crate::output::GetAdmChannelOutput::adm_channel_response): <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetAdmChannelError>`](crate::error::GetAdmChannelError)
@@ -473,8 +473,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApnsChannel`](crate::client::fluent_builders::GetApnsChannel) operation.
     ///
-    /// - Takes [`GetApnsChannelInput`](crate::input::GetApnsChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetApnsChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApnsChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApnsChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetApnsChannelOutput`](crate::output::GetApnsChannelOutput) with field(s):
     ///   - [`apns_channel_response(Option<ApnsChannelResponse>)`](crate::output::GetApnsChannelOutput::apns_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetApnsChannelError>`](crate::error::GetApnsChannelError)
@@ -483,8 +483,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApnsSandboxChannel`](crate::client::fluent_builders::GetApnsSandboxChannel) operation.
     ///
-    /// - Takes [`GetApnsSandboxChannelInput`](crate::input::GetApnsSandboxChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetApnsSandboxChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApnsSandboxChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApnsSandboxChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetApnsSandboxChannelOutput`](crate::output::GetApnsSandboxChannelOutput) with field(s):
     ///   - [`apns_sandbox_channel_response(Option<ApnsSandboxChannelResponse>)`](crate::output::GetApnsSandboxChannelOutput::apns_sandbox_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetApnsSandboxChannelError>`](crate::error::GetApnsSandboxChannelError)
@@ -493,8 +493,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApnsVoipChannel`](crate::client::fluent_builders::GetApnsVoipChannel) operation.
     ///
-    /// - Takes [`GetApnsVoipChannelInput`](crate::input::GetApnsVoipChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetApnsVoipChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApnsVoipChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApnsVoipChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetApnsVoipChannelOutput`](crate::output::GetApnsVoipChannelOutput) with field(s):
     ///   - [`apns_voip_channel_response(Option<ApnsVoipChannelResponse>)`](crate::output::GetApnsVoipChannelOutput::apns_voip_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetApnsVoipChannelError>`](crate::error::GetApnsVoipChannelError)
@@ -503,8 +503,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApnsVoipSandboxChannel`](crate::client::fluent_builders::GetApnsVoipSandboxChannel) operation.
     ///
-    /// - Takes [`GetApnsVoipSandboxChannelInput`](crate::input::GetApnsVoipSandboxChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetApnsVoipSandboxChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApnsVoipSandboxChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApnsVoipSandboxChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetApnsVoipSandboxChannelOutput`](crate::output::GetApnsVoipSandboxChannelOutput) with field(s):
     ///   - [`apns_voip_sandbox_channel_response(Option<ApnsVoipSandboxChannelResponse>)`](crate::output::GetApnsVoipSandboxChannelOutput::apns_voip_sandbox_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetApnsVoipSandboxChannelError>`](crate::error::GetApnsVoipSandboxChannelError)
@@ -515,8 +515,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApp`](crate::client::fluent_builders::GetApp) operation.
     ///
-    /// - Takes [`GetAppInput`](crate::input::GetAppInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetAppInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApp::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApp::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetAppOutput`](crate::output::GetAppOutput) with field(s):
     ///   - [`application_response(Option<ApplicationResponse>)`](crate::output::GetAppOutput::application_response): <p>Provides information about an application.</p>
     /// - On failure, responds with [`SdkError<GetAppError>`](crate::error::GetAppError)
@@ -525,13 +525,13 @@ where
     }
     /// Constructs a fluent builder for the [`GetApplicationDateRangeKpi`](crate::client::fluent_builders::GetApplicationDateRangeKpi) operation.
     ///
-    /// - Takes [`GetApplicationDateRangeKpiInput`](crate::input::GetApplicationDateRangeKpiInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetApplicationDateRangeKpiInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::GetApplicationDateRangeKpiInput::end_time): <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-    ///   - [`kpi_name(Option<String>)`](crate::input::GetApplicationDateRangeKpiInput::kpi_name): <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetApplicationDateRangeKpiInput::next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetApplicationDateRangeKpiInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::GetApplicationDateRangeKpiInput::start_time): <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::set_end_time): <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    ///   - [`kpi_name(impl Into<String>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::kpi_name) / [`set_kpi_name(Option<String>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::set_kpi_name): <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::set_next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetApplicationDateRangeKpi::set_start_time): <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
     /// - On success, responds with [`GetApplicationDateRangeKpiOutput`](crate::output::GetApplicationDateRangeKpiOutput) with field(s):
     ///   - [`application_date_range_kpi_response(Option<ApplicationDateRangeKpiResponse>)`](crate::output::GetApplicationDateRangeKpiOutput::application_date_range_kpi_response): <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
     /// - On failure, responds with [`SdkError<GetApplicationDateRangeKpiError>`](crate::error::GetApplicationDateRangeKpiError)
@@ -542,8 +542,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApplicationSettings`](crate::client::fluent_builders::GetApplicationSettings) operation.
     ///
-    /// - Takes [`GetApplicationSettingsInput`](crate::input::GetApplicationSettingsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetApplicationSettingsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApplicationSettings::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApplicationSettings::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetApplicationSettingsOutput`](crate::output::GetApplicationSettingsOutput) with field(s):
     ///   - [`application_settings_resource(Option<ApplicationSettingsResource>)`](crate::output::GetApplicationSettingsOutput::application_settings_resource): <p>Provides information about an application, including the default settings for an application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationSettingsError>`](crate::error::GetApplicationSettingsError)
@@ -552,9 +552,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetApps`](crate::client::fluent_builders::GetApps) operation.
     ///
-    /// - Takes [`GetAppsInput`](crate::input::GetAppsInput) with field(s):
-    ///   - [`page_size(Option<String>)`](crate::input::GetAppsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetAppsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetApps::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetApps::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetApps::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetApps::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetAppsOutput`](crate::output::GetAppsOutput) with field(s):
     ///   - [`applications_response(Option<ApplicationsResponse>)`](crate::output::GetAppsOutput::applications_response): <p>Provides information about all of your applications.</p>
     /// - On failure, responds with [`SdkError<GetAppsError>`](crate::error::GetAppsError)
@@ -563,8 +563,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetBaiduChannel`](crate::client::fluent_builders::GetBaiduChannel) operation.
     ///
-    /// - Takes [`GetBaiduChannelInput`](crate::input::GetBaiduChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetBaiduChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetBaiduChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetBaiduChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetBaiduChannelOutput`](crate::output::GetBaiduChannelOutput) with field(s):
     ///   - [`baidu_channel_response(Option<BaiduChannelResponse>)`](crate::output::GetBaiduChannelOutput::baidu_channel_response): <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetBaiduChannelError>`](crate::error::GetBaiduChannelError)
@@ -573,9 +573,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetCampaign`](crate::client::fluent_builders::GetCampaign) operation.
     ///
-    /// - Takes [`GetCampaignInput`](crate::input::GetCampaignInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetCampaignInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`campaign_id(Option<String>)`](crate::input::GetCampaignInput::campaign_id): <p>The unique identifier for the campaign.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaign::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetCampaign::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaign::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::GetCampaign::set_campaign_id): <p>The unique identifier for the campaign.</p>
     /// - On success, responds with [`GetCampaignOutput`](crate::output::GetCampaignOutput) with field(s):
     ///   - [`campaign_response(Option<CampaignResponse>)`](crate::output::GetCampaignOutput::campaign_response): <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     /// - On failure, responds with [`SdkError<GetCampaignError>`](crate::error::GetCampaignError)
@@ -584,11 +584,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetCampaignActivities`](crate::client::fluent_builders::GetCampaignActivities) operation.
     ///
-    /// - Takes [`GetCampaignActivitiesInput`](crate::input::GetCampaignActivitiesInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetCampaignActivitiesInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`campaign_id(Option<String>)`](crate::input::GetCampaignActivitiesInput::campaign_id): <p>The unique identifier for the campaign.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetCampaignActivitiesInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetCampaignActivitiesInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaignActivities::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetCampaignActivities::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaignActivities::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::GetCampaignActivities::set_campaign_id): <p>The unique identifier for the campaign.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetCampaignActivities::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetCampaignActivities::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetCampaignActivities::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetCampaignActivities::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetCampaignActivitiesOutput`](crate::output::GetCampaignActivitiesOutput) with field(s):
     ///   - [`activities_response(Option<ActivitiesResponse>)`](crate::output::GetCampaignActivitiesOutput::activities_response): <p>Provides information about the activities that were performed by a campaign.</p>
     /// - On failure, responds with [`SdkError<GetCampaignActivitiesError>`](crate::error::GetCampaignActivitiesError)
@@ -597,14 +597,14 @@ where
     }
     /// Constructs a fluent builder for the [`GetCampaignDateRangeKpi`](crate::client::fluent_builders::GetCampaignDateRangeKpi) operation.
     ///
-    /// - Takes [`GetCampaignDateRangeKpiInput`](crate::input::GetCampaignDateRangeKpiInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetCampaignDateRangeKpiInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`campaign_id(Option<String>)`](crate::input::GetCampaignDateRangeKpiInput::campaign_id): <p>The unique identifier for the campaign.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::GetCampaignDateRangeKpiInput::end_time): <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-    ///   - [`kpi_name(Option<String>)`](crate::input::GetCampaignDateRangeKpiInput::kpi_name): <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetCampaignDateRangeKpiInput::next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetCampaignDateRangeKpiInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::GetCampaignDateRangeKpiInput::start_time): <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::set_campaign_id): <p>The unique identifier for the campaign.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::set_end_time): <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    ///   - [`kpi_name(impl Into<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::kpi_name) / [`set_kpi_name(Option<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::set_kpi_name): <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::set_next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetCampaignDateRangeKpi::set_start_time): <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
     /// - On success, responds with [`GetCampaignDateRangeKpiOutput`](crate::output::GetCampaignDateRangeKpiOutput) with field(s):
     ///   - [`campaign_date_range_kpi_response(Option<CampaignDateRangeKpiResponse>)`](crate::output::GetCampaignDateRangeKpiOutput::campaign_date_range_kpi_response): <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
     /// - On failure, responds with [`SdkError<GetCampaignDateRangeKpiError>`](crate::error::GetCampaignDateRangeKpiError)
@@ -613,10 +613,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetCampaigns`](crate::client::fluent_builders::GetCampaigns) operation.
     ///
-    /// - Takes [`GetCampaignsInput`](crate::input::GetCampaignsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetCampaignsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetCampaignsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetCampaignsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaigns::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetCampaigns::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetCampaigns::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetCampaigns::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetCampaigns::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetCampaigns::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetCampaignsOutput`](crate::output::GetCampaignsOutput) with field(s):
     ///   - [`campaigns_response(Option<CampaignsResponse>)`](crate::output::GetCampaignsOutput::campaigns_response): <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<GetCampaignsError>`](crate::error::GetCampaignsError)
@@ -625,10 +625,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetCampaignVersion`](crate::client::fluent_builders::GetCampaignVersion) operation.
     ///
-    /// - Takes [`GetCampaignVersionInput`](crate::input::GetCampaignVersionInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetCampaignVersionInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`campaign_id(Option<String>)`](crate::input::GetCampaignVersionInput::campaign_id): <p>The unique identifier for the campaign.</p>
-    ///   - [`version(Option<String>)`](crate::input::GetCampaignVersionInput::version): <p>The unique version number (Version property) for the campaign version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaignVersion::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetCampaignVersion::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaignVersion::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::GetCampaignVersion::set_campaign_id): <p>The unique identifier for the campaign.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetCampaignVersion::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetCampaignVersion::set_version): <p>The unique version number (Version property) for the campaign version.</p>
     /// - On success, responds with [`GetCampaignVersionOutput`](crate::output::GetCampaignVersionOutput) with field(s):
     ///   - [`campaign_response(Option<CampaignResponse>)`](crate::output::GetCampaignVersionOutput::campaign_response): <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     /// - On failure, responds with [`SdkError<GetCampaignVersionError>`](crate::error::GetCampaignVersionError)
@@ -637,11 +637,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetCampaignVersions`](crate::client::fluent_builders::GetCampaignVersions) operation.
     ///
-    /// - Takes [`GetCampaignVersionsInput`](crate::input::GetCampaignVersionsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetCampaignVersionsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`campaign_id(Option<String>)`](crate::input::GetCampaignVersionsInput::campaign_id): <p>The unique identifier for the campaign.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetCampaignVersionsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetCampaignVersionsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaignVersions::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetCampaignVersions::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::GetCampaignVersions::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::GetCampaignVersions::set_campaign_id): <p>The unique identifier for the campaign.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetCampaignVersions::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetCampaignVersions::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetCampaignVersions::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetCampaignVersions::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetCampaignVersionsOutput`](crate::output::GetCampaignVersionsOutput) with field(s):
     ///   - [`campaigns_response(Option<CampaignsResponse>)`](crate::output::GetCampaignVersionsOutput::campaigns_response): <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<GetCampaignVersionsError>`](crate::error::GetCampaignVersionsError)
@@ -650,8 +650,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetChannels`](crate::client::fluent_builders::GetChannels) operation.
     ///
-    /// - Takes [`GetChannelsInput`](crate::input::GetChannelsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetChannelsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetChannels::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetChannels::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetChannelsOutput`](crate::output::GetChannelsOutput) with field(s):
     ///   - [`channels_response(Option<ChannelsResponse>)`](crate::output::GetChannelsOutput::channels_response): <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
     /// - On failure, responds with [`SdkError<GetChannelsError>`](crate::error::GetChannelsError)
@@ -660,8 +660,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetEmailChannel`](crate::client::fluent_builders::GetEmailChannel) operation.
     ///
-    /// - Takes [`GetEmailChannelInput`](crate::input::GetEmailChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetEmailChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetEmailChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetEmailChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetEmailChannelOutput`](crate::output::GetEmailChannelOutput) with field(s):
     ///   - [`email_channel_response(Option<EmailChannelResponse>)`](crate::output::GetEmailChannelOutput::email_channel_response): <p>Provides information about the status and settings of the email channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetEmailChannelError>`](crate::error::GetEmailChannelError)
@@ -670,9 +670,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetEmailTemplate`](crate::client::fluent_builders::GetEmailTemplate) operation.
     ///
-    /// - Takes [`GetEmailTemplateInput`](crate::input::GetEmailTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::GetEmailTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::GetEmailTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetEmailTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetEmailTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetEmailTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput) with field(s):
     ///   - [`email_template_response(Option<EmailTemplateResponse>)`](crate::output::GetEmailTemplateOutput::email_template_response): <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
     /// - On failure, responds with [`SdkError<GetEmailTemplateError>`](crate::error::GetEmailTemplateError)
@@ -681,9 +681,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetEndpoint`](crate::client::fluent_builders::GetEndpoint) operation.
     ///
-    /// - Takes [`GetEndpointInput`](crate::input::GetEndpointInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetEndpointInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`endpoint_id(Option<String>)`](crate::input::GetEndpointInput::endpoint_id): <p>The unique identifier for the endpoint.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetEndpoint::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetEndpoint::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::GetEndpoint::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::GetEndpoint::set_endpoint_id): <p>The unique identifier for the endpoint.</p>
     /// - On success, responds with [`GetEndpointOutput`](crate::output::GetEndpointOutput) with field(s):
     ///   - [`endpoint_response(Option<EndpointResponse>)`](crate::output::GetEndpointOutput::endpoint_response): <p>Provides information about the channel type and other settings for an endpoint.</p>
     /// - On failure, responds with [`SdkError<GetEndpointError>`](crate::error::GetEndpointError)
@@ -692,8 +692,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetEventStream`](crate::client::fluent_builders::GetEventStream) operation.
     ///
-    /// - Takes [`GetEventStreamInput`](crate::input::GetEventStreamInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetEventStreamInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetEventStream::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetEventStream::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetEventStreamOutput`](crate::output::GetEventStreamOutput) with field(s):
     ///   - [`event_stream(Option<EventStream>)`](crate::output::GetEventStreamOutput::event_stream): <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     /// - On failure, responds with [`SdkError<GetEventStreamError>`](crate::error::GetEventStreamError)
@@ -702,9 +702,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetExportJob`](crate::client::fluent_builders::GetExportJob) operation.
     ///
-    /// - Takes [`GetExportJobInput`](crate::input::GetExportJobInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetExportJobInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::GetExportJobInput::job_id): <p>The unique identifier for the job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetExportJob::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetExportJob::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetExportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetExportJob::set_job_id): <p>The unique identifier for the job.</p>
     /// - On success, responds with [`GetExportJobOutput`](crate::output::GetExportJobOutput) with field(s):
     ///   - [`export_job_response(Option<ExportJobResponse>)`](crate::output::GetExportJobOutput::export_job_response): <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     /// - On failure, responds with [`SdkError<GetExportJobError>`](crate::error::GetExportJobError)
@@ -713,10 +713,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetExportJobs`](crate::client::fluent_builders::GetExportJobs) operation.
     ///
-    /// - Takes [`GetExportJobsInput`](crate::input::GetExportJobsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetExportJobsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetExportJobsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetExportJobsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetExportJobs::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetExportJobs::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetExportJobs::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetExportJobs::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetExportJobs::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetExportJobs::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetExportJobsOutput`](crate::output::GetExportJobsOutput) with field(s):
     ///   - [`export_jobs_response(Option<ExportJobsResponse>)`](crate::output::GetExportJobsOutput::export_jobs_response): <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     /// - On failure, responds with [`SdkError<GetExportJobsError>`](crate::error::GetExportJobsError)
@@ -725,8 +725,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetGcmChannel`](crate::client::fluent_builders::GetGcmChannel) operation.
     ///
-    /// - Takes [`GetGcmChannelInput`](crate::input::GetGcmChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetGcmChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetGcmChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetGcmChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetGcmChannelOutput`](crate::output::GetGcmChannelOutput) with field(s):
     ///   - [`gcm_channel_response(Option<GcmChannelResponse>)`](crate::output::GetGcmChannelOutput::gcm_channel_response): <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     /// - On failure, responds with [`SdkError<GetGcmChannelError>`](crate::error::GetGcmChannelError)
@@ -735,9 +735,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetImportJob`](crate::client::fluent_builders::GetImportJob) operation.
     ///
-    /// - Takes [`GetImportJobInput`](crate::input::GetImportJobInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetImportJobInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`job_id(Option<String>)`](crate::input::GetImportJobInput::job_id): <p>The unique identifier for the job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetImportJob::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetImportJob::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetImportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetImportJob::set_job_id): <p>The unique identifier for the job.</p>
     /// - On success, responds with [`GetImportJobOutput`](crate::output::GetImportJobOutput) with field(s):
     ///   - [`import_job_response(Option<ImportJobResponse>)`](crate::output::GetImportJobOutput::import_job_response): <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
     /// - On failure, responds with [`SdkError<GetImportJobError>`](crate::error::GetImportJobError)
@@ -746,10 +746,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetImportJobs`](crate::client::fluent_builders::GetImportJobs) operation.
     ///
-    /// - Takes [`GetImportJobsInput`](crate::input::GetImportJobsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetImportJobsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetImportJobsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetImportJobsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetImportJobs::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetImportJobs::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetImportJobs::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetImportJobs::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetImportJobs::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetImportJobs::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetImportJobsOutput`](crate::output::GetImportJobsOutput) with field(s):
     ///   - [`import_jobs_response(Option<ImportJobsResponse>)`](crate::output::GetImportJobsOutput::import_jobs_response): <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
     /// - On failure, responds with [`SdkError<GetImportJobsError>`](crate::error::GetImportJobsError)
@@ -758,9 +758,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetInAppMessages`](crate::client::fluent_builders::GetInAppMessages) operation.
     ///
-    /// - Takes [`GetInAppMessagesInput`](crate::input::GetInAppMessagesInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetInAppMessagesInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`endpoint_id(Option<String>)`](crate::input::GetInAppMessagesInput::endpoint_id): <p>The unique identifier for the endpoint.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetInAppMessages::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetInAppMessages::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::GetInAppMessages::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::GetInAppMessages::set_endpoint_id): <p>The unique identifier for the endpoint.</p>
     /// - On success, responds with [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput) with field(s):
     ///   - [`in_app_messages_response(Option<InAppMessagesResponse>)`](crate::output::GetInAppMessagesOutput::in_app_messages_response): <p>Get in-app messages response object.</p>
     /// - On failure, responds with [`SdkError<GetInAppMessagesError>`](crate::error::GetInAppMessagesError)
@@ -769,9 +769,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetInAppTemplate`](crate::client::fluent_builders::GetInAppTemplate) operation.
     ///
-    /// - Takes [`GetInAppTemplateInput`](crate::input::GetInAppTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::GetInAppTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::GetInAppTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetInAppTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetInAppTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetInAppTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetInAppTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput) with field(s):
     ///   - [`in_app_template_response(Option<InAppTemplateResponse>)`](crate::output::GetInAppTemplateOutput::in_app_template_response): <p>In-App Template Response.</p>
     /// - On failure, responds with [`SdkError<GetInAppTemplateError>`](crate::error::GetInAppTemplateError)
@@ -780,9 +780,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetJourney`](crate::client::fluent_builders::GetJourney) operation.
     ///
-    /// - Takes [`GetJourneyInput`](crate::input::GetJourneyInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetJourneyInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`journey_id(Option<String>)`](crate::input::GetJourneyInput::journey_id): <p>The unique identifier for the journey.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetJourney::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetJourney::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`journey_id(impl Into<String>)`](crate::client::fluent_builders::GetJourney::journey_id) / [`set_journey_id(Option<String>)`](crate::client::fluent_builders::GetJourney::set_journey_id): <p>The unique identifier for the journey.</p>
     /// - On success, responds with [`GetJourneyOutput`](crate::output::GetJourneyOutput) with field(s):
     ///   - [`journey_response(Option<JourneyResponse>)`](crate::output::GetJourneyOutput::journey_response): <p>Provides information about the status, configuration, and other settings for a journey.</p>
     /// - On failure, responds with [`SdkError<GetJourneyError>`](crate::error::GetJourneyError)
@@ -791,14 +791,14 @@ where
     }
     /// Constructs a fluent builder for the [`GetJourneyDateRangeKpi`](crate::client::fluent_builders::GetJourneyDateRangeKpi) operation.
     ///
-    /// - Takes [`GetJourneyDateRangeKpiInput`](crate::input::GetJourneyDateRangeKpiInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetJourneyDateRangeKpiInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::GetJourneyDateRangeKpiInput::end_time): <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-    ///   - [`journey_id(Option<String>)`](crate::input::GetJourneyDateRangeKpiInput::journey_id): <p>The unique identifier for the journey.</p>
-    ///   - [`kpi_name(Option<String>)`](crate::input::GetJourneyDateRangeKpiInput::kpi_name): <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetJourneyDateRangeKpiInput::next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetJourneyDateRangeKpiInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::GetJourneyDateRangeKpiInput::start_time): <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::set_end_time): <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
+    ///   - [`journey_id(impl Into<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::journey_id) / [`set_journey_id(Option<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::set_journey_id): <p>The unique identifier for the journey.</p>
+    ///   - [`kpi_name(impl Into<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::kpi_name) / [`set_kpi_name(Option<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::set_kpi_name): <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::set_next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetJourneyDateRangeKpi::set_start_time): <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
     /// - On success, responds with [`GetJourneyDateRangeKpiOutput`](crate::output::GetJourneyDateRangeKpiOutput) with field(s):
     ///   - [`journey_date_range_kpi_response(Option<JourneyDateRangeKpiResponse>)`](crate::output::GetJourneyDateRangeKpiOutput::journey_date_range_kpi_response): <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
     /// - On failure, responds with [`SdkError<GetJourneyDateRangeKpiError>`](crate::error::GetJourneyDateRangeKpiError)
@@ -807,12 +807,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetJourneyExecutionActivityMetrics`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics) operation.
     ///
-    /// - Takes [`GetJourneyExecutionActivityMetricsInput`](crate::input::GetJourneyExecutionActivityMetricsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetJourneyExecutionActivityMetricsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`journey_activity_id(Option<String>)`](crate::input::GetJourneyExecutionActivityMetricsInput::journey_activity_id): <p>The unique identifier for the journey activity.</p>
-    ///   - [`journey_id(Option<String>)`](crate::input::GetJourneyExecutionActivityMetricsInput::journey_id): <p>The unique identifier for the journey.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetJourneyExecutionActivityMetricsInput::next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetJourneyExecutionActivityMetricsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`journey_activity_id(impl Into<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::journey_activity_id) / [`set_journey_activity_id(Option<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::set_journey_activity_id): <p>The unique identifier for the journey activity.</p>
+    ///   - [`journey_id(impl Into<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::journey_id) / [`set_journey_id(Option<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::set_journey_id): <p>The unique identifier for the journey.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::set_next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetJourneyExecutionActivityMetrics::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     /// - On success, responds with [`GetJourneyExecutionActivityMetricsOutput`](crate::output::GetJourneyExecutionActivityMetricsOutput) with field(s):
     ///   - [`journey_execution_activity_metrics_response(Option<JourneyExecutionActivityMetricsResponse>)`](crate::output::GetJourneyExecutionActivityMetricsOutput::journey_execution_activity_metrics_response): <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
     /// - On failure, responds with [`SdkError<GetJourneyExecutionActivityMetricsError>`](crate::error::GetJourneyExecutionActivityMetricsError)
@@ -823,11 +823,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetJourneyExecutionMetrics`](crate::client::fluent_builders::GetJourneyExecutionMetrics) operation.
     ///
-    /// - Takes [`GetJourneyExecutionMetricsInput`](crate::input::GetJourneyExecutionMetricsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetJourneyExecutionMetricsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`journey_id(Option<String>)`](crate::input::GetJourneyExecutionMetricsInput::journey_id): <p>The unique identifier for the journey.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::GetJourneyExecutionMetricsInput::next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetJourneyExecutionMetricsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetJourneyExecutionMetrics::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetJourneyExecutionMetrics::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`journey_id(impl Into<String>)`](crate::client::fluent_builders::GetJourneyExecutionMetrics::journey_id) / [`set_journey_id(Option<String>)`](crate::client::fluent_builders::GetJourneyExecutionMetrics::set_journey_id): <p>The unique identifier for the journey.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetJourneyExecutionMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetJourneyExecutionMetrics::set_next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetJourneyExecutionMetrics::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetJourneyExecutionMetrics::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     /// - On success, responds with [`GetJourneyExecutionMetricsOutput`](crate::output::GetJourneyExecutionMetricsOutput) with field(s):
     ///   - [`journey_execution_metrics_response(Option<JourneyExecutionMetricsResponse>)`](crate::output::GetJourneyExecutionMetricsOutput::journey_execution_metrics_response): <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
     /// - On failure, responds with [`SdkError<GetJourneyExecutionMetricsError>`](crate::error::GetJourneyExecutionMetricsError)
@@ -838,9 +838,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetPushTemplate`](crate::client::fluent_builders::GetPushTemplate) operation.
     ///
-    /// - Takes [`GetPushTemplateInput`](crate::input::GetPushTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::GetPushTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::GetPushTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetPushTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetPushTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetPushTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetPushTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`GetPushTemplateOutput`](crate::output::GetPushTemplateOutput) with field(s):
     ///   - [`push_notification_template_response(Option<PushNotificationTemplateResponse>)`](crate::output::GetPushTemplateOutput::push_notification_template_response): <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     /// - On failure, responds with [`SdkError<GetPushTemplateError>`](crate::error::GetPushTemplateError)
@@ -849,8 +849,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetRecommenderConfiguration`](crate::client::fluent_builders::GetRecommenderConfiguration) operation.
     ///
-    /// - Takes [`GetRecommenderConfigurationInput`](crate::input::GetRecommenderConfigurationInput) with field(s):
-    ///   - [`recommender_id(Option<String>)`](crate::input::GetRecommenderConfigurationInput::recommender_id): <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`recommender_id(impl Into<String>)`](crate::client::fluent_builders::GetRecommenderConfiguration::recommender_id) / [`set_recommender_id(Option<String>)`](crate::client::fluent_builders::GetRecommenderConfiguration::set_recommender_id): <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetRecommenderConfigurationOutput`](crate::output::GetRecommenderConfigurationOutput) with field(s):
     ///   - [`recommender_configuration_response(Option<RecommenderConfigurationResponse>)`](crate::output::GetRecommenderConfigurationOutput::recommender_configuration_response): <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     /// - On failure, responds with [`SdkError<GetRecommenderConfigurationError>`](crate::error::GetRecommenderConfigurationError)
@@ -861,9 +861,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetRecommenderConfigurations`](crate::client::fluent_builders::GetRecommenderConfigurations) operation.
     ///
-    /// - Takes [`GetRecommenderConfigurationsInput`](crate::input::GetRecommenderConfigurationsInput) with field(s):
-    ///   - [`page_size(Option<String>)`](crate::input::GetRecommenderConfigurationsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetRecommenderConfigurationsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetRecommenderConfigurations::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetRecommenderConfigurations::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetRecommenderConfigurations::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetRecommenderConfigurations::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetRecommenderConfigurationsOutput`](crate::output::GetRecommenderConfigurationsOutput) with field(s):
     ///   - [`list_recommender_configurations_response(Option<ListRecommenderConfigurationsResponse>)`](crate::output::GetRecommenderConfigurationsOutput::list_recommender_configurations_response): <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
     /// - On failure, responds with [`SdkError<GetRecommenderConfigurationsError>`](crate::error::GetRecommenderConfigurationsError)
@@ -874,9 +874,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetSegment`](crate::client::fluent_builders::GetSegment) operation.
     ///
-    /// - Takes [`GetSegmentInput`](crate::input::GetSegmentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetSegmentInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`segment_id(Option<String>)`](crate::input::GetSegmentInput::segment_id): <p>The unique identifier for the segment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetSegment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetSegment::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`segment_id(impl Into<String>)`](crate::client::fluent_builders::GetSegment::segment_id) / [`set_segment_id(Option<String>)`](crate::client::fluent_builders::GetSegment::set_segment_id): <p>The unique identifier for the segment.</p>
     /// - On success, responds with [`GetSegmentOutput`](crate::output::GetSegmentOutput) with field(s):
     ///   - [`segment_response(Option<SegmentResponse>)`](crate::output::GetSegmentOutput::segment_response): <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     /// - On failure, responds with [`SdkError<GetSegmentError>`](crate::error::GetSegmentError)
@@ -885,11 +885,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetSegmentExportJobs`](crate::client::fluent_builders::GetSegmentExportJobs) operation.
     ///
-    /// - Takes [`GetSegmentExportJobsInput`](crate::input::GetSegmentExportJobsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetSegmentExportJobsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetSegmentExportJobsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`segment_id(Option<String>)`](crate::input::GetSegmentExportJobsInput::segment_id): <p>The unique identifier for the segment.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetSegmentExportJobsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetSegmentExportJobs::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetSegmentExportJobs::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetSegmentExportJobs::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetSegmentExportJobs::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`segment_id(impl Into<String>)`](crate::client::fluent_builders::GetSegmentExportJobs::segment_id) / [`set_segment_id(Option<String>)`](crate::client::fluent_builders::GetSegmentExportJobs::set_segment_id): <p>The unique identifier for the segment.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetSegmentExportJobs::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetSegmentExportJobs::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetSegmentExportJobsOutput`](crate::output::GetSegmentExportJobsOutput) with field(s):
     ///   - [`export_jobs_response(Option<ExportJobsResponse>)`](crate::output::GetSegmentExportJobsOutput::export_jobs_response): <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     /// - On failure, responds with [`SdkError<GetSegmentExportJobsError>`](crate::error::GetSegmentExportJobsError)
@@ -898,11 +898,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetSegmentImportJobs`](crate::client::fluent_builders::GetSegmentImportJobs) operation.
     ///
-    /// - Takes [`GetSegmentImportJobsInput`](crate::input::GetSegmentImportJobsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetSegmentImportJobsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetSegmentImportJobsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`segment_id(Option<String>)`](crate::input::GetSegmentImportJobsInput::segment_id): <p>The unique identifier for the segment.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetSegmentImportJobsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetSegmentImportJobs::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetSegmentImportJobs::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetSegmentImportJobs::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetSegmentImportJobs::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`segment_id(impl Into<String>)`](crate::client::fluent_builders::GetSegmentImportJobs::segment_id) / [`set_segment_id(Option<String>)`](crate::client::fluent_builders::GetSegmentImportJobs::set_segment_id): <p>The unique identifier for the segment.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetSegmentImportJobs::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetSegmentImportJobs::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetSegmentImportJobsOutput`](crate::output::GetSegmentImportJobsOutput) with field(s):
     ///   - [`import_jobs_response(Option<ImportJobsResponse>)`](crate::output::GetSegmentImportJobsOutput::import_jobs_response): <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
     /// - On failure, responds with [`SdkError<GetSegmentImportJobsError>`](crate::error::GetSegmentImportJobsError)
@@ -911,10 +911,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetSegments`](crate::client::fluent_builders::GetSegments) operation.
     ///
-    /// - Takes [`GetSegmentsInput`](crate::input::GetSegmentsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetSegmentsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetSegmentsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetSegmentsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetSegments::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetSegments::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetSegments::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetSegments::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetSegments::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetSegments::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetSegmentsOutput`](crate::output::GetSegmentsOutput) with field(s):
     ///   - [`segments_response(Option<SegmentsResponse>)`](crate::output::GetSegmentsOutput::segments_response): <p>Provides information about all the segments that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<GetSegmentsError>`](crate::error::GetSegmentsError)
@@ -923,10 +923,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetSegmentVersion`](crate::client::fluent_builders::GetSegmentVersion) operation.
     ///
-    /// - Takes [`GetSegmentVersionInput`](crate::input::GetSegmentVersionInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetSegmentVersionInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`segment_id(Option<String>)`](crate::input::GetSegmentVersionInput::segment_id): <p>The unique identifier for the segment.</p>
-    ///   - [`version(Option<String>)`](crate::input::GetSegmentVersionInput::version): <p>The unique version number (Version property) for the campaign version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetSegmentVersion::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetSegmentVersion::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`segment_id(impl Into<String>)`](crate::client::fluent_builders::GetSegmentVersion::segment_id) / [`set_segment_id(Option<String>)`](crate::client::fluent_builders::GetSegmentVersion::set_segment_id): <p>The unique identifier for the segment.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetSegmentVersion::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetSegmentVersion::set_version): <p>The unique version number (Version property) for the campaign version.</p>
     /// - On success, responds with [`GetSegmentVersionOutput`](crate::output::GetSegmentVersionOutput) with field(s):
     ///   - [`segment_response(Option<SegmentResponse>)`](crate::output::GetSegmentVersionOutput::segment_response): <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     /// - On failure, responds with [`SdkError<GetSegmentVersionError>`](crate::error::GetSegmentVersionError)
@@ -935,11 +935,11 @@ where
     }
     /// Constructs a fluent builder for the [`GetSegmentVersions`](crate::client::fluent_builders::GetSegmentVersions) operation.
     ///
-    /// - Takes [`GetSegmentVersionsInput`](crate::input::GetSegmentVersionsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetSegmentVersionsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::GetSegmentVersionsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`segment_id(Option<String>)`](crate::input::GetSegmentVersionsInput::segment_id): <p>The unique identifier for the segment.</p>
-    ///   - [`token(Option<String>)`](crate::input::GetSegmentVersionsInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetSegmentVersions::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetSegmentVersions::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::GetSegmentVersions::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::GetSegmentVersions::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`segment_id(impl Into<String>)`](crate::client::fluent_builders::GetSegmentVersions::segment_id) / [`set_segment_id(Option<String>)`](crate::client::fluent_builders::GetSegmentVersions::set_segment_id): <p>The unique identifier for the segment.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetSegmentVersions::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetSegmentVersions::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`GetSegmentVersionsOutput`](crate::output::GetSegmentVersionsOutput) with field(s):
     ///   - [`segments_response(Option<SegmentsResponse>)`](crate::output::GetSegmentVersionsOutput::segments_response): <p>Provides information about all the segments that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<GetSegmentVersionsError>`](crate::error::GetSegmentVersionsError)
@@ -948,8 +948,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSmsChannel`](crate::client::fluent_builders::GetSmsChannel) operation.
     ///
-    /// - Takes [`GetSmsChannelInput`](crate::input::GetSmsChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetSmsChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetSmsChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetSmsChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetSmsChannelOutput`](crate::output::GetSmsChannelOutput) with field(s):
     ///   - [`sms_channel_response(Option<SmsChannelResponse>)`](crate::output::GetSmsChannelOutput::sms_channel_response): <p>Provides information about the status and settings of the SMS channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetSmsChannelError>`](crate::error::GetSmsChannelError)
@@ -958,9 +958,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetSmsTemplate`](crate::client::fluent_builders::GetSmsTemplate) operation.
     ///
-    /// - Takes [`GetSmsTemplateInput`](crate::input::GetSmsTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::GetSmsTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::GetSmsTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetSmsTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetSmsTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetSmsTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetSmsTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`GetSmsTemplateOutput`](crate::output::GetSmsTemplateOutput) with field(s):
     ///   - [`sms_template_response(Option<SmsTemplateResponse>)`](crate::output::GetSmsTemplateOutput::sms_template_response): <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     /// - On failure, responds with [`SdkError<GetSmsTemplateError>`](crate::error::GetSmsTemplateError)
@@ -969,9 +969,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetUserEndpoints`](crate::client::fluent_builders::GetUserEndpoints) operation.
     ///
-    /// - Takes [`GetUserEndpointsInput`](crate::input::GetUserEndpointsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetUserEndpointsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`user_id(Option<String>)`](crate::input::GetUserEndpointsInput::user_id): <p>The unique identifier for the user.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetUserEndpoints::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetUserEndpoints::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::GetUserEndpoints::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::GetUserEndpoints::set_user_id): <p>The unique identifier for the user.</p>
     /// - On success, responds with [`GetUserEndpointsOutput`](crate::output::GetUserEndpointsOutput) with field(s):
     ///   - [`endpoints_response(Option<EndpointsResponse>)`](crate::output::GetUserEndpointsOutput::endpoints_response): <p>Provides information about all the endpoints that are associated with a user ID.</p>
     /// - On failure, responds with [`SdkError<GetUserEndpointsError>`](crate::error::GetUserEndpointsError)
@@ -980,8 +980,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetVoiceChannel`](crate::client::fluent_builders::GetVoiceChannel) operation.
     ///
-    /// - Takes [`GetVoiceChannelInput`](crate::input::GetVoiceChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetVoiceChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetVoiceChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetVoiceChannelOutput`](crate::output::GetVoiceChannelOutput) with field(s):
     ///   - [`voice_channel_response(Option<VoiceChannelResponse>)`](crate::output::GetVoiceChannelOutput::voice_channel_response): <p>Provides information about the status and settings of the voice channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetVoiceChannelError>`](crate::error::GetVoiceChannelError)
@@ -990,9 +990,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetVoiceTemplate`](crate::client::fluent_builders::GetVoiceTemplate) operation.
     ///
-    /// - Takes [`GetVoiceTemplateInput`](crate::input::GetVoiceTemplateInput) with field(s):
-    ///   - [`template_name(Option<String>)`](crate::input::GetVoiceTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::GetVoiceTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::GetVoiceTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::GetVoiceTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetVoiceTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetVoiceTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`GetVoiceTemplateOutput`](crate::output::GetVoiceTemplateOutput) with field(s):
     ///   - [`voice_template_response(Option<VoiceTemplateResponse>)`](crate::output::GetVoiceTemplateOutput::voice_template_response): <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     /// - On failure, responds with [`SdkError<GetVoiceTemplateError>`](crate::error::GetVoiceTemplateError)
@@ -1001,10 +1001,10 @@ where
     }
     /// Constructs a fluent builder for the [`ListJourneys`](crate::client::fluent_builders::ListJourneys) operation.
     ///
-    /// - Takes [`ListJourneysInput`](crate::input::ListJourneysInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::ListJourneysInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::ListJourneysInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`token(Option<String>)`](crate::input::ListJourneysInput::token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListJourneys::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListJourneys::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::ListJourneys::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::ListJourneys::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::ListJourneys::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::ListJourneys::set_token): <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
     /// - On success, responds with [`ListJourneysOutput`](crate::output::ListJourneysOutput) with field(s):
     ///   - [`journeys_response(Option<JourneysResponse>)`](crate::output::ListJourneysOutput::journeys_response): <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<ListJourneysError>`](crate::error::ListJourneysError)
@@ -1013,8 +1013,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags_model(Option<TagsModel>)`](crate::output::ListTagsForResourceOutput::tags_model): <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -1023,11 +1023,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListTemplates`](crate::client::fluent_builders::ListTemplates) operation.
     ///
-    /// - Takes [`ListTemplatesInput`](crate::input::ListTemplatesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListTemplatesInput::next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::ListTemplatesInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`prefix(Option<String>)`](crate::input::ListTemplatesInput::prefix): <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
-    ///   - [`template_type(Option<String>)`](crate::input::ListTemplatesInput::template_type): <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTemplates::set_next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::ListTemplates::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::ListTemplates::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`prefix(impl Into<String>)`](crate::client::fluent_builders::ListTemplates::prefix) / [`set_prefix(Option<String>)`](crate::client::fluent_builders::ListTemplates::set_prefix): <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
+    ///   - [`template_type(impl Into<String>)`](crate::client::fluent_builders::ListTemplates::template_type) / [`set_template_type(Option<String>)`](crate::client::fluent_builders::ListTemplates::set_template_type): <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
     /// - On success, responds with [`ListTemplatesOutput`](crate::output::ListTemplatesOutput) with field(s):
     ///   - [`templates_response(Option<TemplatesResponse>)`](crate::output::ListTemplatesOutput::templates_response): <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
     /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::error::ListTemplatesError)
@@ -1036,11 +1036,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListTemplateVersions`](crate::client::fluent_builders::ListTemplateVersions) operation.
     ///
-    /// - Takes [`ListTemplateVersionsInput`](crate::input::ListTemplateVersionsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListTemplateVersionsInput::next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`page_size(Option<String>)`](crate::input::ListTemplateVersionsInput::page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::ListTemplateVersionsInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`template_type(Option<String>)`](crate::input::ListTemplateVersionsInput::template_type): <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTemplateVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTemplateVersions::set_next_token): <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`page_size(impl Into<String>)`](crate::client::fluent_builders::ListTemplateVersions::page_size) / [`set_page_size(Option<String>)`](crate::client::fluent_builders::ListTemplateVersions::set_page_size): <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::ListTemplateVersions::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::ListTemplateVersions::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`template_type(impl Into<String>)`](crate::client::fluent_builders::ListTemplateVersions::template_type) / [`set_template_type(Option<String>)`](crate::client::fluent_builders::ListTemplateVersions::set_template_type): <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     /// - On success, responds with [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput) with field(s):
     ///   - [`template_versions_response(Option<TemplateVersionsResponse>)`](crate::output::ListTemplateVersionsOutput::template_versions_response): <p>Provides information about all the versions of a specific message template.</p>
     /// - On failure, responds with [`SdkError<ListTemplateVersionsError>`](crate::error::ListTemplateVersionsError)
@@ -1049,8 +1049,8 @@ where
     }
     /// Constructs a fluent builder for the [`PhoneNumberValidate`](crate::client::fluent_builders::PhoneNumberValidate) operation.
     ///
-    /// - Takes [`PhoneNumberValidateInput`](crate::input::PhoneNumberValidateInput) with field(s):
-    ///   - [`number_validate_request(Option<NumberValidateRequest>)`](crate::input::PhoneNumberValidateInput::number_validate_request): <p>Specifies a phone number to validate and retrieve information about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`number_validate_request(NumberValidateRequest)`](crate::client::fluent_builders::PhoneNumberValidate::number_validate_request) / [`set_number_validate_request(Option<NumberValidateRequest>)`](crate::client::fluent_builders::PhoneNumberValidate::set_number_validate_request): <p>Specifies a phone number to validate and retrieve information about.</p>
     /// - On success, responds with [`PhoneNumberValidateOutput`](crate::output::PhoneNumberValidateOutput) with field(s):
     ///   - [`number_validate_response(Option<NumberValidateResponse>)`](crate::output::PhoneNumberValidateOutput::number_validate_response): <p>Provides information about a phone number.</p>
     /// - On failure, responds with [`SdkError<PhoneNumberValidateError>`](crate::error::PhoneNumberValidateError)
@@ -1059,9 +1059,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutEvents`](crate::client::fluent_builders::PutEvents) operation.
     ///
-    /// - Takes [`PutEventsInput`](crate::input::PutEventsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::PutEventsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`events_request(Option<EventsRequest>)`](crate::input::PutEventsInput::events_request): <p>Specifies a batch of events to process.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::PutEvents::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::PutEvents::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`events_request(EventsRequest)`](crate::client::fluent_builders::PutEvents::events_request) / [`set_events_request(Option<EventsRequest>)`](crate::client::fluent_builders::PutEvents::set_events_request): <p>Specifies a batch of events to process.</p>
     /// - On success, responds with [`PutEventsOutput`](crate::output::PutEventsOutput) with field(s):
     ///   - [`events_response(Option<EventsResponse>)`](crate::output::PutEventsOutput::events_response): <p>Provides information about endpoints and the events that they're associated with.</p>
     /// - On failure, responds with [`SdkError<PutEventsError>`](crate::error::PutEventsError)
@@ -1070,9 +1070,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutEventStream`](crate::client::fluent_builders::PutEventStream) operation.
     ///
-    /// - Takes [`PutEventStreamInput`](crate::input::PutEventStreamInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::PutEventStreamInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`write_event_stream(Option<WriteEventStream>)`](crate::input::PutEventStreamInput::write_event_stream): <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::PutEventStream::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::PutEventStream::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`write_event_stream(WriteEventStream)`](crate::client::fluent_builders::PutEventStream::write_event_stream) / [`set_write_event_stream(Option<WriteEventStream>)`](crate::client::fluent_builders::PutEventStream::set_write_event_stream): <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
     /// - On success, responds with [`PutEventStreamOutput`](crate::output::PutEventStreamOutput) with field(s):
     ///   - [`event_stream(Option<EventStream>)`](crate::output::PutEventStreamOutput::event_stream): <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     /// - On failure, responds with [`SdkError<PutEventStreamError>`](crate::error::PutEventStreamError)
@@ -1081,10 +1081,10 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveAttributes`](crate::client::fluent_builders::RemoveAttributes) operation.
     ///
-    /// - Takes [`RemoveAttributesInput`](crate::input::RemoveAttributesInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::RemoveAttributesInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`attribute_type(Option<String>)`](crate::input::RemoveAttributesInput::attribute_type): <p>The type of attribute or attributes to remove. Valid values are:</p>  <ul>  <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>   <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>   <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li> </ul>
-    ///   - [`update_attributes_request(Option<UpdateAttributesRequest>)`](crate::input::RemoveAttributesInput::update_attributes_request): <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::RemoveAttributes::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::RemoveAttributes::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`attribute_type(impl Into<String>)`](crate::client::fluent_builders::RemoveAttributes::attribute_type) / [`set_attribute_type(Option<String>)`](crate::client::fluent_builders::RemoveAttributes::set_attribute_type): <p>The type of attribute or attributes to remove. Valid values are:</p>  <ul>  <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>   <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>   <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li> </ul>
+    ///   - [`update_attributes_request(UpdateAttributesRequest)`](crate::client::fluent_builders::RemoveAttributes::update_attributes_request) / [`set_update_attributes_request(Option<UpdateAttributesRequest>)`](crate::client::fluent_builders::RemoveAttributes::set_update_attributes_request): <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
     /// - On success, responds with [`RemoveAttributesOutput`](crate::output::RemoveAttributesOutput) with field(s):
     ///   - [`attributes_resource(Option<AttributesResource>)`](crate::output::RemoveAttributesOutput::attributes_resource): <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<RemoveAttributesError>`](crate::error::RemoveAttributesError)
@@ -1093,9 +1093,9 @@ where
     }
     /// Constructs a fluent builder for the [`SendMessages`](crate::client::fluent_builders::SendMessages) operation.
     ///
-    /// - Takes [`SendMessagesInput`](crate::input::SendMessagesInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::SendMessagesInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`message_request(Option<MessageRequest>)`](crate::input::SendMessagesInput::message_request): <p>Specifies the configuration and other settings for a message.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::SendMessages::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::SendMessages::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`message_request(MessageRequest)`](crate::client::fluent_builders::SendMessages::message_request) / [`set_message_request(Option<MessageRequest>)`](crate::client::fluent_builders::SendMessages::set_message_request): <p>Specifies the configuration and other settings for a message.</p>
     /// - On success, responds with [`SendMessagesOutput`](crate::output::SendMessagesOutput) with field(s):
     ///   - [`message_response(Option<MessageResponse>)`](crate::output::SendMessagesOutput::message_response): <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     /// - On failure, responds with [`SdkError<SendMessagesError>`](crate::error::SendMessagesError)
@@ -1104,9 +1104,9 @@ where
     }
     /// Constructs a fluent builder for the [`SendOTPMessage`](crate::client::fluent_builders::SendOTPMessage) operation.
     ///
-    /// - Takes [`SendOtpMessageInput`](crate::input::SendOtpMessageInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::SendOtpMessageInput::application_id): <p>The unique ID of your Amazon Pinpoint application.</p>
-    ///   - [`send_otp_message_request_parameters(Option<SendOtpMessageRequestParameters>)`](crate::input::SendOtpMessageInput::send_otp_message_request_parameters): <p>Send OTP message request parameters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::SendOTPMessage::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::SendOTPMessage::set_application_id): <p>The unique ID of your Amazon Pinpoint application.</p>
+    ///   - [`send_otp_message_request_parameters(SendOtpMessageRequestParameters)`](crate::client::fluent_builders::SendOTPMessage::send_otp_message_request_parameters) / [`set_send_otp_message_request_parameters(Option<SendOtpMessageRequestParameters>)`](crate::client::fluent_builders::SendOTPMessage::set_send_otp_message_request_parameters): <p>Send OTP message request parameters.</p>
     /// - On success, responds with [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput) with field(s):
     ///   - [`message_response(Option<MessageResponse>)`](crate::output::SendOtpMessageOutput::message_response): <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     /// - On failure, responds with [`SdkError<SendOTPMessageError>`](crate::error::SendOTPMessageError)
@@ -1115,9 +1115,9 @@ where
     }
     /// Constructs a fluent builder for the [`SendUsersMessages`](crate::client::fluent_builders::SendUsersMessages) operation.
     ///
-    /// - Takes [`SendUsersMessagesInput`](crate::input::SendUsersMessagesInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::SendUsersMessagesInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`send_users_message_request(Option<SendUsersMessageRequest>)`](crate::input::SendUsersMessagesInput::send_users_message_request): <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::SendUsersMessages::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::SendUsersMessages::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`send_users_message_request(SendUsersMessageRequest)`](crate::client::fluent_builders::SendUsersMessages::send_users_message_request) / [`set_send_users_message_request(Option<SendUsersMessageRequest>)`](crate::client::fluent_builders::SendUsersMessages::set_send_users_message_request): <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
     /// - On success, responds with [`SendUsersMessagesOutput`](crate::output::SendUsersMessagesOutput) with field(s):
     ///   - [`send_users_message_response(Option<SendUsersMessageResponse>)`](crate::output::SendUsersMessagesOutput::send_users_message_response): <p>Provides information about which users and endpoints a message was sent to.</p>
     /// - On failure, responds with [`SdkError<SendUsersMessagesError>`](crate::error::SendUsersMessagesError)
@@ -1126,9 +1126,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags_model(Option<TagsModel>)`](crate::input::TagResourceInput::tags_model): <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags_model(TagsModel)`](crate::client::fluent_builders::TagResource::tags_model) / [`set_tags_model(Option<TagsModel>)`](crate::client::fluent_builders::TagResource::set_tags_model): <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -1137,9 +1137,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -1148,9 +1148,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAdmChannel`](crate::client::fluent_builders::UpdateAdmChannel) operation.
     ///
-    /// - Takes [`UpdateAdmChannelInput`](crate::input::UpdateAdmChannelInput) with field(s):
-    ///   - [`adm_channel_request(Option<AdmChannelRequest>)`](crate::input::UpdateAdmChannelInput::adm_channel_request): <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateAdmChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`adm_channel_request(AdmChannelRequest)`](crate::client::fluent_builders::UpdateAdmChannel::adm_channel_request) / [`set_adm_channel_request(Option<AdmChannelRequest>)`](crate::client::fluent_builders::UpdateAdmChannel::set_adm_channel_request): <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAdmChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateAdmChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`UpdateAdmChannelOutput`](crate::output::UpdateAdmChannelOutput) with field(s):
     ///   - [`adm_channel_response(Option<AdmChannelResponse>)`](crate::output::UpdateAdmChannelOutput::adm_channel_response): <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateAdmChannelError>`](crate::error::UpdateAdmChannelError)
@@ -1159,9 +1159,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApnsChannel`](crate::client::fluent_builders::UpdateApnsChannel) operation.
     ///
-    /// - Takes [`UpdateApnsChannelInput`](crate::input::UpdateApnsChannelInput) with field(s):
-    ///   - [`apns_channel_request(Option<ApnsChannelRequest>)`](crate::input::UpdateApnsChannelInput::apns_channel_request): <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateApnsChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`apns_channel_request(ApnsChannelRequest)`](crate::client::fluent_builders::UpdateApnsChannel::apns_channel_request) / [`set_apns_channel_request(Option<ApnsChannelRequest>)`](crate::client::fluent_builders::UpdateApnsChannel::set_apns_channel_request): <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApnsChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApnsChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`UpdateApnsChannelOutput`](crate::output::UpdateApnsChannelOutput) with field(s):
     ///   - [`apns_channel_response(Option<ApnsChannelResponse>)`](crate::output::UpdateApnsChannelOutput::apns_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateApnsChannelError>`](crate::error::UpdateApnsChannelError)
@@ -1170,9 +1170,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApnsSandboxChannel`](crate::client::fluent_builders::UpdateApnsSandboxChannel) operation.
     ///
-    /// - Takes [`UpdateApnsSandboxChannelInput`](crate::input::UpdateApnsSandboxChannelInput) with field(s):
-    ///   - [`apns_sandbox_channel_request(Option<ApnsSandboxChannelRequest>)`](crate::input::UpdateApnsSandboxChannelInput::apns_sandbox_channel_request): <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateApnsSandboxChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`apns_sandbox_channel_request(ApnsSandboxChannelRequest)`](crate::client::fluent_builders::UpdateApnsSandboxChannel::apns_sandbox_channel_request) / [`set_apns_sandbox_channel_request(Option<ApnsSandboxChannelRequest>)`](crate::client::fluent_builders::UpdateApnsSandboxChannel::set_apns_sandbox_channel_request): <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApnsSandboxChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApnsSandboxChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`UpdateApnsSandboxChannelOutput`](crate::output::UpdateApnsSandboxChannelOutput) with field(s):
     ///   - [`apns_sandbox_channel_response(Option<ApnsSandboxChannelResponse>)`](crate::output::UpdateApnsSandboxChannelOutput::apns_sandbox_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateApnsSandboxChannelError>`](crate::error::UpdateApnsSandboxChannelError)
@@ -1183,9 +1183,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApnsVoipChannel`](crate::client::fluent_builders::UpdateApnsVoipChannel) operation.
     ///
-    /// - Takes [`UpdateApnsVoipChannelInput`](crate::input::UpdateApnsVoipChannelInput) with field(s):
-    ///   - [`apns_voip_channel_request(Option<ApnsVoipChannelRequest>)`](crate::input::UpdateApnsVoipChannelInput::apns_voip_channel_request): <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateApnsVoipChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`apns_voip_channel_request(ApnsVoipChannelRequest)`](crate::client::fluent_builders::UpdateApnsVoipChannel::apns_voip_channel_request) / [`set_apns_voip_channel_request(Option<ApnsVoipChannelRequest>)`](crate::client::fluent_builders::UpdateApnsVoipChannel::set_apns_voip_channel_request): <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApnsVoipChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApnsVoipChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`UpdateApnsVoipChannelOutput`](crate::output::UpdateApnsVoipChannelOutput) with field(s):
     ///   - [`apns_voip_channel_response(Option<ApnsVoipChannelResponse>)`](crate::output::UpdateApnsVoipChannelOutput::apns_voip_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateApnsVoipChannelError>`](crate::error::UpdateApnsVoipChannelError)
@@ -1194,9 +1194,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApnsVoipSandboxChannel`](crate::client::fluent_builders::UpdateApnsVoipSandboxChannel) operation.
     ///
-    /// - Takes [`UpdateApnsVoipSandboxChannelInput`](crate::input::UpdateApnsVoipSandboxChannelInput) with field(s):
-    ///   - [`apns_voip_sandbox_channel_request(Option<ApnsVoipSandboxChannelRequest>)`](crate::input::UpdateApnsVoipSandboxChannelInput::apns_voip_sandbox_channel_request): <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateApnsVoipSandboxChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`apns_voip_sandbox_channel_request(ApnsVoipSandboxChannelRequest)`](crate::client::fluent_builders::UpdateApnsVoipSandboxChannel::apns_voip_sandbox_channel_request) / [`set_apns_voip_sandbox_channel_request(Option<ApnsVoipSandboxChannelRequest>)`](crate::client::fluent_builders::UpdateApnsVoipSandboxChannel::set_apns_voip_sandbox_channel_request): <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApnsVoipSandboxChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApnsVoipSandboxChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`UpdateApnsVoipSandboxChannelOutput`](crate::output::UpdateApnsVoipSandboxChannelOutput) with field(s):
     ///   - [`apns_voip_sandbox_channel_response(Option<ApnsVoipSandboxChannelResponse>)`](crate::output::UpdateApnsVoipSandboxChannelOutput::apns_voip_sandbox_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateApnsVoipSandboxChannelError>`](crate::error::UpdateApnsVoipSandboxChannelError)
@@ -1207,9 +1207,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApplicationSettings`](crate::client::fluent_builders::UpdateApplicationSettings) operation.
     ///
-    /// - Takes [`UpdateApplicationSettingsInput`](crate::input::UpdateApplicationSettingsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateApplicationSettingsInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`write_application_settings_request(Option<WriteApplicationSettingsRequest>)`](crate::input::UpdateApplicationSettingsInput::write_application_settings_request): <p>Specifies the default settings for an application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApplicationSettings::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApplicationSettings::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`write_application_settings_request(WriteApplicationSettingsRequest)`](crate::client::fluent_builders::UpdateApplicationSettings::write_application_settings_request) / [`set_write_application_settings_request(Option<WriteApplicationSettingsRequest>)`](crate::client::fluent_builders::UpdateApplicationSettings::set_write_application_settings_request): <p>Specifies the default settings for an application.</p>
     /// - On success, responds with [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput) with field(s):
     ///   - [`application_settings_resource(Option<ApplicationSettingsResource>)`](crate::output::UpdateApplicationSettingsOutput::application_settings_resource): <p>Provides information about an application, including the default settings for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationSettingsError>`](crate::error::UpdateApplicationSettingsError)
@@ -1220,9 +1220,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateBaiduChannel`](crate::client::fluent_builders::UpdateBaiduChannel) operation.
     ///
-    /// - Takes [`UpdateBaiduChannelInput`](crate::input::UpdateBaiduChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateBaiduChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`baidu_channel_request(Option<BaiduChannelRequest>)`](crate::input::UpdateBaiduChannelInput::baidu_channel_request): <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBaiduChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateBaiduChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`baidu_channel_request(BaiduChannelRequest)`](crate::client::fluent_builders::UpdateBaiduChannel::baidu_channel_request) / [`set_baidu_channel_request(Option<BaiduChannelRequest>)`](crate::client::fluent_builders::UpdateBaiduChannel::set_baidu_channel_request): <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     /// - On success, responds with [`UpdateBaiduChannelOutput`](crate::output::UpdateBaiduChannelOutput) with field(s):
     ///   - [`baidu_channel_response(Option<BaiduChannelResponse>)`](crate::output::UpdateBaiduChannelOutput::baidu_channel_response): <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateBaiduChannelError>`](crate::error::UpdateBaiduChannelError)
@@ -1231,10 +1231,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateCampaign`](crate::client::fluent_builders::UpdateCampaign) operation.
     ///
-    /// - Takes [`UpdateCampaignInput`](crate::input::UpdateCampaignInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateCampaignInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`campaign_id(Option<String>)`](crate::input::UpdateCampaignInput::campaign_id): <p>The unique identifier for the campaign.</p>
-    ///   - [`write_campaign_request(Option<WriteCampaignRequest>)`](crate::input::UpdateCampaignInput::write_campaign_request): <p>Specifies the configuration and other settings for a campaign.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaign::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateCampaign::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaign::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::UpdateCampaign::set_campaign_id): <p>The unique identifier for the campaign.</p>
+    ///   - [`write_campaign_request(WriteCampaignRequest)`](crate::client::fluent_builders::UpdateCampaign::write_campaign_request) / [`set_write_campaign_request(Option<WriteCampaignRequest>)`](crate::client::fluent_builders::UpdateCampaign::set_write_campaign_request): <p>Specifies the configuration and other settings for a campaign.</p>
     /// - On success, responds with [`UpdateCampaignOutput`](crate::output::UpdateCampaignOutput) with field(s):
     ///   - [`campaign_response(Option<CampaignResponse>)`](crate::output::UpdateCampaignOutput::campaign_response): <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     /// - On failure, responds with [`SdkError<UpdateCampaignError>`](crate::error::UpdateCampaignError)
@@ -1243,9 +1243,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEmailChannel`](crate::client::fluent_builders::UpdateEmailChannel) operation.
     ///
-    /// - Takes [`UpdateEmailChannelInput`](crate::input::UpdateEmailChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateEmailChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`email_channel_request(Option<EmailChannelRequest>)`](crate::input::UpdateEmailChannelInput::email_channel_request): <p>Specifies the status and settings of the email channel for an application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEmailChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateEmailChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`email_channel_request(EmailChannelRequest)`](crate::client::fluent_builders::UpdateEmailChannel::email_channel_request) / [`set_email_channel_request(Option<EmailChannelRequest>)`](crate::client::fluent_builders::UpdateEmailChannel::set_email_channel_request): <p>Specifies the status and settings of the email channel for an application.</p>
     /// - On success, responds with [`UpdateEmailChannelOutput`](crate::output::UpdateEmailChannelOutput) with field(s):
     ///   - [`email_channel_response(Option<EmailChannelResponse>)`](crate::output::UpdateEmailChannelOutput::email_channel_response): <p>Provides information about the status and settings of the email channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateEmailChannelError>`](crate::error::UpdateEmailChannelError)
@@ -1254,11 +1254,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEmailTemplate`](crate::client::fluent_builders::UpdateEmailTemplate) operation.
     ///
-    /// - Takes [`UpdateEmailTemplateInput`](crate::input::UpdateEmailTemplateInput) with field(s):
-    ///   - [`create_new_version(bool)`](crate::input::UpdateEmailTemplateInput::create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-    ///   - [`email_template_request(Option<EmailTemplateRequest>)`](crate::input::UpdateEmailTemplateInput::email_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::UpdateEmailTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::UpdateEmailTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`create_new_version(bool)`](crate::client::fluent_builders::UpdateEmailTemplate::create_new_version) / [`set_create_new_version(bool)`](crate::client::fluent_builders::UpdateEmailTemplate::set_create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    ///   - [`email_template_request(EmailTemplateRequest)`](crate::client::fluent_builders::UpdateEmailTemplate::email_template_request) / [`set_email_template_request(Option<EmailTemplateRequest>)`](crate::client::fluent_builders::UpdateEmailTemplate::set_email_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEmailTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateEmailTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::UpdateEmailTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::UpdateEmailTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::UpdateEmailTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateEmailTemplateError>`](crate::error::UpdateEmailTemplateError)
@@ -1267,10 +1267,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEndpoint`](crate::client::fluent_builders::UpdateEndpoint) operation.
     ///
-    /// - Takes [`UpdateEndpointInput`](crate::input::UpdateEndpointInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateEndpointInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`endpoint_id(Option<String>)`](crate::input::UpdateEndpointInput::endpoint_id): <p>The unique identifier for the endpoint.</p>
-    ///   - [`endpoint_request(Option<EndpointRequest>)`](crate::input::UpdateEndpointInput::endpoint_request): <p>Specifies the channel type and other settings for an endpoint.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpoint::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateEndpoint::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpoint::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::UpdateEndpoint::set_endpoint_id): <p>The unique identifier for the endpoint.</p>
+    ///   - [`endpoint_request(EndpointRequest)`](crate::client::fluent_builders::UpdateEndpoint::endpoint_request) / [`set_endpoint_request(Option<EndpointRequest>)`](crate::client::fluent_builders::UpdateEndpoint::set_endpoint_request): <p>Specifies the channel type and other settings for an endpoint.</p>
     /// - On success, responds with [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::UpdateEndpointOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointError>`](crate::error::UpdateEndpointError)
@@ -1279,9 +1279,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEndpointsBatch`](crate::client::fluent_builders::UpdateEndpointsBatch) operation.
     ///
-    /// - Takes [`UpdateEndpointsBatchInput`](crate::input::UpdateEndpointsBatchInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateEndpointsBatchInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`endpoint_batch_request(Option<EndpointBatchRequest>)`](crate::input::UpdateEndpointsBatchInput::endpoint_batch_request): <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpointsBatch::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateEndpointsBatch::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`endpoint_batch_request(EndpointBatchRequest)`](crate::client::fluent_builders::UpdateEndpointsBatch::endpoint_batch_request) / [`set_endpoint_batch_request(Option<EndpointBatchRequest>)`](crate::client::fluent_builders::UpdateEndpointsBatch::set_endpoint_batch_request): <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
     /// - On success, responds with [`UpdateEndpointsBatchOutput`](crate::output::UpdateEndpointsBatchOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::UpdateEndpointsBatchOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointsBatchError>`](crate::error::UpdateEndpointsBatchError)
@@ -1290,9 +1290,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateGcmChannel`](crate::client::fluent_builders::UpdateGcmChannel) operation.
     ///
-    /// - Takes [`UpdateGcmChannelInput`](crate::input::UpdateGcmChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateGcmChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`gcm_channel_request(Option<GcmChannelRequest>)`](crate::input::UpdateGcmChannelInput::gcm_channel_request): <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGcmChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateGcmChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`gcm_channel_request(GcmChannelRequest)`](crate::client::fluent_builders::UpdateGcmChannel::gcm_channel_request) / [`set_gcm_channel_request(Option<GcmChannelRequest>)`](crate::client::fluent_builders::UpdateGcmChannel::set_gcm_channel_request): <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     /// - On success, responds with [`UpdateGcmChannelOutput`](crate::output::UpdateGcmChannelOutput) with field(s):
     ///   - [`gcm_channel_response(Option<GcmChannelResponse>)`](crate::output::UpdateGcmChannelOutput::gcm_channel_response): <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     /// - On failure, responds with [`SdkError<UpdateGcmChannelError>`](crate::error::UpdateGcmChannelError)
@@ -1301,11 +1301,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateInAppTemplate`](crate::client::fluent_builders::UpdateInAppTemplate) operation.
     ///
-    /// - Takes [`UpdateInAppTemplateInput`](crate::input::UpdateInAppTemplateInput) with field(s):
-    ///   - [`create_new_version(bool)`](crate::input::UpdateInAppTemplateInput::create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-    ///   - [`in_app_template_request(Option<InAppTemplateRequest>)`](crate::input::UpdateInAppTemplateInput::in_app_template_request): <p>InApp Template Request.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::UpdateInAppTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::UpdateInAppTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`create_new_version(bool)`](crate::client::fluent_builders::UpdateInAppTemplate::create_new_version) / [`set_create_new_version(bool)`](crate::client::fluent_builders::UpdateInAppTemplate::set_create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    ///   - [`in_app_template_request(InAppTemplateRequest)`](crate::client::fluent_builders::UpdateInAppTemplate::in_app_template_request) / [`set_in_app_template_request(Option<InAppTemplateRequest>)`](crate::client::fluent_builders::UpdateInAppTemplate::set_in_app_template_request): <p>InApp Template Request.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateInAppTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateInAppTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::UpdateInAppTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::UpdateInAppTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::UpdateInAppTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateInAppTemplateError>`](crate::error::UpdateInAppTemplateError)
@@ -1314,10 +1314,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateJourney`](crate::client::fluent_builders::UpdateJourney) operation.
     ///
-    /// - Takes [`UpdateJourneyInput`](crate::input::UpdateJourneyInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateJourneyInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`journey_id(Option<String>)`](crate::input::UpdateJourneyInput::journey_id): <p>The unique identifier for the journey.</p>
-    ///   - [`write_journey_request(Option<WriteJourneyRequest>)`](crate::input::UpdateJourneyInput::write_journey_request): <p>Specifies the configuration and other settings for a journey.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJourney::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateJourney::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`journey_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJourney::journey_id) / [`set_journey_id(Option<String>)`](crate::client::fluent_builders::UpdateJourney::set_journey_id): <p>The unique identifier for the journey.</p>
+    ///   - [`write_journey_request(WriteJourneyRequest)`](crate::client::fluent_builders::UpdateJourney::write_journey_request) / [`set_write_journey_request(Option<WriteJourneyRequest>)`](crate::client::fluent_builders::UpdateJourney::set_write_journey_request): <p>Specifies the configuration and other settings for a journey.</p>
     /// - On success, responds with [`UpdateJourneyOutput`](crate::output::UpdateJourneyOutput) with field(s):
     ///   - [`journey_response(Option<JourneyResponse>)`](crate::output::UpdateJourneyOutput::journey_response): <p>Provides information about the status, configuration, and other settings for a journey.</p>
     /// - On failure, responds with [`SdkError<UpdateJourneyError>`](crate::error::UpdateJourneyError)
@@ -1326,10 +1326,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateJourneyState`](crate::client::fluent_builders::UpdateJourneyState) operation.
     ///
-    /// - Takes [`UpdateJourneyStateInput`](crate::input::UpdateJourneyStateInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateJourneyStateInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`journey_id(Option<String>)`](crate::input::UpdateJourneyStateInput::journey_id): <p>The unique identifier for the journey.</p>
-    ///   - [`journey_state_request(Option<JourneyStateRequest>)`](crate::input::UpdateJourneyStateInput::journey_state_request): <p>Changes the status of a journey.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJourneyState::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateJourneyState::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`journey_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJourneyState::journey_id) / [`set_journey_id(Option<String>)`](crate::client::fluent_builders::UpdateJourneyState::set_journey_id): <p>The unique identifier for the journey.</p>
+    ///   - [`journey_state_request(JourneyStateRequest)`](crate::client::fluent_builders::UpdateJourneyState::journey_state_request) / [`set_journey_state_request(Option<JourneyStateRequest>)`](crate::client::fluent_builders::UpdateJourneyState::set_journey_state_request): <p>Changes the status of a journey.</p>
     /// - On success, responds with [`UpdateJourneyStateOutput`](crate::output::UpdateJourneyStateOutput) with field(s):
     ///   - [`journey_response(Option<JourneyResponse>)`](crate::output::UpdateJourneyStateOutput::journey_response): <p>Provides information about the status, configuration, and other settings for a journey.</p>
     /// - On failure, responds with [`SdkError<UpdateJourneyStateError>`](crate::error::UpdateJourneyStateError)
@@ -1338,11 +1338,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdatePushTemplate`](crate::client::fluent_builders::UpdatePushTemplate) operation.
     ///
-    /// - Takes [`UpdatePushTemplateInput`](crate::input::UpdatePushTemplateInput) with field(s):
-    ///   - [`create_new_version(bool)`](crate::input::UpdatePushTemplateInput::create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-    ///   - [`push_notification_template_request(Option<PushNotificationTemplateRequest>)`](crate::input::UpdatePushTemplateInput::push_notification_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::UpdatePushTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::UpdatePushTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`create_new_version(bool)`](crate::client::fluent_builders::UpdatePushTemplate::create_new_version) / [`set_create_new_version(bool)`](crate::client::fluent_builders::UpdatePushTemplate::set_create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    ///   - [`push_notification_template_request(PushNotificationTemplateRequest)`](crate::client::fluent_builders::UpdatePushTemplate::push_notification_template_request) / [`set_push_notification_template_request(Option<PushNotificationTemplateRequest>)`](crate::client::fluent_builders::UpdatePushTemplate::set_push_notification_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePushTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdatePushTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::UpdatePushTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::UpdatePushTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`UpdatePushTemplateOutput`](crate::output::UpdatePushTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::UpdatePushTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdatePushTemplateError>`](crate::error::UpdatePushTemplateError)
@@ -1351,9 +1351,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateRecommenderConfiguration`](crate::client::fluent_builders::UpdateRecommenderConfiguration) operation.
     ///
-    /// - Takes [`UpdateRecommenderConfigurationInput`](crate::input::UpdateRecommenderConfigurationInput) with field(s):
-    ///   - [`recommender_id(Option<String>)`](crate::input::UpdateRecommenderConfigurationInput::recommender_id): <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`update_recommender_configuration(Option<UpdateRecommenderConfigurationShape>)`](crate::input::UpdateRecommenderConfigurationInput::update_recommender_configuration): <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`recommender_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRecommenderConfiguration::recommender_id) / [`set_recommender_id(Option<String>)`](crate::client::fluent_builders::UpdateRecommenderConfiguration::set_recommender_id): <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`update_recommender_configuration(UpdateRecommenderConfigurationShape)`](crate::client::fluent_builders::UpdateRecommenderConfiguration::update_recommender_configuration) / [`set_update_recommender_configuration(Option<UpdateRecommenderConfigurationShape>)`](crate::client::fluent_builders::UpdateRecommenderConfiguration::set_update_recommender_configuration): <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     /// - On success, responds with [`UpdateRecommenderConfigurationOutput`](crate::output::UpdateRecommenderConfigurationOutput) with field(s):
     ///   - [`recommender_configuration_response(Option<RecommenderConfigurationResponse>)`](crate::output::UpdateRecommenderConfigurationOutput::recommender_configuration_response): <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     /// - On failure, responds with [`SdkError<UpdateRecommenderConfigurationError>`](crate::error::UpdateRecommenderConfigurationError)
@@ -1364,10 +1364,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSegment`](crate::client::fluent_builders::UpdateSegment) operation.
     ///
-    /// - Takes [`UpdateSegmentInput`](crate::input::UpdateSegmentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateSegmentInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`segment_id(Option<String>)`](crate::input::UpdateSegmentInput::segment_id): <p>The unique identifier for the segment.</p>
-    ///   - [`write_segment_request(Option<WriteSegmentRequest>)`](crate::input::UpdateSegmentInput::write_segment_request): <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSegment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateSegment::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`segment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSegment::segment_id) / [`set_segment_id(Option<String>)`](crate::client::fluent_builders::UpdateSegment::set_segment_id): <p>The unique identifier for the segment.</p>
+    ///   - [`write_segment_request(WriteSegmentRequest)`](crate::client::fluent_builders::UpdateSegment::write_segment_request) / [`set_write_segment_request(Option<WriteSegmentRequest>)`](crate::client::fluent_builders::UpdateSegment::set_write_segment_request): <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
     /// - On success, responds with [`UpdateSegmentOutput`](crate::output::UpdateSegmentOutput) with field(s):
     ///   - [`segment_response(Option<SegmentResponse>)`](crate::output::UpdateSegmentOutput::segment_response): <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     /// - On failure, responds with [`SdkError<UpdateSegmentError>`](crate::error::UpdateSegmentError)
@@ -1376,9 +1376,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSmsChannel`](crate::client::fluent_builders::UpdateSmsChannel) operation.
     ///
-    /// - Takes [`UpdateSmsChannelInput`](crate::input::UpdateSmsChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateSmsChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`sms_channel_request(Option<SmsChannelRequest>)`](crate::input::UpdateSmsChannelInput::sms_channel_request): <p>Specifies the status and settings of the SMS channel for an application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSmsChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateSmsChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`sms_channel_request(SmsChannelRequest)`](crate::client::fluent_builders::UpdateSmsChannel::sms_channel_request) / [`set_sms_channel_request(Option<SmsChannelRequest>)`](crate::client::fluent_builders::UpdateSmsChannel::set_sms_channel_request): <p>Specifies the status and settings of the SMS channel for an application.</p>
     /// - On success, responds with [`UpdateSmsChannelOutput`](crate::output::UpdateSmsChannelOutput) with field(s):
     ///   - [`sms_channel_response(Option<SmsChannelResponse>)`](crate::output::UpdateSmsChannelOutput::sms_channel_response): <p>Provides information about the status and settings of the SMS channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateSmsChannelError>`](crate::error::UpdateSmsChannelError)
@@ -1387,11 +1387,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateSmsTemplate`](crate::client::fluent_builders::UpdateSmsTemplate) operation.
     ///
-    /// - Takes [`UpdateSmsTemplateInput`](crate::input::UpdateSmsTemplateInput) with field(s):
-    ///   - [`create_new_version(bool)`](crate::input::UpdateSmsTemplateInput::create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-    ///   - [`sms_template_request(Option<SmsTemplateRequest>)`](crate::input::UpdateSmsTemplateInput::sms_template_request): <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::UpdateSmsTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::UpdateSmsTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`create_new_version(bool)`](crate::client::fluent_builders::UpdateSmsTemplate::create_new_version) / [`set_create_new_version(bool)`](crate::client::fluent_builders::UpdateSmsTemplate::set_create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    ///   - [`sms_template_request(SmsTemplateRequest)`](crate::client::fluent_builders::UpdateSmsTemplate::sms_template_request) / [`set_sms_template_request(Option<SmsTemplateRequest>)`](crate::client::fluent_builders::UpdateSmsTemplate::set_sms_template_request): <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSmsTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateSmsTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::UpdateSmsTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::UpdateSmsTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
     /// - On success, responds with [`UpdateSmsTemplateOutput`](crate::output::UpdateSmsTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::UpdateSmsTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateSmsTemplateError>`](crate::error::UpdateSmsTemplateError)
@@ -1400,10 +1400,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTemplateActiveVersion`](crate::client::fluent_builders::UpdateTemplateActiveVersion) operation.
     ///
-    /// - Takes [`UpdateTemplateActiveVersionInput`](crate::input::UpdateTemplateActiveVersionInput) with field(s):
-    ///   - [`template_active_version_request(Option<TemplateActiveVersionRequest>)`](crate::input::UpdateTemplateActiveVersionInput::template_active_version_request): <p>Specifies which version of a message template to use as the active version of the template.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::UpdateTemplateActiveVersionInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`template_type(Option<String>)`](crate::input::UpdateTemplateActiveVersionInput::template_type): <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`template_active_version_request(TemplateActiveVersionRequest)`](crate::client::fluent_builders::UpdateTemplateActiveVersion::template_active_version_request) / [`set_template_active_version_request(Option<TemplateActiveVersionRequest>)`](crate::client::fluent_builders::UpdateTemplateActiveVersion::set_template_active_version_request): <p>Specifies which version of a message template to use as the active version of the template.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateActiveVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateTemplateActiveVersion::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`template_type(impl Into<String>)`](crate::client::fluent_builders::UpdateTemplateActiveVersion::template_type) / [`set_template_type(Option<String>)`](crate::client::fluent_builders::UpdateTemplateActiveVersion::set_template_type): <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     /// - On success, responds with [`UpdateTemplateActiveVersionOutput`](crate::output::UpdateTemplateActiveVersionOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::UpdateTemplateActiveVersionOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateTemplateActiveVersionError>`](crate::error::UpdateTemplateActiveVersionError)
@@ -1414,9 +1414,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateVoiceChannel`](crate::client::fluent_builders::UpdateVoiceChannel) operation.
     ///
-    /// - Takes [`UpdateVoiceChannelInput`](crate::input::UpdateVoiceChannelInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateVoiceChannelInput::application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`voice_channel_request(Option<VoiceChannelRequest>)`](crate::input::UpdateVoiceChannelInput::voice_channel_request): <p>Specifies the status and settings of the voice channel for an application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateVoiceChannel::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateVoiceChannel::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`voice_channel_request(VoiceChannelRequest)`](crate::client::fluent_builders::UpdateVoiceChannel::voice_channel_request) / [`set_voice_channel_request(Option<VoiceChannelRequest>)`](crate::client::fluent_builders::UpdateVoiceChannel::set_voice_channel_request): <p>Specifies the status and settings of the voice channel for an application.</p>
     /// - On success, responds with [`UpdateVoiceChannelOutput`](crate::output::UpdateVoiceChannelOutput) with field(s):
     ///   - [`voice_channel_response(Option<VoiceChannelResponse>)`](crate::output::UpdateVoiceChannelOutput::voice_channel_response): <p>Provides information about the status and settings of the voice channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateVoiceChannelError>`](crate::error::UpdateVoiceChannelError)
@@ -1425,11 +1425,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateVoiceTemplate`](crate::client::fluent_builders::UpdateVoiceTemplate) operation.
     ///
-    /// - Takes [`UpdateVoiceTemplateInput`](crate::input::UpdateVoiceTemplateInput) with field(s):
-    ///   - [`create_new_version(bool)`](crate::input::UpdateVoiceTemplateInput::create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-    ///   - [`template_name(Option<String>)`](crate::input::UpdateVoiceTemplateInput::template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    ///   - [`version(Option<String>)`](crate::input::UpdateVoiceTemplateInput::version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
-    ///   - [`voice_template_request(Option<VoiceTemplateRequest>)`](crate::input::UpdateVoiceTemplateInput::voice_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`create_new_version(bool)`](crate::client::fluent_builders::UpdateVoiceTemplate::create_new_version) / [`set_create_new_version(bool)`](crate::client::fluent_builders::UpdateVoiceTemplate::set_create_new_version): <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVoiceTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateVoiceTemplate::set_template_name): <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::UpdateVoiceTemplate::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::UpdateVoiceTemplate::set_version): <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the   <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>  <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>  <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>  <ul>  <li><p>For a get operation, retrieves information about the active version of the template.</p></li>   <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>   <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li> </ul>
+    ///   - [`voice_template_request(VoiceTemplateRequest)`](crate::client::fluent_builders::UpdateVoiceTemplate::voice_template_request) / [`set_voice_template_request(Option<VoiceTemplateRequest>)`](crate::client::fluent_builders::UpdateVoiceTemplate::set_voice_template_request): <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     /// - On success, responds with [`UpdateVoiceTemplateOutput`](crate::output::UpdateVoiceTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::output::UpdateVoiceTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateVoiceTemplateError>`](crate::error::UpdateVoiceTemplateError)
@@ -1438,9 +1438,9 @@ where
     }
     /// Constructs a fluent builder for the [`VerifyOTPMessage`](crate::client::fluent_builders::VerifyOTPMessage) operation.
     ///
-    /// - Takes [`VerifyOtpMessageInput`](crate::input::VerifyOtpMessageInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::VerifyOtpMessageInput::application_id): <p>The unique ID of your Amazon Pinpoint application.</p>
-    ///   - [`verify_otp_message_request_parameters(Option<VerifyOtpMessageRequestParameters>)`](crate::input::VerifyOtpMessageInput::verify_otp_message_request_parameters): <p>Verify OTP message request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::VerifyOTPMessage::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::VerifyOTPMessage::set_application_id): <p>The unique ID of your Amazon Pinpoint application.</p>
+    ///   - [`verify_otp_message_request_parameters(VerifyOtpMessageRequestParameters)`](crate::client::fluent_builders::VerifyOTPMessage::verify_otp_message_request_parameters) / [`set_verify_otp_message_request_parameters(Option<VerifyOtpMessageRequestParameters>)`](crate::client::fluent_builders::VerifyOTPMessage::set_verify_otp_message_request_parameters): <p>Verify OTP message request.</p>
     /// - On success, responds with [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput) with field(s):
     ///   - [`verification_response(Option<VerificationResponse>)`](crate::output::VerifyOtpMessageOutput::verification_response): <p>Verify OTP Message Response.</p>
     /// - On failure, responds with [`SdkError<VerifyOTPMessageError>`](crate::error::VerifyOTPMessageError)

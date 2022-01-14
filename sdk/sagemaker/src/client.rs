@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`AddAssociation`](crate::client::fluent_builders::AddAssociation) operation.
     ///
-    /// - Takes [`AddAssociationInput`](crate::input::AddAssociationInput) with field(s):
-    ///   - [`source_arn(Option<String>)`](crate::input::AddAssociationInput::source_arn): <p>The ARN of the source.</p>
-    ///   - [`destination_arn(Option<String>)`](crate::input::AddAssociationInput::destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
-    ///   - [`association_type(Option<AssociationEdgeType>)`](crate::input::AddAssociationInput::association_type): <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>  <ul>   <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li>   <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li>   <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>   <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::AddAssociation::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::AddAssociation::set_source_arn): <p>The ARN of the source.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::AddAssociation::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::AddAssociation::set_destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
+    ///   - [`association_type(AssociationEdgeType)`](crate::client::fluent_builders::AddAssociation::association_type) / [`set_association_type(Option<AssociationEdgeType>)`](crate::client::fluent_builders::AddAssociation::set_association_type): <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>  <ul>   <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li>   <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li>   <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>   <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>  </ul>
     /// - On success, responds with [`AddAssociationOutput`](crate::output::AddAssociationOutput) with field(s):
     ///   - [`source_arn(Option<String>)`](crate::output::AddAssociationOutput::source_arn): <p>The ARN of the source.</p>
     ///   - [`destination_arn(Option<String>)`](crate::output::AddAssociationOutput::destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
@@ -98,9 +98,9 @@ where
     }
     /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
     ///
-    /// - Takes [`AddTagsInput`](crate::input::AddTagsInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::AddTagsInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::AddTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::AddTags::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AddTags::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTags::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AddTagsOutput::tags): <p>A list of tags associated with the Amazon SageMaker resource.</p>
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
@@ -109,9 +109,9 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateTrialComponent`](crate::client::fluent_builders::AssociateTrialComponent) operation.
     ///
-    /// - Takes [`AssociateTrialComponentInput`](crate::input::AssociateTrialComponentInput) with field(s):
-    ///   - [`trial_component_name(Option<String>)`](crate::input::AssociateTrialComponentInput::trial_component_name): <p>The name of the component to associated with the trial.</p>
-    ///   - [`trial_name(Option<String>)`](crate::input::AssociateTrialComponentInput::trial_name): <p>The name of the trial to associate with.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_component_name(impl Into<String>)`](crate::client::fluent_builders::AssociateTrialComponent::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::client::fluent_builders::AssociateTrialComponent::set_trial_component_name): <p>The name of the component to associated with the trial.</p>
+    ///   - [`trial_name(impl Into<String>)`](crate::client::fluent_builders::AssociateTrialComponent::trial_name) / [`set_trial_name(Option<String>)`](crate::client::fluent_builders::AssociateTrialComponent::set_trial_name): <p>The name of the trial to associate with.</p>
     /// - On success, responds with [`AssociateTrialComponentOutput`](crate::output::AssociateTrialComponentOutput) with field(s):
     ///   - [`trial_component_arn(Option<String>)`](crate::output::AssociateTrialComponentOutput::trial_component_arn): <p>The ARN of the trial component.</p>
     ///   - [`trial_arn(Option<String>)`](crate::output::AssociateTrialComponentOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
@@ -121,8 +121,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchDescribeModelPackage`](crate::client::fluent_builders::BatchDescribeModelPackage) operation.
     ///
-    /// - Takes [`BatchDescribeModelPackageInput`](crate::input::BatchDescribeModelPackageInput) with field(s):
-    ///   - [`model_package_arn_list(Option<Vec<String>>)`](crate::input::BatchDescribeModelPackageInput::model_package_arn_list): <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_arn_list(Vec<String>)`](crate::client::fluent_builders::BatchDescribeModelPackage::model_package_arn_list) / [`set_model_package_arn_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDescribeModelPackage::set_model_package_arn_list): <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
     /// - On success, responds with [`BatchDescribeModelPackageOutput`](crate::output::BatchDescribeModelPackageOutput) with field(s):
     ///   - [`model_package_summaries(Option<HashMap<String, BatchDescribeModelPackageSummary>>)`](crate::output::BatchDescribeModelPackageOutput::model_package_summaries): <p>The summaries for the model package versions</p>
     ///   - [`batch_describe_model_package_error_map(Option<HashMap<String, BatchDescribeModelPackageError>>)`](crate::output::BatchDescribeModelPackageOutput::batch_describe_model_package_error_map): <p>A map of the resource and BatchDescribeModelPackageError objects reporting the error associated with describing the model package.</p>
@@ -134,15 +134,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAction`](crate::client::fluent_builders::CreateAction) operation.
     ///
-    /// - Takes [`CreateActionInput`](crate::input::CreateActionInput) with field(s):
-    ///   - [`action_name(Option<String>)`](crate::input::CreateActionInput::action_name): <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
-    ///   - [`source(Option<ActionSource>)`](crate::input::CreateActionInput::source): <p>The source type, ID, and URI.</p>
-    ///   - [`action_type(Option<String>)`](crate::input::CreateActionInput::action_type): <p>The action type.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateActionInput::description): <p>The description of the action.</p>
-    ///   - [`status(Option<ActionStatus>)`](crate::input::CreateActionInput::status): <p>The status of the action.</p>
-    ///   - [`properties(Option<HashMap<String, String>>)`](crate::input::CreateActionInput::properties): <p>A list of properties to add to the action.</p>
-    ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::input::CreateActionInput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateActionInput::tags): <p>A list of tags to apply to the action.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::CreateAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::CreateAction::set_action_name): <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
+    ///   - [`source(ActionSource)`](crate::client::fluent_builders::CreateAction::source) / [`set_source(Option<ActionSource>)`](crate::client::fluent_builders::CreateAction::set_source): <p>The source type, ID, and URI.</p>
+    ///   - [`action_type(impl Into<String>)`](crate::client::fluent_builders::CreateAction::action_type) / [`set_action_type(Option<String>)`](crate::client::fluent_builders::CreateAction::set_action_type): <p>The action type.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAction::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAction::set_description): <p>The description of the action.</p>
+    ///   - [`status(ActionStatus)`](crate::client::fluent_builders::CreateAction::status) / [`set_status(Option<ActionStatus>)`](crate::client::fluent_builders::CreateAction::set_status): <p>The status of the action.</p>
+    ///   - [`properties(HashMap<String, String>)`](crate::client::fluent_builders::CreateAction::properties) / [`set_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAction::set_properties): <p>A list of properties to add to the action.</p>
+    ///   - [`metadata_properties(MetadataProperties)`](crate::client::fluent_builders::CreateAction::metadata_properties) / [`set_metadata_properties(Option<MetadataProperties>)`](crate::client::fluent_builders::CreateAction::set_metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAction::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAction::set_tags): <p>A list of tags to apply to the action.</p>
     /// - On success, responds with [`CreateActionOutput`](crate::output::CreateActionOutput) with field(s):
     ///   - [`action_arn(Option<String>)`](crate::output::CreateActionOutput::action_arn): <p>The Amazon Resource Name (ARN) of the action.</p>
     /// - On failure, responds with [`SdkError<CreateActionError>`](crate::error::CreateActionError)
@@ -151,14 +151,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAlgorithm`](crate::client::fluent_builders::CreateAlgorithm) operation.
     ///
-    /// - Takes [`CreateAlgorithmInput`](crate::input::CreateAlgorithmInput) with field(s):
-    ///   - [`algorithm_name(Option<String>)`](crate::input::CreateAlgorithmInput::algorithm_name): <p>The name of the algorithm.</p>
-    ///   - [`algorithm_description(Option<String>)`](crate::input::CreateAlgorithmInput::algorithm_description): <p>A description of the algorithm.</p>
-    ///   - [`training_specification(Option<TrainingSpecification>)`](crate::input::CreateAlgorithmInput::training_specification): <p>Specifies details about training jobs run by this algorithm, including the following:</p>  <ul>   <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>   <li> <p>The hyperparameters that the algorithm supports.</p> </li>   <li> <p>The instance types that the algorithm supports for training.</p> </li>   <li> <p>Whether the algorithm supports distributed training.</p> </li>   <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>   <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>   <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>  </ul>
-    ///   - [`inference_specification(Option<InferenceSpecification>)`](crate::input::CreateAlgorithmInput::inference_specification): <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>  <ul>   <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>   <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>   <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>  </ul>
-    ///   - [`validation_specification(Option<AlgorithmValidationSpecification>)`](crate::input::CreateAlgorithmInput::validation_specification): <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the algorithm's inference code.</p>
-    ///   - [`certify_for_marketplace(bool)`](crate::input::CreateAlgorithmInput::certify_for_marketplace): <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAlgorithmInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`algorithm_name(impl Into<String>)`](crate::client::fluent_builders::CreateAlgorithm::algorithm_name) / [`set_algorithm_name(Option<String>)`](crate::client::fluent_builders::CreateAlgorithm::set_algorithm_name): <p>The name of the algorithm.</p>
+    ///   - [`algorithm_description(impl Into<String>)`](crate::client::fluent_builders::CreateAlgorithm::algorithm_description) / [`set_algorithm_description(Option<String>)`](crate::client::fluent_builders::CreateAlgorithm::set_algorithm_description): <p>A description of the algorithm.</p>
+    ///   - [`training_specification(TrainingSpecification)`](crate::client::fluent_builders::CreateAlgorithm::training_specification) / [`set_training_specification(Option<TrainingSpecification>)`](crate::client::fluent_builders::CreateAlgorithm::set_training_specification): <p>Specifies details about training jobs run by this algorithm, including the following:</p>  <ul>   <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>   <li> <p>The hyperparameters that the algorithm supports.</p> </li>   <li> <p>The instance types that the algorithm supports for training.</p> </li>   <li> <p>Whether the algorithm supports distributed training.</p> </li>   <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>   <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>   <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>  </ul>
+    ///   - [`inference_specification(InferenceSpecification)`](crate::client::fluent_builders::CreateAlgorithm::inference_specification) / [`set_inference_specification(Option<InferenceSpecification>)`](crate::client::fluent_builders::CreateAlgorithm::set_inference_specification): <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>  <ul>   <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>   <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>   <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>  </ul>
+    ///   - [`validation_specification(AlgorithmValidationSpecification)`](crate::client::fluent_builders::CreateAlgorithm::validation_specification) / [`set_validation_specification(Option<AlgorithmValidationSpecification>)`](crate::client::fluent_builders::CreateAlgorithm::set_validation_specification): <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the algorithm's inference code.</p>
+    ///   - [`certify_for_marketplace(bool)`](crate::client::fluent_builders::CreateAlgorithm::certify_for_marketplace) / [`set_certify_for_marketplace(bool)`](crate::client::fluent_builders::CreateAlgorithm::set_certify_for_marketplace): <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAlgorithm::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAlgorithm::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// - On success, responds with [`CreateAlgorithmOutput`](crate::output::CreateAlgorithmOutput) with field(s):
     ///   - [`algorithm_arn(Option<String>)`](crate::output::CreateAlgorithmOutput::algorithm_arn): <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
     /// - On failure, responds with [`SdkError<CreateAlgorithmError>`](crate::error::CreateAlgorithmError)
@@ -167,13 +167,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateApp`](crate::client::fluent_builders::CreateApp) operation.
     ///
-    /// - Takes [`CreateAppInput`](crate::input::CreateAppInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::CreateAppInput::domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(Option<String>)`](crate::input::CreateAppInput::user_profile_name): <p>The user profile name.</p>
-    ///   - [`app_type(Option<AppType>)`](crate::input::CreateAppInput::app_type): <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
-    ///   - [`app_name(Option<String>)`](crate::input::CreateAppInput::app_name): <p>The name of the app.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAppInput::tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
-    ///   - [`resource_spec(Option<ResourceSpec>)`](crate::input::CreateAppInput::resource_spec): <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::CreateApp::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::CreateApp::set_domain_id): <p>The domain ID.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_user_profile_name): <p>The user profile name.</p>
+    ///   - [`app_type(AppType)`](crate::client::fluent_builders::CreateApp::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::CreateApp::set_app_type): <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+    ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_app_name): <p>The name of the app.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateApp::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateApp::set_tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    ///   - [`resource_spec(ResourceSpec)`](crate::client::fluent_builders::CreateApp::resource_spec) / [`set_resource_spec(Option<ResourceSpec>)`](crate::client::fluent_builders::CreateApp::set_resource_spec): <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     /// - On success, responds with [`CreateAppOutput`](crate::output::CreateAppOutput) with field(s):
     ///   - [`app_arn(Option<String>)`](crate::output::CreateAppOutput::app_arn): <p>The Amazon Resource Name (ARN) of the app.</p>
     /// - On failure, responds with [`SdkError<CreateAppError>`](crate::error::CreateAppError)
@@ -182,10 +182,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAppImageConfig`](crate::client::fluent_builders::CreateAppImageConfig) operation.
     ///
-    /// - Takes [`CreateAppImageConfigInput`](crate::input::CreateAppImageConfigInput) with field(s):
-    ///   - [`app_image_config_name(Option<String>)`](crate::input::CreateAppImageConfigInput::app_image_config_name): <p>The name of the AppImageConfig. Must be unique to your account.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAppImageConfigInput::tags): <p>A list of tags to apply to the AppImageConfig.</p>
-    ///   - [`kernel_gateway_image_config(Option<KernelGatewayImageConfig>)`](crate::input::CreateAppImageConfigInput::kernel_gateway_image_config): <p>The KernelGatewayImageConfig.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_image_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateAppImageConfig::app_image_config_name) / [`set_app_image_config_name(Option<String>)`](crate::client::fluent_builders::CreateAppImageConfig::set_app_image_config_name): <p>The name of the AppImageConfig. Must be unique to your account.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAppImageConfig::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAppImageConfig::set_tags): <p>A list of tags to apply to the AppImageConfig.</p>
+    ///   - [`kernel_gateway_image_config(KernelGatewayImageConfig)`](crate::client::fluent_builders::CreateAppImageConfig::kernel_gateway_image_config) / [`set_kernel_gateway_image_config(Option<KernelGatewayImageConfig>)`](crate::client::fluent_builders::CreateAppImageConfig::set_kernel_gateway_image_config): <p>The KernelGatewayImageConfig.</p>
     /// - On success, responds with [`CreateAppImageConfigOutput`](crate::output::CreateAppImageConfigOutput) with field(s):
     ///   - [`app_image_config_arn(Option<String>)`](crate::output::CreateAppImageConfigOutput::app_image_config_arn): <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
     /// - On failure, responds with [`SdkError<CreateAppImageConfigError>`](crate::error::CreateAppImageConfigError)
@@ -194,13 +194,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateArtifact`](crate::client::fluent_builders::CreateArtifact) operation.
     ///
-    /// - Takes [`CreateArtifactInput`](crate::input::CreateArtifactInput) with field(s):
-    ///   - [`artifact_name(Option<String>)`](crate::input::CreateArtifactInput::artifact_name): <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
-    ///   - [`source(Option<ArtifactSource>)`](crate::input::CreateArtifactInput::source): <p>The ID, ID type, and URI of the source.</p>
-    ///   - [`artifact_type(Option<String>)`](crate::input::CreateArtifactInput::artifact_type): <p>The artifact type.</p>
-    ///   - [`properties(Option<HashMap<String, String>>)`](crate::input::CreateArtifactInput::properties): <p>A list of properties to add to the artifact.</p>
-    ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::input::CreateArtifactInput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateArtifactInput::tags): <p>A list of tags to apply to the artifact.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`artifact_name(impl Into<String>)`](crate::client::fluent_builders::CreateArtifact::artifact_name) / [`set_artifact_name(Option<String>)`](crate::client::fluent_builders::CreateArtifact::set_artifact_name): <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
+    ///   - [`source(ArtifactSource)`](crate::client::fluent_builders::CreateArtifact::source) / [`set_source(Option<ArtifactSource>)`](crate::client::fluent_builders::CreateArtifact::set_source): <p>The ID, ID type, and URI of the source.</p>
+    ///   - [`artifact_type(impl Into<String>)`](crate::client::fluent_builders::CreateArtifact::artifact_type) / [`set_artifact_type(Option<String>)`](crate::client::fluent_builders::CreateArtifact::set_artifact_type): <p>The artifact type.</p>
+    ///   - [`properties(HashMap<String, String>)`](crate::client::fluent_builders::CreateArtifact::properties) / [`set_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateArtifact::set_properties): <p>A list of properties to add to the artifact.</p>
+    ///   - [`metadata_properties(MetadataProperties)`](crate::client::fluent_builders::CreateArtifact::metadata_properties) / [`set_metadata_properties(Option<MetadataProperties>)`](crate::client::fluent_builders::CreateArtifact::set_metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateArtifact::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateArtifact::set_tags): <p>A list of tags to apply to the artifact.</p>
     /// - On success, responds with [`CreateArtifactOutput`](crate::output::CreateArtifactOutput) with field(s):
     ///   - [`artifact_arn(Option<String>)`](crate::output::CreateArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>
     /// - On failure, responds with [`SdkError<CreateArtifactError>`](crate::error::CreateArtifactError)
@@ -209,17 +209,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAutoMLJob`](crate::client::fluent_builders::CreateAutoMLJob) operation.
     ///
-    /// - Takes [`CreateAutoMlJobInput`](crate::input::CreateAutoMlJobInput) with field(s):
-    ///   - [`auto_ml_job_name(Option<String>)`](crate::input::CreateAutoMlJobInput::auto_ml_job_name): <p>Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.</p>
-    ///   - [`input_data_config(Option<Vec<AutoMlChannel>>)`](crate::input::CreateAutoMlJobInput::input_data_config): <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
-    ///   - [`output_data_config(Option<AutoMlOutputDataConfig>)`](crate::input::CreateAutoMlJobInput::output_data_config): <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.</p>
-    ///   - [`problem_type(Option<ProblemType>)`](crate::input::CreateAutoMlJobInput::problem_type): <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
-    ///   - [`auto_ml_job_objective(Option<AutoMlJobObjective>)`](crate::input::CreateAutoMlJobInput::auto_ml_job_objective): <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <code>AutoMLJobObjective$MetricName</code> and Autopilot infers whether to minimize or maximize it.</p>
-    ///   - [`auto_ml_job_config(Option<AutoMlJobConfig>)`](crate::input::CreateAutoMlJobInput::auto_ml_job_config): <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateAutoMlJobInput::role_arn): <p>The ARN of the role that is used to access the data.</p>
-    ///   - [`generate_candidate_definitions_only(bool)`](crate::input::CreateAutoMlJobInput::generate_candidate_definitions_only): <p>Generates possible candidates without training the models. A candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAutoMlJobInput::tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
-    ///   - [`model_deploy_config(Option<ModelDeployConfig>)`](crate::input::CreateAutoMlJobInput::model_deploy_config): <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_ml_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoMLJob::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::client::fluent_builders::CreateAutoMLJob::set_auto_ml_job_name): <p>Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.</p>
+    ///   - [`input_data_config(Vec<AutoMlChannel>)`](crate::client::fluent_builders::CreateAutoMLJob::input_data_config) / [`set_input_data_config(Option<Vec<AutoMlChannel>>)`](crate::client::fluent_builders::CreateAutoMLJob::set_input_data_config): <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+    ///   - [`output_data_config(AutoMlOutputDataConfig)`](crate::client::fluent_builders::CreateAutoMLJob::output_data_config) / [`set_output_data_config(Option<AutoMlOutputDataConfig>)`](crate::client::fluent_builders::CreateAutoMLJob::set_output_data_config): <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.</p>
+    ///   - [`problem_type(ProblemType)`](crate::client::fluent_builders::CreateAutoMLJob::problem_type) / [`set_problem_type(Option<ProblemType>)`](crate::client::fluent_builders::CreateAutoMLJob::set_problem_type): <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+    ///   - [`auto_ml_job_objective(AutoMlJobObjective)`](crate::client::fluent_builders::CreateAutoMLJob::auto_ml_job_objective) / [`set_auto_ml_job_objective(Option<AutoMlJobObjective>)`](crate::client::fluent_builders::CreateAutoMLJob::set_auto_ml_job_objective): <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <code>AutoMLJobObjective$MetricName</code> and Autopilot infers whether to minimize or maximize it.</p>
+    ///   - [`auto_ml_job_config(AutoMlJobConfig)`](crate::client::fluent_builders::CreateAutoMLJob::auto_ml_job_config) / [`set_auto_ml_job_config(Option<AutoMlJobConfig>)`](crate::client::fluent_builders::CreateAutoMLJob::set_auto_ml_job_config): <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAutoMLJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateAutoMLJob::set_role_arn): <p>The ARN of the role that is used to access the data.</p>
+    ///   - [`generate_candidate_definitions_only(bool)`](crate::client::fluent_builders::CreateAutoMLJob::generate_candidate_definitions_only) / [`set_generate_candidate_definitions_only(bool)`](crate::client::fluent_builders::CreateAutoMLJob::set_generate_candidate_definitions_only): <p>Generates possible candidates without training the models. A candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAutoMLJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAutoMLJob::set_tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    ///   - [`model_deploy_config(ModelDeployConfig)`](crate::client::fluent_builders::CreateAutoMLJob::model_deploy_config) / [`set_model_deploy_config(Option<ModelDeployConfig>)`](crate::client::fluent_builders::CreateAutoMLJob::set_model_deploy_config): <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
     /// - On success, responds with [`CreateAutoMlJobOutput`](crate::output::CreateAutoMlJobOutput) with field(s):
     ///   - [`auto_ml_job_arn(Option<String>)`](crate::output::CreateAutoMlJobOutput::auto_ml_job_arn): <p>The unique ARN assigned to the AutoML job when it is created.</p>
     /// - On failure, responds with [`SdkError<CreateAutoMLJobError>`](crate::error::CreateAutoMLJobError)
@@ -228,10 +228,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCodeRepository`](crate::client::fluent_builders::CreateCodeRepository) operation.
     ///
-    /// - Takes [`CreateCodeRepositoryInput`](crate::input::CreateCodeRepositoryInput) with field(s):
-    ///   - [`code_repository_name(Option<String>)`](crate::input::CreateCodeRepositoryInput::code_repository_name): <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    ///   - [`git_config(Option<GitConfig>)`](crate::input::CreateCodeRepositoryInput::git_config): <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCodeRepositoryInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`code_repository_name(impl Into<String>)`](crate::client::fluent_builders::CreateCodeRepository::code_repository_name) / [`set_code_repository_name(Option<String>)`](crate::client::fluent_builders::CreateCodeRepository::set_code_repository_name): <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    ///   - [`git_config(GitConfig)`](crate::client::fluent_builders::CreateCodeRepository::git_config) / [`set_git_config(Option<GitConfig>)`](crate::client::fluent_builders::CreateCodeRepository::set_git_config): <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCodeRepository::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCodeRepository::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// - On success, responds with [`CreateCodeRepositoryOutput`](crate::output::CreateCodeRepositoryOutput) with field(s):
     ///   - [`code_repository_arn(Option<String>)`](crate::output::CreateCodeRepositoryOutput::code_repository_arn): <p>The Amazon Resource Name (ARN) of the new repository.</p>
     /// - On failure, responds with [`SdkError<CreateCodeRepositoryError>`](crate::error::CreateCodeRepositoryError)
@@ -240,15 +240,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateCompilationJob`](crate::client::fluent_builders::CreateCompilationJob) operation.
     ///
-    /// - Takes [`CreateCompilationJobInput`](crate::input::CreateCompilationJobInput) with field(s):
-    ///   - [`compilation_job_name(Option<String>)`](crate::input::CreateCompilationJobInput::compilation_job_name): <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateCompilationJobInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf. </p>  <p>During model compilation, Amazon SageMaker needs your permission to:</p>  <ul>   <li> <p>Read input data from an S3 bucket</p> </li>   <li> <p>Write model artifacts to an S3 bucket</p> </li>   <li> <p>Write logs to Amazon CloudWatch Logs</p> </li>   <li> <p>Publish metrics to Amazon CloudWatch</p> </li>  </ul>  <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a> </p>
-    ///   - [`model_package_version_arn(Option<String>)`](crate::input::CreateCompilationJobInput::model_package_version_arn): <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
-    ///   - [`input_config(Option<InputConfig>)`](crate::input::CreateCompilationJobInput::input_config): <p>Provides information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
-    ///   - [`output_config(Option<OutputConfig>)`](crate::input::CreateCompilationJobInput::output_config): <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
-    ///   - [`vpc_config(Option<NeoVpcConfig>)`](crate::input::CreateCompilationJobInput::vpc_config): <p>A <code>VpcConfig</code> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    ///   - [`stopping_condition(Option<StoppingCondition>)`](crate::input::CreateCompilationJobInput::stopping_condition): <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCompilationJobInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`compilation_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateCompilationJob::compilation_job_name) / [`set_compilation_job_name(Option<String>)`](crate::client::fluent_builders::CreateCompilationJob::set_compilation_job_name): <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCompilationJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateCompilationJob::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf. </p>  <p>During model compilation, Amazon SageMaker needs your permission to:</p>  <ul>   <li> <p>Read input data from an S3 bucket</p> </li>   <li> <p>Write model artifacts to an S3 bucket</p> </li>   <li> <p>Write logs to Amazon CloudWatch Logs</p> </li>   <li> <p>Publish metrics to Amazon CloudWatch</p> </li>  </ul>  <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a> </p>
+    ///   - [`model_package_version_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCompilationJob::model_package_version_arn) / [`set_model_package_version_arn(Option<String>)`](crate::client::fluent_builders::CreateCompilationJob::set_model_package_version_arn): <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
+    ///   - [`input_config(InputConfig)`](crate::client::fluent_builders::CreateCompilationJob::input_config) / [`set_input_config(Option<InputConfig>)`](crate::client::fluent_builders::CreateCompilationJob::set_input_config): <p>Provides information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
+    ///   - [`output_config(OutputConfig)`](crate::client::fluent_builders::CreateCompilationJob::output_config) / [`set_output_config(Option<OutputConfig>)`](crate::client::fluent_builders::CreateCompilationJob::set_output_config): <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
+    ///   - [`vpc_config(NeoVpcConfig)`](crate::client::fluent_builders::CreateCompilationJob::vpc_config) / [`set_vpc_config(Option<NeoVpcConfig>)`](crate::client::fluent_builders::CreateCompilationJob::set_vpc_config): <p>A <code>VpcConfig</code> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    ///   - [`stopping_condition(StoppingCondition)`](crate::client::fluent_builders::CreateCompilationJob::stopping_condition) / [`set_stopping_condition(Option<StoppingCondition>)`](crate::client::fluent_builders::CreateCompilationJob::set_stopping_condition): <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCompilationJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCompilationJob::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// - On success, responds with [`CreateCompilationJobOutput`](crate::output::CreateCompilationJobOutput) with field(s):
     ///   - [`compilation_job_arn(Option<String>)`](crate::output::CreateCompilationJobOutput::compilation_job_arn): <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>  <ul>   <li> <p> <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CreateCompilationJobError>`](crate::error::CreateCompilationJobError)
@@ -257,13 +257,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateContext`](crate::client::fluent_builders::CreateContext) operation.
     ///
-    /// - Takes [`CreateContextInput`](crate::input::CreateContextInput) with field(s):
-    ///   - [`context_name(Option<String>)`](crate::input::CreateContextInput::context_name): <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
-    ///   - [`source(Option<ContextSource>)`](crate::input::CreateContextInput::source): <p>The source type, ID, and URI.</p>
-    ///   - [`context_type(Option<String>)`](crate::input::CreateContextInput::context_type): <p>The context type.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateContextInput::description): <p>The description of the context.</p>
-    ///   - [`properties(Option<HashMap<String, String>>)`](crate::input::CreateContextInput::properties): <p>A list of properties to add to the context.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateContextInput::tags): <p>A list of tags to apply to the context.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`context_name(impl Into<String>)`](crate::client::fluent_builders::CreateContext::context_name) / [`set_context_name(Option<String>)`](crate::client::fluent_builders::CreateContext::set_context_name): <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
+    ///   - [`source(ContextSource)`](crate::client::fluent_builders::CreateContext::source) / [`set_source(Option<ContextSource>)`](crate::client::fluent_builders::CreateContext::set_source): <p>The source type, ID, and URI.</p>
+    ///   - [`context_type(impl Into<String>)`](crate::client::fluent_builders::CreateContext::context_type) / [`set_context_type(Option<String>)`](crate::client::fluent_builders::CreateContext::set_context_type): <p>The context type.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContext::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContext::set_description): <p>The description of the context.</p>
+    ///   - [`properties(HashMap<String, String>)`](crate::client::fluent_builders::CreateContext::properties) / [`set_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateContext::set_properties): <p>A list of properties to add to the context.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateContext::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateContext::set_tags): <p>A list of tags to apply to the context.</p>
     /// - On success, responds with [`CreateContextOutput`](crate::output::CreateContextOutput) with field(s):
     ///   - [`context_arn(Option<String>)`](crate::output::CreateContextOutput::context_arn): <p>The Amazon Resource Name (ARN) of the context.</p>
     /// - On failure, responds with [`SdkError<CreateContextError>`](crate::error::CreateContextError)
@@ -272,17 +272,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDataQualityJobDefinition`](crate::client::fluent_builders::CreateDataQualityJobDefinition) operation.
     ///
-    /// - Takes [`CreateDataQualityJobDefinitionInput`](crate::input::CreateDataQualityJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::CreateDataQualityJobDefinitionInput::job_definition_name): <p>The name for the monitoring job definition.</p>
-    ///   - [`data_quality_baseline_config(Option<DataQualityBaselineConfig>)`](crate::input::CreateDataQualityJobDefinitionInput::data_quality_baseline_config): <p>Configures the constraints and baselines for the monitoring job.</p>
-    ///   - [`data_quality_app_specification(Option<DataQualityAppSpecification>)`](crate::input::CreateDataQualityJobDefinitionInput::data_quality_app_specification): <p>Specifies the container that runs the monitoring job.</p>
-    ///   - [`data_quality_job_input(Option<DataQualityJobInput>)`](crate::input::CreateDataQualityJobDefinitionInput::data_quality_job_input): <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring inputs.</p>
-    ///   - [`data_quality_job_output_config(Option<MonitoringOutputConfig>)`](crate::input::CreateDataQualityJobDefinitionInput::data_quality_job_output_config): <p>The output configuration for monitoring jobs.</p>
-    ///   - [`job_resources(Option<MonitoringResources>)`](crate::input::CreateDataQualityJobDefinitionInput::job_resources): <p>Identifies the resources to deploy for a monitoring job.</p>
-    ///   - [`network_config(Option<MonitoringNetworkConfig>)`](crate::input::CreateDataQualityJobDefinitionInput::network_config): <p>Specifies networking configuration for the monitoring job.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateDataQualityJobDefinitionInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    ///   - [`stopping_condition(Option<MonitoringStoppingCondition>)`](crate::input::CreateDataQualityJobDefinitionInput::stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDataQualityJobDefinitionInput::tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_job_definition_name): <p>The name for the monitoring job definition.</p>
+    ///   - [`data_quality_baseline_config(DataQualityBaselineConfig)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::data_quality_baseline_config) / [`set_data_quality_baseline_config(Option<DataQualityBaselineConfig>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_data_quality_baseline_config): <p>Configures the constraints and baselines for the monitoring job.</p>
+    ///   - [`data_quality_app_specification(DataQualityAppSpecification)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::data_quality_app_specification) / [`set_data_quality_app_specification(Option<DataQualityAppSpecification>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_data_quality_app_specification): <p>Specifies the container that runs the monitoring job.</p>
+    ///   - [`data_quality_job_input(DataQualityJobInput)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::data_quality_job_input) / [`set_data_quality_job_input(Option<DataQualityJobInput>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_data_quality_job_input): <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring inputs.</p>
+    ///   - [`data_quality_job_output_config(MonitoringOutputConfig)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::data_quality_job_output_config) / [`set_data_quality_job_output_config(Option<MonitoringOutputConfig>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_data_quality_job_output_config): <p>The output configuration for monitoring jobs.</p>
+    ///   - [`job_resources(MonitoringResources)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::job_resources) / [`set_job_resources(Option<MonitoringResources>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_job_resources): <p>Identifies the resources to deploy for a monitoring job.</p>
+    ///   - [`network_config(MonitoringNetworkConfig)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::network_config) / [`set_network_config(Option<MonitoringNetworkConfig>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_network_config): <p>Specifies networking configuration for the monitoring job.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    ///   - [`stopping_condition(MonitoringStoppingCondition)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::stopping_condition) / [`set_stopping_condition(Option<MonitoringStoppingCondition>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataQualityJobDefinition::set_tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// - On success, responds with [`CreateDataQualityJobDefinitionOutput`](crate::output::CreateDataQualityJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::output::CreateDataQualityJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the job definition.</p>
     /// - On failure, responds with [`SdkError<CreateDataQualityJobDefinitionError>`](crate::error::CreateDataQualityJobDefinitionError)
@@ -293,13 +293,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDeviceFleet`](crate::client::fluent_builders::CreateDeviceFleet) operation.
     ///
-    /// - Takes [`CreateDeviceFleetInput`](crate::input::CreateDeviceFleetInput) with field(s):
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::CreateDeviceFleetInput::device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateDeviceFleetInput::role_arn): <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateDeviceFleetInput::description): <p>A description of the fleet.</p>
-    ///   - [`output_config(Option<EdgeOutputConfig>)`](crate::input::CreateDeviceFleetInput::output_config): <p>The output configuration for storing sample data collected by the fleet.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDeviceFleetInput::tags): <p>Creates tags for the specified fleet.</p>
-    ///   - [`enable_iot_role_alias(Option<bool>)`](crate::input::CreateDeviceFleetInput::enable_iot_role_alias): <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>  <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeviceFleet::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::CreateDeviceFleet::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDeviceFleet::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDeviceFleet::set_role_arn): <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDeviceFleet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDeviceFleet::set_description): <p>A description of the fleet.</p>
+    ///   - [`output_config(EdgeOutputConfig)`](crate::client::fluent_builders::CreateDeviceFleet::output_config) / [`set_output_config(Option<EdgeOutputConfig>)`](crate::client::fluent_builders::CreateDeviceFleet::set_output_config): <p>The output configuration for storing sample data collected by the fleet.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDeviceFleet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDeviceFleet::set_tags): <p>Creates tags for the specified fleet.</p>
+    ///   - [`enable_iot_role_alias(bool)`](crate::client::fluent_builders::CreateDeviceFleet::enable_iot_role_alias) / [`set_enable_iot_role_alias(Option<bool>)`](crate::client::fluent_builders::CreateDeviceFleet::set_enable_iot_role_alias): <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>  <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     /// - On success, responds with [`CreateDeviceFleetOutput`](crate::output::CreateDeviceFleetOutput)
 
     /// - On failure, responds with [`SdkError<CreateDeviceFleetError>`](crate::error::CreateDeviceFleetError)
@@ -308,18 +308,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
     ///
-    /// - Takes [`CreateDomainInput`](crate::input::CreateDomainInput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::input::CreateDomainInput::domain_name): <p>A name for the domain.</p>
-    ///   - [`auth_mode(Option<AuthMode>)`](crate::input::CreateDomainInput::auth_mode): <p>The mode of authentication that members use to access the domain.</p>
-    ///   - [`default_user_settings(Option<UserSettings>)`](crate::input::CreateDomainInput::default_user_settings): <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>  <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateDomainInput::subnet_ids): <p>The VPC subnets that Studio uses for communication.</p>
-    ///   - [`vpc_id(Option<String>)`](crate::input::CreateDomainInput::vpc_id): <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDomainInput::tags): <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>  <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
-    ///   - [`app_network_access_type(Option<AppNetworkAccessType>)`](crate::input::CreateDomainInput::app_network_access_type): <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>  <ul>   <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>   <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>  </ul>
-    ///   - [`home_efs_file_system_kms_key_id(Option<String>)`](crate::input::CreateDomainInput::home_efs_file_system_kms_key_id): <p>Use <code>KmsKeyId</code>.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateDomainInput::kms_key_id): <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
-    ///   - [`app_security_group_management(Option<AppSecurityGroupManagement>)`](crate::input::CreateDomainInput::app_security_group_management): <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    ///   - [`domain_settings(Option<DomainSettings>)`](crate::input::CreateDomainInput::domain_settings): <p>A collection of <code>Domain</code> settings.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain_name): <p>A name for the domain.</p>
+    ///   - [`auth_mode(AuthMode)`](crate::client::fluent_builders::CreateDomain::auth_mode) / [`set_auth_mode(Option<AuthMode>)`](crate::client::fluent_builders::CreateDomain::set_auth_mode): <p>The mode of authentication that members use to access the domain.</p>
+    ///   - [`default_user_settings(UserSettings)`](crate::client::fluent_builders::CreateDomain::default_user_settings) / [`set_default_user_settings(Option<UserSettings>)`](crate::client::fluent_builders::CreateDomain::set_default_user_settings): <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>  <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateDomain::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDomain::set_subnet_ids): <p>The VPC subnets that Studio uses for communication.</p>
+    ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_vpc_id): <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDomain::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomain::set_tags): <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>  <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
+    ///   - [`app_network_access_type(AppNetworkAccessType)`](crate::client::fluent_builders::CreateDomain::app_network_access_type) / [`set_app_network_access_type(Option<AppNetworkAccessType>)`](crate::client::fluent_builders::CreateDomain::set_app_network_access_type): <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>  <ul>   <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>   <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>  </ul>
+    ///   - [`home_efs_file_system_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::home_efs_file_system_kms_key_id) / [`set_home_efs_file_system_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_home_efs_file_system_kms_key_id): <p>Use <code>KmsKeyId</code>.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_kms_key_id): <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
+    ///   - [`app_security_group_management(AppSecurityGroupManagement)`](crate::client::fluent_builders::CreateDomain::app_security_group_management) / [`set_app_security_group_management(Option<AppSecurityGroupManagement>)`](crate::client::fluent_builders::CreateDomain::set_app_security_group_management): <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+    ///   - [`domain_settings(DomainSettings)`](crate::client::fluent_builders::CreateDomain::domain_settings) / [`set_domain_settings(Option<DomainSettings>)`](crate::client::fluent_builders::CreateDomain::set_domain_settings): <p>A collection of <code>Domain</code> settings.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
     ///   - [`domain_arn(Option<String>)`](crate::output::CreateDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) of the created domain.</p>
     ///   - [`url(Option<String>)`](crate::output::CreateDomainOutput::url): <p>The URL to the created domain.</p>
@@ -329,15 +329,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEdgePackagingJob`](crate::client::fluent_builders::CreateEdgePackagingJob) operation.
     ///
-    /// - Takes [`CreateEdgePackagingJobInput`](crate::input::CreateEdgePackagingJobInput) with field(s):
-    ///   - [`edge_packaging_job_name(Option<String>)`](crate::input::CreateEdgePackagingJobInput::edge_packaging_job_name): <p>The name of the edge packaging job.</p>
-    ///   - [`compilation_job_name(Option<String>)`](crate::input::CreateEdgePackagingJobInput::compilation_job_name): <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-    ///   - [`model_name(Option<String>)`](crate::input::CreateEdgePackagingJobInput::model_name): <p>The name of the model.</p>
-    ///   - [`model_version(Option<String>)`](crate::input::CreateEdgePackagingJobInput::model_version): <p>The version of the model.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateEdgePackagingJobInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
-    ///   - [`output_config(Option<EdgeOutputConfig>)`](crate::input::CreateEdgePackagingJobInput::output_config): <p>Provides information about the output location for the packaged model.</p>
-    ///   - [`resource_key(Option<String>)`](crate::input::CreateEdgePackagingJobInput::resource_key): <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEdgePackagingJobInput::tags): <p>Creates tags for the packaging job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`edge_packaging_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::edge_packaging_job_name) / [`set_edge_packaging_job_name(Option<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::set_edge_packaging_job_name): <p>The name of the edge packaging job.</p>
+    ///   - [`compilation_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::compilation_job_name) / [`set_compilation_job_name(Option<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::set_compilation_job_name): <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::set_model_name): <p>The name of the model.</p>
+    ///   - [`model_version(impl Into<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::model_version) / [`set_model_version(Option<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::set_model_version): <p>The version of the model.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
+    ///   - [`output_config(EdgeOutputConfig)`](crate::client::fluent_builders::CreateEdgePackagingJob::output_config) / [`set_output_config(Option<EdgeOutputConfig>)`](crate::client::fluent_builders::CreateEdgePackagingJob::set_output_config): <p>Provides information about the output location for the packaged model.</p>
+    ///   - [`resource_key(impl Into<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::resource_key) / [`set_resource_key(Option<String>)`](crate::client::fluent_builders::CreateEdgePackagingJob::set_resource_key): <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEdgePackagingJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEdgePackagingJob::set_tags): <p>Creates tags for the packaging job.</p>
     /// - On success, responds with [`CreateEdgePackagingJobOutput`](crate::output::CreateEdgePackagingJobOutput)
 
     /// - On failure, responds with [`SdkError<CreateEdgePackagingJobError>`](crate::error::CreateEdgePackagingJobError)
@@ -346,11 +346,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEndpoint`](crate::client::fluent_builders::CreateEndpoint) operation.
     ///
-    /// - Takes [`CreateEndpointInput`](crate::input::CreateEndpointInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::CreateEndpointInput::endpoint_name): <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .</p>
-    ///   - [`endpoint_config_name(Option<String>)`](crate::input::CreateEndpointInput::endpoint_config_name): <p>The name of an endpoint configuration. For more information, see <code>CreateEndpointConfig</code>. </p>
-    ///   - [`deployment_config(Option<DeploymentConfig>)`](crate::input::CreateEndpointInput::deployment_config): <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEndpointInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_endpoint_name): <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .</p>
+    ///   - [`endpoint_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_endpoint_config_name): <p>The name of an endpoint configuration. For more information, see <code>CreateEndpointConfig</code>. </p>
+    ///   - [`deployment_config(DeploymentConfig)`](crate::client::fluent_builders::CreateEndpoint::deployment_config) / [`set_deployment_config(Option<DeploymentConfig>)`](crate::client::fluent_builders::CreateEndpoint::set_deployment_config): <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEndpoint::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEndpoint::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// - On success, responds with [`CreateEndpointOutput`](crate::output::CreateEndpointOutput) with field(s):
     ///   - [`endpoint_arn(Option<String>)`](crate::output::CreateEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::error::CreateEndpointError)
@@ -359,13 +359,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEndpointConfig`](crate::client::fluent_builders::CreateEndpointConfig) operation.
     ///
-    /// - Takes [`CreateEndpointConfigInput`](crate::input::CreateEndpointConfigInput) with field(s):
-    ///   - [`endpoint_config_name(Option<String>)`](crate::input::CreateEndpointConfigInput::endpoint_config_name): <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
-    ///   - [`production_variants(Option<Vec<ProductionVariant>>)`](crate::input::CreateEndpointConfigInput::production_variants): <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    ///   - [`data_capture_config(Option<DataCaptureConfig>)`](crate::input::CreateEndpointConfigInput::data_capture_config): <p></p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEndpointConfigInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateEndpointConfigInput::kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>  <p>The KmsKeyId can be any of the following formats: </p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>   <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>   <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>   <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>  </note>
-    ///   - [`async_inference_config(Option<AsyncInferenceConfig>)`](crate::input::CreateEndpointConfigInput::async_inference_config): <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_endpoint_config_name): <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
+    ///   - [`production_variants(Vec<ProductionVariant>)`](crate::client::fluent_builders::CreateEndpointConfig::production_variants) / [`set_production_variants(Option<Vec<ProductionVariant>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_production_variants): <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+    ///   - [`data_capture_config(DataCaptureConfig)`](crate::client::fluent_builders::CreateEndpointConfig::data_capture_config) / [`set_data_capture_config(Option<DataCaptureConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_data_capture_config): <p></p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEndpointConfig::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEndpointConfig::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointConfig::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEndpointConfig::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>  <p>The KmsKeyId can be any of the following formats: </p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>   <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>   <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>   <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>  </note>
+    ///   - [`async_inference_config(AsyncInferenceConfig)`](crate::client::fluent_builders::CreateEndpointConfig::async_inference_config) / [`set_async_inference_config(Option<AsyncInferenceConfig>)`](crate::client::fluent_builders::CreateEndpointConfig::set_async_inference_config): <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
     /// - On success, responds with [`CreateEndpointConfigOutput`](crate::output::CreateEndpointConfigOutput) with field(s):
     ///   - [`endpoint_config_arn(Option<String>)`](crate::output::CreateEndpointConfigOutput::endpoint_config_arn): <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
     /// - On failure, responds with [`SdkError<CreateEndpointConfigError>`](crate::error::CreateEndpointConfigError)
@@ -374,11 +374,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateExperiment`](crate::client::fluent_builders::CreateExperiment) operation.
     ///
-    /// - Takes [`CreateExperimentInput`](crate::input::CreateExperimentInput) with field(s):
-    ///   - [`experiment_name(Option<String>)`](crate::input::CreateExperimentInput::experiment_name): <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateExperimentInput::display_name): <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateExperimentInput::description): <p>The description of the experiment.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateExperimentInput::tags): <p>A list of tags to associate with the experiment. You can use <code>Search</code> API to search on the tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`experiment_name(impl Into<String>)`](crate::client::fluent_builders::CreateExperiment::experiment_name) / [`set_experiment_name(Option<String>)`](crate::client::fluent_builders::CreateExperiment::set_experiment_name): <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateExperiment::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateExperiment::set_display_name): <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExperiment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExperiment::set_description): <p>The description of the experiment.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateExperiment::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateExperiment::set_tags): <p>A list of tags to associate with the experiment. You can use <code>Search</code> API to search on the tags.</p>
     /// - On success, responds with [`CreateExperimentOutput`](crate::output::CreateExperimentOutput) with field(s):
     ///   - [`experiment_arn(Option<String>)`](crate::output::CreateExperimentOutput::experiment_arn): <p>The Amazon Resource Name (ARN) of the experiment.</p>
     /// - On failure, responds with [`SdkError<CreateExperimentError>`](crate::error::CreateExperimentError)
@@ -387,16 +387,16 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFeatureGroup`](crate::client::fluent_builders::CreateFeatureGroup) operation.
     ///
-    /// - Takes [`CreateFeatureGroupInput`](crate::input::CreateFeatureGroupInput) with field(s):
-    ///   - [`feature_group_name(Option<String>)`](crate::input::CreateFeatureGroupInput::feature_group_name): <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. The name:</p>  <ul>   <li> <p>Must start and end with an alphanumeric character.</p> </li>   <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li>  </ul>
-    ///   - [`record_identifier_feature_name(Option<String>)`](crate::input::CreateFeatureGroupInput::record_identifier_feature_name): <p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p>  <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.</p>  <p>This name:</p>  <ul>   <li> <p>Must start and end with an alphanumeric character.</p> </li>   <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>  </ul>
-    ///   - [`event_time_feature_name(Option<String>)`](crate::input::CreateFeatureGroupInput::event_time_feature_name): <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>  <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.</p>  <p>An <code>EventTime</code> can be a <code>String</code> or <code>Fractional</code>. </p>  <ul>   <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>   <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>  </ul>
-    ///   - [`feature_definitions(Option<Vec<FeatureDefinition>>)`](crate::input::CreateFeatureGroupInput::feature_definitions): <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>. </p>  <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>  <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>  <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    ///   - [`online_store_config(Option<OnlineStoreConfig>)`](crate::input::CreateFeatureGroupInput::online_store_config): <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>  <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
-    ///   - [`offline_store_config(Option<OfflineStoreConfig>)`](crate::input::CreateFeatureGroupInput::offline_store_config): <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>  <ul>   <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>   <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>   <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>  </ul>  <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateFeatureGroupInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateFeatureGroupInput::description): <p>A free-form description of a <code>FeatureGroup</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateFeatureGroupInput::tags): <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`feature_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateFeatureGroup::feature_group_name) / [`set_feature_group_name(Option<String>)`](crate::client::fluent_builders::CreateFeatureGroup::set_feature_group_name): <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. The name:</p>  <ul>   <li> <p>Must start and end with an alphanumeric character.</p> </li>   <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li>  </ul>
+    ///   - [`record_identifier_feature_name(impl Into<String>)`](crate::client::fluent_builders::CreateFeatureGroup::record_identifier_feature_name) / [`set_record_identifier_feature_name(Option<String>)`](crate::client::fluent_builders::CreateFeatureGroup::set_record_identifier_feature_name): <p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p>  <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.</p>  <p>This name:</p>  <ul>   <li> <p>Must start and end with an alphanumeric character.</p> </li>   <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>  </ul>
+    ///   - [`event_time_feature_name(impl Into<String>)`](crate::client::fluent_builders::CreateFeatureGroup::event_time_feature_name) / [`set_event_time_feature_name(Option<String>)`](crate::client::fluent_builders::CreateFeatureGroup::set_event_time_feature_name): <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>  <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.</p>  <p>An <code>EventTime</code> can be a <code>String</code> or <code>Fractional</code>. </p>  <ul>   <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>   <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>  </ul>
+    ///   - [`feature_definitions(Vec<FeatureDefinition>)`](crate::client::fluent_builders::CreateFeatureGroup::feature_definitions) / [`set_feature_definitions(Option<Vec<FeatureDefinition>>)`](crate::client::fluent_builders::CreateFeatureGroup::set_feature_definitions): <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>. </p>  <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>  <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>  <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
+    ///   - [`online_store_config(OnlineStoreConfig)`](crate::client::fluent_builders::CreateFeatureGroup::online_store_config) / [`set_online_store_config(Option<OnlineStoreConfig>)`](crate::client::fluent_builders::CreateFeatureGroup::set_online_store_config): <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>  <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
+    ///   - [`offline_store_config(OfflineStoreConfig)`](crate::client::fluent_builders::CreateFeatureGroup::offline_store_config) / [`set_offline_store_config(Option<OfflineStoreConfig>)`](crate::client::fluent_builders::CreateFeatureGroup::set_offline_store_config): <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>  <ul>   <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>   <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>   <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>  </ul>  <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFeatureGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFeatureGroup::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFeatureGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFeatureGroup::set_description): <p>A free-form description of a <code>FeatureGroup</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFeatureGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFeatureGroup::set_tags): <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
     /// - On success, responds with [`CreateFeatureGroupOutput`](crate::output::CreateFeatureGroupOutput) with field(s):
     ///   - [`feature_group_arn(Option<String>)`](crate::output::CreateFeatureGroupOutput::feature_group_arn): <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
     /// - On failure, responds with [`SdkError<CreateFeatureGroupError>`](crate::error::CreateFeatureGroupError)
@@ -405,14 +405,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFlowDefinition`](crate::client::fluent_builders::CreateFlowDefinition) operation.
     ///
-    /// - Takes [`CreateFlowDefinitionInput`](crate::input::CreateFlowDefinitionInput) with field(s):
-    ///   - [`flow_definition_name(Option<String>)`](crate::input::CreateFlowDefinitionInput::flow_definition_name): <p>The name of your flow definition.</p>
-    ///   - [`human_loop_request_source(Option<HumanLoopRequestSource>)`](crate::input::CreateFlowDefinitionInput::human_loop_request_source): <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
-    ///   - [`human_loop_activation_config(Option<HumanLoopActivationConfig>)`](crate::input::CreateFlowDefinitionInput::human_loop_activation_config): <p>An object containing information about the events that trigger a human workflow.</p>
-    ///   - [`human_loop_config(Option<HumanLoopConfig>)`](crate::input::CreateFlowDefinitionInput::human_loop_config): <p>An object containing information about the tasks the human reviewers will perform.</p>
-    ///   - [`output_config(Option<FlowDefinitionOutputConfig>)`](crate::input::CreateFlowDefinitionInput::output_config): <p>An object containing information about where the human review results will be uploaded.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateFlowDefinitionInput::role_arn): <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateFlowDefinitionInput::tags): <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`flow_definition_name(impl Into<String>)`](crate::client::fluent_builders::CreateFlowDefinition::flow_definition_name) / [`set_flow_definition_name(Option<String>)`](crate::client::fluent_builders::CreateFlowDefinition::set_flow_definition_name): <p>The name of your flow definition.</p>
+    ///   - [`human_loop_request_source(HumanLoopRequestSource)`](crate::client::fluent_builders::CreateFlowDefinition::human_loop_request_source) / [`set_human_loop_request_source(Option<HumanLoopRequestSource>)`](crate::client::fluent_builders::CreateFlowDefinition::set_human_loop_request_source): <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+    ///   - [`human_loop_activation_config(HumanLoopActivationConfig)`](crate::client::fluent_builders::CreateFlowDefinition::human_loop_activation_config) / [`set_human_loop_activation_config(Option<HumanLoopActivationConfig>)`](crate::client::fluent_builders::CreateFlowDefinition::set_human_loop_activation_config): <p>An object containing information about the events that trigger a human workflow.</p>
+    ///   - [`human_loop_config(HumanLoopConfig)`](crate::client::fluent_builders::CreateFlowDefinition::human_loop_config) / [`set_human_loop_config(Option<HumanLoopConfig>)`](crate::client::fluent_builders::CreateFlowDefinition::set_human_loop_config): <p>An object containing information about the tasks the human reviewers will perform.</p>
+    ///   - [`output_config(FlowDefinitionOutputConfig)`](crate::client::fluent_builders::CreateFlowDefinition::output_config) / [`set_output_config(Option<FlowDefinitionOutputConfig>)`](crate::client::fluent_builders::CreateFlowDefinition::set_output_config): <p>An object containing information about where the human review results will be uploaded.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFlowDefinition::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFlowDefinition::set_role_arn): <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFlowDefinition::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFlowDefinition::set_tags): <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
     /// - On success, responds with [`CreateFlowDefinitionOutput`](crate::output::CreateFlowDefinitionOutput) with field(s):
     ///   - [`flow_definition_arn(Option<String>)`](crate::output::CreateFlowDefinitionOutput::flow_definition_arn): <p>The Amazon Resource Name (ARN) of the flow definition you create.</p>
     /// - On failure, responds with [`SdkError<CreateFlowDefinitionError>`](crate::error::CreateFlowDefinitionError)
@@ -421,10 +421,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateHumanTaskUi`](crate::client::fluent_builders::CreateHumanTaskUi) operation.
     ///
-    /// - Takes [`CreateHumanTaskUiInput`](crate::input::CreateHumanTaskUiInput) with field(s):
-    ///   - [`human_task_ui_name(Option<String>)`](crate::input::CreateHumanTaskUiInput::human_task_ui_name): <p>The name of the user interface you are creating.</p>
-    ///   - [`ui_template(Option<UiTemplate>)`](crate::input::CreateHumanTaskUiInput::ui_template): <p>The Liquid template for the worker user interface.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateHumanTaskUiInput::tags): <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`human_task_ui_name(impl Into<String>)`](crate::client::fluent_builders::CreateHumanTaskUi::human_task_ui_name) / [`set_human_task_ui_name(Option<String>)`](crate::client::fluent_builders::CreateHumanTaskUi::set_human_task_ui_name): <p>The name of the user interface you are creating.</p>
+    ///   - [`ui_template(UiTemplate)`](crate::client::fluent_builders::CreateHumanTaskUi::ui_template) / [`set_ui_template(Option<UiTemplate>)`](crate::client::fluent_builders::CreateHumanTaskUi::set_ui_template): <p>The Liquid template for the worker user interface.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateHumanTaskUi::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateHumanTaskUi::set_tags): <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
     /// - On success, responds with [`CreateHumanTaskUiOutput`](crate::output::CreateHumanTaskUiOutput) with field(s):
     ///   - [`human_task_ui_arn(Option<String>)`](crate::output::CreateHumanTaskUiOutput::human_task_ui_arn): <p>The Amazon Resource Name (ARN) of the human review workflow user interface you create.</p>
     /// - On failure, responds with [`SdkError<CreateHumanTaskUiError>`](crate::error::CreateHumanTaskUiError)
@@ -433,13 +433,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateHyperParameterTuningJob`](crate::client::fluent_builders::CreateHyperParameterTuningJob) operation.
     ///
-    /// - Takes [`CreateHyperParameterTuningJobInput`](crate::input::CreateHyperParameterTuningJobInput) with field(s):
-    ///   - [`hyper_parameter_tuning_job_name(Option<String>)`](crate::input::CreateHyperParameterTuningJobInput::hyper_parameter_tuning_job_name): <p>The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job launches. The name must be unique within the same Amazon Web Services account and Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
-    ///   - [`hyper_parameter_tuning_job_config(Option<HyperParameterTuningJobConfig>)`](crate::input::CreateHyperParameterTuningJobInput::hyper_parameter_tuning_job_config): <p>The <code>HyperParameterTuningJobConfig</code> object that describes the tuning job, including the search strategy, the objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
-    ///   - [`training_job_definition(Option<HyperParameterTrainingJobDefinition>)`](crate::input::CreateHyperParameterTuningJobInput::training_job_definition): <p>The <code>HyperParameterTrainingJobDefinition</code> object that describes the training jobs that this tuning job launches, including static hyperparameters, input data configuration, output data configuration, resource configuration, and stopping condition.</p>
-    ///   - [`training_job_definitions(Option<Vec<HyperParameterTrainingJobDefinition>>)`](crate::input::CreateHyperParameterTuningJobInput::training_job_definitions): <p>A list of the <code>HyperParameterTrainingJobDefinition</code> objects launched for this tuning job.</p>
-    ///   - [`warm_start_config(Option<HyperParameterTuningJobWarmStartConfig>)`](crate::input::CreateHyperParameterTuningJobInput::warm_start_config): <p>Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>  <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start configuration, the training job that performs the best in the new tuning job is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>   <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>  </note>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateHyperParameterTuningJobInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>  <p>Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`hyper_parameter_tuning_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::hyper_parameter_tuning_job_name) / [`set_hyper_parameter_tuning_job_name(Option<String>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::set_hyper_parameter_tuning_job_name): <p>The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job launches. The name must be unique within the same Amazon Web Services account and Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
+    ///   - [`hyper_parameter_tuning_job_config(HyperParameterTuningJobConfig)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::hyper_parameter_tuning_job_config) / [`set_hyper_parameter_tuning_job_config(Option<HyperParameterTuningJobConfig>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::set_hyper_parameter_tuning_job_config): <p>The <code>HyperParameterTuningJobConfig</code> object that describes the tuning job, including the search strategy, the objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
+    ///   - [`training_job_definition(HyperParameterTrainingJobDefinition)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::training_job_definition) / [`set_training_job_definition(Option<HyperParameterTrainingJobDefinition>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::set_training_job_definition): <p>The <code>HyperParameterTrainingJobDefinition</code> object that describes the training jobs that this tuning job launches, including static hyperparameters, input data configuration, output data configuration, resource configuration, and stopping condition.</p>
+    ///   - [`training_job_definitions(Vec<HyperParameterTrainingJobDefinition>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::training_job_definitions) / [`set_training_job_definitions(Option<Vec<HyperParameterTrainingJobDefinition>>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::set_training_job_definitions): <p>A list of the <code>HyperParameterTrainingJobDefinition</code> objects launched for this tuning job.</p>
+    ///   - [`warm_start_config(HyperParameterTuningJobWarmStartConfig)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::warm_start_config) / [`set_warm_start_config(Option<HyperParameterTuningJobWarmStartConfig>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::set_warm_start_config): <p>Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>  <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start configuration, the training job that performs the best in the new tuning job is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>   <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateHyperParameterTuningJob::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>  <p>Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.</p>
     /// - On success, responds with [`CreateHyperParameterTuningJobOutput`](crate::output::CreateHyperParameterTuningJobOutput) with field(s):
     ///   - [`hyper_parameter_tuning_job_arn(Option<String>)`](crate::output::CreateHyperParameterTuningJobOutput::hyper_parameter_tuning_job_arn): <p>The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
     /// - On failure, responds with [`SdkError<CreateHyperParameterTuningJobError>`](crate::error::CreateHyperParameterTuningJobError)
@@ -450,12 +450,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateImage`](crate::client::fluent_builders::CreateImage) operation.
     ///
-    /// - Takes [`CreateImageInput`](crate::input::CreateImageInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::CreateImageInput::description): <p>The description of the image.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateImageInput::display_name): <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
-    ///   - [`image_name(Option<String>)`](crate::input::CreateImageInput::image_name): <p>The name of the image. Must be unique to your account.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateImageInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateImageInput::tags): <p>A list of tags to apply to the image.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateImage::set_description): <p>The description of the image.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateImage::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateImage::set_display_name): <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::CreateImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::CreateImage::set_image_name): <p>The name of the image. Must be unique to your account.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateImage::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateImage::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateImage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateImage::set_tags): <p>A list of tags to apply to the image.</p>
     /// - On success, responds with [`CreateImageOutput`](crate::output::CreateImageOutput) with field(s):
     ///   - [`image_arn(Option<String>)`](crate::output::CreateImageOutput::image_arn): <p>The Amazon Resource Name (ARN) of the image.</p>
     /// - On failure, responds with [`SdkError<CreateImageError>`](crate::error::CreateImageError)
@@ -464,10 +464,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateImageVersion`](crate::client::fluent_builders::CreateImageVersion) operation.
     ///
-    /// - Takes [`CreateImageVersionInput`](crate::input::CreateImageVersionInput) with field(s):
-    ///   - [`base_image(Option<String>)`](crate::input::CreateImageVersionInput::base_image): <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>  <p> <code>   <acct-id>    .dkr.ecr.    <region>     .amazonaws.com/     <repo-name[:tag] or [@digest]></repo-name[:tag]>    </region>   </acct-id></code> </p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateImageVersionInput::client_token): <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
-    ///   - [`image_name(Option<String>)`](crate::input::CreateImageVersionInput::image_name): <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`base_image(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::base_image) / [`set_base_image(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_base_image): <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>  <p> <code>   <acct-id>    .dkr.ecr.    <region>     .amazonaws.com/     <repo-name[:tag] or [@digest]></repo-name[:tag]>    </region>   </acct-id></code> </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_client_token): <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::CreateImageVersion::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::CreateImageVersion::set_image_name): <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
     /// - On success, responds with [`CreateImageVersionOutput`](crate::output::CreateImageVersionOutput) with field(s):
     ///   - [`image_version_arn(Option<String>)`](crate::output::CreateImageVersionOutput::image_version_arn): <p>The Amazon Resource Name (ARN) of the image version.</p>
     /// - On failure, responds with [`SdkError<CreateImageVersionError>`](crate::error::CreateImageVersionError)
@@ -476,14 +476,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateInferenceRecommendationsJob`](crate::client::fluent_builders::CreateInferenceRecommendationsJob) operation.
     ///
-    /// - Takes [`CreateInferenceRecommendationsJobInput`](crate::input::CreateInferenceRecommendationsJobInput) with field(s):
-    ///   - [`job_name(Option<String>)`](crate::input::CreateInferenceRecommendationsJobInput::job_name): <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account.</p>
-    ///   - [`job_type(Option<RecommendationJobType>)`](crate::input::CreateInferenceRecommendationsJobInput::job_type): <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateInferenceRecommendationsJobInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    ///   - [`input_config(Option<RecommendationJobInputConfig>)`](crate::input::CreateInferenceRecommendationsJobInput::input_config): <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
-    ///   - [`job_description(Option<String>)`](crate::input::CreateInferenceRecommendationsJobInput::job_description): <p>Description of the recommendation job.</p>
-    ///   - [`stopping_conditions(Option<RecommendationJobStoppingConditions>)`](crate::input::CreateInferenceRecommendationsJobInput::stopping_conditions): <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateInferenceRecommendationsJobInput::tags): <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_job_name): <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account.</p>
+    ///   - [`job_type(RecommendationJobType)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::job_type) / [`set_job_type(Option<RecommendationJobType>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_job_type): <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    ///   - [`input_config(RecommendationJobInputConfig)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::input_config) / [`set_input_config(Option<RecommendationJobInputConfig>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_input_config): <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
+    ///   - [`job_description(impl Into<String>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::job_description) / [`set_job_description(Option<String>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_job_description): <p>Description of the recommendation job.</p>
+    ///   - [`stopping_conditions(RecommendationJobStoppingConditions)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::stopping_conditions) / [`set_stopping_conditions(Option<RecommendationJobStoppingConditions>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_stopping_conditions): <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateInferenceRecommendationsJob::set_tags): <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
     /// - On success, responds with [`CreateInferenceRecommendationsJobOutput`](crate::output::CreateInferenceRecommendationsJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::output::CreateInferenceRecommendationsJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
     /// - On failure, responds with [`SdkError<CreateInferenceRecommendationsJobError>`](crate::error::CreateInferenceRecommendationsJobError)
@@ -494,17 +494,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateLabelingJob`](crate::client::fluent_builders::CreateLabelingJob) operation.
     ///
-    /// - Takes [`CreateLabelingJobInput`](crate::input::CreateLabelingJobInput) with field(s):
-    ///   - [`labeling_job_name(Option<String>)`](crate::input::CreateLabelingJobInput::labeling_job_name): <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
-    ///   - [`label_attribute_name(Option<String>)`](crate::input::CreateLabelingJobInput::label_attribute_name): <p>The attribute name to use for the label in the output manifest file. This is the key for the key/value pair formed with the label that a worker assigns to the object. The <code>LabelAttributeName</code> must meet the following requirements.</p>  <ul>   <li> <p>The name can't end with "-metadata". </p> </li>   <li> <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>    <ul>     <li> <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>) and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p> </li>     <li> <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p> </li>     <li> <p>Video frame object tracking (<code>VideoObjectTracking</code>), and adjustment and verification (<code>AdjustmentVideoObjectTracking</code>) labeling jobs for this task type.</p> </li>     <li> <p>3D point cloud semantic segmentation (<code>3DPointCloudSemanticSegmentation</code>), and adjustment and verification (<code>Adjustment3DPointCloudSemanticSegmentation</code>) labeling jobs for this task type. </p> </li>     <li> <p>3D point cloud object tracking (<code>3DPointCloudObjectTracking</code>), and adjustment and verification (<code>Adjustment3DPointCloudObjectTracking</code>) labeling jobs for this task type. </p> </li>    </ul> </li>  </ul>  <p></p> <important>   <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>  </important>
-    ///   - [`input_config(Option<LabelingJobInputConfig>)`](crate::input::CreateLabelingJobInput::input_config): <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>  <p>You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>. </p>  <ul>   <li> <p>Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming labeling job. If you do not specify and SNS input topic ARN, Ground Truth will create a one-time labeling job that stops after all data objects in the input manifest file have been labeled.</p> </li>   <li> <p>Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.</p> </li>  </ul>  <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
-    ///   - [`output_config(Option<LabelingJobOutputConfig>)`](crate::input::CreateLabelingJobInput::output_config): <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateLabelingJobInput::role_arn): <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
-    ///   - [`label_category_config_s3_uri(Option<String>)`](crate::input::CreateLabelingJobInput::label_category_config_s3_uri): <p>The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories used to label the data objects.</p>  <p>For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>  <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must provide worker instructions in the label category configuration file using the <code>"instructions"</code> parameter: <code>"instructions": {"shortInstruction":"</code></p> <h1><code>Add header</code></h1> <p><code>Add Instructions</code></p><code>", "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a Named Entity Recognition Labeling Job (API) </a>. <p></p>  <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom tasks</a>, your label category configuration file must be a JSON file in the following format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label categories.</p>  <p> <code>{ </code> </p>  <p> <code>"document-version": "2018-11-28",</code> </p>  <p> <code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code> </p>  <p> <code>}</code> </p>  <p>Note the following about the label category configuration file:</p>  <ul>   <li> <p>For image classification and text classification (single and multi-label) you must specify at least two label categories. For all other task types, the minimum number of label categories required is one. </p> </li>   <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>   <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>  </ul>
-    ///   - [`stopping_conditions(Option<LabelingJobStoppingConditions>)`](crate::input::CreateLabelingJobInput::stopping_conditions): <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
-    ///   - [`labeling_job_algorithms_config(Option<LabelingJobAlgorithmsConfig>)`](crate::input::CreateLabelingJobInput::labeling_job_algorithms_config): <p>Configures the information required to perform automated data labeling.</p>
-    ///   - [`human_task_config(Option<HumanTaskConfig>)`](crate::input::CreateLabelingJobInput::human_task_config): <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateLabelingJobInput::tags): <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`labeling_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateLabelingJob::labeling_job_name) / [`set_labeling_job_name(Option<String>)`](crate::client::fluent_builders::CreateLabelingJob::set_labeling_job_name): <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
+    ///   - [`label_attribute_name(impl Into<String>)`](crate::client::fluent_builders::CreateLabelingJob::label_attribute_name) / [`set_label_attribute_name(Option<String>)`](crate::client::fluent_builders::CreateLabelingJob::set_label_attribute_name): <p>The attribute name to use for the label in the output manifest file. This is the key for the key/value pair formed with the label that a worker assigns to the object. The <code>LabelAttributeName</code> must meet the following requirements.</p>  <ul>   <li> <p>The name can't end with "-metadata". </p> </li>   <li> <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>    <ul>     <li> <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>) and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p> </li>     <li> <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p> </li>     <li> <p>Video frame object tracking (<code>VideoObjectTracking</code>), and adjustment and verification (<code>AdjustmentVideoObjectTracking</code>) labeling jobs for this task type.</p> </li>     <li> <p>3D point cloud semantic segmentation (<code>3DPointCloudSemanticSegmentation</code>), and adjustment and verification (<code>Adjustment3DPointCloudSemanticSegmentation</code>) labeling jobs for this task type. </p> </li>     <li> <p>3D point cloud object tracking (<code>3DPointCloudObjectTracking</code>), and adjustment and verification (<code>Adjustment3DPointCloudObjectTracking</code>) labeling jobs for this task type. </p> </li>    </ul> </li>  </ul>  <p></p> <important>   <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>  </important>
+    ///   - [`input_config(LabelingJobInputConfig)`](crate::client::fluent_builders::CreateLabelingJob::input_config) / [`set_input_config(Option<LabelingJobInputConfig>)`](crate::client::fluent_builders::CreateLabelingJob::set_input_config): <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>  <p>You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>. </p>  <ul>   <li> <p>Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming labeling job. If you do not specify and SNS input topic ARN, Ground Truth will create a one-time labeling job that stops after all data objects in the input manifest file have been labeled.</p> </li>   <li> <p>Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.</p> </li>  </ul>  <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
+    ///   - [`output_config(LabelingJobOutputConfig)`](crate::client::fluent_builders::CreateLabelingJob::output_config) / [`set_output_config(Option<LabelingJobOutputConfig>)`](crate::client::fluent_builders::CreateLabelingJob::set_output_config): <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLabelingJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateLabelingJob::set_role_arn): <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
+    ///   - [`label_category_config_s3_uri(impl Into<String>)`](crate::client::fluent_builders::CreateLabelingJob::label_category_config_s3_uri) / [`set_label_category_config_s3_uri(Option<String>)`](crate::client::fluent_builders::CreateLabelingJob::set_label_category_config_s3_uri): <p>The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories used to label the data objects.</p>  <p>For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>  <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must provide worker instructions in the label category configuration file using the <code>"instructions"</code> parameter: <code>"instructions": {"shortInstruction":"</code></p> <h1><code>Add header</code></h1> <p><code>Add Instructions</code></p><code>", "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a Named Entity Recognition Labeling Job (API) </a>. <p></p>  <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom tasks</a>, your label category configuration file must be a JSON file in the following format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label categories.</p>  <p> <code>{ </code> </p>  <p> <code>"document-version": "2018-11-28",</code> </p>  <p> <code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code> </p>  <p> <code>}</code> </p>  <p>Note the following about the label category configuration file:</p>  <ul>   <li> <p>For image classification and text classification (single and multi-label) you must specify at least two label categories. For all other task types, the minimum number of label categories required is one. </p> </li>   <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>   <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>  </ul>
+    ///   - [`stopping_conditions(LabelingJobStoppingConditions)`](crate::client::fluent_builders::CreateLabelingJob::stopping_conditions) / [`set_stopping_conditions(Option<LabelingJobStoppingConditions>)`](crate::client::fluent_builders::CreateLabelingJob::set_stopping_conditions): <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
+    ///   - [`labeling_job_algorithms_config(LabelingJobAlgorithmsConfig)`](crate::client::fluent_builders::CreateLabelingJob::labeling_job_algorithms_config) / [`set_labeling_job_algorithms_config(Option<LabelingJobAlgorithmsConfig>)`](crate::client::fluent_builders::CreateLabelingJob::set_labeling_job_algorithms_config): <p>Configures the information required to perform automated data labeling.</p>
+    ///   - [`human_task_config(HumanTaskConfig)`](crate::client::fluent_builders::CreateLabelingJob::human_task_config) / [`set_human_task_config(Option<HumanTaskConfig>)`](crate::client::fluent_builders::CreateLabelingJob::set_human_task_config): <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateLabelingJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateLabelingJob::set_tags): <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// - On success, responds with [`CreateLabelingJobOutput`](crate::output::CreateLabelingJobOutput) with field(s):
     ///   - [`labeling_job_arn(Option<String>)`](crate::output::CreateLabelingJobOutput::labeling_job_arn): <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to identify the labeling job.</p>
     /// - On failure, responds with [`SdkError<CreateLabelingJobError>`](crate::error::CreateLabelingJobError)
@@ -513,15 +513,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateModel`](crate::client::fluent_builders::CreateModel) operation.
     ///
-    /// - Takes [`CreateModelInput`](crate::input::CreateModelInput) with field(s):
-    ///   - [`model_name(Option<String>)`](crate::input::CreateModelInput::model_name): <p>The name of the new model.</p>
-    ///   - [`primary_container(Option<ContainerDefinition>)`](crate::input::CreateModelInput::primary_container): <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
-    ///   - [`containers(Option<Vec<ContainerDefinition>>)`](crate::input::CreateModelInput::containers): <p>Specifies the containers in the inference pipeline.</p>
-    ///   - [`inference_execution_config(Option<InferenceExecutionConfig>)`](crate::input::CreateModelInput::inference_execution_config): <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    ///   - [`execution_role_arn(Option<String>)`](crate::input::CreateModelInput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::CreateModelInput::vpc_config): <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    ///   - [`enable_network_isolation(bool)`](crate::input::CreateModelInput::enable_network_isolation): <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::CreateModel::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::CreateModel::set_model_name): <p>The name of the new model.</p>
+    ///   - [`primary_container(ContainerDefinition)`](crate::client::fluent_builders::CreateModel::primary_container) / [`set_primary_container(Option<ContainerDefinition>)`](crate::client::fluent_builders::CreateModel::set_primary_container): <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
+    ///   - [`containers(Vec<ContainerDefinition>)`](crate::client::fluent_builders::CreateModel::containers) / [`set_containers(Option<Vec<ContainerDefinition>>)`](crate::client::fluent_builders::CreateModel::set_containers): <p>Specifies the containers in the inference pipeline.</p>
+    ///   - [`inference_execution_config(InferenceExecutionConfig)`](crate::client::fluent_builders::CreateModel::inference_execution_config) / [`set_inference_execution_config(Option<InferenceExecutionConfig>)`](crate::client::fluent_builders::CreateModel::set_inference_execution_config): <p>Specifies details of how containers in a multi-container endpoint are called.</p>
+    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateModel::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::CreateModel::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateModel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateModel::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateModel::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateModel::set_vpc_config): <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    ///   - [`enable_network_isolation(bool)`](crate::client::fluent_builders::CreateModel::enable_network_isolation) / [`set_enable_network_isolation(bool)`](crate::client::fluent_builders::CreateModel::set_enable_network_isolation): <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
     /// - On success, responds with [`CreateModelOutput`](crate::output::CreateModelOutput) with field(s):
     ///   - [`model_arn(Option<String>)`](crate::output::CreateModelOutput::model_arn): <p>The ARN of the model created in Amazon SageMaker.</p>
     /// - On failure, responds with [`SdkError<CreateModelError>`](crate::error::CreateModelError)
@@ -530,17 +530,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateModelBiasJobDefinition`](crate::client::fluent_builders::CreateModelBiasJobDefinition) operation.
     ///
-    /// - Takes [`CreateModelBiasJobDefinitionInput`](crate::input::CreateModelBiasJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::CreateModelBiasJobDefinitionInput::job_definition_name): <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    ///   - [`model_bias_baseline_config(Option<ModelBiasBaselineConfig>)`](crate::input::CreateModelBiasJobDefinitionInput::model_bias_baseline_config): <p>The baseline configuration for a model bias job.</p>
-    ///   - [`model_bias_app_specification(Option<ModelBiasAppSpecification>)`](crate::input::CreateModelBiasJobDefinitionInput::model_bias_app_specification): <p>Configures the model bias job to run a specified Docker container image.</p>
-    ///   - [`model_bias_job_input(Option<ModelBiasJobInput>)`](crate::input::CreateModelBiasJobDefinitionInput::model_bias_job_input): <p>Inputs for the model bias job.</p>
-    ///   - [`model_bias_job_output_config(Option<MonitoringOutputConfig>)`](crate::input::CreateModelBiasJobDefinitionInput::model_bias_job_output_config): <p>The output configuration for monitoring jobs.</p>
-    ///   - [`job_resources(Option<MonitoringResources>)`](crate::input::CreateModelBiasJobDefinitionInput::job_resources): <p>Identifies the resources to deploy for a monitoring job.</p>
-    ///   - [`network_config(Option<MonitoringNetworkConfig>)`](crate::input::CreateModelBiasJobDefinitionInput::network_config): <p>Networking options for a model bias job.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateModelBiasJobDefinitionInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    ///   - [`stopping_condition(Option<MonitoringStoppingCondition>)`](crate::input::CreateModelBiasJobDefinitionInput::stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelBiasJobDefinitionInput::tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_job_definition_name): <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    ///   - [`model_bias_baseline_config(ModelBiasBaselineConfig)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::model_bias_baseline_config) / [`set_model_bias_baseline_config(Option<ModelBiasBaselineConfig>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_model_bias_baseline_config): <p>The baseline configuration for a model bias job.</p>
+    ///   - [`model_bias_app_specification(ModelBiasAppSpecification)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::model_bias_app_specification) / [`set_model_bias_app_specification(Option<ModelBiasAppSpecification>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_model_bias_app_specification): <p>Configures the model bias job to run a specified Docker container image.</p>
+    ///   - [`model_bias_job_input(ModelBiasJobInput)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::model_bias_job_input) / [`set_model_bias_job_input(Option<ModelBiasJobInput>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_model_bias_job_input): <p>Inputs for the model bias job.</p>
+    ///   - [`model_bias_job_output_config(MonitoringOutputConfig)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::model_bias_job_output_config) / [`set_model_bias_job_output_config(Option<MonitoringOutputConfig>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_model_bias_job_output_config): <p>The output configuration for monitoring jobs.</p>
+    ///   - [`job_resources(MonitoringResources)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::job_resources) / [`set_job_resources(Option<MonitoringResources>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_job_resources): <p>Identifies the resources to deploy for a monitoring job.</p>
+    ///   - [`network_config(MonitoringNetworkConfig)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::network_config) / [`set_network_config(Option<MonitoringNetworkConfig>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_network_config): <p>Networking options for a model bias job.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    ///   - [`stopping_condition(MonitoringStoppingCondition)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::stopping_condition) / [`set_stopping_condition(Option<MonitoringStoppingCondition>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateModelBiasJobDefinition::set_tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// - On success, responds with [`CreateModelBiasJobDefinitionOutput`](crate::output::CreateModelBiasJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::output::CreateModelBiasJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the model bias job.</p>
     /// - On failure, responds with [`SdkError<CreateModelBiasJobDefinitionError>`](crate::error::CreateModelBiasJobDefinitionError)
@@ -551,17 +551,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateModelExplainabilityJobDefinition`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition) operation.
     ///
-    /// - Takes [`CreateModelExplainabilityJobDefinitionInput`](crate::input::CreateModelExplainabilityJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::job_definition_name): <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    ///   - [`model_explainability_baseline_config(Option<ModelExplainabilityBaselineConfig>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::model_explainability_baseline_config): <p>The baseline configuration for a model explainability job.</p>
-    ///   - [`model_explainability_app_specification(Option<ModelExplainabilityAppSpecification>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::model_explainability_app_specification): <p>Configures the model explainability job to run a specified Docker container image.</p>
-    ///   - [`model_explainability_job_input(Option<ModelExplainabilityJobInput>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::model_explainability_job_input): <p>Inputs for the model explainability job.</p>
-    ///   - [`model_explainability_job_output_config(Option<MonitoringOutputConfig>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::model_explainability_job_output_config): <p>The output configuration for monitoring jobs.</p>
-    ///   - [`job_resources(Option<MonitoringResources>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::job_resources): <p>Identifies the resources to deploy for a monitoring job.</p>
-    ///   - [`network_config(Option<MonitoringNetworkConfig>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::network_config): <p>Networking options for a model explainability job.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    ///   - [`stopping_condition(Option<MonitoringStoppingCondition>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelExplainabilityJobDefinitionInput::tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_job_definition_name): <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    ///   - [`model_explainability_baseline_config(ModelExplainabilityBaselineConfig)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::model_explainability_baseline_config) / [`set_model_explainability_baseline_config(Option<ModelExplainabilityBaselineConfig>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_model_explainability_baseline_config): <p>The baseline configuration for a model explainability job.</p>
+    ///   - [`model_explainability_app_specification(ModelExplainabilityAppSpecification)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::model_explainability_app_specification) / [`set_model_explainability_app_specification(Option<ModelExplainabilityAppSpecification>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_model_explainability_app_specification): <p>Configures the model explainability job to run a specified Docker container image.</p>
+    ///   - [`model_explainability_job_input(ModelExplainabilityJobInput)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::model_explainability_job_input) / [`set_model_explainability_job_input(Option<ModelExplainabilityJobInput>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_model_explainability_job_input): <p>Inputs for the model explainability job.</p>
+    ///   - [`model_explainability_job_output_config(MonitoringOutputConfig)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::model_explainability_job_output_config) / [`set_model_explainability_job_output_config(Option<MonitoringOutputConfig>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_model_explainability_job_output_config): <p>The output configuration for monitoring jobs.</p>
+    ///   - [`job_resources(MonitoringResources)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::job_resources) / [`set_job_resources(Option<MonitoringResources>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_job_resources): <p>Identifies the resources to deploy for a monitoring job.</p>
+    ///   - [`network_config(MonitoringNetworkConfig)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::network_config) / [`set_network_config(Option<MonitoringNetworkConfig>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_network_config): <p>Networking options for a model explainability job.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    ///   - [`stopping_condition(MonitoringStoppingCondition)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::stopping_condition) / [`set_stopping_condition(Option<MonitoringStoppingCondition>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateModelExplainabilityJobDefinition::set_tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// - On success, responds with [`CreateModelExplainabilityJobDefinitionOutput`](crate::output::CreateModelExplainabilityJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::output::CreateModelExplainabilityJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the model explainability job.</p>
     /// - On failure, responds with [`SdkError<CreateModelExplainabilityJobDefinitionError>`](crate::error::CreateModelExplainabilityJobDefinitionError)
@@ -572,25 +572,25 @@ where
     }
     /// Constructs a fluent builder for the [`CreateModelPackage`](crate::client::fluent_builders::CreateModelPackage) operation.
     ///
-    /// - Takes [`CreateModelPackageInput`](crate::input::CreateModelPackageInput) with field(s):
-    ///   - [`model_package_name(Option<String>)`](crate::input::CreateModelPackageInput::model_package_name): <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>  <p>This parameter is required for unversioned models. It is not applicable to versioned models.</p>
-    ///   - [`model_package_group_name(Option<String>)`](crate::input::CreateModelPackageInput::model_package_group_name): <p>The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.</p>  <p>This parameter is required for versioned models, and does not apply to unversioned models.</p>
-    ///   - [`model_package_description(Option<String>)`](crate::input::CreateModelPackageInput::model_package_description): <p>A description of the model package.</p>
-    ///   - [`inference_specification(Option<InferenceSpecification>)`](crate::input::CreateModelPackageInput::inference_specification): <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>  <ul>   <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>   <li> <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p> </li>   <li> <p>The input and output content formats that the model package supports for inference.</p> </li>  </ul>
-    ///   - [`validation_specification(Option<ModelPackageValidationSpecification>)`](crate::input::CreateModelPackageInput::validation_specification): <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.</p>
-    ///   - [`source_algorithm_specification(Option<SourceAlgorithmSpecification>)`](crate::input::CreateModelPackageInput::source_algorithm_specification): <p>Details about the algorithm that was used to create the model package.</p>
-    ///   - [`certify_for_marketplace(bool)`](crate::input::CreateModelPackageInput::certify_for_marketplace): <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>  <p>This parameter is optional for unversioned models, and does not apply to versioned models.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelPackageInput::tags): <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    ///   - [`model_approval_status(Option<ModelApprovalStatus>)`](crate::input::CreateModelPackageInput::model_approval_status): <p>Whether the model is approved for deployment.</p>  <p>This parameter is optional for versioned models, and does not apply to unversioned models.</p>  <p>For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.</p>
-    ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::input::CreateModelPackageInput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    ///   - [`model_metrics(Option<ModelMetrics>)`](crate::input::CreateModelPackageInput::model_metrics): <p>A structure that contains model metrics reports.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateModelPackageInput::client_token): <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    ///   - [`customer_metadata_properties(Option<HashMap<String, String>>)`](crate::input::CreateModelPackageInput::customer_metadata_properties): <p>The metadata properties associated with the model package versions.</p>
-    ///   - [`drift_check_baselines(Option<DriftCheckBaselines>)`](crate::input::CreateModelPackageInput::drift_check_baselines): <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
-    ///   - [`domain(Option<String>)`](crate::input::CreateModelPackageInput::domain): <p>The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.</p>
-    ///   - [`task(Option<String>)`](crate::input::CreateModelPackageInput::task): <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
-    ///   - [`sample_payload_url(Option<String>)`](crate::input::CreateModelPackageInput::sample_payload_url): <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    ///   - [`additional_inference_specifications(Option<Vec<AdditionalInferenceSpecificationDefinition>>)`](crate::input::CreateModelPackageInput::additional_inference_specifications): <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::model_package_name) / [`set_model_package_name(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_model_package_name): <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>  <p>This parameter is required for unversioned models. It is not applicable to versioned models.</p>
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_model_package_group_name): <p>The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.</p>  <p>This parameter is required for versioned models, and does not apply to unversioned models.</p>
+    ///   - [`model_package_description(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::model_package_description) / [`set_model_package_description(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_model_package_description): <p>A description of the model package.</p>
+    ///   - [`inference_specification(InferenceSpecification)`](crate::client::fluent_builders::CreateModelPackage::inference_specification) / [`set_inference_specification(Option<InferenceSpecification>)`](crate::client::fluent_builders::CreateModelPackage::set_inference_specification): <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>  <ul>   <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>   <li> <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p> </li>   <li> <p>The input and output content formats that the model package supports for inference.</p> </li>  </ul>
+    ///   - [`validation_specification(ModelPackageValidationSpecification)`](crate::client::fluent_builders::CreateModelPackage::validation_specification) / [`set_validation_specification(Option<ModelPackageValidationSpecification>)`](crate::client::fluent_builders::CreateModelPackage::set_validation_specification): <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.</p>
+    ///   - [`source_algorithm_specification(SourceAlgorithmSpecification)`](crate::client::fluent_builders::CreateModelPackage::source_algorithm_specification) / [`set_source_algorithm_specification(Option<SourceAlgorithmSpecification>)`](crate::client::fluent_builders::CreateModelPackage::set_source_algorithm_specification): <p>Details about the algorithm that was used to create the model package.</p>
+    ///   - [`certify_for_marketplace(bool)`](crate::client::fluent_builders::CreateModelPackage::certify_for_marketplace) / [`set_certify_for_marketplace(bool)`](crate::client::fluent_builders::CreateModelPackage::set_certify_for_marketplace): <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>  <p>This parameter is optional for unversioned models, and does not apply to versioned models.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateModelPackage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateModelPackage::set_tags): <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    ///   - [`model_approval_status(ModelApprovalStatus)`](crate::client::fluent_builders::CreateModelPackage::model_approval_status) / [`set_model_approval_status(Option<ModelApprovalStatus>)`](crate::client::fluent_builders::CreateModelPackage::set_model_approval_status): <p>Whether the model is approved for deployment.</p>  <p>This parameter is optional for versioned models, and does not apply to unversioned models.</p>  <p>For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.</p>
+    ///   - [`metadata_properties(MetadataProperties)`](crate::client::fluent_builders::CreateModelPackage::metadata_properties) / [`set_metadata_properties(Option<MetadataProperties>)`](crate::client::fluent_builders::CreateModelPackage::set_metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    ///   - [`model_metrics(ModelMetrics)`](crate::client::fluent_builders::CreateModelPackage::model_metrics) / [`set_model_metrics(Option<ModelMetrics>)`](crate::client::fluent_builders::CreateModelPackage::set_model_metrics): <p>A structure that contains model metrics reports.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_client_token): <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    ///   - [`customer_metadata_properties(HashMap<String, String>)`](crate::client::fluent_builders::CreateModelPackage::customer_metadata_properties) / [`set_customer_metadata_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateModelPackage::set_customer_metadata_properties): <p>The metadata properties associated with the model package versions.</p>
+    ///   - [`drift_check_baselines(DriftCheckBaselines)`](crate::client::fluent_builders::CreateModelPackage::drift_check_baselines) / [`set_drift_check_baselines(Option<DriftCheckBaselines>)`](crate::client::fluent_builders::CreateModelPackage::set_drift_check_baselines): <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_domain): <p>The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.</p>
+    ///   - [`task(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::task) / [`set_task(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_task): <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+    ///   - [`sample_payload_url(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackage::sample_payload_url) / [`set_sample_payload_url(Option<String>)`](crate::client::fluent_builders::CreateModelPackage::set_sample_payload_url): <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    ///   - [`additional_inference_specifications(Vec<AdditionalInferenceSpecificationDefinition>)`](crate::client::fluent_builders::CreateModelPackage::additional_inference_specifications) / [`set_additional_inference_specifications(Option<Vec<AdditionalInferenceSpecificationDefinition>>)`](crate::client::fluent_builders::CreateModelPackage::set_additional_inference_specifications): <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
     /// - On success, responds with [`CreateModelPackageOutput`](crate::output::CreateModelPackageOutput) with field(s):
     ///   - [`model_package_arn(Option<String>)`](crate::output::CreateModelPackageOutput::model_package_arn): <p>The Amazon Resource Name (ARN) of the new model package.</p>
     /// - On failure, responds with [`SdkError<CreateModelPackageError>`](crate::error::CreateModelPackageError)
@@ -599,10 +599,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateModelPackageGroup`](crate::client::fluent_builders::CreateModelPackageGroup) operation.
     ///
-    /// - Takes [`CreateModelPackageGroupInput`](crate::input::CreateModelPackageGroupInput) with field(s):
-    ///   - [`model_package_group_name(Option<String>)`](crate::input::CreateModelPackageGroupInput::model_package_group_name): <p>The name of the model group.</p>
-    ///   - [`model_package_group_description(Option<String>)`](crate::input::CreateModelPackageGroupInput::model_package_group_description): <p>A description for the model group.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelPackageGroupInput::tags): <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackageGroup::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::CreateModelPackageGroup::set_model_package_group_name): <p>The name of the model group.</p>
+    ///   - [`model_package_group_description(impl Into<String>)`](crate::client::fluent_builders::CreateModelPackageGroup::model_package_group_description) / [`set_model_package_group_description(Option<String>)`](crate::client::fluent_builders::CreateModelPackageGroup::set_model_package_group_description): <p>A description for the model group.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateModelPackageGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateModelPackageGroup::set_tags): <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     /// - On success, responds with [`CreateModelPackageGroupOutput`](crate::output::CreateModelPackageGroupOutput) with field(s):
     ///   - [`model_package_group_arn(Option<String>)`](crate::output::CreateModelPackageGroupOutput::model_package_group_arn): <p>The Amazon Resource Name (ARN) of the model group.</p>
     /// - On failure, responds with [`SdkError<CreateModelPackageGroupError>`](crate::error::CreateModelPackageGroupError)
@@ -611,17 +611,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateModelQualityJobDefinition`](crate::client::fluent_builders::CreateModelQualityJobDefinition) operation.
     ///
-    /// - Takes [`CreateModelQualityJobDefinitionInput`](crate::input::CreateModelQualityJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::CreateModelQualityJobDefinitionInput::job_definition_name): <p>The name of the monitoring job definition.</p>
-    ///   - [`model_quality_baseline_config(Option<ModelQualityBaselineConfig>)`](crate::input::CreateModelQualityJobDefinitionInput::model_quality_baseline_config): <p>Specifies the constraints and baselines for the monitoring job.</p>
-    ///   - [`model_quality_app_specification(Option<ModelQualityAppSpecification>)`](crate::input::CreateModelQualityJobDefinitionInput::model_quality_app_specification): <p>The container that runs the monitoring job.</p>
-    ///   - [`model_quality_job_input(Option<ModelQualityJobInput>)`](crate::input::CreateModelQualityJobDefinitionInput::model_quality_job_input): <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
-    ///   - [`model_quality_job_output_config(Option<MonitoringOutputConfig>)`](crate::input::CreateModelQualityJobDefinitionInput::model_quality_job_output_config): <p>The output configuration for monitoring jobs.</p>
-    ///   - [`job_resources(Option<MonitoringResources>)`](crate::input::CreateModelQualityJobDefinitionInput::job_resources): <p>Identifies the resources to deploy for a monitoring job.</p>
-    ///   - [`network_config(Option<MonitoringNetworkConfig>)`](crate::input::CreateModelQualityJobDefinitionInput::network_config): <p>Specifies the network configuration for the monitoring job.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateModelQualityJobDefinitionInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    ///   - [`stopping_condition(Option<MonitoringStoppingCondition>)`](crate::input::CreateModelQualityJobDefinitionInput::stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelQualityJobDefinitionInput::tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_job_definition_name): <p>The name of the monitoring job definition.</p>
+    ///   - [`model_quality_baseline_config(ModelQualityBaselineConfig)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::model_quality_baseline_config) / [`set_model_quality_baseline_config(Option<ModelQualityBaselineConfig>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_model_quality_baseline_config): <p>Specifies the constraints and baselines for the monitoring job.</p>
+    ///   - [`model_quality_app_specification(ModelQualityAppSpecification)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::model_quality_app_specification) / [`set_model_quality_app_specification(Option<ModelQualityAppSpecification>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_model_quality_app_specification): <p>The container that runs the monitoring job.</p>
+    ///   - [`model_quality_job_input(ModelQualityJobInput)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::model_quality_job_input) / [`set_model_quality_job_input(Option<ModelQualityJobInput>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_model_quality_job_input): <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
+    ///   - [`model_quality_job_output_config(MonitoringOutputConfig)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::model_quality_job_output_config) / [`set_model_quality_job_output_config(Option<MonitoringOutputConfig>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_model_quality_job_output_config): <p>The output configuration for monitoring jobs.</p>
+    ///   - [`job_resources(MonitoringResources)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::job_resources) / [`set_job_resources(Option<MonitoringResources>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_job_resources): <p>Identifies the resources to deploy for a monitoring job.</p>
+    ///   - [`network_config(MonitoringNetworkConfig)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::network_config) / [`set_network_config(Option<MonitoringNetworkConfig>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_network_config): <p>Specifies the network configuration for the monitoring job.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    ///   - [`stopping_condition(MonitoringStoppingCondition)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::stopping_condition) / [`set_stopping_condition(Option<MonitoringStoppingCondition>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateModelQualityJobDefinition::set_tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// - On success, responds with [`CreateModelQualityJobDefinitionOutput`](crate::output::CreateModelQualityJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::output::CreateModelQualityJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the model quality monitoring job.</p>
     /// - On failure, responds with [`SdkError<CreateModelQualityJobDefinitionError>`](crate::error::CreateModelQualityJobDefinitionError)
@@ -632,10 +632,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMonitoringSchedule`](crate::client::fluent_builders::CreateMonitoringSchedule) operation.
     ///
-    /// - Takes [`CreateMonitoringScheduleInput`](crate::input::CreateMonitoringScheduleInput) with field(s):
-    ///   - [`monitoring_schedule_name(Option<String>)`](crate::input::CreateMonitoringScheduleInput::monitoring_schedule_name): <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
-    ///   - [`monitoring_schedule_config(Option<MonitoringScheduleConfig>)`](crate::input::CreateMonitoringScheduleInput::monitoring_schedule_config): <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateMonitoringScheduleInput::tags): <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::CreateMonitoringSchedule::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::CreateMonitoringSchedule::set_monitoring_schedule_name): <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
+    ///   - [`monitoring_schedule_config(MonitoringScheduleConfig)`](crate::client::fluent_builders::CreateMonitoringSchedule::monitoring_schedule_config) / [`set_monitoring_schedule_config(Option<MonitoringScheduleConfig>)`](crate::client::fluent_builders::CreateMonitoringSchedule::set_monitoring_schedule_config): <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMonitoringSchedule::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMonitoringSchedule::set_tags): <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// - On success, responds with [`CreateMonitoringScheduleOutput`](crate::output::CreateMonitoringScheduleOutput) with field(s):
     ///   - [`monitoring_schedule_arn(Option<String>)`](crate::output::CreateMonitoringScheduleOutput::monitoring_schedule_arn): <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     /// - On failure, responds with [`SdkError<CreateMonitoringScheduleError>`](crate::error::CreateMonitoringScheduleError)
@@ -644,22 +644,22 @@ where
     }
     /// Constructs a fluent builder for the [`CreateNotebookInstance`](crate::client::fluent_builders::CreateNotebookInstance) operation.
     ///
-    /// - Takes [`CreateNotebookInstanceInput`](crate::input::CreateNotebookInstanceInput) with field(s):
-    ///   - [`notebook_instance_name(Option<String>)`](crate::input::CreateNotebookInstanceInput::notebook_instance_name): <p>The name of the new notebook instance.</p>
-    ///   - [`instance_type(Option<InstanceType>)`](crate::input::CreateNotebookInstanceInput::instance_type): <p>The type of ML compute instance to launch for the notebook instance.</p>
-    ///   - [`subnet_id(Option<String>)`](crate::input::CreateNotebookInstanceInput::subnet_id): <p>The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance. </p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::CreateNotebookInstanceInput::security_group_ids): <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet. </p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateNotebookInstanceInput::role_arn): <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
-    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateNotebookInstanceInput::kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateNotebookInstanceInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    ///   - [`lifecycle_config_name(Option<String>)`](crate::input::CreateNotebookInstanceInput::lifecycle_config_name): <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
-    ///   - [`direct_internet_access(Option<DirectInternetAccess>)`](crate::input::CreateNotebookInstanceInput::direct_internet_access): <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
-    ///   - [`volume_size_in_gb(Option<i32>)`](crate::input::CreateNotebookInstanceInput::volume_size_in_gb): <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.</p>
-    ///   - [`accelerator_types(Option<Vec<NotebookInstanceAcceleratorType>>)`](crate::input::CreateNotebookInstanceInput::accelerator_types): <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    ///   - [`default_code_repository(Option<String>)`](crate::input::CreateNotebookInstanceInput::default_code_repository): <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
-    ///   - [`additional_code_repositories(Option<Vec<String>>)`](crate::input::CreateNotebookInstanceInput::additional_code_repositories): <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
-    ///   - [`root_access(Option<RootAccess>)`](crate::input::CreateNotebookInstanceInput::root_access): <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>   <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>  </note>
-    ///   - [`platform_identifier(Option<String>)`](crate::input::CreateNotebookInstanceInput::platform_identifier): <p>The platform identifier of the notebook instance runtime environment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_notebook_instance_name): <p>The name of the new notebook instance.</p>
+    ///   - [`instance_type(InstanceType)`](crate::client::fluent_builders::CreateNotebookInstance::instance_type) / [`set_instance_type(Option<InstanceType>)`](crate::client::fluent_builders::CreateNotebookInstance::set_instance_type): <p>The type of ML compute instance to launch for the notebook instance.</p>
+    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_subnet_id): <p>The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance. </p>
+    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateNotebookInstance::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_security_group_ids): <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet. </p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_role_arn): <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_kms_key_id): <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateNotebookInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    ///   - [`lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::lifecycle_config_name) / [`set_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_lifecycle_config_name): <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+    ///   - [`direct_internet_access(DirectInternetAccess)`](crate::client::fluent_builders::CreateNotebookInstance::direct_internet_access) / [`set_direct_internet_access(Option<DirectInternetAccess>)`](crate::client::fluent_builders::CreateNotebookInstance::set_direct_internet_access): <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
+    ///   - [`volume_size_in_gb(i32)`](crate::client::fluent_builders::CreateNotebookInstance::volume_size_in_gb) / [`set_volume_size_in_gb(Option<i32>)`](crate::client::fluent_builders::CreateNotebookInstance::set_volume_size_in_gb): <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.</p>
+    ///   - [`accelerator_types(Vec<NotebookInstanceAcceleratorType>)`](crate::client::fluent_builders::CreateNotebookInstance::accelerator_types) / [`set_accelerator_types(Option<Vec<NotebookInstanceAcceleratorType>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_accelerator_types): <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    ///   - [`default_code_repository(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::default_code_repository) / [`set_default_code_repository(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_default_code_repository): <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    ///   - [`additional_code_repositories(Vec<String>)`](crate::client::fluent_builders::CreateNotebookInstance::additional_code_repositories) / [`set_additional_code_repositories(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNotebookInstance::set_additional_code_repositories): <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    ///   - [`root_access(RootAccess)`](crate::client::fluent_builders::CreateNotebookInstance::root_access) / [`set_root_access(Option<RootAccess>)`](crate::client::fluent_builders::CreateNotebookInstance::set_root_access): <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>   <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>  </note>
+    ///   - [`platform_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstance::platform_identifier) / [`set_platform_identifier(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstance::set_platform_identifier): <p>The platform identifier of the notebook instance runtime environment.</p>
     /// - On success, responds with [`CreateNotebookInstanceOutput`](crate::output::CreateNotebookInstanceOutput) with field(s):
     ///   - [`notebook_instance_arn(Option<String>)`](crate::output::CreateNotebookInstanceOutput::notebook_instance_arn): <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     /// - On failure, responds with [`SdkError<CreateNotebookInstanceError>`](crate::error::CreateNotebookInstanceError)
@@ -668,10 +668,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateNotebookInstanceLifecycleConfig`](crate::client::fluent_builders::CreateNotebookInstanceLifecycleConfig) operation.
     ///
-    /// - Takes [`CreateNotebookInstanceLifecycleConfigInput`](crate::input::CreateNotebookInstanceLifecycleConfigInput) with field(s):
-    ///   - [`notebook_instance_lifecycle_config_name(Option<String>)`](crate::input::CreateNotebookInstanceLifecycleConfigInput::notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration.</p>
-    ///   - [`on_create(Option<Vec<NotebookInstanceLifecycleHook>>)`](crate::input::CreateNotebookInstanceLifecycleConfigInput::on_create): <p>A shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
-    ///   - [`on_start(Option<Vec<NotebookInstanceLifecycleHook>>)`](crate::input::CreateNotebookInstanceLifecycleConfigInput::on_start): <p>A shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateNotebookInstanceLifecycleConfig::notebook_instance_lifecycle_config_name) / [`set_notebook_instance_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::CreateNotebookInstanceLifecycleConfig::set_notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration.</p>
+    ///   - [`on_create(Vec<NotebookInstanceLifecycleHook>)`](crate::client::fluent_builders::CreateNotebookInstanceLifecycleConfig::on_create) / [`set_on_create(Option<Vec<NotebookInstanceLifecycleHook>>)`](crate::client::fluent_builders::CreateNotebookInstanceLifecycleConfig::set_on_create): <p>A shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
+    ///   - [`on_start(Vec<NotebookInstanceLifecycleHook>)`](crate::client::fluent_builders::CreateNotebookInstanceLifecycleConfig::on_start) / [`set_on_start(Option<Vec<NotebookInstanceLifecycleHook>>)`](crate::client::fluent_builders::CreateNotebookInstanceLifecycleConfig::set_on_start): <p>A shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
     /// - On success, responds with [`CreateNotebookInstanceLifecycleConfigOutput`](crate::output::CreateNotebookInstanceLifecycleConfigOutput) with field(s):
     ///   - [`notebook_instance_lifecycle_config_arn(Option<String>)`](crate::output::CreateNotebookInstanceLifecycleConfigOutput::notebook_instance_lifecycle_config_arn): <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
     /// - On failure, responds with [`SdkError<CreateNotebookInstanceLifecycleConfigError>`](crate::error::CreateNotebookInstanceLifecycleConfigError)
@@ -682,16 +682,16 @@ where
     }
     /// Constructs a fluent builder for the [`CreatePipeline`](crate::client::fluent_builders::CreatePipeline) operation.
     ///
-    /// - Takes [`CreatePipelineInput`](crate::input::CreatePipelineInput) with field(s):
-    ///   - [`pipeline_name(Option<String>)`](crate::input::CreatePipelineInput::pipeline_name): <p>The name of the pipeline.</p>
-    ///   - [`pipeline_display_name(Option<String>)`](crate::input::CreatePipelineInput::pipeline_display_name): <p>The display name of the pipeline.</p>
-    ///   - [`pipeline_definition(Option<String>)`](crate::input::CreatePipelineInput::pipeline_definition): <p>The JSON pipeline definition of the pipeline.</p>
-    ///   - [`pipeline_definition_s3_location(Option<PipelineDefinitionS3Location>)`](crate::input::CreatePipelineInput::pipeline_definition_s3_location): <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    ///   - [`pipeline_description(Option<String>)`](crate::input::CreatePipelineInput::pipeline_description): <p>A description of the pipeline.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreatePipelineInput::client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreatePipelineInput::role_arn): <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePipelineInput::tags): <p>A list of tags to apply to the created pipeline.</p>
-    ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::input::CreatePipelineInput::parallelism_configuration): <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::CreatePipeline::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::CreatePipeline::set_pipeline_name): <p>The name of the pipeline.</p>
+    ///   - [`pipeline_display_name(impl Into<String>)`](crate::client::fluent_builders::CreatePipeline::pipeline_display_name) / [`set_pipeline_display_name(Option<String>)`](crate::client::fluent_builders::CreatePipeline::set_pipeline_display_name): <p>The display name of the pipeline.</p>
+    ///   - [`pipeline_definition(impl Into<String>)`](crate::client::fluent_builders::CreatePipeline::pipeline_definition) / [`set_pipeline_definition(Option<String>)`](crate::client::fluent_builders::CreatePipeline::set_pipeline_definition): <p>The JSON pipeline definition of the pipeline.</p>
+    ///   - [`pipeline_definition_s3_location(PipelineDefinitionS3Location)`](crate::client::fluent_builders::CreatePipeline::pipeline_definition_s3_location) / [`set_pipeline_definition_s3_location(Option<PipelineDefinitionS3Location>)`](crate::client::fluent_builders::CreatePipeline::set_pipeline_definition_s3_location): <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
+    ///   - [`pipeline_description(impl Into<String>)`](crate::client::fluent_builders::CreatePipeline::pipeline_description) / [`set_pipeline_description(Option<String>)`](crate::client::fluent_builders::CreatePipeline::set_pipeline_description): <p>A description of the pipeline.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreatePipeline::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreatePipeline::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePipeline::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreatePipeline::set_role_arn): <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePipeline::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePipeline::set_tags): <p>A list of tags to apply to the created pipeline.</p>
+    ///   - [`parallelism_configuration(ParallelismConfiguration)`](crate::client::fluent_builders::CreatePipeline::parallelism_configuration) / [`set_parallelism_configuration(Option<ParallelismConfiguration>)`](crate::client::fluent_builders::CreatePipeline::set_parallelism_configuration): <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
     /// - On success, responds with [`CreatePipelineOutput`](crate::output::CreatePipelineOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::output::CreatePipelineOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the created pipeline.</p>
     /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::error::CreatePipelineError)
@@ -700,11 +700,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreatePresignedDomainUrl`](crate::client::fluent_builders::CreatePresignedDomainUrl) operation.
     ///
-    /// - Takes [`CreatePresignedDomainUrlInput`](crate::input::CreatePresignedDomainUrlInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::CreatePresignedDomainUrlInput::domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(Option<String>)`](crate::input::CreatePresignedDomainUrlInput::user_profile_name): <p>The name of the UserProfile to sign-in as.</p>
-    ///   - [`session_expiration_duration_in_seconds(Option<i32>)`](crate::input::CreatePresignedDomainUrlInput::session_expiration_duration_in_seconds): <p>The session expiration duration in seconds. This value defaults to 43200.</p>
-    ///   - [`expires_in_seconds(Option<i32>)`](crate::input::CreatePresignedDomainUrlInput::expires_in_seconds): <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::set_domain_id): <p>The domain ID.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::set_user_profile_name): <p>The name of the UserProfile to sign-in as.</p>
+    ///   - [`session_expiration_duration_in_seconds(i32)`](crate::client::fluent_builders::CreatePresignedDomainUrl::session_expiration_duration_in_seconds) / [`set_session_expiration_duration_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::set_session_expiration_duration_in_seconds): <p>The session expiration duration in seconds. This value defaults to 43200.</p>
+    ///   - [`expires_in_seconds(i32)`](crate::client::fluent_builders::CreatePresignedDomainUrl::expires_in_seconds) / [`set_expires_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreatePresignedDomainUrl::set_expires_in_seconds): <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
     /// - On success, responds with [`CreatePresignedDomainUrlOutput`](crate::output::CreatePresignedDomainUrlOutput) with field(s):
     ///   - [`authorized_url(Option<String>)`](crate::output::CreatePresignedDomainUrlOutput::authorized_url): <p>The presigned URL.</p>
     /// - On failure, responds with [`SdkError<CreatePresignedDomainUrlError>`](crate::error::CreatePresignedDomainUrlError)
@@ -715,9 +715,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreatePresignedNotebookInstanceUrl`](crate::client::fluent_builders::CreatePresignedNotebookInstanceUrl) operation.
     ///
-    /// - Takes [`CreatePresignedNotebookInstanceUrlInput`](crate::input::CreatePresignedNotebookInstanceUrlInput) with field(s):
-    ///   - [`notebook_instance_name(Option<String>)`](crate::input::CreatePresignedNotebookInstanceUrlInput::notebook_instance_name): <p>The name of the notebook instance.</p>
-    ///   - [`session_expiration_duration_in_seconds(Option<i32>)`](crate::input::CreatePresignedNotebookInstanceUrlInput::session_expiration_duration_in_seconds): <p>The duration of the session, in seconds. The default is 12 hours.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::CreatePresignedNotebookInstanceUrl::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::CreatePresignedNotebookInstanceUrl::set_notebook_instance_name): <p>The name of the notebook instance.</p>
+    ///   - [`session_expiration_duration_in_seconds(i32)`](crate::client::fluent_builders::CreatePresignedNotebookInstanceUrl::session_expiration_duration_in_seconds) / [`set_session_expiration_duration_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreatePresignedNotebookInstanceUrl::set_session_expiration_duration_in_seconds): <p>The duration of the session, in seconds. The default is 12 hours.</p>
     /// - On success, responds with [`CreatePresignedNotebookInstanceUrlOutput`](crate::output::CreatePresignedNotebookInstanceUrlOutput) with field(s):
     ///   - [`authorized_url(Option<String>)`](crate::output::CreatePresignedNotebookInstanceUrlOutput::authorized_url): <p>A JSON object that contains the URL string. </p>
     /// - On failure, responds with [`SdkError<CreatePresignedNotebookInstanceUrlError>`](crate::error::CreatePresignedNotebookInstanceUrlError)
@@ -728,18 +728,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateProcessingJob`](crate::client::fluent_builders::CreateProcessingJob) operation.
     ///
-    /// - Takes [`CreateProcessingJobInput`](crate::input::CreateProcessingJobInput) with field(s):
-    ///   - [`processing_inputs(Option<Vec<ProcessingInput>>)`](crate::input::CreateProcessingJobInput::processing_inputs): <p>An array of inputs configuring the data to download into the processing container.</p>
-    ///   - [`processing_output_config(Option<ProcessingOutputConfig>)`](crate::input::CreateProcessingJobInput::processing_output_config): <p>Output configuration for the processing job.</p>
-    ///   - [`processing_job_name(Option<String>)`](crate::input::CreateProcessingJobInput::processing_job_name): <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    ///   - [`processing_resources(Option<ProcessingResources>)`](crate::input::CreateProcessingJobInput::processing_resources): <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    ///   - [`stopping_condition(Option<ProcessingStoppingCondition>)`](crate::input::CreateProcessingJobInput::stopping_condition): <p>The time limit for how long the processing job is allowed to run.</p>
-    ///   - [`app_specification(Option<AppSpecification>)`](crate::input::CreateProcessingJobInput::app_specification): <p>Configures the processing job to run a specified Docker container image.</p>
-    ///   - [`environment(Option<HashMap<String, String>>)`](crate::input::CreateProcessingJobInput::environment): <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    ///   - [`network_config(Option<NetworkConfig>)`](crate::input::CreateProcessingJobInput::network_config): <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateProcessingJobInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateProcessingJobInput::tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    ///   - [`experiment_config(Option<ExperimentConfig>)`](crate::input::CreateProcessingJobInput::experiment_config): <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>  <ul>   <li> <p> <code>CreateProcessingJob</code> </p> </li>   <li> <p> <code>CreateTrainingJob</code> </p> </li>   <li> <p> <code>CreateTransformJob</code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`processing_inputs(Vec<ProcessingInput>)`](crate::client::fluent_builders::CreateProcessingJob::processing_inputs) / [`set_processing_inputs(Option<Vec<ProcessingInput>>)`](crate::client::fluent_builders::CreateProcessingJob::set_processing_inputs): <p>An array of inputs configuring the data to download into the processing container.</p>
+    ///   - [`processing_output_config(ProcessingOutputConfig)`](crate::client::fluent_builders::CreateProcessingJob::processing_output_config) / [`set_processing_output_config(Option<ProcessingOutputConfig>)`](crate::client::fluent_builders::CreateProcessingJob::set_processing_output_config): <p>Output configuration for the processing job.</p>
+    ///   - [`processing_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateProcessingJob::processing_job_name) / [`set_processing_job_name(Option<String>)`](crate::client::fluent_builders::CreateProcessingJob::set_processing_job_name): <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    ///   - [`processing_resources(ProcessingResources)`](crate::client::fluent_builders::CreateProcessingJob::processing_resources) / [`set_processing_resources(Option<ProcessingResources>)`](crate::client::fluent_builders::CreateProcessingJob::set_processing_resources): <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
+    ///   - [`stopping_condition(ProcessingStoppingCondition)`](crate::client::fluent_builders::CreateProcessingJob::stopping_condition) / [`set_stopping_condition(Option<ProcessingStoppingCondition>)`](crate::client::fluent_builders::CreateProcessingJob::set_stopping_condition): <p>The time limit for how long the processing job is allowed to run.</p>
+    ///   - [`app_specification(AppSpecification)`](crate::client::fluent_builders::CreateProcessingJob::app_specification) / [`set_app_specification(Option<AppSpecification>)`](crate::client::fluent_builders::CreateProcessingJob::set_app_specification): <p>Configures the processing job to run a specified Docker container image.</p>
+    ///   - [`environment(HashMap<String, String>)`](crate::client::fluent_builders::CreateProcessingJob::environment) / [`set_environment(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateProcessingJob::set_environment): <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
+    ///   - [`network_config(NetworkConfig)`](crate::client::fluent_builders::CreateProcessingJob::network_config) / [`set_network_config(Option<NetworkConfig>)`](crate::client::fluent_builders::CreateProcessingJob::set_network_config): <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateProcessingJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateProcessingJob::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProcessingJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProcessingJob::set_tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    ///   - [`experiment_config(ExperimentConfig)`](crate::client::fluent_builders::CreateProcessingJob::experiment_config) / [`set_experiment_config(Option<ExperimentConfig>)`](crate::client::fluent_builders::CreateProcessingJob::set_experiment_config): <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>  <ul>   <li> <p> <code>CreateProcessingJob</code> </p> </li>   <li> <p> <code>CreateTrainingJob</code> </p> </li>   <li> <p> <code>CreateTransformJob</code> </p> </li>  </ul>
     /// - On success, responds with [`CreateProcessingJobOutput`](crate::output::CreateProcessingJobOutput) with field(s):
     ///   - [`processing_job_arn(Option<String>)`](crate::output::CreateProcessingJobOutput::processing_job_arn): <p>The Amazon Resource Name (ARN) of the processing job.</p>
     /// - On failure, responds with [`SdkError<CreateProcessingJobError>`](crate::error::CreateProcessingJobError)
@@ -748,11 +748,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// - Takes [`CreateProjectInput`](crate::input::CreateProjectInput) with field(s):
-    ///   - [`project_name(Option<String>)`](crate::input::CreateProjectInput::project_name): <p>The name of the project.</p>
-    ///   - [`project_description(Option<String>)`](crate::input::CreateProjectInput::project_description): <p>A description for the project.</p>
-    ///   - [`service_catalog_provisioning_details(Option<ServiceCatalogProvisioningDetails>)`](crate::input::CreateProjectInput::service_catalog_provisioning_details): <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateProjectInput::tags): <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_project_name): <p>The name of the project.</p>
+    ///   - [`project_description(impl Into<String>)`](crate::client::fluent_builders::CreateProject::project_description) / [`set_project_description(Option<String>)`](crate::client::fluent_builders::CreateProject::set_project_description): <p>A description for the project.</p>
+    ///   - [`service_catalog_provisioning_details(ServiceCatalogProvisioningDetails)`](crate::client::fluent_builders::CreateProject::service_catalog_provisioning_details) / [`set_service_catalog_provisioning_details(Option<ServiceCatalogProvisioningDetails>)`](crate::client::fluent_builders::CreateProject::set_service_catalog_provisioning_details): <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProject::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProject::set_tags): <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
     ///   - [`project_arn(Option<String>)`](crate::output::CreateProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the project.</p>
     ///   - [`project_id(Option<String>)`](crate::output::CreateProjectOutput::project_id): <p>The ID of the new project.</p>
@@ -762,11 +762,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateStudioLifecycleConfig`](crate::client::fluent_builders::CreateStudioLifecycleConfig) operation.
     ///
-    /// - Takes [`CreateStudioLifecycleConfigInput`](crate::input::CreateStudioLifecycleConfigInput) with field(s):
-    ///   - [`studio_lifecycle_config_name(Option<String>)`](crate::input::CreateStudioLifecycleConfigInput::studio_lifecycle_config_name): <p>The name of the Studio Lifecycle Configuration to create.</p>
-    ///   - [`studio_lifecycle_config_content(Option<String>)`](crate::input::CreateStudioLifecycleConfigInput::studio_lifecycle_config_content): <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
-    ///   - [`studio_lifecycle_config_app_type(Option<StudioLifecycleConfigAppType>)`](crate::input::CreateStudioLifecycleConfigInput::studio_lifecycle_config_app_type): <p>The App type that the Lifecycle Configuration is attached to.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateStudioLifecycleConfigInput::tags): <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`studio_lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateStudioLifecycleConfig::studio_lifecycle_config_name) / [`set_studio_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::CreateStudioLifecycleConfig::set_studio_lifecycle_config_name): <p>The name of the Studio Lifecycle Configuration to create.</p>
+    ///   - [`studio_lifecycle_config_content(impl Into<String>)`](crate::client::fluent_builders::CreateStudioLifecycleConfig::studio_lifecycle_config_content) / [`set_studio_lifecycle_config_content(Option<String>)`](crate::client::fluent_builders::CreateStudioLifecycleConfig::set_studio_lifecycle_config_content): <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    ///   - [`studio_lifecycle_config_app_type(StudioLifecycleConfigAppType)`](crate::client::fluent_builders::CreateStudioLifecycleConfig::studio_lifecycle_config_app_type) / [`set_studio_lifecycle_config_app_type(Option<StudioLifecycleConfigAppType>)`](crate::client::fluent_builders::CreateStudioLifecycleConfig::set_studio_lifecycle_config_app_type): <p>The App type that the Lifecycle Configuration is attached to.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateStudioLifecycleConfig::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateStudioLifecycleConfig::set_tags): <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
     /// - On success, responds with [`CreateStudioLifecycleConfigOutput`](crate::output::CreateStudioLifecycleConfigOutput) with field(s):
     ///   - [`studio_lifecycle_config_arn(Option<String>)`](crate::output::CreateStudioLifecycleConfigOutput::studio_lifecycle_config_arn): <p>The ARN of your created Lifecycle Configuration.</p>
     /// - On failure, responds with [`SdkError<CreateStudioLifecycleConfigError>`](crate::error::CreateStudioLifecycleConfigError)
@@ -777,29 +777,29 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTrainingJob`](crate::client::fluent_builders::CreateTrainingJob) operation.
     ///
-    /// - Takes [`CreateTrainingJobInput`](crate::input::CreateTrainingJobInput) with field(s):
-    ///   - [`training_job_name(Option<String>)`](crate::input::CreateTrainingJobInput::training_job_name): <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    ///   - [`hyper_parameters(Option<HashMap<String, String>>)`](crate::input::CreateTrainingJobInput::hyper_parameters): <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>  <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
-    ///   - [`algorithm_specification(Option<AlgorithmSpecification>)`](crate::input::CreateTrainingJobInput::algorithm_specification): <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateTrainingJobInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf. </p>  <p>During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
-    ///   - [`input_data_config(Option<Vec<Channel>>)`](crate::input::CreateTrainingJobInput::input_data_config): <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>  <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>  <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files will be made available as input streams. They do not need to be downloaded.</p>
-    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::CreateTrainingJobInput::output_data_config): <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
-    ///   - [`resource_config(Option<ResourceConfig>)`](crate::input::CreateTrainingJobInput::resource_config): <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>  <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
-    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::CreateTrainingJobInput::vpc_config): <p>A <code>VpcConfig</code> object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    ///   - [`stopping_condition(Option<StoppingCondition>)`](crate::input::CreateTrainingJobInput::stopping_condition): <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>  <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTrainingJobInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    ///   - [`enable_network_isolation(bool)`](crate::input::CreateTrainingJobInput::enable_network_isolation): <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-    ///   - [`enable_inter_container_traffic_encryption(bool)`](crate::input::CreateTrainingJobInput::enable_inter_container_traffic_encryption): <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
-    ///   - [`enable_managed_spot_training(bool)`](crate::input::CreateTrainingJobInput::enable_managed_spot_training): <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>  <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
-    ///   - [`checkpoint_config(Option<CheckpointConfig>)`](crate::input::CreateTrainingJobInput::checkpoint_config): <p>Contains information about the output location for managed spot training checkpoint data.</p>
-    ///   - [`debug_hook_config(Option<DebugHookConfig>)`](crate::input::CreateTrainingJobInput::debug_hook_config): <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-    ///   - [`debug_rule_configurations(Option<Vec<DebugRuleConfiguration>>)`](crate::input::CreateTrainingJobInput::debug_rule_configurations): <p>Configuration information for Debugger rules for debugging output tensors.</p>
-    ///   - [`tensor_board_output_config(Option<TensorBoardOutputConfig>)`](crate::input::CreateTrainingJobInput::tensor_board_output_config): <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
-    ///   - [`experiment_config(Option<ExperimentConfig>)`](crate::input::CreateTrainingJobInput::experiment_config): <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>  <ul>   <li> <p> <code>CreateProcessingJob</code> </p> </li>   <li> <p> <code>CreateTrainingJob</code> </p> </li>   <li> <p> <code>CreateTransformJob</code> </p> </li>  </ul>
-    ///   - [`profiler_config(Option<ProfilerConfig>)`](crate::input::CreateTrainingJobInput::profiler_config): <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
-    ///   - [`profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::input::CreateTrainingJobInput::profiler_rule_configurations): <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
-    ///   - [`environment(Option<HashMap<String, String>>)`](crate::input::CreateTrainingJobInput::environment): <p>The environment variables to set in the Docker container.</p>
-    ///   - [`retry_strategy(Option<RetryStrategy>)`](crate::input::CreateTrainingJobInput::retry_strategy): <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`training_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrainingJob::training_job_name) / [`set_training_job_name(Option<String>)`](crate::client::fluent_builders::CreateTrainingJob::set_training_job_name): <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    ///   - [`hyper_parameters(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrainingJob::hyper_parameters) / [`set_hyper_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrainingJob::set_hyper_parameters): <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>  <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
+    ///   - [`algorithm_specification(AlgorithmSpecification)`](crate::client::fluent_builders::CreateTrainingJob::algorithm_specification) / [`set_algorithm_specification(Option<AlgorithmSpecification>)`](crate::client::fluent_builders::CreateTrainingJob::set_algorithm_specification): <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTrainingJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateTrainingJob::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf. </p>  <p>During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
+    ///   - [`input_data_config(Vec<Channel>)`](crate::client::fluent_builders::CreateTrainingJob::input_data_config) / [`set_input_data_config(Option<Vec<Channel>>)`](crate::client::fluent_builders::CreateTrainingJob::set_input_data_config): <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>  <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>  <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files will be made available as input streams. They do not need to be downloaded.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::CreateTrainingJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_output_data_config): <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
+    ///   - [`resource_config(ResourceConfig)`](crate::client::fluent_builders::CreateTrainingJob::resource_config) / [`set_resource_config(Option<ResourceConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_resource_config): <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>  <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+    ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateTrainingJob::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_vpc_config): <p>A <code>VpcConfig</code> object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    ///   - [`stopping_condition(StoppingCondition)`](crate::client::fluent_builders::CreateTrainingJob::stopping_condition) / [`set_stopping_condition(Option<StoppingCondition>)`](crate::client::fluent_builders::CreateTrainingJob::set_stopping_condition): <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>  <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTrainingJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTrainingJob::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    ///   - [`enable_network_isolation(bool)`](crate::client::fluent_builders::CreateTrainingJob::enable_network_isolation) / [`set_enable_network_isolation(bool)`](crate::client::fluent_builders::CreateTrainingJob::set_enable_network_isolation): <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    ///   - [`enable_inter_container_traffic_encryption(bool)`](crate::client::fluent_builders::CreateTrainingJob::enable_inter_container_traffic_encryption) / [`set_enable_inter_container_traffic_encryption(bool)`](crate::client::fluent_builders::CreateTrainingJob::set_enable_inter_container_traffic_encryption): <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
+    ///   - [`enable_managed_spot_training(bool)`](crate::client::fluent_builders::CreateTrainingJob::enable_managed_spot_training) / [`set_enable_managed_spot_training(bool)`](crate::client::fluent_builders::CreateTrainingJob::set_enable_managed_spot_training): <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>  <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
+    ///   - [`checkpoint_config(CheckpointConfig)`](crate::client::fluent_builders::CreateTrainingJob::checkpoint_config) / [`set_checkpoint_config(Option<CheckpointConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_checkpoint_config): <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    ///   - [`debug_hook_config(DebugHookConfig)`](crate::client::fluent_builders::CreateTrainingJob::debug_hook_config) / [`set_debug_hook_config(Option<DebugHookConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_debug_hook_config): <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    ///   - [`debug_rule_configurations(Vec<DebugRuleConfiguration>)`](crate::client::fluent_builders::CreateTrainingJob::debug_rule_configurations) / [`set_debug_rule_configurations(Option<Vec<DebugRuleConfiguration>>)`](crate::client::fluent_builders::CreateTrainingJob::set_debug_rule_configurations): <p>Configuration information for Debugger rules for debugging output tensors.</p>
+    ///   - [`tensor_board_output_config(TensorBoardOutputConfig)`](crate::client::fluent_builders::CreateTrainingJob::tensor_board_output_config) / [`set_tensor_board_output_config(Option<TensorBoardOutputConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_tensor_board_output_config): <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+    ///   - [`experiment_config(ExperimentConfig)`](crate::client::fluent_builders::CreateTrainingJob::experiment_config) / [`set_experiment_config(Option<ExperimentConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_experiment_config): <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>  <ul>   <li> <p> <code>CreateProcessingJob</code> </p> </li>   <li> <p> <code>CreateTrainingJob</code> </p> </li>   <li> <p> <code>CreateTransformJob</code> </p> </li>  </ul>
+    ///   - [`profiler_config(ProfilerConfig)`](crate::client::fluent_builders::CreateTrainingJob::profiler_config) / [`set_profiler_config(Option<ProfilerConfig>)`](crate::client::fluent_builders::CreateTrainingJob::set_profiler_config): <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    ///   - [`profiler_rule_configurations(Vec<ProfilerRuleConfiguration>)`](crate::client::fluent_builders::CreateTrainingJob::profiler_rule_configurations) / [`set_profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::client::fluent_builders::CreateTrainingJob::set_profiler_rule_configurations): <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    ///   - [`environment(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrainingJob::environment) / [`set_environment(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrainingJob::set_environment): <p>The environment variables to set in the Docker container.</p>
+    ///   - [`retry_strategy(RetryStrategy)`](crate::client::fluent_builders::CreateTrainingJob::retry_strategy) / [`set_retry_strategy(Option<RetryStrategy>)`](crate::client::fluent_builders::CreateTrainingJob::set_retry_strategy): <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     /// - On success, responds with [`CreateTrainingJobOutput`](crate::output::CreateTrainingJobOutput) with field(s):
     ///   - [`training_job_arn(Option<String>)`](crate::output::CreateTrainingJobOutput::training_job_arn): <p>The Amazon Resource Name (ARN) of the training job.</p>
     /// - On failure, responds with [`SdkError<CreateTrainingJobError>`](crate::error::CreateTrainingJobError)
@@ -808,20 +808,20 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTransformJob`](crate::client::fluent_builders::CreateTransformJob) operation.
     ///
-    /// - Takes [`CreateTransformJobInput`](crate::input::CreateTransformJobInput) with field(s):
-    ///   - [`transform_job_name(Option<String>)`](crate::input::CreateTransformJobInput::transform_job_name): <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    ///   - [`model_name(Option<String>)`](crate::input::CreateTransformJobInput::model_name): <p>The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.</p>
-    ///   - [`max_concurrent_transforms(Option<i32>)`](crate::input::CreateTransformJobInput::max_concurrent_transforms): <p>The maximum number of parallel requests that can be sent to each instance in a transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your chosen algorithm. If the execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for <code>MaxConcurrentTransforms</code>.</p>
-    ///   - [`model_client_config(Option<ModelClientConfig>)`](crate::input::CreateTransformJobInput::model_client_config): <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
-    ///   - [`max_payload_in_mb(Option<i32>)`](crate::input::CreateTransformJobInput::max_payload_in_mb): <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>  <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
-    ///   - [`batch_strategy(Option<BatchStrategy>)`](crate::input::CreateTransformJobInput::batch_strategy): <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record. </p>  <p>To enable the batch strategy, you must set the <code>SplitType</code> property to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>  <p>To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>  <p>To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
-    ///   - [`environment(Option<HashMap<String, String>>)`](crate::input::CreateTransformJobInput::environment): <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    ///   - [`transform_input(Option<TransformInput>)`](crate::input::CreateTransformJobInput::transform_input): <p>Describes the input source and the way the transform job consumes it.</p>
-    ///   - [`transform_output(Option<TransformOutput>)`](crate::input::CreateTransformJobInput::transform_output): <p>Describes the results of the transform job.</p>
-    ///   - [`transform_resources(Option<TransformResources>)`](crate::input::CreateTransformJobInput::transform_resources): <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
-    ///   - [`data_processing(Option<DataProcessing>)`](crate::input::CreateTransformJobInput::data_processing): <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTransformJobInput::tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    ///   - [`experiment_config(Option<ExperimentConfig>)`](crate::input::CreateTransformJobInput::experiment_config): <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>  <ul>   <li> <p> <code>CreateProcessingJob</code> </p> </li>   <li> <p> <code>CreateTrainingJob</code> </p> </li>   <li> <p> <code>CreateTransformJob</code> </p> </li>  </ul>
+    /// - The fluent builder is configurable:
+    ///   - [`transform_job_name(impl Into<String>)`](crate::client::fluent_builders::CreateTransformJob::transform_job_name) / [`set_transform_job_name(Option<String>)`](crate::client::fluent_builders::CreateTransformJob::set_transform_job_name): <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::CreateTransformJob::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::CreateTransformJob::set_model_name): <p>The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    ///   - [`max_concurrent_transforms(i32)`](crate::client::fluent_builders::CreateTransformJob::max_concurrent_transforms) / [`set_max_concurrent_transforms(Option<i32>)`](crate::client::fluent_builders::CreateTransformJob::set_max_concurrent_transforms): <p>The maximum number of parallel requests that can be sent to each instance in a transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your chosen algorithm. If the execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for <code>MaxConcurrentTransforms</code>.</p>
+    ///   - [`model_client_config(ModelClientConfig)`](crate::client::fluent_builders::CreateTransformJob::model_client_config) / [`set_model_client_config(Option<ModelClientConfig>)`](crate::client::fluent_builders::CreateTransformJob::set_model_client_config): <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
+    ///   - [`max_payload_in_mb(i32)`](crate::client::fluent_builders::CreateTransformJob::max_payload_in_mb) / [`set_max_payload_in_mb(Option<i32>)`](crate::client::fluent_builders::CreateTransformJob::set_max_payload_in_mb): <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>  <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
+    ///   - [`batch_strategy(BatchStrategy)`](crate::client::fluent_builders::CreateTransformJob::batch_strategy) / [`set_batch_strategy(Option<BatchStrategy>)`](crate::client::fluent_builders::CreateTransformJob::set_batch_strategy): <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record. </p>  <p>To enable the batch strategy, you must set the <code>SplitType</code> property to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>  <p>To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>  <p>To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
+    ///   - [`environment(HashMap<String, String>)`](crate::client::fluent_builders::CreateTransformJob::environment) / [`set_environment(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTransformJob::set_environment): <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    ///   - [`transform_input(TransformInput)`](crate::client::fluent_builders::CreateTransformJob::transform_input) / [`set_transform_input(Option<TransformInput>)`](crate::client::fluent_builders::CreateTransformJob::set_transform_input): <p>Describes the input source and the way the transform job consumes it.</p>
+    ///   - [`transform_output(TransformOutput)`](crate::client::fluent_builders::CreateTransformJob::transform_output) / [`set_transform_output(Option<TransformOutput>)`](crate::client::fluent_builders::CreateTransformJob::set_transform_output): <p>Describes the results of the transform job.</p>
+    ///   - [`transform_resources(TransformResources)`](crate::client::fluent_builders::CreateTransformJob::transform_resources) / [`set_transform_resources(Option<TransformResources>)`](crate::client::fluent_builders::CreateTransformJob::set_transform_resources): <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
+    ///   - [`data_processing(DataProcessing)`](crate::client::fluent_builders::CreateTransformJob::data_processing) / [`set_data_processing(Option<DataProcessing>)`](crate::client::fluent_builders::CreateTransformJob::set_data_processing): <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTransformJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTransformJob::set_tags): <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    ///   - [`experiment_config(ExperimentConfig)`](crate::client::fluent_builders::CreateTransformJob::experiment_config) / [`set_experiment_config(Option<ExperimentConfig>)`](crate::client::fluent_builders::CreateTransformJob::set_experiment_config): <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>  <ul>   <li> <p> <code>CreateProcessingJob</code> </p> </li>   <li> <p> <code>CreateTrainingJob</code> </p> </li>   <li> <p> <code>CreateTransformJob</code> </p> </li>  </ul>
     /// - On success, responds with [`CreateTransformJobOutput`](crate::output::CreateTransformJobOutput) with field(s):
     ///   - [`transform_job_arn(Option<String>)`](crate::output::CreateTransformJobOutput::transform_job_arn): <p>The Amazon Resource Name (ARN) of the transform job.</p>
     /// - On failure, responds with [`SdkError<CreateTransformJobError>`](crate::error::CreateTransformJobError)
@@ -830,12 +830,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTrial`](crate::client::fluent_builders::CreateTrial) operation.
     ///
-    /// - Takes [`CreateTrialInput`](crate::input::CreateTrialInput) with field(s):
-    ///   - [`trial_name(Option<String>)`](crate::input::CreateTrialInput::trial_name): <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateTrialInput::display_name): <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-    ///   - [`experiment_name(Option<String>)`](crate::input::CreateTrialInput::experiment_name): <p>The name of the experiment to associate the trial with.</p>
-    ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::input::CreateTrialInput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTrialInput::tags): <p>A list of tags to associate with the trial. You can use <code>Search</code> API to search on the tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrial::trial_name) / [`set_trial_name(Option<String>)`](crate::client::fluent_builders::CreateTrial::set_trial_name): <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrial::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateTrial::set_display_name): <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    ///   - [`experiment_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrial::experiment_name) / [`set_experiment_name(Option<String>)`](crate::client::fluent_builders::CreateTrial::set_experiment_name): <p>The name of the experiment to associate the trial with.</p>
+    ///   - [`metadata_properties(MetadataProperties)`](crate::client::fluent_builders::CreateTrial::metadata_properties) / [`set_metadata_properties(Option<MetadataProperties>)`](crate::client::fluent_builders::CreateTrial::set_metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTrial::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTrial::set_tags): <p>A list of tags to associate with the trial. You can use <code>Search</code> API to search on the tags.</p>
     /// - On success, responds with [`CreateTrialOutput`](crate::output::CreateTrialOutput) with field(s):
     ///   - [`trial_arn(Option<String>)`](crate::output::CreateTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
     /// - On failure, responds with [`SdkError<CreateTrialError>`](crate::error::CreateTrialError)
@@ -844,17 +844,17 @@ where
     }
     /// Constructs a fluent builder for the [`CreateTrialComponent`](crate::client::fluent_builders::CreateTrialComponent) operation.
     ///
-    /// - Takes [`CreateTrialComponentInput`](crate::input::CreateTrialComponentInput) with field(s):
-    ///   - [`trial_component_name(Option<String>)`](crate::input::CreateTrialComponentInput::trial_component_name): <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateTrialComponentInput::display_name): <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
-    ///   - [`status(Option<TrialComponentStatus>)`](crate::input::CreateTrialComponentInput::status): <p>The status of the component. States include:</p>  <ul>   <li> <p>InProgress</p> </li>   <li> <p>Completed</p> </li>   <li> <p>Failed</p> </li>  </ul>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::CreateTrialComponentInput::start_time): <p>When the component started.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::CreateTrialComponentInput::end_time): <p>When the component ended.</p>
-    ///   - [`parameters(Option<HashMap<String, TrialComponentParameterValue>>)`](crate::input::CreateTrialComponentInput::parameters): <p>The hyperparameters for the component.</p>
-    ///   - [`input_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::input::CreateTrialComponentInput::input_artifacts): <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
-    ///   - [`output_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::input::CreateTrialComponentInput::output_artifacts): <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
-    ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::input::CreateTrialComponentInput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTrialComponentInput::tags): <p>A list of tags to associate with the component. You can use <code>Search</code> API to search on the tags.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_component_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrialComponent::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::client::fluent_builders::CreateTrialComponent::set_trial_component_name): <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrialComponent::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateTrialComponent::set_display_name): <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
+    ///   - [`status(TrialComponentStatus)`](crate::client::fluent_builders::CreateTrialComponent::status) / [`set_status(Option<TrialComponentStatus>)`](crate::client::fluent_builders::CreateTrialComponent::set_status): <p>The status of the component. States include:</p>  <ul>   <li> <p>InProgress</p> </li>   <li> <p>Completed</p> </li>   <li> <p>Failed</p> </li>  </ul>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::CreateTrialComponent::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::CreateTrialComponent::set_start_time): <p>When the component started.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::CreateTrialComponent::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::CreateTrialComponent::set_end_time): <p>When the component ended.</p>
+    ///   - [`parameters(HashMap<String, TrialComponentParameterValue>)`](crate::client::fluent_builders::CreateTrialComponent::parameters) / [`set_parameters(Option<HashMap<String, TrialComponentParameterValue>>)`](crate::client::fluent_builders::CreateTrialComponent::set_parameters): <p>The hyperparameters for the component.</p>
+    ///   - [`input_artifacts(HashMap<String, TrialComponentArtifact>)`](crate::client::fluent_builders::CreateTrialComponent::input_artifacts) / [`set_input_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::client::fluent_builders::CreateTrialComponent::set_input_artifacts): <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
+    ///   - [`output_artifacts(HashMap<String, TrialComponentArtifact>)`](crate::client::fluent_builders::CreateTrialComponent::output_artifacts) / [`set_output_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::client::fluent_builders::CreateTrialComponent::set_output_artifacts): <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
+    ///   - [`metadata_properties(MetadataProperties)`](crate::client::fluent_builders::CreateTrialComponent::metadata_properties) / [`set_metadata_properties(Option<MetadataProperties>)`](crate::client::fluent_builders::CreateTrialComponent::set_metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTrialComponent::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTrialComponent::set_tags): <p>A list of tags to associate with the component. You can use <code>Search</code> API to search on the tags.</p>
     /// - On success, responds with [`CreateTrialComponentOutput`](crate::output::CreateTrialComponentOutput) with field(s):
     ///   - [`trial_component_arn(Option<String>)`](crate::output::CreateTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the trial component.</p>
     /// - On failure, responds with [`SdkError<CreateTrialComponentError>`](crate::error::CreateTrialComponentError)
@@ -863,13 +863,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateUserProfile`](crate::client::fluent_builders::CreateUserProfile) operation.
     ///
-    /// - Takes [`CreateUserProfileInput`](crate::input::CreateUserProfileInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::CreateUserProfileInput::domain_id): <p>The ID of the associated Domain.</p>
-    ///   - [`user_profile_name(Option<String>)`](crate::input::CreateUserProfileInput::user_profile_name): <p>A name for the UserProfile. This value is not case sensitive.</p>
-    ///   - [`single_sign_on_user_identifier(Option<String>)`](crate::input::CreateUserProfileInput::single_sign_on_user_identifier): <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
-    ///   - [`single_sign_on_user_value(Option<String>)`](crate::input::CreateUserProfileInput::single_sign_on_user_value): <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateUserProfileInput::tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>  <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
-    ///   - [`user_settings(Option<UserSettings>)`](crate::input::CreateUserProfileInput::user_settings): <p>A collection of settings.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_domain_id): <p>The ID of the associated Domain.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_user_profile_name): <p>A name for the UserProfile. This value is not case sensitive.</p>
+    ///   - [`single_sign_on_user_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::single_sign_on_user_identifier) / [`set_single_sign_on_user_identifier(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_single_sign_on_user_identifier): <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+    ///   - [`single_sign_on_user_value(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::single_sign_on_user_value) / [`set_single_sign_on_user_value(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_single_sign_on_user_value): <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateUserProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateUserProfile::set_tags): <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>  <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
+    ///   - [`user_settings(UserSettings)`](crate::client::fluent_builders::CreateUserProfile::user_settings) / [`set_user_settings(Option<UserSettings>)`](crate::client::fluent_builders::CreateUserProfile::set_user_settings): <p>A collection of settings.</p>
     /// - On success, responds with [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput) with field(s):
     ///   - [`user_profile_arn(Option<String>)`](crate::output::CreateUserProfileOutput::user_profile_arn): <p>The user profile Amazon Resource Name (ARN).</p>
     /// - On failure, responds with [`SdkError<CreateUserProfileError>`](crate::error::CreateUserProfileError)
@@ -878,12 +878,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateWorkforce`](crate::client::fluent_builders::CreateWorkforce) operation.
     ///
-    /// - Takes [`CreateWorkforceInput`](crate::input::CreateWorkforceInput) with field(s):
-    ///   - [`cognito_config(Option<CognitoConfig>)`](crate::input::CreateWorkforceInput::cognito_config): <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>  <p>Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.</p>
-    ///   - [`oidc_config(Option<OidcConfig>)`](crate::input::CreateWorkforceInput::oidc_config): <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>  <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
-    ///   - [`source_ip_config(Option<SourceIpConfig>)`](crate::input::CreateWorkforceInput::source_ip_config): <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
-    ///   - [`workforce_name(Option<String>)`](crate::input::CreateWorkforceInput::workforce_name): <p>The name of the private workforce.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateWorkforceInput::tags): <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`cognito_config(CognitoConfig)`](crate::client::fluent_builders::CreateWorkforce::cognito_config) / [`set_cognito_config(Option<CognitoConfig>)`](crate::client::fluent_builders::CreateWorkforce::set_cognito_config): <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>  <p>Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.</p>
+    ///   - [`oidc_config(OidcConfig)`](crate::client::fluent_builders::CreateWorkforce::oidc_config) / [`set_oidc_config(Option<OidcConfig>)`](crate::client::fluent_builders::CreateWorkforce::set_oidc_config): <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>  <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
+    ///   - [`source_ip_config(SourceIpConfig)`](crate::client::fluent_builders::CreateWorkforce::source_ip_config) / [`set_source_ip_config(Option<SourceIpConfig>)`](crate::client::fluent_builders::CreateWorkforce::set_source_ip_config): <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
+    ///   - [`workforce_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkforce::workforce_name) / [`set_workforce_name(Option<String>)`](crate::client::fluent_builders::CreateWorkforce::set_workforce_name): <p>The name of the private workforce.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWorkforce::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWorkforce::set_tags): <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
     /// - On success, responds with [`CreateWorkforceOutput`](crate::output::CreateWorkforceOutput) with field(s):
     ///   - [`workforce_arn(Option<String>)`](crate::output::CreateWorkforceOutput::workforce_arn): <p>The Amazon Resource Name (ARN) of the workforce.</p>
     /// - On failure, responds with [`SdkError<CreateWorkforceError>`](crate::error::CreateWorkforceError)
@@ -892,13 +892,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateWorkteam`](crate::client::fluent_builders::CreateWorkteam) operation.
     ///
-    /// - Takes [`CreateWorkteamInput`](crate::input::CreateWorkteamInput) with field(s):
-    ///   - [`workteam_name(Option<String>)`](crate::input::CreateWorkteamInput::workteam_name): <p>The name of the work team. Use this name to identify the work team.</p>
-    ///   - [`workforce_name(Option<String>)`](crate::input::CreateWorkteamInput::workforce_name): <p>The name of the workforce.</p>
-    ///   - [`member_definitions(Option<Vec<MemberDefinition>>)`](crate::input::CreateWorkteamInput::member_definitions): <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>  <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>  <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>  <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateWorkteamInput::description): <p>A description of the work team.</p>
-    ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::input::CreateWorkteamInput::notification_configuration): <p>Configures notification of workers regarding available or expiring work items.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateWorkteamInput::tags): <p>An array of key-value pairs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`workteam_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkteam::workteam_name) / [`set_workteam_name(Option<String>)`](crate::client::fluent_builders::CreateWorkteam::set_workteam_name): <p>The name of the work team. Use this name to identify the work team.</p>
+    ///   - [`workforce_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkteam::workforce_name) / [`set_workforce_name(Option<String>)`](crate::client::fluent_builders::CreateWorkteam::set_workforce_name): <p>The name of the workforce.</p>
+    ///   - [`member_definitions(Vec<MemberDefinition>)`](crate::client::fluent_builders::CreateWorkteam::member_definitions) / [`set_member_definitions(Option<Vec<MemberDefinition>>)`](crate::client::fluent_builders::CreateWorkteam::set_member_definitions): <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>  <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>  <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>  <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkteam::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWorkteam::set_description): <p>A description of the work team.</p>
+    ///   - [`notification_configuration(NotificationConfiguration)`](crate::client::fluent_builders::CreateWorkteam::notification_configuration) / [`set_notification_configuration(Option<NotificationConfiguration>)`](crate::client::fluent_builders::CreateWorkteam::set_notification_configuration): <p>Configures notification of workers regarding available or expiring work items.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWorkteam::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWorkteam::set_tags): <p>An array of key-value pairs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// - On success, responds with [`CreateWorkteamOutput`](crate::output::CreateWorkteamOutput) with field(s):
     ///   - [`workteam_arn(Option<String>)`](crate::output::CreateWorkteamOutput::workteam_arn): <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to identify the work team.</p>
     /// - On failure, responds with [`SdkError<CreateWorkteamError>`](crate::error::CreateWorkteamError)
@@ -907,8 +907,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAction`](crate::client::fluent_builders::DeleteAction) operation.
     ///
-    /// - Takes [`DeleteActionInput`](crate::input::DeleteActionInput) with field(s):
-    ///   - [`action_name(Option<String>)`](crate::input::DeleteActionInput::action_name): <p>The name of the action to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::DeleteAction::set_action_name): <p>The name of the action to delete.</p>
     /// - On success, responds with [`DeleteActionOutput`](crate::output::DeleteActionOutput) with field(s):
     ///   - [`action_arn(Option<String>)`](crate::output::DeleteActionOutput::action_arn): <p>The Amazon Resource Name (ARN) of the action.</p>
     /// - On failure, responds with [`SdkError<DeleteActionError>`](crate::error::DeleteActionError)
@@ -917,8 +917,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAlgorithm`](crate::client::fluent_builders::DeleteAlgorithm) operation.
     ///
-    /// - Takes [`DeleteAlgorithmInput`](crate::input::DeleteAlgorithmInput) with field(s):
-    ///   - [`algorithm_name(Option<String>)`](crate::input::DeleteAlgorithmInput::algorithm_name): <p>The name of the algorithm to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`algorithm_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAlgorithm::algorithm_name) / [`set_algorithm_name(Option<String>)`](crate::client::fluent_builders::DeleteAlgorithm::set_algorithm_name): <p>The name of the algorithm to delete.</p>
     /// - On success, responds with [`DeleteAlgorithmOutput`](crate::output::DeleteAlgorithmOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAlgorithmError>`](crate::error::DeleteAlgorithmError)
@@ -927,11 +927,11 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApp`](crate::client::fluent_builders::DeleteApp) operation.
     ///
-    /// - Takes [`DeleteAppInput`](crate::input::DeleteAppInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::DeleteAppInput::domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(Option<String>)`](crate::input::DeleteAppInput::user_profile_name): <p>The user profile name.</p>
-    ///   - [`app_type(Option<AppType>)`](crate::input::DeleteAppInput::app_type): <p>The type of app.</p>
-    ///   - [`app_name(Option<String>)`](crate::input::DeleteAppInput::app_name): <p>The name of the app.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_domain_id): <p>The domain ID.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_user_profile_name): <p>The user profile name.</p>
+    ///   - [`app_type(AppType)`](crate::client::fluent_builders::DeleteApp::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::DeleteApp::set_app_type): <p>The type of app.</p>
+    ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_app_name): <p>The name of the app.</p>
     /// - On success, responds with [`DeleteAppOutput`](crate::output::DeleteAppOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::error::DeleteAppError)
@@ -940,8 +940,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAppImageConfig`](crate::client::fluent_builders::DeleteAppImageConfig) operation.
     ///
-    /// - Takes [`DeleteAppImageConfigInput`](crate::input::DeleteAppImageConfigInput) with field(s):
-    ///   - [`app_image_config_name(Option<String>)`](crate::input::DeleteAppImageConfigInput::app_image_config_name): <p>The name of the AppImageConfig to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_image_config_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAppImageConfig::app_image_config_name) / [`set_app_image_config_name(Option<String>)`](crate::client::fluent_builders::DeleteAppImageConfig::set_app_image_config_name): <p>The name of the AppImageConfig to delete.</p>
     /// - On success, responds with [`DeleteAppImageConfigOutput`](crate::output::DeleteAppImageConfigOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAppImageConfigError>`](crate::error::DeleteAppImageConfigError)
@@ -950,9 +950,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteArtifact`](crate::client::fluent_builders::DeleteArtifact) operation.
     ///
-    /// - Takes [`DeleteArtifactInput`](crate::input::DeleteArtifactInput) with field(s):
-    ///   - [`artifact_arn(Option<String>)`](crate::input::DeleteArtifactInput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
-    ///   - [`source(Option<ArtifactSource>)`](crate::input::DeleteArtifactInput::source): <p>The URI of the source.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`artifact_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteArtifact::artifact_arn) / [`set_artifact_arn(Option<String>)`](crate::client::fluent_builders::DeleteArtifact::set_artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
+    ///   - [`source(ArtifactSource)`](crate::client::fluent_builders::DeleteArtifact::source) / [`set_source(Option<ArtifactSource>)`](crate::client::fluent_builders::DeleteArtifact::set_source): <p>The URI of the source.</p>
     /// - On success, responds with [`DeleteArtifactOutput`](crate::output::DeleteArtifactOutput) with field(s):
     ///   - [`artifact_arn(Option<String>)`](crate::output::DeleteArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>
     /// - On failure, responds with [`SdkError<DeleteArtifactError>`](crate::error::DeleteArtifactError)
@@ -961,9 +961,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAssociation`](crate::client::fluent_builders::DeleteAssociation) operation.
     ///
-    /// - Takes [`DeleteAssociationInput`](crate::input::DeleteAssociationInput) with field(s):
-    ///   - [`source_arn(Option<String>)`](crate::input::DeleteAssociationInput::source_arn): <p>The ARN of the source.</p>
-    ///   - [`destination_arn(Option<String>)`](crate::input::DeleteAssociationInput::destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAssociation::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::DeleteAssociation::set_source_arn): <p>The ARN of the source.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAssociation::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::DeleteAssociation::set_destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
     /// - On success, responds with [`DeleteAssociationOutput`](crate::output::DeleteAssociationOutput) with field(s):
     ///   - [`source_arn(Option<String>)`](crate::output::DeleteAssociationOutput::source_arn): <p>The ARN of the source.</p>
     ///   - [`destination_arn(Option<String>)`](crate::output::DeleteAssociationOutput::destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
@@ -973,8 +973,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteCodeRepository`](crate::client::fluent_builders::DeleteCodeRepository) operation.
     ///
-    /// - Takes [`DeleteCodeRepositoryInput`](crate::input::DeleteCodeRepositoryInput) with field(s):
-    ///   - [`code_repository_name(Option<String>)`](crate::input::DeleteCodeRepositoryInput::code_repository_name): <p>The name of the Git repository to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`code_repository_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCodeRepository::code_repository_name) / [`set_code_repository_name(Option<String>)`](crate::client::fluent_builders::DeleteCodeRepository::set_code_repository_name): <p>The name of the Git repository to delete.</p>
     /// - On success, responds with [`DeleteCodeRepositoryOutput`](crate::output::DeleteCodeRepositoryOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCodeRepositoryError>`](crate::error::DeleteCodeRepositoryError)
@@ -983,8 +983,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteContext`](crate::client::fluent_builders::DeleteContext) operation.
     ///
-    /// - Takes [`DeleteContextInput`](crate::input::DeleteContextInput) with field(s):
-    ///   - [`context_name(Option<String>)`](crate::input::DeleteContextInput::context_name): <p>The name of the context to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`context_name(impl Into<String>)`](crate::client::fluent_builders::DeleteContext::context_name) / [`set_context_name(Option<String>)`](crate::client::fluent_builders::DeleteContext::set_context_name): <p>The name of the context to delete.</p>
     /// - On success, responds with [`DeleteContextOutput`](crate::output::DeleteContextOutput) with field(s):
     ///   - [`context_arn(Option<String>)`](crate::output::DeleteContextOutput::context_arn): <p>The Amazon Resource Name (ARN) of the context.</p>
     /// - On failure, responds with [`SdkError<DeleteContextError>`](crate::error::DeleteContextError)
@@ -993,8 +993,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDataQualityJobDefinition`](crate::client::fluent_builders::DeleteDataQualityJobDefinition) operation.
     ///
-    /// - Takes [`DeleteDataQualityJobDefinitionInput`](crate::input::DeleteDataQualityJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::DeleteDataQualityJobDefinitionInput::job_definition_name): <p>The name of the data quality monitoring job definition to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDataQualityJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::DeleteDataQualityJobDefinition::set_job_definition_name): <p>The name of the data quality monitoring job definition to delete.</p>
     /// - On success, responds with [`DeleteDataQualityJobDefinitionOutput`](crate::output::DeleteDataQualityJobDefinitionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDataQualityJobDefinitionError>`](crate::error::DeleteDataQualityJobDefinitionError)
@@ -1005,8 +1005,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDeviceFleet`](crate::client::fluent_builders::DeleteDeviceFleet) operation.
     ///
-    /// - Takes [`DeleteDeviceFleetInput`](crate::input::DeleteDeviceFleetInput) with field(s):
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::DeleteDeviceFleetInput::device_fleet_name): <p>The name of the fleet to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeviceFleet::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::DeleteDeviceFleet::set_device_fleet_name): <p>The name of the fleet to delete.</p>
     /// - On success, responds with [`DeleteDeviceFleetOutput`](crate::output::DeleteDeviceFleetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDeviceFleetError>`](crate::error::DeleteDeviceFleetError)
@@ -1015,9 +1015,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) operation.
     ///
-    /// - Takes [`DeleteDomainInput`](crate::input::DeleteDomainInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::DeleteDomainInput::domain_id): <p>The domain ID.</p>
-    ///   - [`retention_policy(Option<RetentionPolicy>)`](crate::input::DeleteDomainInput::retention_policy): <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDomain::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DeleteDomain::set_domain_id): <p>The domain ID.</p>
+    ///   - [`retention_policy(RetentionPolicy)`](crate::client::fluent_builders::DeleteDomain::retention_policy) / [`set_retention_policy(Option<RetentionPolicy>)`](crate::client::fluent_builders::DeleteDomain::set_retention_policy): <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
     /// - On success, responds with [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::error::DeleteDomainError)
@@ -1026,8 +1026,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) operation.
     ///
-    /// - Takes [`DeleteEndpointInput`](crate::input::DeleteEndpointInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::DeleteEndpointInput::endpoint_name): <p>The name of the endpoint that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_endpoint_name): <p>The name of the endpoint that you want to delete.</p>
     /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
@@ -1036,8 +1036,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEndpointConfig`](crate::client::fluent_builders::DeleteEndpointConfig) operation.
     ///
-    /// - Takes [`DeleteEndpointConfigInput`](crate::input::DeleteEndpointConfigInput) with field(s):
-    ///   - [`endpoint_config_name(Option<String>)`](crate::input::DeleteEndpointConfigInput::endpoint_config_name): <p>The name of the endpoint configuration that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_config_name(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpointConfig::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::client::fluent_builders::DeleteEndpointConfig::set_endpoint_config_name): <p>The name of the endpoint configuration that you want to delete.</p>
     /// - On success, responds with [`DeleteEndpointConfigOutput`](crate::output::DeleteEndpointConfigOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEndpointConfigError>`](crate::error::DeleteEndpointConfigError)
@@ -1046,8 +1046,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteExperiment`](crate::client::fluent_builders::DeleteExperiment) operation.
     ///
-    /// - Takes [`DeleteExperimentInput`](crate::input::DeleteExperimentInput) with field(s):
-    ///   - [`experiment_name(Option<String>)`](crate::input::DeleteExperimentInput::experiment_name): <p>The name of the experiment to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`experiment_name(impl Into<String>)`](crate::client::fluent_builders::DeleteExperiment::experiment_name) / [`set_experiment_name(Option<String>)`](crate::client::fluent_builders::DeleteExperiment::set_experiment_name): <p>The name of the experiment to delete.</p>
     /// - On success, responds with [`DeleteExperimentOutput`](crate::output::DeleteExperimentOutput) with field(s):
     ///   - [`experiment_arn(Option<String>)`](crate::output::DeleteExperimentOutput::experiment_arn): <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteExperimentError>`](crate::error::DeleteExperimentError)
@@ -1056,8 +1056,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFeatureGroup`](crate::client::fluent_builders::DeleteFeatureGroup) operation.
     ///
-    /// - Takes [`DeleteFeatureGroupInput`](crate::input::DeleteFeatureGroupInput) with field(s):
-    ///   - [`feature_group_name(Option<String>)`](crate::input::DeleteFeatureGroupInput::feature_group_name): <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`feature_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteFeatureGroup::feature_group_name) / [`set_feature_group_name(Option<String>)`](crate::client::fluent_builders::DeleteFeatureGroup::set_feature_group_name): <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
     /// - On success, responds with [`DeleteFeatureGroupOutput`](crate::output::DeleteFeatureGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFeatureGroupError>`](crate::error::DeleteFeatureGroupError)
@@ -1066,8 +1066,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFlowDefinition`](crate::client::fluent_builders::DeleteFlowDefinition) operation.
     ///
-    /// - Takes [`DeleteFlowDefinitionInput`](crate::input::DeleteFlowDefinitionInput) with field(s):
-    ///   - [`flow_definition_name(Option<String>)`](crate::input::DeleteFlowDefinitionInput::flow_definition_name): <p>The name of the flow definition you are deleting.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`flow_definition_name(impl Into<String>)`](crate::client::fluent_builders::DeleteFlowDefinition::flow_definition_name) / [`set_flow_definition_name(Option<String>)`](crate::client::fluent_builders::DeleteFlowDefinition::set_flow_definition_name): <p>The name of the flow definition you are deleting.</p>
     /// - On success, responds with [`DeleteFlowDefinitionOutput`](crate::output::DeleteFlowDefinitionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFlowDefinitionError>`](crate::error::DeleteFlowDefinitionError)
@@ -1076,8 +1076,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteHumanTaskUi`](crate::client::fluent_builders::DeleteHumanTaskUi) operation.
     ///
-    /// - Takes [`DeleteHumanTaskUiInput`](crate::input::DeleteHumanTaskUiInput) with field(s):
-    ///   - [`human_task_ui_name(Option<String>)`](crate::input::DeleteHumanTaskUiInput::human_task_ui_name): <p>The name of the human task user interface (work task template) you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`human_task_ui_name(impl Into<String>)`](crate::client::fluent_builders::DeleteHumanTaskUi::human_task_ui_name) / [`set_human_task_ui_name(Option<String>)`](crate::client::fluent_builders::DeleteHumanTaskUi::set_human_task_ui_name): <p>The name of the human task user interface (work task template) you want to delete.</p>
     /// - On success, responds with [`DeleteHumanTaskUiOutput`](crate::output::DeleteHumanTaskUiOutput)
 
     /// - On failure, responds with [`SdkError<DeleteHumanTaskUiError>`](crate::error::DeleteHumanTaskUiError)
@@ -1086,8 +1086,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteImage`](crate::client::fluent_builders::DeleteImage) operation.
     ///
-    /// - Takes [`DeleteImageInput`](crate::input::DeleteImageInput) with field(s):
-    ///   - [`image_name(Option<String>)`](crate::input::DeleteImageInput::image_name): <p>The name of the image to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::DeleteImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::DeleteImage::set_image_name): <p>The name of the image to delete.</p>
     /// - On success, responds with [`DeleteImageOutput`](crate::output::DeleteImageOutput)
 
     /// - On failure, responds with [`SdkError<DeleteImageError>`](crate::error::DeleteImageError)
@@ -1096,9 +1096,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteImageVersion`](crate::client::fluent_builders::DeleteImageVersion) operation.
     ///
-    /// - Takes [`DeleteImageVersionInput`](crate::input::DeleteImageVersionInput) with field(s):
-    ///   - [`image_name(Option<String>)`](crate::input::DeleteImageVersionInput::image_name): <p>The name of the image.</p>
-    ///   - [`version(Option<i32>)`](crate::input::DeleteImageVersionInput::version): <p>The version to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::DeleteImageVersion::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::DeleteImageVersion::set_image_name): <p>The name of the image.</p>
+    ///   - [`version(i32)`](crate::client::fluent_builders::DeleteImageVersion::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::DeleteImageVersion::set_version): <p>The version to delete.</p>
     /// - On success, responds with [`DeleteImageVersionOutput`](crate::output::DeleteImageVersionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteImageVersionError>`](crate::error::DeleteImageVersionError)
@@ -1107,8 +1107,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteModel`](crate::client::fluent_builders::DeleteModel) operation.
     ///
-    /// - Takes [`DeleteModelInput`](crate::input::DeleteModelInput) with field(s):
-    ///   - [`model_name(Option<String>)`](crate::input::DeleteModelInput::model_name): <p>The name of the model to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::DeleteModel::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::DeleteModel::set_model_name): <p>The name of the model to delete.</p>
     /// - On success, responds with [`DeleteModelOutput`](crate::output::DeleteModelOutput)
 
     /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::error::DeleteModelError)
@@ -1117,8 +1117,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteModelBiasJobDefinition`](crate::client::fluent_builders::DeleteModelBiasJobDefinition) operation.
     ///
-    /// - Takes [`DeleteModelBiasJobDefinitionInput`](crate::input::DeleteModelBiasJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::DeleteModelBiasJobDefinitionInput::job_definition_name): <p>The name of the model bias job definition to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::DeleteModelBiasJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::DeleteModelBiasJobDefinition::set_job_definition_name): <p>The name of the model bias job definition to delete.</p>
     /// - On success, responds with [`DeleteModelBiasJobDefinitionOutput`](crate::output::DeleteModelBiasJobDefinitionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteModelBiasJobDefinitionError>`](crate::error::DeleteModelBiasJobDefinitionError)
@@ -1129,8 +1129,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteModelExplainabilityJobDefinition`](crate::client::fluent_builders::DeleteModelExplainabilityJobDefinition) operation.
     ///
-    /// - Takes [`DeleteModelExplainabilityJobDefinitionInput`](crate::input::DeleteModelExplainabilityJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::DeleteModelExplainabilityJobDefinitionInput::job_definition_name): <p>The name of the model explainability job definition to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::DeleteModelExplainabilityJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::DeleteModelExplainabilityJobDefinition::set_job_definition_name): <p>The name of the model explainability job definition to delete.</p>
     /// - On success, responds with [`DeleteModelExplainabilityJobDefinitionOutput`](crate::output::DeleteModelExplainabilityJobDefinitionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteModelExplainabilityJobDefinitionError>`](crate::error::DeleteModelExplainabilityJobDefinitionError)
@@ -1141,8 +1141,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteModelPackage`](crate::client::fluent_builders::DeleteModelPackage) operation.
     ///
-    /// - Takes [`DeleteModelPackageInput`](crate::input::DeleteModelPackageInput) with field(s):
-    ///   - [`model_package_name(Option<String>)`](crate::input::DeleteModelPackageInput::model_package_name): <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>  <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_name(impl Into<String>)`](crate::client::fluent_builders::DeleteModelPackage::model_package_name) / [`set_model_package_name(Option<String>)`](crate::client::fluent_builders::DeleteModelPackage::set_model_package_name): <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>  <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     /// - On success, responds with [`DeleteModelPackageOutput`](crate::output::DeleteModelPackageOutput)
 
     /// - On failure, responds with [`SdkError<DeleteModelPackageError>`](crate::error::DeleteModelPackageError)
@@ -1151,8 +1151,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteModelPackageGroup`](crate::client::fluent_builders::DeleteModelPackageGroup) operation.
     ///
-    /// - Takes [`DeleteModelPackageGroupInput`](crate::input::DeleteModelPackageGroupInput) with field(s):
-    ///   - [`model_package_group_name(Option<String>)`](crate::input::DeleteModelPackageGroupInput::model_package_group_name): <p>The name of the model group to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteModelPackageGroup::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::DeleteModelPackageGroup::set_model_package_group_name): <p>The name of the model group to delete.</p>
     /// - On success, responds with [`DeleteModelPackageGroupOutput`](crate::output::DeleteModelPackageGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteModelPackageGroupError>`](crate::error::DeleteModelPackageGroupError)
@@ -1161,8 +1161,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteModelPackageGroupPolicy`](crate::client::fluent_builders::DeleteModelPackageGroupPolicy) operation.
     ///
-    /// - Takes [`DeleteModelPackageGroupPolicyInput`](crate::input::DeleteModelPackageGroupPolicyInput) with field(s):
-    ///   - [`model_package_group_name(Option<String>)`](crate::input::DeleteModelPackageGroupPolicyInput::model_package_group_name): <p>The name of the model group for which to delete the policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteModelPackageGroupPolicy::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::DeleteModelPackageGroupPolicy::set_model_package_group_name): <p>The name of the model group for which to delete the policy.</p>
     /// - On success, responds with [`DeleteModelPackageGroupPolicyOutput`](crate::output::DeleteModelPackageGroupPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteModelPackageGroupPolicyError>`](crate::error::DeleteModelPackageGroupPolicyError)
@@ -1173,8 +1173,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteModelQualityJobDefinition`](crate::client::fluent_builders::DeleteModelQualityJobDefinition) operation.
     ///
-    /// - Takes [`DeleteModelQualityJobDefinitionInput`](crate::input::DeleteModelQualityJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::DeleteModelQualityJobDefinitionInput::job_definition_name): <p>The name of the model quality monitoring job definition to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::DeleteModelQualityJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::DeleteModelQualityJobDefinition::set_job_definition_name): <p>The name of the model quality monitoring job definition to delete.</p>
     /// - On success, responds with [`DeleteModelQualityJobDefinitionOutput`](crate::output::DeleteModelQualityJobDefinitionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteModelQualityJobDefinitionError>`](crate::error::DeleteModelQualityJobDefinitionError)
@@ -1185,8 +1185,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteMonitoringSchedule`](crate::client::fluent_builders::DeleteMonitoringSchedule) operation.
     ///
-    /// - Takes [`DeleteMonitoringScheduleInput`](crate::input::DeleteMonitoringScheduleInput) with field(s):
-    ///   - [`monitoring_schedule_name(Option<String>)`](crate::input::DeleteMonitoringScheduleInput::monitoring_schedule_name): <p>The name of the monitoring schedule to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMonitoringSchedule::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::DeleteMonitoringSchedule::set_monitoring_schedule_name): <p>The name of the monitoring schedule to delete.</p>
     /// - On success, responds with [`DeleteMonitoringScheduleOutput`](crate::output::DeleteMonitoringScheduleOutput)
 
     /// - On failure, responds with [`SdkError<DeleteMonitoringScheduleError>`](crate::error::DeleteMonitoringScheduleError)
@@ -1195,8 +1195,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteNotebookInstance`](crate::client::fluent_builders::DeleteNotebookInstance) operation.
     ///
-    /// - Takes [`DeleteNotebookInstanceInput`](crate::input::DeleteNotebookInstanceInput) with field(s):
-    ///   - [`notebook_instance_name(Option<String>)`](crate::input::DeleteNotebookInstanceInput::notebook_instance_name): <p>The name of the Amazon SageMaker notebook instance to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::DeleteNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::DeleteNotebookInstance::set_notebook_instance_name): <p>The name of the Amazon SageMaker notebook instance to delete.</p>
     /// - On success, responds with [`DeleteNotebookInstanceOutput`](crate::output::DeleteNotebookInstanceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteNotebookInstanceError>`](crate::error::DeleteNotebookInstanceError)
@@ -1205,8 +1205,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteNotebookInstanceLifecycleConfig`](crate::client::fluent_builders::DeleteNotebookInstanceLifecycleConfig) operation.
     ///
-    /// - Takes [`DeleteNotebookInstanceLifecycleConfigInput`](crate::input::DeleteNotebookInstanceLifecycleConfigInput) with field(s):
-    ///   - [`notebook_instance_lifecycle_config_name(Option<String>)`](crate::input::DeleteNotebookInstanceLifecycleConfigInput::notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::DeleteNotebookInstanceLifecycleConfig::notebook_instance_lifecycle_config_name) / [`set_notebook_instance_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::DeleteNotebookInstanceLifecycleConfig::set_notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration to delete.</p>
     /// - On success, responds with [`DeleteNotebookInstanceLifecycleConfigOutput`](crate::output::DeleteNotebookInstanceLifecycleConfigOutput)
 
     /// - On failure, responds with [`SdkError<DeleteNotebookInstanceLifecycleConfigError>`](crate::error::DeleteNotebookInstanceLifecycleConfigError)
@@ -1217,9 +1217,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeletePipeline`](crate::client::fluent_builders::DeletePipeline) operation.
     ///
-    /// - Takes [`DeletePipelineInput`](crate::input::DeletePipelineInput) with field(s):
-    ///   - [`pipeline_name(Option<String>)`](crate::input::DeletePipelineInput::pipeline_name): <p>The name of the pipeline to delete.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::DeletePipelineInput::client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::DeletePipeline::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::DeletePipeline::set_pipeline_name): <p>The name of the pipeline to delete.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeletePipeline::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeletePipeline::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     /// - On success, responds with [`DeletePipelineOutput`](crate::output::DeletePipelineOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::output::DeletePipelineOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the pipeline to delete.</p>
     /// - On failure, responds with [`SdkError<DeletePipelineError>`](crate::error::DeletePipelineError)
@@ -1228,8 +1228,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// - Takes [`DeleteProjectInput`](crate::input::DeleteProjectInput) with field(s):
-    ///   - [`project_name(Option<String>)`](crate::input::DeleteProjectInput::project_name): <p>The name of the project to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::DeleteProject::set_project_name): <p>The name of the project to delete.</p>
     /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
 
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
@@ -1238,8 +1238,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteStudioLifecycleConfig`](crate::client::fluent_builders::DeleteStudioLifecycleConfig) operation.
     ///
-    /// - Takes [`DeleteStudioLifecycleConfigInput`](crate::input::DeleteStudioLifecycleConfigInput) with field(s):
-    ///   - [`studio_lifecycle_config_name(Option<String>)`](crate::input::DeleteStudioLifecycleConfigInput::studio_lifecycle_config_name): <p>The name of the Studio Lifecycle Configuration to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`studio_lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioLifecycleConfig::studio_lifecycle_config_name) / [`set_studio_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::DeleteStudioLifecycleConfig::set_studio_lifecycle_config_name): <p>The name of the Studio Lifecycle Configuration to delete.</p>
     /// - On success, responds with [`DeleteStudioLifecycleConfigOutput`](crate::output::DeleteStudioLifecycleConfigOutput)
 
     /// - On failure, responds with [`SdkError<DeleteStudioLifecycleConfigError>`](crate::error::DeleteStudioLifecycleConfigError)
@@ -1250,9 +1250,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
     ///
-    /// - Takes [`DeleteTagsInput`](crate::input::DeleteTagsInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::DeleteTagsInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags you want to delete.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DeleteTagsInput::tag_keys): <p>An array or one or more tag keys to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteTags::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags you want to delete.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::DeleteTags::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteTags::set_tag_keys): <p>An array or one or more tag keys to delete.</p>
     /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
 
     /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
@@ -1261,8 +1261,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTrial`](crate::client::fluent_builders::DeleteTrial) operation.
     ///
-    /// - Takes [`DeleteTrialInput`](crate::input::DeleteTrialInput) with field(s):
-    ///   - [`trial_name(Option<String>)`](crate::input::DeleteTrialInput::trial_name): <p>The name of the trial to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTrial::trial_name) / [`set_trial_name(Option<String>)`](crate::client::fluent_builders::DeleteTrial::set_trial_name): <p>The name of the trial to delete.</p>
     /// - On success, responds with [`DeleteTrialOutput`](crate::output::DeleteTrialOutput) with field(s):
     ///   - [`trial_arn(Option<String>)`](crate::output::DeleteTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial that is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTrialError>`](crate::error::DeleteTrialError)
@@ -1271,8 +1271,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteTrialComponent`](crate::client::fluent_builders::DeleteTrialComponent) operation.
     ///
-    /// - Takes [`DeleteTrialComponentInput`](crate::input::DeleteTrialComponentInput) with field(s):
-    ///   - [`trial_component_name(Option<String>)`](crate::input::DeleteTrialComponentInput::trial_component_name): <p>The name of the component to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_component_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTrialComponent::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::client::fluent_builders::DeleteTrialComponent::set_trial_component_name): <p>The name of the component to delete.</p>
     /// - On success, responds with [`DeleteTrialComponentOutput`](crate::output::DeleteTrialComponentOutput) with field(s):
     ///   - [`trial_component_arn(Option<String>)`](crate::output::DeleteTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTrialComponentError>`](crate::error::DeleteTrialComponentError)
@@ -1281,9 +1281,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteUserProfile`](crate::client::fluent_builders::DeleteUserProfile) operation.
     ///
-    /// - Takes [`DeleteUserProfileInput`](crate::input::DeleteUserProfileInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::DeleteUserProfileInput::domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(Option<String>)`](crate::input::DeleteUserProfileInput::user_profile_name): <p>The user profile name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserProfile::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DeleteUserProfile::set_domain_id): <p>The domain ID.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::DeleteUserProfile::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::DeleteUserProfile::set_user_profile_name): <p>The user profile name.</p>
     /// - On success, responds with [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput)
 
     /// - On failure, responds with [`SdkError<DeleteUserProfileError>`](crate::error::DeleteUserProfileError)
@@ -1292,8 +1292,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteWorkforce`](crate::client::fluent_builders::DeleteWorkforce) operation.
     ///
-    /// - Takes [`DeleteWorkforceInput`](crate::input::DeleteWorkforceInput) with field(s):
-    ///   - [`workforce_name(Option<String>)`](crate::input::DeleteWorkforceInput::workforce_name): <p>The name of the workforce.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`workforce_name(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkforce::workforce_name) / [`set_workforce_name(Option<String>)`](crate::client::fluent_builders::DeleteWorkforce::set_workforce_name): <p>The name of the workforce.</p>
     /// - On success, responds with [`DeleteWorkforceOutput`](crate::output::DeleteWorkforceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteWorkforceError>`](crate::error::DeleteWorkforceError)
@@ -1302,8 +1302,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteWorkteam`](crate::client::fluent_builders::DeleteWorkteam) operation.
     ///
-    /// - Takes [`DeleteWorkteamInput`](crate::input::DeleteWorkteamInput) with field(s):
-    ///   - [`workteam_name(Option<String>)`](crate::input::DeleteWorkteamInput::workteam_name): <p>The name of the work team to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`workteam_name(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkteam::workteam_name) / [`set_workteam_name(Option<String>)`](crate::client::fluent_builders::DeleteWorkteam::set_workteam_name): <p>The name of the work team to delete.</p>
     /// - On success, responds with [`DeleteWorkteamOutput`](crate::output::DeleteWorkteamOutput) with field(s):
     ///   - [`success(bool)`](crate::output::DeleteWorkteamOutput::success): <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteWorkteamError>`](crate::error::DeleteWorkteamError)
@@ -1312,9 +1312,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeregisterDevices`](crate::client::fluent_builders::DeregisterDevices) operation.
     ///
-    /// - Takes [`DeregisterDevicesInput`](crate::input::DeregisterDevicesInput) with field(s):
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::DeregisterDevicesInput::device_fleet_name): <p>The name of the fleet the devices belong to.</p>
-    ///   - [`device_names(Option<Vec<String>>)`](crate::input::DeregisterDevicesInput::device_names): <p>The unique IDs of the devices.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::DeregisterDevices::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::DeregisterDevices::set_device_fleet_name): <p>The name of the fleet the devices belong to.</p>
+    ///   - [`device_names(Vec<String>)`](crate::client::fluent_builders::DeregisterDevices::device_names) / [`set_device_names(Option<Vec<String>>)`](crate::client::fluent_builders::DeregisterDevices::set_device_names): <p>The unique IDs of the devices.</p>
     /// - On success, responds with [`DeregisterDevicesOutput`](crate::output::DeregisterDevicesOutput)
 
     /// - On failure, responds with [`SdkError<DeregisterDevicesError>`](crate::error::DeregisterDevicesError)
@@ -1323,8 +1323,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAction`](crate::client::fluent_builders::DescribeAction) operation.
     ///
-    /// - Takes [`DescribeActionInput`](crate::input::DescribeActionInput) with field(s):
-    ///   - [`action_name(Option<String>)`](crate::input::DescribeActionInput::action_name): <p>The name of the action to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::DescribeAction::set_action_name): <p>The name of the action to describe.</p>
     /// - On success, responds with [`DescribeActionOutput`](crate::output::DescribeActionOutput) with field(s):
     ///   - [`action_name(Option<String>)`](crate::output::DescribeActionOutput::action_name): <p>The name of the action.</p>
     ///   - [`action_arn(Option<String>)`](crate::output::DescribeActionOutput::action_arn): <p>The Amazon Resource Name (ARN) of the action.</p>
@@ -1345,8 +1345,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAlgorithm`](crate::client::fluent_builders::DescribeAlgorithm) operation.
     ///
-    /// - Takes [`DescribeAlgorithmInput`](crate::input::DescribeAlgorithmInput) with field(s):
-    ///   - [`algorithm_name(Option<String>)`](crate::input::DescribeAlgorithmInput::algorithm_name): <p>The name of the algorithm to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`algorithm_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAlgorithm::algorithm_name) / [`set_algorithm_name(Option<String>)`](crate::client::fluent_builders::DescribeAlgorithm::set_algorithm_name): <p>The name of the algorithm to describe.</p>
     /// - On success, responds with [`DescribeAlgorithmOutput`](crate::output::DescribeAlgorithmOutput) with field(s):
     ///   - [`algorithm_name(Option<String>)`](crate::output::DescribeAlgorithmOutput::algorithm_name): <p>The name of the algorithm being described.</p>
     ///   - [`algorithm_arn(Option<String>)`](crate::output::DescribeAlgorithmOutput::algorithm_arn): <p>The Amazon Resource Name (ARN) of the algorithm.</p>
@@ -1365,11 +1365,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeApp`](crate::client::fluent_builders::DescribeApp) operation.
     ///
-    /// - Takes [`DescribeAppInput`](crate::input::DescribeAppInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::DescribeAppInput::domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(Option<String>)`](crate::input::DescribeAppInput::user_profile_name): <p>The user profile name.</p>
-    ///   - [`app_type(Option<AppType>)`](crate::input::DescribeAppInput::app_type): <p>The type of app.</p>
-    ///   - [`app_name(Option<String>)`](crate::input::DescribeAppInput::app_name): <p>The name of the app.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_domain_id): <p>The domain ID.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_user_profile_name): <p>The user profile name.</p>
+    ///   - [`app_type(AppType)`](crate::client::fluent_builders::DescribeApp::app_type) / [`set_app_type(Option<AppType>)`](crate::client::fluent_builders::DescribeApp::set_app_type): <p>The type of app.</p>
+    ///   - [`app_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApp::app_name) / [`set_app_name(Option<String>)`](crate::client::fluent_builders::DescribeApp::set_app_name): <p>The name of the app.</p>
     /// - On success, responds with [`DescribeAppOutput`](crate::output::DescribeAppOutput) with field(s):
     ///   - [`app_arn(Option<String>)`](crate::output::DescribeAppOutput::app_arn): <p>The Amazon Resource Name (ARN) of the app.</p>
     ///   - [`app_type(Option<AppType>)`](crate::output::DescribeAppOutput::app_type): <p>The type of app.</p>
@@ -1388,8 +1388,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAppImageConfig`](crate::client::fluent_builders::DescribeAppImageConfig) operation.
     ///
-    /// - Takes [`DescribeAppImageConfigInput`](crate::input::DescribeAppImageConfigInput) with field(s):
-    ///   - [`app_image_config_name(Option<String>)`](crate::input::DescribeAppImageConfigInput::app_image_config_name): <p>The name of the AppImageConfig to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_image_config_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAppImageConfig::app_image_config_name) / [`set_app_image_config_name(Option<String>)`](crate::client::fluent_builders::DescribeAppImageConfig::set_app_image_config_name): <p>The name of the AppImageConfig to describe.</p>
     /// - On success, responds with [`DescribeAppImageConfigOutput`](crate::output::DescribeAppImageConfigOutput) with field(s):
     ///   - [`app_image_config_arn(Option<String>)`](crate::output::DescribeAppImageConfigOutput::app_image_config_arn): <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
     ///   - [`app_image_config_name(Option<String>)`](crate::output::DescribeAppImageConfigOutput::app_image_config_name): <p>The name of the AppImageConfig.</p>
@@ -1402,8 +1402,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeArtifact`](crate::client::fluent_builders::DescribeArtifact) operation.
     ///
-    /// - Takes [`DescribeArtifactInput`](crate::input::DescribeArtifactInput) with field(s):
-    ///   - [`artifact_arn(Option<String>)`](crate::input::DescribeArtifactInput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`artifact_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeArtifact::artifact_arn) / [`set_artifact_arn(Option<String>)`](crate::client::fluent_builders::DescribeArtifact::set_artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
     /// - On success, responds with [`DescribeArtifactOutput`](crate::output::DescribeArtifactOutput) with field(s):
     ///   - [`artifact_name(Option<String>)`](crate::output::DescribeArtifactOutput::artifact_name): <p>The name of the artifact.</p>
     ///   - [`artifact_arn(Option<String>)`](crate::output::DescribeArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>
@@ -1422,8 +1422,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAutoMLJob`](crate::client::fluent_builders::DescribeAutoMLJob) operation.
     ///
-    /// - Takes [`DescribeAutoMlJobInput`](crate::input::DescribeAutoMlJobInput) with field(s):
-    ///   - [`auto_ml_job_name(Option<String>)`](crate::input::DescribeAutoMlJobInput::auto_ml_job_name): <p>Requests information about an AutoML job using its unique name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_ml_job_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAutoMLJob::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::client::fluent_builders::DescribeAutoMLJob::set_auto_ml_job_name): <p>Requests information about an AutoML job using its unique name.</p>
     /// - On success, responds with [`DescribeAutoMlJobOutput`](crate::output::DescribeAutoMlJobOutput) with field(s):
     ///   - [`auto_ml_job_name(Option<String>)`](crate::output::DescribeAutoMlJobOutput::auto_ml_job_name): <p>Returns the name of the AutoML job.</p>
     ///   - [`auto_ml_job_arn(Option<String>)`](crate::output::DescribeAutoMlJobOutput::auto_ml_job_arn): <p>Returns the ARN of the AutoML job.</p>
@@ -1452,8 +1452,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCodeRepository`](crate::client::fluent_builders::DescribeCodeRepository) operation.
     ///
-    /// - Takes [`DescribeCodeRepositoryInput`](crate::input::DescribeCodeRepositoryInput) with field(s):
-    ///   - [`code_repository_name(Option<String>)`](crate::input::DescribeCodeRepositoryInput::code_repository_name): <p>The name of the Git repository to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`code_repository_name(impl Into<String>)`](crate::client::fluent_builders::DescribeCodeRepository::code_repository_name) / [`set_code_repository_name(Option<String>)`](crate::client::fluent_builders::DescribeCodeRepository::set_code_repository_name): <p>The name of the Git repository to describe.</p>
     /// - On success, responds with [`DescribeCodeRepositoryOutput`](crate::output::DescribeCodeRepositoryOutput) with field(s):
     ///   - [`code_repository_name(Option<String>)`](crate::output::DescribeCodeRepositoryOutput::code_repository_name): <p>The name of the Git repository.</p>
     ///   - [`code_repository_arn(Option<String>)`](crate::output::DescribeCodeRepositoryOutput::code_repository_arn): <p>The Amazon Resource Name (ARN) of the Git repository.</p>
@@ -1466,8 +1466,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeCompilationJob`](crate::client::fluent_builders::DescribeCompilationJob) operation.
     ///
-    /// - Takes [`DescribeCompilationJobInput`](crate::input::DescribeCompilationJobInput) with field(s):
-    ///   - [`compilation_job_name(Option<String>)`](crate::input::DescribeCompilationJobInput::compilation_job_name): <p>The name of the model compilation job that you want information about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`compilation_job_name(impl Into<String>)`](crate::client::fluent_builders::DescribeCompilationJob::compilation_job_name) / [`set_compilation_job_name(Option<String>)`](crate::client::fluent_builders::DescribeCompilationJob::set_compilation_job_name): <p>The name of the model compilation job that you want information about.</p>
     /// - On success, responds with [`DescribeCompilationJobOutput`](crate::output::DescribeCompilationJobOutput) with field(s):
     ///   - [`compilation_job_name(Option<String>)`](crate::output::DescribeCompilationJobOutput::compilation_job_name): <p>The name of the model compilation job.</p>
     ///   - [`compilation_job_arn(Option<String>)`](crate::output::DescribeCompilationJobOutput::compilation_job_arn): <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
@@ -1492,8 +1492,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeContext`](crate::client::fluent_builders::DescribeContext) operation.
     ///
-    /// - Takes [`DescribeContextInput`](crate::input::DescribeContextInput) with field(s):
-    ///   - [`context_name(Option<String>)`](crate::input::DescribeContextInput::context_name): <p>The name of the context to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`context_name(impl Into<String>)`](crate::client::fluent_builders::DescribeContext::context_name) / [`set_context_name(Option<String>)`](crate::client::fluent_builders::DescribeContext::set_context_name): <p>The name of the context to describe.</p>
     /// - On success, responds with [`DescribeContextOutput`](crate::output::DescribeContextOutput) with field(s):
     ///   - [`context_name(Option<String>)`](crate::output::DescribeContextOutput::context_name): <p>The name of the context.</p>
     ///   - [`context_arn(Option<String>)`](crate::output::DescribeContextOutput::context_arn): <p>The Amazon Resource Name (ARN) of the context.</p>
@@ -1512,8 +1512,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDataQualityJobDefinition`](crate::client::fluent_builders::DescribeDataQualityJobDefinition) operation.
     ///
-    /// - Takes [`DescribeDataQualityJobDefinitionInput`](crate::input::DescribeDataQualityJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::DescribeDataQualityJobDefinitionInput::job_definition_name): <p>The name of the data quality monitoring job definition to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDataQualityJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::DescribeDataQualityJobDefinition::set_job_definition_name): <p>The name of the data quality monitoring job definition to describe.</p>
     /// - On success, responds with [`DescribeDataQualityJobDefinitionOutput`](crate::output::DescribeDataQualityJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::output::DescribeDataQualityJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the data quality monitoring job definition.</p>
     ///   - [`job_definition_name(Option<String>)`](crate::output::DescribeDataQualityJobDefinitionOutput::job_definition_name): <p>The name of the data quality monitoring job definition.</p>
@@ -1534,10 +1534,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) operation.
     ///
-    /// - Takes [`DescribeDeviceInput`](crate::input::DescribeDeviceInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeDeviceInput::next_token): <p>Next token of device description.</p>
-    ///   - [`device_name(Option<String>)`](crate::input::DescribeDeviceInput::device_name): <p>The unique ID of the device.</p>
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::DescribeDeviceInput::device_fleet_name): <p>The name of the fleet the devices belong to.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDevice::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDevice::set_next_token): <p>Next token of device description.</p>
+    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDevice::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::DescribeDevice::set_device_name): <p>The unique ID of the device.</p>
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDevice::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::DescribeDevice::set_device_fleet_name): <p>The name of the fleet the devices belong to.</p>
     /// - On success, responds with [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput) with field(s):
     ///   - [`device_arn(Option<String>)`](crate::output::DescribeDeviceOutput::device_arn): <p>The Amazon Resource Name (ARN) of the device.</p>
     ///   - [`device_name(Option<String>)`](crate::output::DescribeDeviceOutput::device_name): <p>The unique identifier of the device.</p>
@@ -1556,8 +1556,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDeviceFleet`](crate::client::fluent_builders::DescribeDeviceFleet) operation.
     ///
-    /// - Takes [`DescribeDeviceFleetInput`](crate::input::DescribeDeviceFleetInput) with field(s):
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::DescribeDeviceFleetInput::device_fleet_name): <p>The name of the fleet.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDeviceFleet::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::DescribeDeviceFleet::set_device_fleet_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`DescribeDeviceFleetOutput`](crate::output::DescribeDeviceFleetOutput) with field(s):
     ///   - [`device_fleet_name(Option<String>)`](crate::output::DescribeDeviceFleetOutput::device_fleet_name): <p>The name of the fleet.</p>
     ///   - [`device_fleet_arn(Option<String>)`](crate::output::DescribeDeviceFleetOutput::device_fleet_arn): <p>The The Amazon Resource Name (ARN) of the fleet.</p>
@@ -1573,8 +1573,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) operation.
     ///
-    /// - Takes [`DescribeDomainInput`](crate::input::DescribeDomainInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::DescribeDomainInput::domain_id): <p>The domain ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDomain::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeDomain::set_domain_id): <p>The domain ID.</p>
     /// - On success, responds with [`DescribeDomainOutput`](crate::output::DescribeDomainOutput) with field(s):
     ///   - [`domain_arn(Option<String>)`](crate::output::DescribeDomainOutput::domain_arn): <p>The domain's Amazon Resource Name (ARN).</p>
     ///   - [`domain_id(Option<String>)`](crate::output::DescribeDomainOutput::domain_id): <p>The domain ID.</p>
@@ -1602,8 +1602,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEdgePackagingJob`](crate::client::fluent_builders::DescribeEdgePackagingJob) operation.
     ///
-    /// - Takes [`DescribeEdgePackagingJobInput`](crate::input::DescribeEdgePackagingJobInput) with field(s):
-    ///   - [`edge_packaging_job_name(Option<String>)`](crate::input::DescribeEdgePackagingJobInput::edge_packaging_job_name): <p>The name of the edge packaging job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`edge_packaging_job_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEdgePackagingJob::edge_packaging_job_name) / [`set_edge_packaging_job_name(Option<String>)`](crate::client::fluent_builders::DescribeEdgePackagingJob::set_edge_packaging_job_name): <p>The name of the edge packaging job.</p>
     /// - On success, responds with [`DescribeEdgePackagingJobOutput`](crate::output::DescribeEdgePackagingJobOutput) with field(s):
     ///   - [`edge_packaging_job_arn(Option<String>)`](crate::output::DescribeEdgePackagingJobOutput::edge_packaging_job_arn): <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
     ///   - [`edge_packaging_job_name(Option<String>)`](crate::output::DescribeEdgePackagingJobOutput::edge_packaging_job_name): <p>The name of the edge packaging job.</p>
@@ -1628,8 +1628,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEndpoint`](crate::client::fluent_builders::DescribeEndpoint) operation.
     ///
-    /// - Takes [`DescribeEndpointInput`](crate::input::DescribeEndpointInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::DescribeEndpointInput::endpoint_name): <p>The name of the endpoint.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpoint::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::DescribeEndpoint::set_endpoint_name): <p>The name of the endpoint.</p>
     /// - On success, responds with [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput) with field(s):
     ///   - [`endpoint_name(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_name): <p>Name of the endpoint.</p>
     ///   - [`endpoint_arn(Option<String>)`](crate::output::DescribeEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
@@ -1649,8 +1649,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEndpointConfig`](crate::client::fluent_builders::DescribeEndpointConfig) operation.
     ///
-    /// - Takes [`DescribeEndpointConfigInput`](crate::input::DescribeEndpointConfigInput) with field(s):
-    ///   - [`endpoint_config_name(Option<String>)`](crate::input::DescribeEndpointConfigInput::endpoint_config_name): <p>The name of the endpoint configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_config_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpointConfig::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::client::fluent_builders::DescribeEndpointConfig::set_endpoint_config_name): <p>The name of the endpoint configuration.</p>
     /// - On success, responds with [`DescribeEndpointConfigOutput`](crate::output::DescribeEndpointConfigOutput) with field(s):
     ///   - [`endpoint_config_name(Option<String>)`](crate::output::DescribeEndpointConfigOutput::endpoint_config_name): <p>Name of the Amazon SageMaker endpoint configuration.</p>
     ///   - [`endpoint_config_arn(Option<String>)`](crate::output::DescribeEndpointConfigOutput::endpoint_config_arn): <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
@@ -1665,8 +1665,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeExperiment`](crate::client::fluent_builders::DescribeExperiment) operation.
     ///
-    /// - Takes [`DescribeExperimentInput`](crate::input::DescribeExperimentInput) with field(s):
-    ///   - [`experiment_name(Option<String>)`](crate::input::DescribeExperimentInput::experiment_name): <p>The name of the experiment to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`experiment_name(impl Into<String>)`](crate::client::fluent_builders::DescribeExperiment::experiment_name) / [`set_experiment_name(Option<String>)`](crate::client::fluent_builders::DescribeExperiment::set_experiment_name): <p>The name of the experiment to describe.</p>
     /// - On success, responds with [`DescribeExperimentOutput`](crate::output::DescribeExperimentOutput) with field(s):
     ///   - [`experiment_name(Option<String>)`](crate::output::DescribeExperimentOutput::experiment_name): <p>The name of the experiment.</p>
     ///   - [`experiment_arn(Option<String>)`](crate::output::DescribeExperimentOutput::experiment_arn): <p>The Amazon Resource Name (ARN) of the experiment.</p>
@@ -1683,9 +1683,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFeatureGroup`](crate::client::fluent_builders::DescribeFeatureGroup) operation.
     ///
-    /// - Takes [`DescribeFeatureGroupInput`](crate::input::DescribeFeatureGroupInput) with field(s):
-    ///   - [`feature_group_name(Option<String>)`](crate::input::DescribeFeatureGroupInput::feature_group_name): <p>The name of the <code>FeatureGroup</code> you want described. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeFeatureGroupInput::next_token): <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by default.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`feature_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeFeatureGroup::feature_group_name) / [`set_feature_group_name(Option<String>)`](crate::client::fluent_builders::DescribeFeatureGroup::set_feature_group_name): <p>The name of the <code>FeatureGroup</code> you want described. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFeatureGroup::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFeatureGroup::set_next_token): <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by default.</p>
     /// - On success, responds with [`DescribeFeatureGroupOutput`](crate::output::DescribeFeatureGroupOutput) with field(s):
     ///   - [`feature_group_arn(Option<String>)`](crate::output::DescribeFeatureGroupOutput::feature_group_arn): <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
     ///   - [`feature_group_name(Option<String>)`](crate::output::DescribeFeatureGroupOutput::feature_group_name): <p>he name of the <code>FeatureGroup</code>.</p>
@@ -1707,8 +1707,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFlowDefinition`](crate::client::fluent_builders::DescribeFlowDefinition) operation.
     ///
-    /// - Takes [`DescribeFlowDefinitionInput`](crate::input::DescribeFlowDefinitionInput) with field(s):
-    ///   - [`flow_definition_name(Option<String>)`](crate::input::DescribeFlowDefinitionInput::flow_definition_name): <p>The name of the flow definition.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`flow_definition_name(impl Into<String>)`](crate::client::fluent_builders::DescribeFlowDefinition::flow_definition_name) / [`set_flow_definition_name(Option<String>)`](crate::client::fluent_builders::DescribeFlowDefinition::set_flow_definition_name): <p>The name of the flow definition.</p>
     /// - On success, responds with [`DescribeFlowDefinitionOutput`](crate::output::DescribeFlowDefinitionOutput) with field(s):
     ///   - [`flow_definition_arn(Option<String>)`](crate::output::DescribeFlowDefinitionOutput::flow_definition_arn): <p>The Amazon Resource Name (ARN) of the flow defintion.</p>
     ///   - [`flow_definition_name(Option<String>)`](crate::output::DescribeFlowDefinitionOutput::flow_definition_name): <p>The Amazon Resource Name (ARN) of the flow definition.</p>
@@ -1726,8 +1726,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeHumanTaskUi`](crate::client::fluent_builders::DescribeHumanTaskUi) operation.
     ///
-    /// - Takes [`DescribeHumanTaskUiInput`](crate::input::DescribeHumanTaskUiInput) with field(s):
-    ///   - [`human_task_ui_name(Option<String>)`](crate::input::DescribeHumanTaskUiInput::human_task_ui_name): <p>The name of the human task user interface (worker task template) you want information about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`human_task_ui_name(impl Into<String>)`](crate::client::fluent_builders::DescribeHumanTaskUi::human_task_ui_name) / [`set_human_task_ui_name(Option<String>)`](crate::client::fluent_builders::DescribeHumanTaskUi::set_human_task_ui_name): <p>The name of the human task user interface (worker task template) you want information about.</p>
     /// - On success, responds with [`DescribeHumanTaskUiOutput`](crate::output::DescribeHumanTaskUiOutput) with field(s):
     ///   - [`human_task_ui_arn(Option<String>)`](crate::output::DescribeHumanTaskUiOutput::human_task_ui_arn): <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
     ///   - [`human_task_ui_name(Option<String>)`](crate::output::DescribeHumanTaskUiOutput::human_task_ui_name): <p>The name of the human task user interface (worker task template).</p>
@@ -1740,8 +1740,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeHyperParameterTuningJob`](crate::client::fluent_builders::DescribeHyperParameterTuningJob) operation.
     ///
-    /// - Takes [`DescribeHyperParameterTuningJobInput`](crate::input::DescribeHyperParameterTuningJobInput) with field(s):
-    ///   - [`hyper_parameter_tuning_job_name(Option<String>)`](crate::input::DescribeHyperParameterTuningJobInput::hyper_parameter_tuning_job_name): <p>The name of the tuning job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`hyper_parameter_tuning_job_name(impl Into<String>)`](crate::client::fluent_builders::DescribeHyperParameterTuningJob::hyper_parameter_tuning_job_name) / [`set_hyper_parameter_tuning_job_name(Option<String>)`](crate::client::fluent_builders::DescribeHyperParameterTuningJob::set_hyper_parameter_tuning_job_name): <p>The name of the tuning job.</p>
     /// - On success, responds with [`DescribeHyperParameterTuningJobOutput`](crate::output::DescribeHyperParameterTuningJobOutput) with field(s):
     ///   - [`hyper_parameter_tuning_job_name(Option<String>)`](crate::output::DescribeHyperParameterTuningJobOutput::hyper_parameter_tuning_job_name): <p>The name of the tuning job.</p>
     ///   - [`hyper_parameter_tuning_job_arn(Option<String>)`](crate::output::DescribeHyperParameterTuningJobOutput::hyper_parameter_tuning_job_arn): <p>The Amazon Resource Name (ARN) of the tuning job.</p>
@@ -1766,8 +1766,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeImage`](crate::client::fluent_builders::DescribeImage) operation.
     ///
-    /// - Takes [`DescribeImageInput`](crate::input::DescribeImageInput) with field(s):
-    ///   - [`image_name(Option<String>)`](crate::input::DescribeImageInput::image_name): <p>The name of the image to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::DescribeImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::DescribeImage::set_image_name): <p>The name of the image to describe.</p>
     /// - On success, responds with [`DescribeImageOutput`](crate::output::DescribeImageOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeImageOutput::creation_time): <p>When the image was created.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeImageOutput::description): <p>The description of the image.</p>
@@ -1784,9 +1784,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeImageVersion`](crate::client::fluent_builders::DescribeImageVersion) operation.
     ///
-    /// - Takes [`DescribeImageVersionInput`](crate::input::DescribeImageVersionInput) with field(s):
-    ///   - [`image_name(Option<String>)`](crate::input::DescribeImageVersionInput::image_name): <p>The name of the image.</p>
-    ///   - [`version(Option<i32>)`](crate::input::DescribeImageVersionInput::version): <p>The version of the image. If not specified, the latest version is described.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::DescribeImageVersion::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::DescribeImageVersion::set_image_name): <p>The name of the image.</p>
+    ///   - [`version(i32)`](crate::client::fluent_builders::DescribeImageVersion::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::DescribeImageVersion::set_version): <p>The version of the image. If not specified, the latest version is described.</p>
     /// - On success, responds with [`DescribeImageVersionOutput`](crate::output::DescribeImageVersionOutput) with field(s):
     ///   - [`base_image(Option<String>)`](crate::output::DescribeImageVersionOutput::base_image): <p>The registry path of the container image on which this image version is based.</p>
     ///   - [`container_image(Option<String>)`](crate::output::DescribeImageVersionOutput::container_image): <p>The registry path of the container image that contains this image version.</p>
@@ -1803,8 +1803,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeInferenceRecommendationsJob`](crate::client::fluent_builders::DescribeInferenceRecommendationsJob) operation.
     ///
-    /// - Takes [`DescribeInferenceRecommendationsJobInput`](crate::input::DescribeInferenceRecommendationsJobInput) with field(s):
-    ///   - [`job_name(Option<String>)`](crate::input::DescribeInferenceRecommendationsJobInput::job_name): <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::DescribeInferenceRecommendationsJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::DescribeInferenceRecommendationsJob::set_job_name): <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeInferenceRecommendationsJobOutput`](crate::output::DescribeInferenceRecommendationsJobOutput) with field(s):
     ///   - [`job_name(Option<String>)`](crate::output::DescribeInferenceRecommendationsJobOutput::job_name): <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     ///   - [`job_description(Option<String>)`](crate::output::DescribeInferenceRecommendationsJobOutput::job_description): <p>The job description that you provided when you initiated the job.</p>
@@ -1827,8 +1827,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeLabelingJob`](crate::client::fluent_builders::DescribeLabelingJob) operation.
     ///
-    /// - Takes [`DescribeLabelingJobInput`](crate::input::DescribeLabelingJobInput) with field(s):
-    ///   - [`labeling_job_name(Option<String>)`](crate::input::DescribeLabelingJobInput::labeling_job_name): <p>The name of the labeling job to return information for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`labeling_job_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLabelingJob::labeling_job_name) / [`set_labeling_job_name(Option<String>)`](crate::client::fluent_builders::DescribeLabelingJob::set_labeling_job_name): <p>The name of the labeling job to return information for.</p>
     /// - On success, responds with [`DescribeLabelingJobOutput`](crate::output::DescribeLabelingJobOutput) with field(s):
     ///   - [`labeling_job_status(Option<LabelingJobStatus>)`](crate::output::DescribeLabelingJobOutput::labeling_job_status): <p>The processing status of the labeling job. </p>
     ///   - [`label_counters(Option<LabelCounters>)`](crate::output::DescribeLabelingJobOutput::label_counters): <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
@@ -1854,8 +1854,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeLineageGroup`](crate::client::fluent_builders::DescribeLineageGroup) operation.
     ///
-    /// - Takes [`DescribeLineageGroupInput`](crate::input::DescribeLineageGroupInput) with field(s):
-    ///   - [`lineage_group_name(Option<String>)`](crate::input::DescribeLineageGroupInput::lineage_group_name): <p>The name of the lineage group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`lineage_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLineageGroup::lineage_group_name) / [`set_lineage_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLineageGroup::set_lineage_group_name): <p>The name of the lineage group.</p>
     /// - On success, responds with [`DescribeLineageGroupOutput`](crate::output::DescribeLineageGroupOutput) with field(s):
     ///   - [`lineage_group_name(Option<String>)`](crate::output::DescribeLineageGroupOutput::lineage_group_name): <p>The name of the lineage group.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::output::DescribeLineageGroupOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
@@ -1871,8 +1871,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeModel`](crate::client::fluent_builders::DescribeModel) operation.
     ///
-    /// - Takes [`DescribeModelInput`](crate::input::DescribeModelInput) with field(s):
-    ///   - [`model_name(Option<String>)`](crate::input::DescribeModelInput::model_name): <p>The name of the model.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModel::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::DescribeModel::set_model_name): <p>The name of the model.</p>
     /// - On success, responds with [`DescribeModelOutput`](crate::output::DescribeModelOutput) with field(s):
     ///   - [`model_name(Option<String>)`](crate::output::DescribeModelOutput::model_name): <p>Name of the Amazon SageMaker model.</p>
     ///   - [`primary_container(Option<ContainerDefinition>)`](crate::output::DescribeModelOutput::primary_container): <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
@@ -1889,8 +1889,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeModelBiasJobDefinition`](crate::client::fluent_builders::DescribeModelBiasJobDefinition) operation.
     ///
-    /// - Takes [`DescribeModelBiasJobDefinitionInput`](crate::input::DescribeModelBiasJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::DescribeModelBiasJobDefinitionInput::job_definition_name): <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModelBiasJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::DescribeModelBiasJobDefinition::set_job_definition_name): <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeModelBiasJobDefinitionOutput`](crate::output::DescribeModelBiasJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::output::DescribeModelBiasJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the model bias job.</p>
     ///   - [`job_definition_name(Option<String>)`](crate::output::DescribeModelBiasJobDefinitionOutput::job_definition_name): <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
@@ -1911,8 +1911,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeModelExplainabilityJobDefinition`](crate::client::fluent_builders::DescribeModelExplainabilityJobDefinition) operation.
     ///
-    /// - Takes [`DescribeModelExplainabilityJobDefinitionInput`](crate::input::DescribeModelExplainabilityJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::DescribeModelExplainabilityJobDefinitionInput::job_definition_name): <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModelExplainabilityJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::DescribeModelExplainabilityJobDefinition::set_job_definition_name): <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeModelExplainabilityJobDefinitionOutput`](crate::output::DescribeModelExplainabilityJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::output::DescribeModelExplainabilityJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the model explainability job.</p>
     ///   - [`job_definition_name(Option<String>)`](crate::output::DescribeModelExplainabilityJobDefinitionOutput::job_definition_name): <p>The name of the explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
@@ -1933,8 +1933,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeModelPackage`](crate::client::fluent_builders::DescribeModelPackage) operation.
     ///
-    /// - Takes [`DescribeModelPackageInput`](crate::input::DescribeModelPackageInput) with field(s):
-    ///   - [`model_package_name(Option<String>)`](crate::input::DescribeModelPackageInput::model_package_name): <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>  <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModelPackage::model_package_name) / [`set_model_package_name(Option<String>)`](crate::client::fluent_builders::DescribeModelPackage::set_model_package_name): <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>  <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     /// - On success, responds with [`DescribeModelPackageOutput`](crate::output::DescribeModelPackageOutput) with field(s):
     ///   - [`model_package_name(Option<String>)`](crate::output::DescribeModelPackageOutput::model_package_name): <p>The name of the model package being described.</p>
     ///   - [`model_package_group_name(Option<String>)`](crate::output::DescribeModelPackageOutput::model_package_group_name): <p>If the model is a versioned model, the name of the model group that the versioned model belongs to.</p>
@@ -1967,8 +1967,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeModelPackageGroup`](crate::client::fluent_builders::DescribeModelPackageGroup) operation.
     ///
-    /// - Takes [`DescribeModelPackageGroupInput`](crate::input::DescribeModelPackageGroupInput) with field(s):
-    ///   - [`model_package_group_name(Option<String>)`](crate::input::DescribeModelPackageGroupInput::model_package_group_name): <p>The name of the model group to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModelPackageGroup::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::DescribeModelPackageGroup::set_model_package_group_name): <p>The name of the model group to describe.</p>
     /// - On success, responds with [`DescribeModelPackageGroupOutput`](crate::output::DescribeModelPackageGroupOutput) with field(s):
     ///   - [`model_package_group_name(Option<String>)`](crate::output::DescribeModelPackageGroupOutput::model_package_group_name): <p>The name of the model group.</p>
     ///   - [`model_package_group_arn(Option<String>)`](crate::output::DescribeModelPackageGroupOutput::model_package_group_arn): <p>The Amazon Resource Name (ARN) of the model group.</p>
@@ -1984,8 +1984,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeModelQualityJobDefinition`](crate::client::fluent_builders::DescribeModelQualityJobDefinition) operation.
     ///
-    /// - Takes [`DescribeModelQualityJobDefinitionInput`](crate::input::DescribeModelQualityJobDefinitionInput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::input::DescribeModelQualityJobDefinitionInput::job_definition_name): <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::DescribeModelQualityJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::DescribeModelQualityJobDefinition::set_job_definition_name): <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeModelQualityJobDefinitionOutput`](crate::output::DescribeModelQualityJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::output::DescribeModelQualityJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the model quality job.</p>
     ///   - [`job_definition_name(Option<String>)`](crate::output::DescribeModelQualityJobDefinitionOutput::job_definition_name): <p>The name of the quality job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
@@ -2006,8 +2006,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeMonitoringSchedule`](crate::client::fluent_builders::DescribeMonitoringSchedule) operation.
     ///
-    /// - Takes [`DescribeMonitoringScheduleInput`](crate::input::DescribeMonitoringScheduleInput) with field(s):
-    ///   - [`monitoring_schedule_name(Option<String>)`](crate::input::DescribeMonitoringScheduleInput::monitoring_schedule_name): <p>Name of a previously created monitoring schedule.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMonitoringSchedule::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::DescribeMonitoringSchedule::set_monitoring_schedule_name): <p>Name of a previously created monitoring schedule.</p>
     /// - On success, responds with [`DescribeMonitoringScheduleOutput`](crate::output::DescribeMonitoringScheduleOutput) with field(s):
     ///   - [`monitoring_schedule_arn(Option<String>)`](crate::output::DescribeMonitoringScheduleOutput::monitoring_schedule_arn): <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     ///   - [`monitoring_schedule_name(Option<String>)`](crate::output::DescribeMonitoringScheduleOutput::monitoring_schedule_name): <p>Name of the monitoring schedule.</p>
@@ -2027,8 +2027,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeNotebookInstance`](crate::client::fluent_builders::DescribeNotebookInstance) operation.
     ///
-    /// - Takes [`DescribeNotebookInstanceInput`](crate::input::DescribeNotebookInstanceInput) with field(s):
-    ///   - [`notebook_instance_name(Option<String>)`](crate::input::DescribeNotebookInstanceInput::notebook_instance_name): <p>The name of the notebook instance that you want information about.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::DescribeNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::DescribeNotebookInstance::set_notebook_instance_name): <p>The name of the notebook instance that you want information about.</p>
     /// - On success, responds with [`DescribeNotebookInstanceOutput`](crate::output::DescribeNotebookInstanceOutput) with field(s):
     ///   - [`notebook_instance_arn(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::notebook_instance_arn): <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
     ///   - [`notebook_instance_name(Option<String>)`](crate::output::DescribeNotebookInstanceOutput::notebook_instance_name): <p>The name of the Amazon SageMaker notebook instance. </p>
@@ -2057,8 +2057,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeNotebookInstanceLifecycleConfig`](crate::client::fluent_builders::DescribeNotebookInstanceLifecycleConfig) operation.
     ///
-    /// - Takes [`DescribeNotebookInstanceLifecycleConfigInput`](crate::input::DescribeNotebookInstanceLifecycleConfigInput) with field(s):
-    ///   - [`notebook_instance_lifecycle_config_name(Option<String>)`](crate::input::DescribeNotebookInstanceLifecycleConfigInput::notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::DescribeNotebookInstanceLifecycleConfig::notebook_instance_lifecycle_config_name) / [`set_notebook_instance_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::DescribeNotebookInstanceLifecycleConfig::set_notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration to describe.</p>
     /// - On success, responds with [`DescribeNotebookInstanceLifecycleConfigOutput`](crate::output::DescribeNotebookInstanceLifecycleConfigOutput) with field(s):
     ///   - [`notebook_instance_lifecycle_config_arn(Option<String>)`](crate::output::DescribeNotebookInstanceLifecycleConfigOutput::notebook_instance_lifecycle_config_arn): <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
     ///   - [`notebook_instance_lifecycle_config_name(Option<String>)`](crate::output::DescribeNotebookInstanceLifecycleConfigOutput::notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration.</p>
@@ -2074,8 +2074,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribePipeline`](crate::client::fluent_builders::DescribePipeline) operation.
     ///
-    /// - Takes [`DescribePipelineInput`](crate::input::DescribePipelineInput) with field(s):
-    ///   - [`pipeline_name(Option<String>)`](crate::input::DescribePipelineInput::pipeline_name): <p>The name of the pipeline to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::DescribePipeline::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::DescribePipeline::set_pipeline_name): <p>The name of the pipeline to describe.</p>
     /// - On success, responds with [`DescribePipelineOutput`](crate::output::DescribePipelineOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::output::DescribePipelineOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     ///   - [`pipeline_name(Option<String>)`](crate::output::DescribePipelineOutput::pipeline_name): <p>The name of the pipeline.</p>
@@ -2096,8 +2096,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribePipelineDefinitionForExecution`](crate::client::fluent_builders::DescribePipelineDefinitionForExecution) operation.
     ///
-    /// - Takes [`DescribePipelineDefinitionForExecutionInput`](crate::input::DescribePipelineDefinitionForExecutionInput) with field(s):
-    ///   - [`pipeline_execution_arn(Option<String>)`](crate::input::DescribePipelineDefinitionForExecutionInput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_execution_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePipelineDefinitionForExecution::pipeline_execution_arn) / [`set_pipeline_execution_arn(Option<String>)`](crate::client::fluent_builders::DescribePipelineDefinitionForExecution::set_pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On success, responds with [`DescribePipelineDefinitionForExecutionOutput`](crate::output::DescribePipelineDefinitionForExecutionOutput) with field(s):
     ///   - [`pipeline_definition(Option<String>)`](crate::output::DescribePipelineDefinitionForExecutionOutput::pipeline_definition): <p>The JSON pipeline definition.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribePipelineDefinitionForExecutionOutput::creation_time): <p>The time when the pipeline was created.</p>
@@ -2109,8 +2109,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribePipelineExecution`](crate::client::fluent_builders::DescribePipelineExecution) operation.
     ///
-    /// - Takes [`DescribePipelineExecutionInput`](crate::input::DescribePipelineExecutionInput) with field(s):
-    ///   - [`pipeline_execution_arn(Option<String>)`](crate::input::DescribePipelineExecutionInput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_execution_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePipelineExecution::pipeline_execution_arn) / [`set_pipeline_execution_arn(Option<String>)`](crate::client::fluent_builders::DescribePipelineExecution::set_pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On success, responds with [`DescribePipelineExecutionOutput`](crate::output::DescribePipelineExecutionOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::output::DescribePipelineExecutionOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::output::DescribePipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -2132,8 +2132,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeProcessingJob`](crate::client::fluent_builders::DescribeProcessingJob) operation.
     ///
-    /// - Takes [`DescribeProcessingJobInput`](crate::input::DescribeProcessingJobInput) with field(s):
-    ///   - [`processing_job_name(Option<String>)`](crate::input::DescribeProcessingJobInput::processing_job_name): <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`processing_job_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProcessingJob::processing_job_name) / [`set_processing_job_name(Option<String>)`](crate::client::fluent_builders::DescribeProcessingJob::set_processing_job_name): <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeProcessingJobOutput`](crate::output::DescribeProcessingJobOutput) with field(s):
     ///   - [`processing_inputs(Option<Vec<ProcessingInput>>)`](crate::output::DescribeProcessingJobOutput::processing_inputs): <p>The inputs for a processing job.</p>
     ///   - [`processing_output_config(Option<ProcessingOutputConfig>)`](crate::output::DescribeProcessingJobOutput::processing_output_config): <p>Output configuration for the processing job.</p>
@@ -2162,8 +2162,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeProject`](crate::client::fluent_builders::DescribeProject) operation.
     ///
-    /// - Takes [`DescribeProjectInput`](crate::input::DescribeProjectInput) with field(s):
-    ///   - [`project_name(Option<String>)`](crate::input::DescribeProjectInput::project_name): <p>The name of the project to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::DescribeProject::set_project_name): <p>The name of the project to describe.</p>
     /// - On success, responds with [`DescribeProjectOutput`](crate::output::DescribeProjectOutput) with field(s):
     ///   - [`project_arn(Option<String>)`](crate::output::DescribeProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the project.</p>
     ///   - [`project_name(Option<String>)`](crate::output::DescribeProjectOutput::project_name): <p>The name of the project.</p>
@@ -2182,8 +2182,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeStudioLifecycleConfig`](crate::client::fluent_builders::DescribeStudioLifecycleConfig) operation.
     ///
-    /// - Takes [`DescribeStudioLifecycleConfigInput`](crate::input::DescribeStudioLifecycleConfigInput) with field(s):
-    ///   - [`studio_lifecycle_config_name(Option<String>)`](crate::input::DescribeStudioLifecycleConfigInput::studio_lifecycle_config_name): <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`studio_lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::DescribeStudioLifecycleConfig::studio_lifecycle_config_name) / [`set_studio_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::DescribeStudioLifecycleConfig::set_studio_lifecycle_config_name): <p>The name of the Studio Lifecycle Configuration to describe.</p>
     /// - On success, responds with [`DescribeStudioLifecycleConfigOutput`](crate::output::DescribeStudioLifecycleConfigOutput) with field(s):
     ///   - [`studio_lifecycle_config_arn(Option<String>)`](crate::output::DescribeStudioLifecycleConfigOutput::studio_lifecycle_config_arn): <p>The ARN of the Lifecycle Configuration to describe.</p>
     ///   - [`studio_lifecycle_config_name(Option<String>)`](crate::output::DescribeStudioLifecycleConfigOutput::studio_lifecycle_config_name): <p>The name of the Studio Lifecycle Configuration that is described.</p>
@@ -2199,8 +2199,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSubscribedWorkteam`](crate::client::fluent_builders::DescribeSubscribedWorkteam) operation.
     ///
-    /// - Takes [`DescribeSubscribedWorkteamInput`](crate::input::DescribeSubscribedWorkteamInput) with field(s):
-    ///   - [`workteam_arn(Option<String>)`](crate::input::DescribeSubscribedWorkteamInput::workteam_arn): <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`workteam_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeSubscribedWorkteam::workteam_arn) / [`set_workteam_arn(Option<String>)`](crate::client::fluent_builders::DescribeSubscribedWorkteam::set_workteam_arn): <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
     /// - On success, responds with [`DescribeSubscribedWorkteamOutput`](crate::output::DescribeSubscribedWorkteamOutput) with field(s):
     ///   - [`subscribed_workteam(Option<SubscribedWorkteam>)`](crate::output::DescribeSubscribedWorkteamOutput::subscribed_workteam): <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     /// - On failure, responds with [`SdkError<DescribeSubscribedWorkteamError>`](crate::error::DescribeSubscribedWorkteamError)
@@ -2211,8 +2211,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTrainingJob`](crate::client::fluent_builders::DescribeTrainingJob) operation.
     ///
-    /// - Takes [`DescribeTrainingJobInput`](crate::input::DescribeTrainingJobInput) with field(s):
-    ///   - [`training_job_name(Option<String>)`](crate::input::DescribeTrainingJobInput::training_job_name): <p>The name of the training job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`training_job_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTrainingJob::training_job_name) / [`set_training_job_name(Option<String>)`](crate::client::fluent_builders::DescribeTrainingJob::set_training_job_name): <p>The name of the training job.</p>
     /// - On success, responds with [`DescribeTrainingJobOutput`](crate::output::DescribeTrainingJobOutput) with field(s):
     ///   - [`training_job_name(Option<String>)`](crate::output::DescribeTrainingJobOutput::training_job_name): <p> Name of the model training job. </p>
     ///   - [`training_job_arn(Option<String>)`](crate::output::DescribeTrainingJobOutput::training_job_arn): <p>The Amazon Resource Name (ARN) of the training job.</p>
@@ -2260,8 +2260,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTransformJob`](crate::client::fluent_builders::DescribeTransformJob) operation.
     ///
-    /// - Takes [`DescribeTransformJobInput`](crate::input::DescribeTransformJobInput) with field(s):
-    ///   - [`transform_job_name(Option<String>)`](crate::input::DescribeTransformJobInput::transform_job_name): <p>The name of the transform job that you want to view details of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`transform_job_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTransformJob::transform_job_name) / [`set_transform_job_name(Option<String>)`](crate::client::fluent_builders::DescribeTransformJob::set_transform_job_name): <p>The name of the transform job that you want to view details of.</p>
     /// - On success, responds with [`DescribeTransformJobOutput`](crate::output::DescribeTransformJobOutput) with field(s):
     ///   - [`transform_job_name(Option<String>)`](crate::output::DescribeTransformJobOutput::transform_job_name): <p>The name of the transform job.</p>
     ///   - [`transform_job_arn(Option<String>)`](crate::output::DescribeTransformJobOutput::transform_job_arn): <p>The Amazon Resource Name (ARN) of the transform job.</p>
@@ -2289,8 +2289,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTrial`](crate::client::fluent_builders::DescribeTrial) operation.
     ///
-    /// - Takes [`DescribeTrialInput`](crate::input::DescribeTrialInput) with field(s):
-    ///   - [`trial_name(Option<String>)`](crate::input::DescribeTrialInput::trial_name): <p>The name of the trial to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTrial::trial_name) / [`set_trial_name(Option<String>)`](crate::client::fluent_builders::DescribeTrial::set_trial_name): <p>The name of the trial to describe.</p>
     /// - On success, responds with [`DescribeTrialOutput`](crate::output::DescribeTrialOutput) with field(s):
     ///   - [`trial_name(Option<String>)`](crate::output::DescribeTrialOutput::trial_name): <p>The name of the trial.</p>
     ///   - [`trial_arn(Option<String>)`](crate::output::DescribeTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
@@ -2308,8 +2308,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeTrialComponent`](crate::client::fluent_builders::DescribeTrialComponent) operation.
     ///
-    /// - Takes [`DescribeTrialComponentInput`](crate::input::DescribeTrialComponentInput) with field(s):
-    ///   - [`trial_component_name(Option<String>)`](crate::input::DescribeTrialComponentInput::trial_component_name): <p>The name of the trial component to describe.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_component_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTrialComponent::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::client::fluent_builders::DescribeTrialComponent::set_trial_component_name): <p>The name of the trial component to describe.</p>
     /// - On success, responds with [`DescribeTrialComponentOutput`](crate::output::DescribeTrialComponentOutput) with field(s):
     ///   - [`trial_component_name(Option<String>)`](crate::output::DescribeTrialComponentOutput::trial_component_name): <p>The name of the trial component.</p>
     ///   - [`trial_component_arn(Option<String>)`](crate::output::DescribeTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the trial component.</p>
@@ -2334,9 +2334,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeUserProfile`](crate::client::fluent_builders::DescribeUserProfile) operation.
     ///
-    /// - Takes [`DescribeUserProfileInput`](crate::input::DescribeUserProfileInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::DescribeUserProfileInput::domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(Option<String>)`](crate::input::DescribeUserProfileInput::user_profile_name): <p>The user profile name. This value is not case sensitive.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUserProfile::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeUserProfile::set_domain_id): <p>The domain ID.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::DescribeUserProfile::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::DescribeUserProfile::set_user_profile_name): <p>The user profile name. This value is not case sensitive.</p>
     /// - On success, responds with [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput) with field(s):
     ///   - [`domain_id(Option<String>)`](crate::output::DescribeUserProfileOutput::domain_id): <p>The ID of the domain that contains the profile.</p>
     ///   - [`user_profile_arn(Option<String>)`](crate::output::DescribeUserProfileOutput::user_profile_arn): <p>The user profile Amazon Resource Name (ARN).</p>
@@ -2355,8 +2355,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeWorkforce`](crate::client::fluent_builders::DescribeWorkforce) operation.
     ///
-    /// - Takes [`DescribeWorkforceInput`](crate::input::DescribeWorkforceInput) with field(s):
-    ///   - [`workforce_name(Option<String>)`](crate::input::DescribeWorkforceInput::workforce_name): <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`workforce_name(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkforce::workforce_name) / [`set_workforce_name(Option<String>)`](crate::client::fluent_builders::DescribeWorkforce::set_workforce_name): <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
     /// - On success, responds with [`DescribeWorkforceOutput`](crate::output::DescribeWorkforceOutput) with field(s):
     ///   - [`workforce(Option<Workforce>)`](crate::output::DescribeWorkforceOutput::workforce): <p>A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each Amazon Web Services Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkforceError>`](crate::error::DescribeWorkforceError)
@@ -2365,8 +2365,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeWorkteam`](crate::client::fluent_builders::DescribeWorkteam) operation.
     ///
-    /// - Takes [`DescribeWorkteamInput`](crate::input::DescribeWorkteamInput) with field(s):
-    ///   - [`workteam_name(Option<String>)`](crate::input::DescribeWorkteamInput::workteam_name): <p>The name of the work team to return a description of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`workteam_name(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkteam::workteam_name) / [`set_workteam_name(Option<String>)`](crate::client::fluent_builders::DescribeWorkteam::set_workteam_name): <p>The name of the work team to return a description of.</p>
     /// - On success, responds with [`DescribeWorkteamOutput`](crate::output::DescribeWorkteamOutput) with field(s):
     ///   - [`workteam(Option<Workteam>)`](crate::output::DescribeWorkteamOutput::workteam): <p>A <code>Workteam</code> instance that contains information about the work team. </p>
     /// - On failure, responds with [`SdkError<DescribeWorkteamError>`](crate::error::DescribeWorkteamError)
@@ -2375,7 +2375,7 @@ where
     }
     /// Constructs a fluent builder for the [`DisableSagemakerServicecatalogPortfolio`](crate::client::fluent_builders::DisableSagemakerServicecatalogPortfolio) operation.
     ///
-    /// - Takes [`DisableSagemakerServicecatalogPortfolioInput`](crate::input::DisableSagemakerServicecatalogPortfolioInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DisableSagemakerServicecatalogPortfolio::send) it.
 
     /// - On success, responds with [`DisableSagemakerServicecatalogPortfolioOutput`](crate::output::DisableSagemakerServicecatalogPortfolioOutput)
 
@@ -2387,9 +2387,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateTrialComponent`](crate::client::fluent_builders::DisassociateTrialComponent) operation.
     ///
-    /// - Takes [`DisassociateTrialComponentInput`](crate::input::DisassociateTrialComponentInput) with field(s):
-    ///   - [`trial_component_name(Option<String>)`](crate::input::DisassociateTrialComponentInput::trial_component_name): <p>The name of the component to disassociate from the trial.</p>
-    ///   - [`trial_name(Option<String>)`](crate::input::DisassociateTrialComponentInput::trial_name): <p>The name of the trial to disassociate from.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_component_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateTrialComponent::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::client::fluent_builders::DisassociateTrialComponent::set_trial_component_name): <p>The name of the component to disassociate from the trial.</p>
+    ///   - [`trial_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateTrialComponent::trial_name) / [`set_trial_name(Option<String>)`](crate::client::fluent_builders::DisassociateTrialComponent::set_trial_name): <p>The name of the trial to disassociate from.</p>
     /// - On success, responds with [`DisassociateTrialComponentOutput`](crate::output::DisassociateTrialComponentOutput) with field(s):
     ///   - [`trial_component_arn(Option<String>)`](crate::output::DisassociateTrialComponentOutput::trial_component_arn): <p>The ARN of the trial component.</p>
     ///   - [`trial_arn(Option<String>)`](crate::output::DisassociateTrialComponentOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
@@ -2401,7 +2401,7 @@ where
     }
     /// Constructs a fluent builder for the [`EnableSagemakerServicecatalogPortfolio`](crate::client::fluent_builders::EnableSagemakerServicecatalogPortfolio) operation.
     ///
-    /// - Takes [`EnableSagemakerServicecatalogPortfolioInput`](crate::input::EnableSagemakerServicecatalogPortfolioInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::EnableSagemakerServicecatalogPortfolio::send) it.
 
     /// - On success, responds with [`EnableSagemakerServicecatalogPortfolioOutput`](crate::output::EnableSagemakerServicecatalogPortfolioOutput)
 
@@ -2413,8 +2413,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDeviceFleetReport`](crate::client::fluent_builders::GetDeviceFleetReport) operation.
     ///
-    /// - Takes [`GetDeviceFleetReportInput`](crate::input::GetDeviceFleetReportInput) with field(s):
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::GetDeviceFleetReportInput::device_fleet_name): <p>The name of the fleet.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::GetDeviceFleetReport::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::GetDeviceFleetReport::set_device_fleet_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`GetDeviceFleetReportOutput`](crate::output::GetDeviceFleetReportOutput) with field(s):
     ///   - [`device_fleet_arn(Option<String>)`](crate::output::GetDeviceFleetReportOutput::device_fleet_arn): <p>The Amazon Resource Name (ARN) of the device.</p>
     ///   - [`device_fleet_name(Option<String>)`](crate::output::GetDeviceFleetReportOutput::device_fleet_name): <p>The name of the fleet.</p>
@@ -2430,8 +2430,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetLineageGroupPolicy`](crate::client::fluent_builders::GetLineageGroupPolicy) operation.
     ///
-    /// - Takes [`GetLineageGroupPolicyInput`](crate::input::GetLineageGroupPolicyInput) with field(s):
-    ///   - [`lineage_group_name(Option<String>)`](crate::input::GetLineageGroupPolicyInput::lineage_group_name): <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`lineage_group_name(impl Into<String>)`](crate::client::fluent_builders::GetLineageGroupPolicy::lineage_group_name) / [`set_lineage_group_name(Option<String>)`](crate::client::fluent_builders::GetLineageGroupPolicy::set_lineage_group_name): <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On success, responds with [`GetLineageGroupPolicyOutput`](crate::output::GetLineageGroupPolicyOutput) with field(s):
     ///   - [`lineage_group_arn(Option<String>)`](crate::output::GetLineageGroupPolicyOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     ///   - [`resource_policy(Option<String>)`](crate::output::GetLineageGroupPolicyOutput::resource_policy): <p>The resource policy that gives access to the lineage group in another account.</p>
@@ -2441,8 +2441,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetModelPackageGroupPolicy`](crate::client::fluent_builders::GetModelPackageGroupPolicy) operation.
     ///
-    /// - Takes [`GetModelPackageGroupPolicyInput`](crate::input::GetModelPackageGroupPolicyInput) with field(s):
-    ///   - [`model_package_group_name(Option<String>)`](crate::input::GetModelPackageGroupPolicyInput::model_package_group_name): <p>The name of the model group for which to get the resource policy.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::GetModelPackageGroupPolicy::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::GetModelPackageGroupPolicy::set_model_package_group_name): <p>The name of the model group for which to get the resource policy.</p>
     /// - On success, responds with [`GetModelPackageGroupPolicyOutput`](crate::output::GetModelPackageGroupPolicyOutput) with field(s):
     ///   - [`resource_policy(Option<String>)`](crate::output::GetModelPackageGroupPolicyOutput::resource_policy): <p>The resource policy for the model group.</p>
     /// - On failure, responds with [`SdkError<GetModelPackageGroupPolicyError>`](crate::error::GetModelPackageGroupPolicyError)
@@ -2453,7 +2453,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetSagemakerServicecatalogPortfolioStatus`](crate::client::fluent_builders::GetSagemakerServicecatalogPortfolioStatus) operation.
     ///
-    /// - Takes [`GetSagemakerServicecatalogPortfolioStatusInput`](crate::input::GetSagemakerServicecatalogPortfolioStatusInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetSagemakerServicecatalogPortfolioStatus::send) it.
 
     /// - On success, responds with [`GetSagemakerServicecatalogPortfolioStatusOutput`](crate::output::GetSagemakerServicecatalogPortfolioStatusOutput) with field(s):
     ///   - [`status(Option<SagemakerServicecatalogStatus>)`](crate::output::GetSagemakerServicecatalogPortfolioStatusOutput::status): <p>Whether Service Catalog is enabled or disabled in SageMaker.</p>
@@ -2465,9 +2465,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetSearchSuggestions`](crate::client::fluent_builders::GetSearchSuggestions) operation.
     ///
-    /// - Takes [`GetSearchSuggestionsInput`](crate::input::GetSearchSuggestionsInput) with field(s):
-    ///   - [`resource(Option<ResourceType>)`](crate::input::GetSearchSuggestionsInput::resource): <p>The name of the Amazon SageMaker resource to search for.</p>
-    ///   - [`suggestion_query(Option<SuggestionQuery>)`](crate::input::GetSearchSuggestionsInput::suggestion_query): <p>Limits the property names that are included in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource(ResourceType)`](crate::client::fluent_builders::GetSearchSuggestions::resource) / [`set_resource(Option<ResourceType>)`](crate::client::fluent_builders::GetSearchSuggestions::set_resource): <p>The name of the Amazon SageMaker resource to search for.</p>
+    ///   - [`suggestion_query(SuggestionQuery)`](crate::client::fluent_builders::GetSearchSuggestions::suggestion_query) / [`set_suggestion_query(Option<SuggestionQuery>)`](crate::client::fluent_builders::GetSearchSuggestions::set_suggestion_query): <p>Limits the property names that are included in the response.</p>
     /// - On success, responds with [`GetSearchSuggestionsOutput`](crate::output::GetSearchSuggestionsOutput) with field(s):
     ///   - [`property_name_suggestions(Option<Vec<PropertyNameSuggestion>>)`](crate::output::GetSearchSuggestionsOutput::property_name_suggestions): <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
     /// - On failure, responds with [`SdkError<GetSearchSuggestionsError>`](crate::error::GetSearchSuggestionsError)
@@ -2475,17 +2475,17 @@ where
         fluent_builders::GetSearchSuggestions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListActions`](crate::client::fluent_builders::ListActions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListActions::into_paginator).
     ///
-    /// - Takes [`ListActionsInput`](crate::input::ListActionsInput) with field(s):
-    ///   - [`source_uri(Option<String>)`](crate::input::ListActionsInput::source_uri): <p>A filter that returns only actions with the specified source URI.</p>
-    ///   - [`action_type(Option<String>)`](crate::input::ListActionsInput::action_type): <p>A filter that returns only actions of the specified type.</p>
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListActionsInput::created_after): <p>A filter that returns only actions created on or after the specified time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListActionsInput::created_before): <p>A filter that returns only actions created on or before the specified time.</p>
-    ///   - [`sort_by(Option<SortActionsBy>)`](crate::input::ListActionsInput::sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListActionsInput::sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListActionsInput::next_token): <p>If the previous call to <code>ListActions</code> didn't return the full set of actions, the call returns a token for getting the next set of actions.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListActionsInput::max_results): <p>The maximum number of actions to return in the response. The default value is 10.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_uri(impl Into<String>)`](crate::client::fluent_builders::ListActions::source_uri) / [`set_source_uri(Option<String>)`](crate::client::fluent_builders::ListActions::set_source_uri): <p>A filter that returns only actions with the specified source URI.</p>
+    ///   - [`action_type(impl Into<String>)`](crate::client::fluent_builders::ListActions::action_type) / [`set_action_type(Option<String>)`](crate::client::fluent_builders::ListActions::set_action_type): <p>A filter that returns only actions of the specified type.</p>
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListActions::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListActions::set_created_after): <p>A filter that returns only actions created on or after the specified time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListActions::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListActions::set_created_before): <p>A filter that returns only actions created on or before the specified time.</p>
+    ///   - [`sort_by(SortActionsBy)`](crate::client::fluent_builders::ListActions::sort_by) / [`set_sort_by(Option<SortActionsBy>)`](crate::client::fluent_builders::ListActions::set_sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListActions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListActions::set_sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListActions::set_next_token): <p>If the previous call to <code>ListActions</code> didn't return the full set of actions, the call returns a token for getting the next set of actions.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListActions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListActions::set_max_results): <p>The maximum number of actions to return in the response. The default value is 10.</p>
     /// - On success, responds with [`ListActionsOutput`](crate::output::ListActionsOutput) with field(s):
     ///   - [`action_summaries(Option<Vec<ActionSummary>>)`](crate::output::ListActionsOutput::action_summaries): <p>A list of actions and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListActionsOutput::next_token): <p>A token for getting the next set of actions, if there are any.</p>
@@ -2494,16 +2494,16 @@ where
         fluent_builders::ListActions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAlgorithms`](crate::client::fluent_builders::ListAlgorithms) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAlgorithms::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAlgorithms::into_paginator).
     ///
-    /// - Takes [`ListAlgorithmsInput`](crate::input::ListAlgorithmsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListAlgorithmsInput::creation_time_after): <p>A filter that returns only algorithms created after the specified time (timestamp).</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListAlgorithmsInput::creation_time_before): <p>A filter that returns only algorithms created before the specified time (timestamp).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAlgorithmsInput::max_results): <p>The maximum number of algorithms to return in the response.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListAlgorithmsInput::name_contains): <p>A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAlgorithmsInput::next_token): <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p>
-    ///   - [`sort_by(Option<AlgorithmSortBy>)`](crate::input::ListAlgorithmsInput::sort_by): <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListAlgorithmsInput::sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListAlgorithms::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListAlgorithms::set_creation_time_after): <p>A filter that returns only algorithms created after the specified time (timestamp).</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListAlgorithms::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListAlgorithms::set_creation_time_before): <p>A filter that returns only algorithms created before the specified time (timestamp).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAlgorithms::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAlgorithms::set_max_results): <p>The maximum number of algorithms to return in the response.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListAlgorithms::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListAlgorithms::set_name_contains): <p>A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlgorithms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlgorithms::set_next_token): <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p>
+    ///   - [`sort_by(AlgorithmSortBy)`](crate::client::fluent_builders::ListAlgorithms::sort_by) / [`set_sort_by(Option<AlgorithmSortBy>)`](crate::client::fluent_builders::ListAlgorithms::set_sort_by): <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListAlgorithms::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListAlgorithms::set_sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListAlgorithmsOutput`](crate::output::ListAlgorithmsOutput) with field(s):
     ///   - [`algorithm_summary_list(Option<Vec<AlgorithmSummary>>)`](crate::output::ListAlgorithmsOutput::algorithm_summary_list): <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAlgorithmsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
@@ -2512,18 +2512,18 @@ where
         fluent_builders::ListAlgorithms::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAppImageConfigs`](crate::client::fluent_builders::ListAppImageConfigs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppImageConfigs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppImageConfigs::into_paginator).
     ///
-    /// - Takes [`ListAppImageConfigsInput`](crate::input::ListAppImageConfigsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAppImageConfigsInput::max_results): <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAppImageConfigsInput::next_token): <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListAppImageConfigsInput::name_contains): <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListAppImageConfigsInput::creation_time_before): <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListAppImageConfigsInput::creation_time_after): <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
-    ///   - [`modified_time_before(Option<DateTime>)`](crate::input::ListAppImageConfigsInput::modified_time_before): <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
-    ///   - [`modified_time_after(Option<DateTime>)`](crate::input::ListAppImageConfigsInput::modified_time_after): <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
-    ///   - [`sort_by(Option<AppImageConfigSortKey>)`](crate::input::ListAppImageConfigsInput::sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListAppImageConfigsInput::sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppImageConfigs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppImageConfigs::set_max_results): <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppImageConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppImageConfigs::set_next_token): <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListAppImageConfigs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListAppImageConfigs::set_name_contains): <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListAppImageConfigs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListAppImageConfigs::set_creation_time_before): <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListAppImageConfigs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListAppImageConfigs::set_creation_time_after): <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
+    ///   - [`modified_time_before(DateTime)`](crate::client::fluent_builders::ListAppImageConfigs::modified_time_before) / [`set_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListAppImageConfigs::set_modified_time_before): <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
+    ///   - [`modified_time_after(DateTime)`](crate::client::fluent_builders::ListAppImageConfigs::modified_time_after) / [`set_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListAppImageConfigs::set_modified_time_after): <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
+    ///   - [`sort_by(AppImageConfigSortKey)`](crate::client::fluent_builders::ListAppImageConfigs::sort_by) / [`set_sort_by(Option<AppImageConfigSortKey>)`](crate::client::fluent_builders::ListAppImageConfigs::set_sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListAppImageConfigs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListAppImageConfigs::set_sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
     /// - On success, responds with [`ListAppImageConfigsOutput`](crate::output::ListAppImageConfigsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListAppImageConfigsOutput::next_token): <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
     ///   - [`app_image_configs(Option<Vec<AppImageConfigDetails>>)`](crate::output::ListAppImageConfigsOutput::app_image_configs): <p>A list of AppImageConfigs and their properties.</p>
@@ -2532,15 +2532,15 @@ where
         fluent_builders::ListAppImageConfigs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListApps`](crate::client::fluent_builders::ListApps) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApps::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApps::into_paginator).
     ///
-    /// - Takes [`ListAppsInput`](crate::input::ListAppsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListAppsInput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAppsInput::max_results): <p>Returns a list up to a specified limit.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListAppsInput::sort_order): <p>The sort order for the results. The default is Ascending.</p>
-    ///   - [`sort_by(Option<AppSortKey>)`](crate::input::ListAppsInput::sort_by): <p>The parameter by which to sort the results. The default is CreationTime.</p>
-    ///   - [`domain_id_equals(Option<String>)`](crate::input::ListAppsInput::domain_id_equals): <p>A parameter to search for the domain ID.</p>
-    ///   - [`user_profile_name_equals(Option<String>)`](crate::input::ListAppsInput::user_profile_name_equals): <p>A parameter to search by user profile name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApps::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApps::set_next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApps::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApps::set_max_results): <p>Returns a list up to a specified limit.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListApps::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListApps::set_sort_order): <p>The sort order for the results. The default is Ascending.</p>
+    ///   - [`sort_by(AppSortKey)`](crate::client::fluent_builders::ListApps::sort_by) / [`set_sort_by(Option<AppSortKey>)`](crate::client::fluent_builders::ListApps::set_sort_by): <p>The parameter by which to sort the results. The default is CreationTime.</p>
+    ///   - [`domain_id_equals(impl Into<String>)`](crate::client::fluent_builders::ListApps::domain_id_equals) / [`set_domain_id_equals(Option<String>)`](crate::client::fluent_builders::ListApps::set_domain_id_equals): <p>A parameter to search for the domain ID.</p>
+    ///   - [`user_profile_name_equals(impl Into<String>)`](crate::client::fluent_builders::ListApps::user_profile_name_equals) / [`set_user_profile_name_equals(Option<String>)`](crate::client::fluent_builders::ListApps::set_user_profile_name_equals): <p>A parameter to search by user profile name.</p>
     /// - On success, responds with [`ListAppsOutput`](crate::output::ListAppsOutput) with field(s):
     ///   - [`apps(Option<Vec<AppDetails>>)`](crate::output::ListAppsOutput::apps): <p>The list of apps.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAppsOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
@@ -2549,17 +2549,17 @@ where
         fluent_builders::ListApps::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListArtifacts`](crate::client::fluent_builders::ListArtifacts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListArtifacts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListArtifacts::into_paginator).
     ///
-    /// - Takes [`ListArtifactsInput`](crate::input::ListArtifactsInput) with field(s):
-    ///   - [`source_uri(Option<String>)`](crate::input::ListArtifactsInput::source_uri): <p>A filter that returns only artifacts with the specified source URI.</p>
-    ///   - [`artifact_type(Option<String>)`](crate::input::ListArtifactsInput::artifact_type): <p>A filter that returns only artifacts of the specified type.</p>
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListArtifactsInput::created_after): <p>A filter that returns only artifacts created on or after the specified time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListArtifactsInput::created_before): <p>A filter that returns only artifacts created on or before the specified time.</p>
-    ///   - [`sort_by(Option<SortArtifactsBy>)`](crate::input::ListArtifactsInput::sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListArtifactsInput::sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListArtifactsInput::next_token): <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListArtifactsInput::max_results): <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_uri(impl Into<String>)`](crate::client::fluent_builders::ListArtifacts::source_uri) / [`set_source_uri(Option<String>)`](crate::client::fluent_builders::ListArtifacts::set_source_uri): <p>A filter that returns only artifacts with the specified source URI.</p>
+    ///   - [`artifact_type(impl Into<String>)`](crate::client::fluent_builders::ListArtifacts::artifact_type) / [`set_artifact_type(Option<String>)`](crate::client::fluent_builders::ListArtifacts::set_artifact_type): <p>A filter that returns only artifacts of the specified type.</p>
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListArtifacts::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListArtifacts::set_created_after): <p>A filter that returns only artifacts created on or after the specified time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListArtifacts::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListArtifacts::set_created_before): <p>A filter that returns only artifacts created on or before the specified time.</p>
+    ///   - [`sort_by(SortArtifactsBy)`](crate::client::fluent_builders::ListArtifacts::sort_by) / [`set_sort_by(Option<SortArtifactsBy>)`](crate::client::fluent_builders::ListArtifacts::set_sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListArtifacts::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListArtifacts::set_sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListArtifacts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListArtifacts::set_next_token): <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListArtifacts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListArtifacts::set_max_results): <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
     /// - On success, responds with [`ListArtifactsOutput`](crate::output::ListArtifactsOutput) with field(s):
     ///   - [`artifact_summaries(Option<Vec<ArtifactSummary>>)`](crate::output::ListArtifactsOutput::artifact_summaries): <p>A list of artifacts and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListArtifactsOutput::next_token): <p>A token for getting the next set of artifacts, if there are any.</p>
@@ -2568,20 +2568,20 @@ where
         fluent_builders::ListArtifacts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAssociations`](crate::client::fluent_builders::ListAssociations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAssociations::into_paginator).
     ///
-    /// - Takes [`ListAssociationsInput`](crate::input::ListAssociationsInput) with field(s):
-    ///   - [`source_arn(Option<String>)`](crate::input::ListAssociationsInput::source_arn): <p>A filter that returns only associations with the specified source ARN.</p>
-    ///   - [`destination_arn(Option<String>)`](crate::input::ListAssociationsInput::destination_arn): <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
-    ///   - [`source_type(Option<String>)`](crate::input::ListAssociationsInput::source_type): <p>A filter that returns only associations with the specified source type.</p>
-    ///   - [`destination_type(Option<String>)`](crate::input::ListAssociationsInput::destination_type): <p>A filter that returns only associations with the specified destination type.</p>
-    ///   - [`association_type(Option<AssociationEdgeType>)`](crate::input::ListAssociationsInput::association_type): <p>A filter that returns only associations of the specified type.</p>
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListAssociationsInput::created_after): <p>A filter that returns only associations created on or after the specified time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListAssociationsInput::created_before): <p>A filter that returns only associations created on or before the specified time.</p>
-    ///   - [`sort_by(Option<SortAssociationsBy>)`](crate::input::ListAssociationsInput::sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListAssociationsInput::sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssociationsInput::next_token): <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAssociationsInput::max_results): <p>The maximum number of associations to return in the response. The default value is 10.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::ListAssociations::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::ListAssociations::set_source_arn): <p>A filter that returns only associations with the specified source ARN.</p>
+    ///   - [`destination_arn(impl Into<String>)`](crate::client::fluent_builders::ListAssociations::destination_arn) / [`set_destination_arn(Option<String>)`](crate::client::fluent_builders::ListAssociations::set_destination_arn): <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
+    ///   - [`source_type(impl Into<String>)`](crate::client::fluent_builders::ListAssociations::source_type) / [`set_source_type(Option<String>)`](crate::client::fluent_builders::ListAssociations::set_source_type): <p>A filter that returns only associations with the specified source type.</p>
+    ///   - [`destination_type(impl Into<String>)`](crate::client::fluent_builders::ListAssociations::destination_type) / [`set_destination_type(Option<String>)`](crate::client::fluent_builders::ListAssociations::set_destination_type): <p>A filter that returns only associations with the specified destination type.</p>
+    ///   - [`association_type(AssociationEdgeType)`](crate::client::fluent_builders::ListAssociations::association_type) / [`set_association_type(Option<AssociationEdgeType>)`](crate::client::fluent_builders::ListAssociations::set_association_type): <p>A filter that returns only associations of the specified type.</p>
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListAssociations::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListAssociations::set_created_after): <p>A filter that returns only associations created on or after the specified time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListAssociations::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListAssociations::set_created_before): <p>A filter that returns only associations created on or before the specified time.</p>
+    ///   - [`sort_by(SortAssociationsBy)`](crate::client::fluent_builders::ListAssociations::sort_by) / [`set_sort_by(Option<SortAssociationsBy>)`](crate::client::fluent_builders::ListAssociations::set_sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListAssociations::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListAssociations::set_sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssociations::set_next_token): <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssociations::set_max_results): <p>The maximum number of associations to return in the response. The default value is 10.</p>
     /// - On success, responds with [`ListAssociationsOutput`](crate::output::ListAssociationsOutput) with field(s):
     ///   - [`association_summaries(Option<Vec<AssociationSummary>>)`](crate::output::ListAssociationsOutput::association_summaries): <p>A list of associations and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssociationsOutput::next_token): <p>A token for getting the next set of associations, if there are any.</p>
@@ -2590,19 +2590,19 @@ where
         fluent_builders::ListAssociations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAutoMLJobs`](crate::client::fluent_builders::ListAutoMLJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAutoMLJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAutoMLJobs::into_paginator).
     ///
-    /// - Takes [`ListAutoMlJobsInput`](crate::input::ListAutoMlJobsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListAutoMlJobsInput::creation_time_after): <p>Request a list of jobs, using a filter for time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListAutoMlJobsInput::creation_time_before): <p>Request a list of jobs, using a filter for time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListAutoMlJobsInput::last_modified_time_after): <p>Request a list of jobs, using a filter for time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListAutoMlJobsInput::last_modified_time_before): <p>Request a list of jobs, using a filter for time.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListAutoMlJobsInput::name_contains): <p>Request a list of jobs, using a search filter for name.</p>
-    ///   - [`status_equals(Option<AutoMlJobStatus>)`](crate::input::ListAutoMlJobsInput::status_equals): <p>Request a list of jobs, using a filter for status.</p>
-    ///   - [`sort_order(Option<AutoMlSortOrder>)`](crate::input::ListAutoMlJobsInput::sort_order): <p>The sort order for the results. The default is <code>Descending</code>.</p>
-    ///   - [`sort_by(Option<AutoMlSortBy>)`](crate::input::ListAutoMlJobsInput::sort_by): <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAutoMlJobsInput::max_results): <p>Request a list of jobs up to a specified limit.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAutoMlJobsInput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListAutoMLJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListAutoMLJobs::set_creation_time_after): <p>Request a list of jobs, using a filter for time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListAutoMLJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListAutoMLJobs::set_creation_time_before): <p>Request a list of jobs, using a filter for time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListAutoMLJobs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListAutoMLJobs::set_last_modified_time_after): <p>Request a list of jobs, using a filter for time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListAutoMLJobs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListAutoMLJobs::set_last_modified_time_before): <p>Request a list of jobs, using a filter for time.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListAutoMLJobs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListAutoMLJobs::set_name_contains): <p>Request a list of jobs, using a search filter for name.</p>
+    ///   - [`status_equals(AutoMlJobStatus)`](crate::client::fluent_builders::ListAutoMLJobs::status_equals) / [`set_status_equals(Option<AutoMlJobStatus>)`](crate::client::fluent_builders::ListAutoMLJobs::set_status_equals): <p>Request a list of jobs, using a filter for status.</p>
+    ///   - [`sort_order(AutoMlSortOrder)`](crate::client::fluent_builders::ListAutoMLJobs::sort_order) / [`set_sort_order(Option<AutoMlSortOrder>)`](crate::client::fluent_builders::ListAutoMLJobs::set_sort_order): <p>The sort order for the results. The default is <code>Descending</code>.</p>
+    ///   - [`sort_by(AutoMlSortBy)`](crate::client::fluent_builders::ListAutoMLJobs::sort_by) / [`set_sort_by(Option<AutoMlSortBy>)`](crate::client::fluent_builders::ListAutoMLJobs::set_sort_by): <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAutoMLJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAutoMLJobs::set_max_results): <p>Request a list of jobs up to a specified limit.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAutoMLJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAutoMLJobs::set_next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     /// - On success, responds with [`ListAutoMlJobsOutput`](crate::output::ListAutoMlJobsOutput) with field(s):
     ///   - [`auto_ml_job_summaries(Option<Vec<AutoMlJobSummary>>)`](crate::output::ListAutoMlJobsOutput::auto_ml_job_summaries): <p>Returns a summary list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAutoMlJobsOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
@@ -2611,16 +2611,16 @@ where
         fluent_builders::ListAutoMLJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCandidatesForAutoMLJob`](crate::client::fluent_builders::ListCandidatesForAutoMLJob) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::into_paginator).
     ///
-    /// - Takes [`ListCandidatesForAutoMlJobInput`](crate::input::ListCandidatesForAutoMlJobInput) with field(s):
-    ///   - [`auto_ml_job_name(Option<String>)`](crate::input::ListCandidatesForAutoMlJobInput::auto_ml_job_name): <p>List the candidates created for the job by providing the job's name.</p>
-    ///   - [`status_equals(Option<CandidateStatus>)`](crate::input::ListCandidatesForAutoMlJobInput::status_equals): <p>List the candidates for the job and filter by status.</p>
-    ///   - [`candidate_name_equals(Option<String>)`](crate::input::ListCandidatesForAutoMlJobInput::candidate_name_equals): <p>List the candidates for the job and filter by candidate name.</p>
-    ///   - [`sort_order(Option<AutoMlSortOrder>)`](crate::input::ListCandidatesForAutoMlJobInput::sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    ///   - [`sort_by(Option<CandidateSortBy>)`](crate::input::ListCandidatesForAutoMlJobInput::sort_by): <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListCandidatesForAutoMlJobInput::max_results): <p>List the job's candidates up to a specified limit.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListCandidatesForAutoMlJobInput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_ml_job_name(impl Into<String>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::set_auto_ml_job_name): <p>List the candidates created for the job by providing the job's name.</p>
+    ///   - [`status_equals(CandidateStatus)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::status_equals) / [`set_status_equals(Option<CandidateStatus>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::set_status_equals): <p>List the candidates for the job and filter by status.</p>
+    ///   - [`candidate_name_equals(impl Into<String>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::candidate_name_equals) / [`set_candidate_name_equals(Option<String>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::set_candidate_name_equals): <p>List the candidates for the job and filter by candidate name.</p>
+    ///   - [`sort_order(AutoMlSortOrder)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::sort_order) / [`set_sort_order(Option<AutoMlSortOrder>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::set_sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    ///   - [`sort_by(CandidateSortBy)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::sort_by) / [`set_sort_by(Option<CandidateSortBy>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::set_sort_by): <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::set_max_results): <p>List the job's candidates up to a specified limit.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::set_next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     /// - On success, responds with [`ListCandidatesForAutoMlJobOutput`](crate::output::ListCandidatesForAutoMlJobOutput) with field(s):
     ///   - [`candidates(Option<Vec<AutoMlCandidate>>)`](crate::output::ListCandidatesForAutoMlJobOutput::candidates): <p>Summaries about the <code>AutoMLCandidates</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCandidatesForAutoMlJobOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
@@ -2631,18 +2631,18 @@ where
         fluent_builders::ListCandidatesForAutoMLJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCodeRepositories`](crate::client::fluent_builders::ListCodeRepositories) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCodeRepositories::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCodeRepositories::into_paginator).
     ///
-    /// - Takes [`ListCodeRepositoriesInput`](crate::input::ListCodeRepositoriesInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListCodeRepositoriesInput::creation_time_after): <p>A filter that returns only Git repositories that were created after the specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListCodeRepositoriesInput::creation_time_before): <p>A filter that returns only Git repositories that were created before the specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListCodeRepositoriesInput::last_modified_time_after): <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListCodeRepositoriesInput::last_modified_time_before): <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListCodeRepositoriesInput::max_results): <p>The maximum number of Git repositories to return in the response.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListCodeRepositoriesInput::name_contains): <p>A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListCodeRepositoriesInput::next_token): <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
-    ///   - [`sort_by(Option<CodeRepositorySortBy>)`](crate::input::ListCodeRepositoriesInput::sort_by): <p>The field to sort results by. The default is <code>Name</code>.</p>
-    ///   - [`sort_order(Option<CodeRepositorySortOrder>)`](crate::input::ListCodeRepositoriesInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListCodeRepositories::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListCodeRepositories::set_creation_time_after): <p>A filter that returns only Git repositories that were created after the specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListCodeRepositories::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListCodeRepositories::set_creation_time_before): <p>A filter that returns only Git repositories that were created before the specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListCodeRepositories::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListCodeRepositories::set_last_modified_time_after): <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListCodeRepositories::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListCodeRepositories::set_last_modified_time_before): <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCodeRepositories::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCodeRepositories::set_max_results): <p>The maximum number of Git repositories to return in the response.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListCodeRepositories::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListCodeRepositories::set_name_contains): <p>A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCodeRepositories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCodeRepositories::set_next_token): <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
+    ///   - [`sort_by(CodeRepositorySortBy)`](crate::client::fluent_builders::ListCodeRepositories::sort_by) / [`set_sort_by(Option<CodeRepositorySortBy>)`](crate::client::fluent_builders::ListCodeRepositories::set_sort_by): <p>The field to sort results by. The default is <code>Name</code>.</p>
+    ///   - [`sort_order(CodeRepositorySortOrder)`](crate::client::fluent_builders::ListCodeRepositories::sort_order) / [`set_sort_order(Option<CodeRepositorySortOrder>)`](crate::client::fluent_builders::ListCodeRepositories::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListCodeRepositoriesOutput`](crate::output::ListCodeRepositoriesOutput) with field(s):
     ///   - [`code_repository_summary_list(Option<Vec<CodeRepositorySummary>>)`](crate::output::ListCodeRepositoriesOutput::code_repository_summary_list): <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository: </p>  <ul>   <li> <p>Name</p> </li>   <li> <p>Amazon Resource Name (ARN)</p> </li>   <li> <p>Creation time</p> </li>   <li> <p>Last modified time</p> </li>   <li> <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p> </li>  </ul>
     ///   - [`next_token(Option<String>)`](crate::output::ListCodeRepositoriesOutput::next_token): <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
@@ -2651,19 +2651,19 @@ where
         fluent_builders::ListCodeRepositories::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCompilationJobs`](crate::client::fluent_builders::ListCompilationJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCompilationJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCompilationJobs::into_paginator).
     ///
-    /// - Takes [`ListCompilationJobsInput`](crate::input::ListCompilationJobsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListCompilationJobsInput::next_token): <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListCompilationJobsInput::max_results): <p>The maximum number of model compilation jobs to return in the response.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListCompilationJobsInput::creation_time_after): <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListCompilationJobsInput::creation_time_before): <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListCompilationJobsInput::last_modified_time_after): <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListCompilationJobsInput::last_modified_time_before): <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListCompilationJobsInput::name_contains): <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
-    ///   - [`status_equals(Option<CompilationJobStatus>)`](crate::input::ListCompilationJobsInput::status_equals): <p>A filter that retrieves model compilation jobs with a specific <code>DescribeCompilationJobResponse$CompilationJobStatus</code> status.</p>
-    ///   - [`sort_by(Option<ListCompilationJobsSortBy>)`](crate::input::ListCompilationJobsInput::sort_by): <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListCompilationJobsInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCompilationJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCompilationJobs::set_next_token): <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCompilationJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCompilationJobs::set_max_results): <p>The maximum number of model compilation jobs to return in the response.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListCompilationJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListCompilationJobs::set_creation_time_after): <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListCompilationJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListCompilationJobs::set_creation_time_before): <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListCompilationJobs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListCompilationJobs::set_last_modified_time_after): <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListCompilationJobs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListCompilationJobs::set_last_modified_time_before): <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListCompilationJobs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListCompilationJobs::set_name_contains): <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
+    ///   - [`status_equals(CompilationJobStatus)`](crate::client::fluent_builders::ListCompilationJobs::status_equals) / [`set_status_equals(Option<CompilationJobStatus>)`](crate::client::fluent_builders::ListCompilationJobs::set_status_equals): <p>A filter that retrieves model compilation jobs with a specific <code>DescribeCompilationJobResponse$CompilationJobStatus</code> status.</p>
+    ///   - [`sort_by(ListCompilationJobsSortBy)`](crate::client::fluent_builders::ListCompilationJobs::sort_by) / [`set_sort_by(Option<ListCompilationJobsSortBy>)`](crate::client::fluent_builders::ListCompilationJobs::set_sort_by): <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListCompilationJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListCompilationJobs::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListCompilationJobsOutput`](crate::output::ListCompilationJobsOutput) with field(s):
     ///   - [`compilation_job_summaries(Option<Vec<CompilationJobSummary>>)`](crate::output::ListCompilationJobsOutput::compilation_job_summaries): <p>An array of <code>CompilationJobSummary</code> objects, each describing a model compilation job. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListCompilationJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve the next set of model compilation jobs, use this token in the next request.</p>
@@ -2672,17 +2672,17 @@ where
         fluent_builders::ListCompilationJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListContexts`](crate::client::fluent_builders::ListContexts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContexts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContexts::into_paginator).
     ///
-    /// - Takes [`ListContextsInput`](crate::input::ListContextsInput) with field(s):
-    ///   - [`source_uri(Option<String>)`](crate::input::ListContextsInput::source_uri): <p>A filter that returns only contexts with the specified source URI.</p>
-    ///   - [`context_type(Option<String>)`](crate::input::ListContextsInput::context_type): <p>A filter that returns only contexts of the specified type.</p>
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListContextsInput::created_after): <p>A filter that returns only contexts created on or after the specified time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListContextsInput::created_before): <p>A filter that returns only contexts created on or before the specified time.</p>
-    ///   - [`sort_by(Option<SortContextsBy>)`](crate::input::ListContextsInput::sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListContextsInput::sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListContextsInput::next_token): <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListContextsInput::max_results): <p>The maximum number of contexts to return in the response. The default value is 10.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_uri(impl Into<String>)`](crate::client::fluent_builders::ListContexts::source_uri) / [`set_source_uri(Option<String>)`](crate::client::fluent_builders::ListContexts::set_source_uri): <p>A filter that returns only contexts with the specified source URI.</p>
+    ///   - [`context_type(impl Into<String>)`](crate::client::fluent_builders::ListContexts::context_type) / [`set_context_type(Option<String>)`](crate::client::fluent_builders::ListContexts::set_context_type): <p>A filter that returns only contexts of the specified type.</p>
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListContexts::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListContexts::set_created_after): <p>A filter that returns only contexts created on or after the specified time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListContexts::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListContexts::set_created_before): <p>A filter that returns only contexts created on or before the specified time.</p>
+    ///   - [`sort_by(SortContextsBy)`](crate::client::fluent_builders::ListContexts::sort_by) / [`set_sort_by(Option<SortContextsBy>)`](crate::client::fluent_builders::ListContexts::set_sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListContexts::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListContexts::set_sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContexts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContexts::set_next_token): <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContexts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListContexts::set_max_results): <p>The maximum number of contexts to return in the response. The default value is 10.</p>
     /// - On success, responds with [`ListContextsOutput`](crate::output::ListContextsOutput) with field(s):
     ///   - [`context_summaries(Option<Vec<ContextSummary>>)`](crate::output::ListContextsOutput::context_summaries): <p>A list of contexts and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListContextsOutput::next_token): <p>A token for getting the next set of contexts, if there are any.</p>
@@ -2691,17 +2691,17 @@ where
         fluent_builders::ListContexts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDataQualityJobDefinitions`](crate::client::fluent_builders::ListDataQualityJobDefinitions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataQualityJobDefinitions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataQualityJobDefinitions::into_paginator).
     ///
-    /// - Takes [`ListDataQualityJobDefinitionsInput`](crate::input::ListDataQualityJobDefinitionsInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::ListDataQualityJobDefinitionsInput::endpoint_name): <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
-    ///   - [`sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::input::ListDataQualityJobDefinitionsInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListDataQualityJobDefinitionsInput::sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDataQualityJobDefinitionsInput::next_token): <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.&gt;</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDataQualityJobDefinitionsInput::max_results): <p>The maximum number of data quality monitoring job definitions to return in the response.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListDataQualityJobDefinitionsInput::name_contains): <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListDataQualityJobDefinitionsInput::creation_time_before): <p>A filter that returns only data quality monitoring job definitions created before the specified time.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListDataQualityJobDefinitionsInput::creation_time_after): <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::set_endpoint_name): <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
+    ///   - [`sort_by(MonitoringJobDefinitionSortKey)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::sort_by) / [`set_sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::set_sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::set_next_token): <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.&gt;</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::set_max_results): <p>The maximum number of data quality monitoring job definitions to return in the response.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::set_name_contains): <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::set_creation_time_before): <p>A filter that returns only data quality monitoring job definitions created before the specified time.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListDataQualityJobDefinitions::set_creation_time_after): <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
     /// - On success, responds with [`ListDataQualityJobDefinitionsOutput`](crate::output::ListDataQualityJobDefinitionsOutput) with field(s):
     ///   - [`job_definition_summaries(Option<Vec<MonitoringJobDefinitionSummary>>)`](crate::output::ListDataQualityJobDefinitionsOutput::job_definition_summaries): <p>A list of data quality monitoring job definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDataQualityJobDefinitionsOutput::next_token): <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data quality monitoring job definitions, use the token in the next request.</p>
@@ -2712,18 +2712,18 @@ where
         fluent_builders::ListDataQualityJobDefinitions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDeviceFleets`](crate::client::fluent_builders::ListDeviceFleets) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeviceFleets::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeviceFleets::into_paginator).
     ///
-    /// - Takes [`ListDeviceFleetsInput`](crate::input::ListDeviceFleetsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDeviceFleetsInput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDeviceFleetsInput::max_results): <p>The maximum number of results to select.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListDeviceFleetsInput::creation_time_after): <p>Filter fleets where packaging job was created after specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListDeviceFleetsInput::creation_time_before): <p>Filter fleets where the edge packaging job was created before specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListDeviceFleetsInput::last_modified_time_after): <p>Select fleets where the job was updated after X</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListDeviceFleetsInput::last_modified_time_before): <p>Select fleets where the job was updated before X</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListDeviceFleetsInput::name_contains): <p>Filter for fleets containing this name in their fleet device name.</p>
-    ///   - [`sort_by(Option<ListDeviceFleetsSortBy>)`](crate::input::ListDeviceFleetsInput::sort_by): <p>The column to sort by.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListDeviceFleetsInput::sort_order): <p>What direction to sort in.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeviceFleets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeviceFleets::set_next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeviceFleets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeviceFleets::set_max_results): <p>The maximum number of results to select.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListDeviceFleets::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListDeviceFleets::set_creation_time_after): <p>Filter fleets where packaging job was created after specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListDeviceFleets::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListDeviceFleets::set_creation_time_before): <p>Filter fleets where the edge packaging job was created before specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListDeviceFleets::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListDeviceFleets::set_last_modified_time_after): <p>Select fleets where the job was updated after X</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListDeviceFleets::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListDeviceFleets::set_last_modified_time_before): <p>Select fleets where the job was updated before X</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListDeviceFleets::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListDeviceFleets::set_name_contains): <p>Filter for fleets containing this name in their fleet device name.</p>
+    ///   - [`sort_by(ListDeviceFleetsSortBy)`](crate::client::fluent_builders::ListDeviceFleets::sort_by) / [`set_sort_by(Option<ListDeviceFleetsSortBy>)`](crate::client::fluent_builders::ListDeviceFleets::set_sort_by): <p>The column to sort by.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListDeviceFleets::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListDeviceFleets::set_sort_order): <p>What direction to sort in.</p>
     /// - On success, responds with [`ListDeviceFleetsOutput`](crate::output::ListDeviceFleetsOutput) with field(s):
     ///   - [`device_fleet_summaries(Option<Vec<DeviceFleetSummary>>)`](crate::output::ListDeviceFleetsOutput::device_fleet_summaries): <p>Summary of the device fleet.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDeviceFleetsOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
@@ -2732,14 +2732,14 @@ where
         fluent_builders::ListDeviceFleets::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDevices`](crate::client::fluent_builders::ListDevices) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
     ///
-    /// - Takes [`ListDevicesInput`](crate::input::ListDevicesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDevicesInput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDevicesInput::max_results): <p>Maximum number of results to select.</p>
-    ///   - [`latest_heartbeat_after(Option<DateTime>)`](crate::input::ListDevicesInput::latest_heartbeat_after): <p>Select fleets where the job was updated after X</p>
-    ///   - [`model_name(Option<String>)`](crate::input::ListDevicesInput::model_name): <p>A filter that searches devices that contains this name in any of their models.</p>
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::ListDevicesInput::device_fleet_name): <p>Filter for fleets containing this name in their device fleet name.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevices::set_next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDevices::set_max_results): <p>Maximum number of results to select.</p>
+    ///   - [`latest_heartbeat_after(DateTime)`](crate::client::fluent_builders::ListDevices::latest_heartbeat_after) / [`set_latest_heartbeat_after(Option<DateTime>)`](crate::client::fluent_builders::ListDevices::set_latest_heartbeat_after): <p>Select fleets where the job was updated after X</p>
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::ListDevices::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::ListDevices::set_model_name): <p>A filter that searches devices that contains this name in any of their models.</p>
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::ListDevices::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::ListDevices::set_device_fleet_name): <p>Filter for fleets containing this name in their device fleet name.</p>
     /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
     ///   - [`device_summaries(Option<Vec<DeviceSummary>>)`](crate::output::ListDevicesOutput::device_summaries): <p>Summary of devices.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
@@ -2748,11 +2748,11 @@ where
         fluent_builders::ListDevices::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDomains`](crate::client::fluent_builders::ListDomains) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
     ///
-    /// - Takes [`ListDomainsInput`](crate::input::ListDomainsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListDomainsInput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDomainsInput::max_results): <p>Returns a list up to a specified limit.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomains::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomains::set_next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDomains::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDomains::set_max_results): <p>Returns a list up to a specified limit.</p>
     /// - On success, responds with [`ListDomainsOutput`](crate::output::ListDomainsOutput) with field(s):
     ///   - [`domains(Option<Vec<DomainDetails>>)`](crate::output::ListDomainsOutput::domains): <p>The list of domains.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDomainsOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
@@ -2761,20 +2761,20 @@ where
         fluent_builders::ListDomains::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEdgePackagingJobs`](crate::client::fluent_builders::ListEdgePackagingJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEdgePackagingJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEdgePackagingJobs::into_paginator).
     ///
-    /// - Takes [`ListEdgePackagingJobsInput`](crate::input::ListEdgePackagingJobsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListEdgePackagingJobsInput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEdgePackagingJobsInput::max_results): <p>Maximum number of results to select.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListEdgePackagingJobsInput::creation_time_after): <p>Select jobs where the job was created after specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListEdgePackagingJobsInput::creation_time_before): <p>Select jobs where the job was created before specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListEdgePackagingJobsInput::last_modified_time_after): <p>Select jobs where the job was updated after specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListEdgePackagingJobsInput::last_modified_time_before): <p>Select jobs where the job was updated before specified time.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListEdgePackagingJobsInput::name_contains): <p>Filter for jobs containing this name in their packaging job name.</p>
-    ///   - [`model_name_contains(Option<String>)`](crate::input::ListEdgePackagingJobsInput::model_name_contains): <p>Filter for jobs where the model name contains this string.</p>
-    ///   - [`status_equals(Option<EdgePackagingJobStatus>)`](crate::input::ListEdgePackagingJobsInput::status_equals): <p>The job status to filter for.</p>
-    ///   - [`sort_by(Option<ListEdgePackagingJobsSortBy>)`](crate::input::ListEdgePackagingJobsInput::sort_by): <p>Use to specify what column to sort by.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListEdgePackagingJobsInput::sort_order): <p>What direction to sort by.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEdgePackagingJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEdgePackagingJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_max_results): <p>Maximum number of results to select.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListEdgePackagingJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_creation_time_after): <p>Select jobs where the job was created after specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListEdgePackagingJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_creation_time_before): <p>Select jobs where the job was created before specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListEdgePackagingJobs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_last_modified_time_after): <p>Select jobs where the job was updated after specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListEdgePackagingJobs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_last_modified_time_before): <p>Select jobs where the job was updated before specified time.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListEdgePackagingJobs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_name_contains): <p>Filter for jobs containing this name in their packaging job name.</p>
+    ///   - [`model_name_contains(impl Into<String>)`](crate::client::fluent_builders::ListEdgePackagingJobs::model_name_contains) / [`set_model_name_contains(Option<String>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_model_name_contains): <p>Filter for jobs where the model name contains this string.</p>
+    ///   - [`status_equals(EdgePackagingJobStatus)`](crate::client::fluent_builders::ListEdgePackagingJobs::status_equals) / [`set_status_equals(Option<EdgePackagingJobStatus>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_status_equals): <p>The job status to filter for.</p>
+    ///   - [`sort_by(ListEdgePackagingJobsSortBy)`](crate::client::fluent_builders::ListEdgePackagingJobs::sort_by) / [`set_sort_by(Option<ListEdgePackagingJobsSortBy>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_sort_by): <p>Use to specify what column to sort by.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListEdgePackagingJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListEdgePackagingJobs::set_sort_order): <p>What direction to sort by.</p>
     /// - On success, responds with [`ListEdgePackagingJobsOutput`](crate::output::ListEdgePackagingJobsOutput) with field(s):
     ///   - [`edge_packaging_job_summaries(Option<Vec<EdgePackagingJobSummary>>)`](crate::output::ListEdgePackagingJobsOutput::edge_packaging_job_summaries): <p>Summaries of edge packaging jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEdgePackagingJobsOutput::next_token): <p>Token to use when calling the next page of results.</p>
@@ -2783,16 +2783,16 @@ where
         fluent_builders::ListEdgePackagingJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEndpointConfigs`](crate::client::fluent_builders::ListEndpointConfigs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpointConfigs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEndpointConfigs::into_paginator).
     ///
-    /// - Takes [`ListEndpointConfigsInput`](crate::input::ListEndpointConfigsInput) with field(s):
-    ///   - [`sort_by(Option<EndpointConfigSortKey>)`](crate::input::ListEndpointConfigsInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<OrderKey>)`](crate::input::ListEndpointConfigsInput::sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListEndpointConfigsInput::next_token): <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEndpointConfigsInput::max_results): <p>The maximum number of training jobs to return in the response.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListEndpointConfigsInput::name_contains): <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListEndpointConfigsInput::creation_time_before): <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListEndpointConfigsInput::creation_time_after): <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sort_by(EndpointConfigSortKey)`](crate::client::fluent_builders::ListEndpointConfigs::sort_by) / [`set_sort_by(Option<EndpointConfigSortKey>)`](crate::client::fluent_builders::ListEndpointConfigs::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(OrderKey)`](crate::client::fluent_builders::ListEndpointConfigs::sort_order) / [`set_sort_order(Option<OrderKey>)`](crate::client::fluent_builders::ListEndpointConfigs::set_sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpointConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpointConfigs::set_next_token): <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEndpointConfigs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEndpointConfigs::set_max_results): <p>The maximum number of training jobs to return in the response.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListEndpointConfigs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListEndpointConfigs::set_name_contains): <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListEndpointConfigs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListEndpointConfigs::set_creation_time_before): <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListEndpointConfigs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListEndpointConfigs::set_creation_time_after): <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
     /// - On success, responds with [`ListEndpointConfigsOutput`](crate::output::ListEndpointConfigsOutput) with field(s):
     ///   - [`endpoint_configs(Option<Vec<EndpointConfigSummary>>)`](crate::output::ListEndpointConfigsOutput::endpoint_configs): <p>An array of endpoint configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEndpointConfigsOutput::next_token): <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
@@ -2801,19 +2801,19 @@ where
         fluent_builders::ListEndpointConfigs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
     ///
-    /// - Takes [`ListEndpointsInput`](crate::input::ListEndpointsInput) with field(s):
-    ///   - [`sort_by(Option<EndpointSortKey>)`](crate::input::ListEndpointsInput::sort_by): <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<OrderKey>)`](crate::input::ListEndpointsInput::sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListEndpointsInput::next_token): <p>If the result of a <code>ListEndpoints</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEndpointsInput::max_results): <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListEndpointsInput::name_contains): <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListEndpointsInput::creation_time_before): <p>A filter that returns only endpoints that were created before the specified time (timestamp).</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListEndpointsInput::creation_time_after): <p>A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListEndpointsInput::last_modified_time_before): <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListEndpointsInput::last_modified_time_after): <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
-    ///   - [`status_equals(Option<EndpointStatus>)`](crate::input::ListEndpointsInput::status_equals): <p> A filter that returns only endpoints with the specified status.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sort_by(EndpointSortKey)`](crate::client::fluent_builders::ListEndpoints::sort_by) / [`set_sort_by(Option<EndpointSortKey>)`](crate::client::fluent_builders::ListEndpoints::set_sort_by): <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(OrderKey)`](crate::client::fluent_builders::ListEndpoints::sort_order) / [`set_sort_order(Option<OrderKey>)`](crate::client::fluent_builders::ListEndpoints::set_sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpoints::set_next_token): <p>If the result of a <code>ListEndpoints</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEndpoints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEndpoints::set_max_results): <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListEndpoints::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListEndpoints::set_name_contains): <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListEndpoints::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListEndpoints::set_creation_time_before): <p>A filter that returns only endpoints that were created before the specified time (timestamp).</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListEndpoints::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListEndpoints::set_creation_time_after): <p>A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListEndpoints::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListEndpoints::set_last_modified_time_before): <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListEndpoints::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListEndpoints::set_last_modified_time_after): <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
+    ///   - [`status_equals(EndpointStatus)`](crate::client::fluent_builders::ListEndpoints::status_equals) / [`set_status_equals(Option<EndpointStatus>)`](crate::client::fluent_builders::ListEndpoints::set_status_equals): <p> A filter that returns only endpoints with the specified status.</p>
     /// - On success, responds with [`ListEndpointsOutput`](crate::output::ListEndpointsOutput) with field(s):
     ///   - [`endpoints(Option<Vec<EndpointSummary>>)`](crate::output::ListEndpointsOutput::endpoints): <p> An array or endpoint objects. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
@@ -2822,15 +2822,15 @@ where
         fluent_builders::ListEndpoints::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListExperiments`](crate::client::fluent_builders::ListExperiments) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExperiments::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExperiments::into_paginator).
     ///
-    /// - Takes [`ListExperimentsInput`](crate::input::ListExperimentsInput) with field(s):
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListExperimentsInput::created_after): <p>A filter that returns only experiments created after the specified time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListExperimentsInput::created_before): <p>A filter that returns only experiments created before the specified time.</p>
-    ///   - [`sort_by(Option<SortExperimentsBy>)`](crate::input::ListExperimentsInput::sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListExperimentsInput::sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListExperimentsInput::next_token): <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListExperimentsInput::max_results): <p>The maximum number of experiments to return in the response. The default value is 10.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListExperiments::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListExperiments::set_created_after): <p>A filter that returns only experiments created after the specified time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListExperiments::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListExperiments::set_created_before): <p>A filter that returns only experiments created before the specified time.</p>
+    ///   - [`sort_by(SortExperimentsBy)`](crate::client::fluent_builders::ListExperiments::sort_by) / [`set_sort_by(Option<SortExperimentsBy>)`](crate::client::fluent_builders::ListExperiments::set_sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListExperiments::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListExperiments::set_sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExperiments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExperiments::set_next_token): <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExperiments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExperiments::set_max_results): <p>The maximum number of experiments to return in the response. The default value is 10.</p>
     /// - On success, responds with [`ListExperimentsOutput`](crate::output::ListExperimentsOutput) with field(s):
     ///   - [`experiment_summaries(Option<Vec<ExperimentSummary>>)`](crate::output::ListExperimentsOutput::experiment_summaries): <p>A list of the summaries of your experiments.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListExperimentsOutput::next_token): <p>A token for getting the next set of experiments, if there are any.</p>
@@ -2840,16 +2840,16 @@ where
     }
     /// Constructs a fluent builder for the [`ListFeatureGroups`](crate::client::fluent_builders::ListFeatureGroups) operation.
     ///
-    /// - Takes [`ListFeatureGroupsInput`](crate::input::ListFeatureGroupsInput) with field(s):
-    ///   - [`name_contains(Option<String>)`](crate::input::ListFeatureGroupsInput::name_contains): <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
-    ///   - [`feature_group_status_equals(Option<FeatureGroupStatus>)`](crate::input::ListFeatureGroupsInput::feature_group_status_equals): <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
-    ///   - [`offline_store_status_equals(Option<OfflineStoreStatusValue>)`](crate::input::ListFeatureGroupsInput::offline_store_status_equals): <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListFeatureGroupsInput::creation_time_after): <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListFeatureGroupsInput::creation_time_before): <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
-    ///   - [`sort_order(Option<FeatureGroupSortOrder>)`](crate::input::ListFeatureGroupsInput::sort_order): <p>The order in which feature groups are listed.</p>
-    ///   - [`sort_by(Option<FeatureGroupSortBy>)`](crate::input::ListFeatureGroupsInput::sort_by): <p>The value on which the feature group list is sorted.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFeatureGroupsInput::max_results): <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFeatureGroupsInput::next_token): <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListFeatureGroups::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListFeatureGroups::set_name_contains): <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
+    ///   - [`feature_group_status_equals(FeatureGroupStatus)`](crate::client::fluent_builders::ListFeatureGroups::feature_group_status_equals) / [`set_feature_group_status_equals(Option<FeatureGroupStatus>)`](crate::client::fluent_builders::ListFeatureGroups::set_feature_group_status_equals): <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    ///   - [`offline_store_status_equals(OfflineStoreStatusValue)`](crate::client::fluent_builders::ListFeatureGroups::offline_store_status_equals) / [`set_offline_store_status_equals(Option<OfflineStoreStatusValue>)`](crate::client::fluent_builders::ListFeatureGroups::set_offline_store_status_equals): <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListFeatureGroups::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListFeatureGroups::set_creation_time_after): <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListFeatureGroups::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListFeatureGroups::set_creation_time_before): <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
+    ///   - [`sort_order(FeatureGroupSortOrder)`](crate::client::fluent_builders::ListFeatureGroups::sort_order) / [`set_sort_order(Option<FeatureGroupSortOrder>)`](crate::client::fluent_builders::ListFeatureGroups::set_sort_order): <p>The order in which feature groups are listed.</p>
+    ///   - [`sort_by(FeatureGroupSortBy)`](crate::client::fluent_builders::ListFeatureGroups::sort_by) / [`set_sort_by(Option<FeatureGroupSortBy>)`](crate::client::fluent_builders::ListFeatureGroups::set_sort_by): <p>The value on which the feature group list is sorted.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFeatureGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFeatureGroups::set_max_results): <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFeatureGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFeatureGroups::set_next_token): <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     /// - On success, responds with [`ListFeatureGroupsOutput`](crate::output::ListFeatureGroupsOutput) with field(s):
     ///   - [`feature_group_summaries(Option<Vec<FeatureGroupSummary>>)`](crate::output::ListFeatureGroupsOutput::feature_group_summaries): <p>A summary of feature groups.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFeatureGroupsOutput::next_token): <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
@@ -2858,14 +2858,14 @@ where
         fluent_builders::ListFeatureGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFlowDefinitions`](crate::client::fluent_builders::ListFlowDefinitions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFlowDefinitions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFlowDefinitions::into_paginator).
     ///
-    /// - Takes [`ListFlowDefinitionsInput`](crate::input::ListFlowDefinitionsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListFlowDefinitionsInput::creation_time_after): <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListFlowDefinitionsInput::creation_time_before): <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListFlowDefinitionsInput::sort_order): <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFlowDefinitionsInput::next_token): <p>A token to resume pagination.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFlowDefinitionsInput::max_results): <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListFlowDefinitions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListFlowDefinitions::set_creation_time_after): <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListFlowDefinitions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListFlowDefinitions::set_creation_time_before): <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListFlowDefinitions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListFlowDefinitions::set_sort_order): <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFlowDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFlowDefinitions::set_next_token): <p>A token to resume pagination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFlowDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFlowDefinitions::set_max_results): <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
     /// - On success, responds with [`ListFlowDefinitionsOutput`](crate::output::ListFlowDefinitionsOutput) with field(s):
     ///   - [`flow_definition_summaries(Option<Vec<FlowDefinitionSummary>>)`](crate::output::ListFlowDefinitionsOutput::flow_definition_summaries): <p>An array of objects describing the flow definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFlowDefinitionsOutput::next_token): <p>A token to resume pagination.</p>
@@ -2874,14 +2874,14 @@ where
         fluent_builders::ListFlowDefinitions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListHumanTaskUis`](crate::client::fluent_builders::ListHumanTaskUis) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHumanTaskUis::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHumanTaskUis::into_paginator).
     ///
-    /// - Takes [`ListHumanTaskUisInput`](crate::input::ListHumanTaskUisInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListHumanTaskUisInput::creation_time_after): <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListHumanTaskUisInput::creation_time_before): <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListHumanTaskUisInput::sort_order): <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListHumanTaskUisInput::next_token): <p>A token to resume pagination.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListHumanTaskUisInput::max_results): <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListHumanTaskUis::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListHumanTaskUis::set_creation_time_after): <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListHumanTaskUis::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListHumanTaskUis::set_creation_time_before): <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListHumanTaskUis::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListHumanTaskUis::set_sort_order): <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHumanTaskUis::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHumanTaskUis::set_next_token): <p>A token to resume pagination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHumanTaskUis::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHumanTaskUis::set_max_results): <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
     /// - On success, responds with [`ListHumanTaskUisOutput`](crate::output::ListHumanTaskUisOutput) with field(s):
     ///   - [`human_task_ui_summaries(Option<Vec<HumanTaskUiSummary>>)`](crate::output::ListHumanTaskUisOutput::human_task_ui_summaries): <p>An array of objects describing the human task user interfaces.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListHumanTaskUisOutput::next_token): <p>A token to resume pagination.</p>
@@ -2890,19 +2890,19 @@ where
         fluent_builders::ListHumanTaskUis::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListHyperParameterTuningJobs`](crate::client::fluent_builders::ListHyperParameterTuningJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHyperParameterTuningJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHyperParameterTuningJobs::into_paginator).
     ///
-    /// - Takes [`ListHyperParameterTuningJobsInput`](crate::input::ListHyperParameterTuningJobsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListHyperParameterTuningJobsInput::next_token): <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListHyperParameterTuningJobsInput::max_results): <p>The maximum number of tuning jobs to return. The default value is 10.</p>
-    ///   - [`sort_by(Option<HyperParameterTuningJobSortByOptions>)`](crate::input::ListHyperParameterTuningJobsInput::sort_by): <p>The field to sort results by. The default is <code>Name</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListHyperParameterTuningJobsInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListHyperParameterTuningJobsInput::name_contains): <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListHyperParameterTuningJobsInput::creation_time_after): <p>A filter that returns only tuning jobs that were created after the specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListHyperParameterTuningJobsInput::creation_time_before): <p>A filter that returns only tuning jobs that were created before the specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListHyperParameterTuningJobsInput::last_modified_time_after): <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListHyperParameterTuningJobsInput::last_modified_time_before): <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
-    ///   - [`status_equals(Option<HyperParameterTuningJobStatus>)`](crate::input::ListHyperParameterTuningJobsInput::status_equals): <p>A filter that returns only tuning jobs with the specified status.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_next_token): <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_max_results): <p>The maximum number of tuning jobs to return. The default value is 10.</p>
+    ///   - [`sort_by(HyperParameterTuningJobSortByOptions)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::sort_by) / [`set_sort_by(Option<HyperParameterTuningJobSortByOptions>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_sort_by): <p>The field to sort results by. The default is <code>Name</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_name_contains): <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_creation_time_after): <p>A filter that returns only tuning jobs that were created after the specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_creation_time_before): <p>A filter that returns only tuning jobs that were created before the specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_last_modified_time_after): <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_last_modified_time_before): <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
+    ///   - [`status_equals(HyperParameterTuningJobStatus)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::status_equals) / [`set_status_equals(Option<HyperParameterTuningJobStatus>)`](crate::client::fluent_builders::ListHyperParameterTuningJobs::set_status_equals): <p>A filter that returns only tuning jobs with the specified status.</p>
     /// - On success, responds with [`ListHyperParameterTuningJobsOutput`](crate::output::ListHyperParameterTuningJobsOutput) with field(s):
     ///   - [`hyper_parameter_tuning_job_summaries(Option<Vec<HyperParameterTuningJobSummary>>)`](crate::output::ListHyperParameterTuningJobsOutput::hyper_parameter_tuning_job_summaries): <p>A list of <code>HyperParameterTuningJobSummary</code> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListHyperParameterTuningJobsOutput::next_token): <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
@@ -2913,18 +2913,18 @@ where
         fluent_builders::ListHyperParameterTuningJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListImages`](crate::client::fluent_builders::ListImages) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImages::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListImages::into_paginator).
     ///
-    /// - Takes [`ListImagesInput`](crate::input::ListImagesInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListImagesInput::creation_time_after): <p>A filter that returns only images created on or after the specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListImagesInput::creation_time_before): <p>A filter that returns only images created on or before the specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListImagesInput::last_modified_time_after): <p>A filter that returns only images modified on or after the specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListImagesInput::last_modified_time_before): <p>A filter that returns only images modified on or before the specified time.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListImagesInput::max_results): <p>The maximum number of images to return in the response. The default value is 10. </p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListImagesInput::name_contains): <p>A filter that returns only images whose name contains the specified string.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListImagesInput::next_token): <p>If the previous call to <code>ListImages</code> didn't return the full set of images, the call returns a token for getting the next set of images.</p>
-    ///   - [`sort_by(Option<ImageSortBy>)`](crate::input::ListImagesInput::sort_by): <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-    ///   - [`sort_order(Option<ImageSortOrder>)`](crate::input::ListImagesInput::sort_order): <p>The sort order. The default value is <code>DESCENDING</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListImages::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListImages::set_creation_time_after): <p>A filter that returns only images created on or after the specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListImages::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListImages::set_creation_time_before): <p>A filter that returns only images created on or before the specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListImages::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListImages::set_last_modified_time_after): <p>A filter that returns only images modified on or after the specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListImages::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListImages::set_last_modified_time_before): <p>A filter that returns only images modified on or before the specified time.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListImages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListImages::set_max_results): <p>The maximum number of images to return in the response. The default value is 10. </p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListImages::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListImages::set_name_contains): <p>A filter that returns only images whose name contains the specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListImages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListImages::set_next_token): <p>If the previous call to <code>ListImages</code> didn't return the full set of images, the call returns a token for getting the next set of images.</p>
+    ///   - [`sort_by(ImageSortBy)`](crate::client::fluent_builders::ListImages::sort_by) / [`set_sort_by(Option<ImageSortBy>)`](crate::client::fluent_builders::ListImages::set_sort_by): <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
+    ///   - [`sort_order(ImageSortOrder)`](crate::client::fluent_builders::ListImages::sort_order) / [`set_sort_order(Option<ImageSortOrder>)`](crate::client::fluent_builders::ListImages::set_sort_order): <p>The sort order. The default value is <code>DESCENDING</code>.</p>
     /// - On success, responds with [`ListImagesOutput`](crate::output::ListImagesOutput) with field(s):
     ///   - [`images(Option<Vec<Image>>)`](crate::output::ListImagesOutput::images): <p>A list of images and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListImagesOutput::next_token): <p>A token for getting the next set of images, if there are any.</p>
@@ -2933,18 +2933,18 @@ where
         fluent_builders::ListImages::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListImageVersions`](crate::client::fluent_builders::ListImageVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImageVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListImageVersions::into_paginator).
     ///
-    /// - Takes [`ListImageVersionsInput`](crate::input::ListImageVersionsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListImageVersionsInput::creation_time_after): <p>A filter that returns only versions created on or after the specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListImageVersionsInput::creation_time_before): <p>A filter that returns only versions created on or before the specified time.</p>
-    ///   - [`image_name(Option<String>)`](crate::input::ListImageVersionsInput::image_name): <p>The name of the image to list the versions of.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListImageVersionsInput::last_modified_time_after): <p>A filter that returns only versions modified on or after the specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListImageVersionsInput::last_modified_time_before): <p>A filter that returns only versions modified on or before the specified time.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListImageVersionsInput::max_results): <p>The maximum number of versions to return in the response. The default value is 10. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListImageVersionsInput::next_token): <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
-    ///   - [`sort_by(Option<ImageVersionSortBy>)`](crate::input::ListImageVersionsInput::sort_by): <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-    ///   - [`sort_order(Option<ImageVersionSortOrder>)`](crate::input::ListImageVersionsInput::sort_order): <p>The sort order. The default value is <code>DESCENDING</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListImageVersions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListImageVersions::set_creation_time_after): <p>A filter that returns only versions created on or after the specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListImageVersions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListImageVersions::set_creation_time_before): <p>A filter that returns only versions created on or before the specified time.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::ListImageVersions::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::ListImageVersions::set_image_name): <p>The name of the image to list the versions of.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListImageVersions::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListImageVersions::set_last_modified_time_after): <p>A filter that returns only versions modified on or after the specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListImageVersions::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListImageVersions::set_last_modified_time_before): <p>A filter that returns only versions modified on or before the specified time.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListImageVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListImageVersions::set_max_results): <p>The maximum number of versions to return in the response. The default value is 10. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListImageVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListImageVersions::set_next_token): <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
+    ///   - [`sort_by(ImageVersionSortBy)`](crate::client::fluent_builders::ListImageVersions::sort_by) / [`set_sort_by(Option<ImageVersionSortBy>)`](crate::client::fluent_builders::ListImageVersions::set_sort_by): <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
+    ///   - [`sort_order(ImageVersionSortOrder)`](crate::client::fluent_builders::ListImageVersions::sort_order) / [`set_sort_order(Option<ImageVersionSortOrder>)`](crate::client::fluent_builders::ListImageVersions::set_sort_order): <p>The sort order. The default value is <code>DESCENDING</code>.</p>
     /// - On success, responds with [`ListImageVersionsOutput`](crate::output::ListImageVersionsOutput) with field(s):
     ///   - [`image_versions(Option<Vec<ImageVersion>>)`](crate::output::ListImageVersionsOutput::image_versions): <p>A list of versions and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListImageVersionsOutput::next_token): <p>A token for getting the next set of versions, if there are any.</p>
@@ -2953,19 +2953,19 @@ where
         fluent_builders::ListImageVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListInferenceRecommendationsJobs`](crate::client::fluent_builders::ListInferenceRecommendationsJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::into_paginator).
     ///
-    /// - Takes [`ListInferenceRecommendationsJobsInput`](crate::input::ListInferenceRecommendationsJobsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListInferenceRecommendationsJobsInput::creation_time_after): <p>A filter that returns only jobs created after the specified time (timestamp).</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListInferenceRecommendationsJobsInput::creation_time_before): <p>A filter that returns only jobs created before the specified time (timestamp).</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListInferenceRecommendationsJobsInput::last_modified_time_after): <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListInferenceRecommendationsJobsInput::last_modified_time_before): <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListInferenceRecommendationsJobsInput::name_contains): <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
-    ///   - [`status_equals(Option<RecommendationJobStatus>)`](crate::input::ListInferenceRecommendationsJobsInput::status_equals): <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
-    ///   - [`sort_by(Option<ListInferenceRecommendationsJobsSortBy>)`](crate::input::ListInferenceRecommendationsJobsInput::sort_by): <p>The parameter by which to sort the results.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListInferenceRecommendationsJobsInput::sort_order): <p>The sort order for the results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListInferenceRecommendationsJobsInput::next_token): <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of recommendations, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListInferenceRecommendationsJobsInput::max_results): <p>The maximum number of recommendations to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_creation_time_after): <p>A filter that returns only jobs created after the specified time (timestamp).</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_creation_time_before): <p>A filter that returns only jobs created before the specified time (timestamp).</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_last_modified_time_after): <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_last_modified_time_before): <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_name_contains): <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
+    ///   - [`status_equals(RecommendationJobStatus)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::status_equals) / [`set_status_equals(Option<RecommendationJobStatus>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_status_equals): <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
+    ///   - [`sort_by(ListInferenceRecommendationsJobsSortBy)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::sort_by) / [`set_sort_by(Option<ListInferenceRecommendationsJobsSortBy>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_sort_by): <p>The parameter by which to sort the results.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_sort_order): <p>The sort order for the results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_next_token): <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of recommendations, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::set_max_results): <p>The maximum number of recommendations to return in the response.</p>
     /// - On success, responds with [`ListInferenceRecommendationsJobsOutput`](crate::output::ListInferenceRecommendationsJobsOutput) with field(s):
     ///   - [`inference_recommendations_jobs(Option<Vec<InferenceRecommendationsJob>>)`](crate::output::ListInferenceRecommendationsJobsOutput::inference_recommendations_jobs): <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListInferenceRecommendationsJobsOutput::next_token): <p>A token for getting the next set of recommendations, if there are any.</p>
@@ -2976,19 +2976,19 @@ where
         fluent_builders::ListInferenceRecommendationsJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListLabelingJobs`](crate::client::fluent_builders::ListLabelingJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLabelingJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLabelingJobs::into_paginator).
     ///
-    /// - Takes [`ListLabelingJobsInput`](crate::input::ListLabelingJobsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListLabelingJobsInput::creation_time_after): <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListLabelingJobsInput::creation_time_before): <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListLabelingJobsInput::last_modified_time_after): <p>A filter that returns only labeling jobs modified after the specified time (timestamp).</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListLabelingJobsInput::last_modified_time_before): <p>A filter that returns only labeling jobs modified before the specified time (timestamp).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListLabelingJobsInput::max_results): <p>The maximum number of labeling jobs to return in each page of the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListLabelingJobsInput::next_token): <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListLabelingJobsInput::name_contains): <p>A string in the labeling job name. This filter returns only labeling jobs whose name contains the specified string.</p>
-    ///   - [`sort_by(Option<SortBy>)`](crate::input::ListLabelingJobsInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListLabelingJobsInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    ///   - [`status_equals(Option<LabelingJobStatus>)`](crate::input::ListLabelingJobsInput::status_equals): <p>A filter that retrieves only labeling jobs with a specific status.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListLabelingJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListLabelingJobs::set_creation_time_after): <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListLabelingJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListLabelingJobs::set_creation_time_before): <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListLabelingJobs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListLabelingJobs::set_last_modified_time_after): <p>A filter that returns only labeling jobs modified after the specified time (timestamp).</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListLabelingJobs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListLabelingJobs::set_last_modified_time_before): <p>A filter that returns only labeling jobs modified before the specified time (timestamp).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLabelingJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLabelingJobs::set_max_results): <p>The maximum number of labeling jobs to return in each page of the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLabelingJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLabelingJobs::set_next_token): <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListLabelingJobs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListLabelingJobs::set_name_contains): <p>A string in the labeling job name. This filter returns only labeling jobs whose name contains the specified string.</p>
+    ///   - [`sort_by(SortBy)`](crate::client::fluent_builders::ListLabelingJobs::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::client::fluent_builders::ListLabelingJobs::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListLabelingJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListLabelingJobs::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    ///   - [`status_equals(LabelingJobStatus)`](crate::client::fluent_builders::ListLabelingJobs::status_equals) / [`set_status_equals(Option<LabelingJobStatus>)`](crate::client::fluent_builders::ListLabelingJobs::set_status_equals): <p>A filter that retrieves only labeling jobs with a specific status.</p>
     /// - On success, responds with [`ListLabelingJobsOutput`](crate::output::ListLabelingJobsOutput) with field(s):
     ///   - [`labeling_job_summary_list(Option<Vec<LabelingJobSummary>>)`](crate::output::ListLabelingJobsOutput::labeling_job_summary_list): <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLabelingJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
@@ -2997,17 +2997,17 @@ where
         fluent_builders::ListLabelingJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListLabelingJobsForWorkteam`](crate::client::fluent_builders::ListLabelingJobsForWorkteam) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::into_paginator).
     ///
-    /// - Takes [`ListLabelingJobsForWorkteamInput`](crate::input::ListLabelingJobsForWorkteamInput) with field(s):
-    ///   - [`workteam_arn(Option<String>)`](crate::input::ListLabelingJobsForWorkteamInput::workteam_arn): <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListLabelingJobsForWorkteamInput::max_results): <p>The maximum number of labeling jobs to return in each page of the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListLabelingJobsForWorkteamInput::next_token): <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListLabelingJobsForWorkteamInput::creation_time_after): <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListLabelingJobsForWorkteamInput::creation_time_before): <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
-    ///   - [`job_reference_code_contains(Option<String>)`](crate::input::ListLabelingJobsForWorkteamInput::job_reference_code_contains): <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
-    ///   - [`sort_by(Option<ListLabelingJobsForWorkteamSortByOptions>)`](crate::input::ListLabelingJobsForWorkteamInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListLabelingJobsForWorkteamInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`workteam_arn(impl Into<String>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::workteam_arn) / [`set_workteam_arn(Option<String>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::set_workteam_arn): <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::set_max_results): <p>The maximum number of labeling jobs to return in each page of the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::set_next_token): <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::set_creation_time_after): <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::set_creation_time_before): <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
+    ///   - [`job_reference_code_contains(impl Into<String>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::job_reference_code_contains) / [`set_job_reference_code_contains(Option<String>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::set_job_reference_code_contains): <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
+    ///   - [`sort_by(ListLabelingJobsForWorkteamSortByOptions)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::sort_by) / [`set_sort_by(Option<ListLabelingJobsForWorkteamSortByOptions>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListLabelingJobsForWorkteamOutput`](crate::output::ListLabelingJobsForWorkteamOutput) with field(s):
     ///   - [`labeling_job_summary_list(Option<Vec<LabelingJobForWorkteamSummary>>)`](crate::output::ListLabelingJobsForWorkteamOutput::labeling_job_summary_list): <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLabelingJobsForWorkteamOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
@@ -3018,15 +3018,15 @@ where
         fluent_builders::ListLabelingJobsForWorkteam::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListLineageGroups`](crate::client::fluent_builders::ListLineageGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLineageGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLineageGroups::into_paginator).
     ///
-    /// - Takes [`ListLineageGroupsInput`](crate::input::ListLineageGroupsInput) with field(s):
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListLineageGroupsInput::created_after): <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListLineageGroupsInput::created_before): <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
-    ///   - [`sort_by(Option<SortLineageGroupsBy>)`](crate::input::ListLineageGroupsInput::sort_by): <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListLineageGroupsInput::sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListLineageGroupsInput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListLineageGroupsInput::max_results): <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListLineageGroups::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListLineageGroups::set_created_after): <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListLineageGroups::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListLineageGroups::set_created_before): <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
+    ///   - [`sort_by(SortLineageGroupsBy)`](crate::client::fluent_builders::ListLineageGroups::sort_by) / [`set_sort_by(Option<SortLineageGroupsBy>)`](crate::client::fluent_builders::ListLineageGroups::set_sort_by): <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListLineageGroups::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListLineageGroups::set_sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLineageGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLineageGroups::set_next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLineageGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLineageGroups::set_max_results): <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
     /// - On success, responds with [`ListLineageGroupsOutput`](crate::output::ListLineageGroupsOutput) with field(s):
     ///   - [`lineage_group_summaries(Option<Vec<LineageGroupSummary>>)`](crate::output::ListLineageGroupsOutput::lineage_group_summaries): <p>A list of lineage groups and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLineageGroupsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
@@ -3035,17 +3035,17 @@ where
         fluent_builders::ListLineageGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListModelBiasJobDefinitions`](crate::client::fluent_builders::ListModelBiasJobDefinitions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelBiasJobDefinitions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelBiasJobDefinitions::into_paginator).
     ///
-    /// - Takes [`ListModelBiasJobDefinitionsInput`](crate::input::ListModelBiasJobDefinitionsInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::ListModelBiasJobDefinitionsInput::endpoint_name): <p>Name of the endpoint to monitor for model bias.</p>
-    ///   - [`sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::input::ListModelBiasJobDefinitionsInput::sort_by): <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListModelBiasJobDefinitionsInput::sort_order): <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListModelBiasJobDefinitionsInput::next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListModelBiasJobDefinitionsInput::max_results): <p>The maximum number of model bias jobs to return in the response. The default value is 10.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListModelBiasJobDefinitionsInput::name_contains): <p>Filter for model bias jobs whose name contains a specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListModelBiasJobDefinitionsInput::creation_time_before): <p>A filter that returns only model bias jobs created before a specified time.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListModelBiasJobDefinitionsInput::creation_time_after): <p>A filter that returns only model bias jobs created after a specified time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::set_endpoint_name): <p>Name of the endpoint to monitor for model bias.</p>
+    ///   - [`sort_by(MonitoringJobDefinitionSortKey)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::sort_by) / [`set_sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::set_sort_by): <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::set_sort_order): <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::set_next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::set_max_results): <p>The maximum number of model bias jobs to return in the response. The default value is 10.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::set_name_contains): <p>Filter for model bias jobs whose name contains a specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::set_creation_time_before): <p>A filter that returns only model bias jobs created before a specified time.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModelBiasJobDefinitions::set_creation_time_after): <p>A filter that returns only model bias jobs created after a specified time.</p>
     /// - On success, responds with [`ListModelBiasJobDefinitionsOutput`](crate::output::ListModelBiasJobDefinitionsOutput) with field(s):
     ///   - [`job_definition_summaries(Option<Vec<MonitoringJobDefinitionSummary>>)`](crate::output::ListModelBiasJobDefinitionsOutput::job_definition_summaries): <p>A JSON array in which each element is a summary for a model bias jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListModelBiasJobDefinitionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
@@ -3056,17 +3056,17 @@ where
         fluent_builders::ListModelBiasJobDefinitions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListModelExplainabilityJobDefinitions`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::into_paginator).
     ///
-    /// - Takes [`ListModelExplainabilityJobDefinitionsInput`](crate::input::ListModelExplainabilityJobDefinitionsInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::ListModelExplainabilityJobDefinitionsInput::endpoint_name): <p>Name of the endpoint to monitor for model explainability.</p>
-    ///   - [`sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::input::ListModelExplainabilityJobDefinitionsInput::sort_by): <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListModelExplainabilityJobDefinitionsInput::sort_order): <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListModelExplainabilityJobDefinitionsInput::next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListModelExplainabilityJobDefinitionsInput::max_results): <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListModelExplainabilityJobDefinitionsInput::name_contains): <p>Filter for model explainability jobs whose name contains a specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListModelExplainabilityJobDefinitionsInput::creation_time_before): <p>A filter that returns only model explainability jobs created before a specified time.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListModelExplainabilityJobDefinitionsInput::creation_time_after): <p>A filter that returns only model explainability jobs created after a specified time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::set_endpoint_name): <p>Name of the endpoint to monitor for model explainability.</p>
+    ///   - [`sort_by(MonitoringJobDefinitionSortKey)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::sort_by) / [`set_sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::set_sort_by): <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::set_sort_order): <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::set_next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::set_max_results): <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::set_name_contains): <p>Filter for model explainability jobs whose name contains a specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::set_creation_time_before): <p>A filter that returns only model explainability jobs created before a specified time.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::set_creation_time_after): <p>A filter that returns only model explainability jobs created after a specified time.</p>
     /// - On success, responds with [`ListModelExplainabilityJobDefinitionsOutput`](crate::output::ListModelExplainabilityJobDefinitionsOutput) with field(s):
     ///   - [`job_definition_summaries(Option<Vec<MonitoringJobDefinitionSummary>>)`](crate::output::ListModelExplainabilityJobDefinitionsOutput::job_definition_summaries): <p>A JSON array in which each element is a summary for a explainability bias jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListModelExplainabilityJobDefinitionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
@@ -3077,12 +3077,12 @@ where
         fluent_builders::ListModelExplainabilityJobDefinitions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListModelMetadata`](crate::client::fluent_builders::ListModelMetadata) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelMetadata::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelMetadata::into_paginator).
     ///
-    /// - Takes [`ListModelMetadataInput`](crate::input::ListModelMetadataInput) with field(s):
-    ///   - [`search_expression(Option<ModelMetadataSearchExpression>)`](crate::input::ListModelMetadataInput::search_expression): <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListModelMetadataInput::next_token): <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListModelMetadataInput::max_results): <p>The maximum number of models to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`search_expression(ModelMetadataSearchExpression)`](crate::client::fluent_builders::ListModelMetadata::search_expression) / [`set_search_expression(Option<ModelMetadataSearchExpression>)`](crate::client::fluent_builders::ListModelMetadata::set_search_expression): <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelMetadata::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelMetadata::set_next_token): <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModelMetadata::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModelMetadata::set_max_results): <p>The maximum number of models to return in the response.</p>
     /// - On success, responds with [`ListModelMetadataOutput`](crate::output::ListModelMetadataOutput) with field(s):
     ///   - [`model_metadata_summaries(Option<Vec<ModelMetadataSummary>>)`](crate::output::ListModelMetadataOutput::model_metadata_summaries): <p>A structure that holds model metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListModelMetadataOutput::next_token): <p>A token for getting the next set of recommendations, if there are any.</p>
@@ -3091,16 +3091,16 @@ where
         fluent_builders::ListModelMetadata::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListModelPackageGroups`](crate::client::fluent_builders::ListModelPackageGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelPackageGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelPackageGroups::into_paginator).
     ///
-    /// - Takes [`ListModelPackageGroupsInput`](crate::input::ListModelPackageGroupsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListModelPackageGroupsInput::creation_time_after): <p>A filter that returns only model groups created after the specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListModelPackageGroupsInput::creation_time_before): <p>A filter that returns only model groups created before the specified time.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListModelPackageGroupsInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListModelPackageGroupsInput::name_contains): <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListModelPackageGroupsInput::next_token): <p>If the result of the previous <code>ListModelPackageGroups</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model groups, use the token in the next request.</p>
-    ///   - [`sort_by(Option<ModelPackageGroupSortBy>)`](crate::input::ListModelPackageGroupsInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListModelPackageGroupsInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModelPackageGroups::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModelPackageGroups::set_creation_time_after): <p>A filter that returns only model groups created after the specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListModelPackageGroups::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListModelPackageGroups::set_creation_time_before): <p>A filter that returns only model groups created before the specified time.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModelPackageGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModelPackageGroups::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListModelPackageGroups::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListModelPackageGroups::set_name_contains): <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelPackageGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelPackageGroups::set_next_token): <p>If the result of the previous <code>ListModelPackageGroups</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model groups, use the token in the next request.</p>
+    ///   - [`sort_by(ModelPackageGroupSortBy)`](crate::client::fluent_builders::ListModelPackageGroups::sort_by) / [`set_sort_by(Option<ModelPackageGroupSortBy>)`](crate::client::fluent_builders::ListModelPackageGroups::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListModelPackageGroups::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListModelPackageGroups::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListModelPackageGroupsOutput`](crate::output::ListModelPackageGroupsOutput) with field(s):
     ///   - [`model_package_group_summary_list(Option<Vec<ModelPackageGroupSummary>>)`](crate::output::ListModelPackageGroupsOutput::model_package_group_summary_list): <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListModelPackageGroupsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model groups, use it in the subsequent request.</p>
@@ -3109,19 +3109,19 @@ where
         fluent_builders::ListModelPackageGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListModelPackages`](crate::client::fluent_builders::ListModelPackages) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelPackages::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelPackages::into_paginator).
     ///
-    /// - Takes [`ListModelPackagesInput`](crate::input::ListModelPackagesInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListModelPackagesInput::creation_time_after): <p>A filter that returns only model packages created after the specified time (timestamp).</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListModelPackagesInput::creation_time_before): <p>A filter that returns only model packages created before the specified time (timestamp).</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListModelPackagesInput::max_results): <p>The maximum number of model packages to return in the response.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListModelPackagesInput::name_contains): <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
-    ///   - [`model_approval_status(Option<ModelApprovalStatus>)`](crate::input::ListModelPackagesInput::model_approval_status): <p>A filter that returns only the model packages with the specified approval status.</p>
-    ///   - [`model_package_group_name(Option<String>)`](crate::input::ListModelPackagesInput::model_package_group_name): <p>A filter that returns only model versions that belong to the specified model group.</p>
-    ///   - [`model_package_type(Option<ModelPackageType>)`](crate::input::ListModelPackagesInput::model_package_type): <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>  <ul>   <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>   <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>   <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>  </ul>
-    ///   - [`next_token(Option<String>)`](crate::input::ListModelPackagesInput::next_token): <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
-    ///   - [`sort_by(Option<ModelPackageSortBy>)`](crate::input::ListModelPackagesInput::sort_by): <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListModelPackagesInput::sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModelPackages::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModelPackages::set_creation_time_after): <p>A filter that returns only model packages created after the specified time (timestamp).</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListModelPackages::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListModelPackages::set_creation_time_before): <p>A filter that returns only model packages created before the specified time (timestamp).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModelPackages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModelPackages::set_max_results): <p>The maximum number of model packages to return in the response.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListModelPackages::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListModelPackages::set_name_contains): <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
+    ///   - [`model_approval_status(ModelApprovalStatus)`](crate::client::fluent_builders::ListModelPackages::model_approval_status) / [`set_model_approval_status(Option<ModelApprovalStatus>)`](crate::client::fluent_builders::ListModelPackages::set_model_approval_status): <p>A filter that returns only the model packages with the specified approval status.</p>
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::ListModelPackages::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::ListModelPackages::set_model_package_group_name): <p>A filter that returns only model versions that belong to the specified model group.</p>
+    ///   - [`model_package_type(ModelPackageType)`](crate::client::fluent_builders::ListModelPackages::model_package_type) / [`set_model_package_type(Option<ModelPackageType>)`](crate::client::fluent_builders::ListModelPackages::set_model_package_type): <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>  <ul>   <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>   <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>   <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelPackages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelPackages::set_next_token): <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
+    ///   - [`sort_by(ModelPackageSortBy)`](crate::client::fluent_builders::ListModelPackages::sort_by) / [`set_sort_by(Option<ModelPackageSortBy>)`](crate::client::fluent_builders::ListModelPackages::set_sort_by): <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListModelPackages::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListModelPackages::set_sort_order): <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListModelPackagesOutput`](crate::output::ListModelPackagesOutput) with field(s):
     ///   - [`model_package_summary_list(Option<Vec<ModelPackageSummary>>)`](crate::output::ListModelPackagesOutput::model_package_summary_list): <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListModelPackagesOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
@@ -3130,17 +3130,17 @@ where
         fluent_builders::ListModelPackages::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListModelQualityJobDefinitions`](crate::client::fluent_builders::ListModelQualityJobDefinitions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelQualityJobDefinitions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModelQualityJobDefinitions::into_paginator).
     ///
-    /// - Takes [`ListModelQualityJobDefinitionsInput`](crate::input::ListModelQualityJobDefinitionsInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::ListModelQualityJobDefinitionsInput::endpoint_name): <p>A filter that returns only model quality monitoring job definitions that are associated with the specified endpoint.</p>
-    ///   - [`sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::input::ListModelQualityJobDefinitionsInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListModelQualityJobDefinitionsInput::sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListModelQualityJobDefinitionsInput::next_token): <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model quality monitoring job definitions, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListModelQualityJobDefinitionsInput::max_results): <p>The maximum number of results to return in a call to <code>ListModelQualityJobDefinitions</code>.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListModelQualityJobDefinitionsInput::name_contains): <p>A string in the transform job name. This filter returns only model quality monitoring job definitions whose name contains the specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListModelQualityJobDefinitionsInput::creation_time_before): <p>A filter that returns only model quality monitoring job definitions created before the specified time.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListModelQualityJobDefinitionsInput::creation_time_after): <p>A filter that returns only model quality monitoring job definitions created after the specified time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::set_endpoint_name): <p>A filter that returns only model quality monitoring job definitions that are associated with the specified endpoint.</p>
+    ///   - [`sort_by(MonitoringJobDefinitionSortKey)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::sort_by) / [`set_sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::set_sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::set_next_token): <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model quality monitoring job definitions, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::set_max_results): <p>The maximum number of results to return in a call to <code>ListModelQualityJobDefinitions</code>.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::set_name_contains): <p>A string in the transform job name. This filter returns only model quality monitoring job definitions whose name contains the specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::set_creation_time_before): <p>A filter that returns only model quality monitoring job definitions created before the specified time.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModelQualityJobDefinitions::set_creation_time_after): <p>A filter that returns only model quality monitoring job definitions created after the specified time.</p>
     /// - On success, responds with [`ListModelQualityJobDefinitionsOutput`](crate::output::ListModelQualityJobDefinitionsOutput) with field(s):
     ///   - [`job_definition_summaries(Option<Vec<MonitoringJobDefinitionSummary>>)`](crate::output::ListModelQualityJobDefinitionsOutput::job_definition_summaries): <p>A list of summaries of model quality monitoring job definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListModelQualityJobDefinitionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model quality monitoring job definitions, use it in the next request.</p>
@@ -3151,16 +3151,16 @@ where
         fluent_builders::ListModelQualityJobDefinitions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListModels`](crate::client::fluent_builders::ListModels) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModels::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListModels::into_paginator).
     ///
-    /// - Takes [`ListModelsInput`](crate::input::ListModelsInput) with field(s):
-    ///   - [`sort_by(Option<ModelSortKey>)`](crate::input::ListModelsInput::sort_by): <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<OrderKey>)`](crate::input::ListModelsInput::sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListModelsInput::next_token): <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListModelsInput::max_results): <p>The maximum number of models to return in the response.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListModelsInput::name_contains): <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListModelsInput::creation_time_before): <p>A filter that returns only models created before the specified time (timestamp).</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListModelsInput::creation_time_after): <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sort_by(ModelSortKey)`](crate::client::fluent_builders::ListModels::sort_by) / [`set_sort_by(Option<ModelSortKey>)`](crate::client::fluent_builders::ListModels::set_sort_by): <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(OrderKey)`](crate::client::fluent_builders::ListModels::sort_order) / [`set_sort_order(Option<OrderKey>)`](crate::client::fluent_builders::ListModels::set_sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListModels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListModels::set_next_token): <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListModels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListModels::set_max_results): <p>The maximum number of models to return in the response.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListModels::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListModels::set_name_contains): <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListModels::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListModels::set_creation_time_before): <p>A filter that returns only models created before the specified time (timestamp).</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListModels::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListModels::set_creation_time_after): <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
     /// - On success, responds with [`ListModelsOutput`](crate::output::ListModelsOutput) with field(s):
     ///   - [`models(Option<Vec<ModelSummary>>)`](crate::output::ListModelsOutput::models): <p>An array of <code>ModelSummary</code> objects, each of which lists a model.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListModelsOutput::next_token): <p> If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
@@ -3169,24 +3169,24 @@ where
         fluent_builders::ListModels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMonitoringExecutions`](crate::client::fluent_builders::ListMonitoringExecutions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMonitoringExecutions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMonitoringExecutions::into_paginator).
     ///
-    /// - Takes [`ListMonitoringExecutionsInput`](crate::input::ListMonitoringExecutionsInput) with field(s):
-    ///   - [`monitoring_schedule_name(Option<String>)`](crate::input::ListMonitoringExecutionsInput::monitoring_schedule_name): <p>Name of a specific schedule to fetch jobs for.</p>
-    ///   - [`endpoint_name(Option<String>)`](crate::input::ListMonitoringExecutionsInput::endpoint_name): <p>Name of a specific endpoint to fetch jobs for.</p>
-    ///   - [`sort_by(Option<MonitoringExecutionSortKey>)`](crate::input::ListMonitoringExecutionsInput::sort_by): <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListMonitoringExecutionsInput::sort_order): <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListMonitoringExecutionsInput::next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListMonitoringExecutionsInput::max_results): <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-    ///   - [`scheduled_time_before(Option<DateTime>)`](crate::input::ListMonitoringExecutionsInput::scheduled_time_before): <p>Filter for jobs scheduled before a specified time.</p>
-    ///   - [`scheduled_time_after(Option<DateTime>)`](crate::input::ListMonitoringExecutionsInput::scheduled_time_after): <p>Filter for jobs scheduled after a specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListMonitoringExecutionsInput::creation_time_before): <p>A filter that returns only jobs created before a specified time.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListMonitoringExecutionsInput::creation_time_after): <p>A filter that returns only jobs created after a specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListMonitoringExecutionsInput::last_modified_time_before): <p>A filter that returns only jobs modified after a specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListMonitoringExecutionsInput::last_modified_time_after): <p>A filter that returns only jobs modified before a specified time.</p>
-    ///   - [`status_equals(Option<ExecutionStatus>)`](crate::input::ListMonitoringExecutionsInput::status_equals): <p>A filter that retrieves only jobs with a specific status.</p>
-    ///   - [`monitoring_job_definition_name(Option<String>)`](crate::input::ListMonitoringExecutionsInput::monitoring_job_definition_name): <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
-    ///   - [`monitoring_type_equals(Option<MonitoringType>)`](crate::input::ListMonitoringExecutionsInput::monitoring_type_equals): <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringExecutions::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_monitoring_schedule_name): <p>Name of a specific schedule to fetch jobs for.</p>
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringExecutions::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_endpoint_name): <p>Name of a specific endpoint to fetch jobs for.</p>
+    ///   - [`sort_by(MonitoringExecutionSortKey)`](crate::client::fluent_builders::ListMonitoringExecutions::sort_by) / [`set_sort_by(Option<MonitoringExecutionSortKey>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_sort_by): <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListMonitoringExecutions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_sort_order): <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMonitoringExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_max_results): <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    ///   - [`scheduled_time_before(DateTime)`](crate::client::fluent_builders::ListMonitoringExecutions::scheduled_time_before) / [`set_scheduled_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_scheduled_time_before): <p>Filter for jobs scheduled before a specified time.</p>
+    ///   - [`scheduled_time_after(DateTime)`](crate::client::fluent_builders::ListMonitoringExecutions::scheduled_time_after) / [`set_scheduled_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_scheduled_time_after): <p>Filter for jobs scheduled after a specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListMonitoringExecutions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_creation_time_before): <p>A filter that returns only jobs created before a specified time.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListMonitoringExecutions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_creation_time_after): <p>A filter that returns only jobs created after a specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListMonitoringExecutions::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_last_modified_time_before): <p>A filter that returns only jobs modified after a specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListMonitoringExecutions::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_last_modified_time_after): <p>A filter that returns only jobs modified before a specified time.</p>
+    ///   - [`status_equals(ExecutionStatus)`](crate::client::fluent_builders::ListMonitoringExecutions::status_equals) / [`set_status_equals(Option<ExecutionStatus>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_status_equals): <p>A filter that retrieves only jobs with a specific status.</p>
+    ///   - [`monitoring_job_definition_name(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringExecutions::monitoring_job_definition_name) / [`set_monitoring_job_definition_name(Option<String>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_monitoring_job_definition_name): <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
+    ///   - [`monitoring_type_equals(MonitoringType)`](crate::client::fluent_builders::ListMonitoringExecutions::monitoring_type_equals) / [`set_monitoring_type_equals(Option<MonitoringType>)`](crate::client::fluent_builders::ListMonitoringExecutions::set_monitoring_type_equals): <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
     /// - On success, responds with [`ListMonitoringExecutionsOutput`](crate::output::ListMonitoringExecutionsOutput) with field(s):
     ///   - [`monitoring_execution_summaries(Option<Vec<MonitoringExecutionSummary>>)`](crate::output::ListMonitoringExecutionsOutput::monitoring_execution_summaries): <p>A JSON array in which each element is a summary for a monitoring execution.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMonitoringExecutionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent reques</p>
@@ -3195,22 +3195,22 @@ where
         fluent_builders::ListMonitoringExecutions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMonitoringSchedules`](crate::client::fluent_builders::ListMonitoringSchedules) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMonitoringSchedules::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMonitoringSchedules::into_paginator).
     ///
-    /// - Takes [`ListMonitoringSchedulesInput`](crate::input::ListMonitoringSchedulesInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::ListMonitoringSchedulesInput::endpoint_name): <p>Name of a specific endpoint to fetch schedules for.</p>
-    ///   - [`sort_by(Option<MonitoringScheduleSortKey>)`](crate::input::ListMonitoringSchedulesInput::sort_by): <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListMonitoringSchedulesInput::sort_order): <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListMonitoringSchedulesInput::next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListMonitoringSchedulesInput::max_results): <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListMonitoringSchedulesInput::name_contains): <p>Filter for monitoring schedules whose name contains a specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListMonitoringSchedulesInput::creation_time_before): <p>A filter that returns only monitoring schedules created before a specified time.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListMonitoringSchedulesInput::creation_time_after): <p>A filter that returns only monitoring schedules created after a specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListMonitoringSchedulesInput::last_modified_time_before): <p>A filter that returns only monitoring schedules modified before a specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListMonitoringSchedulesInput::last_modified_time_after): <p>A filter that returns only monitoring schedules modified after a specified time.</p>
-    ///   - [`status_equals(Option<ScheduleStatus>)`](crate::input::ListMonitoringSchedulesInput::status_equals): <p>A filter that returns only monitoring schedules modified before a specified time.</p>
-    ///   - [`monitoring_job_definition_name(Option<String>)`](crate::input::ListMonitoringSchedulesInput::monitoring_job_definition_name): <p>Gets a list of the monitoring schedules for the specified monitoring job definition.</p>
-    ///   - [`monitoring_type_equals(Option<MonitoringType>)`](crate::input::ListMonitoringSchedulesInput::monitoring_type_equals): <p>A filter that returns only the monitoring schedules for the specified monitoring type.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringSchedules::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_endpoint_name): <p>Name of a specific endpoint to fetch schedules for.</p>
+    ///   - [`sort_by(MonitoringScheduleSortKey)`](crate::client::fluent_builders::ListMonitoringSchedules::sort_by) / [`set_sort_by(Option<MonitoringScheduleSortKey>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_sort_by): <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListMonitoringSchedules::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_sort_order): <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringSchedules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMonitoringSchedules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_max_results): <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringSchedules::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_name_contains): <p>Filter for monitoring schedules whose name contains a specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListMonitoringSchedules::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_creation_time_before): <p>A filter that returns only monitoring schedules created before a specified time.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListMonitoringSchedules::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_creation_time_after): <p>A filter that returns only monitoring schedules created after a specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListMonitoringSchedules::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_last_modified_time_before): <p>A filter that returns only monitoring schedules modified before a specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListMonitoringSchedules::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_last_modified_time_after): <p>A filter that returns only monitoring schedules modified after a specified time.</p>
+    ///   - [`status_equals(ScheduleStatus)`](crate::client::fluent_builders::ListMonitoringSchedules::status_equals) / [`set_status_equals(Option<ScheduleStatus>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_status_equals): <p>A filter that returns only monitoring schedules modified before a specified time.</p>
+    ///   - [`monitoring_job_definition_name(impl Into<String>)`](crate::client::fluent_builders::ListMonitoringSchedules::monitoring_job_definition_name) / [`set_monitoring_job_definition_name(Option<String>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_monitoring_job_definition_name): <p>Gets a list of the monitoring schedules for the specified monitoring job definition.</p>
+    ///   - [`monitoring_type_equals(MonitoringType)`](crate::client::fluent_builders::ListMonitoringSchedules::monitoring_type_equals) / [`set_monitoring_type_equals(Option<MonitoringType>)`](crate::client::fluent_builders::ListMonitoringSchedules::set_monitoring_type_equals): <p>A filter that returns only the monitoring schedules for the specified monitoring type.</p>
     /// - On success, responds with [`ListMonitoringSchedulesOutput`](crate::output::ListMonitoringSchedulesOutput) with field(s):
     ///   - [`monitoring_schedule_summaries(Option<Vec<MonitoringScheduleSummary>>)`](crate::output::ListMonitoringSchedulesOutput::monitoring_schedule_summaries): <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMonitoringSchedulesOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
@@ -3219,18 +3219,18 @@ where
         fluent_builders::ListMonitoringSchedules::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListNotebookInstanceLifecycleConfigs`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::into_paginator).
     ///
-    /// - Takes [`ListNotebookInstanceLifecycleConfigsInput`](crate::input::ListNotebookInstanceLifecycleConfigsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListNotebookInstanceLifecycleConfigsInput::next_token): <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListNotebookInstanceLifecycleConfigsInput::max_results): <p>The maximum number of lifecycle configurations to return in the response.</p>
-    ///   - [`sort_by(Option<NotebookInstanceLifecycleConfigSortKey>)`](crate::input::ListNotebookInstanceLifecycleConfigsInput::sort_by): <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<NotebookInstanceLifecycleConfigSortOrder>)`](crate::input::ListNotebookInstanceLifecycleConfigsInput::sort_order): <p>The sort order for results.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListNotebookInstanceLifecycleConfigsInput::name_contains): <p>A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListNotebookInstanceLifecycleConfigsInput::creation_time_before): <p>A filter that returns only lifecycle configurations that were created before the specified time (timestamp).</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListNotebookInstanceLifecycleConfigsInput::creation_time_after): <p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListNotebookInstanceLifecycleConfigsInput::last_modified_time_before): <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListNotebookInstanceLifecycleConfigsInput::last_modified_time_after): <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_next_token): <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_max_results): <p>The maximum number of lifecycle configurations to return in the response.</p>
+    ///   - [`sort_by(NotebookInstanceLifecycleConfigSortKey)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::sort_by) / [`set_sort_by(Option<NotebookInstanceLifecycleConfigSortKey>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_sort_by): <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(NotebookInstanceLifecycleConfigSortOrder)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::sort_order) / [`set_sort_order(Option<NotebookInstanceLifecycleConfigSortOrder>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_sort_order): <p>The sort order for results.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_name_contains): <p>A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_creation_time_before): <p>A filter that returns only lifecycle configurations that were created before the specified time (timestamp).</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_creation_time_after): <p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_last_modified_time_before): <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::set_last_modified_time_after): <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
     /// - On success, responds with [`ListNotebookInstanceLifecycleConfigsOutput`](crate::output::ListNotebookInstanceLifecycleConfigsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListNotebookInstanceLifecycleConfigsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
     ///   - [`notebook_instance_lifecycle_configs(Option<Vec<NotebookInstanceLifecycleConfigSummary>>)`](crate::output::ListNotebookInstanceLifecycleConfigsOutput::notebook_instance_lifecycle_configs): <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
@@ -3241,22 +3241,22 @@ where
         fluent_builders::ListNotebookInstanceLifecycleConfigs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListNotebookInstances`](crate::client::fluent_builders::ListNotebookInstances) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotebookInstances::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNotebookInstances::into_paginator).
     ///
-    /// - Takes [`ListNotebookInstancesInput`](crate::input::ListNotebookInstancesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListNotebookInstancesInput::next_token): <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>   <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>  </note>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListNotebookInstancesInput::max_results): <p>The maximum number of notebook instances to return.</p>
-    ///   - [`sort_by(Option<NotebookInstanceSortKey>)`](crate::input::ListNotebookInstancesInput::sort_by): <p>The field to sort results by. The default is <code>Name</code>.</p>
-    ///   - [`sort_order(Option<NotebookInstanceSortOrder>)`](crate::input::ListNotebookInstancesInput::sort_order): <p>The sort order for results. </p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListNotebookInstancesInput::name_contains): <p>A string in the notebook instances' name. This filter returns only notebook instances whose name contains the specified string.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListNotebookInstancesInput::creation_time_before): <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListNotebookInstancesInput::creation_time_after): <p>A filter that returns only notebook instances that were created after the specified time (timestamp).</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListNotebookInstancesInput::last_modified_time_before): <p>A filter that returns only notebook instances that were modified before the specified time (timestamp).</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListNotebookInstancesInput::last_modified_time_after): <p>A filter that returns only notebook instances that were modified after the specified time (timestamp).</p>
-    ///   - [`status_equals(Option<NotebookInstanceStatus>)`](crate::input::ListNotebookInstancesInput::status_equals): <p>A filter that returns only notebook instances with the specified status.</p>
-    ///   - [`notebook_instance_lifecycle_config_name_contains(Option<String>)`](crate::input::ListNotebookInstancesInput::notebook_instance_lifecycle_config_name_contains): <p>A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.</p>
-    ///   - [`default_code_repository_contains(Option<String>)`](crate::input::ListNotebookInstancesInput::default_code_repository_contains): <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
-    ///   - [`additional_code_repository_equals(Option<String>)`](crate::input::ListNotebookInstancesInput::additional_code_repository_equals): <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNotebookInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNotebookInstances::set_next_token): <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>   <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>  </note>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNotebookInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNotebookInstances::set_max_results): <p>The maximum number of notebook instances to return.</p>
+    ///   - [`sort_by(NotebookInstanceSortKey)`](crate::client::fluent_builders::ListNotebookInstances::sort_by) / [`set_sort_by(Option<NotebookInstanceSortKey>)`](crate::client::fluent_builders::ListNotebookInstances::set_sort_by): <p>The field to sort results by. The default is <code>Name</code>.</p>
+    ///   - [`sort_order(NotebookInstanceSortOrder)`](crate::client::fluent_builders::ListNotebookInstances::sort_order) / [`set_sort_order(Option<NotebookInstanceSortOrder>)`](crate::client::fluent_builders::ListNotebookInstances::set_sort_order): <p>The sort order for results. </p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListNotebookInstances::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListNotebookInstances::set_name_contains): <p>A string in the notebook instances' name. This filter returns only notebook instances whose name contains the specified string.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListNotebookInstances::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstances::set_creation_time_before): <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListNotebookInstances::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstances::set_creation_time_after): <p>A filter that returns only notebook instances that were created after the specified time (timestamp).</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListNotebookInstances::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstances::set_last_modified_time_before): <p>A filter that returns only notebook instances that were modified before the specified time (timestamp).</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListNotebookInstances::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookInstances::set_last_modified_time_after): <p>A filter that returns only notebook instances that were modified after the specified time (timestamp).</p>
+    ///   - [`status_equals(NotebookInstanceStatus)`](crate::client::fluent_builders::ListNotebookInstances::status_equals) / [`set_status_equals(Option<NotebookInstanceStatus>)`](crate::client::fluent_builders::ListNotebookInstances::set_status_equals): <p>A filter that returns only notebook instances with the specified status.</p>
+    ///   - [`notebook_instance_lifecycle_config_name_contains(impl Into<String>)`](crate::client::fluent_builders::ListNotebookInstances::notebook_instance_lifecycle_config_name_contains) / [`set_notebook_instance_lifecycle_config_name_contains(Option<String>)`](crate::client::fluent_builders::ListNotebookInstances::set_notebook_instance_lifecycle_config_name_contains): <p>A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.</p>
+    ///   - [`default_code_repository_contains(impl Into<String>)`](crate::client::fluent_builders::ListNotebookInstances::default_code_repository_contains) / [`set_default_code_repository_contains(Option<String>)`](crate::client::fluent_builders::ListNotebookInstances::set_default_code_repository_contains): <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
+    ///   - [`additional_code_repository_equals(impl Into<String>)`](crate::client::fluent_builders::ListNotebookInstances::additional_code_repository_equals) / [`set_additional_code_repository_equals(Option<String>)`](crate::client::fluent_builders::ListNotebookInstances::set_additional_code_repository_equals): <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
     /// - On success, responds with [`ListNotebookInstancesOutput`](crate::output::ListNotebookInstancesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListNotebookInstancesOutput::next_token): <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, Amazon SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
     ///   - [`notebook_instances(Option<Vec<NotebookInstanceSummary>>)`](crate::output::ListNotebookInstancesOutput::notebook_instances): <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
@@ -3265,16 +3265,16 @@ where
         fluent_builders::ListNotebookInstances::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPipelineExecutions`](crate::client::fluent_builders::ListPipelineExecutions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelineExecutions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPipelineExecutions::into_paginator).
     ///
-    /// - Takes [`ListPipelineExecutionsInput`](crate::input::ListPipelineExecutionsInput) with field(s):
-    ///   - [`pipeline_name(Option<String>)`](crate::input::ListPipelineExecutionsInput::pipeline_name): <p>The name of the pipeline.</p>
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListPipelineExecutionsInput::created_after): <p>A filter that returns the pipeline executions that were created after a specified time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListPipelineExecutionsInput::created_before): <p>A filter that returns the pipeline executions that were created before a specified time.</p>
-    ///   - [`sort_by(Option<SortPipelineExecutionsBy>)`](crate::input::ListPipelineExecutionsInput::sort_by): <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListPipelineExecutionsInput::sort_order): <p>The sort order for results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPipelineExecutionsInput::next_token): <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPipelineExecutionsInput::max_results): <p>The maximum number of pipeline executions to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::ListPipelineExecutions::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::ListPipelineExecutions::set_pipeline_name): <p>The name of the pipeline.</p>
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListPipelineExecutions::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListPipelineExecutions::set_created_after): <p>A filter that returns the pipeline executions that were created after a specified time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListPipelineExecutions::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListPipelineExecutions::set_created_before): <p>A filter that returns the pipeline executions that were created before a specified time.</p>
+    ///   - [`sort_by(SortPipelineExecutionsBy)`](crate::client::fluent_builders::ListPipelineExecutions::sort_by) / [`set_sort_by(Option<SortPipelineExecutionsBy>)`](crate::client::fluent_builders::ListPipelineExecutions::set_sort_by): <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListPipelineExecutions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListPipelineExecutions::set_sort_order): <p>The sort order for results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPipelineExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPipelineExecutions::set_next_token): <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPipelineExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPipelineExecutions::set_max_results): <p>The maximum number of pipeline executions to return in the response.</p>
     /// - On success, responds with [`ListPipelineExecutionsOutput`](crate::output::ListPipelineExecutionsOutput) with field(s):
     ///   - [`pipeline_execution_summaries(Option<Vec<PipelineExecutionSummary>>)`](crate::output::ListPipelineExecutionsOutput::pipeline_execution_summaries): <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPipelineExecutionsOutput::next_token): <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
@@ -3283,13 +3283,13 @@ where
         fluent_builders::ListPipelineExecutions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPipelineExecutionSteps`](crate::client::fluent_builders::ListPipelineExecutionSteps) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelineExecutionSteps::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPipelineExecutionSteps::into_paginator).
     ///
-    /// - Takes [`ListPipelineExecutionStepsInput`](crate::input::ListPipelineExecutionStepsInput) with field(s):
-    ///   - [`pipeline_execution_arn(Option<String>)`](crate::input::ListPipelineExecutionStepsInput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPipelineExecutionStepsInput::next_token): <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPipelineExecutionStepsInput::max_results): <p>The maximum number of pipeline execution steps to return in the response.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListPipelineExecutionStepsInput::sort_order): <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_execution_arn(impl Into<String>)`](crate::client::fluent_builders::ListPipelineExecutionSteps::pipeline_execution_arn) / [`set_pipeline_execution_arn(Option<String>)`](crate::client::fluent_builders::ListPipelineExecutionSteps::set_pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPipelineExecutionSteps::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPipelineExecutionSteps::set_next_token): <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPipelineExecutionSteps::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPipelineExecutionSteps::set_max_results): <p>The maximum number of pipeline execution steps to return in the response.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListPipelineExecutionSteps::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListPipelineExecutionSteps::set_sort_order): <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     /// - On success, responds with [`ListPipelineExecutionStepsOutput`](crate::output::ListPipelineExecutionStepsOutput) with field(s):
     ///   - [`pipeline_execution_steps(Option<Vec<PipelineExecutionStep>>)`](crate::output::ListPipelineExecutionStepsOutput::pipeline_execution_steps): <p>A list of <code>PipeLineExecutionStep</code> objects. Each <code>PipeLineExecutionStep</code> consists of StepName, StartTime, EndTime, StepStatus, and Metadata. Metadata is an object with properties for each job that contains relevant information about the job created by the step.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPipelineExecutionStepsOutput::next_token): <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
@@ -3300,12 +3300,12 @@ where
         fluent_builders::ListPipelineExecutionSteps::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPipelineParametersForExecution`](crate::client::fluent_builders::ListPipelineParametersForExecution) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelineParametersForExecution::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPipelineParametersForExecution::into_paginator).
     ///
-    /// - Takes [`ListPipelineParametersForExecutionInput`](crate::input::ListPipelineParametersForExecutionInput) with field(s):
-    ///   - [`pipeline_execution_arn(Option<String>)`](crate::input::ListPipelineParametersForExecutionInput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPipelineParametersForExecutionInput::next_token): <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPipelineParametersForExecutionInput::max_results): <p>The maximum number of parameters to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_execution_arn(impl Into<String>)`](crate::client::fluent_builders::ListPipelineParametersForExecution::pipeline_execution_arn) / [`set_pipeline_execution_arn(Option<String>)`](crate::client::fluent_builders::ListPipelineParametersForExecution::set_pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPipelineParametersForExecution::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPipelineParametersForExecution::set_next_token): <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPipelineParametersForExecution::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPipelineParametersForExecution::set_max_results): <p>The maximum number of parameters to return in the response.</p>
     /// - On success, responds with [`ListPipelineParametersForExecutionOutput`](crate::output::ListPipelineParametersForExecutionOutput) with field(s):
     ///   - [`pipeline_parameters(Option<Vec<Parameter>>)`](crate::output::ListPipelineParametersForExecutionOutput::pipeline_parameters): <p>Contains a list of pipeline parameters. This list can be empty. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPipelineParametersForExecutionOutput::next_token): <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
@@ -3316,16 +3316,16 @@ where
         fluent_builders::ListPipelineParametersForExecution::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPipelines`](crate::client::fluent_builders::ListPipelines) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
     ///
-    /// - Takes [`ListPipelinesInput`](crate::input::ListPipelinesInput) with field(s):
-    ///   - [`pipeline_name_prefix(Option<String>)`](crate::input::ListPipelinesInput::pipeline_name_prefix): <p>The prefix of the pipeline name.</p>
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListPipelinesInput::created_after): <p>A filter that returns the pipelines that were created after a specified time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListPipelinesInput::created_before): <p>A filter that returns the pipelines that were created before a specified time.</p>
-    ///   - [`sort_by(Option<SortPipelinesBy>)`](crate::input::ListPipelinesInput::sort_by): <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListPipelinesInput::sort_order): <p>The sort order for results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListPipelinesInput::next_token): <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListPipelinesInput::max_results): <p>The maximum number of pipelines to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPipelines::pipeline_name_prefix) / [`set_pipeline_name_prefix(Option<String>)`](crate::client::fluent_builders::ListPipelines::set_pipeline_name_prefix): <p>The prefix of the pipeline name.</p>
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListPipelines::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListPipelines::set_created_after): <p>A filter that returns the pipelines that were created after a specified time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListPipelines::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListPipelines::set_created_before): <p>A filter that returns the pipelines that were created before a specified time.</p>
+    ///   - [`sort_by(SortPipelinesBy)`](crate::client::fluent_builders::ListPipelines::sort_by) / [`set_sort_by(Option<SortPipelinesBy>)`](crate::client::fluent_builders::ListPipelines::set_sort_by): <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListPipelines::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListPipelines::set_sort_order): <p>The sort order for results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPipelines::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPipelines::set_next_token): <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPipelines::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPipelines::set_max_results): <p>The maximum number of pipelines to return in the response.</p>
     /// - On success, responds with [`ListPipelinesOutput`](crate::output::ListPipelinesOutput) with field(s):
     ///   - [`pipeline_summaries(Option<Vec<PipelineSummary>>)`](crate::output::ListPipelinesOutput::pipeline_summaries): <p>Contains a sorted list of <code>PipelineSummary</code> objects matching the specified filters. Each <code>PipelineSummary</code> consists of PipelineArn, PipelineName, ExperimentName, PipelineDescription, CreationTime, LastModifiedTime, LastRunTime, and RoleArn. This list can be empty. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPipelinesOutput::next_token): <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
@@ -3334,19 +3334,19 @@ where
         fluent_builders::ListPipelines::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProcessingJobs`](crate::client::fluent_builders::ListProcessingJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProcessingJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProcessingJobs::into_paginator).
     ///
-    /// - Takes [`ListProcessingJobsInput`](crate::input::ListProcessingJobsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListProcessingJobsInput::creation_time_after): <p>A filter that returns only processing jobs created after the specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListProcessingJobsInput::creation_time_before): <p>A filter that returns only processing jobs created after the specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListProcessingJobsInput::last_modified_time_after): <p>A filter that returns only processing jobs modified after the specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListProcessingJobsInput::last_modified_time_before): <p>A filter that returns only processing jobs modified before the specified time.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListProcessingJobsInput::name_contains): <p>A string in the processing job name. This filter returns only processing jobs whose name contains the specified string.</p>
-    ///   - [`status_equals(Option<ProcessingJobStatus>)`](crate::input::ListProcessingJobsInput::status_equals): <p>A filter that retrieves only processing jobs with a specific status.</p>
-    ///   - [`sort_by(Option<SortBy>)`](crate::input::ListProcessingJobsInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListProcessingJobsInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListProcessingJobsInput::next_token): <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of processing jobs, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProcessingJobsInput::max_results): <p>The maximum number of processing jobs to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListProcessingJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListProcessingJobs::set_creation_time_after): <p>A filter that returns only processing jobs created after the specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListProcessingJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListProcessingJobs::set_creation_time_before): <p>A filter that returns only processing jobs created after the specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListProcessingJobs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListProcessingJobs::set_last_modified_time_after): <p>A filter that returns only processing jobs modified after the specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListProcessingJobs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListProcessingJobs::set_last_modified_time_before): <p>A filter that returns only processing jobs modified before the specified time.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListProcessingJobs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListProcessingJobs::set_name_contains): <p>A string in the processing job name. This filter returns only processing jobs whose name contains the specified string.</p>
+    ///   - [`status_equals(ProcessingJobStatus)`](crate::client::fluent_builders::ListProcessingJobs::status_equals) / [`set_status_equals(Option<ProcessingJobStatus>)`](crate::client::fluent_builders::ListProcessingJobs::set_status_equals): <p>A filter that retrieves only processing jobs with a specific status.</p>
+    ///   - [`sort_by(SortBy)`](crate::client::fluent_builders::ListProcessingJobs::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::client::fluent_builders::ListProcessingJobs::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListProcessingJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListProcessingJobs::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProcessingJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProcessingJobs::set_next_token): <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of processing jobs, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProcessingJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProcessingJobs::set_max_results): <p>The maximum number of processing jobs to return in the response.</p>
     /// - On success, responds with [`ListProcessingJobsOutput`](crate::output::ListProcessingJobsOutput) with field(s):
     ///   - [`processing_job_summaries(Option<Vec<ProcessingJobSummary>>)`](crate::output::ListProcessingJobsOutput::processing_job_summaries): <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProcessingJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of processing jobs, use it in the subsequent request.</p>
@@ -3355,16 +3355,16 @@ where
         fluent_builders::ListProcessingJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     ///
-    /// - Takes [`ListProjectsInput`](crate::input::ListProjectsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListProjectsInput::creation_time_after): <p>A filter that returns the projects that were created after a specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListProjectsInput::creation_time_before): <p>A filter that returns the projects that were created before a specified time.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProjectsInput::max_results): <p>The maximum number of projects to return in the response.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListProjectsInput::name_contains): <p>A filter that returns the projects whose name contains a specified string.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListProjectsInput::next_token): <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
-    ///   - [`sort_by(Option<ProjectSortBy>)`](crate::input::ListProjectsInput::sort_by): <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<ProjectSortOrder>)`](crate::input::ListProjectsInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListProjects::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListProjects::set_creation_time_after): <p>A filter that returns the projects that were created after a specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListProjects::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListProjects::set_creation_time_before): <p>A filter that returns the projects that were created before a specified time.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProjects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProjects::set_max_results): <p>The maximum number of projects to return in the response.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListProjects::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListProjects::set_name_contains): <p>A filter that returns the projects whose name contains a specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProjects::set_next_token): <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
+    ///   - [`sort_by(ProjectSortBy)`](crate::client::fluent_builders::ListProjects::sort_by) / [`set_sort_by(Option<ProjectSortBy>)`](crate::client::fluent_builders::ListProjects::set_sort_by): <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(ProjectSortOrder)`](crate::client::fluent_builders::ListProjects::sort_order) / [`set_sort_order(Option<ProjectSortOrder>)`](crate::client::fluent_builders::ListProjects::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
     ///   - [`project_summary_list(Option<Vec<ProjectSummary>>)`](crate::output::ListProjectsOutput::project_summary_list): <p>A list of summaries of projects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
@@ -3373,19 +3373,19 @@ where
         fluent_builders::ListProjects::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListStudioLifecycleConfigs`](crate::client::fluent_builders::ListStudioLifecycleConfigs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStudioLifecycleConfigs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStudioLifecycleConfigs::into_paginator).
     ///
-    /// - Takes [`ListStudioLifecycleConfigsInput`](crate::input::ListStudioLifecycleConfigsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListStudioLifecycleConfigsInput::max_results): <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListStudioLifecycleConfigsInput::next_token): <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListStudioLifecycleConfigsInput::name_contains): <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
-    ///   - [`app_type_equals(Option<StudioLifecycleConfigAppType>)`](crate::input::ListStudioLifecycleConfigsInput::app_type_equals): <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListStudioLifecycleConfigsInput::creation_time_before): <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListStudioLifecycleConfigsInput::creation_time_after): <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
-    ///   - [`modified_time_before(Option<DateTime>)`](crate::input::ListStudioLifecycleConfigsInput::modified_time_before): <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
-    ///   - [`modified_time_after(Option<DateTime>)`](crate::input::ListStudioLifecycleConfigsInput::modified_time_after): <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
-    ///   - [`sort_by(Option<StudioLifecycleConfigSortKey>)`](crate::input::ListStudioLifecycleConfigsInput::sort_by): <p>The property used to sort results. The default value is CreationTime.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListStudioLifecycleConfigsInput::sort_order): <p>The sort order. The default value is Descending.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_max_results): <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_next_token): <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_name_contains): <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
+    ///   - [`app_type_equals(StudioLifecycleConfigAppType)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::app_type_equals) / [`set_app_type_equals(Option<StudioLifecycleConfigAppType>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_app_type_equals): <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_creation_time_before): <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_creation_time_after): <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
+    ///   - [`modified_time_before(DateTime)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::modified_time_before) / [`set_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_modified_time_before): <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
+    ///   - [`modified_time_after(DateTime)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::modified_time_after) / [`set_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_modified_time_after): <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
+    ///   - [`sort_by(StudioLifecycleConfigSortKey)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::sort_by) / [`set_sort_by(Option<StudioLifecycleConfigSortKey>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_sort_by): <p>The property used to sort results. The default value is CreationTime.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListStudioLifecycleConfigs::set_sort_order): <p>The sort order. The default value is Descending.</p>
     /// - On success, responds with [`ListStudioLifecycleConfigsOutput`](crate::output::ListStudioLifecycleConfigsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListStudioLifecycleConfigsOutput::next_token): <p>A token for getting the next set of actions, if there are any.</p>
     ///   - [`studio_lifecycle_configs(Option<Vec<StudioLifecycleConfigDetails>>)`](crate::output::ListStudioLifecycleConfigsOutput::studio_lifecycle_configs): <p>A list of Lifecycle Configurations and their properties.</p>
@@ -3396,12 +3396,12 @@ where
         fluent_builders::ListStudioLifecycleConfigs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSubscribedWorkteams`](crate::client::fluent_builders::ListSubscribedWorkteams) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSubscribedWorkteams::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSubscribedWorkteams::into_paginator).
     ///
-    /// - Takes [`ListSubscribedWorkteamsInput`](crate::input::ListSubscribedWorkteamsInput) with field(s):
-    ///   - [`name_contains(Option<String>)`](crate::input::ListSubscribedWorkteamsInput::name_contains): <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListSubscribedWorkteamsInput::next_token): <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListSubscribedWorkteamsInput::max_results): <p>The maximum number of work teams to return in each page of the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListSubscribedWorkteams::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListSubscribedWorkteams::set_name_contains): <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSubscribedWorkteams::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSubscribedWorkteams::set_next_token): <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSubscribedWorkteams::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSubscribedWorkteams::set_max_results): <p>The maximum number of work teams to return in each page of the response.</p>
     /// - On success, responds with [`ListSubscribedWorkteamsOutput`](crate::output::ListSubscribedWorkteamsOutput) with field(s):
     ///   - [`subscribed_workteams(Option<Vec<SubscribedWorkteam>>)`](crate::output::ListSubscribedWorkteamsOutput::subscribed_workteams): <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListSubscribedWorkteamsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of work teams, use it in the subsequent request.</p>
@@ -3410,12 +3410,12 @@ where
         fluent_builders::ListSubscribedWorkteams::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
     ///
-    /// - Takes [`ListTagsInput`](crate::input::ListTagsInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTagsInput::next_token): <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsInput::max_results): <p>Maximum number of tags to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTags::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTags::set_next_token): <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTags::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTags::set_max_results): <p>Maximum number of tags to return.</p>
     /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tags): <p>An array of <code>Tag</code> objects, each with a tag key and a value.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p> If response is truncated, Amazon SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
@@ -3424,19 +3424,19 @@ where
         fluent_builders::ListTags::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTrainingJobs`](crate::client::fluent_builders::ListTrainingJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrainingJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTrainingJobs::into_paginator).
     ///
-    /// - Takes [`ListTrainingJobsInput`](crate::input::ListTrainingJobsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListTrainingJobsInput::next_token): <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTrainingJobsInput::max_results): <p>The maximum number of training jobs to return in the response.</p>
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListTrainingJobsInput::creation_time_after): <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListTrainingJobsInput::creation_time_before): <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListTrainingJobsInput::last_modified_time_after): <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListTrainingJobsInput::last_modified_time_before): <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListTrainingJobsInput::name_contains): <p>A string in the training job name. This filter returns only training jobs whose name contains the specified string.</p>
-    ///   - [`status_equals(Option<TrainingJobStatus>)`](crate::input::ListTrainingJobsInput::status_equals): <p>A filter that retrieves only training jobs with a specific status.</p>
-    ///   - [`sort_by(Option<SortBy>)`](crate::input::ListTrainingJobsInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListTrainingJobsInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTrainingJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTrainingJobs::set_next_token): <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTrainingJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTrainingJobs::set_max_results): <p>The maximum number of training jobs to return in the response.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListTrainingJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListTrainingJobs::set_creation_time_after): <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListTrainingJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListTrainingJobs::set_creation_time_before): <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListTrainingJobs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListTrainingJobs::set_last_modified_time_after): <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListTrainingJobs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListTrainingJobs::set_last_modified_time_before): <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListTrainingJobs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListTrainingJobs::set_name_contains): <p>A string in the training job name. This filter returns only training jobs whose name contains the specified string.</p>
+    ///   - [`status_equals(TrainingJobStatus)`](crate::client::fluent_builders::ListTrainingJobs::status_equals) / [`set_status_equals(Option<TrainingJobStatus>)`](crate::client::fluent_builders::ListTrainingJobs::set_status_equals): <p>A filter that retrieves only training jobs with a specific status.</p>
+    ///   - [`sort_by(SortBy)`](crate::client::fluent_builders::ListTrainingJobs::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::client::fluent_builders::ListTrainingJobs::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListTrainingJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListTrainingJobs::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListTrainingJobsOutput`](crate::output::ListTrainingJobsOutput) with field(s):
     ///   - [`training_job_summaries(Option<Vec<TrainingJobSummary>>)`](crate::output::ListTrainingJobsOutput::training_job_summaries): <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTrainingJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
@@ -3445,15 +3445,15 @@ where
         fluent_builders::ListTrainingJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTrainingJobsForHyperParameterTuningJob`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::into_paginator).
     ///
-    /// - Takes [`ListTrainingJobsForHyperParameterTuningJobInput`](crate::input::ListTrainingJobsForHyperParameterTuningJobInput) with field(s):
-    ///   - [`hyper_parameter_tuning_job_name(Option<String>)`](crate::input::ListTrainingJobsForHyperParameterTuningJobInput::hyper_parameter_tuning_job_name): <p>The name of the tuning job whose training jobs you want to list.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTrainingJobsForHyperParameterTuningJobInput::next_token): <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTrainingJobsForHyperParameterTuningJobInput::max_results): <p>The maximum number of training jobs to return. The default value is 10.</p>
-    ///   - [`status_equals(Option<TrainingJobStatus>)`](crate::input::ListTrainingJobsForHyperParameterTuningJobInput::status_equals): <p>A filter that returns only training jobs with the specified status.</p>
-    ///   - [`sort_by(Option<TrainingJobSortByOptions>)`](crate::input::ListTrainingJobsForHyperParameterTuningJobInput::sort_by): <p>The field to sort results by. The default is <code>Name</code>.</p>  <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListTrainingJobsForHyperParameterTuningJobInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`hyper_parameter_tuning_job_name(impl Into<String>)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::hyper_parameter_tuning_job_name) / [`set_hyper_parameter_tuning_job_name(Option<String>)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::set_hyper_parameter_tuning_job_name): <p>The name of the tuning job whose training jobs you want to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::set_next_token): <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::set_max_results): <p>The maximum number of training jobs to return. The default value is 10.</p>
+    ///   - [`status_equals(TrainingJobStatus)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::status_equals) / [`set_status_equals(Option<TrainingJobStatus>)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::set_status_equals): <p>A filter that returns only training jobs with the specified status.</p>
+    ///   - [`sort_by(TrainingJobSortByOptions)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::sort_by) / [`set_sort_by(Option<TrainingJobSortByOptions>)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::set_sort_by): <p>The field to sort results by. The default is <code>Name</code>.</p>  <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
     /// - On success, responds with [`ListTrainingJobsForHyperParameterTuningJobOutput`](crate::output::ListTrainingJobsForHyperParameterTuningJobOutput) with field(s):
     ///   - [`training_job_summaries(Option<Vec<HyperParameterTrainingJobSummary>>)`](crate::output::ListTrainingJobsForHyperParameterTuningJobOutput::training_job_summaries): <p>A list of <code>TrainingJobSummary</code> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTrainingJobsForHyperParameterTuningJobOutput::next_token): <p>If the result of this <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
@@ -3464,19 +3464,19 @@ where
         fluent_builders::ListTrainingJobsForHyperParameterTuningJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTransformJobs`](crate::client::fluent_builders::ListTransformJobs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTransformJobs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTransformJobs::into_paginator).
     ///
-    /// - Takes [`ListTransformJobsInput`](crate::input::ListTransformJobsInput) with field(s):
-    ///   - [`creation_time_after(Option<DateTime>)`](crate::input::ListTransformJobsInput::creation_time_after): <p>A filter that returns only transform jobs created after the specified time.</p>
-    ///   - [`creation_time_before(Option<DateTime>)`](crate::input::ListTransformJobsInput::creation_time_before): <p>A filter that returns only transform jobs created before the specified time.</p>
-    ///   - [`last_modified_time_after(Option<DateTime>)`](crate::input::ListTransformJobsInput::last_modified_time_after): <p>A filter that returns only transform jobs modified after the specified time.</p>
-    ///   - [`last_modified_time_before(Option<DateTime>)`](crate::input::ListTransformJobsInput::last_modified_time_before): <p>A filter that returns only transform jobs modified before the specified time.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListTransformJobsInput::name_contains): <p>A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.</p>
-    ///   - [`status_equals(Option<TransformJobStatus>)`](crate::input::ListTransformJobsInput::status_equals): <p>A filter that retrieves only transform jobs with a specific status.</p>
-    ///   - [`sort_by(Option<SortBy>)`](crate::input::ListTransformJobsInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListTransformJobsInput::sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTransformJobsInput::next_token): <p>If the result of the previous <code>ListTransformJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTransformJobsInput::max_results): <p>The maximum number of transform jobs to return in the response. The default value is <code>10</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListTransformJobs::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListTransformJobs::set_creation_time_after): <p>A filter that returns only transform jobs created after the specified time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListTransformJobs::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListTransformJobs::set_creation_time_before): <p>A filter that returns only transform jobs created before the specified time.</p>
+    ///   - [`last_modified_time_after(DateTime)`](crate::client::fluent_builders::ListTransformJobs::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListTransformJobs::set_last_modified_time_after): <p>A filter that returns only transform jobs modified after the specified time.</p>
+    ///   - [`last_modified_time_before(DateTime)`](crate::client::fluent_builders::ListTransformJobs::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListTransformJobs::set_last_modified_time_before): <p>A filter that returns only transform jobs modified before the specified time.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListTransformJobs::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListTransformJobs::set_name_contains): <p>A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.</p>
+    ///   - [`status_equals(TransformJobStatus)`](crate::client::fluent_builders::ListTransformJobs::status_equals) / [`set_status_equals(Option<TransformJobStatus>)`](crate::client::fluent_builders::ListTransformJobs::set_status_equals): <p>A filter that retrieves only transform jobs with a specific status.</p>
+    ///   - [`sort_by(SortBy)`](crate::client::fluent_builders::ListTransformJobs::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::client::fluent_builders::ListTransformJobs::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListTransformJobs::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListTransformJobs::set_sort_order): <p>The sort order for results. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTransformJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTransformJobs::set_next_token): <p>If the result of the previous <code>ListTransformJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTransformJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTransformJobs::set_max_results): <p>The maximum number of transform jobs to return in the response. The default value is <code>10</code>.</p>
     /// - On success, responds with [`ListTransformJobsOutput`](crate::output::ListTransformJobsOutput) with field(s):
     ///   - [`transform_job_summaries(Option<Vec<TransformJobSummary>>)`](crate::output::ListTransformJobsOutput::transform_job_summaries): <p>An array of <code>TransformJobSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTransformJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
@@ -3485,18 +3485,18 @@ where
         fluent_builders::ListTransformJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTrialComponents`](crate::client::fluent_builders::ListTrialComponents) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrialComponents::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTrialComponents::into_paginator).
     ///
-    /// - Takes [`ListTrialComponentsInput`](crate::input::ListTrialComponentsInput) with field(s):
-    ///   - [`experiment_name(Option<String>)`](crate::input::ListTrialComponentsInput::experiment_name): <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
-    ///   - [`trial_name(Option<String>)`](crate::input::ListTrialComponentsInput::trial_name): <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
-    ///   - [`source_arn(Option<String>)`](crate::input::ListTrialComponentsInput::source_arn): <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListTrialComponentsInput::created_after): <p>A filter that returns only components created after the specified time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListTrialComponentsInput::created_before): <p>A filter that returns only components created before the specified time.</p>
-    ///   - [`sort_by(Option<SortTrialComponentsBy>)`](crate::input::ListTrialComponentsInput::sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListTrialComponentsInput::sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTrialComponentsInput::max_results): <p>The maximum number of components to return in the response. The default value is 10.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTrialComponentsInput::next_token): <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`experiment_name(impl Into<String>)`](crate::client::fluent_builders::ListTrialComponents::experiment_name) / [`set_experiment_name(Option<String>)`](crate::client::fluent_builders::ListTrialComponents::set_experiment_name): <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
+    ///   - [`trial_name(impl Into<String>)`](crate::client::fluent_builders::ListTrialComponents::trial_name) / [`set_trial_name(Option<String>)`](crate::client::fluent_builders::ListTrialComponents::set_trial_name): <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
+    ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::ListTrialComponents::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::ListTrialComponents::set_source_arn): <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListTrialComponents::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListTrialComponents::set_created_after): <p>A filter that returns only components created after the specified time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListTrialComponents::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListTrialComponents::set_created_before): <p>A filter that returns only components created before the specified time.</p>
+    ///   - [`sort_by(SortTrialComponentsBy)`](crate::client::fluent_builders::ListTrialComponents::sort_by) / [`set_sort_by(Option<SortTrialComponentsBy>)`](crate::client::fluent_builders::ListTrialComponents::set_sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListTrialComponents::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListTrialComponents::set_sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTrialComponents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTrialComponents::set_max_results): <p>The maximum number of components to return in the response. The default value is 10.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTrialComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTrialComponents::set_next_token): <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
     /// - On success, responds with [`ListTrialComponentsOutput`](crate::output::ListTrialComponentsOutput) with field(s):
     ///   - [`trial_component_summaries(Option<Vec<TrialComponentSummary>>)`](crate::output::ListTrialComponentsOutput::trial_component_summaries): <p>A list of the summaries of your trial components.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTrialComponentsOutput::next_token): <p>A token for getting the next set of components, if there are any.</p>
@@ -3505,17 +3505,17 @@ where
         fluent_builders::ListTrialComponents::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTrials`](crate::client::fluent_builders::ListTrials) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrials::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTrials::into_paginator).
     ///
-    /// - Takes [`ListTrialsInput`](crate::input::ListTrialsInput) with field(s):
-    ///   - [`experiment_name(Option<String>)`](crate::input::ListTrialsInput::experiment_name): <p>A filter that returns only trials that are part of the specified experiment.</p>
-    ///   - [`trial_component_name(Option<String>)`](crate::input::ListTrialsInput::trial_component_name): <p>A filter that returns only trials that are associated with the specified trial component.</p>
-    ///   - [`created_after(Option<DateTime>)`](crate::input::ListTrialsInput::created_after): <p>A filter that returns only trials created after the specified time.</p>
-    ///   - [`created_before(Option<DateTime>)`](crate::input::ListTrialsInput::created_before): <p>A filter that returns only trials created before the specified time.</p>
-    ///   - [`sort_by(Option<SortTrialsBy>)`](crate::input::ListTrialsInput::sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListTrialsInput::sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListTrialsInput::max_results): <p>The maximum number of trials to return in the response. The default value is 10.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListTrialsInput::next_token): <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the call returns a token for getting the next set of trials.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`experiment_name(impl Into<String>)`](crate::client::fluent_builders::ListTrials::experiment_name) / [`set_experiment_name(Option<String>)`](crate::client::fluent_builders::ListTrials::set_experiment_name): <p>A filter that returns only trials that are part of the specified experiment.</p>
+    ///   - [`trial_component_name(impl Into<String>)`](crate::client::fluent_builders::ListTrials::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::client::fluent_builders::ListTrials::set_trial_component_name): <p>A filter that returns only trials that are associated with the specified trial component.</p>
+    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListTrials::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListTrials::set_created_after): <p>A filter that returns only trials created after the specified time.</p>
+    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListTrials::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListTrials::set_created_before): <p>A filter that returns only trials created before the specified time.</p>
+    ///   - [`sort_by(SortTrialsBy)`](crate::client::fluent_builders::ListTrials::sort_by) / [`set_sort_by(Option<SortTrialsBy>)`](crate::client::fluent_builders::ListTrials::set_sort_by): <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListTrials::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListTrials::set_sort_order): <p>The sort order. The default value is <code>Descending</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTrials::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTrials::set_max_results): <p>The maximum number of trials to return in the response. The default value is 10.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTrials::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTrials::set_next_token): <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the call returns a token for getting the next set of trials.</p>
     /// - On success, responds with [`ListTrialsOutput`](crate::output::ListTrialsOutput) with field(s):
     ///   - [`trial_summaries(Option<Vec<TrialSummary>>)`](crate::output::ListTrialsOutput::trial_summaries): <p>A list of the summaries of your trials.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTrialsOutput::next_token): <p>A token for getting the next set of trials, if there are any.</p>
@@ -3524,15 +3524,15 @@ where
         fluent_builders::ListTrials::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListUserProfiles`](crate::client::fluent_builders::ListUserProfiles) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserProfiles::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUserProfiles::into_paginator).
     ///
-    /// - Takes [`ListUserProfilesInput`](crate::input::ListUserProfilesInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListUserProfilesInput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListUserProfilesInput::max_results): <p>Returns a list up to a specified limit.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListUserProfilesInput::sort_order): <p>The sort order for the results. The default is Ascending.</p>
-    ///   - [`sort_by(Option<UserProfileSortKey>)`](crate::input::ListUserProfilesInput::sort_by): <p>The parameter by which to sort the results. The default is CreationTime.</p>
-    ///   - [`domain_id_equals(Option<String>)`](crate::input::ListUserProfilesInput::domain_id_equals): <p>A parameter by which to filter the results.</p>
-    ///   - [`user_profile_name_contains(Option<String>)`](crate::input::ListUserProfilesInput::user_profile_name_contains): <p>A parameter by which to filter the results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUserProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUserProfiles::set_next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUserProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUserProfiles::set_max_results): <p>Returns a list up to a specified limit.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListUserProfiles::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListUserProfiles::set_sort_order): <p>The sort order for the results. The default is Ascending.</p>
+    ///   - [`sort_by(UserProfileSortKey)`](crate::client::fluent_builders::ListUserProfiles::sort_by) / [`set_sort_by(Option<UserProfileSortKey>)`](crate::client::fluent_builders::ListUserProfiles::set_sort_by): <p>The parameter by which to sort the results. The default is CreationTime.</p>
+    ///   - [`domain_id_equals(impl Into<String>)`](crate::client::fluent_builders::ListUserProfiles::domain_id_equals) / [`set_domain_id_equals(Option<String>)`](crate::client::fluent_builders::ListUserProfiles::set_domain_id_equals): <p>A parameter by which to filter the results.</p>
+    ///   - [`user_profile_name_contains(impl Into<String>)`](crate::client::fluent_builders::ListUserProfiles::user_profile_name_contains) / [`set_user_profile_name_contains(Option<String>)`](crate::client::fluent_builders::ListUserProfiles::set_user_profile_name_contains): <p>A parameter by which to filter the results.</p>
     /// - On success, responds with [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput) with field(s):
     ///   - [`user_profiles(Option<Vec<UserProfileDetails>>)`](crate::output::ListUserProfilesOutput::user_profiles): <p>The list of user profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListUserProfilesOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
@@ -3541,14 +3541,14 @@ where
         fluent_builders::ListUserProfiles::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListWorkforces`](crate::client::fluent_builders::ListWorkforces) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkforces::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkforces::into_paginator).
     ///
-    /// - Takes [`ListWorkforcesInput`](crate::input::ListWorkforcesInput) with field(s):
-    ///   - [`sort_by(Option<ListWorkforcesSortByOptions>)`](crate::input::ListWorkforcesInput::sort_by): <p>Sort workforces using the workforce name or creation date.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListWorkforcesInput::sort_order): <p>Sort workforces in ascending or descending order.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListWorkforcesInput::name_contains): <p>A filter you can use to search for workforces using part of the workforce name.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListWorkforcesInput::next_token): <p>A token to resume pagination.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListWorkforcesInput::max_results): <p>The maximum number of workforces returned in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sort_by(ListWorkforcesSortByOptions)`](crate::client::fluent_builders::ListWorkforces::sort_by) / [`set_sort_by(Option<ListWorkforcesSortByOptions>)`](crate::client::fluent_builders::ListWorkforces::set_sort_by): <p>Sort workforces using the workforce name or creation date.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListWorkforces::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListWorkforces::set_sort_order): <p>Sort workforces in ascending or descending order.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListWorkforces::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListWorkforces::set_name_contains): <p>A filter you can use to search for workforces using part of the workforce name.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkforces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkforces::set_next_token): <p>A token to resume pagination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkforces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkforces::set_max_results): <p>The maximum number of workforces returned in the response.</p>
     /// - On success, responds with [`ListWorkforcesOutput`](crate::output::ListWorkforcesOutput) with field(s):
     ///   - [`workforces(Option<Vec<Workforce>>)`](crate::output::ListWorkforcesOutput::workforces): <p>A list containing information about your workforce.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListWorkforcesOutput::next_token): <p>A token to resume pagination.</p>
@@ -3557,14 +3557,14 @@ where
         fluent_builders::ListWorkforces::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListWorkteams`](crate::client::fluent_builders::ListWorkteams) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkteams::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkteams::into_paginator).
     ///
-    /// - Takes [`ListWorkteamsInput`](crate::input::ListWorkteamsInput) with field(s):
-    ///   - [`sort_by(Option<ListWorkteamsSortByOptions>)`](crate::input::ListWorkteamsInput::sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListWorkteamsInput::sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    ///   - [`name_contains(Option<String>)`](crate::input::ListWorkteamsInput::name_contains): <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListWorkteamsInput::next_token): <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListWorkteamsInput::max_results): <p>The maximum number of work teams to return in each page of the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`sort_by(ListWorkteamsSortByOptions)`](crate::client::fluent_builders::ListWorkteams::sort_by) / [`set_sort_by(Option<ListWorkteamsSortByOptions>)`](crate::client::fluent_builders::ListWorkteams::set_sort_by): <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListWorkteams::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListWorkteams::set_sort_order): <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListWorkteams::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListWorkteams::set_name_contains): <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkteams::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkteams::set_next_token): <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkteams::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkteams::set_max_results): <p>The maximum number of work teams to return in each page of the response.</p>
     /// - On success, responds with [`ListWorkteamsOutput`](crate::output::ListWorkteamsOutput) with field(s):
     ///   - [`workteams(Option<Vec<Workteam>>)`](crate::output::ListWorkteamsOutput::workteams): <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListWorkteamsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of work teams, use it in the subsequent request.</p>
@@ -3574,9 +3574,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutModelPackageGroupPolicy`](crate::client::fluent_builders::PutModelPackageGroupPolicy) operation.
     ///
-    /// - Takes [`PutModelPackageGroupPolicyInput`](crate::input::PutModelPackageGroupPolicyInput) with field(s):
-    ///   - [`model_package_group_name(Option<String>)`](crate::input::PutModelPackageGroupPolicyInput::model_package_group_name): <p>The name of the model group to add a resource policy to.</p>
-    ///   - [`resource_policy(Option<String>)`](crate::input::PutModelPackageGroupPolicyInput::resource_policy): <p>The resource policy for the model group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::client::fluent_builders::PutModelPackageGroupPolicy::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::client::fluent_builders::PutModelPackageGroupPolicy::set_model_package_group_name): <p>The name of the model group to add a resource policy to.</p>
+    ///   - [`resource_policy(impl Into<String>)`](crate::client::fluent_builders::PutModelPackageGroupPolicy::resource_policy) / [`set_resource_policy(Option<String>)`](crate::client::fluent_builders::PutModelPackageGroupPolicy::set_resource_policy): <p>The resource policy for the model group.</p>
     /// - On success, responds with [`PutModelPackageGroupPolicyOutput`](crate::output::PutModelPackageGroupPolicyOutput) with field(s):
     ///   - [`model_package_group_arn(Option<String>)`](crate::output::PutModelPackageGroupPolicyOutput::model_package_group_arn): <p>The Amazon Resource Name (ARN) of the model package group.</p>
     /// - On failure, responds with [`SdkError<PutModelPackageGroupPolicyError>`](crate::error::PutModelPackageGroupPolicyError)
@@ -3586,16 +3586,16 @@ where
         fluent_builders::PutModelPackageGroupPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`QueryLineage`](crate::client::fluent_builders::QueryLineage) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::QueryLineage::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::QueryLineage::into_paginator).
     ///
-    /// - Takes [`QueryLineageInput`](crate::input::QueryLineageInput) with field(s):
-    ///   - [`start_arns(Option<Vec<String>>)`](crate::input::QueryLineageInput::start_arns): <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    ///   - [`direction(Option<Direction>)`](crate::input::QueryLineageInput::direction): <p>Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s) the query will look.</p>
-    ///   - [`include_edges(bool)`](crate::input::QueryLineageInput::include_edges): <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
-    ///   - [`filters(Option<QueryFilters>)`](crate::input::QueryLineageInput::filters): <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>  <ul>   <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>   <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>   <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>   <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>   <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>  </ul>
-    ///   - [`max_depth(Option<i32>)`](crate::input::QueryLineageInput::max_depth): <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::QueryLineageInput::max_results): <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::QueryLineageInput::next_token): <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`start_arns(Vec<String>)`](crate::client::fluent_builders::QueryLineage::start_arns) / [`set_start_arns(Option<Vec<String>>)`](crate::client::fluent_builders::QueryLineage::set_start_arns): <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
+    ///   - [`direction(Direction)`](crate::client::fluent_builders::QueryLineage::direction) / [`set_direction(Option<Direction>)`](crate::client::fluent_builders::QueryLineage::set_direction): <p>Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s) the query will look.</p>
+    ///   - [`include_edges(bool)`](crate::client::fluent_builders::QueryLineage::include_edges) / [`set_include_edges(bool)`](crate::client::fluent_builders::QueryLineage::set_include_edges): <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+    ///   - [`filters(QueryFilters)`](crate::client::fluent_builders::QueryLineage::filters) / [`set_filters(Option<QueryFilters>)`](crate::client::fluent_builders::QueryLineage::set_filters): <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>  <ul>   <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>   <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>   <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>   <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>   <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>  </ul>
+    ///   - [`max_depth(i32)`](crate::client::fluent_builders::QueryLineage::max_depth) / [`set_max_depth(Option<i32>)`](crate::client::fluent_builders::QueryLineage::set_max_depth): <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::QueryLineage::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::QueryLineage::set_max_results): <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::QueryLineage::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::QueryLineage::set_next_token): <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     /// - On success, responds with [`QueryLineageOutput`](crate::output::QueryLineageOutput) with field(s):
     ///   - [`vertices(Option<Vec<Vertex>>)`](crate::output::QueryLineageOutput::vertices): <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
     ///   - [`edges(Option<Vec<Edge>>)`](crate::output::QueryLineageOutput::edges): <p>A list of edges that connect vertices in the response.</p>
@@ -3606,10 +3606,10 @@ where
     }
     /// Constructs a fluent builder for the [`RegisterDevices`](crate::client::fluent_builders::RegisterDevices) operation.
     ///
-    /// - Takes [`RegisterDevicesInput`](crate::input::RegisterDevicesInput) with field(s):
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::RegisterDevicesInput::device_fleet_name): <p>The name of the fleet.</p>
-    ///   - [`devices(Option<Vec<Device>>)`](crate::input::RegisterDevicesInput::devices): <p>A list of devices to register with SageMaker Edge Manager.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::RegisterDevicesInput::tags): <p>The tags associated with devices.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::RegisterDevices::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::RegisterDevices::set_device_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`devices(Vec<Device>)`](crate::client::fluent_builders::RegisterDevices::devices) / [`set_devices(Option<Vec<Device>>)`](crate::client::fluent_builders::RegisterDevices::set_devices): <p>A list of devices to register with SageMaker Edge Manager.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RegisterDevices::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RegisterDevices::set_tags): <p>The tags associated with devices.</p>
     /// - On success, responds with [`RegisterDevicesOutput`](crate::output::RegisterDevicesOutput)
 
     /// - On failure, responds with [`SdkError<RegisterDevicesError>`](crate::error::RegisterDevicesError)
@@ -3618,11 +3618,11 @@ where
     }
     /// Constructs a fluent builder for the [`RenderUiTemplate`](crate::client::fluent_builders::RenderUiTemplate) operation.
     ///
-    /// - Takes [`RenderUiTemplateInput`](crate::input::RenderUiTemplateInput) with field(s):
-    ///   - [`ui_template(Option<UiTemplate>)`](crate::input::RenderUiTemplateInput::ui_template): <p>A <code>Template</code> object containing the worker UI template to render.</p>
-    ///   - [`task(Option<RenderableTask>)`](crate::input::RenderUiTemplateInput::task): <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::RenderUiTemplateInput::role_arn): <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
-    ///   - [`human_task_ui_arn(Option<String>)`](crate::input::RenderUiTemplateInput::human_task_ui_arn): <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>  <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <code>UiConfig</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`ui_template(UiTemplate)`](crate::client::fluent_builders::RenderUiTemplate::ui_template) / [`set_ui_template(Option<UiTemplate>)`](crate::client::fluent_builders::RenderUiTemplate::set_ui_template): <p>A <code>Template</code> object containing the worker UI template to render.</p>
+    ///   - [`task(RenderableTask)`](crate::client::fluent_builders::RenderUiTemplate::task) / [`set_task(Option<RenderableTask>)`](crate::client::fluent_builders::RenderUiTemplate::set_task): <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::RenderUiTemplate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::RenderUiTemplate::set_role_arn): <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
+    ///   - [`human_task_ui_arn(impl Into<String>)`](crate::client::fluent_builders::RenderUiTemplate::human_task_ui_arn) / [`set_human_task_ui_arn(Option<String>)`](crate::client::fluent_builders::RenderUiTemplate::set_human_task_ui_arn): <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>  <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <code>UiConfig</code>.</p>
     /// - On success, responds with [`RenderUiTemplateOutput`](crate::output::RenderUiTemplateOutput) with field(s):
     ///   - [`rendered_content(Option<String>)`](crate::output::RenderUiTemplateOutput::rendered_content): <p>A Liquid template that renders the HTML for the worker UI.</p>
     ///   - [`errors(Option<Vec<RenderingError>>)`](crate::output::RenderUiTemplateOutput::errors): <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
@@ -3632,10 +3632,10 @@ where
     }
     /// Constructs a fluent builder for the [`RetryPipelineExecution`](crate::client::fluent_builders::RetryPipelineExecution) operation.
     ///
-    /// - Takes [`RetryPipelineExecutionInput`](crate::input::RetryPipelineExecutionInput) with field(s):
-    ///   - [`pipeline_execution_arn(Option<String>)`](crate::input::RetryPipelineExecutionInput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::RetryPipelineExecutionInput::client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::input::RetryPipelineExecutionInput::parallelism_configuration): <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_execution_arn(impl Into<String>)`](crate::client::fluent_builders::RetryPipelineExecution::pipeline_execution_arn) / [`set_pipeline_execution_arn(Option<String>)`](crate::client::fluent_builders::RetryPipelineExecution::set_pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::RetryPipelineExecution::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::RetryPipelineExecution::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    ///   - [`parallelism_configuration(ParallelismConfiguration)`](crate::client::fluent_builders::RetryPipelineExecution::parallelism_configuration) / [`set_parallelism_configuration(Option<ParallelismConfiguration>)`](crate::client::fluent_builders::RetryPipelineExecution::set_parallelism_configuration): <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
     /// - On success, responds with [`RetryPipelineExecutionOutput`](crate::output::RetryPipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::output::RetryPipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<RetryPipelineExecutionError>`](crate::error::RetryPipelineExecutionError)
@@ -3643,15 +3643,15 @@ where
         fluent_builders::RetryPipelineExecution::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`Search`](crate::client::fluent_builders::Search) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::Search::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::Search::into_paginator).
     ///
-    /// - Takes [`SearchInput`](crate::input::SearchInput) with field(s):
-    ///   - [`resource(Option<ResourceType>)`](crate::input::SearchInput::resource): <p>The name of the Amazon SageMaker resource to search for.</p>
-    ///   - [`search_expression(Option<SearchExpression>)`](crate::input::SearchInput::search_expression): <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
-    ///   - [`sort_by(Option<String>)`](crate::input::SearchInput::sort_by): <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
-    ///   - [`sort_order(Option<SearchSortOrder>)`](crate::input::SearchInput::sort_order): <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::SearchInput::next_token): <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::SearchInput::max_results): <p>The maximum number of results to return.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource(ResourceType)`](crate::client::fluent_builders::Search::resource) / [`set_resource(Option<ResourceType>)`](crate::client::fluent_builders::Search::set_resource): <p>The name of the Amazon SageMaker resource to search for.</p>
+    ///   - [`search_expression(SearchExpression)`](crate::client::fluent_builders::Search::search_expression) / [`set_search_expression(Option<SearchExpression>)`](crate::client::fluent_builders::Search::set_search_expression): <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
+    ///   - [`sort_by(impl Into<String>)`](crate::client::fluent_builders::Search::sort_by) / [`set_sort_by(Option<String>)`](crate::client::fluent_builders::Search::set_sort_by): <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
+    ///   - [`sort_order(SearchSortOrder)`](crate::client::fluent_builders::Search::sort_order) / [`set_sort_order(Option<SearchSortOrder>)`](crate::client::fluent_builders::Search::set_sort_order): <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::Search::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::Search::set_next_token): <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::Search::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::Search::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`SearchOutput`](crate::output::SearchOutput) with field(s):
     ///   - [`results(Option<Vec<SearchRecord>>)`](crate::output::SearchOutput::results): <p>A list of <code>SearchRecord</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchOutput::next_token): <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>
@@ -3661,10 +3661,10 @@ where
     }
     /// Constructs a fluent builder for the [`SendPipelineExecutionStepFailure`](crate::client::fluent_builders::SendPipelineExecutionStepFailure) operation.
     ///
-    /// - Takes [`SendPipelineExecutionStepFailureInput`](crate::input::SendPipelineExecutionStepFailureInput) with field(s):
-    ///   - [`callback_token(Option<String>)`](crate::input::SendPipelineExecutionStepFailureInput::callback_token): <p>The pipeline generated token from the Amazon SQS queue.</p>
-    ///   - [`failure_reason(Option<String>)`](crate::input::SendPipelineExecutionStepFailureInput::failure_reason): <p>A message describing why the step failed.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::SendPipelineExecutionStepFailureInput::client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`callback_token(impl Into<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepFailure::callback_token) / [`set_callback_token(Option<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepFailure::set_callback_token): <p>The pipeline generated token from the Amazon SQS queue.</p>
+    ///   - [`failure_reason(impl Into<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepFailure::failure_reason) / [`set_failure_reason(Option<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepFailure::set_failure_reason): <p>A message describing why the step failed.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepFailure::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepFailure::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     /// - On success, responds with [`SendPipelineExecutionStepFailureOutput`](crate::output::SendPipelineExecutionStepFailureOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::output::SendPipelineExecutionStepFailureOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<SendPipelineExecutionStepFailureError>`](crate::error::SendPipelineExecutionStepFailureError)
@@ -3675,10 +3675,10 @@ where
     }
     /// Constructs a fluent builder for the [`SendPipelineExecutionStepSuccess`](crate::client::fluent_builders::SendPipelineExecutionStepSuccess) operation.
     ///
-    /// - Takes [`SendPipelineExecutionStepSuccessInput`](crate::input::SendPipelineExecutionStepSuccessInput) with field(s):
-    ///   - [`callback_token(Option<String>)`](crate::input::SendPipelineExecutionStepSuccessInput::callback_token): <p>The pipeline generated token from the Amazon SQS queue.</p>
-    ///   - [`output_parameters(Option<Vec<OutputParameter>>)`](crate::input::SendPipelineExecutionStepSuccessInput::output_parameters): <p>A list of the output parameters of the callback step.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::SendPipelineExecutionStepSuccessInput::client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`callback_token(impl Into<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepSuccess::callback_token) / [`set_callback_token(Option<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepSuccess::set_callback_token): <p>The pipeline generated token from the Amazon SQS queue.</p>
+    ///   - [`output_parameters(Vec<OutputParameter>)`](crate::client::fluent_builders::SendPipelineExecutionStepSuccess::output_parameters) / [`set_output_parameters(Option<Vec<OutputParameter>>)`](crate::client::fluent_builders::SendPipelineExecutionStepSuccess::set_output_parameters): <p>A list of the output parameters of the callback step.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepSuccess::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::SendPipelineExecutionStepSuccess::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     /// - On success, responds with [`SendPipelineExecutionStepSuccessOutput`](crate::output::SendPipelineExecutionStepSuccessOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::output::SendPipelineExecutionStepSuccessOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<SendPipelineExecutionStepSuccessError>`](crate::error::SendPipelineExecutionStepSuccessError)
@@ -3689,8 +3689,8 @@ where
     }
     /// Constructs a fluent builder for the [`StartMonitoringSchedule`](crate::client::fluent_builders::StartMonitoringSchedule) operation.
     ///
-    /// - Takes [`StartMonitoringScheduleInput`](crate::input::StartMonitoringScheduleInput) with field(s):
-    ///   - [`monitoring_schedule_name(Option<String>)`](crate::input::StartMonitoringScheduleInput::monitoring_schedule_name): <p>The name of the schedule to start.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::StartMonitoringSchedule::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::StartMonitoringSchedule::set_monitoring_schedule_name): <p>The name of the schedule to start.</p>
     /// - On success, responds with [`StartMonitoringScheduleOutput`](crate::output::StartMonitoringScheduleOutput)
 
     /// - On failure, responds with [`SdkError<StartMonitoringScheduleError>`](crate::error::StartMonitoringScheduleError)
@@ -3699,8 +3699,8 @@ where
     }
     /// Constructs a fluent builder for the [`StartNotebookInstance`](crate::client::fluent_builders::StartNotebookInstance) operation.
     ///
-    /// - Takes [`StartNotebookInstanceInput`](crate::input::StartNotebookInstanceInput) with field(s):
-    ///   - [`notebook_instance_name(Option<String>)`](crate::input::StartNotebookInstanceInput::notebook_instance_name): <p>The name of the notebook instance to start.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::StartNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::StartNotebookInstance::set_notebook_instance_name): <p>The name of the notebook instance to start.</p>
     /// - On success, responds with [`StartNotebookInstanceOutput`](crate::output::StartNotebookInstanceOutput)
 
     /// - On failure, responds with [`SdkError<StartNotebookInstanceError>`](crate::error::StartNotebookInstanceError)
@@ -3709,13 +3709,13 @@ where
     }
     /// Constructs a fluent builder for the [`StartPipelineExecution`](crate::client::fluent_builders::StartPipelineExecution) operation.
     ///
-    /// - Takes [`StartPipelineExecutionInput`](crate::input::StartPipelineExecutionInput) with field(s):
-    ///   - [`pipeline_name(Option<String>)`](crate::input::StartPipelineExecutionInput::pipeline_name): <p>The name of the pipeline.</p>
-    ///   - [`pipeline_execution_display_name(Option<String>)`](crate::input::StartPipelineExecutionInput::pipeline_execution_display_name): <p>The display name of the pipeline execution.</p>
-    ///   - [`pipeline_parameters(Option<Vec<Parameter>>)`](crate::input::StartPipelineExecutionInput::pipeline_parameters): <p>Contains a list of pipeline parameters. This list can be empty. </p>
-    ///   - [`pipeline_execution_description(Option<String>)`](crate::input::StartPipelineExecutionInput::pipeline_execution_description): <p>The description of the pipeline execution.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StartPipelineExecutionInput::client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::input::StartPipelineExecutionInput::parallelism_configuration): <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::StartPipelineExecution::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::StartPipelineExecution::set_pipeline_name): <p>The name of the pipeline.</p>
+    ///   - [`pipeline_execution_display_name(impl Into<String>)`](crate::client::fluent_builders::StartPipelineExecution::pipeline_execution_display_name) / [`set_pipeline_execution_display_name(Option<String>)`](crate::client::fluent_builders::StartPipelineExecution::set_pipeline_execution_display_name): <p>The display name of the pipeline execution.</p>
+    ///   - [`pipeline_parameters(Vec<Parameter>)`](crate::client::fluent_builders::StartPipelineExecution::pipeline_parameters) / [`set_pipeline_parameters(Option<Vec<Parameter>>)`](crate::client::fluent_builders::StartPipelineExecution::set_pipeline_parameters): <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    ///   - [`pipeline_execution_description(impl Into<String>)`](crate::client::fluent_builders::StartPipelineExecution::pipeline_execution_description) / [`set_pipeline_execution_description(Option<String>)`](crate::client::fluent_builders::StartPipelineExecution::set_pipeline_execution_description): <p>The description of the pipeline execution.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartPipelineExecution::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartPipelineExecution::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    ///   - [`parallelism_configuration(ParallelismConfiguration)`](crate::client::fluent_builders::StartPipelineExecution::parallelism_configuration) / [`set_parallelism_configuration(Option<ParallelismConfiguration>)`](crate::client::fluent_builders::StartPipelineExecution::set_parallelism_configuration): <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
     /// - On success, responds with [`StartPipelineExecutionOutput`](crate::output::StartPipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::output::StartPipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<StartPipelineExecutionError>`](crate::error::StartPipelineExecutionError)
@@ -3724,8 +3724,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopAutoMLJob`](crate::client::fluent_builders::StopAutoMLJob) operation.
     ///
-    /// - Takes [`StopAutoMlJobInput`](crate::input::StopAutoMlJobInput) with field(s):
-    ///   - [`auto_ml_job_name(Option<String>)`](crate::input::StopAutoMlJobInput::auto_ml_job_name): <p>The name of the object you are requesting.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_ml_job_name(impl Into<String>)`](crate::client::fluent_builders::StopAutoMLJob::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::client::fluent_builders::StopAutoMLJob::set_auto_ml_job_name): <p>The name of the object you are requesting.</p>
     /// - On success, responds with [`StopAutoMlJobOutput`](crate::output::StopAutoMlJobOutput)
 
     /// - On failure, responds with [`SdkError<StopAutoMLJobError>`](crate::error::StopAutoMLJobError)
@@ -3734,8 +3734,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopCompilationJob`](crate::client::fluent_builders::StopCompilationJob) operation.
     ///
-    /// - Takes [`StopCompilationJobInput`](crate::input::StopCompilationJobInput) with field(s):
-    ///   - [`compilation_job_name(Option<String>)`](crate::input::StopCompilationJobInput::compilation_job_name): <p>The name of the model compilation job to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`compilation_job_name(impl Into<String>)`](crate::client::fluent_builders::StopCompilationJob::compilation_job_name) / [`set_compilation_job_name(Option<String>)`](crate::client::fluent_builders::StopCompilationJob::set_compilation_job_name): <p>The name of the model compilation job to stop.</p>
     /// - On success, responds with [`StopCompilationJobOutput`](crate::output::StopCompilationJobOutput)
 
     /// - On failure, responds with [`SdkError<StopCompilationJobError>`](crate::error::StopCompilationJobError)
@@ -3744,8 +3744,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopEdgePackagingJob`](crate::client::fluent_builders::StopEdgePackagingJob) operation.
     ///
-    /// - Takes [`StopEdgePackagingJobInput`](crate::input::StopEdgePackagingJobInput) with field(s):
-    ///   - [`edge_packaging_job_name(Option<String>)`](crate::input::StopEdgePackagingJobInput::edge_packaging_job_name): <p>The name of the edge packaging job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`edge_packaging_job_name(impl Into<String>)`](crate::client::fluent_builders::StopEdgePackagingJob::edge_packaging_job_name) / [`set_edge_packaging_job_name(Option<String>)`](crate::client::fluent_builders::StopEdgePackagingJob::set_edge_packaging_job_name): <p>The name of the edge packaging job.</p>
     /// - On success, responds with [`StopEdgePackagingJobOutput`](crate::output::StopEdgePackagingJobOutput)
 
     /// - On failure, responds with [`SdkError<StopEdgePackagingJobError>`](crate::error::StopEdgePackagingJobError)
@@ -3754,8 +3754,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopHyperParameterTuningJob`](crate::client::fluent_builders::StopHyperParameterTuningJob) operation.
     ///
-    /// - Takes [`StopHyperParameterTuningJobInput`](crate::input::StopHyperParameterTuningJobInput) with field(s):
-    ///   - [`hyper_parameter_tuning_job_name(Option<String>)`](crate::input::StopHyperParameterTuningJobInput::hyper_parameter_tuning_job_name): <p>The name of the tuning job to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`hyper_parameter_tuning_job_name(impl Into<String>)`](crate::client::fluent_builders::StopHyperParameterTuningJob::hyper_parameter_tuning_job_name) / [`set_hyper_parameter_tuning_job_name(Option<String>)`](crate::client::fluent_builders::StopHyperParameterTuningJob::set_hyper_parameter_tuning_job_name): <p>The name of the tuning job to stop.</p>
     /// - On success, responds with [`StopHyperParameterTuningJobOutput`](crate::output::StopHyperParameterTuningJobOutput)
 
     /// - On failure, responds with [`SdkError<StopHyperParameterTuningJobError>`](crate::error::StopHyperParameterTuningJobError)
@@ -3766,8 +3766,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopInferenceRecommendationsJob`](crate::client::fluent_builders::StopInferenceRecommendationsJob) operation.
     ///
-    /// - Takes [`StopInferenceRecommendationsJobInput`](crate::input::StopInferenceRecommendationsJobInput) with field(s):
-    ///   - [`job_name(Option<String>)`](crate::input::StopInferenceRecommendationsJobInput::job_name): <p>The name of the job you want to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StopInferenceRecommendationsJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StopInferenceRecommendationsJob::set_job_name): <p>The name of the job you want to stop.</p>
     /// - On success, responds with [`StopInferenceRecommendationsJobOutput`](crate::output::StopInferenceRecommendationsJobOutput)
 
     /// - On failure, responds with [`SdkError<StopInferenceRecommendationsJobError>`](crate::error::StopInferenceRecommendationsJobError)
@@ -3778,8 +3778,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopLabelingJob`](crate::client::fluent_builders::StopLabelingJob) operation.
     ///
-    /// - Takes [`StopLabelingJobInput`](crate::input::StopLabelingJobInput) with field(s):
-    ///   - [`labeling_job_name(Option<String>)`](crate::input::StopLabelingJobInput::labeling_job_name): <p>The name of the labeling job to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`labeling_job_name(impl Into<String>)`](crate::client::fluent_builders::StopLabelingJob::labeling_job_name) / [`set_labeling_job_name(Option<String>)`](crate::client::fluent_builders::StopLabelingJob::set_labeling_job_name): <p>The name of the labeling job to stop.</p>
     /// - On success, responds with [`StopLabelingJobOutput`](crate::output::StopLabelingJobOutput)
 
     /// - On failure, responds with [`SdkError<StopLabelingJobError>`](crate::error::StopLabelingJobError)
@@ -3788,8 +3788,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopMonitoringSchedule`](crate::client::fluent_builders::StopMonitoringSchedule) operation.
     ///
-    /// - Takes [`StopMonitoringScheduleInput`](crate::input::StopMonitoringScheduleInput) with field(s):
-    ///   - [`monitoring_schedule_name(Option<String>)`](crate::input::StopMonitoringScheduleInput::monitoring_schedule_name): <p>The name of the schedule to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::StopMonitoringSchedule::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::StopMonitoringSchedule::set_monitoring_schedule_name): <p>The name of the schedule to stop.</p>
     /// - On success, responds with [`StopMonitoringScheduleOutput`](crate::output::StopMonitoringScheduleOutput)
 
     /// - On failure, responds with [`SdkError<StopMonitoringScheduleError>`](crate::error::StopMonitoringScheduleError)
@@ -3798,8 +3798,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopNotebookInstance`](crate::client::fluent_builders::StopNotebookInstance) operation.
     ///
-    /// - Takes [`StopNotebookInstanceInput`](crate::input::StopNotebookInstanceInput) with field(s):
-    ///   - [`notebook_instance_name(Option<String>)`](crate::input::StopNotebookInstanceInput::notebook_instance_name): <p>The name of the notebook instance to terminate.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::StopNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::StopNotebookInstance::set_notebook_instance_name): <p>The name of the notebook instance to terminate.</p>
     /// - On success, responds with [`StopNotebookInstanceOutput`](crate::output::StopNotebookInstanceOutput)
 
     /// - On failure, responds with [`SdkError<StopNotebookInstanceError>`](crate::error::StopNotebookInstanceError)
@@ -3808,9 +3808,9 @@ where
     }
     /// Constructs a fluent builder for the [`StopPipelineExecution`](crate::client::fluent_builders::StopPipelineExecution) operation.
     ///
-    /// - Takes [`StopPipelineExecutionInput`](crate::input::StopPipelineExecutionInput) with field(s):
-    ///   - [`pipeline_execution_arn(Option<String>)`](crate::input::StopPipelineExecutionInput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    ///   - [`client_request_token(Option<String>)`](crate::input::StopPipelineExecutionInput::client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_execution_arn(impl Into<String>)`](crate::client::fluent_builders::StopPipelineExecution::pipeline_execution_arn) / [`set_pipeline_execution_arn(Option<String>)`](crate::client::fluent_builders::StopPipelineExecution::set_pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StopPipelineExecution::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StopPipelineExecution::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
     /// - On success, responds with [`StopPipelineExecutionOutput`](crate::output::StopPipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::output::StopPipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<StopPipelineExecutionError>`](crate::error::StopPipelineExecutionError)
@@ -3819,8 +3819,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopProcessingJob`](crate::client::fluent_builders::StopProcessingJob) operation.
     ///
-    /// - Takes [`StopProcessingJobInput`](crate::input::StopProcessingJobInput) with field(s):
-    ///   - [`processing_job_name(Option<String>)`](crate::input::StopProcessingJobInput::processing_job_name): <p>The name of the processing job to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`processing_job_name(impl Into<String>)`](crate::client::fluent_builders::StopProcessingJob::processing_job_name) / [`set_processing_job_name(Option<String>)`](crate::client::fluent_builders::StopProcessingJob::set_processing_job_name): <p>The name of the processing job to stop.</p>
     /// - On success, responds with [`StopProcessingJobOutput`](crate::output::StopProcessingJobOutput)
 
     /// - On failure, responds with [`SdkError<StopProcessingJobError>`](crate::error::StopProcessingJobError)
@@ -3829,8 +3829,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopTrainingJob`](crate::client::fluent_builders::StopTrainingJob) operation.
     ///
-    /// - Takes [`StopTrainingJobInput`](crate::input::StopTrainingJobInput) with field(s):
-    ///   - [`training_job_name(Option<String>)`](crate::input::StopTrainingJobInput::training_job_name): <p>The name of the training job to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`training_job_name(impl Into<String>)`](crate::client::fluent_builders::StopTrainingJob::training_job_name) / [`set_training_job_name(Option<String>)`](crate::client::fluent_builders::StopTrainingJob::set_training_job_name): <p>The name of the training job to stop.</p>
     /// - On success, responds with [`StopTrainingJobOutput`](crate::output::StopTrainingJobOutput)
 
     /// - On failure, responds with [`SdkError<StopTrainingJobError>`](crate::error::StopTrainingJobError)
@@ -3839,8 +3839,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopTransformJob`](crate::client::fluent_builders::StopTransformJob) operation.
     ///
-    /// - Takes [`StopTransformJobInput`](crate::input::StopTransformJobInput) with field(s):
-    ///   - [`transform_job_name(Option<String>)`](crate::input::StopTransformJobInput::transform_job_name): <p>The name of the batch transform job to stop.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`transform_job_name(impl Into<String>)`](crate::client::fluent_builders::StopTransformJob::transform_job_name) / [`set_transform_job_name(Option<String>)`](crate::client::fluent_builders::StopTransformJob::set_transform_job_name): <p>The name of the batch transform job to stop.</p>
     /// - On success, responds with [`StopTransformJobOutput`](crate::output::StopTransformJobOutput)
 
     /// - On failure, responds with [`SdkError<StopTransformJobError>`](crate::error::StopTransformJobError)
@@ -3849,12 +3849,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAction`](crate::client::fluent_builders::UpdateAction) operation.
     ///
-    /// - Takes [`UpdateActionInput`](crate::input::UpdateActionInput) with field(s):
-    ///   - [`action_name(Option<String>)`](crate::input::UpdateActionInput::action_name): <p>The name of the action to update.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateActionInput::description): <p>The new description for the action.</p>
-    ///   - [`status(Option<ActionStatus>)`](crate::input::UpdateActionInput::status): <p>The new status for the action.</p>
-    ///   - [`properties(Option<HashMap<String, String>>)`](crate::input::UpdateActionInput::properties): <p>The new list of properties. Overwrites the current property list.</p>
-    ///   - [`properties_to_remove(Option<Vec<String>>)`](crate::input::UpdateActionInput::properties_to_remove): <p>A list of properties to remove.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::UpdateAction::set_action_name): <p>The name of the action to update.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAction::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAction::set_description): <p>The new description for the action.</p>
+    ///   - [`status(ActionStatus)`](crate::client::fluent_builders::UpdateAction::status) / [`set_status(Option<ActionStatus>)`](crate::client::fluent_builders::UpdateAction::set_status): <p>The new status for the action.</p>
+    ///   - [`properties(HashMap<String, String>)`](crate::client::fluent_builders::UpdateAction::properties) / [`set_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateAction::set_properties): <p>The new list of properties. Overwrites the current property list.</p>
+    ///   - [`properties_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateAction::properties_to_remove) / [`set_properties_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateAction::set_properties_to_remove): <p>A list of properties to remove.</p>
     /// - On success, responds with [`UpdateActionOutput`](crate::output::UpdateActionOutput) with field(s):
     ///   - [`action_arn(Option<String>)`](crate::output::UpdateActionOutput::action_arn): <p>The Amazon Resource Name (ARN) of the action.</p>
     /// - On failure, responds with [`SdkError<UpdateActionError>`](crate::error::UpdateActionError)
@@ -3863,9 +3863,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateAppImageConfig`](crate::client::fluent_builders::UpdateAppImageConfig) operation.
     ///
-    /// - Takes [`UpdateAppImageConfigInput`](crate::input::UpdateAppImageConfigInput) with field(s):
-    ///   - [`app_image_config_name(Option<String>)`](crate::input::UpdateAppImageConfigInput::app_image_config_name): <p>The name of the AppImageConfig to update.</p>
-    ///   - [`kernel_gateway_image_config(Option<KernelGatewayImageConfig>)`](crate::input::UpdateAppImageConfigInput::kernel_gateway_image_config): <p>The new KernelGateway app to run on the image.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`app_image_config_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAppImageConfig::app_image_config_name) / [`set_app_image_config_name(Option<String>)`](crate::client::fluent_builders::UpdateAppImageConfig::set_app_image_config_name): <p>The name of the AppImageConfig to update.</p>
+    ///   - [`kernel_gateway_image_config(KernelGatewayImageConfig)`](crate::client::fluent_builders::UpdateAppImageConfig::kernel_gateway_image_config) / [`set_kernel_gateway_image_config(Option<KernelGatewayImageConfig>)`](crate::client::fluent_builders::UpdateAppImageConfig::set_kernel_gateway_image_config): <p>The new KernelGateway app to run on the image.</p>
     /// - On success, responds with [`UpdateAppImageConfigOutput`](crate::output::UpdateAppImageConfigOutput) with field(s):
     ///   - [`app_image_config_arn(Option<String>)`](crate::output::UpdateAppImageConfigOutput::app_image_config_arn): <p>The Amazon Resource Name (ARN) for the AppImageConfig.</p>
     /// - On failure, responds with [`SdkError<UpdateAppImageConfigError>`](crate::error::UpdateAppImageConfigError)
@@ -3874,11 +3874,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateArtifact`](crate::client::fluent_builders::UpdateArtifact) operation.
     ///
-    /// - Takes [`UpdateArtifactInput`](crate::input::UpdateArtifactInput) with field(s):
-    ///   - [`artifact_arn(Option<String>)`](crate::input::UpdateArtifactInput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
-    ///   - [`artifact_name(Option<String>)`](crate::input::UpdateArtifactInput::artifact_name): <p>The new name for the artifact.</p>
-    ///   - [`properties(Option<HashMap<String, String>>)`](crate::input::UpdateArtifactInput::properties): <p>The new list of properties. Overwrites the current property list.</p>
-    ///   - [`properties_to_remove(Option<Vec<String>>)`](crate::input::UpdateArtifactInput::properties_to_remove): <p>A list of properties to remove.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`artifact_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateArtifact::artifact_arn) / [`set_artifact_arn(Option<String>)`](crate::client::fluent_builders::UpdateArtifact::set_artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
+    ///   - [`artifact_name(impl Into<String>)`](crate::client::fluent_builders::UpdateArtifact::artifact_name) / [`set_artifact_name(Option<String>)`](crate::client::fluent_builders::UpdateArtifact::set_artifact_name): <p>The new name for the artifact.</p>
+    ///   - [`properties(HashMap<String, String>)`](crate::client::fluent_builders::UpdateArtifact::properties) / [`set_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateArtifact::set_properties): <p>The new list of properties. Overwrites the current property list.</p>
+    ///   - [`properties_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateArtifact::properties_to_remove) / [`set_properties_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateArtifact::set_properties_to_remove): <p>A list of properties to remove.</p>
     /// - On success, responds with [`UpdateArtifactOutput`](crate::output::UpdateArtifactOutput) with field(s):
     ///   - [`artifact_arn(Option<String>)`](crate::output::UpdateArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>
     /// - On failure, responds with [`SdkError<UpdateArtifactError>`](crate::error::UpdateArtifactError)
@@ -3887,9 +3887,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateCodeRepository`](crate::client::fluent_builders::UpdateCodeRepository) operation.
     ///
-    /// - Takes [`UpdateCodeRepositoryInput`](crate::input::UpdateCodeRepositoryInput) with field(s):
-    ///   - [`code_repository_name(Option<String>)`](crate::input::UpdateCodeRepositoryInput::code_repository_name): <p>The name of the Git repository to update.</p>
-    ///   - [`git_config(Option<GitConfigForUpdate>)`](crate::input::UpdateCodeRepositoryInput::git_config): <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>  <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
+    /// - The fluent builder is configurable:
+    ///   - [`code_repository_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCodeRepository::code_repository_name) / [`set_code_repository_name(Option<String>)`](crate::client::fluent_builders::UpdateCodeRepository::set_code_repository_name): <p>The name of the Git repository to update.</p>
+    ///   - [`git_config(GitConfigForUpdate)`](crate::client::fluent_builders::UpdateCodeRepository::git_config) / [`set_git_config(Option<GitConfigForUpdate>)`](crate::client::fluent_builders::UpdateCodeRepository::set_git_config): <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>  <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
     /// - On success, responds with [`UpdateCodeRepositoryOutput`](crate::output::UpdateCodeRepositoryOutput) with field(s):
     ///   - [`code_repository_arn(Option<String>)`](crate::output::UpdateCodeRepositoryOutput::code_repository_arn): <p>The ARN of the Git repository.</p>
     /// - On failure, responds with [`SdkError<UpdateCodeRepositoryError>`](crate::error::UpdateCodeRepositoryError)
@@ -3898,11 +3898,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateContext`](crate::client::fluent_builders::UpdateContext) operation.
     ///
-    /// - Takes [`UpdateContextInput`](crate::input::UpdateContextInput) with field(s):
-    ///   - [`context_name(Option<String>)`](crate::input::UpdateContextInput::context_name): <p>The name of the context to update.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateContextInput::description): <p>The new description for the context.</p>
-    ///   - [`properties(Option<HashMap<String, String>>)`](crate::input::UpdateContextInput::properties): <p>The new list of properties. Overwrites the current property list.</p>
-    ///   - [`properties_to_remove(Option<Vec<String>>)`](crate::input::UpdateContextInput::properties_to_remove): <p>A list of properties to remove.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`context_name(impl Into<String>)`](crate::client::fluent_builders::UpdateContext::context_name) / [`set_context_name(Option<String>)`](crate::client::fluent_builders::UpdateContext::set_context_name): <p>The name of the context to update.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContext::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContext::set_description): <p>The new description for the context.</p>
+    ///   - [`properties(HashMap<String, String>)`](crate::client::fluent_builders::UpdateContext::properties) / [`set_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateContext::set_properties): <p>The new list of properties. Overwrites the current property list.</p>
+    ///   - [`properties_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateContext::properties_to_remove) / [`set_properties_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateContext::set_properties_to_remove): <p>A list of properties to remove.</p>
     /// - On success, responds with [`UpdateContextOutput`](crate::output::UpdateContextOutput) with field(s):
     ///   - [`context_arn(Option<String>)`](crate::output::UpdateContextOutput::context_arn): <p>The Amazon Resource Name (ARN) of the context.</p>
     /// - On failure, responds with [`SdkError<UpdateContextError>`](crate::error::UpdateContextError)
@@ -3911,12 +3911,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDeviceFleet`](crate::client::fluent_builders::UpdateDeviceFleet) operation.
     ///
-    /// - Takes [`UpdateDeviceFleetInput`](crate::input::UpdateDeviceFleetInput) with field(s):
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::UpdateDeviceFleetInput::device_fleet_name): <p>The name of the fleet.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateDeviceFleetInput::role_arn): <p>The Amazon Resource Name (ARN) of the device.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateDeviceFleetInput::description): <p>Description of the fleet.</p>
-    ///   - [`output_config(Option<EdgeOutputConfig>)`](crate::input::UpdateDeviceFleetInput::output_config): <p>Output configuration for storing sample data collected by the fleet.</p>
-    ///   - [`enable_iot_role_alias(Option<bool>)`](crate::input::UpdateDeviceFleetInput::enable_iot_role_alias): <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>  <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDeviceFleet::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::UpdateDeviceFleet::set_device_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDeviceFleet::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDeviceFleet::set_role_arn): <p>The Amazon Resource Name (ARN) of the device.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDeviceFleet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDeviceFleet::set_description): <p>Description of the fleet.</p>
+    ///   - [`output_config(EdgeOutputConfig)`](crate::client::fluent_builders::UpdateDeviceFleet::output_config) / [`set_output_config(Option<EdgeOutputConfig>)`](crate::client::fluent_builders::UpdateDeviceFleet::set_output_config): <p>Output configuration for storing sample data collected by the fleet.</p>
+    ///   - [`enable_iot_role_alias(bool)`](crate::client::fluent_builders::UpdateDeviceFleet::enable_iot_role_alias) / [`set_enable_iot_role_alias(Option<bool>)`](crate::client::fluent_builders::UpdateDeviceFleet::set_enable_iot_role_alias): <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>  <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     /// - On success, responds with [`UpdateDeviceFleetOutput`](crate::output::UpdateDeviceFleetOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDeviceFleetError>`](crate::error::UpdateDeviceFleetError)
@@ -3925,9 +3925,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDevices`](crate::client::fluent_builders::UpdateDevices) operation.
     ///
-    /// - Takes [`UpdateDevicesInput`](crate::input::UpdateDevicesInput) with field(s):
-    ///   - [`device_fleet_name(Option<String>)`](crate::input::UpdateDevicesInput::device_fleet_name): <p>The name of the fleet the devices belong to.</p>
-    ///   - [`devices(Option<Vec<Device>>)`](crate::input::UpdateDevicesInput::devices): <p>List of devices to register with Edge Manager agent.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDevices::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::UpdateDevices::set_device_fleet_name): <p>The name of the fleet the devices belong to.</p>
+    ///   - [`devices(Vec<Device>)`](crate::client::fluent_builders::UpdateDevices::devices) / [`set_devices(Option<Vec<Device>>)`](crate::client::fluent_builders::UpdateDevices::set_devices): <p>List of devices to register with Edge Manager agent.</p>
     /// - On success, responds with [`UpdateDevicesOutput`](crate::output::UpdateDevicesOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDevicesError>`](crate::error::UpdateDevicesError)
@@ -3936,10 +3936,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDomain`](crate::client::fluent_builders::UpdateDomain) operation.
     ///
-    /// - Takes [`UpdateDomainInput`](crate::input::UpdateDomainInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::UpdateDomainInput::domain_id): <p>The ID of the domain to be updated.</p>
-    ///   - [`default_user_settings(Option<UserSettings>)`](crate::input::UpdateDomainInput::default_user_settings): <p>A collection of settings.</p>
-    ///   - [`domain_settings_for_update(Option<DomainSettingsForUpdate>)`](crate::input::UpdateDomainInput::domain_settings_for_update): <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_domain_id): <p>The ID of the domain to be updated.</p>
+    ///   - [`default_user_settings(UserSettings)`](crate::client::fluent_builders::UpdateDomain::default_user_settings) / [`set_default_user_settings(Option<UserSettings>)`](crate::client::fluent_builders::UpdateDomain::set_default_user_settings): <p>A collection of settings.</p>
+    ///   - [`domain_settings_for_update(DomainSettingsForUpdate)`](crate::client::fluent_builders::UpdateDomain::domain_settings_for_update) / [`set_domain_settings_for_update(Option<DomainSettingsForUpdate>)`](crate::client::fluent_builders::UpdateDomain::set_domain_settings_for_update): <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
     /// - On success, responds with [`UpdateDomainOutput`](crate::output::UpdateDomainOutput) with field(s):
     ///   - [`domain_arn(Option<String>)`](crate::output::UpdateDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) of the domain.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainError>`](crate::error::UpdateDomainError)
@@ -3948,13 +3948,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEndpoint`](crate::client::fluent_builders::UpdateEndpoint) operation.
     ///
-    /// - Takes [`UpdateEndpointInput`](crate::input::UpdateEndpointInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::UpdateEndpointInput::endpoint_name): <p>The name of the endpoint whose configuration you want to update.</p>
-    ///   - [`endpoint_config_name(Option<String>)`](crate::input::UpdateEndpointInput::endpoint_config_name): <p>The name of the new endpoint configuration.</p>
-    ///   - [`retain_all_variant_properties(bool)`](crate::input::UpdateEndpointInput::retain_all_variant_properties): <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.</p>
-    ///   - [`exclude_retained_variant_properties(Option<Vec<VariantProperty>>)`](crate::input::UpdateEndpointInput::exclude_retained_variant_properties): <p>When you are updating endpoint resources with <code>UpdateEndpointInput$RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <code>VariantProperty</code> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden. </p>
-    ///   - [`deployment_config(Option<DeploymentConfig>)`](crate::input::UpdateEndpointInput::deployment_config): <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
-    ///   - [`retain_deployment_config(bool)`](crate::input::UpdateEndpointInput::retain_deployment_config): <p>Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpoint::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::UpdateEndpoint::set_endpoint_name): <p>The name of the endpoint whose configuration you want to update.</p>
+    ///   - [`endpoint_config_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpoint::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::client::fluent_builders::UpdateEndpoint::set_endpoint_config_name): <p>The name of the new endpoint configuration.</p>
+    ///   - [`retain_all_variant_properties(bool)`](crate::client::fluent_builders::UpdateEndpoint::retain_all_variant_properties) / [`set_retain_all_variant_properties(bool)`](crate::client::fluent_builders::UpdateEndpoint::set_retain_all_variant_properties): <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.</p>
+    ///   - [`exclude_retained_variant_properties(Vec<VariantProperty>)`](crate::client::fluent_builders::UpdateEndpoint::exclude_retained_variant_properties) / [`set_exclude_retained_variant_properties(Option<Vec<VariantProperty>>)`](crate::client::fluent_builders::UpdateEndpoint::set_exclude_retained_variant_properties): <p>When you are updating endpoint resources with <code>UpdateEndpointInput$RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <code>VariantProperty</code> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden. </p>
+    ///   - [`deployment_config(DeploymentConfig)`](crate::client::fluent_builders::UpdateEndpoint::deployment_config) / [`set_deployment_config(Option<DeploymentConfig>)`](crate::client::fluent_builders::UpdateEndpoint::set_deployment_config): <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
+    ///   - [`retain_deployment_config(bool)`](crate::client::fluent_builders::UpdateEndpoint::retain_deployment_config) / [`set_retain_deployment_config(bool)`](crate::client::fluent_builders::UpdateEndpoint::set_retain_deployment_config): <p>Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).</p>
     /// - On success, responds with [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput) with field(s):
     ///   - [`endpoint_arn(Option<String>)`](crate::output::UpdateEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointError>`](crate::error::UpdateEndpointError)
@@ -3963,9 +3963,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEndpointWeightsAndCapacities`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities) operation.
     ///
-    /// - Takes [`UpdateEndpointWeightsAndCapacitiesInput`](crate::input::UpdateEndpointWeightsAndCapacitiesInput) with field(s):
-    ///   - [`endpoint_name(Option<String>)`](crate::input::UpdateEndpointWeightsAndCapacitiesInput::endpoint_name): <p>The name of an existing Amazon SageMaker endpoint.</p>
-    ///   - [`desired_weights_and_capacities(Option<Vec<DesiredWeightAndCapacity>>)`](crate::input::UpdateEndpointWeightsAndCapacitiesInput::desired_weights_and_capacities): <p>An object that provides new capacity and weight values for a variant.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::set_endpoint_name): <p>The name of an existing Amazon SageMaker endpoint.</p>
+    ///   - [`desired_weights_and_capacities(Vec<DesiredWeightAndCapacity>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::desired_weights_and_capacities) / [`set_desired_weights_and_capacities(Option<Vec<DesiredWeightAndCapacity>>)`](crate::client::fluent_builders::UpdateEndpointWeightsAndCapacities::set_desired_weights_and_capacities): <p>An object that provides new capacity and weight values for a variant.</p>
     /// - On success, responds with [`UpdateEndpointWeightsAndCapacitiesOutput`](crate::output::UpdateEndpointWeightsAndCapacitiesOutput) with field(s):
     ///   - [`endpoint_arn(Option<String>)`](crate::output::UpdateEndpointWeightsAndCapacitiesOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointWeightsAndCapacitiesError>`](crate::error::UpdateEndpointWeightsAndCapacitiesError)
@@ -3976,10 +3976,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateExperiment`](crate::client::fluent_builders::UpdateExperiment) operation.
     ///
-    /// - Takes [`UpdateExperimentInput`](crate::input::UpdateExperimentInput) with field(s):
-    ///   - [`experiment_name(Option<String>)`](crate::input::UpdateExperimentInput::experiment_name): <p>The name of the experiment to update.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateExperimentInput::display_name): <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateExperimentInput::description): <p>The description of the experiment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`experiment_name(impl Into<String>)`](crate::client::fluent_builders::UpdateExperiment::experiment_name) / [`set_experiment_name(Option<String>)`](crate::client::fluent_builders::UpdateExperiment::set_experiment_name): <p>The name of the experiment to update.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateExperiment::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateExperiment::set_display_name): <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExperiment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExperiment::set_description): <p>The description of the experiment.</p>
     /// - On success, responds with [`UpdateExperimentOutput`](crate::output::UpdateExperimentOutput) with field(s):
     ///   - [`experiment_arn(Option<String>)`](crate::output::UpdateExperimentOutput::experiment_arn): <p>The Amazon Resource Name (ARN) of the experiment.</p>
     /// - On failure, responds with [`SdkError<UpdateExperimentError>`](crate::error::UpdateExperimentError)
@@ -3988,12 +3988,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateImage`](crate::client::fluent_builders::UpdateImage) operation.
     ///
-    /// - Takes [`UpdateImageInput`](crate::input::UpdateImageInput) with field(s):
-    ///   - [`delete_properties(Option<Vec<String>>)`](crate::input::UpdateImageInput::delete_properties): <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateImageInput::description): <p>The new description for the image.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateImageInput::display_name): <p>The new display name for the image.</p>
-    ///   - [`image_name(Option<String>)`](crate::input::UpdateImageInput::image_name): <p>The name of the image to update.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateImageInput::role_arn): <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delete_properties(Vec<String>)`](crate::client::fluent_builders::UpdateImage::delete_properties) / [`set_delete_properties(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateImage::set_delete_properties): <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateImage::set_description): <p>The new description for the image.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateImage::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateImage::set_display_name): <p>The new display name for the image.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::UpdateImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::UpdateImage::set_image_name): <p>The name of the image to update.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateImage::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateImage::set_role_arn): <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     /// - On success, responds with [`UpdateImageOutput`](crate::output::UpdateImageOutput) with field(s):
     ///   - [`image_arn(Option<String>)`](crate::output::UpdateImageOutput::image_arn): <p>The Amazon Resource Name (ARN) of the image.</p>
     /// - On failure, responds with [`SdkError<UpdateImageError>`](crate::error::UpdateImageError)
@@ -4002,13 +4002,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateModelPackage`](crate::client::fluent_builders::UpdateModelPackage) operation.
     ///
-    /// - Takes [`UpdateModelPackageInput`](crate::input::UpdateModelPackageInput) with field(s):
-    ///   - [`model_package_arn(Option<String>)`](crate::input::UpdateModelPackageInput::model_package_arn): <p>The Amazon Resource Name (ARN) of the model package.</p>
-    ///   - [`model_approval_status(Option<ModelApprovalStatus>)`](crate::input::UpdateModelPackageInput::model_approval_status): <p>The approval status of the model.</p>
-    ///   - [`approval_description(Option<String>)`](crate::input::UpdateModelPackageInput::approval_description): <p>A description for the approval status of the model.</p>
-    ///   - [`customer_metadata_properties(Option<HashMap<String, String>>)`](crate::input::UpdateModelPackageInput::customer_metadata_properties): <p>The metadata properties associated with the model package versions.</p>
-    ///   - [`customer_metadata_properties_to_remove(Option<Vec<String>>)`](crate::input::UpdateModelPackageInput::customer_metadata_properties_to_remove): <p>The metadata properties associated with the model package versions to remove.</p>
-    ///   - [`additional_inference_specifications_to_add(Option<Vec<AdditionalInferenceSpecificationDefinition>>)`](crate::input::UpdateModelPackageInput::additional_inference_specifications_to_add): <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`model_package_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateModelPackage::model_package_arn) / [`set_model_package_arn(Option<String>)`](crate::client::fluent_builders::UpdateModelPackage::set_model_package_arn): <p>The Amazon Resource Name (ARN) of the model package.</p>
+    ///   - [`model_approval_status(ModelApprovalStatus)`](crate::client::fluent_builders::UpdateModelPackage::model_approval_status) / [`set_model_approval_status(Option<ModelApprovalStatus>)`](crate::client::fluent_builders::UpdateModelPackage::set_model_approval_status): <p>The approval status of the model.</p>
+    ///   - [`approval_description(impl Into<String>)`](crate::client::fluent_builders::UpdateModelPackage::approval_description) / [`set_approval_description(Option<String>)`](crate::client::fluent_builders::UpdateModelPackage::set_approval_description): <p>A description for the approval status of the model.</p>
+    ///   - [`customer_metadata_properties(HashMap<String, String>)`](crate::client::fluent_builders::UpdateModelPackage::customer_metadata_properties) / [`set_customer_metadata_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateModelPackage::set_customer_metadata_properties): <p>The metadata properties associated with the model package versions.</p>
+    ///   - [`customer_metadata_properties_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateModelPackage::customer_metadata_properties_to_remove) / [`set_customer_metadata_properties_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateModelPackage::set_customer_metadata_properties_to_remove): <p>The metadata properties associated with the model package versions to remove.</p>
+    ///   - [`additional_inference_specifications_to_add(Vec<AdditionalInferenceSpecificationDefinition>)`](crate::client::fluent_builders::UpdateModelPackage::additional_inference_specifications_to_add) / [`set_additional_inference_specifications_to_add(Option<Vec<AdditionalInferenceSpecificationDefinition>>)`](crate::client::fluent_builders::UpdateModelPackage::set_additional_inference_specifications_to_add): <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     /// - On success, responds with [`UpdateModelPackageOutput`](crate::output::UpdateModelPackageOutput) with field(s):
     ///   - [`model_package_arn(Option<String>)`](crate::output::UpdateModelPackageOutput::model_package_arn): <p>The Amazon Resource Name (ARN) of the model.</p>
     /// - On failure, responds with [`SdkError<UpdateModelPackageError>`](crate::error::UpdateModelPackageError)
@@ -4017,9 +4017,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateMonitoringSchedule`](crate::client::fluent_builders::UpdateMonitoringSchedule) operation.
     ///
-    /// - Takes [`UpdateMonitoringScheduleInput`](crate::input::UpdateMonitoringScheduleInput) with field(s):
-    ///   - [`monitoring_schedule_name(Option<String>)`](crate::input::UpdateMonitoringScheduleInput::monitoring_schedule_name): <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
-    ///   - [`monitoring_schedule_config(Option<MonitoringScheduleConfig>)`](crate::input::UpdateMonitoringScheduleInput::monitoring_schedule_config): <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMonitoringSchedule::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::client::fluent_builders::UpdateMonitoringSchedule::set_monitoring_schedule_name): <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
+    ///   - [`monitoring_schedule_config(MonitoringScheduleConfig)`](crate::client::fluent_builders::UpdateMonitoringSchedule::monitoring_schedule_config) / [`set_monitoring_schedule_config(Option<MonitoringScheduleConfig>)`](crate::client::fluent_builders::UpdateMonitoringSchedule::set_monitoring_schedule_config): <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
     /// - On success, responds with [`UpdateMonitoringScheduleOutput`](crate::output::UpdateMonitoringScheduleOutput) with field(s):
     ///   - [`monitoring_schedule_arn(Option<String>)`](crate::output::UpdateMonitoringScheduleOutput::monitoring_schedule_arn): <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     /// - On failure, responds with [`SdkError<UpdateMonitoringScheduleError>`](crate::error::UpdateMonitoringScheduleError)
@@ -4028,20 +4028,20 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateNotebookInstance`](crate::client::fluent_builders::UpdateNotebookInstance) operation.
     ///
-    /// - Takes [`UpdateNotebookInstanceInput`](crate::input::UpdateNotebookInstanceInput) with field(s):
-    ///   - [`notebook_instance_name(Option<String>)`](crate::input::UpdateNotebookInstanceInput::notebook_instance_name): <p>The name of the notebook instance to update.</p>
-    ///   - [`instance_type(Option<InstanceType>)`](crate::input::UpdateNotebookInstanceInput::instance_type): <p>The Amazon ML compute instance type.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdateNotebookInstanceInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
-    ///   - [`lifecycle_config_name(Option<String>)`](crate::input::UpdateNotebookInstanceInput::lifecycle_config_name): <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
-    ///   - [`disassociate_lifecycle_config(bool)`](crate::input::UpdateNotebookInstanceInput::disassociate_lifecycle_config): <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    ///   - [`volume_size_in_gb(Option<i32>)`](crate::input::UpdateNotebookInstanceInput::volume_size_in_gb): <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
-    ///   - [`default_code_repository(Option<String>)`](crate::input::UpdateNotebookInstanceInput::default_code_repository): <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
-    ///   - [`additional_code_repositories(Option<Vec<String>>)`](crate::input::UpdateNotebookInstanceInput::additional_code_repositories): <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
-    ///   - [`accelerator_types(Option<Vec<NotebookInstanceAcceleratorType>>)`](crate::input::UpdateNotebookInstanceInput::accelerator_types): <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    ///   - [`disassociate_accelerator_types(bool)`](crate::input::UpdateNotebookInstanceInput::disassociate_accelerator_types): <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    ///   - [`disassociate_default_code_repository(bool)`](crate::input::UpdateNotebookInstanceInput::disassociate_default_code_repository): <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    ///   - [`disassociate_additional_code_repositories(bool)`](crate::input::UpdateNotebookInstanceInput::disassociate_additional_code_repositories): <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    ///   - [`root_access(Option<RootAccess>)`](crate::input::UpdateNotebookInstanceInput::root_access): <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>   <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>  </note>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_notebook_instance_name): <p>The name of the notebook instance to update.</p>
+    ///   - [`instance_type(InstanceType)`](crate::client::fluent_builders::UpdateNotebookInstance::instance_type) / [`set_instance_type(Option<InstanceType>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_instance_type): <p>The Amazon ML compute instance type.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>   <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>  </note>
+    ///   - [`lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::lifecycle_config_name) / [`set_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_lifecycle_config_name): <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+    ///   - [`disassociate_lifecycle_config(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::disassociate_lifecycle_config) / [`set_disassociate_lifecycle_config(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::set_disassociate_lifecycle_config): <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    ///   - [`volume_size_in_gb(i32)`](crate::client::fluent_builders::UpdateNotebookInstance::volume_size_in_gb) / [`set_volume_size_in_gb(Option<i32>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_volume_size_in_gb): <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
+    ///   - [`default_code_repository(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::default_code_repository) / [`set_default_code_repository(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_default_code_repository): <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    ///   - [`additional_code_repositories(Vec<String>)`](crate::client::fluent_builders::UpdateNotebookInstance::additional_code_repositories) / [`set_additional_code_repositories(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_additional_code_repositories): <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    ///   - [`accelerator_types(Vec<NotebookInstanceAcceleratorType>)`](crate::client::fluent_builders::UpdateNotebookInstance::accelerator_types) / [`set_accelerator_types(Option<Vec<NotebookInstanceAcceleratorType>>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_accelerator_types): <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    ///   - [`disassociate_accelerator_types(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::disassociate_accelerator_types) / [`set_disassociate_accelerator_types(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::set_disassociate_accelerator_types): <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    ///   - [`disassociate_default_code_repository(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::disassociate_default_code_repository) / [`set_disassociate_default_code_repository(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::set_disassociate_default_code_repository): <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    ///   - [`disassociate_additional_code_repositories(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::disassociate_additional_code_repositories) / [`set_disassociate_additional_code_repositories(bool)`](crate::client::fluent_builders::UpdateNotebookInstance::set_disassociate_additional_code_repositories): <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
+    ///   - [`root_access(RootAccess)`](crate::client::fluent_builders::UpdateNotebookInstance::root_access) / [`set_root_access(Option<RootAccess>)`](crate::client::fluent_builders::UpdateNotebookInstance::set_root_access): <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>   <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>  </note>
     /// - On success, responds with [`UpdateNotebookInstanceOutput`](crate::output::UpdateNotebookInstanceOutput)
 
     /// - On failure, responds with [`SdkError<UpdateNotebookInstanceError>`](crate::error::UpdateNotebookInstanceError)
@@ -4050,10 +4050,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateNotebookInstanceLifecycleConfig`](crate::client::fluent_builders::UpdateNotebookInstanceLifecycleConfig) operation.
     ///
-    /// - Takes [`UpdateNotebookInstanceLifecycleConfigInput`](crate::input::UpdateNotebookInstanceLifecycleConfigInput) with field(s):
-    ///   - [`notebook_instance_lifecycle_config_name(Option<String>)`](crate::input::UpdateNotebookInstanceLifecycleConfigInput::notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration.</p>
-    ///   - [`on_create(Option<Vec<NotebookInstanceLifecycleHook>>)`](crate::input::UpdateNotebookInstanceLifecycleConfigInput::on_create): <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
-    ///   - [`on_start(Option<Vec<NotebookInstanceLifecycleHook>>)`](crate::input::UpdateNotebookInstanceLifecycleConfigInput::on_start): <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`notebook_instance_lifecycle_config_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotebookInstanceLifecycleConfig::notebook_instance_lifecycle_config_name) / [`set_notebook_instance_lifecycle_config_name(Option<String>)`](crate::client::fluent_builders::UpdateNotebookInstanceLifecycleConfig::set_notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration.</p>
+    ///   - [`on_create(Vec<NotebookInstanceLifecycleHook>)`](crate::client::fluent_builders::UpdateNotebookInstanceLifecycleConfig::on_create) / [`set_on_create(Option<Vec<NotebookInstanceLifecycleHook>>)`](crate::client::fluent_builders::UpdateNotebookInstanceLifecycleConfig::set_on_create): <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
+    ///   - [`on_start(Vec<NotebookInstanceLifecycleHook>)`](crate::client::fluent_builders::UpdateNotebookInstanceLifecycleConfig::on_start) / [`set_on_start(Option<Vec<NotebookInstanceLifecycleHook>>)`](crate::client::fluent_builders::UpdateNotebookInstanceLifecycleConfig::set_on_start): <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
     /// - On success, responds with [`UpdateNotebookInstanceLifecycleConfigOutput`](crate::output::UpdateNotebookInstanceLifecycleConfigOutput)
 
     /// - On failure, responds with [`SdkError<UpdateNotebookInstanceLifecycleConfigError>`](crate::error::UpdateNotebookInstanceLifecycleConfigError)
@@ -4064,14 +4064,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdatePipeline`](crate::client::fluent_builders::UpdatePipeline) operation.
     ///
-    /// - Takes [`UpdatePipelineInput`](crate::input::UpdatePipelineInput) with field(s):
-    ///   - [`pipeline_name(Option<String>)`](crate::input::UpdatePipelineInput::pipeline_name): <p>The name of the pipeline to update.</p>
-    ///   - [`pipeline_display_name(Option<String>)`](crate::input::UpdatePipelineInput::pipeline_display_name): <p>The display name of the pipeline.</p>
-    ///   - [`pipeline_definition(Option<String>)`](crate::input::UpdatePipelineInput::pipeline_definition): <p>The JSON pipeline definition.</p>
-    ///   - [`pipeline_definition_s3_location(Option<PipelineDefinitionS3Location>)`](crate::input::UpdatePipelineInput::pipeline_definition_s3_location): <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    ///   - [`pipeline_description(Option<String>)`](crate::input::UpdatePipelineInput::pipeline_description): <p>The description of the pipeline.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::UpdatePipelineInput::role_arn): <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
-    ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::input::UpdatePipelineInput::parallelism_configuration): <p>If specified, it applies to all executions of this pipeline by default.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePipeline::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::UpdatePipeline::set_pipeline_name): <p>The name of the pipeline to update.</p>
+    ///   - [`pipeline_display_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePipeline::pipeline_display_name) / [`set_pipeline_display_name(Option<String>)`](crate::client::fluent_builders::UpdatePipeline::set_pipeline_display_name): <p>The display name of the pipeline.</p>
+    ///   - [`pipeline_definition(impl Into<String>)`](crate::client::fluent_builders::UpdatePipeline::pipeline_definition) / [`set_pipeline_definition(Option<String>)`](crate::client::fluent_builders::UpdatePipeline::set_pipeline_definition): <p>The JSON pipeline definition.</p>
+    ///   - [`pipeline_definition_s3_location(PipelineDefinitionS3Location)`](crate::client::fluent_builders::UpdatePipeline::pipeline_definition_s3_location) / [`set_pipeline_definition_s3_location(Option<PipelineDefinitionS3Location>)`](crate::client::fluent_builders::UpdatePipeline::set_pipeline_definition_s3_location): <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
+    ///   - [`pipeline_description(impl Into<String>)`](crate::client::fluent_builders::UpdatePipeline::pipeline_description) / [`set_pipeline_description(Option<String>)`](crate::client::fluent_builders::UpdatePipeline::set_pipeline_description): <p>The description of the pipeline.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePipeline::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdatePipeline::set_role_arn): <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
+    ///   - [`parallelism_configuration(ParallelismConfiguration)`](crate::client::fluent_builders::UpdatePipeline::parallelism_configuration) / [`set_parallelism_configuration(Option<ParallelismConfiguration>)`](crate::client::fluent_builders::UpdatePipeline::set_parallelism_configuration): <p>If specified, it applies to all executions of this pipeline by default.</p>
     /// - On success, responds with [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::output::UpdatePipelineOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the updated pipeline.</p>
     /// - On failure, responds with [`SdkError<UpdatePipelineError>`](crate::error::UpdatePipelineError)
@@ -4080,11 +4080,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdatePipelineExecution`](crate::client::fluent_builders::UpdatePipelineExecution) operation.
     ///
-    /// - Takes [`UpdatePipelineExecutionInput`](crate::input::UpdatePipelineExecutionInput) with field(s):
-    ///   - [`pipeline_execution_arn(Option<String>)`](crate::input::UpdatePipelineExecutionInput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    ///   - [`pipeline_execution_description(Option<String>)`](crate::input::UpdatePipelineExecutionInput::pipeline_execution_description): <p>The description of the pipeline execution.</p>
-    ///   - [`pipeline_execution_display_name(Option<String>)`](crate::input::UpdatePipelineExecutionInput::pipeline_execution_display_name): <p>The display name of the pipeline execution.</p>
-    ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::input::UpdatePipelineExecutionInput::parallelism_configuration): <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_execution_arn(impl Into<String>)`](crate::client::fluent_builders::UpdatePipelineExecution::pipeline_execution_arn) / [`set_pipeline_execution_arn(Option<String>)`](crate::client::fluent_builders::UpdatePipelineExecution::set_pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    ///   - [`pipeline_execution_description(impl Into<String>)`](crate::client::fluent_builders::UpdatePipelineExecution::pipeline_execution_description) / [`set_pipeline_execution_description(Option<String>)`](crate::client::fluent_builders::UpdatePipelineExecution::set_pipeline_execution_description): <p>The description of the pipeline execution.</p>
+    ///   - [`pipeline_execution_display_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePipelineExecution::pipeline_execution_display_name) / [`set_pipeline_execution_display_name(Option<String>)`](crate::client::fluent_builders::UpdatePipelineExecution::set_pipeline_execution_display_name): <p>The display name of the pipeline execution.</p>
+    ///   - [`parallelism_configuration(ParallelismConfiguration)`](crate::client::fluent_builders::UpdatePipelineExecution::parallelism_configuration) / [`set_parallelism_configuration(Option<ParallelismConfiguration>)`](crate::client::fluent_builders::UpdatePipelineExecution::set_parallelism_configuration): <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
     /// - On success, responds with [`UpdatePipelineExecutionOutput`](crate::output::UpdatePipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::output::UpdatePipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the updated pipeline execution.</p>
     /// - On failure, responds with [`SdkError<UpdatePipelineExecutionError>`](crate::error::UpdatePipelineExecutionError)
@@ -4093,11 +4093,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
     ///
-    /// - Takes [`UpdateProjectInput`](crate::input::UpdateProjectInput) with field(s):
-    ///   - [`project_name(Option<String>)`](crate::input::UpdateProjectInput::project_name): <p>The name of the project.</p>
-    ///   - [`project_description(Option<String>)`](crate::input::UpdateProjectInput::project_description): <p>The description for the project.</p>
-    ///   - [`service_catalog_provisioning_update_details(Option<ServiceCatalogProvisioningUpdateDetails>)`](crate::input::UpdateProjectInput::service_catalog_provisioning_update_details): <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::UpdateProjectInput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project_name): <p>The name of the project.</p>
+    ///   - [`project_description(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project_description) / [`set_project_description(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project_description): <p>The description for the project.</p>
+    ///   - [`service_catalog_provisioning_update_details(ServiceCatalogProvisioningUpdateDetails)`](crate::client::fluent_builders::UpdateProject::service_catalog_provisioning_update_details) / [`set_service_catalog_provisioning_update_details(Option<ServiceCatalogProvisioningUpdateDetails>)`](crate::client::fluent_builders::UpdateProject::set_service_catalog_provisioning_update_details): <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::UpdateProject::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::UpdateProject::set_tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
     ///   - [`project_arn(Option<String>)`](crate::output::UpdateProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the project.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
@@ -4106,10 +4106,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTrainingJob`](crate::client::fluent_builders::UpdateTrainingJob) operation.
     ///
-    /// - Takes [`UpdateTrainingJobInput`](crate::input::UpdateTrainingJobInput) with field(s):
-    ///   - [`training_job_name(Option<String>)`](crate::input::UpdateTrainingJobInput::training_job_name): <p>The name of a training job to update the Debugger profiling configuration.</p>
-    ///   - [`profiler_config(Option<ProfilerConfigForUpdate>)`](crate::input::UpdateTrainingJobInput::profiler_config): <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
-    ///   - [`profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::input::UpdateTrainingJobInput::profiler_rule_configurations): <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`training_job_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrainingJob::training_job_name) / [`set_training_job_name(Option<String>)`](crate::client::fluent_builders::UpdateTrainingJob::set_training_job_name): <p>The name of a training job to update the Debugger profiling configuration.</p>
+    ///   - [`profiler_config(ProfilerConfigForUpdate)`](crate::client::fluent_builders::UpdateTrainingJob::profiler_config) / [`set_profiler_config(Option<ProfilerConfigForUpdate>)`](crate::client::fluent_builders::UpdateTrainingJob::set_profiler_config): <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
+    ///   - [`profiler_rule_configurations(Vec<ProfilerRuleConfiguration>)`](crate::client::fluent_builders::UpdateTrainingJob::profiler_rule_configurations) / [`set_profiler_rule_configurations(Option<Vec<ProfilerRuleConfiguration>>)`](crate::client::fluent_builders::UpdateTrainingJob::set_profiler_rule_configurations): <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
     /// - On success, responds with [`UpdateTrainingJobOutput`](crate::output::UpdateTrainingJobOutput) with field(s):
     ///   - [`training_job_arn(Option<String>)`](crate::output::UpdateTrainingJobOutput::training_job_arn): <p>The Amazon Resource Name (ARN) of the training job.</p>
     /// - On failure, responds with [`SdkError<UpdateTrainingJobError>`](crate::error::UpdateTrainingJobError)
@@ -4118,9 +4118,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTrial`](crate::client::fluent_builders::UpdateTrial) operation.
     ///
-    /// - Takes [`UpdateTrialInput`](crate::input::UpdateTrialInput) with field(s):
-    ///   - [`trial_name(Option<String>)`](crate::input::UpdateTrialInput::trial_name): <p>The name of the trial to update.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateTrialInput::display_name): <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrial::trial_name) / [`set_trial_name(Option<String>)`](crate::client::fluent_builders::UpdateTrial::set_trial_name): <p>The name of the trial to update.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrial::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateTrial::set_display_name): <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     /// - On success, responds with [`UpdateTrialOutput`](crate::output::UpdateTrialOutput) with field(s):
     ///   - [`trial_arn(Option<String>)`](crate::output::UpdateTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
     /// - On failure, responds with [`SdkError<UpdateTrialError>`](crate::error::UpdateTrialError)
@@ -4129,18 +4129,18 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateTrialComponent`](crate::client::fluent_builders::UpdateTrialComponent) operation.
     ///
-    /// - Takes [`UpdateTrialComponentInput`](crate::input::UpdateTrialComponentInput) with field(s):
-    ///   - [`trial_component_name(Option<String>)`](crate::input::UpdateTrialComponentInput::trial_component_name): <p>The name of the component to update.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateTrialComponentInput::display_name): <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
-    ///   - [`status(Option<TrialComponentStatus>)`](crate::input::UpdateTrialComponentInput::status): <p>The new status of the component.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::UpdateTrialComponentInput::start_time): <p>When the component started.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::UpdateTrialComponentInput::end_time): <p>When the component ended.</p>
-    ///   - [`parameters(Option<HashMap<String, TrialComponentParameterValue>>)`](crate::input::UpdateTrialComponentInput::parameters): <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
-    ///   - [`parameters_to_remove(Option<Vec<String>>)`](crate::input::UpdateTrialComponentInput::parameters_to_remove): <p>The hyperparameters to remove from the component.</p>
-    ///   - [`input_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::input::UpdateTrialComponentInput::input_artifacts): <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
-    ///   - [`input_artifacts_to_remove(Option<Vec<String>>)`](crate::input::UpdateTrialComponentInput::input_artifacts_to_remove): <p>The input artifacts to remove from the component.</p>
-    ///   - [`output_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::input::UpdateTrialComponentInput::output_artifacts): <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
-    ///   - [`output_artifacts_to_remove(Option<Vec<String>>)`](crate::input::UpdateTrialComponentInput::output_artifacts_to_remove): <p>The output artifacts to remove from the component.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`trial_component_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrialComponent::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::client::fluent_builders::UpdateTrialComponent::set_trial_component_name): <p>The name of the component to update.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrialComponent::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateTrialComponent::set_display_name): <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
+    ///   - [`status(TrialComponentStatus)`](crate::client::fluent_builders::UpdateTrialComponent::status) / [`set_status(Option<TrialComponentStatus>)`](crate::client::fluent_builders::UpdateTrialComponent::set_status): <p>The new status of the component.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::UpdateTrialComponent::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateTrialComponent::set_start_time): <p>When the component started.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::UpdateTrialComponent::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateTrialComponent::set_end_time): <p>When the component ended.</p>
+    ///   - [`parameters(HashMap<String, TrialComponentParameterValue>)`](crate::client::fluent_builders::UpdateTrialComponent::parameters) / [`set_parameters(Option<HashMap<String, TrialComponentParameterValue>>)`](crate::client::fluent_builders::UpdateTrialComponent::set_parameters): <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
+    ///   - [`parameters_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateTrialComponent::parameters_to_remove) / [`set_parameters_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateTrialComponent::set_parameters_to_remove): <p>The hyperparameters to remove from the component.</p>
+    ///   - [`input_artifacts(HashMap<String, TrialComponentArtifact>)`](crate::client::fluent_builders::UpdateTrialComponent::input_artifacts) / [`set_input_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::client::fluent_builders::UpdateTrialComponent::set_input_artifacts): <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
+    ///   - [`input_artifacts_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateTrialComponent::input_artifacts_to_remove) / [`set_input_artifacts_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateTrialComponent::set_input_artifacts_to_remove): <p>The input artifacts to remove from the component.</p>
+    ///   - [`output_artifacts(HashMap<String, TrialComponentArtifact>)`](crate::client::fluent_builders::UpdateTrialComponent::output_artifacts) / [`set_output_artifacts(Option<HashMap<String, TrialComponentArtifact>>)`](crate::client::fluent_builders::UpdateTrialComponent::set_output_artifacts): <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
+    ///   - [`output_artifacts_to_remove(Vec<String>)`](crate::client::fluent_builders::UpdateTrialComponent::output_artifacts_to_remove) / [`set_output_artifacts_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateTrialComponent::set_output_artifacts_to_remove): <p>The output artifacts to remove from the component.</p>
     /// - On success, responds with [`UpdateTrialComponentOutput`](crate::output::UpdateTrialComponentOutput) with field(s):
     ///   - [`trial_component_arn(Option<String>)`](crate::output::UpdateTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the trial component.</p>
     /// - On failure, responds with [`SdkError<UpdateTrialComponentError>`](crate::error::UpdateTrialComponentError)
@@ -4149,10 +4149,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateUserProfile`](crate::client::fluent_builders::UpdateUserProfile) operation.
     ///
-    /// - Takes [`UpdateUserProfileInput`](crate::input::UpdateUserProfileInput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::input::UpdateUserProfileInput::domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(Option<String>)`](crate::input::UpdateUserProfileInput::user_profile_name): <p>The user profile name.</p>
-    ///   - [`user_settings(Option<UserSettings>)`](crate::input::UpdateUserProfileInput::user_settings): <p>A collection of settings.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserProfile::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::UpdateUserProfile::set_domain_id): <p>The domain ID.</p>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUserProfile::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::client::fluent_builders::UpdateUserProfile::set_user_profile_name): <p>The user profile name.</p>
+    ///   - [`user_settings(UserSettings)`](crate::client::fluent_builders::UpdateUserProfile::user_settings) / [`set_user_settings(Option<UserSettings>)`](crate::client::fluent_builders::UpdateUserProfile::set_user_settings): <p>A collection of settings.</p>
     /// - On success, responds with [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput) with field(s):
     ///   - [`user_profile_arn(Option<String>)`](crate::output::UpdateUserProfileOutput::user_profile_arn): <p>The user profile Amazon Resource Name (ARN).</p>
     /// - On failure, responds with [`SdkError<UpdateUserProfileError>`](crate::error::UpdateUserProfileError)
@@ -4161,10 +4161,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateWorkforce`](crate::client::fluent_builders::UpdateWorkforce) operation.
     ///
-    /// - Takes [`UpdateWorkforceInput`](crate::input::UpdateWorkforceInput) with field(s):
-    ///   - [`workforce_name(Option<String>)`](crate::input::UpdateWorkforceInput::workforce_name): <p>The name of the private workforce that you want to update. You can find your workforce name by using the operation.</p>
-    ///   - [`source_ip_config(Option<SourceIpConfig>)`](crate::input::UpdateWorkforceInput::source_ip_config): <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>  <p>Maximum: Ten CIDR values</p>
-    ///   - [`oidc_config(Option<OidcConfig>)`](crate::input::UpdateWorkforceInput::oidc_config): <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`workforce_name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkforce::workforce_name) / [`set_workforce_name(Option<String>)`](crate::client::fluent_builders::UpdateWorkforce::set_workforce_name): <p>The name of the private workforce that you want to update. You can find your workforce name by using the operation.</p>
+    ///   - [`source_ip_config(SourceIpConfig)`](crate::client::fluent_builders::UpdateWorkforce::source_ip_config) / [`set_source_ip_config(Option<SourceIpConfig>)`](crate::client::fluent_builders::UpdateWorkforce::set_source_ip_config): <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>  <p>Maximum: Ten CIDR values</p>
+    ///   - [`oidc_config(OidcConfig)`](crate::client::fluent_builders::UpdateWorkforce::oidc_config) / [`set_oidc_config(Option<OidcConfig>)`](crate::client::fluent_builders::UpdateWorkforce::set_oidc_config): <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
     /// - On success, responds with [`UpdateWorkforceOutput`](crate::output::UpdateWorkforceOutput) with field(s):
     ///   - [`workforce(Option<Workforce>)`](crate::output::UpdateWorkforceOutput::workforce): <p>A single private workforce. You can create one private work force in each Amazon Web Services Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkforceError>`](crate::error::UpdateWorkforceError)
@@ -4173,11 +4173,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateWorkteam`](crate::client::fluent_builders::UpdateWorkteam) operation.
     ///
-    /// - Takes [`UpdateWorkteamInput`](crate::input::UpdateWorkteamInput) with field(s):
-    ///   - [`workteam_name(Option<String>)`](crate::input::UpdateWorkteamInput::workteam_name): <p>The name of the work team to update.</p>
-    ///   - [`member_definitions(Option<Vec<MemberDefinition>>)`](crate::input::UpdateWorkteamInput::member_definitions): <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>  <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>  <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>  <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update. </p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateWorkteamInput::description): <p>An updated description for the work team.</p>
-    ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::input::UpdateWorkteamInput::notification_configuration): <p>Configures SNS topic notifications for available or expiring work items</p>
+    /// - The fluent builder is configurable:
+    ///   - [`workteam_name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkteam::workteam_name) / [`set_workteam_name(Option<String>)`](crate::client::fluent_builders::UpdateWorkteam::set_workteam_name): <p>The name of the work team to update.</p>
+    ///   - [`member_definitions(Vec<MemberDefinition>)`](crate::client::fluent_builders::UpdateWorkteam::member_definitions) / [`set_member_definitions(Option<Vec<MemberDefinition>>)`](crate::client::fluent_builders::UpdateWorkteam::set_member_definitions): <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>  <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>  <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>  <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkteam::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWorkteam::set_description): <p>An updated description for the work team.</p>
+    ///   - [`notification_configuration(NotificationConfiguration)`](crate::client::fluent_builders::UpdateWorkteam::notification_configuration) / [`set_notification_configuration(Option<NotificationConfiguration>)`](crate::client::fluent_builders::UpdateWorkteam::set_notification_configuration): <p>Configures SNS topic notifications for available or expiring work items</p>
     /// - On success, responds with [`UpdateWorkteamOutput`](crate::output::UpdateWorkteamOutput) with field(s):
     ///   - [`workteam(Option<Workteam>)`](crate::output::UpdateWorkteamOutput::workteam): <p>A <code>Workteam</code> object that describes the updated work team.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkteamError>`](crate::error::UpdateWorkteamError)

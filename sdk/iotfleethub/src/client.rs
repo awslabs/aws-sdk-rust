@@ -85,12 +85,12 @@ where
 {
     /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
-    /// - Takes [`CreateApplicationInput`](crate::input::CreateApplicationInput) with field(s):
-    ///   - [`application_name(Option<String>)`](crate::input::CreateApplicationInput::application_name): <p>The name of the web application.</p>
-    ///   - [`application_description(Option<String>)`](crate::input::CreateApplicationInput::application_description): <p>An optional description of the web application.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::CreateApplicationInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    ///   - [`role_arn(Option<String>)`](crate::input::CreateApplicationInput::role_arn): <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>   <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>  </note>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateApplicationInput::tags): <p>A set of key/value pairs that you can use to manage the web application resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_application_name): <p>The name of the web application.</p>
+    ///   - [`application_description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::application_description) / [`set_application_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_application_description): <p>An optional description of the web application.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_role_arn): <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>   <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>  </note>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>A set of key/value pairs that you can use to manage the web application resource.</p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>The unique Id of the web application.</p>
     ///   - [`application_arn(Option<String>)`](crate::output::CreateApplicationOutput::application_arn): <p>The ARN of the web application.</p>
@@ -100,9 +100,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
     ///
-    /// - Takes [`DeleteApplicationInput`](crate::input::DeleteApplicationInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteApplicationInput::application_id): <p>The unique Id of the web application.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::DeleteApplicationInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_id): <p>The unique Id of the web application.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
@@ -111,8 +111,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeApplication`](crate::client::fluent_builders::DescribeApplication) operation.
     ///
-    /// - Takes [`DescribeApplicationInput`](crate::input::DescribeApplicationInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DescribeApplicationInput::application_id): <p>The unique Id of the web application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DescribeApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DescribeApplication::set_application_id): <p>The unique Id of the web application.</p>
     /// - On success, responds with [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::DescribeApplicationOutput::application_id): <p>The unique Id of the web application.</p>
     ///   - [`application_arn(Option<String>)`](crate::output::DescribeApplicationOutput::application_arn): <p>The ARN of the web application.</p>
@@ -131,10 +131,10 @@ where
         fluent_builders::DescribeApplication::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     ///
-    /// - Takes [`ListApplicationsInput`](crate::input::ListApplicationsInput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationsInput::next_token): <p>A token used to get the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>A token used to get the next set of results.</p>
     /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
     ///   - [`application_summaries(Option<Vec<ApplicationSummary>>)`](crate::output::ListApplicationsOutput::application_summaries): <p>An array of objects that provide summaries of information about the web applications in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>A token used to get the next set of results.</p>
@@ -144,8 +144,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags assigned to the resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -154,9 +154,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The new or modified tags for the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The new or modified tags for the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -165,9 +165,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of the keys of the tags to be removed from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of the keys of the tags to be removed from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -176,11 +176,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
     ///
-    /// - Takes [`UpdateApplicationInput`](crate::input::UpdateApplicationInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateApplicationInput::application_id): <p>The unique Id of the web application.</p>
-    ///   - [`application_name(Option<String>)`](crate::input::UpdateApplicationInput::application_name): <p>The name of the web application.</p>
-    ///   - [`application_description(Option<String>)`](crate::input::UpdateApplicationInput::application_description): <p>An optional description of the web application.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::UpdateApplicationInput::client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_id): <p>The unique Id of the web application.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_name): <p>The name of the web application.</p>
+    ///   - [`application_description(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_description) / [`set_application_description(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_description): <p>An optional description of the web application.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)

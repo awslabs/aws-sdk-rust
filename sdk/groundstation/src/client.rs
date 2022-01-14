@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`CancelContact`](crate::client::fluent_builders::CancelContact) operation.
     ///
-    /// - Takes [`CancelContactInput`](crate::input::CancelContactInput) with field(s):
-    ///   - [`contact_id(Option<String>)`](crate::input::CancelContactInput::contact_id): <p>UUID of a contact.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::CancelContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::CancelContact::set_contact_id): <p>UUID of a contact.</p>
     /// - On success, responds with [`CancelContactOutput`](crate::output::CancelContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::output::CancelContactOutput::contact_id): <p>UUID of a contact.</p>
     /// - On failure, responds with [`SdkError<CancelContactError>`](crate::error::CancelContactError)
@@ -95,10 +95,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateConfig`](crate::client::fluent_builders::CreateConfig) operation.
     ///
-    /// - Takes [`CreateConfigInput`](crate::input::CreateConfigInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateConfigInput::name): <p>Name of a <code>Config</code>.</p>
-    ///   - [`config_data(Option<ConfigTypeData>)`](crate::input::CreateConfigInput::config_data): <p>Parameters of a <code>Config</code>.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateConfigInput::tags): <p>Tags assigned to a <code>Config</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateConfig::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateConfig::set_name): <p>Name of a <code>Config</code>.</p>
+    ///   - [`config_data(ConfigTypeData)`](crate::client::fluent_builders::CreateConfig::config_data) / [`set_config_data(Option<ConfigTypeData>)`](crate::client::fluent_builders::CreateConfig::set_config_data): <p>Parameters of a <code>Config</code>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateConfig::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateConfig::set_tags): <p>Tags assigned to a <code>Config</code>.</p>
     /// - On success, responds with [`CreateConfigOutput`](crate::output::CreateConfigOutput) with field(s):
     ///   - [`config_id(Option<String>)`](crate::output::CreateConfigOutput::config_id): <p>UUID of a <code>Config</code>.</p>
     ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::output::CreateConfigOutput::config_type): <p>Type of a <code>Config</code>.</p>
@@ -109,9 +109,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDataflowEndpointGroup`](crate::client::fluent_builders::CreateDataflowEndpointGroup) operation.
     ///
-    /// - Takes [`CreateDataflowEndpointGroupInput`](crate::input::CreateDataflowEndpointGroupInput) with field(s):
-    ///   - [`endpoint_details(Option<Vec<EndpointDetails>>)`](crate::input::CreateDataflowEndpointGroupInput::endpoint_details): <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDataflowEndpointGroupInput::tags): <p>Tags of a dataflow endpoint group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_details(Vec<EndpointDetails>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::endpoint_details) / [`set_endpoint_details(Option<Vec<EndpointDetails>>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::set_endpoint_details): <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDataflowEndpointGroup::set_tags): <p>Tags of a dataflow endpoint group.</p>
     /// - On success, responds with [`CreateDataflowEndpointGroupOutput`](crate::output::CreateDataflowEndpointGroupOutput) with field(s):
     ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::output::CreateDataflowEndpointGroupOutput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     /// - On failure, responds with [`SdkError<CreateDataflowEndpointGroupError>`](crate::error::CreateDataflowEndpointGroupError)
@@ -122,14 +122,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMissionProfile`](crate::client::fluent_builders::CreateMissionProfile) operation.
     ///
-    /// - Takes [`CreateMissionProfileInput`](crate::input::CreateMissionProfileInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateMissionProfileInput::name): <p>Name of a mission profile.</p>
-    ///   - [`contact_pre_pass_duration_seconds(Option<i32>)`](crate::input::CreateMissionProfileInput::contact_pre_pass_duration_seconds): <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    ///   - [`contact_post_pass_duration_seconds(Option<i32>)`](crate::input::CreateMissionProfileInput::contact_post_pass_duration_seconds): <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    ///   - [`minimum_viable_contact_duration_seconds(Option<i32>)`](crate::input::CreateMissionProfileInput::minimum_viable_contact_duration_seconds): <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    ///   - [`dataflow_edges(Option<Vec<Vec<String>>>)`](crate::input::CreateMissionProfileInput::dataflow_edges): <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    ///   - [`tracking_config_arn(Option<String>)`](crate::input::CreateMissionProfileInput::tracking_config_arn): <p>ARN of a tracking <code>Config</code>.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateMissionProfileInput::tags): <p>Tags assigned to a mission profile.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateMissionProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateMissionProfile::set_name): <p>Name of a mission profile.</p>
+    ///   - [`contact_pre_pass_duration_seconds(i32)`](crate::client::fluent_builders::CreateMissionProfile::contact_pre_pass_duration_seconds) / [`set_contact_pre_pass_duration_seconds(Option<i32>)`](crate::client::fluent_builders::CreateMissionProfile::set_contact_pre_pass_duration_seconds): <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    ///   - [`contact_post_pass_duration_seconds(i32)`](crate::client::fluent_builders::CreateMissionProfile::contact_post_pass_duration_seconds) / [`set_contact_post_pass_duration_seconds(Option<i32>)`](crate::client::fluent_builders::CreateMissionProfile::set_contact_post_pass_duration_seconds): <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    ///   - [`minimum_viable_contact_duration_seconds(i32)`](crate::client::fluent_builders::CreateMissionProfile::minimum_viable_contact_duration_seconds) / [`set_minimum_viable_contact_duration_seconds(Option<i32>)`](crate::client::fluent_builders::CreateMissionProfile::set_minimum_viable_contact_duration_seconds): <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    ///   - [`dataflow_edges(Vec<Vec<String>>)`](crate::client::fluent_builders::CreateMissionProfile::dataflow_edges) / [`set_dataflow_edges(Option<Vec<Vec<String>>>)`](crate::client::fluent_builders::CreateMissionProfile::set_dataflow_edges): <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    ///   - [`tracking_config_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMissionProfile::tracking_config_arn) / [`set_tracking_config_arn(Option<String>)`](crate::client::fluent_builders::CreateMissionProfile::set_tracking_config_arn): <p>ARN of a tracking <code>Config</code>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateMissionProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateMissionProfile::set_tags): <p>Tags assigned to a mission profile.</p>
     /// - On success, responds with [`CreateMissionProfileOutput`](crate::output::CreateMissionProfileOutput) with field(s):
     ///   - [`mission_profile_id(Option<String>)`](crate::output::CreateMissionProfileOutput::mission_profile_id): <p>UUID of a mission profile.</p>
     /// - On failure, responds with [`SdkError<CreateMissionProfileError>`](crate::error::CreateMissionProfileError)
@@ -138,9 +138,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteConfig`](crate::client::fluent_builders::DeleteConfig) operation.
     ///
-    /// - Takes [`DeleteConfigInput`](crate::input::DeleteConfigInput) with field(s):
-    ///   - [`config_id(Option<String>)`](crate::input::DeleteConfigInput::config_id): <p>UUID of a <code>Config</code>.</p>
-    ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::input::DeleteConfigInput::config_type): <p>Type of a <code>Config</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`config_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConfig::config_id) / [`set_config_id(Option<String>)`](crate::client::fluent_builders::DeleteConfig::set_config_id): <p>UUID of a <code>Config</code>.</p>
+    ///   - [`config_type(ConfigCapabilityType)`](crate::client::fluent_builders::DeleteConfig::config_type) / [`set_config_type(Option<ConfigCapabilityType>)`](crate::client::fluent_builders::DeleteConfig::set_config_type): <p>Type of a <code>Config</code>.</p>
     /// - On success, responds with [`DeleteConfigOutput`](crate::output::DeleteConfigOutput) with field(s):
     ///   - [`config_id(Option<String>)`](crate::output::DeleteConfigOutput::config_id): <p>UUID of a <code>Config</code>.</p>
     ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::output::DeleteConfigOutput::config_type): <p>Type of a <code>Config</code>.</p>
@@ -151,8 +151,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDataflowEndpointGroup`](crate::client::fluent_builders::DeleteDataflowEndpointGroup) operation.
     ///
-    /// - Takes [`DeleteDataflowEndpointGroupInput`](crate::input::DeleteDataflowEndpointGroupInput) with field(s):
-    ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::input::DeleteDataflowEndpointGroupInput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataflow_endpoint_group_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataflowEndpointGroup::dataflow_endpoint_group_id) / [`set_dataflow_endpoint_group_id(Option<String>)`](crate::client::fluent_builders::DeleteDataflowEndpointGroup::set_dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     /// - On success, responds with [`DeleteDataflowEndpointGroupOutput`](crate::output::DeleteDataflowEndpointGroupOutput) with field(s):
     ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::output::DeleteDataflowEndpointGroupOutput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     /// - On failure, responds with [`SdkError<DeleteDataflowEndpointGroupError>`](crate::error::DeleteDataflowEndpointGroupError)
@@ -163,8 +163,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteMissionProfile`](crate::client::fluent_builders::DeleteMissionProfile) operation.
     ///
-    /// - Takes [`DeleteMissionProfileInput`](crate::input::DeleteMissionProfileInput) with field(s):
-    ///   - [`mission_profile_id(Option<String>)`](crate::input::DeleteMissionProfileInput::mission_profile_id): <p>UUID of a mission profile.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`mission_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMissionProfile::mission_profile_id) / [`set_mission_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteMissionProfile::set_mission_profile_id): <p>UUID of a mission profile.</p>
     /// - On success, responds with [`DeleteMissionProfileOutput`](crate::output::DeleteMissionProfileOutput) with field(s):
     ///   - [`mission_profile_id(Option<String>)`](crate::output::DeleteMissionProfileOutput::mission_profile_id): <p>UUID of a mission profile.</p>
     /// - On failure, responds with [`SdkError<DeleteMissionProfileError>`](crate::error::DeleteMissionProfileError)
@@ -173,8 +173,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeContact`](crate::client::fluent_builders::DescribeContact) operation.
     ///
-    /// - Takes [`DescribeContactInput`](crate::input::DescribeContactInput) with field(s):
-    ///   - [`contact_id(Option<String>)`](crate::input::DescribeContactInput::contact_id): <p>UUID of a contact.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::DescribeContact::set_contact_id): <p>UUID of a contact.</p>
     /// - On success, responds with [`DescribeContactOutput`](crate::output::DescribeContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::output::DescribeContactOutput::contact_id): <p>UUID of a contact.</p>
     ///   - [`mission_profile_arn(Option<String>)`](crate::output::DescribeContactOutput::mission_profile_arn): <p>ARN of a mission profile.</p>
@@ -196,9 +196,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetConfig`](crate::client::fluent_builders::GetConfig) operation.
     ///
-    /// - Takes [`GetConfigInput`](crate::input::GetConfigInput) with field(s):
-    ///   - [`config_id(Option<String>)`](crate::input::GetConfigInput::config_id): <p>UUID of a <code>Config</code>.</p>
-    ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::input::GetConfigInput::config_type): <p>Type of a <code>Config</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`config_id(impl Into<String>)`](crate::client::fluent_builders::GetConfig::config_id) / [`set_config_id(Option<String>)`](crate::client::fluent_builders::GetConfig::set_config_id): <p>UUID of a <code>Config</code>.</p>
+    ///   - [`config_type(ConfigCapabilityType)`](crate::client::fluent_builders::GetConfig::config_type) / [`set_config_type(Option<ConfigCapabilityType>)`](crate::client::fluent_builders::GetConfig::set_config_type): <p>Type of a <code>Config</code>.</p>
     /// - On success, responds with [`GetConfigOutput`](crate::output::GetConfigOutput) with field(s):
     ///   - [`config_id(Option<String>)`](crate::output::GetConfigOutput::config_id): <p>UUID of a <code>Config</code>.</p>
     ///   - [`config_arn(Option<String>)`](crate::output::GetConfigOutput::config_arn): <p>ARN of a <code>Config</code> </p>
@@ -212,8 +212,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDataflowEndpointGroup`](crate::client::fluent_builders::GetDataflowEndpointGroup) operation.
     ///
-    /// - Takes [`GetDataflowEndpointGroupInput`](crate::input::GetDataflowEndpointGroupInput) with field(s):
-    ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::input::GetDataflowEndpointGroupInput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`dataflow_endpoint_group_id(impl Into<String>)`](crate::client::fluent_builders::GetDataflowEndpointGroup::dataflow_endpoint_group_id) / [`set_dataflow_endpoint_group_id(Option<String>)`](crate::client::fluent_builders::GetDataflowEndpointGroup::set_dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     /// - On success, responds with [`GetDataflowEndpointGroupOutput`](crate::output::GetDataflowEndpointGroupOutput) with field(s):
     ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::output::GetDataflowEndpointGroupOutput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     ///   - [`dataflow_endpoint_group_arn(Option<String>)`](crate::output::GetDataflowEndpointGroupOutput::dataflow_endpoint_group_arn): <p>ARN of a dataflow endpoint group.</p>
@@ -227,9 +227,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetMinuteUsage`](crate::client::fluent_builders::GetMinuteUsage) operation.
     ///
-    /// - Takes [`GetMinuteUsageInput`](crate::input::GetMinuteUsageInput) with field(s):
-    ///   - [`month(Option<i32>)`](crate::input::GetMinuteUsageInput::month): <p>The month being requested, with a value of 1-12.</p>
-    ///   - [`year(Option<i32>)`](crate::input::GetMinuteUsageInput::year): <p>The year being requested, in the format of YYYY.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`month(i32)`](crate::client::fluent_builders::GetMinuteUsage::month) / [`set_month(Option<i32>)`](crate::client::fluent_builders::GetMinuteUsage::set_month): <p>The month being requested, with a value of 1-12.</p>
+    ///   - [`year(i32)`](crate::client::fluent_builders::GetMinuteUsage::year) / [`set_year(Option<i32>)`](crate::client::fluent_builders::GetMinuteUsage::set_year): <p>The year being requested, in the format of YYYY.</p>
     /// - On success, responds with [`GetMinuteUsageOutput`](crate::output::GetMinuteUsageOutput) with field(s):
     ///   - [`is_reserved_minutes_customer(Option<bool>)`](crate::output::GetMinuteUsageOutput::is_reserved_minutes_customer): <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
     ///   - [`total_reserved_minute_allocation(Option<i32>)`](crate::output::GetMinuteUsageOutput::total_reserved_minute_allocation): <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
@@ -242,8 +242,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetMissionProfile`](crate::client::fluent_builders::GetMissionProfile) operation.
     ///
-    /// - Takes [`GetMissionProfileInput`](crate::input::GetMissionProfileInput) with field(s):
-    ///   - [`mission_profile_id(Option<String>)`](crate::input::GetMissionProfileInput::mission_profile_id): <p>UUID of a mission profile.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`mission_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetMissionProfile::mission_profile_id) / [`set_mission_profile_id(Option<String>)`](crate::client::fluent_builders::GetMissionProfile::set_mission_profile_id): <p>UUID of a mission profile.</p>
     /// - On success, responds with [`GetMissionProfileOutput`](crate::output::GetMissionProfileOutput) with field(s):
     ///   - [`mission_profile_id(Option<String>)`](crate::output::GetMissionProfileOutput::mission_profile_id): <p>UUID of a mission profile.</p>
     ///   - [`mission_profile_arn(Option<String>)`](crate::output::GetMissionProfileOutput::mission_profile_arn): <p>ARN of a mission profile.</p>
@@ -261,8 +261,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetSatellite`](crate::client::fluent_builders::GetSatellite) operation.
     ///
-    /// - Takes [`GetSatelliteInput`](crate::input::GetSatelliteInput) with field(s):
-    ///   - [`satellite_id(Option<String>)`](crate::input::GetSatelliteInput::satellite_id): <p>UUID of a satellite.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`satellite_id(impl Into<String>)`](crate::client::fluent_builders::GetSatellite::satellite_id) / [`set_satellite_id(Option<String>)`](crate::client::fluent_builders::GetSatellite::set_satellite_id): <p>UUID of a satellite.</p>
     /// - On success, responds with [`GetSatelliteOutput`](crate::output::GetSatelliteOutput) with field(s):
     ///   - [`satellite_id(Option<String>)`](crate::output::GetSatelliteOutput::satellite_id): <p>UUID of a satellite.</p>
     ///   - [`satellite_arn(Option<String>)`](crate::output::GetSatelliteOutput::satellite_arn): <p>ARN of a satellite.</p>
@@ -273,11 +273,11 @@ where
         fluent_builders::GetSatellite::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListConfigs`](crate::client::fluent_builders::ListConfigs) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConfigs::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConfigs::into_paginator).
     ///
-    /// - Takes [`ListConfigsInput`](crate::input::ListConfigsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListConfigsInput::max_results): <p>Maximum number of <code>Configs</code> returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListConfigsInput::next_token): <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfigs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListConfigs::set_max_results): <p>Maximum number of <code>Configs</code> returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigs::set_next_token): <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     /// - On success, responds with [`ListConfigsOutput`](crate::output::ListConfigsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListConfigsOutput::next_token): <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     ///   - [`config_list(Option<Vec<ConfigListItem>>)`](crate::output::ListConfigsOutput::config_list): <p>List of <code>Config</code> items.</p>
@@ -286,17 +286,17 @@ where
         fluent_builders::ListConfigs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListContacts`](crate::client::fluent_builders::ListContacts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContacts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContacts::into_paginator).
     ///
-    /// - Takes [`ListContactsInput`](crate::input::ListContactsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListContactsInput::max_results): <p>Maximum number of contacts returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListContactsInput::next_token): <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
-    ///   - [`status_list(Option<Vec<ContactStatus>>)`](crate::input::ListContactsInput::status_list): <p>Status of a contact reservation.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::ListContactsInput::start_time): <p>Start time of a contact.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::ListContactsInput::end_time): <p>End time of a contact.</p>
-    ///   - [`ground_station(Option<String>)`](crate::input::ListContactsInput::ground_station): <p>Name of a ground station.</p>
-    ///   - [`satellite_arn(Option<String>)`](crate::input::ListContactsInput::satellite_arn): <p>ARN of a satellite.</p>
-    ///   - [`mission_profile_arn(Option<String>)`](crate::input::ListContactsInput::mission_profile_arn): <p>ARN of a mission profile.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContacts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListContacts::set_max_results): <p>Maximum number of contacts returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContacts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContacts::set_next_token): <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
+    ///   - [`status_list(Vec<ContactStatus>)`](crate::client::fluent_builders::ListContacts::status_list) / [`set_status_list(Option<Vec<ContactStatus>>)`](crate::client::fluent_builders::ListContacts::set_status_list): <p>Status of a contact reservation.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListContacts::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListContacts::set_start_time): <p>Start time of a contact.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListContacts::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListContacts::set_end_time): <p>End time of a contact.</p>
+    ///   - [`ground_station(impl Into<String>)`](crate::client::fluent_builders::ListContacts::ground_station) / [`set_ground_station(Option<String>)`](crate::client::fluent_builders::ListContacts::set_ground_station): <p>Name of a ground station.</p>
+    ///   - [`satellite_arn(impl Into<String>)`](crate::client::fluent_builders::ListContacts::satellite_arn) / [`set_satellite_arn(Option<String>)`](crate::client::fluent_builders::ListContacts::set_satellite_arn): <p>ARN of a satellite.</p>
+    ///   - [`mission_profile_arn(impl Into<String>)`](crate::client::fluent_builders::ListContacts::mission_profile_arn) / [`set_mission_profile_arn(Option<String>)`](crate::client::fluent_builders::ListContacts::set_mission_profile_arn): <p>ARN of a mission profile.</p>
     /// - On success, responds with [`ListContactsOutput`](crate::output::ListContactsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListContactsOutput::next_token): <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
     ///   - [`contact_list(Option<Vec<ContactData>>)`](crate::output::ListContactsOutput::contact_list): <p>List of contacts.</p>
@@ -305,11 +305,11 @@ where
         fluent_builders::ListContacts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDataflowEndpointGroups`](crate::client::fluent_builders::ListDataflowEndpointGroups) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataflowEndpointGroups::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataflowEndpointGroups::into_paginator).
     ///
-    /// - Takes [`ListDataflowEndpointGroupsInput`](crate::input::ListDataflowEndpointGroupsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDataflowEndpointGroupsInput::max_results): <p>Maximum number of dataflow endpoint groups returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDataflowEndpointGroupsInput::next_token): <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataflowEndpointGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataflowEndpointGroups::set_max_results): <p>Maximum number of dataflow endpoint groups returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataflowEndpointGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataflowEndpointGroups::set_next_token): <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
     /// - On success, responds with [`ListDataflowEndpointGroupsOutput`](crate::output::ListDataflowEndpointGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListDataflowEndpointGroupsOutput::next_token): <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
     ///   - [`dataflow_endpoint_group_list(Option<Vec<DataflowEndpointListItem>>)`](crate::output::ListDataflowEndpointGroupsOutput::dataflow_endpoint_group_list): <p>A list of dataflow endpoint groups.</p>
@@ -320,12 +320,12 @@ where
         fluent_builders::ListDataflowEndpointGroups::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListGroundStations`](crate::client::fluent_builders::ListGroundStations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroundStations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroundStations::into_paginator).
     ///
-    /// - Takes [`ListGroundStationsInput`](crate::input::ListGroundStationsInput) with field(s):
-    ///   - [`satellite_id(Option<String>)`](crate::input::ListGroundStationsInput::satellite_id): <p>Satellite ID to retrieve on-boarded ground stations.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListGroundStationsInput::max_results): <p>Maximum number of ground stations returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListGroundStationsInput::next_token): <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`satellite_id(impl Into<String>)`](crate::client::fluent_builders::ListGroundStations::satellite_id) / [`set_satellite_id(Option<String>)`](crate::client::fluent_builders::ListGroundStations::set_satellite_id): <p>Satellite ID to retrieve on-boarded ground stations.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroundStations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroundStations::set_max_results): <p>Maximum number of ground stations returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroundStations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroundStations::set_next_token): <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
     /// - On success, responds with [`ListGroundStationsOutput`](crate::output::ListGroundStationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListGroundStationsOutput::next_token): <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
     ///   - [`ground_station_list(Option<Vec<GroundStationData>>)`](crate::output::ListGroundStationsOutput::ground_station_list): <p>List of ground stations.</p>
@@ -334,11 +334,11 @@ where
         fluent_builders::ListGroundStations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMissionProfiles`](crate::client::fluent_builders::ListMissionProfiles) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMissionProfiles::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMissionProfiles::into_paginator).
     ///
-    /// - Takes [`ListMissionProfilesInput`](crate::input::ListMissionProfilesInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListMissionProfilesInput::max_results): <p>Maximum number of mission profiles returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListMissionProfilesInput::next_token): <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMissionProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMissionProfiles::set_max_results): <p>Maximum number of mission profiles returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMissionProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMissionProfiles::set_next_token): <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     /// - On success, responds with [`ListMissionProfilesOutput`](crate::output::ListMissionProfilesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListMissionProfilesOutput::next_token): <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     ///   - [`mission_profile_list(Option<Vec<MissionProfileListItem>>)`](crate::output::ListMissionProfilesOutput::mission_profile_list): <p>List of mission profiles.</p>
@@ -347,11 +347,11 @@ where
         fluent_builders::ListMissionProfiles::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListSatellites`](crate::client::fluent_builders::ListSatellites) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSatellites::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSatellites::into_paginator).
     ///
-    /// - Takes [`ListSatellitesInput`](crate::input::ListSatellitesInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListSatellitesInput::max_results): <p>Maximum number of satellites returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListSatellitesInput::next_token): <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSatellites::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSatellites::set_max_results): <p>Maximum number of satellites returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSatellites::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSatellites::set_next_token): <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     /// - On success, responds with [`ListSatellitesOutput`](crate::output::ListSatellitesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListSatellitesOutput::next_token): <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     ///   - [`satellites(Option<Vec<SatelliteListItem>>)`](crate::output::ListSatellitesOutput::satellites): <p>List of satellites.</p>
@@ -361,8 +361,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>ARN of a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>ARN of a resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Tags assigned to a resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -371,13 +371,13 @@ where
     }
     /// Constructs a fluent builder for the [`ReserveContact`](crate::client::fluent_builders::ReserveContact) operation.
     ///
-    /// - Takes [`ReserveContactInput`](crate::input::ReserveContactInput) with field(s):
-    ///   - [`mission_profile_arn(Option<String>)`](crate::input::ReserveContactInput::mission_profile_arn): <p>ARN of a mission profile.</p>
-    ///   - [`satellite_arn(Option<String>)`](crate::input::ReserveContactInput::satellite_arn): <p>ARN of a satellite</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::ReserveContactInput::start_time): <p>Start time of a contact.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::ReserveContactInput::end_time): <p>End time of a contact.</p>
-    ///   - [`ground_station(Option<String>)`](crate::input::ReserveContactInput::ground_station): <p>Name of a ground station.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::ReserveContactInput::tags): <p>Tags assigned to a contact.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`mission_profile_arn(impl Into<String>)`](crate::client::fluent_builders::ReserveContact::mission_profile_arn) / [`set_mission_profile_arn(Option<String>)`](crate::client::fluent_builders::ReserveContact::set_mission_profile_arn): <p>ARN of a mission profile.</p>
+    ///   - [`satellite_arn(impl Into<String>)`](crate::client::fluent_builders::ReserveContact::satellite_arn) / [`set_satellite_arn(Option<String>)`](crate::client::fluent_builders::ReserveContact::set_satellite_arn): <p>ARN of a satellite</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ReserveContact::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ReserveContact::set_start_time): <p>Start time of a contact.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ReserveContact::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ReserveContact::set_end_time): <p>End time of a contact.</p>
+    ///   - [`ground_station(impl Into<String>)`](crate::client::fluent_builders::ReserveContact::ground_station) / [`set_ground_station(Option<String>)`](crate::client::fluent_builders::ReserveContact::set_ground_station): <p>Name of a ground station.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ReserveContact::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ReserveContact::set_tags): <p>Tags assigned to a contact.</p>
     /// - On success, responds with [`ReserveContactOutput`](crate::output::ReserveContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::output::ReserveContactOutput::contact_id): <p>UUID of a contact.</p>
     /// - On failure, responds with [`SdkError<ReserveContactError>`](crate::error::ReserveContactError)
@@ -386,9 +386,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>ARN of a resource tag.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>Tags assigned to a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>ARN of a resource tag.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Tags assigned to a resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -397,9 +397,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>ARN of a resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Keys of a resource tag.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>ARN of a resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Keys of a resource tag.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -408,11 +408,11 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateConfig`](crate::client::fluent_builders::UpdateConfig) operation.
     ///
-    /// - Takes [`UpdateConfigInput`](crate::input::UpdateConfigInput) with field(s):
-    ///   - [`config_id(Option<String>)`](crate::input::UpdateConfigInput::config_id): <p>UUID of a <code>Config</code>.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateConfigInput::name): <p>Name of a <code>Config</code>.</p>
-    ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::input::UpdateConfigInput::config_type): <p>Type of a <code>Config</code>.</p>
-    ///   - [`config_data(Option<ConfigTypeData>)`](crate::input::UpdateConfigInput::config_data): <p>Parameters of a <code>Config</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`config_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConfig::config_id) / [`set_config_id(Option<String>)`](crate::client::fluent_builders::UpdateConfig::set_config_id): <p>UUID of a <code>Config</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateConfig::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateConfig::set_name): <p>Name of a <code>Config</code>.</p>
+    ///   - [`config_type(ConfigCapabilityType)`](crate::client::fluent_builders::UpdateConfig::config_type) / [`set_config_type(Option<ConfigCapabilityType>)`](crate::client::fluent_builders::UpdateConfig::set_config_type): <p>Type of a <code>Config</code>.</p>
+    ///   - [`config_data(ConfigTypeData)`](crate::client::fluent_builders::UpdateConfig::config_data) / [`set_config_data(Option<ConfigTypeData>)`](crate::client::fluent_builders::UpdateConfig::set_config_data): <p>Parameters of a <code>Config</code>.</p>
     /// - On success, responds with [`UpdateConfigOutput`](crate::output::UpdateConfigOutput) with field(s):
     ///   - [`config_id(Option<String>)`](crate::output::UpdateConfigOutput::config_id): <p>UUID of a <code>Config</code>.</p>
     ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::output::UpdateConfigOutput::config_type): <p>Type of a <code>Config</code>.</p>
@@ -423,14 +423,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateMissionProfile`](crate::client::fluent_builders::UpdateMissionProfile) operation.
     ///
-    /// - Takes [`UpdateMissionProfileInput`](crate::input::UpdateMissionProfileInput) with field(s):
-    ///   - [`mission_profile_id(Option<String>)`](crate::input::UpdateMissionProfileInput::mission_profile_id): <p>UUID of a mission profile.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateMissionProfileInput::name): <p>Name of a mission profile.</p>
-    ///   - [`contact_pre_pass_duration_seconds(Option<i32>)`](crate::input::UpdateMissionProfileInput::contact_pre_pass_duration_seconds): <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    ///   - [`contact_post_pass_duration_seconds(Option<i32>)`](crate::input::UpdateMissionProfileInput::contact_post_pass_duration_seconds): <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    ///   - [`minimum_viable_contact_duration_seconds(Option<i32>)`](crate::input::UpdateMissionProfileInput::minimum_viable_contact_duration_seconds): <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    ///   - [`dataflow_edges(Option<Vec<Vec<String>>>)`](crate::input::UpdateMissionProfileInput::dataflow_edges): <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    ///   - [`tracking_config_arn(Option<String>)`](crate::input::UpdateMissionProfileInput::tracking_config_arn): <p>ARN of a tracking <code>Config</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`mission_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMissionProfile::mission_profile_id) / [`set_mission_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateMissionProfile::set_mission_profile_id): <p>UUID of a mission profile.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateMissionProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateMissionProfile::set_name): <p>Name of a mission profile.</p>
+    ///   - [`contact_pre_pass_duration_seconds(i32)`](crate::client::fluent_builders::UpdateMissionProfile::contact_pre_pass_duration_seconds) / [`set_contact_pre_pass_duration_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateMissionProfile::set_contact_pre_pass_duration_seconds): <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    ///   - [`contact_post_pass_duration_seconds(i32)`](crate::client::fluent_builders::UpdateMissionProfile::contact_post_pass_duration_seconds) / [`set_contact_post_pass_duration_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateMissionProfile::set_contact_post_pass_duration_seconds): <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    ///   - [`minimum_viable_contact_duration_seconds(i32)`](crate::client::fluent_builders::UpdateMissionProfile::minimum_viable_contact_duration_seconds) / [`set_minimum_viable_contact_duration_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateMissionProfile::set_minimum_viable_contact_duration_seconds): <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    ///   - [`dataflow_edges(Vec<Vec<String>>)`](crate::client::fluent_builders::UpdateMissionProfile::dataflow_edges) / [`set_dataflow_edges(Option<Vec<Vec<String>>>)`](crate::client::fluent_builders::UpdateMissionProfile::set_dataflow_edges): <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    ///   - [`tracking_config_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateMissionProfile::tracking_config_arn) / [`set_tracking_config_arn(Option<String>)`](crate::client::fluent_builders::UpdateMissionProfile::set_tracking_config_arn): <p>ARN of a tracking <code>Config</code>.</p>
     /// - On success, responds with [`UpdateMissionProfileOutput`](crate::output::UpdateMissionProfileOutput) with field(s):
     ///   - [`mission_profile_id(Option<String>)`](crate::output::UpdateMissionProfileOutput::mission_profile_id): <p>UUID of a mission profile.</p>
     /// - On failure, responds with [`SdkError<UpdateMissionProfileError>`](crate::error::UpdateMissionProfileError)

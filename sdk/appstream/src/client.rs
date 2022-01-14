@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`AssociateApplicationFleet`](crate::client::fluent_builders::AssociateApplicationFleet) operation.
     ///
-    /// - Takes [`AssociateApplicationFleetInput`](crate::input::AssociateApplicationFleetInput) with field(s):
-    ///   - [`fleet_name(Option<String>)`](crate::input::AssociateApplicationFleetInput::fleet_name): <p>The name of the fleet.</p>
-    ///   - [`application_arn(Option<String>)`](crate::input::AssociateApplicationFleetInput::application_arn): <p>The ARN of the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`fleet_name(impl Into<String>)`](crate::client::fluent_builders::AssociateApplicationFleet::fleet_name) / [`set_fleet_name(Option<String>)`](crate::client::fluent_builders::AssociateApplicationFleet::set_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`application_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateApplicationFleet::application_arn) / [`set_application_arn(Option<String>)`](crate::client::fluent_builders::AssociateApplicationFleet::set_application_arn): <p>The ARN of the application.</p>
     /// - On success, responds with [`AssociateApplicationFleetOutput`](crate::output::AssociateApplicationFleetOutput) with field(s):
     ///   - [`application_fleet_association(Option<ApplicationFleetAssociation>)`](crate::output::AssociateApplicationFleetOutput::application_fleet_association): <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
     /// - On failure, responds with [`SdkError<AssociateApplicationFleetError>`](crate::error::AssociateApplicationFleetError)
@@ -98,10 +98,10 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateApplicationToEntitlement`](crate::client::fluent_builders::AssociateApplicationToEntitlement) operation.
     ///
-    /// - Takes [`AssociateApplicationToEntitlementInput`](crate::input::AssociateApplicationToEntitlementInput) with field(s):
-    ///   - [`stack_name(Option<String>)`](crate::input::AssociateApplicationToEntitlementInput::stack_name): <p>The name of the stack.</p>
-    ///   - [`entitlement_name(Option<String>)`](crate::input::AssociateApplicationToEntitlementInput::entitlement_name): <p>The name of the entitlement.</p>
-    ///   - [`application_identifier(Option<String>)`](crate::input::AssociateApplicationToEntitlementInput::application_identifier): <p>The identifier of the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::AssociateApplicationToEntitlement::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::AssociateApplicationToEntitlement::set_stack_name): <p>The name of the stack.</p>
+    ///   - [`entitlement_name(impl Into<String>)`](crate::client::fluent_builders::AssociateApplicationToEntitlement::entitlement_name) / [`set_entitlement_name(Option<String>)`](crate::client::fluent_builders::AssociateApplicationToEntitlement::set_entitlement_name): <p>The name of the entitlement.</p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::AssociateApplicationToEntitlement::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::AssociateApplicationToEntitlement::set_application_identifier): <p>The identifier of the application.</p>
     /// - On success, responds with [`AssociateApplicationToEntitlementOutput`](crate::output::AssociateApplicationToEntitlementOutput)
 
     /// - On failure, responds with [`SdkError<AssociateApplicationToEntitlementError>`](crate::error::AssociateApplicationToEntitlementError)
@@ -112,9 +112,9 @@ where
     }
     /// Constructs a fluent builder for the [`AssociateFleet`](crate::client::fluent_builders::AssociateFleet) operation.
     ///
-    /// - Takes [`AssociateFleetInput`](crate::input::AssociateFleetInput) with field(s):
-    ///   - [`fleet_name(Option<String>)`](crate::input::AssociateFleetInput::fleet_name): <p>The name of the fleet. </p>
-    ///   - [`stack_name(Option<String>)`](crate::input::AssociateFleetInput::stack_name): <p>The name of the stack.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`fleet_name(impl Into<String>)`](crate::client::fluent_builders::AssociateFleet::fleet_name) / [`set_fleet_name(Option<String>)`](crate::client::fluent_builders::AssociateFleet::set_fleet_name): <p>The name of the fleet. </p>
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::AssociateFleet::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::AssociateFleet::set_stack_name): <p>The name of the stack.</p>
     /// - On success, responds with [`AssociateFleetOutput`](crate::output::AssociateFleetOutput)
 
     /// - On failure, responds with [`SdkError<AssociateFleetError>`](crate::error::AssociateFleetError)
@@ -123,8 +123,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchAssociateUserStack`](crate::client::fluent_builders::BatchAssociateUserStack) operation.
     ///
-    /// - Takes [`BatchAssociateUserStackInput`](crate::input::BatchAssociateUserStackInput) with field(s):
-    ///   - [`user_stack_associations(Option<Vec<UserStackAssociation>>)`](crate::input::BatchAssociateUserStackInput::user_stack_associations): <p>The list of UserStackAssociation objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_stack_associations(Vec<UserStackAssociation>)`](crate::client::fluent_builders::BatchAssociateUserStack::user_stack_associations) / [`set_user_stack_associations(Option<Vec<UserStackAssociation>>)`](crate::client::fluent_builders::BatchAssociateUserStack::set_user_stack_associations): <p>The list of UserStackAssociation objects.</p>
     /// - On success, responds with [`BatchAssociateUserStackOutput`](crate::output::BatchAssociateUserStackOutput) with field(s):
     ///   - [`errors(Option<Vec<UserStackAssociationError>>)`](crate::output::BatchAssociateUserStackOutput::errors): <p>The list of UserStackAssociationError objects.</p>
     /// - On failure, responds with [`SdkError<BatchAssociateUserStackError>`](crate::error::BatchAssociateUserStackError)
@@ -133,8 +133,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchDisassociateUserStack`](crate::client::fluent_builders::BatchDisassociateUserStack) operation.
     ///
-    /// - Takes [`BatchDisassociateUserStackInput`](crate::input::BatchDisassociateUserStackInput) with field(s):
-    ///   - [`user_stack_associations(Option<Vec<UserStackAssociation>>)`](crate::input::BatchDisassociateUserStackInput::user_stack_associations): <p>The list of UserStackAssociation objects.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_stack_associations(Vec<UserStackAssociation>)`](crate::client::fluent_builders::BatchDisassociateUserStack::user_stack_associations) / [`set_user_stack_associations(Option<Vec<UserStackAssociation>>)`](crate::client::fluent_builders::BatchDisassociateUserStack::set_user_stack_associations): <p>The list of UserStackAssociation objects.</p>
     /// - On success, responds with [`BatchDisassociateUserStackOutput`](crate::output::BatchDisassociateUserStackOutput) with field(s):
     ///   - [`errors(Option<Vec<UserStackAssociationError>>)`](crate::output::BatchDisassociateUserStackOutput::errors): <p>The list of UserStackAssociationError objects.</p>
     /// - On failure, responds with [`SdkError<BatchDisassociateUserStackError>`](crate::error::BatchDisassociateUserStackError)
@@ -145,11 +145,11 @@ where
     }
     /// Constructs a fluent builder for the [`CopyImage`](crate::client::fluent_builders::CopyImage) operation.
     ///
-    /// - Takes [`CopyImageInput`](crate::input::CopyImageInput) with field(s):
-    ///   - [`source_image_name(Option<String>)`](crate::input::CopyImageInput::source_image_name): <p>The name of the image to copy.</p>
-    ///   - [`destination_image_name(Option<String>)`](crate::input::CopyImageInput::destination_image_name): <p>The name that the image will have when it is copied to the destination.</p>
-    ///   - [`destination_region(Option<String>)`](crate::input::CopyImageInput::destination_region): <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
-    ///   - [`destination_image_description(Option<String>)`](crate::input::CopyImageInput::destination_image_description): <p>The description that the image will have when it is copied to the destination.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`source_image_name(impl Into<String>)`](crate::client::fluent_builders::CopyImage::source_image_name) / [`set_source_image_name(Option<String>)`](crate::client::fluent_builders::CopyImage::set_source_image_name): <p>The name of the image to copy.</p>
+    ///   - [`destination_image_name(impl Into<String>)`](crate::client::fluent_builders::CopyImage::destination_image_name) / [`set_destination_image_name(Option<String>)`](crate::client::fluent_builders::CopyImage::set_destination_image_name): <p>The name that the image will have when it is copied to the destination.</p>
+    ///   - [`destination_region(impl Into<String>)`](crate::client::fluent_builders::CopyImage::destination_region) / [`set_destination_region(Option<String>)`](crate::client::fluent_builders::CopyImage::set_destination_region): <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
+    ///   - [`destination_image_description(impl Into<String>)`](crate::client::fluent_builders::CopyImage::destination_image_description) / [`set_destination_image_description(Option<String>)`](crate::client::fluent_builders::CopyImage::set_destination_image_description): <p>The description that the image will have when it is copied to the destination.</p>
     /// - On success, responds with [`CopyImageOutput`](crate::output::CopyImageOutput) with field(s):
     ///   - [`destination_image_name(Option<String>)`](crate::output::CopyImageOutput::destination_image_name): <p>The name of the destination image.</p>
     /// - On failure, responds with [`SdkError<CopyImageError>`](crate::error::CopyImageError)
@@ -158,13 +158,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAppBlock`](crate::client::fluent_builders::CreateAppBlock) operation.
     ///
-    /// - Takes [`CreateAppBlockInput`](crate::input::CreateAppBlockInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateAppBlockInput::name): <p>The name of the app block.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateAppBlockInput::description): <p>The description of the app block.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateAppBlockInput::display_name): <p>The display name of the app block. This is not displayed to the user.</p>
-    ///   - [`source_s3_location(Option<S3Location>)`](crate::input::CreateAppBlockInput::source_s3_location): <p>The source S3 location of the app block.</p>
-    ///   - [`setup_script_details(Option<ScriptDetails>)`](crate::input::CreateAppBlockInput::setup_script_details): <p>The setup script details of the app block.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAppBlockInput::tags): <p>The tags assigned to the app block.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAppBlock::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAppBlock::set_name): <p>The name of the app block.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAppBlock::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAppBlock::set_description): <p>The description of the app block.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateAppBlock::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateAppBlock::set_display_name): <p>The display name of the app block. This is not displayed to the user.</p>
+    ///   - [`source_s3_location(S3Location)`](crate::client::fluent_builders::CreateAppBlock::source_s3_location) / [`set_source_s3_location(Option<S3Location>)`](crate::client::fluent_builders::CreateAppBlock::set_source_s3_location): <p>The source S3 location of the app block.</p>
+    ///   - [`setup_script_details(ScriptDetails)`](crate::client::fluent_builders::CreateAppBlock::setup_script_details) / [`set_setup_script_details(Option<ScriptDetails>)`](crate::client::fluent_builders::CreateAppBlock::set_setup_script_details): <p>The setup script details of the app block.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAppBlock::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAppBlock::set_tags): <p>The tags assigned to the app block.</p>
     /// - On success, responds with [`CreateAppBlockOutput`](crate::output::CreateAppBlockOutput) with field(s):
     ///   - [`app_block(Option<AppBlock>)`](crate::output::CreateAppBlockOutput::app_block): <p>The app block.</p>
     /// - On failure, responds with [`SdkError<CreateAppBlockError>`](crate::error::CreateAppBlockError)
@@ -173,18 +173,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
-    /// - Takes [`CreateApplicationInput`](crate::input::CreateApplicationInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateApplicationInput::name): <p>The name of the application. This name is visible to users when display name is not specified.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateApplicationInput::display_name): <p>The display name of the application. This name is visible to users in the application catalog.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateApplicationInput::description): <p>The description of the application.</p>
-    ///   - [`icon_s3_location(Option<S3Location>)`](crate::input::CreateApplicationInput::icon_s3_location): <p>The location in S3 of the application icon.</p>
-    ///   - [`launch_path(Option<String>)`](crate::input::CreateApplicationInput::launch_path): <p>The launch path of the application.</p>
-    ///   - [`working_directory(Option<String>)`](crate::input::CreateApplicationInput::working_directory): <p>The working directory of the application.</p>
-    ///   - [`launch_parameters(Option<String>)`](crate::input::CreateApplicationInput::launch_parameters): <p>The launch parameters of the application.</p>
-    ///   - [`platforms(Option<Vec<PlatformType>>)`](crate::input::CreateApplicationInput::platforms): <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-    ///   - [`instance_families(Option<Vec<String>>)`](crate::input::CreateApplicationInput::instance_families): <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
-    ///   - [`app_block_arn(Option<String>)`](crate::input::CreateApplicationInput::app_block_arn): <p>The app block ARN to which the application should be associated</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateApplicationInput::tags): <p>The tags assigned to the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_name): <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_display_name): <p>The display name of the application. This name is visible to users in the application catalog.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_description): <p>The description of the application.</p>
+    ///   - [`icon_s3_location(S3Location)`](crate::client::fluent_builders::CreateApplication::icon_s3_location) / [`set_icon_s3_location(Option<S3Location>)`](crate::client::fluent_builders::CreateApplication::set_icon_s3_location): <p>The location in S3 of the application icon.</p>
+    ///   - [`launch_path(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::launch_path) / [`set_launch_path(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_launch_path): <p>The launch path of the application.</p>
+    ///   - [`working_directory(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::working_directory) / [`set_working_directory(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_working_directory): <p>The working directory of the application.</p>
+    ///   - [`launch_parameters(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::launch_parameters) / [`set_launch_parameters(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_launch_parameters): <p>The launch parameters of the application.</p>
+    ///   - [`platforms(Vec<PlatformType>)`](crate::client::fluent_builders::CreateApplication::platforms) / [`set_platforms(Option<Vec<PlatformType>>)`](crate::client::fluent_builders::CreateApplication::set_platforms): <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    ///   - [`instance_families(Vec<String>)`](crate::client::fluent_builders::CreateApplication::instance_families) / [`set_instance_families(Option<Vec<String>>)`](crate::client::fluent_builders::CreateApplication::set_instance_families): <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
+    ///   - [`app_block_arn(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::app_block_arn) / [`set_app_block_arn(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_app_block_arn): <p>The app block ARN to which the application should be associated</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>The tags assigned to the application.</p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::output::CreateApplicationOutput::application): <p>Describes an application in the application catalog.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
@@ -193,10 +193,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDirectoryConfig`](crate::client::fluent_builders::CreateDirectoryConfig) operation.
     ///
-    /// - Takes [`CreateDirectoryConfigInput`](crate::input::CreateDirectoryConfigInput) with field(s):
-    ///   - [`directory_name(Option<String>)`](crate::input::CreateDirectoryConfigInput::directory_name): <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-    ///   - [`organizational_unit_distinguished_names(Option<Vec<String>>)`](crate::input::CreateDirectoryConfigInput::organizational_unit_distinguished_names): <p>The distinguished names of the organizational units for computer accounts.</p>
-    ///   - [`service_account_credentials(Option<ServiceAccountCredentials>)`](crate::input::CreateDirectoryConfigInput::service_account_credentials): <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_name(impl Into<String>)`](crate::client::fluent_builders::CreateDirectoryConfig::directory_name) / [`set_directory_name(Option<String>)`](crate::client::fluent_builders::CreateDirectoryConfig::set_directory_name): <p>The fully qualified name of the directory (for example, corp.example.com).</p>
+    ///   - [`organizational_unit_distinguished_names(Vec<String>)`](crate::client::fluent_builders::CreateDirectoryConfig::organizational_unit_distinguished_names) / [`set_organizational_unit_distinguished_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDirectoryConfig::set_organizational_unit_distinguished_names): <p>The distinguished names of the organizational units for computer accounts.</p>
+    ///   - [`service_account_credentials(ServiceAccountCredentials)`](crate::client::fluent_builders::CreateDirectoryConfig::service_account_credentials) / [`set_service_account_credentials(Option<ServiceAccountCredentials>)`](crate::client::fluent_builders::CreateDirectoryConfig::set_service_account_credentials): <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     /// - On success, responds with [`CreateDirectoryConfigOutput`](crate::output::CreateDirectoryConfigOutput) with field(s):
     ///   - [`directory_config(Option<DirectoryConfig>)`](crate::output::CreateDirectoryConfigOutput::directory_config): <p>Information about the directory configuration.</p>
     /// - On failure, responds with [`SdkError<CreateDirectoryConfigError>`](crate::error::CreateDirectoryConfigError)
@@ -205,12 +205,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEntitlement`](crate::client::fluent_builders::CreateEntitlement) operation.
     ///
-    /// - Takes [`CreateEntitlementInput`](crate::input::CreateEntitlementInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateEntitlementInput::name): <p>The name of the entitlement.</p>
-    ///   - [`stack_name(Option<String>)`](crate::input::CreateEntitlementInput::stack_name): <p>The name of the stack with which the entitlement is associated.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateEntitlementInput::description): <p>The description of the entitlement.</p>
-    ///   - [`app_visibility(Option<AppVisibility>)`](crate::input::CreateEntitlementInput::app_visibility): <p>Specifies whether all or selected apps are entitled.</p>
-    ///   - [`attributes(Option<Vec<EntitlementAttribute>>)`](crate::input::CreateEntitlementInput::attributes): <p>The attributes of the entitlement.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEntitlement::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEntitlement::set_name): <p>The name of the entitlement.</p>
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::CreateEntitlement::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::CreateEntitlement::set_stack_name): <p>The name of the stack with which the entitlement is associated.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEntitlement::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEntitlement::set_description): <p>The description of the entitlement.</p>
+    ///   - [`app_visibility(AppVisibility)`](crate::client::fluent_builders::CreateEntitlement::app_visibility) / [`set_app_visibility(Option<AppVisibility>)`](crate::client::fluent_builders::CreateEntitlement::set_app_visibility): <p>Specifies whether all or selected apps are entitled.</p>
+    ///   - [`attributes(Vec<EntitlementAttribute>)`](crate::client::fluent_builders::CreateEntitlement::attributes) / [`set_attributes(Option<Vec<EntitlementAttribute>>)`](crate::client::fluent_builders::CreateEntitlement::set_attributes): <p>The attributes of the entitlement.</p>
     /// - On success, responds with [`CreateEntitlementOutput`](crate::output::CreateEntitlementOutput) with field(s):
     ///   - [`entitlement(Option<Entitlement>)`](crate::output::CreateEntitlementOutput::entitlement): <p>The entitlement.</p>
     /// - On failure, responds with [`SdkError<CreateEntitlementError>`](crate::error::CreateEntitlementError)
@@ -219,27 +219,27 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFleet`](crate::client::fluent_builders::CreateFleet) operation.
     ///
-    /// - Takes [`CreateFleetInput`](crate::input::CreateFleetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateFleetInput::name): <p>A unique name for the fleet.</p>
-    ///   - [`image_name(Option<String>)`](crate::input::CreateFleetInput::image_name): <p>The name of the image used to create the fleet.</p>
-    ///   - [`image_arn(Option<String>)`](crate::input::CreateFleetInput::image_arn): <p>The ARN of the public, private, or shared image to use.</p>
-    ///   - [`instance_type(Option<String>)`](crate::input::CreateFleetInput::instance_type): <p>The instance type to use when launching fleet instances. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>  <p>The following instance types are available for Elastic fleets:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>  </ul>
-    ///   - [`fleet_type(Option<FleetType>)`](crate::input::CreateFleetInput::fleet_type): <p>The fleet type.</p>  <dl>   <dt>   ALWAYS_ON  </dt>   <dd>    <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>   </dd>   <dt>   ON_DEMAND  </dt>   <dd>    <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>   </dd>  </dl>
-    ///   - [`compute_capacity(Option<ComputeCapacity>)`](crate::input::CreateFleetInput::compute_capacity): <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
-    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::CreateFleetInput::vpc_config): <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
-    ///   - [`max_user_duration_in_seconds(Option<i32>)`](crate::input::CreateFleetInput::max_user_duration_in_seconds): <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>  <p>Specify a value between 600 and 360000.</p>
-    ///   - [`disconnect_timeout_in_seconds(Option<i32>)`](crate::input::CreateFleetInput::disconnect_timeout_in_seconds): <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>  <p>Specify a value between 60 and 360000.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateFleetInput::description): <p>The description to display.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateFleetInput::display_name): <p>The fleet name to display.</p>
-    ///   - [`enable_default_internet_access(Option<bool>)`](crate::input::CreateFleetInput::enable_default_internet_access): <p>Enables or disables default internet access for the fleet.</p>
-    ///   - [`domain_join_info(Option<DomainJoinInfo>)`](crate::input::CreateFleetInput::domain_join_info): <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFleetInput::tags): <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    ///   - [`idle_disconnect_timeout_in_seconds(Option<i32>)`](crate::input::CreateFleetInput::idle_disconnect_timeout_in_seconds): <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>  <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>   <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>  </note>
-    ///   - [`iam_role_arn(Option<String>)`](crate::input::CreateFleetInput::iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    ///   - [`stream_view(Option<StreamView>)`](crate::input::CreateFleetInput::stream_view): <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>  <p>The default value is <code>APP</code>.</p>
-    ///   - [`platform(Option<PlatformType>)`](crate::input::CreateFleetInput::platform): <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
-    ///   - [`max_concurrent_sessions(Option<i32>)`](crate::input::CreateFleetInput::max_concurrent_sessions): <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
-    ///   - [`usb_device_filter_strings(Option<Vec<String>>)`](crate::input::CreateFleetInput::usb_device_filter_strings): <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_name): <p>A unique name for the fleet.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_image_name): <p>The name of the image used to create the fleet.</p>
+    ///   - [`image_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::image_arn) / [`set_image_arn(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_image_arn): <p>The ARN of the public, private, or shared image to use.</p>
+    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_instance_type): <p>The instance type to use when launching fleet instances. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>  <p>The following instance types are available for Elastic fleets:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>  </ul>
+    ///   - [`fleet_type(FleetType)`](crate::client::fluent_builders::CreateFleet::fleet_type) / [`set_fleet_type(Option<FleetType>)`](crate::client::fluent_builders::CreateFleet::set_fleet_type): <p>The fleet type.</p>  <dl>   <dt>   ALWAYS_ON  </dt>   <dd>    <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>   </dd>   <dt>   ON_DEMAND  </dt>   <dd>    <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>   </dd>  </dl>
+    ///   - [`compute_capacity(ComputeCapacity)`](crate::client::fluent_builders::CreateFleet::compute_capacity) / [`set_compute_capacity(Option<ComputeCapacity>)`](crate::client::fluent_builders::CreateFleet::set_compute_capacity): <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
+    ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateFleet::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateFleet::set_vpc_config): <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
+    ///   - [`max_user_duration_in_seconds(i32)`](crate::client::fluent_builders::CreateFleet::max_user_duration_in_seconds) / [`set_max_user_duration_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreateFleet::set_max_user_duration_in_seconds): <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>  <p>Specify a value between 600 and 360000.</p>
+    ///   - [`disconnect_timeout_in_seconds(i32)`](crate::client::fluent_builders::CreateFleet::disconnect_timeout_in_seconds) / [`set_disconnect_timeout_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreateFleet::set_disconnect_timeout_in_seconds): <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>  <p>Specify a value between 60 and 360000.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_description): <p>The description to display.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_display_name): <p>The fleet name to display.</p>
+    ///   - [`enable_default_internet_access(bool)`](crate::client::fluent_builders::CreateFleet::enable_default_internet_access) / [`set_enable_default_internet_access(Option<bool>)`](crate::client::fluent_builders::CreateFleet::set_enable_default_internet_access): <p>Enables or disables default internet access for the fleet.</p>
+    ///   - [`domain_join_info(DomainJoinInfo)`](crate::client::fluent_builders::CreateFleet::domain_join_info) / [`set_domain_join_info(Option<DomainJoinInfo>)`](crate::client::fluent_builders::CreateFleet::set_domain_join_info): <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFleet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFleet::set_tags): <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    ///   - [`idle_disconnect_timeout_in_seconds(i32)`](crate::client::fluent_builders::CreateFleet::idle_disconnect_timeout_in_seconds) / [`set_idle_disconnect_timeout_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreateFleet::set_idle_disconnect_timeout_in_seconds): <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>  <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>   <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>  </note>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    ///   - [`stream_view(StreamView)`](crate::client::fluent_builders::CreateFleet::stream_view) / [`set_stream_view(Option<StreamView>)`](crate::client::fluent_builders::CreateFleet::set_stream_view): <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>  <p>The default value is <code>APP</code>.</p>
+    ///   - [`platform(PlatformType)`](crate::client::fluent_builders::CreateFleet::platform) / [`set_platform(Option<PlatformType>)`](crate::client::fluent_builders::CreateFleet::set_platform): <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
+    ///   - [`max_concurrent_sessions(i32)`](crate::client::fluent_builders::CreateFleet::max_concurrent_sessions) / [`set_max_concurrent_sessions(Option<i32>)`](crate::client::fluent_builders::CreateFleet::set_max_concurrent_sessions): <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
+    ///   - [`usb_device_filter_strings(Vec<String>)`](crate::client::fluent_builders::CreateFleet::usb_device_filter_strings) / [`set_usb_device_filter_strings(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFleet::set_usb_device_filter_strings): <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
     /// - On success, responds with [`CreateFleetOutput`](crate::output::CreateFleetOutput) with field(s):
     ///   - [`fleet(Option<Fleet>)`](crate::output::CreateFleetOutput::fleet): <p>Information about the fleet.</p>
     /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::error::CreateFleetError)
@@ -248,20 +248,20 @@ where
     }
     /// Constructs a fluent builder for the [`CreateImageBuilder`](crate::client::fluent_builders::CreateImageBuilder) operation.
     ///
-    /// - Takes [`CreateImageBuilderInput`](crate::input::CreateImageBuilderInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateImageBuilderInput::name): <p>A unique name for the image builder.</p>
-    ///   - [`image_name(Option<String>)`](crate::input::CreateImageBuilderInput::image_name): <p>The name of the image used to create the image builder.</p>
-    ///   - [`image_arn(Option<String>)`](crate::input::CreateImageBuilderInput::image_arn): <p>The ARN of the public, private, or shared image to use.</p>
-    ///   - [`instance_type(Option<String>)`](crate::input::CreateImageBuilderInput::instance_type): <p>The instance type to use when launching the image builder. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>
-    ///   - [`description(Option<String>)`](crate::input::CreateImageBuilderInput::description): <p>The description to display.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateImageBuilderInput::display_name): <p>The image builder name to display.</p>
-    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::CreateImageBuilderInput::vpc_config): <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
-    ///   - [`iam_role_arn(Option<String>)`](crate::input::CreateImageBuilderInput::iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    ///   - [`enable_default_internet_access(Option<bool>)`](crate::input::CreateImageBuilderInput::enable_default_internet_access): <p>Enables or disables default internet access for the image builder.</p>
-    ///   - [`domain_join_info(Option<DomainJoinInfo>)`](crate::input::CreateImageBuilderInput::domain_join_info): <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-    ///   - [`appstream_agent_version(Option<String>)`](crate::input::CreateImageBuilderInput::appstream_agent_version): <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateImageBuilderInput::tags): <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    ///   - [`access_endpoints(Option<Vec<AccessEndpoint>>)`](crate::input::CreateImageBuilderInput::access_endpoints): <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateImageBuilder::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateImageBuilder::set_name): <p>A unique name for the image builder.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::CreateImageBuilder::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::CreateImageBuilder::set_image_name): <p>The name of the image used to create the image builder.</p>
+    ///   - [`image_arn(impl Into<String>)`](crate::client::fluent_builders::CreateImageBuilder::image_arn) / [`set_image_arn(Option<String>)`](crate::client::fluent_builders::CreateImageBuilder::set_image_arn): <p>The ARN of the public, private, or shared image to use.</p>
+    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateImageBuilder::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateImageBuilder::set_instance_type): <p>The instance type to use when launching the image builder. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateImageBuilder::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateImageBuilder::set_description): <p>The description to display.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateImageBuilder::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateImageBuilder::set_display_name): <p>The image builder name to display.</p>
+    ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateImageBuilder::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateImageBuilder::set_vpc_config): <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateImageBuilder::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateImageBuilder::set_iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    ///   - [`enable_default_internet_access(bool)`](crate::client::fluent_builders::CreateImageBuilder::enable_default_internet_access) / [`set_enable_default_internet_access(Option<bool>)`](crate::client::fluent_builders::CreateImageBuilder::set_enable_default_internet_access): <p>Enables or disables default internet access for the image builder.</p>
+    ///   - [`domain_join_info(DomainJoinInfo)`](crate::client::fluent_builders::CreateImageBuilder::domain_join_info) / [`set_domain_join_info(Option<DomainJoinInfo>)`](crate::client::fluent_builders::CreateImageBuilder::set_domain_join_info): <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
+    ///   - [`appstream_agent_version(impl Into<String>)`](crate::client::fluent_builders::CreateImageBuilder::appstream_agent_version) / [`set_appstream_agent_version(Option<String>)`](crate::client::fluent_builders::CreateImageBuilder::set_appstream_agent_version): <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateImageBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateImageBuilder::set_tags): <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    ///   - [`access_endpoints(Vec<AccessEndpoint>)`](crate::client::fluent_builders::CreateImageBuilder::access_endpoints) / [`set_access_endpoints(Option<Vec<AccessEndpoint>>)`](crate::client::fluent_builders::CreateImageBuilder::set_access_endpoints): <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
     /// - On success, responds with [`CreateImageBuilderOutput`](crate::output::CreateImageBuilderOutput) with field(s):
     ///   - [`image_builder(Option<ImageBuilder>)`](crate::output::CreateImageBuilderOutput::image_builder): <p>Information about the image builder.</p>
     /// - On failure, responds with [`SdkError<CreateImageBuilderError>`](crate::error::CreateImageBuilderError)
@@ -270,9 +270,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateImageBuilderStreamingURL`](crate::client::fluent_builders::CreateImageBuilderStreamingURL) operation.
     ///
-    /// - Takes [`CreateImageBuilderStreamingUrlInput`](crate::input::CreateImageBuilderStreamingUrlInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateImageBuilderStreamingUrlInput::name): <p>The name of the image builder.</p>
-    ///   - [`validity(Option<i64>)`](crate::input::CreateImageBuilderStreamingUrlInput::validity): <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateImageBuilderStreamingURL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateImageBuilderStreamingURL::set_name): <p>The name of the image builder.</p>
+    ///   - [`validity(i64)`](crate::client::fluent_builders::CreateImageBuilderStreamingURL::validity) / [`set_validity(Option<i64>)`](crate::client::fluent_builders::CreateImageBuilderStreamingURL::set_validity): <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     /// - On success, responds with [`CreateImageBuilderStreamingUrlOutput`](crate::output::CreateImageBuilderStreamingUrlOutput) with field(s):
     ///   - [`streaming_url(Option<String>)`](crate::output::CreateImageBuilderStreamingUrlOutput::streaming_url): <p>The URL to start the AppStream 2.0 streaming session.</p>
     ///   - [`expires(Option<DateTime>)`](crate::output::CreateImageBuilderStreamingUrlOutput::expires): <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
@@ -284,18 +284,18 @@ where
     }
     /// Constructs a fluent builder for the [`CreateStack`](crate::client::fluent_builders::CreateStack) operation.
     ///
-    /// - Takes [`CreateStackInput`](crate::input::CreateStackInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateStackInput::name): <p>The name of the stack.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateStackInput::description): <p>The description to display.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::CreateStackInput::display_name): <p>The stack name to display.</p>
-    ///   - [`storage_connectors(Option<Vec<StorageConnector>>)`](crate::input::CreateStackInput::storage_connectors): <p>The storage connectors to enable.</p>
-    ///   - [`redirect_url(Option<String>)`](crate::input::CreateStackInput::redirect_url): <p>The URL that users are redirected to after their streaming session ends.</p>
-    ///   - [`feedback_url(Option<String>)`](crate::input::CreateStackInput::feedback_url): <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    ///   - [`user_settings(Option<Vec<UserSetting>>)`](crate::input::CreateStackInput::user_settings): <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
-    ///   - [`application_settings(Option<ApplicationSettings>)`](crate::input::CreateStackInput::application_settings): <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateStackInput::tags): <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    ///   - [`access_endpoints(Option<Vec<AccessEndpoint>>)`](crate::input::CreateStackInput::access_endpoints): <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    ///   - [`embed_host_domains(Option<Vec<String>>)`](crate::input::CreateStackInput::embed_host_domains): <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStack::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStack::set_name): <p>The name of the stack.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStack::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStack::set_description): <p>The description to display.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateStack::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateStack::set_display_name): <p>The stack name to display.</p>
+    ///   - [`storage_connectors(Vec<StorageConnector>)`](crate::client::fluent_builders::CreateStack::storage_connectors) / [`set_storage_connectors(Option<Vec<StorageConnector>>)`](crate::client::fluent_builders::CreateStack::set_storage_connectors): <p>The storage connectors to enable.</p>
+    ///   - [`redirect_url(impl Into<String>)`](crate::client::fluent_builders::CreateStack::redirect_url) / [`set_redirect_url(Option<String>)`](crate::client::fluent_builders::CreateStack::set_redirect_url): <p>The URL that users are redirected to after their streaming session ends.</p>
+    ///   - [`feedback_url(impl Into<String>)`](crate::client::fluent_builders::CreateStack::feedback_url) / [`set_feedback_url(Option<String>)`](crate::client::fluent_builders::CreateStack::set_feedback_url): <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    ///   - [`user_settings(Vec<UserSetting>)`](crate::client::fluent_builders::CreateStack::user_settings) / [`set_user_settings(Option<Vec<UserSetting>>)`](crate::client::fluent_builders::CreateStack::set_user_settings): <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
+    ///   - [`application_settings(ApplicationSettings)`](crate::client::fluent_builders::CreateStack::application_settings) / [`set_application_settings(Option<ApplicationSettings>)`](crate::client::fluent_builders::CreateStack::set_application_settings): <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStack::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStack::set_tags): <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    ///   - [`access_endpoints(Vec<AccessEndpoint>)`](crate::client::fluent_builders::CreateStack::access_endpoints) / [`set_access_endpoints(Option<Vec<AccessEndpoint>>)`](crate::client::fluent_builders::CreateStack::set_access_endpoints): <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+    ///   - [`embed_host_domains(Vec<String>)`](crate::client::fluent_builders::CreateStack::embed_host_domains) / [`set_embed_host_domains(Option<Vec<String>>)`](crate::client::fluent_builders::CreateStack::set_embed_host_domains): <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     /// - On success, responds with [`CreateStackOutput`](crate::output::CreateStackOutput) with field(s):
     ///   - [`stack(Option<Stack>)`](crate::output::CreateStackOutput::stack): <p>Information about the stack.</p>
     /// - On failure, responds with [`SdkError<CreateStackError>`](crate::error::CreateStackError)
@@ -304,13 +304,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateStreamingURL`](crate::client::fluent_builders::CreateStreamingURL) operation.
     ///
-    /// - Takes [`CreateStreamingUrlInput`](crate::input::CreateStreamingUrlInput) with field(s):
-    ///   - [`stack_name(Option<String>)`](crate::input::CreateStreamingUrlInput::stack_name): <p>The name of the stack.</p>
-    ///   - [`fleet_name(Option<String>)`](crate::input::CreateStreamingUrlInput::fleet_name): <p>The name of the fleet.</p>
-    ///   - [`user_id(Option<String>)`](crate::input::CreateStreamingUrlInput::user_id): <p>The identifier of the user.</p>
-    ///   - [`application_id(Option<String>)`](crate::input::CreateStreamingUrlInput::application_id): <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
-    ///   - [`validity(Option<i64>)`](crate::input::CreateStreamingUrlInput::validity): <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
-    ///   - [`session_context(Option<String>)`](crate::input::CreateStreamingUrlInput::session_context): <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingURL::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::CreateStreamingURL::set_stack_name): <p>The name of the stack.</p>
+    ///   - [`fleet_name(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingURL::fleet_name) / [`set_fleet_name(Option<String>)`](crate::client::fluent_builders::CreateStreamingURL::set_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingURL::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingURL::set_user_id): <p>The identifier of the user.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingURL::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingURL::set_application_id): <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+    ///   - [`validity(i64)`](crate::client::fluent_builders::CreateStreamingURL::validity) / [`set_validity(Option<i64>)`](crate::client::fluent_builders::CreateStreamingURL::set_validity): <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+    ///   - [`session_context(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingURL::session_context) / [`set_session_context(Option<String>)`](crate::client::fluent_builders::CreateStreamingURL::set_session_context): <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     /// - On success, responds with [`CreateStreamingUrlOutput`](crate::output::CreateStreamingUrlOutput) with field(s):
     ///   - [`streaming_url(Option<String>)`](crate::output::CreateStreamingUrlOutput::streaming_url): <p>The URL to start the AppStream 2.0 streaming session.</p>
     ///   - [`expires(Option<DateTime>)`](crate::output::CreateStreamingUrlOutput::expires): <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
@@ -320,13 +320,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateUpdatedImage`](crate::client::fluent_builders::CreateUpdatedImage) operation.
     ///
-    /// - Takes [`CreateUpdatedImageInput`](crate::input::CreateUpdatedImageInput) with field(s):
-    ///   - [`existing_image_name(Option<String>)`](crate::input::CreateUpdatedImageInput::existing_image_name): <p>The name of the image to update.</p>
-    ///   - [`new_image_name(Option<String>)`](crate::input::CreateUpdatedImageInput::new_image_name): <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
-    ///   - [`new_image_description(Option<String>)`](crate::input::CreateUpdatedImageInput::new_image_description): <p>The description to display for the new image.</p>
-    ///   - [`new_image_display_name(Option<String>)`](crate::input::CreateUpdatedImageInput::new_image_display_name): <p>The name to display for the new image.</p>
-    ///   - [`new_image_tags(Option<HashMap<String, String>>)`](crate::input::CreateUpdatedImageInput::new_image_tags): <p>The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    ///   - [`dry_run(bool)`](crate::input::CreateUpdatedImageInput::dry_run): <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`existing_image_name(impl Into<String>)`](crate::client::fluent_builders::CreateUpdatedImage::existing_image_name) / [`set_existing_image_name(Option<String>)`](crate::client::fluent_builders::CreateUpdatedImage::set_existing_image_name): <p>The name of the image to update.</p>
+    ///   - [`new_image_name(impl Into<String>)`](crate::client::fluent_builders::CreateUpdatedImage::new_image_name) / [`set_new_image_name(Option<String>)`](crate::client::fluent_builders::CreateUpdatedImage::set_new_image_name): <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
+    ///   - [`new_image_description(impl Into<String>)`](crate::client::fluent_builders::CreateUpdatedImage::new_image_description) / [`set_new_image_description(Option<String>)`](crate::client::fluent_builders::CreateUpdatedImage::set_new_image_description): <p>The description to display for the new image.</p>
+    ///   - [`new_image_display_name(impl Into<String>)`](crate::client::fluent_builders::CreateUpdatedImage::new_image_display_name) / [`set_new_image_display_name(Option<String>)`](crate::client::fluent_builders::CreateUpdatedImage::set_new_image_display_name): <p>The name to display for the new image.</p>
+    ///   - [`new_image_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUpdatedImage::new_image_tags) / [`set_new_image_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUpdatedImage::set_new_image_tags): <p>The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    ///   - [`dry_run(bool)`](crate::client::fluent_builders::CreateUpdatedImage::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::CreateUpdatedImage::set_dry_run): <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
     /// - On success, responds with [`CreateUpdatedImageOutput`](crate::output::CreateUpdatedImageOutput) with field(s):
     ///   - [`image(Option<Image>)`](crate::output::CreateUpdatedImageOutput::image): <p>Describes an image.</p>
     ///   - [`can_update_image(bool)`](crate::output::CreateUpdatedImageOutput::can_update_image): <p>Indicates whether a new image can be created.</p>
@@ -336,7 +336,7 @@ where
     }
     /// Constructs a fluent builder for the [`CreateUsageReportSubscription`](crate::client::fluent_builders::CreateUsageReportSubscription) operation.
     ///
-    /// - Takes [`CreateUsageReportSubscriptionInput`](crate::input::CreateUsageReportSubscriptionInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::CreateUsageReportSubscription::send) it.
 
     /// - On success, responds with [`CreateUsageReportSubscriptionOutput`](crate::output::CreateUsageReportSubscriptionOutput) with field(s):
     ///   - [`s3_bucket_name(Option<String>)`](crate::output::CreateUsageReportSubscriptionOutput::s3_bucket_name): <p>The Amazon S3 bucket where generated reports are stored.</p>  <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
@@ -349,12 +349,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// - Takes [`CreateUserInput`](crate::input::CreateUserInput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::input::CreateUserInput::user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>  </note>
-    ///   - [`message_action(Option<MessageAction>)`](crate::input::CreateUserInput::message_action): <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>   <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>  </note>
-    ///   - [`first_name(Option<String>)`](crate::input::CreateUserInput::first_name): <p>The first name, or given name, of the user.</p>
-    ///   - [`last_name(Option<String>)`](crate::input::CreateUserInput::last_name): <p>The last name, or surname, of the user.</p>
-    ///   - [`authentication_type(Option<AuthenticationType>)`](crate::input::CreateUserInput::authentication_type): <p>The authentication type for the user. You must specify USERPOOL. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>  </note>
+    ///   - [`message_action(MessageAction)`](crate::client::fluent_builders::CreateUser::message_action) / [`set_message_action(Option<MessageAction>)`](crate::client::fluent_builders::CreateUser::set_message_action): <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>   <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>  </note>
+    ///   - [`first_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::first_name) / [`set_first_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_first_name): <p>The first name, or given name, of the user.</p>
+    ///   - [`last_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::last_name) / [`set_last_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_last_name): <p>The last name, or surname, of the user.</p>
+    ///   - [`authentication_type(AuthenticationType)`](crate::client::fluent_builders::CreateUser::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::client::fluent_builders::CreateUser::set_authentication_type): <p>The authentication type for the user. You must specify USERPOOL. </p>
     /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput)
 
     /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
@@ -363,8 +363,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAppBlock`](crate::client::fluent_builders::DeleteAppBlock) operation.
     ///
-    /// - Takes [`DeleteAppBlockInput`](crate::input::DeleteAppBlockInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteAppBlockInput::name): <p>The name of the app block.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteAppBlock::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteAppBlock::set_name): <p>The name of the app block.</p>
     /// - On success, responds with [`DeleteAppBlockOutput`](crate::output::DeleteAppBlockOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAppBlockError>`](crate::error::DeleteAppBlockError)
@@ -373,8 +373,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
     ///
-    /// - Takes [`DeleteApplicationInput`](crate::input::DeleteApplicationInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteApplicationInput::name): <p>The name of the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_name): <p>The name of the application.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
@@ -383,8 +383,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDirectoryConfig`](crate::client::fluent_builders::DeleteDirectoryConfig) operation.
     ///
-    /// - Takes [`DeleteDirectoryConfigInput`](crate::input::DeleteDirectoryConfigInput) with field(s):
-    ///   - [`directory_name(Option<String>)`](crate::input::DeleteDirectoryConfigInput::directory_name): <p>The name of the directory configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDirectoryConfig::directory_name) / [`set_directory_name(Option<String>)`](crate::client::fluent_builders::DeleteDirectoryConfig::set_directory_name): <p>The name of the directory configuration.</p>
     /// - On success, responds with [`DeleteDirectoryConfigOutput`](crate::output::DeleteDirectoryConfigOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDirectoryConfigError>`](crate::error::DeleteDirectoryConfigError)
@@ -393,9 +393,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEntitlement`](crate::client::fluent_builders::DeleteEntitlement) operation.
     ///
-    /// - Takes [`DeleteEntitlementInput`](crate::input::DeleteEntitlementInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteEntitlementInput::name): <p>The name of the entitlement.</p>
-    ///   - [`stack_name(Option<String>)`](crate::input::DeleteEntitlementInput::stack_name): <p>The name of the stack with which the entitlement is associated.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteEntitlement::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteEntitlement::set_name): <p>The name of the entitlement.</p>
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::DeleteEntitlement::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::DeleteEntitlement::set_stack_name): <p>The name of the stack with which the entitlement is associated.</p>
     /// - On success, responds with [`DeleteEntitlementOutput`](crate::output::DeleteEntitlementOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEntitlementError>`](crate::error::DeleteEntitlementError)
@@ -404,8 +404,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFleet`](crate::client::fluent_builders::DeleteFleet) operation.
     ///
-    /// - Takes [`DeleteFleetInput`](crate::input::DeleteFleetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteFleetInput::name): <p>The name of the fleet.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteFleet::set_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::error::DeleteFleetError)
@@ -414,8 +414,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteImage`](crate::client::fluent_builders::DeleteImage) operation.
     ///
-    /// - Takes [`DeleteImageInput`](crate::input::DeleteImageInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteImageInput::name): <p>The name of the image.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteImage::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteImage::set_name): <p>The name of the image.</p>
     /// - On success, responds with [`DeleteImageOutput`](crate::output::DeleteImageOutput) with field(s):
     ///   - [`image(Option<Image>)`](crate::output::DeleteImageOutput::image): <p>Information about the image.</p>
     /// - On failure, responds with [`SdkError<DeleteImageError>`](crate::error::DeleteImageError)
@@ -424,8 +424,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteImageBuilder`](crate::client::fluent_builders::DeleteImageBuilder) operation.
     ///
-    /// - Takes [`DeleteImageBuilderInput`](crate::input::DeleteImageBuilderInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteImageBuilderInput::name): <p>The name of the image builder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteImageBuilder::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteImageBuilder::set_name): <p>The name of the image builder.</p>
     /// - On success, responds with [`DeleteImageBuilderOutput`](crate::output::DeleteImageBuilderOutput) with field(s):
     ///   - [`image_builder(Option<ImageBuilder>)`](crate::output::DeleteImageBuilderOutput::image_builder): <p>Information about the image builder.</p>
     /// - On failure, responds with [`SdkError<DeleteImageBuilderError>`](crate::error::DeleteImageBuilderError)
@@ -434,9 +434,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteImagePermissions`](crate::client::fluent_builders::DeleteImagePermissions) operation.
     ///
-    /// - Takes [`DeleteImagePermissionsInput`](crate::input::DeleteImagePermissionsInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteImagePermissionsInput::name): <p>The name of the private image.</p>
-    ///   - [`shared_account_id(Option<String>)`](crate::input::DeleteImagePermissionsInput::shared_account_id): <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteImagePermissions::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteImagePermissions::set_name): <p>The name of the private image.</p>
+    ///   - [`shared_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteImagePermissions::shared_account_id) / [`set_shared_account_id(Option<String>)`](crate::client::fluent_builders::DeleteImagePermissions::set_shared_account_id): <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
     /// - On success, responds with [`DeleteImagePermissionsOutput`](crate::output::DeleteImagePermissionsOutput)
 
     /// - On failure, responds with [`SdkError<DeleteImagePermissionsError>`](crate::error::DeleteImagePermissionsError)
@@ -445,8 +445,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteStack`](crate::client::fluent_builders::DeleteStack) operation.
     ///
-    /// - Takes [`DeleteStackInput`](crate::input::DeleteStackInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DeleteStackInput::name): <p>The name of the stack.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteStack::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteStack::set_name): <p>The name of the stack.</p>
     /// - On success, responds with [`DeleteStackOutput`](crate::output::DeleteStackOutput)
 
     /// - On failure, responds with [`SdkError<DeleteStackError>`](crate::error::DeleteStackError)
@@ -455,7 +455,7 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteUsageReportSubscription`](crate::client::fluent_builders::DeleteUsageReportSubscription) operation.
     ///
-    /// - Takes [`DeleteUsageReportSubscriptionInput`](crate::input::DeleteUsageReportSubscriptionInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DeleteUsageReportSubscription::send) it.
 
     /// - On success, responds with [`DeleteUsageReportSubscriptionOutput`](crate::output::DeleteUsageReportSubscriptionOutput)
 
@@ -467,9 +467,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// - Takes [`DeleteUserInput`](crate::input::DeleteUserInput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::input::DeleteUserInput::user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive.</p>  </note>
-    ///   - [`authentication_type(Option<AuthenticationType>)`](crate::input::DeleteUserInput::authentication_type): <p>The authentication type for the user. You must specify USERPOOL.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive.</p>  </note>
+    ///   - [`authentication_type(AuthenticationType)`](crate::client::fluent_builders::DeleteUser::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::client::fluent_builders::DeleteUser::set_authentication_type): <p>The authentication type for the user. You must specify USERPOOL.</p>
     /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
 
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
@@ -478,10 +478,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeAppBlocks`](crate::client::fluent_builders::DescribeAppBlocks) operation.
     ///
-    /// - Takes [`DescribeAppBlocksInput`](crate::input::DescribeAppBlocksInput) with field(s):
-    ///   - [`arns(Option<Vec<String>>)`](crate::input::DescribeAppBlocksInput::arns): <p>The ARNs of the app blocks.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeAppBlocksInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAppBlocksInput::max_results): <p>The maximum size of each page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arns(Vec<String>)`](crate::client::fluent_builders::DescribeAppBlocks::arns) / [`set_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAppBlocks::set_arns): <p>The ARNs of the app blocks.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAppBlocks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAppBlocks::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeAppBlocks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeAppBlocks::set_max_results): <p>The maximum size of each page of results.</p>
     /// - On success, responds with [`DescribeAppBlocksOutput`](crate::output::DescribeAppBlocksOutput) with field(s):
     ///   - [`app_blocks(Option<Vec<AppBlock>>)`](crate::output::DescribeAppBlocksOutput::app_blocks): <p>The app blocks in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeAppBlocksOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -491,11 +491,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeApplicationFleetAssociations`](crate::client::fluent_builders::DescribeApplicationFleetAssociations) operation.
     ///
-    /// - Takes [`DescribeApplicationFleetAssociationsInput`](crate::input::DescribeApplicationFleetAssociationsInput) with field(s):
-    ///   - [`fleet_name(Option<String>)`](crate::input::DescribeApplicationFleetAssociationsInput::fleet_name): <p>The name of the fleet.</p>
-    ///   - [`application_arn(Option<String>)`](crate::input::DescribeApplicationFleetAssociationsInput::application_arn): <p>The ARN of the application.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeApplicationFleetAssociationsInput::max_results): <p>The maximum size of each page of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeApplicationFleetAssociationsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`fleet_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicationFleetAssociations::fleet_name) / [`set_fleet_name(Option<String>)`](crate::client::fluent_builders::DescribeApplicationFleetAssociations::set_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`application_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicationFleetAssociations::application_arn) / [`set_application_arn(Option<String>)`](crate::client::fluent_builders::DescribeApplicationFleetAssociations::set_application_arn): <p>The ARN of the application.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeApplicationFleetAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeApplicationFleetAssociations::set_max_results): <p>The maximum size of each page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicationFleetAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeApplicationFleetAssociations::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On success, responds with [`DescribeApplicationFleetAssociationsOutput`](crate::output::DescribeApplicationFleetAssociationsOutput) with field(s):
     ///   - [`application_fleet_associations(Option<Vec<ApplicationFleetAssociation>>)`](crate::output::DescribeApplicationFleetAssociationsOutput::application_fleet_associations): <p>The application fleet associations in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeApplicationFleetAssociationsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -507,10 +507,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeApplications`](crate::client::fluent_builders::DescribeApplications) operation.
     ///
-    /// - Takes [`DescribeApplicationsInput`](crate::input::DescribeApplicationsInput) with field(s):
-    ///   - [`arns(Option<Vec<String>>)`](crate::input::DescribeApplicationsInput::arns): <p>The ARNs for the applications.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeApplicationsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeApplicationsInput::max_results): <p>The maximum size of each page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arns(Vec<String>)`](crate::client::fluent_builders::DescribeApplications::arns) / [`set_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeApplications::set_arns): <p>The ARNs for the applications.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeApplications::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeApplications::set_max_results): <p>The maximum size of each page of results.</p>
     /// - On success, responds with [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput) with field(s):
     ///   - [`applications(Option<Vec<Application>>)`](crate::output::DescribeApplicationsOutput::applications): <p>The applications in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeApplicationsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -520,10 +520,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeDirectoryConfigs`](crate::client::fluent_builders::DescribeDirectoryConfigs) operation.
     ///
-    /// - Takes [`DescribeDirectoryConfigsInput`](crate::input::DescribeDirectoryConfigsInput) with field(s):
-    ///   - [`directory_names(Option<Vec<String>>)`](crate::input::DescribeDirectoryConfigsInput::directory_names): <p>The directory names.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeDirectoryConfigsInput::max_results): <p>The maximum size of each page of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeDirectoryConfigsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_names(Vec<String>)`](crate::client::fluent_builders::DescribeDirectoryConfigs::directory_names) / [`set_directory_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDirectoryConfigs::set_directory_names): <p>The directory names.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeDirectoryConfigs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeDirectoryConfigs::set_max_results): <p>The maximum size of each page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDirectoryConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDirectoryConfigs::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeDirectoryConfigsOutput`](crate::output::DescribeDirectoryConfigsOutput) with field(s):
     ///   - [`directory_configs(Option<Vec<DirectoryConfig>>)`](crate::output::DescribeDirectoryConfigsOutput::directory_configs): <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeDirectoryConfigsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -533,11 +533,11 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeEntitlements`](crate::client::fluent_builders::DescribeEntitlements) operation.
     ///
-    /// - Takes [`DescribeEntitlementsInput`](crate::input::DescribeEntitlementsInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DescribeEntitlementsInput::name): <p>The name of the entitlement.</p>
-    ///   - [`stack_name(Option<String>)`](crate::input::DescribeEntitlementsInput::stack_name): <p>The name of the stack with which the entitlement is associated.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeEntitlementsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEntitlementsInput::max_results): <p>The maximum size of each page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeEntitlements::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeEntitlements::set_name): <p>The name of the entitlement.</p>
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEntitlements::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::DescribeEntitlements::set_stack_name): <p>The name of the stack with which the entitlement is associated.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeEntitlements::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeEntitlements::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeEntitlements::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeEntitlements::set_max_results): <p>The maximum size of each page of results.</p>
     /// - On success, responds with [`DescribeEntitlementsOutput`](crate::output::DescribeEntitlementsOutput) with field(s):
     ///   - [`entitlements(Option<Vec<Entitlement>>)`](crate::output::DescribeEntitlementsOutput::entitlements): <p>The entitlements.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeEntitlementsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -547,9 +547,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFleets`](crate::client::fluent_builders::DescribeFleets) operation.
     ///
-    /// - Takes [`DescribeFleetsInput`](crate::input::DescribeFleetsInput) with field(s):
-    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeFleetsInput::names): <p>The names of the fleets to describe.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeFleetsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::DescribeFleets::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeFleets::set_names): <p>The names of the fleets to describe.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleets::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeFleetsOutput`](crate::output::DescribeFleetsOutput) with field(s):
     ///   - [`fleets(Option<Vec<Fleet>>)`](crate::output::DescribeFleetsOutput::fleets): <p>Information about the fleets.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -559,10 +559,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeImageBuilders`](crate::client::fluent_builders::DescribeImageBuilders) operation.
     ///
-    /// - Takes [`DescribeImageBuildersInput`](crate::input::DescribeImageBuildersInput) with field(s):
-    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeImageBuildersInput::names): <p>The names of the image builders to describe.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeImageBuildersInput::max_results): <p>The maximum size of each page of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeImageBuildersInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::DescribeImageBuilders::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeImageBuilders::set_names): <p>The names of the image builders to describe.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeImageBuilders::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeImageBuilders::set_max_results): <p>The maximum size of each page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeImageBuilders::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeImageBuilders::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeImageBuildersOutput`](crate::output::DescribeImageBuildersOutput) with field(s):
     ///   - [`image_builders(Option<Vec<ImageBuilder>>)`](crate::output::DescribeImageBuildersOutput::image_builders): <p>Information about the image builders.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeImageBuildersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -571,13 +571,13 @@ where
         fluent_builders::DescribeImageBuilders::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeImagePermissions`](crate::client::fluent_builders::DescribeImagePermissions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeImagePermissions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeImagePermissions::into_paginator).
     ///
-    /// - Takes [`DescribeImagePermissionsInput`](crate::input::DescribeImagePermissionsInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::DescribeImagePermissionsInput::name): <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeImagePermissionsInput::max_results): <p>The maximum size of each page of results.</p>
-    ///   - [`shared_aws_account_ids(Option<Vec<String>>)`](crate::input::DescribeImagePermissionsInput::shared_aws_account_ids): <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeImagePermissionsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeImagePermissions::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeImagePermissions::set_name): <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeImagePermissions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeImagePermissions::set_max_results): <p>The maximum size of each page of results.</p>
+    ///   - [`shared_aws_account_ids(Vec<String>)`](crate::client::fluent_builders::DescribeImagePermissions::shared_aws_account_ids) / [`set_shared_aws_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeImagePermissions::set_shared_aws_account_ids): <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeImagePermissions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeImagePermissions::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeImagePermissionsOutput`](crate::output::DescribeImagePermissionsOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::DescribeImagePermissionsOutput::name): <p>The name of the private image.</p>
     ///   - [`shared_image_permissions_list(Option<Vec<SharedImagePermissions>>)`](crate::output::DescribeImagePermissionsOutput::shared_image_permissions_list): <p>The permissions for a private image that you own. </p>
@@ -587,14 +587,14 @@ where
         fluent_builders::DescribeImagePermissions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeImages`](crate::client::fluent_builders::DescribeImages) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeImages::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeImages::into_paginator).
     ///
-    /// - Takes [`DescribeImagesInput`](crate::input::DescribeImagesInput) with field(s):
-    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeImagesInput::names): <p>The names of the public or private images to describe.</p>
-    ///   - [`arns(Option<Vec<String>>)`](crate::input::DescribeImagesInput::arns): <p>The ARNs of the public, private, and shared images to describe.</p>
-    ///   - [`r#type(Option<VisibilityType>)`](crate::input::DescribeImagesInput::type): <p>The type of image (public, private, or shared) to describe. </p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeImagesInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeImagesInput::max_results): <p>The maximum size of each page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::DescribeImages::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeImages::set_names): <p>The names of the public or private images to describe.</p>
+    ///   - [`arns(Vec<String>)`](crate::client::fluent_builders::DescribeImages::arns) / [`set_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeImages::set_arns): <p>The ARNs of the public, private, and shared images to describe.</p>
+    ///   - [`r#type(VisibilityType)`](crate::client::fluent_builders::DescribeImages::r#type) / [`set_type(Option<VisibilityType>)`](crate::client::fluent_builders::DescribeImages::set_type): <p>The type of image (public, private, or shared) to describe. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeImages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeImages::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeImages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeImages::set_max_results): <p>The maximum size of each page of results.</p>
     /// - On success, responds with [`DescribeImagesOutput`](crate::output::DescribeImagesOutput) with field(s):
     ///   - [`images(Option<Vec<Image>>)`](crate::output::DescribeImagesOutput::images): <p>Information about the images.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeImagesOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -604,13 +604,13 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeSessions`](crate::client::fluent_builders::DescribeSessions) operation.
     ///
-    /// - Takes [`DescribeSessionsInput`](crate::input::DescribeSessionsInput) with field(s):
-    ///   - [`stack_name(Option<String>)`](crate::input::DescribeSessionsInput::stack_name): <p>The name of the stack. This value is case-sensitive.</p>
-    ///   - [`fleet_name(Option<String>)`](crate::input::DescribeSessionsInput::fleet_name): <p>The name of the fleet. This value is case-sensitive.</p>
-    ///   - [`user_id(Option<String>)`](crate::input::DescribeSessionsInput::user_id): <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeSessionsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`limit(Option<i32>)`](crate::input::DescribeSessionsInput::limit): <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
-    ///   - [`authentication_type(Option<AuthenticationType>)`](crate::input::DescribeSessionsInput::authentication_type): <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSessions::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::DescribeSessions::set_stack_name): <p>The name of the stack. This value is case-sensitive.</p>
+    ///   - [`fleet_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSessions::fleet_name) / [`set_fleet_name(Option<String>)`](crate::client::fluent_builders::DescribeSessions::set_fleet_name): <p>The name of the fleet. This value is case-sensitive.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSessions::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DescribeSessions::set_user_id): <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSessions::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeSessions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeSessions::set_limit): <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
+    ///   - [`authentication_type(AuthenticationType)`](crate::client::fluent_builders::DescribeSessions::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::client::fluent_builders::DescribeSessions::set_authentication_type): <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
     /// - On success, responds with [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput) with field(s):
     ///   - [`sessions(Option<Vec<Session>>)`](crate::output::DescribeSessionsOutput::sessions): <p>Information about the streaming sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeSessionsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -620,9 +620,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeStacks`](crate::client::fluent_builders::DescribeStacks) operation.
     ///
-    /// - Takes [`DescribeStacksInput`](crate::input::DescribeStacksInput) with field(s):
-    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeStacksInput::names): <p>The names of the stacks to describe.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeStacksInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::DescribeStacks::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeStacks::set_names): <p>The names of the stacks to describe.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeStacks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeStacks::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeStacksOutput`](crate::output::DescribeStacksOutput) with field(s):
     ///   - [`stacks(Option<Vec<Stack>>)`](crate::output::DescribeStacksOutput::stacks): <p>Information about the stacks.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeStacksOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -632,9 +632,9 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeUsageReportSubscriptions`](crate::client::fluent_builders::DescribeUsageReportSubscriptions) operation.
     ///
-    /// - Takes [`DescribeUsageReportSubscriptionsInput`](crate::input::DescribeUsageReportSubscriptionsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeUsageReportSubscriptionsInput::max_results): <p>The maximum size of each page of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeUsageReportSubscriptionsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeUsageReportSubscriptions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeUsageReportSubscriptions::set_max_results): <p>The maximum size of each page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeUsageReportSubscriptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeUsageReportSubscriptions::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeUsageReportSubscriptionsOutput`](crate::output::DescribeUsageReportSubscriptionsOutput) with field(s):
     ///   - [`usage_report_subscriptions(Option<Vec<UsageReportSubscription>>)`](crate::output::DescribeUsageReportSubscriptionsOutput::usage_report_subscriptions): <p>Information about the usage report subscription.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeUsageReportSubscriptionsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -646,10 +646,10 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeUsers`](crate::client::fluent_builders::DescribeUsers) operation.
     ///
-    /// - Takes [`DescribeUsersInput`](crate::input::DescribeUsersInput) with field(s):
-    ///   - [`authentication_type(Option<AuthenticationType>)`](crate::input::DescribeUsersInput::authentication_type): <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeUsersInput::max_results): <p>The maximum size of each page of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeUsersInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`authentication_type(AuthenticationType)`](crate::client::fluent_builders::DescribeUsers::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::client::fluent_builders::DescribeUsers::set_authentication_type): <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeUsers::set_max_results): <p>The maximum size of each page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeUsers::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeUsersOutput`](crate::output::DescribeUsersOutput) with field(s):
     ///   - [`users(Option<Vec<User>>)`](crate::output::DescribeUsersOutput::users): <p>Information about users in the user pool.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeUsersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -659,12 +659,12 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeUserStackAssociations`](crate::client::fluent_builders::DescribeUserStackAssociations) operation.
     ///
-    /// - Takes [`DescribeUserStackAssociationsInput`](crate::input::DescribeUserStackAssociationsInput) with field(s):
-    ///   - [`stack_name(Option<String>)`](crate::input::DescribeUserStackAssociationsInput::stack_name): <p>The name of the stack that is associated with the user.</p>
-    ///   - [`user_name(Option<String>)`](crate::input::DescribeUserStackAssociationsInput::user_name): <p>The email address of the user who is associated with the stack.</p> <note>   <p>Users' email addresses are case-sensitive.</p>  </note>
-    ///   - [`authentication_type(Option<AuthenticationType>)`](crate::input::DescribeUserStackAssociationsInput::authentication_type): <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::DescribeUserStackAssociationsInput::max_results): <p>The maximum size of each page of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::DescribeUserStackAssociationsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::DescribeUserStackAssociations::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::DescribeUserStackAssociations::set_stack_name): <p>The name of the stack that is associated with the user.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DescribeUserStackAssociations::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DescribeUserStackAssociations::set_user_name): <p>The email address of the user who is associated with the stack.</p> <note>   <p>Users' email addresses are case-sensitive.</p>  </note>
+    ///   - [`authentication_type(AuthenticationType)`](crate::client::fluent_builders::DescribeUserStackAssociations::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::client::fluent_builders::DescribeUserStackAssociations::set_authentication_type): <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeUserStackAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeUserStackAssociations::set_max_results): <p>The maximum size of each page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeUserStackAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeUserStackAssociations::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeUserStackAssociationsOutput`](crate::output::DescribeUserStackAssociationsOutput) with field(s):
     ///   - [`user_stack_associations(Option<Vec<UserStackAssociation>>)`](crate::output::DescribeUserStackAssociationsOutput::user_stack_associations): <p>The UserStackAssociation objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeUserStackAssociationsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -676,9 +676,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisableUser`](crate::client::fluent_builders::DisableUser) operation.
     ///
-    /// - Takes [`DisableUserInput`](crate::input::DisableUserInput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::input::DisableUserInput::user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive.</p>  </note>
-    ///   - [`authentication_type(Option<AuthenticationType>)`](crate::input::DisableUserInput::authentication_type): <p>The authentication type for the user. You must specify USERPOOL.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DisableUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DisableUser::set_user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive.</p>  </note>
+    ///   - [`authentication_type(AuthenticationType)`](crate::client::fluent_builders::DisableUser::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::client::fluent_builders::DisableUser::set_authentication_type): <p>The authentication type for the user. You must specify USERPOOL.</p>
     /// - On success, responds with [`DisableUserOutput`](crate::output::DisableUserOutput)
 
     /// - On failure, responds with [`SdkError<DisableUserError>`](crate::error::DisableUserError)
@@ -687,9 +687,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateApplicationFleet`](crate::client::fluent_builders::DisassociateApplicationFleet) operation.
     ///
-    /// - Takes [`DisassociateApplicationFleetInput`](crate::input::DisassociateApplicationFleetInput) with field(s):
-    ///   - [`fleet_name(Option<String>)`](crate::input::DisassociateApplicationFleetInput::fleet_name): <p>The name of the fleet.</p>
-    ///   - [`application_arn(Option<String>)`](crate::input::DisassociateApplicationFleetInput::application_arn): <p>The ARN of the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`fleet_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateApplicationFleet::fleet_name) / [`set_fleet_name(Option<String>)`](crate::client::fluent_builders::DisassociateApplicationFleet::set_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`application_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateApplicationFleet::application_arn) / [`set_application_arn(Option<String>)`](crate::client::fluent_builders::DisassociateApplicationFleet::set_application_arn): <p>The ARN of the application.</p>
     /// - On success, responds with [`DisassociateApplicationFleetOutput`](crate::output::DisassociateApplicationFleetOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateApplicationFleetError>`](crate::error::DisassociateApplicationFleetError)
@@ -700,10 +700,10 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateApplicationFromEntitlement`](crate::client::fluent_builders::DisassociateApplicationFromEntitlement) operation.
     ///
-    /// - Takes [`DisassociateApplicationFromEntitlementInput`](crate::input::DisassociateApplicationFromEntitlementInput) with field(s):
-    ///   - [`stack_name(Option<String>)`](crate::input::DisassociateApplicationFromEntitlementInput::stack_name): <p>The name of the stack with which the entitlement is associated.</p>
-    ///   - [`entitlement_name(Option<String>)`](crate::input::DisassociateApplicationFromEntitlementInput::entitlement_name): <p>The name of the entitlement.</p>
-    ///   - [`application_identifier(Option<String>)`](crate::input::DisassociateApplicationFromEntitlementInput::application_identifier): <p>The identifier of the application to remove from the entitlement.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateApplicationFromEntitlement::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::DisassociateApplicationFromEntitlement::set_stack_name): <p>The name of the stack with which the entitlement is associated.</p>
+    ///   - [`entitlement_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateApplicationFromEntitlement::entitlement_name) / [`set_entitlement_name(Option<String>)`](crate::client::fluent_builders::DisassociateApplicationFromEntitlement::set_entitlement_name): <p>The name of the entitlement.</p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::DisassociateApplicationFromEntitlement::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::DisassociateApplicationFromEntitlement::set_application_identifier): <p>The identifier of the application to remove from the entitlement.</p>
     /// - On success, responds with [`DisassociateApplicationFromEntitlementOutput`](crate::output::DisassociateApplicationFromEntitlementOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateApplicationFromEntitlementError>`](crate::error::DisassociateApplicationFromEntitlementError)
@@ -714,9 +714,9 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateFleet`](crate::client::fluent_builders::DisassociateFleet) operation.
     ///
-    /// - Takes [`DisassociateFleetInput`](crate::input::DisassociateFleetInput) with field(s):
-    ///   - [`fleet_name(Option<String>)`](crate::input::DisassociateFleetInput::fleet_name): <p>The name of the fleet.</p>
-    ///   - [`stack_name(Option<String>)`](crate::input::DisassociateFleetInput::stack_name): <p>The name of the stack.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`fleet_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateFleet::fleet_name) / [`set_fleet_name(Option<String>)`](crate::client::fluent_builders::DisassociateFleet::set_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateFleet::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::DisassociateFleet::set_stack_name): <p>The name of the stack.</p>
     /// - On success, responds with [`DisassociateFleetOutput`](crate::output::DisassociateFleetOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateFleetError>`](crate::error::DisassociateFleetError)
@@ -725,9 +725,9 @@ where
     }
     /// Constructs a fluent builder for the [`EnableUser`](crate::client::fluent_builders::EnableUser) operation.
     ///
-    /// - Takes [`EnableUserInput`](crate::input::EnableUserInput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::input::EnableUserInput::user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>  </note>
-    ///   - [`authentication_type(Option<AuthenticationType>)`](crate::input::EnableUserInput::authentication_type): <p>The authentication type for the user. You must specify USERPOOL.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::EnableUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::EnableUser::set_user_name): <p>The email address of the user.</p> <note>   <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>  </note>
+    ///   - [`authentication_type(AuthenticationType)`](crate::client::fluent_builders::EnableUser::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::client::fluent_builders::EnableUser::set_authentication_type): <p>The authentication type for the user. You must specify USERPOOL.</p>
     /// - On success, responds with [`EnableUserOutput`](crate::output::EnableUserOutput)
 
     /// - On failure, responds with [`SdkError<EnableUserError>`](crate::error::EnableUserError)
@@ -736,8 +736,8 @@ where
     }
     /// Constructs a fluent builder for the [`ExpireSession`](crate::client::fluent_builders::ExpireSession) operation.
     ///
-    /// - Takes [`ExpireSessionInput`](crate::input::ExpireSessionInput) with field(s):
-    ///   - [`session_id(Option<String>)`](crate::input::ExpireSessionInput::session_id): <p>The identifier of the streaming session.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::ExpireSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::ExpireSession::set_session_id): <p>The identifier of the streaming session.</p>
     /// - On success, responds with [`ExpireSessionOutput`](crate::output::ExpireSessionOutput)
 
     /// - On failure, responds with [`SdkError<ExpireSessionError>`](crate::error::ExpireSessionError)
@@ -746,9 +746,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListAssociatedFleets`](crate::client::fluent_builders::ListAssociatedFleets) operation.
     ///
-    /// - Takes [`ListAssociatedFleetsInput`](crate::input::ListAssociatedFleetsInput) with field(s):
-    ///   - [`stack_name(Option<String>)`](crate::input::ListAssociatedFleetsInput::stack_name): <p>The name of the stack.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssociatedFleetsInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedFleets::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::ListAssociatedFleets::set_stack_name): <p>The name of the stack.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedFleets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssociatedFleets::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`ListAssociatedFleetsOutput`](crate::output::ListAssociatedFleetsOutput) with field(s):
     ///   - [`names(Option<Vec<String>>)`](crate::output::ListAssociatedFleetsOutput::names): <p>The name of the fleet.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssociatedFleetsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -758,9 +758,9 @@ where
     }
     /// Constructs a fluent builder for the [`ListAssociatedStacks`](crate::client::fluent_builders::ListAssociatedStacks) operation.
     ///
-    /// - Takes [`ListAssociatedStacksInput`](crate::input::ListAssociatedStacksInput) with field(s):
-    ///   - [`fleet_name(Option<String>)`](crate::input::ListAssociatedStacksInput::fleet_name): <p>The name of the fleet.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAssociatedStacksInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`fleet_name(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedStacks::fleet_name) / [`set_fleet_name(Option<String>)`](crate::client::fluent_builders::ListAssociatedStacks::set_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssociatedStacks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssociatedStacks::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`ListAssociatedStacksOutput`](crate::output::ListAssociatedStacksOutput) with field(s):
     ///   - [`names(Option<Vec<String>>)`](crate::output::ListAssociatedStacksOutput::names): <p>The name of the stack.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAssociatedStacksOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -770,11 +770,11 @@ where
     }
     /// Constructs a fluent builder for the [`ListEntitledApplications`](crate::client::fluent_builders::ListEntitledApplications) operation.
     ///
-    /// - Takes [`ListEntitledApplicationsInput`](crate::input::ListEntitledApplicationsInput) with field(s):
-    ///   - [`stack_name(Option<String>)`](crate::input::ListEntitledApplicationsInput::stack_name): <p>The name of the stack with which the entitlement is associated.</p>
-    ///   - [`entitlement_name(Option<String>)`](crate::input::ListEntitledApplicationsInput::entitlement_name): <p>The name of the entitlement.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListEntitledApplicationsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEntitledApplicationsInput::max_results): <p>The maximum size of each page of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::ListEntitledApplications::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::ListEntitledApplications::set_stack_name): <p>The name of the stack with which the entitlement is associated.</p>
+    ///   - [`entitlement_name(impl Into<String>)`](crate::client::fluent_builders::ListEntitledApplications::entitlement_name) / [`set_entitlement_name(Option<String>)`](crate::client::fluent_builders::ListEntitledApplications::set_entitlement_name): <p>The name of the entitlement.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEntitledApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEntitledApplications::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEntitledApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEntitledApplications::set_max_results): <p>The maximum size of each page of results.</p>
     /// - On success, responds with [`ListEntitledApplicationsOutput`](crate::output::ListEntitledApplicationsOutput) with field(s):
     ///   - [`entitled_applications(Option<Vec<EntitledApplication>>)`](crate::output::ListEntitledApplicationsOutput::entitled_applications): <p>The entitled applications.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEntitledApplicationsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -784,8 +784,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The information about the tags.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -794,8 +794,8 @@ where
     }
     /// Constructs a fluent builder for the [`StartFleet`](crate::client::fluent_builders::StartFleet) operation.
     ///
-    /// - Takes [`StartFleetInput`](crate::input::StartFleetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::StartFleetInput::name): <p>The name of the fleet.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartFleet::set_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`StartFleetOutput`](crate::output::StartFleetOutput)
 
     /// - On failure, responds with [`SdkError<StartFleetError>`](crate::error::StartFleetError)
@@ -804,9 +804,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartImageBuilder`](crate::client::fluent_builders::StartImageBuilder) operation.
     ///
-    /// - Takes [`StartImageBuilderInput`](crate::input::StartImageBuilderInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::StartImageBuilderInput::name): <p>The name of the image builder.</p>
-    ///   - [`appstream_agent_version(Option<String>)`](crate::input::StartImageBuilderInput::appstream_agent_version): <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartImageBuilder::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartImageBuilder::set_name): <p>The name of the image builder.</p>
+    ///   - [`appstream_agent_version(impl Into<String>)`](crate::client::fluent_builders::StartImageBuilder::appstream_agent_version) / [`set_appstream_agent_version(Option<String>)`](crate::client::fluent_builders::StartImageBuilder::set_appstream_agent_version): <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     /// - On success, responds with [`StartImageBuilderOutput`](crate::output::StartImageBuilderOutput) with field(s):
     ///   - [`image_builder(Option<ImageBuilder>)`](crate::output::StartImageBuilderOutput::image_builder): <p>Information about the image builder.</p>
     /// - On failure, responds with [`SdkError<StartImageBuilderError>`](crate::error::StartImageBuilderError)
@@ -815,8 +815,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopFleet`](crate::client::fluent_builders::StopFleet) operation.
     ///
-    /// - Takes [`StopFleetInput`](crate::input::StopFleetInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::StopFleetInput::name): <p>The name of the fleet.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopFleet::set_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`StopFleetOutput`](crate::output::StopFleetOutput)
 
     /// - On failure, responds with [`SdkError<StopFleetError>`](crate::error::StopFleetError)
@@ -825,8 +825,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopImageBuilder`](crate::client::fluent_builders::StopImageBuilder) operation.
     ///
-    /// - Takes [`StopImageBuilderInput`](crate::input::StopImageBuilderInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::StopImageBuilderInput::name): <p>The name of the image builder.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopImageBuilder::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopImageBuilder::set_name): <p>The name of the image builder.</p>
     /// - On success, responds with [`StopImageBuilderOutput`](crate::output::StopImageBuilderOutput) with field(s):
     ///   - [`image_builder(Option<ImageBuilder>)`](crate::output::StopImageBuilderOutput::image_builder): <p>Information about the image builder.</p>
     /// - On failure, responds with [`SdkError<StopImageBuilderError>`](crate::error::StopImageBuilderError)
@@ -835,9 +835,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>  <p>If you do not specify a value, the value is set to an empty string.</p>  <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>  <p>_ . : / = + \ - @</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -846,9 +846,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys for the tags to disassociate.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys for the tags to disassociate.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -857,16 +857,16 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
     ///
-    /// - Takes [`UpdateApplicationInput`](crate::input::UpdateApplicationInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::UpdateApplicationInput::name): <p>The name of the application. This name is visible to users when display name is not specified.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateApplicationInput::display_name): <p>The display name of the application. This name is visible to users in the application catalog.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateApplicationInput::description): <p>The description of the application.</p>
-    ///   - [`icon_s3_location(Option<S3Location>)`](crate::input::UpdateApplicationInput::icon_s3_location): <p>The icon S3 location of the application.</p>
-    ///   - [`launch_path(Option<String>)`](crate::input::UpdateApplicationInput::launch_path): <p>The launch path of the application.</p>
-    ///   - [`working_directory(Option<String>)`](crate::input::UpdateApplicationInput::working_directory): <p>The working directory of the application.</p>
-    ///   - [`launch_parameters(Option<String>)`](crate::input::UpdateApplicationInput::launch_parameters): <p>The launch parameters of the application.</p>
-    ///   - [`app_block_arn(Option<String>)`](crate::input::UpdateApplicationInput::app_block_arn): <p>The ARN of the app block.</p>
-    ///   - [`attributes_to_delete(Option<Vec<ApplicationAttribute>>)`](crate::input::UpdateApplicationInput::attributes_to_delete): <p>The attributes to delete for an application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_name): <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_display_name): <p>The display name of the application. This name is visible to users in the application catalog.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_description): <p>The description of the application.</p>
+    ///   - [`icon_s3_location(S3Location)`](crate::client::fluent_builders::UpdateApplication::icon_s3_location) / [`set_icon_s3_location(Option<S3Location>)`](crate::client::fluent_builders::UpdateApplication::set_icon_s3_location): <p>The icon S3 location of the application.</p>
+    ///   - [`launch_path(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::launch_path) / [`set_launch_path(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_launch_path): <p>The launch path of the application.</p>
+    ///   - [`working_directory(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::working_directory) / [`set_working_directory(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_working_directory): <p>The working directory of the application.</p>
+    ///   - [`launch_parameters(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::launch_parameters) / [`set_launch_parameters(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_launch_parameters): <p>The launch parameters of the application.</p>
+    ///   - [`app_block_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::app_block_arn) / [`set_app_block_arn(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_app_block_arn): <p>The ARN of the app block.</p>
+    ///   - [`attributes_to_delete(Vec<ApplicationAttribute>)`](crate::client::fluent_builders::UpdateApplication::attributes_to_delete) / [`set_attributes_to_delete(Option<Vec<ApplicationAttribute>>)`](crate::client::fluent_builders::UpdateApplication::set_attributes_to_delete): <p>The attributes to delete for an application.</p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::output::UpdateApplicationOutput::application): <p>Describes an application in the application catalog.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
@@ -875,10 +875,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDirectoryConfig`](crate::client::fluent_builders::UpdateDirectoryConfig) operation.
     ///
-    /// - Takes [`UpdateDirectoryConfigInput`](crate::input::UpdateDirectoryConfigInput) with field(s):
-    ///   - [`directory_name(Option<String>)`](crate::input::UpdateDirectoryConfigInput::directory_name): <p>The name of the Directory Config object.</p>
-    ///   - [`organizational_unit_distinguished_names(Option<Vec<String>>)`](crate::input::UpdateDirectoryConfigInput::organizational_unit_distinguished_names): <p>The distinguished names of the organizational units for computer accounts.</p>
-    ///   - [`service_account_credentials(Option<ServiceAccountCredentials>)`](crate::input::UpdateDirectoryConfigInput::service_account_credentials): <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`directory_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDirectoryConfig::directory_name) / [`set_directory_name(Option<String>)`](crate::client::fluent_builders::UpdateDirectoryConfig::set_directory_name): <p>The name of the Directory Config object.</p>
+    ///   - [`organizational_unit_distinguished_names(Vec<String>)`](crate::client::fluent_builders::UpdateDirectoryConfig::organizational_unit_distinguished_names) / [`set_organizational_unit_distinguished_names(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDirectoryConfig::set_organizational_unit_distinguished_names): <p>The distinguished names of the organizational units for computer accounts.</p>
+    ///   - [`service_account_credentials(ServiceAccountCredentials)`](crate::client::fluent_builders::UpdateDirectoryConfig::service_account_credentials) / [`set_service_account_credentials(Option<ServiceAccountCredentials>)`](crate::client::fluent_builders::UpdateDirectoryConfig::set_service_account_credentials): <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     /// - On success, responds with [`UpdateDirectoryConfigOutput`](crate::output::UpdateDirectoryConfigOutput) with field(s):
     ///   - [`directory_config(Option<DirectoryConfig>)`](crate::output::UpdateDirectoryConfigOutput::directory_config): <p>Information about the Directory Config object.</p>
     /// - On failure, responds with [`SdkError<UpdateDirectoryConfigError>`](crate::error::UpdateDirectoryConfigError)
@@ -887,12 +887,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEntitlement`](crate::client::fluent_builders::UpdateEntitlement) operation.
     ///
-    /// - Takes [`UpdateEntitlementInput`](crate::input::UpdateEntitlementInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::UpdateEntitlementInput::name): <p>The name of the entitlement.</p>
-    ///   - [`stack_name(Option<String>)`](crate::input::UpdateEntitlementInput::stack_name): <p>The name of the stack with which the entitlement is associated.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateEntitlementInput::description): <p>The description of the entitlement.</p>
-    ///   - [`app_visibility(Option<AppVisibility>)`](crate::input::UpdateEntitlementInput::app_visibility): <p>Specifies whether all or only selected apps are entitled.</p>
-    ///   - [`attributes(Option<Vec<EntitlementAttribute>>)`](crate::input::UpdateEntitlementInput::attributes): <p>The attributes of the entitlement.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEntitlement::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEntitlement::set_name): <p>The name of the entitlement.</p>
+    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::UpdateEntitlement::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::UpdateEntitlement::set_stack_name): <p>The name of the stack with which the entitlement is associated.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateEntitlement::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateEntitlement::set_description): <p>The description of the entitlement.</p>
+    ///   - [`app_visibility(AppVisibility)`](crate::client::fluent_builders::UpdateEntitlement::app_visibility) / [`set_app_visibility(Option<AppVisibility>)`](crate::client::fluent_builders::UpdateEntitlement::set_app_visibility): <p>Specifies whether all or only selected apps are entitled.</p>
+    ///   - [`attributes(Vec<EntitlementAttribute>)`](crate::client::fluent_builders::UpdateEntitlement::attributes) / [`set_attributes(Option<Vec<EntitlementAttribute>>)`](crate::client::fluent_builders::UpdateEntitlement::set_attributes): <p>The attributes of the entitlement.</p>
     /// - On success, responds with [`UpdateEntitlementOutput`](crate::output::UpdateEntitlementOutput) with field(s):
     ///   - [`entitlement(Option<Entitlement>)`](crate::output::UpdateEntitlementOutput::entitlement): <p>The entitlement.</p>
     /// - On failure, responds with [`SdkError<UpdateEntitlementError>`](crate::error::UpdateEntitlementError)
@@ -901,27 +901,27 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFleet`](crate::client::fluent_builders::UpdateFleet) operation.
     ///
-    /// - Takes [`UpdateFleetInput`](crate::input::UpdateFleetInput) with field(s):
-    ///   - [`image_name(Option<String>)`](crate::input::UpdateFleetInput::image_name): <p>The name of the image used to create the fleet.</p>
-    ///   - [`image_arn(Option<String>)`](crate::input::UpdateFleetInput::image_arn): <p>The ARN of the public, private, or shared image to use.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateFleetInput::name): <p>A unique name for the fleet.</p>
-    ///   - [`instance_type(Option<String>)`](crate::input::UpdateFleetInput::instance_type): <p>The instance type to use when launching fleet instances. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>  <p>The following instance types are available for Elastic fleets:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>  </ul>
-    ///   - [`compute_capacity(Option<ComputeCapacity>)`](crate::input::UpdateFleetInput::compute_capacity): <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
-    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::UpdateFleetInput::vpc_config): <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
-    ///   - [`max_user_duration_in_seconds(Option<i32>)`](crate::input::UpdateFleetInput::max_user_duration_in_seconds): <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>  <p>Specify a value between 600 and 360000.</p>
-    ///   - [`disconnect_timeout_in_seconds(Option<i32>)`](crate::input::UpdateFleetInput::disconnect_timeout_in_seconds): <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>  <p>Specify a value between 60 and 360000.</p>
-    ///   - [`delete_vpc_config(bool)`](crate::input::UpdateFleetInput::delete_vpc_config): <p>Deletes the VPC association for the specified fleet.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateFleetInput::description): <p>The description to display.</p>
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateFleetInput::display_name): <p>The fleet name to display.</p>
-    ///   - [`enable_default_internet_access(Option<bool>)`](crate::input::UpdateFleetInput::enable_default_internet_access): <p>Enables or disables default internet access for the fleet.</p>
-    ///   - [`domain_join_info(Option<DomainJoinInfo>)`](crate::input::UpdateFleetInput::domain_join_info): <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
-    ///   - [`idle_disconnect_timeout_in_seconds(Option<i32>)`](crate::input::UpdateFleetInput::idle_disconnect_timeout_in_seconds): <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>  <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>   <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>  </note>
-    ///   - [`attributes_to_delete(Option<Vec<FleetAttribute>>)`](crate::input::UpdateFleetInput::attributes_to_delete): <p>The fleet attributes to delete.</p>
-    ///   - [`iam_role_arn(Option<String>)`](crate::input::UpdateFleetInput::iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    ///   - [`stream_view(Option<StreamView>)`](crate::input::UpdateFleetInput::stream_view): <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>  <p>The default value is <code>APP</code>.</p>
-    ///   - [`platform(Option<PlatformType>)`](crate::input::UpdateFleetInput::platform): <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
-    ///   - [`max_concurrent_sessions(Option<i32>)`](crate::input::UpdateFleetInput::max_concurrent_sessions): <p>The maximum number of concurrent sessions for a fleet.</p>
-    ///   - [`usb_device_filter_strings(Option<Vec<String>>)`](crate::input::UpdateFleetInput::usb_device_filter_strings): <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_image_name): <p>The name of the image used to create the fleet.</p>
+    ///   - [`image_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::image_arn) / [`set_image_arn(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_image_arn): <p>The ARN of the public, private, or shared image to use.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_name): <p>A unique name for the fleet.</p>
+    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_instance_type): <p>The instance type to use when launching fleet instances. The following instance types are available:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>   <li> <p>stream.standard.large</p> </li>   <li> <p>stream.compute.large</p> </li>   <li> <p>stream.compute.xlarge</p> </li>   <li> <p>stream.compute.2xlarge</p> </li>   <li> <p>stream.compute.4xlarge</p> </li>   <li> <p>stream.compute.8xlarge</p> </li>   <li> <p>stream.memory.large</p> </li>   <li> <p>stream.memory.xlarge</p> </li>   <li> <p>stream.memory.2xlarge</p> </li>   <li> <p>stream.memory.4xlarge</p> </li>   <li> <p>stream.memory.8xlarge</p> </li>   <li> <p>stream.memory.z1d.large</p> </li>   <li> <p>stream.memory.z1d.xlarge</p> </li>   <li> <p>stream.memory.z1d.2xlarge</p> </li>   <li> <p>stream.memory.z1d.3xlarge</p> </li>   <li> <p>stream.memory.z1d.6xlarge</p> </li>   <li> <p>stream.memory.z1d.12xlarge</p> </li>   <li> <p>stream.graphics-design.large</p> </li>   <li> <p>stream.graphics-design.xlarge</p> </li>   <li> <p>stream.graphics-design.2xlarge</p> </li>   <li> <p>stream.graphics-design.4xlarge</p> </li>   <li> <p>stream.graphics-desktop.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.xlarge</p> </li>   <li> <p>stream.graphics.g4dn.2xlarge</p> </li>   <li> <p>stream.graphics.g4dn.4xlarge</p> </li>   <li> <p>stream.graphics.g4dn.8xlarge</p> </li>   <li> <p>stream.graphics.g4dn.12xlarge</p> </li>   <li> <p>stream.graphics.g4dn.16xlarge</p> </li>   <li> <p>stream.graphics-pro.4xlarge</p> </li>   <li> <p>stream.graphics-pro.8xlarge</p> </li>   <li> <p>stream.graphics-pro.16xlarge</p> </li>  </ul>  <p>The following instance types are available for Elastic fleets:</p>  <ul>   <li> <p>stream.standard.small</p> </li>   <li> <p>stream.standard.medium</p> </li>  </ul>
+    ///   - [`compute_capacity(ComputeCapacity)`](crate::client::fluent_builders::UpdateFleet::compute_capacity) / [`set_compute_capacity(Option<ComputeCapacity>)`](crate::client::fluent_builders::UpdateFleet::set_compute_capacity): <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
+    ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::UpdateFleet::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::UpdateFleet::set_vpc_config): <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
+    ///   - [`max_user_duration_in_seconds(i32)`](crate::client::fluent_builders::UpdateFleet::max_user_duration_in_seconds) / [`set_max_user_duration_in_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateFleet::set_max_user_duration_in_seconds): <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>  <p>Specify a value between 600 and 360000.</p>
+    ///   - [`disconnect_timeout_in_seconds(i32)`](crate::client::fluent_builders::UpdateFleet::disconnect_timeout_in_seconds) / [`set_disconnect_timeout_in_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateFleet::set_disconnect_timeout_in_seconds): <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>  <p>Specify a value between 60 and 360000.</p>
+    ///   - [`delete_vpc_config(bool)`](crate::client::fluent_builders::UpdateFleet::delete_vpc_config) / [`set_delete_vpc_config(bool)`](crate::client::fluent_builders::UpdateFleet::set_delete_vpc_config): <p>Deletes the VPC association for the specified fleet.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_description): <p>The description to display.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_display_name): <p>The fleet name to display.</p>
+    ///   - [`enable_default_internet_access(bool)`](crate::client::fluent_builders::UpdateFleet::enable_default_internet_access) / [`set_enable_default_internet_access(Option<bool>)`](crate::client::fluent_builders::UpdateFleet::set_enable_default_internet_access): <p>Enables or disables default internet access for the fleet.</p>
+    ///   - [`domain_join_info(DomainJoinInfo)`](crate::client::fluent_builders::UpdateFleet::domain_join_info) / [`set_domain_join_info(Option<DomainJoinInfo>)`](crate::client::fluent_builders::UpdateFleet::set_domain_join_info): <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    ///   - [`idle_disconnect_timeout_in_seconds(i32)`](crate::client::fluent_builders::UpdateFleet::idle_disconnect_timeout_in_seconds) / [`set_idle_disconnect_timeout_in_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateFleet::set_idle_disconnect_timeout_in_seconds): <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>  <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>   <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>  </note>
+    ///   - [`attributes_to_delete(Vec<FleetAttribute>)`](crate::client::fluent_builders::UpdateFleet::attributes_to_delete) / [`set_attributes_to_delete(Option<Vec<FleetAttribute>>)`](crate::client::fluent_builders::UpdateFleet::set_attributes_to_delete): <p>The fleet attributes to delete.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFleet::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateFleet::set_iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    ///   - [`stream_view(StreamView)`](crate::client::fluent_builders::UpdateFleet::stream_view) / [`set_stream_view(Option<StreamView>)`](crate::client::fluent_builders::UpdateFleet::set_stream_view): <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>  <p>The default value is <code>APP</code>.</p>
+    ///   - [`platform(PlatformType)`](crate::client::fluent_builders::UpdateFleet::platform) / [`set_platform(Option<PlatformType>)`](crate::client::fluent_builders::UpdateFleet::set_platform): <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
+    ///   - [`max_concurrent_sessions(i32)`](crate::client::fluent_builders::UpdateFleet::max_concurrent_sessions) / [`set_max_concurrent_sessions(Option<i32>)`](crate::client::fluent_builders::UpdateFleet::set_max_concurrent_sessions): <p>The maximum number of concurrent sessions for a fleet.</p>
+    ///   - [`usb_device_filter_strings(Vec<String>)`](crate::client::fluent_builders::UpdateFleet::usb_device_filter_strings) / [`set_usb_device_filter_strings(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFleet::set_usb_device_filter_strings): <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
     /// - On success, responds with [`UpdateFleetOutput`](crate::output::UpdateFleetOutput) with field(s):
     ///   - [`fleet(Option<Fleet>)`](crate::output::UpdateFleetOutput::fleet): <p>Information about the fleet.</p>
     /// - On failure, responds with [`SdkError<UpdateFleetError>`](crate::error::UpdateFleetError)
@@ -930,10 +930,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateImagePermissions`](crate::client::fluent_builders::UpdateImagePermissions) operation.
     ///
-    /// - Takes [`UpdateImagePermissionsInput`](crate::input::UpdateImagePermissionsInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::UpdateImagePermissionsInput::name): <p>The name of the private image.</p>
-    ///   - [`shared_account_id(Option<String>)`](crate::input::UpdateImagePermissionsInput::shared_account_id): <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
-    ///   - [`image_permissions(Option<ImagePermissions>)`](crate::input::UpdateImagePermissionsInput::image_permissions): <p>The permissions for the image.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateImagePermissions::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateImagePermissions::set_name): <p>The name of the private image.</p>
+    ///   - [`shared_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateImagePermissions::shared_account_id) / [`set_shared_account_id(Option<String>)`](crate::client::fluent_builders::UpdateImagePermissions::set_shared_account_id): <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
+    ///   - [`image_permissions(ImagePermissions)`](crate::client::fluent_builders::UpdateImagePermissions::image_permissions) / [`set_image_permissions(Option<ImagePermissions>)`](crate::client::fluent_builders::UpdateImagePermissions::set_image_permissions): <p>The permissions for the image.</p>
     /// - On success, responds with [`UpdateImagePermissionsOutput`](crate::output::UpdateImagePermissionsOutput)
 
     /// - On failure, responds with [`SdkError<UpdateImagePermissionsError>`](crate::error::UpdateImagePermissionsError)
@@ -942,19 +942,19 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateStack`](crate::client::fluent_builders::UpdateStack) operation.
     ///
-    /// - Takes [`UpdateStackInput`](crate::input::UpdateStackInput) with field(s):
-    ///   - [`display_name(Option<String>)`](crate::input::UpdateStackInput::display_name): <p>The stack name to display.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateStackInput::description): <p>The description to display.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateStackInput::name): <p>The name of the stack.</p>
-    ///   - [`storage_connectors(Option<Vec<StorageConnector>>)`](crate::input::UpdateStackInput::storage_connectors): <p>The storage connectors to enable.</p>
-    ///   - [`delete_storage_connectors(bool)`](crate::input::UpdateStackInput::delete_storage_connectors): <p>Deletes the storage connectors currently enabled for the stack.</p>
-    ///   - [`redirect_url(Option<String>)`](crate::input::UpdateStackInput::redirect_url): <p>The URL that users are redirected to after their streaming session ends.</p>
-    ///   - [`feedback_url(Option<String>)`](crate::input::UpdateStackInput::feedback_url): <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    ///   - [`attributes_to_delete(Option<Vec<StackAttribute>>)`](crate::input::UpdateStackInput::attributes_to_delete): <p>The stack attributes to delete.</p>
-    ///   - [`user_settings(Option<Vec<UserSetting>>)`](crate::input::UpdateStackInput::user_settings): <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-    ///   - [`application_settings(Option<ApplicationSettings>)`](crate::input::UpdateStackInput::application_settings): <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-    ///   - [`access_endpoints(Option<Vec<AccessEndpoint>>)`](crate::input::UpdateStackInput::access_endpoints): <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    ///   - [`embed_host_domains(Option<Vec<String>>)`](crate::input::UpdateStackInput::embed_host_domains): <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_display_name): <p>The stack name to display.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_description): <p>The description to display.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_name): <p>The name of the stack.</p>
+    ///   - [`storage_connectors(Vec<StorageConnector>)`](crate::client::fluent_builders::UpdateStack::storage_connectors) / [`set_storage_connectors(Option<Vec<StorageConnector>>)`](crate::client::fluent_builders::UpdateStack::set_storage_connectors): <p>The storage connectors to enable.</p>
+    ///   - [`delete_storage_connectors(bool)`](crate::client::fluent_builders::UpdateStack::delete_storage_connectors) / [`set_delete_storage_connectors(bool)`](crate::client::fluent_builders::UpdateStack::set_delete_storage_connectors): <p>Deletes the storage connectors currently enabled for the stack.</p>
+    ///   - [`redirect_url(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::redirect_url) / [`set_redirect_url(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_redirect_url): <p>The URL that users are redirected to after their streaming session ends.</p>
+    ///   - [`feedback_url(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::feedback_url) / [`set_feedback_url(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_feedback_url): <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    ///   - [`attributes_to_delete(Vec<StackAttribute>)`](crate::client::fluent_builders::UpdateStack::attributes_to_delete) / [`set_attributes_to_delete(Option<Vec<StackAttribute>>)`](crate::client::fluent_builders::UpdateStack::set_attributes_to_delete): <p>The stack attributes to delete.</p>
+    ///   - [`user_settings(Vec<UserSetting>)`](crate::client::fluent_builders::UpdateStack::user_settings) / [`set_user_settings(Option<Vec<UserSetting>>)`](crate::client::fluent_builders::UpdateStack::set_user_settings): <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
+    ///   - [`application_settings(ApplicationSettings)`](crate::client::fluent_builders::UpdateStack::application_settings) / [`set_application_settings(Option<ApplicationSettings>)`](crate::client::fluent_builders::UpdateStack::set_application_settings): <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
+    ///   - [`access_endpoints(Vec<AccessEndpoint>)`](crate::client::fluent_builders::UpdateStack::access_endpoints) / [`set_access_endpoints(Option<Vec<AccessEndpoint>>)`](crate::client::fluent_builders::UpdateStack::set_access_endpoints): <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+    ///   - [`embed_host_domains(Vec<String>)`](crate::client::fluent_builders::UpdateStack::embed_host_domains) / [`set_embed_host_domains(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateStack::set_embed_host_domains): <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     /// - On success, responds with [`UpdateStackOutput`](crate::output::UpdateStackOutput) with field(s):
     ///   - [`stack(Option<Stack>)`](crate::output::UpdateStackOutput::stack): <p>Information about the stack.</p>
     /// - On failure, responds with [`SdkError<UpdateStackError>`](crate::error::UpdateStackError)

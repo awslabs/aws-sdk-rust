@@ -85,8 +85,8 @@ where
 {
     /// Constructs a fluent builder for the [`AssociateMember`](crate::client::fluent_builders::AssociateMember) operation.
     ///
-    /// - Takes [`AssociateMemberInput`](crate::input::AssociateMemberInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::AssociateMemberInput::account_id): <p>The Amazon Web Services account ID of the member account to be associated.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::AssociateMember::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::AssociateMember::set_account_id): <p>The Amazon Web Services account ID of the member account to be associated.</p>
     /// - On success, responds with [`AssociateMemberOutput`](crate::output::AssociateMemberOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::output::AssociateMemberOutput::account_id): <p>The Amazon Web Services account ID of the successfully associated member account.</p>
     /// - On failure, responds with [`SdkError<AssociateMemberError>`](crate::error::AssociateMemberError)
@@ -95,8 +95,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchGetAccountStatus`](crate::client::fluent_builders::BatchGetAccountStatus) operation.
     ///
-    /// - Takes [`BatchGetAccountStatusInput`](crate::input::BatchGetAccountStatusInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::BatchGetAccountStatusInput::account_ids): <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetAccountStatus::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetAccountStatus::set_account_ids): <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
     /// - On success, responds with [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput) with field(s):
     ///   - [`accounts(Option<Vec<AccountState>>)`](crate::output::BatchGetAccountStatusOutput::accounts): <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
     ///   - [`failed_accounts(Option<Vec<FailedAccount>>)`](crate::output::BatchGetAccountStatusOutput::failed_accounts): <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
@@ -106,8 +106,8 @@ where
     }
     /// Constructs a fluent builder for the [`BatchGetFreeTrialInfo`](crate::client::fluent_builders::BatchGetFreeTrialInfo) operation.
     ///
-    /// - Takes [`BatchGetFreeTrialInfoInput`](crate::input::BatchGetFreeTrialInfoInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::BatchGetFreeTrialInfoInput::account_ids): <p>The account IDs to get free trial status for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetFreeTrialInfo::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetFreeTrialInfo::set_account_ids): <p>The account IDs to get free trial status for.</p>
     /// - On success, responds with [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput) with field(s):
     ///   - [`accounts(Option<Vec<FreeTrialAccountInfo>>)`](crate::output::BatchGetFreeTrialInfoOutput::accounts): <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     ///   - [`failed_accounts(Option<Vec<FreeTrialInfoError>>)`](crate::output::BatchGetFreeTrialInfoOutput::failed_accounts): <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
@@ -117,8 +117,8 @@ where
     }
     /// Constructs a fluent builder for the [`CancelFindingsReport`](crate::client::fluent_builders::CancelFindingsReport) operation.
     ///
-    /// - Takes [`CancelFindingsReportInput`](crate::input::CancelFindingsReportInput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::input::CancelFindingsReportInput::report_id): <p>The ID of the report to be canceled.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::CancelFindingsReport::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::CancelFindingsReport::set_report_id): <p>The ID of the report to be canceled.</p>
     /// - On success, responds with [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::output::CancelFindingsReportOutput::report_id): <p>The ID of the canceled report.</p>
     /// - On failure, responds with [`SdkError<CancelFindingsReportError>`](crate::error::CancelFindingsReportError)
@@ -127,12 +127,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFilter`](crate::client::fluent_builders::CreateFilter) operation.
     ///
-    /// - Takes [`CreateFilterInput`](crate::input::CreateFilterInput) with field(s):
-    ///   - [`action(Option<FilterAction>)`](crate::input::CreateFilterInput::action): <p>Defines the action that is to be applied to the findings that match the filter.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateFilterInput::description): <p>A description of the filter.</p>
-    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::input::CreateFilterInput::filter_criteria): <p>Defines the criteria to be used in the filter for querying findings.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateFilterInput::name): <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFilterInput::tags): <p>A list of tags for the filter.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action(FilterAction)`](crate::client::fluent_builders::CreateFilter::action) / [`set_action(Option<FilterAction>)`](crate::client::fluent_builders::CreateFilter::set_action): <p>Defines the action that is to be applied to the findings that match the filter.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_description): <p>A description of the filter.</p>
+    ///   - [`filter_criteria(FilterCriteria)`](crate::client::fluent_builders::CreateFilter::filter_criteria) / [`set_filter_criteria(Option<FilterCriteria>)`](crate::client::fluent_builders::CreateFilter::set_filter_criteria): <p>Defines the criteria to be used in the filter for querying findings.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_name): <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFilter::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFilter::set_tags): <p>A list of tags for the filter.</p>
     /// - On success, responds with [`CreateFilterOutput`](crate::output::CreateFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateFilterOutput::arn): <p>The Amazon Resource Number (ARN) of the successfully created filter.</p>
     /// - On failure, responds with [`SdkError<CreateFilterError>`](crate::error::CreateFilterError)
@@ -141,10 +141,10 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFindingsReport`](crate::client::fluent_builders::CreateFindingsReport) operation.
     ///
-    /// - Takes [`CreateFindingsReportInput`](crate::input::CreateFindingsReportInput) with field(s):
-    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::input::CreateFindingsReportInput::filter_criteria): <p>The filter criteria to apply to the results of the finding report.</p>
-    ///   - [`report_format(Option<ReportFormat>)`](crate::input::CreateFindingsReportInput::report_format): <p>The format to generate the report in.</p>
-    ///   - [`s3_destination(Option<Destination>)`](crate::input::CreateFindingsReportInput::s3_destination): <p>The Amazon S3 export destination for the report.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter_criteria(FilterCriteria)`](crate::client::fluent_builders::CreateFindingsReport::filter_criteria) / [`set_filter_criteria(Option<FilterCriteria>)`](crate::client::fluent_builders::CreateFindingsReport::set_filter_criteria): <p>The filter criteria to apply to the results of the finding report.</p>
+    ///   - [`report_format(ReportFormat)`](crate::client::fluent_builders::CreateFindingsReport::report_format) / [`set_report_format(Option<ReportFormat>)`](crate::client::fluent_builders::CreateFindingsReport::set_report_format): <p>The format to generate the report in.</p>
+    ///   - [`s3_destination(Destination)`](crate::client::fluent_builders::CreateFindingsReport::s3_destination) / [`set_s3_destination(Option<Destination>)`](crate::client::fluent_builders::CreateFindingsReport::set_s3_destination): <p>The Amazon S3 export destination for the report.</p>
     /// - On success, responds with [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::output::CreateFindingsReportOutput::report_id): <p>The ID of the report.</p>
     /// - On failure, responds with [`SdkError<CreateFindingsReportError>`](crate::error::CreateFindingsReportError)
@@ -153,8 +153,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFilter`](crate::client::fluent_builders::DeleteFilter) operation.
     ///
-    /// - Takes [`DeleteFilterInput`](crate::input::DeleteFilterInput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::input::DeleteFilterInput::arn): <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteFilter::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteFilter::set_arn): <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
     /// - On success, responds with [`DeleteFilterOutput`](crate::output::DeleteFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::DeleteFilterOutput::arn): <p>The Amazon Resource Number (ARN) of the filter that has been deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::error::DeleteFilterError)
@@ -163,7 +163,7 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) operation.
     ///
-    /// - Takes [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeOrganizationConfiguration::send) it.
 
     /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput) with field(s):
     ///   - [`auto_enable(Option<AutoEnable>)`](crate::output::DescribeOrganizationConfigurationOutput::auto_enable): <p>The scan types are automatically enabled for new members of your organization.</p>
@@ -176,9 +176,9 @@ where
     }
     /// Constructs a fluent builder for the [`Disable`](crate::client::fluent_builders::Disable) operation.
     ///
-    /// - Takes [`DisableInput`](crate::input::DisableInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DisableInput::account_ids): <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-    ///   - [`resource_types(Option<Vec<ResourceScanType>>)`](crate::input::DisableInput::resource_types): <p>The resource scan types you want to disable.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::Disable::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::Disable::set_account_ids): <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
+    ///   - [`resource_types(Vec<ResourceScanType>)`](crate::client::fluent_builders::Disable::resource_types) / [`set_resource_types(Option<Vec<ResourceScanType>>)`](crate::client::fluent_builders::Disable::set_resource_types): <p>The resource scan types you want to disable.</p>
     /// - On success, responds with [`DisableOutput`](crate::output::DisableOutput) with field(s):
     ///   - [`accounts(Option<Vec<Account>>)`](crate::output::DisableOutput::accounts): <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
     ///   - [`failed_accounts(Option<Vec<FailedAccount>>)`](crate::output::DisableOutput::failed_accounts): <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
@@ -188,8 +188,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisableDelegatedAdminAccount`](crate::client::fluent_builders::DisableDelegatedAdminAccount) operation.
     ///
-    /// - Takes [`DisableDelegatedAdminAccountInput`](crate::input::DisableDelegatedAdminAccountInput) with field(s):
-    ///   - [`delegated_admin_account_id(Option<String>)`](crate::input::DisableDelegatedAdminAccountInput::delegated_admin_account_id): <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delegated_admin_account_id(impl Into<String>)`](crate::client::fluent_builders::DisableDelegatedAdminAccount::delegated_admin_account_id) / [`set_delegated_admin_account_id(Option<String>)`](crate::client::fluent_builders::DisableDelegatedAdminAccount::set_delegated_admin_account_id): <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
     /// - On success, responds with [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput) with field(s):
     ///   - [`delegated_admin_account_id(Option<String>)`](crate::output::DisableDelegatedAdminAccountOutput::delegated_admin_account_id): <p>The Amazon Web Services account ID of the successfully disabled delegated administrator.</p>
     /// - On failure, responds with [`SdkError<DisableDelegatedAdminAccountError>`](crate::error::DisableDelegatedAdminAccountError)
@@ -200,8 +200,8 @@ where
     }
     /// Constructs a fluent builder for the [`DisassociateMember`](crate::client::fluent_builders::DisassociateMember) operation.
     ///
-    /// - Takes [`DisassociateMemberInput`](crate::input::DisassociateMemberInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::DisassociateMemberInput::account_id): <p>The Amazon Web Services account ID of the member account to disassociate.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateMember::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DisassociateMember::set_account_id): <p>The Amazon Web Services account ID of the member account to disassociate.</p>
     /// - On success, responds with [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::output::DisassociateMemberOutput::account_id): <p>The Amazon Web Services account ID of the successfully disassociated member.</p>
     /// - On failure, responds with [`SdkError<DisassociateMemberError>`](crate::error::DisassociateMemberError)
@@ -210,10 +210,10 @@ where
     }
     /// Constructs a fluent builder for the [`Enable`](crate::client::fluent_builders::Enable) operation.
     ///
-    /// - Takes [`EnableInput`](crate::input::EnableInput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::EnableInput::account_ids): <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
-    ///   - [`resource_types(Option<Vec<ResourceScanType>>)`](crate::input::EnableInput::resource_types): <p>The resource scan types you want to enable.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::EnableInput::client_token): <p>The idempotency token for the request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::Enable::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::Enable::set_account_ids): <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
+    ///   - [`resource_types(Vec<ResourceScanType>)`](crate::client::fluent_builders::Enable::resource_types) / [`set_resource_types(Option<Vec<ResourceScanType>>)`](crate::client::fluent_builders::Enable::set_resource_types): <p>The resource scan types you want to enable.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::Enable::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::Enable::set_client_token): <p>The idempotency token for the request.</p>
     /// - On success, responds with [`EnableOutput`](crate::output::EnableOutput) with field(s):
     ///   - [`accounts(Option<Vec<Account>>)`](crate::output::EnableOutput::accounts): <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
     ///   - [`failed_accounts(Option<Vec<FailedAccount>>)`](crate::output::EnableOutput::failed_accounts): <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
@@ -223,9 +223,9 @@ where
     }
     /// Constructs a fluent builder for the [`EnableDelegatedAdminAccount`](crate::client::fluent_builders::EnableDelegatedAdminAccount) operation.
     ///
-    /// - Takes [`EnableDelegatedAdminAccountInput`](crate::input::EnableDelegatedAdminAccountInput) with field(s):
-    ///   - [`delegated_admin_account_id(Option<String>)`](crate::input::EnableDelegatedAdminAccountInput::delegated_admin_account_id): <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
-    ///   - [`client_token(Option<String>)`](crate::input::EnableDelegatedAdminAccountInput::client_token): <p>The idempotency token for the request.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`delegated_admin_account_id(impl Into<String>)`](crate::client::fluent_builders::EnableDelegatedAdminAccount::delegated_admin_account_id) / [`set_delegated_admin_account_id(Option<String>)`](crate::client::fluent_builders::EnableDelegatedAdminAccount::set_delegated_admin_account_id): <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::EnableDelegatedAdminAccount::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::EnableDelegatedAdminAccount::set_client_token): <p>The idempotency token for the request.</p>
     /// - On success, responds with [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput) with field(s):
     ///   - [`delegated_admin_account_id(Option<String>)`](crate::output::EnableDelegatedAdminAccountOutput::delegated_admin_account_id): <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
     /// - On failure, responds with [`SdkError<EnableDelegatedAdminAccountError>`](crate::error::EnableDelegatedAdminAccountError)
@@ -236,7 +236,7 @@ where
     }
     /// Constructs a fluent builder for the [`GetDelegatedAdminAccount`](crate::client::fluent_builders::GetDelegatedAdminAccount) operation.
     ///
-    /// - Takes [`GetDelegatedAdminAccountInput`](crate::input::GetDelegatedAdminAccountInput)
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetDelegatedAdminAccount::send) it.
 
     /// - On success, responds with [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput) with field(s):
     ///   - [`delegated_admin(Option<DelegatedAdmin>)`](crate::output::GetDelegatedAdminAccountOutput::delegated_admin): <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
@@ -248,8 +248,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetFindingsReportStatus`](crate::client::fluent_builders::GetFindingsReportStatus) operation.
     ///
-    /// - Takes [`GetFindingsReportStatusInput`](crate::input::GetFindingsReportStatusInput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::input::GetFindingsReportStatusInput::report_id): <p>The ID of the report to retrieve the status of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::GetFindingsReportStatus::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::GetFindingsReportStatus::set_report_id): <p>The ID of the report to retrieve the status of.</p>
     /// - On success, responds with [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::output::GetFindingsReportStatusOutput::report_id): <p>The ID of the report.</p>
     ///   - [`status(Option<ExternalReportStatus>)`](crate::output::GetFindingsReportStatusOutput::status): <p>The status of the report.</p>
@@ -263,8 +263,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetMember`](crate::client::fluent_builders::GetMember) operation.
     ///
-    /// - Takes [`GetMemberInput`](crate::input::GetMemberInput) with field(s):
-    ///   - [`account_id(Option<String>)`](crate::input::GetMemberInput::account_id): <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetMember::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetMember::set_account_id): <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
     /// - On success, responds with [`GetMemberOutput`](crate::output::GetMemberOutput) with field(s):
     ///   - [`member(Option<Member>)`](crate::output::GetMemberOutput::member): <p>Details of the retrieved member account.</p>
     /// - On failure, responds with [`SdkError<GetMemberError>`](crate::error::GetMemberError)
@@ -272,12 +272,12 @@ where
         fluent_builders::GetMember::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAccountPermissions`](crate::client::fluent_builders::ListAccountPermissions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountPermissions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountPermissions::into_paginator).
     ///
-    /// - Takes [`ListAccountPermissionsInput`](crate::input::ListAccountPermissionsInput) with field(s):
-    ///   - [`service(Option<Service>)`](crate::input::ListAccountPermissionsInput::service): <p>The service scan type to check permissions for.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAccountPermissionsInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAccountPermissionsInput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`service(Service)`](crate::client::fluent_builders::ListAccountPermissions::service) / [`set_service(Option<Service>)`](crate::client::fluent_builders::ListAccountPermissions::set_service): <p>The service scan type to check permissions for.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountPermissions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountPermissions::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountPermissions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountPermissions::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On success, responds with [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput) with field(s):
     ///   - [`permissions(Option<Vec<Permission>>)`](crate::output::ListAccountPermissionsOutput::permissions): <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountPermissionsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -286,12 +286,12 @@ where
         fluent_builders::ListAccountPermissions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCoverage`](crate::client::fluent_builders::ListCoverage) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCoverage::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCoverage::into_paginator).
     ///
-    /// - Takes [`ListCoverageInput`](crate::input::ListCoverageInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListCoverageInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListCoverageInput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    ///   - [`filter_criteria(Option<CoverageFilterCriteria>)`](crate::input::ListCoverageInput::filter_criteria): <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCoverage::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCoverage::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCoverage::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCoverage::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    ///   - [`filter_criteria(CoverageFilterCriteria)`](crate::client::fluent_builders::ListCoverage::filter_criteria) / [`set_filter_criteria(Option<CoverageFilterCriteria>)`](crate::client::fluent_builders::ListCoverage::set_filter_criteria): <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     /// - On success, responds with [`ListCoverageOutput`](crate::output::ListCoverageOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListCoverageOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     ///   - [`covered_resources(Option<Vec<CoveredResource>>)`](crate::output::ListCoverageOutput::covered_resources): <p>An object that contains details on the covered resources in your environment.</p>
@@ -300,12 +300,12 @@ where
         fluent_builders::ListCoverage::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListCoverageStatistics`](crate::client::fluent_builders::ListCoverageStatistics) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCoverageStatistics::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCoverageStatistics::into_paginator).
     ///
-    /// - Takes [`ListCoverageStatisticsInput`](crate::input::ListCoverageStatisticsInput) with field(s):
-    ///   - [`filter_criteria(Option<CoverageFilterCriteria>)`](crate::input::ListCoverageStatisticsInput::filter_criteria): <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    ///   - [`group_by(Option<GroupKey>)`](crate::input::ListCoverageStatisticsInput::group_by): <p>The value to group the results by.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListCoverageStatisticsInput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`filter_criteria(CoverageFilterCriteria)`](crate::client::fluent_builders::ListCoverageStatistics::filter_criteria) / [`set_filter_criteria(Option<CoverageFilterCriteria>)`](crate::client::fluent_builders::ListCoverageStatistics::set_filter_criteria): <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
+    ///   - [`group_by(GroupKey)`](crate::client::fluent_builders::ListCoverageStatistics::group_by) / [`set_group_by(Option<GroupKey>)`](crate::client::fluent_builders::ListCoverageStatistics::set_group_by): <p>The value to group the results by.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCoverageStatistics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCoverageStatistics::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On success, responds with [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput) with field(s):
     ///   - [`counts_by_group(Option<Vec<Counts>>)`](crate::output::ListCoverageStatisticsOutput::counts_by_group): <p>An array with the number for each group.</p>
     ///   - [`total_counts(Option<i64>)`](crate::output::ListCoverageStatisticsOutput::total_counts): <p>The total number for all groups.</p>
@@ -315,11 +315,11 @@ where
         fluent_builders::ListCoverageStatistics::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDelegatedAdminAccounts`](crate::client::fluent_builders::ListDelegatedAdminAccounts) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDelegatedAdminAccounts::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDelegatedAdminAccounts::into_paginator).
     ///
-    /// - Takes [`ListDelegatedAdminAccountsInput`](crate::input::ListDelegatedAdminAccountsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDelegatedAdminAccountsInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDelegatedAdminAccountsInput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDelegatedAdminAccounts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDelegatedAdminAccounts::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDelegatedAdminAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDelegatedAdminAccounts::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On success, responds with [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput) with field(s):
     ///   - [`delegated_admin_accounts(Option<Vec<DelegatedAdminAccount>>)`](crate::output::ListDelegatedAdminAccountsOutput::delegated_admin_accounts): <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDelegatedAdminAccountsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -330,13 +330,13 @@ where
         fluent_builders::ListDelegatedAdminAccounts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFilters`](crate::client::fluent_builders::ListFilters) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFilters::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFilters::into_paginator).
     ///
-    /// - Takes [`ListFiltersInput`](crate::input::ListFiltersInput) with field(s):
-    ///   - [`arns(Option<Vec<String>>)`](crate::input::ListFiltersInput::arns): <p>The Amazon resource number (ARN) of the filter.</p>
-    ///   - [`action(Option<FilterAction>)`](crate::input::ListFiltersInput::action): <p>The action the filter applies to matched findings.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFiltersInput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFiltersInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`arns(Vec<String>)`](crate::client::fluent_builders::ListFilters::arns) / [`set_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListFilters::set_arns): <p>The Amazon resource number (ARN) of the filter.</p>
+    ///   - [`action(FilterAction)`](crate::client::fluent_builders::ListFilters::action) / [`set_action(Option<FilterAction>)`](crate::client::fluent_builders::ListFilters::set_action): <p>The action the filter applies to matched findings.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFilters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFilters::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFilters::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFilters::set_max_results): <p>The maximum number of results to return in the response.</p>
     /// - On success, responds with [`ListFiltersOutput`](crate::output::ListFiltersOutput) with field(s):
     ///   - [`filters(Option<Vec<Filter>>)`](crate::output::ListFiltersOutput::filters): <p>Contains details on the filters associated with your account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFiltersOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -345,14 +345,14 @@ where
         fluent_builders::ListFilters::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFindingAggregations`](crate::client::fluent_builders::ListFindingAggregations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindingAggregations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFindingAggregations::into_paginator).
     ///
-    /// - Takes [`ListFindingAggregationsInput`](crate::input::ListFindingAggregationsInput) with field(s):
-    ///   - [`aggregation_type(Option<AggregationType>)`](crate::input::ListFindingAggregationsInput::aggregation_type): <p>The type of the aggregation request.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFindingAggregationsInput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFindingAggregationsInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`account_ids(Option<Vec<StringFilter>>)`](crate::input::ListFindingAggregationsInput::account_ids): <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    ///   - [`aggregation_request(Option<AggregationRequest>)`](crate::input::ListFindingAggregationsInput::aggregation_request): <p>Details of the aggregation request that is used to filter your aggregation results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`aggregation_type(AggregationType)`](crate::client::fluent_builders::ListFindingAggregations::aggregation_type) / [`set_aggregation_type(Option<AggregationType>)`](crate::client::fluent_builders::ListFindingAggregations::set_aggregation_type): <p>The type of the aggregation request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindingAggregations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindingAggregations::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindingAggregations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFindingAggregations::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`account_ids(Vec<StringFilter>)`](crate::client::fluent_builders::ListFindingAggregations::account_ids) / [`set_account_ids(Option<Vec<StringFilter>>)`](crate::client::fluent_builders::ListFindingAggregations::set_account_ids): <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
+    ///   - [`aggregation_request(AggregationRequest)`](crate::client::fluent_builders::ListFindingAggregations::aggregation_request) / [`set_aggregation_request(Option<AggregationRequest>)`](crate::client::fluent_builders::ListFindingAggregations::set_aggregation_request): <p>Details of the aggregation request that is used to filter your aggregation results.</p>
     /// - On success, responds with [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput) with field(s):
     ///   - [`aggregation_type(Option<AggregationType>)`](crate::output::ListFindingAggregationsOutput::aggregation_type): <p>The type of aggregation to perform.</p>
     ///   - [`responses(Option<Vec<AggregationResponse>>)`](crate::output::ListFindingAggregationsOutput::responses): <p>Objects that contain the results of an aggregation operation.</p>
@@ -362,13 +362,13 @@ where
         fluent_builders::ListFindingAggregations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFindings`](crate::client::fluent_builders::ListFindings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     ///
-    /// - Takes [`ListFindingsInput`](crate::input::ListFindingsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFindingsInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFindingsInput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::input::ListFindingsInput::filter_criteria): <p>Details on the filters to apply to your finding results.</p>
-    ///   - [`sort_criteria(Option<SortCriteria>)`](crate::input::ListFindingsInput::sort_criteria): <p>Details on the sort criteria to apply to your finding results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFindings::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindings::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    ///   - [`filter_criteria(FilterCriteria)`](crate::client::fluent_builders::ListFindings::filter_criteria) / [`set_filter_criteria(Option<FilterCriteria>)`](crate::client::fluent_builders::ListFindings::set_filter_criteria): <p>Details on the filters to apply to your finding results.</p>
+    ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::ListFindings::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::ListFindings::set_sort_criteria): <p>Details on the sort criteria to apply to your finding results.</p>
     /// - On success, responds with [`ListFindingsOutput`](crate::output::ListFindingsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListFindingsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     ///   - [`findings(Option<Vec<Finding>>)`](crate::output::ListFindingsOutput::findings): <p>Contains details on the findings in your environment.</p>
@@ -377,12 +377,12 @@ where
         fluent_builders::ListFindings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListMembers`](crate::client::fluent_builders::ListMembers) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     ///
-    /// - Takes [`ListMembersInput`](crate::input::ListMembersInput) with field(s):
-    ///   - [`only_associated(Option<bool>)`](crate::input::ListMembersInput::only_associated): <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListMembersInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListMembersInput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`only_associated(bool)`](crate::client::fluent_builders::ListMembers::only_associated) / [`set_only_associated(Option<bool>)`](crate::client::fluent_builders::ListMembers::set_only_associated): <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMembers::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
     ///   - [`members(Option<Vec<Member>>)`](crate::output::ListMembersOutput::members): <p>An object that contains details for each member account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
@@ -392,8 +392,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon resource number (ARN) of the resource to list tags of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon resource number (ARN) of the resource to list tags of.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with the resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -401,12 +401,12 @@ where
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListUsageTotals`](crate::client::fluent_builders::ListUsageTotals) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsageTotals::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUsageTotals::into_paginator).
     ///
-    /// - Takes [`ListUsageTotalsInput`](crate::input::ListUsageTotalsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListUsageTotalsInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListUsageTotalsInput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::ListUsageTotalsInput::account_ids): <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsageTotals::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsageTotals::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsageTotals::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsageTotals::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::ListUsageTotals::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListUsageTotals::set_account_ids): <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
     /// - On success, responds with [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListUsageTotalsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     ///   - [`totals(Option<Vec<UsageTotal>>)`](crate::output::ListUsageTotalsOutput::totals): <p>An object with details on the total usage for the requested account.</p>
@@ -416,9 +416,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to apply a tag to.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags to be added to a resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to apply a tag to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to be added to a resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -427,9 +427,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys to remove from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys to remove from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -438,12 +438,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFilter`](crate::client::fluent_builders::UpdateFilter) operation.
     ///
-    /// - Takes [`UpdateFilterInput`](crate::input::UpdateFilterInput) with field(s):
-    ///   - [`action(Option<FilterAction>)`](crate::input::UpdateFilterInput::action): <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateFilterInput::description): <p>A description of the filter.</p>
-    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::input::UpdateFilterInput::filter_criteria): <p>Defines the criteria to be update in the filter.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateFilterInput::name): <p>The name of the filter.</p>
-    ///   - [`filter_arn(Option<String>)`](crate::input::UpdateFilterInput::filter_arn): <p>The Amazon Resource Number (ARN) of the filter to update.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`action(FilterAction)`](crate::client::fluent_builders::UpdateFilter::action) / [`set_action(Option<FilterAction>)`](crate::client::fluent_builders::UpdateFilter::set_action): <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_description): <p>A description of the filter.</p>
+    ///   - [`filter_criteria(FilterCriteria)`](crate::client::fluent_builders::UpdateFilter::filter_criteria) / [`set_filter_criteria(Option<FilterCriteria>)`](crate::client::fluent_builders::UpdateFilter::set_filter_criteria): <p>Defines the criteria to be update in the filter.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_name): <p>The name of the filter.</p>
+    ///   - [`filter_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::filter_arn) / [`set_filter_arn(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_filter_arn): <p>The Amazon Resource Number (ARN) of the filter to update.</p>
     /// - On success, responds with [`UpdateFilterOutput`](crate::output::UpdateFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateFilterOutput::arn): <p>The Amazon Resource Number (ARN) of the successfully updated filter.</p>
     /// - On failure, responds with [`SdkError<UpdateFilterError>`](crate::error::UpdateFilterError)
@@ -452,8 +452,8 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) operation.
     ///
-    /// - Takes [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput) with field(s):
-    ///   - [`auto_enable(Option<AutoEnable>)`](crate::input::UpdateOrganizationConfigurationInput::auto_enable): <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`auto_enable(AutoEnable)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::auto_enable) / [`set_auto_enable(Option<AutoEnable>)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_auto_enable): <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
     /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput) with field(s):
     ///   - [`auto_enable(Option<AutoEnable>)`](crate::output::UpdateOrganizationConfigurationOutput::auto_enable): <p>The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.</p>
     /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::error::UpdateOrganizationConfigurationError)

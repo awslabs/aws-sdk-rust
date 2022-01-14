@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`BatchCreateAttendee`](crate::client::fluent_builders::BatchCreateAttendee) operation.
     ///
-    /// - Takes [`BatchCreateAttendeeInput`](crate::input::BatchCreateAttendeeInput) with field(s):
-    ///   - [`meeting_id(Option<String>)`](crate::input::BatchCreateAttendeeInput::meeting_id): <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-    ///   - [`attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::input::BatchCreateAttendeeInput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreateAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::BatchCreateAttendee::set_meeting_id): <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
+    ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::client::fluent_builders::BatchCreateAttendee::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::client::fluent_builders::BatchCreateAttendee::set_attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
     /// - On success, responds with [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput) with field(s):
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::BatchCreateAttendeeOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
     ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::output::BatchCreateAttendeeOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
@@ -97,9 +97,9 @@ where
     }
     /// Constructs a fluent builder for the [`CreateAttendee`](crate::client::fluent_builders::CreateAttendee) operation.
     ///
-    /// - Takes [`CreateAttendeeInput`](crate::input::CreateAttendeeInput) with field(s):
-    ///   - [`meeting_id(Option<String>)`](crate::input::CreateAttendeeInput::meeting_id): <p>The unique ID of the meeting.</p>
-    ///   - [`external_user_id(Option<String>)`](crate::input::CreateAttendeeInput::external_user_id): <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_meeting_id): <p>The unique ID of the meeting.</p>
+    ///   - [`external_user_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::external_user_id) / [`set_external_user_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_external_user_id): <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// - On success, responds with [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput) with field(s):
     ///   - [`attendee(Option<Attendee>)`](crate::output::CreateAttendeeOutput::attendee): <p>The attendee information, including attendee ID and join token.</p>
     /// - On failure, responds with [`SdkError<CreateAttendeeError>`](crate::error::CreateAttendeeError)
@@ -108,13 +108,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMeeting`](crate::client::fluent_builders::CreateMeeting) operation.
     ///
-    /// - Takes [`CreateMeetingInput`](crate::input::CreateMeetingInput) with field(s):
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateMeetingInput::client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    ///   - [`media_region(Option<String>)`](crate::input::CreateMeetingInput::media_region): <p>The Region in which to create the meeting.</p>  <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
-    ///   - [`meeting_host_id(Option<String>)`](crate::input::CreateMeetingInput::meeting_host_id): <p>Reserved.</p>
-    ///   - [`external_meeting_id(Option<String>)`](crate::input::CreateMeetingInput::external_meeting_id): <p>The external meeting ID.</p>
-    ///   - [`notifications_configuration(Option<NotificationsConfiguration>)`](crate::input::CreateMeetingInput::notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    ///   - [`meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::input::CreateMeetingInput::meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_media_region): <p>The Region in which to create the meeting.</p>  <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
+    ///   - [`meeting_host_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::meeting_host_id) / [`set_meeting_host_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_meeting_host_id): <p>Reserved.</p>
+    ///   - [`external_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::external_meeting_id) / [`set_external_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_external_meeting_id): <p>The external meeting ID.</p>
+    ///   - [`notifications_configuration(NotificationsConfiguration)`](crate::client::fluent_builders::CreateMeeting::notifications_configuration) / [`set_notifications_configuration(Option<NotificationsConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    ///   - [`meeting_features(MeetingFeaturesConfiguration)`](crate::client::fluent_builders::CreateMeeting::meeting_features) / [`set_meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
     /// - On success, responds with [`CreateMeetingOutput`](crate::output::CreateMeetingOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     /// - On failure, responds with [`SdkError<CreateMeetingError>`](crate::error::CreateMeetingError)
@@ -123,14 +123,14 @@ where
     }
     /// Constructs a fluent builder for the [`CreateMeetingWithAttendees`](crate::client::fluent_builders::CreateMeetingWithAttendees) operation.
     ///
-    /// - Takes [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput) with field(s):
-    ///   - [`client_request_token(Option<String>)`](crate::input::CreateMeetingWithAttendeesInput::client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    ///   - [`media_region(Option<String>)`](crate::input::CreateMeetingWithAttendeesInput::media_region): <p>The Region in which to create the meeting.</p>
-    ///   - [`meeting_host_id(Option<String>)`](crate::input::CreateMeetingWithAttendeesInput::meeting_host_id): <p>Reserved.</p>
-    ///   - [`external_meeting_id(Option<String>)`](crate::input::CreateMeetingWithAttendeesInput::external_meeting_id): <p>The external meeting ID.</p>
-    ///   - [`meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::input::CreateMeetingWithAttendeesInput::meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    ///   - [`notifications_configuration(Option<NotificationsConfiguration>)`](crate::input::CreateMeetingWithAttendeesInput::notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    ///   - [`attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::input::CreateMeetingWithAttendeesInput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_media_region): <p>The Region in which to create the meeting.</p>
+    ///   - [`meeting_host_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::meeting_host_id) / [`set_meeting_host_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_meeting_host_id): <p>Reserved.</p>
+    ///   - [`external_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::external_meeting_id) / [`set_external_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_external_meeting_id): <p>The external meeting ID.</p>
+    ///   - [`meeting_features(MeetingFeaturesConfiguration)`](crate::client::fluent_builders::CreateMeetingWithAttendees::meeting_features) / [`set_meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
+    ///   - [`notifications_configuration(NotificationsConfiguration)`](crate::client::fluent_builders::CreateMeetingWithAttendees::notifications_configuration) / [`set_notifications_configuration(Option<NotificationsConfiguration>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
     /// - On success, responds with [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingWithAttendeesOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::CreateMeetingWithAttendeesOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
@@ -143,9 +143,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteAttendee`](crate::client::fluent_builders::DeleteAttendee) operation.
     ///
-    /// - Takes [`DeleteAttendeeInput`](crate::input::DeleteAttendeeInput) with field(s):
-    ///   - [`meeting_id(Option<String>)`](crate::input::DeleteAttendeeInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendee_id(Option<String>)`](crate::input::DeleteAttendeeInput::attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::DeleteAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAttendee::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::DeleteAttendee::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
     /// - On success, responds with [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAttendeeError>`](crate::error::DeleteAttendeeError)
@@ -154,8 +154,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteMeeting`](crate::client::fluent_builders::DeleteMeeting) operation.
     ///
-    /// - Takes [`DeleteMeetingInput`](crate::input::DeleteMeetingInput) with field(s):
-    ///   - [`meeting_id(Option<String>)`](crate::input::DeleteMeetingInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMeeting::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::DeleteMeeting::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
     /// - On success, responds with [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput)
 
     /// - On failure, responds with [`SdkError<DeleteMeetingError>`](crate::error::DeleteMeetingError)
@@ -164,9 +164,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetAttendee`](crate::client::fluent_builders::GetAttendee) operation.
     ///
-    /// - Takes [`GetAttendeeInput`](crate::input::GetAttendeeInput) with field(s):
-    ///   - [`meeting_id(Option<String>)`](crate::input::GetAttendeeInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendee_id(Option<String>)`](crate::input::GetAttendeeInput::attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::GetAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::GetAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::GetAttendee::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::GetAttendee::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
     /// - On success, responds with [`GetAttendeeOutput`](crate::output::GetAttendeeOutput) with field(s):
     ///   - [`attendee(Option<Attendee>)`](crate::output::GetAttendeeOutput::attendee): <p>The Amazon Chime SDK attendee information.</p>
     /// - On failure, responds with [`SdkError<GetAttendeeError>`](crate::error::GetAttendeeError)
@@ -175,8 +175,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetMeeting`](crate::client::fluent_builders::GetMeeting) operation.
     ///
-    /// - Takes [`GetMeetingInput`](crate::input::GetMeetingInput) with field(s):
-    ///   - [`meeting_id(Option<String>)`](crate::input::GetMeetingInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::GetMeeting::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::GetMeeting::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
     /// - On success, responds with [`GetMeetingOutput`](crate::output::GetMeetingOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::output::GetMeetingOutput::meeting): <p>The Amazon Chime SDK meeting information.</p>
     /// - On failure, responds with [`SdkError<GetMeetingError>`](crate::error::GetMeetingError)
@@ -184,12 +184,12 @@ where
         fluent_builders::GetMeeting::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListAttendees`](crate::client::fluent_builders::ListAttendees) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttendees::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttendees::into_paginator).
     ///
-    /// - Takes [`ListAttendeesInput`](crate::input::ListAttendeesInput) with field(s):
-    ///   - [`meeting_id(Option<String>)`](crate::input::ListAttendeesInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListAttendeesInput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListAttendeesInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::ListAttendees::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::ListAttendees::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAttendees::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAttendees::set_next_token): <p>The token to use to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAttendees::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAttendees::set_max_results): <p>The maximum number of results to return in a single call.</p>
     /// - On success, responds with [`ListAttendeesOutput`](crate::output::ListAttendeesOutput) with field(s):
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::ListAttendeesOutput::attendees): <p>The Amazon Chime SDK attendee information.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAttendeesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
@@ -199,9 +199,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartMeetingTranscription`](crate::client::fluent_builders::StartMeetingTranscription) operation.
     ///
-    /// - Takes [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput) with field(s):
-    ///   - [`meeting_id(Option<String>)`](crate::input::StartMeetingTranscriptionInput::meeting_id): <p>The unique ID of the meeting being transcribed.</p>
-    ///   - [`transcription_configuration(Option<TranscriptionConfiguration>)`](crate::input::StartMeetingTranscriptionInput::transcription_configuration): <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::StartMeetingTranscription::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::StartMeetingTranscription::set_meeting_id): <p>The unique ID of the meeting being transcribed.</p>
+    ///   - [`transcription_configuration(TranscriptionConfiguration)`](crate::client::fluent_builders::StartMeetingTranscription::transcription_configuration) / [`set_transcription_configuration(Option<TranscriptionConfiguration>)`](crate::client::fluent_builders::StartMeetingTranscription::set_transcription_configuration): <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
     /// - On success, responds with [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
 
     /// - On failure, responds with [`SdkError<StartMeetingTranscriptionError>`](crate::error::StartMeetingTranscriptionError)
@@ -212,8 +212,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopMeetingTranscription`](crate::client::fluent_builders::StopMeetingTranscription) operation.
     ///
-    /// - Takes [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput) with field(s):
-    ///   - [`meeting_id(Option<String>)`](crate::input::StopMeetingTranscriptionInput::meeting_id): <p>The unique ID of the meeting for which you stop transcription.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::StopMeetingTranscription::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::StopMeetingTranscription::set_meeting_id): <p>The unique ID of the meeting for which you stop transcription.</p>
     /// - On success, responds with [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
 
     /// - On failure, responds with [`SdkError<StopMeetingTranscriptionError>`](crate::error::StopMeetingTranscriptionError)

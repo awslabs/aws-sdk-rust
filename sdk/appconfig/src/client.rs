@@ -85,10 +85,10 @@ where
 {
     /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
-    /// - Takes [`CreateApplicationInput`](crate::input::CreateApplicationInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateApplicationInput::name): <p>A name for the application.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateApplicationInput::description): <p>A description of the application.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateApplicationInput::tags): <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_name): <p>A name for the application.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_description): <p>A description of the application.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateApplicationOutput::id): <p>The application ID.</p>
     ///   - [`name(Option<String>)`](crate::output::CreateApplicationOutput::name): <p>The application name.</p>
@@ -99,15 +99,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateConfigurationProfile`](crate::client::fluent_builders::CreateConfigurationProfile) operation.
     ///
-    /// - Takes [`CreateConfigurationProfileInput`](crate::input::CreateConfigurationProfileInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::CreateConfigurationProfileInput::application_id): <p>The application ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateConfigurationProfileInput::name): <p>A name for the configuration profile.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateConfigurationProfileInput::description): <p>A description of the configuration profile.</p>
-    ///   - [`location_uri(Option<String>)`](crate::input::CreateConfigurationProfileInput::location_uri): <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://   <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://   <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://   <bucket>    /    <objectkey>     </objectkey>   </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
-    ///   - [`retrieval_role_arn(Option<String>)`](crate::input::CreateConfigurationProfileInput::retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>   <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>  </important>
-    ///   - [`validators(Option<Vec<Validator>>)`](crate::input::CreateConfigurationProfileInput::validators): <p>A list of methods for validating the configuration.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateConfigurationProfileInput::tags): <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::CreateConfigurationProfileInput::type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_application_id): <p>The application ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_name): <p>A name for the configuration profile.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_description): <p>A description of the configuration profile.</p>
+    ///   - [`location_uri(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::location_uri) / [`set_location_uri(Option<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_location_uri): <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://   <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://   <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://   <bucket>    /    <objectkey>     </objectkey>   </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+    ///   - [`retrieval_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::retrieval_role_arn) / [`set_retrieval_role_arn(Option<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>   <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>  </important>
+    ///   - [`validators(Vec<Validator>)`](crate::client::fluent_builders::CreateConfigurationProfile::validators) / [`set_validators(Option<Vec<Validator>>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_validators): <p>A list of methods for validating the configuration.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateConfigurationProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_tags): <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::r#type) / [`set_type(Option<String>)`](crate::client::fluent_builders::CreateConfigurationProfile::set_type): <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
     /// - On success, responds with [`CreateConfigurationProfileOutput`](crate::output::CreateConfigurationProfileOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::CreateConfigurationProfileOutput::application_id): <p>The application ID.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateConfigurationProfileOutput::id): <p>The configuration profile ID.</p>
@@ -125,15 +125,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateDeploymentStrategy`](crate::client::fluent_builders::CreateDeploymentStrategy) operation.
     ///
-    /// - Takes [`CreateDeploymentStrategyInput`](crate::input::CreateDeploymentStrategyInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateDeploymentStrategyInput::name): <p>A name for the deployment strategy.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateDeploymentStrategyInput::description): <p>A description of the deployment strategy.</p>
-    ///   - [`deployment_duration_in_minutes(Option<i32>)`](crate::input::CreateDeploymentStrategyInput::deployment_duration_in_minutes): <p>Total amount of time for a deployment to last.</p>
-    ///   - [`final_bake_time_in_minutes(i32)`](crate::input::CreateDeploymentStrategyInput::final_bake_time_in_minutes): <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
-    ///   - [`growth_factor(Option<f32>)`](crate::input::CreateDeploymentStrategyInput::growth_factor): <p>The percentage of targets to receive a deployed configuration during each interval.</p>
-    ///   - [`growth_type(Option<GrowthType>)`](crate::input::CreateDeploymentStrategyInput::growth_type): <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>  <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>  <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>  <p> <code>2*(2^0)</code> </p>  <p> <code>2*(2^1)</code> </p>  <p> <code>2*(2^2)</code> </p>  <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
-    ///   - [`replicate_to(Option<ReplicateTo>)`](crate::input::CreateDeploymentStrategyInput::replicate_to): <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDeploymentStrategyInput::tags): <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentStrategy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_name): <p>A name for the deployment strategy.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentStrategy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_description): <p>A description of the deployment strategy.</p>
+    ///   - [`deployment_duration_in_minutes(i32)`](crate::client::fluent_builders::CreateDeploymentStrategy::deployment_duration_in_minutes) / [`set_deployment_duration_in_minutes(Option<i32>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_deployment_duration_in_minutes): <p>Total amount of time for a deployment to last.</p>
+    ///   - [`final_bake_time_in_minutes(i32)`](crate::client::fluent_builders::CreateDeploymentStrategy::final_bake_time_in_minutes) / [`set_final_bake_time_in_minutes(i32)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_final_bake_time_in_minutes): <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
+    ///   - [`growth_factor(f32)`](crate::client::fluent_builders::CreateDeploymentStrategy::growth_factor) / [`set_growth_factor(Option<f32>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_growth_factor): <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    ///   - [`growth_type(GrowthType)`](crate::client::fluent_builders::CreateDeploymentStrategy::growth_type) / [`set_growth_type(Option<GrowthType>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_growth_type): <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>  <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>  <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>  <p> <code>2*(2^0)</code> </p>  <p> <code>2*(2^1)</code> </p>  <p> <code>2*(2^2)</code> </p>  <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
+    ///   - [`replicate_to(ReplicateTo)`](crate::client::fluent_builders::CreateDeploymentStrategy::replicate_to) / [`set_replicate_to(Option<ReplicateTo>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_replicate_to): <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDeploymentStrategy::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDeploymentStrategy::set_tags): <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     /// - On success, responds with [`CreateDeploymentStrategyOutput`](crate::output::CreateDeploymentStrategyOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::CreateDeploymentStrategyOutput::id): <p>The deployment strategy ID.</p>
     ///   - [`name(Option<String>)`](crate::output::CreateDeploymentStrategyOutput::name): <p>The name of the deployment strategy.</p>
@@ -149,12 +149,12 @@ where
     }
     /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
     ///
-    /// - Takes [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::CreateEnvironmentInput::application_id): <p>The application ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateEnvironmentInput::name): <p>A name for the environment.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateEnvironmentInput::description): <p>A description of the environment.</p>
-    ///   - [`monitors(Option<Vec<Monitor>>)`](crate::input::CreateEnvironmentInput::monitors): <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateEnvironmentInput::tags): <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_application_id): <p>The application ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_name): <p>A name for the environment.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_description): <p>A description of the environment.</p>
+    ///   - [`monitors(Vec<Monitor>)`](crate::client::fluent_builders::CreateEnvironment::monitors) / [`set_monitors(Option<Vec<Monitor>>)`](crate::client::fluent_builders::CreateEnvironment::set_monitors): <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::CreateEnvironmentOutput::application_id): <p>The application ID.</p>
     ///   - [`id(Option<String>)`](crate::output::CreateEnvironmentOutput::id): <p>The environment ID.</p>
@@ -168,13 +168,13 @@ where
     }
     /// Constructs a fluent builder for the [`CreateHostedConfigurationVersion`](crate::client::fluent_builders::CreateHostedConfigurationVersion) operation.
     ///
-    /// - Takes [`CreateHostedConfigurationVersionInput`](crate::input::CreateHostedConfigurationVersionInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::CreateHostedConfigurationVersionInput::application_id): <p>The application ID.</p>
-    ///   - [`configuration_profile_id(Option<String>)`](crate::input::CreateHostedConfigurationVersionInput::configuration_profile_id): <p>The configuration profile ID.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateHostedConfigurationVersionInput::description): <p>A description of the configuration.</p>
-    ///   - [`content(Option<Blob>)`](crate::input::CreateHostedConfigurationVersionInput::content): <p>The content of the configuration or the configuration data.</p>
-    ///   - [`content_type(Option<String>)`](crate::input::CreateHostedConfigurationVersionInput::content_type): <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    ///   - [`latest_version_number(Option<i32>)`](crate::input::CreateHostedConfigurationVersionInput::latest_version_number): <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::set_application_id): <p>The application ID.</p>
+    ///   - [`configuration_profile_id(impl Into<String>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::set_configuration_profile_id): <p>The configuration profile ID.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::set_description): <p>A description of the configuration.</p>
+    ///   - [`content(Blob)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::content) / [`set_content(Option<Blob>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::set_content): <p>The content of the configuration or the configuration data.</p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::set_content_type): <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    ///   - [`latest_version_number(i32)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::latest_version_number) / [`set_latest_version_number(Option<i32>)`](crate::client::fluent_builders::CreateHostedConfigurationVersion::set_latest_version_number): <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
     /// - On success, responds with [`CreateHostedConfigurationVersionOutput`](crate::output::CreateHostedConfigurationVersionOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::CreateHostedConfigurationVersionOutput::application_id): <p>The application ID.</p>
     ///   - [`configuration_profile_id(Option<String>)`](crate::output::CreateHostedConfigurationVersionOutput::configuration_profile_id): <p>The configuration profile ID.</p>
@@ -190,8 +190,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
     ///
-    /// - Takes [`DeleteApplicationInput`](crate::input::DeleteApplicationInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteApplicationInput::application_id): <p>The ID of the application to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_id): <p>The ID of the application to delete.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
@@ -200,9 +200,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteConfigurationProfile`](crate::client::fluent_builders::DeleteConfigurationProfile) operation.
     ///
-    /// - Takes [`DeleteConfigurationProfileInput`](crate::input::DeleteConfigurationProfileInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteConfigurationProfileInput::application_id): <p>The application ID that includes the configuration profile you want to delete.</p>
-    ///   - [`configuration_profile_id(Option<String>)`](crate::input::DeleteConfigurationProfileInput::configuration_profile_id): <p>The ID of the configuration profile you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationProfile::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationProfile::set_application_id): <p>The application ID that includes the configuration profile you want to delete.</p>
+    ///   - [`configuration_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationProfile::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationProfile::set_configuration_profile_id): <p>The ID of the configuration profile you want to delete.</p>
     /// - On success, responds with [`DeleteConfigurationProfileOutput`](crate::output::DeleteConfigurationProfileOutput)
 
     /// - On failure, responds with [`SdkError<DeleteConfigurationProfileError>`](crate::error::DeleteConfigurationProfileError)
@@ -213,8 +213,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteDeploymentStrategy`](crate::client::fluent_builders::DeleteDeploymentStrategy) operation.
     ///
-    /// - Takes [`DeleteDeploymentStrategyInput`](crate::input::DeleteDeploymentStrategyInput) with field(s):
-    ///   - [`deployment_strategy_id(Option<String>)`](crate::input::DeleteDeploymentStrategyInput::deployment_strategy_id): <p>The ID of the deployment strategy you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_strategy_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDeploymentStrategy::deployment_strategy_id) / [`set_deployment_strategy_id(Option<String>)`](crate::client::fluent_builders::DeleteDeploymentStrategy::set_deployment_strategy_id): <p>The ID of the deployment strategy you want to delete.</p>
     /// - On success, responds with [`DeleteDeploymentStrategyOutput`](crate::output::DeleteDeploymentStrategyOutput)
 
     /// - On failure, responds with [`SdkError<DeleteDeploymentStrategyError>`](crate::error::DeleteDeploymentStrategyError)
@@ -223,9 +223,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) operation.
     ///
-    /// - Takes [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteEnvironmentInput::application_id): <p>The application ID that includes the environment that you want to delete.</p>
-    ///   - [`environment_id(Option<String>)`](crate::input::DeleteEnvironmentInput::environment_id): <p>The ID of the environment that you want to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteEnvironment::set_application_id): <p>The application ID that includes the environment that you want to delete.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::DeleteEnvironment::set_environment_id): <p>The ID of the environment that you want to delete.</p>
     /// - On success, responds with [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
 
     /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
@@ -234,10 +234,10 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteHostedConfigurationVersion`](crate::client::fluent_builders::DeleteHostedConfigurationVersion) operation.
     ///
-    /// - Takes [`DeleteHostedConfigurationVersionInput`](crate::input::DeleteHostedConfigurationVersionInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::DeleteHostedConfigurationVersionInput::application_id): <p>The application ID.</p>
-    ///   - [`configuration_profile_id(Option<String>)`](crate::input::DeleteHostedConfigurationVersionInput::configuration_profile_id): <p>The configuration profile ID.</p>
-    ///   - [`version_number(i32)`](crate::input::DeleteHostedConfigurationVersionInput::version_number): <p>The versions number to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHostedConfigurationVersion::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteHostedConfigurationVersion::set_application_id): <p>The application ID.</p>
+    ///   - [`configuration_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHostedConfigurationVersion::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteHostedConfigurationVersion::set_configuration_profile_id): <p>The configuration profile ID.</p>
+    ///   - [`version_number(i32)`](crate::client::fluent_builders::DeleteHostedConfigurationVersion::version_number) / [`set_version_number(i32)`](crate::client::fluent_builders::DeleteHostedConfigurationVersion::set_version_number): <p>The versions number to delete.</p>
     /// - On success, responds with [`DeleteHostedConfigurationVersionOutput`](crate::output::DeleteHostedConfigurationVersionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteHostedConfigurationVersionError>`](crate::error::DeleteHostedConfigurationVersionError)
@@ -248,8 +248,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetApplication`](crate::client::fluent_builders::GetApplication) operation.
     ///
-    /// - Takes [`GetApplicationInput`](crate::input::GetApplicationInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetApplicationInput::application_id): <p>The ID of the application you want to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application_id): <p>The ID of the application you want to get.</p>
     /// - On success, responds with [`GetApplicationOutput`](crate::output::GetApplicationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::GetApplicationOutput::id): <p>The application ID.</p>
     ///   - [`name(Option<String>)`](crate::output::GetApplicationOutput::name): <p>The application name.</p>
@@ -260,12 +260,12 @@ where
     }
     /// Constructs a fluent builder for the [`GetConfiguration`](crate::client::fluent_builders::GetConfiguration) operation.
     ///
-    /// - Takes [`GetConfigurationInput`](crate::input::GetConfigurationInput) with field(s):
-    ///   - [`application(Option<String>)`](crate::input::GetConfigurationInput::application): <p>The application to get. Specify either the application name or the application ID.</p>
-    ///   - [`environment(Option<String>)`](crate::input::GetConfigurationInput::environment): <p>The environment to get. Specify either the environment name or the environment ID.</p>
-    ///   - [`configuration(Option<String>)`](crate::input::GetConfigurationInput::configuration): <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
-    ///   - [`client_id(Option<String>)`](crate::input::GetConfigurationInput::client_id): <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
-    ///   - [`client_configuration_version(Option<String>)`](crate::input::GetConfigurationInput::client_configuration_version): <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>   <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>   <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>  </important>  <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::GetConfiguration::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::GetConfiguration::set_application): <p>The application to get. Specify either the application name or the application ID.</p>
+    ///   - [`environment(impl Into<String>)`](crate::client::fluent_builders::GetConfiguration::environment) / [`set_environment(Option<String>)`](crate::client::fluent_builders::GetConfiguration::set_environment): <p>The environment to get. Specify either the environment name or the environment ID.</p>
+    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::GetConfiguration::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::GetConfiguration::set_configuration): <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::GetConfiguration::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::GetConfiguration::set_client_id): <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
+    ///   - [`client_configuration_version(impl Into<String>)`](crate::client::fluent_builders::GetConfiguration::client_configuration_version) / [`set_client_configuration_version(Option<String>)`](crate::client::fluent_builders::GetConfiguration::set_client_configuration_version): <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>   <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>   <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>  </important>  <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
     /// - On success, responds with [`GetConfigurationOutput`](crate::output::GetConfigurationOutput) with field(s):
     ///   - [`content(Option<Blob>)`](crate::output::GetConfigurationOutput::content): <p>The content of the configuration or the configuration data.</p> <important>   <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>  </important>
     ///   - [`configuration_version(Option<String>)`](crate::output::GetConfigurationOutput::configuration_version): <p>The configuration version.</p>
@@ -276,9 +276,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetConfigurationProfile`](crate::client::fluent_builders::GetConfigurationProfile) operation.
     ///
-    /// - Takes [`GetConfigurationProfileInput`](crate::input::GetConfigurationProfileInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetConfigurationProfileInput::application_id): <p>The ID of the application that includes the configuration profile you want to get.</p>
-    ///   - [`configuration_profile_id(Option<String>)`](crate::input::GetConfigurationProfileInput::configuration_profile_id): <p>The ID of the configuration profile that you want to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetConfigurationProfile::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetConfigurationProfile::set_application_id): <p>The ID of the application that includes the configuration profile you want to get.</p>
+    ///   - [`configuration_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetConfigurationProfile::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::client::fluent_builders::GetConfigurationProfile::set_configuration_profile_id): <p>The ID of the configuration profile that you want to get.</p>
     /// - On success, responds with [`GetConfigurationProfileOutput`](crate::output::GetConfigurationProfileOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::GetConfigurationProfileOutput::application_id): <p>The application ID.</p>
     ///   - [`id(Option<String>)`](crate::output::GetConfigurationProfileOutput::id): <p>The configuration profile ID.</p>
@@ -294,10 +294,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetDeployment`](crate::client::fluent_builders::GetDeployment) operation.
     ///
-    /// - Takes [`GetDeploymentInput`](crate::input::GetDeploymentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetDeploymentInput::application_id): <p>The ID of the application that includes the deployment you want to get. </p>
-    ///   - [`environment_id(Option<String>)`](crate::input::GetDeploymentInput::environment_id): <p>The ID of the environment that includes the deployment you want to get. </p>
-    ///   - [`deployment_number(Option<i32>)`](crate::input::GetDeploymentInput::deployment_number): <p>The sequence number of the deployment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetDeployment::set_application_id): <p>The ID of the application that includes the deployment you want to get. </p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::GetDeployment::set_environment_id): <p>The ID of the environment that includes the deployment you want to get. </p>
+    ///   - [`deployment_number(i32)`](crate::client::fluent_builders::GetDeployment::deployment_number) / [`set_deployment_number(Option<i32>)`](crate::client::fluent_builders::GetDeployment::set_deployment_number): <p>The sequence number of the deployment.</p>
     /// - On success, responds with [`GetDeploymentOutput`](crate::output::GetDeploymentOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::GetDeploymentOutput::application_id): <p>The ID of the application that was deployed.</p>
     ///   - [`environment_id(Option<String>)`](crate::output::GetDeploymentOutput::environment_id): <p>The ID of the environment that was deployed.</p>
@@ -323,8 +323,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetDeploymentStrategy`](crate::client::fluent_builders::GetDeploymentStrategy) operation.
     ///
-    /// - Takes [`GetDeploymentStrategyInput`](crate::input::GetDeploymentStrategyInput) with field(s):
-    ///   - [`deployment_strategy_id(Option<String>)`](crate::input::GetDeploymentStrategyInput::deployment_strategy_id): <p>The ID of the deployment strategy to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_strategy_id(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentStrategy::deployment_strategy_id) / [`set_deployment_strategy_id(Option<String>)`](crate::client::fluent_builders::GetDeploymentStrategy::set_deployment_strategy_id): <p>The ID of the deployment strategy to get.</p>
     /// - On success, responds with [`GetDeploymentStrategyOutput`](crate::output::GetDeploymentStrategyOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::GetDeploymentStrategyOutput::id): <p>The deployment strategy ID.</p>
     ///   - [`name(Option<String>)`](crate::output::GetDeploymentStrategyOutput::name): <p>The name of the deployment strategy.</p>
@@ -340,9 +340,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) operation.
     ///
-    /// - Takes [`GetEnvironmentInput`](crate::input::GetEnvironmentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetEnvironmentInput::application_id): <p>The ID of the application that includes the environment you want to get.</p>
-    ///   - [`environment_id(Option<String>)`](crate::input::GetEnvironmentInput::environment_id): <p>The ID of the environment that you want to get.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetEnvironment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetEnvironment::set_application_id): <p>The ID of the application that includes the environment you want to get.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::GetEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::GetEnvironment::set_environment_id): <p>The ID of the environment that you want to get.</p>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::GetEnvironmentOutput::application_id): <p>The application ID.</p>
     ///   - [`id(Option<String>)`](crate::output::GetEnvironmentOutput::id): <p>The environment ID.</p>
@@ -356,10 +356,10 @@ where
     }
     /// Constructs a fluent builder for the [`GetHostedConfigurationVersion`](crate::client::fluent_builders::GetHostedConfigurationVersion) operation.
     ///
-    /// - Takes [`GetHostedConfigurationVersionInput`](crate::input::GetHostedConfigurationVersionInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::GetHostedConfigurationVersionInput::application_id): <p>The application ID.</p>
-    ///   - [`configuration_profile_id(Option<String>)`](crate::input::GetHostedConfigurationVersionInput::configuration_profile_id): <p>The configuration profile ID.</p>
-    ///   - [`version_number(i32)`](crate::input::GetHostedConfigurationVersionInput::version_number): <p>The version.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetHostedConfigurationVersion::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetHostedConfigurationVersion::set_application_id): <p>The application ID.</p>
+    ///   - [`configuration_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetHostedConfigurationVersion::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::client::fluent_builders::GetHostedConfigurationVersion::set_configuration_profile_id): <p>The configuration profile ID.</p>
+    ///   - [`version_number(i32)`](crate::client::fluent_builders::GetHostedConfigurationVersion::version_number) / [`set_version_number(i32)`](crate::client::fluent_builders::GetHostedConfigurationVersion::set_version_number): <p>The version.</p>
     /// - On success, responds with [`GetHostedConfigurationVersionOutput`](crate::output::GetHostedConfigurationVersionOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::GetHostedConfigurationVersionOutput::application_id): <p>The application ID.</p>
     ///   - [`configuration_profile_id(Option<String>)`](crate::output::GetHostedConfigurationVersionOutput::configuration_profile_id): <p>The configuration profile ID.</p>
@@ -374,11 +374,11 @@ where
         fluent_builders::GetHostedConfigurationVersion::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     ///
-    /// - Takes [`ListApplicationsInput`](crate::input::ListApplicationsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListApplicationsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationsInput::next_token): <p>A token to start the list. Next token is a pagination token generated by AppConfig to describe what page the previous List call ended on. For the first List request, the nextToken should not be set. On subsequent calls, the nextToken parameter should be set to the previous responses nextToken value. Use this token to get the next set of results. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApplications::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>A token to start the list. Next token is a pagination token generated by AppConfig to describe what page the previous List call ended on. For the first List request, the nextToken should not be set. On subsequent calls, the nextToken parameter should be set to the previous responses nextToken value. Use this token to get the next set of results. </p>
     /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
     ///   - [`items(Option<Vec<Application>>)`](crate::output::ListApplicationsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -387,13 +387,13 @@ where
         fluent_builders::ListApplications::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListConfigurationProfiles`](crate::client::fluent_builders::ListConfigurationProfiles) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConfigurationProfiles::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConfigurationProfiles::into_paginator).
     ///
-    /// - Takes [`ListConfigurationProfilesInput`](crate::input::ListConfigurationProfilesInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::ListConfigurationProfilesInput::application_id): <p>The application ID.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListConfigurationProfilesInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListConfigurationProfilesInput::next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::ListConfigurationProfilesInput::type): <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::set_application_id): <p>The application ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfigurationProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListConfigurationProfiles::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::set_next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::r#type) / [`set_type(Option<String>)`](crate::client::fluent_builders::ListConfigurationProfiles::set_type): <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
     /// - On success, responds with [`ListConfigurationProfilesOutput`](crate::output::ListConfigurationProfilesOutput) with field(s):
     ///   - [`items(Option<Vec<ConfigurationProfileSummary>>)`](crate::output::ListConfigurationProfilesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationProfilesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -404,13 +404,13 @@ where
         fluent_builders::ListConfigurationProfiles::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDeployments`](crate::client::fluent_builders::ListDeployments) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeployments::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeployments::into_paginator).
     ///
-    /// - Takes [`ListDeploymentsInput`](crate::input::ListDeploymentsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::ListDeploymentsInput::application_id): <p>The application ID.</p>
-    ///   - [`environment_id(Option<String>)`](crate::input::ListDeploymentsInput::environment_id): <p>The environment ID.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDeploymentsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDeploymentsInput::next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_application_id): <p>The application ID.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_environment_id): <p>The environment ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeployments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeployments::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
     /// - On success, responds with [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput) with field(s):
     ///   - [`items(Option<Vec<DeploymentSummary>>)`](crate::output::ListDeploymentsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -419,11 +419,11 @@ where
         fluent_builders::ListDeployments::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDeploymentStrategies`](crate::client::fluent_builders::ListDeploymentStrategies) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentStrategies::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentStrategies::into_paginator).
     ///
-    /// - Takes [`ListDeploymentStrategiesInput`](crate::input::ListDeploymentStrategiesInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListDeploymentStrategiesInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListDeploymentStrategiesInput::next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeploymentStrategies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeploymentStrategies::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentStrategies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeploymentStrategies::set_next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
     /// - On success, responds with [`ListDeploymentStrategiesOutput`](crate::output::ListDeploymentStrategiesOutput) with field(s):
     ///   - [`items(Option<Vec<DeploymentStrategy>>)`](crate::output::ListDeploymentStrategiesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentStrategiesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -432,12 +432,12 @@ where
         fluent_builders::ListDeploymentStrategies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
     ///
-    /// - Takes [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::ListEnvironmentsInput::application_id): <p>The application ID.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListEnvironmentsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListEnvironmentsInput::next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListEnvironments::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListEnvironments::set_application_id): <p>The application ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnvironments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEnvironments::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnvironments::set_next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
     /// - On success, responds with [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput) with field(s):
     ///   - [`items(Option<Vec<Environment>>)`](crate::output::ListEnvironmentsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -446,13 +446,13 @@ where
         fluent_builders::ListEnvironments::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListHostedConfigurationVersions`](crate::client::fluent_builders::ListHostedConfigurationVersions) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHostedConfigurationVersions::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHostedConfigurationVersions::into_paginator).
     ///
-    /// - Takes [`ListHostedConfigurationVersionsInput`](crate::input::ListHostedConfigurationVersionsInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::ListHostedConfigurationVersionsInput::application_id): <p>The application ID.</p>
-    ///   - [`configuration_profile_id(Option<String>)`](crate::input::ListHostedConfigurationVersionsInput::configuration_profile_id): <p>The configuration profile ID.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListHostedConfigurationVersionsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListHostedConfigurationVersionsInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListHostedConfigurationVersions::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListHostedConfigurationVersions::set_application_id): <p>The application ID.</p>
+    ///   - [`configuration_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListHostedConfigurationVersions::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::client::fluent_builders::ListHostedConfigurationVersions::set_configuration_profile_id): <p>The configuration profile ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHostedConfigurationVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHostedConfigurationVersions::set_max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHostedConfigurationVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHostedConfigurationVersions::set_next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
     /// - On success, responds with [`ListHostedConfigurationVersionsOutput`](crate::output::ListHostedConfigurationVersionsOutput) with field(s):
     ///   - [`items(Option<Vec<HostedConfigurationVersionSummary>>)`](crate::output::ListHostedConfigurationVersionsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListHostedConfigurationVersionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -464,8 +464,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The resource ARN.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The resource ARN.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -474,14 +474,14 @@ where
     }
     /// Constructs a fluent builder for the [`StartDeployment`](crate::client::fluent_builders::StartDeployment) operation.
     ///
-    /// - Takes [`StartDeploymentInput`](crate::input::StartDeploymentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::StartDeploymentInput::application_id): <p>The application ID.</p>
-    ///   - [`environment_id(Option<String>)`](crate::input::StartDeploymentInput::environment_id): <p>The environment ID.</p>
-    ///   - [`deployment_strategy_id(Option<String>)`](crate::input::StartDeploymentInput::deployment_strategy_id): <p>The deployment strategy ID.</p>
-    ///   - [`configuration_profile_id(Option<String>)`](crate::input::StartDeploymentInput::configuration_profile_id): <p>The configuration profile ID.</p>
-    ///   - [`configuration_version(Option<String>)`](crate::input::StartDeploymentInput::configuration_version): <p>The configuration version to deploy.</p>
-    ///   - [`description(Option<String>)`](crate::input::StartDeploymentInput::description): <p>A description of the deployment.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::StartDeploymentInput::tags): <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::StartDeployment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::StartDeployment::set_application_id): <p>The application ID.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::StartDeployment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::StartDeployment::set_environment_id): <p>The environment ID.</p>
+    ///   - [`deployment_strategy_id(impl Into<String>)`](crate::client::fluent_builders::StartDeployment::deployment_strategy_id) / [`set_deployment_strategy_id(Option<String>)`](crate::client::fluent_builders::StartDeployment::set_deployment_strategy_id): <p>The deployment strategy ID.</p>
+    ///   - [`configuration_profile_id(impl Into<String>)`](crate::client::fluent_builders::StartDeployment::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::client::fluent_builders::StartDeployment::set_configuration_profile_id): <p>The configuration profile ID.</p>
+    ///   - [`configuration_version(impl Into<String>)`](crate::client::fluent_builders::StartDeployment::configuration_version) / [`set_configuration_version(Option<String>)`](crate::client::fluent_builders::StartDeployment::set_configuration_version): <p>The configuration version to deploy.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::StartDeployment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::StartDeployment::set_description): <p>A description of the deployment.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::StartDeployment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartDeployment::set_tags): <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     /// - On success, responds with [`StartDeploymentOutput`](crate::output::StartDeploymentOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::StartDeploymentOutput::application_id): <p>The ID of the application that was deployed.</p>
     ///   - [`environment_id(Option<String>)`](crate::output::StartDeploymentOutput::environment_id): <p>The ID of the environment that was deployed.</p>
@@ -507,10 +507,10 @@ where
     }
     /// Constructs a fluent builder for the [`StopDeployment`](crate::client::fluent_builders::StopDeployment) operation.
     ///
-    /// - Takes [`StopDeploymentInput`](crate::input::StopDeploymentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::StopDeploymentInput::application_id): <p>The application ID.</p>
-    ///   - [`environment_id(Option<String>)`](crate::input::StopDeploymentInput::environment_id): <p>The environment ID.</p>
-    ///   - [`deployment_number(Option<i32>)`](crate::input::StopDeploymentInput::deployment_number): <p>The sequence number of the deployment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::StopDeployment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::StopDeployment::set_application_id): <p>The application ID.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::StopDeployment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::StopDeployment::set_environment_id): <p>The environment ID.</p>
+    ///   - [`deployment_number(i32)`](crate::client::fluent_builders::StopDeployment::deployment_number) / [`set_deployment_number(Option<i32>)`](crate::client::fluent_builders::StopDeployment::set_deployment_number): <p>The sequence number of the deployment.</p>
     /// - On success, responds with [`StopDeploymentOutput`](crate::output::StopDeploymentOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::StopDeploymentOutput::application_id): <p>The ID of the application that was deployed.</p>
     ///   - [`environment_id(Option<String>)`](crate::output::StopDeploymentOutput::environment_id): <p>The ID of the environment that was deployed.</p>
@@ -536,9 +536,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource for which to retrieve tags.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource for which to retrieve tags.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -547,9 +547,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource for which to remove tags.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource for which to remove tags.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys to delete.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -558,10 +558,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
     ///
-    /// - Takes [`UpdateApplicationInput`](crate::input::UpdateApplicationInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateApplicationInput::application_id): <p>The application ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateApplicationInput::name): <p>The name of the application.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateApplicationInput::description): <p>A description of the application.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_id): <p>The application ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_name): <p>The name of the application.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_description): <p>A description of the application.</p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::UpdateApplicationOutput::id): <p>The application ID.</p>
     ///   - [`name(Option<String>)`](crate::output::UpdateApplicationOutput::name): <p>The application name.</p>
@@ -572,13 +572,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateConfigurationProfile`](crate::client::fluent_builders::UpdateConfigurationProfile) operation.
     ///
-    /// - Takes [`UpdateConfigurationProfileInput`](crate::input::UpdateConfigurationProfileInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateConfigurationProfileInput::application_id): <p>The application ID.</p>
-    ///   - [`configuration_profile_id(Option<String>)`](crate::input::UpdateConfigurationProfileInput::configuration_profile_id): <p>The ID of the configuration profile.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateConfigurationProfileInput::name): <p>The name of the configuration profile.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateConfigurationProfileInput::description): <p>A description of the configuration profile.</p>
-    ///   - [`retrieval_role_arn(Option<String>)`](crate::input::UpdateConfigurationProfileInput::retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    ///   - [`validators(Option<Vec<Validator>>)`](crate::input::UpdateConfigurationProfileInput::validators): <p>A list of methods for validating the configuration.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::set_application_id): <p>The application ID.</p>
+    ///   - [`configuration_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::set_configuration_profile_id): <p>The ID of the configuration profile.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::set_name): <p>The name of the configuration profile.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::set_description): <p>A description of the configuration profile.</p>
+    ///   - [`retrieval_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::retrieval_role_arn) / [`set_retrieval_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationProfile::set_retrieval_role_arn): <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
+    ///   - [`validators(Vec<Validator>)`](crate::client::fluent_builders::UpdateConfigurationProfile::validators) / [`set_validators(Option<Vec<Validator>>)`](crate::client::fluent_builders::UpdateConfigurationProfile::set_validators): <p>A list of methods for validating the configuration.</p>
     /// - On success, responds with [`UpdateConfigurationProfileOutput`](crate::output::UpdateConfigurationProfileOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::application_id): <p>The application ID.</p>
     ///   - [`id(Option<String>)`](crate::output::UpdateConfigurationProfileOutput::id): <p>The configuration profile ID.</p>
@@ -596,13 +596,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateDeploymentStrategy`](crate::client::fluent_builders::UpdateDeploymentStrategy) operation.
     ///
-    /// - Takes [`UpdateDeploymentStrategyInput`](crate::input::UpdateDeploymentStrategyInput) with field(s):
-    ///   - [`deployment_strategy_id(Option<String>)`](crate::input::UpdateDeploymentStrategyInput::deployment_strategy_id): <p>The deployment strategy ID.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateDeploymentStrategyInput::description): <p>A description of the deployment strategy.</p>
-    ///   - [`deployment_duration_in_minutes(Option<i32>)`](crate::input::UpdateDeploymentStrategyInput::deployment_duration_in_minutes): <p>Total amount of time for a deployment to last.</p>
-    ///   - [`final_bake_time_in_minutes(Option<i32>)`](crate::input::UpdateDeploymentStrategyInput::final_bake_time_in_minutes): <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
-    ///   - [`growth_factor(Option<f32>)`](crate::input::UpdateDeploymentStrategyInput::growth_factor): <p>The percentage of targets to receive a deployed configuration during each interval.</p>
-    ///   - [`growth_type(Option<GrowthType>)`](crate::input::UpdateDeploymentStrategyInput::growth_type): <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>  <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>  <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>  <p> <code>2*(2^0)</code> </p>  <p> <code>2*(2^1)</code> </p>  <p> <code>2*(2^2)</code> </p>  <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_strategy_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDeploymentStrategy::deployment_strategy_id) / [`set_deployment_strategy_id(Option<String>)`](crate::client::fluent_builders::UpdateDeploymentStrategy::set_deployment_strategy_id): <p>The deployment strategy ID.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDeploymentStrategy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDeploymentStrategy::set_description): <p>A description of the deployment strategy.</p>
+    ///   - [`deployment_duration_in_minutes(i32)`](crate::client::fluent_builders::UpdateDeploymentStrategy::deployment_duration_in_minutes) / [`set_deployment_duration_in_minutes(Option<i32>)`](crate::client::fluent_builders::UpdateDeploymentStrategy::set_deployment_duration_in_minutes): <p>Total amount of time for a deployment to last.</p>
+    ///   - [`final_bake_time_in_minutes(i32)`](crate::client::fluent_builders::UpdateDeploymentStrategy::final_bake_time_in_minutes) / [`set_final_bake_time_in_minutes(Option<i32>)`](crate::client::fluent_builders::UpdateDeploymentStrategy::set_final_bake_time_in_minutes): <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
+    ///   - [`growth_factor(f32)`](crate::client::fluent_builders::UpdateDeploymentStrategy::growth_factor) / [`set_growth_factor(Option<f32>)`](crate::client::fluent_builders::UpdateDeploymentStrategy::set_growth_factor): <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    ///   - [`growth_type(GrowthType)`](crate::client::fluent_builders::UpdateDeploymentStrategy::growth_type) / [`set_growth_type(Option<GrowthType>)`](crate::client::fluent_builders::UpdateDeploymentStrategy::set_growth_type): <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>  <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>  <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>  <p> <code>2*(2^0)</code> </p>  <p> <code>2*(2^1)</code> </p>  <p> <code>2*(2^2)</code> </p>  <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     /// - On success, responds with [`UpdateDeploymentStrategyOutput`](crate::output::UpdateDeploymentStrategyOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::output::UpdateDeploymentStrategyOutput::id): <p>The deployment strategy ID.</p>
     ///   - [`name(Option<String>)`](crate::output::UpdateDeploymentStrategyOutput::name): <p>The name of the deployment strategy.</p>
@@ -618,12 +618,12 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) operation.
     ///
-    /// - Takes [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::UpdateEnvironmentInput::application_id): <p>The application ID.</p>
-    ///   - [`environment_id(Option<String>)`](crate::input::UpdateEnvironmentInput::environment_id): <p>The environment ID.</p>
-    ///   - [`name(Option<String>)`](crate::input::UpdateEnvironmentInput::name): <p>The name of the environment.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateEnvironmentInput::description): <p>A description of the environment.</p>
-    ///   - [`monitors(Option<Vec<Monitor>>)`](crate::input::UpdateEnvironmentInput::monitors): <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_application_id): <p>The application ID.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_environment_id): <p>The environment ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_name): <p>The name of the environment.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_description): <p>A description of the environment.</p>
+    ///   - [`monitors(Vec<Monitor>)`](crate::client::fluent_builders::UpdateEnvironment::monitors) / [`set_monitors(Option<Vec<Monitor>>)`](crate::client::fluent_builders::UpdateEnvironment::set_monitors): <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::output::UpdateEnvironmentOutput::application_id): <p>The application ID.</p>
     ///   - [`id(Option<String>)`](crate::output::UpdateEnvironmentOutput::id): <p>The environment ID.</p>
@@ -637,10 +637,10 @@ where
     }
     /// Constructs a fluent builder for the [`ValidateConfiguration`](crate::client::fluent_builders::ValidateConfiguration) operation.
     ///
-    /// - Takes [`ValidateConfigurationInput`](crate::input::ValidateConfigurationInput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::input::ValidateConfigurationInput::application_id): <p>The application ID.</p>
-    ///   - [`configuration_profile_id(Option<String>)`](crate::input::ValidateConfigurationInput::configuration_profile_id): <p>The configuration profile ID.</p>
-    ///   - [`configuration_version(Option<String>)`](crate::input::ValidateConfigurationInput::configuration_version): <p>The version of the configuration to validate.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ValidateConfiguration::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ValidateConfiguration::set_application_id): <p>The application ID.</p>
+    ///   - [`configuration_profile_id(impl Into<String>)`](crate::client::fluent_builders::ValidateConfiguration::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::client::fluent_builders::ValidateConfiguration::set_configuration_profile_id): <p>The configuration profile ID.</p>
+    ///   - [`configuration_version(impl Into<String>)`](crate::client::fluent_builders::ValidateConfiguration::configuration_version) / [`set_configuration_version(Option<String>)`](crate::client::fluent_builders::ValidateConfiguration::set_configuration_version): <p>The version of the configuration to validate.</p>
     /// - On success, responds with [`ValidateConfigurationOutput`](crate::output::ValidateConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<ValidateConfigurationError>`](crate::error::ValidateConfigurationError)

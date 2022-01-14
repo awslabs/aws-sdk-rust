@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`AddFlowMediaStreams`](crate::client::fluent_builders::AddFlowMediaStreams) operation.
     ///
-    /// - Takes [`AddFlowMediaStreamsInput`](crate::input::AddFlowMediaStreamsInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::AddFlowMediaStreamsInput::flow_arn): The Amazon Resource Name (ARN) of the flow.
-    ///   - [`media_streams(Option<Vec<AddMediaStreamRequest>>)`](crate::input::AddFlowMediaStreamsInput::media_streams): The media streams that you want to add to the flow.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::AddFlowMediaStreams::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::AddFlowMediaStreams::set_flow_arn): The Amazon Resource Name (ARN) of the flow.
+    ///   - [`media_streams(Vec<AddMediaStreamRequest>)`](crate::client::fluent_builders::AddFlowMediaStreams::media_streams) / [`set_media_streams(Option<Vec<AddMediaStreamRequest>>)`](crate::client::fluent_builders::AddFlowMediaStreams::set_media_streams): The media streams that you want to add to the flow.
     /// - On success, responds with [`AddFlowMediaStreamsOutput`](crate::output::AddFlowMediaStreamsOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::AddFlowMediaStreamsOutput::flow_arn): The ARN of the flow that you added media streams to.
     ///   - [`media_streams(Option<Vec<MediaStream>>)`](crate::output::AddFlowMediaStreamsOutput::media_streams): The media streams that you added to the flow.
@@ -97,9 +97,9 @@ where
     }
     /// Constructs a fluent builder for the [`AddFlowOutputs`](crate::client::fluent_builders::AddFlowOutputs) operation.
     ///
-    /// - Takes [`AddFlowOutputsInput`](crate::input::AddFlowOutputsInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::AddFlowOutputsInput::flow_arn): The flow that you want to add outputs to.
-    ///   - [`outputs(Option<Vec<AddOutputRequest>>)`](crate::input::AddFlowOutputsInput::outputs): A list of outputs that you want to add.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::AddFlowOutputs::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::AddFlowOutputs::set_flow_arn): The flow that you want to add outputs to.
+    ///   - [`outputs(Vec<AddOutputRequest>)`](crate::client::fluent_builders::AddFlowOutputs::outputs) / [`set_outputs(Option<Vec<AddOutputRequest>>)`](crate::client::fluent_builders::AddFlowOutputs::set_outputs): A list of outputs that you want to add.
     /// - On success, responds with [`AddFlowOutputsOutput`](crate::output::AddFlowOutputsOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::AddFlowOutputsOutput::flow_arn): The ARN of the flow that these outputs were added to.
     ///   - [`outputs(Option<Vec<Output>>)`](crate::output::AddFlowOutputsOutput::outputs): The details of the newly added outputs.
@@ -109,9 +109,9 @@ where
     }
     /// Constructs a fluent builder for the [`AddFlowSources`](crate::client::fluent_builders::AddFlowSources) operation.
     ///
-    /// - Takes [`AddFlowSourcesInput`](crate::input::AddFlowSourcesInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::AddFlowSourcesInput::flow_arn): The flow that you want to mutate.
-    ///   - [`sources(Option<Vec<SetSourceRequest>>)`](crate::input::AddFlowSourcesInput::sources): A list of sources that you want to add.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::AddFlowSources::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::AddFlowSources::set_flow_arn): The flow that you want to mutate.
+    ///   - [`sources(Vec<SetSourceRequest>)`](crate::client::fluent_builders::AddFlowSources::sources) / [`set_sources(Option<Vec<SetSourceRequest>>)`](crate::client::fluent_builders::AddFlowSources::set_sources): A list of sources that you want to add.
     /// - On success, responds with [`AddFlowSourcesOutput`](crate::output::AddFlowSourcesOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::AddFlowSourcesOutput::flow_arn): The ARN of the flow that these sources were added to.
     ///   - [`sources(Option<Vec<Source>>)`](crate::output::AddFlowSourcesOutput::sources): The details of the newly added sources.
@@ -121,9 +121,9 @@ where
     }
     /// Constructs a fluent builder for the [`AddFlowVpcInterfaces`](crate::client::fluent_builders::AddFlowVpcInterfaces) operation.
     ///
-    /// - Takes [`AddFlowVpcInterfacesInput`](crate::input::AddFlowVpcInterfacesInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::AddFlowVpcInterfacesInput::flow_arn): The flow that you want to mutate.
-    ///   - [`vpc_interfaces(Option<Vec<VpcInterfaceRequest>>)`](crate::input::AddFlowVpcInterfacesInput::vpc_interfaces): A list of VPC interfaces that you want to add.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::AddFlowVpcInterfaces::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::AddFlowVpcInterfaces::set_flow_arn): The flow that you want to mutate.
+    ///   - [`vpc_interfaces(Vec<VpcInterfaceRequest>)`](crate::client::fluent_builders::AddFlowVpcInterfaces::vpc_interfaces) / [`set_vpc_interfaces(Option<Vec<VpcInterfaceRequest>>)`](crate::client::fluent_builders::AddFlowVpcInterfaces::set_vpc_interfaces): A list of VPC interfaces that you want to add.
     /// - On success, responds with [`AddFlowVpcInterfacesOutput`](crate::output::AddFlowVpcInterfacesOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::AddFlowVpcInterfacesOutput::flow_arn): The ARN of the flow that these VPC interfaces were added to.
     ///   - [`vpc_interfaces(Option<Vec<VpcInterface>>)`](crate::output::AddFlowVpcInterfacesOutput::vpc_interfaces): The details of the newly added VPC interfaces.
@@ -133,16 +133,16 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFlow`](crate::client::fluent_builders::CreateFlow) operation.
     ///
-    /// - Takes [`CreateFlowInput`](crate::input::CreateFlowInput) with field(s):
-    ///   - [`availability_zone(Option<String>)`](crate::input::CreateFlowInput::availability_zone): The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
-    ///   - [`entitlements(Option<Vec<GrantEntitlementRequest>>)`](crate::input::CreateFlowInput::entitlements): The entitlements that you want to grant on a flow.
-    ///   - [`media_streams(Option<Vec<AddMediaStreamRequest>>)`](crate::input::CreateFlowInput::media_streams): The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    ///   - [`name(Option<String>)`](crate::input::CreateFlowInput::name): The name of the flow.
-    ///   - [`outputs(Option<Vec<AddOutputRequest>>)`](crate::input::CreateFlowInput::outputs): The outputs that you want to add to this flow.
-    ///   - [`source(Option<SetSourceRequest>)`](crate::input::CreateFlowInput::source): The settings for the source of the flow.
-    ///   - [`source_failover_config(Option<FailoverConfig>)`](crate::input::CreateFlowInput::source_failover_config): The settings for source failover.
-    ///   - [`sources(Option<Vec<SetSourceRequest>>)`](crate::input::CreateFlowInput::sources): (undocumented)
-    ///   - [`vpc_interfaces(Option<Vec<VpcInterfaceRequest>>)`](crate::input::CreateFlowInput::vpc_interfaces): The VPC interfaces you want on the flow.
+    /// - The fluent builder is configurable:
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateFlow::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateFlow::set_availability_zone): The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
+    ///   - [`entitlements(Vec<GrantEntitlementRequest>)`](crate::client::fluent_builders::CreateFlow::entitlements) / [`set_entitlements(Option<Vec<GrantEntitlementRequest>>)`](crate::client::fluent_builders::CreateFlow::set_entitlements): The entitlements that you want to grant on a flow.
+    ///   - [`media_streams(Vec<AddMediaStreamRequest>)`](crate::client::fluent_builders::CreateFlow::media_streams) / [`set_media_streams(Option<Vec<AddMediaStreamRequest>>)`](crate::client::fluent_builders::CreateFlow::set_media_streams): The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFlow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFlow::set_name): The name of the flow.
+    ///   - [`outputs(Vec<AddOutputRequest>)`](crate::client::fluent_builders::CreateFlow::outputs) / [`set_outputs(Option<Vec<AddOutputRequest>>)`](crate::client::fluent_builders::CreateFlow::set_outputs): The outputs that you want to add to this flow.
+    ///   - [`source(SetSourceRequest)`](crate::client::fluent_builders::CreateFlow::source) / [`set_source(Option<SetSourceRequest>)`](crate::client::fluent_builders::CreateFlow::set_source): The settings for the source of the flow.
+    ///   - [`source_failover_config(FailoverConfig)`](crate::client::fluent_builders::CreateFlow::source_failover_config) / [`set_source_failover_config(Option<FailoverConfig>)`](crate::client::fluent_builders::CreateFlow::set_source_failover_config): The settings for source failover.
+    ///   - [`sources(Vec<SetSourceRequest>)`](crate::client::fluent_builders::CreateFlow::sources) / [`set_sources(Option<Vec<SetSourceRequest>>)`](crate::client::fluent_builders::CreateFlow::set_sources): (undocumented)
+    ///   - [`vpc_interfaces(Vec<VpcInterfaceRequest>)`](crate::client::fluent_builders::CreateFlow::vpc_interfaces) / [`set_vpc_interfaces(Option<Vec<VpcInterfaceRequest>>)`](crate::client::fluent_builders::CreateFlow::set_vpc_interfaces): The VPC interfaces you want on the flow.
     /// - On success, responds with [`CreateFlowOutput`](crate::output::CreateFlowOutput) with field(s):
     ///   - [`flow(Option<Flow>)`](crate::output::CreateFlowOutput::flow): The settings for a flow, including its source, outputs, and entitlements.
     /// - On failure, responds with [`SdkError<CreateFlowError>`](crate::error::CreateFlowError)
@@ -151,8 +151,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFlow`](crate::client::fluent_builders::DeleteFlow) operation.
     ///
-    /// - Takes [`DeleteFlowInput`](crate::input::DeleteFlowInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::DeleteFlowInput::flow_arn): The ARN of the flow that you want to delete.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteFlow::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::DeleteFlow::set_flow_arn): The ARN of the flow that you want to delete.
     /// - On success, responds with [`DeleteFlowOutput`](crate::output::DeleteFlowOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::DeleteFlowOutput::flow_arn): The ARN of the flow that was deleted.
     ///   - [`status(Option<Status>)`](crate::output::DeleteFlowOutput::status): The status of the flow when the DeleteFlow process begins.
@@ -162,8 +162,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeFlow`](crate::client::fluent_builders::DescribeFlow) operation.
     ///
-    /// - Takes [`DescribeFlowInput`](crate::input::DescribeFlowInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::DescribeFlowInput::flow_arn): The ARN of the flow that you want to describe.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeFlow::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::DescribeFlow::set_flow_arn): The ARN of the flow that you want to describe.
     /// - On success, responds with [`DescribeFlowOutput`](crate::output::DescribeFlowOutput) with field(s):
     ///   - [`flow(Option<Flow>)`](crate::output::DescribeFlowOutput::flow): The settings for a flow, including its source, outputs, and entitlements.
     ///   - [`messages(Option<Messages>)`](crate::output::DescribeFlowOutput::messages): Messages that provide the state of the flow.
@@ -173,8 +173,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeOffering`](crate::client::fluent_builders::DescribeOffering) operation.
     ///
-    /// - Takes [`DescribeOfferingInput`](crate::input::DescribeOfferingInput) with field(s):
-    ///   - [`offering_arn(Option<String>)`](crate::input::DescribeOfferingInput::offering_arn): The Amazon Resource Name (ARN) of the offering.
+    /// - The fluent builder is configurable:
+    ///   - [`offering_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeOffering::offering_arn) / [`set_offering_arn(Option<String>)`](crate::client::fluent_builders::DescribeOffering::set_offering_arn): The Amazon Resource Name (ARN) of the offering.
     /// - On success, responds with [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput) with field(s):
     ///   - [`offering(Option<Offering>)`](crate::output::DescribeOfferingOutput::offering): A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
     /// - On failure, responds with [`SdkError<DescribeOfferingError>`](crate::error::DescribeOfferingError)
@@ -183,8 +183,8 @@ where
     }
     /// Constructs a fluent builder for the [`DescribeReservation`](crate::client::fluent_builders::DescribeReservation) operation.
     ///
-    /// - Takes [`DescribeReservationInput`](crate::input::DescribeReservationInput) with field(s):
-    ///   - [`reservation_arn(Option<String>)`](crate::input::DescribeReservationInput::reservation_arn): The Amazon Resource Name (ARN) of the reservation.
+    /// - The fluent builder is configurable:
+    ///   - [`reservation_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeReservation::reservation_arn) / [`set_reservation_arn(Option<String>)`](crate::client::fluent_builders::DescribeReservation::set_reservation_arn): The Amazon Resource Name (ARN) of the reservation.
     /// - On success, responds with [`DescribeReservationOutput`](crate::output::DescribeReservationOutput) with field(s):
     ///   - [`reservation(Option<Reservation>)`](crate::output::DescribeReservationOutput::reservation): A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     /// - On failure, responds with [`SdkError<DescribeReservationError>`](crate::error::DescribeReservationError)
@@ -193,9 +193,9 @@ where
     }
     /// Constructs a fluent builder for the [`GrantFlowEntitlements`](crate::client::fluent_builders::GrantFlowEntitlements) operation.
     ///
-    /// - Takes [`GrantFlowEntitlementsInput`](crate::input::GrantFlowEntitlementsInput) with field(s):
-    ///   - [`entitlements(Option<Vec<GrantEntitlementRequest>>)`](crate::input::GrantFlowEntitlementsInput::entitlements): The list of entitlements that you want to grant.
-    ///   - [`flow_arn(Option<String>)`](crate::input::GrantFlowEntitlementsInput::flow_arn): The flow that you want to grant entitlements on.
+    /// - The fluent builder is configurable:
+    ///   - [`entitlements(Vec<GrantEntitlementRequest>)`](crate::client::fluent_builders::GrantFlowEntitlements::entitlements) / [`set_entitlements(Option<Vec<GrantEntitlementRequest>>)`](crate::client::fluent_builders::GrantFlowEntitlements::set_entitlements): The list of entitlements that you want to grant.
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::GrantFlowEntitlements::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::GrantFlowEntitlements::set_flow_arn): The flow that you want to grant entitlements on.
     /// - On success, responds with [`GrantFlowEntitlementsOutput`](crate::output::GrantFlowEntitlementsOutput) with field(s):
     ///   - [`entitlements(Option<Vec<Entitlement>>)`](crate::output::GrantFlowEntitlementsOutput::entitlements): The entitlements that were just granted.
     ///   - [`flow_arn(Option<String>)`](crate::output::GrantFlowEntitlementsOutput::flow_arn): The ARN of the flow that these entitlements were granted to.
@@ -204,11 +204,11 @@ where
         fluent_builders::GrantFlowEntitlements::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListEntitlements`](crate::client::fluent_builders::ListEntitlements) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEntitlements::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEntitlements::into_paginator).
     ///
-    /// - Takes [`ListEntitlementsInput`](crate::input::ListEntitlementsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListEntitlementsInput::max_results): The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
-    ///   - [`next_token(Option<String>)`](crate::input::ListEntitlementsInput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEntitlements::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEntitlements::set_max_results): The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEntitlements::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEntitlements::set_next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     /// - On success, responds with [`ListEntitlementsOutput`](crate::output::ListEntitlementsOutput) with field(s):
     ///   - [`entitlements(Option<Vec<ListedEntitlement>>)`](crate::output::ListEntitlementsOutput::entitlements): A list of entitlements that have been granted to you from other AWS accounts.
     ///   - [`next_token(Option<String>)`](crate::output::ListEntitlementsOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
@@ -217,11 +217,11 @@ where
         fluent_builders::ListEntitlements::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFlows`](crate::client::fluent_builders::ListFlows) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFlows::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFlows::into_paginator).
     ///
-    /// - Takes [`ListFlowsInput`](crate::input::ListFlowsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListFlowsInput::max_results): The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
-    ///   - [`next_token(Option<String>)`](crate::input::ListFlowsInput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFlows::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListFlows::set_max_results): The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFlows::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFlows::set_next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
     /// - On success, responds with [`ListFlowsOutput`](crate::output::ListFlowsOutput) with field(s):
     ///   - [`flows(Option<Vec<ListedFlow>>)`](crate::output::ListFlowsOutput::flows): A list of flow summaries.
     ///   - [`next_token(Option<String>)`](crate::output::ListFlowsOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
@@ -230,11 +230,11 @@ where
         fluent_builders::ListFlows::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListOfferings`](crate::client::fluent_builders::ListOfferings) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOfferings::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOfferings::into_paginator).
     ///
-    /// - Takes [`ListOfferingsInput`](crate::input::ListOfferingsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListOfferingsInput::max_results): The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
-    ///   - [`next_token(Option<String>)`](crate::input::ListOfferingsInput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOfferings::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListOfferings::set_max_results): The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     /// - On success, responds with [`ListOfferingsOutput`](crate::output::ListOfferingsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListOfferingsOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     ///   - [`offerings(Option<Vec<Offering>>)`](crate::output::ListOfferingsOutput::offerings): A list of offerings that are available to this account in the current AWS Region.
@@ -243,11 +243,11 @@ where
         fluent_builders::ListOfferings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListReservations`](crate::client::fluent_builders::ListReservations) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReservations::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReservations::into_paginator).
     ///
-    /// - Takes [`ListReservationsInput`](crate::input::ListReservationsInput) with field(s):
-    ///   - [`max_results(i32)`](crate::input::ListReservationsInput::max_results): The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
-    ///   - [`next_token(Option<String>)`](crate::input::ListReservationsInput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReservations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListReservations::set_max_results): The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReservations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReservations::set_next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     /// - On success, responds with [`ListReservationsOutput`](crate::output::ListReservationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListReservationsOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
     ///   - [`reservations(Option<Vec<Reservation>>)`](crate::output::ListReservationsOutput::reservations): A list of all reservations that have been purchased by this account in the current AWS Region.
@@ -257,8 +257,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -267,10 +267,10 @@ where
     }
     /// Constructs a fluent builder for the [`PurchaseOffering`](crate::client::fluent_builders::PurchaseOffering) operation.
     ///
-    /// - Takes [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput) with field(s):
-    ///   - [`offering_arn(Option<String>)`](crate::input::PurchaseOfferingInput::offering_arn): The Amazon Resource Name (ARN) of the offering.
-    ///   - [`reservation_name(Option<String>)`](crate::input::PurchaseOfferingInput::reservation_name): The name that you want to use for the reservation.
-    ///   - [`start(Option<String>)`](crate::input::PurchaseOfferingInput::start): The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
+    /// - The fluent builder is configurable:
+    ///   - [`offering_arn(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::offering_arn) / [`set_offering_arn(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_offering_arn): The Amazon Resource Name (ARN) of the offering.
+    ///   - [`reservation_name(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::reservation_name) / [`set_reservation_name(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_reservation_name): The name that you want to use for the reservation.
+    ///   - [`start(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::start) / [`set_start(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_start): The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
     /// - On success, responds with [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput) with field(s):
     ///   - [`reservation(Option<Reservation>)`](crate::output::PurchaseOfferingOutput::reservation): A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     /// - On failure, responds with [`SdkError<PurchaseOfferingError>`](crate::error::PurchaseOfferingError)
@@ -279,9 +279,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveFlowMediaStream`](crate::client::fluent_builders::RemoveFlowMediaStream) operation.
     ///
-    /// - Takes [`RemoveFlowMediaStreamInput`](crate::input::RemoveFlowMediaStreamInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::RemoveFlowMediaStreamInput::flow_arn): The Amazon Resource Name (ARN) of the flow.
-    ///   - [`media_stream_name(Option<String>)`](crate::input::RemoveFlowMediaStreamInput::media_stream_name): The name of the media stream that you want to remove.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveFlowMediaStream::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::RemoveFlowMediaStream::set_flow_arn): The Amazon Resource Name (ARN) of the flow.
+    ///   - [`media_stream_name(impl Into<String>)`](crate::client::fluent_builders::RemoveFlowMediaStream::media_stream_name) / [`set_media_stream_name(Option<String>)`](crate::client::fluent_builders::RemoveFlowMediaStream::set_media_stream_name): The name of the media stream that you want to remove.
     /// - On success, responds with [`RemoveFlowMediaStreamOutput`](crate::output::RemoveFlowMediaStreamOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::RemoveFlowMediaStreamOutput::flow_arn): The Amazon Resource Name (ARN) of the flow.
     ///   - [`media_stream_name(Option<String>)`](crate::output::RemoveFlowMediaStreamOutput::media_stream_name): The name of the media stream that was removed.
@@ -291,9 +291,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveFlowOutput`](crate::client::fluent_builders::RemoveFlowOutput) operation.
     ///
-    /// - Takes [`RemoveFlowOutputInput`](crate::input::RemoveFlowOutputInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::RemoveFlowOutputInput::flow_arn): The flow that you want to remove an output from.
-    ///   - [`output_arn(Option<String>)`](crate::input::RemoveFlowOutputInput::output_arn): The ARN of the output that you want to remove.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveFlowOutput::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::RemoveFlowOutput::set_flow_arn): The flow that you want to remove an output from.
+    ///   - [`output_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveFlowOutput::output_arn) / [`set_output_arn(Option<String>)`](crate::client::fluent_builders::RemoveFlowOutput::set_output_arn): The ARN of the output that you want to remove.
     /// - On success, responds with [`RemoveFlowOutputOutput`](crate::output::RemoveFlowOutputOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::RemoveFlowOutputOutput::flow_arn): The ARN of the flow that is associated with the output you removed.
     ///   - [`output_arn(Option<String>)`](crate::output::RemoveFlowOutputOutput::output_arn): The ARN of the output that was removed.
@@ -303,9 +303,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveFlowSource`](crate::client::fluent_builders::RemoveFlowSource) operation.
     ///
-    /// - Takes [`RemoveFlowSourceInput`](crate::input::RemoveFlowSourceInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::RemoveFlowSourceInput::flow_arn): The flow that you want to remove a source from.
-    ///   - [`source_arn(Option<String>)`](crate::input::RemoveFlowSourceInput::source_arn): The ARN of the source that you want to remove.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveFlowSource::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::RemoveFlowSource::set_flow_arn): The flow that you want to remove a source from.
+    ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveFlowSource::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::RemoveFlowSource::set_source_arn): The ARN of the source that you want to remove.
     /// - On success, responds with [`RemoveFlowSourceOutput`](crate::output::RemoveFlowSourceOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::RemoveFlowSourceOutput::flow_arn): The ARN of the flow that is associated with the source you removed.
     ///   - [`source_arn(Option<String>)`](crate::output::RemoveFlowSourceOutput::source_arn): The ARN of the source that was removed.
@@ -315,9 +315,9 @@ where
     }
     /// Constructs a fluent builder for the [`RemoveFlowVpcInterface`](crate::client::fluent_builders::RemoveFlowVpcInterface) operation.
     ///
-    /// - Takes [`RemoveFlowVpcInterfaceInput`](crate::input::RemoveFlowVpcInterfaceInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::RemoveFlowVpcInterfaceInput::flow_arn): The flow that you want to remove a VPC interface from.
-    ///   - [`vpc_interface_name(Option<String>)`](crate::input::RemoveFlowVpcInterfaceInput::vpc_interface_name): The name of the VPC interface that you want to remove.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveFlowVpcInterface::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::RemoveFlowVpcInterface::set_flow_arn): The flow that you want to remove a VPC interface from.
+    ///   - [`vpc_interface_name(impl Into<String>)`](crate::client::fluent_builders::RemoveFlowVpcInterface::vpc_interface_name) / [`set_vpc_interface_name(Option<String>)`](crate::client::fluent_builders::RemoveFlowVpcInterface::set_vpc_interface_name): The name of the VPC interface that you want to remove.
     /// - On success, responds with [`RemoveFlowVpcInterfaceOutput`](crate::output::RemoveFlowVpcInterfaceOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::RemoveFlowVpcInterfaceOutput::flow_arn): The ARN of the flow that is associated with the VPC interface you removed.
     ///   - [`non_deleted_network_interface_ids(Option<Vec<String>>)`](crate::output::RemoveFlowVpcInterfaceOutput::non_deleted_network_interface_ids): IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
@@ -328,9 +328,9 @@ where
     }
     /// Constructs a fluent builder for the [`RevokeFlowEntitlement`](crate::client::fluent_builders::RevokeFlowEntitlement) operation.
     ///
-    /// - Takes [`RevokeFlowEntitlementInput`](crate::input::RevokeFlowEntitlementInput) with field(s):
-    ///   - [`entitlement_arn(Option<String>)`](crate::input::RevokeFlowEntitlementInput::entitlement_arn): The ARN of the entitlement that you want to revoke.
-    ///   - [`flow_arn(Option<String>)`](crate::input::RevokeFlowEntitlementInput::flow_arn): The flow that you want to revoke an entitlement from.
+    /// - The fluent builder is configurable:
+    ///   - [`entitlement_arn(impl Into<String>)`](crate::client::fluent_builders::RevokeFlowEntitlement::entitlement_arn) / [`set_entitlement_arn(Option<String>)`](crate::client::fluent_builders::RevokeFlowEntitlement::set_entitlement_arn): The ARN of the entitlement that you want to revoke.
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::RevokeFlowEntitlement::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::RevokeFlowEntitlement::set_flow_arn): The flow that you want to revoke an entitlement from.
     /// - On success, responds with [`RevokeFlowEntitlementOutput`](crate::output::RevokeFlowEntitlementOutput) with field(s):
     ///   - [`entitlement_arn(Option<String>)`](crate::output::RevokeFlowEntitlementOutput::entitlement_arn): The ARN of the entitlement that was revoked.
     ///   - [`flow_arn(Option<String>)`](crate::output::RevokeFlowEntitlementOutput::flow_arn): The ARN of the flow that the entitlement was revoked from.
@@ -340,8 +340,8 @@ where
     }
     /// Constructs a fluent builder for the [`StartFlow`](crate::client::fluent_builders::StartFlow) operation.
     ///
-    /// - Takes [`StartFlowInput`](crate::input::StartFlowInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::StartFlowInput::flow_arn): The ARN of the flow that you want to start.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::StartFlow::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::StartFlow::set_flow_arn): The ARN of the flow that you want to start.
     /// - On success, responds with [`StartFlowOutput`](crate::output::StartFlowOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::StartFlowOutput::flow_arn): The ARN of the flow that you started.
     ///   - [`status(Option<Status>)`](crate::output::StartFlowOutput::status): The status of the flow when the StartFlow process begins.
@@ -351,8 +351,8 @@ where
     }
     /// Constructs a fluent builder for the [`StopFlow`](crate::client::fluent_builders::StopFlow) operation.
     ///
-    /// - Takes [`StopFlowInput`](crate::input::StopFlowInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::StopFlowInput::flow_arn): The ARN of the flow that you want to stop.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::StopFlow::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::StopFlow::set_flow_arn): The ARN of the flow that you want to stop.
     /// - On success, responds with [`StopFlowOutput`](crate::output::StopFlowOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::StopFlowOutput::flow_arn): The ARN of the flow that you stopped.
     ///   - [`status(Option<Status>)`](crate::output::StopFlowOutput::status): The status of the flow when the StopFlow process begins.
@@ -362,9 +362,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -373,9 +373,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): The keys of the tags to be removed.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): The keys of the tags to be removed.
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -384,9 +384,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFlow`](crate::client::fluent_builders::UpdateFlow) operation.
     ///
-    /// - Takes [`UpdateFlowInput`](crate::input::UpdateFlowInput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::input::UpdateFlowInput::flow_arn): The flow that you want to update.
-    ///   - [`source_failover_config(Option<UpdateFailoverConfig>)`](crate::input::UpdateFlowInput::source_failover_config): The settings for source failover.
+    /// - The fluent builder is configurable:
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlow::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlow::set_flow_arn): The flow that you want to update.
+    ///   - [`source_failover_config(UpdateFailoverConfig)`](crate::client::fluent_builders::UpdateFlow::source_failover_config) / [`set_source_failover_config(Option<UpdateFailoverConfig>)`](crate::client::fluent_builders::UpdateFlow::set_source_failover_config): The settings for source failover.
     /// - On success, responds with [`UpdateFlowOutput`](crate::output::UpdateFlowOutput) with field(s):
     ///   - [`flow(Option<Flow>)`](crate::output::UpdateFlowOutput::flow): The settings for a flow, including its source, outputs, and entitlements.
     /// - On failure, responds with [`SdkError<UpdateFlowError>`](crate::error::UpdateFlowError)
@@ -395,13 +395,13 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFlowEntitlement`](crate::client::fluent_builders::UpdateFlowEntitlement) operation.
     ///
-    /// - Takes [`UpdateFlowEntitlementInput`](crate::input::UpdateFlowEntitlementInput) with field(s):
-    ///   - [`description(Option<String>)`](crate::input::UpdateFlowEntitlementInput::description): A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    ///   - [`encryption(Option<UpdateEncryption>)`](crate::input::UpdateFlowEntitlementInput::encryption): The type of encryption that will be used on the output associated with this entitlement.
-    ///   - [`entitlement_arn(Option<String>)`](crate::input::UpdateFlowEntitlementInput::entitlement_arn): The ARN of the entitlement that you want to update.
-    ///   - [`entitlement_status(Option<EntitlementStatus>)`](crate::input::UpdateFlowEntitlementInput::entitlement_status): An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-    ///   - [`flow_arn(Option<String>)`](crate::input::UpdateFlowEntitlementInput::flow_arn): The flow that is associated with the entitlement that you want to update.
-    ///   - [`subscribers(Option<Vec<String>>)`](crate::input::UpdateFlowEntitlementInput::subscribers): The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowEntitlement::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFlowEntitlement::set_description): A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
+    ///   - [`encryption(UpdateEncryption)`](crate::client::fluent_builders::UpdateFlowEntitlement::encryption) / [`set_encryption(Option<UpdateEncryption>)`](crate::client::fluent_builders::UpdateFlowEntitlement::set_encryption): The type of encryption that will be used on the output associated with this entitlement.
+    ///   - [`entitlement_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowEntitlement::entitlement_arn) / [`set_entitlement_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlowEntitlement::set_entitlement_arn): The ARN of the entitlement that you want to update.
+    ///   - [`entitlement_status(EntitlementStatus)`](crate::client::fluent_builders::UpdateFlowEntitlement::entitlement_status) / [`set_entitlement_status(Option<EntitlementStatus>)`](crate::client::fluent_builders::UpdateFlowEntitlement::set_entitlement_status): An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowEntitlement::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlowEntitlement::set_flow_arn): The flow that is associated with the entitlement that you want to update.
+    ///   - [`subscribers(Vec<String>)`](crate::client::fluent_builders::UpdateFlowEntitlement::subscribers) / [`set_subscribers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFlowEntitlement::set_subscribers): The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     /// - On success, responds with [`UpdateFlowEntitlementOutput`](crate::output::UpdateFlowEntitlementOutput) with field(s):
     ///   - [`entitlement(Option<Entitlement>)`](crate::output::UpdateFlowEntitlementOutput::entitlement): The new configuration of the entitlement that you updated.
     ///   - [`flow_arn(Option<String>)`](crate::output::UpdateFlowEntitlementOutput::flow_arn): The ARN of the flow that this entitlement was granted on.
@@ -411,14 +411,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFlowMediaStream`](crate::client::fluent_builders::UpdateFlowMediaStream) operation.
     ///
-    /// - Takes [`UpdateFlowMediaStreamInput`](crate::input::UpdateFlowMediaStreamInput) with field(s):
-    ///   - [`attributes(Option<MediaStreamAttributesRequest>)`](crate::input::UpdateFlowMediaStreamInput::attributes): The attributes that you want to assign to the media stream.
-    ///   - [`clock_rate(i32)`](crate::input::UpdateFlowMediaStreamInput::clock_rate): The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
-    ///   - [`description(Option<String>)`](crate::input::UpdateFlowMediaStreamInput::description): Description
-    ///   - [`flow_arn(Option<String>)`](crate::input::UpdateFlowMediaStreamInput::flow_arn): The Amazon Resource Name (ARN) of the flow.
-    ///   - [`media_stream_name(Option<String>)`](crate::input::UpdateFlowMediaStreamInput::media_stream_name): The name of the media stream that you want to update.
-    ///   - [`media_stream_type(Option<MediaStreamType>)`](crate::input::UpdateFlowMediaStreamInput::media_stream_type): The type of media stream.
-    ///   - [`video_format(Option<String>)`](crate::input::UpdateFlowMediaStreamInput::video_format): The resolution of the video.
+    /// - The fluent builder is configurable:
+    ///   - [`attributes(MediaStreamAttributesRequest)`](crate::client::fluent_builders::UpdateFlowMediaStream::attributes) / [`set_attributes(Option<MediaStreamAttributesRequest>)`](crate::client::fluent_builders::UpdateFlowMediaStream::set_attributes): The attributes that you want to assign to the media stream.
+    ///   - [`clock_rate(i32)`](crate::client::fluent_builders::UpdateFlowMediaStream::clock_rate) / [`set_clock_rate(i32)`](crate::client::fluent_builders::UpdateFlowMediaStream::set_clock_rate): The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowMediaStream::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFlowMediaStream::set_description): Description
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowMediaStream::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlowMediaStream::set_flow_arn): The Amazon Resource Name (ARN) of the flow.
+    ///   - [`media_stream_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowMediaStream::media_stream_name) / [`set_media_stream_name(Option<String>)`](crate::client::fluent_builders::UpdateFlowMediaStream::set_media_stream_name): The name of the media stream that you want to update.
+    ///   - [`media_stream_type(MediaStreamType)`](crate::client::fluent_builders::UpdateFlowMediaStream::media_stream_type) / [`set_media_stream_type(Option<MediaStreamType>)`](crate::client::fluent_builders::UpdateFlowMediaStream::set_media_stream_type): The type of media stream.
+    ///   - [`video_format(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowMediaStream::video_format) / [`set_video_format(Option<String>)`](crate::client::fluent_builders::UpdateFlowMediaStream::set_video_format): The resolution of the video.
     /// - On success, responds with [`UpdateFlowMediaStreamOutput`](crate::output::UpdateFlowMediaStreamOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::UpdateFlowMediaStreamOutput::flow_arn): The ARN of the flow that is associated with the media stream that you updated.
     ///   - [`media_stream(Option<MediaStream>)`](crate::output::UpdateFlowMediaStreamOutput::media_stream): The media stream that you updated.
@@ -428,24 +428,24 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFlowOutput`](crate::client::fluent_builders::UpdateFlowOutput) operation.
     ///
-    /// - Takes [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput) with field(s):
-    ///   - [`cidr_allow_list(Option<Vec<String>>)`](crate::input::UpdateFlowOutputInput::cidr_allow_list): The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    ///   - [`description(Option<String>)`](crate::input::UpdateFlowOutputInput::description): A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
-    ///   - [`destination(Option<String>)`](crate::input::UpdateFlowOutputInput::destination): The IP address where you want to send the output.
-    ///   - [`encryption(Option<UpdateEncryption>)`](crate::input::UpdateFlowOutputInput::encryption): The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    ///   - [`flow_arn(Option<String>)`](crate::input::UpdateFlowOutputInput::flow_arn): The flow that is associated with the output that you want to update.
-    ///   - [`max_latency(i32)`](crate::input::UpdateFlowOutputInput::max_latency): The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
-    ///   - [`media_stream_output_configurations(Option<Vec<MediaStreamOutputConfigurationRequest>>)`](crate::input::UpdateFlowOutputInput::media_stream_output_configurations): The media streams that are associated with the output, and the parameters for those associations.
-    ///   - [`min_latency(i32)`](crate::input::UpdateFlowOutputInput::min_latency): The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-    ///   - [`output_arn(Option<String>)`](crate::input::UpdateFlowOutputInput::output_arn): The ARN of the output that you want to update.
-    ///   - [`port(i32)`](crate::input::UpdateFlowOutputInput::port): The port to use when content is distributed to this output.
-    ///   - [`protocol(Option<Protocol>)`](crate::input::UpdateFlowOutputInput::protocol): The protocol to use for the output.
-    ///   - [`remote_id(Option<String>)`](crate::input::UpdateFlowOutputInput::remote_id): The remote ID for the Zixi-pull stream.
-    ///   - [`sender_control_port(i32)`](crate::input::UpdateFlowOutputInput::sender_control_port): The port that the flow uses to send outbound requests to initiate connection with the sender.
-    ///   - [`sender_ip_address(Option<String>)`](crate::input::UpdateFlowOutputInput::sender_ip_address): The IP address that the flow communicates with to initiate connection with the sender.
-    ///   - [`smoothing_latency(i32)`](crate::input::UpdateFlowOutputInput::smoothing_latency): The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
-    ///   - [`stream_id(Option<String>)`](crate::input::UpdateFlowOutputInput::stream_id): The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    ///   - [`vpc_interface_attachment(Option<VpcInterfaceAttachment>)`](crate::input::UpdateFlowOutputInput::vpc_interface_attachment): The name of the VPC interface attachment to use for this output.
+    /// - The fluent builder is configurable:
+    ///   - [`cidr_allow_list(Vec<String>)`](crate::client::fluent_builders::UpdateFlowOutput::cidr_allow_list) / [`set_cidr_allow_list(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFlowOutput::set_cidr_allow_list): The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowOutput::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFlowOutput::set_description): A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    ///   - [`destination(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowOutput::destination) / [`set_destination(Option<String>)`](crate::client::fluent_builders::UpdateFlowOutput::set_destination): The IP address where you want to send the output.
+    ///   - [`encryption(UpdateEncryption)`](crate::client::fluent_builders::UpdateFlowOutput::encryption) / [`set_encryption(Option<UpdateEncryption>)`](crate::client::fluent_builders::UpdateFlowOutput::set_encryption): The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowOutput::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlowOutput::set_flow_arn): The flow that is associated with the output that you want to update.
+    ///   - [`max_latency(i32)`](crate::client::fluent_builders::UpdateFlowOutput::max_latency) / [`set_max_latency(i32)`](crate::client::fluent_builders::UpdateFlowOutput::set_max_latency): The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    ///   - [`media_stream_output_configurations(Vec<MediaStreamOutputConfigurationRequest>)`](crate::client::fluent_builders::UpdateFlowOutput::media_stream_output_configurations) / [`set_media_stream_output_configurations(Option<Vec<MediaStreamOutputConfigurationRequest>>)`](crate::client::fluent_builders::UpdateFlowOutput::set_media_stream_output_configurations): The media streams that are associated with the output, and the parameters for those associations.
+    ///   - [`min_latency(i32)`](crate::client::fluent_builders::UpdateFlowOutput::min_latency) / [`set_min_latency(i32)`](crate::client::fluent_builders::UpdateFlowOutput::set_min_latency): The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    ///   - [`output_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowOutput::output_arn) / [`set_output_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlowOutput::set_output_arn): The ARN of the output that you want to update.
+    ///   - [`port(i32)`](crate::client::fluent_builders::UpdateFlowOutput::port) / [`set_port(i32)`](crate::client::fluent_builders::UpdateFlowOutput::set_port): The port to use when content is distributed to this output.
+    ///   - [`protocol(Protocol)`](crate::client::fluent_builders::UpdateFlowOutput::protocol) / [`set_protocol(Option<Protocol>)`](crate::client::fluent_builders::UpdateFlowOutput::set_protocol): The protocol to use for the output.
+    ///   - [`remote_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowOutput::remote_id) / [`set_remote_id(Option<String>)`](crate::client::fluent_builders::UpdateFlowOutput::set_remote_id): The remote ID for the Zixi-pull stream.
+    ///   - [`sender_control_port(i32)`](crate::client::fluent_builders::UpdateFlowOutput::sender_control_port) / [`set_sender_control_port(i32)`](crate::client::fluent_builders::UpdateFlowOutput::set_sender_control_port): The port that the flow uses to send outbound requests to initiate connection with the sender.
+    ///   - [`sender_ip_address(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowOutput::sender_ip_address) / [`set_sender_ip_address(Option<String>)`](crate::client::fluent_builders::UpdateFlowOutput::set_sender_ip_address): The IP address that the flow communicates with to initiate connection with the sender.
+    ///   - [`smoothing_latency(i32)`](crate::client::fluent_builders::UpdateFlowOutput::smoothing_latency) / [`set_smoothing_latency(i32)`](crate::client::fluent_builders::UpdateFlowOutput::set_smoothing_latency): The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowOutput::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::UpdateFlowOutput::set_stream_id): The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    ///   - [`vpc_interface_attachment(VpcInterfaceAttachment)`](crate::client::fluent_builders::UpdateFlowOutput::vpc_interface_attachment) / [`set_vpc_interface_attachment(Option<VpcInterfaceAttachment>)`](crate::client::fluent_builders::UpdateFlowOutput::set_vpc_interface_attachment): The name of the VPC interface attachment to use for this output.
     /// - On success, responds with [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::UpdateFlowOutputOutput::flow_arn): The ARN of the flow that is associated with the updated output.
     ///   - [`output(Option<Output>)`](crate::output::UpdateFlowOutputOutput::output): The new settings of the output that you updated.
@@ -455,24 +455,24 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFlowSource`](crate::client::fluent_builders::UpdateFlowSource) operation.
     ///
-    /// - Takes [`UpdateFlowSourceInput`](crate::input::UpdateFlowSourceInput) with field(s):
-    ///   - [`decryption(Option<UpdateEncryption>)`](crate::input::UpdateFlowSourceInput::decryption): The type of encryption used on the content ingested from this source.
-    ///   - [`description(Option<String>)`](crate::input::UpdateFlowSourceInput::description): A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    ///   - [`entitlement_arn(Option<String>)`](crate::input::UpdateFlowSourceInput::entitlement_arn): The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-    ///   - [`flow_arn(Option<String>)`](crate::input::UpdateFlowSourceInput::flow_arn): The flow that is associated with the source that you want to update.
-    ///   - [`ingest_port(i32)`](crate::input::UpdateFlowSourceInput::ingest_port): The port that the flow will be listening on for incoming content.
-    ///   - [`max_bitrate(i32)`](crate::input::UpdateFlowSourceInput::max_bitrate): The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
-    ///   - [`max_latency(i32)`](crate::input::UpdateFlowSourceInput::max_latency): The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
-    ///   - [`max_sync_buffer(i32)`](crate::input::UpdateFlowSourceInput::max_sync_buffer): The size of the buffer (in milliseconds) to use to sync incoming source data.
-    ///   - [`media_stream_source_configurations(Option<Vec<MediaStreamSourceConfigurationRequest>>)`](crate::input::UpdateFlowSourceInput::media_stream_source_configurations): The media streams that are associated with the source, and the parameters for those associations.
-    ///   - [`min_latency(i32)`](crate::input::UpdateFlowSourceInput::min_latency): The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-    ///   - [`protocol(Option<Protocol>)`](crate::input::UpdateFlowSourceInput::protocol): The protocol that is used by the source.
-    ///   - [`sender_control_port(i32)`](crate::input::UpdateFlowSourceInput::sender_control_port): The port that the flow uses to send outbound requests to initiate connection with the sender.
-    ///   - [`sender_ip_address(Option<String>)`](crate::input::UpdateFlowSourceInput::sender_ip_address): The IP address that the flow communicates with to initiate connection with the sender.
-    ///   - [`source_arn(Option<String>)`](crate::input::UpdateFlowSourceInput::source_arn): The ARN of the source that you want to update.
-    ///   - [`stream_id(Option<String>)`](crate::input::UpdateFlowSourceInput::stream_id): The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    ///   - [`vpc_interface_name(Option<String>)`](crate::input::UpdateFlowSourceInput::vpc_interface_name): The name of the VPC interface to use for this source.
-    ///   - [`whitelist_cidr(Option<String>)`](crate::input::UpdateFlowSourceInput::whitelist_cidr): The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// - The fluent builder is configurable:
+    ///   - [`decryption(UpdateEncryption)`](crate::client::fluent_builders::UpdateFlowSource::decryption) / [`set_decryption(Option<UpdateEncryption>)`](crate::client::fluent_builders::UpdateFlowSource::set_decryption): The type of encryption used on the content ingested from this source.
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_description): A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    ///   - [`entitlement_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::entitlement_arn) / [`set_entitlement_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_entitlement_arn): The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
+    ///   - [`flow_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::flow_arn) / [`set_flow_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_flow_arn): The flow that is associated with the source that you want to update.
+    ///   - [`ingest_port(i32)`](crate::client::fluent_builders::UpdateFlowSource::ingest_port) / [`set_ingest_port(i32)`](crate::client::fluent_builders::UpdateFlowSource::set_ingest_port): The port that the flow will be listening on for incoming content.
+    ///   - [`max_bitrate(i32)`](crate::client::fluent_builders::UpdateFlowSource::max_bitrate) / [`set_max_bitrate(i32)`](crate::client::fluent_builders::UpdateFlowSource::set_max_bitrate): The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    ///   - [`max_latency(i32)`](crate::client::fluent_builders::UpdateFlowSource::max_latency) / [`set_max_latency(i32)`](crate::client::fluent_builders::UpdateFlowSource::set_max_latency): The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    ///   - [`max_sync_buffer(i32)`](crate::client::fluent_builders::UpdateFlowSource::max_sync_buffer) / [`set_max_sync_buffer(i32)`](crate::client::fluent_builders::UpdateFlowSource::set_max_sync_buffer): The size of the buffer (in milliseconds) to use to sync incoming source data.
+    ///   - [`media_stream_source_configurations(Vec<MediaStreamSourceConfigurationRequest>)`](crate::client::fluent_builders::UpdateFlowSource::media_stream_source_configurations) / [`set_media_stream_source_configurations(Option<Vec<MediaStreamSourceConfigurationRequest>>)`](crate::client::fluent_builders::UpdateFlowSource::set_media_stream_source_configurations): The media streams that are associated with the source, and the parameters for those associations.
+    ///   - [`min_latency(i32)`](crate::client::fluent_builders::UpdateFlowSource::min_latency) / [`set_min_latency(i32)`](crate::client::fluent_builders::UpdateFlowSource::set_min_latency): The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    ///   - [`protocol(Protocol)`](crate::client::fluent_builders::UpdateFlowSource::protocol) / [`set_protocol(Option<Protocol>)`](crate::client::fluent_builders::UpdateFlowSource::set_protocol): The protocol that is used by the source.
+    ///   - [`sender_control_port(i32)`](crate::client::fluent_builders::UpdateFlowSource::sender_control_port) / [`set_sender_control_port(i32)`](crate::client::fluent_builders::UpdateFlowSource::set_sender_control_port): The port that the flow uses to send outbound requests to initiate connection with the sender.
+    ///   - [`sender_ip_address(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::sender_ip_address) / [`set_sender_ip_address(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_sender_ip_address): The IP address that the flow communicates with to initiate connection with the sender.
+    ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_source_arn): The ARN of the source that you want to update.
+    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_stream_id): The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    ///   - [`vpc_interface_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::vpc_interface_name) / [`set_vpc_interface_name(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_vpc_interface_name): The name of the VPC interface to use for this source.
+    ///   - [`whitelist_cidr(impl Into<String>)`](crate::client::fluent_builders::UpdateFlowSource::whitelist_cidr) / [`set_whitelist_cidr(Option<String>)`](crate::client::fluent_builders::UpdateFlowSource::set_whitelist_cidr): The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     /// - On success, responds with [`UpdateFlowSourceOutput`](crate::output::UpdateFlowSourceOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::output::UpdateFlowSourceOutput::flow_arn): The ARN of the flow that you want to update.
     ///   - [`source(Option<Source>)`](crate::output::UpdateFlowSourceOutput::source): The settings for the source of the flow.

@@ -85,9 +85,9 @@ where
 {
     /// Constructs a fluent builder for the [`BatchEvaluateFeature`](crate::client::fluent_builders::BatchEvaluateFeature) operation.
     ///
-    /// - Takes [`BatchEvaluateFeatureInput`](crate::input::BatchEvaluateFeatureInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::BatchEvaluateFeatureInput::project): <p>The name or ARN of the project that contains the feature being evaluated.</p>
-    ///   - [`requests(Option<Vec<EvaluationRequest>>)`](crate::input::BatchEvaluateFeatureInput::requests): <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::BatchEvaluateFeature::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::BatchEvaluateFeature::set_project): <p>The name or ARN of the project that contains the feature being evaluated.</p>
+    ///   - [`requests(Vec<EvaluationRequest>)`](crate::client::fluent_builders::BatchEvaluateFeature::requests) / [`set_requests(Option<Vec<EvaluationRequest>>)`](crate::client::fluent_builders::BatchEvaluateFeature::set_requests): <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
     /// - On success, responds with [`BatchEvaluateFeatureOutput`](crate::output::BatchEvaluateFeatureOutput) with field(s):
     ///   - [`results(Option<Vec<EvaluationResult>>)`](crate::output::BatchEvaluateFeatureOutput::results): <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
     /// - On failure, responds with [`SdkError<BatchEvaluateFeatureError>`](crate::error::BatchEvaluateFeatureError)
@@ -96,16 +96,16 @@ where
     }
     /// Constructs a fluent builder for the [`CreateExperiment`](crate::client::fluent_builders::CreateExperiment) operation.
     ///
-    /// - Takes [`CreateExperimentInput`](crate::input::CreateExperimentInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::CreateExperimentInput::project): <p>The name or ARN of the project that you want to create the new experiment in.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateExperimentInput::name): <p>A name for the new experiment.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateExperimentInput::description): <p>An optional description of the experiment.</p>
-    ///   - [`treatments(Option<Vec<TreatmentConfig>>)`](crate::input::CreateExperimentInput::treatments): <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    ///   - [`metric_goals(Option<Vec<MetricGoalConfig>>)`](crate::input::CreateExperimentInput::metric_goals): <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    ///   - [`randomization_salt(Option<String>)`](crate::input::CreateExperimentInput::randomization_salt): <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    ///   - [`sampling_rate(Option<i64>)`](crate::input::CreateExperimentInput::sampling_rate): <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>  <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
-    ///   - [`online_ab_config(Option<OnlineAbConfig>)`](crate::input::CreateExperimentInput::online_ab_config): <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateExperimentInput::tags): <p>Assigns one or more tags (key-value pairs) to the experiment.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with an experiment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::CreateExperiment::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::CreateExperiment::set_project): <p>The name or ARN of the project that you want to create the new experiment in.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateExperiment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateExperiment::set_name): <p>A name for the new experiment.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExperiment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExperiment::set_description): <p>An optional description of the experiment.</p>
+    ///   - [`treatments(Vec<TreatmentConfig>)`](crate::client::fluent_builders::CreateExperiment::treatments) / [`set_treatments(Option<Vec<TreatmentConfig>>)`](crate::client::fluent_builders::CreateExperiment::set_treatments): <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
+    ///   - [`metric_goals(Vec<MetricGoalConfig>)`](crate::client::fluent_builders::CreateExperiment::metric_goals) / [`set_metric_goals(Option<Vec<MetricGoalConfig>>)`](crate::client::fluent_builders::CreateExperiment::set_metric_goals): <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+    ///   - [`randomization_salt(impl Into<String>)`](crate::client::fluent_builders::CreateExperiment::randomization_salt) / [`set_randomization_salt(Option<String>)`](crate::client::fluent_builders::CreateExperiment::set_randomization_salt): <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
+    ///   - [`sampling_rate(i64)`](crate::client::fluent_builders::CreateExperiment::sampling_rate) / [`set_sampling_rate(Option<i64>)`](crate::client::fluent_builders::CreateExperiment::set_sampling_rate): <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>  <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
+    ///   - [`online_ab_config(OnlineAbConfig)`](crate::client::fluent_builders::CreateExperiment::online_ab_config) / [`set_online_ab_config(Option<OnlineAbConfig>)`](crate::client::fluent_builders::CreateExperiment::set_online_ab_config): <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateExperiment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateExperiment::set_tags): <p>Assigns one or more tags (key-value pairs) to the experiment.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with an experiment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     /// - On success, responds with [`CreateExperimentOutput`](crate::output::CreateExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::output::CreateExperimentOutput::experiment): <p>A structure containing the configuration details of the experiment that you created.</p>
     /// - On failure, responds with [`SdkError<CreateExperimentError>`](crate::error::CreateExperimentError)
@@ -114,15 +114,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateFeature`](crate::client::fluent_builders::CreateFeature) operation.
     ///
-    /// - Takes [`CreateFeatureInput`](crate::input::CreateFeatureInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::CreateFeatureInput::project): <p>The name or ARN of the project that is to contain the new feature.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateFeatureInput::name): <p>The name for the new feature.</p>
-    ///   - [`evaluation_strategy(Option<FeatureEvaluationStrategy>)`](crate::input::CreateFeatureInput::evaluation_strategy): <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateFeatureInput::description): <p>An optional description of the feature.</p>
-    ///   - [`variations(Option<Vec<VariationConfig>>)`](crate::input::CreateFeatureInput::variations): <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    ///   - [`default_variation(Option<String>)`](crate::input::CreateFeatureInput::default_variation): <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>  <p>This variation must also be listed in the <code>variations</code> structure.</p>  <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFeatureInput::tags): <p>Assigns one or more tags (key-value pairs) to the feature.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a feature.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    ///   - [`entity_overrides(Option<HashMap<String, String>>)`](crate::input::CreateFeatureInput::entity_overrides): <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::CreateFeature::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::CreateFeature::set_project): <p>The name or ARN of the project that is to contain the new feature.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFeature::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFeature::set_name): <p>The name for the new feature.</p>
+    ///   - [`evaluation_strategy(FeatureEvaluationStrategy)`](crate::client::fluent_builders::CreateFeature::evaluation_strategy) / [`set_evaluation_strategy(Option<FeatureEvaluationStrategy>)`](crate::client::fluent_builders::CreateFeature::set_evaluation_strategy): <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFeature::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFeature::set_description): <p>An optional description of the feature.</p>
+    ///   - [`variations(Vec<VariationConfig>)`](crate::client::fluent_builders::CreateFeature::variations) / [`set_variations(Option<Vec<VariationConfig>>)`](crate::client::fluent_builders::CreateFeature::set_variations): <p>An array of structures that contain the configuration of the feature's different variations.</p>
+    ///   - [`default_variation(impl Into<String>)`](crate::client::fluent_builders::CreateFeature::default_variation) / [`set_default_variation(Option<String>)`](crate::client::fluent_builders::CreateFeature::set_default_variation): <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>  <p>This variation must also be listed in the <code>variations</code> structure.</p>  <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFeature::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFeature::set_tags): <p>Assigns one or more tags (key-value pairs) to the feature.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a feature.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    ///   - [`entity_overrides(HashMap<String, String>)`](crate::client::fluent_builders::CreateFeature::entity_overrides) / [`set_entity_overrides(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFeature::set_entity_overrides): <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// - On success, responds with [`CreateFeatureOutput`](crate::output::CreateFeatureOutput) with field(s):
     ///   - [`feature(Option<Feature>)`](crate::output::CreateFeatureOutput::feature): <p>A structure that contains information about the new feature.</p>
     /// - On failure, responds with [`SdkError<CreateFeatureError>`](crate::error::CreateFeatureError)
@@ -131,15 +131,15 @@ where
     }
     /// Constructs a fluent builder for the [`CreateLaunch`](crate::client::fluent_builders::CreateLaunch) operation.
     ///
-    /// - Takes [`CreateLaunchInput`](crate::input::CreateLaunchInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::CreateLaunchInput::project): <p>The name or ARN of the project that you want to create the launch in.</p>
-    ///   - [`name(Option<String>)`](crate::input::CreateLaunchInput::name): <p>The name for the new launch.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateLaunchInput::description): <p>An optional description for the launch.</p>
-    ///   - [`scheduled_splits_config(Option<ScheduledSplitsLaunchConfig>)`](crate::input::CreateLaunchInput::scheduled_splits_config): <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    ///   - [`metric_monitors(Option<Vec<MetricMonitorConfig>>)`](crate::input::CreateLaunchInput::metric_monitors): <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    ///   - [`groups(Option<Vec<LaunchGroupConfig>>)`](crate::input::CreateLaunchInput::groups): <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    ///   - [`randomization_salt(Option<String>)`](crate::input::CreateLaunchInput::randomization_salt): <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateLaunchInput::tags): <p>Assigns one or more tags (key-value pairs) to the launch.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a launch.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::CreateLaunch::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::CreateLaunch::set_project): <p>The name or ARN of the project that you want to create the launch in.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateLaunch::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateLaunch::set_name): <p>The name for the new launch.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateLaunch::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateLaunch::set_description): <p>An optional description for the launch.</p>
+    ///   - [`scheduled_splits_config(ScheduledSplitsLaunchConfig)`](crate::client::fluent_builders::CreateLaunch::scheduled_splits_config) / [`set_scheduled_splits_config(Option<ScheduledSplitsLaunchConfig>)`](crate::client::fluent_builders::CreateLaunch::set_scheduled_splits_config): <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
+    ///   - [`metric_monitors(Vec<MetricMonitorConfig>)`](crate::client::fluent_builders::CreateLaunch::metric_monitors) / [`set_metric_monitors(Option<Vec<MetricMonitorConfig>>)`](crate::client::fluent_builders::CreateLaunch::set_metric_monitors): <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+    ///   - [`groups(Vec<LaunchGroupConfig>)`](crate::client::fluent_builders::CreateLaunch::groups) / [`set_groups(Option<Vec<LaunchGroupConfig>>)`](crate::client::fluent_builders::CreateLaunch::set_groups): <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
+    ///   - [`randomization_salt(impl Into<String>)`](crate::client::fluent_builders::CreateLaunch::randomization_salt) / [`set_randomization_salt(Option<String>)`](crate::client::fluent_builders::CreateLaunch::set_randomization_salt): <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLaunch::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLaunch::set_tags): <p>Assigns one or more tags (key-value pairs) to the launch.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a launch.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     /// - On success, responds with [`CreateLaunchOutput`](crate::output::CreateLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::output::CreateLaunchOutput::launch): <p>A structure that contains the configuration of the launch that was created.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchError>`](crate::error::CreateLaunchError)
@@ -148,11 +148,11 @@ where
     }
     /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// - Takes [`CreateProjectInput`](crate::input::CreateProjectInput) with field(s):
-    ///   - [`name(Option<String>)`](crate::input::CreateProjectInput::name): <p>The name for the project.</p>
-    ///   - [`description(Option<String>)`](crate::input::CreateProjectInput::description): <p>An optional description of the project.</p>
-    ///   - [`data_delivery(Option<ProjectDataDeliveryConfig>)`](crate::input::CreateProjectInput::data_delivery): <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateProjectInput::tags): <p>Assigns one or more tags (key-value pairs) to the project.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a project.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_name): <p>The name for the project.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProject::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProject::set_description): <p>An optional description of the project.</p>
+    ///   - [`data_delivery(ProjectDataDeliveryConfig)`](crate::client::fluent_builders::CreateProject::data_delivery) / [`set_data_delivery(Option<ProjectDataDeliveryConfig>)`](crate::client::fluent_builders::CreateProject::set_data_delivery): <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateProject::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateProject::set_tags): <p>Assigns one or more tags (key-value pairs) to the project.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with a project.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::output::CreateProjectOutput::project): <p>A structure that contains information about the created project.</p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
@@ -161,9 +161,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteExperiment`](crate::client::fluent_builders::DeleteExperiment) operation.
     ///
-    /// - Takes [`DeleteExperimentInput`](crate::input::DeleteExperimentInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::DeleteExperimentInput::project): <p>The name or ARN of the project that contains the experiment to delete.</p>
-    ///   - [`experiment(Option<String>)`](crate::input::DeleteExperimentInput::experiment): <p>The name of the experiment to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::DeleteExperiment::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::DeleteExperiment::set_project): <p>The name or ARN of the project that contains the experiment to delete.</p>
+    ///   - [`experiment(impl Into<String>)`](crate::client::fluent_builders::DeleteExperiment::experiment) / [`set_experiment(Option<String>)`](crate::client::fluent_builders::DeleteExperiment::set_experiment): <p>The name of the experiment to delete.</p>
     /// - On success, responds with [`DeleteExperimentOutput`](crate::output::DeleteExperimentOutput)
 
     /// - On failure, responds with [`SdkError<DeleteExperimentError>`](crate::error::DeleteExperimentError)
@@ -172,9 +172,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteFeature`](crate::client::fluent_builders::DeleteFeature) operation.
     ///
-    /// - Takes [`DeleteFeatureInput`](crate::input::DeleteFeatureInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::DeleteFeatureInput::project): <p>The name or ARN of the project that contains the feature to delete.</p>
-    ///   - [`feature(Option<String>)`](crate::input::DeleteFeatureInput::feature): <p>The name of the feature to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::DeleteFeature::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::DeleteFeature::set_project): <p>The name or ARN of the project that contains the feature to delete.</p>
+    ///   - [`feature(impl Into<String>)`](crate::client::fluent_builders::DeleteFeature::feature) / [`set_feature(Option<String>)`](crate::client::fluent_builders::DeleteFeature::set_feature): <p>The name of the feature to delete.</p>
     /// - On success, responds with [`DeleteFeatureOutput`](crate::output::DeleteFeatureOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFeatureError>`](crate::error::DeleteFeatureError)
@@ -183,9 +183,9 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteLaunch`](crate::client::fluent_builders::DeleteLaunch) operation.
     ///
-    /// - Takes [`DeleteLaunchInput`](crate::input::DeleteLaunchInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::DeleteLaunchInput::project): <p>The name or ARN of the project that contains the launch to delete.</p>
-    ///   - [`launch(Option<String>)`](crate::input::DeleteLaunchInput::launch): <p>The name of the launch to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunch::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::DeleteLaunch::set_project): <p>The name or ARN of the project that contains the launch to delete.</p>
+    ///   - [`launch(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunch::launch) / [`set_launch(Option<String>)`](crate::client::fluent_builders::DeleteLaunch::set_launch): <p>The name of the launch to delete.</p>
     /// - On success, responds with [`DeleteLaunchOutput`](crate::output::DeleteLaunchOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLaunchError>`](crate::error::DeleteLaunchError)
@@ -194,8 +194,8 @@ where
     }
     /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// - Takes [`DeleteProjectInput`](crate::input::DeleteProjectInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::DeleteProjectInput::project): <p>The name or ARN of the project to delete.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::DeleteProject::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::DeleteProject::set_project): <p>The name or ARN of the project to delete.</p>
     /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
 
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
@@ -204,11 +204,11 @@ where
     }
     /// Constructs a fluent builder for the [`EvaluateFeature`](crate::client::fluent_builders::EvaluateFeature) operation.
     ///
-    /// - Takes [`EvaluateFeatureInput`](crate::input::EvaluateFeatureInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::EvaluateFeatureInput::project): <p>The name or ARN of the project that contains this feature.</p>
-    ///   - [`feature(Option<String>)`](crate::input::EvaluateFeatureInput::feature): <p>The name of the feature being evaluated.</p>
-    ///   - [`entity_id(Option<String>)`](crate::input::EvaluateFeatureInput::entity_id): <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    ///   - [`evaluation_context(Option<String>)`](crate::input::EvaluateFeatureInput::evaluation_context): <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::EvaluateFeature::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::EvaluateFeature::set_project): <p>The name or ARN of the project that contains this feature.</p>
+    ///   - [`feature(impl Into<String>)`](crate::client::fluent_builders::EvaluateFeature::feature) / [`set_feature(Option<String>)`](crate::client::fluent_builders::EvaluateFeature::set_feature): <p>The name of the feature being evaluated.</p>
+    ///   - [`entity_id(impl Into<String>)`](crate::client::fluent_builders::EvaluateFeature::entity_id) / [`set_entity_id(Option<String>)`](crate::client::fluent_builders::EvaluateFeature::set_entity_id): <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
+    ///   - [`evaluation_context(impl Into<String>)`](crate::client::fluent_builders::EvaluateFeature::evaluation_context) / [`set_evaluation_context(Option<String>)`](crate::client::fluent_builders::EvaluateFeature::set_evaluation_context): <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
     /// - On success, responds with [`EvaluateFeatureOutput`](crate::output::EvaluateFeatureOutput) with field(s):
     ///   - [`variation(Option<String>)`](crate::output::EvaluateFeatureOutput::variation): <p>The name of the variation that was served to the user session.</p>
     ///   - [`value(Option<VariableValue>)`](crate::output::EvaluateFeatureOutput::value): <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
@@ -220,9 +220,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetExperiment`](crate::client::fluent_builders::GetExperiment) operation.
     ///
-    /// - Takes [`GetExperimentInput`](crate::input::GetExperimentInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::GetExperimentInput::project): <p>The name or ARN of the project that contains the experiment.</p>
-    ///   - [`experiment(Option<String>)`](crate::input::GetExperimentInput::experiment): <p>The name of the experiment that you want to see the details of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::GetExperiment::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::GetExperiment::set_project): <p>The name or ARN of the project that contains the experiment.</p>
+    ///   - [`experiment(impl Into<String>)`](crate::client::fluent_builders::GetExperiment::experiment) / [`set_experiment(Option<String>)`](crate::client::fluent_builders::GetExperiment::set_experiment): <p>The name of the experiment that you want to see the details of.</p>
     /// - On success, responds with [`GetExperimentOutput`](crate::output::GetExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::output::GetExperimentOutput::experiment): <p>A structure containing the configuration details of the experiment.</p>
     /// - On failure, responds with [`SdkError<GetExperimentError>`](crate::error::GetExperimentError)
@@ -231,17 +231,17 @@ where
     }
     /// Constructs a fluent builder for the [`GetExperimentResults`](crate::client::fluent_builders::GetExperimentResults) operation.
     ///
-    /// - Takes [`GetExperimentResultsInput`](crate::input::GetExperimentResultsInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::GetExperimentResultsInput::project): <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
-    ///   - [`experiment(Option<String>)`](crate::input::GetExperimentResultsInput::experiment): <p>The name of the experiment to retrieve the results of.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::input::GetExperimentResultsInput::start_time): <p>The date and time that the experiment started.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::input::GetExperimentResultsInput::end_time): <p>The date and time that the experiment ended, if it is completed.</p>
-    ///   - [`metric_names(Option<Vec<String>>)`](crate::input::GetExperimentResultsInput::metric_names): <p>The names of the experiment metrics that you want to see the results of.</p>
-    ///   - [`treatment_names(Option<Vec<String>>)`](crate::input::GetExperimentResultsInput::treatment_names): <p>The names of the experiment treatments that you want to see the results for.</p>
-    ///   - [`base_stat(Option<ExperimentBaseStat>)`](crate::input::GetExperimentResultsInput::base_stat): <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
-    ///   - [`result_stats(Option<Vec<ExperimentResultRequestType>>)`](crate::input::GetExperimentResultsInput::result_stats): <p>The statistics that you want to see in the returned results.</p>  <ul>   <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>   <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>   <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>   <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>  </ul>
-    ///   - [`report_names(Option<Vec<ExperimentReportName>>)`](crate::input::GetExperimentResultsInput::report_names): <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    ///   - [`period(i64)`](crate::input::GetExperimentResultsInput::period): <p>In seconds, the amount of time to aggregate results together. </p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::GetExperimentResults::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::GetExperimentResults::set_project): <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
+    ///   - [`experiment(impl Into<String>)`](crate::client::fluent_builders::GetExperimentResults::experiment) / [`set_experiment(Option<String>)`](crate::client::fluent_builders::GetExperimentResults::set_experiment): <p>The name of the experiment to retrieve the results of.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetExperimentResults::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetExperimentResults::set_start_time): <p>The date and time that the experiment started.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetExperimentResults::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetExperimentResults::set_end_time): <p>The date and time that the experiment ended, if it is completed.</p>
+    ///   - [`metric_names(Vec<String>)`](crate::client::fluent_builders::GetExperimentResults::metric_names) / [`set_metric_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetExperimentResults::set_metric_names): <p>The names of the experiment metrics that you want to see the results of.</p>
+    ///   - [`treatment_names(Vec<String>)`](crate::client::fluent_builders::GetExperimentResults::treatment_names) / [`set_treatment_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetExperimentResults::set_treatment_names): <p>The names of the experiment treatments that you want to see the results for.</p>
+    ///   - [`base_stat(ExperimentBaseStat)`](crate::client::fluent_builders::GetExperimentResults::base_stat) / [`set_base_stat(Option<ExperimentBaseStat>)`](crate::client::fluent_builders::GetExperimentResults::set_base_stat): <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
+    ///   - [`result_stats(Vec<ExperimentResultRequestType>)`](crate::client::fluent_builders::GetExperimentResults::result_stats) / [`set_result_stats(Option<Vec<ExperimentResultRequestType>>)`](crate::client::fluent_builders::GetExperimentResults::set_result_stats): <p>The statistics that you want to see in the returned results.</p>  <ul>   <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>   <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>   <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>   <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>  </ul>
+    ///   - [`report_names(Vec<ExperimentReportName>)`](crate::client::fluent_builders::GetExperimentResults::report_names) / [`set_report_names(Option<Vec<ExperimentReportName>>)`](crate::client::fluent_builders::GetExperimentResults::set_report_names): <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
+    ///   - [`period(i64)`](crate::client::fluent_builders::GetExperimentResults::period) / [`set_period(i64)`](crate::client::fluent_builders::GetExperimentResults::set_period): <p>In seconds, the amount of time to aggregate results together. </p>
     /// - On success, responds with [`GetExperimentResultsOutput`](crate::output::GetExperimentResultsOutput) with field(s):
     ///   - [`results_data(Option<Vec<ExperimentResultsData>>)`](crate::output::GetExperimentResultsOutput::results_data): <p>An array of structures that include experiment results including metric names and values. </p>
     ///   - [`reports(Option<Vec<ExperimentReport>>)`](crate::output::GetExperimentResultsOutput::reports): <p>An array of structures that include the reports that you requested.</p>
@@ -252,9 +252,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetFeature`](crate::client::fluent_builders::GetFeature) operation.
     ///
-    /// - Takes [`GetFeatureInput`](crate::input::GetFeatureInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::GetFeatureInput::project): <p>The name or ARN of the project that contains the feature.</p>
-    ///   - [`feature(Option<String>)`](crate::input::GetFeatureInput::feature): <p>The name of the feature that you want to retrieve information for.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::GetFeature::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::GetFeature::set_project): <p>The name or ARN of the project that contains the feature.</p>
+    ///   - [`feature(impl Into<String>)`](crate::client::fluent_builders::GetFeature::feature) / [`set_feature(Option<String>)`](crate::client::fluent_builders::GetFeature::set_feature): <p>The name of the feature that you want to retrieve information for.</p>
     /// - On success, responds with [`GetFeatureOutput`](crate::output::GetFeatureOutput) with field(s):
     ///   - [`feature(Option<Feature>)`](crate::output::GetFeatureOutput::feature): <p>A structure containing the configuration details of the feature.</p>
     /// - On failure, responds with [`SdkError<GetFeatureError>`](crate::error::GetFeatureError)
@@ -263,9 +263,9 @@ where
     }
     /// Constructs a fluent builder for the [`GetLaunch`](crate::client::fluent_builders::GetLaunch) operation.
     ///
-    /// - Takes [`GetLaunchInput`](crate::input::GetLaunchInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::GetLaunchInput::project): <p>The name or ARN of the project that contains the launch.</p>
-    ///   - [`launch(Option<String>)`](crate::input::GetLaunchInput::launch): <p>The name of the launch that you want to see the details of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::GetLaunch::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::GetLaunch::set_project): <p>The name or ARN of the project that contains the launch.</p>
+    ///   - [`launch(impl Into<String>)`](crate::client::fluent_builders::GetLaunch::launch) / [`set_launch(Option<String>)`](crate::client::fluent_builders::GetLaunch::set_launch): <p>The name of the launch that you want to see the details of.</p>
     /// - On success, responds with [`GetLaunchOutput`](crate::output::GetLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::output::GetLaunchOutput::launch): <p>A structure containing the configuration details of the launch.</p>
     /// - On failure, responds with [`SdkError<GetLaunchError>`](crate::error::GetLaunchError)
@@ -274,8 +274,8 @@ where
     }
     /// Constructs a fluent builder for the [`GetProject`](crate::client::fluent_builders::GetProject) operation.
     ///
-    /// - Takes [`GetProjectInput`](crate::input::GetProjectInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::GetProjectInput::project): <p>The name or ARN of the project that you want to see the details of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::GetProject::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::GetProject::set_project): <p>The name or ARN of the project that you want to see the details of.</p>
     /// - On success, responds with [`GetProjectOutput`](crate::output::GetProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::output::GetProjectOutput::project): <p>A structure containing the configuration details of the project.</p>
     /// - On failure, responds with [`SdkError<GetProjectError>`](crate::error::GetProjectError)
@@ -283,12 +283,12 @@ where
         fluent_builders::GetProject::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListExperiments`](crate::client::fluent_builders::ListExperiments) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExperiments::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExperiments::into_paginator).
     ///
-    /// - Takes [`ListExperimentsInput`](crate::input::ListExperimentsInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::ListExperimentsInput::project): <p>The name or ARN of the project to return the experiment list from.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListExperimentsInput::max_results): <p>The maximum number of results to include in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListExperimentsInput::next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::ListExperiments::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::ListExperiments::set_project): <p>The name or ARN of the project to return the experiment list from.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExperiments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExperiments::set_max_results): <p>The maximum number of results to include in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExperiments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExperiments::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
     /// - On success, responds with [`ListExperimentsOutput`](crate::output::ListExperimentsOutput) with field(s):
     ///   - [`experiments(Option<Vec<Experiment>>)`](crate::output::ListExperimentsOutput::experiments): <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListExperimentsOutput::next_token): <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>
@@ -297,12 +297,12 @@ where
         fluent_builders::ListExperiments::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListFeatures`](crate::client::fluent_builders::ListFeatures) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFeatures::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFeatures::into_paginator).
     ///
-    /// - Takes [`ListFeaturesInput`](crate::input::ListFeaturesInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::ListFeaturesInput::project): <p>The name or ARN of the project to return the feature list from.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListFeaturesInput::max_results): <p>The maximum number of results to include in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListFeaturesInput::next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::ListFeatures::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::ListFeatures::set_project): <p>The name or ARN of the project to return the feature list from.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFeatures::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFeatures::set_max_results): <p>The maximum number of results to include in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFeatures::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFeatures::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
     /// - On success, responds with [`ListFeaturesOutput`](crate::output::ListFeaturesOutput) with field(s):
     ///   - [`features(Option<Vec<FeatureSummary>>)`](crate::output::ListFeaturesOutput::features): <p>An array of structures that contain the configuration details of the features in the specified project.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFeaturesOutput::next_token): <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
@@ -311,12 +311,12 @@ where
         fluent_builders::ListFeatures::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListLaunches`](crate::client::fluent_builders::ListLaunches) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLaunches::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLaunches::into_paginator).
     ///
-    /// - Takes [`ListLaunchesInput`](crate::input::ListLaunchesInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::ListLaunchesInput::project): <p>The name or ARN of the project to return the launch list from.</p>
-    ///   - [`max_results(Option<i32>)`](crate::input::ListLaunchesInput::max_results): <p>The maximum number of results to include in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListLaunchesInput::next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::ListLaunches::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::ListLaunches::set_project): <p>The name or ARN of the project to return the launch list from.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunches::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLaunches::set_max_results): <p>The maximum number of results to include in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunches::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunches::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
     /// - On success, responds with [`ListLaunchesOutput`](crate::output::ListLaunchesOutput) with field(s):
     ///   - [`launches(Option<Vec<Launch>>)`](crate::output::ListLaunchesOutput::launches): <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListLaunchesOutput::next_token): <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
@@ -325,11 +325,11 @@ where
         fluent_builders::ListLaunches::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     ///
-    /// - Takes [`ListProjectsInput`](crate::input::ListProjectsInput) with field(s):
-    ///   - [`max_results(Option<i32>)`](crate::input::ListProjectsInput::max_results): <p>The maximum number of results to include in the response.</p>
-    ///   - [`next_token(Option<String>)`](crate::input::ListProjectsInput::next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProjects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProjects::set_max_results): <p>The maximum number of results to include in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProjects::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
     /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
     ///   - [`projects(Option<Vec<ProjectSummary>>)`](crate::output::ListProjectsOutput::projects): <p>An array of structures that contain the configuration details of the projects in the Region.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>
@@ -339,8 +339,8 @@ where
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource that you want to see the tags of.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource that you want to see the tags of.</p>
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tag keys and values associated with the resource you specified.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
@@ -349,9 +349,9 @@ where
     }
     /// Constructs a fluent builder for the [`PutProjectEvents`](crate::client::fluent_builders::PutProjectEvents) operation.
     ///
-    /// - Takes [`PutProjectEventsInput`](crate::input::PutProjectEventsInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::PutProjectEventsInput::project): <p>The name or ARN of the project to write the events to.</p>
-    ///   - [`events(Option<Vec<Event>>)`](crate::input::PutProjectEventsInput::events): <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::PutProjectEvents::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::PutProjectEvents::set_project): <p>The name or ARN of the project to write the events to.</p>
+    ///   - [`events(Vec<Event>)`](crate::client::fluent_builders::PutProjectEvents::events) / [`set_events(Option<Vec<Event>>)`](crate::client::fluent_builders::PutProjectEvents::set_events): <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
     /// - On success, responds with [`PutProjectEventsOutput`](crate::output::PutProjectEventsOutput) with field(s):
     ///   - [`failed_event_count(Option<i32>)`](crate::output::PutProjectEventsOutput::failed_event_count): <p>The number of events in the operation that could not be used by Evidently.</p>
     ///   - [`event_results(Option<Vec<PutProjectEventsResultEntry>>)`](crate::output::PutProjectEventsOutput::event_results): <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
@@ -361,10 +361,10 @@ where
     }
     /// Constructs a fluent builder for the [`StartExperiment`](crate::client::fluent_builders::StartExperiment) operation.
     ///
-    /// - Takes [`StartExperimentInput`](crate::input::StartExperimentInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::StartExperimentInput::project): <p>The name or ARN of the project that contains the experiment to start.</p>
-    ///   - [`experiment(Option<String>)`](crate::input::StartExperimentInput::experiment): <p>The name of the experiment to start.</p>
-    ///   - [`analysis_complete_time(Option<DateTime>)`](crate::input::StartExperimentInput::analysis_complete_time): <p>The date and time to end the experiment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::StartExperiment::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::StartExperiment::set_project): <p>The name or ARN of the project that contains the experiment to start.</p>
+    ///   - [`experiment(impl Into<String>)`](crate::client::fluent_builders::StartExperiment::experiment) / [`set_experiment(Option<String>)`](crate::client::fluent_builders::StartExperiment::set_experiment): <p>The name of the experiment to start.</p>
+    ///   - [`analysis_complete_time(DateTime)`](crate::client::fluent_builders::StartExperiment::analysis_complete_time) / [`set_analysis_complete_time(Option<DateTime>)`](crate::client::fluent_builders::StartExperiment::set_analysis_complete_time): <p>The date and time to end the experiment.</p>
     /// - On success, responds with [`StartExperimentOutput`](crate::output::StartExperimentOutput) with field(s):
     ///   - [`started_time(Option<DateTime>)`](crate::output::StartExperimentOutput::started_time): <p>A timestamp that indicates when the experiment started.</p>
     /// - On failure, responds with [`SdkError<StartExperimentError>`](crate::error::StartExperimentError)
@@ -373,9 +373,9 @@ where
     }
     /// Constructs a fluent builder for the [`StartLaunch`](crate::client::fluent_builders::StartLaunch) operation.
     ///
-    /// - Takes [`StartLaunchInput`](crate::input::StartLaunchInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::StartLaunchInput::project): <p>The name or ARN of the project that contains the launch to start.</p>
-    ///   - [`launch(Option<String>)`](crate::input::StartLaunchInput::launch): <p>The name of the launch to start.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::StartLaunch::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::StartLaunch::set_project): <p>The name or ARN of the project that contains the launch to start.</p>
+    ///   - [`launch(impl Into<String>)`](crate::client::fluent_builders::StartLaunch::launch) / [`set_launch(Option<String>)`](crate::client::fluent_builders::StartLaunch::set_launch): <p>The name of the launch to start.</p>
     /// - On success, responds with [`StartLaunchOutput`](crate::output::StartLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::output::StartLaunchOutput::launch): <p>A structure that contains information about the launch that was started.</p>
     /// - On failure, responds with [`SdkError<StartLaunchError>`](crate::error::StartLaunchError)
@@ -384,11 +384,11 @@ where
     }
     /// Constructs a fluent builder for the [`StopExperiment`](crate::client::fluent_builders::StopExperiment) operation.
     ///
-    /// - Takes [`StopExperimentInput`](crate::input::StopExperimentInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::StopExperimentInput::project): <p>The name or ARN of the project that contains the experiment to stop.</p>
-    ///   - [`experiment(Option<String>)`](crate::input::StopExperimentInput::experiment): <p>The name of the experiment to stop.</p>
-    ///   - [`desired_state(Option<ExperimentStopDesiredState>)`](crate::input::StopExperimentInput::desired_state): <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    ///   - [`reason(Option<String>)`](crate::input::StopExperimentInput::reason): <p>A string that describes why you are stopping the experiment.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::StopExperiment::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::StopExperiment::set_project): <p>The name or ARN of the project that contains the experiment to stop.</p>
+    ///   - [`experiment(impl Into<String>)`](crate::client::fluent_builders::StopExperiment::experiment) / [`set_experiment(Option<String>)`](crate::client::fluent_builders::StopExperiment::set_experiment): <p>The name of the experiment to stop.</p>
+    ///   - [`desired_state(ExperimentStopDesiredState)`](crate::client::fluent_builders::StopExperiment::desired_state) / [`set_desired_state(Option<ExperimentStopDesiredState>)`](crate::client::fluent_builders::StopExperiment::set_desired_state): <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::StopExperiment::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::StopExperiment::set_reason): <p>A string that describes why you are stopping the experiment.</p>
     /// - On success, responds with [`StopExperimentOutput`](crate::output::StopExperimentOutput) with field(s):
     ///   - [`ended_time(Option<DateTime>)`](crate::output::StopExperimentOutput::ended_time): <p>The date and time that the experiment stopped.</p>
     /// - On failure, responds with [`SdkError<StopExperimentError>`](crate::error::StopExperimentError)
@@ -397,11 +397,11 @@ where
     }
     /// Constructs a fluent builder for the [`StopLaunch`](crate::client::fluent_builders::StopLaunch) operation.
     ///
-    /// - Takes [`StopLaunchInput`](crate::input::StopLaunchInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::StopLaunchInput::project): <p>The name or ARN of the project that contains the launch that you want to stop.</p>
-    ///   - [`launch(Option<String>)`](crate::input::StopLaunchInput::launch): <p>The name of the launch to stop.</p>
-    ///   - [`desired_state(Option<LaunchStopDesiredState>)`](crate::input::StopLaunchInput::desired_state): <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    ///   - [`reason(Option<String>)`](crate::input::StopLaunchInput::reason): <p>A string that describes why you are stopping the launch.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::StopLaunch::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::StopLaunch::set_project): <p>The name or ARN of the project that contains the launch that you want to stop.</p>
+    ///   - [`launch(impl Into<String>)`](crate::client::fluent_builders::StopLaunch::launch) / [`set_launch(Option<String>)`](crate::client::fluent_builders::StopLaunch::set_launch): <p>The name of the launch to stop.</p>
+    ///   - [`desired_state(LaunchStopDesiredState)`](crate::client::fluent_builders::StopLaunch::desired_state) / [`set_desired_state(Option<LaunchStopDesiredState>)`](crate::client::fluent_builders::StopLaunch::set_desired_state): <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::StopLaunch::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::StopLaunch::set_reason): <p>A string that describes why you are stopping the launch.</p>
     /// - On success, responds with [`StopLaunchOutput`](crate::output::StopLaunchOutput) with field(s):
     ///   - [`ended_time(Option<DateTime>)`](crate::output::StopLaunchOutput::ended_time): <p>The date and time that the launch stopped.</p>
     /// - On failure, responds with [`SdkError<StopLaunchError>`](crate::error::StopLaunchError)
@@ -410,9 +410,9 @@ where
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the CloudWatch Evidently resource that you're adding tags to.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The list of key-value pairs to associate with the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the CloudWatch Evidently resource that you're adding tags to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of key-value pairs to associate with the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -421,9 +421,9 @@ where
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the CloudWatch Evidently resource that you're removing tags from.</p>
-    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of tag keys to remove from the resource.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the CloudWatch Evidently resource that you're removing tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -432,15 +432,15 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateExperiment`](crate::client::fluent_builders::UpdateExperiment) operation.
     ///
-    /// - Takes [`UpdateExperimentInput`](crate::input::UpdateExperimentInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::UpdateExperimentInput::project): <p>The name or ARN of the project that contains the experiment that you want to update.</p>
-    ///   - [`experiment(Option<String>)`](crate::input::UpdateExperimentInput::experiment): <p>The name of the experiment to update.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateExperimentInput::description): <p>An optional description of the experiment.</p>
-    ///   - [`treatments(Option<Vec<TreatmentConfig>>)`](crate::input::UpdateExperimentInput::treatments): <p>An array of structures that define the variations being tested in the experiment.</p>
-    ///   - [`metric_goals(Option<Vec<MetricGoalConfig>>)`](crate::input::UpdateExperimentInput::metric_goals): <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    ///   - [`randomization_salt(Option<String>)`](crate::input::UpdateExperimentInput::randomization_salt): <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    ///   - [`sampling_rate(Option<i64>)`](crate::input::UpdateExperimentInput::sampling_rate): <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>  <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
-    ///   - [`online_ab_config(Option<OnlineAbConfig>)`](crate::input::UpdateExperimentInput::online_ab_config): <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::UpdateExperiment::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::UpdateExperiment::set_project): <p>The name or ARN of the project that contains the experiment that you want to update.</p>
+    ///   - [`experiment(impl Into<String>)`](crate::client::fluent_builders::UpdateExperiment::experiment) / [`set_experiment(Option<String>)`](crate::client::fluent_builders::UpdateExperiment::set_experiment): <p>The name of the experiment to update.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExperiment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExperiment::set_description): <p>An optional description of the experiment.</p>
+    ///   - [`treatments(Vec<TreatmentConfig>)`](crate::client::fluent_builders::UpdateExperiment::treatments) / [`set_treatments(Option<Vec<TreatmentConfig>>)`](crate::client::fluent_builders::UpdateExperiment::set_treatments): <p>An array of structures that define the variations being tested in the experiment.</p>
+    ///   - [`metric_goals(Vec<MetricGoalConfig>)`](crate::client::fluent_builders::UpdateExperiment::metric_goals) / [`set_metric_goals(Option<Vec<MetricGoalConfig>>)`](crate::client::fluent_builders::UpdateExperiment::set_metric_goals): <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+    ///   - [`randomization_salt(impl Into<String>)`](crate::client::fluent_builders::UpdateExperiment::randomization_salt) / [`set_randomization_salt(Option<String>)`](crate::client::fluent_builders::UpdateExperiment::set_randomization_salt): <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
+    ///   - [`sampling_rate(i64)`](crate::client::fluent_builders::UpdateExperiment::sampling_rate) / [`set_sampling_rate(Option<i64>)`](crate::client::fluent_builders::UpdateExperiment::set_sampling_rate): <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>  <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
+    ///   - [`online_ab_config(OnlineAbConfig)`](crate::client::fluent_builders::UpdateExperiment::online_ab_config) / [`set_online_ab_config(Option<OnlineAbConfig>)`](crate::client::fluent_builders::UpdateExperiment::set_online_ab_config): <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     /// - On success, responds with [`UpdateExperimentOutput`](crate::output::UpdateExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::output::UpdateExperimentOutput::experiment): <p>A structure containing the configuration details of the experiment that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateExperimentError>`](crate::error::UpdateExperimentError)
@@ -449,15 +449,15 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateFeature`](crate::client::fluent_builders::UpdateFeature) operation.
     ///
-    /// - Takes [`UpdateFeatureInput`](crate::input::UpdateFeatureInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::UpdateFeatureInput::project): <p>The name or ARN of the project that contains the feature to be updated.</p>
-    ///   - [`feature(Option<String>)`](crate::input::UpdateFeatureInput::feature): <p>The name of the feature to be updated.</p>
-    ///   - [`evaluation_strategy(Option<FeatureEvaluationStrategy>)`](crate::input::UpdateFeatureInput::evaluation_strategy): <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateFeatureInput::description): <p>An optional description of the feature.</p>
-    ///   - [`add_or_update_variations(Option<Vec<VariationConfig>>)`](crate::input::UpdateFeatureInput::add_or_update_variations): <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
-    ///   - [`remove_variations(Option<Vec<String>>)`](crate::input::UpdateFeatureInput::remove_variations): <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>  <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
-    ///   - [`default_variation(Option<String>)`](crate::input::UpdateFeatureInput::default_variation): <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
-    ///   - [`entity_overrides(Option<HashMap<String, String>>)`](crate::input::UpdateFeatureInput::entity_overrides): <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::UpdateFeature::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::UpdateFeature::set_project): <p>The name or ARN of the project that contains the feature to be updated.</p>
+    ///   - [`feature(impl Into<String>)`](crate::client::fluent_builders::UpdateFeature::feature) / [`set_feature(Option<String>)`](crate::client::fluent_builders::UpdateFeature::set_feature): <p>The name of the feature to be updated.</p>
+    ///   - [`evaluation_strategy(FeatureEvaluationStrategy)`](crate::client::fluent_builders::UpdateFeature::evaluation_strategy) / [`set_evaluation_strategy(Option<FeatureEvaluationStrategy>)`](crate::client::fluent_builders::UpdateFeature::set_evaluation_strategy): <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFeature::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFeature::set_description): <p>An optional description of the feature.</p>
+    ///   - [`add_or_update_variations(Vec<VariationConfig>)`](crate::client::fluent_builders::UpdateFeature::add_or_update_variations) / [`set_add_or_update_variations(Option<Vec<VariationConfig>>)`](crate::client::fluent_builders::UpdateFeature::set_add_or_update_variations): <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
+    ///   - [`remove_variations(Vec<String>)`](crate::client::fluent_builders::UpdateFeature::remove_variations) / [`set_remove_variations(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFeature::set_remove_variations): <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>  <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
+    ///   - [`default_variation(impl Into<String>)`](crate::client::fluent_builders::UpdateFeature::default_variation) / [`set_default_variation(Option<String>)`](crate::client::fluent_builders::UpdateFeature::set_default_variation): <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
+    ///   - [`entity_overrides(HashMap<String, String>)`](crate::client::fluent_builders::UpdateFeature::entity_overrides) / [`set_entity_overrides(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateFeature::set_entity_overrides): <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// - On success, responds with [`UpdateFeatureOutput`](crate::output::UpdateFeatureOutput) with field(s):
     ///   - [`feature(Option<Feature>)`](crate::output::UpdateFeatureOutput::feature): <p>A structure that contains information about the updated feature.</p>
     /// - On failure, responds with [`SdkError<UpdateFeatureError>`](crate::error::UpdateFeatureError)
@@ -466,14 +466,14 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateLaunch`](crate::client::fluent_builders::UpdateLaunch) operation.
     ///
-    /// - Takes [`UpdateLaunchInput`](crate::input::UpdateLaunchInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::UpdateLaunchInput::project): <p>The name or ARN of the project that contains the launch that you want to update.</p>
-    ///   - [`launch(Option<String>)`](crate::input::UpdateLaunchInput::launch): <p>The name of the launch that is to be updated.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateLaunchInput::description): <p>An optional description for the launch.</p>
-    ///   - [`groups(Option<Vec<LaunchGroupConfig>>)`](crate::input::UpdateLaunchInput::groups): <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    ///   - [`metric_monitors(Option<Vec<MetricMonitorConfig>>)`](crate::input::UpdateLaunchInput::metric_monitors): <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    ///   - [`randomization_salt(Option<String>)`](crate::input::UpdateLaunchInput::randomization_salt): <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
-    ///   - [`scheduled_splits_config(Option<ScheduledSplitsLaunchConfig>)`](crate::input::UpdateLaunchInput::scheduled_splits_config): <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunch::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::UpdateLaunch::set_project): <p>The name or ARN of the project that contains the launch that you want to update.</p>
+    ///   - [`launch(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunch::launch) / [`set_launch(Option<String>)`](crate::client::fluent_builders::UpdateLaunch::set_launch): <p>The name of the launch that is to be updated.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunch::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateLaunch::set_description): <p>An optional description for the launch.</p>
+    ///   - [`groups(Vec<LaunchGroupConfig>)`](crate::client::fluent_builders::UpdateLaunch::groups) / [`set_groups(Option<Vec<LaunchGroupConfig>>)`](crate::client::fluent_builders::UpdateLaunch::set_groups): <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
+    ///   - [`metric_monitors(Vec<MetricMonitorConfig>)`](crate::client::fluent_builders::UpdateLaunch::metric_monitors) / [`set_metric_monitors(Option<Vec<MetricMonitorConfig>>)`](crate::client::fluent_builders::UpdateLaunch::set_metric_monitors): <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+    ///   - [`randomization_salt(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunch::randomization_salt) / [`set_randomization_salt(Option<String>)`](crate::client::fluent_builders::UpdateLaunch::set_randomization_salt): <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
+    ///   - [`scheduled_splits_config(ScheduledSplitsLaunchConfig)`](crate::client::fluent_builders::UpdateLaunch::scheduled_splits_config) / [`set_scheduled_splits_config(Option<ScheduledSplitsLaunchConfig>)`](crate::client::fluent_builders::UpdateLaunch::set_scheduled_splits_config): <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     /// - On success, responds with [`UpdateLaunchOutput`](crate::output::UpdateLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::output::UpdateLaunchOutput::launch): <p>A structure that contains the new configuration of the launch that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateLaunchError>`](crate::error::UpdateLaunchError)
@@ -482,9 +482,9 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
     ///
-    /// - Takes [`UpdateProjectInput`](crate::input::UpdateProjectInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::UpdateProjectInput::project): <p>The name or ARN of the project to update.</p>
-    ///   - [`description(Option<String>)`](crate::input::UpdateProjectInput::description): <p>An optional description of the project.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project): <p>The name or ARN of the project to update.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_description): <p>An optional description of the project.</p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::output::UpdateProjectOutput::project): <p>A structure containing information about the updated project.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
@@ -493,10 +493,10 @@ where
     }
     /// Constructs a fluent builder for the [`UpdateProjectDataDelivery`](crate::client::fluent_builders::UpdateProjectDataDelivery) operation.
     ///
-    /// - Takes [`UpdateProjectDataDeliveryInput`](crate::input::UpdateProjectDataDeliveryInput) with field(s):
-    ///   - [`project(Option<String>)`](crate::input::UpdateProjectDataDeliveryInput::project): <p>The name or ARN of the project that you want to modify the data storage options for.</p>
-    ///   - [`s3_destination(Option<S3DestinationConfig>)`](crate::input::UpdateProjectDataDeliveryInput::s3_destination): <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
-    ///   - [`cloud_watch_logs(Option<CloudWatchLogsDestinationConfig>)`](crate::input::UpdateProjectDataDeliveryInput::cloud_watch_logs): <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
+    /// - The fluent builder is configurable:
+    ///   - [`project(impl Into<String>)`](crate::client::fluent_builders::UpdateProjectDataDelivery::project) / [`set_project(Option<String>)`](crate::client::fluent_builders::UpdateProjectDataDelivery::set_project): <p>The name or ARN of the project that you want to modify the data storage options for.</p>
+    ///   - [`s3_destination(S3DestinationConfig)`](crate::client::fluent_builders::UpdateProjectDataDelivery::s3_destination) / [`set_s3_destination(Option<S3DestinationConfig>)`](crate::client::fluent_builders::UpdateProjectDataDelivery::set_s3_destination): <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
+    ///   - [`cloud_watch_logs(CloudWatchLogsDestinationConfig)`](crate::client::fluent_builders::UpdateProjectDataDelivery::cloud_watch_logs) / [`set_cloud_watch_logs(Option<CloudWatchLogsDestinationConfig>)`](crate::client::fluent_builders::UpdateProjectDataDelivery::set_cloud_watch_logs): <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
     /// - On success, responds with [`UpdateProjectDataDeliveryOutput`](crate::output::UpdateProjectDataDeliveryOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::output::UpdateProjectDataDeliveryOutput::project): <p>A structure containing details about the project that you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectDataDeliveryError>`](crate::error::UpdateProjectDataDeliveryError)
