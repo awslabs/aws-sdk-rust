@@ -88,12 +88,13 @@ where
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_admin_list_groups_for_user_output_next_token(resp);
-                            if new_token == input.next_token.as_ref() {
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
                                 return;
                             }
                             input.next_token = new_token.cloned();
-                            input.next_token.as_deref().unwrap_or_default().is_empty()
+                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -199,12 +200,13 @@ where
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_admin_list_user_auth_events_output_next_token(resp);
-                            if new_token == input.next_token.as_ref() {
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
                                 return;
                             }
                             input.next_token = new_token.cloned();
-                            input.next_token.as_deref().unwrap_or_default().is_empty()
+                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -310,12 +312,13 @@ where
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_groups_output_next_token(resp);
-                            if new_token == input.next_token.as_ref() {
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
                                 return;
                             }
                             input.next_token = new_token.cloned();
-                            input.next_token.as_deref().unwrap_or_default().is_empty()
+                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -421,12 +424,13 @@ where
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_identity_providers_output_next_token(resp);
-                            if new_token == input.next_token.as_ref() {
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
                                 return;
                             }
                             input.next_token = new_token.cloned();
-                            input.next_token.as_deref().unwrap_or_default().is_empty()
+                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -532,12 +536,13 @@ where
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_resource_servers_output_next_token(resp);
-                            if new_token == input.next_token.as_ref() {
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
                                 return;
                             }
                             input.next_token = new_token.cloned();
-                            input.next_token.as_deref().unwrap_or_default().is_empty()
+                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -643,12 +648,13 @@ where
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_user_pool_clients_output_next_token(resp);
-                            if new_token == input.next_token.as_ref() {
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
                                 return;
                             }
                             input.next_token = new_token.cloned();
-                            input.next_token.as_deref().unwrap_or_default().is_empty()
+                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -754,12 +760,13 @@ where
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_user_pools_output_next_token(resp);
-                            if new_token == input.next_token.as_ref() {
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
                                 return;
                             }
                             input.next_token = new_token.cloned();
-                            input.next_token.as_deref().unwrap_or_default().is_empty()
+                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -865,16 +872,13 @@ where
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_users_output_pagination_token(resp);
-                            if new_token == input.pagination_token.as_ref() {
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.pagination_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
                                 return;
                             }
                             input.pagination_token = new_token.cloned();
-                            input
-                                .pagination_token
-                                .as_deref()
-                                .unwrap_or_default()
-                                .is_empty()
+                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -980,12 +984,13 @@ where
                     let done = match resp {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_users_in_group_output_next_token(resp);
-                            if new_token == input.next_token.as_ref() {
+                            let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                            if !is_empty && new_token == input.next_token.as_ref() {
                                 let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
                                 return;
                             }
                             input.next_token = new_token.cloned();
-                            input.next_token.as_deref().unwrap_or_default().is_empty()
+                            is_empty
                         }
                         Err(_) => true,
                     };
