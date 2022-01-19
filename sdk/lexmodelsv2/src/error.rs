@@ -2261,6 +2261,154 @@ impl std::error::Error for DeleteBotVersionError {
     }
 }
 
+/// Error type for the `DeleteCustomVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteCustomVocabularyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteCustomVocabularyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteCustomVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteCustomVocabularyErrorKind {
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteCustomVocabularyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteCustomVocabularyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteCustomVocabularyErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteCustomVocabularyErrorKind::PreconditionFailedException(_inner) => _inner.fmt(f),
+            DeleteCustomVocabularyErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            DeleteCustomVocabularyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteCustomVocabularyErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteCustomVocabularyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteCustomVocabularyError {
+    fn code(&self) -> Option<&str> {
+        DeleteCustomVocabularyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteCustomVocabularyError {
+    /// Creates a new `DeleteCustomVocabularyError`.
+    pub fn new(kind: DeleteCustomVocabularyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteCustomVocabularyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteCustomVocabularyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteCustomVocabularyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteCustomVocabularyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteCustomVocabularyErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomVocabularyErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomVocabularyErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomVocabularyErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomVocabularyErrorKind::PreconditionFailedException`.
+    pub fn is_precondition_failed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomVocabularyErrorKind::PreconditionFailedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomVocabularyErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomVocabularyErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomVocabularyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomVocabularyErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomVocabularyErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomVocabularyErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteCustomVocabularyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteCustomVocabularyErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteCustomVocabularyErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteCustomVocabularyErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            DeleteCustomVocabularyErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            DeleteCustomVocabularyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteCustomVocabularyErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteCustomVocabularyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteExport` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3978,6 +4126,158 @@ impl std::error::Error for DescribeBotVersionError {
             DescribeBotVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeBotVersionErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeBotVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeCustomVocabularyMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeCustomVocabularyMetadataError {
+    /// Kind of error that occurred.
+    pub kind: DescribeCustomVocabularyMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeCustomVocabularyMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeCustomVocabularyMetadataErrorKind {
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You have reached a quota for your bot. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeCustomVocabularyMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeCustomVocabularyMetadataErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeCustomVocabularyMetadataErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeCustomVocabularyMetadataErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeCustomVocabularyMetadataErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeCustomVocabularyMetadataErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeCustomVocabularyMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeCustomVocabularyMetadataError {
+    fn code(&self) -> Option<&str> {
+        DescribeCustomVocabularyMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeCustomVocabularyMetadataError {
+    /// Creates a new `DescribeCustomVocabularyMetadataError`.
+    pub fn new(
+        kind: DescribeCustomVocabularyMetadataErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeCustomVocabularyMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeCustomVocabularyMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeCustomVocabularyMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeCustomVocabularyMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeCustomVocabularyMetadataErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomVocabularyMetadataErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeCustomVocabularyMetadataErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomVocabularyMetadataErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeCustomVocabularyMetadataErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomVocabularyMetadataErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeCustomVocabularyMetadataErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomVocabularyMetadataErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeCustomVocabularyMetadataErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomVocabularyMetadataErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeCustomVocabularyMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeCustomVocabularyMetadataErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DescribeCustomVocabularyMetadataErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeCustomVocabularyMetadataErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            DescribeCustomVocabularyMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeCustomVocabularyMetadataErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeCustomVocabularyMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

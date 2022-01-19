@@ -556,6 +556,9 @@ where
                 crate::error::ListStreamsErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
+                crate::error::ListStreamsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::ListStreamsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),

@@ -3477,7 +3477,7 @@ impl DocumentDefaultVersionDescription {
     }
 }
 
-/// <p>Describes a Amazon Web Services Systems Manager document (SSM document). </p>
+/// <p>Describes an Amazon Web Services Systems Manager document (SSM document). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentDescription {
@@ -3511,7 +3511,7 @@ pub struct DocumentDescription {
     pub description: std::option::Option<std::string::String>,
     /// <p>A description of the parameters for a document.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
-    /// <p>The list of OS platforms compatible with this SSM document. </p>
+    /// <p>The list of operating system (OS) platforms compatible with this SSM document. </p>
     pub platform_types: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
     /// <p>The type of document.</p>
     pub document_type: std::option::Option<crate::model::DocumentType>,
@@ -3542,6 +3542,10 @@ pub struct DocumentDescription {
     pub pending_review_version: std::option::Option<std::string::String>,
     /// <p>The current status of the review.</p>
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
+    /// <p>The classification of a document to help you identify and categorize its use.</p>
+    pub category: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The value that identifies a document's category.</p>
+    pub category_enum: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DocumentDescription {
     /// <p>The SHA1 hash of the document, which you can use for verification.</p>
@@ -3600,7 +3604,7 @@ impl DocumentDescription {
     pub fn parameters(&self) -> std::option::Option<&[crate::model::DocumentParameter]> {
         self.parameters.as_deref()
     }
-    /// <p>The list of OS platforms compatible with this SSM document. </p>
+    /// <p>The list of operating system (OS) platforms compatible with this SSM document. </p>
     pub fn platform_types(&self) -> std::option::Option<&[crate::model::PlatformType]> {
         self.platform_types.as_deref()
     }
@@ -3662,6 +3666,14 @@ impl DocumentDescription {
     pub fn review_status(&self) -> std::option::Option<&crate::model::ReviewStatus> {
         self.review_status.as_ref()
     }
+    /// <p>The classification of a document to help you identify and categorize its use.</p>
+    pub fn category(&self) -> std::option::Option<&[std::string::String]> {
+        self.category.as_deref()
+    }
+    /// <p>The value that identifies a document's category.</p>
+    pub fn category_enum(&self) -> std::option::Option<&[std::string::String]> {
+        self.category_enum.as_deref()
+    }
 }
 impl std::fmt::Debug for DocumentDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3694,6 +3706,8 @@ impl std::fmt::Debug for DocumentDescription {
         formatter.field("approved_version", &self.approved_version);
         formatter.field("pending_review_version", &self.pending_review_version);
         formatter.field("review_status", &self.review_status);
+        formatter.field("category", &self.category);
+        formatter.field("category_enum", &self.category_enum);
         formatter.finish()
     }
 }
@@ -3733,6 +3747,8 @@ pub mod document_description {
         pub(crate) approved_version: std::option::Option<std::string::String>,
         pub(crate) pending_review_version: std::option::Option<std::string::String>,
         pub(crate) review_status: std::option::Option<crate::model::ReviewStatus>,
+        pub(crate) category: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) category_enum: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The SHA1 hash of the document, which you can use for verification.</p>
@@ -3901,14 +3917,14 @@ pub mod document_description {
         ///
         /// To override the contents of this collection use [`set_platform_types`](Self::set_platform_types).
         ///
-        /// <p>The list of OS platforms compatible with this SSM document. </p>
+        /// <p>The list of operating system (OS) platforms compatible with this SSM document. </p>
         pub fn platform_types(mut self, input: crate::model::PlatformType) -> Self {
             let mut v = self.platform_types.unwrap_or_default();
             v.push(input);
             self.platform_types = Some(v);
             self
         }
-        /// <p>The list of OS platforms compatible with this SSM document. </p>
+        /// <p>The list of operating system (OS) platforms compatible with this SSM document. </p>
         pub fn set_platform_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
@@ -4119,6 +4135,44 @@ pub mod document_description {
             self.review_status = input;
             self
         }
+        /// Appends an item to `category`.
+        ///
+        /// To override the contents of this collection use [`set_category`](Self::set_category).
+        ///
+        /// <p>The classification of a document to help you identify and categorize its use.</p>
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.category.unwrap_or_default();
+            v.push(input.into());
+            self.category = Some(v);
+            self
+        }
+        /// <p>The classification of a document to help you identify and categorize its use.</p>
+        pub fn set_category(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.category = input;
+            self
+        }
+        /// Appends an item to `category_enum`.
+        ///
+        /// To override the contents of this collection use [`set_category_enum`](Self::set_category_enum).
+        ///
+        /// <p>The value that identifies a document's category.</p>
+        pub fn category_enum(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.category_enum.unwrap_or_default();
+            v.push(input.into());
+            self.category_enum = Some(v);
+            self
+        }
+        /// <p>The value that identifies a document's category.</p>
+        pub fn set_category_enum(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.category_enum = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DocumentDescription`](crate::model::DocumentDescription)
         pub fn build(self) -> crate::model::DocumentDescription {
             crate::model::DocumentDescription {
@@ -4150,6 +4204,8 @@ pub mod document_description {
                 approved_version: self.approved_version,
                 pending_review_version: self.pending_review_version,
                 review_status: self.review_status,
+                category: self.category,
+                category_enum: self.category_enum,
             }
         }
     }
@@ -6926,7 +6982,7 @@ pub struct Command {
     /// <li> <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p> </li>
     /// <li> <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p> </li>
     /// <li> <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p> </li>
-    /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
     /// </ul>
     pub status_details: std::option::Option<std::string::String>,
@@ -6942,7 +6998,7 @@ pub struct Command {
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The number of targets for the command.</p>
     pub target_count: i32,
-    /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+    /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
     pub completed_count: i32,
     /// <p>The number of targets for which the status is Failed or Execution Timed Out.</p>
     pub error_count: i32,
@@ -7011,7 +7067,7 @@ impl Command {
     /// <li> <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p> </li>
     /// <li> <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p> </li>
     /// <li> <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p> </li>
-    /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
     /// </ul>
     pub fn status_details(&self) -> std::option::Option<&str> {
@@ -7041,7 +7097,7 @@ impl Command {
     pub fn target_count(&self) -> i32 {
         self.target_count
     }
-    /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+    /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
     pub fn completed_count(&self) -> i32 {
         self.completed_count
     }
@@ -7294,7 +7350,7 @@ pub mod command {
         /// <li> <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p> </li>
         /// <li> <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p> </li>
         /// <li> <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p> </li>
-        /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
         /// </ul>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7310,7 +7366,7 @@ pub mod command {
         /// <li> <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p> </li>
         /// <li> <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p> </li>
         /// <li> <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p> </li>
-        /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
         /// </ul>
         pub fn set_status_details(
@@ -7392,12 +7448,12 @@ pub mod command {
             self.target_count = input;
             self
         }
-        /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+        /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
         pub fn completed_count(mut self, input: i32) -> Self {
             self.completed_count = Some(input);
             self
         }
-        /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+        /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
         pub fn set_completed_count(mut self, input: std::option::Option<i32>) -> Self {
             self.completed_count = input;
             self
@@ -13468,7 +13524,7 @@ pub struct CommandInvocation {
     /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
     /// <li> <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-    /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
@@ -13529,7 +13585,7 @@ impl CommandInvocation {
     /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
     /// <li> <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-    /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
@@ -13717,7 +13773,7 @@ pub mod command_invocation {
         /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
         /// <li> <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-        /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
         /// </ul>
@@ -13733,7 +13789,7 @@ pub mod command_invocation {
         /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
         /// <li> <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-        /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
         /// </ul>
@@ -13884,7 +13940,7 @@ pub struct CommandPlugin {
     /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
     /// <li> <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li>
-    /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
@@ -13935,7 +13991,7 @@ impl CommandPlugin {
     /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
     /// <li> <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li>
-    /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
@@ -14058,7 +14114,7 @@ pub mod command_plugin {
         /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
         /// <li> <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li>
-        /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
         /// </ul>
@@ -14074,7 +14130,7 @@ pub mod command_plugin {
         /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Execution Timed Out: Command execution started on the managed node, but the execution wasn't complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
         /// <li> <p>Failed: The command wasn't successful on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li>
-        /// <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>
+        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
         /// </ul>
@@ -14890,7 +14946,9 @@ pub struct Association {
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The association version.</p>
     pub association_version: std::option::Option<std::string::String>,
-    /// <p>The version of the document used in the association.</p>
+    /// <p>The version of the document used in the association.</p> <important>
+    /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+    /// </important>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The managed nodes targeted by the request to create an association. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -14920,7 +14978,9 @@ impl Association {
     pub fn association_version(&self) -> std::option::Option<&str> {
         self.association_version.as_deref()
     }
-    /// <p>The version of the document used in the association.</p>
+    /// <p>The version of the document used in the association.</p> <important>
+    /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+    /// </important>
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
@@ -15025,12 +15085,16 @@ pub mod association {
             self.association_version = input;
             self
         }
-        /// <p>The version of the document used in the association.</p>
+        /// <p>The version of the document used in the association.</p> <important>
+        /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+        /// </important>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
         }
-        /// <p>The version of the document used in the association.</p>
+        /// <p>The version of the document used in the association.</p> <important>
+        /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+        /// </important>
         pub fn set_document_version(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -265,7 +265,7 @@ where
     /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     /// - On success, responds with [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput) with field(s):
-    ///   - [`enhanced_infrastructure_metrics(Option<EnhancedInfrastructureMetrics>)`](crate::output::GetEffectiveRecommendationPreferencesOutput::enhanced_infrastructure_metrics): <p>The status of the enhanced infrastructure metrics recommendation preference. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p>  <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>  <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
+    ///   - [`enhanced_infrastructure_metrics(Option<EnhancedInfrastructureMetrics>)`](crate::output::GetEffectiveRecommendationPreferencesOutput::enhanced_infrastructure_metrics): <p>The status of the enhanced infrastructure metrics recommendation preference. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p>  <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>  <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetEffectiveRecommendationPreferencesError>`](crate::error::GetEffectiveRecommendationPreferencesError)
     pub fn get_effective_recommendation_preferences(
         &self,
@@ -353,8 +353,9 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::PutRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference to create.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::PutRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to create.</p>  <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>   <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified the Auto Scaling group.</p>  </note>
-    ///   - [`enhanced_infrastructure_metrics(EnhancedInfrastructureMetrics)`](crate::client::fluent_builders::PutRecommendationPreferences::enhanced_infrastructure_metrics) / [`set_enhanced_infrastructure_metrics(Option<EnhancedInfrastructureMetrics>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_enhanced_infrastructure_metrics): <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>  <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::PutRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to create.</p>  <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>   <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>  </note>
+    ///   - [`enhanced_infrastructure_metrics(EnhancedInfrastructureMetrics)`](crate::client::fluent_builders::PutRecommendationPreferences::enhanced_infrastructure_metrics) / [`set_enhanced_infrastructure_metrics(Option<EnhancedInfrastructureMetrics>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_enhanced_infrastructure_metrics): <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>  <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`inferred_workload_types(InferredWorkloadTypesPreference)`](crate::client::fluent_builders::PutRecommendationPreferences::inferred_workload_types) / [`set_inferred_workload_types(Option<InferredWorkloadTypesPreference>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_inferred_workload_types): <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>   <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>  </note>  <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// - On success, responds with [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
 
     /// - On failure, responds with [`SdkError<PutRecommendationPreferencesError>`](crate::error::PutRecommendationPreferencesError)
@@ -2598,7 +2599,7 @@ pub mod fluent_builders {
         }
         /// <p>An object that describes the scope of the recommendation preference to create.</p>
         /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
-        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified the Auto Scaling group.</p>
+        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
         /// </note>
         pub fn scope(mut self, input: crate::model::Scope) -> Self {
             self.inner = self.inner.scope(input);
@@ -2606,14 +2607,15 @@ pub mod fluent_builders {
         }
         /// <p>An object that describes the scope of the recommendation preference to create.</p>
         /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
-        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified the Auto Scaling group.</p>
+        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
         /// </note>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+        /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn enhanced_infrastructure_metrics(
             mut self,
             input: crate::model::EnhancedInfrastructureMetrics,
@@ -2622,12 +2624,37 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+        /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_enhanced_infrastructure_metrics(
             mut self,
             input: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
         ) -> Self {
             self.inner = self.inner.set_enhanced_infrastructure_metrics(input);
+            self
+        }
+        /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
+        /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
+        /// </note>
+        /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn inferred_workload_types(
+            mut self,
+            input: crate::model::InferredWorkloadTypesPreference,
+        ) -> Self {
+            self.inner = self.inner.inferred_workload_types(input);
+            self
+        }
+        /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
+        /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
+        /// </note>
+        /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn set_inferred_workload_types(
+            mut self,
+            input: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+        ) -> Self {
+            self.inner = self.inner.set_inferred_workload_types(input);
             self
         }
     }

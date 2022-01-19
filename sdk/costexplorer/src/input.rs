@@ -1861,11 +1861,15 @@ pub mod get_cost_and_usage_input {
             self
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
+        /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
             self
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
+        /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -2115,12 +2119,16 @@ pub mod get_cost_and_usage_with_resources_input {
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
         /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
+        /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
             self
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
         /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
+        /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+        /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -2940,12 +2948,12 @@ pub mod get_dimension_values_input {
             self.time_period = input;
             self
         }
-        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>. </p>
         pub fn dimension(mut self, input: crate::model::Dimension) -> Self {
             self.dimension = Some(input);
             self
         }
-        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>. </p>
         pub fn set_dimension(
             mut self,
             input: std::option::Option<crate::model::Dimension>,
@@ -3385,7 +3393,7 @@ pub mod get_reservation_coverage_input {
         /// <li> <p>TAG</p> </li>
         /// <li> <p>TENANCY</p> </li>
         /// </ul>
-        /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep.</p>
         /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
         /// <p>Cost category is also supported.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
@@ -3407,7 +3415,7 @@ pub mod get_reservation_coverage_input {
         /// <li> <p>TAG</p> </li>
         /// <li> <p>TENANCY</p> </li>
         /// </ul>
-        /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep.</p>
         /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
         /// <p>Cost category is also supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
@@ -4023,7 +4031,7 @@ pub mod get_reservation_utilization_input {
         /// <li> <p>SCOPE</p> </li>
         /// <li> <p>TENANCY</p> </li>
         /// </ul>
-        /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
             self
@@ -4042,7 +4050,7 @@ pub mod get_reservation_utilization_input {
         /// <li> <p>SCOPE</p> </li>
         /// <li> <p>TENANCY</p> </li>
         /// </ul>
-        /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -4572,8 +4580,8 @@ pub mod get_savings_plans_coverage_input {
         /// <li> <p> <code>SERVICE</code> </p> </li>
         /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
         /// </ul>
-        /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
-        /// <p>Cost category is also supported.</p>
+        /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        /// <p>Cost category is supported. Tags are not supported.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
             self
@@ -4585,8 +4593,8 @@ pub mod get_savings_plans_coverage_input {
         /// <li> <p> <code>SERVICE</code> </p> </li>
         /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
         /// </ul>
-        /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
-        /// <p>Cost category is also supported.</p>
+        /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        /// <p>Cost category is supported. Tags are not supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -5127,6 +5135,7 @@ pub mod get_savings_plans_utilization_input {
         /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
         /// </ul>
         /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        /// <p>Filtering by tags isn't supported.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
             self
@@ -5141,6 +5150,7 @@ pub mod get_savings_plans_utilization_input {
         /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
         /// </ul>
         /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        /// <p>Filtering by tags isn't supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -5353,6 +5363,7 @@ pub mod get_savings_plans_utilization_details_input {
         /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
         /// </ul>
         /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        /// <p>Filtering by tags isn't supported.</p>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
             self
@@ -5366,6 +5377,7 @@ pub mod get_savings_plans_utilization_details_input {
         /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
         /// </ul>
         /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        /// <p>Filtering by tags isn't supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -7571,6 +7583,7 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
     /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p>Filtering by tags isn't supported.</p>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The data type.</p>
     pub data_type: std::option::Option<std::vec::Vec<crate::model::SavingsPlansDataType>>,
@@ -7606,6 +7619,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
     /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
     /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p>Filtering by tags isn't supported.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
@@ -7669,6 +7683,7 @@ pub struct GetSavingsPlansUtilizationInput {
     /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
     /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p>Filtering by tags isn't supported.</p>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value by which you want to sort the data.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -7702,6 +7717,7 @@ impl GetSavingsPlansUtilizationInput {
     /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
     /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p>Filtering by tags isn't supported.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
@@ -7824,8 +7840,8 @@ pub struct GetSavingsPlansCoverageInput {
     /// <li> <p> <code>SERVICE</code> </p> </li>
     /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
     /// </ul>
-    /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
-    /// <p>Cost category is also supported.</p>
+    /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p>Cost category is supported. Tags are not supported.</p>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7868,8 +7884,8 @@ impl GetSavingsPlansCoverageInput {
     /// <li> <p> <code>SERVICE</code> </p> </li>
     /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
     /// </ul>
-    /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
-    /// <p>Cost category is also supported.</p>
+    /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+    /// <p>Cost category is supported. Tags are not supported.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
@@ -8010,7 +8026,7 @@ pub struct GetReservationUtilizationInput {
     /// <li> <p>SCOPE</p> </li>
     /// <li> <p>TENANCY</p> </li>
     /// </ul>
-    /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep.</p>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value by which you want to sort the data.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -8068,7 +8084,7 @@ impl GetReservationUtilizationInput {
     /// <li> <p>SCOPE</p> </li>
     /// <li> <p>TENANCY</p> </li>
     /// </ul>
-    /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
@@ -8265,7 +8281,7 @@ pub struct GetReservationCoverageInput {
     /// <li> <p>TAG</p> </li>
     /// <li> <p>TENANCY</p> </li>
     /// </ul>
-    /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
     pub filter: std::option::Option<crate::model::Expression>,
@@ -8335,7 +8351,7 @@ impl GetReservationCoverageInput {
     /// <li> <p>TAG</p> </li>
     /// <li> <p>TENANCY</p> </li>
     /// </ul>
-    /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+    /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
@@ -8396,7 +8412,7 @@ pub struct GetDimensionValuesInput {
     pub search_string: std::option::Option<std::string::String>,
     /// <p>The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
-    /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+    /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>. </p>
     pub dimension: std::option::Option<crate::model::Dimension>,
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
@@ -8480,7 +8496,7 @@ impl GetDimensionValuesInput {
     pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
         self.time_period.as_ref()
     }
-    /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+    /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>. </p>
     pub fn dimension(&self) -> std::option::Option<&crate::model::Dimension> {
         self.dimension.as_ref()
     }
@@ -8820,6 +8836,8 @@ pub struct GetCostAndUsageWithResourcesInput {
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
     /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
+    /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
@@ -8843,6 +8861,8 @@ impl GetCostAndUsageWithResourcesInput {
     }
     /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
     /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
+    /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }
@@ -8885,6 +8905,8 @@ pub struct GetCostAndUsageInput {
     /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
+    /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
     /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
@@ -8909,6 +8931,8 @@ impl GetCostAndUsageInput {
         self.granularity.as_ref()
     }
     /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
+    /// <p>The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::Expression> {
         self.filter.as_ref()
     }

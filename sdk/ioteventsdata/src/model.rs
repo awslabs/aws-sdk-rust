@@ -771,7 +771,7 @@ impl DetectorState {
 pub struct Timer {
     /// <p>The name of the timer.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The number of seconds which have elapsed on the timer.</p>
+    /// <p>The expiration time for the timer.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Timer {
@@ -779,7 +779,7 @@ impl Timer {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The number of seconds which have elapsed on the timer.</p>
+    /// <p>The expiration time for the timer.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
@@ -812,12 +812,12 @@ pub mod timer {
             self.name = input;
             self
         }
-        /// <p>The number of seconds which have elapsed on the timer.</p>
+        /// <p>The expiration time for the timer.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>The number of seconds which have elapsed on the timer.</p>
+        /// <p>The expiration time for the timer.</p>
         pub fn set_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

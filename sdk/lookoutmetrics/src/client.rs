@@ -152,6 +152,18 @@ where
     pub fn create_metric_set(&self) -> fluent_builders::CreateMetricSet<C, M, R> {
         fluent_builders::CreateMetricSet::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeactivateAnomalyDetector`](crate::client::fluent_builders::DeactivateAnomalyDetector) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::client::fluent_builders::DeactivateAnomalyDetector::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::client::fluent_builders::DeactivateAnomalyDetector::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    /// - On success, responds with [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
+
+    /// - On failure, responds with [`SdkError<DeactivateAnomalyDetectorError>`](crate::error::DeactivateAnomalyDetectorError)
+    pub fn deactivate_anomaly_detector(
+        &self,
+    ) -> fluent_builders::DeactivateAnomalyDetector<C, M, R> {
+        fluent_builders::DeactivateAnomalyDetector::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteAlert`](crate::client::fluent_builders::DeleteAlert) operation.
     ///
     /// - The fluent builder is configurable:
@@ -211,8 +223,9 @@ where
     ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeAnomalyDetectorOutput::creation_time): <p>The time at which the detector was created.</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeAnomalyDetectorOutput::last_modification_time): <p>The time at which the detector was last modified.</p>
     ///   - [`status(Option<AnomalyDetectorStatus>)`](crate::output::DescribeAnomalyDetectorOutput::status): <p>The status of the detector.</p>
-    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeAnomalyDetectorOutput::failure_reason): <p>The reason that the detector failed, if any.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeAnomalyDetectorOutput::failure_reason): <p>The reason that the detector failed.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::output::DescribeAnomalyDetectorOutput::kms_key_arn): <p>The ARN of the KMS key to use to encrypt your data.</p>
+    ///   - [`failure_type(Option<AnomalyDetectorFailureType>)`](crate::output::DescribeAnomalyDetectorOutput::failure_type): <p>The process that caused the detector to fail.</p>
     /// - On failure, responds with [`SdkError<DescribeAnomalyDetectorError>`](crate::error::DescribeAnomalyDetectorError)
     pub fn describe_anomaly_detector(&self) -> fluent_builders::DescribeAnomalyDetector<C, M, R> {
         fluent_builders::DescribeAnomalyDetector::new(self.handle.clone())
@@ -1091,6 +1104,79 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeactivateAnomalyDetector`.
+    ///
+    /// <p>Deactivates an anomaly detector.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeactivateAnomalyDetector<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::deactivate_anomaly_detector_input::Builder,
+    }
+    impl<C, M, R> DeactivateAnomalyDetector<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeactivateAnomalyDetector`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeactivateAnomalyDetectorOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeactivateAnomalyDetectorError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeactivateAnomalyDetectorInputOperationOutputAlias,
+                crate::output::DeactivateAnomalyDetectorOutput,
+                crate::error::DeactivateAnomalyDetectorError,
+                crate::input::DeactivateAnomalyDetectorInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+        pub fn set_anomaly_detector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_anomaly_detector_arn(input);
             self
         }
     }

@@ -167,6 +167,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMetricSet {
     }
 }
 
+/// Operation shape for `DeactivateAnomalyDetector`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`deactivate_anomaly_detector`](crate::client::Client::deactivate_anomaly_detector).
+///
+/// See [`crate::client::fluent_builders::DeactivateAnomalyDetector`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeactivateAnomalyDetector {
+    _private: (),
+}
+impl DeactivateAnomalyDetector {
+    /// Creates a new builder-style object to manufacture [`DeactivateAnomalyDetectorInput`](crate::input::DeactivateAnomalyDetectorInput)
+    pub fn builder() -> crate::input::deactivate_anomaly_detector_input::Builder {
+        crate::input::deactivate_anomaly_detector_input::Builder::default()
+    }
+    /// Creates a new `DeactivateAnomalyDetector` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeactivateAnomalyDetector {
+    type Output = std::result::Result<
+        crate::output::DeactivateAnomalyDetectorOutput,
+        crate::error::DeactivateAnomalyDetectorError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_deactivate_anomaly_detector_error(response)
+        } else {
+            crate::operation_deser::parse_deactivate_anomaly_detector_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteAlert`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

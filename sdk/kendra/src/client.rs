@@ -560,6 +560,7 @@ where
         fluent_builders::GetQuerySuggestions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetSnapshots`](crate::client::fluent_builders::GetSnapshots) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetSnapshots::into_paginator).
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::GetSnapshots::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::GetSnapshots::set_index_id): <p>The identifier of the index to get search metrics data.</p>
@@ -766,6 +767,7 @@ where
     ///   - [`result_items(Option<Vec<QueryResultItem>>)`](crate::output::QueryOutput::result_items): <p>The results of the search.</p>
     ///   - [`facet_results(Option<Vec<FacetResult>>)`](crate::output::QueryOutput::facet_results): <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was specified in the <code>Facets</code> input parameter.</p>
     ///   - [`total_number_of_results(Option<i32>)`](crate::output::QueryOutput::total_number_of_results): <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
+    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::QueryOutput::warnings): <p>A list of warning codes and their messages on problems with your query.</p>  <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
     /// - On failure, responds with [`SdkError<QueryError>`](crate::error::QueryError)
     pub fn query(&self) -> fluent_builders::Query<C, M, R> {
         fluent_builders::Query::new(self.handle.clone())
@@ -1865,6 +1867,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFaq`.
     ///
     /// <p>Creates an new set of frequently asked question (FAQ) questions and answers.</p>
+    /// <p>Adding FAQs to an index is an asynchronous operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFaq<
         C = aws_smithy_client::erase::DynConnector,
@@ -4122,6 +4125,12 @@ pub mod fluent_builders {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetSnapshotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetSnapshotsPaginator<C, M, R> {
+            crate::paginator::GetSnapshotsPaginator::new(self.handle, self.inner)
         }
         /// <p>The identifier of the index to get search metrics data.</p>
         pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {

@@ -574,6 +574,144 @@ pub fn parse_copy_workspace_image_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_connect_client_add_in_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateConnectClientAddInOutput,
+    crate::error::CreateConnectClientAddInError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateConnectClientAddInError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateConnectClientAddInError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::CreateConnectClientAddInErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectClientAddInError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValuesException" => crate::error::CreateConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::CreateConnectClientAddInErrorKind::InvalidParameterValuesException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_values_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_values_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectClientAddInError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceAlreadyExistsException" => crate::error::CreateConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::CreateConnectClientAddInErrorKind::ResourceAlreadyExistsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_already_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectClientAddInError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceCreationFailedException" => crate::error::CreateConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::CreateConnectClientAddInErrorKind::ResourceCreationFailedException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_creation_failed_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_creation_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectClientAddInError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceNotFoundException" => crate::error::CreateConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::CreateConnectClientAddInErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectClientAddInError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateConnectClientAddInError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_connect_client_add_in_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateConnectClientAddInOutput,
+    crate::error::CreateConnectClientAddInError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_connect_client_add_in_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_connect_client_add_in(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateConnectClientAddInError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_connection_alias_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1322,6 +1460,99 @@ pub fn parse_create_workspaces_response(
             output,
         )
         .map_err(crate::error::CreateWorkspacesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_connect_client_add_in_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteConnectClientAddInOutput,
+    crate::error::DeleteConnectClientAddInError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteConnectClientAddInError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteConnectClientAddInError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DeleteConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::DeleteConnectClientAddInErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectClientAddInError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValuesException" => crate::error::DeleteConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::DeleteConnectClientAddInErrorKind::InvalidParameterValuesException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_values_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_values_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectClientAddInError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::DeleteConnectClientAddInErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectClientAddInError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteConnectClientAddInError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_connect_client_add_in_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteConnectClientAddInOutput,
+    crate::error::DeleteConnectClientAddInError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_connect_client_add_in_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }
@@ -2166,6 +2397,107 @@ pub fn parse_describe_client_properties_response(
             output,
         )
         .map_err(crate::error::DescribeClientPropertiesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_connect_client_add_ins_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeConnectClientAddInsOutput,
+    crate::error::DescribeConnectClientAddInsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeConnectClientAddInsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeConnectClientAddInsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DescribeConnectClientAddInsError {
+            meta: generic,
+            kind: crate::error::DescribeConnectClientAddInsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConnectClientAddInsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValuesException" => crate::error::DescribeConnectClientAddInsError {
+            meta: generic,
+            kind:
+                crate::error::DescribeConnectClientAddInsErrorKind::InvalidParameterValuesException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_parameter_values_exception::Builder::default(
+                                );
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_values_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConnectClientAddInsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeConnectClientAddInsError {
+            meta: generic,
+            kind: crate::error::DescribeConnectClientAddInsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConnectClientAddInsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeConnectClientAddInsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_connect_client_add_ins_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeConnectClientAddInsOutput,
+    crate::error::DescribeConnectClientAddInsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_connect_client_add_ins_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_connect_client_add_ins(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeConnectClientAddInsError::unhandled)?;
         output.build()
     })
 }
@@ -4749,6 +5081,99 @@ pub fn parse_terminate_workspaces_response(
             output,
         )
         .map_err(crate::error::TerminateWorkspacesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_connect_client_add_in_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateConnectClientAddInOutput,
+    crate::error::UpdateConnectClientAddInError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateConnectClientAddInError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateConnectClientAddInError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::UpdateConnectClientAddInErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConnectClientAddInError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValuesException" => crate::error::UpdateConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::UpdateConnectClientAddInErrorKind::InvalidParameterValuesException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_values_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_values_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConnectClientAddInError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateConnectClientAddInError {
+            meta: generic,
+            kind: crate::error::UpdateConnectClientAddInErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConnectClientAddInError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateConnectClientAddInError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_connect_client_add_in_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateConnectClientAddInOutput,
+    crate::error::UpdateConnectClientAddInError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_connect_client_add_in_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }

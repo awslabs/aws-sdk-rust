@@ -101,7 +101,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_channel_name): <p>The identifier for the channel you are working on.</p>
-    ///   - [`filler_slate(SlateSource)`](crate::client::fluent_builders::CreateChannel::filler_slate) / [`set_filler_slate(Option<SlateSource>)`](crate::client::fluent_builders::CreateChannel::set_filler_slate): <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
+    ///   - [`filler_slate(SlateSource)`](crate::client::fluent_builders::CreateChannel::filler_slate) / [`set_filler_slate(Option<SlateSource>)`](crate::client::fluent_builders::CreateChannel::set_filler_slate): <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
     ///   - [`outputs(Vec<RequestOutputItem>)`](crate::client::fluent_builders::CreateChannel::outputs) / [`set_outputs(Option<Vec<RequestOutputItem>>)`](crate::client::fluent_builders::CreateChannel::set_outputs): <p>The channel's output properties.</p>
     ///   - [`playback_mode(PlaybackMode)`](crate::client::fluent_builders::CreateChannel::playback_mode) / [`set_playback_mode(Option<PlaybackMode>)`](crate::client::fluent_builders::CreateChannel::set_playback_mode): <p>The type of playback mode to use for this channel.</p>  <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>  <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>The tags to assign to the channel.</p>
@@ -606,6 +606,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`filler_slate(SlateSource)`](crate::client::fluent_builders::UpdateChannel::filler_slate) / [`set_filler_slate(Option<SlateSource>)`](crate::client::fluent_builders::UpdateChannel::set_filler_slate): <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
     ///   - [`outputs(Vec<RequestOutputItem>)`](crate::client::fluent_builders::UpdateChannel::outputs) / [`set_outputs(Option<Vec<RequestOutputItem>>)`](crate::client::fluent_builders::UpdateChannel::set_outputs): <p>The channel's output properties.</p>
     /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::UpdateChannelOutput::arn): <p>The ARN of the channel.</p>
@@ -827,12 +828,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
         pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
             self.inner = self.inner.filler_slate(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
         pub fn set_filler_slate(
             mut self,
             input: std::option::Option<crate::model::SlateSource>,
@@ -3977,6 +3978,19 @@ pub mod fluent_builders {
         /// <p>The identifier for the channel you are working on.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
+            self
+        }
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.inner = self.inner.filler_slate(input);
+            self
+        }
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        pub fn set_filler_slate(
+            mut self,
+            input: std::option::Option<crate::model::SlateSource>,
+        ) -> Self {
+            self.inner = self.inner.set_filler_slate(input);
             self
         }
         /// Appends an item to `Outputs`.

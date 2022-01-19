@@ -6,21 +6,21 @@ authors = ["John DiSanti <jdisanti@amazon.com>", "Doug Schwartz <dougsch@amazon.
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.aws-smithy-types-convert]
 path = "../../sdk/aws-smithy-types-convert"
 features = ["convert-chrono"]
-version = "0.34.1"
+version = "0.35.0"
 
 [dependencies.aws-sdk-cognitoidentityprovider]
 package = "aws-sdk-cognitoidentityprovider"
 path = "../../sdk/cognitoidentityprovider"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.tokio]
 version = "1"

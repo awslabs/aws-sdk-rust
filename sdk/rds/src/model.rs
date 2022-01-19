@@ -12122,9 +12122,9 @@ impl DbProxyTargetGroup {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionPoolConfigurationInfo {
-    /// <p>The maximum size of the connection pool for each target in a target group. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+    /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     pub max_connections_percent: i32,
-    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. A high value enables the proxy to leave a high percentage of idle connections open. A low value causes the proxy to close idle client connections and return the underlying database connections to the connection pool. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. </p>
+    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
     pub max_idle_connections_percent: i32,
     /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
     pub connection_borrow_timeout: i32,
@@ -12134,11 +12134,11 @@ pub struct ConnectionPoolConfigurationInfo {
     pub init_query: std::option::Option<std::string::String>,
 }
 impl ConnectionPoolConfigurationInfo {
-    /// <p>The maximum size of the connection pool for each target in a target group. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+    /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     pub fn max_connections_percent(&self) -> i32 {
         self.max_connections_percent
     }
-    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. A high value enables the proxy to leave a high percentage of idle connections open. A low value causes the proxy to close idle client connections and return the underlying database connections to the connection pool. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. </p>
+    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
     pub fn max_idle_connections_percent(&self) -> i32 {
         self.max_idle_connections_percent
     }
@@ -12182,22 +12182,22 @@ pub mod connection_pool_configuration_info {
         pub(crate) init_query: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum size of the connection pool for each target in a target group. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+        /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
         pub fn max_connections_percent(mut self, input: i32) -> Self {
             self.max_connections_percent = Some(input);
             self
         }
-        /// <p>The maximum size of the connection pool for each target in a target group. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+        /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
         pub fn set_max_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.max_connections_percent = input;
             self
         }
-        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. A high value enables the proxy to leave a high percentage of idle connections open. A low value causes the proxy to close idle client connections and return the underlying database connections to the connection pool. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. </p>
+        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
         pub fn max_idle_connections_percent(mut self, input: i32) -> Self {
             self.max_idle_connections_percent = Some(input);
             self
         }
-        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. A high value enables the proxy to leave a high percentage of idle connections open. A low value causes the proxy to close idle client connections and return the underlying database connections to the connection pool. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. </p>
+        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
         pub fn set_max_idle_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.max_idle_connections_percent = input;
             self
@@ -12264,11 +12264,11 @@ impl ConnectionPoolConfigurationInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionPoolConfiguration {
-    /// <p>The maximum size of the connection pool for each target in a target group. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+    /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: between 1 and 100</p>
     pub max_connections_percent: std::option::Option<i32>,
-    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. A high value enables the proxy to leave a high percentage of idle connections open. A low value causes the proxy to close idle client connections and return the underlying database connections to the connection pool. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. </p>
+    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
     /// <p>Default: 50</p>
     /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
     pub max_idle_connections_percent: std::option::Option<i32>,
@@ -12284,13 +12284,13 @@ pub struct ConnectionPoolConfiguration {
     pub init_query: std::option::Option<std::string::String>,
 }
 impl ConnectionPoolConfiguration {
-    /// <p>The maximum size of the connection pool for each target in a target group. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+    /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: between 1 and 100</p>
     pub fn max_connections_percent(&self) -> std::option::Option<i32> {
         self.max_connections_percent
     }
-    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. A high value enables the proxy to leave a high percentage of idle connections open. A low value causes the proxy to close idle client connections and return the underlying database connections to the connection pool. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. </p>
+    /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
     /// <p>Default: 50</p>
     /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
     pub fn max_idle_connections_percent(&self) -> std::option::Option<i32> {
@@ -12340,28 +12340,28 @@ pub mod connection_pool_configuration {
         pub(crate) init_query: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum size of the connection pool for each target in a target group. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+        /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: between 1 and 100</p>
         pub fn max_connections_percent(mut self, input: i32) -> Self {
             self.max_connections_percent = Some(input);
             self
         }
-        /// <p>The maximum size of the connection pool for each target in a target group. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
+        /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: between 1 and 100</p>
         pub fn set_max_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.max_connections_percent = input;
             self
         }
-        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. A high value enables the proxy to leave a high percentage of idle connections open. A low value causes the proxy to close idle client connections and return the underlying database connections to the connection pool. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. </p>
+        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
         /// <p>Default: 50</p>
         /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
         pub fn max_idle_connections_percent(mut self, input: i32) -> Self {
             self.max_idle_connections_percent = Some(input);
             self
         }
-        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. A high value enables the proxy to leave a high percentage of idle connections open. A low value causes the proxy to close idle client connections and return the underlying database connections to the connection pool. For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. </p>
+        /// <p> Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database. </p>
         /// <p>Default: 50</p>
         /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code> </p>
         pub fn set_max_idle_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
@@ -18165,6 +18165,8 @@ pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     DbParameterGroup,
     #[allow(missing_docs)] // documentation missing in model
+    DbProxy,
+    #[allow(missing_docs)] // documentation missing in model
     DbSecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
     DbSnapshot,
@@ -18179,6 +18181,7 @@ impl std::convert::From<&str> for SourceType {
             "db-cluster-snapshot" => SourceType::DbClusterSnapshot,
             "db-instance" => SourceType::DbInstance,
             "db-parameter-group" => SourceType::DbParameterGroup,
+            "db-proxy" => SourceType::DbProxy,
             "db-security-group" => SourceType::DbSecurityGroup,
             "db-snapshot" => SourceType::DbSnapshot,
             other => SourceType::Unknown(other.to_owned()),
@@ -18201,6 +18204,7 @@ impl SourceType {
             SourceType::DbClusterSnapshot => "db-cluster-snapshot",
             SourceType::DbInstance => "db-instance",
             SourceType::DbParameterGroup => "db-parameter-group",
+            SourceType::DbProxy => "db-proxy",
             SourceType::DbSecurityGroup => "db-security-group",
             SourceType::DbSnapshot => "db-snapshot",
             SourceType::Unknown(s) => s.as_ref(),
@@ -18214,6 +18218,7 @@ impl SourceType {
             "db-cluster-snapshot",
             "db-instance",
             "db-parameter-group",
+            "db-proxy",
             "db-security-group",
             "db-snapshot",
         ]

@@ -603,6 +603,155 @@ impl std::error::Error for CopyWorkspaceImageError {
     }
 }
 
+/// Error type for the `CreateConnectClientAddIn` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateConnectClientAddInError {
+    /// Kind of error that occurred.
+    pub kind: CreateConnectClientAddInErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateConnectClientAddIn` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateConnectClientAddInErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>The specified resource already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The resource could not be created.</p>
+    ResourceCreationFailedException(crate::error::ResourceCreationFailedException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateConnectClientAddInError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateConnectClientAddInErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateConnectClientAddInErrorKind::InvalidParameterValuesException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateConnectClientAddInErrorKind::ResourceAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateConnectClientAddInErrorKind::ResourceCreationFailedException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateConnectClientAddInErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateConnectClientAddInErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateConnectClientAddInError {
+    fn code(&self) -> Option<&str> {
+        CreateConnectClientAddInError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateConnectClientAddInError {
+    /// Creates a new `CreateConnectClientAddInError`.
+    pub fn new(kind: CreateConnectClientAddInErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateConnectClientAddInError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateConnectClientAddInErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateConnectClientAddInError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateConnectClientAddInErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateConnectClientAddInErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectClientAddInErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateConnectClientAddInErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectClientAddInErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateConnectClientAddInErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectClientAddInErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateConnectClientAddInErrorKind::ResourceCreationFailedException`.
+    pub fn is_resource_creation_failed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectClientAddInErrorKind::ResourceCreationFailedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateConnectClientAddInErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectClientAddInErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateConnectClientAddInError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateConnectClientAddInErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateConnectClientAddInErrorKind::InvalidParameterValuesException(_inner) => {
+                Some(_inner)
+            }
+            CreateConnectClientAddInErrorKind::ResourceAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            CreateConnectClientAddInErrorKind::ResourceCreationFailedException(_inner) => {
+                Some(_inner)
+            }
+            CreateConnectClientAddInErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateConnectClientAddInErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateConnectionAlias` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1433,6 +1582,125 @@ impl std::error::Error for CreateWorkspacesError {
             CreateWorkspacesErrorKind::InvalidParameterValuesException(_inner) => Some(_inner),
             CreateWorkspacesErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             CreateWorkspacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteConnectClientAddIn` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteConnectClientAddInError {
+    /// Kind of error that occurred.
+    pub kind: DeleteConnectClientAddInErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteConnectClientAddIn` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteConnectClientAddInErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteConnectClientAddInError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteConnectClientAddInErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteConnectClientAddInErrorKind::InvalidParameterValuesException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteConnectClientAddInErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteConnectClientAddInErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteConnectClientAddInError {
+    fn code(&self) -> Option<&str> {
+        DeleteConnectClientAddInError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteConnectClientAddInError {
+    /// Creates a new `DeleteConnectClientAddInError`.
+    pub fn new(kind: DeleteConnectClientAddInErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteConnectClientAddInError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteConnectClientAddInErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteConnectClientAddInError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteConnectClientAddInErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteConnectClientAddInErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConnectClientAddInErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteConnectClientAddInErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConnectClientAddInErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteConnectClientAddInErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConnectClientAddInErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteConnectClientAddInError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteConnectClientAddInErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteConnectClientAddInErrorKind::InvalidParameterValuesException(_inner) => {
+                Some(_inner)
+            }
+            DeleteConnectClientAddInErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteConnectClientAddInErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2511,6 +2779,127 @@ impl std::error::Error for DescribeClientPropertiesError {
             }
             DescribeClientPropertiesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeClientPropertiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeConnectClientAddIns` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeConnectClientAddInsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeConnectClientAddInsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeConnectClientAddIns` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeConnectClientAddInsErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeConnectClientAddInsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeConnectClientAddInsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeConnectClientAddInsErrorKind::InvalidParameterValuesException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeConnectClientAddInsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeConnectClientAddInsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeConnectClientAddInsError {
+    fn code(&self) -> Option<&str> {
+        DescribeConnectClientAddInsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeConnectClientAddInsError {
+    /// Creates a new `DescribeConnectClientAddInsError`.
+    pub fn new(kind: DescribeConnectClientAddInsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeConnectClientAddInsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeConnectClientAddInsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeConnectClientAddInsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeConnectClientAddInsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeConnectClientAddInsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeConnectClientAddInsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeConnectClientAddInsErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeConnectClientAddInsErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeConnectClientAddInsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeConnectClientAddInsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeConnectClientAddInsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeConnectClientAddInsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeConnectClientAddInsErrorKind::InvalidParameterValuesException(_inner) => {
+                Some(_inner)
+            }
+            DescribeConnectClientAddInsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeConnectClientAddInsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6178,6 +6567,125 @@ impl std::error::Error for TerminateWorkspacesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             TerminateWorkspacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateConnectClientAddIn` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateConnectClientAddInError {
+    /// Kind of error that occurred.
+    pub kind: UpdateConnectClientAddInErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateConnectClientAddIn` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateConnectClientAddInErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateConnectClientAddInError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateConnectClientAddInErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateConnectClientAddInErrorKind::InvalidParameterValuesException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateConnectClientAddInErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateConnectClientAddInErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateConnectClientAddInError {
+    fn code(&self) -> Option<&str> {
+        UpdateConnectClientAddInError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateConnectClientAddInError {
+    /// Creates a new `UpdateConnectClientAddInError`.
+    pub fn new(kind: UpdateConnectClientAddInErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateConnectClientAddInError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateConnectClientAddInErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateConnectClientAddInError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateConnectClientAddInErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateConnectClientAddInErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectClientAddInErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectClientAddInErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectClientAddInErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectClientAddInErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectClientAddInErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateConnectClientAddInError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateConnectClientAddInErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateConnectClientAddInErrorKind::InvalidParameterValuesException(_inner) => {
+                Some(_inner)
+            }
+            UpdateConnectClientAddInErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateConnectClientAddInErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

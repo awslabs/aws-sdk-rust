@@ -760,11 +760,18 @@ pub struct DataViewDestinationTypeParams {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
     /// <li> <p> <code>GLUE_TABLE</code> - Glue table destination type.</p> </li>
+    /// <li> <p> <code>S3</code> - S3 destination type.</p> </li>
     /// </ul>
     pub destination_type: std::option::Option<std::string::String>,
-    /// Data View Export File Format
+    /// <p>Data view export file format.</p>
+    /// <ul>
+    /// <li> <p> <code>PARQUET</code> - Parquet export file format.</p> </li>
+    /// <li> <p> <code>DELIMITED_TEXT</code> - Delimited text export file format.</p> </li>
+    /// </ul>
     pub s3_destination_export_file_format: std::option::Option<crate::model::ExportFileFormat>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Format Options for S3 Destination type.</p>
+    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
+    /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
     pub s3_destination_export_file_format_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -772,17 +779,24 @@ impl DataViewDestinationTypeParams {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
     /// <li> <p> <code>GLUE_TABLE</code> - Glue table destination type.</p> </li>
+    /// <li> <p> <code>S3</code> - S3 destination type.</p> </li>
     /// </ul>
     pub fn destination_type(&self) -> std::option::Option<&str> {
         self.destination_type.as_deref()
     }
-    /// Data View Export File Format
+    /// <p>Data view export file format.</p>
+    /// <ul>
+    /// <li> <p> <code>PARQUET</code> - Parquet export file format.</p> </li>
+    /// <li> <p> <code>DELIMITED_TEXT</code> - Delimited text export file format.</p> </li>
+    /// </ul>
     pub fn s3_destination_export_file_format(
         &self,
     ) -> std::option::Option<&crate::model::ExportFileFormat> {
         self.s3_destination_export_file_format.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Format Options for S3 Destination type.</p>
+    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
+    /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
     pub fn s3_destination_export_file_format_options(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -822,6 +836,7 @@ pub mod data_view_destination_type_params {
         /// <p>Destination type for a Dataview.</p>
         /// <ul>
         /// <li> <p> <code>GLUE_TABLE</code> - Glue table destination type.</p> </li>
+        /// <li> <p> <code>S3</code> - S3 destination type.</p> </li>
         /// </ul>
         pub fn destination_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_type = Some(input.into());
@@ -830,6 +845,7 @@ pub mod data_view_destination_type_params {
         /// <p>Destination type for a Dataview.</p>
         /// <ul>
         /// <li> <p> <code>GLUE_TABLE</code> - Glue table destination type.</p> </li>
+        /// <li> <p> <code>S3</code> - S3 destination type.</p> </li>
         /// </ul>
         pub fn set_destination_type(
             mut self,
@@ -838,7 +854,11 @@ pub mod data_view_destination_type_params {
             self.destination_type = input;
             self
         }
-        /// Data View Export File Format
+        /// <p>Data view export file format.</p>
+        /// <ul>
+        /// <li> <p> <code>PARQUET</code> - Parquet export file format.</p> </li>
+        /// <li> <p> <code>DELIMITED_TEXT</code> - Delimited text export file format.</p> </li>
+        /// </ul>
         pub fn s3_destination_export_file_format(
             mut self,
             input: crate::model::ExportFileFormat,
@@ -846,7 +866,11 @@ pub mod data_view_destination_type_params {
             self.s3_destination_export_file_format = Some(input);
             self
         }
-        /// Data View Export File Format
+        /// <p>Data view export file format.</p>
+        /// <ul>
+        /// <li> <p> <code>PARQUET</code> - Parquet export file format.</p> </li>
+        /// <li> <p> <code>DELIMITED_TEXT</code> - Delimited text export file format.</p> </li>
+        /// </ul>
         pub fn set_s3_destination_export_file_format(
             mut self,
             input: std::option::Option<crate::model::ExportFileFormat>,
@@ -858,6 +882,9 @@ pub mod data_view_destination_type_params {
         ///
         /// To override the contents of this collection use [`set_s3_destination_export_file_format_options`](Self::set_s3_destination_export_file_format_options).
         ///
+        /// <p>Format Options for S3 Destination type.</p>
+        /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
+        /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
         pub fn s3_destination_export_file_format_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -870,7 +897,9 @@ pub mod data_view_destination_type_params {
             self.s3_destination_export_file_format_options = Some(hash_map);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Format Options for S3 Destination type.</p>
+        /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
+        /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
         pub fn set_s3_destination_export_file_format_options(
             mut self,
             input: std::option::Option<
@@ -1631,7 +1660,7 @@ pub struct ChangesetSummary {
     pub error_info: std::option::Option<crate::model::ChangesetErrorInfo>,
     /// <p>Time until which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub active_until_timestamp: std::option::Option<i64>,
-    /// Milliseconds since UTC epoch
+    /// <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub active_from_timestamp: std::option::Option<i64>,
     /// <p>The unique identifier of the Changeset that is updated.</p>
     pub updates_changeset_id: std::option::Option<std::string::String>,
@@ -1697,7 +1726,7 @@ impl ChangesetSummary {
     pub fn active_until_timestamp(&self) -> std::option::Option<i64> {
         self.active_until_timestamp
     }
-    /// Milliseconds since UTC epoch
+    /// <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn active_from_timestamp(&self) -> std::option::Option<i64> {
         self.active_from_timestamp
     }
@@ -1920,12 +1949,12 @@ pub mod changeset_summary {
             self.active_until_timestamp = input;
             self
         }
-        /// Milliseconds since UTC epoch
+        /// <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn active_from_timestamp(mut self, input: i64) -> Self {
             self.active_from_timestamp = Some(input);
             self
         }
-        /// Milliseconds since UTC epoch
+        /// <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_active_from_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.active_from_timestamp = input;
             self
@@ -2448,6 +2477,8 @@ impl AsRef<str> for DatasetStatus {
 }
 
 /// <p>Permission group parameters for Dataset permissions.</p>
+/// <p>Here is an example of how you could specify the <code>PermissionGroupParams</code>:</p>
+/// <p> <code> { "permissionGroupId": "0r6fCRtSTUk4XPfXQe3M0g", "datasetPermissions": [ {"permission": "ViewDatasetDetails"}, {"permission": "AddDatasetData"}, {"permission": "EditDatasetMetadata"}, {"permission": "DeleteDataset"} ] } </code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionGroupParams {
@@ -2533,7 +2564,17 @@ impl PermissionGroupParams {
     }
 }
 
-/// <p>Resource permission for a Dataset.</p>
+/// <p>Resource permission for a dataset. When you create a dataset, all the other members of the same user group inherit access to the dataset. You can only create a dataset if your user group has application permission for Create Datasets.</p>
+/// <p>The following is a list of valid dataset permissions that you can apply: </p>
+/// <ul>
+/// <li> <p> <code>ViewDatasetDetails</code> </p> </li>
+/// <li> <p> <code>ReadDatasetDetails</code> </p> </li>
+/// <li> <p> <code>AddDatasetData</code> </p> </li>
+/// <li> <p> <code>CreateSnapshot</code> </p> </li>
+/// <li> <p> <code>EditDatasetMetadata</code> </p> </li>
+/// <li> <p> <code>DeleteDataset</code> </p> </li>
+/// </ul>
+/// <p>For more information on the ataset permissions, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported Dataset Permissions</a> in the FinSpace User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePermission {

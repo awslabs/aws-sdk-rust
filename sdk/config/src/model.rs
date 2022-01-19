@@ -199,6 +199,12 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Project,
     #[allow(missing_docs)] // documentation missing in model
+    CodeDeployApplication,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeDeployDeploymentConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeDeployDeploymentGroup,
+    #[allow(missing_docs)] // documentation missing in model
     Pipeline,
     #[allow(missing_docs)] // documentation missing in model
     ConformancePackCompliance,
@@ -234,6 +240,8 @@ pub enum ResourceType {
     SecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
     Subnet,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGateway,
     #[allow(missing_docs)] // documentation missing in model
     Vpc,
     #[allow(missing_docs)] // documentation missing in model
@@ -284,6 +292,10 @@ pub enum ResourceType {
     User,
     #[allow(missing_docs)] // documentation missing in model
     Key,
+    #[allow(missing_docs)] // documentation missing in model
+    KinesisStream,
+    #[allow(missing_docs)] // documentation missing in model
+    KinesisStreamConsumer,
     #[allow(missing_docs)] // documentation missing in model
     Function,
     #[allow(missing_docs)] // documentation missing in model
@@ -403,6 +415,9 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::CloudTrail::Trail" => ResourceType::Trail,
             "AWS::CloudWatch::Alarm" => ResourceType::Alarm,
             "AWS::CodeBuild::Project" => ResourceType::Project,
+            "AWS::CodeDeploy::Application" => ResourceType::CodeDeployApplication,
+            "AWS::CodeDeploy::DeploymentConfig" => ResourceType::CodeDeployDeploymentConfig,
+            "AWS::CodeDeploy::DeploymentGroup" => ResourceType::CodeDeployDeploymentGroup,
             "AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
             "AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
             "AWS::Config::ResourceCompliance" => ResourceType::ResourceCompliance,
@@ -421,6 +436,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EC2::RouteTable" => ResourceType::RouteTable,
             "AWS::EC2::SecurityGroup" => ResourceType::SecurityGroup,
             "AWS::EC2::Subnet" => ResourceType::Subnet,
+            "AWS::EC2::TransitGateway" => ResourceType::TransitGateway,
             "AWS::EC2::VPC" => ResourceType::Vpc,
             "AWS::EC2::VPCEndpoint" => ResourceType::VpcEndpoint,
             "AWS::EC2::VPCEndpointService" => ResourceType::VpcEndpointService,
@@ -446,6 +462,8 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::IAM::Role" => ResourceType::Role,
             "AWS::IAM::User" => ResourceType::User,
             "AWS::KMS::Key" => ResourceType::Key,
+            "AWS::Kinesis::Stream" => ResourceType::KinesisStream,
+            "AWS::Kinesis::StreamConsumer" => ResourceType::KinesisStreamConsumer,
             "AWS::Lambda::Function" => ResourceType::Function,
             "AWS::NetworkFirewall::Firewall" => ResourceType::NetworkFirewallFirewall,
             "AWS::NetworkFirewall::FirewallPolicy" => ResourceType::NetworkFirewallFirewallPolicy,
@@ -529,6 +547,9 @@ impl ResourceType {
             ResourceType::Trail => "AWS::CloudTrail::Trail",
             ResourceType::Alarm => "AWS::CloudWatch::Alarm",
             ResourceType::Project => "AWS::CodeBuild::Project",
+            ResourceType::CodeDeployApplication => "AWS::CodeDeploy::Application",
+            ResourceType::CodeDeployDeploymentConfig => "AWS::CodeDeploy::DeploymentConfig",
+            ResourceType::CodeDeployDeploymentGroup => "AWS::CodeDeploy::DeploymentGroup",
             ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
             ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
             ResourceType::ResourceCompliance => "AWS::Config::ResourceCompliance",
@@ -547,6 +568,7 @@ impl ResourceType {
             ResourceType::RouteTable => "AWS::EC2::RouteTable",
             ResourceType::SecurityGroup => "AWS::EC2::SecurityGroup",
             ResourceType::Subnet => "AWS::EC2::Subnet",
+            ResourceType::TransitGateway => "AWS::EC2::TransitGateway",
             ResourceType::Vpc => "AWS::EC2::VPC",
             ResourceType::VpcEndpoint => "AWS::EC2::VPCEndpoint",
             ResourceType::VpcEndpointService => "AWS::EC2::VPCEndpointService",
@@ -572,6 +594,8 @@ impl ResourceType {
             ResourceType::Role => "AWS::IAM::Role",
             ResourceType::User => "AWS::IAM::User",
             ResourceType::Key => "AWS::KMS::Key",
+            ResourceType::KinesisStream => "AWS::Kinesis::Stream",
+            ResourceType::KinesisStreamConsumer => "AWS::Kinesis::StreamConsumer",
             ResourceType::Function => "AWS::Lambda::Function",
             ResourceType::NetworkFirewallFirewall => "AWS::NetworkFirewall::Firewall",
             ResourceType::NetworkFirewallFirewallPolicy => "AWS::NetworkFirewall::FirewallPolicy",
@@ -646,6 +670,9 @@ impl ResourceType {
             "AWS::CloudTrail::Trail",
             "AWS::CloudWatch::Alarm",
             "AWS::CodeBuild::Project",
+            "AWS::CodeDeploy::Application",
+            "AWS::CodeDeploy::DeploymentConfig",
+            "AWS::CodeDeploy::DeploymentGroup",
             "AWS::CodePipeline::Pipeline",
             "AWS::Config::ConformancePackCompliance",
             "AWS::Config::ResourceCompliance",
@@ -664,6 +691,7 @@ impl ResourceType {
             "AWS::EC2::RouteTable",
             "AWS::EC2::SecurityGroup",
             "AWS::EC2::Subnet",
+            "AWS::EC2::TransitGateway",
             "AWS::EC2::VPC",
             "AWS::EC2::VPCEndpoint",
             "AWS::EC2::VPCEndpointService",
@@ -689,6 +717,8 @@ impl ResourceType {
             "AWS::IAM::Role",
             "AWS::IAM::User",
             "AWS::KMS::Key",
+            "AWS::Kinesis::Stream",
+            "AWS::Kinesis::StreamConsumer",
             "AWS::Lambda::Function",
             "AWS::NetworkFirewall::Firewall",
             "AWS::NetworkFirewall::FirewallPolicy",

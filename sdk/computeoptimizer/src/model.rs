@@ -73,6 +73,61 @@ impl AsRef<str> for Status {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum InferredWorkloadTypesPreference {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InferredWorkloadTypesPreference {
+    fn from(s: &str) -> Self {
+        match s {
+            "Active" => InferredWorkloadTypesPreference::Active,
+            "Inactive" => InferredWorkloadTypesPreference::Inactive,
+            other => InferredWorkloadTypesPreference::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InferredWorkloadTypesPreference {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InferredWorkloadTypesPreference::from(s))
+    }
+}
+impl InferredWorkloadTypesPreference {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InferredWorkloadTypesPreference::Active => "Active",
+            InferredWorkloadTypesPreference::Inactive => "Inactive",
+            InferredWorkloadTypesPreference::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Inactive"]
+    }
+}
+impl AsRef<str> for InferredWorkloadTypesPreference {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum EnhancedInfrastructureMetrics {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -119,7 +174,7 @@ impl AsRef<str> for EnhancedInfrastructureMetrics {
 
 /// <p>Describes the scope of a recommendation preference.</p>
 /// <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
-/// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified the Auto Scaling group.</p>
+/// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -324,6 +379,8 @@ pub enum ResourceType {
     Ec2Instance,
     #[allow(missing_docs)] // documentation missing in model
     LambdaFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    NotApplicable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -334,6 +391,7 @@ impl std::convert::From<&str> for ResourceType {
             "EbsVolume" => ResourceType::EbsVolume,
             "Ec2Instance" => ResourceType::Ec2Instance,
             "LambdaFunction" => ResourceType::LambdaFunction,
+            "NotApplicable" => ResourceType::NotApplicable,
             other => ResourceType::Unknown(other.to_owned()),
         }
     }
@@ -353,6 +411,7 @@ impl ResourceType {
             ResourceType::EbsVolume => "EbsVolume",
             ResourceType::Ec2Instance => "Ec2Instance",
             ResourceType::LambdaFunction => "LambdaFunction",
+            ResourceType::NotApplicable => "NotApplicable",
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
@@ -363,6 +422,7 @@ impl ResourceType {
             "EbsVolume",
             "Ec2Instance",
             "LambdaFunction",
+            "NotApplicable",
         ]
     }
 }
@@ -658,17 +718,17 @@ impl CurrentPerformanceRiskRatings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SavingsOpportunity {
-    /// <p>The estimated monthly savings possible as a percentage of monthly cost.</p>
+    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer recommendations for a given resource.</p>
     pub savings_opportunity_percentage: f64,
-    /// <p>An object that describes the estimated monthly savings amount possible based on On-Demand instance pricing.</p>
+    /// <p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
     pub estimated_monthly_savings: std::option::Option<crate::model::EstimatedMonthlySavings>,
 }
 impl SavingsOpportunity {
-    /// <p>The estimated monthly savings possible as a percentage of monthly cost.</p>
+    /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer recommendations for a given resource.</p>
     pub fn savings_opportunity_percentage(&self) -> f64 {
         self.savings_opportunity_percentage
     }
-    /// <p>An object that describes the estimated monthly savings amount possible based on On-Demand instance pricing.</p>
+    /// <p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
     pub fn estimated_monthly_savings(
         &self,
     ) -> std::option::Option<&crate::model::EstimatedMonthlySavings> {
@@ -697,12 +757,12 @@ pub mod savings_opportunity {
             std::option::Option<crate::model::EstimatedMonthlySavings>,
     }
     impl Builder {
-        /// <p>The estimated monthly savings possible as a percentage of monthly cost.</p>
+        /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer recommendations for a given resource.</p>
         pub fn savings_opportunity_percentage(mut self, input: f64) -> Self {
             self.savings_opportunity_percentage = Some(input);
             self
         }
-        /// <p>The estimated monthly savings possible as a percentage of monthly cost.</p>
+        /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer recommendations for a given resource.</p>
         pub fn set_savings_opportunity_percentage(
             mut self,
             input: std::option::Option<f64>,
@@ -710,7 +770,7 @@ pub mod savings_opportunity {
             self.savings_opportunity_percentage = input;
             self
         }
-        /// <p>An object that describes the estimated monthly savings amount possible based on On-Demand instance pricing.</p>
+        /// <p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
         pub fn estimated_monthly_savings(
             mut self,
             input: crate::model::EstimatedMonthlySavings,
@@ -718,7 +778,7 @@ pub mod savings_opportunity {
             self.estimated_monthly_savings = Some(input);
             self
         }
-        /// <p>An object that describes the estimated monthly savings amount possible based on On-Demand instance pricing.</p>
+        /// <p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
         pub fn set_estimated_monthly_savings(
             mut self,
             input: std::option::Option<crate::model::EstimatedMonthlySavings>,
@@ -744,7 +804,7 @@ impl SavingsOpportunity {
     }
 }
 
-/// <p>Describes the estimated monthly savings amount possible for a given resource based on On-Demand instance pricing</p>
+/// <p>Describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation">Estimated monthly savings and savings opportunities</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1253,9 +1313,13 @@ pub struct RecommendationPreferencesDetail {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
-    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub enhanced_infrastructure_metrics:
         std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+    /// <p>The status of the inferred workload types recommendation preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    pub inferred_workload_types: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
 }
 impl RecommendationPreferencesDetail {
     /// <p>An object that describes the scope of the recommendation preference.</p>
@@ -1269,11 +1333,19 @@ impl RecommendationPreferencesDetail {
         self.resource_type.as_ref()
     }
     /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
-    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn enhanced_infrastructure_metrics(
         &self,
     ) -> std::option::Option<&crate::model::EnhancedInfrastructureMetrics> {
         self.enhanced_infrastructure_metrics.as_ref()
+    }
+    /// <p>The status of the inferred workload types recommendation preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    pub fn inferred_workload_types(
+        &self,
+    ) -> std::option::Option<&crate::model::InferredWorkloadTypesPreference> {
+        self.inferred_workload_types.as_ref()
     }
 }
 impl std::fmt::Debug for RecommendationPreferencesDetail {
@@ -1285,6 +1357,7 @@ impl std::fmt::Debug for RecommendationPreferencesDetail {
             "enhanced_infrastructure_metrics",
             &self.enhanced_infrastructure_metrics,
         );
+        formatter.field("inferred_workload_types", &self.inferred_workload_types);
         formatter.finish()
     }
 }
@@ -1298,6 +1371,8 @@ pub mod recommendation_preferences_detail {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) enhanced_infrastructure_metrics:
             std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+        pub(crate) inferred_workload_types:
+            std::option::Option<crate::model::InferredWorkloadTypesPreference>,
     }
     impl Builder {
         /// <p>An object that describes the scope of the recommendation preference.</p>
@@ -1328,7 +1403,8 @@ pub mod recommendation_preferences_detail {
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn enhanced_infrastructure_metrics(
             mut self,
             input: crate::model::EnhancedInfrastructureMetrics,
@@ -1337,12 +1413,31 @@ pub mod recommendation_preferences_detail {
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_enhanced_infrastructure_metrics(
             mut self,
             input: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
         ) -> Self {
             self.enhanced_infrastructure_metrics = input;
+            self
+        }
+        /// <p>The status of the inferred workload types recommendation preference.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        pub fn inferred_workload_types(
+            mut self,
+            input: crate::model::InferredWorkloadTypesPreference,
+        ) -> Self {
+            self.inferred_workload_types = Some(input);
+            self
+        }
+        /// <p>The status of the inferred workload types recommendation preference.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        pub fn set_inferred_workload_types(
+            mut self,
+            input: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+        ) -> Self {
+            self.inferred_workload_types = input;
             self
         }
         /// Consumes the builder and constructs a [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail)
@@ -1351,6 +1446,7 @@ pub mod recommendation_preferences_detail {
                 scope: self.scope,
                 resource_type: self.resource_type,
                 enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
+                inferred_workload_types: self.inferred_workload_types,
             }
         }
     }
@@ -1409,7 +1505,7 @@ pub struct LambdaFunctionRecommendation {
     /// <p>An array of objects that describe the memory configuration recommendation options for the function.</p>
     pub memory_size_recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionMemoryRecommendationOption>>,
-    /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function configuration is underperforming in its workload.</p>
+    /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
     pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
 }
 impl LambdaFunctionRecommendation {
@@ -1482,7 +1578,7 @@ impl LambdaFunctionRecommendation {
     ) -> std::option::Option<&[crate::model::LambdaFunctionMemoryRecommendationOption]> {
         self.memory_size_recommendation_options.as_deref()
     }
-    /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function configuration is underperforming in its workload.</p>
+    /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
     pub fn current_performance_risk(
         &self,
     ) -> std::option::Option<&crate::model::CurrentPerformanceRisk> {
@@ -1731,7 +1827,7 @@ pub mod lambda_function_recommendation {
             self.memory_size_recommendation_options = input;
             self
         }
-        /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function configuration is underperforming in its workload.</p>
+        /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
         pub fn current_performance_risk(
             mut self,
             input: crate::model::CurrentPerformanceRisk,
@@ -1739,7 +1835,7 @@ pub mod lambda_function_recommendation {
             self.current_performance_risk = Some(input);
             self
         }
-        /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function configuration is underperforming in its workload.</p>
+        /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
         pub fn set_current_performance_risk(
             mut self,
             input: std::option::Option<crate::model::CurrentPerformanceRisk>,
@@ -3722,11 +3818,24 @@ pub struct InstanceRecommendation {
         std::option::Option<std::vec::Vec<crate::model::RecommendationSource>>,
     /// <p>The timestamp of when the instance recommendation was last generated.</p>
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
+    /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
     pub current_performance_risk: std::option::Option<crate::model::CurrentPerformanceRisk>,
     /// <p>An object that describes the effective recommendation preferences for the instance.</p>
     pub effective_recommendation_preferences:
         std::option::Option<crate::model::EffectiveRecommendationPreferences>,
+    /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
+    /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
+    /// <ul>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instance.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instance.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
+    /// </ul>
+    pub inferred_workload_types:
+        std::option::Option<std::vec::Vec<crate::model::InferredWorkloadType>>,
 }
 impl InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -3808,7 +3917,7 @@ impl InstanceRecommendation {
     pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
-    /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
+    /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
     pub fn current_performance_risk(
         &self,
     ) -> std::option::Option<&crate::model::CurrentPerformanceRisk> {
@@ -3819,6 +3928,22 @@ impl InstanceRecommendation {
         &self,
     ) -> std::option::Option<&crate::model::EffectiveRecommendationPreferences> {
         self.effective_recommendation_preferences.as_ref()
+    }
+    /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
+    /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
+    /// <ul>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instance.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instance.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
+    /// </ul>
+    pub fn inferred_workload_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferredWorkloadType]> {
+        self.inferred_workload_types.as_deref()
     }
 }
 impl std::fmt::Debug for InstanceRecommendation {
@@ -3840,6 +3965,7 @@ impl std::fmt::Debug for InstanceRecommendation {
             "effective_recommendation_preferences",
             &self.effective_recommendation_preferences,
         );
+        formatter.field("inferred_workload_types", &self.inferred_workload_types);
         formatter.finish()
     }
 }
@@ -3869,6 +3995,8 @@ pub mod instance_recommendation {
             std::option::Option<crate::model::CurrentPerformanceRisk>,
         pub(crate) effective_recommendation_preferences:
             std::option::Option<crate::model::EffectiveRecommendationPreferences>,
+        pub(crate) inferred_workload_types:
+            std::option::Option<std::vec::Vec<crate::model::InferredWorkloadType>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -4092,7 +4220,7 @@ pub mod instance_recommendation {
             self.last_refresh_timestamp = input;
             self
         }
-        /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
+        /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
         pub fn current_performance_risk(
             mut self,
             input: crate::model::CurrentPerformanceRisk,
@@ -4100,7 +4228,7 @@ pub mod instance_recommendation {
             self.current_performance_risk = Some(input);
             self
         }
-        /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
+        /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
         pub fn set_current_performance_risk(
             mut self,
             input: std::option::Option<crate::model::CurrentPerformanceRisk>,
@@ -4124,6 +4252,48 @@ pub mod instance_recommendation {
             self.effective_recommendation_preferences = input;
             self
         }
+        /// Appends an item to `inferred_workload_types`.
+        ///
+        /// To override the contents of this collection use [`set_inferred_workload_types`](Self::set_inferred_workload_types).
+        ///
+        /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
+        /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
+        /// <ul>
+        /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p> </li>
+        /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p> </li>
+        /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p> </li>
+        /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instance.</p> </li>
+        /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instance.</p> </li>
+        /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
+        /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
+        /// </ul>
+        pub fn inferred_workload_types(
+            mut self,
+            input: crate::model::InferredWorkloadType,
+        ) -> Self {
+            let mut v = self.inferred_workload_types.unwrap_or_default();
+            v.push(input);
+            self.inferred_workload_types = Some(v);
+            self
+        }
+        /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
+        /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
+        /// <ul>
+        /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p> </li>
+        /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p> </li>
+        /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p> </li>
+        /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instance.</p> </li>
+        /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instance.</p> </li>
+        /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
+        /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
+        /// </ul>
+        pub fn set_inferred_workload_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InferredWorkloadType>>,
+        ) -> Self {
+            self.inferred_workload_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceRecommendation`](crate::model::InstanceRecommendation)
         pub fn build(self) -> crate::model::InstanceRecommendation {
             crate::model::InstanceRecommendation {
@@ -4140,6 +4310,7 @@ pub mod instance_recommendation {
                 last_refresh_timestamp: self.last_refresh_timestamp,
                 current_performance_risk: self.current_performance_risk,
                 effective_recommendation_preferences: self.effective_recommendation_preferences,
+                inferred_workload_types: self.inferred_workload_types,
             }
         }
     }
@@ -4148,6 +4319,89 @@ impl InstanceRecommendation {
     /// Creates a new builder-style object to manufacture [`InstanceRecommendation`](crate::model::InstanceRecommendation)
     pub fn builder() -> crate::model::instance_recommendation::Builder {
         crate::model::instance_recommendation::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InferredWorkloadType {
+    #[allow(missing_docs)] // documentation missing in model
+    AmazonEmr,
+    #[allow(missing_docs)] // documentation missing in model
+    ApacheCassandra,
+    #[allow(missing_docs)] // documentation missing in model
+    ApacheHadoop,
+    #[allow(missing_docs)] // documentation missing in model
+    Memcached,
+    #[allow(missing_docs)] // documentation missing in model
+    Nginx,
+    #[allow(missing_docs)] // documentation missing in model
+    PostgreSql,
+    #[allow(missing_docs)] // documentation missing in model
+    Redis,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InferredWorkloadType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AmazonEmr" => InferredWorkloadType::AmazonEmr,
+            "ApacheCassandra" => InferredWorkloadType::ApacheCassandra,
+            "ApacheHadoop" => InferredWorkloadType::ApacheHadoop,
+            "Memcached" => InferredWorkloadType::Memcached,
+            "Nginx" => InferredWorkloadType::Nginx,
+            "PostgreSql" => InferredWorkloadType::PostgreSql,
+            "Redis" => InferredWorkloadType::Redis,
+            other => InferredWorkloadType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InferredWorkloadType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InferredWorkloadType::from(s))
+    }
+}
+impl InferredWorkloadType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InferredWorkloadType::AmazonEmr => "AmazonEmr",
+            InferredWorkloadType::ApacheCassandra => "ApacheCassandra",
+            InferredWorkloadType::ApacheHadoop => "ApacheHadoop",
+            InferredWorkloadType::Memcached => "Memcached",
+            InferredWorkloadType::Nginx => "Nginx",
+            InferredWorkloadType::PostgreSql => "PostgreSql",
+            InferredWorkloadType::Redis => "Redis",
+            InferredWorkloadType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AmazonEmr",
+            "ApacheCassandra",
+            "ApacheHadoop",
+            "Memcached",
+            "Nginx",
+            "PostgreSql",
+            "Redis",
+        ]
+    }
+}
+impl AsRef<str> for InferredWorkloadType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4165,9 +4419,13 @@ pub struct EffectiveRecommendationPreferences {
     pub cpu_vendor_architectures:
         std::option::Option<std::vec::Vec<crate::model::CpuVendorArchitecture>>,
     /// <p>Describes the activation status of the enhanced infrastructure metrics preference.</p>
-    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub enhanced_infrastructure_metrics:
         std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+    /// <p>Describes the activation status of the inferred workload types preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    pub inferred_workload_types: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
 }
 impl EffectiveRecommendationPreferences {
     /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.</p>
@@ -4183,11 +4441,19 @@ impl EffectiveRecommendationPreferences {
         self.cpu_vendor_architectures.as_deref()
     }
     /// <p>Describes the activation status of the enhanced infrastructure metrics preference.</p>
-    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn enhanced_infrastructure_metrics(
         &self,
     ) -> std::option::Option<&crate::model::EnhancedInfrastructureMetrics> {
         self.enhanced_infrastructure_metrics.as_ref()
+    }
+    /// <p>Describes the activation status of the inferred workload types preference.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    pub fn inferred_workload_types(
+        &self,
+    ) -> std::option::Option<&crate::model::InferredWorkloadTypesPreference> {
+        self.inferred_workload_types.as_ref()
     }
 }
 impl std::fmt::Debug for EffectiveRecommendationPreferences {
@@ -4198,6 +4464,7 @@ impl std::fmt::Debug for EffectiveRecommendationPreferences {
             "enhanced_infrastructure_metrics",
             &self.enhanced_infrastructure_metrics,
         );
+        formatter.field("inferred_workload_types", &self.inferred_workload_types);
         formatter.finish()
     }
 }
@@ -4211,6 +4478,8 @@ pub mod effective_recommendation_preferences {
             std::option::Option<std::vec::Vec<crate::model::CpuVendorArchitecture>>,
         pub(crate) enhanced_infrastructure_metrics:
             std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+        pub(crate) inferred_workload_types:
+            std::option::Option<crate::model::InferredWorkloadTypesPreference>,
     }
     impl Builder {
         /// Appends an item to `cpu_vendor_architectures`.
@@ -4248,7 +4517,8 @@ pub mod effective_recommendation_preferences {
             self
         }
         /// <p>Describes the activation status of the enhanced infrastructure metrics preference.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn enhanced_infrastructure_metrics(
             mut self,
             input: crate::model::EnhancedInfrastructureMetrics,
@@ -4257,7 +4527,8 @@ pub mod effective_recommendation_preferences {
             self
         }
         /// <p>Describes the activation status of the enhanced infrastructure metrics preference.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_enhanced_infrastructure_metrics(
             mut self,
             input: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
@@ -4265,11 +4536,30 @@ pub mod effective_recommendation_preferences {
             self.enhanced_infrastructure_metrics = input;
             self
         }
+        /// <p>Describes the activation status of the inferred workload types preference.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        pub fn inferred_workload_types(
+            mut self,
+            input: crate::model::InferredWorkloadTypesPreference,
+        ) -> Self {
+            self.inferred_workload_types = Some(input);
+            self
+        }
+        /// <p>Describes the activation status of the inferred workload types preference.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+        pub fn set_inferred_workload_types(
+            mut self,
+            input: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+        ) -> Self {
+            self.inferred_workload_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences)
         pub fn build(self) -> crate::model::EffectiveRecommendationPreferences {
             crate::model::EffectiveRecommendationPreferences {
                 cpu_vendor_architectures: self.cpu_vendor_architectures,
                 enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
+                inferred_workload_types: self.inferred_workload_types,
             }
         }
     }
@@ -4400,6 +4690,9 @@ pub struct InstanceRecommendationOption {
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the instance recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
+    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+    pub migration_effort: std::option::Option<crate::model::MigrationEffort>,
 }
 impl InstanceRecommendationOption {
     /// <p>The instance type of the instance recommendation.</p>
@@ -4442,6 +4735,11 @@ impl InstanceRecommendationOption {
     pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
+    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+    pub fn migration_effort(&self) -> std::option::Option<&crate::model::MigrationEffort> {
+        self.migration_effort.as_ref()
+    }
 }
 impl std::fmt::Debug for InstanceRecommendationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4455,6 +4753,7 @@ impl std::fmt::Debug for InstanceRecommendationOption {
         formatter.field("performance_risk", &self.performance_risk);
         formatter.field("rank", &self.rank);
         formatter.field("savings_opportunity", &self.savings_opportunity);
+        formatter.field("migration_effort", &self.migration_effort);
         formatter.finish()
     }
 }
@@ -4472,6 +4771,7 @@ pub mod instance_recommendation_option {
         pub(crate) performance_risk: std::option::Option<f64>,
         pub(crate) rank: std::option::Option<i32>,
         pub(crate) savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
+        pub(crate) migration_effort: std::option::Option<crate::model::MigrationEffort>,
     }
     impl Builder {
         /// <p>The instance type of the instance recommendation.</p>
@@ -4589,6 +4889,21 @@ pub mod instance_recommendation_option {
             self.savings_opportunity = input;
             self
         }
+        /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+        /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+        pub fn migration_effort(mut self, input: crate::model::MigrationEffort) -> Self {
+            self.migration_effort = Some(input);
+            self
+        }
+        /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+        /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+        pub fn set_migration_effort(
+            mut self,
+            input: std::option::Option<crate::model::MigrationEffort>,
+        ) -> Self {
+            self.migration_effort = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption)
         pub fn build(self) -> crate::model::InstanceRecommendationOption {
             crate::model::InstanceRecommendationOption {
@@ -4598,6 +4913,7 @@ pub mod instance_recommendation_option {
                 performance_risk: self.performance_risk.unwrap_or_default(),
                 rank: self.rank.unwrap_or_default(),
                 savings_opportunity: self.savings_opportunity,
+                migration_effort: self.migration_effort,
             }
         }
     }
@@ -4606,6 +4922,69 @@ impl InstanceRecommendationOption {
     /// Creates a new builder-style object to manufacture [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption)
     pub fn builder() -> crate::model::instance_recommendation_option::Builder {
         crate::model::instance_recommendation_option::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MigrationEffort {
+    #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    #[allow(missing_docs)] // documentation missing in model
+    Medium,
+    #[allow(missing_docs)] // documentation missing in model
+    VeryLow,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MigrationEffort {
+    fn from(s: &str) -> Self {
+        match s {
+            "High" => MigrationEffort::High,
+            "Low" => MigrationEffort::Low,
+            "Medium" => MigrationEffort::Medium,
+            "VeryLow" => MigrationEffort::VeryLow,
+            other => MigrationEffort::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MigrationEffort {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MigrationEffort::from(s))
+    }
+}
+impl MigrationEffort {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MigrationEffort::High => "High",
+            MigrationEffort::Low => "Low",
+            MigrationEffort::Medium => "Medium",
+            MigrationEffort::VeryLow => "VeryLow",
+            MigrationEffort::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["High", "Low", "Medium", "VeryLow"]
+    }
+}
+impl AsRef<str> for MigrationEffort {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6292,6 +6671,19 @@ pub struct AutoScalingGroupRecommendation {
     /// <p>An object that describes the effective recommendation preferences for the Auto Scaling group.</p>
     pub effective_recommendation_preferences:
         std::option::Option<crate::model::EffectiveRecommendationPreferences>,
+    /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
+    /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
+    /// <ul>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// </ul>
+    pub inferred_workload_types:
+        std::option::Option<std::vec::Vec<crate::model::InferredWorkloadType>>,
 }
 impl AutoScalingGroupRecommendation {
     /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
@@ -6351,6 +6743,22 @@ impl AutoScalingGroupRecommendation {
     ) -> std::option::Option<&crate::model::EffectiveRecommendationPreferences> {
         self.effective_recommendation_preferences.as_ref()
     }
+    /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
+    /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
+    /// <ul>
+    /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+    /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+    /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+    /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+    /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+    /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// </ul>
+    pub fn inferred_workload_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferredWorkloadType]> {
+        self.inferred_workload_types.as_deref()
+    }
 }
 impl std::fmt::Debug for AutoScalingGroupRecommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6369,6 +6777,7 @@ impl std::fmt::Debug for AutoScalingGroupRecommendation {
             "effective_recommendation_preferences",
             &self.effective_recommendation_preferences,
         );
+        formatter.field("inferred_workload_types", &self.inferred_workload_types);
         formatter.finish()
     }
 }
@@ -6394,6 +6803,8 @@ pub mod auto_scaling_group_recommendation {
             std::option::Option<crate::model::CurrentPerformanceRisk>,
         pub(crate) effective_recommendation_preferences:
             std::option::Option<crate::model::EffectiveRecommendationPreferences>,
+        pub(crate) inferred_workload_types:
+            std::option::Option<std::vec::Vec<crate::model::InferredWorkloadType>>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
@@ -6566,6 +6977,48 @@ pub mod auto_scaling_group_recommendation {
             self.effective_recommendation_preferences = input;
             self
         }
+        /// Appends an item to `inferred_workload_types`.
+        ///
+        /// To override the contents of this collection use [`set_inferred_workload_types`](Self::set_inferred_workload_types).
+        ///
+        /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
+        /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
+        /// <ul>
+        /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+        /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+        /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+        /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+        /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+        /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+        /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+        /// </ul>
+        pub fn inferred_workload_types(
+            mut self,
+            input: crate::model::InferredWorkloadType,
+        ) -> Self {
+            let mut v = self.inferred_workload_types.unwrap_or_default();
+            v.push(input);
+            self.inferred_workload_types = Some(v);
+            self
+        }
+        /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
+        /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
+        /// <ul>
+        /// <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li>
+        /// <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li>
+        /// <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li>
+        /// <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li>
+        /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
+        /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
+        /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+        /// </ul>
+        pub fn set_inferred_workload_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InferredWorkloadType>>,
+        ) -> Self {
+            self.inferred_workload_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AutoScalingGroupRecommendation`](crate::model::AutoScalingGroupRecommendation)
         pub fn build(self) -> crate::model::AutoScalingGroupRecommendation {
             crate::model::AutoScalingGroupRecommendation {
@@ -6580,6 +7033,7 @@ pub mod auto_scaling_group_recommendation {
                 last_refresh_timestamp: self.last_refresh_timestamp,
                 current_performance_risk: self.current_performance_risk,
                 effective_recommendation_preferences: self.effective_recommendation_preferences,
+                inferred_workload_types: self.inferred_workload_types,
             }
         }
     }
@@ -6611,6 +7065,9 @@ pub struct AutoScalingGroupRecommendationOption {
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
+    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+    pub migration_effort: std::option::Option<crate::model::MigrationEffort>,
 }
 impl AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
@@ -6642,6 +7099,11 @@ impl AutoScalingGroupRecommendationOption {
     pub fn savings_opportunity(&self) -> std::option::Option<&crate::model::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
+    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+    pub fn migration_effort(&self) -> std::option::Option<&crate::model::MigrationEffort> {
+        self.migration_effort.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoScalingGroupRecommendationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6654,6 +7116,7 @@ impl std::fmt::Debug for AutoScalingGroupRecommendationOption {
         formatter.field("performance_risk", &self.performance_risk);
         formatter.field("rank", &self.rank);
         formatter.field("savings_opportunity", &self.savings_opportunity);
+        formatter.field("migration_effort", &self.migration_effort);
         formatter.finish()
     }
 }
@@ -6669,6 +7132,7 @@ pub mod auto_scaling_group_recommendation_option {
         pub(crate) performance_risk: std::option::Option<f64>,
         pub(crate) rank: std::option::Option<i32>,
         pub(crate) savings_opportunity: std::option::Option<crate::model::SavingsOpportunity>,
+        pub(crate) migration_effort: std::option::Option<crate::model::MigrationEffort>,
     }
     impl Builder {
         /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
@@ -6749,6 +7213,21 @@ pub mod auto_scaling_group_recommendation_option {
             self.savings_opportunity = input;
             self
         }
+        /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+        /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+        pub fn migration_effort(mut self, input: crate::model::MigrationEffort) -> Self {
+            self.migration_effort = Some(input);
+            self
+        }
+        /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+        /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+        pub fn set_migration_effort(
+            mut self,
+            input: std::option::Option<crate::model::MigrationEffort>,
+        ) -> Self {
+            self.migration_effort = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AutoScalingGroupRecommendationOption`](crate::model::AutoScalingGroupRecommendationOption)
         pub fn build(self) -> crate::model::AutoScalingGroupRecommendationOption {
             crate::model::AutoScalingGroupRecommendationOption {
@@ -6757,6 +7236,7 @@ pub mod auto_scaling_group_recommendation_option {
                 performance_risk: self.performance_risk.unwrap_or_default(),
                 rank: self.rank.unwrap_or_default(),
                 savings_opportunity: self.savings_opportunity,
+                migration_effort: self.migration_effort,
             }
         }
     }
@@ -7322,9 +7802,13 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
     FindingReasonCodes,
+    #[allow(missing_docs)] // documentation missing in model
+    InferredWorkloadTypes,
     #[allow(missing_docs)] // documentation missing in model
     InstanceArn,
     #[allow(missing_docs)] // documentation missing in model
@@ -7341,6 +7825,8 @@ pub enum ExportableInstanceField {
     RecommendationOptionsInstanceType,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsMemory,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsMigrationEffort,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsNetwork,
     #[allow(missing_docs)] // documentation missing in model
@@ -7413,8 +7899,10 @@ impl std::convert::From<&str> for ExportableInstanceField {
             "CurrentVCpus" => ExportableInstanceField::CurrentVcpus,
             "EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+            "EffectiveRecommendationPreferencesInferredWorkloadTypes" => ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes,
             "Finding" => ExportableInstanceField::Finding,
             "FindingReasonCodes" => ExportableInstanceField::FindingReasonCodes,
+            "InferredWorkloadTypes" => ExportableInstanceField::InferredWorkloadTypes,
             "InstanceArn" => ExportableInstanceField::InstanceArn,
             "InstanceName" => ExportableInstanceField::InstanceName,
             "LastRefreshTimestamp" => ExportableInstanceField::LastRefreshTimestamp,
@@ -7423,6 +7911,7 @@ impl std::convert::From<&str> for ExportableInstanceField {
             "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue,
             "RecommendationOptionsInstanceType" => ExportableInstanceField::RecommendationOptionsInstanceType,
             "RecommendationOptionsMemory" => ExportableInstanceField::RecommendationOptionsMemory,
+            "RecommendationOptionsMigrationEffort" => ExportableInstanceField::RecommendationOptionsMigrationEffort,
             "RecommendationOptionsNetwork" => ExportableInstanceField::RecommendationOptionsNetwork,
             "RecommendationOptionsOnDemandPrice" => ExportableInstanceField::RecommendationOptionsOnDemandPrice,
             "RecommendationOptionsPerformanceRisk" => ExportableInstanceField::RecommendationOptionsPerformanceRisk,
@@ -7477,8 +7966,10 @@ impl ExportableInstanceField {
             ExportableInstanceField::CurrentVcpus => "CurrentVCpus",
             ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
             ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+            ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => "EffectiveRecommendationPreferencesInferredWorkloadTypes",
             ExportableInstanceField::Finding => "Finding",
             ExportableInstanceField::FindingReasonCodes => "FindingReasonCodes",
+            ExportableInstanceField::InferredWorkloadTypes => "InferredWorkloadTypes",
             ExportableInstanceField::InstanceArn => "InstanceArn",
             ExportableInstanceField::InstanceName => "InstanceName",
             ExportableInstanceField::LastRefreshTimestamp => "LastRefreshTimestamp",
@@ -7487,6 +7978,7 @@ impl ExportableInstanceField {
             ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
             ExportableInstanceField::RecommendationOptionsInstanceType => "RecommendationOptionsInstanceType",
             ExportableInstanceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
+            ExportableInstanceField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
             ExportableInstanceField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
             ExportableInstanceField::RecommendationOptionsOnDemandPrice => "RecommendationOptionsOnDemandPrice",
             ExportableInstanceField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
@@ -7532,8 +8024,10 @@ impl ExportableInstanceField {
             "CurrentVCpus",
             "EffectiveRecommendationPreferencesCpuVendorArchitectures",
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+            "EffectiveRecommendationPreferencesInferredWorkloadTypes",
             "Finding",
             "FindingReasonCodes",
+            "InferredWorkloadTypes",
             "InstanceArn",
             "InstanceName",
             "LastRefreshTimestamp",
@@ -7542,6 +8036,7 @@ impl ExportableInstanceField {
             "RecommendationOptionsEstimatedMonthlySavingsValue",
             "RecommendationOptionsInstanceType",
             "RecommendationOptionsMemory",
+            "RecommendationOptionsMigrationEffort",
             "RecommendationOptionsNetwork",
             "RecommendationOptionsOnDemandPrice",
             "RecommendationOptionsPerformanceRisk",
@@ -7897,7 +8392,11 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
+    #[allow(missing_docs)] // documentation missing in model
+    InferredWorkloadTypes,
     #[allow(missing_docs)] // documentation missing in model
     LastRefreshTimestamp,
     #[allow(missing_docs)] // documentation missing in model
@@ -7916,6 +8415,8 @@ pub enum ExportableAutoScalingGroupField {
     RecommendationOptionsEstimatedMonthlySavingsValue,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsMemory,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsMigrationEffort,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsNetwork,
     #[allow(missing_docs)] // documentation missing in model
@@ -7987,7 +8488,9 @@ impl std::convert::From<&str> for ExportableAutoScalingGroupField {
             "CurrentVCpus" => ExportableAutoScalingGroupField::CurrentVcpus,
             "EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+            "EffectiveRecommendationPreferencesInferredWorkloadTypes" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes,
             "Finding" => ExportableAutoScalingGroupField::Finding,
+            "InferredWorkloadTypes" => ExportableAutoScalingGroupField::InferredWorkloadTypes,
             "LastRefreshTimestamp" => ExportableAutoScalingGroupField::LastRefreshTimestamp,
             "LookbackPeriodInDays" => ExportableAutoScalingGroupField::LookbackPeriodInDays,
             "RecommendationOptionsConfigurationDesiredCapacity" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity,
@@ -7997,6 +8500,7 @@ impl std::convert::From<&str> for ExportableAutoScalingGroupField {
             "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
             "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue,
             "RecommendationOptionsMemory" => ExportableAutoScalingGroupField::RecommendationOptionsMemory,
+            "RecommendationOptionsMigrationEffort" => ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort,
             "RecommendationOptionsNetwork" => ExportableAutoScalingGroupField::RecommendationOptionsNetwork,
             "RecommendationOptionsOnDemandPrice" => ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice,
             "RecommendationOptionsPerformanceRisk" => ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk,
@@ -8053,7 +8557,9 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::CurrentVcpus => "CurrentVCpus",
             ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
             ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes => "EffectiveRecommendationPreferencesInferredWorkloadTypes",
             ExportableAutoScalingGroupField::Finding => "Finding",
+            ExportableAutoScalingGroupField::InferredWorkloadTypes => "InferredWorkloadTypes",
             ExportableAutoScalingGroupField::LastRefreshTimestamp => "LastRefreshTimestamp",
             ExportableAutoScalingGroupField::LookbackPeriodInDays => "LookbackPeriodInDays",
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity => "RecommendationOptionsConfigurationDesiredCapacity",
@@ -8063,6 +8569,7 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
             ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
             ExportableAutoScalingGroupField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
+            ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
             ExportableAutoScalingGroupField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
             ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice => "RecommendationOptionsOnDemandPrice",
             ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
@@ -8110,7 +8617,9 @@ impl ExportableAutoScalingGroupField {
             "CurrentVCpus",
             "EffectiveRecommendationPreferencesCpuVendorArchitectures",
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+            "EffectiveRecommendationPreferencesInferredWorkloadTypes",
             "Finding",
+            "InferredWorkloadTypes",
             "LastRefreshTimestamp",
             "LookbackPeriodInDays",
             "RecommendationOptionsConfigurationDesiredCapacity",
@@ -8120,6 +8629,7 @@ impl ExportableAutoScalingGroupField {
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",
             "RecommendationOptionsEstimatedMonthlySavingsValue",
             "RecommendationOptionsMemory",
+            "RecommendationOptionsMigrationEffort",
             "RecommendationOptionsNetwork",
             "RecommendationOptionsOnDemandPrice",
             "RecommendationOptionsPerformanceRisk",
@@ -8633,6 +9143,8 @@ impl AsRef<str> for JobFilterName {
 pub enum RecommendationPreferenceName {
     #[allow(missing_docs)] // documentation missing in model
     EnhancedInfrastructureMetrics,
+    #[allow(missing_docs)] // documentation missing in model
+    InferredWorkloadTypes,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -8642,6 +9154,7 @@ impl std::convert::From<&str> for RecommendationPreferenceName {
             "EnhancedInfrastructureMetrics" => {
                 RecommendationPreferenceName::EnhancedInfrastructureMetrics
             }
+            "InferredWorkloadTypes" => RecommendationPreferenceName::InferredWorkloadTypes,
             other => RecommendationPreferenceName::Unknown(other.to_owned()),
         }
     }
@@ -8660,12 +9173,13 @@ impl RecommendationPreferenceName {
             RecommendationPreferenceName::EnhancedInfrastructureMetrics => {
                 "EnhancedInfrastructureMetrics"
             }
+            RecommendationPreferenceName::InferredWorkloadTypes => "InferredWorkloadTypes",
             RecommendationPreferenceName::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["EnhancedInfrastructureMetrics"]
+        &["EnhancedInfrastructureMetrics", "InferredWorkloadTypes"]
     }
 }
 impl AsRef<str> for RecommendationPreferenceName {

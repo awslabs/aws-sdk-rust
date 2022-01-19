@@ -728,6 +728,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMulticastGroup {
     }
 }
 
+/// Operation shape for `DeleteQueuedMessages`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_queued_messages`](crate::client::Client::delete_queued_messages).
+///
+/// See [`crate::client::fluent_builders::DeleteQueuedMessages`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteQueuedMessages {
+    _private: (),
+}
+impl DeleteQueuedMessages {
+    /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput)
+    pub fn builder() -> crate::input::delete_queued_messages_input::Builder {
+        crate::input::delete_queued_messages_input::Builder::default()
+    }
+    /// Creates a new `DeleteQueuedMessages` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteQueuedMessages {
+    type Output = std::result::Result<
+        crate::output::DeleteQueuedMessagesOutput,
+        crate::error::DeleteQueuedMessagesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_queued_messages_error(response)
+        } else {
+            crate::operation_deser::parse_delete_queued_messages_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteServiceProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2038,6 +2072,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPartnerAccounts {
             crate::operation_deser::parse_list_partner_accounts_error(response)
         } else {
             crate::operation_deser::parse_list_partner_accounts_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListQueuedMessages`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_queued_messages`](crate::client::Client::list_queued_messages).
+///
+/// See [`crate::client::fluent_builders::ListQueuedMessages`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListQueuedMessages {
+    _private: (),
+}
+impl ListQueuedMessages {
+    /// Creates a new builder-style object to manufacture [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput)
+    pub fn builder() -> crate::input::list_queued_messages_input::Builder {
+        crate::input::list_queued_messages_input::Builder::default()
+    }
+    /// Creates a new `ListQueuedMessages` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListQueuedMessages {
+    type Output = std::result::Result<
+        crate::output::ListQueuedMessagesOutput,
+        crate::error::ListQueuedMessagesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_queued_messages_error(response)
+        } else {
+            crate::operation_deser::parse_list_queued_messages_response(response)
         }
     }
 }

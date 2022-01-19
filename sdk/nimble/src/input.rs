@@ -903,12 +903,12 @@ pub mod create_streaming_session_input {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
         pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.owned_by = Some(input.into());
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
         pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owned_by = input;
             self
@@ -6313,7 +6313,7 @@ pub mod list_launch_profiles_input {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) principal_id: std::option::Option<std::string::String>,
-        pub(crate) states: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) states: std::option::Option<std::vec::Vec<crate::model::LaunchProfileState>>,
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6352,16 +6352,16 @@ pub mod list_launch_profiles_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>Filter this request to launch profiles in any of the given states.</p>
-        pub fn states(mut self, input: impl Into<std::string::String>) -> Self {
+        pub fn states(mut self, input: crate::model::LaunchProfileState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
         /// <p>Filter this request to launch profiles in any of the given states.</p>
         pub fn set_states(
             mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LaunchProfileState>>,
         ) -> Self {
             self.states = input;
             self
@@ -6968,9 +6968,9 @@ pub mod list_studio_components_input {
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) states: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) states: std::option::Option<std::vec::Vec<crate::model::StudioComponentState>>,
         pub(crate) studio_id: std::option::Option<std::string::String>,
-        pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) types: std::option::Option<std::vec::Vec<crate::model::StudioComponentType>>,
     }
     impl Builder {
         /// <p>The max number of results to return in the response.</p>
@@ -6998,16 +6998,16 @@ pub mod list_studio_components_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>Filters the request to studio components that are in one of the given states. </p>
-        pub fn states(mut self, input: impl Into<std::string::String>) -> Self {
+        pub fn states(mut self, input: crate::model::StudioComponentState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
         /// <p>Filters the request to studio components that are in one of the given states. </p>
         pub fn set_states(
             mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StudioComponentState>>,
         ) -> Self {
             self.states = input;
             self
@@ -7027,16 +7027,16 @@ pub mod list_studio_components_input {
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
         /// <p>Filters the request to studio components that are of one of the given types.</p>
-        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+        pub fn types(mut self, input: crate::model::StudioComponentType) -> Self {
             let mut v = self.types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.types = Some(v);
             self
         }
         /// <p>Filters the request to studio components that are of one of the given types.</p>
         pub fn set_types(
             mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StudioComponentType>>,
         ) -> Self {
             self.types = input;
             self
@@ -11123,11 +11123,11 @@ pub struct ListStudioComponentsInput {
     /// <p>The token to request the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters the request to studio components that are in one of the given states. </p>
-    pub states: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub states: std::option::Option<std::vec::Vec<crate::model::StudioComponentState>>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub types: std::option::Option<std::vec::Vec<crate::model::StudioComponentType>>,
 }
 impl ListStudioComponentsInput {
     /// <p>The max number of results to return in the response.</p>
@@ -11139,7 +11139,7 @@ impl ListStudioComponentsInput {
         self.next_token.as_deref()
     }
     /// <p>Filters the request to studio components that are in one of the given states. </p>
-    pub fn states(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn states(&self) -> std::option::Option<&[crate::model::StudioComponentState]> {
         self.states.as_deref()
     }
     /// <p>The studio ID. </p>
@@ -11147,7 +11147,7 @@ impl ListStudioComponentsInput {
         self.studio_id.as_deref()
     }
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn types(&self) -> std::option::Option<&[crate::model::StudioComponentType]> {
         self.types.as_deref()
     }
 }
@@ -11634,7 +11634,7 @@ pub struct CreateStreamingSessionInput {
     pub ec2_instance_type: std::option::Option<crate::model::StreamingInstanceType>,
     /// <p>The launch profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The user ID of the user that owns the streaming session.</p>
+    /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>The ID of the streaming image.</p>
     pub streaming_image_id: std::option::Option<std::string::String>,
@@ -11657,7 +11657,7 @@ impl CreateStreamingSessionInput {
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
-    /// <p>The user ID of the user that owns the streaming session.</p>
+    /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub fn owned_by(&self) -> std::option::Option<&str> {
         self.owned_by.as_deref()
     }
@@ -12269,7 +12269,7 @@ pub struct ListLaunchProfilesInput {
     /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>Filter this request to launch profiles in any of the given states.</p>
-    pub states: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub states: std::option::Option<std::vec::Vec<crate::model::LaunchProfileState>>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
@@ -12287,7 +12287,7 @@ impl ListLaunchProfilesInput {
         self.principal_id.as_deref()
     }
     /// <p>Filter this request to launch profiles in any of the given states.</p>
-    pub fn states(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn states(&self) -> std::option::Option<&[crate::model::LaunchProfileState]> {
         self.states.as_deref()
     }
     /// <p>The studio ID. </p>

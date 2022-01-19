@@ -2,6 +2,66 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceOutput {}
+impl std::fmt::Debug for UntagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+pub mod untag_resource_output {
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        pub fn build(self) -> crate::output::UntagResourceOutput {
+            crate::output::UntagResourceOutput {}
+        }
+    }
+}
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceOutput {}
+impl std::fmt::Debug for TagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+pub mod tag_resource_output {
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        pub fn build(self) -> crate::output::TagResourceOutput {
+            crate::output::TagResourceOutput {}
+        }
+    }
+}
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTableDataImportJobOutput {
     /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
     pub job_id: std::option::Option<std::string::String>,
@@ -201,6 +261,79 @@ impl QueryTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput)
     pub fn builder() -> crate::output::query_table_rows_output::Builder {
         crate::output::query_table_rows_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceOutput {
+    /// <p>The resource's tags.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The resource's tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for ListTagsForResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+pub mod list_tags_for_resource_output {
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The resource's tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The resource's tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
+            crate::output::ListTagsForResourceOutput { tags: self.tags }
+        }
+    }
+}
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
 
@@ -741,6 +874,8 @@ pub struct DescribeTableDataImportJobOutput {
     pub message: std::option::Option<std::string::String>,
     /// <p> The metadata about the job that was submitted for import. </p>
     pub job_metadata: std::option::Option<crate::model::TableDataImportJobMetadata>,
+    /// <p> If job status is failed, error code to understand reason for the failure. </p>
+    pub error_code: std::option::Option<crate::model::ErrorCode>,
 }
 impl DescribeTableDataImportJobOutput {
     /// <p> The current status of the import job. </p>
@@ -755,6 +890,10 @@ impl DescribeTableDataImportJobOutput {
     pub fn job_metadata(&self) -> std::option::Option<&crate::model::TableDataImportJobMetadata> {
         self.job_metadata.as_ref()
     }
+    /// <p> If job status is failed, error code to understand reason for the failure. </p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTableDataImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -762,6 +901,7 @@ impl std::fmt::Debug for DescribeTableDataImportJobOutput {
         formatter.field("job_status", &self.job_status);
         formatter.field("message", &self.message);
         formatter.field("job_metadata", &self.job_metadata);
+        formatter.field("error_code", &self.error_code);
         formatter.finish()
     }
 }
@@ -774,6 +914,7 @@ pub mod describe_table_data_import_job_output {
         pub(crate) job_status: std::option::Option<crate::model::TableDataImportJobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) job_metadata: std::option::Option<crate::model::TableDataImportJobMetadata>,
+        pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
     }
     impl Builder {
         /// <p> The current status of the import job. </p>
@@ -812,12 +953,26 @@ pub mod describe_table_data_import_job_output {
             self.job_metadata = input;
             self
         }
+        /// <p> If job status is failed, error code to understand reason for the failure. </p>
+        pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p> If job status is failed, error code to understand reason for the failure. </p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::ErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput)
         pub fn build(self) -> crate::output::DescribeTableDataImportJobOutput {
             crate::output::DescribeTableDataImportJobOutput {
                 job_status: self.job_status,
                 message: self.message,
                 job_metadata: self.job_metadata,
+                error_code: self.error_code,
             }
         }
     }

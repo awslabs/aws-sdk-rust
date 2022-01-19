@@ -54,47 +54,47 @@ impl AsRef<str> for WebserverAccessMode {
     }
 }
 
-/// <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+/// <p>Defines the Apache Airflow log types to send to CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfigurationInput {
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
     pub dag_processing_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow scheduler logs to CloudWatch Logs.</p>
     pub scheduler_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
     pub webserver_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow worker logs to CloudWatch Logs.</p>
     pub worker_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
     pub task_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
 }
 impl LoggingConfigurationInput {
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
     pub fn dag_processing_logs(
         &self,
     ) -> std::option::Option<&crate::model::ModuleLoggingConfigurationInput> {
         self.dag_processing_logs.as_ref()
     }
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow scheduler logs to CloudWatch Logs.</p>
     pub fn scheduler_logs(
         &self,
     ) -> std::option::Option<&crate::model::ModuleLoggingConfigurationInput> {
         self.scheduler_logs.as_ref()
     }
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
     pub fn webserver_logs(
         &self,
     ) -> std::option::Option<&crate::model::ModuleLoggingConfigurationInput> {
         self.webserver_logs.as_ref()
     }
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow worker logs to CloudWatch Logs.</p>
     pub fn worker_logs(
         &self,
     ) -> std::option::Option<&crate::model::ModuleLoggingConfigurationInput> {
         self.worker_logs.as_ref()
     }
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
     pub fn task_logs(&self) -> std::option::Option<&crate::model::ModuleLoggingConfigurationInput> {
         self.task_logs.as_ref()
     }
@@ -126,7 +126,7 @@ pub mod logging_configuration_input {
         pub(crate) task_logs: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
     }
     impl Builder {
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
         pub fn dag_processing_logs(
             mut self,
             input: crate::model::ModuleLoggingConfigurationInput,
@@ -134,7 +134,7 @@ pub mod logging_configuration_input {
             self.dag_processing_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow DAG processing logs to CloudWatch Logs.</p>
         pub fn set_dag_processing_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
@@ -142,7 +142,7 @@ pub mod logging_configuration_input {
             self.dag_processing_logs = input;
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow scheduler logs to CloudWatch Logs.</p>
         pub fn scheduler_logs(
             mut self,
             input: crate::model::ModuleLoggingConfigurationInput,
@@ -150,7 +150,7 @@ pub mod logging_configuration_input {
             self.scheduler_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow scheduler logs to CloudWatch Logs.</p>
         pub fn set_scheduler_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
@@ -158,7 +158,7 @@ pub mod logging_configuration_input {
             self.scheduler_logs = input;
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
         pub fn webserver_logs(
             mut self,
             input: crate::model::ModuleLoggingConfigurationInput,
@@ -166,7 +166,7 @@ pub mod logging_configuration_input {
             self.webserver_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
         pub fn set_webserver_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
@@ -174,12 +174,12 @@ pub mod logging_configuration_input {
             self.webserver_logs = input;
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow worker logs to CloudWatch Logs.</p>
         pub fn worker_logs(mut self, input: crate::model::ModuleLoggingConfigurationInput) -> Self {
             self.worker_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow worker logs to CloudWatch Logs.</p>
         pub fn set_worker_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
@@ -187,12 +187,12 @@ pub mod logging_configuration_input {
             self.worker_logs = input;
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
         pub fn task_logs(mut self, input: crate::model::ModuleLoggingConfigurationInput) -> Self {
             self.task_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>Publishes Airflow task logs to CloudWatch Logs.</p>
         pub fn set_task_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
@@ -219,21 +219,21 @@ impl LoggingConfigurationInput {
     }
 }
 
-/// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+/// <p>Enables the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) and defines the log level to send to CloudWatch Logs (e.g. <code>INFO</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModuleLoggingConfigurationInput {
-    /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+    /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.</p>
+    /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
     pub log_level: std::option::Option<crate::model::LoggingLevel>,
 }
 impl ModuleLoggingConfigurationInput {
-    /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+    /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.</p>
+    /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LoggingLevel> {
         self.log_level.as_ref()
     }
@@ -256,22 +256,22 @@ pub mod module_logging_configuration_input {
         pub(crate) log_level: std::option::Option<crate::model::LoggingLevel>,
     }
     impl Builder {
-        /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+        /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+        /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
-        /// <p>Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.</p>
+        /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
         pub fn log_level(mut self, input: crate::model::LoggingLevel) -> Self {
             self.log_level = Some(input);
             self
         }
-        /// <p>Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.</p>
+        /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
         pub fn set_log_level(
             mut self,
             input: std::option::Option<crate::model::LoggingLevel>,
@@ -362,15 +362,15 @@ impl AsRef<str> for LoggingLevel {
     }
 }
 
-/// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+/// <p>Defines the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkConfigurationInput {
-    /// <p>A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+    /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateNetworkConfigurationInput {
-    /// <p>A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+    /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -395,14 +395,14 @@ pub mod update_network_configuration_input {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+        /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+        /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -425,45 +425,45 @@ impl UpdateNetworkConfigurationInput {
     }
 }
 
-/// <p>Internal only API.</p>
+/// <p> <b>Internal only</b>. Collects Apache Airflow metrics. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDatum {
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The name of the metric.</p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The time the metric data was received.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The value for the metric.</p>
     pub value: std::option::Option<f64>,
-    /// Unit
+    /// <p> <b>Internal only</b>. The unit used to store the metric.</p>
     pub unit: std::option::Option<crate::model::Unit>,
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The statistical values for the metric.</p>
     pub statistic_values: std::option::Option<crate::model::StatisticSet>,
 }
 impl MetricDatum {
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The name of the metric.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The time the metric data was received.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The value for the metric.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
     }
-    /// Unit
+    /// <p> <b>Internal only</b>. The unit used to store the metric.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::Unit> {
         self.unit.as_ref()
     }
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The statistical values for the metric.</p>
     pub fn statistic_values(&self) -> std::option::Option<&crate::model::StatisticSet> {
         self.statistic_values.as_ref()
     }
@@ -494,22 +494,22 @@ pub mod metric_datum {
         pub(crate) statistic_values: std::option::Option<crate::model::StatisticSet>,
     }
     impl Builder {
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The name of the metric.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The time the metric data was received.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The time the metric data was received.</p>
         pub fn set_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -521,14 +521,14 @@ pub mod metric_datum {
         ///
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input);
             self.dimensions = Some(v);
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -536,32 +536,32 @@ pub mod metric_datum {
             self.dimensions = input;
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The value for the metric.</p>
         pub fn value(mut self, input: f64) -> Self {
             self.value = Some(input);
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The value for the metric.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
         }
-        /// Unit
+        /// <p> <b>Internal only</b>. The unit used to store the metric.</p>
         pub fn unit(mut self, input: crate::model::Unit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// Unit
+        /// <p> <b>Internal only</b>. The unit used to store the metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::Unit>) -> Self {
             self.unit = input;
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The statistical values for the metric.</p>
         pub fn statistic_values(mut self, input: crate::model::StatisticSet) -> Self {
             self.statistic_values = Some(input);
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The statistical values for the metric.</p>
         pub fn set_statistic_values(
             mut self,
             input: std::option::Option<crate::model::StatisticSet>,
@@ -589,33 +589,33 @@ impl MetricDatum {
     }
 }
 
-/// <p>Internal only API.</p>
+/// <p> <b>Internal only</b>. Represents a set of statistics that describe a specific metric. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatisticSet {
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
     pub sample_count: std::option::Option<i32>,
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
     pub sum: std::option::Option<f64>,
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
     pub minimum: std::option::Option<f64>,
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
     pub maximum: std::option::Option<f64>,
 }
 impl StatisticSet {
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
     pub fn sample_count(&self) -> std::option::Option<i32> {
         self.sample_count
     }
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
     pub fn sum(&self) -> std::option::Option<f64> {
         self.sum
     }
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
     pub fn minimum(&self) -> std::option::Option<f64> {
         self.minimum
     }
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
     pub fn maximum(&self) -> std::option::Option<f64> {
         self.maximum
     }
@@ -642,42 +642,42 @@ pub mod statistic_set {
         pub(crate) maximum: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
         pub fn sample_count(mut self, input: i32) -> Self {
             self.sample_count = Some(input);
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
         pub fn set_sample_count(mut self, input: std::option::Option<i32>) -> Self {
             self.sample_count = input;
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
         pub fn sum(mut self, input: f64) -> Self {
             self.sum = Some(input);
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
             self.sum = input;
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
         pub fn minimum(mut self, input: f64) -> Self {
             self.minimum = Some(input);
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
         pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
             self.minimum = input;
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
         pub fn maximum(mut self, input: f64) -> Self {
             self.maximum = Some(input);
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
         pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
             self.maximum = input;
             self
@@ -700,7 +700,7 @@ impl StatisticSet {
     }
 }
 
-/// Unit
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -883,21 +883,21 @@ impl AsRef<str> for Unit {
     }
 }
 
-/// <p>Internal only API.</p>
+/// <p> <b>Internal only</b>. Represents the dimensions of a metric. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dimension {
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The name of the dimension.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The value of the dimension.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Dimension {
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The name of the dimension.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Internal only API.</p>
+    /// <p> <b>Internal only</b>. The value of the dimension.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -920,22 +920,22 @@ pub mod dimension {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The name of the dimension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The name of the dimension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The value of the dimension.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>Internal only API.</p>
+        /// <p> <b>Internal only</b>. The value of the dimension.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -956,7 +956,7 @@ impl Dimension {
     }
 }
 
-/// <p>The Amazon Managed Workflows for Apache Airflow (MWAA) environment.</p>
+/// <p>Describes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
@@ -981,13 +981,13 @@ pub struct Environment {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
     pub webserver_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.</p>
+    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
     pub airflow_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
     pub source_bucket_arn: std::option::Option<std::string::String>,
@@ -1008,15 +1008,15 @@ pub struct Environment {
     pub environment_class: std::option::Option<std::string::String>,
     /// <p>The maximum number of workers that run in your environment. For example, <code>20</code>.</p>
     pub max_workers: std::option::Option<i32>,
-    /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
-    /// <p>The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+    /// <p>The Apache Airflow logs published to CloudWatch Logs.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
-    /// <p>The status of the last update on the environment, and any errors that were encountered.</p>
+    /// <p>The status of the last update on the environment.</p>
     pub last_update: std::option::Option<crate::model::LastUpdate>,
-    /// <p>The day and time of the week that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
+    /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
     pub weekly_maintenance_window_start: std::option::Option<std::string::String>,
-    /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
@@ -1058,7 +1058,7 @@ impl Environment {
     pub fn webserver_url(&self) -> std::option::Option<&str> {
         self.webserver_url.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
@@ -1066,11 +1066,11 @@ impl Environment {
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.</p>
+    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
     pub fn airflow_version(&self) -> std::option::Option<&str> {
         self.airflow_version.as_deref()
     }
@@ -1113,27 +1113,27 @@ impl Environment {
     pub fn max_workers(&self) -> std::option::Option<i32> {
         self.max_workers
     }
-    /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
     pub fn network_configuration(
         &self,
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+    /// <p>The Apache Airflow logs published to CloudWatch Logs.</p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
-    /// <p>The status of the last update on the environment, and any errors that were encountered.</p>
+    /// <p>The status of the last update on the environment.</p>
     pub fn last_update(&self) -> std::option::Option<&crate::model::LastUpdate> {
         self.last_update.as_ref()
     }
-    /// <p>The day and time of the week that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
+    /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
     pub fn weekly_maintenance_window_start(&self) -> std::option::Option<&str> {
         self.weekly_maintenance_window_start.as_deref()
     }
-    /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1313,12 +1313,12 @@ pub mod environment {
             self.webserver_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1339,22 +1339,22 @@ pub mod environment {
             self.service_role_arn = input;
             self
         }
-        /// <p>The Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+        /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>The Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+        /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
         }
-        /// <p>The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.</p>
+        /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
         pub fn airflow_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.airflow_version = Some(input.into());
             self
         }
-        /// <p>The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.</p>
+        /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.</p>
         pub fn set_airflow_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1488,12 +1488,12 @@ pub mod environment {
             self.max_workers = input;
             self
         }
-        /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+        /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
             self.network_configuration = Some(input);
             self
         }
-        /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+        /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -1501,12 +1501,12 @@ pub mod environment {
             self.network_configuration = input;
             self
         }
-        /// <p>The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+        /// <p>The Apache Airflow logs published to CloudWatch Logs.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+        /// <p>The Apache Airflow logs published to CloudWatch Logs.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -1514,12 +1514,12 @@ pub mod environment {
             self.logging_configuration = input;
             self
         }
-        /// <p>The status of the last update on the environment, and any errors that were encountered.</p>
+        /// <p>The status of the last update on the environment.</p>
         pub fn last_update(mut self, input: crate::model::LastUpdate) -> Self {
             self.last_update = Some(input);
             self
         }
-        /// <p>The status of the last update on the environment, and any errors that were encountered.</p>
+        /// <p>The status of the last update on the environment.</p>
         pub fn set_last_update(
             mut self,
             input: std::option::Option<crate::model::LastUpdate>,
@@ -1527,7 +1527,7 @@ pub mod environment {
             self.last_update = input;
             self
         }
-        /// <p>The day and time of the week that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
+        /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
         pub fn weekly_maintenance_window_start(
             mut self,
             input: impl Into<std::string::String>,
@@ -1535,7 +1535,7 @@ pub mod environment {
             self.weekly_maintenance_window_start = Some(input.into());
             self
         }
-        /// <p>The day and time of the week that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
+        /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
         pub fn set_weekly_maintenance_window_start(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1547,7 +1547,7 @@ pub mod environment {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+        /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1558,7 +1558,7 @@ pub mod environment {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+        /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1641,19 +1641,21 @@ impl Environment {
     }
 }
 
-/// <p>The status of the last update on the environment, and any errors that were encountered.</p>
+/// <p>Describes the status of the last update on the environment, and any errors that were encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LastUpdate {
-    /// <p>The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+    /// <p>The status of the last update on the environment.</p>
     pub status: std::option::Option<crate::model::UpdateStatus>,
     /// <p>The day and time of the last update on the environment.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error that was encountered during the last update of the environment.</p>
     pub error: std::option::Option<crate::model::UpdateError>,
+    /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
+    pub source: std::option::Option<std::string::String>,
 }
 impl LastUpdate {
-    /// <p>The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+    /// <p>The status of the last update on the environment.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::UpdateStatus> {
         self.status.as_ref()
     }
@@ -1665,6 +1667,10 @@ impl LastUpdate {
     pub fn error(&self) -> std::option::Option<&crate::model::UpdateError> {
         self.error.as_ref()
     }
+    /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
 }
 impl std::fmt::Debug for LastUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1672,6 +1678,7 @@ impl std::fmt::Debug for LastUpdate {
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("error", &self.error);
+        formatter.field("source", &self.source);
         formatter.finish()
     }
 }
@@ -1684,14 +1691,15 @@ pub mod last_update {
         pub(crate) status: std::option::Option<crate::model::UpdateStatus>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error: std::option::Option<crate::model::UpdateError>,
+        pub(crate) source: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+        /// <p>The status of the last update on the environment.</p>
         pub fn status(mut self, input: crate::model::UpdateStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+        /// <p>The status of the last update on the environment.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::UpdateStatus>,
@@ -1722,12 +1730,23 @@ pub mod last_update {
             self.error = input;
             self
         }
+        /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LastUpdate`](crate::model::LastUpdate)
         pub fn build(self) -> crate::model::LastUpdate {
             crate::model::LastUpdate {
                 status: self.status,
                 created_at: self.created_at,
                 error: self.error,
+                source: self.source,
             }
         }
     }
@@ -1739,7 +1758,7 @@ impl LastUpdate {
     }
 }
 
-/// <p>An object containing the error encountered with the last update: <code>ErrorCode</code>, <code>ErrorMessage</code>.</p>
+/// <p>Describes the error(s) encountered with the last update of the environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateError {
@@ -1874,41 +1893,41 @@ impl AsRef<str> for UpdateStatus {
     }
 }
 
-/// <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+/// <p>Describes the Apache Airflow log types that are published to CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
     pub dag_processing_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow scheduler logs published to CloudWatch Logs and the log level.</p>
     pub scheduler_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow web server logs published to CloudWatch Logs and the log level.</p>
     pub webserver_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
     pub worker_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
     pub task_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
 }
 impl LoggingConfiguration {
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
     pub fn dag_processing_logs(
         &self,
     ) -> std::option::Option<&crate::model::ModuleLoggingConfiguration> {
         self.dag_processing_logs.as_ref()
     }
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow scheduler logs published to CloudWatch Logs and the log level.</p>
     pub fn scheduler_logs(&self) -> std::option::Option<&crate::model::ModuleLoggingConfiguration> {
         self.scheduler_logs.as_ref()
     }
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow web server logs published to CloudWatch Logs and the log level.</p>
     pub fn webserver_logs(&self) -> std::option::Option<&crate::model::ModuleLoggingConfiguration> {
         self.webserver_logs.as_ref()
     }
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
     pub fn worker_logs(&self) -> std::option::Option<&crate::model::ModuleLoggingConfiguration> {
         self.worker_logs.as_ref()
     }
-    /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+    /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
     pub fn task_logs(&self) -> std::option::Option<&crate::model::ModuleLoggingConfiguration> {
         self.task_logs.as_ref()
     }
@@ -1938,7 +1957,7 @@ pub mod logging_configuration {
         pub(crate) task_logs: std::option::Option<crate::model::ModuleLoggingConfiguration>,
     }
     impl Builder {
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
         pub fn dag_processing_logs(
             mut self,
             input: crate::model::ModuleLoggingConfiguration,
@@ -1946,7 +1965,7 @@ pub mod logging_configuration {
             self.dag_processing_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow DAG processing logs published to CloudWatch Logs and the log level.</p>
         pub fn set_dag_processing_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfiguration>,
@@ -1954,12 +1973,12 @@ pub mod logging_configuration {
             self.dag_processing_logs = input;
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow scheduler logs published to CloudWatch Logs and the log level.</p>
         pub fn scheduler_logs(mut self, input: crate::model::ModuleLoggingConfiguration) -> Self {
             self.scheduler_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow scheduler logs published to CloudWatch Logs and the log level.</p>
         pub fn set_scheduler_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfiguration>,
@@ -1967,12 +1986,12 @@ pub mod logging_configuration {
             self.scheduler_logs = input;
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow web server logs published to CloudWatch Logs and the log level.</p>
         pub fn webserver_logs(mut self, input: crate::model::ModuleLoggingConfiguration) -> Self {
             self.webserver_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow web server logs published to CloudWatch Logs and the log level.</p>
         pub fn set_webserver_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfiguration>,
@@ -1980,12 +1999,12 @@ pub mod logging_configuration {
             self.webserver_logs = input;
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
         pub fn worker_logs(mut self, input: crate::model::ModuleLoggingConfiguration) -> Self {
             self.worker_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
         pub fn set_worker_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfiguration>,
@@ -1993,12 +2012,12 @@ pub mod logging_configuration {
             self.worker_logs = input;
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
         pub fn task_logs(mut self, input: crate::model::ModuleLoggingConfiguration) -> Self {
             self.task_logs = Some(input);
             self
         }
-        /// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+        /// <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
         pub fn set_task_logs(
             mut self,
             input: std::option::Option<crate::model::ModuleLoggingConfiguration>,
@@ -2025,23 +2044,23 @@ impl LoggingConfiguration {
     }
 }
 
-/// <p>Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.</p>
+/// <p>Describes the Apache Airflow log details for the log type (e.g. <code>DagProcessingLogs</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModuleLoggingConfiguration {
-    /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+    /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.</p>
+    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
     pub log_level: std::option::Option<crate::model::LoggingLevel>,
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
 }
 impl ModuleLoggingConfiguration {
-    /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+    /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.</p>
+    /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
     pub fn log_level(&self) -> std::option::Option<&crate::model::LoggingLevel> {
         self.log_level.as_ref()
     }
@@ -2070,22 +2089,22 @@ pub mod module_logging_configuration {
         pub(crate) cloud_watch_log_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+        /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+        /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
-        /// <p>Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.</p>
+        /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
         pub fn log_level(mut self, input: crate::model::LoggingLevel) -> Self {
             self.log_level = Some(input);
             self
         }
-        /// <p>Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.</p>
+        /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
         pub fn set_log_level(
             mut self,
             input: std::option::Option<crate::model::LoggingLevel>,
@@ -2123,21 +2142,21 @@ impl ModuleLoggingConfiguration {
     }
 }
 
-/// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+/// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkConfiguration {
-    /// <p>A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different availability zones. A subnet must be attached to the same VPC as the security group.</p>
+    /// <p>A list of subnet IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+    /// <p>A list of security group IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NetworkConfiguration {
-    /// <p>A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different availability zones. A subnet must be attached to the same VPC as the security group.</p>
+    /// <p>A list of subnet IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+    /// <p>A list of security group IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -2164,14 +2183,14 @@ pub mod network_configuration {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different availability zones. A subnet must be attached to the same VPC as the security group.</p>
+        /// <p>A list of subnet IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// <p>A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different availability zones. A subnet must be attached to the same VPC as the security group.</p>
+        /// <p>A list of subnet IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2183,14 +2202,14 @@ pub mod network_configuration {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+        /// <p>A list of security group IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+        /// <p>A list of security group IDs. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -230,6 +230,8 @@ pub struct SlotValueSelectionSetting {
     pub resolution_strategy: std::option::Option<crate::model::SlotValueResolutionStrategy>,
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub regex_filter: std::option::Option<crate::model::SlotValueRegexFilter>,
+    /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
+    pub advanced_recognition_setting: std::option::Option<crate::model::AdvancedRecognitionSetting>,
 }
 impl SlotValueSelectionSetting {
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
@@ -247,12 +249,22 @@ impl SlotValueSelectionSetting {
     pub fn regex_filter(&self) -> std::option::Option<&crate::model::SlotValueRegexFilter> {
         self.regex_filter.as_ref()
     }
+    /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
+    pub fn advanced_recognition_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedRecognitionSetting> {
+        self.advanced_recognition_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for SlotValueSelectionSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotValueSelectionSetting");
         formatter.field("resolution_strategy", &self.resolution_strategy);
         formatter.field("regex_filter", &self.regex_filter);
+        formatter.field(
+            "advanced_recognition_setting",
+            &self.advanced_recognition_setting,
+        );
         formatter.finish()
     }
 }
@@ -265,6 +277,8 @@ pub mod slot_value_selection_setting {
         pub(crate) resolution_strategy:
             std::option::Option<crate::model::SlotValueResolutionStrategy>,
         pub(crate) regex_filter: std::option::Option<crate::model::SlotValueRegexFilter>,
+        pub(crate) advanced_recognition_setting:
+            std::option::Option<crate::model::AdvancedRecognitionSetting>,
     }
     impl Builder {
         /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
@@ -306,11 +320,28 @@ pub mod slot_value_selection_setting {
             self.regex_filter = input;
             self
         }
+        /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
+        pub fn advanced_recognition_setting(
+            mut self,
+            input: crate::model::AdvancedRecognitionSetting,
+        ) -> Self {
+            self.advanced_recognition_setting = Some(input);
+            self
+        }
+        /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
+        pub fn set_advanced_recognition_setting(
+            mut self,
+            input: std::option::Option<crate::model::AdvancedRecognitionSetting>,
+        ) -> Self {
+            self.advanced_recognition_setting = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting)
         pub fn build(self) -> crate::model::SlotValueSelectionSetting {
             crate::model::SlotValueSelectionSetting {
                 resolution_strategy: self.resolution_strategy,
                 regex_filter: self.regex_filter,
+                advanced_recognition_setting: self.advanced_recognition_setting,
             }
         }
     }
@@ -319,6 +350,127 @@ impl SlotValueSelectionSetting {
     /// Creates a new builder-style object to manufacture [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting)
     pub fn builder() -> crate::model::slot_value_selection_setting::Builder {
         crate::model::slot_value_selection_setting::Builder::default()
+    }
+}
+
+/// <p>Provides settings that enable advanced recognition settings for slot values.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AdvancedRecognitionSetting {
+    /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
+    pub audio_recognition_strategy: std::option::Option<crate::model::AudioRecognitionStrategy>,
+}
+impl AdvancedRecognitionSetting {
+    /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
+    pub fn audio_recognition_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AudioRecognitionStrategy> {
+        self.audio_recognition_strategy.as_ref()
+    }
+}
+impl std::fmt::Debug for AdvancedRecognitionSetting {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AdvancedRecognitionSetting");
+        formatter.field(
+            "audio_recognition_strategy",
+            &self.audio_recognition_strategy,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting)
+pub mod advanced_recognition_setting {
+    /// A builder for [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) audio_recognition_strategy:
+            std::option::Option<crate::model::AudioRecognitionStrategy>,
+    }
+    impl Builder {
+        /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
+        pub fn audio_recognition_strategy(
+            mut self,
+            input: crate::model::AudioRecognitionStrategy,
+        ) -> Self {
+            self.audio_recognition_strategy = Some(input);
+            self
+        }
+        /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
+        pub fn set_audio_recognition_strategy(
+            mut self,
+            input: std::option::Option<crate::model::AudioRecognitionStrategy>,
+        ) -> Self {
+            self.audio_recognition_strategy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting)
+        pub fn build(self) -> crate::model::AdvancedRecognitionSetting {
+            crate::model::AdvancedRecognitionSetting {
+                audio_recognition_strategy: self.audio_recognition_strategy,
+            }
+        }
+    }
+}
+impl AdvancedRecognitionSetting {
+    /// Creates a new builder-style object to manufacture [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting)
+    pub fn builder() -> crate::model::advanced_recognition_setting::Builder {
+        crate::model::advanced_recognition_setting::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AudioRecognitionStrategy {
+    #[allow(missing_docs)] // documentation missing in model
+    UseSlotValuesAsCustomVocabulary,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AudioRecognitionStrategy {
+    fn from(s: &str) -> Self {
+        match s {
+            "UseSlotValuesAsCustomVocabulary" => {
+                AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary
+            }
+            other => AudioRecognitionStrategy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AudioRecognitionStrategy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AudioRecognitionStrategy::from(s))
+    }
+}
+impl AudioRecognitionStrategy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary => {
+                "UseSlotValuesAsCustomVocabulary"
+            }
+            AudioRecognitionStrategy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["UseSlotValuesAsCustomVocabulary"]
+    }
+}
+impl AsRef<str> for AudioRecognitionStrategy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3371,6 +3523,8 @@ impl AsRef<str> for ExportStatus {
 pub enum ImportExportFileFormat {
     #[allow(missing_docs)] // documentation missing in model
     LexJson,
+    #[allow(missing_docs)] // documentation missing in model
+    Tsv,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -3378,6 +3532,7 @@ impl std::convert::From<&str> for ImportExportFileFormat {
     fn from(s: &str) -> Self {
         match s {
             "LexJson" => ImportExportFileFormat::LexJson,
+            "TSV" => ImportExportFileFormat::Tsv,
             other => ImportExportFileFormat::Unknown(other.to_owned()),
         }
     }
@@ -3394,12 +3549,13 @@ impl ImportExportFileFormat {
     pub fn as_str(&self) -> &str {
         match self {
             ImportExportFileFormat::LexJson => "LexJson",
+            ImportExportFileFormat::Tsv => "TSV",
             ImportExportFileFormat::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["LexJson"]
+        &["LexJson", "TSV"]
     }
 }
 impl AsRef<str> for ImportExportFileFormat {
@@ -3417,6 +3573,9 @@ pub struct ExportResourceSpecification {
     /// <p>Parameters for exporting a bot locale.</p>
     pub bot_locale_export_specification:
         std::option::Option<crate::model::BotLocaleExportSpecification>,
+    /// <p>The parameters required to export a custom vocabulary.</p>
+    pub custom_vocabulary_export_specification:
+        std::option::Option<crate::model::CustomVocabularyExportSpecification>,
 }
 impl ExportResourceSpecification {
     /// <p>Parameters for exporting a bot.</p>
@@ -3431,6 +3590,12 @@ impl ExportResourceSpecification {
     ) -> std::option::Option<&crate::model::BotLocaleExportSpecification> {
         self.bot_locale_export_specification.as_ref()
     }
+    /// <p>The parameters required to export a custom vocabulary.</p>
+    pub fn custom_vocabulary_export_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomVocabularyExportSpecification> {
+        self.custom_vocabulary_export_specification.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportResourceSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3439,6 +3604,10 @@ impl std::fmt::Debug for ExportResourceSpecification {
         formatter.field(
             "bot_locale_export_specification",
             &self.bot_locale_export_specification,
+        );
+        formatter.field(
+            "custom_vocabulary_export_specification",
+            &self.custom_vocabulary_export_specification,
         );
         formatter.finish()
     }
@@ -3453,6 +3622,8 @@ pub mod export_resource_specification {
             std::option::Option<crate::model::BotExportSpecification>,
         pub(crate) bot_locale_export_specification:
             std::option::Option<crate::model::BotLocaleExportSpecification>,
+        pub(crate) custom_vocabulary_export_specification:
+            std::option::Option<crate::model::CustomVocabularyExportSpecification>,
     }
     impl Builder {
         /// <p>Parameters for exporting a bot.</p>
@@ -3487,11 +3658,28 @@ pub mod export_resource_specification {
             self.bot_locale_export_specification = input;
             self
         }
+        /// <p>The parameters required to export a custom vocabulary.</p>
+        pub fn custom_vocabulary_export_specification(
+            mut self,
+            input: crate::model::CustomVocabularyExportSpecification,
+        ) -> Self {
+            self.custom_vocabulary_export_specification = Some(input);
+            self
+        }
+        /// <p>The parameters required to export a custom vocabulary.</p>
+        pub fn set_custom_vocabulary_export_specification(
+            mut self,
+            input: std::option::Option<crate::model::CustomVocabularyExportSpecification>,
+        ) -> Self {
+            self.custom_vocabulary_export_specification = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExportResourceSpecification`](crate::model::ExportResourceSpecification)
         pub fn build(self) -> crate::model::ExportResourceSpecification {
             crate::model::ExportResourceSpecification {
                 bot_export_specification: self.bot_export_specification,
                 bot_locale_export_specification: self.bot_locale_export_specification,
+                custom_vocabulary_export_specification: self.custom_vocabulary_export_specification,
             }
         }
     }
@@ -3500,6 +3688,98 @@ impl ExportResourceSpecification {
     /// Creates a new builder-style object to manufacture [`ExportResourceSpecification`](crate::model::ExportResourceSpecification)
     pub fn builder() -> crate::model::export_resource_specification::Builder {
         crate::model::export_resource_specification::Builder::default()
+    }
+}
+
+/// <p>Provides the parameters required for exporting a custom vocabulary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomVocabularyExportSpecification {
+    /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot that contains the custom vocabulary to export.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+}
+impl CustomVocabularyExportSpecification {
+    /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the custom vocabulary to export.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CustomVocabularyExportSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomVocabularyExportSpecification");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.finish()
+    }
+}
+/// See [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification)
+pub mod custom_vocabulary_export_specification {
+    /// A builder for [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot that contains the custom vocabulary to export.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot that contains the custom vocabulary to export.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification)
+        pub fn build(self) -> crate::model::CustomVocabularyExportSpecification {
+            crate::model::CustomVocabularyExportSpecification {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+            }
+        }
+    }
+}
+impl CustomVocabularyExportSpecification {
+    /// Creates a new builder-style object to manufacture [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification)
+    pub fn builder() -> crate::model::custom_vocabulary_export_specification::Builder {
+        crate::model::custom_vocabulary_export_specification::Builder::default()
     }
 }
 
@@ -5739,6 +6019,9 @@ pub struct ImportResourceSpecification {
     /// <p>Parameters for importing a bot locale.</p>
     pub bot_locale_import_specification:
         std::option::Option<crate::model::BotLocaleImportSpecification>,
+    /// <p>Provides the parameters required for importing a custom vocabulary.</p>
+    pub custom_vocabulary_import_specification:
+        std::option::Option<crate::model::CustomVocabularyImportSpecification>,
 }
 impl ImportResourceSpecification {
     /// <p>Parameters for importing a bot.</p>
@@ -5753,6 +6036,12 @@ impl ImportResourceSpecification {
     ) -> std::option::Option<&crate::model::BotLocaleImportSpecification> {
         self.bot_locale_import_specification.as_ref()
     }
+    /// <p>Provides the parameters required for importing a custom vocabulary.</p>
+    pub fn custom_vocabulary_import_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomVocabularyImportSpecification> {
+        self.custom_vocabulary_import_specification.as_ref()
+    }
 }
 impl std::fmt::Debug for ImportResourceSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5761,6 +6050,10 @@ impl std::fmt::Debug for ImportResourceSpecification {
         formatter.field(
             "bot_locale_import_specification",
             &self.bot_locale_import_specification,
+        );
+        formatter.field(
+            "custom_vocabulary_import_specification",
+            &self.custom_vocabulary_import_specification,
         );
         formatter.finish()
     }
@@ -5775,6 +6068,8 @@ pub mod import_resource_specification {
             std::option::Option<crate::model::BotImportSpecification>,
         pub(crate) bot_locale_import_specification:
             std::option::Option<crate::model::BotLocaleImportSpecification>,
+        pub(crate) custom_vocabulary_import_specification:
+            std::option::Option<crate::model::CustomVocabularyImportSpecification>,
     }
     impl Builder {
         /// <p>Parameters for importing a bot.</p>
@@ -5809,11 +6104,28 @@ pub mod import_resource_specification {
             self.bot_locale_import_specification = input;
             self
         }
+        /// <p>Provides the parameters required for importing a custom vocabulary.</p>
+        pub fn custom_vocabulary_import_specification(
+            mut self,
+            input: crate::model::CustomVocabularyImportSpecification,
+        ) -> Self {
+            self.custom_vocabulary_import_specification = Some(input);
+            self
+        }
+        /// <p>Provides the parameters required for importing a custom vocabulary.</p>
+        pub fn set_custom_vocabulary_import_specification(
+            mut self,
+            input: std::option::Option<crate::model::CustomVocabularyImportSpecification>,
+        ) -> Self {
+            self.custom_vocabulary_import_specification = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportResourceSpecification`](crate::model::ImportResourceSpecification)
         pub fn build(self) -> crate::model::ImportResourceSpecification {
             crate::model::ImportResourceSpecification {
                 bot_import_specification: self.bot_import_specification,
                 bot_locale_import_specification: self.bot_locale_import_specification,
+                custom_vocabulary_import_specification: self.custom_vocabulary_import_specification,
             }
         }
     }
@@ -5822,6 +6134,98 @@ impl ImportResourceSpecification {
     /// Creates a new builder-style object to manufacture [`ImportResourceSpecification`](crate::model::ImportResourceSpecification)
     pub fn builder() -> crate::model::import_resource_specification::Builder {
         crate::model::import_resource_specification::Builder::default()
+    }
+}
+
+/// <p>Provides the parameters required for importing a custom vocabulary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomVocabularyImportSpecification {
+    /// <p>The identifier of the bot to import the custom vocabulary to.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot to import the custom vocabulary to.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+}
+impl CustomVocabularyImportSpecification {
+    /// <p>The identifier of the bot to import the custom vocabulary to.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot to import the custom vocabulary to.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CustomVocabularyImportSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomVocabularyImportSpecification");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.finish()
+    }
+}
+/// See [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification)
+pub mod custom_vocabulary_import_specification {
+    /// A builder for [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the bot to import the custom vocabulary to.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot to import the custom vocabulary to.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot to import the custom vocabulary to.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot to import the custom vocabulary to.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification)
+        pub fn build(self) -> crate::model::CustomVocabularyImportSpecification {
+            crate::model::CustomVocabularyImportSpecification {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+            }
+        }
+    }
+}
+impl CustomVocabularyImportSpecification {
+    /// Creates a new builder-style object to manufacture [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification)
+    pub fn builder() -> crate::model::custom_vocabulary_import_specification::Builder {
+        crate::model::custom_vocabulary_import_specification::Builder::default()
     }
 }
 
@@ -8269,6 +8673,8 @@ pub struct ImportSummary {
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the import was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The type of resource that was imported.</p>
+    pub imported_resource_type: std::option::Option<crate::model::ImportResourceType>,
 }
 impl ImportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
@@ -8299,6 +8705,10 @@ impl ImportSummary {
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
+    /// <p>The type of resource that was imported.</p>
+    pub fn imported_resource_type(&self) -> std::option::Option<&crate::model::ImportResourceType> {
+        self.imported_resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ImportSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8310,6 +8720,7 @@ impl std::fmt::Debug for ImportSummary {
         formatter.field("merge_strategy", &self.merge_strategy);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_updated_date_time", &self.last_updated_date_time);
+        formatter.field("imported_resource_type", &self.imported_resource_type);
         formatter.finish()
     }
 }
@@ -8326,6 +8737,7 @@ pub mod import_summary {
         pub(crate) merge_strategy: std::option::Option<crate::model::MergeStrategy>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) imported_resource_type: std::option::Option<crate::model::ImportResourceType>,
     }
     impl Builder {
         /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
@@ -8416,6 +8828,19 @@ pub mod import_summary {
             self.last_updated_date_time = input;
             self
         }
+        /// <p>The type of resource that was imported.</p>
+        pub fn imported_resource_type(mut self, input: crate::model::ImportResourceType) -> Self {
+            self.imported_resource_type = Some(input);
+            self
+        }
+        /// <p>The type of resource that was imported.</p>
+        pub fn set_imported_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ImportResourceType>,
+        ) -> Self {
+            self.imported_resource_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportSummary`](crate::model::ImportSummary)
         pub fn build(self) -> crate::model::ImportSummary {
             crate::model::ImportSummary {
@@ -8426,6 +8851,7 @@ pub mod import_summary {
                 merge_strategy: self.merge_strategy,
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
+                imported_resource_type: self.imported_resource_type,
             }
         }
     }
@@ -8437,13 +8863,72 @@ impl ImportSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImportResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    Bot,
+    #[allow(missing_docs)] // documentation missing in model
+    BotLocale,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomVocabulary,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImportResourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Bot" => ImportResourceType::Bot,
+            "BotLocale" => ImportResourceType::BotLocale,
+            "CustomVocabulary" => ImportResourceType::CustomVocabulary,
+            other => ImportResourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImportResourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImportResourceType::from(s))
+    }
+}
+impl ImportResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImportResourceType::Bot => "Bot",
+            ImportResourceType::BotLocale => "BotLocale",
+            ImportResourceType::CustomVocabulary => "CustomVocabulary",
+            ImportResourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Bot", "BotLocale", "CustomVocabulary"]
+    }
+}
+impl AsRef<str> for ImportResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Filters the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportFilter {
     /// <p>The name of the field to use for filtering.</p>
     pub name: std::option::Option<crate::model::ImportFilterName>,
-    /// <p>The values to use to filter the response.</p>
+    /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
     pub operator: std::option::Option<crate::model::ImportFilterOperator>,
@@ -8453,7 +8938,7 @@ impl ImportFilter {
     pub fn name(&self) -> std::option::Option<&crate::model::ImportFilterName> {
         self.name.as_ref()
     }
-    /// <p>The values to use to filter the response.</p>
+    /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -8499,14 +8984,14 @@ pub mod import_filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>The values to use to filter the response.</p>
+        /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>The values to use to filter the response.</p>
+        /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8953,7 +9438,7 @@ impl ExportSummary {
 pub struct ExportFilter {
     /// <p>The name of the field to use for filtering.</p>
     pub name: std::option::Option<crate::model::ExportFilterName>,
-    /// <p>The values to use to filter the response.</p>
+    /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
     pub operator: std::option::Option<crate::model::ExportFilterOperator>,
@@ -8963,7 +9448,7 @@ impl ExportFilter {
     pub fn name(&self) -> std::option::Option<&crate::model::ExportFilterName> {
         self.name.as_ref()
     }
-    /// <p>The values to use to filter the response.</p>
+    /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -9009,14 +9494,14 @@ pub mod export_filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>The values to use to filter the response.</p>
+        /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>The values to use to filter the response.</p>
+        /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12023,6 +12508,73 @@ impl AggregatedUtterancesSortAttribute {
     }
 }
 impl AsRef<str> for AggregatedUtterancesSortAttribute {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CustomVocabularyStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Exporting,
+    #[allow(missing_docs)] // documentation missing in model
+    Importing,
+    #[allow(missing_docs)] // documentation missing in model
+    Ready,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CustomVocabularyStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Creating" => CustomVocabularyStatus::Creating,
+            "Deleting" => CustomVocabularyStatus::Deleting,
+            "Exporting" => CustomVocabularyStatus::Exporting,
+            "Importing" => CustomVocabularyStatus::Importing,
+            "Ready" => CustomVocabularyStatus::Ready,
+            other => CustomVocabularyStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CustomVocabularyStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CustomVocabularyStatus::from(s))
+    }
+}
+impl CustomVocabularyStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CustomVocabularyStatus::Creating => "Creating",
+            CustomVocabularyStatus::Deleting => "Deleting",
+            CustomVocabularyStatus::Exporting => "Exporting",
+            CustomVocabularyStatus::Importing => "Importing",
+            CustomVocabularyStatus::Ready => "Ready",
+            CustomVocabularyStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Creating", "Deleting", "Exporting", "Importing", "Ready"]
+    }
+}
+impl AsRef<str> for CustomVocabularyStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

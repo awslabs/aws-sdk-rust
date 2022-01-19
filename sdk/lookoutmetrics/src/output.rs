@@ -1482,10 +1482,12 @@ pub struct DescribeAnomalyDetectorOutput {
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the detector.</p>
     pub status: std::option::Option<crate::model::AnomalyDetectorStatus>,
-    /// <p>The reason that the detector failed, if any.</p>
+    /// <p>The reason that the detector failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
+    /// <p>The process that caused the detector to fail.</p>
+    pub failure_type: std::option::Option<crate::model::AnomalyDetectorFailureType>,
 }
 impl DescribeAnomalyDetectorOutput {
     /// <p>The ARN of the detector.</p>
@@ -1518,13 +1520,17 @@ impl DescribeAnomalyDetectorOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::AnomalyDetectorStatus> {
         self.status.as_ref()
     }
-    /// <p>The reason that the detector failed, if any.</p>
+    /// <p>The reason that the detector failed.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
+    }
+    /// <p>The process that caused the detector to fail.</p>
+    pub fn failure_type(&self) -> std::option::Option<&crate::model::AnomalyDetectorFailureType> {
+        self.failure_type.as_ref()
     }
 }
 impl std::fmt::Debug for DescribeAnomalyDetectorOutput {
@@ -1542,6 +1548,7 @@ impl std::fmt::Debug for DescribeAnomalyDetectorOutput {
         formatter.field("status", &self.status);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("failure_type", &self.failure_type);
         formatter.finish()
     }
 }
@@ -1561,6 +1568,7 @@ pub mod describe_anomaly_detector_output {
         pub(crate) status: std::option::Option<crate::model::AnomalyDetectorStatus>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+        pub(crate) failure_type: std::option::Option<crate::model::AnomalyDetectorFailureType>,
     }
     impl Builder {
         /// <p>The ARN of the detector.</p>
@@ -1660,12 +1668,12 @@ pub mod describe_anomaly_detector_output {
             self.status = input;
             self
         }
-        /// <p>The reason that the detector failed, if any.</p>
+        /// <p>The reason that the detector failed.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_reason = Some(input.into());
             self
         }
-        /// <p>The reason that the detector failed, if any.</p>
+        /// <p>The reason that the detector failed.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1683,6 +1691,19 @@ pub mod describe_anomaly_detector_output {
             self.kms_key_arn = input;
             self
         }
+        /// <p>The process that caused the detector to fail.</p>
+        pub fn failure_type(mut self, input: crate::model::AnomalyDetectorFailureType) -> Self {
+            self.failure_type = Some(input);
+            self
+        }
+        /// <p>The process that caused the detector to fail.</p>
+        pub fn set_failure_type(
+            mut self,
+            input: std::option::Option<crate::model::AnomalyDetectorFailureType>,
+        ) -> Self {
+            self.failure_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput)
         pub fn build(self) -> crate::output::DescribeAnomalyDetectorOutput {
             crate::output::DescribeAnomalyDetectorOutput {
@@ -1695,6 +1716,7 @@ pub mod describe_anomaly_detector_output {
                 status: self.status,
                 failure_reason: self.failure_reason,
                 kms_key_arn: self.kms_key_arn,
+                failure_type: self.failure_type,
             }
         }
     }
@@ -1898,6 +1920,36 @@ impl DeleteAlertOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAlertOutput`](crate::output::DeleteAlertOutput)
     pub fn builder() -> crate::output::delete_alert_output::Builder {
         crate::output::delete_alert_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeactivateAnomalyDetectorOutput {}
+impl std::fmt::Debug for DeactivateAnomalyDetectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeactivateAnomalyDetectorOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
+pub mod deactivate_anomaly_detector_output {
+    /// A builder for [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
+        pub fn build(self) -> crate::output::DeactivateAnomalyDetectorOutput {
+            crate::output::DeactivateAnomalyDetectorOutput {}
+        }
+    }
+}
+impl DeactivateAnomalyDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
+    pub fn builder() -> crate::output::deactivate_anomaly_detector_output::Builder {
+        crate::output::deactivate_anomaly_detector_output::Builder::default()
     }
 }
 

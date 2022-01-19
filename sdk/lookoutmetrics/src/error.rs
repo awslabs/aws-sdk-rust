@@ -732,6 +732,154 @@ impl std::error::Error for CreateMetricSetError {
     }
 }
 
+/// Error type for the `DeactivateAnomalyDetector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeactivateAnomalyDetectorError {
+    /// Kind of error that occurred.
+    pub kind: DeactivateAnomalyDetectorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeactivateAnomalyDetector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeactivateAnomalyDetectorErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There was a conflict processing the request. Try your request again.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The specified resource cannot be found. Check the ARN of the resource and try again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied due to too many requests being submitted at the same time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeactivateAnomalyDetectorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeactivateAnomalyDetectorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeactivateAnomalyDetectorErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeactivateAnomalyDetectorErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeactivateAnomalyDetectorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeactivateAnomalyDetectorErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeactivateAnomalyDetectorErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeactivateAnomalyDetectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeactivateAnomalyDetectorError {
+    fn code(&self) -> Option<&str> {
+        DeactivateAnomalyDetectorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeactivateAnomalyDetectorError {
+    /// Creates a new `DeactivateAnomalyDetectorError`.
+    pub fn new(kind: DeactivateAnomalyDetectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeactivateAnomalyDetectorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeactivateAnomalyDetectorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeactivateAnomalyDetectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeactivateAnomalyDetectorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeactivateAnomalyDetectorErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateAnomalyDetectorErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeactivateAnomalyDetectorErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateAnomalyDetectorErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeactivateAnomalyDetectorErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateAnomalyDetectorErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeactivateAnomalyDetectorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateAnomalyDetectorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeactivateAnomalyDetectorErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateAnomalyDetectorErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeactivateAnomalyDetectorErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateAnomalyDetectorErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeactivateAnomalyDetectorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeactivateAnomalyDetectorErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeactivateAnomalyDetectorErrorKind::ConflictException(_inner) => Some(_inner),
+            DeactivateAnomalyDetectorErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeactivateAnomalyDetectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeactivateAnomalyDetectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeactivateAnomalyDetectorErrorKind::ValidationException(_inner) => Some(_inner),
+            DeactivateAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteAlert` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3408,6 +3556,8 @@ pub enum UpdateMetricSetErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource cannot be found. Check the ARN of the resource and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request exceeded the service's quotas. Check the service quotas and try again.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
@@ -3421,6 +3571,7 @@ impl std::fmt::Display for UpdateMetricSetError {
             UpdateMetricSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             UpdateMetricSetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateMetricSetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateMetricSetErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             UpdateMetricSetErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateMetricSetErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateMetricSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -3498,6 +3649,13 @@ impl UpdateMetricSetError {
             UpdateMetricSetErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateMetricSetErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMetricSetErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateMetricSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
@@ -3516,6 +3674,7 @@ impl std::error::Error for UpdateMetricSetError {
             UpdateMetricSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateMetricSetErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateMetricSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateMetricSetErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             UpdateMetricSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateMetricSetErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateMetricSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -3704,6 +3863,151 @@ impl TooManyRequestsException {
     }
 }
 
+/// <p>The request exceeded the service's quotas. Check the service quotas and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The ID of the resource.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The type of the resource.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The quota code.</p>
+    pub quota_code: std::option::Option<std::string::String>,
+    /// <p>The service code.</p>
+    pub service_code: std::option::Option<std::string::String>,
+}
+impl ServiceQuotaExceededException {
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The quota code.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The service code.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+}
+impl std::fmt::Debug for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
+        formatter.field("message", &self.message);
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("quota_code", &self.quota_code);
+        formatter.field("service_code", &self.service_code);
+        formatter.finish()
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+pub mod service_quota_exceeded_exception {
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) quota_code: std::option::Option<std::string::String>,
+        pub(crate) service_code: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The type of the resource.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The type of the resource.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The quota code.</p>
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quota_code = Some(input.into());
+            self
+        }
+        /// <p>The quota code.</p>
+        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.quota_code = input;
+            self
+        }
+        /// <p>The service code.</p>
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_code = Some(input.into());
+            self
+        }
+        /// <p>The service code.</p>
+        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
+                message: self.message,
+                resource_id: self.resource_id,
+                resource_type: self.resource_type,
+                quota_code: self.quota_code,
+                service_code: self.service_code,
+            }
+        }
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The specified resource cannot be found. Check the ARN of the resource and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3743,8 +4047,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -3834,8 +4138,8 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -3898,8 +4202,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -3978,8 +4282,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -4043,150 +4347,5 @@ impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
     pub fn builder() -> crate::error::conflict_exception::Builder {
         crate::error::conflict_exception::Builder::default()
-    }
-}
-
-/// <p>The request exceeded the service's quotas. Check the service quotas and try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceQuotaExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    /// <p>The ID of the resource.</p>
-    pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The type of the resource.</p>
-    pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The quota code.</p>
-    pub quota_code: std::option::Option<std::string::String>,
-    /// <p>The service code.</p>
-    pub service_code: std::option::Option<std::string::String>,
-}
-impl ServiceQuotaExceededException {
-    /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
-        self.resource_id.as_deref()
-    }
-    /// <p>The type of the resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
-        self.resource_type.as_deref()
-    }
-    /// <p>The quota code.</p>
-    pub fn quota_code(&self) -> std::option::Option<&str> {
-        self.quota_code.as_deref()
-    }
-    /// <p>The service code.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
-        self.service_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("quota_code", &self.quota_code);
-        formatter.field("service_code", &self.service_code);
-        formatter.finish()
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceQuotaExceededException {}
-/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-pub mod service_quota_exceeded_exception {
-    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) resource_id: std::option::Option<std::string::String>,
-        pub(crate) resource_type: std::option::Option<std::string::String>,
-        pub(crate) quota_code: std::option::Option<std::string::String>,
-        pub(crate) service_code: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>The ID of the resource.</p>
-        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(input.into());
-            self
-        }
-        /// <p>The ID of the resource.</p>
-        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
-        }
-        /// <p>The type of the resource.</p>
-        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(input.into());
-            self
-        }
-        /// <p>The type of the resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
-        }
-        /// <p>The quota code.</p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.quota_code = Some(input.into());
-            self
-        }
-        /// <p>The quota code.</p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.quota_code = input;
-            self
-        }
-        /// <p>The service code.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.service_code = Some(input.into());
-            self
-        }
-        /// <p>The service code.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_code = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
-            crate::error::ServiceQuotaExceededException {
-                message: self.message,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-                quota_code: self.quota_code,
-                service_code: self.service_code,
-            }
-        }
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
-        crate::error::service_quota_exceeded_exception::Builder::default()
     }
 }

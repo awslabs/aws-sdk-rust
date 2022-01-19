@@ -368,6 +368,18 @@ where
     pub fn delete_multicast_group(&self) -> fluent_builders::DeleteMulticastGroup<C, M, R> {
         fluent_builders::DeleteMulticastGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteQueuedMessages`](crate::client::fluent_builders::DeleteQueuedMessages) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::set_id): <p>Id of a given wireless device which messages will be deleted </p>
+    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::DeleteQueuedMessages::set_message_id): <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
+    ///   - [`wireless_device_type(WirelessDeviceType)`](crate::client::fluent_builders::DeleteQueuedMessages::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::DeleteQueuedMessages::set_wireless_device_type): <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+    /// - On success, responds with [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteQueuedMessagesError>`](crate::error::DeleteQueuedMessagesError)
+    pub fn delete_queued_messages(&self) -> fluent_builders::DeleteQueuedMessages<C, M, R> {
+        fluent_builders::DeleteQueuedMessages::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteServiceProfile`](crate::client::fluent_builders::DeleteServiceProfile) operation.
     ///
     /// - The fluent builder is configurable:
@@ -874,6 +886,21 @@ where
     /// - On failure, responds with [`SdkError<ListPartnerAccountsError>`](crate::error::ListPartnerAccountsError)
     pub fn list_partner_accounts(&self) -> fluent_builders::ListPartnerAccounts<C, M, R> {
         fluent_builders::ListPartnerAccounts::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListQueuedMessages`](crate::client::fluent_builders::ListQueuedMessages) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQueuedMessages::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListQueuedMessages::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListQueuedMessages::set_id): <p>Id of a given wireless device which the downlink packets are targeted </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQueuedMessages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQueuedMessages::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueuedMessages::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListQueuedMessages::set_max_results): <p>The maximum number of results to return in this operation.</p>
+    ///   - [`wireless_device_type(WirelessDeviceType)`](crate::client::fluent_builders::ListQueuedMessages::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::ListQueuedMessages::set_wireless_device_type): <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+    /// - On success, responds with [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListQueuedMessagesOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    ///   - [`downlink_queue_messages_list(Option<Vec<DownlinkQueueMessage>>)`](crate::output::ListQueuedMessagesOutput::downlink_queue_messages_list): <p>The messages in downlink queue.</p>
+    /// - On failure, responds with [`SdkError<ListQueuedMessagesError>`](crate::error::ListQueuedMessagesError)
+    pub fn list_queued_messages(&self) -> fluent_builders::ListQueuedMessages<C, M, R> {
+        fluent_builders::ListQueuedMessages::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListServiceProfiles`](crate::client::fluent_builders::ListServiceProfiles) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServiceProfiles::into_paginator).
@@ -3311,6 +3338,99 @@ pub mod fluent_builders {
         /// <p>The ID of the multicast group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteQueuedMessages`.
+    ///
+    /// <p> The operation to delete queued messages. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteQueuedMessages<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_queued_messages_input::Builder,
+    }
+    impl<C, M, R> DeleteQueuedMessages<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteQueuedMessages`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteQueuedMessagesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteQueuedMessagesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteQueuedMessagesInputOperationOutputAlias,
+                crate::output::DeleteQueuedMessagesOutput,
+                crate::error::DeleteQueuedMessagesError,
+                crate::input::DeleteQueuedMessagesInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Id of a given wireless device which messages will be deleted </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>Id of a given wireless device which messages will be deleted </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
+            self
+        }
+        /// <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_message_id(input);
+            self
+        }
+        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+        pub fn wireless_device_type(mut self, input: crate::model::WirelessDeviceType) -> Self {
+            self.inner = self.inner.wireless_device_type(input);
+            self
+        }
+        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+        pub fn set_wireless_device_type(
+            mut self,
+            input: std::option::Option<crate::model::WirelessDeviceType>,
+        ) -> Self {
+            self.inner = self.inner.set_wireless_device_type(input);
             self
         }
     }
@@ -6232,6 +6352,115 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in this operation.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListQueuedMessages`.
+    ///
+    /// <p>The operation to list queued messages. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListQueuedMessages<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_queued_messages_input::Builder,
+    }
+    impl<C, M, R> ListQueuedMessages<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListQueuedMessages`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListQueuedMessagesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListQueuedMessagesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListQueuedMessagesInputOperationOutputAlias,
+                crate::output::ListQueuedMessagesOutput,
+                crate::error::ListQueuedMessagesError,
+                crate::input::ListQueuedMessagesInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListQueuedMessagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListQueuedMessagesPaginator<C, M, R> {
+            crate::paginator::ListQueuedMessagesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Id of a given wireless device which the downlink packets are targeted </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
+            self
+        }
+        /// <p>Id of a given wireless device which the downlink packets are targeted </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+        pub fn wireless_device_type(mut self, input: crate::model::WirelessDeviceType) -> Self {
+            self.inner = self.inner.wireless_device_type(input);
+            self
+        }
+        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+        pub fn set_wireless_device_type(
+            mut self,
+            input: std::option::Option<crate::model::WirelessDeviceType>,
+        ) -> Self {
+            self.inner = self.inner.set_wireless_device_type(input);
             self
         }
     }

@@ -229,6 +229,121 @@ impl std::error::Error for GetDimensionKeyDetailsError {
     }
 }
 
+/// Error type for the `GetResourceMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetResourceMetadataError {
+    /// Kind of error that occurred.
+    pub kind: GetResourceMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetResourceMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetResourceMetadataErrorKind {
+    /// <p>The request failed due to an unknown error.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>One of the arguments provided is invalid for this request.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>The user is not authorized to perform this request.</p>
+    NotAuthorizedException(crate::error::NotAuthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetResourceMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetResourceMetadataErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            GetResourceMetadataErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
+            GetResourceMetadataErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
+            GetResourceMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetResourceMetadataError {
+    fn code(&self) -> Option<&str> {
+        GetResourceMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetResourceMetadataError {
+    /// Creates a new `GetResourceMetadataError`.
+    pub fn new(kind: GetResourceMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetResourceMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetResourceMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetResourceMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetResourceMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetResourceMetadataErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceMetadataErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourceMetadataErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceMetadataErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResourceMetadataErrorKind::NotAuthorizedException`.
+    pub fn is_not_authorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceMetadataErrorKind::NotAuthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for GetResourceMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetResourceMetadataErrorKind::InternalServiceError(_inner) => Some(_inner),
+            GetResourceMetadataErrorKind::InvalidArgumentException(_inner) => Some(_inner),
+            GetResourceMetadataErrorKind::NotAuthorizedException(_inner) => Some(_inner),
+            GetResourceMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetResourceMetrics` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -340,6 +455,249 @@ impl std::error::Error for GetResourceMetricsError {
             GetResourceMetricsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetResourceMetricsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             GetResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListAvailableResourceDimensions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAvailableResourceDimensionsError {
+    /// Kind of error that occurred.
+    pub kind: ListAvailableResourceDimensionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListAvailableResourceDimensions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAvailableResourceDimensionsErrorKind {
+    /// <p>The request failed due to an unknown error.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>One of the arguments provided is invalid for this request.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>The user is not authorized to perform this request.</p>
+    NotAuthorizedException(crate::error::NotAuthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAvailableResourceDimensionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAvailableResourceDimensionsErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ListAvailableResourceDimensionsErrorKind::InvalidArgumentException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAvailableResourceDimensionsErrorKind::NotAuthorizedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAvailableResourceDimensionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListAvailableResourceDimensionsError {
+    fn code(&self) -> Option<&str> {
+        ListAvailableResourceDimensionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAvailableResourceDimensionsError {
+    /// Creates a new `ListAvailableResourceDimensionsError`.
+    pub fn new(
+        kind: ListAvailableResourceDimensionsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAvailableResourceDimensionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAvailableResourceDimensionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAvailableResourceDimensionsErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableResourceDimensionsErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAvailableResourceDimensionsErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableResourceDimensionsErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAvailableResourceDimensionsErrorKind::NotAuthorizedException`.
+    pub fn is_not_authorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableResourceDimensionsErrorKind::NotAuthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for ListAvailableResourceDimensionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAvailableResourceDimensionsErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ListAvailableResourceDimensionsErrorKind::InvalidArgumentException(_inner) => {
+                Some(_inner)
+            }
+            ListAvailableResourceDimensionsErrorKind::NotAuthorizedException(_inner) => {
+                Some(_inner)
+            }
+            ListAvailableResourceDimensionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListAvailableResourceMetrics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAvailableResourceMetricsError {
+    /// Kind of error that occurred.
+    pub kind: ListAvailableResourceMetricsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListAvailableResourceMetrics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAvailableResourceMetricsErrorKind {
+    /// <p>The request failed due to an unknown error.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>One of the arguments provided is invalid for this request.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>The user is not authorized to perform this request.</p>
+    NotAuthorizedException(crate::error::NotAuthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAvailableResourceMetricsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAvailableResourceMetricsErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ListAvailableResourceMetricsErrorKind::InvalidArgumentException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAvailableResourceMetricsErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
+            ListAvailableResourceMetricsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListAvailableResourceMetricsError {
+    fn code(&self) -> Option<&str> {
+        ListAvailableResourceMetricsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAvailableResourceMetricsError {
+    /// Creates a new `ListAvailableResourceMetricsError`.
+    pub fn new(kind: ListAvailableResourceMetricsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAvailableResourceMetricsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAvailableResourceMetricsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAvailableResourceMetricsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAvailableResourceMetricsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAvailableResourceMetricsErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableResourceMetricsErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAvailableResourceMetricsErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableResourceMetricsErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAvailableResourceMetricsErrorKind::NotAuthorizedException`.
+    pub fn is_not_authorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableResourceMetricsErrorKind::NotAuthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for ListAvailableResourceMetricsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAvailableResourceMetricsErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ListAvailableResourceMetricsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
+            ListAvailableResourceMetricsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
+            ListAvailableResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

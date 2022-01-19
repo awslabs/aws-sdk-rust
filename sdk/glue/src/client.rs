@@ -2113,6 +2113,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartWorkflowRun::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartWorkflowRun::set_name): <p>The name of the workflow to start.</p>
+    ///   - [`run_properties(HashMap<String, String>)`](crate::client::fluent_builders::StartWorkflowRun::run_properties) / [`set_run_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartWorkflowRun::set_run_properties): <p>The workflow run properties for the new workflow run.</p>
     /// - On success, responds with [`StartWorkflowRunOutput`](crate::output::StartWorkflowRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::output::StartWorkflowRunOutput::run_id): <p>An Id for the new run.</p>
     /// - On failure, responds with [`SdkError<StartWorkflowRunError>`](crate::error::StartWorkflowRunError)
@@ -17630,6 +17631,29 @@ pub mod fluent_builders {
         /// <p>The name of the workflow to start.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Adds a key-value pair to `RunProperties`.
+        ///
+        /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).
+        ///
+        /// <p>The workflow run properties for the new workflow run.</p>
+        pub fn run_properties(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.run_properties(k.into(), v.into());
+            self
+        }
+        /// <p>The workflow run properties for the new workflow run.</p>
+        pub fn set_run_properties(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_run_properties(input);
             self
         }
     }

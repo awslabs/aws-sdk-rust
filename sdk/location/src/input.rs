@@ -1422,7 +1422,7 @@ pub mod calculate_route_input {
         /// <ul>
         /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn departure_position(mut self, input: f64) -> Self {
@@ -1435,7 +1435,7 @@ pub mod calculate_route_input {
         /// <ul>
         /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn set_departure_position(
@@ -1453,7 +1453,7 @@ pub mod calculate_route_input {
         /// <ul>
         /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn destination_position(mut self, input: f64) -> Self {
@@ -1466,7 +1466,7 @@ pub mod calculate_route_input {
         /// <ul>
         /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn set_destination_position(
@@ -1484,7 +1484,7 @@ pub mod calculate_route_input {
         /// <ul>
         /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
         /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
         /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
@@ -1499,7 +1499,7 @@ pub mod calculate_route_input {
         /// <ul>
         /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
         /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
         /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
@@ -1512,7 +1512,7 @@ pub mod calculate_route_input {
             self
         }
         /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-        /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
+        /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
         /// <ul>
         /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
         /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
@@ -1523,7 +1523,7 @@ pub mod calculate_route_input {
             self
         }
         /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-        /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
+        /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
         /// <ul>
         /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
         /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
@@ -1800,6 +1800,371 @@ impl CalculateRouteInput {
     }
 }
 
+/// See [`CalculateRouteMatrixInput`](crate::input::CalculateRouteMatrixInput)
+pub mod calculate_route_matrix_input {
+    /// A builder for [`CalculateRouteMatrixInput`](crate::input::CalculateRouteMatrixInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculator_name: std::option::Option<std::string::String>,
+        pub(crate) departure_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        pub(crate) destination_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        pub(crate) travel_mode: std::option::Option<crate::model::TravelMode>,
+        pub(crate) departure_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) depart_now: std::option::Option<bool>,
+        pub(crate) distance_unit: std::option::Option<crate::model::DistanceUnit>,
+        pub(crate) car_mode_options:
+            std::option::Option<crate::model::CalculateRouteCarModeOptions>,
+        pub(crate) truck_mode_options:
+            std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
+    }
+    impl Builder {
+        /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculator_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
+        pub fn set_calculator_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculator_name = input;
+            self
+        }
+        /// Appends an item to `departure_positions`.
+        ///
+        /// To override the contents of this collection use [`set_departure_positions`](Self::set_departure_positions).
+        ///
+        /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
+        /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// </important> <note>
+        /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+        pub fn departure_positions(mut self, input: std::vec::Vec<f64>) -> Self {
+            let mut v = self.departure_positions.unwrap_or_default();
+            v.push(input);
+            self.departure_positions = Some(v);
+            self
+        }
+        /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
+        /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// </important> <note>
+        /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+        pub fn set_departure_positions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        ) -> Self {
+            self.departure_positions = input;
+            self
+        }
+        /// Appends an item to `destination_positions`.
+        ///
+        /// To override the contents of this collection use [`set_destination_positions`](Self::set_destination_positions).
+        ///
+        /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
+        /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// </important> <note>
+        /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+        pub fn destination_positions(mut self, input: std::vec::Vec<f64>) -> Self {
+            let mut v = self.destination_positions.unwrap_or_default();
+            v.push(input);
+            self.destination_positions = Some(v);
+            self
+        }
+        /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
+        /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// </important> <note>
+        /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+        pub fn set_destination_positions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        ) -> Self {
+            self.destination_positions = input;
+            self
+        }
+        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+        /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
+        /// <ul>
+        /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+        /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+        /// </ul>
+        /// <p>Default Value: <code>Car</code> </p>
+        pub fn travel_mode(mut self, input: crate::model::TravelMode) -> Self {
+            self.travel_mode = Some(input);
+            self
+        }
+        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+        /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
+        /// <ul>
+        /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+        /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+        /// </ul>
+        /// <p>Default Value: <code>Car</code> </p>
+        pub fn set_travel_mode(
+            mut self,
+            input: std::option::Option<crate::model::TravelMode>,
+        ) -> Self {
+            self.travel_mode = input;
+            self
+        }
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
+        /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
+        /// </note>
+        /// <ul>
+        /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// </ul>
+        pub fn departure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.departure_time = Some(input);
+            self
+        }
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
+        /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
+        /// </note>
+        /// <ul>
+        /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// </ul>
+        pub fn set_departure_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.departure_time = input;
+            self
+        }
+        /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
+        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+        pub fn depart_now(mut self, input: bool) -> Self {
+            self.depart_now = Some(input);
+            self
+        }
+        /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
+        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+        pub fn set_depart_now(mut self, input: std::option::Option<bool>) -> Self {
+            self.depart_now = input;
+            self
+        }
+        /// <p>Set the unit system to specify the distance.</p>
+        /// <p>Default Value: <code>Kilometers</code> </p>
+        pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
+            self.distance_unit = Some(input);
+            self
+        }
+        /// <p>Set the unit system to specify the distance.</p>
+        /// <p>Default Value: <code>Kilometers</code> </p>
+        pub fn set_distance_unit(
+            mut self,
+            input: std::option::Option<crate::model::DistanceUnit>,
+        ) -> Self {
+            self.distance_unit = input;
+            self
+        }
+        /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+        pub fn car_mode_options(
+            mut self,
+            input: crate::model::CalculateRouteCarModeOptions,
+        ) -> Self {
+            self.car_mode_options = Some(input);
+            self
+        }
+        /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+        pub fn set_car_mode_options(
+            mut self,
+            input: std::option::Option<crate::model::CalculateRouteCarModeOptions>,
+        ) -> Self {
+            self.car_mode_options = input;
+            self
+        }
+        /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+        pub fn truck_mode_options(
+            mut self,
+            input: crate::model::CalculateRouteTruckModeOptions,
+        ) -> Self {
+            self.truck_mode_options = Some(input);
+            self
+        }
+        /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+        pub fn set_truck_mode_options(
+            mut self,
+            input: std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
+        ) -> Self {
+            self.truck_mode_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CalculateRouteMatrixInput`](crate::input::CalculateRouteMatrixInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CalculateRouteMatrixInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CalculateRouteMatrixInput {
+                calculator_name: self.calculator_name,
+                departure_positions: self.departure_positions,
+                destination_positions: self.destination_positions,
+                travel_mode: self.travel_mode,
+                departure_time: self.departure_time,
+                depart_now: self.depart_now,
+                distance_unit: self.distance_unit,
+                car_mode_options: self.car_mode_options,
+                truck_mode_options: self.truck_mode_options,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CalculateRouteMatrixInputOperationOutputAlias = crate::operation::CalculateRouteMatrix;
+#[doc(hidden)]
+pub type CalculateRouteMatrixInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CalculateRouteMatrixInput {
+    /// Consumes the builder and constructs an Operation<[`CalculateRouteMatrix`](crate::operation::CalculateRouteMatrix)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CalculateRouteMatrix,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CalculateRouteMatrixInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_9 = &_input.calculator_name;
+            let input_9 =
+                input_9
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "calculator_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let calculator_name = aws_smithy_http::label::fmt_string(input_9, false);
+            if calculator_name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "calculator_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/routes/v0/calculators/{CalculatorName}/calculate/route-matrix",
+                CalculatorName = calculator_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CalculateRouteMatrixInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CalculateRouteMatrixInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_calculate_route_matrix(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CalculateRouteMatrix::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CalculateRouteMatrix",
+            "location",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixInput`](crate::input::CalculateRouteMatrixInput)
+    pub fn builder() -> crate::input::calculate_route_matrix_input::Builder {
+        crate::input::calculate_route_matrix_input::Builder::default()
+    }
+}
+
 /// See [`CreateGeofenceCollectionInput`](crate::input::CreateGeofenceCollectionInput)
 pub mod create_geofence_collection_input {
     /// A builder for [`CreateGeofenceCollectionInput`](crate::input::CreateGeofenceCollectionInput)
@@ -1841,14 +2206,12 @@ pub mod create_geofence_collection_input {
             self.collection_name = input;
             self
         }
-        /// <p>Optionally specifies the pricing plan for the geofence collection. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the geofence collection. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -1856,26 +2219,12 @@ pub mod create_geofence_collection_input {
             self.pricing_plan = input;
             self
         }
-        /// <p>Specifies the data provider for the geofence collection.</p>
-        /// <ul>
-        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-        /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-        /// </note>
-        /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
+        /// <p>This parameter is no longer used.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
-        /// <p>Specifies the data provider for the geofence collection.</p>
-        /// <ul>
-        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-        /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-        /// </note>
-        /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
+        /// <p>This parameter is no longer used.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2138,14 +2487,12 @@ pub mod create_map_input {
             self.configuration = input;
             self
         }
-        /// <p>Optionally specifies the pricing plan for the map resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the map resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2408,14 +2755,12 @@ pub mod create_place_index_input {
             self.data_source = input;
             self
         }
-        /// <p>Optionally specifies the pricing plan for the place index resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the place index resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2697,14 +3042,12 @@ pub mod create_route_calculator_input {
             self.data_source = input;
             self
         }
-        /// <p>Optionally specifies the pricing plan for the route calculator resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the route calculator resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2950,14 +3293,12 @@ pub mod create_tracker_input {
             self.tracker_name = input;
             self
         }
-        /// <p>Optionally specifies the pricing plan for the tracker resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the tracker resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2975,26 +3316,12 @@ pub mod create_tracker_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>Specifies the data provider for the tracker resource.</p>
-        /// <ul>
-        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-        /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-        /// </note>
-        /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
+        /// <p>This parameter is no longer used.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
-        /// <p>Specifies the data provider for the tracker resource.</p>
-        /// <ul>
-        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-        /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-        /// </note>
-        /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
+        /// <p>This parameter is no longer used.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3279,15 +3606,15 @@ impl DeleteGeofenceCollectionInput {
             _input: &crate::input::DeleteGeofenceCollectionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_9 = &_input.collection_name;
-            let input_9 =
-                input_9
+            let input_10 = &_input.collection_name;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = aws_smithy_http::label::fmt_string(input_9, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_10, false);
             if collection_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
@@ -3434,15 +3761,15 @@ impl DeleteMapInput {
             _input: &crate::input::DeleteMapInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_10 = &_input.map_name;
-            let input_10 =
-                input_10
+            let input_11 = &_input.map_name;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = aws_smithy_http::label::fmt_string(input_10, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_11, false);
             if map_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
@@ -3585,15 +3912,15 @@ impl DeletePlaceIndexInput {
             _input: &crate::input::DeletePlaceIndexInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.index_name;
-            let input_11 =
-                input_11
+            let input_12 = &_input.index_name;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = aws_smithy_http::label::fmt_string(input_11, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_12, false);
             if index_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
@@ -3745,15 +4072,15 @@ impl DeleteRouteCalculatorInput {
             _input: &crate::input::DeleteRouteCalculatorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.calculator_name;
-            let input_12 =
-                input_12
+            let input_13 = &_input.calculator_name;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "calculator_name",
                         details: "cannot be empty or unset",
                     })?;
-            let calculator_name = aws_smithy_http::label::fmt_string(input_12, false);
+            let calculator_name = aws_smithy_http::label::fmt_string(input_13, false);
             if calculator_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "calculator_name",
@@ -3902,15 +4229,15 @@ impl DeleteTrackerInput {
             _input: &crate::input::DeleteTrackerInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.tracker_name;
-            let input_13 =
-                input_13
+            let input_14 = &_input.tracker_name;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = aws_smithy_http::label::fmt_string(input_13, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_14, false);
             if tracker_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
@@ -4063,15 +4390,15 @@ impl DescribeGeofenceCollectionInput {
             _input: &crate::input::DescribeGeofenceCollectionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_14 = &_input.collection_name;
-            let input_14 =
-                input_14
+            let input_15 = &_input.collection_name;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = aws_smithy_http::label::fmt_string(input_14, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_15, false);
             if collection_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
@@ -4220,15 +4547,15 @@ impl DescribeMapInput {
             _input: &crate::input::DescribeMapInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.map_name;
-            let input_15 =
-                input_15
+            let input_16 = &_input.map_name;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = aws_smithy_http::label::fmt_string(input_15, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_16, false);
             if map_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
@@ -4373,15 +4700,15 @@ impl DescribePlaceIndexInput {
             _input: &crate::input::DescribePlaceIndexInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_16 = &_input.index_name;
-            let input_16 =
-                input_16
+            let input_17 = &_input.index_name;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = aws_smithy_http::label::fmt_string(input_16, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_17, false);
             if index_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
@@ -4534,15 +4861,15 @@ impl DescribeRouteCalculatorInput {
             _input: &crate::input::DescribeRouteCalculatorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.calculator_name;
-            let input_17 =
-                input_17
+            let input_18 = &_input.calculator_name;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "calculator_name",
                         details: "cannot be empty or unset",
                     })?;
-            let calculator_name = aws_smithy_http::label::fmt_string(input_17, false);
+            let calculator_name = aws_smithy_http::label::fmt_string(input_18, false);
             if calculator_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "calculator_name",
@@ -4691,15 +5018,15 @@ impl DescribeTrackerInput {
             _input: &crate::input::DescribeTrackerInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.tracker_name;
-            let input_18 =
-                input_18
+            let input_19 = &_input.tracker_name;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = aws_smithy_http::label::fmt_string(input_18, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_19, false);
             if tracker_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
@@ -4867,30 +5194,30 @@ impl DisassociateTrackerConsumerInput {
             _input: &crate::input::DisassociateTrackerConsumerInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_19 = &_input.tracker_name;
-            let input_19 =
-                input_19
+            let input_20 = &_input.tracker_name;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = aws_smithy_http::label::fmt_string(input_19, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_20, false);
             if tracker_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_20 = &_input.consumer_arn;
-            let input_20 =
-                input_20
+            let input_21 = &_input.consumer_arn;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "consumer_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let consumer_arn = aws_smithy_http::label::fmt_string(input_20, false);
+            let consumer_arn = aws_smithy_http::label::fmt_string(input_21, false);
             if consumer_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "consumer_arn",
@@ -5052,30 +5379,30 @@ impl GetDevicePositionInput {
             _input: &crate::input::GetDevicePositionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_21 = &_input.tracker_name;
-            let input_21 =
-                input_21
+            let input_22 = &_input.tracker_name;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = aws_smithy_http::label::fmt_string(input_21, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_22, false);
             if tracker_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_22 = &_input.device_id;
-            let input_22 =
-                input_22
+            let input_23 = &_input.device_id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let device_id = aws_smithy_http::label::fmt_string(input_22, false);
+            let device_id = aws_smithy_http::label::fmt_string(input_23, false);
             if device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
@@ -5298,30 +5625,30 @@ impl GetDevicePositionHistoryInput {
             _input: &crate::input::GetDevicePositionHistoryInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_23 = &_input.tracker_name;
-            let input_23 =
-                input_23
+            let input_24 = &_input.tracker_name;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = aws_smithy_http::label::fmt_string(input_23, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_24, false);
             if tracker_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_24 = &_input.device_id;
-            let input_24 =
-                input_24
+            let input_25 = &_input.device_id;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let device_id = aws_smithy_http::label::fmt_string(input_24, false);
+            let device_id = aws_smithy_http::label::fmt_string(input_25, false);
             if device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
@@ -5502,30 +5829,30 @@ impl GetGeofenceInput {
             _input: &crate::input::GetGeofenceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_25 = &_input.collection_name;
-            let input_25 =
-                input_25
+            let input_26 = &_input.collection_name;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = aws_smithy_http::label::fmt_string(input_25, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_26, false);
             if collection_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_26 = &_input.geofence_id;
-            let input_26 =
-                input_26
+            let input_27 = &_input.geofence_id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "geofence_id",
                         details: "cannot be empty or unset",
                     })?;
-            let geofence_id = aws_smithy_http::label::fmt_string(input_26, false);
+            let geofence_id = aws_smithy_http::label::fmt_string(input_27, false);
             if geofence_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "geofence_id",
@@ -5726,45 +6053,45 @@ impl GetMapGlyphsInput {
             _input: &crate::input::GetMapGlyphsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.map_name;
-            let input_27 =
-                input_27
+            let input_28 = &_input.map_name;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = aws_smithy_http::label::fmt_string(input_27, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_28, false);
             if map_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_28 = &_input.font_stack;
-            let input_28 =
-                input_28
+            let input_29 = &_input.font_stack;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "font_stack",
                         details: "cannot be empty or unset",
                     })?;
-            let font_stack = aws_smithy_http::label::fmt_string(input_28, false);
+            let font_stack = aws_smithy_http::label::fmt_string(input_29, false);
             if font_stack.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "font_stack",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_29 = &_input.font_unicode_range;
-            let input_29 =
-                input_29
+            let input_30 = &_input.font_unicode_range;
+            let input_30 =
+                input_30
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "font_unicode_range",
                         details: "cannot be empty or unset",
                     })?;
-            let font_unicode_range = aws_smithy_http::label::fmt_string(input_29, false);
+            let font_unicode_range = aws_smithy_http::label::fmt_string(input_30, false);
             if font_unicode_range.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "font_unicode_range",
@@ -5945,30 +6272,30 @@ impl GetMapSpritesInput {
             _input: &crate::input::GetMapSpritesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_30 = &_input.map_name;
-            let input_30 =
-                input_30
+            let input_31 = &_input.map_name;
+            let input_31 =
+                input_31
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = aws_smithy_http::label::fmt_string(input_30, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_31, false);
             if map_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_31 = &_input.file_name;
-            let input_31 =
-                input_31
+            let input_32 = &_input.file_name;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_name",
                         details: "cannot be empty or unset",
                     })?;
-            let file_name = aws_smithy_http::label::fmt_string(input_31, false);
+            let file_name = aws_smithy_http::label::fmt_string(input_32, false);
             if file_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_name",
@@ -6118,15 +6445,15 @@ impl GetMapStyleDescriptorInput {
             _input: &crate::input::GetMapStyleDescriptorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_32 = &_input.map_name;
-            let input_32 =
-                input_32
+            let input_33 = &_input.map_name;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = aws_smithy_http::label::fmt_string(input_32, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_33, false);
             if map_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
@@ -6311,60 +6638,60 @@ impl GetMapTileInput {
             _input: &crate::input::GetMapTileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_33 = &_input.map_name;
-            let input_33 =
-                input_33
+            let input_34 = &_input.map_name;
+            let input_34 =
+                input_34
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = aws_smithy_http::label::fmt_string(input_33, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_34, false);
             if map_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_34 = &_input.z;
-            let input_34 =
-                input_34
+            let input_35 = &_input.z;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "z",
                         details: "cannot be empty or unset",
                     })?;
-            let z = aws_smithy_http::label::fmt_string(input_34, false);
+            let z = aws_smithy_http::label::fmt_string(input_35, false);
             if z.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "z",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_35 = &_input.x;
-            let input_35 =
-                input_35
+            let input_36 = &_input.x;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "x",
                         details: "cannot be empty or unset",
                     })?;
-            let x = aws_smithy_http::label::fmt_string(input_35, false);
+            let x = aws_smithy_http::label::fmt_string(input_36, false);
             if x.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "x",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_36 = &_input.y;
-            let input_36 =
-                input_36
+            let input_37 = &_input.y;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "y",
                         details: "cannot be empty or unset",
                     })?;
-            let y = aws_smithy_http::label::fmt_string(input_36, false);
+            let y = aws_smithy_http::label::fmt_string(input_37, false);
             if y.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "y",
@@ -6544,15 +6871,15 @@ impl ListDevicePositionsInput {
             _input: &crate::input::ListDevicePositionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_37 = &_input.tracker_name;
-            let input_37 =
-                input_37
+            let input_38 = &_input.tracker_name;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = aws_smithy_http::label::fmt_string(input_37, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_38, false);
             if tracker_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
@@ -6902,15 +7229,15 @@ impl ListGeofencesInput {
             _input: &crate::input::ListGeofencesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_38 = &_input.collection_name;
-            let input_38 =
-                input_38
+            let input_39 = &_input.collection_name;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = aws_smithy_http::label::fmt_string(input_38, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_39, false);
             if collection_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
@@ -7575,15 +7902,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_39 = &_input.resource_arn;
-            let input_39 =
-                input_39
+            let input_40 = &_input.resource_arn;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_39, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -7756,15 +8083,15 @@ impl ListTrackerConsumersInput {
             _input: &crate::input::ListTrackerConsumersInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.tracker_name;
-            let input_40 =
-                input_40
+            let input_41 = &_input.tracker_name;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = aws_smithy_http::label::fmt_string(input_40, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_41, false);
             if tracker_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
@@ -8129,30 +8456,30 @@ impl PutGeofenceInput {
             _input: &crate::input::PutGeofenceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_41 = &_input.collection_name;
-            let input_41 =
-                input_41
+            let input_42 = &_input.collection_name;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = aws_smithy_http::label::fmt_string(input_41, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_42, false);
             if collection_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_42 = &_input.geofence_id;
-            let input_42 =
-                input_42
+            let input_43 = &_input.geofence_id;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "geofence_id",
                         details: "cannot be empty or unset",
                     })?;
-            let geofence_id = aws_smithy_http::label::fmt_string(input_42, false);
+            let geofence_id = aws_smithy_http::label::fmt_string(input_43, false);
             if geofence_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "geofence_id",
@@ -8366,15 +8693,15 @@ impl SearchPlaceIndexForPositionInput {
             _input: &crate::input::SearchPlaceIndexForPositionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_43 = &_input.index_name;
-            let input_43 =
-                input_43
+            let input_44 = &_input.index_name;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = aws_smithy_http::label::fmt_string(input_43, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_44, false);
             if index_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
@@ -8661,15 +8988,15 @@ impl SearchPlaceIndexForSuggestionsInput {
             _input: &crate::input::SearchPlaceIndexForSuggestionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_44 = &_input.index_name;
-            let input_44 =
-                input_44
+            let input_45 = &_input.index_name;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = aws_smithy_http::label::fmt_string(input_44, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_45, false);
             if index_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
@@ -8953,15 +9280,15 @@ impl SearchPlaceIndexForTextInput {
             _input: &crate::input::SearchPlaceIndexForTextInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_45 = &_input.index_name;
-            let input_45 =
-                input_45
+            let input_46 = &_input.index_name;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = aws_smithy_http::label::fmt_string(input_45, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_46, false);
             if index_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
@@ -9181,15 +9508,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_46 = &_input.resource_arn;
-            let input_46 =
-                input_46
+            let input_47 = &_input.resource_arn;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_47, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -9374,15 +9701,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_47 = &_input.resource_arn;
-            let input_47 =
-                input_47
+            let input_48 = &_input.resource_arn;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_47, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_48, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -9398,9 +9725,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_48) = &_input.tag_keys {
-                for inner_49 in inner_48 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_49));
+            if let Some(inner_49) = &_input.tag_keys {
+                for inner_50 in inner_49 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_50));
                 }
             }
             Ok(())
@@ -9511,14 +9838,12 @@ pub mod update_geofence_collection_input {
             self.collection_name = input;
             self
         }
-        /// <p>Updates the pricing plan for the geofence collection.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Updates the pricing plan for the geofence collection.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -9526,22 +9851,12 @@ pub mod update_geofence_collection_input {
             self.pricing_plan = input;
             self
         }
-        /// <p>Updates the data provider for the geofence collection. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-        /// </note>
+        /// <p>This parameter is no longer used.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
-        /// <p>Updates the data provider for the geofence collection. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-        /// </note>
+        /// <p>This parameter is no longer used.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9598,15 +9913,15 @@ impl UpdateGeofenceCollectionInput {
             _input: &crate::input::UpdateGeofenceCollectionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_50 = &_input.collection_name;
-            let input_50 =
-                input_50
+            let input_51 = &_input.collection_name;
+            let input_51 =
+                input_51
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = aws_smithy_http::label::fmt_string(input_50, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_51, false);
             if collection_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
@@ -9738,14 +10053,12 @@ pub mod update_map_input {
             self.map_name = input;
             self
         }
-        /// <p>Updates the pricing plan for the map resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Updates the pricing plan for the map resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -9798,15 +10111,15 @@ impl UpdateMapInput {
             _input: &crate::input::UpdateMapInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_51 = &_input.map_name;
-            let input_51 =
-                input_51
+            let input_52 = &_input.map_name;
+            let input_52 =
+                input_52
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = aws_smithy_http::label::fmt_string(input_51, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_52, false);
             if map_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
@@ -9931,14 +10244,12 @@ pub mod update_place_index_input {
             self.index_name = input;
             self
         }
-        /// <p>Updates the pricing plan for the place index resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Updates the pricing plan for the place index resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -10010,15 +10321,15 @@ impl UpdatePlaceIndexInput {
             _input: &crate::input::UpdatePlaceIndexInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_52 = &_input.index_name;
-            let input_52 =
-                input_52
+            let input_53 = &_input.index_name;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = aws_smithy_http::label::fmt_string(input_52, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_53, false);
             if index_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
@@ -10151,14 +10462,12 @@ pub mod update_route_calculator_input {
             self.calculator_name = input;
             self
         }
-        /// <p>Updates the pricing plan for the route calculator resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Updates the pricing plan for the route calculator resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -10213,15 +10522,15 @@ impl UpdateRouteCalculatorInput {
             _input: &crate::input::UpdateRouteCalculatorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_53 = &_input.calculator_name;
-            let input_53 =
-                input_53
+            let input_54 = &_input.calculator_name;
+            let input_54 =
+                input_54
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "calculator_name",
                         details: "cannot be empty or unset",
                     })?;
-            let calculator_name = aws_smithy_http::label::fmt_string(input_53, false);
+            let calculator_name = aws_smithy_http::label::fmt_string(input_54, false);
             if calculator_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "calculator_name",
@@ -10355,14 +10664,12 @@ pub mod update_tracker_input {
             self.tracker_name = input;
             self
         }
-        /// <p>Updates the pricing plan for the tracker resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>Updates the pricing plan for the tracker resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -10370,22 +10677,12 @@ pub mod update_tracker_input {
             self.pricing_plan = input;
             self
         }
-        /// <p>Updates the data provider for the tracker resource. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-        /// </note>
+        /// <p>This parameter is no longer used.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
-        /// <p>Updates the data provider for the tracker resource. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-        /// </note>
+        /// <p>This parameter is no longer used.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10467,15 +10764,15 @@ impl UpdateTrackerInput {
             _input: &crate::input::UpdateTrackerInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_54 = &_input.tracker_name;
-            let input_54 =
-                input_54
+            let input_55 = &_input.tracker_name;
+            let input_55 =
+                input_55
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = aws_smithy_http::label::fmt_string(input_54, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_55, false);
             if tracker_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
@@ -10964,19 +11261,11 @@ pub struct CreateTrackerInput {
     /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
     /// </ul>
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>Optionally specifies the pricing plan for the tracker resource. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the data provider for the tracker resource.</p>
-    /// <ul>
-    /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-    /// </ul>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-    /// </note>
-    /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
+    /// <p>This parameter is no longer used.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>An optional description for the tracker resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -11014,8 +11303,7 @@ impl CreateTrackerInput {
     pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>Optionally specifies the pricing plan for the tracker resource. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -11023,14 +11311,7 @@ impl CreateTrackerInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies the data provider for the tracker resource.</p>
-    /// <ul>
-    /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-    /// </ul>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-    /// </note>
-    /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
+    /// <p>This parameter is no longer used.</p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -11108,15 +11389,9 @@ impl std::fmt::Debug for DeleteTrackerInput {
 pub struct UpdateTrackerInput {
     /// <p>The name of the tracker resource to update.</p>
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>Updates the pricing plan for the tracker resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
-    /// <p>Updates the data provider for the tracker resource. </p>
-    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
-    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-    /// </note>
+    /// <p>This parameter is no longer used.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>Updates the description for the tracker resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -11134,17 +11409,11 @@ impl UpdateTrackerInput {
     pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>Updates the pricing plan for the tracker resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
-    /// <p>Updates the data provider for the tracker resource. </p>
-    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
-    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-    /// </note>
+    /// <p>This parameter is no longer used.</p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -11199,6 +11468,139 @@ impl std::fmt::Debug for DescribeTrackerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CalculateRouteMatrixInput {
+    /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
+    pub calculator_name: std::option::Option<std::string::String>,
+    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// </important> <note>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    pub departure_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// </important> <note>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    pub destination_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
+    /// <ul>
+    /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+    /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+    /// </ul>
+    /// <p>Default Value: <code>Car</code> </p>
+    pub travel_mode: std::option::Option<crate::model::TravelMode>,
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
+    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
+    /// </note>
+    /// <ul>
+    /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// </ul>
+    pub departure_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    pub depart_now: std::option::Option<bool>,
+    /// <p>Set the unit system to specify the distance.</p>
+    /// <p>Default Value: <code>Kilometers</code> </p>
+    pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
+    /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
+    /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+    pub car_mode_options: std::option::Option<crate::model::CalculateRouteCarModeOptions>,
+    /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
+    /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+    pub truck_mode_options: std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
+}
+impl CalculateRouteMatrixInput {
+    /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
+    pub fn calculator_name(&self) -> std::option::Option<&str> {
+        self.calculator_name.as_deref()
+    }
+    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// </important> <note>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    pub fn departure_positions(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+        self.departure_positions.as_deref()
+    }
+    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// </important> <note>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+    /// </note>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    pub fn destination_positions(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+        self.destination_positions.as_deref()
+    }
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
+    /// <ul>
+    /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+    /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+    /// </ul>
+    /// <p>Default Value: <code>Car</code> </p>
+    pub fn travel_mode(&self) -> std::option::Option<&crate::model::TravelMode> {
+        self.travel_mode.as_ref()
+    }
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
+    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
+    /// </note>
+    /// <ul>
+    /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// </ul>
+    pub fn departure_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.departure_time.as_ref()
+    }
+    /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    pub fn depart_now(&self) -> std::option::Option<bool> {
+        self.depart_now
+    }
+    /// <p>Set the unit system to specify the distance.</p>
+    /// <p>Default Value: <code>Kilometers</code> </p>
+    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+        self.distance_unit.as_ref()
+    }
+    /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
+    /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+    pub fn car_mode_options(
+        &self,
+    ) -> std::option::Option<&crate::model::CalculateRouteCarModeOptions> {
+        self.car_mode_options.as_ref()
+    }
+    /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
+    /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+    pub fn truck_mode_options(
+        &self,
+    ) -> std::option::Option<&crate::model::CalculateRouteTruckModeOptions> {
+        self.truck_mode_options.as_ref()
+    }
+}
+impl std::fmt::Debug for CalculateRouteMatrixInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CalculateRouteMatrixInput");
+        formatter.field("calculator_name", &self.calculator_name);
+        formatter.field("departure_positions", &self.departure_positions);
+        formatter.field("destination_positions", &self.destination_positions);
+        formatter.field("travel_mode", &self.travel_mode);
+        formatter.field("departure_time", &self.departure_time);
+        formatter.field("depart_now", &self.depart_now);
+        formatter.field("distance_unit", &self.distance_unit);
+        formatter.field("car_mode_options", &self.car_mode_options);
+        formatter.field("truck_mode_options", &self.truck_mode_options);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculateRouteInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
     pub calculator_name: std::option::Option<std::string::String>,
@@ -11206,7 +11608,7 @@ pub struct CalculateRouteInput {
     /// <ul>
     /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
     /// </ul> <note>
-    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub departure_position: std::option::Option<std::vec::Vec<f64>>,
@@ -11214,7 +11616,7 @@ pub struct CalculateRouteInput {
     /// <ul>
     /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
     /// </ul> <note>
-    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub destination_position: std::option::Option<std::vec::Vec<f64>>,
@@ -11222,14 +11624,14 @@ pub struct CalculateRouteInput {
     /// <ul>
     /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
     /// </ul> <note>
-    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub waypoint_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
+    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
     /// <ul>
     /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
     /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
@@ -11270,7 +11672,7 @@ impl CalculateRouteInput {
     /// <ul>
     /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
     /// </ul> <note>
-    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn departure_position(&self) -> std::option::Option<&[f64]> {
@@ -11280,7 +11682,7 @@ impl CalculateRouteInput {
     /// <ul>
     /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
     /// </ul> <note>
-    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn destination_position(&self) -> std::option::Option<&[f64]> {
@@ -11290,7 +11692,7 @@ impl CalculateRouteInput {
     /// <ul>
     /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
     /// </ul> <note>
-    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
@@ -11299,7 +11701,7 @@ impl CalculateRouteInput {
         self.waypoint_positions.as_deref()
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
+    /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
     /// <ul>
     /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
     /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
@@ -11421,8 +11823,7 @@ pub struct CreateRouteCalculatorInput {
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub data_source: std::option::Option<std::string::String>,
-    /// <p>Optionally specifies the pricing plan for the route calculator resource. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the route calculator resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -11466,8 +11867,7 @@ impl CreateRouteCalculatorInput {
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
-    /// <p>Optionally specifies the pricing plan for the route calculator resource. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -11535,8 +11935,7 @@ impl std::fmt::Debug for DeleteRouteCalculatorInput {
 pub struct UpdateRouteCalculatorInput {
     /// <p>The name of the route calculator resource to update.</p>
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>Updates the pricing plan for the route calculator resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Updates the description for the route calculator resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -11546,8 +11945,7 @@ impl UpdateRouteCalculatorInput {
     pub fn calculator_name(&self) -> std::option::Option<&str> {
         self.calculator_name.as_deref()
     }
-    /// <p>Updates the pricing plan for the route calculator resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -11873,8 +12271,7 @@ pub struct CreatePlaceIndexInput {
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub data_source: std::option::Option<std::string::String>,
-    /// <p>Optionally specifies the pricing plan for the place index resource. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -11919,8 +12316,7 @@ impl CreatePlaceIndexInput {
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
-    /// <p>Optionally specifies the pricing plan for the place index resource. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -11992,8 +12388,7 @@ impl std::fmt::Debug for DeletePlaceIndexInput {
 pub struct UpdatePlaceIndexInput {
     /// <p>The name of the place index resource to update.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Updates the pricing plan for the place index resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Updates the description for the place index resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12005,8 +12400,7 @@ impl UpdatePlaceIndexInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Updates the pricing plan for the place index resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -12267,8 +12661,7 @@ pub struct CreateMapInput {
     pub map_name: std::option::Option<std::string::String>,
     /// <p>Specifies the map style selected from an available data provider.</p>
     pub configuration: std::option::Option<crate::model::MapConfiguration>,
-    /// <p>Optionally specifies the pricing plan for the map resource. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>An optional description for the map resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12301,8 +12694,7 @@ impl CreateMapInput {
     pub fn configuration(&self) -> std::option::Option<&crate::model::MapConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>Optionally specifies the pricing plan for the map resource. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -12367,8 +12759,7 @@ impl std::fmt::Debug for DeleteMapInput {
 pub struct UpdateMapInput {
     /// <p>The name of the map resource to update.</p>
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>Updates the pricing plan for the map resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Updates the description for the map resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12378,8 +12769,7 @@ impl UpdateMapInput {
     pub fn map_name(&self) -> std::option::Option<&str> {
         self.map_name.as_deref()
     }
-    /// <p>Updates the pricing plan for the map resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -12647,17 +13037,9 @@ pub struct CreateGeofenceCollectionInput {
     /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
     /// </ul>
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>Optionally specifies the pricing plan for the geofence collection. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
-    /// <p>Specifies the data provider for the geofence collection.</p>
-    /// <ul>
-    /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-    /// </ul>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-    /// </note>
-    /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
+    /// <p>This parameter is no longer used.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>An optional description for the geofence collection.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12688,19 +13070,11 @@ impl CreateGeofenceCollectionInput {
     pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>Optionally specifies the pricing plan for the geofence collection. Defaults to <code>RequestBasedUsage</code>.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
-    /// <p>Specifies the data provider for the geofence collection.</p>
-    /// <ul>
-    /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-    /// </ul>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-    /// </note>
-    /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
+    /// <p>This parameter is no longer used.</p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -12770,15 +13144,9 @@ impl std::fmt::Debug for DeleteGeofenceCollectionInput {
 pub struct UpdateGeofenceCollectionInput {
     /// <p>The name of the geofence collection to update.</p>
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>Updates the pricing plan for the geofence collection.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
-    /// <p>Updates the data provider for the geofence collection. </p>
-    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-    /// </note>
+    /// <p>This parameter is no longer used.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>Updates the description for the geofence collection.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12788,17 +13156,11 @@ impl UpdateGeofenceCollectionInput {
     pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>Updates the pricing plan for the geofence collection.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
-    /// <p>Updates the data provider for the geofence collection. </p>
-    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-    /// </note>
+    /// <p>This parameter is no longer used.</p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }

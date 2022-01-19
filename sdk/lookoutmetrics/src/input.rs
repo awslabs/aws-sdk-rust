@@ -1095,6 +1095,161 @@ impl CreateMetricSetInput {
     }
 }
 
+/// See [`DeactivateAnomalyDetectorInput`](crate::input::DeactivateAnomalyDetectorInput)
+pub mod deactivate_anomaly_detector_input {
+    /// A builder for [`DeactivateAnomalyDetectorInput`](crate::input::DeactivateAnomalyDetectorInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.anomaly_detector_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+        pub fn set_anomaly_detector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.anomaly_detector_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeactivateAnomalyDetectorInput`](crate::input::DeactivateAnomalyDetectorInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeactivateAnomalyDetectorInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeactivateAnomalyDetectorInput {
+                anomaly_detector_arn: self.anomaly_detector_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeactivateAnomalyDetectorInputOperationOutputAlias =
+    crate::operation::DeactivateAnomalyDetector;
+#[doc(hidden)]
+pub type DeactivateAnomalyDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeactivateAnomalyDetectorInput {
+    /// Consumes the builder and constructs an Operation<[`DeactivateAnomalyDetector`](crate::operation::DeactivateAnomalyDetector)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeactivateAnomalyDetector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeactivateAnomalyDetectorInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/DeactivateAnomalyDetector").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeactivateAnomalyDetectorInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeactivateAnomalyDetectorInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_deactivate_anomaly_detector(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeactivateAnomalyDetector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeactivateAnomalyDetector",
+            "lookoutmetrics",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeactivateAnomalyDetectorInput`](crate::input::DeactivateAnomalyDetectorInput)
+    pub fn builder() -> crate::input::deactivate_anomaly_detector_input::Builder {
+        crate::input::deactivate_anomaly_detector_input::Builder::default()
+    }
+}
+
 /// See [`DeleteAlertInput`](crate::input::DeleteAlertInput)
 pub mod delete_alert_input {
     /// A builder for [`DeleteAlertInput`](crate::input::DeleteAlertInput)
@@ -5554,6 +5709,27 @@ impl std::fmt::Debug for DeleteAlertInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAlertInput");
         formatter.field("alert_arn", &self.alert_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeactivateAnomalyDetectorInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub anomaly_detector_arn: std::option::Option<std::string::String>,
+}
+impl DeactivateAnomalyDetectorInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DeactivateAnomalyDetectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeactivateAnomalyDetectorInput");
+        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
         formatter.finish()
     }
 }

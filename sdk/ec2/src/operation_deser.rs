@@ -6366,6 +6366,40 @@ pub fn parse_describe_export_tasks_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fast_launch_images_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFastLaunchImagesOutput,
+    crate::error::DescribeFastLaunchImagesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeFastLaunchImagesError::unhandled)?;
+    Err(crate::error::DescribeFastLaunchImagesError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_fast_launch_images_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeFastLaunchImagesOutput,
+    crate::error::DescribeFastLaunchImagesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_fast_launch_images_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_fast_launch_images(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeFastLaunchImagesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fast_snapshot_restores_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -9950,6 +9984,34 @@ pub fn parse_disable_ebs_encryption_by_default_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_disable_fast_launch_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DisableFastLaunchOutput, crate::error::DisableFastLaunchError>
+{
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DisableFastLaunchError::unhandled)?;
+    Err(crate::error::DisableFastLaunchError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disable_fast_launch_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DisableFastLaunchOutput, crate::error::DisableFastLaunchError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::disable_fast_launch_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_disable_fast_launch(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DisableFastLaunchError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_fast_snapshot_restores_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10580,6 +10642,34 @@ pub fn parse_enable_ebs_encryption_by_default_response(
                 output,
             )
             .map_err(crate::error::EnableEbsEncryptionByDefaultError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_enable_fast_launch_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::EnableFastLaunchOutput, crate::error::EnableFastLaunchError>
+{
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::EnableFastLaunchError::unhandled)?;
+    Err(crate::error::EnableFastLaunchError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_enable_fast_launch_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::EnableFastLaunchOutput, crate::error::EnableFastLaunchError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::enable_fast_launch_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_enable_fast_launch(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::EnableFastLaunchError::unhandled)?;
         output.build()
     })
 }

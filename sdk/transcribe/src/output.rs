@@ -350,11 +350,11 @@ impl UpdateMedicalVocabularyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCallAnalyticsCategoryOutput {
-    /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created. </p>
+    /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created.</p>
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
 }
 impl UpdateCallAnalyticsCategoryOutput {
-    /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created. </p>
+    /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created.</p>
     pub fn category_properties(&self) -> std::option::Option<&crate::model::CategoryProperties> {
         self.category_properties.as_ref()
     }
@@ -375,12 +375,12 @@ pub mod update_call_analytics_category_output {
         pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
     }
     impl Builder {
-        /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created. </p>
+        /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created.</p>
         pub fn category_properties(mut self, input: crate::model::CategoryProperties) -> Self {
             self.category_properties = Some(input);
             self
         }
-        /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created. </p>
+        /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created.</p>
         pub fn set_category_properties(
             mut self,
             input: std::option::Option<crate::model::CategoryProperties>,

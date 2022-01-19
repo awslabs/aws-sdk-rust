@@ -566,6 +566,8 @@ pub mod create_recording_configuration_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) thumbnail_configuration:
+            std::option::Option<crate::model::ThumbnailConfiguration>,
     }
     impl Builder {
         /// <p>Recording-configuration name. The value does not need to be unique.</p>
@@ -619,6 +621,22 @@ pub mod create_recording_configuration_input {
             self.tags = input;
             self
         }
+        /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+        pub fn thumbnail_configuration(
+            mut self,
+            input: crate::model::ThumbnailConfiguration,
+        ) -> Self {
+            self.thumbnail_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+        pub fn set_thumbnail_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ThumbnailConfiguration>,
+        ) -> Self {
+            self.thumbnail_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRecordingConfigurationInput`](crate::input::CreateRecordingConfigurationInput)
         pub fn build(
             self,
@@ -630,6 +648,7 @@ pub mod create_recording_configuration_input {
                 name: self.name,
                 destination_configuration: self.destination_configuration,
                 tags: self.tags,
+                thumbnail_configuration: self.thumbnail_configuration,
             })
         }
     }
@@ -5417,6 +5436,8 @@ pub struct CreateRecordingConfigurationInput {
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+    pub thumbnail_configuration: std::option::Option<crate::model::ThumbnailConfiguration>,
 }
 impl CreateRecordingConfigurationInput {
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
@@ -5436,6 +5457,12 @@ impl CreateRecordingConfigurationInput {
     {
         self.tags.as_ref()
     }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn thumbnail_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ThumbnailConfiguration> {
+        self.thumbnail_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRecordingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5443,6 +5470,7 @@ impl std::fmt::Debug for CreateRecordingConfigurationInput {
         formatter.field("name", &self.name);
         formatter.field("destination_configuration", &self.destination_configuration);
         formatter.field("tags", &self.tags);
+        formatter.field("thumbnail_configuration", &self.thumbnail_configuration);
         formatter.finish()
     }
 }

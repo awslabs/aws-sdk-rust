@@ -127,6 +127,7 @@ where
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_name): <p>Recording-configuration name. The value does not need to be unique.</p>
     ///   - [`destination_configuration(DestinationConfiguration)`](crate::client::fluent_builders::CreateRecordingConfiguration::destination_configuration) / [`set_destination_configuration(Option<DestinationConfiguration>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_destination_configuration): <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    ///   - [`thumbnail_configuration(ThumbnailConfiguration)`](crate::client::fluent_builders::CreateRecordingConfiguration::thumbnail_configuration) / [`set_thumbnail_configuration(Option<ThumbnailConfiguration>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_thumbnail_configuration): <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
     /// - On success, responds with [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput) with field(s):
     ///   - [`recording_configuration(Option<RecordingConfiguration>)`](crate::output::CreateRecordingConfigurationOutput::recording_configuration): (undocumented)
     /// - On failure, responds with [`SdkError<CreateRecordingConfigurationError>`](crate::error::CreateRecordingConfigurationError)
@@ -342,7 +343,7 @@ where
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamSessions::set_next_token): <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreamSessions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreamSessions::set_max_results): <p>Maximum number of streams to return. Default: 50.</p>
     /// - On success, responds with [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput) with field(s):
-    ///   - [`stream_sessions(Option<Vec<StreamSessionSummary>>)`](crate::output::ListStreamSessionsOutput::stream_sessions): <p></p>
+    ///   - [`stream_sessions(Option<Vec<StreamSessionSummary>>)`](crate::output::ListStreamSessionsOutput::stream_sessions): <p>List of stream sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListStreamSessionsOutput::next_token): <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListStreamSessionsError>`](crate::error::ListStreamSessionsError)
     pub fn list_stream_sessions(&self) -> fluent_builders::ListStreamSessions<C, M, R> {
@@ -837,6 +838,22 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+        pub fn thumbnail_configuration(
+            mut self,
+            input: crate::model::ThumbnailConfiguration,
+        ) -> Self {
+            self.inner = self.inner.thumbnail_configuration(input);
+            self
+        }
+        /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+        pub fn set_thumbnail_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ThumbnailConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_thumbnail_configuration(input);
             self
         }
     }

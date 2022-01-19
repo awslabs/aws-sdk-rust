@@ -215,6 +215,8 @@ pub struct Resolver {
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The caching configuration for the resolver.</p>
     pub caching_config: std::option::Option<crate::model::CachingConfig>,
+    /// <p>The maximum batching size for a resolver.</p>
+    pub max_batch_size: i32,
 }
 impl Resolver {
     /// <p>The resolver type name.</p>
@@ -261,6 +263,10 @@ impl Resolver {
     pub fn caching_config(&self) -> std::option::Option<&crate::model::CachingConfig> {
         self.caching_config.as_ref()
     }
+    /// <p>The maximum batching size for a resolver.</p>
+    pub fn max_batch_size(&self) -> i32 {
+        self.max_batch_size
+    }
 }
 impl std::fmt::Debug for Resolver {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -275,6 +281,7 @@ impl std::fmt::Debug for Resolver {
         formatter.field("pipeline_config", &self.pipeline_config);
         formatter.field("sync_config", &self.sync_config);
         formatter.field("caching_config", &self.caching_config);
+        formatter.field("max_batch_size", &self.max_batch_size);
         formatter.finish()
     }
 }
@@ -294,6 +301,7 @@ pub mod resolver {
         pub(crate) pipeline_config: std::option::Option<crate::model::PipelineConfig>,
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
         pub(crate) caching_config: std::option::Option<crate::model::CachingConfig>,
+        pub(crate) max_batch_size: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The resolver type name.</p>
@@ -422,6 +430,16 @@ pub mod resolver {
             self.caching_config = input;
             self
         }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.max_batch_size = Some(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_batch_size = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Resolver`](crate::model::Resolver)
         pub fn build(self) -> crate::model::Resolver {
             crate::model::Resolver {
@@ -435,6 +453,7 @@ pub mod resolver {
                 pipeline_config: self.pipeline_config,
                 sync_config: self.sync_config,
                 caching_config: self.caching_config,
+                max_batch_size: self.max_batch_size.unwrap_or_default(),
             }
         }
     }
@@ -2292,6 +2311,8 @@ pub struct FunctionConfiguration {
     /// <p>Describes a Sync configuration for a resolver.</p>
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
+    /// <p>The maximum batching size for a resolver.</p>
+    pub max_batch_size: i32,
 }
 impl FunctionConfiguration {
     /// <p>A unique ID representing the <code>Function</code> object.</p>
@@ -2331,6 +2352,10 @@ impl FunctionConfiguration {
     pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
         self.sync_config.as_ref()
     }
+    /// <p>The maximum batching size for a resolver.</p>
+    pub fn max_batch_size(&self) -> i32 {
+        self.max_batch_size
+    }
 }
 impl std::fmt::Debug for FunctionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2344,6 +2369,7 @@ impl std::fmt::Debug for FunctionConfiguration {
         formatter.field("response_mapping_template", &self.response_mapping_template);
         formatter.field("function_version", &self.function_version);
         formatter.field("sync_config", &self.sync_config);
+        formatter.field("max_batch_size", &self.max_batch_size);
         formatter.finish()
     }
 }
@@ -2362,6 +2388,7 @@ pub mod function_configuration {
         pub(crate) response_mapping_template: std::option::Option<std::string::String>,
         pub(crate) function_version: std::option::Option<std::string::String>,
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
+        pub(crate) max_batch_size: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>A unique ID representing the <code>Function</code> object.</p>
@@ -2471,6 +2498,16 @@ pub mod function_configuration {
             self.sync_config = input;
             self
         }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.max_batch_size = Some(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_batch_size = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::model::FunctionConfiguration)
         pub fn build(self) -> crate::model::FunctionConfiguration {
             crate::model::FunctionConfiguration {
@@ -2483,6 +2520,7 @@ pub mod function_configuration {
                 response_mapping_template: self.response_mapping_template,
                 function_version: self.function_version,
                 sync_config: self.sync_config,
+                max_batch_size: self.max_batch_size.unwrap_or_default(),
             }
         }
     }

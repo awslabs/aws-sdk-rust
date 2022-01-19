@@ -5126,6 +5126,117 @@ impl AsRef<str> for ConnectionAliasState {
     }
 }
 
+/// <p>Describes an Amazon Connect client add-in.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConnectClientAddIn {
+    /// <p>The client add-in identifier.</p>
+    pub add_in_id: std::option::Option<std::string::String>,
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The name of the client add in.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The endpoint URL of the client add-in.</p>
+    pub url: std::option::Option<std::string::String>,
+}
+impl ConnectClientAddIn {
+    /// <p>The client add-in identifier.</p>
+    pub fn add_in_id(&self) -> std::option::Option<&str> {
+        self.add_in_id.as_deref()
+    }
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The name of the client add in.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The endpoint URL of the client add-in.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
+impl std::fmt::Debug for ConnectClientAddIn {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectClientAddIn");
+        formatter.field("add_in_id", &self.add_in_id);
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("name", &self.name);
+        formatter.field("url", &self.url);
+        formatter.finish()
+    }
+}
+/// See [`ConnectClientAddIn`](crate::model::ConnectClientAddIn)
+pub mod connect_client_add_in {
+    /// A builder for [`ConnectClientAddIn`](crate::model::ConnectClientAddIn)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) add_in_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The client add-in identifier.</p>
+        pub fn add_in_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.add_in_id = Some(input.into());
+            self
+        }
+        /// <p>The client add-in identifier.</p>
+        pub fn set_add_in_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.add_in_id = input;
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The name of the client add in.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the client add in.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The endpoint URL of the client add-in.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The endpoint URL of the client add-in.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConnectClientAddIn`](crate::model::ConnectClientAddIn)
+        pub fn build(self) -> crate::model::ConnectClientAddIn {
+            crate::model::ConnectClientAddIn {
+                add_in_id: self.add_in_id,
+                resource_id: self.resource_id,
+                name: self.name,
+                url: self.url,
+            }
+        }
+    }
+}
+impl ConnectClientAddIn {
+    /// Creates a new builder-style object to manufacture [`ConnectClientAddIn`](crate::model::ConnectClientAddIn)
+    pub fn builder() -> crate::model::connect_client_add_in::Builder {
+        crate::model::connect_client_add_in::Builder::default()
+    }
+}
+
 /// <p>Information about the Amazon WorkSpaces client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

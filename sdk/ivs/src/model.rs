@@ -1986,6 +1986,8 @@ pub struct RecordingConfiguration {
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+    pub thumbnail_configuration: std::option::Option<crate::model::ThumbnailConfiguration>,
 }
 impl RecordingConfiguration {
     /// <p>Recording-configuration ARN.</p>
@@ -2013,6 +2015,12 @@ impl RecordingConfiguration {
     {
         self.tags.as_ref()
     }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn thumbnail_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ThumbnailConfiguration> {
+        self.thumbnail_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RecordingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2022,6 +2030,7 @@ impl std::fmt::Debug for RecordingConfiguration {
         formatter.field("destination_configuration", &self.destination_configuration);
         formatter.field("state", &self.state);
         formatter.field("tags", &self.tags);
+        formatter.field("thumbnail_configuration", &self.thumbnail_configuration);
         formatter.finish()
     }
 }
@@ -2039,6 +2048,8 @@ pub mod recording_configuration {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) thumbnail_configuration:
+            std::option::Option<crate::model::ThumbnailConfiguration>,
     }
     impl Builder {
         /// <p>Recording-configuration ARN.</p>
@@ -2115,6 +2126,22 @@ pub mod recording_configuration {
             self.tags = input;
             self
         }
+        /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+        pub fn thumbnail_configuration(
+            mut self,
+            input: crate::model::ThumbnailConfiguration,
+        ) -> Self {
+            self.thumbnail_configuration = Some(input);
+            self
+        }
+        /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+        pub fn set_thumbnail_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ThumbnailConfiguration>,
+        ) -> Self {
+            self.thumbnail_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RecordingConfiguration`](crate::model::RecordingConfiguration)
         pub fn build(self) -> crate::model::RecordingConfiguration {
             crate::model::RecordingConfiguration {
@@ -2123,6 +2150,7 @@ pub mod recording_configuration {
                 destination_configuration: self.destination_configuration,
                 state: self.state,
                 tags: self.tags,
+                thumbnail_configuration: self.thumbnail_configuration,
             }
         }
     }
@@ -2131,6 +2159,141 @@ impl RecordingConfiguration {
     /// Creates a new builder-style object to manufacture [`RecordingConfiguration`](crate::model::RecordingConfiguration)
     pub fn builder() -> crate::model::recording_configuration::Builder {
         crate::model::recording_configuration::Builder::default()
+    }
+}
+
+/// <p>An object representing a configuration of thumbnails for recorded video.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThumbnailConfiguration {
+    /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
+    pub recording_mode: std::option::Option<crate::model::RecordingMode>,
+    /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
+    /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
+    pub target_interval_seconds: i64,
+}
+impl ThumbnailConfiguration {
+    /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
+    pub fn recording_mode(&self) -> std::option::Option<&crate::model::RecordingMode> {
+        self.recording_mode.as_ref()
+    }
+    /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
+    /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
+    pub fn target_interval_seconds(&self) -> i64 {
+        self.target_interval_seconds
+    }
+}
+impl std::fmt::Debug for ThumbnailConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThumbnailConfiguration");
+        formatter.field("recording_mode", &self.recording_mode);
+        formatter.field("target_interval_seconds", &self.target_interval_seconds);
+        formatter.finish()
+    }
+}
+/// See [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration)
+pub mod thumbnail_configuration {
+    /// A builder for [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recording_mode: std::option::Option<crate::model::RecordingMode>,
+        pub(crate) target_interval_seconds: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
+        pub fn recording_mode(mut self, input: crate::model::RecordingMode) -> Self {
+            self.recording_mode = Some(input);
+            self
+        }
+        /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
+        pub fn set_recording_mode(
+            mut self,
+            input: std::option::Option<crate::model::RecordingMode>,
+        ) -> Self {
+            self.recording_mode = input;
+            self
+        }
+        /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
+        /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
+        pub fn target_interval_seconds(mut self, input: i64) -> Self {
+            self.target_interval_seconds = Some(input);
+            self
+        }
+        /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
+        /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
+        pub fn set_target_interval_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.target_interval_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration)
+        pub fn build(self) -> crate::model::ThumbnailConfiguration {
+            crate::model::ThumbnailConfiguration {
+                recording_mode: self.recording_mode,
+                target_interval_seconds: self.target_interval_seconds.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ThumbnailConfiguration {
+    /// Creates a new builder-style object to manufacture [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration)
+    pub fn builder() -> crate::model::thumbnail_configuration::Builder {
+        crate::model::thumbnail_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecordingMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Interval,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RecordingMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => RecordingMode::Disabled,
+            "INTERVAL" => RecordingMode::Interval,
+            other => RecordingMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RecordingMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecordingMode::from(s))
+    }
+}
+impl RecordingMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecordingMode::Disabled => "DISABLED",
+            RecordingMode::Interval => "INTERVAL",
+            RecordingMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "INTERVAL"]
+    }
+}
+impl AsRef<str> for RecordingMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

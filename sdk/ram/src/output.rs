@@ -610,6 +610,92 @@ impl ListPrincipalsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPermissionVersionsOutput {
+    /// <p>An array of objects that contain details for each of the available versions.</p>
+    pub permissions:
+        std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPermissionVersionsOutput {
+    /// <p>An array of objects that contain details for each of the available versions.</p>
+    pub fn permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceSharePermissionSummary]> {
+        self.permissions.as_deref()
+    }
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListPermissionVersionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPermissionVersionsOutput");
+        formatter.field("permissions", &self.permissions);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
+pub mod list_permission_versions_output {
+    /// A builder for [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) permissions:
+            std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>An array of objects that contain details for each of the available versions.</p>
+        pub fn permissions(mut self, input: crate::model::ResourceSharePermissionSummary) -> Self {
+            let mut v = self.permissions.unwrap_or_default();
+            v.push(input);
+            self.permissions = Some(v);
+            self
+        }
+        /// <p>An array of objects that contain details for each of the available versions.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
+        ) -> Self {
+            self.permissions = input;
+            self
+        }
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
+        pub fn build(self) -> crate::output::ListPermissionVersionsOutput {
+            crate::output::ListPermissionVersionsOutput {
+                permissions: self.permissions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListPermissionVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
+    pub fn builder() -> crate::output::list_permission_versions_output::Builder {
+        crate::output::list_permission_versions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsOutput {
     /// <p>An array of objects with information about the permissions.</p>
     pub permissions:
