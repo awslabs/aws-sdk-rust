@@ -14,7 +14,7 @@ version = "0.35.1"
 
 [dependencies.aws-sdk-apigateway]
 path = "../../sdk/apigateway"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.tokio]
 version = "1"
