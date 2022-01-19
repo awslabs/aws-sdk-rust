@@ -5,12 +5,12 @@ version = "0.1.0"
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-smithy-types-convert]
 path = "../../sdk/aws-smithy-types-convert"
 features = ["convert-chrono"]
-version = "0.35.0"
+version = "0.35.1"
 
 [dependencies.aws-sdk-apigateway]
 path = "../../sdk/apigateway"

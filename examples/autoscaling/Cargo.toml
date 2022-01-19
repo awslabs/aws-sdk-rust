@@ -6,7 +6,7 @@ authors = ["Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-sdk-autoscaling]
 path = "../../sdk/autoscaling"

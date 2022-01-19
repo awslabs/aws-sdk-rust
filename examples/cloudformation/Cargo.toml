@@ -6,7 +6,7 @@ authors = ["Alistair McLean <mclean@amazon.com>", "Doug Schwartz <dougsch@amazon
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-sdk-cloudformation]
 package = "aws-sdk-cloudformation"
@@ -15,7 +15,7 @@ version = "0.5.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.tokio]
 version = "1"
