@@ -6,15 +6,15 @@ authors = ["Alistair McLean <mclean@amazon.com>", "Doug Schwartz <dougsch@amazon
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.aws-sdk-route53]
 path = "../../sdk/route53"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.tokio]
 version = "1"

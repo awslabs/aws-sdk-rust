@@ -501,6 +501,45 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListPermissionVersionsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListPermissionVersionsErrorKind::InvalidNextTokenException(inner) => {
+                    Error::InvalidNextTokenException(inner)
+                }
+                crate::error::ListPermissionVersionsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::ListPermissionVersionsErrorKind::MalformedArnException(inner) => {
+                    Error::MalformedArnException(inner)
+                }
+                crate::error::ListPermissionVersionsErrorKind::OperationNotPermittedException(
+                    inner,
+                ) => Error::OperationNotPermittedException(inner),
+                crate::error::ListPermissionVersionsErrorKind::ServerInternalException(inner) => {
+                    Error::ServerInternalException(inner)
+                }
+                crate::error::ListPermissionVersionsErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::ListPermissionVersionsErrorKind::UnknownResourceException(inner) => {
+                    Error::UnknownResourceException(inner)
+                }
+                crate::error::ListPermissionVersionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPrincipalsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

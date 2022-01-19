@@ -1948,6 +1948,23 @@ pub fn parse_list_streams_error(
                 tmp
             }),
         },
+        "ValidationException" => crate::error::ListStreamsError {
+            meta: generic,
+            kind: crate::error::ListStreamsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListStreamsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListStreamsError::generic(generic),
     })
 }

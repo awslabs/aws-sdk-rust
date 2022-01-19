@@ -170,10 +170,10 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::CalculateRoute::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::CalculateRoute::set_calculator_name): <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-    ///   - [`departure_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::departure_position) / [`set_departure_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_departure_position): <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>  </ul> <note>   <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    ///   - [`destination_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::destination_position) / [`set_destination_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_destination_position): <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>  </ul> <note>   <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    ///   - [`waypoint_positions(Vec<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::waypoint_positions) / [`set_waypoint_positions(Option<Vec<Vec<f64>>>)`](crate::client::fluent_builders::CalculateRoute::set_waypoint_positions): <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>  <ul>   <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>  </ul> <note>   <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>   <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>   <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    ///   - [`travel_mode(TravelMode)`](crate::client::fluent_builders::CalculateRoute::travel_mode) / [`set_travel_mode(Option<TravelMode>)`](crate::client::fluent_builders::CalculateRoute::set_travel_mode): <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>  <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>  <ul>   <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>   <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>  </ul>  <p>Default Value: <code>Car</code> </p>
+    ///   - [`departure_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::departure_position) / [`set_departure_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_departure_position): <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>  </ul> <note>   <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    ///   - [`destination_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::destination_position) / [`set_destination_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_destination_position): <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>  </ul> <note>   <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    ///   - [`waypoint_positions(Vec<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::waypoint_positions) / [`set_waypoint_positions(Option<Vec<Vec<f64>>>)`](crate::client::fluent_builders::CalculateRoute::set_waypoint_positions): <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>  <ul>   <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>  </ul> <note>   <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>   <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>   <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    ///   - [`travel_mode(TravelMode)`](crate::client::fluent_builders::CalculateRoute::travel_mode) / [`set_travel_mode(Option<TravelMode>)`](crate::client::fluent_builders::CalculateRoute::set_travel_mode): <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>  <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>  <ul>   <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>   <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>  </ul>  <p>Default Value: <code>Car</code> </p>
     ///   - [`departure_time(DateTime)`](crate::client::fluent_builders::CalculateRoute::departure_time) / [`set_departure_time(Option<DateTime>)`](crate::client::fluent_builders::CalculateRoute::set_departure_time): <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>   <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>  </note>  <ul>   <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
     ///   - [`depart_now(bool)`](crate::client::fluent_builders::CalculateRoute::depart_now) / [`set_depart_now(Option<bool>)`](crate::client::fluent_builders::CalculateRoute::set_depart_now): <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>  <p>Default Value: <code>false</code> </p>  <p>Valid Values: <code>false</code> | <code>true</code> </p>
     ///   - [`distance_unit(DistanceUnit)`](crate::client::fluent_builders::CalculateRoute::distance_unit) / [`set_distance_unit(Option<DistanceUnit>)`](crate::client::fluent_builders::CalculateRoute::set_distance_unit): <p>Set the unit system to specify the distance.</p>  <p>Default Value: <code>Kilometers</code> </p>
@@ -181,18 +181,39 @@ where
     ///   - [`car_mode_options(CalculateRouteCarModeOptions)`](crate::client::fluent_builders::CalculateRoute::car_mode_options) / [`set_car_mode_options(Option<CalculateRouteCarModeOptions>)`](crate::client::fluent_builders::CalculateRoute::set_car_mode_options): <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>  <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
     ///   - [`truck_mode_options(CalculateRouteTruckModeOptions)`](crate::client::fluent_builders::CalculateRoute::truck_mode_options) / [`set_truck_mode_options(Option<CalculateRouteTruckModeOptions>)`](crate::client::fluent_builders::CalculateRoute::set_truck_mode_options): <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>  <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
     /// - On success, responds with [`CalculateRouteOutput`](crate::output::CalculateRouteOutput) with field(s):
-    ///   - [`legs(Option<Vec<Leg>>)`](crate::output::CalculateRouteOutput::legs): <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>  <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>  <ul>   <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>   <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>  </ul>  <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>  <ul>   <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>   <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>  </ul>
+    ///   - [`legs(Option<Vec<Leg>>)`](crate::output::CalculateRouteOutput::legs): <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>  <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>  <ul>   <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>   <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>  </ul>  <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>  <ul>   <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>   <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>  </ul>
     ///   - [`summary(Option<CalculateRouteSummary>)`](crate::output::CalculateRouteOutput::summary): <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     /// - On failure, responds with [`SdkError<CalculateRouteError>`](crate::error::CalculateRouteError)
     pub fn calculate_route(&self) -> fluent_builders::CalculateRoute<C, M, R> {
         fluent_builders::CalculateRoute::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CalculateRouteMatrix`](crate::client::fluent_builders::CalculateRouteMatrix) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::CalculateRouteMatrix::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_calculator_name): <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
+    ///   - [`departure_positions(Vec<Vec<f64>>)`](crate::client::fluent_builders::CalculateRouteMatrix::departure_positions) / [`set_departure_positions(Option<Vec<Vec<f64>>>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_departure_positions): <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>   <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>  </important> <note>   <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    ///   - [`destination_positions(Vec<Vec<f64>>)`](crate::client::fluent_builders::CalculateRouteMatrix::destination_positions) / [`set_destination_positions(Option<Vec<Vec<f64>>>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_destination_positions): <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>   <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>  </important> <note>   <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+    ///   - [`travel_mode(TravelMode)`](crate::client::fluent_builders::CalculateRouteMatrix::travel_mode) / [`set_travel_mode(Option<TravelMode>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_travel_mode): <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>  <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>  <ul>   <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>   <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>  </ul>  <p>Default Value: <code>Car</code> </p>
+    ///   - [`departure_time(DateTime)`](crate::client::fluent_builders::CalculateRouteMatrix::departure_time) / [`set_departure_time(Option<DateTime>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_departure_time): <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>   <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>  </note>  <ul>   <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
+    ///   - [`depart_now(bool)`](crate::client::fluent_builders::CalculateRouteMatrix::depart_now) / [`set_depart_now(Option<bool>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_depart_now): <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>  <p>Default Value: <code>false</code> </p>  <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    ///   - [`distance_unit(DistanceUnit)`](crate::client::fluent_builders::CalculateRouteMatrix::distance_unit) / [`set_distance_unit(Option<DistanceUnit>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_distance_unit): <p>Set the unit system to specify the distance.</p>  <p>Default Value: <code>Kilometers</code> </p>
+    ///   - [`car_mode_options(CalculateRouteCarModeOptions)`](crate::client::fluent_builders::CalculateRouteMatrix::car_mode_options) / [`set_car_mode_options(Option<CalculateRouteCarModeOptions>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_car_mode_options): <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>  <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+    ///   - [`truck_mode_options(CalculateRouteTruckModeOptions)`](crate::client::fluent_builders::CalculateRouteMatrix::truck_mode_options) / [`set_truck_mode_options(Option<CalculateRouteTruckModeOptions>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_truck_mode_options): <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>  <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+    /// - On success, responds with [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput) with field(s):
+    ///   - [`route_matrix(Option<Vec<Vec<RouteMatrixEntry>>>)`](crate::output::CalculateRouteMatrixOutput::route_matrix): <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
+    ///   - [`snapped_departure_positions(Option<Vec<Vec<f64>>>)`](crate::output::CalculateRouteMatrixOutput::snapped_departure_positions): <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
+    ///   - [`snapped_destination_positions(Option<Vec<Vec<f64>>>)`](crate::output::CalculateRouteMatrixOutput::snapped_destination_positions): <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
+    ///   - [`summary(Option<CalculateRouteMatrixSummary>)`](crate::output::CalculateRouteMatrixOutput::summary): <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
+    /// - On failure, responds with [`SdkError<CalculateRouteMatrixError>`](crate::error::CalculateRouteMatrixError)
+    pub fn calculate_route_matrix(&self) -> fluent_builders::CalculateRouteMatrix<C, M, R> {
+        fluent_builders::CalculateRouteMatrix::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateGeofenceCollection`](crate::client::fluent_builders::CreateGeofenceCollection) operation.
     ///
     /// - The fluent builder is configurable:
     ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_collection_name): <p>A custom name for the geofence collection.</p>  <p>Requirements:</p>  <ul>   <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>   <li> <p>Must be a unique geofence collection name.</p> </li>   <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>  </ul>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateGeofenceCollection::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_pricing_plan): <p>Optionally specifies the pricing plan for the geofence collection. Defaults to <code>RequestBasedUsage</code>.</p>  <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
-    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_pricing_plan_data_source): <p>Specifies the data provider for the geofence collection.</p>  <ul>   <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>  </ul>  <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>   <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>  </note>  <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateGeofenceCollection::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_pricing_plan_data_source): <p>This parameter is no longer used.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_description): <p>An optional description for the geofence collection.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateGeofenceCollection::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_tags): <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource</p> </li>   <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_kms_key_id): <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
@@ -209,7 +230,7 @@ where
     /// - The fluent builder is configurable:
     ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::CreateMap::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::CreateMap::set_map_name): <p>The name for the map resource.</p>  <p>Requirements:</p>  <ul>   <li> <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>   <li> <p>Must be a unique map resource name. </p> </li>   <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>  </ul>
     ///   - [`configuration(MapConfiguration)`](crate::client::fluent_builders::CreateMap::configuration) / [`set_configuration(Option<MapConfiguration>)`](crate::client::fluent_builders::CreateMap::set_configuration): <p>Specifies the map style selected from an available data provider.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateMap::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateMap::set_pricing_plan): <p>Optionally specifies the pricing plan for the map resource. Defaults to <code>RequestBasedUsage</code>.</p>  <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateMap::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateMap::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateMap::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateMap::set_description): <p>An optional description for the map resource.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateMap::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateMap::set_tags): <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource</p> </li>   <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
     /// - On success, responds with [`CreateMapOutput`](crate::output::CreateMapOutput) with field(s):
@@ -225,7 +246,7 @@ where
     /// - The fluent builder is configurable:
     ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::CreatePlaceIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::CreatePlaceIndex::set_index_name): <p>The name of the place index resource. </p>  <p>Requirements:</p>  <ul>   <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>   <li> <p>Must be a unique place index resource name.</p> </li>   <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>  </ul>
     ///   - [`data_source(impl Into<String>)`](crate::client::fluent_builders::CreatePlaceIndex::data_source) / [`set_data_source(Option<String>)`](crate::client::fluent_builders::CreatePlaceIndex::set_data_source): <p>Specifies the geospatial data provider for the new place index.</p> <note>   <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>  </note>  <p>Valid values include:</p>  <ul>   <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>   <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>     <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>    </important> </li>  </ul>  <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreatePlaceIndex::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreatePlaceIndex::set_pricing_plan): <p>Optionally specifies the pricing plan for the place index resource. Defaults to <code>RequestBasedUsage</code>.</p>  <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreatePlaceIndex::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreatePlaceIndex::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePlaceIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePlaceIndex::set_description): <p>The optional description for the place index resource.</p>
     ///   - [`data_source_configuration(DataSourceConfiguration)`](crate::client::fluent_builders::CreatePlaceIndex::data_source_configuration) / [`set_data_source_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::CreatePlaceIndex::set_data_source_configuration): <p>Specifies the data storage option requesting Places.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreatePlaceIndex::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePlaceIndex::set_tags): <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource.</p> </li>   <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
@@ -242,7 +263,7 @@ where
     /// - The fluent builder is configurable:
     ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::CreateRouteCalculator::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::CreateRouteCalculator::set_calculator_name): <p>The name of the route calculator resource. </p>  <p>Requirements:</p>  <ul>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>   <li> <p>Must be a unique Route calculator resource name.</p> </li>   <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>  </ul>
     ///   - [`data_source(impl Into<String>)`](crate::client::fluent_builders::CreateRouteCalculator::data_source) / [`set_data_source(Option<String>)`](crate::client::fluent_builders::CreateRouteCalculator::set_data_source): <p>Specifies the data provider of traffic and road network data.</p> <note>   <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p>  </note>  <p>Valid values include:</p>  <ul>   <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> </li>   <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>  </ul>  <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateRouteCalculator::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateRouteCalculator::set_pricing_plan): <p>Optionally specifies the pricing plan for the route calculator resource. Defaults to <code>RequestBasedUsage</code>.</p>  <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateRouteCalculator::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateRouteCalculator::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRouteCalculator::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRouteCalculator::set_description): <p>The optional description for the route calculator resource.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRouteCalculator::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRouteCalculator::set_tags): <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>  <ul>   <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>  </ul>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource</p> </li>   <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
     /// - On success, responds with [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput) with field(s):
@@ -257,9 +278,9 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::CreateTracker::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::CreateTracker::set_tracker_name): <p>The name for the tracker resource.</p>  <p>Requirements:</p>  <ul>   <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li>   <li> <p>Must be a unique tracker resource name.</p> </li>   <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>  </ul>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateTracker::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateTracker::set_pricing_plan): <p>Optionally specifies the pricing plan for the tracker resource. Defaults to <code>RequestBasedUsage</code>.</p>  <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateTracker::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateTracker::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateTracker::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateTracker::set_kms_key_id): <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
-    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::CreateTracker::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::CreateTracker::set_pricing_plan_data_source): <p>Specifies the data provider for the tracker resource.</p>  <ul>   <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>  </ul>  <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>   <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>  </note>  <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
+    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::CreateTracker::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::CreateTracker::set_pricing_plan_data_source): <p>This parameter is no longer used.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateTracker::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateTracker::set_description): <p>An optional description for the tracker resource.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateTracker::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTracker::set_tags): <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource</p> </li>   <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
     ///   - [`position_filtering(PositionFiltering)`](crate::client::fluent_builders::CreateTracker::position_filtering) / [`set_position_filtering(Option<PositionFiltering>)`](crate::client::fluent_builders::CreateTracker::set_position_filtering): <p>Specifies the position filtering for the tracker resource.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>   <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>   <li> <p> <code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations. </p> </li>  </ul>  <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
@@ -329,8 +350,8 @@ where
     ///   - [`collection_name(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::collection_name): <p>The name of the geofence collection.</p>
     ///   - [`collection_arn(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::collection_arn): <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>  </ul>
     ///   - [`description(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::description): <p>The optional description for the geofence collection.</p>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeGeofenceCollectionOutput::pricing_plan): <p>The pricing plan selected for the specified geofence collection.</p>  <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
-    ///   - [`pricing_plan_data_source(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::pricing_plan_data_source): <p>The specified data provider for the geofence collection.</p>
+    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeGeofenceCollectionOutput::pricing_plan): <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
+    ///   - [`pricing_plan_data_source(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::pricing_plan_data_source): <p>No longer used. Always returns an empty string.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::kms_key_id): <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeGeofenceCollectionOutput::tags): <p>Displays the key, value pairs of tags associated with this resource.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::output::DescribeGeofenceCollectionOutput::create_time): <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -348,7 +369,7 @@ where
     /// - On success, responds with [`DescribeMapOutput`](crate::output::DescribeMapOutput) with field(s):
     ///   - [`map_name(Option<String>)`](crate::output::DescribeMapOutput::map_name): <p>The map style selected from an available provider.</p>
     ///   - [`map_arn(Option<String>)`](crate::output::DescribeMapOutput::map_arn): <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>  </ul>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeMapOutput::pricing_plan): <p>The pricing plan selected for the specified map resource.</p>  <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeMapOutput::pricing_plan): <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     ///   - [`data_source(Option<String>)`](crate::output::DescribeMapOutput::data_source): <p>Specifies the data provider for the associated map tiles.</p>
     ///   - [`configuration(Option<MapConfiguration>)`](crate::output::DescribeMapOutput::configuration): <p>Specifies the map tile style selected from a partner data provider.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeMapOutput::description): <p>The optional description for the map resource.</p>
@@ -366,7 +387,7 @@ where
     /// - On success, responds with [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput) with field(s):
     ///   - [`index_name(Option<String>)`](crate::output::DescribePlaceIndexOutput::index_name): <p>The name of the place index resource being described.</p>
     ///   - [`index_arn(Option<String>)`](crate::output::DescribePlaceIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>  </ul>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribePlaceIndexOutput::pricing_plan): <p>The pricing plan selected for the specified place index resource.</p>  <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribePlaceIndexOutput::pricing_plan): <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribePlaceIndexOutput::description): <p>The optional description for the place index resource.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::output::DescribePlaceIndexOutput::create_time): <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     ///   - [`update_time(Option<DateTime>)`](crate::output::DescribePlaceIndexOutput::update_time): <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
@@ -384,7 +405,7 @@ where
     /// - On success, responds with [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput) with field(s):
     ///   - [`calculator_name(Option<String>)`](crate::output::DescribeRouteCalculatorOutput::calculator_name): <p>The name of the route calculator resource being described.</p>
     ///   - [`calculator_arn(Option<String>)`](crate::output::DescribeRouteCalculatorOutput::calculator_arn): <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>  </ul>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeRouteCalculatorOutput::pricing_plan): <p>The pricing plan selected for the specified route calculator resource.</p>  <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeRouteCalculatorOutput::pricing_plan): <p>Always returns <code>RequestBasedUsage</code>.</p>
     ///   - [`description(Option<String>)`](crate::output::DescribeRouteCalculatorOutput::description): <p>The optional description of the route calculator resource.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::output::DescribeRouteCalculatorOutput::create_time): <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>  <ul>   <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
     ///   - [`update_time(Option<DateTime>)`](crate::output::DescribeRouteCalculatorOutput::update_time): <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>  <ul>   <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
@@ -402,8 +423,8 @@ where
     ///   - [`tracker_name(Option<String>)`](crate::output::DescribeTrackerOutput::tracker_name): <p>The name of the tracker resource.</p>
     ///   - [`tracker_arn(Option<String>)`](crate::output::DescribeTrackerOutput::tracker_arn): <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>  </ul>
     ///   - [`description(Option<String>)`](crate::output::DescribeTrackerOutput::description): <p>The optional description for the tracker resource.</p>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeTrackerOutput::pricing_plan): <p>The pricing plan selected for the specified tracker resource.</p>  <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
-    ///   - [`pricing_plan_data_source(Option<String>)`](crate::output::DescribeTrackerOutput::pricing_plan_data_source): <p>The specified data provider for the tracker resource.</p>
+    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeTrackerOutput::pricing_plan): <p>Always returns <code>RequestBasedUsage</code>.</p>
+    ///   - [`pricing_plan_data_source(Option<String>)`](crate::output::DescribeTrackerOutput::pricing_plan_data_source): <p>No longer used. Always returns an empty string.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeTrackerOutput::tags): <p>The tags associated with the tracker resource.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::output::DescribeTrackerOutput::create_time): <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     ///   - [`update_time(Option<DateTime>)`](crate::output::DescribeTrackerOutput::update_time): <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
@@ -733,8 +754,8 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_collection_name): <p>The name of the geofence collection to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateGeofenceCollection::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_pricing_plan): <p>Updates the pricing plan for the geofence collection.</p>  <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
-    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_pricing_plan_data_source): <p>Updates the data provider for the geofence collection. </p>  <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>  <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>   <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>   <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>  </note>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateGeofenceCollection::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_pricing_plan_data_source): <p>This parameter is no longer used.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_description): <p>Updates the description for the geofence collection.</p>
     /// - On success, responds with [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput) with field(s):
     ///   - [`collection_name(Option<String>)`](crate::output::UpdateGeofenceCollectionOutput::collection_name): <p>The name of the updated geofence collection.</p>
@@ -748,7 +769,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMap::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::UpdateMap::set_map_name): <p>The name of the map resource to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateMap::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateMap::set_pricing_plan): <p>Updates the pricing plan for the map resource.</p>  <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateMap::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateMap::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateMap::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateMap::set_description): <p>Updates the description for the map resource.</p>
     /// - On success, responds with [`UpdateMapOutput`](crate::output::UpdateMapOutput) with field(s):
     ///   - [`map_name(Option<String>)`](crate::output::UpdateMapOutput::map_name): <p>The name of the updated map resource.</p>
@@ -762,7 +783,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePlaceIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::UpdatePlaceIndex::set_index_name): <p>The name of the place index resource to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdatePlaceIndex::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdatePlaceIndex::set_pricing_plan): <p>Updates the pricing plan for the place index resource.</p>  <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdatePlaceIndex::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdatePlaceIndex::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePlaceIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePlaceIndex::set_description): <p>Updates the description for the place index resource.</p>
     ///   - [`data_source_configuration(DataSourceConfiguration)`](crate::client::fluent_builders::UpdatePlaceIndex::data_source_configuration) / [`set_data_source_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::UpdatePlaceIndex::set_data_source_configuration): <p>Updates the data storage option for the place index resource.</p>
     /// - On success, responds with [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput) with field(s):
@@ -777,7 +798,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRouteCalculator::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::UpdateRouteCalculator::set_calculator_name): <p>The name of the route calculator resource to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateRouteCalculator::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateRouteCalculator::set_pricing_plan): <p>Updates the pricing plan for the route calculator resource.</p>  <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateRouteCalculator::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateRouteCalculator::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRouteCalculator::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRouteCalculator::set_description): <p>Updates the description for the route calculator resource.</p>
     /// - On success, responds with [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput) with field(s):
     ///   - [`calculator_name(Option<String>)`](crate::output::UpdateRouteCalculatorOutput::calculator_name): <p>The name of the updated route calculator resource.</p>
@@ -791,8 +812,8 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTracker::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::UpdateTracker::set_tracker_name): <p>The name of the tracker resource to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateTracker::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateTracker::set_pricing_plan): <p>Updates the pricing plan for the tracker resource.</p>  <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
-    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::UpdateTracker::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::UpdateTracker::set_pricing_plan_data_source): <p>Updates the data provider for the tracker resource. </p>  <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>  <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>   <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>   <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>  </note>
+    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateTracker::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateTracker::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::UpdateTracker::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::UpdateTracker::set_pricing_plan_data_source): <p>This parameter is no longer used.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateTracker::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateTracker::set_description): <p>Updates the description for the tracker resource.</p>
     ///   - [`position_filtering(PositionFiltering)`](crate::client::fluent_builders::UpdateTracker::position_filtering) / [`set_position_filtering(Option<PositionFiltering>)`](crate::client::fluent_builders::UpdateTracker::set_position_filtering): <p>Updates the position filtering for the tracker resource.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>   <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>   <li> <p> <code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This helps educe the effects of GPS noise when displaying device trajectories on a map, and can help control costs by reducing the number of geofence evaluations. </p> </li>  </ul>
     /// - On success, responds with [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput) with field(s):
@@ -1464,16 +1485,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CalculateRoute`.
     ///
-    /// <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters: <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters: <code>DeparturePosition</code> and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p>
     /// <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating the route.</p>
     /// <p>Additional options include:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#departure-time">Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartureNow</code>. This calculates a route based on predictive traffic data at the given time. </p> <note>
-    /// <p>You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in a single request. Specifying both parameters returns a validation error.</p>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates a route based on predictive traffic data at the given time. </p> <note>
+    /// <p>You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a single request. Specifying both parameters returns a validation error.</p>
     /// </note> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying a travel mode</a> using TravelMode. This lets you specify an additional route preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li>
     /// </ul>
-    /// <p> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CalculateRoute<
         C = aws_smithy_client::erase::DynConnector,
@@ -1551,7 +1571,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn departure_position(mut self, input: f64) -> Self {
@@ -1562,7 +1582,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn set_departure_position(
@@ -1580,7 +1600,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn destination_position(mut self, input: f64) -> Self {
@@ -1591,7 +1611,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn set_destination_position(
@@ -1609,7 +1629,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
         /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
         /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
@@ -1622,7 +1642,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
         /// </ul> <note>
-        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
         /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
         /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
@@ -1635,7 +1655,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-        /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
+        /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
         /// <ul>
         /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
         /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
@@ -1646,7 +1666,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-        /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
+        /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
         /// <ul>
         /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
         /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
@@ -1723,6 +1743,257 @@ pub mod fluent_builders {
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn set_include_leg_geometry(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_leg_geometry(input);
+            self
+        }
+        /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+        pub fn car_mode_options(
+            mut self,
+            input: crate::model::CalculateRouteCarModeOptions,
+        ) -> Self {
+            self.inner = self.inner.car_mode_options(input);
+            self
+        }
+        /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+        pub fn set_car_mode_options(
+            mut self,
+            input: std::option::Option<crate::model::CalculateRouteCarModeOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_car_mode_options(input);
+            self
+        }
+        /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+        pub fn truck_mode_options(
+            mut self,
+            input: crate::model::CalculateRouteTruckModeOptions,
+        ) -> Self {
+            self.inner = self.inner.truck_mode_options(input);
+            self
+        }
+        /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
+        pub fn set_truck_mode_options(
+            mut self,
+            input: std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_truck_mode_options(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CalculateRouteMatrix`.
+    ///
+    /// <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html"> Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code> and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates routes and returns the travel time and travel distance from each departure position to each destination position in the request. For example, given departure positions A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned (and routes calculated) will be the number of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.</p> <note>
+    /// <p>Your account is charged for each route calculated, not the number of requests.</p>
+    /// </note>
+    /// <p>Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p>
+    /// <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating routes.</p>
+    /// <p>Additional options include:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html"> Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates routes based on predictive traffic data at the given time. </p> <note>
+    /// <p>You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a single request. Specifying both parameters returns a validation error.</p>
+    /// </note> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li>
+    /// </ul>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CalculateRouteMatrix<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::calculate_route_matrix_input::Builder,
+    }
+    impl<C, M, R> CalculateRouteMatrix<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CalculateRouteMatrix`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CalculateRouteMatrixOutput,
+            aws_smithy_http::result::SdkError<crate::error::CalculateRouteMatrixError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CalculateRouteMatrixInputOperationOutputAlias,
+                crate::output::CalculateRouteMatrixOutput,
+                crate::error::CalculateRouteMatrixError,
+                crate::input::CalculateRouteMatrixInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculator_name(input.into());
+            self
+        }
+        /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
+        pub fn set_calculator_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_calculator_name(input);
+            self
+        }
+        /// Appends an item to `DeparturePositions`.
+        ///
+        /// To override the contents of this collection use [`set_departure_positions`](Self::set_departure_positions).
+        ///
+        /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
+        /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// </important> <note>
+        /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+        pub fn departure_positions(mut self, input: std::vec::Vec<f64>) -> Self {
+            self.inner = self.inner.departure_positions(input);
+            self
+        }
+        /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
+        /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// </important> <note>
+        /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+        pub fn set_departure_positions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        ) -> Self {
+            self.inner = self.inner.set_departure_positions(input);
+            self
+        }
+        /// Appends an item to `DestinationPositions`.
+        ///
+        /// To override the contents of this collection use [`set_destination_positions`](Self::set_destination_positions).
+        ///
+        /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
+        /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// </important> <note>
+        /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+        pub fn destination_positions(mut self, input: std::vec::Vec<f64>) -> Self {
+            self.inner = self.inner.destination_positions(input);
+            self
+        }
+        /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
+        /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// </important> <note>
+        /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
+        pub fn set_destination_positions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_positions(input);
+            self
+        }
+        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+        /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
+        /// <ul>
+        /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+        /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+        /// </ul>
+        /// <p>Default Value: <code>Car</code> </p>
+        pub fn travel_mode(mut self, input: crate::model::TravelMode) -> Self {
+            self.inner = self.inner.travel_mode(input);
+            self
+        }
+        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
+        /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
+        /// <ul>
+        /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+        /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
+        /// </ul>
+        /// <p>Default Value: <code>Car</code> </p>
+        pub fn set_travel_mode(
+            mut self,
+            input: std::option::Option<crate::model::TravelMode>,
+        ) -> Self {
+            self.inner = self.inner.set_travel_mode(input);
+            self
+        }
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
+        /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
+        /// </note>
+        /// <ul>
+        /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// </ul>
+        pub fn departure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.departure_time(input);
+            self
+        }
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>
+        /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
+        /// </note>
+        /// <ul>
+        /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// </ul>
+        pub fn set_departure_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_departure_time(input);
+            self
+        }
+        /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
+        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+        pub fn depart_now(mut self, input: bool) -> Self {
+            self.inner = self.inner.depart_now(input);
+            self
+        }
+        /// <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>
+        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+        pub fn set_depart_now(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_depart_now(input);
+            self
+        }
+        /// <p>Set the unit system to specify the distance.</p>
+        /// <p>Default Value: <code>Kilometers</code> </p>
+        pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
+            self.inner = self.inner.distance_unit(input);
+            self
+        }
+        /// <p>Set the unit system to specify the distance.</p>
+        /// <p>Default Value: <code>Kilometers</code> </p>
+        pub fn set_distance_unit(
+            mut self,
+            input: std::option::Option<crate::model::DistanceUnit>,
+        ) -> Self {
+            self.inner = self.inner.set_distance_unit(input);
             self
         }
         /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
@@ -1846,14 +2117,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_collection_name(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the geofence collection. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the geofence collection. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -1861,26 +2130,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pricing_plan(input);
             self
         }
-        /// <p>Specifies the data provider for the geofence collection.</p>
-        /// <ul>
-        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-        /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-        /// </note>
-        /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
+        /// <p>This parameter is no longer used.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
-        /// <p>Specifies the data provider for the geofence collection.</p>
-        /// <ul>
-        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-        /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-        /// </note>
-        /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
+        /// <p>This parameter is no longer used.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1954,7 +2209,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMap`.
     ///
-    /// <p>Creates a map resource in your AWS account, which provides map tiles of different styles sourced from global location data providers.</p>
+    /// <p>Creates a map resource in your AWS account, which provides map tiles of different styles sourced from global location data providers.</p> <note>
+    /// <p>If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you may only use HERE as your geolocation provider. See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMap<
         C = aws_smithy_client::erase::DynConnector,
@@ -2046,14 +2303,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the map resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the map resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2117,7 +2372,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePlaceIndex`.
     ///
-    /// <p>Creates a place index resource in your AWS account. Use a place index resource to geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code> operation.</p>
+    /// <p>Creates a place index resource in your AWS account. Use a place index resource to geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code> operation.</p> <note>
+    /// <p>If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you may only use HERE as your geolocation provider. See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlaceIndex<
         C = aws_smithy_client::erase::DynConnector,
@@ -2226,14 +2483,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_source(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the place index resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the place index resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2314,7 +2569,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRouteCalculator`.
     ///
     /// <p>Creates a route calculator resource in your AWS account.</p>
-    /// <p>You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A route calculator sources traffic and road network data from your chosen data provider.</p>
+    /// <p>You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A route calculator sources traffic and road network data from your chosen data provider.</p> <note>
+    /// <p>If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you may only use HERE as your geolocation provider. See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRouteCalculator<
         C = aws_smithy_client::erase::DynConnector,
@@ -2422,14 +2679,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_source(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the route calculator resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the route calculator resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2578,14 +2833,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tracker_name(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the tracker resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Optionally specifies the pricing plan for the tracker resource. Defaults to <code>RequestBasedUsage</code>.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2603,26 +2856,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>Specifies the data provider for the tracker resource.</p>
-        /// <ul>
-        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-        /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-        /// </note>
-        /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
+        /// <p>This parameter is no longer used.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
-        /// <p>Specifies the data provider for the tracker resource.</p>
-        /// <ul>
-        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
-        /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
-        /// </note>
-        /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
+        /// <p>This parameter is no longer used.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5884,14 +6123,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_collection_name(input);
             self
         }
-        /// <p>Updates the pricing plan for the geofence collection.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Updates the pricing plan for the geofence collection.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5899,22 +6136,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pricing_plan(input);
             self
         }
-        /// <p>Updates the data provider for the geofence collection. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-        /// </note>
+        /// <p>This parameter is no longer used.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
-        /// <p>Updates the data provider for the geofence collection. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-        /// </note>
+        /// <p>This parameter is no longer used.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6002,14 +6229,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_map_name(input);
             self
         }
-        /// <p>Updates the pricing plan for the map resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Updates the pricing plan for the map resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -6097,14 +6322,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_name(input);
             self
         }
-        /// <p>Updates the pricing plan for the place index resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Updates the pricing plan for the place index resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -6211,14 +6434,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_calculator_name(input);
             self
         }
-        /// <p>Updates the pricing plan for the route calculator resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Updates the pricing plan for the route calculator resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -6306,14 +6527,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tracker_name(input);
             self
         }
-        /// <p>Updates the pricing plan for the tracker resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(input);
             self
         }
-        /// <p>Updates the pricing plan for the tracker resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -6321,22 +6540,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pricing_plan(input);
             self
         }
-        /// <p>Updates the data provider for the tracker resource. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-        /// </note>
+        /// <p>This parameter is no longer used.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
-        /// <p>Updates the data provider for the tracker resource. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
-        /// </note>
+        /// <p>This parameter is no longer used.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,

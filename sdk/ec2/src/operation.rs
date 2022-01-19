@@ -7149,6 +7149,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExportTasks {
     }
 }
 
+/// Operation shape for `DescribeFastLaunchImages`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_fast_launch_images`](crate::client::Client::describe_fast_launch_images).
+///
+/// See [`crate::client::fluent_builders::DescribeFastLaunchImages`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeFastLaunchImages {
+    _private: (),
+}
+impl DescribeFastLaunchImages {
+    /// Creates a new builder-style object to manufacture [`DescribeFastLaunchImagesInput`](crate::input::DescribeFastLaunchImagesInput)
+    pub fn builder() -> crate::input::describe_fast_launch_images_input::Builder {
+        crate::input::describe_fast_launch_images_input::Builder::default()
+    }
+    /// Creates a new `DescribeFastLaunchImages` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeFastLaunchImages {
+    type Output = std::result::Result<
+        crate::output::DescribeFastLaunchImagesOutput,
+        crate::error::DescribeFastLaunchImagesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_fast_launch_images_error(response)
+        } else {
+            crate::operation_deser::parse_describe_fast_launch_images_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeFastSnapshotRestores`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -11062,6 +11096,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableEbsEncryptionByDe
     }
 }
 
+/// Operation shape for `DisableFastLaunch`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disable_fast_launch`](crate::client::Client::disable_fast_launch).
+///
+/// See [`crate::client::fluent_builders::DisableFastLaunch`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisableFastLaunch {
+    _private: (),
+}
+impl DisableFastLaunch {
+    /// Creates a new builder-style object to manufacture [`DisableFastLaunchInput`](crate::input::DisableFastLaunchInput)
+    pub fn builder() -> crate::input::disable_fast_launch_input::Builder {
+        crate::input::disable_fast_launch_input::Builder::default()
+    }
+    /// Creates a new `DisableFastLaunch` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisableFastLaunch {
+    type Output = std::result::Result<
+        crate::output::DisableFastLaunchOutput,
+        crate::error::DisableFastLaunchError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disable_fast_launch_error(response)
+        } else {
+            crate::operation_deser::parse_disable_fast_launch_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DisableFastSnapshotRestores`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -11751,6 +11819,40 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableEbsEncryptionByDef
             crate::operation_deser::parse_enable_ebs_encryption_by_default_error(response)
         } else {
             crate::operation_deser::parse_enable_ebs_encryption_by_default_response(response)
+        }
+    }
+}
+
+/// Operation shape for `EnableFastLaunch`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`enable_fast_launch`](crate::client::Client::enable_fast_launch).
+///
+/// See [`crate::client::fluent_builders::EnableFastLaunch`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct EnableFastLaunch {
+    _private: (),
+}
+impl EnableFastLaunch {
+    /// Creates a new builder-style object to manufacture [`EnableFastLaunchInput`](crate::input::EnableFastLaunchInput)
+    pub fn builder() -> crate::input::enable_fast_launch_input::Builder {
+        crate::input::enable_fast_launch_input::Builder::default()
+    }
+    /// Creates a new `EnableFastLaunch` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for EnableFastLaunch {
+    type Output = std::result::Result<
+        crate::output::EnableFastLaunchOutput,
+        crate::error::EnableFastLaunchError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_enable_fast_launch_error(response)
+        } else {
+            crate::operation_deser::parse_enable_fast_launch_response(response)
         }
     }
 }

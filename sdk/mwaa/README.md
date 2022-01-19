@@ -5,6 +5,28 @@ feedback purposes only. Do not use this SDK for production workloads.**
 
 This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference documentation. For more information, see [What Is Amazon MWAA?](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html).
 
+__Endpoints__
+  - api.airflow.{region}.amazonaws.com - This endpoint is used for environment management.
+    - [CreateEnvironment](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateEnvironment.html)
+    - [DeleteEnvironment](https://docs.aws.amazon.com/mwaa/latest/API/API_DeleteEnvironment.html)
+    - [GetEnvironment](https://docs.aws.amazon.com/mwaa/latest/API/API_GetEnvironment.html)
+    - [ListEnvironments](https://docs.aws.amazon.com/mwaa/latest/API/API_ListEnvironments.html)
+    - [ListTagsForResource](https://docs.aws.amazon.com/mwaa/latest/API/API_ListTagsForResource.html)
+    - [TagResource](https://docs.aws.amazon.com/mwaa/latest/API/API_TagResource.html)
+    - [UntagResource](https://docs.aws.amazon.com/mwaa/latest/API/API_UntagResource.html)
+    - [UpdateEnvironment](https://docs.aws.amazon.com/mwaa/latest/API/API_UpdateEnvironment.html)
+
+  - env.airflow.{region}.amazonaws.com - This endpoint is used to operate the Airflow environment.
+    - [CreateCliToken](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html )
+    - [CreateWebLoginToken](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html)
+
+  - ops.airflow.{region}.amazonaws.com - This endpoint is used to push environment metrics that track environment health.
+    - [PublishMetrics](https://docs.aws.amazon.com/mwaa/latest/API/API_PublishMetrics.html )
+
+__Regions__
+
+For a list of regions that Amazon MWAA supports, see [Region availability](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html#regions-mwaa) in the _Amazon MWAA User Guide_.
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -16,8 +38,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.4.1"
-aws-sdk-mwaa = "0.4.1"
+aws-config = "0.5.0"
+aws-sdk-mwaa = "0.5.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

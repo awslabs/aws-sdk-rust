@@ -118,7 +118,7 @@ where
     ///   - [`permission_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateResourceSharePermission::permission_arn) / [`set_permission_arn(Option<String>)`](crate::client::fluent_builders::AssociateResourceSharePermission::set_permission_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     ///   - [`replace(bool)`](crate::client::fluent_builders::AssociateResourceSharePermission::replace) / [`set_replace(Option<bool>)`](crate::client::fluent_builders::AssociateResourceSharePermission::set_replace): <p>Specifies whether the specified permission should replace or add to the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. The default value is <code>false</code>.</p> <note>   <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>  </note>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::AssociateResourceSharePermission::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::AssociateResourceSharePermission::set_client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
-    ///   - [`permission_version(i32)`](crate::client::fluent_builders::AssociateResourceSharePermission::permission_version) / [`set_permission_version(Option<i32>)`](crate::client::fluent_builders::AssociateResourceSharePermission::set_permission_version): <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
+    ///   - [`permission_version(i32)`](crate::client::fluent_builders::AssociateResourceSharePermission::permission_version) / [`set_permission_version(Option<i32>)`](crate::client::fluent_builders::AssociateResourceSharePermission::set_permission_version): <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default. You can use the <code>ListPermissionVersions</code> operation to discover the available versions of a permission.</p>
     /// - On success, responds with [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput) with field(s):
     ///   - [`return_value(Option<bool>)`](crate::output::AssociateResourceSharePermissionOutput::return_value): <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     ///   - [`client_token(Option<String>)`](crate::output::AssociateResourceSharePermissionOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
@@ -312,6 +312,20 @@ where
     /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::error::ListPermissionsError)
     pub fn list_permissions(&self) -> fluent_builders::ListPermissions<C, M, R> {
         fluent_builders::ListPermissions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListPermissionVersions`](crate::client::fluent_builders::ListPermissionVersions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissionVersions::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`permission_arn(impl Into<String>)`](crate::client::fluent_builders::ListPermissionVersions::permission_arn) / [`set_permission_arn(Option<String>)`](crate::client::fluent_builders::ListPermissionVersions::set_permission_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the <code>permissionVersion</code> parameter on the <code>AssociateResourceSharePermission</code> operation to specify a non-default version to attach.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissionVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissionVersions::set_next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissionVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissionVersions::set_max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// - On success, responds with [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput) with field(s):
+    ///   - [`permissions(Option<Vec<ResourceSharePermissionSummary>>)`](crate::output::ListPermissionVersionsOutput::permissions): <p>An array of objects that contain details for each of the available versions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPermissionVersionsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<ListPermissionVersionsError>`](crate::error::ListPermissionVersionsError)
+    pub fn list_permission_versions(&self) -> fluent_builders::ListPermissionVersions<C, M, R> {
+        fluent_builders::ListPermissionVersions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListPrincipals`](crate::client::fluent_builders::ListPrincipals) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPrincipals::into_paginator).
@@ -791,12 +805,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
+        /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default. You can use the <code>ListPermissionVersions</code> operation to discover the available versions of a permission.</p>
         pub fn permission_version(mut self, input: i32) -> Self {
             self.inner = self.inner.permission_version(input);
             self
         }
-        /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
+        /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default. You can use the <code>ListPermissionVersions</code> operation to discover the available versions of a permission.</p>
         pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_permission_version(input);
             self
@@ -2244,6 +2258,105 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListPermissionVersions`.
+    ///
+    /// <p>Lists the available versions of the specified RAM permission.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListPermissionVersions<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_permission_versions_input::Builder,
+    }
+    impl<C, M, R> ListPermissionVersions<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListPermissionVersions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListPermissionVersionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListPermissionVersionsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListPermissionVersionsInputOperationOutputAlias,
+                crate::output::ListPermissionVersionsOutput,
+                crate::error::ListPermissionVersionsError,
+                crate::input::ListPermissionVersionsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPermissionVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPermissionVersionsPaginator<C, M, R> {
+            crate::paginator::ListPermissionVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the <code>permissionVersion</code> parameter on the <code>AssociateResourceSharePermission</code> operation to specify a non-default version to attach.</p>
+        pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arn(input.into());
+            self
+        }
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the <code>permissionVersion</code> parameter on the <code>AssociateResourceSharePermission</code> operation to specify a non-default version to attach.</p>
+        pub fn set_permission_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_arn(input);
             self
         }
         /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>

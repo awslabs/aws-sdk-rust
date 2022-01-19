@@ -1077,12 +1077,16 @@ pub mod create_association_input {
             self.name = input;
             self
         }
-        /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p>
+        /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p> <important>
+        /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+        /// </important>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
         }
-        /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p>
+        /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p> <important>
+        /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+        /// </important>
         pub fn set_document_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25301,12 +25305,16 @@ pub mod update_association_input {
             self.parameters = input;
             self
         }
-        /// <p>The document version you want update for the association. </p>
+        /// <p>The document version you want update for the association. </p> <important>
+        /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+        /// </important>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
         }
-        /// <p>The document version you want update for the association. </p>
+        /// <p>The document version you want update for the association. </p> <important>
+        /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+        /// </important>
         pub fn set_document_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29948,7 +29956,9 @@ pub struct UpdateAssociationInput {
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>The document version you want update for the association. </p>
+    /// <p>The document version you want update for the association. </p> <important>
+    /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+    /// </important>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The cron expression used to schedule the association that you want to update.</p>
     pub schedule_expression: std::option::Option<std::string::String>,
@@ -30003,7 +30013,9 @@ impl UpdateAssociationInput {
     > {
         self.parameters.as_ref()
     }
-    /// <p>The document version you want update for the association. </p>
+    /// <p>The document version you want update for the association. </p> <important>
+    /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+    /// </important>
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
@@ -35637,7 +35649,9 @@ pub struct CreateAssociationInput {
     /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p>
+    /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p> <important>
+    /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+    /// </important>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The managed node ID.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
@@ -35687,7 +35701,9 @@ impl CreateAssociationInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p>
+    /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p> <important>
+    /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
+    /// </important>
     pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }

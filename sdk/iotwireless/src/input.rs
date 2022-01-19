@@ -4009,6 +4009,201 @@ impl DeleteMulticastGroupInput {
     }
 }
 
+/// See [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput)
+pub mod delete_queued_messages_input {
+    /// A builder for [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) message_id: std::option::Option<std::string::String>,
+        pub(crate) wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
+    }
+    impl Builder {
+        /// <p>Id of a given wireless device which messages will be deleted </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>Id of a given wireless device which messages will be deleted </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
+            self
+        }
+        /// <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
+            self
+        }
+        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+        pub fn wireless_device_type(mut self, input: crate::model::WirelessDeviceType) -> Self {
+            self.wireless_device_type = Some(input);
+            self
+        }
+        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+        pub fn set_wireless_device_type(
+            mut self,
+            input: std::option::Option<crate::model::WirelessDeviceType>,
+        ) -> Self {
+            self.wireless_device_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteQueuedMessagesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteQueuedMessagesInput {
+                id: self.id,
+                message_id: self.message_id,
+                wireless_device_type: self.wireless_device_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteQueuedMessagesInputOperationOutputAlias = crate::operation::DeleteQueuedMessages;
+#[doc(hidden)]
+pub type DeleteQueuedMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteQueuedMessagesInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteQueuedMessages`](crate::operation::DeleteQueuedMessages)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteQueuedMessages,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteQueuedMessagesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_13 = &_input.id;
+            let input_13 =
+                input_13
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_13, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/wireless-devices/{Id}/data", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::DeleteQueuedMessagesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_14) = &_input.message_id {
+                query.push_kv("messageId", &aws_smithy_http::query::fmt_string(&inner_14));
+            }
+            if let Some(inner_15) = &_input.wireless_device_type {
+                query.push_kv(
+                    "WirelessDeviceType",
+                    &aws_smithy_http::query::fmt_string(&inner_15),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteQueuedMessagesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteQueuedMessagesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteQueuedMessages::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteQueuedMessages",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput)
+    pub fn builder() -> crate::input::delete_queued_messages_input::Builder {
+        crate::input::delete_queued_messages_input::Builder::default()
+    }
+}
+
 /// See [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput)
 pub mod delete_service_profile_input {
     /// A builder for [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput)
@@ -4061,15 +4256,15 @@ impl DeleteServiceProfileInput {
             _input: &crate::input::DeleteServiceProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.id;
-            let input_13 =
-                input_13
+            let input_16 = &_input.id;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_13, false);
+            let id = aws_smithy_http::label::fmt_string(input_16, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -4209,15 +4404,15 @@ impl DeleteWirelessDeviceInput {
             _input: &crate::input::DeleteWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_14 = &_input.id;
-            let input_14 =
-                input_14
+            let input_17 = &_input.id;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_14, false);
+            let id = aws_smithy_http::label::fmt_string(input_17, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -4357,15 +4552,15 @@ impl DeleteWirelessGatewayInput {
             _input: &crate::input::DeleteWirelessGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.id;
-            let input_15 =
-                input_15
+            let input_18 = &_input.id;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_15, false);
+            let id = aws_smithy_http::label::fmt_string(input_18, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -4506,15 +4701,15 @@ impl DeleteWirelessGatewayTaskInput {
             _input: &crate::input::DeleteWirelessGatewayTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_16 = &_input.id;
-            let input_16 =
-                input_16
+            let input_19 = &_input.id;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_16, false);
+            let id = aws_smithy_http::label::fmt_string(input_19, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -4657,15 +4852,15 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
             _input: &crate::input::DeleteWirelessGatewayTaskDefinitionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.id;
-            let input_17 =
-                input_17
+            let input_20 = &_input.id;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_17, false);
+            let id = aws_smithy_http::label::fmt_string(input_20, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -4830,15 +5025,15 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
             _input: &crate::input::DisassociateAwsAccountFromPartnerAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.partner_account_id;
-            let input_18 =
-                input_18
+            let input_21 = &_input.partner_account_id;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "partner_account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let partner_account_id = aws_smithy_http::label::fmt_string(input_18, false);
+            let partner_account_id = aws_smithy_http::label::fmt_string(input_21, false);
             if partner_account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "partner_account_id",
@@ -4858,10 +5053,10 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_19) = &_input.partner_type {
+            if let Some(inner_22) = &_input.partner_type {
                 query.push_kv(
                     "partnerType",
-                    &aws_smithy_http::query::fmt_string(&inner_19),
+                    &aws_smithy_http::query::fmt_string(&inner_22),
                 );
             }
             Ok(())
@@ -5016,30 +5211,30 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
             _input: &crate::input::DisassociateMulticastGroupFromFuotaTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_20 = &_input.id;
-            let input_20 =
-                input_20
+            let input_23 = &_input.id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_20, false);
+            let id = aws_smithy_http::label::fmt_string(input_23, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_21 = &_input.multicast_group_id;
-            let input_21 =
-                input_21
+            let input_24 = &_input.multicast_group_id;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multicast_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let multicast_group_id = aws_smithy_http::label::fmt_string(input_21, false);
+            let multicast_group_id = aws_smithy_http::label::fmt_string(input_24, false);
             if multicast_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "multicast_group_id",
@@ -5204,30 +5399,30 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
             _input: &crate::input::DisassociateWirelessDeviceFromFuotaTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_22 = &_input.id;
-            let input_22 =
-                input_22
+            let input_25 = &_input.id;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_22, false);
+            let id = aws_smithy_http::label::fmt_string(input_25, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_23 = &_input.wireless_device_id;
-            let input_23 =
-                input_23
+            let input_26 = &_input.wireless_device_id;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "wireless_device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let wireless_device_id = aws_smithy_http::label::fmt_string(input_23, false);
+            let wireless_device_id = aws_smithy_http::label::fmt_string(input_26, false);
             if wireless_device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "wireless_device_id",
@@ -5394,30 +5589,30 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
             _input: &crate::input::DisassociateWirelessDeviceFromMulticastGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_24 = &_input.id;
-            let input_24 =
-                input_24
+            let input_27 = &_input.id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_24, false);
+            let id = aws_smithy_http::label::fmt_string(input_27, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_25 = &_input.wireless_device_id;
-            let input_25 =
-                input_25
+            let input_28 = &_input.wireless_device_id;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "wireless_device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let wireless_device_id = aws_smithy_http::label::fmt_string(input_25, false);
+            let wireless_device_id = aws_smithy_http::label::fmt_string(input_28, false);
             if wireless_device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "wireless_device_id",
@@ -5566,15 +5761,15 @@ impl DisassociateWirelessDeviceFromThingInput {
             _input: &crate::input::DisassociateWirelessDeviceFromThingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_26 = &_input.id;
-            let input_26 =
-                input_26
+            let input_29 = &_input.id;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_26, false);
+            let id = aws_smithy_http::label::fmt_string(input_29, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5717,15 +5912,15 @@ impl DisassociateWirelessGatewayFromCertificateInput {
             _input: &crate::input::DisassociateWirelessGatewayFromCertificateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.id;
-            let input_27 =
-                input_27
+            let input_30 = &_input.id;
+            let input_30 =
+                input_30
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_27, false);
+            let id = aws_smithy_http::label::fmt_string(input_30, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -5869,15 +6064,15 @@ impl DisassociateWirelessGatewayFromThingInput {
             _input: &crate::input::DisassociateWirelessGatewayFromThingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_28 = &_input.id;
-            let input_28 =
-                input_28
+            let input_31 = &_input.id;
+            let input_31 =
+                input_31
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_28, false);
+            let id = aws_smithy_http::label::fmt_string(input_31, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6018,15 +6213,15 @@ impl GetDestinationInput {
             _input: &crate::input::GetDestinationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_29 = &_input.name;
-            let input_29 =
-                input_29
+            let input_32 = &_input.name;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_29, false);
+            let name = aws_smithy_http::label::fmt_string(input_32, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -6166,15 +6361,15 @@ impl GetDeviceProfileInput {
             _input: &crate::input::GetDeviceProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_30 = &_input.id;
-            let input_30 =
-                input_30
+            let input_33 = &_input.id;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_30, false);
+            let id = aws_smithy_http::label::fmt_string(input_33, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6314,15 +6509,15 @@ impl GetFuotaTaskInput {
             _input: &crate::input::GetFuotaTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_31 = &_input.id;
-            let input_31 =
-                input_31
+            let input_34 = &_input.id;
+            let input_34 =
+                input_34
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_31, false);
+            let id = aws_smithy_http::label::fmt_string(input_34, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6584,15 +6779,15 @@ impl GetMulticastGroupInput {
             _input: &crate::input::GetMulticastGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_32 = &_input.id;
-            let input_32 =
-                input_32
+            let input_35 = &_input.id;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_32, false);
+            let id = aws_smithy_http::label::fmt_string(input_35, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6733,15 +6928,15 @@ impl GetMulticastGroupSessionInput {
             _input: &crate::input::GetMulticastGroupSessionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_33 = &_input.id;
-            let input_33 =
-                input_33
+            let input_36 = &_input.id;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_33, false);
+            let id = aws_smithy_http::label::fmt_string(input_36, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -6889,15 +7084,15 @@ impl GetNetworkAnalyzerConfigurationInput {
             _input: &crate::input::GetNetworkAnalyzerConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_34 = &_input.configuration_name;
-            let input_34 =
-                input_34
+            let input_37 = &_input.configuration_name;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_name",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_name = aws_smithy_http::label::fmt_string(input_34, false);
+            let configuration_name = aws_smithy_http::label::fmt_string(input_37, false);
             if configuration_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_name",
@@ -7062,15 +7257,15 @@ impl GetPartnerAccountInput {
             _input: &crate::input::GetPartnerAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_35 = &_input.partner_account_id;
-            let input_35 =
-                input_35
+            let input_38 = &_input.partner_account_id;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "partner_account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let partner_account_id = aws_smithy_http::label::fmt_string(input_35, false);
+            let partner_account_id = aws_smithy_http::label::fmt_string(input_38, false);
             if partner_account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "partner_account_id",
@@ -7090,10 +7285,10 @@ impl GetPartnerAccountInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_36) = &_input.partner_type {
+            if let Some(inner_39) = &_input.partner_type {
                 query.push_kv(
                     "partnerType",
-                    &aws_smithy_http::query::fmt_string(&inner_36),
+                    &aws_smithy_http::query::fmt_string(&inner_39),
                 );
             }
             Ok(())
@@ -7263,15 +7458,15 @@ impl GetResourceEventConfigurationInput {
             _input: &crate::input::GetResourceEventConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_37 = &_input.identifier;
-            let input_37 =
-                input_37
+            let input_40 = &_input.identifier;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let identifier = aws_smithy_http::label::fmt_string(input_37, false);
+            let identifier = aws_smithy_http::label::fmt_string(input_40, false);
             if identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identifier",
@@ -7291,16 +7486,16 @@ impl GetResourceEventConfigurationInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_38) = &_input.identifier_type {
+            if let Some(inner_41) = &_input.identifier_type {
                 query.push_kv(
                     "identifierType",
-                    &aws_smithy_http::query::fmt_string(&inner_38),
+                    &aws_smithy_http::query::fmt_string(&inner_41),
                 );
             }
-            if let Some(inner_39) = &_input.partner_type {
+            if let Some(inner_42) = &_input.partner_type {
                 query.push_kv(
                     "partnerType",
-                    &aws_smithy_http::query::fmt_string(&inner_39),
+                    &aws_smithy_http::query::fmt_string(&inner_42),
                 );
             }
             Ok(())
@@ -7456,15 +7651,15 @@ impl GetResourceLogLevelInput {
             _input: &crate::input::GetResourceLogLevelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.resource_identifier;
-            let input_40 =
-                input_40
+            let input_43 = &_input.resource_identifier;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_identifier = aws_smithy_http::label::fmt_string(input_40, false);
+            let resource_identifier = aws_smithy_http::label::fmt_string(input_43, false);
             if resource_identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_identifier",
@@ -7484,10 +7679,10 @@ impl GetResourceLogLevelInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_41) = &_input.resource_type {
+            if let Some(inner_44) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_41),
+                    &aws_smithy_http::query::fmt_string(&inner_44),
                 );
             }
             Ok(())
@@ -7636,10 +7831,10 @@ impl GetServiceEndpointInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_42) = &_input.service_type {
+            if let Some(inner_45) = &_input.service_type {
                 query.push_kv(
                     "serviceType",
-                    &aws_smithy_http::query::fmt_string(&inner_42),
+                    &aws_smithy_http::query::fmt_string(&inner_45),
                 );
             }
             Ok(())
@@ -7775,15 +7970,15 @@ impl GetServiceProfileInput {
             _input: &crate::input::GetServiceProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_43 = &_input.id;
-            let input_43 =
-                input_43
+            let input_46 = &_input.id;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_43, false);
+            let id = aws_smithy_http::label::fmt_string(input_46, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -7940,15 +8135,15 @@ impl GetWirelessDeviceInput {
             _input: &crate::input::GetWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_44 = &_input.identifier;
-            let input_44 =
-                input_44
+            let input_47 = &_input.identifier;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let identifier = aws_smithy_http::label::fmt_string(input_44, false);
+            let identifier = aws_smithy_http::label::fmt_string(input_47, false);
             if identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identifier",
@@ -7968,10 +8163,10 @@ impl GetWirelessDeviceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_45) = &_input.identifier_type {
+            if let Some(inner_48) = &_input.identifier_type {
                 query.push_kv(
                     "identifierType",
-                    &aws_smithy_http::query::fmt_string(&inner_45),
+                    &aws_smithy_http::query::fmt_string(&inner_48),
                 );
             }
             Ok(())
@@ -8113,15 +8308,15 @@ impl GetWirelessDeviceStatisticsInput {
             _input: &crate::input::GetWirelessDeviceStatisticsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_46 = &_input.wireless_device_id;
-            let input_46 =
-                input_46
+            let input_49 = &_input.wireless_device_id;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "wireless_device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let wireless_device_id = aws_smithy_http::label::fmt_string(input_46, false);
+            let wireless_device_id = aws_smithy_http::label::fmt_string(input_49, false);
             if wireless_device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "wireless_device_id",
@@ -8283,15 +8478,15 @@ impl GetWirelessGatewayInput {
             _input: &crate::input::GetWirelessGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_47 = &_input.identifier;
-            let input_47 =
-                input_47
+            let input_50 = &_input.identifier;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let identifier = aws_smithy_http::label::fmt_string(input_47, false);
+            let identifier = aws_smithy_http::label::fmt_string(input_50, false);
             if identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identifier",
@@ -8311,10 +8506,10 @@ impl GetWirelessGatewayInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_48) = &_input.identifier_type {
+            if let Some(inner_51) = &_input.identifier_type {
                 query.push_kv(
                     "identifierType",
-                    &aws_smithy_http::query::fmt_string(&inner_48),
+                    &aws_smithy_http::query::fmt_string(&inner_51),
                 );
             }
             Ok(())
@@ -8452,15 +8647,15 @@ impl GetWirelessGatewayCertificateInput {
             _input: &crate::input::GetWirelessGatewayCertificateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_49 = &_input.id;
-            let input_49 =
-                input_49
+            let input_52 = &_input.id;
+            let input_52 =
+                input_52
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_49, false);
+            let id = aws_smithy_http::label::fmt_string(input_52, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -8603,15 +8798,15 @@ impl GetWirelessGatewayFirmwareInformationInput {
             _input: &crate::input::GetWirelessGatewayFirmwareInformationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_50 = &_input.id;
-            let input_50 =
-                input_50
+            let input_53 = &_input.id;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_50, false);
+            let id = aws_smithy_http::label::fmt_string(input_53, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -8763,15 +8958,15 @@ impl GetWirelessGatewayStatisticsInput {
             _input: &crate::input::GetWirelessGatewayStatisticsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_51 = &_input.wireless_gateway_id;
-            let input_51 =
-                input_51
+            let input_54 = &_input.wireless_gateway_id;
+            let input_54 =
+                input_54
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "wireless_gateway_id",
                         details: "cannot be empty or unset",
                     })?;
-            let wireless_gateway_id = aws_smithy_http::label::fmt_string(input_51, false);
+            let wireless_gateway_id = aws_smithy_http::label::fmt_string(input_54, false);
             if wireless_gateway_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "wireless_gateway_id",
@@ -8916,15 +9111,15 @@ impl GetWirelessGatewayTaskInput {
             _input: &crate::input::GetWirelessGatewayTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_52 = &_input.id;
-            let input_52 =
-                input_52
+            let input_55 = &_input.id;
+            let input_55 =
+                input_55
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_52, false);
+            let id = aws_smithy_http::label::fmt_string(input_55, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -9067,15 +9262,15 @@ impl GetWirelessGatewayTaskDefinitionInput {
             _input: &crate::input::GetWirelessGatewayTaskDefinitionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_53 = &_input.id;
-            let input_53 =
-                input_53
+            let input_56 = &_input.id;
+            let input_56 =
+                input_56
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_53, false);
+            let id = aws_smithy_http::label::fmt_string(input_56, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -9244,8 +9439,8 @@ impl ListDestinationsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_54) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+            if let Some(inner_57) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_57));
             }
             Ok(())
         }
@@ -9402,8 +9597,8 @@ impl ListDeviceProfilesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_55) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_55));
+            if let Some(inner_58) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_58));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -9566,8 +9761,8 @@ impl ListFuotaTasksInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_56) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
+            if let Some(inner_59) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_59));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -9730,8 +9925,8 @@ impl ListMulticastGroupsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_57) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_57));
+            if let Some(inner_60) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -9900,15 +10095,15 @@ impl ListMulticastGroupsByFuotaTaskInput {
             _input: &crate::input::ListMulticastGroupsByFuotaTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_58 = &_input.id;
-            let input_58 =
-                input_58
+            let input_61 = &_input.id;
+            let input_61 =
+                input_61
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_58, false);
+            let id = aws_smithy_http::label::fmt_string(input_61, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -9924,8 +10119,8 @@ impl ListMulticastGroupsByFuotaTaskInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_59) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_59));
+            if let Some(inner_62) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_62));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -10088,8 +10283,8 @@ impl ListPartnerAccountsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_60) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
+            if let Some(inner_63) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -10178,6 +10373,219 @@ impl ListPartnerAccountsInput {
     }
 }
 
+/// See [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput)
+pub mod list_queued_messages_input {
+    /// A builder for [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
+    }
+    impl Builder {
+        /// <p>Id of a given wireless device which the downlink packets are targeted </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>Id of a given wireless device which the downlink packets are targeted </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return in this operation.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+        pub fn wireless_device_type(mut self, input: crate::model::WirelessDeviceType) -> Self {
+            self.wireless_device_type = Some(input);
+            self
+        }
+        /// <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+        pub fn set_wireless_device_type(
+            mut self,
+            input: std::option::Option<crate::model::WirelessDeviceType>,
+        ) -> Self {
+            self.wireless_device_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListQueuedMessagesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListQueuedMessagesInput {
+                id: self.id,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                wireless_device_type: self.wireless_device_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListQueuedMessagesInputOperationOutputAlias = crate::operation::ListQueuedMessages;
+#[doc(hidden)]
+pub type ListQueuedMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListQueuedMessagesInput {
+    /// Consumes the builder and constructs an Operation<[`ListQueuedMessages`](crate::operation::ListQueuedMessages)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListQueuedMessages,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListQueuedMessagesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_64 = &_input.id;
+            let input_64 =
+                input_64
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let id = aws_smithy_http::label::fmt_string(input_64, false);
+            if id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/wireless-devices/{Id}/data", Id = id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListQueuedMessagesInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_65) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_65));
+            }
+            if _input.max_results != 0 {
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                );
+            }
+            if let Some(inner_66) = &_input.wireless_device_type {
+                query.push_kv(
+                    "WirelessDeviceType",
+                    &aws_smithy_http::query::fmt_string(&inner_66),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListQueuedMessagesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListQueuedMessagesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListQueuedMessages::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListQueuedMessages",
+            "iotwireless",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput)
+    pub fn builder() -> crate::input::list_queued_messages_input::Builder {
+        crate::input::list_queued_messages_input::Builder::default()
+    }
+}
+
 /// See [`ListServiceProfilesInput`](crate::input::ListServiceProfilesInput)
 pub mod list_service_profiles_input {
     /// A builder for [`ListServiceProfilesInput`](crate::input::ListServiceProfilesInput)
@@ -10252,8 +10660,8 @@ impl ListServiceProfilesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_61) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_61));
+            if let Some(inner_67) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -10404,10 +10812,10 @@ impl ListTagsForResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_62) = &_input.resource_arn {
+            if let Some(inner_68) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_62),
+                    &aws_smithy_http::query::fmt_string(&inner_68),
                 );
             }
             Ok(())
@@ -10661,43 +11069,43 @@ impl ListWirelessDevicesInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_63) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
+            if let Some(inner_69) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
             }
-            if let Some(inner_64) = &_input.destination_name {
+            if let Some(inner_70) = &_input.destination_name {
                 query.push_kv(
                     "destinationName",
-                    &aws_smithy_http::query::fmt_string(&inner_64),
+                    &aws_smithy_http::query::fmt_string(&inner_70),
                 );
             }
-            if let Some(inner_65) = &_input.device_profile_id {
+            if let Some(inner_71) = &_input.device_profile_id {
                 query.push_kv(
                     "deviceProfileId",
-                    &aws_smithy_http::query::fmt_string(&inner_65),
+                    &aws_smithy_http::query::fmt_string(&inner_71),
                 );
             }
-            if let Some(inner_66) = &_input.service_profile_id {
+            if let Some(inner_72) = &_input.service_profile_id {
                 query.push_kv(
                     "serviceProfileId",
-                    &aws_smithy_http::query::fmt_string(&inner_66),
+                    &aws_smithy_http::query::fmt_string(&inner_72),
                 );
             }
-            if let Some(inner_67) = &_input.wireless_device_type {
+            if let Some(inner_73) = &_input.wireless_device_type {
                 query.push_kv(
                     "wirelessDeviceType",
-                    &aws_smithy_http::query::fmt_string(&inner_67),
+                    &aws_smithy_http::query::fmt_string(&inner_73),
                 );
             }
-            if let Some(inner_68) = &_input.fuota_task_id {
+            if let Some(inner_74) = &_input.fuota_task_id {
                 query.push_kv(
                     "fuotaTaskId",
-                    &aws_smithy_http::query::fmt_string(&inner_68),
+                    &aws_smithy_http::query::fmt_string(&inner_74),
                 );
             }
-            if let Some(inner_69) = &_input.multicast_group_id {
+            if let Some(inner_75) = &_input.multicast_group_id {
                 query.push_kv(
                     "multicastGroupId",
-                    &aws_smithy_http::query::fmt_string(&inner_69),
+                    &aws_smithy_http::query::fmt_string(&inner_75),
                 );
             }
             Ok(())
@@ -10855,8 +11263,8 @@ impl ListWirelessGatewaysInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_70) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
+            if let Some(inner_76) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_76));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -11047,13 +11455,13 @@ impl ListWirelessGatewayTaskDefinitionsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_71) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+            if let Some(inner_77) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
             }
-            if let Some(inner_72) = &_input.task_definition_type {
+            if let Some(inner_78) = &_input.task_definition_type {
                 query.push_kv(
                     "taskDefinitionType",
-                    &aws_smithy_http::query::fmt_string(&inner_72),
+                    &aws_smithy_http::query::fmt_string(&inner_78),
                 );
             }
             Ok(())
@@ -11221,15 +11629,15 @@ impl PutResourceLogLevelInput {
             _input: &crate::input::PutResourceLogLevelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_73 = &_input.resource_identifier;
-            let input_73 =
-                input_73
+            let input_79 = &_input.resource_identifier;
+            let input_79 =
+                input_79
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_identifier = aws_smithy_http::label::fmt_string(input_73, false);
+            let resource_identifier = aws_smithy_http::label::fmt_string(input_79, false);
             if resource_identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_identifier",
@@ -11249,10 +11657,10 @@ impl PutResourceLogLevelInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_74) = &_input.resource_type {
+            if let Some(inner_80) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_74),
+                    &aws_smithy_http::query::fmt_string(&inner_80),
                 );
             }
             Ok(())
@@ -11546,15 +11954,15 @@ impl ResetResourceLogLevelInput {
             _input: &crate::input::ResetResourceLogLevelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_75 = &_input.resource_identifier;
-            let input_75 =
-                input_75
+            let input_81 = &_input.resource_identifier;
+            let input_81 =
+                input_81
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_identifier = aws_smithy_http::label::fmt_string(input_75, false);
+            let resource_identifier = aws_smithy_http::label::fmt_string(input_81, false);
             if resource_identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_identifier",
@@ -11574,10 +11982,10 @@ impl ResetResourceLogLevelInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_76) = &_input.resource_type {
+            if let Some(inner_82) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_76),
+                    &aws_smithy_http::query::fmt_string(&inner_82),
                 );
             }
             Ok(())
@@ -11743,15 +12151,15 @@ impl SendDataToMulticastGroupInput {
             _input: &crate::input::SendDataToMulticastGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_77 = &_input.id;
-            let input_77 =
-                input_77
+            let input_83 = &_input.id;
+            let input_83 =
+                input_83
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_77, false);
+            let id = aws_smithy_http::label::fmt_string(input_83, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -11950,15 +12358,15 @@ impl SendDataToWirelessDeviceInput {
             _input: &crate::input::SendDataToWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_78 = &_input.id;
-            let input_78 =
-                input_78
+            let input_84 = &_input.id;
+            let input_84 =
+                input_84
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_78, false);
+            let id = aws_smithy_http::label::fmt_string(input_84, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -12154,15 +12562,15 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
             _input: &crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_79 = &_input.id;
-            let input_79 =
-                input_79
+            let input_85 = &_input.id;
+            let input_85 =
+                input_85
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_79, false);
+            let id = aws_smithy_http::label::fmt_string(input_85, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -12359,15 +12767,15 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
             _input: &crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_80 = &_input.id;
-            let input_80 =
-                input_80
+            let input_86 = &_input.id;
+            let input_86 =
+                input_86
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_80, false);
+            let id = aws_smithy_http::label::fmt_string(input_86, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -12542,15 +12950,15 @@ impl StartFuotaTaskInput {
             _input: &crate::input::StartFuotaTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_81 = &_input.id;
-            let input_81 =
-                input_81
+            let input_87 = &_input.id;
+            let input_87 =
+                input_87
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_81, false);
+            let id = aws_smithy_http::label::fmt_string(input_87, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -12722,15 +13130,15 @@ impl StartMulticastGroupSessionInput {
             _input: &crate::input::StartMulticastGroupSessionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_82 = &_input.id;
-            let input_82 =
-                input_82
+            let input_88 = &_input.id;
+            let input_88 =
+                input_88
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_82, false);
+            let id = aws_smithy_http::label::fmt_string(input_88, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -12917,10 +13325,10 @@ impl TagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_83) = &_input.resource_arn {
+            if let Some(inner_89) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_83),
+                    &aws_smithy_http::query::fmt_string(&inner_89),
                 );
             }
             Ok(())
@@ -13069,15 +13477,15 @@ impl TestWirelessDeviceInput {
             _input: &crate::input::TestWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_84 = &_input.id;
-            let input_84 =
-                input_84
+            let input_90 = &_input.id;
+            let input_90 =
+                input_90
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_84, false);
+            let id = aws_smithy_http::label::fmt_string(input_90, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -13249,15 +13657,15 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_85) = &_input.resource_arn {
+            if let Some(inner_91) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_85),
+                    &aws_smithy_http::query::fmt_string(&inner_91),
                 );
             }
-            if let Some(inner_86) = &_input.tag_keys {
-                for inner_87 in inner_86 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_87));
+            if let Some(inner_92) = &_input.tag_keys {
+                for inner_93 in inner_92 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_93));
                 }
             }
             Ok(())
@@ -13446,15 +13854,15 @@ impl UpdateDestinationInput {
             _input: &crate::input::UpdateDestinationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_88 = &_input.name;
-            let input_88 =
-                input_88
+            let input_94 = &_input.name;
+            let input_94 =
+                input_94
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_88, false);
+            let name = aws_smithy_http::label::fmt_string(input_94, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -13679,15 +14087,15 @@ impl UpdateFuotaTaskInput {
             _input: &crate::input::UpdateFuotaTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_89 = &_input.id;
-            let input_89 =
-                input_89
+            let input_95 = &_input.id;
+            let input_95 =
+                input_95
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_89, false);
+            let id = aws_smithy_http::label::fmt_string(input_95, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -14087,15 +14495,15 @@ impl UpdateMulticastGroupInput {
             _input: &crate::input::UpdateMulticastGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_90 = &_input.id;
-            let input_90 =
-                input_90
+            let input_96 = &_input.id;
+            let input_96 =
+                input_96
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_90, false);
+            let id = aws_smithy_http::label::fmt_string(input_96, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -14363,15 +14771,15 @@ impl UpdateNetworkAnalyzerConfigurationInput {
             _input: &crate::input::UpdateNetworkAnalyzerConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_91 = &_input.configuration_name;
-            let input_91 =
-                input_91
+            let input_97 = &_input.configuration_name;
+            let input_97 =
+                input_97
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_name",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_name = aws_smithy_http::label::fmt_string(input_91, false);
+            let configuration_name = aws_smithy_http::label::fmt_string(input_97, false);
             if configuration_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_name",
@@ -14566,15 +14974,15 @@ impl UpdatePartnerAccountInput {
             _input: &crate::input::UpdatePartnerAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_92 = &_input.partner_account_id;
-            let input_92 =
-                input_92
+            let input_98 = &_input.partner_account_id;
+            let input_98 =
+                input_98
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "partner_account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let partner_account_id = aws_smithy_http::label::fmt_string(input_92, false);
+            let partner_account_id = aws_smithy_http::label::fmt_string(input_98, false);
             if partner_account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "partner_account_id",
@@ -14594,10 +15002,10 @@ impl UpdatePartnerAccountInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_93) = &_input.partner_type {
+            if let Some(inner_99) = &_input.partner_type {
                 query.push_kv(
                     "partnerType",
-                    &aws_smithy_http::query::fmt_string(&inner_93),
+                    &aws_smithy_http::query::fmt_string(&inner_99),
                 );
             }
             Ok(())
@@ -14817,15 +15225,15 @@ impl UpdateResourceEventConfigurationInput {
             _input: &crate::input::UpdateResourceEventConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_94 = &_input.identifier;
-            let input_94 =
-                input_94
+            let input_100 = &_input.identifier;
+            let input_100 =
+                input_100
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "identifier",
                         details: "cannot be empty or unset",
                     })?;
-            let identifier = aws_smithy_http::label::fmt_string(input_94, false);
+            let identifier = aws_smithy_http::label::fmt_string(input_100, false);
             if identifier.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "identifier",
@@ -14845,16 +15253,16 @@ impl UpdateResourceEventConfigurationInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_95) = &_input.identifier_type {
+            if let Some(inner_101) = &_input.identifier_type {
                 query.push_kv(
                     "identifierType",
-                    &aws_smithy_http::query::fmt_string(&inner_95),
+                    &aws_smithy_http::query::fmt_string(&inner_101),
                 );
             }
-            if let Some(inner_96) = &_input.partner_type {
+            if let Some(inner_102) = &_input.partner_type {
                 query.push_kv(
                     "partnerType",
-                    &aws_smithy_http::query::fmt_string(&inner_96),
+                    &aws_smithy_http::query::fmt_string(&inner_102),
                 );
             }
             Ok(())
@@ -15061,15 +15469,15 @@ impl UpdateWirelessDeviceInput {
             _input: &crate::input::UpdateWirelessDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_97 = &_input.id;
-            let input_97 =
-                input_97
+            let input_103 = &_input.id;
+            let input_103 =
+                input_103
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_97, false);
+            let id = aws_smithy_http::label::fmt_string(input_103, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -15294,15 +15702,15 @@ impl UpdateWirelessGatewayInput {
             _input: &crate::input::UpdateWirelessGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_98 = &_input.id;
-            let input_98 =
-                input_98
+            let input_104 = &_input.id;
+            let input_104 =
+                input_104
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = aws_smithy_http::label::fmt_string(input_98, false);
+            let id = aws_smithy_http::label::fmt_string(input_104, false);
             if id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
@@ -16392,6 +16800,48 @@ impl std::fmt::Debug for ListServiceProfilesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListQueuedMessagesInput {
+    /// <p>Id of a given wireless device which the downlink packets are targeted </p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub max_results: i32,
+    /// <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+    pub wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
+}
+impl ListQueuedMessagesInput {
+    /// <p>Id of a given wireless device which the downlink packets are targeted </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The wireless device type, it is either Sidewalk or LoRaWAN.</p>
+    pub fn wireless_device_type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+        self.wireless_device_type.as_ref()
+    }
+}
+impl std::fmt::Debug for ListQueuedMessagesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListQueuedMessagesInput");
+        formatter.field("id", &self.id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("wireless_device_type", &self.wireless_device_type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartnerAccountsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -17292,6 +17742,41 @@ impl std::fmt::Debug for DeleteServiceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteServiceProfileInput");
         formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteQueuedMessagesInput {
+    /// <p>Id of a given wireless device which messages will be deleted </p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
+    pub message_id: std::option::Option<std::string::String>,
+    /// <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+    pub wireless_device_type: std::option::Option<crate::model::WirelessDeviceType>,
+}
+impl DeleteQueuedMessagesInput {
+    /// <p>Id of a given wireless device which messages will be deleted </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise, the specific message with messageId will be deleted </p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The wireless device type, it is either Sidewalk or LoRaWAN. </p>
+    pub fn wireless_device_type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+        self.wireless_device_type.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteQueuedMessagesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteQueuedMessagesInput");
+        formatter.field("id", &self.id);
+        formatter.field("message_id", &self.message_id);
+        formatter.field("wireless_device_type", &self.wireless_device_type);
         formatter.finish()
     }
 }

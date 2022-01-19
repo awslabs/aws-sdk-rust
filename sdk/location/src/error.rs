@@ -1194,6 +1194,151 @@ impl std::error::Error for CalculateRouteError {
     }
 }
 
+/// Error type for the `CalculateRouteMatrix` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CalculateRouteMatrixError {
+    /// Kind of error that occurred.
+    pub kind: CalculateRouteMatrixErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CalculateRouteMatrix` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CalculateRouteMatrixErrorKind {
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource that you've entered was not found in your AWS account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input failed to meet the constraints specified by the AWS service. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CalculateRouteMatrixError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CalculateRouteMatrixErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CalculateRouteMatrixErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CalculateRouteMatrixErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CalculateRouteMatrixErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CalculateRouteMatrixErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CalculateRouteMatrixErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CalculateRouteMatrixError {
+    fn code(&self) -> Option<&str> {
+        CalculateRouteMatrixError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            CalculateRouteMatrixErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CalculateRouteMatrixErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl CalculateRouteMatrixError {
+    /// Creates a new `CalculateRouteMatrixError`.
+    pub fn new(kind: CalculateRouteMatrixErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CalculateRouteMatrixError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CalculateRouteMatrixErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CalculateRouteMatrixError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CalculateRouteMatrixErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CalculateRouteMatrixErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CalculateRouteMatrixErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CalculateRouteMatrixErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CalculateRouteMatrixErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CalculateRouteMatrixErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CalculateRouteMatrixErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CalculateRouteMatrixErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CalculateRouteMatrixErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CalculateRouteMatrixErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CalculateRouteMatrixErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CalculateRouteMatrixError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CalculateRouteMatrixErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CalculateRouteMatrixErrorKind::InternalServerException(_inner) => Some(_inner),
+            CalculateRouteMatrixErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CalculateRouteMatrixErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CalculateRouteMatrixErrorKind::ValidationException(_inner) => Some(_inner),
+            CalculateRouteMatrixErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateGeofenceCollection` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

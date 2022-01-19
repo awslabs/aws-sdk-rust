@@ -2746,7 +2746,7 @@ pub struct StreamingSession {
     pub ec2_instance_type: std::option::Option<std::string::String>,
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The user ID of the user that owns the streaming session.</p>
+    /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>The session ID.</p>
     pub session_id: std::option::Option<std::string::String>,
@@ -2799,7 +2799,7 @@ impl StreamingSession {
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
-    /// <p>The user ID of the user that owns the streaming session.</p>
+    /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub fn owned_by(&self) -> std::option::Option<&str> {
         self.owned_by.as_deref()
     }
@@ -2978,12 +2978,12 @@ pub mod streaming_session {
             self.launch_profile_id = input;
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
         pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.owned_by = Some(input.into());
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
         pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owned_by = input;
             self
@@ -3219,6 +3219,8 @@ pub enum StreamingSessionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     ActiveDirectoryDomainJoinError,
     #[allow(missing_docs)] // documentation missing in model
+    AmiValidationError,
+    #[allow(missing_docs)] // documentation missing in model
     DecryptStreamingImageError,
     #[allow(missing_docs)] // documentation missing in model
     InitializationScriptError,
@@ -3255,6 +3257,7 @@ impl std::convert::From<&str> for StreamingSessionStatusCode {
             "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR" => {
                 StreamingSessionStatusCode::ActiveDirectoryDomainJoinError
             }
+            "AMI_VALIDATION_ERROR" => StreamingSessionStatusCode::AmiValidationError,
             "DECRYPT_STREAMING_IMAGE_ERROR" => {
                 StreamingSessionStatusCode::DecryptStreamingImageError
             }
@@ -3297,6 +3300,7 @@ impl StreamingSessionStatusCode {
             StreamingSessionStatusCode::ActiveDirectoryDomainJoinError => {
                 "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR"
             }
+            StreamingSessionStatusCode::AmiValidationError => "AMI_VALIDATION_ERROR",
             StreamingSessionStatusCode::DecryptStreamingImageError => {
                 "DECRYPT_STREAMING_IMAGE_ERROR"
             }
@@ -3328,6 +3332,7 @@ impl StreamingSessionStatusCode {
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR",
+            "AMI_VALIDATION_ERROR",
             "DECRYPT_STREAMING_IMAGE_ERROR",
             "INITIALIZATION_SCRIPT_ERROR",
             "INSUFFICIENT_CAPACITY",
@@ -3464,7 +3469,7 @@ pub struct StreamingSessionStream {
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
     pub expires_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The user ID of the user that owns the streaming session.</p>
+    /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>The current state.</p>
     pub state: std::option::Option<crate::model::StreamingSessionStreamState>,
@@ -3488,7 +3493,7 @@ impl StreamingSessionStream {
     pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
-    /// <p>The user ID of the user that owns the streaming session.</p>
+    /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub fn owned_by(&self) -> std::option::Option<&str> {
         self.owned_by.as_deref()
     }
@@ -3577,12 +3582,12 @@ pub mod streaming_session_stream {
             self.expires_at = input;
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
         pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.owned_by = Some(input.into());
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
         pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owned_by = input;
             self
@@ -5658,6 +5663,8 @@ pub struct LaunchProfile {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
+    /// <p>The list of the latest validation results.</p>
+    pub validation_results: std::option::Option<std::vec::Vec<crate::model::ValidationResult>>,
 }
 impl LaunchProfile {
     /// <p>The ARN of the resource.</p>
@@ -5727,6 +5734,10 @@ impl LaunchProfile {
     pub fn updated_by(&self) -> std::option::Option<&str> {
         self.updated_by.as_deref()
     }
+    /// <p>The list of the latest validation results.</p>
+    pub fn validation_results(&self) -> std::option::Option<&[crate::model::ValidationResult]> {
+        self.validation_results.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5750,6 +5761,7 @@ impl std::fmt::Debug for LaunchProfile {
         formatter.field("tags", &self.tags);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("validation_results", &self.validation_results);
         formatter.finish()
     }
 }
@@ -5778,6 +5790,8 @@ pub mod launch_profile {
         >,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
+        pub(crate) validation_results:
+            std::option::Option<std::vec::Vec<crate::model::ValidationResult>>,
     }
     impl Builder {
         /// <p>The ARN of the resource.</p>
@@ -6006,6 +6020,25 @@ pub mod launch_profile {
             self.updated_by = input;
             self
         }
+        /// Appends an item to `validation_results`.
+        ///
+        /// To override the contents of this collection use [`set_validation_results`](Self::set_validation_results).
+        ///
+        /// <p>The list of the latest validation results.</p>
+        pub fn validation_results(mut self, input: crate::model::ValidationResult) -> Self {
+            let mut v = self.validation_results.unwrap_or_default();
+            v.push(input);
+            self.validation_results = Some(v);
+            self
+        }
+        /// <p>The list of the latest validation results.</p>
+        pub fn set_validation_results(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidationResult>>,
+        ) -> Self {
+            self.validation_results = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LaunchProfile`](crate::model::LaunchProfile)
         pub fn build(self) -> crate::model::LaunchProfile {
             crate::model::LaunchProfile {
@@ -6025,6 +6058,7 @@ pub mod launch_profile {
                 tags: self.tags,
                 updated_at: self.updated_at,
                 updated_by: self.updated_by,
+                validation_results: self.validation_results,
             }
         }
     }
@@ -6033,6 +6067,385 @@ impl LaunchProfile {
     /// Creates a new builder-style object to manufacture [`LaunchProfile`](crate::model::LaunchProfile)
     pub fn builder() -> crate::model::launch_profile::Builder {
         crate::model::launch_profile::Builder::default()
+    }
+}
+
+/// <p>The launch profile validation result.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValidationResult {
+    /// <p>The type of the validation result.</p>
+    pub r#type: std::option::Option<crate::model::LaunchProfileValidationType>,
+    /// <p>The current state.</p>
+    pub state: std::option::Option<crate::model::LaunchProfileValidationState>,
+    /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
+    pub status_code: std::option::Option<crate::model::LaunchProfileValidationStatusCode>,
+    /// <p>The status message for the validation result.</p>
+    pub status_message: std::option::Option<std::string::String>,
+}
+impl ValidationResult {
+    /// <p>The type of the validation result.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LaunchProfileValidationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The current state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::LaunchProfileValidationState> {
+        self.state.as_ref()
+    }
+    /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
+    pub fn status_code(
+        &self,
+    ) -> std::option::Option<&crate::model::LaunchProfileValidationStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>The status message for the validation result.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+}
+impl std::fmt::Debug for ValidationResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidationResult");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("state", &self.state);
+        formatter.field("status_code", &self.status_code);
+        formatter.field("status_message", &self.status_message);
+        formatter.finish()
+    }
+}
+/// See [`ValidationResult`](crate::model::ValidationResult)
+pub mod validation_result {
+    /// A builder for [`ValidationResult`](crate::model::ValidationResult)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::LaunchProfileValidationType>,
+        pub(crate) state: std::option::Option<crate::model::LaunchProfileValidationState>,
+        pub(crate) status_code:
+            std::option::Option<crate::model::LaunchProfileValidationStatusCode>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of the validation result.</p>
+        pub fn r#type(mut self, input: crate::model::LaunchProfileValidationType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of the validation result.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::LaunchProfileValidationType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The current state.</p>
+        pub fn state(mut self, input: crate::model::LaunchProfileValidationState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::LaunchProfileValidationState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
+        pub fn status_code(
+            mut self,
+            input: crate::model::LaunchProfileValidationStatusCode,
+        ) -> Self {
+            self.status_code = Some(input);
+            self
+        }
+        /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
+        pub fn set_status_code(
+            mut self,
+            input: std::option::Option<crate::model::LaunchProfileValidationStatusCode>,
+        ) -> Self {
+            self.status_code = input;
+            self
+        }
+        /// <p>The status message for the validation result.</p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p>The status message for the validation result.</p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValidationResult`](crate::model::ValidationResult)
+        pub fn build(self) -> crate::model::ValidationResult {
+            crate::model::ValidationResult {
+                r#type: self.r#type,
+                state: self.state,
+                status_code: self.status_code,
+                status_message: self.status_message,
+            }
+        }
+    }
+}
+impl ValidationResult {
+    /// Creates a new builder-style object to manufacture [`ValidationResult`](crate::model::ValidationResult)
+    pub fn builder() -> crate::model::validation_result::Builder {
+        crate::model::validation_result::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LaunchProfileValidationStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationFailedInternalServerError,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationFailedInvalidActiveDirectory,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationFailedInvalidSecurityGroupAssociation,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationFailedInvalidSubnetRouteTableAssociation,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationFailedSubnetNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationFailedUnauthorized,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationNotStarted,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationSuccess,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LaunchProfileValidationStatusCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationStatusCode::ValidationFailedInternalServerError,
+            "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY" => LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory,
+            "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation,
+            "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation,
+            "VALIDATION_FAILED_SUBNET_NOT_FOUND" => LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound,
+            "VALIDATION_FAILED_UNAUTHORIZED" => LaunchProfileValidationStatusCode::ValidationFailedUnauthorized,
+            "VALIDATION_IN_PROGRESS" => LaunchProfileValidationStatusCode::ValidationInProgress,
+            "VALIDATION_NOT_STARTED" => LaunchProfileValidationStatusCode::ValidationNotStarted,
+            "VALIDATION_SUCCESS" => LaunchProfileValidationStatusCode::ValidationSuccess,
+            other => LaunchProfileValidationStatusCode::Unknown(other.to_owned())
+        }
+    }
+}
+impl std::str::FromStr for LaunchProfileValidationStatusCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LaunchProfileValidationStatusCode::from(s))
+    }
+}
+impl LaunchProfileValidationStatusCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LaunchProfileValidationStatusCode::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
+            LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory => "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY",
+            LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation => "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION",
+            LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation => "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION",
+            LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound => "VALIDATION_FAILED_SUBNET_NOT_FOUND",
+            LaunchProfileValidationStatusCode::ValidationFailedUnauthorized => "VALIDATION_FAILED_UNAUTHORIZED",
+            LaunchProfileValidationStatusCode::ValidationInProgress => "VALIDATION_IN_PROGRESS",
+            LaunchProfileValidationStatusCode::ValidationNotStarted => "VALIDATION_NOT_STARTED",
+            LaunchProfileValidationStatusCode::ValidationSuccess => "VALIDATION_SUCCESS",
+            LaunchProfileValidationStatusCode::Unknown(s) => s.as_ref()
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
+            "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY",
+            "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION",
+            "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION",
+            "VALIDATION_FAILED_SUBNET_NOT_FOUND",
+            "VALIDATION_FAILED_UNAUTHORIZED",
+            "VALIDATION_IN_PROGRESS",
+            "VALIDATION_NOT_STARTED",
+            "VALIDATION_SUCCESS",
+        ]
+    }
+}
+impl AsRef<str> for LaunchProfileValidationStatusCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LaunchProfileValidationState {
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationFailedInternalServerError,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationNotStarted,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationSuccess,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LaunchProfileValidationState {
+    fn from(s: &str) -> Self {
+        match s {
+            "VALIDATION_FAILED" => LaunchProfileValidationState::ValidationFailed,
+            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => {
+                LaunchProfileValidationState::ValidationFailedInternalServerError
+            }
+            "VALIDATION_IN_PROGRESS" => LaunchProfileValidationState::ValidationInProgress,
+            "VALIDATION_NOT_STARTED" => LaunchProfileValidationState::ValidationNotStarted,
+            "VALIDATION_SUCCESS" => LaunchProfileValidationState::ValidationSuccess,
+            other => LaunchProfileValidationState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LaunchProfileValidationState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LaunchProfileValidationState::from(s))
+    }
+}
+impl LaunchProfileValidationState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LaunchProfileValidationState::ValidationFailed => "VALIDATION_FAILED",
+            LaunchProfileValidationState::ValidationFailedInternalServerError => {
+                "VALIDATION_FAILED_INTERNAL_SERVER_ERROR"
+            }
+            LaunchProfileValidationState::ValidationInProgress => "VALIDATION_IN_PROGRESS",
+            LaunchProfileValidationState::ValidationNotStarted => "VALIDATION_NOT_STARTED",
+            LaunchProfileValidationState::ValidationSuccess => "VALIDATION_SUCCESS",
+            LaunchProfileValidationState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "VALIDATION_FAILED",
+            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
+            "VALIDATION_IN_PROGRESS",
+            "VALIDATION_NOT_STARTED",
+            "VALIDATION_SUCCESS",
+        ]
+    }
+}
+impl AsRef<str> for LaunchProfileValidationState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LaunchProfileValidationType {
+    #[allow(missing_docs)] // documentation missing in model
+    ValidateActiveDirectoryStudioComponent,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidateNetworkAclAssociation,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidateSecurityGroupAssociation,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidateSubnetAssociation,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LaunchProfileValidationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT" => {
+                LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent
+            }
+            "VALIDATE_NETWORK_ACL_ASSOCIATION" => {
+                LaunchProfileValidationType::ValidateNetworkAclAssociation
+            }
+            "VALIDATE_SECURITY_GROUP_ASSOCIATION" => {
+                LaunchProfileValidationType::ValidateSecurityGroupAssociation
+            }
+            "VALIDATE_SUBNET_ASSOCIATION" => LaunchProfileValidationType::ValidateSubnetAssociation,
+            other => LaunchProfileValidationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LaunchProfileValidationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LaunchProfileValidationType::from(s))
+    }
+}
+impl LaunchProfileValidationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => {
+                "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT"
+            }
+            LaunchProfileValidationType::ValidateNetworkAclAssociation => {
+                "VALIDATE_NETWORK_ACL_ASSOCIATION"
+            }
+            LaunchProfileValidationType::ValidateSecurityGroupAssociation => {
+                "VALIDATE_SECURITY_GROUP_ASSOCIATION"
+            }
+            LaunchProfileValidationType::ValidateSubnetAssociation => "VALIDATE_SUBNET_ASSOCIATION",
+            LaunchProfileValidationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT",
+            "VALIDATE_NETWORK_ACL_ASSOCIATION",
+            "VALIDATE_SECURITY_GROUP_ASSOCIATION",
+            "VALIDATE_SUBNET_ASSOCIATION",
+        ]
+    }
+}
+impl AsRef<str> for LaunchProfileValidationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6049,8 +6462,8 @@ pub struct StreamConfiguration {
     /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
     pub streaming_image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call StopStreamingSession, the session fails. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be terminated by AWS (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call StopStreamingSession to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be stopped by AWS (instead of terminated).</p>
+    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
     pub max_stopped_session_length_in_minutes: i32,
     /// <p>(Optional) The upload storage for a streaming session.</p>
     pub session_storage: std::option::Option<crate::model::StreamConfigurationSessionStorage>,
@@ -6075,8 +6488,8 @@ impl StreamConfiguration {
         self.streaming_image_ids.as_deref()
     }
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call StopStreamingSession, the session fails. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be terminated by AWS (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call StopStreamingSession to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be stopped by AWS (instead of terminated).</p>
+    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
     pub fn max_stopped_session_length_in_minutes(&self) -> i32 {
         self.max_stopped_session_length_in_minutes
     }
@@ -6186,15 +6599,15 @@ pub mod stream_configuration {
             self
         }
         /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call StopStreamingSession, the session fails. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be terminated by AWS (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call StopStreamingSession to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be stopped by AWS (instead of terminated).</p>
+        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
         pub fn max_stopped_session_length_in_minutes(mut self, input: i32) -> Self {
             self.max_stopped_session_length_in_minutes = Some(input);
             self
         }
         /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call StopStreamingSession, the session fails. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be terminated by AWS (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call StopStreamingSession to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be stopped by AWS (instead of terminated).</p>
+        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
         pub fn set_max_stopped_session_length_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -6383,17 +6796,17 @@ impl AsRef<str> for StreamingSessionStorageMode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingSessionStorageRoot {
-    /// <p>The folder path in Linux workstations where files are uploaded. The default path is <code>$HOME/Downloads</code>.</p>
+    /// <p>The folder path in Linux workstations where files are uploaded.</p>
     pub linux: std::option::Option<std::string::String>,
-    /// <p>The folder path in Windows workstations where files are uploaded. The default path is <code>%HOMEPATH%\Downloads</code>.</p>
+    /// <p>The folder path in Windows workstations where files are uploaded.</p>
     pub windows: std::option::Option<std::string::String>,
 }
 impl StreamingSessionStorageRoot {
-    /// <p>The folder path in Linux workstations where files are uploaded. The default path is <code>$HOME/Downloads</code>.</p>
+    /// <p>The folder path in Linux workstations where files are uploaded.</p>
     pub fn linux(&self) -> std::option::Option<&str> {
         self.linux.as_deref()
     }
-    /// <p>The folder path in Windows workstations where files are uploaded. The default path is <code>%HOMEPATH%\Downloads</code>.</p>
+    /// <p>The folder path in Windows workstations where files are uploaded.</p>
     pub fn windows(&self) -> std::option::Option<&str> {
         self.windows.as_deref()
     }
@@ -6416,22 +6829,22 @@ pub mod streaming_session_storage_root {
         pub(crate) windows: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The folder path in Linux workstations where files are uploaded. The default path is <code>$HOME/Downloads</code>.</p>
+        /// <p>The folder path in Linux workstations where files are uploaded.</p>
         pub fn linux(mut self, input: impl Into<std::string::String>) -> Self {
             self.linux = Some(input.into());
             self
         }
-        /// <p>The folder path in Linux workstations where files are uploaded. The default path is <code>$HOME/Downloads</code>.</p>
+        /// <p>The folder path in Linux workstations where files are uploaded.</p>
         pub fn set_linux(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.linux = input;
             self
         }
-        /// <p>The folder path in Windows workstations where files are uploaded. The default path is <code>%HOMEPATH%\Downloads</code>.</p>
+        /// <p>The folder path in Windows workstations where files are uploaded.</p>
         pub fn windows(mut self, input: impl Into<std::string::String>) -> Self {
             self.windows = Some(input.into());
             self
         }
-        /// <p>The folder path in Windows workstations where files are uploaded. The default path is <code>%HOMEPATH%\Downloads</code>.</p>
+        /// <p>The folder path in Windows workstations where files are uploaded.</p>
         pub fn set_windows(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.windows = input;
             self
@@ -6737,8 +7150,8 @@ pub struct StreamConfigurationCreate {
     /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
     pub streaming_image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call StopStreamingSession, the session fails. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be terminated by AWS (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call StopStreamingSession to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be stopped by AWS (instead of terminated).</p>
+    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
     pub max_stopped_session_length_in_minutes: i32,
     /// <p>(Optional) The upload storage for a streaming workstation that is created using this launch profile.</p>
     pub session_storage: std::option::Option<crate::model::StreamConfigurationSessionStorage>,
@@ -6763,8 +7176,8 @@ impl StreamConfigurationCreate {
         self.streaming_image_ids.as_deref()
     }
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call StopStreamingSession, the session fails. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be terminated by AWS (instead of stopped).</p>
-    /// <p>If the value is set to a positive number, the session can be stopped. You can call StopStreamingSession to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be stopped by AWS (instead of terminated).</p>
+    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
     pub fn max_stopped_session_length_in_minutes(&self) -> i32 {
         self.max_stopped_session_length_in_minutes
     }
@@ -6874,15 +7287,15 @@ pub mod stream_configuration_create {
             self
         }
         /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call StopStreamingSession, the session fails. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be terminated by AWS (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call StopStreamingSession to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be stopped by AWS (instead of terminated).</p>
+        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
         pub fn max_stopped_session_length_in_minutes(mut self, input: i32) -> Self {
             self.max_stopped_session_length_in_minutes = Some(input);
             self
         }
         /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
-        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call StopStreamingSession, the session fails. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be terminated by AWS (instead of stopped).</p>
-        /// <p>If the value is set to a positive number, the session can be stopped. You can call StopStreamingSession to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will automatically be stopped by AWS (instead of terminated).</p>
+        /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated by AWS (instead of stopped).</p>
+        /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the READY state. If the time that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped by AWS (instead of terminated).</p>
         pub fn set_max_stopped_session_length_in_minutes(
             mut self,
             input: std::option::Option<i32>,

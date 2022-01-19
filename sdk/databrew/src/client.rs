@@ -122,7 +122,7 @@ where
     ///   - [`log_subscription(LogSubscription)`](crate::client::fluent_builders::CreateProfileJob::log_subscription) / [`set_log_subscription(Option<LogSubscription>)`](crate::client::fluent_builders::CreateProfileJob::set_log_subscription): <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     ///   - [`max_capacity(i32)`](crate::client::fluent_builders::CreateProfileJob::max_capacity) / [`set_max_capacity(i32)`](crate::client::fluent_builders::CreateProfileJob::set_max_capacity): <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
     ///   - [`max_retries(i32)`](crate::client::fluent_builders::CreateProfileJob::max_retries) / [`set_max_retries(i32)`](crate::client::fluent_builders::CreateProfileJob::set_max_retries): <p>The maximum number of times to retry the job after a job run fails.</p>
-    ///   - [`output_location(S3Location)`](crate::client::fluent_builders::CreateProfileJob::output_location) / [`set_output_location(Option<S3Location>)`](crate::client::fluent_builders::CreateProfileJob::set_output_location): <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    ///   - [`output_location(S3Location)`](crate::client::fluent_builders::CreateProfileJob::output_location) / [`set_output_location(Option<S3Location>)`](crate::client::fluent_builders::CreateProfileJob::set_output_location): <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     ///   - [`configuration(ProfileConfiguration)`](crate::client::fluent_builders::CreateProfileJob::configuration) / [`set_configuration(Option<ProfileConfiguration>)`](crate::client::fluent_builders::CreateProfileJob::set_configuration): <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     ///   - [`validation_configurations(Vec<ValidationConfiguration>)`](crate::client::fluent_builders::CreateProfileJob::validation_configurations) / [`set_validation_configurations(Option<Vec<ValidationConfiguration>>)`](crate::client::fluent_builders::CreateProfileJob::set_validation_configurations): <p>List of validation configurations that are applied to the profile job.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateProfileJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateProfileJob::set_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
@@ -672,7 +672,7 @@ where
     ///   - [`log_subscription(LogSubscription)`](crate::client::fluent_builders::UpdateProfileJob::log_subscription) / [`set_log_subscription(Option<LogSubscription>)`](crate::client::fluent_builders::UpdateProfileJob::set_log_subscription): <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     ///   - [`max_capacity(i32)`](crate::client::fluent_builders::UpdateProfileJob::max_capacity) / [`set_max_capacity(i32)`](crate::client::fluent_builders::UpdateProfileJob::set_max_capacity): <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
     ///   - [`max_retries(i32)`](crate::client::fluent_builders::UpdateProfileJob::max_retries) / [`set_max_retries(i32)`](crate::client::fluent_builders::UpdateProfileJob::set_max_retries): <p>The maximum number of times to retry the job after a job run fails.</p>
-    ///   - [`output_location(S3Location)`](crate::client::fluent_builders::UpdateProfileJob::output_location) / [`set_output_location(Option<S3Location>)`](crate::client::fluent_builders::UpdateProfileJob::set_output_location): <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    ///   - [`output_location(S3Location)`](crate::client::fluent_builders::UpdateProfileJob::output_location) / [`set_output_location(Option<S3Location>)`](crate::client::fluent_builders::UpdateProfileJob::set_output_location): <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     ///   - [`validation_configurations(Vec<ValidationConfiguration>)`](crate::client::fluent_builders::UpdateProfileJob::validation_configurations) / [`set_validation_configurations(Option<Vec<ValidationConfiguration>>)`](crate::client::fluent_builders::UpdateProfileJob::set_validation_configurations): <p>List of validation configurations that are applied to the profile job.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateProfileJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateProfileJob::set_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     ///   - [`timeout(i32)`](crate::client::fluent_builders::UpdateProfileJob::timeout) / [`set_timeout(i32)`](crate::client::fluent_builders::UpdateProfileJob::set_timeout): <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
@@ -1149,12 +1149,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_retries(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
             self.inner = self.inner.output_location(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -4685,12 +4685,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_retries(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
             self.inner = self.inner.output_location(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,

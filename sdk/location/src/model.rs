@@ -1050,10 +1050,9 @@ pub struct ListTrackersResponseEntry {
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The description for the tracker resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The pricing plan for the specified tracker resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
-    /// <p>The specified data provider for the tracker resource.</p>
+    /// <p>No longer used. Always returns an empty string.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1069,12 +1068,11 @@ impl ListTrackersResponseEntry {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The pricing plan for the specified tracker resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
-    /// <p>The specified data provider for the tracker resource.</p>
+    /// <p>No longer used. Always returns an empty string.</p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -1133,14 +1131,12 @@ pub mod list_trackers_response_entry {
             self.description = input;
             self
         }
-        /// <p>The pricing plan for the specified tracker resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan for the specified tracker resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -1148,12 +1144,12 @@ pub mod list_trackers_response_entry {
             self.pricing_plan = input;
             self
         }
-        /// <p>The specified data provider for the tracker resource.</p>
+        /// <p>No longer used. Always returns an empty string.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
-        /// <p>The specified data provider for the tracker resource.</p>
+        /// <p>No longer used. Always returns an empty string.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1273,54 +1269,26 @@ where
     }
 }
 
-/// <p>A summary of the calculated route.</p>
+/// <p>A summary of the calculated route matrix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CalculateRouteSummary {
-    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
-    /// <ul>
-    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
-    /// </ul>
-    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
-    /// <ul>
-    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
-    /// </ul>
-    pub route_b_box: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
+pub struct CalculateRouteMatrixSummary {
+    /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
-    /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
-    /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
-    /// </note>
-    pub distance: std::option::Option<f64>,
-    /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
-    pub duration_seconds: std::option::Option<f64>,
+    /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
+    pub route_count: std::option::Option<i32>,
+    /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
+    pub error_count: std::option::Option<i32>,
     /// <p>The unit of measurement for route distances.</p>
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
 }
-impl CalculateRouteSummary {
-    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
-    /// <ul>
-    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
-    /// </ul>
-    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
-    /// <ul>
-    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
-    /// </ul>
-    pub fn route_b_box(&self) -> std::option::Option<&[f64]> {
-        self.route_b_box.as_deref()
-    }
-    /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
+impl CalculateRouteMatrixSummary {
+    /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
     /// <li> <p> <code>Esri</code> </p> </li>
     /// <li> <p> <code>Here</code> </p> </li>
@@ -1329,82 +1297,42 @@ impl CalculateRouteSummary {
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
-    /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
-    /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
-    /// </note>
-    pub fn distance(&self) -> std::option::Option<f64> {
-        self.distance
+    /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
+    pub fn route_count(&self) -> std::option::Option<i32> {
+        self.route_count
     }
-    /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
-    pub fn duration_seconds(&self) -> std::option::Option<f64> {
-        self.duration_seconds
+    /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
+    pub fn error_count(&self) -> std::option::Option<i32> {
+        self.error_count
     }
     /// <p>The unit of measurement for route distances.</p>
     pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
         self.distance_unit.as_ref()
     }
 }
-impl std::fmt::Debug for CalculateRouteSummary {
+impl std::fmt::Debug for CalculateRouteMatrixSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CalculateRouteSummary");
-        formatter.field("route_b_box", &"*** Sensitive Data Redacted ***");
+        let mut formatter = f.debug_struct("CalculateRouteMatrixSummary");
         formatter.field("data_source", &self.data_source);
-        formatter.field("distance", &self.distance);
-        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("route_count", &self.route_count);
+        formatter.field("error_count", &self.error_count);
         formatter.field("distance_unit", &self.distance_unit);
         formatter.finish()
     }
 }
-/// See [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
-pub mod calculate_route_summary {
-    /// A builder for [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
+/// See [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary)
+pub mod calculate_route_matrix_summary {
+    /// A builder for [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) route_b_box: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) data_source: std::option::Option<std::string::String>,
-        pub(crate) distance: std::option::Option<f64>,
-        pub(crate) duration_seconds: std::option::Option<f64>,
+        pub(crate) route_count: std::option::Option<i32>,
+        pub(crate) error_count: std::option::Option<i32>,
         pub(crate) distance_unit: std::option::Option<crate::model::DistanceUnit>,
     }
     impl Builder {
-        /// Appends an item to `route_b_box`.
-        ///
-        /// To override the contents of this collection use [`set_route_b_box`](Self::set_route_b_box).
-        ///
-        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
-        /// <ul>
-        /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-        /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
-        /// </ul>
-        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
-        /// <ul>
-        /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-        /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
-        /// </ul>
-        pub fn route_b_box(mut self, input: f64) -> Self {
-            let mut v = self.route_b_box.unwrap_or_default();
-            v.push(input);
-            self.route_b_box = Some(v);
-            self
-        }
-        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
-        /// <ul>
-        /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-        /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
-        /// </ul>
-        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
-        /// <ul>
-        /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-        /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
-        /// </ul>
-        pub fn set_route_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.route_b_box = input;
-            self
-        }
-        /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
+        /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
@@ -1414,7 +1342,7 @@ pub mod calculate_route_summary {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
+        /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
         /// <ul>
         /// <li> <p> <code>Esri</code> </p> </li>
         /// <li> <p> <code>Here</code> </p> </li>
@@ -1424,28 +1352,24 @@ pub mod calculate_route_summary {
             self.data_source = input;
             self
         }
-        /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
-        /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
-        /// </note>
-        pub fn distance(mut self, input: f64) -> Self {
-            self.distance = Some(input);
+        /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
+        pub fn route_count(mut self, input: i32) -> Self {
+            self.route_count = Some(input);
             self
         }
-        /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
-        /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
-        /// </note>
-        pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
-            self.distance = input;
+        /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
+        pub fn set_route_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.route_count = input;
             self
         }
-        /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
-        pub fn duration_seconds(mut self, input: f64) -> Self {
-            self.duration_seconds = Some(input);
+        /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
+        pub fn error_count(mut self, input: i32) -> Self {
+            self.error_count = Some(input);
             self
         }
-        /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
-        pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
-            self.duration_seconds = input;
+        /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
+        pub fn set_error_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.error_count = input;
             self
         }
         /// <p>The unit of measurement for route distances.</p>
@@ -1461,22 +1385,21 @@ pub mod calculate_route_summary {
             self.distance_unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
-        pub fn build(self) -> crate::model::CalculateRouteSummary {
-            crate::model::CalculateRouteSummary {
-                route_b_box: self.route_b_box,
+        /// Consumes the builder and constructs a [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary)
+        pub fn build(self) -> crate::model::CalculateRouteMatrixSummary {
+            crate::model::CalculateRouteMatrixSummary {
                 data_source: self.data_source,
-                distance: self.distance,
-                duration_seconds: self.duration_seconds,
+                route_count: self.route_count,
+                error_count: self.error_count,
                 distance_unit: self.distance_unit,
             }
         }
     }
 }
-impl CalculateRouteSummary {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
-    pub fn builder() -> crate::model::calculate_route_summary::Builder {
-        crate::model::calculate_route_summary::Builder::default()
+impl CalculateRouteMatrixSummary {
+    /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary)
+    pub fn builder() -> crate::model::calculate_route_matrix_summary::Builder {
+        crate::model::calculate_route_matrix_summary::Builder::default()
     }
 }
 
@@ -1511,445 +1434,231 @@ where
     }
 }
 
-/// <p>Contains the calculated route's details for each path between a pair of positions. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-/// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
-/// <ul>
-/// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
-/// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
-/// </ul>
-/// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
-/// <ul>
-/// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
-/// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
-/// </ul>
+/// <p>The result for one <code>SnappedDeparturePosition</code> <code>SnappedDestinationPosition</code> pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Leg {
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
-    /// </note>
-    pub start_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
-    /// </note>
-    pub end_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
-    /// <ul>
-    /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
-    /// </ul>
+pub struct RouteMatrixEntry {
+    /// <p>The total distance of travel for the route.</p>
     pub distance: std::option::Option<f64>,
-    /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    /// <p>The expected duration of travel for the route.</p>
     pub duration_seconds: std::option::Option<f64>,
-    /// <p>Contains the calculated route's path as a linestring geometry.</p>
-    pub geometry: std::option::Option<crate::model::LegGeometry>,
-    /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
+    /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
+    pub error: std::option::Option<crate::model::RouteMatrixEntryError>,
 }
-impl Leg {
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
-    /// </note>
-    pub fn start_position(&self) -> std::option::Option<&[f64]> {
-        self.start_position.as_deref()
-    }
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
-    /// </note>
-    pub fn end_position(&self) -> std::option::Option<&[f64]> {
-        self.end_position.as_deref()
-    }
-    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
-    /// <ul>
-    /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
-    /// </ul>
+impl RouteMatrixEntry {
+    /// <p>The total distance of travel for the route.</p>
     pub fn distance(&self) -> std::option::Option<f64> {
         self.distance
     }
-    /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    /// <p>The expected duration of travel for the route.</p>
     pub fn duration_seconds(&self) -> std::option::Option<f64> {
         self.duration_seconds
     }
-    /// <p>Contains the calculated route's path as a linestring geometry.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::model::LegGeometry> {
-        self.geometry.as_ref()
-    }
-    /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub fn steps(&self) -> std::option::Option<&[crate::model::Step]> {
-        self.steps.as_deref()
+    /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::RouteMatrixEntryError> {
+        self.error.as_ref()
     }
 }
-impl std::fmt::Debug for Leg {
+impl std::fmt::Debug for RouteMatrixEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Leg");
-        formatter.field("start_position", &"*** Sensitive Data Redacted ***");
-        formatter.field("end_position", &"*** Sensitive Data Redacted ***");
+        let mut formatter = f.debug_struct("RouteMatrixEntry");
         formatter.field("distance", &self.distance);
         formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("geometry", &self.geometry);
-        formatter.field("steps", &self.steps);
+        formatter.field("error", &self.error);
         formatter.finish()
     }
 }
-/// See [`Leg`](crate::model::Leg)
-pub mod leg {
-    /// A builder for [`Leg`](crate::model::Leg)
+/// See [`RouteMatrixEntry`](crate::model::RouteMatrixEntry)
+pub mod route_matrix_entry {
+    /// A builder for [`RouteMatrixEntry`](crate::model::RouteMatrixEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
-        pub(crate) end_position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) distance: std::option::Option<f64>,
         pub(crate) duration_seconds: std::option::Option<f64>,
-        pub(crate) geometry: std::option::Option<crate::model::LegGeometry>,
-        pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
+        pub(crate) error: std::option::Option<crate::model::RouteMatrixEntryError>,
     }
     impl Builder {
-        /// Appends an item to `start_position`.
-        ///
-        /// To override the contents of this collection use [`set_start_position`](Self::set_start_position).
-        ///
-        /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
-        /// </note>
-        pub fn start_position(mut self, input: f64) -> Self {
-            let mut v = self.start_position.unwrap_or_default();
-            v.push(input);
-            self.start_position = Some(v);
-            self
-        }
-        /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
-        /// </note>
-        pub fn set_start_position(
-            mut self,
-            input: std::option::Option<std::vec::Vec<f64>>,
-        ) -> Self {
-            self.start_position = input;
-            self
-        }
-        /// Appends an item to `end_position`.
-        ///
-        /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
-        ///
-        /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
-        /// </note>
-        pub fn end_position(mut self, input: f64) -> Self {
-            let mut v = self.end_position.unwrap_or_default();
-            v.push(input);
-            self.end_position = Some(v);
-            self
-        }
-        /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
-        /// </note>
-        pub fn set_end_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.end_position = input;
-            self
-        }
-        /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
-        /// <ul>
-        /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
-        /// </ul>
+        /// <p>The total distance of travel for the route.</p>
         pub fn distance(mut self, input: f64) -> Self {
             self.distance = Some(input);
             self
         }
-        /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
-        /// <ul>
-        /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
-        /// </ul>
+        /// <p>The total distance of travel for the route.</p>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
             self.distance = input;
             self
         }
-        /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+        /// <p>The expected duration of travel for the route.</p>
         pub fn duration_seconds(mut self, input: f64) -> Self {
             self.duration_seconds = Some(input);
             self
         }
-        /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+        /// <p>The expected duration of travel for the route.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
             self.duration_seconds = input;
             self
         }
-        /// <p>Contains the calculated route's path as a linestring geometry.</p>
-        pub fn geometry(mut self, input: crate::model::LegGeometry) -> Self {
-            self.geometry = Some(input);
+        /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
+        pub fn error(mut self, input: crate::model::RouteMatrixEntryError) -> Self {
+            self.error = Some(input);
             self
         }
-        /// <p>Contains the calculated route's path as a linestring geometry.</p>
-        pub fn set_geometry(
+        /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
+        pub fn set_error(
             mut self,
-            input: std::option::Option<crate::model::LegGeometry>,
+            input: std::option::Option<crate::model::RouteMatrixEntryError>,
         ) -> Self {
-            self.geometry = input;
+            self.error = input;
             self
         }
-        /// Appends an item to `steps`.
-        ///
-        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
-        ///
-        /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-        pub fn steps(mut self, input: crate::model::Step) -> Self {
-            let mut v = self.steps.unwrap_or_default();
-            v.push(input);
-            self.steps = Some(v);
-            self
-        }
-        /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-        pub fn set_steps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Step>>,
-        ) -> Self {
-            self.steps = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Leg`](crate::model::Leg)
-        pub fn build(self) -> crate::model::Leg {
-            crate::model::Leg {
-                start_position: self.start_position,
-                end_position: self.end_position,
+        /// Consumes the builder and constructs a [`RouteMatrixEntry`](crate::model::RouteMatrixEntry)
+        pub fn build(self) -> crate::model::RouteMatrixEntry {
+            crate::model::RouteMatrixEntry {
                 distance: self.distance,
                 duration_seconds: self.duration_seconds,
-                geometry: self.geometry,
-                steps: self.steps,
+                error: self.error,
             }
         }
     }
 }
-impl Leg {
-    /// Creates a new builder-style object to manufacture [`Leg`](crate::model::Leg)
-    pub fn builder() -> crate::model::leg::Builder {
-        crate::model::leg::Builder::default()
+impl RouteMatrixEntry {
+    /// Creates a new builder-style object to manufacture [`RouteMatrixEntry`](crate::model::RouteMatrixEntry)
+    pub fn builder() -> crate::model::route_matrix_entry::Builder {
+        crate::model::route_matrix_entry::Builder::default()
     }
 }
 
-/// <p> Represents an element of a leg within a route. A step contains instructions for how to move to the next step in the leg. </p>
+/// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
+/// <p>The error code can be one of the following:</p>
+/// <ul>
+/// <li> <p> <code>RouteNotFound</code> - Unable to find a valid route with the given parameters.</p> </li>
+/// </ul>
+/// <ul>
+/// <li> <p> <code>RouteTooLong</code> - Route calculation went beyond the maximum size of a route and was terminated before completion.</p> </li>
+/// </ul>
+/// <ul>
+/// <li> <p> <code>PositionsNotFound</code> - One or more of the input positions were not found on the route network.</p> </li>
+/// </ul>
+/// <ul>
+/// <li> <p> <code>DestinationPositionNotFound</code> - The destination position was not found on the route network.</p> </li>
+/// </ul>
+/// <ul>
+/// <li> <p> <code>DeparturePositionNotFound</code> - The departure position was not found on the route network.</p> </li>
+/// </ul>
+/// <ul>
+/// <li> <p> <code>OtherValidationError</code> - The given inputs were not valid or a route was not found. More information is given in the error <code>Message</code> </p> </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Step {
-    /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-    pub start_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
-    pub end_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
-    pub distance: std::option::Option<f64>,
-    /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
-    pub duration_seconds: std::option::Option<f64>,
-    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
-    /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
-    pub geometry_offset: std::option::Option<i32>,
+pub struct RouteMatrixEntryError {
+    /// <p>The type of error which occurred for the route calculation.</p>
+    pub code: std::option::Option<crate::model::RouteMatrixErrorCode>,
+    /// <p>A message about the error that occurred for the route calculation.</p>
+    pub message: std::option::Option<std::string::String>,
 }
-impl Step {
-    /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-    pub fn start_position(&self) -> std::option::Option<&[f64]> {
-        self.start_position.as_deref()
+impl RouteMatrixEntryError {
+    /// <p>The type of error which occurred for the route calculation.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::RouteMatrixErrorCode> {
+        self.code.as_ref()
     }
-    /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
-    pub fn end_position(&self) -> std::option::Option<&[f64]> {
-        self.end_position.as_deref()
-    }
-    /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
-    pub fn distance(&self) -> std::option::Option<f64> {
-        self.distance
-    }
-    /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
-    pub fn duration_seconds(&self) -> std::option::Option<f64> {
-        self.duration_seconds
-    }
-    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
-    /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
-    pub fn geometry_offset(&self) -> std::option::Option<i32> {
-        self.geometry_offset
+    /// <p>A message about the error that occurred for the route calculation.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
     }
 }
-impl std::fmt::Debug for Step {
+impl std::fmt::Debug for RouteMatrixEntryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Step");
-        formatter.field("start_position", &"*** Sensitive Data Redacted ***");
-        formatter.field("end_position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("geometry_offset", &self.geometry_offset);
+        let mut formatter = f.debug_struct("RouteMatrixEntryError");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-/// See [`Step`](crate::model::Step)
-pub mod step {
-    /// A builder for [`Step`](crate::model::Step)
+/// See [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError)
+pub mod route_matrix_entry_error {
+    /// A builder for [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
-        pub(crate) end_position: std::option::Option<std::vec::Vec<f64>>,
-        pub(crate) distance: std::option::Option<f64>,
-        pub(crate) duration_seconds: std::option::Option<f64>,
-        pub(crate) geometry_offset: std::option::Option<i32>,
+        pub(crate) code: std::option::Option<crate::model::RouteMatrixErrorCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Appends an item to `start_position`.
-        ///
-        /// To override the contents of this collection use [`set_start_position`](Self::set_start_position).
-        ///
-        /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-        pub fn start_position(mut self, input: f64) -> Self {
-            let mut v = self.start_position.unwrap_or_default();
-            v.push(input);
-            self.start_position = Some(v);
+        /// <p>The type of error which occurred for the route calculation.</p>
+        pub fn code(mut self, input: crate::model::RouteMatrixErrorCode) -> Self {
+            self.code = Some(input);
             self
         }
-        /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-        pub fn set_start_position(
+        /// <p>The type of error which occurred for the route calculation.</p>
+        pub fn set_code(
             mut self,
-            input: std::option::Option<std::vec::Vec<f64>>,
+            input: std::option::Option<crate::model::RouteMatrixErrorCode>,
         ) -> Self {
-            self.start_position = input;
+            self.code = input;
             self
         }
-        /// Appends an item to `end_position`.
-        ///
-        /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
-        ///
-        /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
-        pub fn end_position(mut self, input: f64) -> Self {
-            let mut v = self.end_position.unwrap_or_default();
-            v.push(input);
-            self.end_position = Some(v);
+        /// <p>A message about the error that occurred for the route calculation.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
-        pub fn set_end_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.end_position = input;
+        /// <p>A message about the error that occurred for the route calculation.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
-        /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
-        pub fn distance(mut self, input: f64) -> Self {
-            self.distance = Some(input);
-            self
-        }
-        /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
-        pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
-            self.distance = input;
-            self
-        }
-        /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
-        pub fn duration_seconds(mut self, input: f64) -> Self {
-            self.duration_seconds = Some(input);
-            self
-        }
-        /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
-        pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
-            self.duration_seconds = input;
-            self
-        }
-        /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
-        /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
-        pub fn geometry_offset(mut self, input: i32) -> Self {
-            self.geometry_offset = Some(input);
-            self
-        }
-        /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
-        /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
-        pub fn set_geometry_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.geometry_offset = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Step`](crate::model::Step)
-        pub fn build(self) -> crate::model::Step {
-            crate::model::Step {
-                start_position: self.start_position,
-                end_position: self.end_position,
-                distance: self.distance,
-                duration_seconds: self.duration_seconds,
-                geometry_offset: self.geometry_offset,
+        /// Consumes the builder and constructs a [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError)
+        pub fn build(self) -> crate::model::RouteMatrixEntryError {
+            crate::model::RouteMatrixEntryError {
+                code: self.code,
+                message: self.message,
             }
         }
     }
 }
-impl Step {
-    /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step)
-    pub fn builder() -> crate::model::step::Builder {
-        crate::model::step::Builder::default()
+impl RouteMatrixEntryError {
+    /// Creates a new builder-style object to manufacture [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError)
+    pub fn builder() -> crate::model::route_matrix_entry_error::Builder {
+        crate::model::route_matrix_entry_error::Builder::default()
     }
 }
 
-/// <p>Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.</p>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LegGeometry {
-    /// <p>An ordered list of positions used to plot a route on a map. </p>
-    /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
-    /// </ul>
-    pub line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
-}
-impl LegGeometry {
-    /// <p>An ordered list of positions used to plot a route on a map. </p>
-    /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
-    /// </ul>
-    pub fn line_string(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
-        self.line_string.as_deref()
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub struct RouteMatrixErrorCode(String);
+impl RouteMatrixErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        &self.0
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DeparturePositionNotFound",
+            "DestinationPositionNotFound",
+            "OtherValidationError",
+            "PositionsNotFound",
+            "RouteNotFound",
+            "RouteTooLong",
+        ]
     }
 }
-impl std::fmt::Debug for LegGeometry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LegGeometry");
-        formatter.field("line_string", &self.line_string);
-        formatter.finish()
-    }
-}
-/// See [`LegGeometry`](crate::model::LegGeometry)
-pub mod leg_geometry {
-    /// A builder for [`LegGeometry`](crate::model::LegGeometry)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
-    }
-    impl Builder {
-        /// Appends an item to `line_string`.
-        ///
-        /// To override the contents of this collection use [`set_line_string`](Self::set_line_string).
-        ///
-        /// <p>An ordered list of positions used to plot a route on a map. </p>
-        /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
-        /// </ul>
-        pub fn line_string(mut self, input: std::vec::Vec<f64>) -> Self {
-            let mut v = self.line_string.unwrap_or_default();
-            v.push(input);
-            self.line_string = Some(v);
-            self
-        }
-        /// <p>An ordered list of positions used to plot a route on a map. </p>
-        /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
-        /// </ul>
-        pub fn set_line_string(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
-        ) -> Self {
-            self.line_string = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LegGeometry`](crate::model::LegGeometry)
-        pub fn build(self) -> crate::model::LegGeometry {
-            crate::model::LegGeometry {
-                line_string: self.line_string,
-            }
-        }
-    }
-}
-impl LegGeometry {
-    /// Creates a new builder-style object to manufacture [`LegGeometry`](crate::model::LegGeometry)
-    pub fn builder() -> crate::model::leg_geometry::Builder {
-        crate::model::leg_geometry::Builder::default()
+impl<T> std::convert::From<T> for RouteMatrixErrorCode
+where
+    T: std::convert::AsRef<str>,
+{
+    fn from(s: T) -> Self {
+        RouteMatrixErrorCode(s.as_ref().to_owned())
     }
 }
 
@@ -2508,6 +2217,655 @@ where
     }
 }
 
+/// <p>A summary of the calculated route.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CalculateRouteSummary {
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+    /// <ul>
+    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
+    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+    /// </ul>
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+    /// <ul>
+    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
+    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+    /// </ul>
+    pub route_b_box: std::option::Option<std::vec::Vec<f64>>,
+    /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
+    /// <ul>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
+    /// </ul>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub data_source: std::option::Option<std::string::String>,
+    /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
+    /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
+    /// </note>
+    pub distance: std::option::Option<f64>,
+    /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
+    pub duration_seconds: std::option::Option<f64>,
+    /// <p>The unit of measurement for route distances.</p>
+    pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
+}
+impl CalculateRouteSummary {
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+    /// <ul>
+    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
+    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+    /// </ul>
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+    /// <ul>
+    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
+    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+    /// </ul>
+    pub fn route_b_box(&self) -> std::option::Option<&[f64]> {
+        self.route_b_box.as_deref()
+    }
+    /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
+    /// <ul>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
+    /// </ul>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
+    /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
+    /// </note>
+    pub fn distance(&self) -> std::option::Option<f64> {
+        self.distance
+    }
+    /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
+    pub fn duration_seconds(&self) -> std::option::Option<f64> {
+        self.duration_seconds
+    }
+    /// <p>The unit of measurement for route distances.</p>
+    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+        self.distance_unit.as_ref()
+    }
+}
+impl std::fmt::Debug for CalculateRouteSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CalculateRouteSummary");
+        formatter.field("route_b_box", &"*** Sensitive Data Redacted ***");
+        formatter.field("data_source", &self.data_source);
+        formatter.field("distance", &self.distance);
+        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("distance_unit", &self.distance_unit);
+        formatter.finish()
+    }
+}
+/// See [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
+pub mod calculate_route_summary {
+    /// A builder for [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) route_b_box: std::option::Option<std::vec::Vec<f64>>,
+        pub(crate) data_source: std::option::Option<std::string::String>,
+        pub(crate) distance: std::option::Option<f64>,
+        pub(crate) duration_seconds: std::option::Option<f64>,
+        pub(crate) distance_unit: std::option::Option<crate::model::DistanceUnit>,
+    }
+    impl Builder {
+        /// Appends an item to `route_b_box`.
+        ///
+        /// To override the contents of this collection use [`set_route_b_box`](Self::set_route_b_box).
+        ///
+        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+        /// <ul>
+        /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
+        /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+        /// </ul>
+        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+        /// <ul>
+        /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
+        /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+        /// </ul>
+        pub fn route_b_box(mut self, input: f64) -> Self {
+            let mut v = self.route_b_box.unwrap_or_default();
+            v.push(input);
+            self.route_b_box = Some(v);
+            self
+        }
+        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+        /// <ul>
+        /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
+        /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+        /// </ul>
+        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+        /// <ul>
+        /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
+        /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+        /// </ul>
+        pub fn set_route_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+            self.route_b_box = input;
+            self
+        }
+        /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
+        /// <ul>
+        /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Here</code> </p> </li>
+        /// </ul>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source = Some(input.into());
+            self
+        }
+        /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
+        /// <ul>
+        /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Here</code> </p> </li>
+        /// </ul>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
+        /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
+        /// </note>
+        pub fn distance(mut self, input: f64) -> Self {
+            self.distance = Some(input);
+            self
+        }
+        /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
+        /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
+        /// </note>
+        pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
+            self.distance = input;
+            self
+        }
+        /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
+        pub fn duration_seconds(mut self, input: f64) -> Self {
+            self.duration_seconds = Some(input);
+            self
+        }
+        /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
+        pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
+            self.duration_seconds = input;
+            self
+        }
+        /// <p>The unit of measurement for route distances.</p>
+        pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
+            self.distance_unit = Some(input);
+            self
+        }
+        /// <p>The unit of measurement for route distances.</p>
+        pub fn set_distance_unit(
+            mut self,
+            input: std::option::Option<crate::model::DistanceUnit>,
+        ) -> Self {
+            self.distance_unit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
+        pub fn build(self) -> crate::model::CalculateRouteSummary {
+            crate::model::CalculateRouteSummary {
+                route_b_box: self.route_b_box,
+                data_source: self.data_source,
+                distance: self.distance,
+                duration_seconds: self.duration_seconds,
+                distance_unit: self.distance_unit,
+            }
+        }
+    }
+}
+impl CalculateRouteSummary {
+    /// Creates a new builder-style object to manufacture [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
+    pub fn builder() -> crate::model::calculate_route_summary::Builder {
+        crate::model::calculate_route_summary::Builder::default()
+    }
+}
+
+/// <p>Contains the calculated route's details for each path between a pair of positions. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
+/// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
+/// <ul>
+/// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+/// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
+/// </ul>
+/// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
+/// <ul>
+/// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+/// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Leg {
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+    /// </note>
+    pub start_position: std::option::Option<std::vec::Vec<f64>>,
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+    /// </note>
+    pub end_position: std::option::Option<std::vec::Vec<f64>>,
+    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
+    /// <ul>
+    /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
+    /// </ul>
+    pub distance: std::option::Option<f64>,
+    /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    pub duration_seconds: std::option::Option<f64>,
+    /// <p>Contains the calculated route's path as a linestring geometry.</p>
+    pub geometry: std::option::Option<crate::model::LegGeometry>,
+    /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
+    pub steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
+}
+impl Leg {
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+    /// </note>
+    pub fn start_position(&self) -> std::option::Option<&[f64]> {
+        self.start_position.as_deref()
+    }
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+    /// </note>
+    pub fn end_position(&self) -> std::option::Option<&[f64]> {
+        self.end_position.as_deref()
+    }
+    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
+    /// <ul>
+    /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
+    /// </ul>
+    pub fn distance(&self) -> std::option::Option<f64> {
+        self.distance
+    }
+    /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    pub fn duration_seconds(&self) -> std::option::Option<f64> {
+        self.duration_seconds
+    }
+    /// <p>Contains the calculated route's path as a linestring geometry.</p>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::LegGeometry> {
+        self.geometry.as_ref()
+    }
+    /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::Step]> {
+        self.steps.as_deref()
+    }
+}
+impl std::fmt::Debug for Leg {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Leg");
+        formatter.field("start_position", &"*** Sensitive Data Redacted ***");
+        formatter.field("end_position", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &self.distance);
+        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("geometry", &self.geometry);
+        formatter.field("steps", &self.steps);
+        formatter.finish()
+    }
+}
+/// See [`Leg`](crate::model::Leg)
+pub mod leg {
+    /// A builder for [`Leg`](crate::model::Leg)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
+        pub(crate) end_position: std::option::Option<std::vec::Vec<f64>>,
+        pub(crate) distance: std::option::Option<f64>,
+        pub(crate) duration_seconds: std::option::Option<f64>,
+        pub(crate) geometry: std::option::Option<crate::model::LegGeometry>,
+        pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
+    }
+    impl Builder {
+        /// Appends an item to `start_position`.
+        ///
+        /// To override the contents of this collection use [`set_start_position`](Self::set_start_position).
+        ///
+        /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+        /// </note>
+        pub fn start_position(mut self, input: f64) -> Self {
+            let mut v = self.start_position.unwrap_or_default();
+            v.push(input);
+            self.start_position = Some(v);
+            self
+        }
+        /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+        /// </note>
+        pub fn set_start_position(
+            mut self,
+            input: std::option::Option<std::vec::Vec<f64>>,
+        ) -> Self {
+            self.start_position = input;
+            self
+        }
+        /// Appends an item to `end_position`.
+        ///
+        /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
+        ///
+        /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+        /// </note>
+        pub fn end_position(mut self, input: f64) -> Self {
+            let mut v = self.end_position.unwrap_or_default();
+            v.push(input);
+            self.end_position = Some(v);
+            self
+        }
+        /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+        /// </note>
+        pub fn set_end_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+            self.end_position = input;
+            self
+        }
+        /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
+        /// <ul>
+        /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
+        /// </ul>
+        pub fn distance(mut self, input: f64) -> Self {
+            self.distance = Some(input);
+            self
+        }
+        /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
+        /// <ul>
+        /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
+        /// </ul>
+        pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
+            self.distance = input;
+            self
+        }
+        /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+        pub fn duration_seconds(mut self, input: f64) -> Self {
+            self.duration_seconds = Some(input);
+            self
+        }
+        /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
+        pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
+            self.duration_seconds = input;
+            self
+        }
+        /// <p>Contains the calculated route's path as a linestring geometry.</p>
+        pub fn geometry(mut self, input: crate::model::LegGeometry) -> Self {
+            self.geometry = Some(input);
+            self
+        }
+        /// <p>Contains the calculated route's path as a linestring geometry.</p>
+        pub fn set_geometry(
+            mut self,
+            input: std::option::Option<crate::model::LegGeometry>,
+        ) -> Self {
+            self.geometry = input;
+            self
+        }
+        /// Appends an item to `steps`.
+        ///
+        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
+        ///
+        /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
+        pub fn steps(mut self, input: crate::model::Step) -> Self {
+            let mut v = self.steps.unwrap_or_default();
+            v.push(input);
+            self.steps = Some(v);
+            self
+        }
+        /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
+        pub fn set_steps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Step>>,
+        ) -> Self {
+            self.steps = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Leg`](crate::model::Leg)
+        pub fn build(self) -> crate::model::Leg {
+            crate::model::Leg {
+                start_position: self.start_position,
+                end_position: self.end_position,
+                distance: self.distance,
+                duration_seconds: self.duration_seconds,
+                geometry: self.geometry,
+                steps: self.steps,
+            }
+        }
+    }
+}
+impl Leg {
+    /// Creates a new builder-style object to manufacture [`Leg`](crate::model::Leg)
+    pub fn builder() -> crate::model::leg::Builder {
+        crate::model::leg::Builder::default()
+    }
+}
+
+/// <p> Represents an element of a leg within a route. A step contains instructions for how to move to the next step in the leg. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Step {
+    /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
+    pub start_position: std::option::Option<std::vec::Vec<f64>>,
+    /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
+    pub end_position: std::option::Option<std::vec::Vec<f64>>,
+    /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
+    pub distance: std::option::Option<f64>,
+    /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    pub duration_seconds: std::option::Option<f64>,
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+    /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
+    pub geometry_offset: std::option::Option<i32>,
+}
+impl Step {
+    /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
+    pub fn start_position(&self) -> std::option::Option<&[f64]> {
+        self.start_position.as_deref()
+    }
+    /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
+    pub fn end_position(&self) -> std::option::Option<&[f64]> {
+        self.end_position.as_deref()
+    }
+    /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
+    pub fn distance(&self) -> std::option::Option<f64> {
+        self.distance
+    }
+    /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    pub fn duration_seconds(&self) -> std::option::Option<f64> {
+        self.duration_seconds
+    }
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+    /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
+    pub fn geometry_offset(&self) -> std::option::Option<i32> {
+        self.geometry_offset
+    }
+}
+impl std::fmt::Debug for Step {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Step");
+        formatter.field("start_position", &"*** Sensitive Data Redacted ***");
+        formatter.field("end_position", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &self.distance);
+        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.finish()
+    }
+}
+/// See [`Step`](crate::model::Step)
+pub mod step {
+    /// A builder for [`Step`](crate::model::Step)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
+        pub(crate) end_position: std::option::Option<std::vec::Vec<f64>>,
+        pub(crate) distance: std::option::Option<f64>,
+        pub(crate) duration_seconds: std::option::Option<f64>,
+        pub(crate) geometry_offset: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// Appends an item to `start_position`.
+        ///
+        /// To override the contents of this collection use [`set_start_position`](Self::set_start_position).
+        ///
+        /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
+        pub fn start_position(mut self, input: f64) -> Self {
+            let mut v = self.start_position.unwrap_or_default();
+            v.push(input);
+            self.start_position = Some(v);
+            self
+        }
+        /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
+        pub fn set_start_position(
+            mut self,
+            input: std::option::Option<std::vec::Vec<f64>>,
+        ) -> Self {
+            self.start_position = input;
+            self
+        }
+        /// Appends an item to `end_position`.
+        ///
+        /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
+        ///
+        /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
+        pub fn end_position(mut self, input: f64) -> Self {
+            let mut v = self.end_position.unwrap_or_default();
+            v.push(input);
+            self.end_position = Some(v);
+            self
+        }
+        /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
+        pub fn set_end_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+            self.end_position = input;
+            self
+        }
+        /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
+        pub fn distance(mut self, input: f64) -> Self {
+            self.distance = Some(input);
+            self
+        }
+        /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
+        pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
+            self.distance = input;
+            self
+        }
+        /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
+        pub fn duration_seconds(mut self, input: f64) -> Self {
+            self.duration_seconds = Some(input);
+            self
+        }
+        /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
+        pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
+            self.duration_seconds = input;
+            self
+        }
+        /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+        /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
+        pub fn geometry_offset(mut self, input: i32) -> Self {
+            self.geometry_offset = Some(input);
+            self
+        }
+        /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+        /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
+        pub fn set_geometry_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.geometry_offset = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Step`](crate::model::Step)
+        pub fn build(self) -> crate::model::Step {
+            crate::model::Step {
+                start_position: self.start_position,
+                end_position: self.end_position,
+                distance: self.distance,
+                duration_seconds: self.duration_seconds,
+                geometry_offset: self.geometry_offset,
+            }
+        }
+    }
+}
+impl Step {
+    /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step)
+    pub fn builder() -> crate::model::step::Builder {
+        crate::model::step::Builder::default()
+    }
+}
+
+/// <p>Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LegGeometry {
+    /// <p>An ordered list of positions used to plot a route on a map. </p>
+    /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
+    /// <ul>
+    /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
+    /// </ul>
+    pub line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+}
+impl LegGeometry {
+    /// <p>An ordered list of positions used to plot a route on a map. </p>
+    /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
+    /// <ul>
+    /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
+    /// </ul>
+    pub fn line_string(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+        self.line_string.as_deref()
+    }
+}
+impl std::fmt::Debug for LegGeometry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LegGeometry");
+        formatter.field("line_string", &self.line_string);
+        formatter.finish()
+    }
+}
+/// See [`LegGeometry`](crate::model::LegGeometry)
+pub mod leg_geometry {
+    /// A builder for [`LegGeometry`](crate::model::LegGeometry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+    }
+    impl Builder {
+        /// Appends an item to `line_string`.
+        ///
+        /// To override the contents of this collection use [`set_line_string`](Self::set_line_string).
+        ///
+        /// <p>An ordered list of positions used to plot a route on a map. </p>
+        /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
+        /// <ul>
+        /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
+        /// </ul>
+        pub fn line_string(mut self, input: std::vec::Vec<f64>) -> Self {
+            let mut v = self.line_string.unwrap_or_default();
+            v.push(input);
+            self.line_string = Some(v);
+            self
+        }
+        /// <p>An ordered list of positions used to plot a route on a map. </p>
+        /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
+        /// <ul>
+        /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
+        /// </ul>
+        pub fn set_line_string(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        ) -> Self {
+            self.line_string = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LegGeometry`](crate::model::LegGeometry)
+        pub fn build(self) -> crate::model::LegGeometry {
+            crate::model::LegGeometry {
+                line_string: self.line_string,
+            }
+        }
+    }
+}
+impl LegGeometry {
+    /// Creates a new builder-style object to manufacture [`LegGeometry`](crate::model::LegGeometry)
+    pub fn builder() -> crate::model::leg_geometry::Builder {
+        crate::model::leg_geometry::Builder::default()
+    }
+}
+
 /// <p>A route calculator resource listed in your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2523,8 +2881,7 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
-    /// <p>The pricing plan for the specified route calculator resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
@@ -2555,8 +2912,7 @@ impl ListRouteCalculatorsResponseEntry {
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
-    /// <p>The pricing plan for the specified route calculator resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -2644,14 +3000,12 @@ pub mod list_route_calculators_response_entry {
             self.data_source = input;
             self
         }
-        /// <p>The pricing plan for the specified route calculator resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan for the specified route calculator resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -4005,8 +4359,7 @@ pub struct ListPlaceIndexesResponseEntry {
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
-    /// <p>The pricing plan for the specified place index resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4031,8 +4384,7 @@ impl ListPlaceIndexesResponseEntry {
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
-    /// <p>The pricing plan for the specified place index resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -4111,14 +4463,12 @@ pub mod list_place_indexes_response_entry {
             self.data_source = input;
             self
         }
-        /// <p>The pricing plan for the specified place index resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan for the specified place index resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -4301,8 +4651,7 @@ pub struct ListMapsResponseEntry {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
     pub data_source: std::option::Option<std::string::String>,
-    /// <p>The pricing plan for the specified map resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4322,8 +4671,7 @@ impl ListMapsResponseEntry {
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
-    /// <p>The pricing plan for the specified map resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -4392,14 +4740,12 @@ pub mod list_maps_response_entry {
             self.data_source = input;
             self
         }
-        /// <p>The pricing plan for the specified map resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan for the specified map resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5241,10 +5587,9 @@ pub struct ListGeofenceCollectionsResponseEntry {
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>The description for the geofence collection</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The pricing plan for the specified geofence collection.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
-    /// <p>The specified data provider for the geofence collection.</p>
+    /// <p>No longer used. Always returns an empty string.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5260,12 +5605,11 @@ impl ListGeofenceCollectionsResponseEntry {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The pricing plan for the specified geofence collection.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
-    /// <p>The specified data provider for the geofence collection.</p>
+    /// <p>No longer used. Always returns an empty string.</p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -5327,14 +5671,12 @@ pub mod list_geofence_collections_response_entry {
             self.description = input;
             self
         }
-        /// <p>The pricing plan for the specified geofence collection.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan for the specified geofence collection.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5342,12 +5684,12 @@ pub mod list_geofence_collections_response_entry {
             self.pricing_plan = input;
             self
         }
-        /// <p>The specified data provider for the geofence collection.</p>
+        /// <p>No longer used. Always returns an empty string.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
-        /// <p>The specified data provider for the geofence collection.</p>
+        /// <p>No longer used. Always returns an empty string.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,

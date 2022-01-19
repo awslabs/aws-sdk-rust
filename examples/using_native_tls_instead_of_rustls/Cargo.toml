@@ -8,21 +8,21 @@ edition = "2018"
 path = "../../sdk/aws-config"
 default-features = false
 features = ["native-tls", "rt-tokio"]
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.aws-sdk-s3]
 package = "aws-sdk-s3"
 path = "../../sdk/s3"
 default-features = false
 features = ["native-tls"]
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.aws-sdk-sts]
 package = "aws-sdk-sts"
 path = "../../sdk/sts"
 default-features = false
 features = ["native-tls"]
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.tokio]
 version = "1"

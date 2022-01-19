@@ -8,6 +8,7 @@ pub struct Rule {
     /// <p>A value that specifies whether the rule is disabled. Once a rule is disabled, a profile job will not validate it during a job run. Default value is false.</p>
     pub disabled: bool,
     /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no columnn reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
     pub check_expression: std::option::Option<std::string::String>,
     /// <p>The map of substitution variable names to their values used in a check expression. Variable names should start with a ':' (colon). Variable values can either be actual values or column names. To differentiate between the two, column names should be enclosed in backticks, for example, <code>":col1": "`Column A`".</code> </p>
     pub substitution_map:
@@ -27,6 +28,7 @@ impl Rule {
         self.disabled
     }
     /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no columnn reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
     pub fn check_expression(&self) -> std::option::Option<&str> {
         self.check_expression.as_deref()
     }
@@ -96,11 +98,13 @@ pub mod rule {
             self
         }
         /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no columnn reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
         pub fn check_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_expression = Some(input.into());
             self
         }
         /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no columnn reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
         pub fn set_check_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -703,7 +707,7 @@ impl DatabaseTableOutputOptions {
     }
 }
 
-/// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+/// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
@@ -711,6 +715,8 @@ pub struct S3Location {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The unique name of the object in the bucket.</p>
     pub key: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID of the bucket owner.</p>
+    pub bucket_owner: std::option::Option<std::string::String>,
 }
 impl S3Location {
     /// <p>The Amazon S3 bucket name.</p>
@@ -721,12 +727,17 @@ impl S3Location {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
+    /// <p>The Amazon Web Services account ID of the bucket owner.</p>
+    pub fn bucket_owner(&self) -> std::option::Option<&str> {
+        self.bucket_owner.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3Location");
         formatter.field("bucket", &self.bucket);
         formatter.field("key", &self.key);
+        formatter.field("bucket_owner", &self.bucket_owner);
         formatter.finish()
     }
 }
@@ -738,6 +749,7 @@ pub mod s3_location {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon S3 bucket name.</p>
@@ -760,11 +772,22 @@ pub mod s3_location {
             self.key = input;
             self
         }
+        /// <p>The Amazon Web Services account ID of the bucket owner.</p>
+        pub fn bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_owner = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the bucket owner.</p>
+        pub fn set_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_owner = input;
+            self
+        }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location)
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
                 bucket: self.bucket,
                 key: self.key,
+                bucket_owner: self.bucket_owner,
             }
         }
     }
@@ -3842,7 +3865,7 @@ pub struct DatabaseInputDefinition {
     pub glue_connection_name: std::option::Option<std::string::String>,
     /// <p>The table within the target database.</p>
     pub database_table_name: std::option::Option<std::string::String>,
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub temp_directory: std::option::Option<crate::model::S3Location>,
     /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
     pub query_string: std::option::Option<std::string::String>,
@@ -3856,7 +3879,7 @@ impl DatabaseInputDefinition {
     pub fn database_table_name(&self) -> std::option::Option<&str> {
         self.database_table_name.as_deref()
     }
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn temp_directory(&self) -> std::option::Option<&crate::model::S3Location> {
         self.temp_directory.as_ref()
     }
@@ -3913,12 +3936,12 @@ pub mod database_input_definition {
             self.database_table_name = input;
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn temp_directory(mut self, input: crate::model::S3Location) -> Self {
             self.temp_directory = Some(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_temp_directory(
             mut self,
             input: std::option::Option<crate::model::S3Location>,

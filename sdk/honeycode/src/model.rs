@@ -606,7 +606,7 @@ impl ImportDataSourceConfig {
 impl std::fmt::Debug for ImportDataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportDataSourceConfig");
-        formatter.field("data_source_url", &self.data_source_url);
+        formatter.field("data_source_url", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -743,11 +743,15 @@ pub struct Cell {
     /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
     /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
     /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+    /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p>
+    /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
     /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
     pub raw_value: std::option::Option<std::string::String>,
     /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
     /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
     pub formatted_value: std::option::Option<std::string::String>,
+    /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
+    pub formatted_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Cell {
     /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
@@ -764,6 +768,8 @@ impl Cell {
     /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
     /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
     /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+    /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p>
+    /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
     /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
     pub fn raw_value(&self) -> std::option::Option<&str> {
         self.raw_value.as_deref()
@@ -773,6 +779,10 @@ impl Cell {
     pub fn formatted_value(&self) -> std::option::Option<&str> {
         self.formatted_value.as_deref()
     }
+    /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
+    pub fn formatted_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.formatted_values.as_deref()
+    }
 }
 impl std::fmt::Debug for Cell {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -781,6 +791,7 @@ impl std::fmt::Debug for Cell {
         formatter.field("format", &self.format);
         formatter.field("raw_value", &self.raw_value);
         formatter.field("formatted_value", &self.formatted_value);
+        formatter.field("formatted_values", &self.formatted_values);
         formatter.finish()
     }
 }
@@ -794,6 +805,7 @@ pub mod cell {
         pub(crate) format: std::option::Option<crate::model::Format>,
         pub(crate) raw_value: std::option::Option<std::string::String>,
         pub(crate) formatted_value: std::option::Option<std::string::String>,
+        pub(crate) formatted_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p> The formula contained in the cell. This field is empty if a cell does not have a formula. </p>
@@ -822,6 +834,8 @@ pub mod cell {
         /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
         /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
         /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+        /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p>
+        /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
         /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
         pub fn raw_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.raw_value = Some(input.into());
@@ -833,6 +847,8 @@ pub mod cell {
         /// <p> Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith" will have "John Smith" as both the raw value and the formatted value. </p>
         /// <p> Cells with format CONTACT will have the name of the contact as a formatted value and the email address of the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the formatted value and "john.smith@example.com" as the raw value. </p>
         /// <p> Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table that displays task status might have "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
+        /// <p> Cells with format ROWSET (aka multi-select or multi-record picklist) will by default have the first column of each of the linked rows as the formatted value in the list, and the rowset id of the linked rows as the raw value. For example, a cell containing a multi-select picklist to a table that contains items might have "Item A", "Item B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as the raw value. </p>
+        /// <p> Cells with format ATTACHMENT will have the name of the attachment as the formatted value and the attachment id as the raw value. For example, a cell containing an attachment named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p>
         /// <p> Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no auto-detected format, the raw and formatted values will be the same as the data in the cell. </p>
         pub fn set_raw_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_value = input;
@@ -853,6 +869,25 @@ pub mod cell {
             self.formatted_value = input;
             self
         }
+        /// Appends an item to `formatted_values`.
+        ///
+        /// To override the contents of this collection use [`set_formatted_values`](Self::set_formatted_values).
+        ///
+        /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
+        pub fn formatted_values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.formatted_values.unwrap_or_default();
+            v.push(input.into());
+            self.formatted_values = Some(v);
+            self
+        }
+        /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
+        pub fn set_formatted_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.formatted_values = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Cell`](crate::model::Cell)
         pub fn build(self) -> crate::model::Cell {
             crate::model::Cell {
@@ -860,6 +895,7 @@ pub mod cell {
                 format: self.format,
                 raw_value: self.raw_value,
                 formatted_value: self.formatted_value,
+                formatted_values: self.formatted_values,
             }
         }
     }
@@ -902,6 +938,8 @@ pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     Rowlink,
     #[allow(missing_docs)] // documentation missing in model
+    Rowset,
+    #[allow(missing_docs)] // documentation missing in model
     Text,
     #[allow(missing_docs)] // documentation missing in model
     Time,
@@ -920,6 +958,7 @@ impl std::convert::From<&str> for Format {
             "NUMBER" => Format::Number,
             "PERCENTAGE" => Format::Percentage,
             "ROWLINK" => Format::Rowlink,
+            "ROWSET" => Format::Rowset,
             "TEXT" => Format::Text,
             "TIME" => Format::Time,
             other => Format::Unknown(other.to_owned()),
@@ -946,6 +985,7 @@ impl Format {
             Format::Number => "NUMBER",
             Format::Percentage => "PERCENTAGE",
             Format::Rowlink => "ROWLINK",
+            Format::Rowset => "ROWSET",
             Format::Text => "TEXT",
             Format::Time => "TIME",
             Format::Unknown(s) => s.as_ref(),
@@ -963,6 +1003,7 @@ impl Format {
             "NUMBER",
             "PERCENTAGE",
             "ROWLINK",
+            "ROWSET",
             "TEXT",
             "TIME",
         ]
@@ -1623,6 +1664,124 @@ impl ColumnMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    FileEmptyError,
+    #[allow(missing_docs)] // documentation missing in model
+    FileNotFoundError,
+    #[allow(missing_docs)] // documentation missing in model
+    FileParsingError,
+    #[allow(missing_docs)] // documentation missing in model
+    FileSizeLimitError,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidFileTypeError,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidImportOptionsError,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidTableColumnIdError,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidTableIdError,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidUrlError,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotFoundError,
+    #[allow(missing_docs)] // documentation missing in model
+    SystemLimitError,
+    #[allow(missing_docs)] // documentation missing in model
+    TableNotFoundError,
+    #[allow(missing_docs)] // documentation missing in model
+    UnknownError,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ErrorCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCESS_DENIED" => ErrorCode::AccessDenied,
+            "FILE_EMPTY_ERROR" => ErrorCode::FileEmptyError,
+            "FILE_NOT_FOUND_ERROR" => ErrorCode::FileNotFoundError,
+            "FILE_PARSING_ERROR" => ErrorCode::FileParsingError,
+            "FILE_SIZE_LIMIT_ERROR" => ErrorCode::FileSizeLimitError,
+            "INVALID_FILE_TYPE_ERROR" => ErrorCode::InvalidFileTypeError,
+            "INVALID_IMPORT_OPTIONS_ERROR" => ErrorCode::InvalidImportOptionsError,
+            "INVALID_TABLE_COLUMN_ID_ERROR" => ErrorCode::InvalidTableColumnIdError,
+            "INVALID_TABLE_ID_ERROR" => ErrorCode::InvalidTableIdError,
+            "INVALID_URL_ERROR" => ErrorCode::InvalidUrlError,
+            "RESOURCE_NOT_FOUND_ERROR" => ErrorCode::ResourceNotFoundError,
+            "SYSTEM_LIMIT_ERROR" => ErrorCode::SystemLimitError,
+            "TABLE_NOT_FOUND_ERROR" => ErrorCode::TableNotFoundError,
+            "UNKNOWN_ERROR" => ErrorCode::UnknownError,
+            other => ErrorCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ErrorCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ErrorCode::from(s))
+    }
+}
+impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ErrorCode::AccessDenied => "ACCESS_DENIED",
+            ErrorCode::FileEmptyError => "FILE_EMPTY_ERROR",
+            ErrorCode::FileNotFoundError => "FILE_NOT_FOUND_ERROR",
+            ErrorCode::FileParsingError => "FILE_PARSING_ERROR",
+            ErrorCode::FileSizeLimitError => "FILE_SIZE_LIMIT_ERROR",
+            ErrorCode::InvalidFileTypeError => "INVALID_FILE_TYPE_ERROR",
+            ErrorCode::InvalidImportOptionsError => "INVALID_IMPORT_OPTIONS_ERROR",
+            ErrorCode::InvalidTableColumnIdError => "INVALID_TABLE_COLUMN_ID_ERROR",
+            ErrorCode::InvalidTableIdError => "INVALID_TABLE_ID_ERROR",
+            ErrorCode::InvalidUrlError => "INVALID_URL_ERROR",
+            ErrorCode::ResourceNotFoundError => "RESOURCE_NOT_FOUND_ERROR",
+            ErrorCode::SystemLimitError => "SYSTEM_LIMIT_ERROR",
+            ErrorCode::TableNotFoundError => "TABLE_NOT_FOUND_ERROR",
+            ErrorCode::UnknownError => "UNKNOWN_ERROR",
+            ErrorCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACCESS_DENIED",
+            "FILE_EMPTY_ERROR",
+            "FILE_NOT_FOUND_ERROR",
+            "FILE_PARSING_ERROR",
+            "FILE_SIZE_LIMIT_ERROR",
+            "INVALID_FILE_TYPE_ERROR",
+            "INVALID_IMPORT_OPTIONS_ERROR",
+            "INVALID_TABLE_COLUMN_ID_ERROR",
+            "INVALID_TABLE_ID_ERROR",
+            "INVALID_URL_ERROR",
+            "RESOURCE_NOT_FOUND_ERROR",
+            "SYSTEM_LIMIT_ERROR",
+            "TABLE_NOT_FOUND_ERROR",
+            "UNKNOWN_ERROR",
+        ]
+    }
+}
+impl AsRef<str> for ErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The metadata associated with the table data import job that was submitted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2156,23 +2315,32 @@ impl UpsertRowData {
     }
 }
 
-/// <p> CellInput object contains the data needed to create or update cells in a table. </p>
+/// <p> CellInput object contains the data needed to create or update cells in a table. </p> <note>
+/// <p> CellInput object has only a facts field or a fact field, but not both. A 400 bad request will be thrown if both fact and facts field are present. </p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CellInput {
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
     pub fact: std::option::Option<std::string::String>,
+    /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
+    pub facts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CellInput {
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
     pub fn fact(&self) -> std::option::Option<&str> {
         self.fact.as_deref()
     }
+    /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
+    pub fn facts(&self) -> std::option::Option<&[std::string::String]> {
+        self.facts.as_deref()
+    }
 }
 impl std::fmt::Debug for CellInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CellInput");
         formatter.field("fact", &"*** Sensitive Data Redacted ***");
+        formatter.field("facts", &self.facts);
         formatter.finish()
     }
 }
@@ -2183,6 +2351,7 @@ pub mod cell_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fact: std::option::Option<std::string::String>,
+        pub(crate) facts: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
@@ -2195,9 +2364,31 @@ pub mod cell_input {
             self.fact = input;
             self
         }
+        /// Appends an item to `facts`.
+        ///
+        /// To override the contents of this collection use [`set_facts`](Self::set_facts).
+        ///
+        /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
+        pub fn facts(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.facts.unwrap_or_default();
+            v.push(input.into());
+            self.facts = Some(v);
+            self
+        }
+        /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
+        pub fn set_facts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.facts = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CellInput`](crate::model::CellInput)
         pub fn build(self) -> crate::model::CellInput {
-            crate::model::CellInput { fact: self.fact }
+            crate::model::CellInput {
+                fact: self.fact,
+                facts: self.facts,
+            }
         }
     }
 }

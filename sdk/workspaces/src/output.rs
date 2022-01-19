@@ -122,6 +122,36 @@ impl UpdateConnectionAliasPermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConnectClientAddInOutput {}
+impl std::fmt::Debug for UpdateConnectClientAddInOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectClientAddInOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput)
+pub mod update_connect_client_add_in_output {
+    /// A builder for [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput)
+        pub fn build(self) -> crate::output::UpdateConnectClientAddInOutput {
+            crate::output::UpdateConnectClientAddInOutput {}
+        }
+    }
+}
+impl UpdateConnectClientAddInOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput)
+    pub fn builder() -> crate::output::update_connect_client_add_in_output::Builder {
+        crate::output::update_connect_client_add_in_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be terminated.</p>
     pub failed_requests:
@@ -2004,6 +2034,88 @@ impl DescribeConnectionAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeConnectClientAddInsOutput {
+    /// <p>Information about client add-ins.</p>
+    pub add_ins: std::option::Option<std::vec::Vec<crate::model::ConnectClientAddIn>>,
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConnectClientAddInsOutput {
+    /// <p>Information about client add-ins.</p>
+    pub fn add_ins(&self) -> std::option::Option<&[crate::model::ConnectClientAddIn]> {
+        self.add_ins.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeConnectClientAddInsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeConnectClientAddInsOutput");
+        formatter.field("add_ins", &self.add_ins);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput)
+pub mod describe_connect_client_add_ins_output {
+    /// A builder for [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) add_ins: std::option::Option<std::vec::Vec<crate::model::ConnectClientAddIn>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `add_ins`.
+        ///
+        /// To override the contents of this collection use [`set_add_ins`](Self::set_add_ins).
+        ///
+        /// <p>Information about client add-ins.</p>
+        pub fn add_ins(mut self, input: crate::model::ConnectClientAddIn) -> Self {
+            let mut v = self.add_ins.unwrap_or_default();
+            v.push(input);
+            self.add_ins = Some(v);
+            self
+        }
+        /// <p>Information about client add-ins.</p>
+        pub fn set_add_ins(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConnectClientAddIn>>,
+        ) -> Self {
+            self.add_ins = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput)
+        pub fn build(self) -> crate::output::DescribeConnectClientAddInsOutput {
+            crate::output::DescribeConnectClientAddInsOutput {
+                add_ins: self.add_ins,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeConnectClientAddInsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput)
+    pub fn builder() -> crate::output::describe_connect_client_add_ins_output::Builder {
+        crate::output::describe_connect_client_add_ins_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientPropertiesOutput {
     /// <p>Information about the specified Amazon WorkSpaces clients.</p>
     pub client_properties_list:
@@ -2438,6 +2550,36 @@ impl DeleteConnectionAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteConnectClientAddInOutput {}
+impl std::fmt::Debug for DeleteConnectClientAddInOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteConnectClientAddInOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput)
+pub mod delete_connect_client_add_in_output {
+    /// A builder for [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput)
+        pub fn build(self) -> crate::output::DeleteConnectClientAddInOutput {
+            crate::output::DeleteConnectClientAddInOutput {}
+        }
+    }
+}
+impl DeleteConnectClientAddInOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput)
+    pub fn builder() -> crate::output::delete_connect_client_add_in_output::Builder {
+        crate::output::delete_connect_client_add_in_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be created.</p>
     pub failed_requests:
@@ -2783,6 +2925,60 @@ impl CreateConnectionAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionAliasOutput`](crate::output::CreateConnectionAliasOutput)
     pub fn builder() -> crate::output::create_connection_alias_output::Builder {
         crate::output::create_connection_alias_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateConnectClientAddInOutput {
+    /// <p>The client add-in identifier.</p>
+    pub add_in_id: std::option::Option<std::string::String>,
+}
+impl CreateConnectClientAddInOutput {
+    /// <p>The client add-in identifier.</p>
+    pub fn add_in_id(&self) -> std::option::Option<&str> {
+        self.add_in_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateConnectClientAddInOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateConnectClientAddInOutput");
+        formatter.field("add_in_id", &self.add_in_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput)
+pub mod create_connect_client_add_in_output {
+    /// A builder for [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) add_in_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The client add-in identifier.</p>
+        pub fn add_in_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.add_in_id = Some(input.into());
+            self
+        }
+        /// <p>The client add-in identifier.</p>
+        pub fn set_add_in_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.add_in_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput)
+        pub fn build(self) -> crate::output::CreateConnectClientAddInOutput {
+            crate::output::CreateConnectClientAddInOutput {
+                add_in_id: self.add_in_id,
+            }
+        }
+    }
+}
+impl CreateConnectClientAddInOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput)
+    pub fn builder() -> crate::output::create_connect_client_add_in_output::Builder {
+        crate::output::create_connect_client_add_in_output::Builder::default()
     }
 }
 

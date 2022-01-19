@@ -400,6 +400,21 @@ where
     pub fn delete_bot_version(&self) -> fluent_builders::DeleteBotVersion<C, M, R> {
         fluent_builders::DeleteBotVersion::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DeleteCustomVocabulary`](crate::client::fluent_builders::DeleteCustomVocabulary) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomVocabulary::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::DeleteCustomVocabulary::set_bot_id): <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
+    ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomVocabulary::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::DeleteCustomVocabulary::set_bot_version): <p>The version of the bot to remove the custom vocabulary from.</p>
+    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomVocabulary::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::DeleteCustomVocabulary::set_locale_id): <p>The locale identifier for the locale that contains the custom vocabulary to remove.</p>
+    /// - On success, responds with [`DeleteCustomVocabularyOutput`](crate::output::DeleteCustomVocabularyOutput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::output::DeleteCustomVocabularyOutput::bot_id): <p>The identifier of the bot that the custom vocabulary was removed from.</p>
+    ///   - [`bot_version(Option<String>)`](crate::output::DeleteCustomVocabularyOutput::bot_version): <p>The version of the bot that the custom vocabulary was removed from.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::DeleteCustomVocabularyOutput::locale_id): <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
+    ///   - [`custom_vocabulary_status(Option<CustomVocabularyStatus>)`](crate::output::DeleteCustomVocabularyOutput::custom_vocabulary_status): <p>The status of removing the custom vocabulary.</p>
+    /// - On failure, responds with [`SdkError<DeleteCustomVocabularyError>`](crate::error::DeleteCustomVocabularyError)
+    pub fn delete_custom_vocabulary(&self) -> fluent_builders::DeleteCustomVocabulary<C, M, R> {
+        fluent_builders::DeleteCustomVocabulary::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DeleteExport`](crate::client::fluent_builders::DeleteExport) operation.
     ///
     /// - The fluent builder is configurable:
@@ -614,6 +629,25 @@ where
     pub fn describe_bot_version(&self) -> fluent_builders::DescribeBotVersion<C, M, R> {
         fluent_builders::DescribeBotVersion::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeCustomVocabularyMetadata`](crate::client::fluent_builders::DescribeCustomVocabularyMetadata) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCustomVocabularyMetadata::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::DescribeCustomVocabularyMetadata::set_bot_id): <p>The unique identifier of the bot that contains the custom vocabulary.</p>
+    ///   - [`bot_version(impl Into<String>)`](crate::client::fluent_builders::DescribeCustomVocabularyMetadata::bot_version) / [`set_bot_version(Option<String>)`](crate::client::fluent_builders::DescribeCustomVocabularyMetadata::set_bot_version): <p>The bot version of the bot to return metadata for.</p>
+    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCustomVocabularyMetadata::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::DescribeCustomVocabularyMetadata::set_locale_id): <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
+    /// - On success, responds with [`DescribeCustomVocabularyMetadataOutput`](crate::output::DescribeCustomVocabularyMetadataOutput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::output::DescribeCustomVocabularyMetadataOutput::bot_id): <p>The identifier of the bot that contains the custom vocabulary.</p>
+    ///   - [`bot_version(Option<String>)`](crate::output::DescribeCustomVocabularyMetadataOutput::bot_version): <p>The version of the bot that contains the custom vocabulary to describe.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::DescribeCustomVocabularyMetadataOutput::locale_id): <p>The locale that contains the custom vocabulary to describe.</p>
+    ///   - [`custom_vocabulary_status(Option<CustomVocabularyStatus>)`](crate::output::DescribeCustomVocabularyMetadataOutput::custom_vocabulary_status): <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::DescribeCustomVocabularyMetadataOutput::creation_date_time): <p>The date and time that the custom vocabulary was created.</p>
+    ///   - [`last_updated_date_time(Option<DateTime>)`](crate::output::DescribeCustomVocabularyMetadataOutput::last_updated_date_time): <p>The date and time that the custom vocabulary was last updated.</p>
+    /// - On failure, responds with [`SdkError<DescribeCustomVocabularyMetadataError>`](crate::error::DescribeCustomVocabularyMetadataError)
+    pub fn describe_custom_vocabulary_metadata(
+        &self,
+    ) -> fluent_builders::DescribeCustomVocabularyMetadata<C, M, R> {
+        fluent_builders::DescribeCustomVocabularyMetadata::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeExport`](crate::client::fluent_builders::DescribeExport) operation.
     ///
     /// - The fluent builder is configurable:
@@ -621,7 +655,7 @@ where
     /// - On success, responds with [`DescribeExportOutput`](crate::output::DescribeExportOutput) with field(s):
     ///   - [`export_id(Option<String>)`](crate::output::DescribeExportOutput::export_id): <p>The unique identifier of the described export.</p>
     ///   - [`resource_specification(Option<ExportResourceSpecification>)`](crate::output::DescribeExportOutput::resource_specification): <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
-    ///   - [`file_format(Option<ImportExportFileFormat>)`](crate::output::DescribeExportOutput::file_format): <p>The file format used in the files that describe the bot or bot locale.</p>
+    ///   - [`file_format(Option<ImportExportFileFormat>)`](crate::output::DescribeExportOutput::file_format): <p>The file format used in the files that describe the resource. </p>
     ///   - [`export_status(Option<ExportStatus>)`](crate::output::DescribeExportOutput::export_status): <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
     ///   - [`failure_reasons(Option<Vec<String>>)`](crate::output::DescribeExportOutput::failure_reasons): <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
     ///   - [`download_url(Option<String>)`](crate::output::DescribeExportOutput::download_url): <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
@@ -637,7 +671,7 @@ where
     ///   - [`import_id(impl Into<String>)`](crate::client::fluent_builders::DescribeImport::import_id) / [`set_import_id(Option<String>)`](crate::client::fluent_builders::DescribeImport::set_import_id): <p>The unique identifier of the import to describe.</p>
     /// - On success, responds with [`DescribeImportOutput`](crate::output::DescribeImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::output::DescribeImportOutput::import_id): <p>The unique identifier of the described import.</p>
-    ///   - [`resource_specification(Option<ImportResourceSpecification>)`](crate::output::DescribeImportOutput::resource_specification): <p>The specifications of the imported bot or bot locale.</p>
+    ///   - [`resource_specification(Option<ImportResourceSpecification>)`](crate::output::DescribeImportOutput::resource_specification): <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
     ///   - [`imported_resource_id(Option<String>)`](crate::output::DescribeImportOutput::imported_resource_id): <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
     ///   - [`imported_resource_name(Option<String>)`](crate::output::DescribeImportOutput::imported_resource_name): <p>The name of the imported resource.</p>
     ///   - [`merge_strategy(Option<MergeStrategy>)`](crate::output::DescribeImportOutput::merge_strategy): <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
@@ -829,7 +863,7 @@ where
     ///   - [`sort_by(BotSortBy)`](crate::client::fluent_builders::ListBots::sort_by) / [`set_sort_by(Option<BotSortBy>)`](crate::client::fluent_builders::ListBots::set_sort_by): <p>Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order.</p>
     ///   - [`filters(Vec<BotFilter>)`](crate::client::fluent_builders::ListBots::filters) / [`set_filters(Option<Vec<BotFilter>>)`](crate::client::fluent_builders::ListBots::set_filters): <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBots::set_max_results): <p>The maximum number of bots to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBots::set_next_token): <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBots::set_next_token): <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>  <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListBots</code> request to return the next page of results. For a complete set of results, call the <code>ListBots</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     /// - On success, responds with [`ListBotsOutput`](crate::output::ListBotsOutput) with field(s):
     ///   - [`bot_summaries(Option<Vec<BotSummary>>)`](crate::output::ListBotsOutput::bot_summaries): <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBotsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
@@ -894,12 +928,14 @@ where
     ///   - [`sort_by(ExportSortBy)`](crate::client::fluent_builders::ListExports::sort_by) / [`set_sort_by(Option<ExportSortBy>)`](crate::client::fluent_builders::ListExports::set_sort_by): <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     ///   - [`filters(Vec<ExportFilter>)`](crate::client::fluent_builders::ListExports::filters) / [`set_filters(Option<Vec<ExportFilter>>)`](crate::client::fluent_builders::ListExports::set_filters): <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExports::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExports::set_max_results): <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExports::set_next_token): <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExports::set_next_token): <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>  <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
+    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::ListExports::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::ListExports::set_locale_id): <p>Specifies the resources that should be exported. If you don't specify a resource type in the <code>filters</code> parameter, both bot locales and custom vocabularies are exported.</p>
     /// - On success, responds with [`ListExportsOutput`](crate::output::ListExportsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::output::ListExportsOutput::bot_id): <p>The unique identifier assigned to the bot by Amazon Lex.</p>
     ///   - [`bot_version(Option<String>)`](crate::output::ListExportsOutput::bot_version): <p>The version of the bot that was exported.</p>
     ///   - [`export_summaries(Option<Vec<ExportSummary>>)`](crate::output::ListExportsOutput::export_summaries): <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListExportsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::ListExportsOutput::locale_id): <p>The locale specified in the request.</p>
     /// - On failure, responds with [`SdkError<ListExportsError>`](crate::error::ListExportsError)
     pub fn list_exports(&self) -> fluent_builders::ListExports<C, M, R> {
         fluent_builders::ListExports::new(self.handle.clone())
@@ -913,12 +949,14 @@ where
     ///   - [`sort_by(ImportSortBy)`](crate::client::fluent_builders::ListImports::sort_by) / [`set_sort_by(Option<ImportSortBy>)`](crate::client::fluent_builders::ListImports::set_sort_by): <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     ///   - [`filters(Vec<ImportFilter>)`](crate::client::fluent_builders::ListImports::filters) / [`set_filters(Option<Vec<ImportFilter>>)`](crate::client::fluent_builders::ListImports::set_filters): <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListImports::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListImports::set_max_results): <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListImports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListImports::set_next_token): <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListImports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListImports::set_next_token): <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>  <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
+    ///   - [`locale_id(impl Into<String>)`](crate::client::fluent_builders::ListImports::locale_id) / [`set_locale_id(Option<String>)`](crate::client::fluent_builders::ListImports::set_locale_id): <p>Specifies the locale that should be present in the list. If you don't specify a resource type in the <code>filters</code> parameter, the list contains both bot locales and custom vocabularies.</p>
     /// - On success, responds with [`ListImportsOutput`](crate::output::ListImportsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::output::ListImportsOutput::bot_id): <p>The unique identifier assigned by Amazon Lex to the bot.</p>
     ///   - [`bot_version(Option<String>)`](crate::output::ListImportsOutput::bot_version): <p>The version of the bot that was imported. It will always be <code>DRAFT</code>.</p>
     ///   - [`import_summaries(Option<Vec<ImportSummary>>)`](crate::output::ListImportsOutput::import_summaries): <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListImportsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::ListImportsOutput::locale_id): <p>The locale specified in the request.</p>
     /// - On failure, responds with [`SdkError<ListImportsError>`](crate::error::ListImportsError)
     pub fn list_imports(&self) -> fluent_builders::ListImports<C, M, R> {
         fluent_builders::ListImports::new(self.handle.clone())
@@ -933,7 +971,7 @@ where
     ///   - [`sort_by(IntentSortBy)`](crate::client::fluent_builders::ListIntents::sort_by) / [`set_sort_by(Option<IntentSortBy>)`](crate::client::fluent_builders::ListIntents::set_sort_by): <p>Determines the sort order for the response from the <code>ListIntents</code> operation. You can choose to sort by the intent name or last updated date in either ascending or descending order.</p>
     ///   - [`filters(Vec<IntentFilter>)`](crate::client::fluent_builders::ListIntents::filters) / [`set_filters(Option<Vec<IntentFilter>>)`](crate::client::fluent_builders::ListIntents::set_filters): <p>Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIntents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIntents::set_max_results): <p>The maximum number of intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIntents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIntents::set_next_token): <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIntents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIntents::set_next_token): <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>  <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListIntents</code> request to return the next page of results. For a complete set of results, call the <code>ListIntents</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     /// - On success, responds with [`ListIntentsOutput`](crate::output::ListIntentsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::output::ListIntentsOutput::bot_id): <p>The identifier of the bot that contains the intent.</p>
     ///   - [`bot_version(Option<String>)`](crate::output::ListIntentsOutput::bot_version): <p>The version of the bot that contains the intent.</p>
@@ -1069,14 +1107,14 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`import_id(impl Into<String>)`](crate::client::fluent_builders::StartImport::import_id) / [`set_import_id(Option<String>)`](crate::client::fluent_builders::StartImport::set_import_id): <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
-    ///   - [`resource_specification(ImportResourceSpecification)`](crate::client::fluent_builders::StartImport::resource_specification) / [`set_resource_specification(Option<ImportResourceSpecification>)`](crate::client::fluent_builders::StartImport::set_resource_specification): <p>Parameters for creating the bot or bot locale.</p>
+    ///   - [`resource_specification(ImportResourceSpecification)`](crate::client::fluent_builders::StartImport::resource_specification) / [`set_resource_specification(Option<ImportResourceSpecification>)`](crate::client::fluent_builders::StartImport::set_resource_specification): <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
     ///   - [`merge_strategy(MergeStrategy)`](crate::client::fluent_builders::StartImport::merge_strategy) / [`set_merge_strategy(Option<MergeStrategy>)`](crate::client::fluent_builders::StartImport::set_merge_strategy): <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    ///   - [`file_password(impl Into<String>)`](crate::client::fluent_builders::StartImport::file_password) / [`set_file_password(Option<String>)`](crate::client::fluent_builders::StartImport::set_file_password): <p>The password used to encrypt the zip archive that contains the bot or bot locale definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
+    ///   - [`file_password(impl Into<String>)`](crate::client::fluent_builders::StartImport::file_password) / [`set_file_password(Option<String>)`](crate::client::fluent_builders::StartImport::set_file_password): <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
     /// - On success, responds with [`StartImportOutput`](crate::output::StartImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::output::StartImportOutput::import_id): <p>A unique identifier for the import.</p>
-    ///   - [`resource_specification(Option<ImportResourceSpecification>)`](crate::output::StartImportOutput::resource_specification): <p>The parameters used when importing the bot or bot locale.</p>
+    ///   - [`resource_specification(Option<ImportResourceSpecification>)`](crate::output::StartImportOutput::resource_specification): <p>The parameters used when importing the resource.</p>
     ///   - [`merge_strategy(Option<MergeStrategy>)`](crate::output::StartImportOutput::merge_strategy): <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    ///   - [`import_status(Option<ImportStatus>)`](crate::output::StartImportOutput::import_status): <p>The current status of the import. When the status is <code>Complete</code> the bot or bot alias is ready to use.</p>
+    ///   - [`import_status(Option<ImportStatus>)`](crate::output::StartImportOutput::import_status): <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::StartImportOutput::creation_date_time): <p>The date and time that the import request was created.</p>
     /// - On failure, responds with [`SdkError<StartImportError>`](crate::error::StartImportError)
     pub fn start_import(&self) -> fluent_builders::StartImport<C, M, R> {
@@ -1210,7 +1248,7 @@ where
     /// - On success, responds with [`UpdateExportOutput`](crate::output::UpdateExportOutput) with field(s):
     ///   - [`export_id(Option<String>)`](crate::output::UpdateExportOutput::export_id): <p>The unique identifier Amazon Lex assigned to the export.</p>
     ///   - [`resource_specification(Option<ExportResourceSpecification>)`](crate::output::UpdateExportOutput::resource_specification): <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    ///   - [`file_format(Option<ImportExportFileFormat>)`](crate::output::UpdateExportOutput::file_format): <p>The file format used for the files that define the resource.</p>
+    ///   - [`file_format(Option<ImportExportFileFormat>)`](crate::output::UpdateExportOutput::file_format): <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
     ///   - [`export_status(Option<ExportStatus>)`](crate::output::UpdateExportOutput::export_status): <p>The status of the export. When the status is <code>Completed</code> the export archive is available for download.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::output::UpdateExportOutput::creation_date_time): <p>The date and time that the export was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::output::UpdateExportOutput::last_updated_date_time): <p>The date and time that the export was last updated.</p>
@@ -3436,6 +3474,96 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteCustomVocabulary`.
+    ///
+    /// <p>Removes a custom vocabulary from the specified locale in the specified bot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteCustomVocabulary<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_custom_vocabulary_input::Builder,
+    }
+    impl<C, M, R> DeleteCustomVocabulary<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteCustomVocabulary`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteCustomVocabularyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteCustomVocabularyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteCustomVocabularyInputOperationOutputAlias,
+                crate::output::DeleteCustomVocabularyOutput,
+                crate::error::DeleteCustomVocabularyError,
+                crate::input::DeleteCustomVocabularyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The version of the bot to remove the custom vocabulary from.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
+            self
+        }
+        /// <p>The version of the bot to remove the custom vocabulary from.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The locale identifier for the locale that contains the custom vocabulary to remove.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
+            self
+        }
+        /// <p>The locale identifier for the locale that contains the custom vocabulary to remove.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteExport`.
     ///
     /// <p>Removes a previous export and the associated files stored in an S3 bucket.</p>
@@ -4593,6 +4721,96 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeCustomVocabularyMetadata`.
+    ///
+    /// <p>Provides metadata information about a custom vocabulary.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeCustomVocabularyMetadata<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_custom_vocabulary_metadata_input::Builder,
+    }
+    impl<C, M, R> DescribeCustomVocabularyMetadata<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeCustomVocabularyMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeCustomVocabularyMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeCustomVocabularyMetadataError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeCustomVocabularyMetadataInputOperationOutputAlias,
+                crate::output::DescribeCustomVocabularyMetadataOutput,
+                crate::error::DescribeCustomVocabularyMetadataError,
+                crate::input::DescribeCustomVocabularyMetadataInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The bot version of the bot to return metadata for.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
+            self
+        }
+        /// <p>The bot version of the bot to return metadata for.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
+            self
+        }
+        /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeExport`.
     ///
     /// <p>Gets information about a specific export.</p>
@@ -5746,12 +5964,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
+        /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListBots</code> request to return the next page of results. For a complete set of results, call the <code>ListBots</code> operation until the <code>nextToken</code> returned in the response is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
+        /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListBots</code> request to return the next page of results. For a complete set of results, call the <code>ListBots</code> operation until the <code>nextToken</code> returned in the response is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6089,7 +6309,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListExports`.
     ///
-    /// <p>Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.</p>
+    /// <p>Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in the list for 7 days.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExports<
         C = aws_smithy_client::erase::DynConnector,
@@ -6212,20 +6432,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
+        /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
+        /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Specifies the resources that should be exported. If you don't specify a resource type in the <code>filters</code> parameter, both bot locales and custom vocabularies are exported.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
+            self
+        }
+        /// <p>Specifies the resources that should be exported. If you don't specify a resource type in the <code>filters</code> parameter, both bot locales and custom vocabularies are exported.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
             self
         }
     }
     /// Fluent builder constructing a request to `ListImports`.
     ///
-    /// <p>Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.</p>
+    /// <p>Lists the imports for a bot, bot locale, or custom vocabulary. Imports are kept in the list for 7 days.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImports<
         C = aws_smithy_client::erase::DynConnector,
@@ -6348,14 +6580,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
+        /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
+        /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Specifies the locale that should be present in the list. If you don't specify a resource type in the <code>filters</code> parameter, the list contains both bot locales and custom vocabularies.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
+            self
+        }
+        /// <p>Specifies the locale that should be present in the list. If you don't specify a resource type in the <code>filters</code> parameter, the list contains both bot locales and custom vocabularies.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
             self
         }
     }
@@ -6494,12 +6738,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
+        /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListIntents</code> request to return the next page of results. For a complete set of results, call the <code>ListIntents</code> operation until the <code>nextToken</code> returned in the response is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
+        /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListIntents</code> request to return the next page of results. For a complete set of results, call the <code>ListIntents</code> operation until the <code>nextToken</code> returned in the response is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7277,7 +7523,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartImport`.
     ///
-    /// <p>Starts importing a bot or bot locale from a zip archive that you uploaded to an S3 bucket.</p>
+    /// <p>Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you uploaded to an S3 bucket.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImport<
         C = aws_smithy_client::erase::DynConnector,
@@ -7344,7 +7590,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_import_id(input);
             self
         }
-        /// <p>Parameters for creating the bot or bot locale.</p>
+        /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
         pub fn resource_specification(
             mut self,
             input: crate::model::ImportResourceSpecification,
@@ -7352,7 +7598,7 @@ pub mod fluent_builders {
             self.inner = self.inner.resource_specification(input);
             self
         }
-        /// <p>Parameters for creating the bot or bot locale.</p>
+        /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ImportResourceSpecification>,
@@ -7373,12 +7619,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_merge_strategy(input);
             self
         }
-        /// <p>The password used to encrypt the zip archive that contains the bot or bot locale definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
+        /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
         pub fn file_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.file_password(input.into());
             self
         }
-        /// <p>The password used to encrypt the zip archive that contains the bot or bot locale definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
+        /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
         pub fn set_file_password(
             mut self,
             input: std::option::Option<std::string::String>,

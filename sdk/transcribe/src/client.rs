@@ -87,7 +87,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`category_name(impl Into<String>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::category_name) / [`set_category_name(Option<String>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::set_category_name): <p>The name that you choose for your category when you create it. </p>
-    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::set_rules): <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral. </p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::set_rules): <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
     /// - On success, responds with [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput) with field(s):
     ///   - [`category_properties(Option<CategoryProperties>)`](crate::output::CreateCallAnalyticsCategoryOutput::category_properties): <p>The rules and associated metadata used to create a category.</p>
     /// - On failure, responds with [`SdkError<CreateCallAnalyticsCategoryError>`](crate::error::CreateCallAnalyticsCategoryError)
@@ -119,7 +119,7 @@ where
     /// - The fluent builder is configurable:
     ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::set_vocabulary_name): <p>The name of the custom vocabulary. This case-sensitive name must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::CreateMedicalVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::CreateMedicalVocabulary::set_language_code): <p>The language code for the language used for the entries in your custom vocabulary. The language code of your custom vocabulary must match the language code of your transcription job. US English (en-US) is the only language code available for Amazon Transcribe Medical.</p>
-    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::set_vocabulary_file_uri): <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>  <p> <code> https://s3.   <aws-region>    .amazonaws.com/    <bucket-name>     /     <keyprefix>      /      <objectkey>       </objectkey>     </keyprefix>    </bucket-name>   </aws-region></code> </p>  <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical Custom Vocabularies</a>.</p>
+    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::set_vocabulary_file_uri): <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>  <p> <code>https://s3.   <aws-region>    .amazonaws.com/    <bucket-name>     /     <keyprefix>      /      <objectkey></objectkey>     </keyprefix>    </bucket-name>   </aws-region></code> </p>  <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMedicalVocabulary::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMedicalVocabulary::set_tags): <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create this new vocabulary.</p>
     /// - On success, responds with [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput) with field(s):
     ///   - [`vocabulary_name(Option<String>)`](crate::output::CreateMedicalVocabularyOutput::vocabulary_name): <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account and is case sensitive.</p>
@@ -135,9 +135,9 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_vocabulary_name): <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account. The name is case sensitive. If you try to create a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::CreateVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::CreateVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::CreateVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::CreateVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
     ///   - [`phrases(Vec<String>)`](crate::client::fluent_builders::CreateVocabulary::phrases) / [`set_phrases(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVocabulary::set_phrases): <p>An array of strings that contains the vocabulary entries. </p>
-    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_vocabulary_file_uri): <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>  <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom vocabularies</a>.</p>
+    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_vocabulary_file_uri): <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>  <p> <code>https://s3.   <amazon web services-region>    .amazonaws.com/    <awsdoc-example-bucket>     /     <keyprefix>      /      <objectkey>       </objectkey>     </keyprefix>    </awsdoc-example-bucket>   </amazon></code> </p>  <p>For example:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateVocabulary::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateVocabulary::set_tags): <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary at the time you create this new vocabulary.</p>
     /// - On success, responds with [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput) with field(s):
     ///   - [`vocabulary_name(Option<String>)`](crate::output::CreateVocabularyOutput::vocabulary_name): <p>The name of the vocabulary.</p>
@@ -154,8 +154,8 @@ where
     /// - The fluent builder is configurable:
     ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_vocabulary_filter_name): <p>The vocabulary filter name. The name must be unique within the account that contains it. If you try to create a vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code> error.</p>
     ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::CreateVocabularyFilter::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_language_code): <p>The language code of the words in the vocabulary filter. All words in the filter must be in the same language. The vocabulary filter can only be used with transcription jobs in the specified language.</p>
-    ///   - [`words(Vec<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::words) / [`set_words(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_words): <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>  <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
-    ///   - [`vocabulary_filter_file_uri(impl Into<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::vocabulary_filter_file_uri) / [`set_vocabulary_filter_file_uri(Option<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_vocabulary_filter_file_uri): <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>  <p>The specified file must be less than 50 KB of UTF-8 characters.</p>  <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
+    ///   - [`words(Vec<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::words) / [`set_words(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_words): <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>  <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
+    ///   - [`vocabulary_filter_file_uri(impl Into<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::vocabulary_filter_file_uri) / [`set_vocabulary_filter_file_uri(Option<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_vocabulary_filter_file_uri): <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>  <p>The specified file must be less than 50 KB of UTF-8 characters.</p>  <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateVocabularyFilter::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_tags): <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary filter at the time you create this new vocabulary filter.</p>
     /// - On success, responds with [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput) with field(s):
     ///   - [`vocabulary_filter_name(Option<String>)`](crate::output::CreateVocabularyFilterOutput::vocabulary_filter_name): <p>The name of the vocabulary filter.</p>
@@ -488,10 +488,10 @@ where
     /// - The fluent builder is configurable:
     ///   - [`call_analytics_job_name(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::call_analytics_job_name) / [`set_call_analytics_job_name(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_call_analytics_job_name): <p>The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to create a call analytics job with the same name as a previous call analytics job, you get a <code>ConflictException</code> error.</p>
     ///   - [`media(Media)`](crate::client::fluent_builders::StartCallAnalyticsJob::media) / [`set_media(Option<Media>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_media): <p>Describes the input media file in a transcription request.</p>
-    ///   - [`output_location(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::output_location) / [`set_output_location(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_output_location): <p>The Amazon S3 location where the output of the call analytics job is stored. You can provide the following location types to store the output of call analytics job:</p>  <ul>   <li> <p>s3://DOC-EXAMPLE-BUCKET1</p> <p> If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level of the bucket.</p> </li>   <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>   <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li>  </ul>  <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3 bucket.</p>
-    ///   - [`output_encryption_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::output_encryption_kms_key_id) / [`set_output_encryption_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_output_encryption_kms_key_id): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the output of the call analytics job. The user calling the operation must have permission to use the specified KMS key.</p>  <p>You use either of the following to identify an Amazon Web Services KMS key in the current account:</p>  <ul>   <li> <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li>   <li> <p>KMS Key Alias: "alias/ExampleAlias"</p> </li>  </ul>  <p> You can use either of the following to identify a KMS key in the current account or another account:</p>  <ul>   <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or another account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li>   <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li>  </ul>  <p>If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon S3 key (SSE-S3).</p>  <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the <code>OutputLocation</code> parameter. </p>
+    ///   - [`output_location(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::output_location) / [`set_output_location(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_output_location): <p>The Amazon S3 location where the output of the call analytics job is stored. You can provide the following location types to store the output of call analytics job:</p>  <ul>   <li> <p>s3://DOC-EXAMPLE-BUCKET1</p> <p> If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level of the bucket.</p> </li>   <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>   <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li>  </ul>  <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3 bucket.</p>
+    ///   - [`output_encryption_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::output_encryption_kms_key_id) / [`set_output_encryption_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_output_encryption_kms_key_id): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the output of the call analytics job. The user calling the operation must have permission to use the specified KMS key.</p>  <p>You use either of the following to identify an Amazon Web Services KMS key in the current account:</p>  <ul>   <li> <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li>   <li> <p>KMS Key Alias: "alias/ExampleAlias"</p> </li>  </ul>  <p> You can use either of the following to identify a KMS key in the current account or another account:</p>  <ul>   <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or another account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li>   <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li>  </ul>  <p>If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon S3 key (SSE-S3).</p>  <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the <code>OutputLocation</code> parameter. </p>
     ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files. Amazon Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket for your transcription results, this role should have access to the output bucket as well.</p>
-    ///   - [`settings(CallAnalyticsJobSettings)`](crate::client::fluent_builders::StartCallAnalyticsJob::settings) / [`set_settings(Option<CallAnalyticsJobSettings>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_settings): <p>A <code>Settings</code> object that provides optional settings for a call analytics job. </p>
+    ///   - [`settings(CallAnalyticsJobSettings)`](crate::client::fluent_builders::StartCallAnalyticsJob::settings) / [`set_settings(Option<CallAnalyticsJobSettings>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_settings): <p>A <code>Settings</code> object that provides optional settings for a call analytics job.</p>
     ///   - [`channel_definitions(Vec<ChannelDefinition>)`](crate::client::fluent_builders::StartCallAnalyticsJob::channel_definitions) / [`set_channel_definitions(Option<Vec<ChannelDefinition>>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_channel_definitions): <p>When you start a call analytics job, you must pass an array that maps the agent and the customer to specific audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have their own channel. You can't assign more than one channel to an agent or customer. </p>
     /// - On success, responds with [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput) with field(s):
     ///   - [`call_analytics_job(Option<CallAnalyticsJob>)`](crate::output::StartCallAnalyticsJobOutput::call_analytics_job): <p>An object containing the details of the asynchronous call analytics job.</p>
@@ -577,9 +577,9 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`category_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::category_name) / [`set_category_name(Option<String>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::set_category_name): <p>The name of the analytics category to update. The name is case sensitive. If you try to update a call analytics category with the same name as a previous category you will receive a <code>ConflictException</code> error.</p>
-    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::set_rules): <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used. </p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::set_rules): <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used.</p>
     /// - On success, responds with [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput) with field(s):
-    ///   - [`category_properties(Option<CategoryProperties>)`](crate::output::UpdateCallAnalyticsCategoryOutput::category_properties): <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created. </p>
+    ///   - [`category_properties(Option<CategoryProperties>)`](crate::output::UpdateCallAnalyticsCategoryOutput::category_properties): <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created.</p>
     /// - On failure, responds with [`SdkError<UpdateCallAnalyticsCategoryError>`](crate::error::UpdateCallAnalyticsCategoryError)
     pub fn update_call_analytics_category(
         &self,
@@ -590,8 +590,8 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::set_vocabulary_name): <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same name as a vocabulary you've already made, you get a <code>ConflictException</code> error.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::UpdateMedicalVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::set_language_code): <p>The language code of the language used for the entries in the updated vocabulary. US English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
-    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::set_vocabulary_file_uri): <p>The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:</p>  <p> <code> https://s3.   <aws-region>    .amazonaws.com/    <bucket-name>     /     <keyprefix>      /      <objectkey>       </objectkey>     </keyprefix>    </bucket-name>   </aws-region></code> </p>  <p>For example:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical Custom Vocabularies</a>.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::UpdateMedicalVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::set_language_code): <p>The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::set_vocabulary_file_uri): <p>The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:</p>  <p> <code> https://s3.   <aws-region>    .amazonaws.com/    <bucket-name>     /     <keyprefix>      /      <objectkey>       </objectkey>     </keyprefix>    </bucket-name>   </aws-region></code> </p>  <p>For example:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
     /// - On success, responds with [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput) with field(s):
     ///   - [`vocabulary_name(Option<String>)`](crate::output::UpdateMedicalVocabularyOutput::vocabulary_name): <p>The name of the updated vocabulary.</p>
     ///   - [`language_code(Option<LanguageCode>)`](crate::output::UpdateMedicalVocabularyOutput::language_code): <p>The language code for the language of the text file used to update the custom vocabulary. US English (en-US) is the only language supported in Amazon Transcribe Medical.</p>
@@ -605,9 +605,9 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::UpdateVocabulary::set_vocabulary_name): <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
-    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::UpdateVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::UpdateVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::UpdateVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::UpdateVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
     ///   - [`phrases(Vec<String>)`](crate::client::fluent_builders::UpdateVocabulary::phrases) / [`set_phrases(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateVocabulary::set_phrases): <p>An array of strings containing the vocabulary entries.</p>
-    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::UpdateVocabulary::set_vocabulary_file_uri): <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is </p>  <p>For example:</p>  <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
+    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::UpdateVocabulary::set_vocabulary_file_uri): <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>  <p> <code>https://s3.   <aws-region>    .amazonaws.com/    <awsdoc-example-bucket>     /     <keyprefix>      /      <objectkey></objectkey>     </keyprefix>    </awsdoc-example-bucket>   </aws-region></code> </p>  <p>For example:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
     /// - On success, responds with [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput) with field(s):
     ///   - [`vocabulary_name(Option<String>)`](crate::output::UpdateVocabularyOutput::vocabulary_name): <p>The name of the vocabulary that was updated.</p>
     ///   - [`language_code(Option<LanguageCode>)`](crate::output::UpdateVocabularyOutput::language_code): <p>The language code of the vocabulary entries.</p>
@@ -621,8 +621,8 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::set_vocabulary_filter_name): <p>The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code> error.</p>
-    ///   - [`words(Vec<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::words) / [`set_words(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateVocabularyFilter::set_words): <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>  <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
-    ///   - [`vocabulary_filter_file_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::vocabulary_filter_file_uri) / [`set_vocabulary_filter_file_uri(Option<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::set_vocabulary_filter_file_uri): <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>  <p>The specified file must be less than 50 KB of UTF-8 characters.</p>  <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
+    ///   - [`words(Vec<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::words) / [`set_words(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateVocabularyFilter::set_words): <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>  <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
+    ///   - [`vocabulary_filter_file_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::vocabulary_filter_file_uri) / [`set_vocabulary_filter_file_uri(Option<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::set_vocabulary_filter_file_uri): <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>  <p>The specified file must be less than 50 KB of UTF-8 characters.</p>  <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
     /// - On success, responds with [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput) with field(s):
     ///   - [`vocabulary_filter_name(Option<String>)`](crate::output::UpdateVocabularyFilterOutput::vocabulary_filter_name): <p>The name of the updated vocabulary filter.</p>
     ///   - [`language_code(Option<LanguageCode>)`](crate::output::UpdateVocabularyFilterOutput::language_code): <p>The language code of the words in the vocabulary filter.</p>
@@ -716,12 +716,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral. </p>
+        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             self.inner = self.inner.rules(input);
             self
         }
-        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral. </p>
+        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -946,43 +946,41 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>
-        /// <p> <code> https://s3.
+        /// <p> <code>https://s3.
         /// <aws-region>
         /// .amazonaws.com/
         /// <bucket-name>
         /// /
         /// <keyprefix>
         /// /
-        /// <objectkey>
-        /// </objectkey>
+        /// <objectkey></objectkey>
         /// </keyprefix>
         /// </bucket-name>
         /// </aws-region></code> </p>
         /// <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>
         /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
         /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>
-        /// <p> <code> https://s3.
+        /// <p> <code>https://s3.
         /// <aws-region>
         /// .amazonaws.com/
         /// <bucket-name>
         /// /
         /// <keyprefix>
         /// /
-        /// <objectkey>
-        /// </objectkey>
+        /// <objectkey></objectkey>
         /// </keyprefix>
         /// </bucket-name>
         /// </aws-region></code> </p>
         /// <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>
         /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1080,12 +1078,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vocabulary_name(input);
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1111,15 +1109,43 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
+        /// <p> <code>https://s3.
+        /// <amazon web services-region>
+        /// .amazonaws.com/
+        /// <awsdoc-example-bucket>
+        /// /
+        /// <keyprefix>
+        /// /
+        /// <objectkey>
+        /// </objectkey>
+        /// </keyprefix>
+        /// </awsdoc-example-bucket>
+        /// </amazon></code> </p>
+        /// <p>For example:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
+        /// <p> <code>https://s3.
+        /// <amazon web services-region>
+        /// .amazonaws.com/
+        /// <awsdoc-example-bucket>
+        /// /
+        /// <keyprefix>
+        /// /
+        /// <objectkey>
+        /// </objectkey>
+        /// </keyprefix>
+        /// </awsdoc-example-bucket>
+        /// </amazon></code> </p>
+        /// <p>For example:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1234,13 +1260,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_words`](Self::set_words).
         ///
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn words(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.words(input.into());
             self
         }
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn set_words(
             mut self,
@@ -1249,14 +1275,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_words(input);
             self
         }
-        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
         /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
         pub fn vocabulary_filter_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_filter_file_uri(input.into());
             self
         }
-        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
         /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
         pub fn set_vocabulary_filter_file_uri(
@@ -3468,8 +3494,8 @@ pub mod fluent_builders {
         /// <p>The Amazon S3 location where the output of the call analytics job is stored. You can provide the following location types to store the output of call analytics job:</p>
         /// <ul>
         /// <li> <p>s3://DOC-EXAMPLE-BUCKET1</p> <p> If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level of the bucket.</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li>
         /// </ul>
         /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3 bucket.</p>
         pub fn output_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3479,8 +3505,8 @@ pub mod fluent_builders {
         /// <p>The Amazon S3 location where the output of the call analytics job is stored. You can provide the following location types to store the output of call analytics job:</p>
         /// <ul>
         /// <li> <p>s3://DOC-EXAMPLE-BUCKET1</p> <p> If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level of the bucket.</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li>
         /// </ul>
         /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3 bucket.</p>
         pub fn set_output_location(
@@ -3499,7 +3525,7 @@ pub mod fluent_builders {
         /// <p> You can use either of the following to identify a KMS key in the current account or another account:</p>
         /// <ul>
         /// <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or another account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li>
-        /// <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li>
+        /// <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li>
         /// </ul>
         /// <p>If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon S3 key (SSE-S3).</p>
         /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the <code>OutputLocation</code> parameter. </p>
@@ -3519,7 +3545,7 @@ pub mod fluent_builders {
         /// <p> You can use either of the following to identify a KMS key in the current account or another account:</p>
         /// <ul>
         /// <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or another account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li>
-        /// <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li>
+        /// <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li>
         /// </ul>
         /// <p>If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon S3 key (SSE-S3).</p>
         /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the <code>OutputLocation</code> parameter. </p>
@@ -3543,12 +3569,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_access_role_arn(input);
             self
         }
-        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job. </p>
+        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job.</p>
         pub fn settings(mut self, input: crate::model::CallAnalyticsJobSettings) -> Self {
             self.inner = self.inner.settings(input);
             self
         }
-        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job. </p>
+        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::CallAnalyticsJobSettings>,
@@ -4394,7 +4420,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCallAnalyticsCategory`.
     ///
-    /// <p>Updates the call analytics category with new values. The <code>UpdateCallAnalyticsCategory</code> operation overwrites all of the existing information with the values that you provide in the request. </p>
+    /// <p>Updates the call analytics category with new values. The <code>UpdateCallAnalyticsCategory</code> operation overwrites all of the existing information with the values that you provide in the request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCallAnalyticsCategory<
         C = aws_smithy_client::erase::DynConnector,
@@ -4468,12 +4494,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used. </p>
+        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             self.inner = self.inner.rules(input);
             self
         }
-        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used. </p>
+        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -4554,12 +4580,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vocabulary_name(input);
             self
         }
-        /// <p>The language code of the language used for the entries in the updated vocabulary. US English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+        /// <p>The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language code of the language used for the entries in the updated vocabulary. US English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+        /// <p>The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -4583,7 +4609,7 @@ pub mod fluent_builders {
         /// <p>For example:</p>
         /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input.into());
             self
@@ -4604,7 +4630,7 @@ pub mod fluent_builders {
         /// <p>For example:</p>
         /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4685,12 +4711,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vocabulary_name(input);
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -4715,18 +4741,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_phrases(input);
             self
         }
-        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is </p>
+        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
+        /// <p> <code>https://s3.
+        /// <aws-region>
+        /// .amazonaws.com/
+        /// <awsdoc-example-bucket>
+        /// /
+        /// <keyprefix>
+        /// /
+        /// <objectkey></objectkey>
+        /// </keyprefix>
+        /// </awsdoc-example-bucket>
+        /// </aws-region></code> </p>
         /// <p>For example:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
-        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is </p>
+        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
+        /// <p> <code>https://s3.
+        /// <aws-region>
+        /// .amazonaws.com/
+        /// <awsdoc-example-bucket>
+        /// /
+        /// <keyprefix>
+        /// /
+        /// <objectkey></objectkey>
+        /// </keyprefix>
+        /// </awsdoc-example-bucket>
+        /// </aws-region></code> </p>
         /// <p>For example:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4811,13 +4861,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_words`](Self::set_words).
         ///
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn words(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.words(input.into());
             self
         }
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn set_words(
             mut self,
@@ -4826,14 +4876,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_words(input);
             self
         }
-        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
         /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
         pub fn vocabulary_filter_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_filter_file_uri(input.into());
             self
         }
-        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
         /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
         pub fn set_vocabulary_filter_file_uri(

@@ -198,12 +198,12 @@ pub mod create_channel_input {
             self.channel_name = input;
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
         pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
             self.filler_slate = Some(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
         pub fn set_filler_slate(
             mut self,
             input: std::option::Option<crate::model::SlateSource>,
@@ -6514,6 +6514,7 @@ pub mod update_channel_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
+        pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
     }
     impl Builder {
@@ -6525,6 +6526,19 @@ pub mod update_channel_input {
         /// <p>The identifier for the channel you are working on.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
+            self
+        }
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.filler_slate = Some(input);
+            self
+        }
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+        pub fn set_filler_slate(
+            mut self,
+            input: std::option::Option<crate::model::SlateSource>,
+        ) -> Self {
+            self.filler_slate = input;
             self
         }
         /// Appends an item to `outputs`.
@@ -6555,6 +6569,7 @@ pub mod update_channel_input {
         > {
             Ok(crate::input::UpdateChannelInput {
                 channel_name: self.channel_name,
+                filler_slate: self.filler_slate,
                 outputs: self.outputs,
             })
         }
@@ -7238,6 +7253,8 @@ impl std::fmt::Debug for UpdateSourceLocationInput {
 pub struct UpdateChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+    pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
 }
@@ -7245,6 +7262,10 @@ impl UpdateChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
+    }
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
     }
     /// <p>The channel's output properties.</p>
     pub fn outputs(&self) -> std::option::Option<&[crate::model::RequestOutputItem]> {
@@ -7255,6 +7276,7 @@ impl std::fmt::Debug for UpdateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelInput");
         formatter.field("channel_name", &self.channel_name);
+        formatter.field("filler_slate", &self.filler_slate);
         formatter.field("outputs", &self.outputs);
         formatter.finish()
     }
@@ -8367,7 +8389,7 @@ impl std::fmt::Debug for CreatePrefetchScheduleInput {
 pub struct CreateChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
@@ -8384,7 +8406,7 @@ impl CreateChannelInput {
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
     pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
         self.filler_slate.as_ref()
     }

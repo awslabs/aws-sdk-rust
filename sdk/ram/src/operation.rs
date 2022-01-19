@@ -507,6 +507,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissions {
     }
 }
 
+/// Operation shape for `ListPermissionVersions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_permission_versions`](crate::client::Client::list_permission_versions).
+///
+/// See [`crate::client::fluent_builders::ListPermissionVersions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListPermissionVersions {
+    _private: (),
+}
+impl ListPermissionVersions {
+    /// Creates a new builder-style object to manufacture [`ListPermissionVersionsInput`](crate::input::ListPermissionVersionsInput)
+    pub fn builder() -> crate::input::list_permission_versions_input::Builder {
+        crate::input::list_permission_versions_input::Builder::default()
+    }
+    /// Creates a new `ListPermissionVersions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListPermissionVersions {
+    type Output = std::result::Result<
+        crate::output::ListPermissionVersionsOutput,
+        crate::error::ListPermissionVersionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_permission_versions_error(response)
+        } else {
+            crate::operation_deser::parse_list_permission_versions_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListPrincipals`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

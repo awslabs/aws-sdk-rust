@@ -1187,7 +1187,7 @@ pub struct GetChangesetOutput {
     pub error_info: std::option::Option<crate::model::ChangesetErrorInfo>,
     /// <p>Time until which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub active_until_timestamp: std::option::Option<i64>,
-    /// Milliseconds since UTC epoch
+    /// <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub active_from_timestamp: std::option::Option<i64>,
     /// <p>The unique identifier of the Changeset that is being updated.</p>
     pub updates_changeset_id: std::option::Option<std::string::String>,
@@ -1246,7 +1246,7 @@ impl GetChangesetOutput {
     pub fn active_until_timestamp(&self) -> std::option::Option<i64> {
         self.active_until_timestamp
     }
-    /// Milliseconds since UTC epoch
+    /// <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn active_from_timestamp(&self) -> std::option::Option<i64> {
         self.active_from_timestamp
     }
@@ -1455,12 +1455,12 @@ pub mod get_changeset_output {
             self.active_until_timestamp = input;
             self
         }
-        /// Milliseconds since UTC epoch
+        /// <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn active_from_timestamp(mut self, input: i64) -> Self {
             self.active_from_timestamp = Some(input);
             self
         }
-        /// Milliseconds since UTC epoch
+        /// <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_active_from_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.active_from_timestamp = input;
             self

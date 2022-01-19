@@ -2768,6 +2768,167 @@ impl std::error::Error for ListPermissionsError {
     }
 }
 
+/// Error type for the `ListPermissionVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListPermissionVersionsError {
+    /// Kind of error that occurred.
+    pub kind: ListPermissionVersionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListPermissionVersions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListPermissionVersionsErrorKind {
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>A parameter is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The format of an Amazon Resource Name (ARN) is not valid.</p>
+    MalformedArnException(crate::error::MalformedArnException),
+    /// <p>The requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The service could not respond to the request due to an internal problem.</p>
+    ServerInternalException(crate::error::ServerInternalException),
+    /// <p>The service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>A specified resource was not found.</p>
+    UnknownResourceException(crate::error::UnknownResourceException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListPermissionVersionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListPermissionVersionsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListPermissionVersionsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListPermissionVersionsErrorKind::MalformedArnException(_inner) => _inner.fmt(f),
+            ListPermissionVersionsErrorKind::OperationNotPermittedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListPermissionVersionsErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
+            ListPermissionVersionsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListPermissionVersionsErrorKind::UnknownResourceException(_inner) => _inner.fmt(f),
+            ListPermissionVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListPermissionVersionsError {
+    fn code(&self) -> Option<&str> {
+        ListPermissionVersionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListPermissionVersionsError {
+    /// Creates a new `ListPermissionVersionsError`.
+    pub fn new(kind: ListPermissionVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListPermissionVersionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListPermissionVersionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListPermissionVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListPermissionVersionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListPermissionVersionsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPermissionVersionsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPermissionVersionsErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPermissionVersionsErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPermissionVersionsErrorKind::MalformedArnException`.
+    pub fn is_malformed_arn_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPermissionVersionsErrorKind::MalformedArnException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPermissionVersionsErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPermissionVersionsErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPermissionVersionsErrorKind::ServerInternalException`.
+    pub fn is_server_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPermissionVersionsErrorKind::ServerInternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPermissionVersionsErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPermissionVersionsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListPermissionVersionsErrorKind::UnknownResourceException`.
+    pub fn is_unknown_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPermissionVersionsErrorKind::UnknownResourceException(_)
+        )
+    }
+}
+impl std::error::Error for ListPermissionVersionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListPermissionVersionsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListPermissionVersionsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListPermissionVersionsErrorKind::MalformedArnException(_inner) => Some(_inner),
+            ListPermissionVersionsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            ListPermissionVersionsErrorKind::ServerInternalException(_inner) => Some(_inner),
+            ListPermissionVersionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListPermissionVersionsErrorKind::UnknownResourceException(_inner) => Some(_inner),
+            ListPermissionVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListPrincipals` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

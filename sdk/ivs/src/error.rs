@@ -2363,6 +2363,8 @@ pub struct ListStreamsError {
 pub enum ListStreamsErrorKind {
     /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p></p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2370,6 +2372,7 @@ impl std::fmt::Display for ListStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListStreamsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListStreamsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             ListStreamsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2428,11 +2431,16 @@ impl ListStreamsError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListStreamsErrorKind::AccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `ListStreamsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListStreamsErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for ListStreamsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListStreamsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListStreamsErrorKind::ValidationException(_inner) => Some(_inner),
             ListStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }

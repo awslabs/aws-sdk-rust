@@ -17,12 +17,12 @@ pub mod create_changeset_input {
         >,
     }
     impl Builder {
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -64,7 +64,11 @@ pub mod create_changeset_input {
         ///
         /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
         ///
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn source_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -75,7 +79,11 @@ pub mod create_changeset_input {
             self.source_params = Some(hash_map);
             self
         }
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn set_source_params(
             mut self,
             input: std::option::Option<
@@ -97,7 +105,11 @@ pub mod create_changeset_input {
         /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
         /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -116,7 +128,11 @@ pub mod create_changeset_input {
         /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
         /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -300,12 +316,12 @@ pub mod create_dataset_input {
         pub(crate) schema_definition: std::option::Option<crate::model::SchemaUnion>,
     }
     impl Builder {
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -561,12 +577,12 @@ pub mod create_data_view_input {
             std::option::Option<crate::model::DataViewDestinationTypeParams>,
     }
     impl Builder {
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -824,12 +840,12 @@ pub mod delete_dataset_input {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2413,12 +2429,12 @@ pub mod update_changeset_input {
         >,
     }
     impl Builder {
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2447,7 +2463,11 @@ pub mod update_changeset_input {
         ///
         /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
         ///
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn source_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -2458,7 +2478,11 @@ pub mod update_changeset_input {
             self.source_params = Some(hash_map);
             self
         }
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn set_source_params(
             mut self,
             input: std::option::Option<
@@ -2472,7 +2496,19 @@ pub mod update_changeset_input {
         ///
         /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
         ///
-        /// <p>Options that define the structure of the source file(s).</p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
+        /// <ul>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// </ul>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -2483,7 +2519,19 @@ pub mod update_changeset_input {
             self.format_params = Some(hash_map);
             self
         }
-        /// <p>Options that define the structure of the source file(s).</p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
+        /// <ul>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// </ul>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -2681,12 +2729,12 @@ pub mod update_dataset_input {
         pub(crate) schema_definition: std::option::Option<crate::model::SchemaUnion>,
     }
     impl Builder {
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2926,7 +2974,7 @@ impl UpdateDatasetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the Dataset to update.</p>
     pub dataset_id: std::option::Option<std::string::String>,
@@ -2946,7 +2994,7 @@ pub struct UpdateDatasetInput {
     pub schema_definition: std::option::Option<crate::model::SchemaUnion>,
 }
 impl UpdateDatasetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -2997,21 +3045,37 @@ impl std::fmt::Debug for UpdateDatasetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateChangesetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the Changeset to update.</p>
     pub changeset_id: std::option::Option<std::string::String>,
-    /// <p>Options that define the location of the data being ingested.</p>
+    /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+    /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+    /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+    /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+    /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
     pub source_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Options that define the structure of the source file(s).</p>
+    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+    /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
+    /// <ul>
+    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+    /// </ul>
+    /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+    /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+    /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+    /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+    /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     pub format_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateChangesetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -3023,14 +3087,30 @@ impl UpdateChangesetInput {
     pub fn changeset_id(&self) -> std::option::Option<&str> {
         self.changeset_id.as_deref()
     }
-    /// <p>Options that define the location of the data being ingested.</p>
+    /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+    /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+    /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+    /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+    /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
     pub fn source_params(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.source_params.as_ref()
     }
-    /// <p>Options that define the structure of the source file(s).</p>
+    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+    /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
+    /// <ul>
+    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+    /// </ul>
+    /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+    /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+    /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+    /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+    /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     pub fn format_params(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3286,13 +3366,13 @@ impl std::fmt::Debug for GetChangesetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the Dataset to be deleted.</p>
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -3314,7 +3394,7 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataViewInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
     pub dataset_id: std::option::Option<std::string::String>,
@@ -3330,7 +3410,7 @@ pub struct CreateDataViewInput {
     pub destination_type_params: std::option::Option<crate::model::DataViewDestinationTypeParams>,
 }
 impl CreateDataViewInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -3379,7 +3459,7 @@ impl std::fmt::Debug for CreateDataViewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Display title for a FinSpace Dataset.</p>
     pub dataset_title: std::option::Option<std::string::String>,
@@ -3401,7 +3481,7 @@ pub struct CreateDatasetInput {
     pub schema_definition: std::option::Option<crate::model::SchemaUnion>,
 }
 impl CreateDatasetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -3459,7 +3539,7 @@ impl std::fmt::Debug for CreateDatasetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChangesetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
     pub dataset_id: std::option::Option<std::string::String>,
@@ -3470,7 +3550,11 @@ pub struct CreateChangesetInput {
     /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub change_type: std::option::Option<crate::model::ChangeType>,
-    /// <p>Options that define the location of the data being ingested.</p>
+    /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+    /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+    /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+    /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+    /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
     pub source_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
@@ -3481,12 +3565,16 @@ pub struct CreateChangesetInput {
     /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
     /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
     /// </ul>
-    /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+    /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+    /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+    /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+    /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+    /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     pub format_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateChangesetInput {
-    /// <p>A token used to ensure idempotency.</p>
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -3503,7 +3591,11 @@ impl CreateChangesetInput {
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.change_type.as_ref()
     }
-    /// <p>Options that define the location of the data being ingested.</p>
+    /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+    /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+    /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+    /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+    /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
     pub fn source_params(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3518,7 +3610,11 @@ impl CreateChangesetInput {
     /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
     /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
     /// </ul>
-    /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+    /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+    /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+    /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+    /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+    /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     pub fn format_params(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

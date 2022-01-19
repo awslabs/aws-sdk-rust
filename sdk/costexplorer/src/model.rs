@@ -9478,7 +9478,7 @@ pub struct InstanceDetails {
     /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
     pub elasti_cache_instance_details:
         std::option::Option<crate::model::ElastiCacheInstanceDetails>,
-    /// <p>The Amazon ES instances that Amazon Web Services recommends that you purchase.</p>
+    /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
     pub es_instance_details: std::option::Option<crate::model::EsInstanceDetails>,
 }
 impl InstanceDetails {
@@ -9502,7 +9502,7 @@ impl InstanceDetails {
     ) -> std::option::Option<&crate::model::ElastiCacheInstanceDetails> {
         self.elasti_cache_instance_details.as_ref()
     }
-    /// <p>The Amazon ES instances that Amazon Web Services recommends that you purchase.</p>
+    /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
     pub fn es_instance_details(&self) -> std::option::Option<&crate::model::EsInstanceDetails> {
         self.es_instance_details.as_ref()
     }
@@ -9594,12 +9594,12 @@ pub mod instance_details {
             self.elasti_cache_instance_details = input;
             self
         }
-        /// <p>The Amazon ES instances that Amazon Web Services recommends that you purchase.</p>
+        /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
         pub fn es_instance_details(mut self, input: crate::model::EsInstanceDetails) -> Self {
             self.es_instance_details = Some(input);
             self
         }
-        /// <p>The Amazon ES instances that Amazon Web Services recommends that you purchase.</p>
+        /// <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
         pub fn set_es_instance_details(
             mut self,
             input: std::option::Option<crate::model::EsInstanceDetails>,
@@ -9626,7 +9626,7 @@ impl InstanceDetails {
     }
 }
 
-/// <p>Details about the Amazon ES instances that Amazon Web Services recommends that you purchase.</p>
+/// <p>Details about the Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EsInstanceDetails {

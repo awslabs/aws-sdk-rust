@@ -164,6 +164,7 @@ where
     ///   - [`response_mapping_template(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::response_mapping_template) / [`set_response_mapping_template(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_response_mapping_template): <p>The <code>Function</code> response mapping template.</p>
     ///   - [`function_version(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::function_version) / [`set_function_version(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
     ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::CreateFunction::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::CreateFunction::set_sync_config): <p>Describes a Sync configuration for a resolver.</p>  <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
+    ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::CreateFunction::max_batch_size) / [`set_max_batch_size(i32)`](crate::client::fluent_builders::CreateFunction::set_max_batch_size): <p>The maximum batching size for a resolver.</p>
     /// - On success, responds with [`CreateFunctionOutput`](crate::output::CreateFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::output::CreateFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::error::CreateFunctionError)
@@ -201,6 +202,7 @@ where
     ///   - [`pipeline_config(PipelineConfig)`](crate::client::fluent_builders::CreateResolver::pipeline_config) / [`set_pipeline_config(Option<PipelineConfig>)`](crate::client::fluent_builders::CreateResolver::set_pipeline_config): <p>The <code>PipelineConfig</code>.</p>
     ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::CreateResolver::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::CreateResolver::set_sync_config): <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
     ///   - [`caching_config(CachingConfig)`](crate::client::fluent_builders::CreateResolver::caching_config) / [`set_caching_config(Option<CachingConfig>)`](crate::client::fluent_builders::CreateResolver::set_caching_config): <p>The caching configuration for the resolver.</p>
+    ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::CreateResolver::max_batch_size) / [`set_max_batch_size(i32)`](crate::client::fluent_builders::CreateResolver::set_max_batch_size): <p>The maximum batching size for a resolver.</p>
     /// - On success, responds with [`CreateResolverOutput`](crate::output::CreateResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::output::CreateResolverOutput::resolver): <p>The <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateResolverError>`](crate::error::CreateResolverError)
@@ -651,6 +653,7 @@ where
     ///   - [`response_mapping_template(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::response_mapping_template) / [`set_response_mapping_template(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_response_mapping_template): <p>The <code>Function</code> request mapping template.</p>
     ///   - [`function_version(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::function_version) / [`set_function_version(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_function_version): <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29.</p>
     ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::UpdateFunction::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::UpdateFunction::set_sync_config): <p>Describes a Sync configuration for a resolver.</p>  <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
+    ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::UpdateFunction::max_batch_size) / [`set_max_batch_size(i32)`](crate::client::fluent_builders::UpdateFunction::set_max_batch_size): <p>The maximum batching size for a resolver.</p>
     /// - On success, responds with [`UpdateFunctionOutput`](crate::output::UpdateFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::output::UpdateFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionError>`](crate::error::UpdateFunctionError)
@@ -688,6 +691,7 @@ where
     ///   - [`pipeline_config(PipelineConfig)`](crate::client::fluent_builders::UpdateResolver::pipeline_config) / [`set_pipeline_config(Option<PipelineConfig>)`](crate::client::fluent_builders::UpdateResolver::set_pipeline_config): <p>The <code>PipelineConfig</code>.</p>
     ///   - [`sync_config(SyncConfig)`](crate::client::fluent_builders::UpdateResolver::sync_config) / [`set_sync_config(Option<SyncConfig>)`](crate::client::fluent_builders::UpdateResolver::set_sync_config): <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
     ///   - [`caching_config(CachingConfig)`](crate::client::fluent_builders::UpdateResolver::caching_config) / [`set_caching_config(Option<CachingConfig>)`](crate::client::fluent_builders::UpdateResolver::set_caching_config): <p>The caching configuration for the resolver.</p>
+    ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::UpdateResolver::max_batch_size) / [`set_max_batch_size(i32)`](crate::client::fluent_builders::UpdateResolver::set_max_batch_size): <p>The maximum batching size for a resolver.</p>
     /// - On success, responds with [`UpdateResolverOutput`](crate::output::UpdateResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::output::UpdateResolverOutput::resolver): <p>The updated <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateResolverError>`](crate::error::UpdateResolverError)
@@ -1516,6 +1520,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sync_config(input);
             self
         }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_batch_size(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_batch_size(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateGraphqlApi`.
     ///
@@ -1898,6 +1912,16 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CachingConfig>,
         ) -> Self {
             self.inner = self.inner.set_caching_config(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_batch_size(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_batch_size(input);
             self
         }
     }
@@ -5314,6 +5338,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sync_config(input);
             self
         }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_batch_size(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_batch_size(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateGraphqlApi`.
     ///
@@ -5682,6 +5716,16 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CachingConfig>,
         ) -> Self {
             self.inner = self.inner.set_caching_config(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_batch_size(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_batch_size(input);
             self
         }
     }

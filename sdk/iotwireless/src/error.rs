@@ -3250,6 +3250,143 @@ impl std::error::Error for DeleteMulticastGroupError {
     }
 }
 
+/// Error type for the `DeleteQueuedMessages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteQueuedMessagesError {
+    /// Kind of error that occurred.
+    pub kind: DeleteQueuedMessagesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteQueuedMessages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteQueuedMessagesErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteQueuedMessagesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteQueuedMessagesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteQueuedMessagesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteQueuedMessagesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteQueuedMessagesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteQueuedMessagesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteQueuedMessagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteQueuedMessagesError {
+    fn code(&self) -> Option<&str> {
+        DeleteQueuedMessagesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteQueuedMessagesError {
+    /// Creates a new `DeleteQueuedMessagesError`.
+    pub fn new(kind: DeleteQueuedMessagesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteQueuedMessagesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteQueuedMessagesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteQueuedMessagesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteQueuedMessagesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteQueuedMessagesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteQueuedMessagesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteQueuedMessagesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteQueuedMessagesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteQueuedMessagesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteQueuedMessagesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteQueuedMessagesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteQueuedMessagesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteQueuedMessagesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteQueuedMessagesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteQueuedMessagesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteQueuedMessagesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteQueuedMessagesErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteQueuedMessagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteQueuedMessagesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteQueuedMessagesErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteQueuedMessagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteServiceProfile` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8687,6 +8824,143 @@ impl std::error::Error for ListPartnerAccountsError {
             ListPartnerAccountsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListPartnerAccountsErrorKind::ValidationException(_inner) => Some(_inner),
             ListPartnerAccountsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListQueuedMessages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListQueuedMessagesError {
+    /// Kind of error that occurred.
+    pub kind: ListQueuedMessagesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListQueuedMessages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListQueuedMessagesErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListQueuedMessagesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListQueuedMessagesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListQueuedMessagesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListQueuedMessagesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListQueuedMessagesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListQueuedMessagesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListQueuedMessagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListQueuedMessagesError {
+    fn code(&self) -> Option<&str> {
+        ListQueuedMessagesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListQueuedMessagesError {
+    /// Creates a new `ListQueuedMessagesError`.
+    pub fn new(kind: ListQueuedMessagesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListQueuedMessagesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListQueuedMessagesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListQueuedMessagesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListQueuedMessagesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListQueuedMessagesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueuedMessagesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueuedMessagesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueuedMessagesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueuedMessagesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueuedMessagesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueuedMessagesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueuedMessagesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueuedMessagesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueuedMessagesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListQueuedMessagesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListQueuedMessagesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListQueuedMessagesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListQueuedMessagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListQueuedMessagesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListQueuedMessagesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListQueuedMessagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

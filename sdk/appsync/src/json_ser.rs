@@ -150,6 +150,12 @@ pub fn serialize_structure_crate_input_create_function_input(
     if let Some(var_26) = &input.function_version {
         object.key("functionVersion").string(var_26);
     }
+    if input.max_batch_size != 0 {
+        object.key("maxBatchSize").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.max_batch_size).into()),
+        );
+    }
     if let Some(var_27) = &input.name {
         object.key("name").string(var_27);
     }
@@ -248,6 +254,12 @@ pub fn serialize_structure_crate_input_create_resolver_input(
     }
     if let Some(var_54) = &input.kind {
         object.key("kind").string(var_54.as_str());
+    }
+    if input.max_batch_size != 0 {
+        object.key("maxBatchSize").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.max_batch_size).into()),
+        );
     }
     if let Some(var_55) = &input.pipeline_config {
         let mut object_56 = object.key("pipelineConfig").start_object();
@@ -431,6 +443,12 @@ pub fn serialize_structure_crate_input_update_function_input(
     if let Some(var_89) = &input.function_version {
         object.key("functionVersion").string(var_89);
     }
+    if input.max_batch_size != 0 {
+        object.key("maxBatchSize").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.max_batch_size).into()),
+        );
+    }
     if let Some(var_90) = &input.name {
         object.key("name").string(var_90);
     }
@@ -520,6 +538,12 @@ pub fn serialize_structure_crate_input_update_resolver_input(
     }
     if let Some(var_112) = &input.kind {
         object.key("kind").string(var_112.as_str());
+    }
+    if input.max_batch_size != 0 {
+        object.key("maxBatchSize").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((input.max_batch_size).into()),
+        );
     }
     if let Some(var_113) = &input.pipeline_config {
         let mut object_114 = object.key("pipelineConfig").start_object();

@@ -1161,6 +1161,7 @@ pub mod create_function_input {
         pub(crate) response_mapping_template: std::option::Option<std::string::String>,
         pub(crate) function_version: std::option::Option<std::string::String>,
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
+        pub(crate) max_batch_size: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The GraphQL API ID.</p>
@@ -1260,6 +1261,16 @@ pub mod create_function_input {
             self.sync_config = input;
             self
         }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.max_batch_size = Some(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_batch_size = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::input::CreateFunctionInput)
         pub fn build(
             self,
@@ -1276,6 +1287,7 @@ pub mod create_function_input {
                 response_mapping_template: self.response_mapping_template,
                 function_version: self.function_version,
                 sync_config: self.sync_config,
+                max_batch_size: self.max_batch_size.unwrap_or_default(),
             })
         }
     }
@@ -1725,6 +1737,7 @@ pub mod create_resolver_input {
         pub(crate) pipeline_config: std::option::Option<crate::model::PipelineConfig>,
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
         pub(crate) caching_config: std::option::Option<crate::model::CachingConfig>,
+        pub(crate) max_batch_size: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
@@ -1857,6 +1870,16 @@ pub mod create_resolver_input {
             self.caching_config = input;
             self
         }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.max_batch_size = Some(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_batch_size = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateResolverInput`](crate::input::CreateResolverInput)
         pub fn build(
             self,
@@ -1875,6 +1898,7 @@ pub mod create_resolver_input {
                 pipeline_config: self.pipeline_config,
                 sync_config: self.sync_config,
                 caching_config: self.caching_config,
+                max_batch_size: self.max_batch_size.unwrap_or_default(),
             })
         }
     }
@@ -8949,6 +8973,7 @@ pub mod update_function_input {
         pub(crate) response_mapping_template: std::option::Option<std::string::String>,
         pub(crate) function_version: std::option::Option<std::string::String>,
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
+        pub(crate) max_batch_size: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The GraphQL API ID.</p>
@@ -9058,6 +9083,16 @@ pub mod update_function_input {
             self.sync_config = input;
             self
         }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.max_batch_size = Some(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_batch_size = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFunctionInput`](crate::input::UpdateFunctionInput)
         pub fn build(
             self,
@@ -9075,6 +9110,7 @@ pub mod update_function_input {
                 response_mapping_template: self.response_mapping_template,
                 function_version: self.function_version,
                 sync_config: self.sync_config,
+                max_batch_size: self.max_batch_size.unwrap_or_default(),
             })
         }
     }
@@ -9542,6 +9578,7 @@ pub mod update_resolver_input {
         pub(crate) pipeline_config: std::option::Option<crate::model::PipelineConfig>,
         pub(crate) sync_config: std::option::Option<crate::model::SyncConfig>,
         pub(crate) caching_config: std::option::Option<crate::model::CachingConfig>,
+        pub(crate) max_batch_size: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The API ID.</p>
@@ -9674,6 +9711,16 @@ pub mod update_resolver_input {
             self.caching_config = input;
             self
         }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.max_batch_size = Some(input);
+            self
+        }
+        /// <p>The maximum batching size for a resolver.</p>
+        pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_batch_size = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateResolverInput`](crate::input::UpdateResolverInput)
         pub fn build(
             self,
@@ -9692,6 +9739,7 @@ pub mod update_resolver_input {
                 pipeline_config: self.pipeline_config,
                 sync_config: self.sync_config,
                 caching_config: self.caching_config,
+                max_batch_size: self.max_batch_size.unwrap_or_default(),
             })
         }
     }
@@ -10160,6 +10208,8 @@ pub struct UpdateResolverInput {
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The caching configuration for the resolver.</p>
     pub caching_config: std::option::Option<crate::model::CachingConfig>,
+    /// <p>The maximum batching size for a resolver.</p>
+    pub max_batch_size: i32,
 }
 impl UpdateResolverInput {
     /// <p>The API ID.</p>
@@ -10208,6 +10258,10 @@ impl UpdateResolverInput {
     pub fn caching_config(&self) -> std::option::Option<&crate::model::CachingConfig> {
         self.caching_config.as_ref()
     }
+    /// <p>The maximum batching size for a resolver.</p>
+    pub fn max_batch_size(&self) -> i32 {
+        self.max_batch_size
+    }
 }
 impl std::fmt::Debug for UpdateResolverInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10222,6 +10276,7 @@ impl std::fmt::Debug for UpdateResolverInput {
         formatter.field("pipeline_config", &self.pipeline_config);
         formatter.field("sync_config", &self.sync_config);
         formatter.field("caching_config", &self.caching_config);
+        formatter.field("max_batch_size", &self.max_batch_size);
         formatter.finish()
     }
 }
@@ -10336,6 +10391,8 @@ pub struct UpdateFunctionInput {
     /// <p>Describes a Sync configuration for a resolver.</p>
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
+    /// <p>The maximum batching size for a resolver.</p>
+    pub max_batch_size: i32,
 }
 impl UpdateFunctionInput {
     /// <p>The GraphQL API ID.</p>
@@ -10375,6 +10432,10 @@ impl UpdateFunctionInput {
     pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
         self.sync_config.as_ref()
     }
+    /// <p>The maximum batching size for a resolver.</p>
+    pub fn max_batch_size(&self) -> i32 {
+        self.max_batch_size
+    }
 }
 impl std::fmt::Debug for UpdateFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10388,6 +10449,7 @@ impl std::fmt::Debug for UpdateFunctionInput {
         formatter.field("response_mapping_template", &self.response_mapping_template);
         formatter.field("function_version", &self.function_version);
         formatter.field("sync_config", &self.sync_config);
+        formatter.field("max_batch_size", &self.max_batch_size);
         formatter.finish()
     }
 }
@@ -11644,6 +11706,8 @@ pub struct CreateResolverInput {
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The caching configuration for the resolver.</p>
     pub caching_config: std::option::Option<crate::model::CachingConfig>,
+    /// <p>The maximum batching size for a resolver.</p>
+    pub max_batch_size: i32,
 }
 impl CreateResolverInput {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
@@ -11692,6 +11756,10 @@ impl CreateResolverInput {
     pub fn caching_config(&self) -> std::option::Option<&crate::model::CachingConfig> {
         self.caching_config.as_ref()
     }
+    /// <p>The maximum batching size for a resolver.</p>
+    pub fn max_batch_size(&self) -> i32 {
+        self.max_batch_size
+    }
 }
 impl std::fmt::Debug for CreateResolverInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11706,6 +11774,7 @@ impl std::fmt::Debug for CreateResolverInput {
         formatter.field("pipeline_config", &self.pipeline_config);
         formatter.field("sync_config", &self.sync_config);
         formatter.field("caching_config", &self.caching_config);
+        formatter.field("max_batch_size", &self.max_batch_size);
         formatter.finish()
     }
 }
@@ -11822,6 +11891,8 @@ pub struct CreateFunctionInput {
     /// <p>Describes a Sync configuration for a resolver.</p>
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
+    /// <p>The maximum batching size for a resolver.</p>
+    pub max_batch_size: i32,
 }
 impl CreateFunctionInput {
     /// <p>The GraphQL API ID.</p>
@@ -11857,6 +11928,10 @@ impl CreateFunctionInput {
     pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
         self.sync_config.as_ref()
     }
+    /// <p>The maximum batching size for a resolver.</p>
+    pub fn max_batch_size(&self) -> i32 {
+        self.max_batch_size
+    }
 }
 impl std::fmt::Debug for CreateFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11869,6 +11944,7 @@ impl std::fmt::Debug for CreateFunctionInput {
         formatter.field("response_mapping_template", &self.response_mapping_template);
         formatter.field("function_version", &self.function_version);
         formatter.field("sync_config", &self.sync_config);
+        formatter.field("max_batch_size", &self.max_batch_size);
         formatter.finish()
     }
 }

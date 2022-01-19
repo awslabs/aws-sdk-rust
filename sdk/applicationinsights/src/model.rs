@@ -126,6 +126,8 @@ impl LogPattern {
 )]
 pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
+    ActiveDirectory,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Default,
@@ -152,6 +154,8 @@ pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     SapHanaSingleNode,
     #[allow(missing_docs)] // documentation missing in model
+    Sharepoint,
+    #[allow(missing_docs)] // documentation missing in model
     SqlServer,
     #[allow(missing_docs)] // documentation missing in model
     SqlServerAlwaysonAvailabilityGroup,
@@ -163,6 +167,7 @@ pub enum Tier {
 impl std::convert::From<&str> for Tier {
     fn from(s: &str) -> Self {
         match s {
+            "ACTIVE_DIRECTORY" => Tier::ActiveDirectory,
             "CUSTOM" => Tier::Custom,
             "DEFAULT" => Tier::Default,
             "DOT_NET_CORE" => Tier::DotNetCore,
@@ -176,6 +181,7 @@ impl std::convert::From<&str> for Tier {
             "SAP_HANA_HIGH_AVAILABILITY" => Tier::SapHanaHighAvailability,
             "SAP_HANA_MULTI_NODE" => Tier::SapHanaMultiNode,
             "SAP_HANA_SINGLE_NODE" => Tier::SapHanaSingleNode,
+            "SHAREPOINT" => Tier::Sharepoint,
             "SQL_SERVER" => Tier::SqlServer,
             "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" => Tier::SqlServerAlwaysonAvailabilityGroup,
             "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" => Tier::SqlServerFailoverClusterInstance,
@@ -194,6 +200,7 @@ impl Tier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Tier::ActiveDirectory => "ACTIVE_DIRECTORY",
             Tier::Custom => "CUSTOM",
             Tier::Default => "DEFAULT",
             Tier::DotNetCore => "DOT_NET_CORE",
@@ -207,6 +214,7 @@ impl Tier {
             Tier::SapHanaHighAvailability => "SAP_HANA_HIGH_AVAILABILITY",
             Tier::SapHanaMultiNode => "SAP_HANA_MULTI_NODE",
             Tier::SapHanaSingleNode => "SAP_HANA_SINGLE_NODE",
+            Tier::Sharepoint => "SHAREPOINT",
             Tier::SqlServer => "SQL_SERVER",
             Tier::SqlServerAlwaysonAvailabilityGroup => "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
             Tier::SqlServerFailoverClusterInstance => "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
@@ -216,6 +224,7 @@ impl Tier {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "ACTIVE_DIRECTORY",
             "CUSTOM",
             "DEFAULT",
             "DOT_NET_CORE",
@@ -229,6 +238,7 @@ impl Tier {
             "SAP_HANA_HIGH_AVAILABILITY",
             "SAP_HANA_MULTI_NODE",
             "SAP_HANA_SINGLE_NODE",
+            "SHAREPOINT",
             "SQL_SERVER",
             "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
             "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",

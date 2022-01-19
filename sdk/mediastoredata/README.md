@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.4.1"
-aws-sdk-mediastoredata = "0.4.1"
+aws-config = "0.5.0"
+aws-sdk-mediastoredata = "0.5.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -86,11 +86,11 @@ where
     /// Constructs a fluent builder for the [`CreateChangeset`](crate::client::fluent_builders::CreateChangeset) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateChangeset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateChangeset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateChangeset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateChangeset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::CreateChangeset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::CreateChangeset::set_dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
     ///   - [`change_type(ChangeType)`](crate::client::fluent_builders::CreateChangeset::change_type) / [`set_change_type(Option<ChangeType>)`](crate::client::fluent_builders::CreateChangeset::set_change_type): <p>Option to indicate how a Changeset will be applied to a Dataset.</p>  <ul>   <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>   <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>   <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>  </ul>
-    ///   - [`source_params(HashMap<String, String>)`](crate::client::fluent_builders::CreateChangeset::source_params) / [`set_source_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChangeset::set_source_params): <p>Options that define the location of the data being ingested.</p>
-    ///   - [`format_params(HashMap<String, String>)`](crate::client::fluent_builders::CreateChangeset::format_params) / [`set_format_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChangeset::set_format_params): <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>  <p> <code>formatType</code> is a required attribute and can have the following values: </p>  <ul>   <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>   <li> <p> <code>CSV</code> - CSV source file format.</p> </li>   <li> <p> <code>JSON</code> - JSON source file format.</p> </li>   <li> <p> <code>XML</code> - XML source file format.</p> </li>  </ul>  <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+    ///   - [`source_params(HashMap<String, String>)`](crate::client::fluent_builders::CreateChangeset::source_params) / [`set_source_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChangeset::set_source_params): <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>  <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>  <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>  <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>  <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+    ///   - [`format_params(HashMap<String, String>)`](crate::client::fluent_builders::CreateChangeset::format_params) / [`set_format_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChangeset::set_format_params): <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>  <p> <code>formatType</code> is a required attribute and can have the following values: </p>  <ul>   <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>   <li> <p> <code>CSV</code> - CSV source file format.</p> </li>   <li> <p> <code>JSON</code> - JSON source file format.</p> </li>   <li> <p> <code>XML</code> - XML source file format.</p> </li>  </ul>  <p>Here is an example of how you could specify the <code>formatParams</code>:</p>  <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>  <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>  <p> <code> { "withHeader": "true", "separator": "," } </code> </p>  <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     /// - On success, responds with [`CreateChangesetOutput`](crate::output::CreateChangesetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::output::CreateChangesetOutput::dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
     ///   - [`changeset_id(Option<String>)`](crate::output::CreateChangesetOutput::changeset_id): <p>The unique identifier of the Changeset that is created.</p>
@@ -101,7 +101,7 @@ where
     /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     ///   - [`dataset_title(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_title) / [`set_dataset_title(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_title): <p>Display title for a FinSpace Dataset.</p>
     ///   - [`kind(DatasetKind)`](crate::client::fluent_builders::CreateDataset::kind) / [`set_kind(Option<DatasetKind>)`](crate::client::fluent_builders::CreateDataset::set_kind): <p>The format in which Dataset data is structured.</p>  <ul>   <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>   <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>  </ul>
     ///   - [`dataset_description(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_description) / [`set_dataset_description(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_description): <p>Description of a Dataset.</p>
@@ -118,7 +118,7 @@ where
     /// Constructs a fluent builder for the [`CreateDataView`](crate::client::fluent_builders::CreateDataView) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataView::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataView::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataView::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataView::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataView::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::CreateDataView::set_dataset_id): <p>The unique Dataset identifier that is used to create a Dataview.</p>
     ///   - [`auto_update(bool)`](crate::client::fluent_builders::CreateDataView::auto_update) / [`set_auto_update(bool)`](crate::client::fluent_builders::CreateDataView::set_auto_update): <p>Flag to indicate Dataview should be updated automatically.</p>
     ///   - [`sort_columns(Vec<String>)`](crate::client::fluent_builders::CreateDataView::sort_columns) / [`set_sort_columns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDataView::set_sort_columns): <p>Columns to be used for sorting the data.</p>
@@ -135,7 +135,7 @@ where
     /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_dataset_id): <p>The unique identifier of the Dataset to be deleted.</p>
     /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::output::DeleteDatasetOutput::dataset_id): <p>The unique identifier for the deleted Dataset.</p>
@@ -159,7 +159,7 @@ where
     ///   - [`status(Option<IngestionStatus>)`](crate::output::GetChangesetOutput::status): <p>The status of Changeset creation operation.</p>
     ///   - [`error_info(Option<ChangesetErrorInfo>)`](crate::output::GetChangesetOutput::error_info): <p>The structure with error messages.</p>
     ///   - [`active_until_timestamp(Option<i64>)`](crate::output::GetChangesetOutput::active_until_timestamp): <p>Time until which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    ///   - [`active_from_timestamp(Option<i64>)`](crate::output::GetChangesetOutput::active_from_timestamp): Milliseconds since UTC epoch
+    ///   - [`active_from_timestamp(Option<i64>)`](crate::output::GetChangesetOutput::active_from_timestamp): <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     ///   - [`updates_changeset_id(Option<String>)`](crate::output::GetChangesetOutput::updates_changeset_id): <p>The unique identifier of the Changeset that is being updated.</p>
     ///   - [`updated_by_changeset_id(Option<String>)`](crate::output::GetChangesetOutput::updated_by_changeset_id): <p>The unique identifier of the updated Changeset.</p>
     /// - On failure, responds with [`SdkError<GetChangesetError>`](crate::error::GetChangesetError)
@@ -277,11 +277,11 @@ where
     /// Constructs a fluent builder for the [`UpdateChangeset`](crate::client::fluent_builders::UpdateChangeset) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_dataset_id): <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
     ///   - [`changeset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::changeset_id) / [`set_changeset_id(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_changeset_id): <p>The unique identifier for the Changeset to update.</p>
-    ///   - [`source_params(HashMap<String, String>)`](crate::client::fluent_builders::UpdateChangeset::source_params) / [`set_source_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateChangeset::set_source_params): <p>Options that define the location of the data being ingested.</p>
-    ///   - [`format_params(HashMap<String, String>)`](crate::client::fluent_builders::UpdateChangeset::format_params) / [`set_format_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateChangeset::set_format_params): <p>Options that define the structure of the source file(s).</p>
+    ///   - [`source_params(HashMap<String, String>)`](crate::client::fluent_builders::UpdateChangeset::source_params) / [`set_source_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateChangeset::set_source_params): <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>  <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>  <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>  <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>  <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+    ///   - [`format_params(HashMap<String, String>)`](crate::client::fluent_builders::UpdateChangeset::format_params) / [`set_format_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateChangeset::set_format_params): <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>  <p> <code>formatType</code> is a required attribute and can have the following values: </p>  <ul>   <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>   <li> <p> <code>CSV</code> - CSV source file format.</p> </li>   <li> <p> <code>JSON</code> - JSON source file format.</p> </li>   <li> <p> <code>XML</code> - XML source file format.</p> </li>  </ul>  <p>Here is an example of how you could specify the <code>formatParams</code>:</p>  <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>  <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>  <p> <code> { "withHeader": "true", "separator": "," } </code> </p>  <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     /// - On success, responds with [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput) with field(s):
     ///   - [`changeset_id(Option<String>)`](crate::output::UpdateChangesetOutput::changeset_id): <p>The unique identifier for the Changeset to update.</p>
     ///   - [`dataset_id(Option<String>)`](crate::output::UpdateChangesetOutput::dataset_id): <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
@@ -292,7 +292,7 @@ where
     /// Constructs a fluent builder for the [`UpdateDataset`](crate::client::fluent_builders::UpdateDataset) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_client_token): <p>A token used to ensure idempotency.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_dataset_id): <p>The unique identifier for the Dataset to update.</p>
     ///   - [`dataset_title(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::dataset_title) / [`set_dataset_title(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_dataset_title): <p>A display title for the Dataset.</p>
     ///   - [`kind(DatasetKind)`](crate::client::fluent_builders::UpdateDataset::kind) / [`set_kind(Option<DatasetKind>)`](crate::client::fluent_builders::UpdateDataset::set_kind): <p>The format in which the Dataset data is structured.</p>  <ul>   <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>   <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>  </ul>
@@ -373,12 +373,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -420,7 +420,11 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
         ///
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn source_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -429,7 +433,11 @@ pub mod fluent_builders {
             self.inner = self.inner.source_params(k.into(), v.into());
             self
         }
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn set_source_params(
             mut self,
             input: std::option::Option<
@@ -451,7 +459,11 @@ pub mod fluent_builders {
         /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
         /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -468,7 +480,11 @@ pub mod fluent_builders {
         /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
         /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -538,12 +554,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -704,12 +720,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -854,12 +870,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1606,12 +1622,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1640,7 +1656,11 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
         ///
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn source_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -1649,7 +1669,11 @@ pub mod fluent_builders {
             self.inner = self.inner.source_params(k.into(), v.into());
             self
         }
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn set_source_params(
             mut self,
             input: std::option::Option<
@@ -1663,7 +1687,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
         ///
-        /// <p>Options that define the structure of the source file(s).</p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
+        /// <ul>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// </ul>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -1672,7 +1708,19 @@ pub mod fluent_builders {
             self.inner = self.inner.format_params(k.into(), v.into());
             self
         }
-        /// <p>Options that define the structure of the source file(s).</p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
+        /// <ul>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// </ul>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -1742,12 +1790,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self

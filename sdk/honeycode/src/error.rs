@@ -674,6 +674,8 @@ pub enum DescribeTableDataImportJobErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>The request timed out.</p>
+    RequestTimeoutException(crate::error::RequestTimeoutException),
     /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Remote service is unreachable.</p>
@@ -690,6 +692,7 @@ impl std::fmt::Display for DescribeTableDataImportJobError {
         match &self.kind {
             DescribeTableDataImportJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DescribeTableDataImportJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeTableDataImportJobErrorKind::RequestTimeoutException(_inner) => _inner.fmt(f),
             DescribeTableDataImportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeTableDataImportJobErrorKind::ServiceUnavailableException(_inner) => {
                 _inner.fmt(f)
@@ -764,6 +767,13 @@ impl DescribeTableDataImportJobError {
             DescribeTableDataImportJobErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeTableDataImportJobErrorKind::RequestTimeoutException`.
+    pub fn is_request_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTableDataImportJobErrorKind::RequestTimeoutException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeTableDataImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
@@ -798,6 +808,7 @@ impl std::error::Error for DescribeTableDataImportJobError {
         match &self.kind {
             DescribeTableDataImportJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DescribeTableDataImportJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeTableDataImportJobErrorKind::RequestTimeoutException(_inner) => Some(_inner),
             DescribeTableDataImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeTableDataImportJobErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
@@ -984,6 +995,8 @@ pub enum InvokeScreenAutomationErrorKind {
     RequestTimeoutException(crate::error::RequestTimeoutException),
     /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request caused service quota to be breached. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Remote service is unreachable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
@@ -1004,6 +1017,7 @@ impl std::fmt::Display for InvokeScreenAutomationError {
             InvokeScreenAutomationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             InvokeScreenAutomationErrorKind::RequestTimeoutException(_inner) => _inner.fmt(f),
             InvokeScreenAutomationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            InvokeScreenAutomationErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             InvokeScreenAutomationErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             InvokeScreenAutomationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             InvokeScreenAutomationErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -1103,6 +1117,13 @@ impl InvokeScreenAutomationError {
             InvokeScreenAutomationErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeScreenAutomationErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
@@ -1136,6 +1157,7 @@ impl std::error::Error for InvokeScreenAutomationError {
             InvokeScreenAutomationErrorKind::InternalServerException(_inner) => Some(_inner),
             InvokeScreenAutomationErrorKind::RequestTimeoutException(_inner) => Some(_inner),
             InvokeScreenAutomationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            InvokeScreenAutomationErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             InvokeScreenAutomationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             InvokeScreenAutomationErrorKind::ThrottlingException(_inner) => Some(_inner),
             InvokeScreenAutomationErrorKind::ValidationException(_inner) => Some(_inner),
@@ -1597,6 +1619,165 @@ impl std::error::Error for ListTablesError {
     }
 }
 
+/// Error type for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTagsForResourceError {
+    /// Kind of error that occurred.
+    pub kind: ListTagsForResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTagsForResourceErrorKind {
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There were unexpected errors from the server.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request timed out.</p>
+    RequestTimeoutException(crate::error::RequestTimeoutException),
+    /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Remote service is unreachable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>Tps(transactions per second) rate reached.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTagsForResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::RequestTimeoutException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
+    fn code(&self) -> Option<&str> {
+        ListTagsForResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTagsForResourceError {
+    /// Creates a new `ListTagsForResourceError`.
+    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::RequestTimeoutException`.
+    pub fn is_request_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::RequestTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListTagsForResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::RequestTimeoutException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `QueryTableRows` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1767,8 +1948,12 @@ pub enum StartTableDataImportJobErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>There were unexpected errors from the server.</p>
     InternalServerException(crate::error::InternalServerException),
+    /// <p>The request timed out.</p>
+    RequestTimeoutException(crate::error::RequestTimeoutException),
     /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request caused service quota to be breached. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Remote service is unreachable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
@@ -1783,7 +1968,11 @@ impl std::fmt::Display for StartTableDataImportJobError {
         match &self.kind {
             StartTableDataImportJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             StartTableDataImportJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StartTableDataImportJobErrorKind::RequestTimeoutException(_inner) => _inner.fmt(f),
             StartTableDataImportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartTableDataImportJobErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             StartTableDataImportJobErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             StartTableDataImportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             StartTableDataImportJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
@@ -1855,11 +2044,25 @@ impl StartTableDataImportJobError {
             StartTableDataImportJobErrorKind::InternalServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::RequestTimeoutException`.
+    pub fn is_request_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTableDataImportJobErrorKind::RequestTimeoutException(_)
+        )
+    }
     /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTableDataImportJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTableDataImportJobErrorKind::ServiceQuotaExceededException(_)
         )
     }
     /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::ServiceUnavailableException`.
@@ -1889,11 +2092,307 @@ impl std::error::Error for StartTableDataImportJobError {
         match &self.kind {
             StartTableDataImportJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
             StartTableDataImportJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            StartTableDataImportJobErrorKind::RequestTimeoutException(_inner) => Some(_inner),
             StartTableDataImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartTableDataImportJobErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             StartTableDataImportJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             StartTableDataImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartTableDataImportJobErrorKind::ValidationException(_inner) => Some(_inner),
             StartTableDataImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TagResourceError {
+    /// Kind of error that occurred.
+    pub kind: TagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TagResourceErrorKind {
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There were unexpected errors from the server.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request timed out.</p>
+    RequestTimeoutException(crate::error::RequestTimeoutException),
+    /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Remote service is unreachable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>Tps(transactions per second) rate reached.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::RequestTimeoutException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
+    fn code(&self) -> Option<&str> {
+        TagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl TagResourceError {
+    /// Creates a new `TagResourceError`.
+    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::RequestTimeoutException`.
+    pub fn is_request_timeout_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::RequestTimeoutException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for TagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            TagResourceErrorKind::RequestTimeoutException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UntagResourceError {
+    /// Kind of error that occurred.
+    pub kind: UntagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UntagResourceErrorKind {
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There were unexpected errors from the server.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request timed out.</p>
+    RequestTimeoutException(crate::error::RequestTimeoutException),
+    /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Remote service is unreachable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>Tps(transactions per second) rate reached.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UntagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UntagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::RequestTimeoutException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
+    fn code(&self) -> Option<&str> {
+        UntagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UntagResourceError {
+    /// Creates a new `UntagResourceError`.
+    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::RequestTimeoutException`.
+    pub fn is_request_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::RequestTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UntagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UntagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            UntagResourceErrorKind::RequestTimeoutException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2154,6 +2653,70 @@ impl ResourceNotFoundException {
     }
 }
 
+/// <p>The request timed out.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RequestTimeoutException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RequestTimeoutException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RequestTimeoutException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl RequestTimeoutException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for RequestTimeoutException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "RequestTimeoutException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for RequestTimeoutException {}
+/// See [`RequestTimeoutException`](crate::error::RequestTimeoutException)
+pub mod request_timeout_exception {
+    /// A builder for [`RequestTimeoutException`](crate::error::RequestTimeoutException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RequestTimeoutException`](crate::error::RequestTimeoutException)
+        pub fn build(self) -> crate::error::RequestTimeoutException {
+            crate::error::RequestTimeoutException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl RequestTimeoutException {
+    /// Creates a new builder-style object to manufacture [`RequestTimeoutException`](crate::error::RequestTimeoutException)
+    pub fn builder() -> crate::error::request_timeout_exception::Builder {
+        crate::error::request_timeout_exception::Builder::default()
+    }
+}
+
 /// <p>There were unexpected errors from the server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2177,8 +2740,8 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -2241,8 +2804,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -2282,39 +2845,39 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The request timed out.</p>
+/// <p> The request caused service quota to be breached. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RequestTimeoutException {
+pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RequestTimeoutException {
+impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestTimeoutException");
+        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl RequestTimeoutException {
+impl ServiceQuotaExceededException {
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for RequestTimeoutException {
+impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "RequestTimeoutException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for RequestTimeoutException {}
-/// See [`RequestTimeoutException`](crate::error::RequestTimeoutException)
-pub mod request_timeout_exception {
-    /// A builder for [`RequestTimeoutException`](crate::error::RequestTimeoutException)
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+pub mod service_quota_exceeded_exception {
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2331,18 +2894,18 @@ pub mod request_timeout_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestTimeoutException`](crate::error::RequestTimeoutException)
-        pub fn build(self) -> crate::error::RequestTimeoutException {
-            crate::error::RequestTimeoutException {
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl RequestTimeoutException {
-    /// Creates a new builder-style object to manufacture [`RequestTimeoutException`](crate::error::RequestTimeoutException)
-    pub fn builder() -> crate::error::request_timeout_exception::Builder {
-        crate::error::request_timeout_exception::Builder::default()
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
     }
 }
 
@@ -2369,8 +2932,8 @@ impl AutomationExecutionTimeoutException {
 impl std::fmt::Display for AutomationExecutionTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AutomationExecutionTimeoutException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -2433,8 +2996,8 @@ impl AutomationExecutionException {
 impl std::fmt::Display for AutomationExecutionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AutomationExecutionException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -2471,69 +3034,5 @@ impl AutomationExecutionException {
     /// Creates a new builder-style object to manufacture [`AutomationExecutionException`](crate::error::AutomationExecutionException)
     pub fn builder() -> crate::error::automation_execution_exception::Builder {
         crate::error::automation_execution_exception::Builder::default()
-    }
-}
-
-/// <p> The request caused service quota to be breached. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceQuotaExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceQuotaExceededException {}
-/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-pub mod service_quota_exceeded_exception {
-    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
-            crate::error::ServiceQuotaExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
-    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
-        crate::error::service_quota_exceeded_exception::Builder::default()
     }
 }

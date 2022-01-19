@@ -250,13 +250,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamSessionsOutput {
-    /// <p></p>
+    /// <p>List of stream sessions.</p>
     pub stream_sessions: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamSessionsOutput {
-    /// <p></p>
+    /// <p>List of stream sessions.</p>
     pub fn stream_sessions(&self) -> std::option::Option<&[crate::model::StreamSessionSummary]> {
         self.stream_sessions.as_deref()
     }
@@ -288,14 +288,14 @@ pub mod list_stream_sessions_output {
         ///
         /// To override the contents of this collection use [`set_stream_sessions`](Self::set_stream_sessions).
         ///
-        /// <p></p>
+        /// <p>List of stream sessions.</p>
         pub fn stream_sessions(mut self, input: crate::model::StreamSessionSummary) -> Self {
             let mut v = self.stream_sessions.unwrap_or_default();
             v.push(input);
             self.stream_sessions = Some(v);
             self
         }
-        /// <p></p>
+        /// <p>List of stream sessions.</p>
         pub fn set_stream_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,

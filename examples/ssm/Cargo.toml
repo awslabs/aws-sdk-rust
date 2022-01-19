@@ -6,11 +6,11 @@ authors = ["John DiSanti <jdisanti@amazon.com>", "Doug Schwartz <dougsch@amazon.
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.aws-sdk-ssm]
 path = "../../sdk/ssm"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.tokio]
 version = "1"
@@ -18,7 +18,7 @@ features = ["full"]
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.structopt]
 version = "0.3"

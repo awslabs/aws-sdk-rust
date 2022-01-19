@@ -736,6 +736,187 @@ impl CopyWorkspaceImageInput {
     }
 }
 
+/// See [`CreateConnectClientAddInInput`](crate::input::CreateConnectClientAddInInput)
+pub mod create_connect_client_add_in_input {
+    /// A builder for [`CreateConnectClientAddInInput`](crate::input::CreateConnectClientAddInInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The directory identifier for which to configure the client add-in.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier for which to configure the client add-in.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateConnectClientAddInInput`](crate::input::CreateConnectClientAddInInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateConnectClientAddInInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateConnectClientAddInInput {
+                resource_id: self.resource_id,
+                name: self.name,
+                url: self.url,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateConnectClientAddInInputOperationOutputAlias =
+    crate::operation::CreateConnectClientAddIn;
+#[doc(hidden)]
+pub type CreateConnectClientAddInInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateConnectClientAddInInput {
+    /// Consumes the builder and constructs an Operation<[`CreateConnectClientAddIn`](crate::operation::CreateConnectClientAddIn)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateConnectClientAddIn,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateConnectClientAddInInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateConnectClientAddInInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateConnectClientAddInInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.CreateConnectClientAddIn",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_connect_client_add_in(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateConnectClientAddIn::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateConnectClientAddIn",
+            "workspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateConnectClientAddInInput`](crate::input::CreateConnectClientAddInInput)
+    pub fn builder() -> crate::input::create_connect_client_add_in_input::Builder {
+        crate::input::create_connect_client_add_in_input::Builder::default()
+    }
+}
+
 /// See [`CreateConnectionAliasInput`](crate::input::CreateConnectionAliasInput)
 pub mod create_connection_alias_input {
     /// A builder for [`CreateConnectionAliasInput`](crate::input::CreateConnectionAliasInput)
@@ -1923,6 +2104,175 @@ impl CreateWorkspacesInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspacesInput`](crate::input::CreateWorkspacesInput)
     pub fn builder() -> crate::input::create_workspaces_input::Builder {
         crate::input::create_workspaces_input::Builder::default()
+    }
+}
+
+/// See [`DeleteConnectClientAddInInput`](crate::input::DeleteConnectClientAddInInput)
+pub mod delete_connect_client_add_in_input {
+    /// A builder for [`DeleteConnectClientAddInInput`](crate::input::DeleteConnectClientAddInInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) add_in_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the client add-in to delete.</p>
+        pub fn add_in_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.add_in_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the client add-in to delete.</p>
+        pub fn set_add_in_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.add_in_id = input;
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteConnectClientAddInInput`](crate::input::DeleteConnectClientAddInInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteConnectClientAddInInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteConnectClientAddInInput {
+                add_in_id: self.add_in_id,
+                resource_id: self.resource_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteConnectClientAddInInputOperationOutputAlias =
+    crate::operation::DeleteConnectClientAddIn;
+#[doc(hidden)]
+pub type DeleteConnectClientAddInInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteConnectClientAddInInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteConnectClientAddIn`](crate::operation::DeleteConnectClientAddIn)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteConnectClientAddIn,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteConnectClientAddInInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteConnectClientAddInInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteConnectClientAddInInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.DeleteConnectClientAddIn",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_connect_client_add_in(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteConnectClientAddIn::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteConnectClientAddIn",
+            "workspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteConnectClientAddInInput`](crate::input::DeleteConnectClientAddInInput)
+    pub fn builder() -> crate::input::delete_connect_client_add_in_input::Builder {
+        crate::input::delete_connect_client_add_in_input::Builder::default()
     }
 }
 
@@ -3331,6 +3681,186 @@ impl DescribeClientPropertiesInput {
     /// Creates a new builder-style object to manufacture [`DescribeClientPropertiesInput`](crate::input::DescribeClientPropertiesInput)
     pub fn builder() -> crate::input::describe_client_properties_input::Builder {
         crate::input::describe_client_properties_input::Builder::default()
+    }
+}
+
+/// See [`DescribeConnectClientAddInsInput`](crate::input::DescribeConnectClientAddInsInput)
+pub mod describe_connect_client_add_ins_input {
+    /// A builder for [`DescribeConnectClientAddInsInput`](crate::input::DescribeConnectClientAddInsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of items to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of items to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeConnectClientAddInsInput`](crate::input::DescribeConnectClientAddInsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeConnectClientAddInsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeConnectClientAddInsInput {
+                resource_id: self.resource_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeConnectClientAddInsInputOperationOutputAlias =
+    crate::operation::DescribeConnectClientAddIns;
+#[doc(hidden)]
+pub type DescribeConnectClientAddInsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeConnectClientAddInsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeConnectClientAddIns`](crate::operation::DescribeConnectClientAddIns)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeConnectClientAddIns,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeConnectClientAddInsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeConnectClientAddInsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeConnectClientAddInsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.DescribeConnectClientAddIns",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_connect_client_add_ins(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeConnectClientAddIns::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeConnectClientAddIns",
+            "workspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeConnectClientAddInsInput`](crate::input::DescribeConnectClientAddInsInput)
+    pub fn builder() -> crate::input::describe_connect_client_add_ins_input::Builder {
+        crate::input::describe_connect_client_add_ins_input::Builder::default()
     }
 }
 
@@ -8933,6 +9463,199 @@ impl TerminateWorkspacesInput {
     }
 }
 
+/// See [`UpdateConnectClientAddInInput`](crate::input::UpdateConnectClientAddInInput)
+pub mod update_connect_client_add_in_input {
+    /// A builder for [`UpdateConnectClientAddInInput`](crate::input::UpdateConnectClientAddInInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) add_in_id: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the client add-in to update.</p>
+        pub fn add_in_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.add_in_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the client add-in to update.</p>
+        pub fn set_add_in_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.add_in_id = input;
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateConnectClientAddInInput`](crate::input::UpdateConnectClientAddInInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateConnectClientAddInInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateConnectClientAddInInput {
+                add_in_id: self.add_in_id,
+                resource_id: self.resource_id,
+                name: self.name,
+                url: self.url,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateConnectClientAddInInputOperationOutputAlias =
+    crate::operation::UpdateConnectClientAddIn;
+#[doc(hidden)]
+pub type UpdateConnectClientAddInInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateConnectClientAddInInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateConnectClientAddIn`](crate::operation::UpdateConnectClientAddIn)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateConnectClientAddIn,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateConnectClientAddInInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateConnectClientAddInInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateConnectClientAddInInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.UpdateConnectClientAddIn",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_connect_client_add_in(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateConnectClientAddIn::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateConnectClientAddIn",
+            "workspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateConnectClientAddInInput`](crate::input::UpdateConnectClientAddInInput)
+    pub fn builder() -> crate::input::update_connect_client_add_in_input::Builder {
+        crate::input::update_connect_client_add_in_input::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectionAliasPermissionInput`](crate::input::UpdateConnectionAliasPermissionInput)
 pub mod update_connection_alias_permission_input {
     /// A builder for [`UpdateConnectionAliasPermissionInput`](crate::input::UpdateConnectionAliasPermissionInput)
@@ -9766,6 +10489,48 @@ impl std::fmt::Debug for UpdateConnectionAliasPermissionInput {
             "connection_alias_permission",
             &self.connection_alias_permission,
         );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConnectClientAddInInput {
+    /// <p>The identifier of the client add-in to update.</p>
+    pub add_in_id: std::option::Option<std::string::String>,
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The name of the client add-in.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    pub url: std::option::Option<std::string::String>,
+}
+impl UpdateConnectClientAddInInput {
+    /// <p>The identifier of the client add-in to update.</p>
+    pub fn add_in_id(&self) -> std::option::Option<&str> {
+        self.add_in_id.as_deref()
+    }
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The name of the client add-in.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateConnectClientAddInInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectClientAddInInput");
+        formatter.field("add_in_id", &self.add_in_id);
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("name", &self.name);
+        formatter.field("url", &self.url);
         formatter.finish()
     }
 }
@@ -10777,6 +11542,41 @@ impl std::fmt::Debug for DescribeConnectionAliasesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeConnectClientAddInsInput {
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of items to return.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl DescribeConnectClientAddInsInput {
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for DescribeConnectClientAddInsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeConnectClientAddInsInput");
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClientPropertiesInput {
     /// <p>The resource identifier, in the form of directory IDs.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10956,6 +11756,34 @@ impl std::fmt::Debug for DeleteConnectionAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConnectionAliasInput");
         formatter.field("alias_id", &self.alias_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteConnectClientAddInInput {
+    /// <p>The identifier of the client add-in to delete.</p>
+    pub add_in_id: std::option::Option<std::string::String>,
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+}
+impl DeleteConnectClientAddInInput {
+    /// <p>The identifier of the client add-in to delete.</p>
+    pub fn add_in_id(&self) -> std::option::Option<&str> {
+        self.add_in_id.as_deref()
+    }
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteConnectClientAddInInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteConnectClientAddInInput");
+        formatter.field("add_in_id", &self.add_in_id);
+        formatter.field("resource_id", &self.resource_id);
         formatter.finish()
     }
 }
@@ -11192,6 +12020,41 @@ impl std::fmt::Debug for CreateConnectionAliasInput {
         let mut formatter = f.debug_struct("CreateConnectionAliasInput");
         formatter.field("connection_string", &self.connection_string);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateConnectClientAddInInput {
+    /// <p>The directory identifier for which to configure the client add-in.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The name of the client add-in.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    pub url: std::option::Option<std::string::String>,
+}
+impl CreateConnectClientAddInInput {
+    /// <p>The directory identifier for which to configure the client add-in.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The name of the client add-in.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateConnectClientAddInInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateConnectClientAddInInput");
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("name", &self.name);
+        formatter.field("url", &self.url);
         formatter.finish()
     }
 }

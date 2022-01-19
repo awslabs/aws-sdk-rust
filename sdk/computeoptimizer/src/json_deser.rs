@@ -1910,6 +1910,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_effective_recommendation_preferences(tokens)?
                                 );
                             }
+                            "inferredWorkloadTypes" => {
+                                builder = builder.set_inferred_workload_types(
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_inferred_workload_types(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -2222,6 +2227,11 @@ where
                             "effectiveRecommendationPreferences" => {
                                 builder = builder.set_effective_recommendation_preferences(
                                     crate::json_deser::deser_structure_crate_model_effective_recommendation_preferences(tokens)?
+                                );
+                            }
+                            "inferredWorkloadTypes" => {
+                                builder = builder.set_inferred_workload_types(
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_inferred_workload_types(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2572,6 +2582,21 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "inferredWorkloadTypes" => {
+                                builder = builder.set_inferred_workload_types(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::InferredWorkloadTypesPreference::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -2901,6 +2926,21 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "inferredWorkloadTypes" => {
+                                builder = builder.set_inferred_workload_types(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::InferredWorkloadTypesPreference::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -2916,6 +2956,51 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_computeoptimizer_inferred_workload_types<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::InferredWorkloadType>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| {
+                            s.to_unescaped()
+                                .map(|u| crate::model::InferredWorkloadType::from(u.as_ref()))
+                        })
+                        .transpose()?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
         )),
     }
 }
@@ -3725,6 +3810,19 @@ where
                                     crate::json_deser::deser_structure_crate_model_savings_opportunity(tokens)?
                                 );
                             }
+                            "migrationEffort" => {
+                                builder = builder.set_migration_effort(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::MigrationEffort::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3978,6 +4076,19 @@ where
                             "savingsOpportunity" => {
                                 builder = builder.set_savings_opportunity(
                                     crate::json_deser::deser_structure_crate_model_savings_opportunity(tokens)?
+                                );
+                            }
+                            "migrationEffort" => {
+                                builder = builder.set_migration_effort(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::MigrationEffort::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

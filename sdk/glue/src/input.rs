@@ -27816,6 +27816,9 @@ pub mod start_workflow_run_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) run_properties: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The name of the workflow to start.</p>
@@ -27828,6 +27831,31 @@ pub mod start_workflow_run_input {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `run_properties`.
+        ///
+        /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).
+        ///
+        /// <p>The workflow run properties for the new workflow run.</p>
+        pub fn run_properties(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.run_properties.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.run_properties = Some(hash_map);
+            self
+        }
+        /// <p>The workflow run properties for the new workflow run.</p>
+        pub fn set_run_properties(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.run_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartWorkflowRunInput`](crate::input::StartWorkflowRunInput)
         pub fn build(
             self,
@@ -27835,7 +27863,10 @@ pub mod start_workflow_run_input {
             crate::input::StartWorkflowRunInput,
             aws_smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::StartWorkflowRunInput { name: self.name })
+            Ok(crate::input::StartWorkflowRunInput {
+                name: self.name,
+                run_properties: self.run_properties,
+            })
         }
     }
 }
@@ -33826,17 +33857,28 @@ impl std::fmt::Debug for StopCrawlerInput {
 pub struct StartWorkflowRunInput {
     /// <p>The name of the workflow to start.</p>
     pub name: std::option::Option<std::string::String>,
+    /// <p>The workflow run properties for the new workflow run.</p>
+    pub run_properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartWorkflowRunInput {
     /// <p>The name of the workflow to start.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The workflow run properties for the new workflow run.</p>
+    pub fn run_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.run_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for StartWorkflowRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartWorkflowRunInput");
         formatter.field("name", &self.name);
+        formatter.field("run_properties", &self.run_properties);
         formatter.finish()
     }
 }

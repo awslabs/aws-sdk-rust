@@ -134,7 +134,7 @@ where
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     ///   - [`ec2_instance_type(StreamingInstanceType)`](crate::client::fluent_builders::CreateStreamingSession::ec2_instance_type) / [`set_ec2_instance_type(Option<StreamingInstanceType>)`](crate::client::fluent_builders::CreateStreamingSession::set_ec2_instance_type): <p>The EC2 Instance type used for the streaming session.</p>
     ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_launch_profile_id): <p>The launch profile ID.</p>
-    ///   - [`owned_by(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::owned_by) / [`set_owned_by(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_owned_by): <p>The user ID of the user that owns the streaming session.</p>
+    ///   - [`owned_by(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::owned_by) / [`set_owned_by(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_owned_by): <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     ///   - [`streaming_image_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::streaming_image_id) / [`set_streaming_image_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_streaming_image_id): <p>The ID of the streaming image.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_studio_id): <p>The studio ID. </p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamingSession::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamingSession::set_tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
@@ -462,7 +462,7 @@ where
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunchProfiles::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLaunchProfiles::set_max_results): <p>The max number of results to return in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_next_token): <p>The token to request the next page of results. </p>
     ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
-    ///   - [`states(Vec<String>)`](crate::client::fluent_builders::ListLaunchProfiles::states) / [`set_states(Option<Vec<String>>)`](crate::client::fluent_builders::ListLaunchProfiles::set_states): <p>Filter this request to launch profiles in any of the given states.</p>
+    ///   - [`states(Vec<LaunchProfileState>)`](crate::client::fluent_builders::ListLaunchProfiles::states) / [`set_states(Option<Vec<LaunchProfileState>>)`](crate::client::fluent_builders::ListLaunchProfiles::set_states): <p>Filter this request to launch profiles in any of the given states.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput) with field(s):
     ///   - [`launch_profiles(Option<Vec<LaunchProfile>>)`](crate::output::ListLaunchProfilesOutput::launch_profiles): <p>A collection of launch profiles.</p>
@@ -507,9 +507,9 @@ where
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioComponents::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStudioComponents::set_max_results): <p>The max number of results to return in the response.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioComponents::set_next_token): <p>The token to request the next page of results. </p>
-    ///   - [`states(Vec<String>)`](crate::client::fluent_builders::ListStudioComponents::states) / [`set_states(Option<Vec<String>>)`](crate::client::fluent_builders::ListStudioComponents::set_states): <p>Filters the request to studio components that are in one of the given states. </p>
+    ///   - [`states(Vec<StudioComponentState>)`](crate::client::fluent_builders::ListStudioComponents::states) / [`set_states(Option<Vec<StudioComponentState>>)`](crate::client::fluent_builders::ListStudioComponents::set_states): <p>Filters the request to studio components that are in one of the given states. </p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStudioComponents::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStudioComponents::set_studio_id): <p>The studio ID. </p>
-    ///   - [`types(Vec<String>)`](crate::client::fluent_builders::ListStudioComponents::types) / [`set_types(Option<Vec<String>>)`](crate::client::fluent_builders::ListStudioComponents::set_types): <p>Filters the request to studio components that are of one of the given types.</p>
+    ///   - [`types(Vec<StudioComponentType>)`](crate::client::fluent_builders::ListStudioComponents::types) / [`set_types(Option<Vec<StudioComponentType>>)`](crate::client::fluent_builders::ListStudioComponents::set_types): <p>Filters the request to studio components that are of one of the given types.</p>
     /// - On success, responds with [`ListStudioComponentsOutput`](crate::output::ListStudioComponentsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListStudioComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`studio_components(Option<Vec<StudioComponent>>)`](crate::output::ListStudioComponentsOutput::studio_components): <p>A collection of studio components.</p>
@@ -1248,12 +1248,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
         pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owned_by(input.into());
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
         pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_owned_by(input);
             self
@@ -2972,7 +2972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStreamingSession`.
     ///
     /// <p>Gets StreamingSession resource.</p>
-    /// <p>anvoke this operation to poll for a streaming session state while creating or deleting a session.</p>
+    /// <p>Invoke this operation to poll for a streaming session state while creating or deleting a session.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamingSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -3782,14 +3782,14 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>Filter this request to launch profiles in any of the given states.</p>
-        pub fn states(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.states(input.into());
+        pub fn states(mut self, input: crate::model::LaunchProfileState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>Filter this request to launch profiles in any of the given states.</p>
         pub fn set_states(
             mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LaunchProfileState>>,
         ) -> Self {
             self.inner = self.inner.set_states(input);
             self
@@ -4108,14 +4108,14 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>Filters the request to studio components that are in one of the given states. </p>
-        pub fn states(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.states(input.into());
+        pub fn states(mut self, input: crate::model::StudioComponentState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>Filters the request to studio components that are in one of the given states. </p>
         pub fn set_states(
             mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StudioComponentState>>,
         ) -> Self {
             self.inner = self.inner.set_states(input);
             self
@@ -4135,14 +4135,14 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
         /// <p>Filters the request to studio components that are of one of the given types.</p>
-        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.types(input.into());
+        pub fn types(mut self, input: crate::model::StudioComponentType) -> Self {
+            self.inner = self.inner.types(input);
             self
         }
         /// <p>Filters the request to studio components that are of one of the given types.</p>
         pub fn set_types(
             mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StudioComponentType>>,
         ) -> Self {
             self.inner = self.inner.set_types(input);
             self

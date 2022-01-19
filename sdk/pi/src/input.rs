@@ -13,6 +13,7 @@ pub mod describe_dimension_keys_input {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) period_in_seconds: std::option::Option<i32>,
         pub(crate) group_by: std::option::Option<crate::model::DimensionGroup>,
+        pub(crate) additional_metrics: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) partition_by: std::option::Option<crate::model::DimensionGroup>,
         pub(crate) filter: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -21,12 +22,12 @@ pub mod describe_dimension_keys_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+        /// <p>The Amazon Web Services service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
         pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
             self.service_type = Some(input);
             self
         }
-        /// <p>The AWS service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+        /// <p>The Amazon Web Services service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
         pub fn set_service_type(
             mut self,
             input: std::option::Option<crate::model::ServiceType>,
@@ -34,26 +35,26 @@ pub mod describe_dimension_keys_input {
             self.service_type = input;
             self
         }
-        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
-        /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+        /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+        /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.identifier = Some(input.into());
             self
         }
-        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
-        /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+        /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+        /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
         }
-        /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned.</p>
-        /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+        /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
+        /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned.</p>
-        /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+        /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
+        /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -79,8 +80,8 @@ pub mod describe_dimension_keys_input {
         /// <p>The name of a Performance Insights metric to be measured.</p>
         /// <p>Valid values for <code>Metric</code> are:</p>
         /// <ul>
-        /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-        /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine. </p> </li>
+        /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine. </p> </li>
         /// </ul>
         /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
         pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,15 +91,15 @@ pub mod describe_dimension_keys_input {
         /// <p>The name of a Performance Insights metric to be measured.</p>
         /// <p>Valid values for <code>Metric</code> are:</p>
         /// <ul>
-        /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-        /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+        /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine. </p> </li>
+        /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine. </p> </li>
         /// </ul>
         /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
         pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric = input;
             self
         }
-        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
+        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
         /// <ul>
         /// <li> <p> <code>1</code> (one second)</p> </li>
         /// <li> <p> <code>60</code> (one minute)</p> </li>
@@ -106,12 +107,12 @@ pub mod describe_dimension_keys_input {
         /// <li> <p> <code>3600</code> (one hour)</p> </li>
         /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
         /// </ul>
-        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
+        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
         pub fn period_in_seconds(mut self, input: i32) -> Self {
             self.period_in_seconds = Some(input);
             self
         }
-        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
+        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
         /// <ul>
         /// <li> <p> <code>1</code> (one second)</p> </li>
         /// <li> <p> <code>60</code> (one minute)</p> </li>
@@ -119,17 +120,17 @@ pub mod describe_dimension_keys_input {
         /// <li> <p> <code>3600</code> (one hour)</p> </li>
         /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
         /// </ul>
-        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
+        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
         pub fn set_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.period_in_seconds = input;
             self
         }
-        /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+        /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
         pub fn group_by(mut self, input: crate::model::DimensionGroup) -> Self {
             self.group_by = Some(input);
             self
         }
-        /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+        /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<crate::model::DimensionGroup>,
@@ -137,12 +138,33 @@ pub mod describe_dimension_keys_input {
             self.group_by = input;
             self
         }
-        /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
+        /// Appends an item to `additional_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_additional_metrics`](Self::set_additional_metrics).
+        ///
+        /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+        /// <p></p>
+        pub fn additional_metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.additional_metrics.unwrap_or_default();
+            v.push(input.into());
+            self.additional_metrics = Some(v);
+            self
+        }
+        /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+        /// <p></p>
+        pub fn set_additional_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.additional_metrics = input;
+            self
+        }
+        /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
         pub fn partition_by(mut self, input: crate::model::DimensionGroup) -> Self {
             self.partition_by = Some(input);
             self
         }
-        /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
+        /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
         pub fn set_partition_by(
             mut self,
             input: std::option::Option<crate::model::DimensionGroup>,
@@ -193,12 +215,12 @@ pub mod describe_dimension_keys_input {
             self.max_results = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -218,6 +240,7 @@ pub mod describe_dimension_keys_input {
                 metric: self.metric,
                 period_in_seconds: self.period_in_seconds,
                 group_by: self.group_by,
+                additional_metrics: self.additional_metrics,
                 partition_by: self.partition_by,
                 filter: self.filter,
                 max_results: self.max_results,
@@ -363,12 +386,12 @@ pub mod get_dimension_key_details_input {
         pub(crate) requested_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The AWS service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
+        /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
         pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
             self.service_type = Some(input);
             self
         }
-        /// <p>The AWS service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
+        /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
         pub fn set_service_type(
             mut self,
             input: std::option::Option<crate::model::ServiceType>,
@@ -376,12 +399,12 @@ pub mod get_dimension_key_details_input {
             self.service_type = input;
             self
         }
-        /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an AWS Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+        /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.identifier = Some(input.into());
             self
         }
-        /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an AWS Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+        /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -413,14 +436,14 @@ pub mod get_dimension_key_details_input {
         ///
         /// To override the contents of this collection use [`set_requested_dimensions`](Self::set_requested_dimensions).
         ///
-        /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group.</p>
+        /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. </p>
         pub fn requested_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.requested_dimensions.unwrap_or_default();
             v.push(input.into());
             self.requested_dimensions = Some(v);
             self
         }
-        /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group.</p>
+        /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. </p>
         pub fn set_requested_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -569,6 +592,175 @@ impl GetDimensionKeyDetailsInput {
     }
 }
 
+/// See [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput)
+pub mod get_resource_metadata_input {
+    /// A builder for [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
+        pub(crate) identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
+            self.service_type = Some(input);
+            self
+        }
+        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+        pub fn set_service_type(
+            mut self,
+            input: std::option::Option<crate::model::ServiceType>,
+        ) -> Self {
+            self.service_type = input;
+            self
+        }
+        /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetResourceMetadataInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetResourceMetadataInput {
+                service_type: self.service_type,
+                identifier: self.identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetResourceMetadataInputOperationOutputAlias = crate::operation::GetResourceMetadata;
+#[doc(hidden)]
+pub type GetResourceMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetResourceMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`GetResourceMetadata`](crate::operation::GetResourceMetadata)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetResourceMetadata,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetResourceMetadataInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResourceMetadataInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResourceMetadataInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PerformanceInsightsv20180227.GetResourceMetadata",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_metadata(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResourceMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetResourceMetadata",
+            "pi",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput)
+    pub fn builder() -> crate::input::get_resource_metadata_input::Builder {
+        crate::input::get_resource_metadata_input::Builder::default()
+    }
+}
+
 /// See [`GetResourceMetricsInput`](crate::input::GetResourceMetricsInput)
 pub mod get_resource_metrics_input {
     /// A builder for [`GetResourceMetricsInput`](crate::input::GetResourceMetricsInput)
@@ -585,12 +777,12 @@ pub mod get_resource_metrics_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+        /// <p>The Amazon Web Services service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
         pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
             self.service_type = Some(input);
             self
         }
-        /// <p>The AWS service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+        /// <p>The Amazon Web Services service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
         pub fn set_service_type(
             mut self,
             input: std::option::Option<crate::model::ServiceType>,
@@ -598,13 +790,13 @@ pub mod get_resource_metrics_input {
             self.service_type = input;
             self
         }
-        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+        /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
         /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.identifier = Some(input.into());
             self
         }
-        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+        /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
         /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
@@ -847,13 +1039,569 @@ impl GetResourceMetricsInput {
     }
 }
 
+/// See [`ListAvailableResourceDimensionsInput`](crate::input::ListAvailableResourceDimensionsInput)
+pub mod list_available_resource_dimensions_input {
+    /// A builder for [`ListAvailableResourceDimensionsInput`](crate::input::ListAvailableResourceDimensionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
+        pub(crate) identifier: std::option::Option<std::string::String>,
+        pub(crate) metrics: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
+            self.service_type = Some(input);
+            self
+        }
+        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+        pub fn set_service_type(
+            mut self,
+            input: std::option::Option<crate::model::ServiceType>,
+        ) -> Self {
+            self.service_type = input;
+            self
+        }
+        /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
+        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.metrics.unwrap_or_default();
+            v.push(input.into());
+            self.metrics = Some(v);
+            self
+        }
+        /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
+        pub fn set_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.metrics = input;
+            self
+        }
+        /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAvailableResourceDimensionsInput`](crate::input::ListAvailableResourceDimensionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListAvailableResourceDimensionsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAvailableResourceDimensionsInput {
+                service_type: self.service_type,
+                identifier: self.identifier,
+                metrics: self.metrics,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAvailableResourceDimensionsInputOperationOutputAlias =
+    crate::operation::ListAvailableResourceDimensions;
+#[doc(hidden)]
+pub type ListAvailableResourceDimensionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListAvailableResourceDimensionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAvailableResourceDimensions`](crate::operation::ListAvailableResourceDimensions)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAvailableResourceDimensions,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListAvailableResourceDimensionsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListAvailableResourceDimensionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListAvailableResourceDimensionsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PerformanceInsightsv20180227.ListAvailableResourceDimensions",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_available_resource_dimensions(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAvailableResourceDimensions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAvailableResourceDimensions",
+            "pi",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsInput`](crate::input::ListAvailableResourceDimensionsInput)
+    pub fn builder() -> crate::input::list_available_resource_dimensions_input::Builder {
+        crate::input::list_available_resource_dimensions_input::Builder::default()
+    }
+}
+
+/// See [`ListAvailableResourceMetricsInput`](crate::input::ListAvailableResourceMetricsInput)
+pub mod list_available_resource_metrics_input {
+    /// A builder for [`ListAvailableResourceMetricsInput`](crate::input::ListAvailableResourceMetricsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
+        pub(crate) identifier: std::option::Option<std::string::String>,
+        pub(crate) metric_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
+            self.service_type = Some(input);
+            self
+        }
+        /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+        pub fn set_service_type(
+            mut self,
+            input: std::option::Option<crate::model::ServiceType>,
+        ) -> Self {
+            self.service_type = input;
+            self
+        }
+        /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// Appends an item to `metric_types`.
+        ///
+        /// To override the contents of this collection use [`set_metric_types`](Self::set_metric_types).
+        ///
+        /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
+        /// <ul>
+        /// <li> <p> <code>os</code> (OS counter metrics)</p> </li>
+        /// <li> <p> <code>db</code> (DB load metrics)</p> </li>
+        /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics)</p> </li>
+        /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li>
+        /// </ul>
+        pub fn metric_types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.metric_types.unwrap_or_default();
+            v.push(input.into());
+            self.metric_types = Some(v);
+            self
+        }
+        /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
+        /// <ul>
+        /// <li> <p> <code>os</code> (OS counter metrics)</p> </li>
+        /// <li> <p> <code>db</code> (DB load metrics)</p> </li>
+        /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics)</p> </li>
+        /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li>
+        /// </ul>
+        pub fn set_metric_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.metric_types = input;
+            self
+        }
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAvailableResourceMetricsInput`](crate::input::ListAvailableResourceMetricsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListAvailableResourceMetricsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAvailableResourceMetricsInput {
+                service_type: self.service_type,
+                identifier: self.identifier,
+                metric_types: self.metric_types,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAvailableResourceMetricsInputOperationOutputAlias =
+    crate::operation::ListAvailableResourceMetrics;
+#[doc(hidden)]
+pub type ListAvailableResourceMetricsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListAvailableResourceMetricsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAvailableResourceMetrics`](crate::operation::ListAvailableResourceMetrics)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAvailableResourceMetrics,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListAvailableResourceMetricsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListAvailableResourceMetricsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListAvailableResourceMetricsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PerformanceInsightsv20180227.ListAvailableResourceMetrics",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_available_resource_metrics(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAvailableResourceMetrics::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAvailableResourceMetrics",
+            "pi",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsInput`](crate::input::ListAvailableResourceMetricsInput)
+    pub fn builder() -> crate::input::list_available_resource_metrics_input::Builder {
+        crate::input::list_available_resource_metrics_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAvailableResourceMetricsInput {
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    pub service_type: std::option::Option<crate::model::ServiceType>,
+    /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    pub identifier: std::option::Option<std::string::String>,
+    /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>os</code> (OS counter metrics)</p> </li>
+    /// <li> <p> <code>db</code> (DB load metrics)</p> </li>
+    /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics)</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li>
+    /// </ul>
+    pub metric_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListAvailableResourceMetricsInput {
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
+        self.service_type.as_ref()
+    }
+    /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>os</code> (OS counter metrics)</p> </li>
+    /// <li> <p> <code>db</code> (DB load metrics)</p> </li>
+    /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics)</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)</p> </li>
+    /// </ul>
+    pub fn metric_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.metric_types.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListAvailableResourceMetricsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAvailableResourceMetricsInput");
+        formatter.field("service_type", &self.service_type);
+        formatter.field("identifier", &self.identifier);
+        formatter.field("metric_types", &self.metric_types);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAvailableResourceDimensionsInput {
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    pub service_type: std::option::Option<crate::model::ServiceType>,
+    /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    pub identifier: std::option::Option<std::string::String>,
+    /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
+    pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAvailableResourceDimensionsInput {
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
+        self.service_type.as_ref()
+    }
+    /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
+    pub fn metrics(&self) -> std::option::Option<&[std::string::String]> {
+        self.metrics.as_deref()
+    }
+    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAvailableResourceDimensionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAvailableResourceDimensionsInput");
+        formatter.field("service_type", &self.service_type);
+        formatter.field("identifier", &self.identifier);
+        formatter.field("metrics", &self.metrics);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceMetricsInput {
-    /// <p>The AWS service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
     pub service_type: std::option::Option<crate::model::ServiceType>,
-    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+    /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
     pub identifier: std::option::Option<std::string::String>,
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
@@ -880,11 +1628,11 @@ pub struct GetResourceMetricsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceMetricsInput {
-    /// <p>The AWS service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
     pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
         self.service_type.as_ref()
     }
-    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+    /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
@@ -942,24 +1690,52 @@ impl std::fmt::Debug for GetResourceMetricsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDimensionKeyDetailsInput {
-    /// <p>The AWS service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
+pub struct GetResourceMetadataInput {
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     pub service_type: std::option::Option<crate::model::ServiceType>,
-    /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an AWS Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    pub identifier: std::option::Option<std::string::String>,
+}
+impl GetResourceMetadataInput {
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
+        self.service_type.as_ref()
+    }
+    /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for GetResourceMetadataInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetResourceMetadataInput");
+        formatter.field("service_type", &self.service_type);
+        formatter.field("identifier", &self.identifier);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDimensionKeyDetailsInput {
+    /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
+    pub service_type: std::option::Option<crate::model::ServiceType>,
+    /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
     pub identifier: std::option::Option<std::string::String>,
     /// <p>The name of the dimension group. The only valid value is <code>db.sql</code>. Performance Insights searches the specified group for the dimension group ID.</p>
     pub group: std::option::Option<std::string::String>,
     /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>.</p>
     pub group_identifier: std::option::Option<std::string::String>,
-    /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group.</p>
+    /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. </p>
     pub requested_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetDimensionKeyDetailsInput {
-    /// <p>The AWS service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
     pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
         self.service_type.as_ref()
     }
-    /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an AWS Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -971,7 +1747,7 @@ impl GetDimensionKeyDetailsInput {
     pub fn group_identifier(&self) -> std::option::Option<&str> {
         self.group_identifier.as_deref()
     }
-    /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group.</p>
+    /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. </p>
     pub fn requested_dimensions(&self) -> std::option::Option<&[std::string::String]> {
         self.requested_dimensions.as_deref()
     }
@@ -992,13 +1768,13 @@ impl std::fmt::Debug for GetDimensionKeyDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDimensionKeysInput {
-    /// <p>The AWS service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
     pub service_type: std::option::Option<crate::model::ServiceType>,
-    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
-    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+    /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned.</p>
-    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
+    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
@@ -1006,12 +1782,12 @@ pub struct DescribeDimensionKeysInput {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-    /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine. </p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine. </p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
     pub metric: std::option::Option<std::string::String>,
-    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
+    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
     /// <ul>
     /// <li> <p> <code>1</code> (one second)</p> </li>
     /// <li> <p> <code>60</code> (one minute)</p> </li>
@@ -1019,11 +1795,14 @@ pub struct DescribeDimensionKeysInput {
     /// <li> <p> <code>3600</code> (one hour)</p> </li>
     /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
-    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
+    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
     pub period_in_seconds: std::option::Option<i32>,
-    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
     pub group_by: std::option::Option<crate::model::DimensionGroup>,
-    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
+    /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+    /// <p></p>
+    pub additional_metrics: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
     pub partition_by: std::option::Option<crate::model::DimensionGroup>,
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
@@ -1034,21 +1813,21 @@ pub struct DescribeDimensionKeysInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDimensionKeysInput {
-    /// <p>The AWS service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
     pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
         self.service_type.as_ref()
     }
-    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
-    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+    /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned.</p>
-    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
+    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -1060,14 +1839,14 @@ impl DescribeDimensionKeysInput {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine.</p> </li>
-    /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
+    /// <li> <p> <code>db.load.avg</code> - a scaled representation of the number of active sessions for the database engine. </p> </li>
+    /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine. </p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
     pub fn metric(&self) -> std::option::Option<&str> {
         self.metric.as_deref()
     }
-    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
+    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
     /// <ul>
     /// <li> <p> <code>1</code> (one second)</p> </li>
     /// <li> <p> <code>60</code> (one minute)</p> </li>
@@ -1075,15 +1854,20 @@ impl DescribeDimensionKeysInput {
     /// <li> <p> <code>3600</code> (one hour)</p> </li>
     /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
-    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
+    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
     pub fn period_in_seconds(&self) -> std::option::Option<i32> {
         self.period_in_seconds
     }
-    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
+    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
     pub fn group_by(&self) -> std::option::Option<&crate::model::DimensionGroup> {
         self.group_by.as_ref()
     }
-    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
+    /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+    /// <p></p>
+    pub fn additional_metrics(&self) -> std::option::Option<&[std::string::String]> {
+        self.additional_metrics.as_deref()
+    }
+    /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
     pub fn partition_by(&self) -> std::option::Option<&crate::model::DimensionGroup> {
         self.partition_by.as_ref()
     }
@@ -1102,7 +1886,7 @@ impl DescribeDimensionKeysInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1117,6 +1901,7 @@ impl std::fmt::Debug for DescribeDimensionKeysInput {
         formatter.field("metric", &self.metric);
         formatter.field("period_in_seconds", &self.period_in_seconds);
         formatter.field("group_by", &self.group_by);
+        formatter.field("additional_metrics", &self.additional_metrics);
         formatter.field("partition_by", &self.partition_by);
         formatter.field("filter", &self.filter);
         formatter.field("max_results", &self.max_results);

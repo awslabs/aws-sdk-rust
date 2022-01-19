@@ -209,7 +209,7 @@ pub struct CreateWebLoginTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWebLoginTokenErrorKind {
-    /// <p>Access to the Airflow Web UI or CLI has been Denied. Please follow the MWAA user guide to setup permissions to access the Web UI and CLI functionality.</p>
+    /// <p>Access to the Apache Airflow Web UI or CLI has been denied due to insufficient permissions. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html">Accessing an Amazon MWAA environment</a>.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>InternalServerException: An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1397,7 +1397,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>Access to the Airflow Web UI or CLI has been Denied. Please follow the MWAA user guide to setup permissions to access the Web UI and CLI functionality.</p>
+/// <p>Access to the Apache Airflow Web UI or CLI has been denied due to insufficient permissions. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html">Accessing an Amazon MWAA environment</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

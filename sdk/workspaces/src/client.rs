@@ -130,6 +130,20 @@ where
     pub fn copy_workspace_image(&self) -> fluent_builders::CopyWorkspaceImage<C, M, R> {
         fluent_builders::CopyWorkspaceImage::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateConnectClientAddIn`](crate::client::fluent_builders::CreateConnectClientAddIn) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::set_resource_id): <p>The directory identifier for which to configure the client add-in.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::set_name): <p>The name of the client add-in.</p>
+    ///   - [`url(impl Into<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::url) / [`set_url(Option<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::set_url): <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// - On success, responds with [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput) with field(s):
+    ///   - [`add_in_id(Option<String>)`](crate::output::CreateConnectClientAddInOutput::add_in_id): <p>The client add-in identifier.</p>
+    /// - On failure, responds with [`SdkError<CreateConnectClientAddInError>`](crate::error::CreateConnectClientAddInError)
+    pub fn create_connect_client_add_in(
+        &self,
+    ) -> fluent_builders::CreateConnectClientAddIn<C, M, R> {
+        fluent_builders::CreateConnectClientAddIn::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateConnectionAlias`](crate::client::fluent_builders::CreateConnectionAlias) operation.
     ///
     /// - The fluent builder is configurable:
@@ -206,6 +220,19 @@ where
     /// - On failure, responds with [`SdkError<CreateWorkspacesError>`](crate::error::CreateWorkspacesError)
     pub fn create_workspaces(&self) -> fluent_builders::CreateWorkspaces<C, M, R> {
         fluent_builders::CreateWorkspaces::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteConnectClientAddIn`](crate::client::fluent_builders::DeleteConnectClientAddIn) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`add_in_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConnectClientAddIn::add_in_id) / [`set_add_in_id(Option<String>)`](crate::client::fluent_builders::DeleteConnectClientAddIn::set_add_in_id): <p>The identifier of the client add-in to delete.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConnectClientAddIn::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DeleteConnectClientAddIn::set_resource_id): <p>The directory identifier for which the client add-in is configured.</p>
+    /// - On success, responds with [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConnectClientAddInError>`](crate::error::DeleteConnectClientAddInError)
+    pub fn delete_connect_client_add_in(
+        &self,
+    ) -> fluent_builders::DeleteConnectClientAddIn<C, M, R> {
+        fluent_builders::DeleteConnectClientAddIn::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteConnectionAlias`](crate::client::fluent_builders::DeleteConnectionAlias) operation.
     ///
@@ -303,6 +330,21 @@ where
     /// - On failure, responds with [`SdkError<DescribeClientPropertiesError>`](crate::error::DescribeClientPropertiesError)
     pub fn describe_client_properties(&self) -> fluent_builders::DescribeClientProperties<C, M, R> {
         fluent_builders::DescribeClientProperties::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeConnectClientAddIns`](crate::client::fluent_builders::DescribeConnectClientAddIns) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::set_resource_id): <p>The directory identifier for which the client add-in is configured.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeConnectClientAddIns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::set_max_results): <p>The maximum number of items to return.</p>
+    /// - On success, responds with [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput) with field(s):
+    ///   - [`add_ins(Option<Vec<ConnectClientAddIn>>)`](crate::output::DescribeConnectClientAddInsOutput::add_ins): <p>Information about client add-ins.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConnectClientAddInsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeConnectClientAddInsError>`](crate::error::DescribeConnectClientAddInsError)
+    pub fn describe_connect_client_add_ins(
+        &self,
+    ) -> fluent_builders::DescribeConnectClientAddIns<C, M, R> {
+        fluent_builders::DescribeConnectClientAddIns::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeConnectionAliases`](crate::client::fluent_builders::DescribeConnectionAliases) operation.
     ///
@@ -700,6 +742,21 @@ where
     /// - On failure, responds with [`SdkError<TerminateWorkspacesError>`](crate::error::TerminateWorkspacesError)
     pub fn terminate_workspaces(&self) -> fluent_builders::TerminateWorkspaces<C, M, R> {
         fluent_builders::TerminateWorkspaces::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateConnectClientAddIn`](crate::client::fluent_builders::UpdateConnectClientAddIn) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`add_in_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::add_in_id) / [`set_add_in_id(Option<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::set_add_in_id): <p>The identifier of the client add-in to update.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::set_resource_id): <p>The directory identifier for which the client add-in is configured.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::set_name): <p>The name of the client add-in.</p>
+    ///   - [`url(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::url) / [`set_url(Option<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::set_url): <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// - On success, responds with [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateConnectClientAddInError>`](crate::error::UpdateConnectClientAddInError)
+    pub fn update_connect_client_add_in(
+        &self,
+    ) -> fluent_builders::UpdateConnectClientAddIn<C, M, R> {
+        fluent_builders::UpdateConnectClientAddIn::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateConnectionAliasPermission`](crate::client::fluent_builders::UpdateConnectionAliasPermission) operation.
     ///
@@ -1140,6 +1197,97 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateConnectClientAddIn`.
+    ///
+    /// <p>Creates a client-add-in for Amazon Connect within a directory. You can create only one Amazon Connect client add-in within a directory.</p>
+    /// <p>This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateConnectClientAddIn<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_connect_client_add_in_input::Builder,
+    }
+    impl<C, M, R> CreateConnectClientAddIn<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateConnectClientAddIn`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateConnectClientAddInOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateConnectClientAddInError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateConnectClientAddInInputOperationOutputAlias,
+                crate::output::CreateConnectClientAddInOutput,
+                crate::error::CreateConnectClientAddInError,
+                crate::input::CreateConnectClientAddInInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The directory identifier for which to configure the client add-in.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier for which to configure the client add-in.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.url(input.into());
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_url(input);
             self
         }
     }
@@ -1792,6 +1940,86 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteConnectClientAddIn`.
+    ///
+    /// <p>Deletes a client-add-in for Amazon Connect that is configured within a directory.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteConnectClientAddIn<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_connect_client_add_in_input::Builder,
+    }
+    impl<C, M, R> DeleteConnectClientAddIn<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteConnectClientAddIn`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteConnectClientAddInOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteConnectClientAddInError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteConnectClientAddInInputOperationOutputAlias,
+                crate::output::DeleteConnectClientAddInOutput,
+                crate::error::DeleteConnectClientAddInError,
+                crate::input::DeleteConnectClientAddInInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the client add-in to delete.</p>
+        pub fn add_in_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.add_in_id(input.into());
+            self
+        }
+        /// <p>The identifier of the client add-in to delete.</p>
+        pub fn set_add_in_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_add_in_id(input);
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteConnectionAlias`.
     ///
     /// <p>Deletes the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <important>
@@ -2441,6 +2669,96 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_resource_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeConnectClientAddIns`.
+    ///
+    /// <p>Retrieves a list of Amazon Connect client add-ins that have been created.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeConnectClientAddIns<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_connect_client_add_ins_input::Builder,
+    }
+    impl<C, M, R> DescribeConnectClientAddIns<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeConnectClientAddIns`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeConnectClientAddInsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeConnectClientAddInsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeConnectClientAddInsInputOperationOutputAlias,
+                crate::output::DescribeConnectClientAddInsOutput,
+                crate::error::DescribeConnectClientAddInsError,
+                crate::input::DescribeConnectClientAddInsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of items to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -5306,6 +5624,106 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::TerminateRequest>>,
         ) -> Self {
             self.inner = self.inner.set_terminate_workspace_requests(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateConnectClientAddIn`.
+    ///
+    /// <p>Updates a Amazon Connect client add-in. Use this action to update the name and endpoint URL of a Amazon Connect client add-in.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateConnectClientAddIn<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_connect_client_add_in_input::Builder,
+    }
+    impl<C, M, R> UpdateConnectClientAddIn<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateConnectClientAddIn`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateConnectClientAddInOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateConnectClientAddInError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateConnectClientAddInInputOperationOutputAlias,
+                crate::output::UpdateConnectClientAddInOutput,
+                crate::error::UpdateConnectClientAddInError,
+                crate::input::UpdateConnectClientAddInInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the client add-in to update.</p>
+        pub fn add_in_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.add_in_id(input.into());
+            self
+        }
+        /// <p>The identifier of the client add-in to update.</p>
+        pub fn set_add_in_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_add_in_id(input);
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.url(input.into());
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_url(input);
             self
         }
     }

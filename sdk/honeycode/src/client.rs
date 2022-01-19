@@ -151,6 +151,7 @@ where
     ///   - [`job_status(Option<TableDataImportJobStatus>)`](crate::output::DescribeTableDataImportJobOutput::job_status): <p> The current status of the import job. </p>
     ///   - [`message(Option<String>)`](crate::output::DescribeTableDataImportJobOutput::message): <p> A message providing more details about the current status of the import job. </p>
     ///   - [`job_metadata(Option<TableDataImportJobMetadata>)`](crate::output::DescribeTableDataImportJobOutput::job_metadata): <p> The metadata about the job that was submitted for import. </p>
+    ///   - [`error_code(Option<ErrorCode>)`](crate::output::DescribeTableDataImportJobOutput::error_code): <p> If job status is failed, error code to understand reason for the failure. </p>
     /// - On failure, responds with [`SdkError<DescribeTableDataImportJobError>`](crate::error::DescribeTableDataImportJobError)
     pub fn describe_table_data_import_job(
         &self,
@@ -161,7 +162,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::GetScreenData::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::GetScreenData::set_workbook_id): <p>The ID of the workbook that contains the screen.</p>
-    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetScreenData::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetScreenData::set_app_id): <p>The ID of the app that contains the screem.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetScreenData::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetScreenData::set_app_id): <p>The ID of the app that contains the screen.</p>
     ///   - [`screen_id(impl Into<String>)`](crate::client::fluent_builders::GetScreenData::screen_id) / [`set_screen_id(Option<String>)`](crate::client::fluent_builders::GetScreenData::set_screen_id): <p>The ID of the screen.</p>
     ///   - [`variables(HashMap<String, VariableValue>)`](crate::client::fluent_builders::GetScreenData::variables) / [`set_variables(Option<HashMap<String, VariableValue>>)`](crate::client::fluent_builders::GetScreenData::set_variables): <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::GetScreenData::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetScreenData::set_max_results): <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>  <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
@@ -239,6 +240,16 @@ where
     pub fn list_tables(&self) -> fluent_builders::ListTables<C, M, R> {
         fluent_builders::ListTables::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The resource's tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`QueryTableRows`](crate::client::fluent_builders::QueryTableRows) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::QueryTableRows::into_paginator).
     ///
@@ -272,6 +283,28 @@ where
     /// - On failure, responds with [`SdkError<StartTableDataImportJobError>`](crate::error::StartTableDataImportJobError)
     pub fn start_table_data_import_job(&self) -> fluent_builders::StartTableDataImportJob<C, M, R> {
         fluent_builders::StartTableDataImportJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags to apply to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
+    pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
+        fluent_builders::UntagResource::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -922,12 +955,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
-        /// <p>The ID of the app that contains the screem.</p>
+        /// <p>The ID of the app that contains the screen.</p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_id(input.into());
             self
         }
-        /// <p>The ID of the app that contains the screem.</p>
+        /// <p>The ID of the app that contains the screen.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_id(input);
             self
@@ -1472,6 +1505,76 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTagsForResource`.
+    ///
+    /// <p> The ListTagsForResource API allows you to return a resource's tags. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTagsForResource<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl<C, M, R> ListTagsForResource<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListTagsForResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListTagsForResourceInputOperationOutputAlias,
+                crate::output::ListTagsForResourceOutput,
+                crate::error::ListTagsForResourceError,
+                crate::input::ListTagsForResourceInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `QueryTableRows`.
     ///
     /// <p> The QueryTableRows API allows you to use a filter formula to query for specific rows in a table. </p>
@@ -1735,6 +1838,186 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `TagResource`.
+    ///
+    /// <p> The TagResource API allows you to add tags to an ARN-able resource. Resource includes workbook, table, screen and screen-automation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TagResource<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl<C, M, R> TagResource<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `TagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::TagResourceInputOperationOutputAlias,
+                crate::output::TagResourceOutput,
+                crate::error::TagResourceError,
+                crate::input::TagResourceInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to apply to the resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>A list of tags to apply to the resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UntagResource`.
+    ///
+    /// <p> The UntagResource API allows you to removes tags from an ARN-able resource. Resource includes workbook, table, screen and screen-automation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UntagResource<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl<C, M, R> UntagResource<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UntagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UntagResourceInputOperationOutputAlias,
+                crate::output::UntagResourceOutput,
+                crate::error::UntagResourceError,
+                crate::input::UntagResourceInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The resource's Amazon Resource Name (ARN).</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `tagKeys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of tag keys to remove from the resource.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
+            self
+        }
+        /// <p>A list of tag keys to remove from the resource.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }

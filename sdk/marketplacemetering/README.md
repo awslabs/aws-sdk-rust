@@ -32,8 +32,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.4.1"
-aws-sdk-marketplacemetering = "0.4.1"
+aws-config = "0.5.0"
+aws-sdk-marketplacemetering = "0.5.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
