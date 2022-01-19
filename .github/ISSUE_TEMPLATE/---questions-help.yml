@@ -7,7 +7,6 @@ body:
     id: issues
     attributes:
       label: Prerequisites 
-      description:
       options:
         - label: I've searched for [previous similar issues](https://github.com/awslabs/aws-sdk-rust/issues) or [discussions](https://github.com/awslabs/aws-sdk-rust/discussions) and didn't find any solution.
           required: true
